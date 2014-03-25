@@ -1,6 +1,12 @@
 # OpenProject Translations Plugin
 
-`openproject-translations` is an OpenProject plugin, which adds 
+**Warning:** This plugin is work in progress and does not work as intended yet.
+
+`openproject-translations` is an OpenProject plugin, which adds more languages to your OpenProject installation.
+
+All translations a daily fetched from [our crowding project](https://crowdin.net/project/openproject). If you want to change translations, you are very welcome to do that via crowdin.
+
+
 
 ## Requirements
 
@@ -30,8 +36,10 @@ OpenProject is supported by its community members, both companies as well as ind
 
 ## Start Collaborating
 
-Join the OpenProject community and start collaborating. We envision building a platform to share ideas, contributions, and discussions around OpenProject and project collaboration. Each commitment is noteworthy as it helps to improve the software and the project.
-More details will be added on the OpenProject Community [contribution page](https://www.openproject.org/projects/openproject/wiki/Contribution).
+If you want to contribute translations, please visit [our crowin project](https://crowdin.net/project/openproject).
+
+This plugin contains some other things than translation files -- if you want to change those, join the OpenProject community and start collaborating.
+Details will can be found on the OpenProject Community [contribution page](https://www.openproject.org/projects/openproject/wiki/Contribution).
 
 In case you find a bug or need a feature, please report at https://www.openproject.org/projects/translations/issues
 
