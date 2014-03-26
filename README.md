@@ -20,7 +20,7 @@ All translations a daily fetched from [our crowding project](https://crowdin.net
 Edit the `Gemfile.plugins` file in your openproject-installation directory to contain the following lines:
 
 <pre>
-gem "openproject-translations", :git => 'https://github.com/finnlabs/openproject-translations.git'
+gem "openproject-translations", :git => 'https://github.com/finnlabs/openproject-translations.git', :branch => 'dev'
 </pre>
 
 Then update your bundle with:
