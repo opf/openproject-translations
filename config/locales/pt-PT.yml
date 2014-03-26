@@ -1,3 +1,4 @@
+---
 pt:
   account:
     delete: Excluir conta
@@ -5,15 +6,33 @@ pt:
     deleted: Conta excluida com sucesso
     deletion_info:
       data_consequences:
-        other: 'Of the data the user created (e.g. e-mail, preferences, work packages, wiki entries) as much as possible will be deleted. Note however, that data like work packages and wiki entries can not be deleted without impeding the work of the other users. Such data is hence reassigned to an account called "Deleted user". As the data of every deleted account is reassigned to this account it will not be possible to distinguish the data the user created from the data of another deleted account.'
-        self: 'Of the data you created (e.g. e-mail, preferences, work packages, wiki entries) as much as possible will be deleted. Note however, that data like work packages and wiki entries can not be deleted without impeding the work of the other users. Such data is hence reassigned to an account called "Deleted user". As the data of every deleted account is reassigned to this account it will not be possible to distinguish the data you created from the data of another deleted account.'
-      heading: 'Ecluir a conta %{name}'
+        other: Of the data the user created (e.g. e-mail, preferences, work packages,
+          wiki entries) as much as possible will be deleted. Note however, that data
+          like work packages and wiki entries can not be deleted without impeding
+          the work of the other users. Such data is hence reassigned to an account
+          called "Deleted user". As the data of every deleted account is reassigned
+          to this account it will not be possible to distinguish the data the user
+          created from the data of another deleted account.
+        self: Of the data you created (e.g. e-mail, preferences, work packages, wiki
+          entries) as much as possible will be deleted. Note however, that data like
+          work packages and wiki entries can not be deleted without impeding the work
+          of the other users. Such data is hence reassigned to an account called "Deleted
+          user". As the data of every deleted account is reassigned to this account
+          it will not be possible to distinguish the data you created from the data
+          of another deleted account.
+      heading: Ecluir a conta %{name}
       info:
         other: Excluir a conta do usuário é uma ação irreversível.
         self: Excluir a sua conta de usuário é uma ação irreversível.
       login_consequences:
-        other: The account will be deleted from the system. Therefore, the user will no longer be able to log in with his current credentials. He/she can choose to become a user of this application again by the means this application grants.
-        self: Your account will be deleted from the system. Therefore, you will no longer be able to log in with your current credentials. If you choose to become a user of this application again, you can do so by using the means this application grants.
+        other: The account will be deleted from the system. Therefore, the user will
+          no longer be able to log in with his current credentials. He/she can choose
+          to become a user of this application again by the means this application
+          grants.
+        self: Your account will be deleted from the system. Therefore, you will no
+          longer be able to log in with your current credentials. If you choose to
+          become a user of this application again, you can do so by using the means
+          this application grants.
   actionview_instancetag_blank_option: Por favor selecione
   activerecord:
     attributes:
@@ -124,7 +143,7 @@ pt:
         position: Posição
       timeline:
         name: Nome
-        options: ""
+        options: ''
       reporting:
         reported_project_status_comment: Comentário ao ponto de situação
         reporting_to_project: Reports to project
@@ -134,6 +153,8 @@ pt:
         done_ratio: '% completo'
         fixed_version: Target version
         parent: Pai
+        parent_issue: Parent
+        parent_work_package: Parent
         priority: Prioridade
         progress: '% completo'
         responsible: Responsável
@@ -146,68 +167,77 @@ pt:
       messages:
         accepted: Deve ser aceite
         blank: Não pode ficar em branco
-        cant_link_a_work_package_with_a_descendant: Um pacote de trabalho não pode ser ligado a uma das suas subtarefas
+        cant_link_a_work_package_with_a_descendant: Um pacote de trabalho não pode
+          ser ligado a uma das suas subtarefas
         circular_dependency: Esta relação iria criar uma dependência circular
         confirmation: não corresponde à confirmação
         empty: Não pode ser vazio
-        equal_to: 'deve ser igual a %{count}'
+        equal_to: deve ser igual a %{count}
         even: deve ser mesmo
         exclusion: reservado
-        greater_than: 'deve ser maior que %{count}'
-        greater_than_or_equal_to: 'deve ser maior ou igual que %{count}'
+        greater_than: deve ser maior que %{count}
+        greater_than_or_equal_to: deve ser maior ou igual que %{count}
         greater_than_start_date: deve ser maior que a data de início
         inclusion: Não está incluído na lista
         invalid: é inválido
-        less_than: 'deve ser menor que % {count}'
-        less_than_or_equal_to: 'deve ser menor ou igual a %{count}'
+        less_than: deve ser menor que % {count}
+        less_than_or_equal_to: deve ser menor ou igual a %{count}
         not_a_date: Não é uma data
         not_a_number: Não é um número
         not_an_integer: Não é um número inteiro
         not_same_project: Não pertence ao mesmo projeto
         odd: deve ser odd
         taken: Já foi tomada
-        too_long: 'é muito longo (o máximo é %{count} caracteres)'
-        too_short: 'é muito curto (mínimo é %{count} caracteres)'
-        wrong_length: 'é o tamanho errado (deve ser %{count} caracteres)'
-        after: 'deve ser depois %{date}'
-        after_or_equal_to: 'must be after or equal to %{date}'
-        before: 'must be before %{date}'
-        before_or_equal_to: 'must be before or equal to %{date}'
+        too_long: é muito longo (o máximo é %{count} caracteres)
+        too_short: é muito curto (mínimo é %{count} caracteres)
+        wrong_length: é o tamanho errado (deve ser %{count} caracteres)
+        after: deve ser depois %{date}
+        after_or_equal_to: must be after or equal to %{date}
+        before: must be before %{date}
+        before_or_equal_to: must be before or equal to %{date}
         could_not_be_copied: could not be (fully) copied
       models:
         project_association:
           identical_projects: can not be created from one project to itself
           project_association_not_allowed: does not allow associations
         work_package:
-          is_not_a_valid_target_for_time_entries: 'Work package #%{id} is not a valid target for reassigning the time entries.'
+          is_not_a_valid_target_for_time_entries: 'Work package #%{id} is not a valid
+            target for reassigning the time entries.'
           attributes:
             due_date:
-              not_start_date: is not on start date, although this is required for milestones
+              not_start_date: is not on start date, although this is required for
+                milestones
             parent_id:
               cannot_be_milestone: cannot be a milestone
               cannot_be_in_another_project: cannot be in another project
               not_a_valid_parent: is invaild
               does_not_exist: does not exist
             status_id:
-              status_transition_invalid: no valid transition exists from old to new status for the current user roles
+              status_transition_invalid: no valid transition exists from old to new
+                status for the current user roles
+            priority_id:
+              only_active_priorities_allowed: needs to be active
         user:
           attributes:
             password:
-              weak: 'must contain characters of the following classes (at least %{min_count} of %{all_count}): %{rules}'
-              lowercase: "lowercase (e.g. 'a')"
-              uppercase: "uppercase (e.g. 'A')"
-              numeric: "numeric (e.g. '1')"
-              special: "special (e.g. '%')"
+              weak: 'must contain characters of the following classes (at least %{min_count}
+                of %{all_count}): %{rules}'
+              lowercase: lowercase (e.g. 'a')
+              uppercase: uppercase (e.g. 'A')
+              numeric: numeric (e.g. '1')
+              special: special (e.g. '%')
               reused:
-                one: has been used before. Please choose one that is different from your last one.
-                other: 'has been used before. Please choose one that is different from your last %{count}.'
+                one: has been used before. Please choose one that is different from
+                  your last one.
+                other: has been used before. Please choose one that is different from
+                  your last %{count}.
         member:
           principal_blank: Please choose at least one user or group.
           role_blank: Please choose at least one role.
       template:
         body: 'Please check the following fields:'
         header:
-          one: '1 error prohibited this %{model} from being saved'
+          one: 1 error prohibited this %{model} from being saved
           other: '%{count} errors prohibited this %{model} from being saved'
     models:
       attachment: File
@@ -299,7 +329,7 @@ pt:
   button_create: Create
   button_create_and_continue: Create and continue
   button_delete: Delete
-  button_delete_watcher: 'Delete watcher %{name}'
+  button_delete_watcher: Delete watcher %{name}
   button_download: Download
   button_duplicate: Duplicate
   button_edit: Edit
@@ -338,81 +368,81 @@ pt:
   create_new_page: Criar nova página
   date:
     abbr_day_names:
-      - Dom
-      - Seg
-      - Ter
-      - Qua
-      - Qui
-      - Sex
-      - Sáb
+    - Dom
+    - Seg
+    - Ter
+    - Qua
+    - Qui
+    - Sex
+    - Sáb
     abbr_month_names:
-      - ""
-      - Jan
-      - Fev
-      - Mar
-      - Abr
-      - Maio
-      - Jun
-      - Jul
-      - Ago
-      - Set
-      - Out
-      - Nov
-      - Dez
+    - ''
+    - Jan
+    - Fev
+    - Mar
+    - Abr
+    - Maio
+    - Jun
+    - Jul
+    - Ago
+    - Set
+    - Out
+    - Nov
+    - Dez
     day_names:
-      - Domingo
-      - Segunda
-      - Terça
-      - Quarta
-      - Quinta
-      - Sexta
-      - Sábado
+    - Domingo
+    - Segunda
+    - Terça
+    - Quarta
+    - Quinta
+    - Sexta
+    - Sábado
     formats:
       default: '%d/%m/%Y'
       long: '%B %d, %Y'
       short: '%b %d'
     month_names:
-      - ""
-      - Janeiro
-      - Fevereiro
-      - Março
-      - Abril
-      - Maio
-      - Junho
-      - Julho
-      - Agosto
-      - Setembro
-      - Outubro
-      - Novembro
-      - Dezembro
+    - ''
+    - Janeiro
+    - Fevereiro
+    - Março
+    - Abril
+    - Maio
+    - Junho
+    - Julho
+    - Agosto
+    - Setembro
+    - Outubro
+    - Novembro
+    - Dezembro
     order:
-      - :year
-      - :month
-      - :day
+    - :year
+    - :month
+    - :day
   datetime:
     distance_in_words:
       about_x_hours:
         one: about 1 hour
-        other: 'about %{count} hours'
+        other: about %{count} hours
       about_x_months:
         one: about 1 month
-        other: 'about %{count} months'
+        other: about %{count} months
       about_x_years:
         one: about 1 year
-        other: 'about %{count} years'
+        other: about %{count} years
       almost_x_years:
         one: almost 1 year
-        other: 'almost %{count} years'
+        other: almost %{count} years
       half_a_minute: half a minute
       less_than_x_minutes:
         one: less than a minute
-        other: 'less than %{count} minutes'
+        other: less than %{count} minutes
       less_than_x_seconds:
         one: less than 1 second
-        other: 'less than %{count} seconds'
+        other: less than %{count} seconds
       over_x_years:
         one: over 1 year
-        other: 'over %{count} years'
+        other: over %{count} years
       x_days:
         one: 1 day
         other: '%{count} days'
@@ -451,7 +481,10 @@ pt:
   default_type_milestone: Milestone
   description_active: Active?
   description_attachment_toggle: Show/Hide attachments
-  description_autocomplete: This field uses autocomplete. While typing the title of a work package you will receive a list of possible candidates. Choose one using the arrow up and arrow down key and select it with tab or enter. Alternatively you can enter the work package number directly.
+  description_autocomplete: This field uses autocomplete. While typing the title of
+    a work package you will receive a list of possible candidates. Choose one using
+    the arrow up and arrow down key and select it with tab or enter. Alternatively
+    you can enter the work package number directly.
   description_available_columns: Available Columns
   description_choose_project: Projects
   description_compare_from: Compare from version
@@ -490,20 +523,26 @@ pt:
   error_can_not_archive_project: This project cannot be archived
   error_can_not_delete_custom_field: Unable to delete custom field
   error_can_not_delete_type: This type contains work packages and cannot be deleted.
+  error_can_not_delete_standard_type: Standard types cannot be deleted.
   error_can_not_remove_role: This role is in use and cannot be deleted.
-  error_can_not_reopen_work_package_on_closed_version: A work package assigned to a closed version cannot be reopened
+  error_can_not_reopen_work_package_on_closed_version: A work package assigned to
+    a closed version cannot be reopened
   error_can_t_load_default_data: 'Default configuration could not be loaded: %{value}'
   error_check_user_and_role: Please choose a user and a role.
   error_work_package_done_ratios_not_updated: Work package done ratios not updated.
-  error_work_package_not_found_in_project: The work package was not found or does not belong to this project
+  error_work_package_not_found_in_project: The work package was not found or does
+    not belong to this project
   error_must_be_project_member: must be project member
-  error_no_default_work_package_status: 'No default work package status is defined. Please check your configuration (Go to "Administration -> Work package statuses").'
-  error_no_type_in_project: No type is associated to this project. Please check the Project settings.
+  error_no_default_work_package_status: No default work package status is defined.
+    Please check your configuration (Go to "Administration -> Work package statuses").
+  error_no_type_in_project: No type is associated to this project. Please check the
+    Project settings.
   error_scm_annotate: The entry does not exist or cannot be annotated.
-  error_scm_command_failed: 'An error occurred when trying to access the repository: %{value}'
+  error_scm_command_failed: 'An error occurred when trying to access the repository:
+    %{value}'
   error_scm_not_found: The entry or revision was not found in the repository.
   error_unable_delete_status: Unable to delete work package status
-  error_unable_to_connect: 'Unable to connect (%{value})'
+  error_unable_to_connect: Unable to connect (%{value})
   error_workflow_copy_source: Please select a source type or role
   error_workflow_copy_target: Please select target type(s) and role(s)
   error_menu_item_not_created: Menu item could not be added
@@ -519,14 +558,14 @@ pt:
     work_package_closed: Work Package closed
     work_package_edit: Work Package edited
     work_package_note: Work Package note added
-  general_csv_decimal_separator: '.'
+  general_csv_decimal_separator: .
   general_csv_encoding: UTF-8
   general_csv_separator: ','
-  general_first_day_of_week: "7"
+  general_first_day_of_week: '7'
   general_lang_name: English
   general_pdf_encoding: ISO-8859-1
-  general_text_No: No
-  general_text_Yes: Yes
+  general_text_No: false
+  general_text_Yes: true
   general_text_no: 'no'
   general_text_yes: 'yes'
   gui_validation_error: 1 error
@@ -534,7 +573,8 @@ pt:
   js:
     unsupported_browser:
       title: Your browser is not supported
-      message: The browser you are using is no longer supported by OpenProject. Please update your browser.
+      message: The browser you are using is no longer supported by OpenProject. Please
+        update your browser.
       learn_more: Learn more
     logoff: You have been logged off
     redirect_login: Do you want to be redirected to the login page?
@@ -544,15 +584,17 @@ pt:
     select2:
       input_too_short:
         one: Please enter one more character
-        other: 'Please enter {{count}} more characters'
+        other: Please enter {{count}} more characters
+        zero: Please enter more characters
       load_more: Loading more results ...
       no_matches: No matches found
       searching: Searching ...
       selection_too_big:
         one: You can only select one item
-        other: 'You can only select {{limit}} items'
+        other: You can only select {{limit}} items
+        zero: You cannot select any items
     timelines:
-      tooManyProjects: 'More than %{count} Projects. Please use a better filter!'
+      tooManyProjects: More than %{count} Projects. Please use a better filter!
       cancel: Cancel
       save: Save
       due_date: Due date
@@ -563,7 +605,8 @@ pt:
       start_date: Start date
       error: An error has occured.
       create_planning_select_project: 'Project:'
-      really_close_dialog: Do you really want to close the dialog and loose the entered data?
+      really_close_dialog: Do you really want to close the dialog and loose the entered
+        data?
       zoom_slider: Zoom slider
     filter:
       noneElement: (none)
@@ -575,6 +618,8 @@ pt:
     label_collapse_all: Collapse all
     label_expand_all: Expand all
     label_menu_item_toggle: Show/hide submenu items
+    label_menu_collapse: collapse
+    label_menu_expand: expand
     tl_toolbar:
       zooms: Zoom level
       outlines: Hierarchy level
@@ -587,9 +632,11 @@ pt:
   label_add_related_work_packages: Add related work packages
   label_add_subtask: Add subtask
   label_added: added
-  label_added_time_by: 'Added by %{author} %{age} ago'
-  label_additional_workflow_transitions_for_assignee: Additional transitions allowed when the user is the assignee
-  label_additional_workflow_transitions_for_author: Additional transitions allowed when the user is the author
+  label_added_time_by: Added by %{author} %{age} ago
+  label_additional_workflow_transitions_for_assignee: Additional transitions allowed
+    when the user is the assignee
+  label_additional_workflow_transitions_for_author: Additional transitions allowed
+    when the user is the author
   label_administration: Administration
   label_age: Age
   label_ago: days ago
@@ -599,7 +646,7 @@ pt:
   label_all_words: All words
   label_and_its_subprojects: '%{value} and its subprojects'
   label_api_access_key: API access key
-  label_api_access_key_created_on: 'API access key created %{value} ago'
+  label_api_access_key_created_on: API access key created %{value} ago
   label_applied_status: Applied status
   label_ascending: Ascending
   label_assigned_to_me_work_packages: Work packages assigned to me
@@ -663,7 +710,7 @@ pt:
   label_custom_field_default_type: Empty type
   label_date: Date
   label_date_from: From
-  label_date_from_to: 'From %{start} to %{end}'
+  label_date_from_to: From %{start} to %{end}
   label_date_range: Date range
   label_date_to: To
   label_day_plural: days
@@ -699,7 +746,7 @@ pt:
   label_f_hour_plural: '%{value} hours'
   label_feed_plural: Feeds
   label_feeds_access_key: RSS access key
-  label_feeds_access_key_created_on: 'RSS access key created %{value} ago'
+  label_feeds_access_key_created_on: RSS access key created %{value} ago
   label_file_added: File added
   label_file_plural: Files
   label_filesystem_path: Root directory
@@ -707,7 +754,8 @@ pt:
   label_filter_plural: Filters
   label_float: Float
   label_follows: follows
-  label_force_user_language_to_default: Set language of users having a non allowed language to default
+  label_force_user_language_to_default: Set language of users having a non allowed
+    language to default
   label_general: General
   label_generate_key: Generate a key
   label_git_path: Path to .git directory
@@ -734,7 +782,7 @@ pt:
   label_work_package_hierarchy: Work Package Hierarchy
   label_work_package_new: New work package
   label_work_package_note_added: Work package note added
-  label_work_package_edit: 'Edit work package %{name}'
+  label_work_package_edit: Edit work package %{name}
   label_work_package_plural: Work packages
   label_work_package_priority_updated: Work package priority updated
   label_work_package_status_new: New status
@@ -744,22 +792,23 @@ pt:
   label_work_package_view_all: View all work packages
   label_work_package_view_all_assigned_to_me: View all work packages assigned to me
   label_work_package_view_all_reported_by_me: View all work packages reported by me
-  label_work_package_view_all_responsible_for: View all work packages I am responsible for
+  label_work_package_view_all_responsible_for: View all work packages I am responsible
+    for
   label_work_package_view_all_watched: View all watched work packages
   label_work_package_watchers: Watchers
-  label_work_packages_by: 'Work packages by %{value}'
+  label_work_packages_by: Work packages by %{value}
   label_journal_diff: Description Comparison
   label_jump_to_a_project: Jump to a project...
-  label_language_based: "Based on user's language"
-  label_last_changes: 'last %{count} changes'
+  label_language_based: Based on user's language
+  label_last_changes: last %{count} changes
   label_last_login: Last connection
   label_last_month: last month
-  label_last_n_days: 'last %{count} days'
+  label_last_n_days: last %{count} days
   label_last_week: last week
   label_latest_revision: Latest revision
   label_latest_revision_plural: Latest revisions
   label_ldap_authentication: LDAP authentication
-  label_less_or_equal: '<='
+  label_less_or_equal: <=
   label_less_than_ago: less than days ago
   label_list: List
   label_loading: Loading...
@@ -777,7 +826,7 @@ pt:
   label_message_new: New message
   label_message_plural: Messages
   label_message_posted: Message added
-  label_min_max_length: 'Min - Max length'
+  label_min_max_length: Min - Max length
   label_missing_api_access_key: Missing an API access key
   label_missing_feeds_access_key: Missing a RSS access key
   label_modification: '%{count} change'
@@ -811,7 +860,7 @@ pt:
   label_no_data: No data to display
   label_nobody: nobody
   label_none: none
-  label_not_contains: "doesn't contain"
+  label_not_contains: doesn't contain
   label_not_equals: is not
   label_notify_member_plural: Email updates
   label_open_work_packages: open
@@ -878,11 +927,11 @@ pt:
   label_result_plural: Results
   label_reverse_chronological_order: In reverse chronological order
   label_revision: Revision
-  label_revision_id: 'Revision %{value}'
+  label_revision_id: Revision %{value}
   label_revision_plural: Revisions
   label_roadmap: Roadmap
-  label_roadmap_edit: 'Edit roadmap %{name}'
-  label_roadmap_due_in: 'Due in %{value}'
+  label_roadmap_edit: Edit roadmap %{name}
+  label_roadmap_due_in: Due in %{value}
   label_roadmap_no_work_packages: No work packages for this version
   label_roadmap_overdue: '%{value} late'
   label_role_and_permissions: Roles and permissions
@@ -897,8 +946,8 @@ pt:
   label_settings: Settings
   label_show_completed_versions: Show completed versions
   label_sort: Sort
-  label_sort_by: 'Sort by %{value}'
-  label_sorted_by: 'sorted by %{value}'
+  label_sort_by: Sort by %{value}
+  label_sorted_by: sorted by %{value}
   label_sort_higher: Move up
   label_sort_highest: Move to top
   label_sort_lower: Move down
@@ -914,7 +963,7 @@ pt:
   label_subproject_new: New subproject
   label_subproject_plural: Subprojects
   label_subtask_plural: Subtasks
-  label_sum_for: 'Sum for %{value}'
+  label_sum_for: Sum for %{value}
   label_summary: Summary
   label_system: System
   label_table_of_contents: Table of Contents
@@ -934,17 +983,18 @@ pt:
   label_type_plural: Types
   label_ui: User Interface
   label_update_work_package_done_ratios: Update work package done ratios
-  label_updated_time: 'Updated %{value} ago'
+  label_updated_time: Updated %{value} ago
   label_updated_time_at: '%{author} %{age}'
-  label_updated_time_by: 'Updated by %{author} %{age} ago'
+  label_updated_time_by: Updated by %{author} %{age} ago
   label_used_by: Used by
-  label_user_activity: "%{value}'s activity"
+  label_user_activity: '%{value}''s activity'
   label_user_anonymous: Anonymous
-  label_user_mail_no_self_notified: "I don't want to be notified of changes that I make myself"
+  label_user_mail_no_self_notified: I don't want to be notified of changes that I
+    make myself
   label_user_mail_option_all: For any event on all my projects
   label_user_mail_option_none: No events
   label_user_mail_option_only_assigned: Only for things I am assigned to
-  label_user_mail_option_only_my_events: "Only for things I watch or I'm involved in"
+  label_user_mail_option_only_my_events: Only for things I watch or I'm involved in
   label_user_mail_option_only_owner: Only for things I am the owner of
   label_user_mail_option_selected: For any event on the selected projects only...
   label_user_new: New user
@@ -971,9 +1021,9 @@ pt:
   label_wiki_navigation: Wiki navigation
   label_wiki_page: Wiki page
   label_wiki_page_plural: Wiki pages
-  label_wiki_show_index_page_link: "Show submenu item 'Table of Contents'"
+  label_wiki_show_index_page_link: Show submenu item 'Table of Contents'
   label_wiki_show_menu_item: Show as menu item in project navigation
-  label_wiki_show_new_page_link: "Show submenu item 'Create new child page'"
+  label_wiki_show_new_page_link: Show submenu item 'Create new child page'
   label_wiki_show_submenu_item: 'Show as submenu item of '
   label_work_package: Work package
   label_workflow: Workflow
@@ -982,20 +1032,28 @@ pt:
   label_x_closed_work_packages_abbr:
     one: 1 closed
     other: '%{count} closed'
+    zero: 0 closed
   label_x_comments:
     one: 1 comment
     other: '%{count} comments'
+    zero: no comments
   label_x_open_work_packages_abbr:
     one: 1 open
     other: '%{count} open'
+    zero: 0 open
   label_x_open_work_packages_abbr_on_total:
-    one: '1 open / %{total}'
+    one: 1 open / %{total}
     other: '%{count} open / %{total}'
+    zero: 0 open / %{total}
   label_x_projects:
     one: 1 project
     other: '%{count} projects'
+    zero: no projects
   label_year: Year
   label_yesterday: yesterday
+  label_keyboard_function: Function
+  label_keyboard_shortcut: Shortcut
+  label_keyboard_accesskey: Accesskey
   label_keyboard_shortcut_help_heading: Available Keyboard Shortcuts
   label_keyboard_shortcut_within_project: 'Project related shortcuts:'
   label_keyboard_shortcut_global_shortcuts: 'Global shortcuts:'
@@ -1014,78 +1072,104 @@ pt:
   label_keyboard_shortcut_new_work_package: Create new work package
   label_keyboard_shortcut_go_edit: Go to edit the current item (on detail pages only)
   label_keyboard_shortcut_open_more_menu: Open more-menu (on detail pages only)
-  label_keyboard_shortcut_go_preview: Go to preview the current edit (on edit pages only)
-  label_keyboard_shortcut_focus_previous_item: Focus previous list element (on some lists only)
-  label_keyboard_shortcut_focus_next_item: Focus next list element (on some lists only)
-  mail_body_account_activation_request: 'A new user (%{value}) has registered. The account is pending your approval:'
+  label_keyboard_shortcut_go_preview: Go to preview the current edit (on edit pages
+    only)
+  label_keyboard_shortcut_focus_previous_item: Focus previous list element (on some
+    lists only)
+  label_keyboard_shortcut_focus_next_item: Focus next list element (on some lists
+    only)
+  mail_body_account_activation_request: 'A new user (%{value}) has registered. The
+    account is pending your approval:'
   mail_body_account_information: Your account information
-  mail_body_account_information_external: 'You can use your %{value} account to log in.'
+  mail_body_account_information_external: You can use your %{value} account to log
+    in.
   mail_body_lost_password: 'To change your password, click on the following link:'
   mail_body_register: 'To activate your account, click on the following link:'
-  mail_body_reminder: '%{count} work package(s) that are assigned to you are due in the next %{days} days:'
-  mail_body_wiki_content_added: "The '%{id}' wiki page has been added by %{author}."
-  mail_body_wiki_content_updated: "The '%{id}' wiki page has been updated by %{author}."
+  mail_body_reminder: '%{count} work package(s) that are assigned to you are due in
+    the next %{days} days:'
+  mail_body_wiki_content_added: The '%{id}' wiki page has been added by %{author}.
+  mail_body_wiki_content_updated: The '%{id}' wiki page has been updated by %{author}.
   mail_subject_account_activation_request: '%{value} account activation request'
-  mail_subject_lost_password: 'Your %{value} password'
-  mail_subject_register: 'Your %{value} account activation'
+  mail_subject_lost_password: Your %{value} password
+  mail_subject_register: Your %{value} account activation
   mail_subject_reminder: '%{count} work package(s) due in the next %{days} days'
-  mail_subject_wiki_content_added: "'%{id}' wiki page has been added"
-  mail_subject_wiki_content_updated: "'%{id}' wiki page has been updated"
+  mail_subject_wiki_content_added: '''%{id}'' wiki page has been added'
+  mail_subject_wiki_content_updated: '''%{id}'' wiki page has been updated'
   more_actions: More functions
   noscript_description: You need to activate JavaScript in order to use OpenProject!
   noscript_heading: JavaScript disabled
   noscript_learn_more: Learn more
   notice_account_activated: Your account has been activated. You can now log in.
-  notice_account_inactive: Your account has not yet been activated. To activate your account, click on the link that was emailed to you.
+  notice_account_inactive: Your account has not yet been activated. To activate your
+    account, click on the link that was emailed to you.
   notice_account_invalid_credentials: Invalid user or password
-  notice_account_invalid_credentials_or_blocked: Invalid user or password or the account is blocked due to multiple failed login attempts. If so, it will be unblocked automatically in a short time.
-  notice_account_lost_email_sent: An email with instructions to choose a new password has been sent to you.
+  notice_account_invalid_credentials_or_blocked: Invalid user or password or the account
+    is blocked due to multiple failed login attempts. If so, it will be unblocked
+    automatically in a short time.
+  notice_account_lost_email_sent: An email with instructions to choose a new password
+    has been sent to you.
   notice_account_new_password_forced: A new password is required.
-  notice_account_password_expired: 'Your password expired after %{days} days. Please set a new one.'
+  notice_account_password_expired: Your password expired after %{days} days. Please
+    set a new one.
   notice_account_password_updated: Password was successfully updated.
-  notice_account_pending: Your account was created and is now pending administrator approval.
-  notice_account_register_done: Account was successfully created. To activate your account, click on the link that was emailed to you.
+  notice_account_pending: Your account was created and is now pending administrator
+    approval.
+  notice_account_register_done: Account was successfully created. To activate your
+    account, click on the link that was emailed to you.
   notice_account_unknown_email: Unknown user.
-  notice_account_update_failed: Account setting could not be safed. Please have a look at your account page.
+  notice_account_update_failed: Account setting could not be safed. Please have a
+    look at your account page.
   notice_account_updated: Account was successfully updated.
   notice_account_wrong_password: Wrong password
   notice_api_access_key_reseted: Your API access key was reset.
-  notice_can_t_change_password: This account uses an external authentication source. Impossible to change the password.
+  notice_can_t_change_password: This account uses an external authentication source.
+    Impossible to change the password.
   notice_default_data_loaded: Default configuration successfully loaded.
-  notice_email_error: 'An error occurred while sending mail (%{value})'
-  notice_email_sent: 'An email was sent to %{value}'
-  notice_failed_to_save_work_packages: 'Failed to save %{count} work package(s) on %{total} selected: %{ids}.'
+  notice_email_error: An error occurred while sending mail (%{value})
+  notice_email_sent: An email was sent to %{value}
+  notice_failed_to_save_work_packages: 'Failed to save %{count} work package(s) on
+    %{total} selected: %{ids}.'
   notice_failed_to_save_members: 'Failed to save member(s): %{errors}.'
   notice_feeds_access_key_reseted: Your RSS access key was reset.
-  notice_file_not_found: "The page you were trying to access doesn't exist or has been removed."
-  notice_forced_logout: 'You have been automatically logged out after %{ttl_time} minutes of inactivity.'
-  notice_internal_server_error: 'An error occurred on the page you were trying to access. If you continue to experience problems please contact your %{app_title} administrator for assistance.'
+  notice_file_not_found: The page you were trying to access doesn't exist or has been
+    removed.
+  notice_forced_logout: You have been automatically logged out after %{ttl_time} minutes
+    of inactivity.
+  notice_internal_server_error: An error occurred on the page you were trying to access.
+    If you continue to experience problems please contact your %{app_title} administrator
+    for assistance.
   notice_work_package_done_ratios_updated: Work package done ratios updated.
-  notice_locking_conflict: Information has been updated by at least one other user in the meantime.
-  notice_locking_conflict_additional_information: 'The update(s) came from %{users}.'
-  notice_locking_conflict_reload_page: Please reload the page, review the changes and reapply your updates.
+  notice_locking_conflict: Information has been updated by at least one other user
+    in the meantime.
+  notice_locking_conflict_additional_information: The update(s) came from %{users}.
+  notice_locking_conflict_reload_page: Please reload the page, review the changes
+    and reapply your updates.
   notice_no_principals_found: No results found.
   notice_bad_request: Bad Request.
   notice_not_authorized: You are not authorized to access this page.
-  notice_not_authorized_archived_project: "The project you're trying to access has been archived."
+  notice_not_authorized_archived_project: The project you're trying to access has
+    been archived.
+  notice_project_not_deleted: The project wasn't deleted.
   notice_successful_connection: Successful connection.
   notice_successful_create: Successful creation.
   notice_successful_delete: Successful deletion.
   notice_successful_update: Successful update.
-  notice_to_many_principals_to_display: There are too many results.\nNarrow down the search by typing in the name of the new member (or group).
+  notice_to_many_principals_to_display: There are too many results.\nNarrow down the
+    search by typing in the name of the new member (or group).
   notice_unable_delete_time_entry: Unable to delete time log entry.
   notice_unable_delete_version: Unable to delete version.
   notice_automatic_set_of_standard_type: Set standard type automatically.
-  error_types_in_use_by_work_packages: 'The following types are still referenced by work packages: %{types}'
+  error_types_in_use_by_work_packages: 'The following types are still referenced by
+    work packages: %{types}'
   number:
     format:
-      delimiter: ""
-      precision: "3"
-      separator: '.'
+      delimiter: ''
+      precision: '3'
+      separator: .
     human:
       format:
-        delimiter: ""
-        precision: "1"
+        delimiter: ''
+        precision: '1'
       storage_units:
         format: '%n %u'
         units:
@@ -1171,8 +1255,8 @@ pt:
   project_module_time_tracking: Time tracking
   project_module_wiki: Wiki
   query_fields:
-    assigned_to_role: "Assignee's role"
-    member_of_group: "Assignee's group"
+    assigned_to_role: Assignee's role
+    member_of_group: Assignee's group
     subproject_id: Subproject
   search_input_placeholder: search ...
   setting_activity_days_default: Days displayed on project activity
@@ -1183,7 +1267,8 @@ pt:
   setting_autologin: Autologin
   setting_available_languages: Available languages
   setting_bcc_recipients: Blind carbon copy recipients (bcc)
-  setting_brute_force_block_after_failed_logins: Block user after this number of failed login attempts (disable with 0)
+  setting_brute_force_block_after_failed_logins: Block user after this number of failed
+    login attempts (disable with 0)
   setting_brute_force_block_minutes: Time the user is blocked for (minutes)
   setting_cache_formatted_text: Cache formatted text
   setting_column_options: Customize the appearance of the work package lists
@@ -1199,7 +1284,8 @@ pt:
   setting_default_projects_modules: Default enabled modules for new projects
   setting_default_projects_public: New projects are public by default
   setting_diff_max_lines_displayed: Max number of diff lines displayed
-  setting_display_subprojects_work_packages: Display subprojects work packages on main projects by default
+  setting_display_subprojects_work_packages: Display subprojects work packages on
+    main projects by default
   setting_emails_footer: Emails footer
   setting_emails_header: Emails header
   setting_enabled_scm: Enabled SCM
@@ -1216,7 +1302,8 @@ pt:
   setting_work_package_list_default_columns: Display by default
   setting_work_package_list_summable_columns: Summable
   setting_work_package_properties: Work package properties
-  setting_work_package_startdate_is_adddate: Use current date as start date for new work packages
+  setting_work_package_startdate_is_adddate: Use current date as start date for new
+    work packages
   setting_work_packages_export_limit: Work packages export limit
   setting_log_requesting_user: Log user login, name, and mail address for all requests
   setting_login_required: Authentication required
@@ -1227,15 +1314,18 @@ pt:
   setting_new_project_user_role_id: Role given to a non-admin user who creates a project
   setting_openid: Allow OpenID login and registration
   setting_password_active_rules: Active character classes
-  setting_password_count_former_banned: Number of most recently used passwords banned for reuse
-  setting_password_days_valid: Number of days, after which to enforce a password change (disable with 0)
+  setting_password_count_former_banned: Number of most recently used passwords banned
+    for reuse
+  setting_password_days_valid: Number of days, after which to enforce a password change
+    (disable with 0)
   setting_password_min_length: Minimum length
   setting_password_min_adhered_rules: Minimum number of required classes
   setting_per_page_options: Objects per page options
   setting_plain_text_mail: Plain text mail (no HTML)
   setting_protocol: Protocol
   setting_repositories_encodings: Repositories encodings
-  setting_repository_log_display_limit: Maximum number of revisions displayed on file log
+  setting_repository_log_display_limit: Maximum number of revisions displayed on file
+    log
   setting_rest_api_enabled: Enable REST web service
   setting_self_registration: Self-registration
   setting_sequential_project_identifiers: Generate sequential project identifiers
@@ -1248,7 +1338,8 @@ pt:
   setting_time_format: Time format
   setting_ui_theme: Theme
   setting_user_may_override_theme: Users may choose their own themes
-  setting_accessibility_mode_for_anonymous: Enable accessibility mode for anonymous users
+  setting_accessibility_mode_for_anonymous: Enable accessibility mode for anonymous
+    users
   setting_user_format: Users display format
   setting_users_deletable_by_admins: User accounts deletable by admins
   setting_users_deletable_by_self: Users allowed to delete their accounts
@@ -1272,27 +1363,34 @@ pt:
   text_are_you_sure_with_children: Delete work package and all child work packages?
   text_assign_to_project: Assign to the project
   text_caracters_maximum: '%{count} characters maximum.'
-  text_caracters_minimum: 'Must be at least %{count} characters long.'
+  text_caracters_minimum: Must be at least %{count} characters long.
   text_comma_separated: Multiple values allowed (comma separated).
   text_custom_field_possible_values_info: One line for each value
   text_default_administrator_account_changed: Default administrator account changed
   text_default_encoding: 'Default: UTF-8'
   text_destroy: Delete
-  text_destroy_with_associated: 'There are additional objects assossociated with the work package(s) that are to be deleted. Those objects are of the following types:'
+  text_destroy_with_associated: 'There are additional objects assossociated with the
+    work package(s) that are to be deleted. Those objects are of the following types:'
   text_destroy_what_to_do: What do you want to do?
-  text_diff_truncated: ... This diff was truncated because it exceeds the maximum size that can be displayed.
-  text_email_delivery_not_configured: Email delivery is not configured, and notifications are disabled.\nConfigure your SMTP server in config/configuration.yml and restart the application to enable them.
+  text_diff_truncated: '... This diff was truncated because it exceeds the maximum
+    size that can be displayed.'
+  text_email_delivery_not_configured: Email delivery is not configured, and notifications
+    are disabled.\nConfigure your SMTP server in config/configuration.yml and restart
+    the application to enable them.
   text_enumeration_category_reassign_to: 'Reassign them to this value:'
   text_enumeration_destroy_question: '%{count} objects are assigned to this value.'
   text_file_repository_writable: Attachments directory writable
   text_git_repo_example: a bare and local repository (e.g. /gitrepo, c:\\gitrepo)
-  text_work_package_added: 'Work package %{id} has been reported by %{author}.'
+  text_work_package_added: Work package %{id} has been reported by %{author}.
   text_work_package_category_destroy_assignments: Remove category assignments
-  text_work_package_category_destroy_question: 'Some work packages (%{count}) are assigned to this category. What do you want to do?'
+  text_work_package_category_destroy_question: Some work packages (%{count}) are assigned
+    to this category. What do you want to do?
   text_work_package_category_reassign_to: Reassign work packages to this category
-  text_work_package_updated: 'Work package %{id} has been updated by %{author}.'
-  text_work_packages_destroy_confirmation: Are you sure you want to delete the selected work package(s)?
-  text_work_packages_ref_in_commit_messages: Referencing and fixing work packages in commit messages
+  text_work_package_updated: Work package %{id} has been updated by %{author}.
+  text_work_packages_destroy_confirmation: Are you sure you want to delete the selected
+    work package(s)?
+  text_work_packages_ref_in_commit_messages: Referencing and fixing work packages
+    in commit messages
   text_journal_added: '%{label} %{value} added'
   text_journal_changed: '%{label} changed from %{old} to %{new}'
   text_journal_changed_no_detail: '%{label} updated'
@@ -1301,37 +1399,51 @@ pt:
   text_journal_deleted_with_diff: '%{label} deleted (%{link})'
   text_journal_set_to: '%{label} set to %{value}'
   text_journal_set_with_diff: '%{label} set (%{link})'
-  text_length_between: 'Length between %{min} and %{max} characters.'
+  text_length_between: Length between %{min} and %{max} characters.
   text_line_separated: Multiple values allowed (one line for each value).
   text_load_default_configuration: Load the default configuration
   text_min_max_length_info: 0 means no restriction
-  text_no_configuration_data: Roles, types, work package statuses and workflow have not been configured yet.\nIt is highly recommended to load the default configuration. You will be able to modify it once loaded.
-  text_own_membership_delete_confirmation: You are about to remove some or all of your permissions and may no longer be able to edit this project after that.\nAre you sure you want to continue?
+  text_no_configuration_data: Roles, types, work package statuses and workflow have
+    not been configured yet.\nIt is highly recommended to load the default configuration.
+    You will be able to modify it once loaded.
+  text_own_membership_delete_confirmation: You are about to remove some or all of
+    your permissions and may no longer be able to edit this project after that.\nAre
+    you sure you want to continue?
   text_plugin_assets_writable: Plugin assets directory writable
-  text_powered_by: 'Powered by %{link}'
-  text_project_destroy_confirmation: Are you sure you want to delete this project and related data?
-  text_project_identifier_info: 'Only lower case letters (a-z), numbers, dashes and underscores are allowed, must start with a lower case letter.<br />Once saved, the identifier cannot be changed.'
+  text_powered_by: Powered by %{link}
+  text_project_destroy_confirmation: Are you sure you want to delete this project
+    and related data?
+  text_project_identifier_info: Only lower case letters (a-z), numbers, dashes and
+    underscores are allowed, must start with a lower case letter.<br />Once saved,
+    the identifier cannot be changed.
   text_reassign: Reassign to
   text_reassign_to: 'work package:'
-  text_regexp_info: 'eg. ^[A-Z0-9]+$'
-  text_repository_usernames_mapping: Select or update the OpenProject user mapped to each username found in the repository log.\nUsers with the same OpenProject and repository username or email are automatically mapped.
-  text_rmagick_available: RMagick available (optional)
-  text_select_mail_notifications: Select actions for which email notifications should be sent.
+  text_regexp_info: eg. ^[A-Z0-9]+$
+  text_repository_usernames_mapping: Select or update the OpenProject user mapped
+    to each username found in the repository log.\nUsers with the same OpenProject
+    and repository username or email are automatically mapped.
+  text_select_mail_notifications: Select actions for which email notifications should
+    be sent.
   text_select_project_modules: 'Select modules to enable for this project:'
-  text_status_changed_by_changeset: 'Applied in changeset %{value}.'
+  text_status_changed_by_changeset: Applied in changeset %{value}.
   text_subprojects_destroy_warning: 'Its subproject(s): %{value} will be also deleted.'
-  text_time_logged_by_changeset: 'Applied in changeset %{value}.'
+  text_time_logged_by_changeset: Applied in changeset %{value}.
   text_tip_work_package_begin_day: work package beginning this day
   text_tip_work_package_begin_end_day: work package beginning and ending this day
   text_tip_work_package_end_day: work package ending this day
   text_type_no_workflow: No workflow defined for this type
   text_unallowed_characters: Unallowed characters
-  text_user_mail_option: "For unselected projects, you will only receive notifications about things you watch or you're involved in (eg. work packages you're the author or assignee)."
+  text_user_mail_option: For unselected projects, you will only receive notifications
+    about things you watch or you're involved in (eg. work packages you're the author
+    or assignee).
   text_user_wrote: '%{value} wrote:'
-  text_warn_on_leaving_unsaved: The current page contains unsaved text that will be lost if you leave this page.
-  text_wiki_destroy_confirmation: Are you sure you want to delete this wiki and all its content?
+  text_warn_on_leaving_unsaved: The current page contains unsaved text that will be
+    lost if you leave this page.
+  text_wiki_destroy_confirmation: Are you sure you want to delete this wiki and all
+    its content?
   text_wiki_page_destroy_children: Delete child pages and all their descendants
-  text_wiki_page_destroy_question: 'This page has %{descendants} child page(s) and descendant(s). What do you want to do?'
+  text_wiki_page_destroy_question: This page has %{descendants} child page(s) and
+    descendant(s). What do you want to do?
   text_wiki_page_nullify_children: Keep child pages as root pages
   text_wiki_page_reassign_children: Reassign child pages to this parent page
   text_workflow_edit: Select a role and a type to edit the workflow
@@ -1366,7 +1478,8 @@ pt:
     color_could_not_be_saved: Color could not be saved
     current_planning: Current planning
     dates: Dates
-    dates_are_calculated_based_on_sub_elements: Dates are calculated based on sub elements.
+    dates_are_calculated_based_on_sub_elements: Dates are calculated based on sub
+      elements.
     delete_all: Delete all
     delete_thing: Delete
     duration: Duration
@@ -1379,11 +1492,14 @@ pt:
     edit_timeline: Edit timeline report
     delete_timeline: Delete timeline report
     empty: (empty)
-    enable_type_in_project: 'Enable type "%{type}"'
+    enable_type_in_project: Enable type "%{type}"
     end: End
     errors:
-      not_implemented: The timeline could not be rendered because it uses a feature that is not yet implemented.
-      report_comparison: The timeline could not render the configured comparisons. Please check the appropriate section in the configuration, resetting it can help solve this problem.
+      not_implemented: The timeline could not be rendered because it uses a feature
+        that is not yet implemented.
+      report_comparison: The timeline could not render the configured comparisons.
+        Please check the appropriate section in the configuration, resetting it can
+        help solve this problem.
       report_epicfail: The timeline could not be loaded due to an unexpected error.
       report_timeout: The timeline could not be loaded in a reasonable amount of time.
     filter:
@@ -1392,10 +1508,14 @@ pt:
         timeframe_end: 'The timeframe end '
         compare_to_relative: 'The value of the relative comparison '
         compare_to_absolute: 'The value of the absolute comparison '
-        planning_element_time_relative_one: 'The start for work packages in a certain timeframe '
-        planning_element_time_relative_two: 'The end for work packages in a certain timeframe '
-        planning_element_time_absolute_one: 'The start for work packages in a certain timeframe  '
-        planning_element_time_absolute_two: 'The end for work packages in a certain timeframe  '
+        planning_element_time_relative_one: 'The start for work packages in a certain
+          timeframe '
+        planning_element_time_relative_two: 'The end for work packages in a certain
+          timeframe '
+        planning_element_time_absolute_one: 'The start for work packages in a certain
+          timeframe  '
+        planning_element_time_absolute_two: 'The end for work packages in a certain
+          timeframe  '
       sort:
         sortation: Sort by
         alphabet: alphabet
@@ -1417,8 +1537,8 @@ pt:
         absolute: Absolute
         none: None
         relative: Relative
-        compare_relative: 'Compare current planning to %{timespan} ago'
-        compare_absolute: 'Compare current planning to %{date}'
+        compare_relative: Compare current planning to %{timespan} ago
+        compare_absolute: Compare current planning to %{date}
       time_relative:
         days: days
         weeks: weeks
@@ -1427,7 +1547,7 @@ pt:
       exclude_reporters: Hide other projects
       exclude_empty: Hide empty projects
       grouping: Grouping
-      grouping_hide_group: 'Hide group "%{group}"'
+      grouping_hide_group: Hide group "%{group}"
       grouping_one: First grouping criterion
       grouping_one_phrase: Is a subproject of
       grouping_other: Other
@@ -1443,11 +1563,15 @@ pt:
       work_package_assignee: Show work packages with assignee
       types: Show types
       status: Show status
-      project_time_filter: Projects with a work package of a certain type in a certain timeframe
+      project_time_filter: Projects with a work package of a certain type in a certain
+        timeframe
       project_time_filter_absolute_timeframe: Absolute timeframe
       project_time_filter_relative_timeframe: Relative timeframe
-      project_time_filter_historical: 'from %{startdate} to %{enddate}'
-      project_time_filter_relative: 'from %{startspan}%{startspanunit} ago, to %{endspan}%{endspanunit} from now'
+      project_time_filter_historical_from: from
+      project_time_filter_historical_to: to
+      project_time_filter_historical: from %{startdate} to %{enddate}
+      project_time_filter_relative: from %{startspan}%{startspanunit} ago, to %{endspan}%{endspanunit}
+        from now
       project_filters: Filter projects
       project_responsible: Show projects with responsible
       project_status: Show project status
@@ -1464,9 +1588,11 @@ pt:
     new_project_type: New project type
     new_reporting: New reporting
     new_timeline: New timeline report
-    no_projects_for_reporting_available: There are no projects to which a reporting association can be created.
-    no_right_to_view_timeline: You do not have the necessary permission to view the linked timeline.
-    no_timeline_for_id: 'There is no timeline with ID %{id}.'
+    no_projects_for_reporting_available: There are no projects to which a reporting
+      association can be created.
+    no_right_to_view_timeline: You do not have the necessary permission to view the
+      linked timeline.
+    no_timeline_for_id: There is no timeline with ID %{id}.
     notice_successful_deleted_all_elements: Successfully deleted all elements
     outline: Reset Outline
     outlines:
@@ -1488,18 +1614,24 @@ pt:
     planning_element_update: 'Update: %{title}'
     work_packages_are_displayed_in_aggregations: Work packages are displayed in aggregations
     project_association_new: Add project dependency
-    project_association_new_for_with: 'Set dependency for “%{project_a}” with'
-    project_association_with_other: 'Project dependency between “%{project_a}” and “%{project_b}”'
-    project_association_of_type: 'Dependency to project of type “%{type}”'
+    project_association_new_for_with: Set dependency for “%{project_a}” with
+    project_association_with_other: Project dependency between “%{project_a}” and
+      “%{project_b}”
+    project_association_of_type: Dependency to project of type “%{type}”
     project_type_could_not_be_saved: Project type could not be saved
     type_could_not_be_saved: Type could not be saved
     reporting_could_not_be_saved: Reporting could not be saved
     properties: Properties
-    really_delete_color: Are you sure, you want to delete the following color? Types using this color will not be deleted.
-    really_delete_project_association_between_project_a_and_project_b: 'Are you sure, you want to delete the dependency between “%{project_a}” and “%{project_b}”?'
-    really_delete_project_type: Are you sure, you want to delete the following project type? Projects using this type will not be deleted.
-    really_delete_timeline: Are you sure, you want to delete the following timeline report? Work packages shown in this timeline report will not be deleted.
-    really_delete_reporting: Are you sure, you want to delete the following reporting? Previous reporting statuses will be deleted, too.
+    really_delete_color: Are you sure, you want to delete the following color? Types
+      using this color will not be deleted.
+    really_delete_project_association_between_project_a_and_project_b: Are you sure,
+      you want to delete the dependency between “%{project_a}” and “%{project_b}”?
+    really_delete_project_type: Are you sure, you want to delete the following project
+      type? Projects using this type will not be deleted.
+    really_delete_timeline: Are you sure, you want to delete the following timeline
+      report? Work packages shown in this timeline report will not be deleted.
+    really_delete_reporting: Are you sure, you want to delete the following reporting?
+      Previous reporting statuses will be deleted, too.
     start: Start
     timeline: Timeline report
     timelines: Timeline reports
@@ -1527,9 +1659,10 @@ pt:
     blocked: locked temporarily
     blocked_num_failed_logins:
       one: locked temporarily (one failed login attempt)
-      other: 'locked temporarily (%{count} failed login attempts)'
+      other: locked temporarily (%{count} failed login attempts)
     deleted: Deleted user
-    error_status_change_failed: 'Changing the user status failed due to the following errors: %{errors}'
+    error_status_change_failed: 'Changing the user status failed due to the following
+      errors: %{errors}'
     lock: Lock permanently
     locked: locked permanently
     registered: registered
@@ -1543,10 +1676,15 @@ pt:
   warning_attachments_not_saved: '%{count} file(s) could not be saved.'
   menu_item: Menu item
   menu_item_setting: Visibility
-  wiki_menu_item_for: 'Menu item for wikipage "%{title}"'
+  wiki_menu_item_for: Menu item for wikipage "%{title}"
   wiki_menu_item_setting: Visibility
-  wiki_menu_item_new_main_item_explanation: You are deleting the only main wiki menu item. You now have to choose a wiki page for which a new main item will be generated. To delete the wiki the wiki module can be deactivated by project administrators.
-  wiki_menu_item_delete_not_permitted: The wiki menu item of the only wiki page cannot be deleted.
-  query_menu_item_for: 'Menu item for query "%{title}"'
+  wiki_menu_item_new_main_item_explanation: You are deleting the only main wiki menu
+    item. You now have to choose a wiki page for which a new main item will be generated.
+    To delete the wiki the wiki module can be deactivated by project administrators.
+  wiki_menu_item_delete_not_permitted: The wiki menu item of the only wiki page cannot
+    be deleted.
+  query_menu_item_for: Menu item for query "%{title}"
   work_package:
-    updated_automatically_by_child_changes: '_Updated automatically by changing values within child work package %{child}_'
+    updated_automatically_by_child_changes: _Updated automatically by changing values
+      within child work package %{child}_
+  text_rmagick_available: RMagick available (optional)
