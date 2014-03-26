@@ -19,12 +19,12 @@ We plan to release this plugin every time an OpenProject core release is done.
 
 * OpenProject version **3.0.0 or higher** ( or a current installation from the `dev` branch)
 
-## Installation
+### Plugin Installation
 
 Edit the `Gemfile.plugins` file in your openproject-installation directory to contain the following lines:
 
 <pre>
-gem "openproject-translations", :git => 'https://github.com/finnlabs/openproject-translations.git', :branch => 'dev'
+gem "openproject-webhooks", :git => 'https://github.com/finnlabs/openproject-webhooks.git', :branch => 'stable'
 </pre>
 
 Then update your bundle with:
@@ -35,23 +35,35 @@ bundle install
 
 and restart the OpenProject server.
 
-## Get in Contact
+## Contact
 
-OpenProject is supported by its community members, both companies as well as individuals. There are different possibilities of getting help:
-* OpenProject [support page](https://www.openproject.org/projects/openproject/wiki/Support)
-* E-Mail Support - info@openproject.org
+OpenProject is supported by its community members, both companies and individuals.
 
-## Start Collaborating
+Please find ways to contact us on the OpenProject [support page](https://www.openproject.org/support).
 
-If you want to contribute translations, please visit [our crowin project](https://crowdin.net/project/openproject).
+## Contributing
 
-This plugin contains some other things than translation files -- if you want to change those, join the OpenProject community and start collaborating.
-Details can be found on the OpenProject Community [contribution page](https://www.openproject.org/projects/openproject/wiki/Contribution).
+This OpenProject plugin is an open source project and we encourage you to help us out. We'd be happy if you do one of these things:
 
-In case you find a bug or need a feature, please report at https://www.openproject.org/projects/translations/issues
+* Add new translations at [our crowin project](https://crowdin.net/project/openproject)
+* Create a new [work package in the Translations plugin project on openproject.org](https://www.openproject.org/projects/translations/work_packages) if you find a bug or need a feature
+* Help out other people on our [forums](https://www.openproject.org/projects/openproject/boards)
+* Contribute code via GitHub Pull Requests, see our [contribution page](https://www.openproject.org/projects/openproject/wiki/Contribution) for more information
+
+## Community
+
+OpenProject is driven by an active group of open source enthusiasts: software engineers, project managers, creatives, and consultants. OpenProject is supported by companies as well as individuals. We share the vision to build great open source project collaboration software.
+The [OpenProject Foundation (OPF)](https://www.openproject.org/projects/openproject/wiki/OpenProject_Foundation) will give official guidance to the project and the community and oversees contributions and decisions.
+
+## Repository
+
+This repository contains two main branches:
+
+* `dev`: The main development branch. We try to keep it stable in the sense of all tests are passing, but we don't recommend it for production systems.
+* `stable`: Contains the latest stable release that we recommend for production use. Use this if you always want the latest version of this plugin.
 
 ## License
 
 Copyright (C) 2014 the OpenProject Foundation (OPF)
 
-This plugin is licensed under the GNU GPL v3. See doc/COPYRIGHT.md for details.
+This plugin is licensed under the GNU GPL v3. See [doc/COPYRIGHT.md](doc/COPYRIGHT.md) for details.
