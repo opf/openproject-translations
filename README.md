@@ -3,7 +3,7 @@
 `openproject-translations` is an OpenProject plugin, which adds more languages to your OpenProject installation.
 
 OpenProject uses crowdin for translations.
-All translations a daily fetched from [our crowding project](https://crowdin.net/project/openproject). If you want to change translations, you are very welcome to do that via crowdin.
+All translations are fetched from [our crowding project](https://crowdin.net/project/openproject) on a daily basis. If you want to change translations, you are very welcome to do that via crowdin.
 
 Please keep in mind that the OPF team does not speak all the languages this plugin provides, thus we cannot guarantee for correctness of the translations.
 
@@ -46,7 +46,7 @@ OpenProject is supported by its community members, both companies as well as ind
 If you want to contribute translations, please visit [our crowin project](https://crowdin.net/project/openproject).
 
 This plugin contains some other things than translation files -- if you want to change those, join the OpenProject community and start collaborating.
-Details will can be found on the OpenProject Community [contribution page](https://www.openproject.org/projects/openproject/wiki/Contribution).
+Details can be found on the OpenProject Community [contribution page](https://www.openproject.org/projects/openproject/wiki/Contribution).
 
 In case you find a bug or need a feature, please report at https://www.openproject.org/projects/translations/issues
 
