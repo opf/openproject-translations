@@ -1,22 +1,8 @@
-#-- copyright
-# OpenProject is a project management system.
-# Copyright (C) 2014 the OpenProject Foundation (OPF)
-#
-# This program is free software; you can redistribute it and/or
-# modify it under the terms of the GNU General Public License version 3.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program; if not, write to the Free Software
-# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
-#
-# See doc/COPYRIGHT.md for more details.
-#++
-
 zh:
   account:
-    delete: Delete account
-    delete_confirmation: Are you sure you want to delete the account?
-    deleted: Account successfully deleted
+    delete: 刪除帳戶
+    delete_confirmation: 您確定要刪除這個帳號嗎？
+    deleted: 帳戶已成功刪除
     deletion_info:
       data_consequences:
         other: 'Of the data the user created (e.g. e-mail, preferences, work packages, wiki entries) as much as possible will be deleted. Note however, that data like work packages and wiki entries can not be deleted without impeding the work of the other users. Such data is hence reassigned to an account called "Deleted user". As the data of every deleted account is reassigned to this account it will not be possible to distinguish the data the user created from the data of another deleted account.'
@@ -32,29 +18,29 @@ zh:
   activerecord:
     attributes:
       attachment:
-        downloads: Downloads
-        filename: File
-        filesize: Size
+        downloads: 下載
+        filename: 檔
+        filesize: 檔案大小
       auth_source:
-        account: Account
-        attr_firstname: Firstname attribute
-        attr_lastname: Lastname attribute
-        attr_login: Login attribute
-        attr_mail: Email attribute
-        base_dn: Base DN
+        account: 帳戶
+        attr_firstname: 名子
+        attr_lastname: 姓氏
+        attr_login: 帳號
+        attr_mail: Email
+        base_dn: 網址
         host: Host
         onthefly: On-the-fly user creation
         port: Port
       comment:
-        commented: Commented
+        commented: '已註解 '
       custom_field:
-        default_value: Default value
-        editable: Editable
-        field_format: Format
+        default_value: 預設值
+        editable: 可編輯
+        field_format: 格式
         is_filter: Used as a filter
-        is_required: Required
-        max_length: Maximum length
-        min_length: Minimum length
+        is_required: 必填
+        max_length: 最大長度
+        min_length: 最小長度
         possible_values: Possible values
         regexp: Regular expression
         searchable: Searchable
@@ -79,7 +65,7 @@ zh:
         versions: Versions
         project_type: Project type
         responsible: Responsible
-        types: Types
+        types: 類型
         queries: Queries
       query:
         column_names: Columns
@@ -99,33 +85,33 @@ zh:
         is_in_roadmap: Work packages displayed in roadmap
         in_aggregation: Work packages displayed in aggregation
         is_milestone: Work packages displayed as milestone
-        color: Color
+        color: 顏色
       user:
-        admin: Administrator
-        auth_source: Authentication mode
-        identity_url: OpenID URL
-        language: Language
-        last_login_on: Last connection
-        mail_notification: Email notifications
-        new_password: New password
-        password_confirmation: Confirmation
-        force_password_change: Enforce password change on next login
+        admin: 管理員
+        auth_source: 身份驗證模式
+        identity_url: OpenID 的 URL
+        language: 語言
+        last_login_on: 最後一次連接
+        mail_notification: 電子郵件通知
+        new_password: 新密碼
+        password_confirmation: 確認密碼
+        force_password_change: 強制在下次登錄時更改密碼
       user_preference:
-        comments_sorting: Display comments
-        hide_mail: Hide my email address
-        impaired: Accessibility mode
-        time_zone: Time zone
-        warn_on_leaving_unsaved: Warn me when leaving a page with unsaved text
+        comments_sorting: 顯示評論
+        hide_mail: 隱藏我的電子郵件地址
+        impaired: 協助工具模式
+        time_zone: 時區
+        warn_on_leaving_unsaved: 離開未保存文本頁面時向我發出警告
       version:
-        effective_date: Due date
-        sharing: Sharing
+        effective_date: 截止日期
+        sharing: 分享
       wiki:
-        start_page: Start page
+        start_page: '開始頁面 '
       wiki_content:
-        text: Text
+        text: 文字
       wiki_page:
-        parent_title: Parent page
-        redirect_existing_links: Redirect existing links
+        parent_title: 父頁面
+        redirect_existing_links: 將現有的連結重定向
       planning_element_type_color:
         name: Name
         hexcode: Hex code
@@ -135,33 +121,31 @@ zh:
         allows_association: Allows association
         name: Name
         reported_project_statuses: Reported project statuses
-        position: Position
+        position: 位置
       timeline:
-        name: Name
+        name: 名稱
         options: ""
       reporting:
-        reported_project_status_comment: Status comment
-        reporting_to_project: Reports to project
-        reported_project_status: Project status
-        created_at: Created
+        reported_project_status_comment: 狀態注釋
+        reporting_to_project: 專案的報告
+        reported_project_status: 專案狀態
+        created_at: 創建
       work_package:
-        done_ratio: '% done'
-        fixed_version: Target version
-        parent: Parent
-        parent_issue: Parent
-        parent_work_package: Parent
-        priority: Priority
-        progress: '% done'
-        responsible: Responsible
-        spent_time: Spent time
-        subproject: Subproject
-        time_entries: Log time
-        type: Type
-        watcher: Watcher
+        done_ratio: '%完成'
+        fixed_version: 目標版本
+        parent: 主
+        priority: 優先值
+        progress: '%完成'
+        responsible: 責任歸屬者
+        spent_time: 把時間花在
+        subproject: 子專案
+        time_entries: 日誌的時間
+        type: 類型
+        watcher: 監督者
     errors:
       messages:
-        accepted: must be accepted
-        blank: "can't be blank"
+        accepted: 必須接受
+        blank: 不能為空
         cant_link_a_work_package_with_a_descendant: A work package cannot be linked to one of its subtasks
         circular_dependency: This relation would create a circular dependency
         confirmation: "doesn't match confirmation"
@@ -206,8 +190,6 @@ zh:
               does_not_exist: does not exist
             status_id:
               status_transition_invalid: no valid transition exists from old to new status for the current user roles
-            priority_id:
-              only_active_priorities_allowed: needs to be active
         user:
           attributes:
             password:
@@ -361,7 +343,7 @@ zh:
       - Fri
       - Sat
     abbr_month_names:
-      - ""
+      - null
       - Jan
       - Feb
       - Mar
@@ -387,7 +369,7 @@ zh:
       long: '%B %d, %Y'
       short: '%b %d'
     month_names:
-      - ""
+      - null
       - January
       - February
       - March
@@ -494,7 +476,6 @@ zh:
   error_can_not_archive_project: This project cannot be archived
   error_can_not_delete_custom_field: Unable to delete custom field
   error_can_not_delete_type: This type contains work packages and cannot be deleted.
-  error_can_not_delete_standard_type: Standard types cannot be deleted.
   error_can_not_remove_role: This role is in use and cannot be deleted.
   error_can_not_reopen_work_package_on_closed_version: A work package assigned to a closed version cannot be reopened
   error_can_t_load_default_data: 'Default configuration could not be loaded: %{value}'
@@ -530,8 +511,8 @@ zh:
   general_first_day_of_week: "7"
   general_lang_name: English
   general_pdf_encoding: ISO-8859-1
-  general_text_No: No
-  general_text_Yes: Yes
+  general_text_No: 'No'
+  general_text_Yes: 'Yes'
   general_text_no: 'no'
   general_text_yes: 'yes'
   gui_validation_error: 1 error
@@ -578,8 +559,6 @@ zh:
     label_collapse_all: Collapse all
     label_expand_all: Expand all
     label_menu_item_toggle: Show/hide submenu items
-    label_menu_collapse: collapse
-    label_menu_expand: expand
     tl_toolbar:
       zooms: Zoom level
       outlines: Hierarchy level
@@ -996,9 +975,6 @@ zh:
     other: '%{count} projects'
   label_year: Year
   label_yesterday: yesterday
-  label_keyboard_function: Function
-  label_keyboard_shortcut: Shortcut
-  label_keyboard_accesskey: Accesskey
   label_keyboard_shortcut_help_heading: Available Keyboard Shortcuts
   label_keyboard_shortcut_within_project: 'Project related shortcuts:'
   label_keyboard_shortcut_global_shortcuts: 'Global shortcuts:'
@@ -1071,7 +1047,6 @@ zh:
   notice_bad_request: Bad Request.
   notice_not_authorized: You are not authorized to access this page.
   notice_not_authorized_archived_project: "The project you're trying to access has been archived."
-  notice_project_not_deleted: "The project wasn't deleted."
   notice_successful_connection: Successful connection.
   notice_successful_create: Successful creation.
   notice_successful_delete: Successful deletion.
@@ -1084,12 +1059,12 @@ zh:
   number:
     format:
       delimiter: ""
-      precision: "3"
+      precision: 3
       separator: '.'
     human:
       format:
         delimiter: ""
-        precision: "1"
+        precision: 1
       storage_units:
         format: '%n %u'
         units:
@@ -1211,7 +1186,7 @@ zh:
   setting_file_max_size_displayed: Max size of text files displayed inline
   setting_gravatar_default: Default Gravatar image
   setting_gravatar_enabled: Use Gravatar user icons
-  setting_host_name: Host name
+  setting_host_name: Host name and path
   setting_work_package_done_ratio: Calculate the work package done ratio with
   setting_work_package_done_ratio_field: Use the work package field
   setting_work_package_done_ratio_status: Use the work package status
@@ -1313,11 +1288,12 @@ zh:
   text_plugin_assets_writable: Plugin assets directory writable
   text_powered_by: 'Powered by %{link}'
   text_project_destroy_confirmation: Are you sure you want to delete this project and related data?
-  text_project_identifier_info: Only lower case letters (a-z), numbers, dashes and underscores are allowed, must start with a lower case letter.
+  text_project_identifier_info: 'Only lower case letters (a-z), numbers, dashes and underscores are allowed, must start with a lower case letter.<br />Once saved, the identifier cannot be changed.'
   text_reassign: Reassign to
   text_reassign_to: 'work package:'
   text_regexp_info: 'eg. ^[A-Z0-9]+$'
   text_repository_usernames_mapping: Select or update the OpenProject user mapped to each username found in the repository log.\nUsers with the same OpenProject and repository username or email are automatically mapped.
+  text_rmagick_available: RMagick available (optional)
   text_select_mail_notifications: Select actions for which email notifications should be sent.
   text_select_project_modules: 'Select modules to enable for this project:'
   text_status_changed_by_changeset: 'Applied in changeset %{value}.'
@@ -1447,10 +1423,8 @@ zh:
       project_time_filter: Projects with a work package of a certain type in a certain timeframe
       project_time_filter_absolute_timeframe: Absolute timeframe
       project_time_filter_relative_timeframe: Relative timeframe
-      project_time_filter_historical_from: from
-      project_time_filter_historical_to: to
-      project_time_filter_historical: '%{start_label} %{startdate} %{end_label} %{enddate}'
-      project_time_filter_relative: '%{start_label} %{startspan}%{startspanunit} ago, %{end_label} %{endspan}%{endspanunit} from now'
+      project_time_filter_historical: 'from %{startdate} to %{enddate}'
+      project_time_filter_relative: 'from %{startspan}%{startspanunit} ago, to %{endspan}%{endspanunit} from now'
       project_filters: Filter projects
       project_responsible: Show projects with responsible
       project_status: Show project status
