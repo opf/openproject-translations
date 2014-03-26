@@ -1,11 +1,14 @@
 # OpenProject Translations Plugin
 
-**Warning:** This plugin is work in progress and does not work as intended yet.
-
 `openproject-translations` is an OpenProject plugin, which adds more languages to your OpenProject installation.
 
+OpenProject uses crowdin for translations.
 All translations a daily fetched from [our crowding project](https://crowdin.net/project/openproject). If you want to change translations, you are very welcome to do that via crowdin.
 
+**Beware**:
+
+* when translating `general_lang_name` do not translate the word 'English', but fill in the name of the language you are currently translating
+* We are affected by a missing crowdin feature. Therefore we can only partly translate plural forms with crowdin. To change that you may write crowdin or [vote for the missing feature on uservoice](https://crowdin.uservoice.com/forums/31787-collaborative-translation-tool/suggestions/4772336-support-plural-forms-translation-for-yml). To work around this problem we currently use english translations where crowdin cannot give us a translation.
 
 
 ## Requirements
