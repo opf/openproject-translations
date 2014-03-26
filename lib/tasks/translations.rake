@@ -21,7 +21,7 @@ require 'zip'
 
 namespace :translations do
   crowdin_project_key = ''
-  crowdin_project_name = 'openproject-test'
+  crowdin_project_name = 'openproject'
 
   task :check_for_api_key => :environment do
     env_name = 'OPENPROJECT_CROWDIN_KEY'
