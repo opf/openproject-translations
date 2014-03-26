@@ -5,6 +5,10 @@
 OpenProject uses crowdin for translations.
 All translations a daily fetched from [our crowding project](https://crowdin.net/project/openproject). If you want to change translations, you are very welcome to do that via crowdin.
 
+Please keep in mind that the OPF team does not speak all the languages this plugin provides, thus we cannot guarantee for correctness of the translations.
+
+We plan to release this plugin every time an OpenProject core release is done.
+
 **Beware**:
 
 * when translating `general_lang_name` do not translate the word 'English', but fill in the name of the language you are currently translating
