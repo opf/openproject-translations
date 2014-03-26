@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.homepage    = "https://www.openproject.org/projects/translations"
   s.summary     = 'OpenProject Translations'
   s.description = 'Adds translations to OpenProject.'
-  s.license     = "GPLv3" # TODO: determine
+  s.license     = "GPLv3"
 
   s.files = Dir["{app,config,db,doc,lib}/**/*"] + %w(README.md)
 
