@@ -3,9 +3,9 @@
 `openproject-translations` is an OpenProject plugin, which adds more languages to your OpenProject installation.
 
 OpenProject uses crowdin for translations.
-All translations are fetched from [our crowding project](https://crowdin.net/project/openproject) on a daily basis. If you want to change translations, you are very welcome to do that via crowdin.
+All translations are fetched from [our crowding project](https://crowdin.net/project/openproject) on a daily basis. If you want to change translations, you are very welcome to do so via crowdin.
 
-Please keep in mind that the OPF team does not speak all the languages this plugin provides, thus we cannot guarantee for correctness of the translations.
+Please keep in mind that the OPF team does not speak all the languages this plugin provides, thus we cannot guarantee the correctness of translations.
 
 We plan to release this plugin every time an OpenProject core release is done.
 
