@@ -24,7 +24,7 @@ We plan to release this plugin every time an OpenProject core release is done.
 Edit the `Gemfile.plugins` file in your openproject-installation directory to contain the following lines:
 
 <pre>
-gem "openproject-webhooks", :git => 'https://github.com/finnlabs/openproject-webhooks.git', :branch => 'stable'
+gem "openproject-translations", :git => 'https://github.com/finnlabs/openproject-translations.git', :branch => 'stable'
 </pre>
 
 Then update your bundle with:
