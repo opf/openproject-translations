@@ -102,6 +102,23 @@ namespace :translations do
       end
     end
 
+    def calculate_language_key(translation_file_path)
+      # The main translation key is the language key ('en' for english, 'zh' for chinese etc.)
+      # Sometimes a language has multiple variants (eg simplified chinese 'zh-TW')
+      # For language variants ('zh-TW') crowdin gives us only the language key ('zh') so we replace it.
+      # from /path/to/openproject-translations/config/locales/zh-TW.yml we extract 'zh-TW'
+      language_key = translation_file_path.basename.to_s[0..-5]
+
+      # Unfortunately OpenProject have some vendored translations in jstoolbar, which
+      # needs different names sometimes, so we map exceptions here
+      mapping = Hash.new {|hash, key| key }
+      mapping['zh-CN'] = 'zh'
+      mapping['es-ES'] = 'es'
+      mapping['pt-PT'] = 'pt'
+
+      mapping[language_key]
+    end
+
 
     # read english translation keys from the openproject core
     english_translation = YAML.load File.read(Rails.root.join('config', 'locales', 'en.yml'))
@@ -111,11 +128,7 @@ namespace :translations do
       # find all .yml files in this gems' locales directory
       file_path.file? && file_path.to_s[-4..-1] == '.yml'
     end.each do |translation_file|
-      # The main translation key is the language key ('en' for english, 'zh' for chinese etc.)
-      # Sometimes a language has multiple variants (eg simplified chinese 'zh-CN')
-      # For language variants ('zh-CN') crowdin gives us only the language key ('zh') so we replace it.
-      # from /path/to/openproject-translations/config/locales/zh-CN.yml we extract 'zh-CN'
-      language_key = translation_file.basename.to_s[0..-5]
+      language_key = calculate_language_key translation_file
 
       puts "fixing #{language_key}"
 
