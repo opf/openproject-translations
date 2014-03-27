@@ -92,6 +92,8 @@ namespace :translations do
 
   desc "Insert missing translation keys into all translation files. This circumvents a crowdin bug."
   task :fix_missing_keys => :environment do
+    puts 'Fixing missing keys and language names...'
+
     # see: https://stackoverflow.com/questions/9381553/ruby-merge-nested-hash
     class ::Hash
       def deep_merge(second)
@@ -109,11 +111,21 @@ namespace :translations do
       # find all .yml files in this gems' locales directory
       file_path.file? && file_path.to_s[-4..-1] == '.yml'
     end.each do |translation_file|
+      # The main translation key is the language key ('en' for english, 'zh' for chinese etc.)
+      # Sometimes a language has multiple variants (eg simplified chinese 'zh-CN')
+      # For language variants ('zh-CN') crowdin gives us only the language key ('zh') so we replace it.
+      # from /path/to/openproject-translations/config/locales/zh-CN.yml we extract 'zh-CN'
+      language_key = translation_file.basename.to_s[0..-5]
+
+      puts "fixing #{language_key}"
+
       # for each translation file add missing translation keys
       translation = YAML.load File.read(translation_file)
+
       # add missing english keys
-      translation = {translation.keys.first => english_translation['en'].deep_merge(translation.values.first)}
-      # write file bac kto disk
+      translation = {language_key => english_translation['en'].deep_merge(translation.values.first)}
+
+      # write file back to disk
       File.open(translation_file, 'w') do |file|
         file.write translation.to_yaml
       end
