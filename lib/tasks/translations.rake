@@ -142,6 +142,9 @@ namespace :translations do
       File.open(translation_file, 'w') do |file|
         file.write translation.to_yaml
       end
+
+      # the files should be named like their translation-key
+      File.rename translation_file, OpenProject::Translations::Engine.root.join('config', 'locales', "#{language_key}.yml")
     end
   end
 end
