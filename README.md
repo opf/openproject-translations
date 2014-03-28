@@ -59,8 +59,8 @@ The [OpenProject Foundation (OPF)](https://www.openproject.org/projects/openproj
 
 This repository contains two main branches:
 
-* `dev`: The main development branch. We try to keep it stable in the sense of all tests are passing, but we don't recommend it for production systems.
-* `stable`: Contains the latest stable release that we recommend for production use. Use this if you always want the latest version of this plugin.
+* `dev`: The main development branch. We try to keep it stable in the sense of all tests are passing, but we don't recommend it for production systems. Translations in this branch should match those required by the `dev` branch of the OpenProject core.
+* `stable`: Contains the latest stable release that we recommend for production use. Use this if you always want the latest version of this plugin together with the `stable` branch of the OpenProject core.
 
 ## License
 
