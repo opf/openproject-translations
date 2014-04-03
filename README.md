@@ -20,7 +20,7 @@ We plan to release this plugin every time an OpenProject core release is done.
 
 * OpenProject version **3.0.0 or higher** ( or a current installation from the `dev` branch)
 
-### Plugin Installation
+## Plugin Installation
 
 Edit the `Gemfile.plugins` file in your openproject-installation directory to contain the following lines:
 
