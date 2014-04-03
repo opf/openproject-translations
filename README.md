@@ -28,10 +28,11 @@ Edit the `Gemfile.plugins` file in your openproject-installation directory to co
 gem "openproject-translations", :git => 'https://github.com/opf/openproject-translations.git', :branch => 'stable'
 </pre>
 
-Then update your bundle with:
+Then update your bundle with the following commands executed from your openproject directory:
 
 <pre>
 bundle install
+bundle exec rake assets:precompile
 </pre>
 
 and restart the OpenProject server.
