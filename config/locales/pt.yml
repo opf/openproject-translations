@@ -25,14 +25,12 @@ pt:
         other: Excluir a conta do usuário é uma ação irreversível.
         self: Excluir a sua conta de usuário é uma ação irreversível.
       login_consequences:
-        other: The account will be deleted from the system. Therefore, the user will
-          no longer be able to log in with his current credentials. He/she can choose
-          to become a user of this application again by the means this application
-          grants.
-        self: Your account will be deleted from the system. Therefore, you will no
-          longer be able to log in with your current credentials. If you choose to
-          become a user of this application again, you can do so by using the means
-          this application grants.
+        other: A conta será apagada do sistema. Em consequência, o utilizador não
+          poderá mais entrar com as suas credenciais atuais. Ele/ela pode escolher
+          ser utilizador desta aplicação outra vez nos termos permitidos pela aplicação.
+        self: A sua conta será apagada do sistema. Em consequência,  não poderá mais
+          entrar com as suas credenciais atuais. Poderá escolher ser utilizador desta
+          aplicação outra vez nos termos permitidos pela aplicação.
   actionview_instancetag_blank_option: Por favor selecione
   activerecord:
     attributes:
@@ -147,14 +145,14 @@ pt:
       reporting:
         reported_project_status_comment: Comentário ao ponto de situação
         reporting_to_project: Reports to project
-        reported_project_status: Project status
+        reported_project_status: Estado do Projeto
         created_at: Criado
       work_package:
         done_ratio: "% completo"
-        fixed_version: Target version
+        fixed_version: Versão alvo
         parent: Pai
-        parent_issue: Parent
-        parent_work_package: Parent
+        parent_issue: Mãe
+        parent_work_package: Mãe
         priority: Prioridade
         progress: "% completo"
         responsible: Responsável
@@ -192,14 +190,14 @@ pt:
         too_short: "é muito curto (mínimo é %{count} caracteres)"
         wrong_length: "é o tamanho errado (deve ser %{count} caracteres)"
         after: deve ser depois %{date}
-        after_or_equal_to: must be after or equal to %{date}
-        before: must be before %{date}
+        after_or_equal_to: tem de ser depois ou igual a %{date}
+        before: tem de ser anterior a %{date}
         before_or_equal_to: must be before or equal to %{date}
         could_not_be_copied: could not be (fully) copied
       models:
         project_association:
           identical_projects: can not be created from one project to itself
-          project_association_not_allowed: does not allow associations
+          project_association_not_allowed: não permite associações
         work_package:
           is_not_a_valid_target_for_time_entries: 'Work package #%{id} is not a valid
             target for reassigning the time entries.'
@@ -210,22 +208,22 @@ pt:
             parent_id:
               cannot_be_milestone: cannot be a milestone
               cannot_be_in_another_project: cannot be in another project
-              not_a_valid_parent: is invalid
-              does_not_exist: does not exist
+              not_a_valid_parent: "é invalido"
+              does_not_exist: não existe
             status_id:
               status_transition_invalid: no valid transition exists from old to new
                 status for the current user roles
             priority_id:
-              only_active_priorities_allowed: needs to be active
+              only_active_priorities_allowed: tem de estar ativo
         user:
           attributes:
             password:
               weak: 'must contain characters of the following classes (at least %{min_count}
                 of %{all_count}): %{rules}'
-              lowercase: lowercase (e.g. 'a')
-              uppercase: uppercase (e.g. 'A')
-              numeric: numeric (e.g. '1')
-              special: special (e.g. '%')
+              lowercase: caixa baixa (e.g. 'a')
+              uppercase: caixa alta (e.g. 'A')
+              numeric: algarismo (e.g. '1')
+              special: carater especial (e.g. %)
               reused:
                 one: has been used before. Please choose one that is different from
                   your last one.
@@ -244,20 +242,25 @@ pt:
       board: Forum
       comment: Comment
       custom_field: Custom field
-      group: Group
+      group: Grupo
       issue: Issue
-      category: Category
+      category: Categoria
       status: Work package status
       member: Member
       news: News
       project: Project
       query: Custom query
       role:
-        one: Role
-        other: Roles
-      type: Type
-      planning_element: Planning element
-      project_type: Project type
+        one: |
+          [one]
+          Papel
+
+          [other]
+          Papeis
+        other: Papel
+      type: Tipo
+      planning_element: Elemento de planeamento
+      project_type: Tipo de Projeto
       user: Usuário
       version: Versão
       wiki: Wiki
