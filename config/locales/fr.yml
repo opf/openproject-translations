@@ -49,7 +49,7 @@ fr:
         attr_lastname: Attribut Nom de famille
         attr_login: Attribut de connexion
         attr_mail: Attribut courriel
-        base_dn: Base DN
+        base_dn: DN de base
         host: Hôte
         onthefly: Création de l'utilisateur à la volée
         port: Port
@@ -221,7 +221,7 @@ fr:
               status_transition_invalid: Aucune transition valide n'existe de l'ancien
                 vers le nouveau statut pour le rôle utilisateur actuel
             priority_id:
-              only_active_priorities_allowed: needs to be active
+              only_active_priorities_allowed: ont besoin d'être actif
         user:
           attributes:
             password:
@@ -530,7 +530,7 @@ fr:
   error_can_not_delete_custom_field: Impossible de supprimer le champ personnalisé
   error_can_not_delete_type: Ce type contient des Lots de Travaux et ne peut être
     supprimé.
-  error_can_not_delete_standard_type: Standard types cannot be deleted.
+  error_can_not_delete_standard_type: Les types standards ne peuvent pas être supprimés.
   error_can_not_remove_role: Ce rôle est utilisé et ne peut être supprimé.
   error_can_not_reopen_work_package_on_closed_version: Un Lot de Travaux assigné à
     une version fermée ne peut être réouvert
@@ -628,8 +628,8 @@ fr:
     label_collapse_all: Tout regrouper
     label_expand_all: Tout étendre
     label_menu_item_toggle: Afficher/masquer les éléments de sous-menu
-    label_menu_collapse: collapse
-    label_menu_expand: expand
+    label_menu_collapse: réduire
+    label_menu_expand: développer
     tl_toolbar:
       zooms: Niveau de zoom
       outlines: Niveau de hiérarchie
@@ -729,8 +729,8 @@ fr:
   label_deleted_custom_field: "(champs personnalisés supprimés)"
   label_descending: Décroissant
   label_details: Détails
-  label_diff: diff
-  label_diff_inline: inline
+  label_diff: différence
+  label_diff_inline: en ligne
   label_diff_side_by_side: côte à côte
   label_disabled: désactivé
   label_display: Affichage
@@ -888,16 +888,16 @@ fr:
   label_password_rule_numeric: Caractères numériques
   label_password_rule_special: Caractères spéciaux
   label_password_rule_uppercase: Majuscules
-  label_path_encoding: Path encoding
+  label_path_encoding: Encodage du chemin d'accès
   label_pdf_with_descriptions: PDF avec Descriptions
   label_per_page: Par page
-  label_permissions: Permissions
+  label_permissions: Autorisations
   label_permissions_report: Rapport d'autorisations
   label_personalize_page: Personaliser cette page
-  label_planning: Planning
+  label_planning: Planification
   label_please_login: Veuillez vous connecter
   label_plugins: Plugins
-  label_precedes: precedes
+  label_precedes: précède
   label_preferences: Préférences
   label_preview: Prévisualisation
   label_previous: Précédent
@@ -990,7 +990,7 @@ fr:
   label_time_entry_plural: Temps passé
   label_time_tracking: Suivi du temps
   label_today: aujourd'hui
-  label_top_menu: Top Menu
+  label_top_menu: Menu du haut
   label_topic_plural: Sujets
   label_total: Total
   label_type_new: Nouveau type
@@ -1069,9 +1069,9 @@ fr:
     zero: no projects
   label_year: Année
   label_yesterday: hier
-  label_keyboard_function: Function
-  label_keyboard_shortcut: Shortcut
-  label_keyboard_accesskey: Accesskey
+  label_keyboard_function: Fonction
+  label_keyboard_shortcut: Raccourci
+  label_keyboard_accesskey: Touche de raccourci
   label_keyboard_shortcut_help_heading: Raccourcis de clavier disponibles
   label_keyboard_shortcut_within_project: 'Raccourcis liés au projet:'
   label_keyboard_shortcut_global_shortcuts: 'Raccourcis généraux:'
@@ -1172,7 +1172,7 @@ fr:
   notice_not_authorized: Vous n'êtes pas autorisé à accéder à cette page.
   notice_not_authorized_archived_project: Le projet auquel vous essayer d'accéder
     a été archivé.
-  notice_project_not_deleted: The project wasn't deleted.
+  notice_project_not_deleted: Le projet n'a pas été supprimé.
   notice_successful_connection: Connection réussie.
   notice_successful_create: Création réussie.
   notice_successful_delete: Suppression réussie.
@@ -1275,8 +1275,8 @@ fr:
   project_module_calendar: Calendrier
   project_module_work_package_tracking: Suivi du Lot de Travaux
   project_module_news: Actualités
-  project_module_repository: Repository
-  project_module_time_tracking: Time tracking
+  project_module_repository: Référentiel
+  project_module_time_tracking: Suivi du temps
   project_module_wiki: Wiki
   query_fields:
     assigned_to_role: Rôle du Destinataire
@@ -1321,7 +1321,7 @@ fr:
     inline
   setting_gravatar_default: Image Gravatar par défaut
   setting_gravatar_enabled: Utiliser les icônes Gravatar
-  setting_host_name: Host name
+  setting_host_name: Nom d'hôte
   setting_work_package_done_ratio: Calculer le Taux d'avancement du lot de travail
     avec...
   setting_work_package_done_ratio_field: Utiliser le champ Lot de Travaux
@@ -1353,7 +1353,7 @@ fr:
   setting_per_page_options: Options des objets par page
   setting_plain_text_mail: Courriel en plein texte (pas HTML)
   setting_protocol: Protocole
-  setting_repositories_encodings: Repositories encodings
+  setting_repositories_encodings: Encodages de référentiels
   setting_repository_log_display_limit: Nombre maximal des révisions affichées sur
     « file log »
   setting_rest_api_enabled: Autoriser service web REST
@@ -1446,8 +1446,9 @@ fr:
   text_powered_by: Propulsé par %{link}
   text_project_destroy_confirmation: "Êtes-vous sûr de vouloir supprimer ce projet
     et ses données relatives?"
-  text_project_identifier_info: Only lower case letters (a-z), numbers, dashes and
-    underscores are allowed, must start with a lower case letter.
+  text_project_identifier_info: Seulement les lettres en minuscule (a-z), les nombres,
+    les tirets et les underscores sont autorisés, il est obligatoire de commencer
+    avec une lettre en minuscule.
   text_reassign: Réassigner à
   text_reassign_to: 'Lot de Travaux:'
   text_regexp_info: ex. ^[A-Z0-9]+$
@@ -1590,7 +1591,7 @@ fr:
       hide_chart: Masquer graphique
       noneElement: "(none)"
       noneSelection: "(none)"
-      outline: Initial outline expansion
+      outline: Expansion de ligne par défaut
       parent: Afficher sous-projets de
       work_package_filters: Filtrer les Lots de Travaux
       work_package_responsible: Afficher les Lots de Travaux avec les responsables
@@ -1601,8 +1602,8 @@ fr:
         certain laps de temps
       project_time_filter_absolute_timeframe: "Échéancier absolu"
       project_time_filter_relative_timeframe: "Échéancier relatif"
-      project_time_filter_historical_from: from
-      project_time_filter_historical_to: to
+      project_time_filter_historical_from: de
+      project_time_filter_historical_to: pour
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
       project_time_filter_relative: "%{start_label} %{startspan}%{startspanunit} ago,
         %{end_label} %{endspan}%{endspanunit} from now"
@@ -1726,4 +1727,4 @@ fr:
   work_package:
     updated_automatically_by_child_changes: _Mis à jour automatiquement en changeant
       les valeurs dans le lot de travail enfant %{child}_
-  nothing_to_preview: Nothing to preview
+  nothing_to_preview: Rien à afficher en apperçu
