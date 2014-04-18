@@ -100,7 +100,6 @@ th:
       user:
         admin: "ผู้ดูแลระบบ"
         auth_source: "โหมดการระบุตัวตนผู้ใช้"
-        identity_url: OpenID URL
         language: "ภาษา"
         last_login_on: "ครั้งสุดท้ายที่เข้าระบบ"
         mail_notification: "อีเมล์แจ้งเตือน"
@@ -523,6 +522,8 @@ th:
   error_no_default_work_package_status: "ไม่ได้กำหนดค่าเริ่มต้นสถานะของชุดภารกิจ โปรดตรวจสอบการตั้งค่าของคุณ
     (ไปที่ \"การจัดการระบบ -> สถานะชุดภารกิจ\")"
   error_no_type_in_project: "ไม่พบประเภทที่เกี่ยวข้องกับโครงการนี้ โปรดตรวจสอบการตั้งค่าโครงการ"
+  error_omniauth_registration_timed_out: The registration via an external authentication
+    provider timed out. Please try again.
   error_scm_annotate: "ไม่พบรายการ จึงไม่สามารถใส่คำอธิบายประกอบได้"
   error_scm_command_failed: "เกิดข้อผิดพลาดเมื่อพยายามเข้าถึงที่เก็บข้อมูล: %{value}"
   error_scm_not_found: "ไม่พบรายการการปรับปรุงในที่เก็บข้อมูล"
@@ -532,6 +533,8 @@ th:
   error_workflow_copy_target: "กรุณาเลือกประเภทเป้าหมายและบทบาท"
   error_menu_item_not_created: "ไม่สามารถเพิ่มรายการเมนูได้"
   error_menu_item_not_saved: "ไม่สามารถบันทึกรายการเมนูได้"
+  error_external_authentication_failed: An error occured during external authentication.
+    Please try again.
   events:
     project: "โครงการได้รับการแก้ไขแล้ว"
     changeset: "แก้ไขชุดการเปลี่ยนแปลงแล้ว"
@@ -794,7 +797,6 @@ th:
   label_loading: "กำลังโหลด..."
   label_logged_as: "เข้าสู่ระบบในนาม"
   label_login: "ลงชื่อเข้าใช้"
-  label_login_with_open_id_option: "หรือล็อกอิน ด้วย OpenID"
   label_logout: "ออกจากระบบ"
   label_main_menu: "เมนูด้านข้าง"
   label_max_size: "ความยาวสูงสุด"
@@ -885,6 +887,7 @@ th:
   label_query_menu_item: "เมนูแบบสอบถาม"
   label_read: "อ่าน..."
   label_register: "ลงทะเบียน"
+  label_register_with_developer: Register as developer
   label_registered_on: "ได้ลงทะเบียนใน"
   label_registration_activation_by_email: "เปิดใช้งานบัญชีทางอีเมล์"
   label_registration_automatic_activation: "เปิดใช้งานบัญชีโดยอัตโนมัติ"
@@ -1092,6 +1095,8 @@ th:
   notice_account_update_failed: "ไม่สามารถบันทึกการตั้งค่าบัญชีของคุณได้ โปรดดูที่รายละเอียดบัญชี"
   notice_account_updated: "ปรับปรุงบัญชีสำเร็จ"
   notice_account_wrong_password: "รหัสผ่านไม่ถูกต้อง"
+  notice_account_registered_and_logged_in: Welcome, your account has been activated.
+    You are logged in now.
   notice_api_access_key_reseted: "มีการรีเซตคีย์การเข้าถึง API ของคุณ"
   notice_can_t_change_password: "ไม่สามารถเปลี่ยนรหัสผ่านได้ เนื่องจากบัญชีผู้ใช้นี้
     ใช้การระบุตัวตนจากแหล่งภายนอก"
@@ -1277,7 +1282,6 @@ th:
   setting_mail_handler_api_key: "คีย์ API"
   setting_mail_handler_body_delimiters: "ตัดข้อความอีเมลหลังจากเส้นนี้"
   setting_new_project_user_role_id: "บทบาทที่ให้กับผู้ใช้ที่สร้างโครงการ ซึ่งไม่ใช่ผู้ดูแลระบบ "
-  setting_openid: "อนุญาตให้ลงทะเบียนและล็อกอินโดยใช้ OpenID"
   setting_password_active_rules: "ประเภทของตัวอักษรที่ใช้งานได้"
   setting_password_count_former_banned: "จำนวนรหัสผ่านที่ใช้ล่าสุดที่ห้ามนำมาใช้ซ้ำ "
   setting_password_days_valid: "จำนวนวันที่บังคับให้ต้องมีการเปลี่ยนรหัสผ่าน (ปิดการใช้งาน
@@ -1592,6 +1596,10 @@ th:
     active: "ใช้งานอยู่"
     activate: "เปิดใช้งาน"
     activate_and_reset_failed_logins: "เปิดใช้งานและรีเซตการล็อคอินที่ล้มเหลว"
+    authentication_provider: Authentication Provider
+    authentication_settings_disabled_due_to_external_authentication: This user authenticates
+      via an external authentication provider, so there is no password in OpenProject
+      to be changed.
     assign_random_password: "กำหนดรหัสผ่านแบบสุ่ม (ส่งไปยังผู้ใช้ผ่านทางอีเมล์)"
     blocked: "ล็อคชั่วคราว"
     blocked_num_failed_logins:

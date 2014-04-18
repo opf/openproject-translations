@@ -110,14 +110,12 @@ es:
       user:
         admin: Administrador
         auth_source: Modos de autentificación
-        identity_url: URL de OpenID
         language: Idioma
         last_login_on: "Última conexión"
         mail_notification: Notificaciones de correo electrónico
         new_password: Nueva contraseña
         password_confirmation: Confirmación
-        force_password_change: Aplicar el cambio de contraseña en el próximo unicio
-          de sesión
+        force_password_change: Aplicar el cambio de contraseña en la próxima sesión
       user_preference:
         comments_sorting: Mostrar comentarios
         hide_mail: Ocultar mi dirección de correo electrónico
@@ -544,6 +542,8 @@ es:
     del paquete de trabajo").
   error_no_type_in_project: Ningún tipo se asocia a este proyecto. Por favor, Compruebe
     la configuración del proyecto.
+  error_omniauth_registration_timed_out: The registration via an external authentication
+    provider timed out. Please try again.
   error_scm_annotate: La entrada no existe o no puede ser anotada.
   error_scm_command_failed: 'Se produjo un error al intentar acceder al repositorio:
     %{value}'
@@ -554,6 +554,8 @@ es:
   error_workflow_copy_target: Por favor, seleccione tipo(s) de objetivos y role(s)
   error_menu_item_not_created: No se pudo agregar el elemento de menú
   error_menu_item_not_saved: Elemento de menú no podría ser guardado
+  error_external_authentication_failed: An error occured during external authentication.
+    Please try again.
   events:
     project: Proyecto editado
     changeset: Set de cambios editado
@@ -823,7 +825,6 @@ es:
   label_loading: Cargando...
   label_logged_as: Sesión iniciada como
   label_login: Iniciar sesión
-  label_login_with_open_id_option: o iniciar sesión con OpenID
   label_logout: Cerrar sesión
   label_main_menu: Menú lateral
   label_max_size: Tamaño máximo
@@ -915,6 +916,7 @@ es:
   label_query_menu_item: Menú de consulta
   label_read: Leer...
   label_register: Registrar
+  label_register_with_developer: Register as developer
   label_registered_on: Registrado en
   label_registration_activation_by_email: activación de cuenta por correo electrónico
   label_registration_automatic_activation: activación automática de la cuenta
@@ -1139,6 +1141,8 @@ es:
     favor revise en la página de su cuenta.
   notice_account_updated: Cuenta se actualizó correctamente.
   notice_account_wrong_password: Contraseña incorrecta
+  notice_account_registered_and_logged_in: Welcome, your account has been activated.
+    You are logged in now.
   notice_api_access_key_reseted: Su API de acceso ha sido re-iniciada.
   notice_can_t_change_password: Esta cuenta utiliza una fuente de autenticación externa.
     Es imposible cambiar la contraseña.
@@ -1340,7 +1344,6 @@ es:
     una de estas líneas
   setting_new_project_user_role_id: Papel ortorgado a usuario no administrador que
     crea un proyecto
-  setting_openid: Permitir inicio de sesión y registro con OpenID
   setting_password_active_rules: Activar clases de personajes
   setting_password_count_former_banned: Numero de contraseñas usadas mas recientemente
     bloqueadas para re-uso
@@ -1694,6 +1697,10 @@ es:
     activate: Activar
     activate_and_reset_failed_logins: Activar y restablecer los inicios de sesión
       fallidos
+    authentication_provider: Authentication Provider
+    authentication_settings_disabled_due_to_external_authentication: This user authenticates
+      via an external authentication provider, so there is no password in OpenProject
+      to be changed.
     assign_random_password: Asignar contraseñas aleatorias (enviado al usuario por
       correo electrónico)
     blocked: bloqueado temporalmente

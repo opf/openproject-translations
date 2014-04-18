@@ -107,7 +107,6 @@ sk:
       user:
         admin: Administrator
         auth_source: Authentication mode
-        identity_url: OpenID URL
         language: Language
         last_login_on: Last connection
         mail_notification: Email notifications
@@ -551,6 +550,8 @@ sk:
     Please check your configuration (Go to "Administration -> Work package statuses").
   error_no_type_in_project: No type is associated to this project. Please check the
     Project settings.
+  error_omniauth_registration_timed_out: The registration via an external authentication
+    provider timed out. Please try again.
   error_scm_annotate: The entry does not exist or cannot be annotated.
   error_scm_command_failed: 'An error occurred when trying to access the repository:
     %{value}'
@@ -561,6 +562,8 @@ sk:
   error_workflow_copy_target: Please select target type(s) and role(s)
   error_menu_item_not_created: Menu item could not be added
   error_menu_item_not_saved: Menu item could not be saved
+  error_external_authentication_failed: An error occured during external authentication.
+    Please try again.
   events:
     project: Project edited
     changeset: Changeset edited
@@ -830,7 +833,6 @@ sk:
   label_loading: Loading...
   label_logged_as: Logged in as
   label_login: Sign in
-  label_login_with_open_id_option: or login with OpenID
   label_logout: Sign out
   label_main_menu: Side Menu
   label_max_size: Maximum size
@@ -921,6 +923,7 @@ sk:
   label_query_menu_item: Query menu item
   label_read: Read...
   label_register: Register
+  label_register_with_developer: Register as developer
   label_registered_on: Registered on
   label_registration_activation_by_email: account activation by email
   label_registration_automatic_activation: automatic account activation
@@ -1142,6 +1145,8 @@ sk:
     look at your account page.
   notice_account_updated: Account was successfully updated.
   notice_account_wrong_password: Wrong password
+  notice_account_registered_and_logged_in: Welcome, your account has been activated.
+    You are logged in now.
   notice_api_access_key_reseted: Your API access key was reset.
   notice_can_t_change_password: This account uses an external authentication source.
     Impossible to change the password.
@@ -1335,7 +1340,6 @@ sk:
   setting_mail_handler_api_key: API key
   setting_mail_handler_body_delimiters: Truncate emails after one of these lines
   setting_new_project_user_role_id: Role given to a non-admin user who creates a project
-  setting_openid: Allow OpenID login and registration
   setting_password_active_rules: Active character classes
   setting_password_count_former_banned: Number of most recently used passwords banned
     for reuse
@@ -1678,6 +1682,10 @@ sk:
     active: active
     activate: Activate
     activate_and_reset_failed_logins: Activate and reset failed logins
+    authentication_provider: Authentication Provider
+    authentication_settings_disabled_due_to_external_authentication: This user authenticates
+      via an external authentication provider, so there is no password in OpenProject
+      to be changed.
     assign_random_password: Assign random password (sent to user via e-mail)
     blocked: locked temporarily
     blocked_num_failed_logins:
