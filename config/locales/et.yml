@@ -545,6 +545,9 @@ et:
   error_scm_not_found: Versioonihalduse süsteemis ei leidunud otsitavat sissekannet
     või versiooni.
   error_unable_delete_status: Oleku kustutamine ei õnnestunud
+  error_unable_delete_default_status: Unable to delete default work package status.
+    Please select another default work package status before deleting the current
+    one.
   error_unable_to_connect: "Ühenduse loomine ebaõnnestus (%{value})"
   error_workflow_copy_source: Palun vali lähtepunkti liik või roll
   error_workflow_copy_target: Palun vali sihtpunkti tüübid ja rollid
@@ -972,7 +975,7 @@ et:
   label_wiki_show_index_page_link: Kuva alammenüü valik "Sisukord"
   label_wiki_show_menu_item: Näita lehe nime projektimenüüs
   label_wiki_show_new_page_link: Näita alammenüüs valikut 'Loo uus alamleht'
-  label_wiki_show_submenu_item: 'Show as submenu item of '
+  label_wiki_show_submenu_item: 'Näita kui alammenüüd (<--) '
   label_work_package: Teema
   label_workflow: Töövoog
   label_workflow_plural: Töövood
@@ -1080,9 +1083,8 @@ et:
   notice_file_not_found: Sellist lehte ei leitud.
   notice_forced_logout: Sind logiti automaatselt välja %{ttl_time} tegevuseta minuti
     järel.
-  notice_internal_server_error: An error occurred on the page you were trying to access.
-    If you continue to experience problems please contact your %{app_title} administrator
-    for assistance.
+  notice_internal_server_error: Lehel, mida Sa üritasid avada, ilmnes tõrge. Kui probleem
+    on püsiv, siis pöörduge abi saamiseks rakenduse %{app_title} administraatori poole.
   notice_work_package_done_ratios_updated: Teema edenemise astmed on uuendatud.
   notice_locking_conflict: Teine kasutaja uuendas vahepeal neid andmeid.
   notice_locking_conflict_additional_information: Uuendused on tehtud %{users} poolt.
@@ -1236,7 +1238,7 @@ et:
   setting_enabled_scm: Kasutatavad lähtekoodi haldusvahendid
   setting_feeds_enabled: Luba tellitavaid uudisvoogusid
   setting_feeds_limit: Uudisvoogude suurim uudiste arv
-  setting_file_max_size_displayed: Max size of text files displayed inline
+  setting_file_max_size_displayed: Teksti sees kuvatava tekstifaili maksimaalne suurus
   setting_gravatar_default: Vaikimisi kasutatav Gravatari kasutajaikoon
   setting_gravatar_enabled: Kasuta Gravatari kasutajaikoone
   setting_host_name: Serveri nimi ja teerada
@@ -1273,8 +1275,8 @@ et:
   setting_rest_api_enabled: Luba REST API kasutamine
   setting_self_registration: Omaloodud konto aktiveerimine
   setting_sequential_project_identifiers: Genereeri järjestikused projektitunnused
-  setting_session_ttl: Session expiry time after inactivity
-  setting_session_ttl_hint: Value below 5 works like disabled
+  setting_session_ttl: Sessiooni aegumise aeg
+  setting_session_ttl_hint: Väärtus alla 5-e mõjub nii, nagu sessioon ei aeguks kunagi
   setting_session_ttl_enabled: Seansi lõppemine
   setting_start_of_week: Nädala esimene päev
   setting_sys_api_enabled: Hoidlate haldamine veebiteenuse kaudu
@@ -1363,7 +1365,7 @@ et:
     seotud andmed täielikult kustutada?
   text_project_identifier_info: Lubatud on ainult väikesed tähed (a-z), numbrid ja
     kriipsud. Peab algama väikse tähega.
-  text_reassign: Reassign to
+  text_reassign: Määra töö ümber
   text_reassign_to: 'teema:'
   text_regexp_info: ehk teisisõnu ^[A-Z0-9]+$
   text_repository_usernames_mapping: Seosta OpenProject kasutaja hoidlasse sissekannete
@@ -1376,7 +1378,7 @@ et:
   text_tip_work_package_begin_day: teema avamise päev
   text_tip_work_package_begin_end_day: teema avati ja sulgeti samal päeval
   text_tip_work_package_end_day: teema sulgemise päev on täna
-  text_type_no_workflow: No workflow defined for this type
+  text_type_no_workflow: Selle tüübi jaoks ei ole töövooge defineeritud
   text_unallowed_characters: Lubamatud märgid
   text_user_mail_option: Valimata projektidest saad teavitusi ainult jälgitavate või
     Sinuga seotud asjade kohta (nt. Sinu loodud või teha olevad teemad).
@@ -1415,21 +1417,21 @@ et:
       timelines: Ajakavad
     add_project_association: Lisa sõltuvussuhe
     associations: Sõltuvused
-    board_could_not_be_saved: Board could not be saved
-    button_delete_all: Delete all
-    change: Change in planning
-    children: Child elements
-    color_could_not_be_saved: Color could not be saved
-    current_planning: Current planning
-    dates: Dates
-    dates_are_calculated_based_on_sub_elements: Dates are calculated based on sub
-      elements.
+    board_could_not_be_saved: "(?) ei saa salvestada"
+    button_delete_all: Kustuta kõik
+    change: Muudatus planeerimises
+    children: Alamelemendid
+    color_could_not_be_saved: Värvi ei saa salvestada
+    current_planning: Kehtiv plaan
+    dates: Kuupäevad
+    dates_are_calculated_based_on_sub_elements: Kuupäevad on arvutatud alamelementide
+      järgi.
     delete_all: Kustuta kõik
     delete_thing: Kustuta
     duration: kestus
     duration_days:
-      one: 1 day
-      other: "%{count} days"
+      one: 1 päev
+      other: "%{count} päeva"
     edit_color: Muuda värvi
     edit_project_type: Muuda projekti tüüpi
     edit_thing: Muuda
@@ -1439,27 +1441,23 @@ et:
     enable_type_in_project: Luba kasutada tüüpi "%{type}" projektis
     end: Lõpp
     errors:
-      not_implemented: The timeline could not be rendered because it uses a feature
-        that is not yet implemented.
-      report_comparison: The timeline could not render the configured comparisons.
-        Please check the appropriate section in the configuration, resetting it can
-        help solve this problem.
-      report_epicfail: The timeline could not be loaded due to an unexpected error.
-      report_timeout: The timeline could not be loaded in a reasonable amount of time.
+      not_implemented: Ajakava ei saa koostada, kuna see kasutab funktsiooni, mis
+        pole veel realiseeritud.
+      report_comparison: Ajakava ei saa kujutada konfigureeritud võrdlusi. Palun kontrollige
+        konfiguratsiooni vastavat jaotist, selle andmete algväärtustamine võib aidata
+        probleemi lahendada.
+      report_epicfail: Ajakava ei saa laadida ootamatu tõrke tõttu.
+      report_timeout: Ajakava ei saa laadida vastuvõetava aja jooksul.
     filter:
       errors:
-        timeframe_start: 'The timeframe start '
-        timeframe_end: 'The timeframe end '
-        compare_to_relative: 'The value of the relative comparison '
-        compare_to_absolute: 'The value of the absolute comparison '
-        planning_element_time_relative_one: 'The start for work packages in a certain
-          timeframe '
-        planning_element_time_relative_two: 'The end for work packages in a certain
-          timeframe '
-        planning_element_time_absolute_one: 'The start for work packages in a certain
-          timeframe  '
-        planning_element_time_absolute_two: 'The end for work packages in a certain
-          timeframe  '
+        timeframe_start: 'Perioodi algus '
+        timeframe_end: 'Perioodi lõpp '
+        compare_to_relative: 'Suhtelise võrdluse väärtus '
+        compare_to_absolute: 'Absoluutse võrdluse väärtus '
+        planning_element_time_relative_one: 'Teatud perioodis olevate teemade algus '
+        planning_element_time_relative_two: 'Teatud perioodis olevate teemade lõpp '
+        planning_element_time_absolute_one: 'Teatud perioodis olevate teemade algus  '
+        planning_element_time_absolute_two: 'Teatud perioodis olevate teemade lõpp  '
       sort:
         sortation: Sorteeri
         alphabet: tähestikuliselt
@@ -1475,33 +1473,33 @@ et:
         status: Olek
         responsible: Vastutaja
         start_date: Alguskuupäev
-      columns: Columns
-      comparisons: Comparisons
+      columns: Väljad
+      comparisons: Võrdlused
       comparison:
-        absolute: Absolute
-        none: None
-        relative: Relative
-        compare_relative: Compare current planning to %{timespan} ago
-        compare_absolute: Compare current planning to %{date}
+        absolute: Absoluutne
+        none: Mittemingi
+        relative: Suhteline
+        compare_relative: Võrdle kehtivat plaani plaaniga %{timespan} tagasi
+        compare_absolute: Võrdle praegust plaani kuupäeval %{date} kehtinud plaaniga
       time_relative:
         days: päeva
         weeks: nädalat
         months: kuud
       exclude_own_work_packages: "Ära kuva minu poolt lisatud teemad"
-      exclude_reporters: Hide other projects
+      exclude_reporters: Peida muud projektid
       exclude_empty: Peida tühjad projektid
       grouping: Rühmitamine
       grouping_hide_group: Peida rühm "%{group}"
       grouping_one: Esimene grupeerimise kriteerium
-      grouping_one_phrase: Is a subproject of
+      grouping_one_phrase: On alamprojektiks projektile
       grouping_other: Muu
       grouping_two: Teine grupeerimise kriteerium
       grouping_two_phrase: On seotud projekti tüübiga
       hide_chart: Peida diagramm
       noneElement: "(pole)"
       noneSelection: "(pole)"
-      outline: Initial outline expansion
-      parent: Show subprojects of
+      outline: Esmase kontuuri laiendamine
+      parent: Näita alamprojekte
       work_package_filters: Filtreeri teemasid
       work_package_responsible: Kuva teemad nende vastutajatega
       work_package_assignee: Kuva teemad nende tegijatega
@@ -1533,19 +1531,18 @@ et:
     new_timeline: Uus aruanne ajakava kohta
     no_projects_for_reporting_available: Pole ühtki projekti mille juurde võiks lisada
       aruandluse.
-    no_right_to_view_timeline: You do not have the necessary permission to view the
-      linked timeline.
-    no_timeline_for_id: There is no timeline with ID %{id}.
-    notice_successful_deleted_all_elements: Successfully deleted all elements
-    outline: Reset Outline
+    no_right_to_view_timeline: Sul pole lingitud ajakava vaatamiseks vajalikke õigusi.
+    no_timeline_for_id: Ei ole olemas ajakava, mille ID on %{id}.
+    notice_successful_deleted_all_elements: Kõikide elementide kustutamine õnnestus
+    outline: Lähtesta kontuur
     outlines:
-      aggregation: Show aggregations only
-      level1: Expand level 1
-      level2: Expand level 2
-      level3: Expand level 3
-      level4: Expand level 4
-      level5: Expand level 5
-      all: Show all
+      aggregation: Näita ainult summeeritult
+      level1: Laienda tasemele 1
+      level2: Laienda tasemele 2
+      level3: Laienda tasemele 3
+      level4: Laienda tasemele 4
+      level5: Laienda tasemele 5
+      all: Näita kõiki
     reporting_for_project:
       show: 'Status reported to project: %{title}'
       edit_delete: 'status report for project: %{title}'
@@ -1613,25 +1610,25 @@ et:
     lock: Lock permanently
     locked: locked permanently
     registered: registered
-    reset_failed_logins: Reset failed logins
-    status_user_and_brute_force: "%{user} and %{brute_force}"
-    unlock: Unlock
-    unlock_and_reset_failed_logins: Unlock and reset failed logins
-  version_status_closed: closed
-  version_status_locked: locked
-  version_status_open: open
-  warning_attachments_not_saved: "%{count} file(s) could not be saved."
-  menu_item: Menu item
-  menu_item_setting: Visibility
-  wiki_menu_item_for: Menu item for wikipage "%{title}"
-  wiki_menu_item_setting: Visibility
-  wiki_menu_item_new_main_item_explanation: You are deleting the only main wiki menu
-    item. You now have to choose a wiki page for which a new main item will be generated.
-    To delete the wiki the wiki module can be deactivated by project administrators.
-  wiki_menu_item_delete_not_permitted: The wiki menu item of the only wiki page cannot
-    be deleted.
-  query_menu_item_for: Menu item for query "%{title}"
+    reset_failed_logins: Lähtesta ebaõnnestunud sisselogimised
+    status_user_and_brute_force: "%{user} ja %{brute_force}"
+    unlock: Aktiveeri
+    unlock_and_reset_failed_logins: Aktiveeri ja lähtesta ebaõnnestunud sisselogimised
+  version_status_closed: suletud
+  version_status_locked: lukustatud
+  version_status_open: avatud
+  warning_attachments_not_saved: "%{count} faili ei saa salvestada."
+  menu_item: Menüüvalik
+  menu_item_setting: Nähtavus
+  wiki_menu_item_for: Menüüvalik vikilehele "%{title}"
+  wiki_menu_item_setting: Nähtavus
+  wiki_menu_item_new_main_item_explanation: Sa oled kustutamas ainsat viki põhilehele
+    viivat menüüvalikut. Nüüd pead sa valima ühe viki lehtedest, mille jaoks genereeritakse
+    uus peamine menüüvalik. Kui soovid hoopiski vabaneda vikilehtedest, siis palu
+    projekti administraatoril viki moodul välja lülitada.
+  wiki_menu_item_delete_not_permitted: Ainsa vikilehe menüüvalikut ei saa kustutada.
+  query_menu_item_for: Menüüvalik päringule "%{title}"
   work_package:
     updated_automatically_by_child_changes: _Uuendati automaatselt, kuna muudeti alamteemat
       %{child}_
-  nothing_to_preview: Nothing to preview
+  nothing_to_preview: Eelvaateks pole midagi näidata
