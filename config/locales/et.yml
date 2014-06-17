@@ -85,7 +85,7 @@ et:
         homepage: Koduleht
         identifier: Identifikaator
         work_packages: Teemad
-        parent: Alamprojektid
+        parent: "Ülemprojekt"
         versions: Versioonid
         project_type: Projekti tüüp
         responsible: Vastutaja
@@ -366,14 +366,16 @@ et:
   button_configure_menu_entry: Muuda menüükäsk
   button_delete_menu_entry: Kustuta menüükäsk
   copy_project:
-    started: Started to copy project "%{source_project_name}" to "%{target_project_name}".
-      You will be informed by Mail as soon as "%{target_project_name}" is available.
-    failed: Cannot copy project %{source_project_name}
-    succeeded: Created project %{target_project_name}
-    errors: Error
+    started: Alustatud andmete kopeerimist projektist "%{source_project_name}" projekti
+      "%{target_project_name}". Teid teavitatakse kirjaga kohe kui projekt "%{target_project_name}"
+      on saadaval.
+    failed: Projekti %{source_project_name} ei saa kopeerida
+    succeeded: Projekt %{target_project_name} on loodud
+    errors: Tõrge
     text:
-      failed: Could not copy project "%{source_project_name}" to project "%{target_project_name}".
-      succeeded: Copied project "%{source_project_name}" to "%{target_project_name}".
+      failed: Ei saanud kopeerida andmeid projektist "%{source_project_name}" projekti
+        "%{target_project_name}".
+      succeeded: Projekti "%{source_project_name}" andmed kopeeriti projekti "%{target_project_name}".
   create_child_page: Loo uus alamleht
   create_child_page_for: 'Loo uus alamleht: "%{title}"'
   create_new_page: Loo uus leht
@@ -565,7 +567,7 @@ et:
     uuesti.
   events:
     project: Projekti on muudetud
-    changeset: Toimiku sissekanded on muutunud
+    changeset: Toimikut on muudetud
     message: Sõnum on muudetud
     news: Uudised
     reply: Vastatud
@@ -821,7 +823,7 @@ et:
   label_not_contains: ei sisalda
   label_not_equals: ei ole
   label_notify_member_plural: Saada liikmetele teavitused ekirjaga
-  label_open_menu: Open menu
+  label_open_menu: Ava menüü
   label_open_work_packages: avatud
   label_open_work_packages_plural: avatud
   label_optional_description: Teave
@@ -1554,72 +1556,73 @@ et:
       level5: Laienda tasemele 5
       all: Näita kõiki
     reporting_for_project:
-      show: 'Status reported to project: %{title}'
-      edit_delete: 'status report for project: %{title}'
-      history: 'History for status for project: %{title}'
+      show: Projekti %{title} oleku aruanne
+      edit_delete: oleku aruanne projektile %{title}
+      history: Projekti %{title} olekute ajalugu
     reporting:
-      delete: 'Delete status: %{comment}'
-      edit: 'Edit status: %{comment}'
-      show: 'Status: %{comment}'
-    planning_element_update: 'Update: %{title}'
+      delete: 'Kustuta olek: %{comment}'
+      edit: 'Muuda olekut: %{comment}'
+      show: 'Olek: %{comment}'
+    planning_element_update: 'Muudatus: %{title}'
     work_packages_are_displayed_in_aggregations: Teemad näidetakse koondatuna
-    project_association_new: Add project dependency
-    project_association_new_for_with: Set dependency for “%{project_a}” with
-    project_association_with_other: Project dependency between “%{project_a}” and
-      “%{project_b}”
-    project_association_of_type: Dependency to project of type “%{type}”
-    project_type_could_not_be_saved: Project type could not be saved
-    type_could_not_be_saved: Type could not be saved
-    reporting_could_not_be_saved: Reporting could not be saved
-    properties: Properties
-    really_delete_color: Are you sure, you want to delete the following color? Types
-      using this color will not be deleted.
-    really_delete_project_association_between_project_a_and_project_b: Are you sure,
-      you want to delete the dependency between “%{project_a}” and “%{project_b}”?
-    really_delete_project_type: Are you sure, you want to delete the following project
-      type? Projects using this type will not be deleted.
-    really_delete_timeline: Are you sure, you want to delete the following timeline
-      report? Work packages shown in this timeline report will not be deleted.
-    really_delete_reporting: Are you sure, you want to delete the following reporting?
-      Previous reporting statuses will be deleted, too.
-    start: Start
-    timeline: Timeline report
-    timelines: Timeline reports
-    settings: Timelines
-    vertical_work_package: Vertical work packages
-    without_project_type: Without project type
-    you_are_viewing_the_selected_timeline: You are viewing the selected timeline report
+    project_association_new: Lisa projekti sõltuvus
+    project_association_new_for_with: Sea projektile “%{project_a}” sõltuvus
+    project_association_with_other: Sõltuvus projektide “%{project_a}” ja “%{project_b}”
+      vahel
+    project_association_of_type: Sõltuvus projekti tüübile “%{type}”
+    project_type_could_not_be_saved: Projekti tüüpi ei saa salvestada
+    type_could_not_be_saved: Tüüpi ei saa salvestada
+    reporting_could_not_be_saved: Aruandlust ei saa salvestada
+    properties: Atribuudid
+    really_delete_color: Kas oled kindel, et tahad seda värvi kustutada? Tüübid, mis
+      seda värvi kasutavad, jäävad alles.
+    really_delete_project_association_between_project_a_and_project_b: Kas oled kindel,
+      et tahad kustutada sõltuvuse projektide “%{project_a}” ja “%{project_b}” vahel?
+    really_delete_project_type: Kas sa oled kindel, et tahad kustutada selle projektitüübi?
+      Projektid, mis kasutavad seda tüüpi, jäävad alles.
+    really_delete_timeline: Kas sa oled kindel, et tahad kustutada seda aruannet?
+      Aruandes näidatud teemad jäävad alles.
+    really_delete_reporting: Kas sa oled kindel, et tahad seda aruannet kustutada?
+      Eelmised aruande olekud kustutatakse ka ära.
+    start: Algus
+    timeline: Perioodi aruanne
+    timelines: Perioodi aruanded
+    settings: Perioodid
+    vertical_work_package: Vertikaalsed teemad
+    without_project_type: Ilma projektitüübita
+    you_are_viewing_the_selected_timeline: Sa näed valitud perioodi aruannet
     zoom:
-      in: Zoom in
-      out: Zoom out
-      days: Days
-      weeks: Weeks
-      months: Months
-      quarters: Quarters
-      years: Years
+      in: Vaata lähemalt
+      out: Vaata kaugemalt
+      days: Päevad
+      weeks: Nädalad
+      months: Kuud
+      quarters: Kvartalid
+      years: Aastad
   queries:
-    apply_filter: Apply preconfigured filter
-  total_progress: Total progress
+    apply_filter: Eelseadistatud filtri rakendamine
+  total_progress: Täielik edenemine
   user:
-    all: all
-    active: active
-    activate: Activate
-    activate_and_reset_failed_logins: Activate and reset failed logins
-    authentication_provider: Authentication Provider
-    authentication_settings_disabled_due_to_external_authentication: This user authenticates
-      via an external authentication provider, so there is no password in OpenProject
-      to be changed.
-    assign_random_password: Assign random password (sent to user via e-mail)
-    blocked: locked temporarily
+    all: kõik
+    active: aktiivne
+    activate: Aktiveerimine
+    activate_and_reset_failed_logins: Aktiveeri ja unusta ebaõnnestunud sisselogimised
+    authentication_provider: Autentimisteenuse pakkuja
+    authentication_settings_disabled_due_to_external_authentication: See kasutaja
+      autendib end välise autentimisteenuse pakkuja abil, seega ei saa parooli OpenProject'is
+      muuta.
+    assign_random_password: Määratakse juhuslik parool (saadetakse kasutajale e-posti
+      teel)
+    blocked: ajutiselt blokeeritud
     blocked_num_failed_logins:
-      one: locked temporarily (one failed login attempt)
-      other: locked temporarily (%{count} failed login attempts)
-    deleted: Deleted user
-    error_status_change_failed: 'Changing the user status failed due to the following
-      errors: %{errors}'
-    lock: Lock permanently
-    locked: locked permanently
-    registered: registered
+      one: ajutiselt blokeeritud (üks ebaõnnestunud sisselogimise katse)
+      other: ajutiselt blokeeritud (%{count} ebaõnnestunud sisselogimise katset)
+    deleted: Kustutatud kasutaja
+    error_status_change_failed: 'Kasutaja oleku muutmine nurjus järgmiste tõrgete
+      tõttu: %{errors}'
+    lock: Lukustada jäädavalt
+    locked: lukustatud jäädavalt
+    registered: registreeritud
     reset_failed_logins: Lähtesta ebaõnnestunud sisselogimised
     status_user_and_brute_force: "%{user} ja %{brute_force}"
     unlock: Aktiveeri
