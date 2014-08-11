@@ -16,8 +16,6 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,doc,lib}/**/*"] + %w(README.md)
 
   s.add_dependency "rails", "~> 3.2.14"
-  s.add_dependency "httmultiparty"
   s.add_dependency "rubyzip"
-  s.add_dependency "rest-client"
   s.add_dependency 'crowdin-api', '~> 0.2.3'
 end
