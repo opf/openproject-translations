@@ -1,588 +1,572 @@
 ---
-sk:
+da:
   account:
-    delete: Odstrániť konto
-    delete_confirmation: Naozaj chcete odstrániť toto konto?
-    deleted: "Účet bol úspešne vymazaný"
+    delete: Slet konto
+    delete_confirmation: Er du sikker på, du vil slette denne konto?
+    deleted: Kontoen slettet med succes
     deletion_info:
       data_consequences:
-        other: Of the data the user created (e.g. e-mail, preferences, work packages,
-          wiki entries) as much as possible will be deleted. Note however, that data
-          like work packages and wiki entries can not be deleted without impeding
-          the work of the other users. Such data is hence reassigned to an account
-          called "Deleted user". As the data of every deleted account is reassigned
-          to this account it will not be possible to distinguish the data the user
-          created from the data of another deleted account.
-        self: Of the data you created (e.g. e-mail, preferences, work packages, wiki
-          entries) as much as possible will be deleted. Note however, that data like
-          work packages and wiki entries can not be deleted without impeding the work
-          of the other users. Such data is hence reassigned to an account called "Deleted
-          user". As the data of every deleted account is reassigned to this account
-          it will not be possible to distinguish the data you created from the data
-          of another deleted account.
-      heading: Delete account %{name}
+        other: Så meget som muligt af brugerens data vil blive slettet (fx e-mail,
+          præferencer, arbejdspakker og bidrag til wiki). Bemærk dog at data som arbejdspakker
+          og bidrag til wiki ikke kan slettes uden at påvirke andre brugeres arbejde.
+          Sådanne data bliver hensat til en særlig konto med navnet "Slettet bruger".
+          Da data fra alle slettede brugere bliver flyttet til denne konto vil det
+          ikke være muligt at skelne mellem data skabt af den ene eller den anden
+          slettede bruger.
+        self: Så meget som muligt af dine data vil blive slettet (fx e-mail, præferencer,
+          arbejdspakker og bidrag til wiki). Bemærk dog at data som arbejdspakker
+          og bidrag til wiki ikke kan slettes uden at påvirke andre brugeres arbejde.
+          Sådanne data bliver hensat til en særlig konto med navnet "Slettet bruger".
+          Da data fra alle slettede brugere bliver flyttet til denne konto vil det
+          ikke være muligt at skelne mellem data skabt af dig eller en anden slettede
+          bruger.
+      heading: Slet konto %{name}
       info:
-        other: Odstránenie používateľského konta je nevratná akcia.
-        self: Odstránenie vášho používateľského konta je nevratná akcia.
+        other: Sletning af kontoen er en uigenkaldelig handling.
+        self: Sletning af din konto er en uigenkaldelig handling.
       login_consequences:
-        other: "Účet sa odstráni zo systému. Potom používateľ už nebude schopný prihlásiť
-          sa jeho s jeho prihlasovacími údajmi. Zmazaný užívateľ sa bude môcť stať
-          užívateľom tejto aplikácie po potvrdení tejto žiadosti."
-        self: Your account will be deleted from the system. Therefore, you will no
-          longer be able to log in with your current credentials. If you choose to
-          become a user of this application again, you can do so by using the means
-          this application grants.
-  actionview_instancetag_blank_option: Please select
+        other: Kontoen vil blive slettet fra systemet. Derfor vil brugeren ikke længere
+          kunne logge ind med sin nuværende oplysninger. Han eller hun vil dog kunne
+          blive bruger af denne app igen med en ny registrering.
+        self: Din konto vil blive slettet fra systemet. Derfor vil du ikke længere
+          kunne logge ind med dine nuværende oplysninger. Du vil dog kunne blive bruger
+          af denne app igen med en ny registrering.
+  actionview_instancetag_blank_option: Vælg venligst
   activerecord:
     attributes:
       attachment:
-        downloads: Downloads
-        filename: File
-        filesize: Size
+        downloads: Hentninger
+        filename: Fil
+        filesize: Størrelse
       auth_source:
-        account: Account
-        attr_firstname: Firstname attribute
-        attr_lastname: Lastname attribute
-        attr_login: Login attribute
-        attr_mail: Email attribute
-        base_dn: Base DN
-        host: Host
-        onthefly: On-the-fly user creation
+        account: Konto
+        attr_firstname: Fornavn
+        attr_lastname: Efternavn
+        attr_login: Login
+        attr_mail: E-mail
+        base_dn: DN base
+        host: Vært
+        onthefly: Brugeroprettelse undervejs
         port: Port
       comment:
-        commented: Commented
+        commented: Kommenterede
       custom_field:
-        default_value: Default value
-        editable: Editable
+        default_value: Forhåndsvalgt værdi
+        editable: Redigerbar
         field_format: Format
-        is_filter: Used as a filter
-        is_required: Required
-        max_length: Maximum length
-        min_length: Minimum length
-        possible_values: Possible values
-        regexp: Regular expression
-        searchable: Searchable
-        visible: Visible
+        is_filter: Bruges som filter
+        is_required: Påkrævet
+        max_length: Største længde
+        min_length: Mindste længde
+        possible_values: Mulige værdier
+        regexp: Normalt udtryk
+        searchable: Søgbar
+        visible: Synlig
       custom_value:
-        value: Value
+        value: Værdi
       relation:
-        delay: Delay
-        from: Work Package
-        to: Related work package
+        delay: Forsinkelse
+        from: Arbejdspakke
+        to: Sammenhørende arbejdspakker
       status:
-        is_closed: Work package closed
+        is_closed: Lukket arbejdspakke
       journal:
-        notes: Notes
+        notes: Noter
       member:
-        roles: Roles
+        roles: Roller
       project:
-        homepage: Homepage
-        identifier: Identifier
-        work_packages: Work Packages
-        parent: Subproject of
-        versions: Versions
-        project_type: Project type
-        responsible: Responsible
-        types: Types
-        queries: Queries
+        homepage: Hjemmeside
+        identifier: ID
+        work_packages: Arbejdspakke
+        parent: Delprojekt af
+        versions: Versioner
+        project_type: Projekttype
+        responsible: Ansvarlig
+        types: Typer
+        queries: Forespørgsler
       query:
-        column_names: Columns
-        group_by: Group results by
-        filters: Filters
+        column_names: Kolonner
+        group_by: Grupper resultater efter
+        filters: Filtre
       repository:
-        url: URL
+        url: URL-adresse
       role:
-        assignable: Work packages can be assigned to this role
+        assignable: Arbejdspakker kan tilknyttes denne rolle
       time_entry:
-        activity: Activity
-        hours: Hours
-        work_package: Work Package
-        spent_on: Date
+        activity: Aktivitet
+        hours: Timer
+        work_package: Arbejdspakke
+        spent_on: Dato
         type: Type
       type:
-        is_in_roadmap: Work packages displayed in roadmap
-        in_aggregation: Work packages displayed in aggregation
-        is_milestone: Work packages displayed as milestone
-        color: Color
+        is_in_roadmap: Arbejdspakker vist i køreplanen
+        in_aggregation: Arbejdspakker vist i helhed
+        is_milestone: Arbejdspakker vist som milepæle
+        color: Farve
       user:
         admin: Administrator
-        auth_source: Authentication mode
+        auth_source: Godkendelsestilstand
         identity_url: OpenID URL
-        language: Language
-        last_login_on: Last connection
-        mail_notification: Email notifications
-        new_password: New password
-        password_confirmation: Confirmation
-        force_password_change: Enforce password change on next login
+        language: Sprog
+        last_login_on: Seneste forbindelse
+        mail_notification: E-mailpåmindelser
+        new_password: Ny adgangskode
+        password_confirmation: Bekræftelse
+        force_password_change: "Ændring af adgangskode virksom ved næste login"
       user_preference:
-        comments_sorting: Display comments
-        hide_mail: Hide my email address
-        impaired: Accessibility mode
-        time_zone: Time zone
-        warn_on_leaving_unsaved: Warn me when leaving a page with unsaved text
+        comments_sorting: Vis kommentarer
+        hide_mail: Skjul min e-mailadresse
+        impaired: Tilgængelighedstilstand
+        time_zone: Tidszone
+        warn_on_leaving_unsaved: Advar mig, når jeg forsøger at forlade en side med
+          ugemt tekst
       version:
-        effective_date: Due date
-        sharing: Sharing
+        effective_date: Forfaldsdato
+        sharing: Deler
       wiki:
-        start_page: Start page
+        start_page: Startside
       wiki_content:
-        text: Text
+        text: Tekst
       wiki_page:
-        parent_title: Parent page
-        redirect_existing_links: Redirect existing links
+        parent_title: Overordnet side
+        redirect_existing_links: Omdiriger eksisterende links
       planning_element_type_color:
-        name: Name
-        hexcode: Hex code
+        name: Navn
+        hexcode: Hex kode
       project_association:
-        description: Cause
+        description: "Årsag"
       project_type:
-        allows_association: Allows association
-        name: Name
-        reported_project_statuses: Reported project statuses
-        position: Position
+        allows_association: Tillader sammenknytning
+        name: Navn
+        reported_project_statuses: Rapporterede statusser for projekt
+        position: Placering
       timeline:
-        name: Name
+        name: Navn
         options: ''
       reporting:
-        reported_project_status_comment: Status comment
-        reporting_to_project: Reports to project
-        reported_project_status: Project status
-        created_at: Created
+        reported_project_status_comment: Kommentar til status
+        reporting_to_project: Rapporter til projekt
+        reported_project_status: Projektstatus
+        created_at: Oprettet
       work_package:
-        done_ratio: "% done"
-        fixed_version: Target version
-        parent: Parent
-        parent_issue: Parent
-        parent_work_packae: Parent
-        priority: Priority
-        progress: "% done"
-        responsible: Responsible
-        spent_time: Spent time
-        subproject: Subproject
-        time_entries: Log time
+        done_ratio: "% udført"
+        fixed_version: "Ønsket version"
+        parent: Overordnet
+        parent_issue: Overordnet
+        parent_work_packae: Overordnet
+        priority: Prioritet
+        progress: "% udført"
+        responsible: Ansvarlig
+        spent_time: Brugt tid
+        subproject: Underprojekt
+        time_entries: Log tidspunkt
         type: Type
-        watcher: Watcher
+        watcher: Overvåger
     errors:
       messages:
-        accepted: must be accepted
-        blank: can't be blank
-        cant_link_a_work_package_with_a_descendant: A work package cannot be linked
-          to one of its subtasks
-        circular_dependency: This relation would create a circular dependency
-        confirmation: doesn't match confirmation
-        empty: can't be empty
-        equal_to: must be equal to %{count}
-        even: must be even
-        exclusion: is reserved
-        greater_than: must be greater than %{count}
-        greater_than_or_equal_to: must be greater than or equal to %{count}
-        greater_than_start_date: must be greater than start date
-        inclusion: is not included in the list
-        invalid: is invalid
-        less_than: must be less than %{count}
-        less_than_or_equal_to: must be less than or equal to %{count}
-        not_a_date: is not a date
-        not_a_number: is not a number
-        not_an_integer: is not an integer
-        not_same_project: doesn't belong to the same project
-        odd: must be odd
-        taken: has already been taken
-        too_long: is too long (maximum is %{count} characters)
-        too_short: is too short (minimum is %{count} characters)
-        wrong_length: is the wrong length (should be %{count} characters)
-        after: must be after %{date}
-        after_or_equal_to: must be after or equal to %{date}
-        before: must be before %{date}
-        before_or_equal_to: must be before or equal to %{date}
-        could_not_be_copied: could not be (fully) copied
+        accepted: skal accepteres
+        blank: må ikke være tomt
+        cant_link_a_work_package_with_a_descendant: En arbejdspakke kan ikke knyttes
+          til en af dens underopgaver
+        circular_dependency: Denne relation vil skabe en cirkulær afhængighed
+        confirmation: svarer ikke til bekræftelse
+        empty: må ikke være tomt
+        equal_to: skal være lig med %{count}
+        even: skal være lige
+        exclusion: er reserveret
+        greater_than: skal være større end %{count}
+        greater_than_or_equal_to: skal være større end eller lig med %{count}
+        greater_than_start_date: skal være senere end startdatoen
+        inclusion: er ikke medtaget på listen
+        invalid: er ugyldig
+        less_than: skal være mindre end %{count}}
+        less_than_or_equal_to: skal være mindre end eller lig med  %{count}
+        not_a_date: er ikke en dato
+        not_a_number: er ikke et tal
+        not_an_integer: er ikke et heltal
+        not_same_project: hører ikke til samme projekt
+        odd: skal være ulige
+        taken: er allerede taget
+        too_long: 'er for lang (højst: %{count} tegn)'
+        too_short: 'er for kort (mindst: %{count} tegn)'
+        wrong_length: har forkert længde (skal være %{count} tegn)
+        after: skal være senere end %{date}
+        after_or_equal_to: skal være tidligst den %{date}
+        before: skal være før %{date}
+        before_or_equal_to: skal være senest den %{date}
+        could_not_be_copied: kunne ikke kopieres (i fuldt omfang)
       models:
         project_association:
-          identical_projects: can not be created from one project to itself
-          project_association_not_allowed: does not allow associations
+          identical_projects: kan ikke oprettes fra et projekt til sig selv
+          project_association_not_allowed: tillader ikke sammensætninger
         work_package:
-          is_not_a_valid_target_for_time_entries: 'Work package #%{id} is not a valid
-            target for reassigning the time entries.'
+          is_not_a_valid_target_for_time_entries: 'Arbejdspakke # %{id} er ikke et
+            gyldig mål for genfordeling af tider.'
           attributes:
             due_date:
-              not_start_date: is not on start date, although this is required for
-                milestones
+              not_start_date: er ikke på startdato, selvom dette er påkrævet for milepæle
             parent_id:
-              cannot_be_milestone: cannot be a milestone
-              cannot_be_in_another_project: cannot be in another project
+              cannot_be_milestone: kan ikke være en milepæl
+              cannot_be_in_another_project: kan ikke være i et andet projekt
               not_a_valid_parent: is invaild
-              does_not_exist: does not exist
+              does_not_exist: findes ikke
             status_id:
-              status_transition_invalid: no valid transition exists from old to new
-                status for the current user roles
+              status_transition_invalid: der findes ingen gyldig overgang fra gammel
+                til ny status for de aktuelle brugerroller
             priority_id:
-              only_active_priorities_allowed: needs to be active
+              only_active_priorities_allowed: skal være aktiv
         user:
           attributes:
             password:
-              weak: 'must contain characters of the following classes (at least %{min_count}
-                of %{all_count}): %{rules}'
-              lowercase: lowercase (e.g. 'a')
-              uppercase: uppercase (e.g. 'A')
-              numeric: numeric (e.g. '1')
-              special: special (e.g. '%')
+              weak: 'skal indeholde tegn fra de følgende typer (mindst %{min_count}
+                af %{all_count}): %{rules}'
+              lowercase: små bogstaver (f.eks. "a")
+              uppercase: store bogstaver (f.eks. "A")
+              numeric: tal (fx "1")
+              special: Special (fx "%")
               reused:
-                one: has been used before. Please choose one that is different from
-                  your last one.
-                other: has been used before. Please choose one that is different from
-                  your last %{count}.
-                few: has been used before. Please choose one that is different from
-                  your last %{count}.
+                one: er blevet brugt før. Vælg en, der er forskellig fra din seneste.
+                other: har været brugt før. Vælg en, der er forskellig fra dine seneste
+                  %{count}.
         member:
-          principal_blank: Please choose at least one user or group.
-          role_blank: Please choose at least one role.
+          principal_blank: Vælg venligst mindst én bruger eller gruppe.
+          role_blank: Vælg venligst mindst én rolle.
       template:
-        body: 'Please check the following fields:'
+        body: 'Kontroller venligst følgende felter:'
         header:
-          one: 1 error prohibited this %{model} from being saved
-          other: "%{count} errors prohibited this %{model} from being saved"
-          few: "%{count} errors prohibited this %{model} from being saved"
+          one: 1 fejl forhindrede at dette %{model} blev gemt
+          other: "%{count} fejl forhindrede at dette %{model} blev gemt"
     models:
-      attachment: File
+      attachment: Fil
       board: Forum
-      comment: Comment
-      custom_field: Custom field
-      group: Group
-      issue: Issue
-      category: Category
-      status: Work package status
-      member: Member
-      news: News
-      project: Project
-      query: Custom query
+      comment: Kommentar
+      custom_field: Selvvalgt felt
+      group: Gruppe
+      issue: Emne
+      category: Kategori
+      status: Status for arbejdspakke
+      member: Medlem
+      news: Nyheder
+      project: Projekt
+      query: Selvvalgt forespørgsel
       role:
-        one: Role
-        other: Roles
-        few: Roles
+        one: Rolle
+        other: Roller
       type: Type
-      planning_element: Planning element
-      project_type: Project type
-      user: User
+      planning_element: Planlægningselement
+      project_type: Projekttype
+      user: Bruger
       version: Version
       wiki: Wiki
-      wiki_page: Wiki page
-      workflow: Workflow
+      wiki_page: Wiki-side
+      workflow: Arbejdsstrøm
   errors:
-    header_invalid_fields: 'There were problems with the following fields:'
+    header_invalid_fields: 'Der var problemer med disse felter:'
   activity:
-    created: 'Created: %{title}'
-    updated: 'Updated: %{title}'
+    created: 'Oprettet: %{title}'
+    updated: 'Opdateret: %{title}'
   attributes:
-    active: Active
-    assigned_to: Assignee
-    attachments: Attachments
-    author: Author
-    base: 'General Error:'
-    blocks_ids: Blocks
-    category: Category
-    comments: Comment
-    content: Content
-    created_at: Created on
-    created_on: Created on
-    custom_values: Custom fields
-    default_columns: Default columns
-    description: Description
-    display_sums: Display Sums
-    due_date: Due date
-    estimated_hours: Estimated time
-    firstname: First name
-    group: Group
-    groupname: Group name
-    is_default: Default value
-    is_for_all: For all projects
-    is_public: Public
-    lastname: Last name
+    active: Aktiv
+    assigned_to: Tovholder
+    attachments: Vedhæftninger
+    author: Forfatter
+    base: 'Generel fejl:'
+    blocks_ids: Blokke
+    category: Kategori
+    comments: Kommentar
+    content: Indhold
+    created_at: Oprettet den
+    created_on: Oprettet den
+    custom_values: Selvvalgte felter
+    default_columns: Forudvalgte kolonner
+    description: Beskrivelse
+    display_sums: Vis totaler
+    due_date: Forfaldsdato
+    estimated_hours: Anslået tid
+    firstname: Fornavn
+    group: Gruppe
+    groupname: Gruppenavn
+    is_default: Forhåndsvalgt værdi
+    is_for_all: For alle projekter
+    is_public: Offentlig
+    lastname: Efternavn
     login: Login
-    mail: Email
-    name: Name
-    password: Password
-    project: Project
+    mail: E-mail
+    name: Navn
+    password: Adgangskode
+    project: Projekt
     role: Role
-    start_date: Start date
+    start_date: Start dato
     status: Status
-    subject: Subject
-    summary: Summary
-    title: Title
+    subject: Emne
+    summary: Opsummering
+    title: Titel
     type: Type
-    updated_at: Updated on
-    updated_on: Updated on
-    user: User
+    updated_at: Opdateret den
+    updated_on: Opdateret den
+    user: Bruger
     version: Version
-    work_package: Work package
-  button_add: Add
-  button_add_watcher: Add watcher
-  button_annotate: Annotate
-  button_apply: Apply
-  button_archive: Archive
-  button_back: Back
-  button_cancel: Cancel
-  button_change: Change
-  button_change_parent_page: Change parent page
-  button_change_password: Change password
-  button_check_all: Check all
-  button_clear: Clear
-  button_collapse_all: Collapse all
-  button_configure: Configure
-  button_copy: Copy
-  button_copy_and_follow: Copy and follow
-  button_create: Create
-  button_create_and_continue: Create and continue
-  button_delete: Delete
-  button_delete_watcher: Delete watcher %{name}
-  button_download: Download
-  button_duplicate: Duplicate
-  button_edit: Edit
-  button_edit_associated_wikipage: 'Edit associated Wiki page: %{page_title}'
-  button_expand_all: Expand all
+    work_package: Arbejdspakke
+  button_add: Tilføj
+  button_add_watcher: Tilføj overvåger
+  button_annotate: Anmærke
+  button_apply: Benyt
+  button_archive: Arkiv
+  button_back: Tilbage
+  button_cancel: Annuller
+  button_change: "Ændring"
+  button_change_parent_page: "Ændr overordnet side"
+  button_change_password: Skift adgangskode
+  button_check_all: Vælg alt
+  button_clear: Ryd
+  button_collapse_all: Fold alle sammen
+  button_configure: Opsæt
+  button_copy: Kopier
+  button_copy_and_follow: Kopier og følg
+  button_create: Opret
+  button_create_and_continue: Opret og fortsæt
+  button_delete: Slet
+  button_delete_watcher: Slet overvåger %{name}
+  button_download: Hent
+  button_duplicate: Lav dublet
+  button_edit: Rediger
+  button_edit_associated_wikipage: 'Rediger tilknyttet wiki-side: %{page_title}'
+  button_expand_all: Fold alle ud
   button_list: List
-  button_lock: Lock
-  button_log_time: Log time
+  button_lock: Lås
+  button_log_time: Log tidspunkt
   button_login: Login
-  button_move: Move
-  button_move_and_follow: Move and follow
-  button_quote: Quote
-  button_remove_widget: Remove widget
-  button_rename: Rename
-  button_reply: Reply
-  button_reset: Reset
-  button_rollback: Rollback to this version
-  button_save: Save
-  button_show: Show
-  button_sort: Sort
-  button_submit: Submit
+  button_move: Flyt
+  button_move_and_follow: Flyt og følg
+  button_quote: Citer
+  button_remove_widget: Fjern widget
+  button_rename: Omdøb
+  button_reply: Svar
+  button_reset: Nulstil
+  button_rollback: Vend tilbage til denne version
+  button_save: Gem
+  button_show: Vis
+  button_sort: Sorter
+  button_submit: Indsend
   button_test: Test
-  button_unarchive: Unarchive
-  button_uncheck_all: Uncheck all
-  button_unlock: Unlock
-  button_unwatch: Unwatch
-  button_update: Update
-  button_view: View
-  button_watch: Watch
-  button_manage_menu_entry: Configure menu item
-  button_add_menu_entry: Add menu item
-  button_configure_menu_entry: Configure menu item
-  button_delete_menu_entry: Delete menu item
-  create_child_page: Create new child page
-  create_child_page_for: 'Create new child page: "%{title}"'
-  create_new_page: Create new page
+  button_unarchive: Udpak
+  button_uncheck_all: Fjern alle markeringer
+  button_unlock: Lås op
+  button_unwatch: Stands overvågning
+  button_update: Opdater
+  button_view: Se
+  button_watch: Overvåg
+  button_manage_menu_entry: Opsæt menupunkt
+  button_add_menu_entry: Tilføj menupunkt
+  button_configure_menu_entry: Opsæt menupunkt
+  button_delete_menu_entry: Slet menupunkt
+  create_child_page: Opret ny underordnet side
+  create_child_page_for: 'Opret den nye underordnede side: "%{title}"'
+  create_new_page: Opret ny side
   date:
     abbr_day_names:
-    - Sun
-    - Mon
-    - Tue
-    - Wed
-    - Thu
-    - Fri
-    - Sat
+    - Søn
+    - Man
+    - Tir
+    - Ons
+    - Tor
+    - Fre
+    - Lør
     abbr_month_names:
     - 
     - Jan
     - Feb
     - Mar
     - Apr
-    - May
+    - Maj
     - Jun
     - Jul
     - Aug
     - Sep
-    - Oct
+    - Okt
     - Nov
     - Dec
     day_names:
-    - Sunday
-    - Monday
-    - Tuesday
-    - Wednesday
-    - Thursday
-    - Friday
-    - Saturday
+    - Søndag
+    - Mandag
+    - Tirsdag
+    - Onsdag
+    - Torsdag
+    - Fredag
+    - Lørdag
     formats:
-      default: "%m/%d/%Y"
-      long: "%B %d, %Y"
+      default: "%d/%m/%Y"
+      long: "%B %d %Y"
       short: "%b %d"
     month_names:
     - 
-    - January
-    - February
-    - March
+    - Januar
+    - Februar
+    - Marts
     - April
-    - May
-    - June
-    - July
+    - Maj
+    - Juni
+    - Juli
     - August
     - September
-    - October
+    - Oktober
     - November
     - December
     order:
-    - :year
-    - :month
-    - :day
+    - :år
+    - :måned
+    - :dag
   datetime:
     distance_in_words:
       about_x_hours:
-        one: about 1 hour
-        other: about %{count} hours
-        few: about %{count} hours
+        one: omkring 1 time
+        other: omkring %{count} timer
       about_x_months:
-        one: about 1 month
-        other: about %{count} months
-        few: about %{count} months
+        one: omkring 1 måned
+        other: omkring %{count} måneder
       about_x_years:
-        one: about 1 year
-        other: about %{count} years
-        few: about %{count} years
+        one: omkring 1 år
+        other: omkring %{count} år
       almost_x_years:
-        one: almost 1 year
-        other: almost %{count} years
-        few: almost %{count} years
-      half_a_minute: half a minute
+        one: knapt 1 år
+        other: knapt %{count} år
+      half_a_minute: et halvt minut
       less_than_x_minutes:
-        one: less than a minute
-        other: less than %{count} minutes
-        few: less than %{count} minutes
+        one: mindre end et minut
+        other: mindre end %{count} minutter
       less_than_x_seconds:
-        one: less than 1 second
-        other: less than %{count} seconds
-        few: less than %{count} seconds
+        one: mindre end 1 sekund
+        other: mindre end %{count} sekunder
       over_x_years:
-        one: over 1 year
-        other: over %{count} years
-        few: over %{count} years
+        one: mere end 1 år
+        other: mere end %{count} år
       x_days:
-        one: 1 day
-        other: "%{count} days"
-        few: "%{count} days"
+        one: 1 dag
+        other: "%{count} dage"
       x_minutes:
-        one: 1 minute
-        other: "%{count} minutes"
-        few: "%{count} minutes"
+        one: 1 minut
+        other: "%{count} minutter"
       x_months:
-        one: 1 month
-        other: "%{count} months"
-        few: "%{count} months"
+        one: 1 måned
+        other: "%{count} måneder"
       x_seconds:
-        one: 1 second
-        other: "%{count} seconds"
-        few: "%{count} seconds"
+        one: 1 sekund
+        other: "%{count} sekunder"
   default_activity_design: Design
-  default_activity_development: Development
-  default_status_closed: Closed
-  default_status_feedback: Feedback
-  default_status_in_progress: In Progress
-  default_status_new: New
-  default_status_rejected: Rejected
-  default_status_resolved: Resolved
-  default_priority_high: High
-  default_priority_immediate: Immediate
-  default_priority_low: Low
+  default_activity_development: Udvikling
+  default_status_closed: Lukket
+  default_status_feedback: Tilbagemelding
+  default_status_in_progress: Under udførsel
+  default_status_new: Ny
+  default_status_rejected: Afvist
+  default_status_resolved: Løst
+  default_priority_high: Høj
+  default_priority_immediate: Straks
+  default_priority_low: Lav
   default_priority_normal: Normal
-  default_priority_urgent: Urgent
-  default_role_anonymous: Anonymous
-  default_role_developer: Developer
-  default_role_manager: Manager
-  default_role_non_member: Non member
-  default_role_reporter: Reporter
-  default_type: Work Package
-  default_type_bug: Bug
-  default_type_feature: Feature
+  default_priority_urgent: Haster
+  default_role_anonymous: Anonymt
+  default_role_developer: Udvikler
+  default_role_manager: Ansvarlig
+  default_role_non_member: Ikke medlem
+  default_role_reporter: Rapportør
+  default_type: Arbejdspakke
+  default_type_bug: Fejl
+  default_type_feature: Funktion
   default_type_support: Support
-  default_type_phase: Phase
-  default_type_milestone: Milestone
-  description_active: Active?
-  description_attachment_toggle: Show/Hide attachments
-  description_autocomplete: This field uses autocomplete. While typing the title of
-    a work package you will receive a list of possible candidates. Choose one using
-    the arrow up and arrow down key and select it with tab or enter. Alternatively
-    you can enter the work package number directly.
-  description_available_columns: Available Columns
-  description_choose_project: Projects
-  description_compare_from: Compare from version
-  description_compare_to: Compare to version
-  description_current_position: 'You are here:'
-  description_date_from: Enter start date
-  description_date_range_interval: Choose range by selecting start and end date
-  description_date_range_list: Choose range from list
-  description_date_to: Enter end date
-  description_enter_number: Enter number
-  description_enter_text: Enter text
+  default_type_phase: Fase
+  default_type_milestone: Milepæl
+  description_active: Aktiv?
+  description_attachment_toggle: Vis/Skjul vedhæftede
+  description_autocomplete: Dette felt anvender autofuldførelse. Når du indtaster
+    titel på en arbejdspakke vil du blive foreslået en række muligheder. Vælg en ved
+    at bruge piletasterne for op og ned, og vælg det med Tab eller Enter. Alternativt
+    kan du taste arbejdspakkens nummer direkte.
+  description_available_columns: Tilgængelige kolonner
+  description_choose_project: Projekter
+  description_compare_from: Sammenlign fra version
+  description_compare_to: Sammenlign til version
+  description_current_position: 'Du er her:'
+  description_date_from: Indtast startdato
+  description_date_range_interval: Udpeg interval ved at vælge start- og slutdato
+  description_date_range_list: Udpeg interval fra liste
+  description_date_to: Indtast slutdato
+  description_enter_number: Indtast nummer
+  description_enter_text: Indtast tekst
   description_filter: Filter
-  description_filter_toggle: Show/Hide filter
-  description_category_reassign: Choose category
-  description_message_content: Message content
-  description_my_project: You are member
-  description_notes: Notes
+  description_filter_toggle: Vis/Skjul filter
+  description_category_reassign: Vælg kategori
+  description_message_content: Meddelelsens indhold
+  description_my_project: Du er medlem
+  description_notes: Noter
   description_option_toggle: Show/Hide options
-  description_parent_work_package: Parent work package of current
-  description_project_scope: Search scope
-  description_query_sort_criteria_attribute: Sort attribute
-  description_query_sort_criteria_direction: Sort direction
-  description_search: Searchfield
-  description_select_work_package: Select work package
-  description_selected_columns: Selected Columns
-  description_sub_work_package: Sub work package of current
+  description_parent_work_package: Overordnet arbejdspakken for denne
+  description_project_scope: Bredde af søgning
+  description_query_sort_criteria_attribute: Sorteringsegenskab
+  description_query_sort_criteria_direction: Sorteringsretning
+  description_search: Søgefelt
+  description_select_work_package: Vælg arbejdspakke
+  description_selected_columns: Valgte kolonner
+  description_sub_work_package: Underordnet arbejdspakke til denne
   description_subwork_package: Sub work package of
-  description_toc_toggle: Show/Hide table of contents
-  description_user_mail_notification: Mail notification settings
-  description_wiki_subpages_reassign: Choose new parent page
-  direction: ltr
-  enumeration_activities: Activities (time tracking)
-  enumeration_work_package_priorities: Work package priorities
-  enumeration_system_activity: System Activity
-  enumeration_reported_project_statuses: Reported project status
-  error_can_not_archive_project: This project cannot be archived
-  error_can_not_delete_custom_field: Unable to delete custom field
-  error_can_not_delete_type: This type contains work packages and cannot be deleted.
-  error_can_not_remove_role: This role is in use and cannot be deleted.
-  error_can_not_reopen_work_package_on_closed_version: A work package assigned to
-    a closed version cannot be reopened
-  error_can_t_load_default_data: 'Default configuration could not be loaded: %{value}'
-  error_check_user_and_role: Please choose a user and a role.
-  error_work_package_done_ratios_not_updated: Work package done ratios not updated.
-  error_work_package_not_found_in_project: The work package was not found or does
-    not belong to this project
-  error_must_be_project_member: must be project member
-  error_no_default_work_package_status: No default work package status is defined.
-    Please check your configuration (Go to "Administration -> Work package statuses").
-  error_no_type_in_project: No type is associated to this project. Please check the
-    Project settings.
-  error_scm_annotate: The entry does not exist or cannot be annotated.
-  error_scm_command_failed: 'An error occurred when trying to access the repository:
-    %{value}'
-  error_scm_not_found: The entry or revision was not found in the repository.
-  error_unable_delete_status: Unable to delete work package status
-  error_unable_to_connect: Unable to connect (%{value})
-  error_workflow_copy_source: Please select a source type or role
-  error_workflow_copy_target: Please select target type(s) and role(s)
-  error_menu_item_not_created: Menu item could not be added
-  error_menu_item_not_saved: Menu item could not be saved
+  description_toc_toggle: Vis/Skjul indholdsfortegnelse
+  description_user_mail_notification: Indstillinger for e-mailadvisering
+  description_wiki_subpages_reassign: Vælg ny overordnet side
+  direction: Fra venstre mod højre
+  enumeration_activities: Aktiviteter (styring af tid)
+  enumeration_work_package_priorities: Prioritering af arbejdspakker
+  enumeration_system_activity: Systemaktivitet
+  enumeration_reported_project_statuses: Rapporteret projektstatus
+  error_can_not_archive_project: Dette projekt kan ikke arkiveres
+  error_can_not_delete_custom_field: Kan ikke slette det selvvalgte felt
+  error_can_not_delete_type: Denne type indeholder arbejdspakker og kan ikke slettes.
+  error_can_not_remove_role: Denne rolle er i brug og kan ikke slettes.
+  error_can_not_reopen_work_package_on_closed_version: En arbejdspakke der er knyttet
+    til en lukket version kan ikke åbnes igen
+  error_can_t_load_default_data: 'Forhåndsopsætningen kan ikke hentes: %{value}'
+  error_check_user_and_role: Vælg venligst en bruger og en rolle.
+  error_work_package_done_ratios_not_updated: Andelen af udført for arbejdspakken
+    er ikke opdateret.
+  error_work_package_not_found_in_project: Arbejdspakken er ikke fundet, eller den
+    hører ikke til dette projekt
+  error_must_be_project_member: skal være et medlem af projektet
+  error_no_default_work_package_status: Der er ikke angivet en status som standard
+    for denne arbejdspakke. Tjek venligst din opsætning (gå til "Administration >
+    Status for arbejdspakker").
+  error_no_type_in_project: Der er ikke tilknyttet en type til dette projekt. Tjek
+    venligst projektindstillingerne.
+  error_scm_annotate: Indholdet findes ikke eller der kan ikke tilføjes nyt.
+  error_scm_command_failed: 'Der optod en fejl da du forsøgte at tilgå arkivet: %{value}'
+  error_scm_not_found: Indholdet eller ændring findes ikke i arkivet.
+  error_unable_delete_status: Det er ikke muligt at slette status for arbejdspakken
+  error_unable_to_connect: Kan ikke forbinde til (%{value})
+  error_workflow_copy_source: Vælg venlist en type eller rolle for kilden
+  error_workflow_copy_target: Vælg venligst type(r) og rolle(r) for mål
+  error_menu_item_not_created: Menupunktet kunne ikke tilføjes
+  error_menu_item_not_saved: Menupunktet kunne ikke gemmes
   events:
-    project: Project edited
-    changeset: Changeset edited
-    message: Message edited
-    news: News
-    reply: Replied
-    time_entry: Timelog edited
-    wiki_page: Wiki page edited
-    work_package_closed: Work Package closed
-    work_package_edit: Work Package edited
-    work_package_note: Work Package note added
+    project: Projekt er redigeret
+    changeset: Pakken af ændringer er redigeret
+    message: Meddelelse er redigeret
+    news: Nyheder
+    reply: Besvaret
+    time_entry: Tidsrapport redigeret
+    wiki_page: Wiki-side redigeret
+    work_package_closed: Arbejdspakke lukket
+    work_package_edit: Arbejdspakke redigeret
+    work_package_note: Note tilføjet arbejdspakke
   general_csv_decimal_separator: "."
   general_csv_encoding: UTF-8
   general_csv_separator: ","
-  general_first_day_of_week: '7'
-  general_lang_name: English
+  general_first_day_of_week: '1'
+  general_lang_name: Dansk
   general_pdf_encoding: ISO-8859-1
-  general_text_No: 'No'
-  general_text_Yes: 'Yes'
-  general_text_no: 'no'
-  general_text_yes: 'yes'
-  gui_validation_error: 1 error
-  gui_validation_error_plural: "%{count} errors"
+  general_text_No: Nej
+  general_text_Yes: Ja
+  general_text_no: nej
+  general_text_yes: ja
+  gui_validation_error: 1 fejl
+  gui_validation_error_plural: "%{count} fejl"
   js:
     unsupported_browser:
       title: Your browser is not supported
@@ -599,7 +583,6 @@ sk:
         one: Please enter one more character
         other: Please enter {{count}} more characters
         zero: Please enter more characters
-        few: Please enter {{count}} more characters
       load_more: Loading more results ...
       no_matches: No matches found
       searching: Searching ...
@@ -607,17 +590,16 @@ sk:
         one: You can only select one item
         other: You can only select {{limit}} items
         zero: You cannot select any items
-        few: You can only select {{limit}} items
     timelines:
       tooManyProjects: More than %{count} Projects. Please use a better filter!
-      cancel: Cancel
-      save: Save
-      due_date: Due date
-      name: Name
-      project_status: Project status
-      project_type: Project type
-      responsible: Responsible
-      start_date: Start date
+      cancel: Annuller
+      save: Gem
+      due_date: Forfaldsdato
+      name: Navn
+      project_status: Projektstatus
+      project_type: Projekttype
+      responsible: Ansvarlig
+      start_date: Start dato
       error: An error has occured.
       create_planning_select_project: 'Project:'
       really_close_dialog: Do you really want to close the dialog and loose the entered
@@ -626,125 +608,125 @@ sk:
     filter:
       noneElement: "(none)"
       noneSelection: "(none)"
-    button_check_all: Check all
-    button_uncheck_all: Uncheck all
+    button_check_all: Vælg alt
+    button_uncheck_all: Fjern alle markeringer
     label_collapsed: collapsed
     label_expanded: expanded
-    label_collapse_all: Collapse all
-    label_expand_all: Expand all
+    label_collapse_all: Fold alle sammen
+    label_expand_all: Fold alle ud
     label_menu_item_toggle: Show/hide submenu items
     label_menu_collapse: collapse
     label_menu_expand: expand
     tl_toolbar:
       zooms: Zoom level
       outlines: Hierarchy level
-  label_account: Account
-  label_activity: Activity
-  label_add_another_file: Add another file
-  label_add_columns: Add selected columns
-  label_add_note: Add a note
-  label_add_related_issues: Add related issue
-  label_add_related_work_packages: Add related work packages
-  label_add_subtask: Add subtask
-  label_added: added
-  label_added_time_by: Added by %{author} %{age} ago
-  label_additional_workflow_transitions_for_assignee: Additional transitions allowed
-    when the user is the assignee
-  label_additional_workflow_transitions_for_author: Additional transitions allowed
-    when the user is the author
+  label_account: Konto
+  label_activity: Aktivitet
+  label_add_another_file: Tilføj en anden fil
+  label_add_columns: Tilføj valgte kolonner
+  label_add_note: Tilføj en note
+  label_add_related_issues: Tilføj et relateret emne
+  label_add_related_work_packages: Tilføj relateret arbejdspakker
+  label_add_subtask: Tilføj underopgave
+  label_added: tilføjet
+  label_added_time_by: Tilføjet af %{author} for %{age} siden
+  label_additional_workflow_transitions_for_assignee: Yderligere overgange tilladt
+    når brugeren er den tilknyttede
+  label_additional_workflow_transitions_for_author: Yderligere overgange tilladt når
+    brugeren er forfatteren
   label_administration: Administration
-  label_age: Age
-  label_ago: days ago
-  label_all: all
+  label_age: Alder
+  label_ago: dage siden
+  label_all: alle
   label_all_work_packages: all work packages
-  label_all_time: all time
-  label_all_words: All words
-  label_and_its_subprojects: "%{value} and its subprojects"
-  label_api_access_key: API access key
-  label_api_access_key_created_on: API access key created %{value} ago
-  label_applied_status: Applied status
-  label_ascending: Ascending
-  label_assigned_to_me_work_packages: Work packages assigned to me
-  label_associated_revisions: Associated revisions
-  label_attachment_delete: Delete file
-  label_attachment_new: New file
-  label_attachment_plural: Files
-  label_attribute: Attribute
-  label_attribute_plural: Attributes
-  label_auth_source: Authentication mode
-  label_auth_source_new: New authentication mode
-  label_auth_source_plural: Authentication modes
-  label_authentication: Authentication
-  label_blocked_by: blocked by
-  label_blocks: blocks
-  label_board_locked: Locked
-  label_board_new: New forum
-  label_board_plural: Forums
-  label_board_sticky: Sticky
-  label_boolean: Boolean
-  label_branch: Branch
+  label_all_time: alle tider
+  label_all_words: Alle ord
+  label_and_its_subprojects: "%{value} og dets delprojekter"
+  label_api_access_key: API adgangsnøgle
+  label_api_access_key_created_on: API adgangsnøgle oprettet for %{value} siden
+  label_applied_status: Tildelt status
+  label_ascending: Stigende
+  label_assigned_to_me_work_packages: Mine tilknyttede arbejdspakker
+  label_associated_revisions: Tilknyttede ændringer
+  label_attachment_delete: Slet fil
+  label_attachment_new: Ny fil
+  label_attachment_plural: Filer
+  label_attribute: Egenskab
+  label_attribute_plural: Egenskaber
+  label_auth_source: Godkendelsestilstand
+  label_auth_source_new: Ny godkendelsestilstand
+  label_auth_source_plural: Godkendelsestilstande
+  label_authentication: Godkendelse
+  label_blocked_by: spærret af
+  label_blocks: spærringer
+  label_board_locked: Låst
+  label_board_new: Nyt forum
+  label_board_plural: Fora
+  label_board_sticky: Fremhævet
+  label_boolean: Boolsk
+  label_branch: Gren
   label_browse: Browse
-  label_bulk_edit_selected_work_packages: Bulk edit selected work packages
-  label_calendar: Calendar
-  label_calendar_show: Show Calendar
-  label_category: Category
-  label_wiki_menu_item: Wiki menu item
-  label_select_main_menu_item: Select new main menu item
-  label_change_plural: Changes
-  label_change_properties: Change properties
-  label_change_status: Change status
-  label_change_view_all: View all changes
-  label_changes_details: Details of all changes
-  label_changeset_plural: Changesets
-  label_checked: checked
-  label_chronological_order: In chronological order
-  label_close_versions: Close completed versions
-  label_closed_work_packages: closed
-  label_collapse: Collapse
-  label_collapse_all: Collapse all
-  label_comment_add: Add a comment
-  label_comment_added: Comment added
-  label_comment_delete: Delete comments
-  label_comment_plural: Comments
-  label_commits_per_author: Commits per author
-  label_commits_per_month: Commits per month
-  label_confirmation: Confirmation
-  label_contains: contains
-  label_content: Content
-  label_copied: copied
-  label_copy_same_as_target: Same as target
-  label_copy_source: Source
-  label_copy_target: Target
-  label_copy_workflow_from: Copy workflow from
-  label_copy_project: Copy project
-  label_core_version: Core version
-  label_current_status: Current status
-  label_current_version: Current version
-  label_custom_field_new: New custom field
-  label_custom_field_plural: Custom fields
-  label_custom_field_default_type: Empty type
-  label_date: Date
-  label_date_from: From
-  label_date_from_to: From %{start} to %{end}
-  label_date_range: Date range
-  label_date_to: To
-  label_day_plural: days
-  label_default: Default
-  label_deleted: deleted
-  label_deleted_custom_field: "(deleted custom field)"
-  label_descending: Descending
-  label_details: Details
-  label_diff: diff
-  label_diff_inline: inline
-  label_diff_side_by_side: side by side
-  label_disabled: disabled
-  label_display: Display
-  label_display_per_page: 'Per page: %{value}'
-  label_display_used_statuses_only: Only display statuses that are used by this type
-  label_download: "%{count} Download"
+  label_bulk_edit_selected_work_packages: Rediger valgte arbejdspakker samlet
+  label_calendar: Kalender
+  label_calendar_show: Vis kalender
+  label_category: Kategori
+  label_wiki_menu_item: Wiki-menupunkt
+  label_select_main_menu_item: Vælg nyt punkt i hovedmenu
+  label_change_plural: "Ændringer"
+  label_change_properties: Skift egenskaber
+  label_change_status: Skift status
+  label_change_view_all: Se alle ændringer
+  label_changes_details: Detaljer for alle ændringer
+  label_changeset_plural: Alle ændringer
+  label_checked: valgt
+  label_chronological_order: I kronologisk orden
+  label_close_versions: Luk afsluttede versioner
+  label_closed_work_packages: lukket
+  label_collapse: Fold sammen
+  label_collapse_all: Fold alle sammen
+  label_comment_add: Tilføj kommentar
+  label_comment_added: Kommentar tilføjet
+  label_comment_delete: Slet kommentarer
+  label_comment_plural: Kommentarer
+  label_commits_per_author: Bidrag efter forfatter
+  label_commits_per_month: Bidrag efter måned
+  label_confirmation: Bekræftelse
+  label_contains: indeholder
+  label_content: Indhold
+  label_copied: kopieret
+  label_copy_same_as_target: Samme som mål
+  label_copy_source: Kilde
+  label_copy_target: Mål
+  label_copy_workflow_from: Kopier arbejdsgang fra
+  label_copy_project: Kopier projekt
+  label_core_version: Kerneversion
+  label_current_status: Nuværende status
+  label_current_version: Nuværende version
+  label_custom_field_new: Nyt selvvalgt felt
+  label_custom_field_plural: Selvvalgte felter
+  label_custom_field_default_type: Tom typebetegnelse
+  label_date: Dato
+  label_date_from: Fra
+  label_date_from_to: Fra %{start} til %{end}
+  label_date_range: Datointerval
+  label_date_to: Til
+  label_day_plural: dage
+  label_default: Forhåndsvalgt
+  label_deleted: slettet
+  label_deleted_custom_field: "(slettet selvvalgt felt)"
+  label_descending: Faldende
+  label_details: Detaljer
+  label_diff: difference
+  label_diff_inline: på linje
+  label_diff_side_by_side: side ved side
+  label_disabled: deaktiveret
+  label_display: Vis
+  label_display_per_page: Per side %{value}
+  label_display_used_statuses_only: Vis kun statuser, der bruges af denne type
+  label_download: "%{count} hentning"
   label_download_plural: "%{count} Downloads"
   label_downloads_abbr: D/L
-  label_duplicated_by: duplicated by
+  label_duplicated_by: duplikeret gennem
   label_duplicates: duplicates
   label_enable_multi_select: Toggle multiselect
   label_end_to_end: end to end
@@ -755,7 +737,7 @@ sk:
   label_equals: is
   label_example: Example
   label_expand: Expand
-  label_expand_all: Expand all
+  label_expand_all: Fold alle ud
   label_export_to: 'Also available in:'
   label_f_hour: "%{value} hour"
   label_f_hour_plural: "%{value} hours"
@@ -763,14 +745,14 @@ sk:
   label_feeds_access_key: RSS access key
   label_feeds_access_key_created_on: RSS access key created %{value} ago
   label_file_added: File added
-  label_file_plural: Files
+  label_file_plural: Filer
   label_filesystem_path: Root directory
   label_filter_add: Add filter
-  label_filter_plural: Filters
+  label_filter_plural: Filtre
   label_float: Float
   label_follows: follows
-  label_force_user_language_to_default: Set language of users having a non allowed
-    language to default
+  label_force_user_language_to_default: Sæt sprog for brugere, der har forhåndsvalgt
+    et ikke gangbart sprog
   label_general: General
   label_generate_key: Generate a key
   label_git_path: Path to .git directory
@@ -779,58 +761,60 @@ sk:
   label_group_plural: Groups
   label_help: Help
   label_hide: Hide
-  label_history: History
-  label_home: Home
-  label_in: in
-  label_in_less_than: in less than
-  label_in_more_than: in more than
-  label_incoming_emails: Incoming emails
-  label_index_by_date: Index by date
-  label_index_by_title: Index by title
+  label_history: Historik
+  label_home: Hjem
+  label_in: i
+  label_in_less_than: på mindre end
+  label_in_more_than: på mere end
+  label_incoming_emails: Indkommende e-mails
+  label_index_by_date: Sider efter dato
+  label_index_by_title: Sider efter titel
   label_information: Information
   label_information_plural: Information
-  label_integer: Integer
-  label_internal: Internal
-  label_work_package_added: Work package added
-  label_work_package_category_new: New category
-  label_work_package_category_plural: Work package categories
-  label_work_package_hierarchy: Work Package Hierarchy
-  label_work_package_new: New work package
-  label_work_package_note_added: Work package note added
-  label_work_package_edit: Edit work package %{name}
-  label_work_package_plural: Work packages
-  label_work_package_priority_updated: Work package priority updated
-  label_work_package_status_new: New status
-  label_work_package_status_plural: Work package statuses
-  label_work_package_tracking: Work package tracking
-  label_work_package_updated: Work package updated
-  label_work_package_view_all: View all work packages
-  label_work_package_view_all_assigned_to_me: View all work packages assigned to me
-  label_work_package_view_all_reported_by_me: View all work packages reported by me
-  label_work_package_view_all_responsible_for: View all work packages I am responsible
+  label_integer: Heltal
+  label_internal: Intern
+  label_work_package_added: Arbejdspakker tilføjet
+  label_work_package_category_new: Ny kategori
+  label_work_package_category_plural: Kategorier for arbejdspakker
+  label_work_package_hierarchy: Hieraki for arbejdspakker
+  label_work_package_new: Ny arbejdspakke
+  label_work_package_note_added: Note tilføjet arbejdspakke
+  label_work_package_edit: Rediger arbejdspakke %{name}
+  label_work_package_plural: Arbejdspakker
+  label_work_package_priority_updated: Prioritet for arbejdspakke opdateret
+  label_work_package_status_new: Ny status
+  label_work_package_status_plural: Statusser for arbejdspakke
+  label_work_package_tracking: Sporing af arbejdspakke
+  label_work_package_updated: Arbejdspakke opdateret
+  label_work_package_view_all: Vis alle arbejdspakker
+  label_work_package_view_all_assigned_to_me: Vis alle arbejdspakker, der er tilknyttet
+    mig
+  label_work_package_view_all_reported_by_me: Vis alle arbejdspakker, der rapporterer
+    til mig
+  label_work_package_view_all_responsible_for: Vis alle arbejdspakker, jeg er ansvarlig
     for
-  label_work_package_view_all_watched: View all watched work packages
-  label_work_package_watchers: Watchers
-  label_work_packages_by: Work packages by %{value}
-  label_journal_diff: Description Comparison
-  label_jump_to_a_project: Jump to a project...
-  label_language_based: Based on user's language
-  label_last_changes: last %{count} changes
-  label_last_login: Last connection
-  label_last_month: last month
-  label_last_n_days: last %{count} days
-  label_last_week: last week
-  label_latest_revision: Latest revision
-  label_latest_revision_plural: Latest revisions
-  label_ldap_authentication: LDAP authentication
+  label_work_package_view_all_watched: Vis alle arbejdspakker, jeg overvåger
+  label_work_package_watchers: Overvågere
+  label_work_packages_by: Arbejdspakker efter %{value}
+  label_journal_diff: Sammenligning af beskrivelser
+  label_jump_to_a_project: Gå til et projekt...
+  label_language_based: Baseret på brugerens sprog
+  label_last_changes: seneste %{count} ændringer
+  label_last_login: Seneste forbindelse
+  label_last_month: seneste måned
+  label_last_n_days: seneste %{count} dage
+  label_last_week: seneste uge
+  label_latest_revision: Seneste revidering
+  label_latest_revision_plural: Seneste revideringer
+  label_ldap_authentication: LDAP-godkendelse
   label_less_or_equal: "<="
-  label_less_than_ago: less than days ago
+  label_less_than_ago: mindre end dage siden
   label_list: List
-  label_loading: Loading...
-  label_logged_as: Logged in as
-  label_login: Sign in
+  label_loading: Henter...
+  label_logged_as: Logget ind som
+  label_login: Log ind
   label_login_with_open_id_option: or login with OpenID
-  label_logout: Sign out
+  label_logout: Log ud
   label_main_menu: Side Menu
   label_max_size: Maximum size
   label_me: me
@@ -859,15 +843,15 @@ sk:
   label_my_page: My page
   label_my_page_block: My page block
   label_my_projects: My projects
-  label_my_queries: My custom queries
-  label_new: New
+  label_my_queries: Mine selvvalgte forespørgsler
+  label_new: Ny
   label_new_statuses_allowed: New statuses allowed
   label_news_added: News added
   label_news_comment_added: Comment added to a news
   label_news_latest: Latest news
   label_news_new: Add news
   label_news_edit: Edit news
-  label_news_plural: News
+  label_news_plural: Nyheder
   label_news_view_all: View all news
   label_next: Next
   label_next_week: Next week
@@ -880,43 +864,43 @@ sk:
   label_notify_member_plural: Email updates
   label_open_work_packages: open
   label_open_work_packages_plural: open
-  label_optional_description: Description
-  label_options: Options
-  label_overall_activity: Overall activity
-  label_overall_spent_time: Overall spent time
-  label_overview: Overview
+  label_optional_description: Beskrivelse
+  label_options: Muligheder
+  label_overall_activity: Samlet aktivitet
+  label_overall_spent_time: Samlet brugt tid
+  label_overview: Overblik
   label_password_lost: Lost password
-  label_password_rule_lowercase: Lowercase
-  label_password_rule_numeric: Numeric Characters
-  label_password_rule_special: Special Characters
-  label_password_rule_uppercase: Uppercase
-  label_path_encoding: Path encoding
-  label_pdf_with_descriptions: PDF with Descriptions
-  label_per_page: Per page
-  label_permissions: Permissions
-  label_permissions_report: Permissions report
-  label_personalize_page: Personalize this page
-  label_planning: Planning
-  label_please_login: Please log in
-  label_plugins: Plugins
-  label_precedes: precedes
-  label_preferences: Preferences
-  label_preview: Preview
-  label_previous: Previous
-  label_previous_week: Previous week
-  label_principal_search: Search for users or groups
-  label_profile: Profile
-  label_project_all: All Projects
-  label_project_copy_notifications: Send email notifications during the project copy
+  label_password_rule_lowercase: Små bogstaver
+  label_password_rule_numeric: Tal
+  label_password_rule_special: Specialtegn
+  label_password_rule_uppercase: Store bogstaver
+  label_path_encoding: Vælg sti for arkivering
+  label_pdf_with_descriptions: PDF med beskrivelser
+  label_per_page: Per side
+  label_permissions: Tilladelser
+  label_permissions_report: Oversigt over tilladelser
+  label_personalize_page: Tilpas denne side
+  label_planning: Planlæg
+  label_please_login: Log venligst ind
+  label_plugins: Tilføjelsesprogrammer
+  label_precedes: kommer før
+  label_preferences: Instillinger
+  label_preview: Forhåndsvisning
+  label_previous: Foregående
+  label_previous_week: Foregående uge
+  label_principal_search: Søg efter brugere eller grupper
+  label_profile: Profil
+  label_project_all: Alle projekter
+  label_project_copy_notifications: Adviser via e-mail under kopiering af projekt
   label_project_latest: Latest projects
-  label_project_default_type: Allow empty type
+  label_project_default_type: Tillad tom typebetegnelse
   label_project_new: New project
-  label_project_plural: Projects
+  label_project_plural: Projekter
   label_project_settings: Project settings
   label_project_view_all: View all projects
   label_public_projects: Public projects
   label_query_new: New query
-  label_query_plural: Custom queries
+  label_query_plural: Selvvalgte forespørgsler
   label_query_menu_item: Query menu item
   label_read: Read...
   label_register: Register
@@ -951,7 +935,7 @@ sk:
   label_roadmap_overdue: "%{value} late"
   label_role_and_permissions: Roles and permissions
   label_role_new: New role
-  label_role_plural: Roles
+  label_role_plural: Roller
   label_role_search: Search for roles
   label_scm: SCM
   label_search: Search
@@ -960,26 +944,26 @@ sk:
   label_send_test_email: Send a test email
   label_settings: Settings
   label_show_completed_versions: Show completed versions
-  label_sort: Sort
+  label_sort: Sorter
   label_sort_by: Sort by %{value}
   label_sorted_by: sorted by %{value}
   label_sort_higher: Move up
   label_sort_highest: Move to top
   label_sort_lower: Move down
   label_sort_lowest: Move to bottom
-  label_spent_time: Spent time
+  label_spent_time: Brugt tid
   label_start_to_end: start to end
   label_start_to_start: start to start
   label_statistics: Statistics
   label_status: Status
   label_status_updated: Work package status updated
   label_stay_logged_in: Stay logged in
-  label_string: Text
+  label_string: Tekst
   label_subproject_new: New subproject
   label_subproject_plural: Subprojects
   label_subtask_plural: Subtasks
   label_sum_for: Sum for %{value}
-  label_summary: Summary
+  label_summary: Opsummering
   label_system: System
   label_table_of_contents: Table of Contents
   label_tag: Tag
@@ -988,14 +972,14 @@ sk:
   label_this_month: this month
   label_this_week: this week
   label_this_year: this year
-  label_time_entry_plural: Spent time
+  label_time_entry_plural: Brugt tid
   label_time_tracking: Time tracking
   label_today: today
   label_top_menu: Top Menu
   label_topic_plural: Topics
   label_total: Total
   label_type_new: New type
-  label_type_plural: Types
+  label_type_plural: Typer
   label_ui: User Interface
   label_update_work_package_done_ratios: Update work package done ratios
   label_updated_time: Updated %{value} ago
@@ -1003,7 +987,7 @@ sk:
   label_updated_time_by: Updated by %{author} %{age} ago
   label_used_by: Used by
   label_user_activity: "%{value}'s activity"
-  label_user_anonymous: Anonymous
+  label_user_anonymous: Anonymt
   label_user_mail_no_self_notified: I don't want to be notified of changes that I
     make myself
   label_user_mail_option_all: For any event on all my projects
@@ -1016,7 +1000,7 @@ sk:
   label_user_plural: Users
   label_user_search: Search for user
   label_version_new: New version
-  label_version_plural: Versions
+  label_version_plural: Versioner
   label_version_sharing_descendants: With subprojects
   label_version_sharing_hierarchy: With project hierarchy
   label_version_sharing_none: Not shared
@@ -1034,41 +1018,36 @@ sk:
   label_wiki_edit: Wiki edit
   label_wiki_edit_plural: Wiki edits
   label_wiki_navigation: Wiki navigation
-  label_wiki_page: Wiki page
+  label_wiki_page: Wiki-side
   label_wiki_page_plural: Wiki pages
   label_wiki_show_index_page_link: Show submenu item 'Table of Contents'
   label_wiki_show_menu_item: Show as menu item in project navigation
   label_wiki_show_new_page_link: Show submenu item 'Create new child page'
   label_wiki_show_submenu_item: 'Show as submenu item of '
-  label_work_package: Work package
-  label_workflow: Workflow
+  label_work_package: Arbejdspakke
+  label_workflow: Arbejdsstrøm
   label_workflow_plural: Workflows
-  label_workflow_summary: Summary
+  label_workflow_summary: Opsummering
   label_x_closed_work_packages_abbr:
     one: 1 closed
     other: "%{count} closed"
     zero: 0 closed
-    few: "%{count} closed"
   label_x_comments:
     one: 1 comment
     other: "%{count} comments"
     zero: no comments
-    few: "%{count} comments"
   label_x_open_work_packages_abbr:
     one: 1 open
     other: "%{count} open"
     zero: 0 open
-    few: "%{count} open"
   label_x_open_work_packages_abbr_on_total:
     one: 1 open / %{total}
     other: "%{count} open / %{total}"
     zero: 0 open / %{total}
-    few: "%{count} open / %{total}"
   label_x_projects:
     one: 1 project
     other: "%{count} projects"
     zero: no projects
-    few: "%{count} projects"
   label_year: Year
   label_yesterday: yesterday
   label_keyboard_shortcut_help_heading: Available Keyboard Shortcuts
@@ -1117,8 +1096,8 @@ sk:
   noscript_heading: JavaScript disabled
   noscript_learn_more: Learn more
   notice_account_activated: Your account has been activated. You can now log in.
-  notice_account_inactive: Your account has not yet been activated. To activate your
-    account, click on the link that was emailed to you.
+  notice_account_inactive: Din konto er endnu ikke blevet aktiveret. For at aktivere
+    din konto, klik på det link, der blev sendt til dig.
   notice_account_invalid_credentials: Invalid user or password
   notice_account_invalid_credentials_or_blocked: Invalid user or password or the account
     is blocked due to multiple failed login attempts. If so, it will be unblocked
@@ -1138,16 +1117,16 @@ sk:
     look at your account page.
   notice_account_updated: Account was successfully updated.
   notice_account_wrong_password: Wrong password
-  notice_api_access_key_reseted: Your API access key was reset.
+  notice_api_access_key_reseted: Din adgangsnøgle til API blev nulstillet.
   notice_can_t_change_password: This account uses an external authentication source.
     Impossible to change the password.
-  notice_default_data_loaded: Default configuration successfully loaded.
+  notice_default_data_loaded: Forhåndsvalgt opsætning indlæst med succes.
   notice_email_error: An error occurred while sending mail (%{value})
   notice_email_sent: An email was sent to %{value}
   notice_failed_to_save_work_packages: 'Failed to save %{count} work package(s) on
     %{total} selected: %{ids}.'
   notice_failed_to_save_members: 'Failed to save member(s): %{errors}.'
-  notice_feeds_access_key_reseted: Your RSS access key was reset.
+  notice_feeds_access_key_reseted: Din adgangsnøgle til RSS blev nulstillet.
   notice_file_not_found: The page you were trying to access doesn't exist or has been
     removed.
   notice_forced_logout: You have been automatically logged out after %{ttl_time} minutes
@@ -1194,7 +1173,6 @@ sk:
           byte:
             one: Byte
             other: Bytes
-            few: Bytes
           gb: GB
           kb: kB
           mb: MB
@@ -1265,20 +1243,20 @@ sk:
   permission_view_timelines: View timelines
   permission_view_wiki_edits: View wiki history
   permission_view_wiki_pages: View wiki
-  project_module_activity: Activity
-  project_module_boards: Forums
-  project_module_calendar: Calendar
-  project_module_work_package_tracking: Work package tracking
-  project_module_news: News
+  project_module_activity: Aktivitet
+  project_module_boards: Fora
+  project_module_calendar: Kalender
+  project_module_work_package_tracking: Sporing af arbejdspakke
+  project_module_news: Nyheder
   project_module_repository: Repository
   project_module_time_tracking: Time tracking
   project_module_wiki: Wiki
   query_fields:
     assigned_to_role: Assignee's role
     member_of_group: Assignee's group
-    subproject_id: Subproject
+    subproject_id: Underprojekt
   search_input_placeholder: search ...
-  setting_activity_days_default: Days displayed on project activity
+  setting_activity_days_default: Dage, der vises under projektaktivitet
   setting_app_subtitle: Application subtitle
   setting_app_title: Application title
   setting_attachment_max_size: Attachment max. size
@@ -1290,7 +1268,7 @@ sk:
     login attempts (disable with 0)
   setting_brute_force_block_minutes: Time the user is blocked for (minutes)
   setting_cache_formatted_text: Cache formatted text
-  setting_column_options: Customize the appearance of the work package lists
+  setting_column_options: Tilpas udseendet af listen over arbejdspakker
   setting_commit_fix_keywords: Fixing keywords
   setting_commit_logs_encoding: Commit messages encoding
   setting_commit_logtime_activity_id: Activity for logged time
@@ -1298,27 +1276,27 @@ sk:
   setting_commit_ref_keywords: Referencing keywords
   setting_cross_project_work_package_relations: Allow cross-project work package relations
   setting_date_format: Date format
-  setting_default_language: Default language
-  setting_default_notification_option: Default notification option
-  setting_default_projects_modules: Default enabled modules for new projects
-  setting_default_projects_public: New projects are public by default
+  setting_default_language: Forhåndsvalgt sprog
+  setting_default_notification_option: Forhåndsvalgt indstilling for beskeder
+  setting_default_projects_modules: Forhåndsvalgt aktive moduler for nye projekter
+  setting_default_projects_public: Nye projekter er på forhånd sat som offentlige
   setting_diff_max_lines_displayed: Max number of diff lines displayed
-  setting_display_subprojects_work_packages: Display subprojects work packages on
-    main projects by default
+  setting_display_subprojects_work_packages: Vælg altid at vise underprojekters arbejdspakker
+    ved hovedprojektet
   setting_emails_footer: Emails footer
   setting_emails_header: Emails header
   setting_enabled_scm: Enabled SCM
   setting_feeds_enabled: Enable Feeds
   setting_feeds_limit: Feed content limit
   setting_file_max_size_displayed: Max size of text files displayed inline
-  setting_gravatar_default: Default Gravatar image
+  setting_gravatar_default: Forhåndsvalgt Gravatar billede
   setting_gravatar_enabled: Use Gravatar user icons
   setting_host_name: Host name
   setting_work_package_done_ratio: Calculate the work package done ratio with
   setting_work_package_done_ratio_field: Use the work package field
   setting_work_package_done_ratio_status: Use the work package status
   setting_work_package_done_ratio_disabled: Disable (hide the progress)
-  setting_work_package_list_default_columns: Display by default
+  setting_work_package_list_default_columns: Vis efter forhåndsopsætning
   setting_work_package_list_summable_columns: Summable
   setting_work_package_properties: Work package properties
   setting_work_package_startdate_is_adddate: Use current date as start date for new
@@ -1337,7 +1315,7 @@ sk:
     for reuse
   setting_password_days_valid: Number of days, after which to enforce a password change
     (disable with 0)
-  setting_password_min_length: Minimum length
+  setting_password_min_length: Mindste længde
   setting_password_min_adhered_rules: Minimum number of required classes
   setting_per_page_options: Objects per page options
   setting_plain_text_mail: Plain text mail (no HTML)
@@ -1384,10 +1362,10 @@ sk:
   text_caracters_maximum: "%{count} characters maximum."
   text_caracters_minimum: Must be at least %{count} characters long.
   text_comma_separated: Multiple values allowed (comma separated).
-  text_custom_field_possible_values_info: One line for each value
-  text_default_administrator_account_changed: Default administrator account changed
-  text_default_encoding: 'Default: UTF-8'
-  text_destroy: Delete
+  text_custom_field_possible_values_info: "Én linje for hver værdi"
+  text_default_administrator_account_changed: Forhåndsvalgt administratorkonto ændret
+  text_default_encoding: 'Forhåndsvalgt: UTF-8'
+  text_destroy: Slet
   text_destroy_with_associated: 'There are additional objects assossociated with the
     work package(s) that are to be deleted. Those objects are of the following types:'
   text_destroy_what_to_do: What do you want to do?
@@ -1420,11 +1398,11 @@ sk:
   text_journal_set_with_diff: "%{label} set (%{link})"
   text_length_between: Length between %{min} and %{max} characters.
   text_line_separated: Multiple values allowed (one line for each value).
-  text_load_default_configuration: Load the default configuration
+  text_load_default_configuration: Hent forhåndsvalgt opsætning
   text_min_max_length_info: 0 means no restriction
-  text_no_configuration_data: |
-    Roles, types, work package statuses and workflow have not been configured yet.
-    It is highly recommended to load the default configuration. You will be able to modify it once loaded.
+  text_no_configuration_data: Roller, typer, statusser for arbejdspakker og arbejdsgange
+    er endnu ikke sat op. Det anbefales stærkt at hente forhåndsopsætningen. Du vil
+    kunne ændre den når den er indlæst.
   text_own_membership_delete_confirmation: |
     You are about to remove some or all of your permissions and may no longer be able to edit this project after that.
     Are you sure you want to continue?
@@ -1471,16 +1449,16 @@ sk:
   time:
     am: am
     formats:
-      default: "%m/%d/%Y %I:%M %p"
+      default: "%d%m%Y%I%M%p"
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
       time: "%I:%M %p"
     pm: pm
   timelines:
     admin_menu:
-      color: Color
+      color: Farve
       colors: Colors
-      project_type: Project type
+      project_type: Projekttype
       project_types: Project types
     project_menu:
       planning_elements: Planning elements
@@ -1500,15 +1478,14 @@ sk:
     dates_are_calculated_based_on_sub_elements: Dates are calculated based on sub
       elements.
     delete_all: Delete all
-    delete_thing: Delete
+    delete_thing: Slet
     duration: Duration
     duration_days:
-      one: 1 day
-      other: "%{count} days"
-      few: "%{count} days"
+      one: 1 dag
+      other: "%{count} dage"
     edit_color: Edit color
     edit_project_type: Edit project type
-    edit_thing: Edit
+    edit_thing: Rediger
     edit_timeline: Edit timeline report
     delete_timeline: Delete timeline report
     empty: "(empty)"
@@ -1517,9 +1494,9 @@ sk:
     errors:
       not_implemented: The timeline could not be rendered because it uses a feature
         that is not yet implemented.
-      report_comparison: The timeline could not render the configured comparisons.
-        Please check the appropriate section in the configuration, resetting it can
-        help solve this problem.
+      report_comparison: Tidslinien kunne ikke gengive de opsatte sammenligninger.
+        Tjek venligst den relevante del i opsætningen. En nulstilling kan formodentlig
+        løse problemet.
       report_epicfail: The timeline could not be loaded due to an unexpected error.
       report_timeout: The timeline could not be loaded in a reasonable amount of time.
     filter:
@@ -1542,16 +1519,16 @@ sk:
         explicit_order: explicit order
         project_sortation: Sort projects by
         date: date
-        default: default
+        default: Forhåndsvalgt
       column:
-        assigned_to: Assignee
+        assigned_to: Tovholder
         type: Type
         due_date: End date
-        name: Name
+        name: Navn
         status: Status
-        responsible: Responsible
-        start_date: Start date
-      columns: Columns
+        responsible: Ansvarlig
+        start_date: Start dato
+      columns: Kolonner
       comparisons: Comparisons
       comparison:
         absolute: Absolute
@@ -1560,7 +1537,7 @@ sk:
         compare_relative: Compare current planning to %{timespan} ago
         compare_absolute: Compare current planning to %{date}
       time_relative:
-        days: days
+        days: dage
         weeks: weeks
         months: months
       exclude_own_work_packages: Hide work packages from this project
@@ -1599,10 +1576,10 @@ sk:
       timeframe_start: from
       timeline: General Settings
       zoom: Zoom factor
-    history: History
+    history: Historik
     new_color: New color
     new_association: New dependency
-    new_work_package: New work package
+    new_work_package: Ny arbejdspakke
     new_project_type: New project type
     new_reporting: New reporting
     new_timeline: New timeline report
@@ -1612,7 +1589,7 @@ sk:
       linked timeline.
     no_timeline_for_id: There is no timeline with ID %{id}.
     notice_successful_deleted_all_elements: Successfully deleted all elements
-    outline: Reset Outline
+    outline: Nulstil dispostionen
     outlines:
       aggregation: Show aggregations only
       level1: Expand level 1
@@ -1654,55 +1631,57 @@ sk:
     timeline: Timeline report
     timelines: Timeline reports
     settings: Timelines
-    vertical_work_package: Vertical work packages
-    without_project_type: Without project type
-    you_are_viewing_the_selected_timeline: You are viewing the selected timeline report
+    vertical_work_package: Lodret arbejdspakke
+    without_project_type: Uden projekttype
+    you_are_viewing_the_selected_timeline: Du ser den valgte tidslinjerapport
     zoom:
       in: Zoom in
       out: Zoom out
-      days: Days
-      weeks: Weeks
-      months: Months
-      quarters: Quarters
-      years: Years
+      days: Dage
+      weeks: Uger
+      months: Måneder
+      quarters: Kvartaler
+      years: "År"
   queries:
-    apply_filter: Apply preconfigured filter
-  total_progress: Total progress
+    apply_filter: Tildel filter som specificeret på forhånd
+  total_progress: Samlet fremgang
   user:
-    all: all
+    all: alle
     active: active
-    activate: Activate
-    activate_and_reset_failed_logins: Activate and reset failed logins
-    assign_random_password: Assign random password (sent to user via e-mail)
-    blocked: locked temporarily
+    activate: Aktiver
+    activate_and_reset_failed_logins: Aktiver og nulstil mislykkede forsøg på at logge
+      ind
+    assign_random_password: Tildel tilfældig adgangskode (sendt til bruger med e-mail)
+    blocked: Midlertid spærret
     blocked_num_failed_logins:
-      one: locked temporarily (one failed login attempt)
-      other: locked temporarily (%{count} failed login attempts)
-      few: locked temporarily (%{count} failed login attempts)
-    deleted: Deleted user
-    error_status_change_failed: 'Changing the user status failed due to the following
-      errors: %{errors}'
-    lock: Lock permanently
-    locked: locked permanently
-    registered: registered
-    reset_failed_logins: Reset failed logins
-    status_user_and_brute_force: "%{user} and %{brute_force}"
-    unlock: Unlock
-    unlock_and_reset_failed_logins: Unlock and reset failed logins
-  version_status_closed: closed
-  version_status_locked: locked
+      one: midlertidigt spærret (1 mislykket forsøg på at logge ind)
+      other: Midlertidigt spærret (%{count} mislykkede forsøg på at logge ind)
+    deleted: Slettet bruger
+    error_status_change_failed: 'Det lykkedes ikke at ændre brugerens status på grund
+      af denne fejl: %{errors}'
+    lock: Spær permanent
+    locked: spærret permanent
+    registered: registreret
+    reset_failed_logins: Nulstil mislykkede forsøg på at logge ind
+    status_user_and_brute_force: "%{user} og %{brute_force}"
+    unlock: Lås op
+    unlock_and_reset_failed_logins: Lås mislykkede forsøg på at logge ind op, og nulstil
+      dem
+  version_status_closed: lukket
+  version_status_locked: Spærret
   version_status_open: open
-  warning_attachments_not_saved: "%{count} file(s) could not be saved."
-  menu_item: Menu item
-  menu_item_setting: Visibility
-  wiki_menu_item_for: Menu item for wikipage "%{title}"
-  wiki_menu_item_setting: Visibility
-  wiki_menu_item_new_main_item_explanation: You are deleting the only main wiki menu
-    item. You now have to choose a wiki page for which a new main item will be generated.
-    To delete the wiki the wiki module can be deactivated by project administrators.
-  wiki_menu_item_delete_not_permitted: The wiki menu item of the only wiki page cannot
-    be deleted.
-  query_menu_item_for: Menu item for query "%{title}"
+  warning_attachments_not_saved: "%{count} file(r) kunne ikke gemmes."
+  menu_item: Menupunkt
+  menu_item_setting: Synlighed
+  wiki_menu_item_for: Menupunkt for wikipage "%{title}"
+  wiki_menu_item_setting: Synlighed
+  wiki_menu_item_new_main_item_explanation: Du er ved at slette det eneste overordnede
+    punkt på wiki-menuen. Du skal nu vælge en wiki-side, udfra hvilken der kan dannes
+    et nyt hovedpunkt. Hvis du vil slette wikien helt kan wiki-modulet deaktiveres
+    af projektadministratorer.
+  wiki_menu_item_delete_not_permitted: Menupunktet til den eneste wiki-side kan ikke
+    slettes.
+  query_menu_item_for: Menupunkt for forespørgsel "%{title}"
   work_package:
-    updated_automatically_by_child_changes: _Updated automatically by changing values
-      within child work package %{child}_
+    updated_automatically_by_child_changes: _Updateret automatisk ved at ændre værdier
+      i underordnet arbejdspakke %{child} _

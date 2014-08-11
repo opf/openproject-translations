@@ -24,14 +24,12 @@ pl:
         other: Usunięcie konta użytkownika jest czynnością nieodwracalną.
         self: Usunięcie konta użytkownika jest czynnością nieodwracalną.
       login_consequences:
-        other: Konta zostaną usunięte z systemu. W związku z tym użytkownik nie będą
-          mogli zalogować się przy użyciu jego poświadczenia bieżącego. On wybrać,
-          aby stać się użytkownikiem tej aplikacji ponownie oznacza, że aplikacja
-          ta udziela.
-        self: Twoje konto zostanie usunięte z systemu. W związku z tym nie będzie
-          w stanie zalogować się za pomocą poświadczenia bieżącego. Jeśli chcesz stać
-          się użytkownikiem tej aplikacji ponownie, to zrobić za pomocą środków dotacji
-          tej aplikacji.
+        other: Konto zostanie usunięte z systemu. W związku z tym użytkownik nie będzie
+          już mógł zalogować się przy użyciu bieżących poświadczeń. Będzie natomiast
+          mógł stać się użytkownikiem tej aplikacji ponownie.
+        self: Twoje konto zostanie usunięte z systemu. W związku z tym nie będziesz
+          już mógł zalogować się przy użyciu bieżących poświadczeń. Będziesz natomiast
+          mógł stać się użytkownikiem tej aplikacji ponownie.
   actionview_instancetag_blank_option: Proszę wybrać
   activerecord:
     attributes:
@@ -41,11 +39,11 @@ pl:
         filesize: Rozmiar
       auth_source:
         account: Konto
-        attr_firstname: Atrybuty Imienia
-        attr_lastname: Atrybuty Nazwiska
+        attr_firstname: Atrybut imienia
+        attr_lastname: Atrybut nazwiska
         attr_login: Atrybut Identyfikator logowania
-        attr_mail: atrybuty E-mail
-        base_dn: Base DN
+        attr_mail: Atrybut adresu e-mail
+        base_dn: Bazowa nazwa wyróżniająca
         host: Host
         onthefly: Tworzenie użytkownika w locie
         port: Port
@@ -61,7 +59,7 @@ pl:
         min_length: Minimalna długość
         possible_values: Możliwe wartości
         regexp: Wyrażenie regularne
-        searchable: Można wyszukiwać
+        searchable: Wyszukiwalne
         visible: Widoczne
       custom_value:
         value: Wartość
@@ -107,6 +105,7 @@ pl:
       user:
         admin: Administrator
         auth_source: Tryb uwierzytelniania
+        identity_url: OpenID URL
         language: Język
         last_login_on: Ostatnie połączenie
         mail_notification: Powiadomienia e-mail
@@ -116,7 +115,7 @@ pl:
       user_preference:
         comments_sorting: Wyświetlanie komentarzy
         hide_mail: Ukryj mój adres e-mail
-        impaired: Tryb dostępu
+        impaired: Ułatwienia dostępu
         time_zone: Strefa czasowa
         warn_on_leaving_unsaved: Ostrzegaj mnie kiedy opuszczam stronę z niezapisanym
           tekstem
@@ -144,16 +143,16 @@ pl:
         name: Nazwa
         options: ''
       reporting:
-        reported_project_status_comment: Stan komentarz
+        reported_project_status_comment: Stan komentarza
         reporting_to_project: Raporty do projektu
         reported_project_status: Stan projektu
-        created_at: Stworzony
+        created_at: Utworzono
       work_package:
         done_ratio: "% wykonania"
         fixed_version: Wersja docelowa
         parent: Rodzic
         parent_issue: Rodzic
-        parent_work_package: Rodzic
+        parent_work_packae: Rodzic
         priority: Priorytet
         progress: "% wykonania"
         responsible: Odpowiedzialny
@@ -186,7 +185,7 @@ pl:
         not_an_integer: nie jest liczbą całkowitą
         not_same_project: nie należą do tego samego projektu
         odd: musi być nieparzyste
-        taken: podjęto już
+        taken: zostały już podjęte
         too_long: jest zbyt długi (maksymalnie %{count} znaków)
         too_short: jest zbyt krótki (minimum %{count} znaków)
         wrong_length: ma złą długość (powinno być %{count} znaków)
@@ -198,22 +197,22 @@ pl:
       models:
         project_association:
           identical_projects: nie mogą być tworzone z jednego projektu do siebie
-          project_association_not_allowed: nie pozwalają stowarzyszenia
+          project_association_not_allowed: niedozwolone zależności
         work_package:
-          is_not_a_valid_target_for_time_entries: 'Zadanie #%{id} jest nie jest właściwym
-            do ponownego rozpisania czasu.'
+          is_not_a_valid_target_for_time_entries: 'Zadanie #%{id} jest niepoprawnym
+            celem do ponownego rozpisania czasu.'
           attributes:
             due_date:
-              not_start_date: nie jest na początku dnia, mimo, że jest to wymagane
+              not_start_date: nie jest w dniu rozpoczęcia, chociaż jest to wymagane
                 dla kamieni milowych
             parent_id:
               cannot_be_milestone: nie może być kamieniem milowym
               cannot_be_in_another_project: nie może być w innym projekcie
-              not_a_valid_parent: jest nieprawidłowy
+              not_a_valid_parent: is invaild
               does_not_exist: nie istnieje
             status_id:
-              status_transition_invalid: nie prawidłowego przejścia istnieje od starego
-                do nowego stanu bieżących ról użytkownika
+              status_transition_invalid: istnieje nie ważne przejście od starego do
+                nowego statusu dla obecnych ról użytkownika
             priority_id:
               only_active_priorities_allowed: musi być aktywny
         user:
@@ -301,7 +300,7 @@ pl:
     name: Nazwa
     password: Hasło
     project: Projekt
-    role: Rola
+    role: Role
     start_date: Data rozpoczęcia
     status: Stan
     subject: Temat
@@ -516,7 +515,7 @@ pl:
   description_message_content: Treść wiadomości
   description_my_project: Jesteś członkiem
   description_notes: Notatki
-  description_option_toggle: Pokaż/Ukryj opcje
+  description_option_toggle: Show/Hide options
   description_parent_work_package: Parent work package of current
   description_project_scope: Zakres wyszukiwania
   description_query_sort_criteria_attribute: Sortowanie atrybut
@@ -537,7 +536,6 @@ pl:
   error_can_not_archive_project: Ten projekt nie może być archiwizowany
   error_can_not_delete_custom_field: Nie można usunąć pola niestandardowego
   error_can_not_delete_type: Ten typ zawiera zadania i nie może być usunięty.
-  error_can_not_delete_standard_type: Nie można usunąć standardowych typów.
   error_can_not_remove_role: Ta Rola jest używana i nie można jej usunąć.
   error_can_not_reopen_work_package_on_closed_version: Nie można otworzyć zadania
     przypisanego do zamkniętej wersji
@@ -552,8 +550,6 @@ pl:
     Proszę sprawdzić konfigurację (przejdź do "Administracja-> Statusy zadań").
   error_no_type_in_project: "Żaden typ nie jest związany z tym projektem. Proszę sprawdzić
     ustawienia projektu."
-  error_omniauth_registration_timed_out: Upłynął limit czasu na zewnętrzną autoryzację.
-    Spróbuj ponownie.
   error_scm_annotate: Wpis nie istnieje lub nie może być adnotowany.
   error_scm_command_failed: 'Wystąpił błąd podczas próby dostępu do repozytorium:
     %{value}'
@@ -564,8 +560,6 @@ pl:
   error_workflow_copy_target: Wybierz docelowy typ oraz rolę
   error_menu_item_not_created: Nie można dodać elementu menu
   error_menu_item_not_saved: Nie można zapisać elementu menu
-  error_external_authentication_failed: Wystąpił błąd podczas autoryzacji zewnętrznej.
-    Proszę spróbować ponownie.
   events:
     project: Projekt edytowany
     changeset: Changeset edytowane
@@ -591,31 +585,31 @@ pl:
   gui_validation_error_plural: "%{count} błędy/ów"
   js:
     unsupported_browser:
-      title: Twoja przeglądarka nie jest obsługiwana
-      message: Przeglądarka, której używasz jest już obsługiwane przez OpenProject.
-        Prosimy o zaktualizowanie przeglądarki.
+      title: Your browser is not supported
+      message: The browser you are using is no longer supported by OpenProject. Please
+        update your browser.
       learn_more: Dowiedz się więcej
-    logoff: Użytkownik został wylogowany
-    redirect_login: Czy chcesz zostać przekierowany do strony logowania?
+    logoff: You have been logged off
+    redirect_login: Do you want to be redirected to the login page?
     ajax:
       hide: Ukryj
-      loading: "Ładowanie..."
+      loading: Loading ...
     select2:
       input_too_short:
-        one: Podaj o jeden znak więcej
-        other: Wpisz {{count}} znaków więcej
+        one: Please enter one more character
+        other: Please enter {{count}} more characters
         zero: Please enter more characters
-        few: Wpisz {{count}} znaków więcej
-      load_more: "Ładowanie więcej wyników..."
-      no_matches: Nie znaleziono odpowiedników
-      searching: Wyszukiwanie...
+        few: Please enter {{count}} more characters
+      load_more: Loading more results ...
+      no_matches: No matches found
+      searching: Searching ...
       selection_too_big:
-        one: Można wybrać tylko jeden element
-        other: Można wybrać tylko {{limit}} elementów
+        one: You can only select one item
+        other: You can only select {{limit}} items
         zero: You cannot select any items
-        few: Można wybrać tylko {{limit}} elementów
+        few: You can only select {{limit}} items
     timelines:
-      tooManyProjects: Więcej niż %{count} projektów. Proszę użyj filtrowania!
+      tooManyProjects: More than %{count} Projects. Please use a better filter!
       cancel: Anuluj
       save: Zapisz
       due_date: Termin
@@ -624,26 +618,26 @@ pl:
       project_type: Typ projektu
       responsible: Odpowiedzialny
       start_date: Data rozpoczęcia
-      error: Wystąpił błąd.
-      create_planning_select_project: 'Projekt:'
-      really_close_dialog: Czy naprawdę chcesz zamknąć okno dialogowe i utracić wprowadzone
-        dane?
-      zoom_slider: Suwak powiększenia
+      error: An error has occured.
+      create_planning_select_project: 'Project:'
+      really_close_dialog: Do you really want to close the dialog and loose the entered
+        data?
+      zoom_slider: Zoom slider
     filter:
       noneElement: "(brak)"
       noneSelection: "(brak)"
     button_check_all: Zaznacz wszystko
     button_uncheck_all: Odznacz wszystko
-    label_collapsed: zwinięty
-    label_expanded: rozwinięty
-    label_collapse_all: Zwiń wszystkie
+    label_collapsed: collapsed
+    label_expanded: expanded
+    label_collapse_all: Zwiń wszystko
     label_expand_all: Rozwiń wszystkie
-    label_menu_item_toggle: Pokaż/Ukryj elementy podmenu
-    label_menu_collapse: Zwiń
-    label_menu_expand: Rozwiń
+    label_menu_item_toggle: Show/hide submenu items
+    label_menu_collapse: collapse
+    label_menu_expand: expand
     tl_toolbar:
-      zooms: Powiększenie
-      outlines: Poziom hierarchii
+      zooms: Zoom level
+      outlines: Hierarchy level
   label_account: Konto
   label_activity: Działanie
   label_add_another_file: Dodaj plik
@@ -662,7 +656,7 @@ pl:
   label_age: Wiek
   label_ago: dni temu
   label_all: wszystkie
-  label_all_work_packages: wszystkie zadania
+  label_all_work_packages: all work packages
   label_all_time: cały czas
   label_all_words: Wszystkie słowa
   label_and_its_subprojects: "%{value} oraz jego projekty podrzędne"
@@ -761,7 +755,7 @@ pl:
   label_environment: "Środowisko"
   label_equals: jest
   label_example: Przykład
-  label_expand: Rozwiń
+  label_expand: Expand
   label_expand_all: Rozwiń wszystkie
   label_export_to: 'Dostępne również w:'
   label_f_hour: "%{value} godzin"
@@ -837,7 +831,8 @@ pl:
   label_list: Lista
   label_loading: "Ładowanie..."
   label_logged_as: Zalogowany jako
-  label_login: Logowanie
+  label_login: Login
+  label_login_with_open_id_option: or login with OpenID
   label_logout: Wyloguj
   label_main_menu: Menu boczne
   label_max_size: Maksymalny rozmiar
@@ -893,7 +888,7 @@ pl:
   label_overall_activity: Ogólna aktywność
   label_overall_spent_time: Całkowity spędzony czas
   label_overview: Przegląd
-  label_password_lost: Resetuj hasło
+  label_password_lost: Lost password
   label_password_rule_lowercase: Małe litery
   label_password_rule_numeric: Znaki numeryczne
   label_password_rule_special: Znaki specjalne
@@ -928,8 +923,7 @@ pl:
   label_query_plural: Zapytania niestandardowe
   label_query_menu_item: Pozycja menu zapytania
   label_read: Czytaj...
-  label_register: Zarejestruj się
-  label_register_with_developer: Zarejestruj się jako programista
+  label_register: Register
   label_registered_on: Zarejestrowany na
   label_registration_activation_by_email: aktywacja konta przez e-mail
   label_registration_automatic_activation: automatyczna aktywacja konta
@@ -977,19 +971,19 @@ pl:
   label_sort_highest: Przenieś na samą górę
   label_sort_lower: Przenieś niżej
   label_sort_lowest: Przenieś na sam dół
-  label_spent_time: Poświęcony czas
+  label_spent_time: Czas pracy
   label_start_to_end: od początku do końca
   label_start_to_start: rozpoczęcie-rozpoczęcie
   label_statistics: Statystyki
-  label_status: Status
+  label_status: Stan
   label_status_updated: Status zadania został zaktualizowany
   label_stay_logged_in: Pozostań zalogowany
   label_string: Tekst
   label_subproject_new: Nowy podprojekt
   label_subproject_plural: Podprojekty
   label_subtask_plural: Zadania podrzędne
-  label_sum_for: Suma dla %{value}
-  label_summary: Podsumowanie
+  label_sum_for: Sum for %{value}
+  label_summary: Streszczenie
   label_system: System
   label_table_of_contents: Spis treści
   label_tag: Znacznik
@@ -998,7 +992,7 @@ pl:
   label_this_month: ten miesiąc
   label_this_week: ten tydzień
   label_this_year: ten rok
-  label_time_entry_plural: Spędzony czas
+  label_time_entry_plural: Czas pracy
   label_time_tracking: Zarządzanie czasem
   label_today: Dzisiaj
   label_top_menu: Głowne Menu
@@ -1044,16 +1038,16 @@ pl:
   label_wiki_edit: Edycja wiki
   label_wiki_edit_plural: Edycja wiki
   label_wiki_navigation: Nawigacja Wiki
-  label_wiki_page: Strona wiki
+  label_wiki_page: Strony wiki
   label_wiki_page_plural: Strony wiki
   label_wiki_show_index_page_link: Pokaż element podmenu "Spis treści"
   label_wiki_show_menu_item: Pokaż jako element menu w nawigacji projektu
   label_wiki_show_new_page_link: Pokaż element podmenu "Utwórz nową stronę podrzędną"
   label_wiki_show_submenu_item: 'Pokaż jako pozycję podmenu '
-  label_work_package: Zadanie
+  label_work_package: Zadania
   label_workflow: Przepływ pracy
   label_workflow_plural: Przepływy pracy
-  label_workflow_summary: Podsumowanie
+  label_workflow_summary: Streszczenie
   label_x_closed_work_packages_abbr:
     one: 1 zamknięte
     other: "%{count} zamkniętych"
@@ -1081,9 +1075,6 @@ pl:
     few: "%{count} projekty"
   label_year: Rok
   label_yesterday: wczoraj
-  label_keyboard_function: Funkcja
-  label_keyboard_shortcut: Skrót
-  label_keyboard_accesskey: Accesskey
   label_keyboard_shortcut_help_heading: Dostępne skróty klawiaturowe
   label_keyboard_shortcut_within_project: 'Skróty związane z projektem:'
   label_keyboard_shortcut_global_shortcuts: 'Globalne skróty:'
@@ -1132,7 +1123,7 @@ pl:
   noscript_learn_more: Dowiedz się więcej
   notice_account_activated: Twoje konto zostało aktywowane. Możesz się teraz zalogować.
   notice_account_inactive: Twoje konto nie zostało jeszcze aktywowane. Aby aktywować
-    swoje konto, kliknij na link, który został do Ciebie wysłany.
+    swoje konto, kliknij na link, który został do Ciebie wysłany mailem.
   notice_account_invalid_credentials: Nieprawidłowy użytkownik lub hasło
   notice_account_invalid_credentials_or_blocked: Nieprawidłowy użytkownik lub hasło
     lub konto jest zablokowane z powodu wielu nieudanych logowań. Jeśli tak, to będzie
@@ -1152,8 +1143,6 @@ pl:
     look at your account page.
   notice_account_updated: Konto zostało pomyślnie zaktualizowane.
   notice_account_wrong_password: Nieprawidłowe hasło
-  notice_account_registered_and_logged_in: Witaj Twoje konto zostało aktywowane. Zostałeś
-    zalogowany.
   notice_api_access_key_reseted: Twój klucz dostępu API został zresetowany.
   notice_can_t_change_password: This account uses an external authentication source.
     Impossible to change the password.
@@ -1281,10 +1270,10 @@ pl:
   permission_view_timelines: Widok osi czasu
   permission_view_wiki_edits: WIdok historii wiki
   permission_view_wiki_pages: Widok wiki
-  project_module_activity: Aktywność
+  project_module_activity: Działanie
   project_module_boards: Fora
   project_module_calendar: Kalendarz
-  project_module_work_package_tracking: Zadania
+  project_module_work_package_tracking: "Śledzenie zadania"
   project_module_news: Aktualności
   project_module_repository: Repozytorium
   project_module_time_tracking: Zarządzanie czasem
@@ -1350,6 +1339,7 @@ pl:
   setting_mail_handler_body_delimiters: Obcinanie e-mail po jednej z tych linii
   setting_new_project_user_role_id: Rola dla użytkownika bez uprawnień administratora,
     który tworzy projekt
+  setting_openid: Allow OpenID login and registration
   setting_password_active_rules: Aktywne klasy znaków
   setting_password_count_former_banned: Liczba ostatnio używanych haseł zakazane do
     ponownego wykorzystania
@@ -1372,7 +1362,7 @@ pl:
   setting_session_ttl_enabled: Session expires
   setting_start_of_week: Start calendars on
   setting_sys_api_enabled: Enable WS for repository management
-  setting_text_formatting: Text formatting
+  setting_text_formatting: Formatowanie tekstu
   setting_time_format: Format czasu
   setting_ui_theme: Motyw
   setting_user_may_override_theme: Users may choose their own themes
@@ -1381,7 +1371,7 @@ pl:
   setting_user_format: Users display format
   setting_users_deletable_by_admins: User accounts deletable by admins
   setting_users_deletable_by_self: Users allowed to delete their accounts
-  setting_welcome_text: Welcome text
+  setting_welcome_text: Tekst powitalny
   setting_wiki_compression: Wiki history compression
   setting_work_package_group_assignment: Allow assignment to groups
   settings:
@@ -1401,7 +1391,7 @@ pl:
   text_are_you_sure_with_children: Usunąć zadanie i wszystkie podrzędne zadania?
   text_assign_to_project: Przypisz do projektu
   text_caracters_maximum: "%{count} characters maximum."
-  text_caracters_minimum: Must be at least %{count} characters long.
+  text_caracters_minimum: Co najmniej %{count} znaków długości.
   text_comma_separated: Multiple values allowed (comma separated).
   text_custom_field_possible_values_info: Jeden wiersz dla każdej wartości
   text_default_administrator_account_changed: Domyślne konto administratora zostało
@@ -1419,7 +1409,7 @@ pl:
   text_enumeration_category_reassign_to: 'Reassign them to this value:'
   text_enumeration_destroy_question: "%{count} objects are assigned to this value."
   text_file_repository_writable: Attachments directory writable
-  text_git_repo_example: a bare and local repository (e.g. /gitrepo, c:\\gitrepo)
+  text_git_repo_example: a bare and local repository (e.g. /gitrepo, c:\gitrepo)
   text_work_package_added: Work package %{id} has been reported by %{author}.
   text_work_package_category_destroy_assignments: Remove category assignments
   text_work_package_category_destroy_question: Some work packages (%{count}) are assigned
@@ -1460,6 +1450,7 @@ pl:
   text_repository_usernames_mapping: |
     Wybierz lub zaktualizuj użytkownika OpenProject do każdego użytkownika w dzienniku repozytorium.
     Użytkownicy z tym samym loginem lub adresem e-mail w OpenProject i repozytorium są automatycznie mapowani.
+  text_rmagick_available: RMagick available (optional)
   text_select_mail_notifications: Wybierz akcje które mają być przesyłane powiadomieniami
     e-mail.
   text_select_project_modules: 'Wybierz moduły dla tego projektu:'
@@ -1528,8 +1519,8 @@ pl:
     edit_color: Edycja koloru
     edit_project_type: Edycja typu projektu
     edit_thing: Edycja
-    edit_timeline: Edit timeline report %{timeline}
-    delete_timeline: Delete timeline report %{timeline}
+    edit_timeline: Edit timeline report
+    delete_timeline: Delete timeline report
     empty: "(puste)"
     enable_type_in_project: Enable type "%{type}"
     end: Koniec
@@ -1563,7 +1554,7 @@ pl:
         type: Typ
         due_date: Data zakończenia
         name: Nazwa
-        status: Status
+        status: Stan
         responsible: Odpowiedzialny
         start_date: Data rozpoczęcia
       columns: Kolumny
@@ -1602,11 +1593,9 @@ pl:
         timeframe
       project_time_filter_absolute_timeframe: Bezwzględny zakres
       project_time_filter_relative_timeframe: Względny zakres
-      project_time_filter_historical_from: od
-      project_time_filter_historical_to: do
-      project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
-      project_time_filter_relative: "%{start_label} %{startspan}%{startspanunit} ago,
-        %{end_label} %{endspan}%{endspanunit} from now"
+      project_time_filter_historical: from %{startdate} to %{enddate}
+      project_time_filter_relative: from %{startspan}%{startspanunit} ago, to %{endspan}%{endspanunit}
+        from now
       project_filters: Filtr projektów
       project_responsible: Pokaż projekty z odpowiedzialnym
       project_status: Pokaż status projektu
@@ -1668,8 +1657,8 @@ pl:
       zgłoszenia statusów będą również usunięte.
     start: Start
     timeline: Raport osi czasu
-    timelines: Raporty osi czasu
-    settings: Oś czasu
+    timelines: Sprawozdania terminów
+    settings: Terminarz
     vertical_work_package: Pionowe zadania
     without_project_type: Bez typu projektu
     you_are_viewing_the_selected_timeline: Oglądasz raport zaznaczonej osi czasu
@@ -1689,10 +1678,6 @@ pl:
     active: aktywne
     activate: Aktywuj
     activate_and_reset_failed_logins: Aktywuj i resetuj nieudane logowania
-    authentication_provider: Dostawca uwierzytelnień
-    authentication_settings_disabled_due_to_external_authentication: Ten użytkownik
-      uwierzytelnia się przez zewnętrznego dostawcę uwierzytelnień, zatem hasło w
-      OpenProject nie zostanie zmienione.
     assign_random_password: Przypisanie losowego hasła (wysłane do użytkownika za
       pośrednictwem poczty e-mail)
     blocked: zablokowany tymczsowo
@@ -1728,4 +1713,3 @@ pl:
   work_package:
     updated_automatically_by_child_changes: _Zaktualizowane automatycznie przez zmianę
       wartości wewnątrz podrzędnego zadania %{child}_
-  nothing_to_preview: Nie ma nic do podglądu

@@ -90,6 +90,7 @@ zh:
       user:
         admin: "管理员"
         auth_source: "身份验证模式"
+        identity_url: OpenID URL
         language: "语言"
         last_login_on: "最后一次连接"
         mail_notification: "电子邮件通知"
@@ -135,7 +136,7 @@ zh:
         fixed_version: "目标版本"
         parent: "父"
         parent_issue: "父"
-        parent_work_package: "父"
+        parent_work_packae: "父"
         priority: "优先级"
         progress: "%完成"
         responsible: "责任人"
@@ -188,7 +189,7 @@ zh:
             parent_id:
               cannot_be_milestone: "不能是一个里程碑"
               cannot_be_in_another_project: "不能在另一个项目中"
-              not_a_valid_parent: "无效"
+              not_a_valid_parent: is invaild
               does_not_exist: "不存在"
             status_id:
               status_transition_invalid: "当前用户角色没有从旧到新状态的有效过度"
@@ -273,7 +274,7 @@ zh:
     name: "名称"
     password: "密码"
     project: "项目"
-    role: "角色"
+    role: Role
     start_date: "开始日期"
     status: "状态"
     subject: "主题"
@@ -339,7 +340,7 @@ zh:
   button_configure_menu_entry: "配置菜单项"
   button_delete_menu_entry: "删除菜单项"
   create_child_page: "创建新的子页面"
-  create_child_page_for: "创建新的子页面：\"%{title}\""
+  create_child_page_for: 创建新的子页面："%{title}"
   create_new_page: "创建新页"
   date:
     abbr_day_names:
@@ -474,7 +475,7 @@ zh:
   description_message_content: "消息内容"
   description_my_project: "您是成员"
   description_notes: "备注"
-  description_option_toggle: "显示/隐藏选项"
+  description_option_toggle: Show/Hide options
   description_parent_work_package: "当前的父工作包"
   description_project_scope: "搜索范围"
   description_query_sort_criteria_attribute: "排序属性"
@@ -483,7 +484,7 @@ zh:
   description_select_work_package: "选择工作包"
   description_selected_columns: "选定的列"
   description_sub_work_package: "当前的子工作包"
-  description_subwork_package: "子工作包属于"
+  description_subwork_package: Sub work package of
   description_toc_toggle: "显示/隐藏表的内容"
   description_user_mail_notification: "邮件通知设置"
   description_wiki_subpages_reassign: "选择新的父页"
@@ -495,7 +496,6 @@ zh:
   error_can_not_archive_project: "此项目不能存档"
   error_can_not_delete_custom_field: "无法删除自定义字段"
   error_can_not_delete_type: "这种类型包含工作包，不能被删除。"
-  error_can_not_delete_standard_type: "标准类型不能被删除。"
   error_can_not_remove_role: "该角色正在使用，无法删除。"
   error_can_not_reopen_work_package_on_closed_version: "不能重新打开一个已经分配给已关闭版本的工作包"
   error_can_t_load_default_data: "不能加载默认配置： %{value}"
@@ -503,10 +503,8 @@ zh:
   error_work_package_done_ratios_not_updated: "工作包完成比率不更新。"
   error_work_package_not_found_in_project: "工作包找不到或不属于此项目"
   error_must_be_project_member: "必须是项目成员"
-  error_no_default_work_package_status: "没有定义默认的工作包状态。请检查您的配置 （转到\"管理-> 工作包状态\"）。"
+  error_no_default_work_package_status: 没有定义默认的工作包状态。请检查您的配置 （转到"管理-> 工作包状态"）。
   error_no_type_in_project: "没有类型与此项目关联。请检查的项目设置。"
-  error_omniauth_registration_timed_out: The registration via an external authentication
-    provider timed out. Please try again.
   error_scm_annotate: "该条目不存在，或不能进行批注。"
   error_scm_command_failed: "当试图访问该代码库时出现错误: %{value}"
   error_scm_not_found: "在代码库中未找到的条目或修正版本。"
@@ -516,8 +514,6 @@ zh:
   error_workflow_copy_target: "请选择目标类型和角色"
   error_menu_item_not_created: "不能添加菜单项"
   error_menu_item_not_saved: "不能保存菜单项"
-  error_external_authentication_failed: An error occured during external authentication.
-    Please try again.
   events:
     project: "编辑项目"
     changeset: "编辑变更集"
@@ -543,28 +539,29 @@ zh:
   gui_validation_error_plural: "%{count} 错误"
   js:
     unsupported_browser:
-      title: "不支持您的浏览器"
-      message: OpenProject 是不再支持您所使用的浏览器。请更新您的浏览器。
+      title: Your browser is not supported
+      message: The browser you are using is no longer supported by OpenProject. Please
+        update your browser.
       learn_more: "了解更多信息"
-    logoff: "您已注销了"
-    redirect_login: "你想要将重定向到登录页吗？"
+    logoff: You have been logged off
+    redirect_login: Do you want to be redirected to the login page?
     ajax:
       hide: "隐藏"
-      loading: "正在加载..."
+      loading: Loading ...
     select2:
       input_too_short:
         one: Please enter one more character
-        other: "请输入额外的 {{count}} 字符"
+        other: Please enter {{count}} more characters
         zero: Please enter more characters
-      load_more: "正在加载更多的结果..."
-      no_matches: "没有找到匹配的"
-      searching: "正在搜索..."
+      load_more: Loading more results ...
+      no_matches: No matches found
+      searching: Searching ...
       selection_too_big:
         one: You can only select one item
-        other: "您可以只选择 {{limit}} 项目"
+        other: You can only select {{limit}} items
         zero: You cannot select any items
     timelines:
-      tooManyProjects: "超过 %{count} 个项目。请使用一个更好的筛选器 ！"
+      tooManyProjects: More than %{count} Projects. Please use a better filter!
       cancel: "取消"
       save: "保存"
       due_date: "截止日期"
@@ -573,25 +570,26 @@ zh:
       project_type: "项目类型"
       responsible: "责任人"
       start_date: "开始日期"
-      error: "出现错误。"
-      create_planning_select_project: "项目："
-      really_close_dialog: "你真的想要关闭对话框并丢失输入的数据吗？"
-      zoom_slider: "缩放滑块"
+      error: An error has occured.
+      create_planning_select_project: 'Project:'
+      really_close_dialog: Do you really want to close the dialog and loose the entered
+        data?
+      zoom_slider: Zoom slider
     filter:
       noneElement: "(无)"
       noneSelection: "(无)"
     button_check_all: "全选"
     button_uncheck_all: "全部不选"
-    label_collapsed: "折叠"
-    label_expanded: "展开"
+    label_collapsed: collapsed
+    label_expanded: expanded
     label_collapse_all: "全部折叠"
     label_expand_all: "全部展开"
-    label_menu_item_toggle: "显示/隐藏子菜单项"
-    label_menu_collapse: "折叠"
-    label_menu_expand: "展开"
+    label_menu_item_toggle: Show/hide submenu items
+    label_menu_collapse: collapse
+    label_menu_expand: expand
     tl_toolbar:
-      zooms: "缩放级别"
-      outlines: "层次结构级别"
+      zooms: Zoom level
+      outlines: Hierarchy level
   label_account: "帐户"
   label_activity: "活动"
   label_add_another_file: "添加另一个文件"
@@ -608,7 +606,7 @@ zh:
   label_age: "年龄"
   label_ago: "天前"
   label_all: "所有"
-  label_all_work_packages: "所有工作包"
+  label_all_work_packages: all work packages
   label_all_time: "所有的时间"
   label_all_words: "所有的词"
   label_and_its_subprojects: "%{value} 及其子项目"
@@ -706,7 +704,7 @@ zh:
   label_environment: "环境"
   label_equals: "是"
   label_example: "示例"
-  label_expand: "展开"
+  label_expand: Expand
   label_expand_all: "全部展开"
   label_export_to: "在其中也可用："
   label_f_hour: "%{value} 小时"
@@ -766,7 +764,7 @@ zh:
   label_jump_to_a_project: "跳转到一个项目..."
   label_language_based: "基于用户的语言"
   label_last_changes: "最后 %{count} 更改"
-  label_last_login: "最后连接"
+  label_last_login: "最后一次连接"
   label_last_month: "上个月"
   label_last_n_days: "%{count} 天前"
   label_last_week: "上个星期"
@@ -779,6 +777,7 @@ zh:
   label_loading: "正在加载..."
   label_logged_as: "登录用户名"
   label_login: "登录"
+  label_login_with_open_id_option: or login with OpenID
   label_logout: "注销"
   label_main_menu: "侧边菜单"
   label_max_size: "最大"
@@ -834,7 +833,7 @@ zh:
   label_overall_activity: "总体活动"
   label_overall_spent_time: "花的总时间"
   label_overview: "概述"
-  label_password_lost: "丢失的密码"
+  label_password_lost: Lost password
   label_password_rule_lowercase: "小写"
   label_password_rule_numeric: "数字字符"
   label_password_rule_special: "特殊字符"
@@ -868,8 +867,7 @@ zh:
   label_query_plural: "自定义查询"
   label_query_menu_item: "查询菜单项"
   label_read: "阅读..."
-  label_register: "注册"
-  label_register_with_developer: Register as developer
+  label_register: Register
   label_registered_on: "注册于"
   label_registration_activation_by_email: "通过电子邮件激活帐户"
   label_registration_automatic_activation: "自动帐户激活"
@@ -928,7 +926,7 @@ zh:
   label_subproject_new: "新的子项目"
   label_subproject_plural: "子项目"
   label_subtask_plural: "子任务"
-  label_sum_for: "%{value} 的总和"
+  label_sum_for: Sum for %{value}
   label_summary: "摘要"
   label_system: "系统"
   label_table_of_contents: "目录"
@@ -1015,9 +1013,6 @@ zh:
     zero: no projects
   label_year: "年"
   label_yesterday: "昨天"
-  label_keyboard_function: "功能"
-  label_keyboard_shortcut: "快捷方式"
-  label_keyboard_accesskey: "访问键"
   label_keyboard_shortcut_help_heading: "可用的键盘快捷键"
   label_keyboard_shortcut_within_project: "项目相关的快捷方式:"
   label_keyboard_shortcut_global_shortcuts: "全局快捷方式："
@@ -1071,8 +1066,6 @@ zh:
   notice_account_update_failed: "帐户设置不能保存。请看查看您的帐户页面。"
   notice_account_updated: "帐户已成功更新。"
   notice_account_wrong_password: "密码错误"
-  notice_account_registered_and_logged_in: Welcome, your account has been activated.
-    You are logged in now.
   notice_api_access_key_reseted: "您的 API 访问密钥被重置。"
   notice_can_t_change_password: "此帐户使用外部身份验证源。无法更改密码。"
   notice_default_data_loaded: "成功加载默认配置。"
@@ -1097,7 +1090,9 @@ zh:
   notice_successful_create: "成功创建。"
   notice_successful_delete: "成功删除。"
   notice_successful_update: "成功更新。"
-  notice_to_many_principals_to_display: "有太多结果。\\n键入新成员（或组）缩小搜索。"
+  notice_to_many_principals_to_display: |-
+    有太多结果。
+    键入新成员（或组）缩小搜索。
   notice_unable_delete_time_entry: "不能删除时间记录条目。"
   notice_unable_delete_version: "不能删除版本。"
   notice_automatic_set_of_standard_type: "自动设置标准类型。"
@@ -1194,7 +1189,7 @@ zh:
   project_module_news: "新闻"
   project_module_repository: "代码库"
   project_module_time_tracking: "时间跟踪"
-  project_module_wiki: Wiki
+  project_module_wiki: "维基"
   query_fields:
     assigned_to_role: "指定人角色"
     member_of_group: "指定人用户组"
@@ -1250,6 +1245,7 @@ zh:
   setting_mail_handler_api_key: API 密钥
   setting_mail_handler_body_delimiters: "在这些行之后截断电子邮件"
   setting_new_project_user_role_id: "给创建项目的非管理员用户的角色"
+  setting_openid: Allow OpenID login and registration
   setting_password_active_rules: "激活支付类型"
   setting_password_count_former_banned: "禁止重复使用最近使用密码的数量"
   setting_password_days_valid: "几天后，强制执行密码更改 （禁用与 0）"
@@ -1305,12 +1301,12 @@ zh:
   text_destroy_with_associated: "有额外的对象关联到要删除的工作包。这些对象是以下类型："
   text_destroy_what_to_do: "你想做什么？"
   text_diff_truncated: "...这个比较被截断，因为它超出了可显示的最大大小。"
-  text_email_delivery_not_configured: "未配置电子邮件，并且通知已禁用。 \\n配置Configure config/configuration.yml
+  text_email_delivery_not_configured: "未配置电子邮件，并且通知已禁用。 \n配置Configure config/configuration.yml
     的 SMTP 服务器，重新启动应用程序启用他们。"
   text_enumeration_category_reassign_to: "重新分配以此值："
   text_enumeration_destroy_question: "%{count} 个对象被分配到该值。"
   text_file_repository_writable: "附件目录可写"
-  text_git_repo_example: "一个纯粹和本地的代码库(e.g. /gitrepo, c:\\\\gitrepo)"
+  text_git_repo_example: "一个纯粹和本地的代码库(e.g. /gitrepo, c:\\gitrepo)"
   text_work_package_added: "工作包 %{id} 已经被 %{author} 报告。"
   text_work_package_category_destroy_assignments: "删除类别分配"
   text_work_package_category_destroy_question: "一些工作包 (%{count}) 被分配到这个类别。你想做什么？"
@@ -1330,8 +1326,8 @@ zh:
   text_line_separated: "允许有多个值 （每行一个值）。"
   text_load_default_configuration: "加载默认配置"
   text_min_max_length_info: 0 表示没有限制
-  text_no_configuration_data: "角色、 类型、 工作包状态和工作流有尚未配置。 \\n强烈建议加载默认配置。加载完成后你将能够修改它。"
-  text_own_membership_delete_confirmation: "您将要删除部分或全部的权限，可能不能够在那之后编辑此项目。 \\n您确定要继续吗？"
+  text_no_configuration_data: "角色、 类型、 工作包状态和工作流有尚未配置。 \n强烈建议加载默认配置。加载完成后你将能够修改它。"
+  text_own_membership_delete_confirmation: "您将要删除部分或全部的权限，可能不能够在那之后编辑此项目。 \n您确定要继续吗？"
   text_plugin_assets_writable: "插件资产目录可写"
   text_powered_by: Powered by %{link}
   text_project_destroy_confirmation: "确实要删除此项目和相关的数据吗?"
@@ -1339,7 +1335,10 @@ zh:
   text_reassign: "重新分配给"
   text_reassign_to: "工作包："
   text_regexp_info: "例如 ^ [A-Z0-9]+$"
-  text_repository_usernames_mapping: "选择或更新每个在代码库日志中发现的用户名所映射的OpenProject用户。\\n与OpenProject和代码库用户名或电子邮件相同的用户已被自动更新。"
+  text_repository_usernames_mapping: |-
+    选择或更新每个在代码库日志中发现的用户名所映射的OpenProject用户。
+    与OpenProject和代码库用户名或电子邮件相同的用户已被自动更新。
+  text_rmagick_available: RMagick available (optional)
   text_select_mail_notifications: "选择邮件通知应该被发送的动作。"
   text_select_project_modules: "选择要为此项目启用的模块："
   text_status_changed_by_changeset: "被实施在变更集 %{value} 中。"
@@ -1400,10 +1399,10 @@ zh:
     edit_color: "编辑颜色"
     edit_project_type: "编辑项目类型"
     edit_thing: "编辑"
-    edit_timeline: "编辑时间线报告"
-    delete_timeline: "删除时间线报告"
+    edit_timeline: Edit timeline report
+    delete_timeline: Delete timeline report
     empty: "(空)"
-    enable_type_in_project: "启用类型\"%{type}\""
+    enable_type_in_project: 启用类型"%{type}"
     end: "结束"
     errors:
       not_implemented: "不会呈现时间轴，因为它使用了一种尚未实现的功能。"
@@ -1451,7 +1450,7 @@ zh:
       exclude_reporters: "隐藏其他项目"
       exclude_empty: "隐藏空项目"
       grouping: "分组"
-      grouping_hide_group: "隐藏组\"%{group}\""
+      grouping_hide_group: 隐藏组"%{group}"
       grouping_one: "第一个分组标准"
       grouping_one_phrase: "是一个子项目属于"
       grouping_other: "其他"
@@ -1470,11 +1469,9 @@ zh:
       project_time_filter: "项目具有在一定时间段中的某类型工作包"
       project_time_filter_absolute_timeframe: "绝对时间段"
       project_time_filter_relative_timeframe: "相对时间段"
-      project_time_filter_historical_from: "从"
-      project_time_filter_historical_to: "到"
-      project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
-      project_time_filter_relative: "%{start_label} %{startspan} %{startspanunit}
-        前，从现在起的 %{end_label} %{endspan} %{endspanunit}"
+      project_time_filter_historical: from %{startdate} to %{enddate}
+      project_time_filter_relative: from %{startspan}%{startspanunit} ago, to %{endspan}%{endspanunit}
+        from now
       project_filters: "筛选项目"
       project_responsible: "显示项目与责任人"
       project_status: "显示项目的状态"
@@ -1516,14 +1513,14 @@ zh:
     work_packages_are_displayed_in_aggregations: "项目包显示为聚合"
     project_association_new: "添加项目依赖项"
     project_association_new_for_with: "为 %{project_a} 设置依赖项"
-    project_association_with_other: "项目\"%{project_a}\"与\"%{project_b}\"之间的依赖关系"
-    project_association_of_type: "类型为\"%{type}\"的项目的依赖项"
+    project_association_with_other: 项目"%{project_a}"与"%{project_b}"之间的依赖关系
+    project_association_of_type: 类型为"%{type}"的项目的依赖项
     project_type_could_not_be_saved: "项目类型不能保存"
     type_could_not_be_saved: "无法保存类型"
     reporting_could_not_be_saved: "不能保存报告"
     properties: "属性"
     really_delete_color: "您确定您要删除以下颜色？使用这种颜色的类型不会被删除。"
-    really_delete_project_association_between_project_a_and_project_b: "您确定您要删除\"%{project_a}\"和\"%{project_b}\"之间的依赖关系吗?"
+    really_delete_project_association_between_project_a_and_project_b: 您确定您要删除"%{project_a}"和"%{project_b}"之间的依赖关系吗?
     really_delete_project_type: "您确定你要删除以下项目类型？使用这种类型的项目不会被删除。"
     really_delete_timeline: "您确定您要删除以下时间线报告？在该时间线报告中的工作包不会被删除。"
     really_delete_reporting: "您确定您要删除以下报告吗？之前的报告状态也会被删除。"
@@ -1550,10 +1547,6 @@ zh:
     active: "激活"
     activate: "激活"
     activate_and_reset_failed_logins: "激活和重置失败的帐户"
-    authentication_provider: Authentication Provider
-    authentication_settings_disabled_due_to_external_authentication: This user authenticates
-      via an external authentication provider, so there is no password in OpenProject
-      to be changed.
     assign_random_password: "分配随机密码 （用户通过电子邮件发送）"
     blocked: "暂时锁定"
     blocked_num_failed_logins:
@@ -1578,7 +1571,6 @@ zh:
   wiki_menu_item_setting: "可见性"
   wiki_menu_item_new_main_item_explanation: "您正在删除唯一的主wiki菜单项。您现在需要选择一个wiki页面生成新的主项目。若要删除wiki，wiki模块可以由管理员停用。"
   wiki_menu_item_delete_not_permitted: "不能删除唯一 wiki 页面的 wiki 菜单项。"
-  query_menu_item_for: "查询\"%{title}\"的菜单项"
+  query_menu_item_for: 查询"%{title}"的菜单项
   work_package:
     updated_automatically_by_child_changes: _自动更新由于改变子工作包 %{child} 内的值_
-  nothing_to_preview: "没有什么要预览"

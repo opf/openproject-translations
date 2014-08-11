@@ -95,7 +95,7 @@ pt:
       time_entry:
         activity: Atividade
         hours: Horas
-        work_package: Pacotes de trabalho
+        work_package: Formulário
         spent_on: Data
         type: Tipo
       type:
@@ -106,6 +106,7 @@ pt:
       user:
         admin: Administrador
         auth_source: Modo de autenticação
+        identity_url: OpenID URL
         language: Idioma
         last_login_on: "Último acesso"
         mail_notification: Notificações por e-mail
@@ -150,8 +151,8 @@ pt:
         done_ratio: "% completo"
         fixed_version: Versão alvo
         parent: Pai
-        parent_issue: Mãe
-        parent_work_package: Mãe
+        parent_issue: Pai
+        parent_work_packae: Pai
         priority: Prioridade
         progress: "% completo"
         responsible: Responsável
@@ -207,7 +208,7 @@ pt:
             parent_id:
               cannot_be_milestone: cannot be a milestone
               cannot_be_in_another_project: cannot be in another project
-              not_a_valid_parent: "é invalido"
+              not_a_valid_parent: is invaild
               does_not_exist: não existe
             status_id:
               status_transition_invalid: no valid transition exists from old to new
@@ -237,7 +238,7 @@ pt:
           one: 1 error prohibited this %{model} from being saved
           other: "%{count} errors prohibited this %{model} from being saved"
     models:
-      attachment: File
+      attachment: Arquivo
       board: Forum
       comment: Comment
       custom_field: Custom field
@@ -259,7 +260,7 @@ pt:
         other: Papel
       type: Tipo
       planning_element: Elemento de planeamento
-      project_type: Tipo de Projeto
+      project_type: Tipo do projeto
       user: Usuário
       version: Versão
       wiki: Wiki
@@ -277,7 +278,7 @@ pt:
     author: Author
     base: 'General Error:'
     blocks_ids: Blocks
-    category: Category
+    category: Categoria
     comments: Comment
     content: Content
     created_at: Created on
@@ -299,8 +300,8 @@ pt:
     mail: E-mail
     name: Nome
     password: Senha
-    project: Projeto
-    role: Papel
+    project: Project
+    role: Role
     start_date: Data de início
     status: Situação
     subject: Assunto
@@ -339,7 +340,7 @@ pt:
   button_expand_all: Expand all
   button_list: List
   button_lock: Lock
-  button_log_time: Log time
+  button_log_time: Tempo de registro
   button_login: Login
   button_move: Move
   button_move_and_follow: Move and follow
@@ -475,7 +476,7 @@ pt:
   default_role_manager: Manager
   default_role_non_member: Non member
   default_role_reporter: Reporter
-  default_type: Work Package
+  default_type: Formulário
   default_type_bug: Bug
   default_type_feature: Feature
   default_type_support: Support
@@ -503,8 +504,8 @@ pt:
   description_category_reassign: Escolha a categoria
   description_message_content: Conteúdo da mensagem
   description_my_project: Você é membro
-  description_notes: Notes
-  description_option_toggle: Mostrar/Ocultar opções
+  description_notes: Notas
+  description_option_toggle: Show/Hide options
   description_parent_work_package: Pacote de trabalho pai do atual
   description_project_scope: Escopo da pesquisa
   description_query_sort_criteria_attribute: Ordenar por atributo
@@ -525,7 +526,6 @@ pt:
   error_can_not_archive_project: This project cannot be archived
   error_can_not_delete_custom_field: Unable to delete custom field
   error_can_not_delete_type: This type contains work packages and cannot be deleted.
-  error_can_not_delete_standard_type: Standard types cannot be deleted.
   error_can_not_remove_role: This role is in use and cannot be deleted.
   error_can_not_reopen_work_package_on_closed_version: A work package assigned to
     a closed version cannot be reopened
@@ -539,8 +539,6 @@ pt:
     Please check your configuration (Go to "Administration -> Work package statuses").
   error_no_type_in_project: No type is associated to this project. Please check the
     Project settings.
-  error_omniauth_registration_timed_out: The registration via an external authentication
-    provider timed out. Please try again.
   error_scm_annotate: The entry does not exist or cannot be annotated.
   error_scm_command_failed: 'An error occurred when trying to access the repository:
     %{value}'
@@ -551,8 +549,6 @@ pt:
   error_workflow_copy_target: Please select target type(s) and role(s)
   error_menu_item_not_created: Menu item could not be added
   error_menu_item_not_saved: Menu item could not be saved
-  error_external_authentication_failed: An error occured during external authentication.
-    Please try again.
   events:
     project: Project edited
     changeset: Changeset edited
@@ -603,12 +599,12 @@ pt:
       tooManyProjects: More than %{count} Projects. Please use a better filter!
       cancel: Cancel
       save: Save
-      due_date: Due date
-      name: Name
-      project_status: Project status
-      project_type: Project type
-      responsible: Responsible
-      start_date: Start date
+      due_date: Prazo
+      name: Nome
+      project_status: Estado do Projeto
+      project_type: Tipo do projeto
+      responsible: Responsável
+      start_date: Data de início
       error: An error has occured.
       create_planning_select_project: 'Project:'
       really_close_dialog: Do you really want to close the dialog and loose the entered
@@ -629,8 +625,8 @@ pt:
     tl_toolbar:
       zooms: Zoom level
       outlines: Hierarchy level
-  label_account: Account
-  label_activity: Activity
+  label_account: Conta
+  label_activity: Atividade
   label_add_another_file: Add another file
   label_add_columns: Add selected columns
   label_add_note: Add a note
@@ -662,7 +658,7 @@ pt:
   label_attachment_plural: Files
   label_attribute: Attribute
   label_attribute_plural: Attributes
-  label_auth_source: Authentication mode
+  label_auth_source: Modo de autenticação
   label_auth_source_new: New authentication mode
   label_auth_source_plural: Authentication modes
   label_authentication: Authentication
@@ -678,7 +674,7 @@ pt:
   label_bulk_edit_selected_work_packages: Bulk edit selected work packages
   label_calendar: Calendar
   label_calendar_show: Show Calendar
-  label_category: Category
+  label_category: Categoria
   label_wiki_menu_item: Wiki menu item
   label_select_main_menu_item: Select new main menu item
   label_change_plural: Changes
@@ -699,7 +695,7 @@ pt:
   label_comment_plural: Comments
   label_commits_per_author: Commits per author
   label_commits_per_month: Commits per month
-  label_confirmation: Confirmation
+  label_confirmation: Confirmação
   label_contains: contains
   label_content: Content
   label_copied: copied
@@ -712,9 +708,9 @@ pt:
   label_current_status: Current status
   label_current_version: Current version
   label_custom_field_new: New custom field
-  label_custom_field_plural: Custom fields
+  label_custom_field_plural: Campos personalizados
   label_custom_field_default_type: Empty type
-  label_date: Date
+  label_date: Data
   label_date_from: From
   label_date_from_to: From %{start} to %{end}
   label_date_range: Date range
@@ -757,7 +753,7 @@ pt:
   label_file_plural: Files
   label_filesystem_path: Root directory
   label_filter_add: Add filter
-  label_filter_plural: Filters
+  label_filter_plural: Filtros
   label_float: Float
   label_follows: follows
   label_force_user_language_to_default: Set language of users having a non allowed
@@ -807,7 +803,7 @@ pt:
   label_jump_to_a_project: Jump to a project...
   label_language_based: Based on user's language
   label_last_changes: last %{count} changes
-  label_last_login: Last connection
+  label_last_login: "Último acesso"
   label_last_month: last month
   label_last_n_days: last %{count} days
   label_last_week: last week
@@ -820,6 +816,7 @@ pt:
   label_loading: Loading...
   label_logged_as: Logged in as
   label_login: Sign in
+  label_login_with_open_id_option: or login with OpenID
   label_logout: Sign out
   label_main_menu: Side Menu
   label_max_size: Maximum size
@@ -870,7 +867,7 @@ pt:
   label_notify_member_plural: Email updates
   label_open_work_packages: open
   label_open_work_packages_plural: open
-  label_optional_description: Description
+  label_optional_description: Descrição
   label_options: Options
   label_overall_activity: Overall activity
   label_overall_spent_time: Overall spent time
@@ -910,7 +907,6 @@ pt:
   label_query_menu_item: Query menu item
   label_read: Read...
   label_register: Register
-  label_register_with_developer: Register as developer
   label_registered_on: Registered on
   label_registration_activation_by_email: account activation by email
   label_registration_automatic_activation: automatic account activation
@@ -942,7 +938,7 @@ pt:
   label_roadmap_overdue: "%{value} late"
   label_role_and_permissions: Roles and permissions
   label_role_new: New role
-  label_role_plural: Roles
+  label_role_plural: Funções
   label_role_search: Search for roles
   label_scm: SCM
   label_search: Search
@@ -958,19 +954,19 @@ pt:
   label_sort_highest: Move to top
   label_sort_lower: Move down
   label_sort_lowest: Move to bottom
-  label_spent_time: Spent time
+  label_spent_time: Tempo usado
   label_start_to_end: start to end
   label_start_to_start: start to start
   label_statistics: Statistics
-  label_status: Status
+  label_status: Situação
   label_status_updated: Work package status updated
   label_stay_logged_in: Stay logged in
-  label_string: Text
+  label_string: Conteúdo
   label_subproject_new: New subproject
   label_subproject_plural: Subprojects
   label_subtask_plural: Subtasks
   label_sum_for: Sum for %{value}
-  label_summary: Summary
+  label_summary: Resumo
   label_system: System
   label_table_of_contents: Table of Contents
   label_tag: Tag
@@ -979,14 +975,14 @@ pt:
   label_this_month: this month
   label_this_week: this week
   label_this_year: this year
-  label_time_entry_plural: Spent time
+  label_time_entry_plural: Tempo usado
   label_time_tracking: Time tracking
   label_today: today
   label_top_menu: Top Menu
   label_topic_plural: Topics
   label_total: Total
   label_type_new: New type
-  label_type_plural: Types
+  label_type_plural: Tipos
   label_ui: User Interface
   label_update_work_package_done_ratios: Update work package done ratios
   label_updated_time: Updated %{value} ago
@@ -1007,7 +1003,7 @@ pt:
   label_user_plural: Users
   label_user_search: Search for user
   label_version_new: New version
-  label_version_plural: Versions
+  label_version_plural: Versões
   label_version_sharing_descendants: With subprojects
   label_version_sharing_hierarchy: With project hierarchy
   label_version_sharing_none: Not shared
@@ -1025,16 +1021,16 @@ pt:
   label_wiki_edit: Wiki edit
   label_wiki_edit_plural: Wiki edits
   label_wiki_navigation: Wiki navigation
-  label_wiki_page: Wiki page
+  label_wiki_page: Página wiki
   label_wiki_page_plural: Wiki pages
   label_wiki_show_index_page_link: Show submenu item 'Table of Contents'
   label_wiki_show_menu_item: Show as menu item in project navigation
   label_wiki_show_new_page_link: Show submenu item 'Create new child page'
   label_wiki_show_submenu_item: 'Show as submenu item of '
-  label_work_package: Work package
-  label_workflow: Workflow
+  label_work_package: Pacote de trabalho
+  label_workflow: Fluxo de trabalho
   label_workflow_plural: Workflows
-  label_workflow_summary: Summary
+  label_workflow_summary: Resumo
   label_x_closed_work_packages_abbr:
     one: 1 closed
     other: "%{count} closed"
@@ -1057,9 +1053,6 @@ pt:
     zero: no projects
   label_year: Year
   label_yesterday: yesterday
-  label_keyboard_function: Function
-  label_keyboard_shortcut: Shortcut
-  label_keyboard_accesskey: Accesskey
   label_keyboard_shortcut_help_heading: Available Keyboard Shortcuts
   label_keyboard_shortcut_within_project: 'Project related shortcuts:'
   label_keyboard_shortcut_global_shortcuts: 'Global shortcuts:'
@@ -1127,8 +1120,6 @@ pt:
     look at your account page.
   notice_account_updated: Account was successfully updated.
   notice_account_wrong_password: Wrong password
-  notice_account_registered_and_logged_in: Welcome, your account has been activated.
-    You are logged in now.
   notice_api_access_key_reseted: Your API access key was reset.
   notice_can_t_change_password: This account uses an external authentication source.
     Impossible to change the password.
@@ -1255,7 +1246,7 @@ pt:
   permission_view_timelines: View timelines
   permission_view_wiki_edits: View wiki history
   permission_view_wiki_pages: View wiki
-  project_module_activity: Activity
+  project_module_activity: Atividade
   project_module_boards: Forums
   project_module_calendar: Calendar
   project_module_work_package_tracking: Work package tracking
@@ -1266,7 +1257,7 @@ pt:
   query_fields:
     assigned_to_role: Assignee's role
     member_of_group: Assignee's group
-    subproject_id: Subproject
+    subproject_id: Sub-projecto
   search_input_placeholder: search ...
   setting_activity_days_default: Days displayed on project activity
   setting_app_subtitle: Application subtitle
@@ -1321,12 +1312,13 @@ pt:
   setting_mail_handler_api_key: API key
   setting_mail_handler_body_delimiters: Truncate emails after one of these lines
   setting_new_project_user_role_id: Role given to a non-admin user who creates a project
+  setting_openid: Allow OpenID login and registration
   setting_password_active_rules: Active character classes
   setting_password_count_former_banned: Number of most recently used passwords banned
     for reuse
   setting_password_days_valid: Number of days, after which to enforce a password change
     (disable with 0)
-  setting_password_min_length: Minimum length
+  setting_password_min_length: Tamanho mínimo
   setting_password_min_adhered_rules: Minimum number of required classes
   setting_per_page_options: Objects per page options
   setting_plain_text_mail: Plain text mail (no HTML)
@@ -1388,7 +1380,7 @@ pt:
   text_enumeration_category_reassign_to: 'Reassign them to this value:'
   text_enumeration_destroy_question: "%{count} objects are assigned to this value."
   text_file_repository_writable: Attachments directory writable
-  text_git_repo_example: a bare and local repository (e.g. /gitrepo, c:\\gitrepo)
+  text_git_repo_example: a bare and local repository (e.g. /gitrepo, c:\gitrepo)
   text_work_package_added: Work package %{id} has been reported by %{author}.
   text_work_package_category_destroy_assignments: Remove category assignments
   text_work_package_category_destroy_question: Some work packages (%{count}) are assigned
@@ -1429,6 +1421,7 @@ pt:
   text_repository_usernames_mapping: |
     Select or update the OpenProject user mapped to each username found in the repository log.
     Users with the same OpenProject and repository username or email are automatically mapped.
+  text_rmagick_available: RMagick available (optional)
   text_select_mail_notifications: Select actions for which email notifications should
     be sent.
   text_select_project_modules: 'Select modules to enable for this project:'
@@ -1466,9 +1459,9 @@ pt:
     pm: pm
   timelines:
     admin_menu:
-      color: Color
+      color: Cor
       colors: Colors
-      project_type: Project type
+      project_type: Tipo do projeto
       project_types: Project types
     project_menu:
       planning_elements: Planning elements
@@ -1496,8 +1489,8 @@ pt:
     edit_color: Edit color
     edit_project_type: Edit project type
     edit_thing: Edit
-    edit_timeline: Edit timeline report %{timeline}
-    delete_timeline: Delete timeline report %{timeline}
+    edit_timeline: Edit timeline report
+    delete_timeline: Delete timeline report
     empty: "(empty)"
     enable_type_in_project: Enable type "%{type}"
     end: End
@@ -1531,14 +1524,14 @@ pt:
         date: date
         default: default
       column:
-        assigned_to: Assignee
-        type: Type
+        assigned_to: Atribuído para
+        type: Tipo
         due_date: End date
-        name: Name
-        status: Status
-        responsible: Responsible
-        start_date: Start date
-      columns: Columns
+        name: Nome
+        status: Situação
+        responsible: Responsável
+        start_date: Data de início
+      columns: Colunas
       comparisons: Comparisons
       comparison:
         absolute: Absolute
@@ -1574,11 +1567,9 @@ pt:
         timeframe
       project_time_filter_absolute_timeframe: Absolute timeframe
       project_time_filter_relative_timeframe: Relative timeframe
-      project_time_filter_historical_from: from
-      project_time_filter_historical_to: to
-      project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
-      project_time_filter_relative: "%{start_label} %{startspan}%{startspanunit} ago,
-        %{end_label} %{endspan}%{endspanunit} from now"
+      project_time_filter_historical: from %{startdate} to %{enddate}
+      project_time_filter_relative: from %{startspan}%{startspanunit} ago, to %{endspan}%{endspanunit}
+        from now
       project_filters: Filter projects
       project_responsible: Show projects with responsible
       project_status: Show project status
@@ -1662,10 +1653,6 @@ pt:
     active: active
     activate: Activate
     activate_and_reset_failed_logins: Activate and reset failed logins
-    authentication_provider: Authentication Provider
-    authentication_settings_disabled_due_to_external_authentication: This user authenticates
-      via an external authentication provider, so there is no password in OpenProject
-      to be changed.
     assign_random_password: Assign random password (sent to user via e-mail)
     blocked: locked temporarily
     blocked_num_failed_logins:
@@ -1698,4 +1685,3 @@ pt:
   work_package:
     updated_automatically_by_child_changes: _Updated automatically by changing values
       within child work package %{child}_
-  nothing_to_preview: Nothing to preview
