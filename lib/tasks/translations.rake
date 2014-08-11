@@ -35,7 +35,7 @@ namespace :translations do
 
   desc "request a new build of the language export files"
   task :request_build => :check_for_api_key do
-    crowdin = Crowdin::API.new project_id: crowdin_project_name, api_key: crowdin_project_key, base_url: 'https://api.crowdin.com'
+    crowdin = Crowdin::API.new project_id: crowdin_project_name, api_key: crowdin_project_key
     crowdin.export_translations
   end
 
@@ -45,14 +45,14 @@ namespace :translations do
       raise "#{OpenProject::Translations::Engine.root.join 'config', 'locales'} need to be writable"
     end
 
-    crowdin = Crowdin::API.new project_id: crowdin_project_name, api_key: crowdin_project_key, base_url: 'https://api.crowdin.com'
+    crowdin = Crowdin::API.new project_id: crowdin_project_name, api_key: crowdin_project_key
 
     puts 'Downloading translations from crowdin ...'
     begin
       languages_files = Tempfile.new('crowdin_translations')
       languages_files.close
 
-      crowdin = Crowdin::API.new project_id: crowdin_project_name, api_key: crowdin_project_key, base_url: 'https://api.crowdin.com'
+      crowdin = Crowdin::API.new project_id: crowdin_project_name, api_key: crowdin_project_key
       crowdin.download_translation 'all', output: languages_files.path
 
       # read zip
@@ -80,7 +80,7 @@ namespace :translations do
   desc "Upload current en.yml to crowdin, so that the crowd can update their translations"
   task :upload => :check_for_api_key do
     puts "Uploading current OpenProject en.yml to crowdin"
-    crowdin = Crowdin::API.new project_id: crowdin_project_name, api_key: crowdin_project_key, base_url: 'https://api.crowdin.com'
+    crowdin = Crowdin::API.new project_id: crowdin_project_name, api_key: crowdin_project_key
 
     # create crowdin directory just in case it doesn't exist.
     dir = crowdin.project_info['files'].find {|f| f['name'] == crowdin_directory && f['node_type'] == 'directory'}
