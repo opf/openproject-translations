@@ -27,6 +27,7 @@ module OpenProject::Translations
              :requires_openproject => '>= 4.0.0'
 
     config.to_prepare do
+      Redmine::I18n # let rails do some autoloading magic with Redmine::I18n
       require_dependency 'open_project/translations/patches'
       require_dependency 'open_project/translations/patches/redmine_i18n_patch'
     end
