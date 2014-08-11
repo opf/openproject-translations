@@ -14,8 +14,6 @@
 # See doc/COPYRIGHT.md for more details.
 #++
 
-require 'httmultiparty'
-require 'rest_client'
 require 'tempfile'
 require 'crowdin-api'
 require 'yaml'
@@ -47,19 +45,20 @@ namespace :translations do
       raise "#{OpenProject::Translations::Engine.root.join 'config', 'locales'} need to be writable"
     end
 
+    crowdin = Crowdin::API.new project_id: crowdin_project_name, api_key: crowdin_project_key, base_url: 'https://api.crowdin.com'
+
     puts 'Downloading translations from crowdin ...'
-    response = RestClient.get("http://api.crowdin.net/api/project/#{crowdin_project_name}/download/all.zip?key=#{crowdin_project_key}")
     begin
       languages_files = Tempfile.new('crowdin_translations')
       languages_files.close
-      File.open(languages_files.path, 'wb') do |file|
-        file.write response
-      end
+
+      crowdin = Crowdin::API.new project_id: crowdin_project_name, api_key: crowdin_project_key, base_url: 'https://api.crowdin.com'
+      crowdin.download_translation 'all', output: languages_files.path
 
       # read zip
       target_directory = OpenProject::Translations::Engine.root.join 'config', 'locales'
       Zip::File.open(languages_files.path) do |zip_file|
-        zip_file.glob('**/*.yml').each do |entry|
+        zip_file.glob("*/#{crowdin_directory}/*.yml").each do |entry|
           filename = entry.name.split('/').first + '.yml'
           filepath = target_directory.join filename
           puts "saving #{filename}"
