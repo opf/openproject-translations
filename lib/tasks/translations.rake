@@ -37,16 +37,8 @@ namespace :translations do
 
   desc "request a new build of the language export files"
   task :request_build => :check_for_api_key do
-    response = JSON.parse RestClient.get("http://api.crowdin.net/api/project/#{crowdin_project_name}/export?json=&key=#{crowdin_project_key}")
-    if response["success"]
-      if response["success"]["status"] == "built"
-        puts 'scheduled new build.'
-      else
-        puts 'already at latest version. skipped build.'
-      end
-    else
-      puts 'Some error occured. either the crowdin-api changed, or the API key is not valid.'
-    end
+    crowdin = Crowdin::API.new project_id: crowdin_project_name, api_key: crowdin_project_key, base_url: 'https://api.crowdin.com'
+    crowdin.export_translations
   end
 
   desc "fetch available translations from crowdin, and puts them into this gem"
