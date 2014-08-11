@@ -17,17 +17,22 @@
 require 'httmultiparty'
 require 'rest_client'
 require 'tempfile'
+require 'crowdin-api'
 require 'yaml'
 require 'zip'
 
 namespace :translations do
   crowdin_project_key = ''
   crowdin_project_name = 'openproject'
+  # translations are organized in subdirecotries in crowdin.
+  # one dir per OpenProject version
+  crowdin_directory = ''
 
   task :check_for_api_key => :environment do
     env_name = 'OPENPROJECT_CROWDIN_KEY'
     raise "ERROR: please specify a crowdin API key via the #{env_name} environment variable" unless ENV[env_name]
     crowdin_project_key = ENV[env_name]
+    crowdin_directory = OpenProject::VERSION.to_semver
   end
 
   desc "request a new build of the language export files"
@@ -84,10 +89,22 @@ namespace :translations do
   desc "Upload current en.yml to crowdin, so that the crowd can update their translations"
   task :upload => :check_for_api_key do
     puts "Uploading current OpenProject en.yml to crowdin"
-    path_to_upload_file = Rails.root.join 'config', 'locales', 'en.yml'
-    response = RestClient.post("http://api.crowdin.net/api/project/#{crowdin_project_name}/update-file?key=#{crowdin_project_key}&update_option=update_without_changes&json=",
-                             :'files[/en.yml]' => File.new(path_to_upload_file))
-    puts response
+    crowdin = Crowdin::API.new project_id: crowdin_project_name, api_key: crowdin_project_key, base_url: 'https://api.crowdin.com'
+
+    # create crowdin directory just in case it doesn't exist.
+    dir = crowdin.project_info['files'].find {|f| f['name'] == crowdin_directory && f['node_type'] == 'directory'}
+    unless dir
+      crowdin.add_directory(crowdin_directory)
+    end
+
+    # either add or update the english translation file
+    path_to_translation = Rails.root.join 'config', 'locales', 'en.yml'
+    dir = crowdin.project_info['files'].find {|f| f['name'] == crowdin_directory && f['node_type'] == 'directory'}
+    if dir['files'].find {|f| f['name'] == 'en.yml'}
+      crowdin.update_file [{dest: "/#{crowdin_directory}/en.yml", source: path_to_translation.to_s, title: 'OpenProject wording', export_pattern: '%two_letters_code%.yml'}], type: 'yaml'
+    else
+      crowdin.add_file [{dest: "/#{crowdin_directory}/en.yml", source: path_to_translation.to_s, title: 'OpenProject wording', export_pattern: '%two_letters_code%.yml'}], type: 'yaml'
+    end
   end
 
   desc "Insert missing translation keys into all translation files. This circumvents a crowdin bug."
