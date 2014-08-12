@@ -176,7 +176,7 @@ fr:
         watcher: Abonné
     errors:
       messages:
-        accepted: doivent être acceptés
+        accepted: doit être accepté(e)
         blank: ne peut pas être vide
         cant_link_a_work_package_with_a_descendant: Un Lot de Travaux ne peut être
           lié à l'une de ses tâches subordonnées
@@ -188,6 +188,8 @@ fr:
         exclusion: est réservé
         greater_than: doit être supérieur à %{count}
         greater_than_or_equal_to: doit être supérieur ou égal à %{count}
+        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
+          length
         greater_than_start_date: doit être supérieure à la date de début
         inclusion: n'est pas inclus dans la liste
         invalid: est invalide
@@ -309,7 +311,7 @@ fr:
     name: Nom
     password: Mot de passe
     project: Projet
-    role: Rôle
+    role: Role
     start_date: Date de début
     status: Statut
     subject: Objet
@@ -372,7 +374,7 @@ fr:
   button_watch: S'abonner
   button_manage_menu_entry: Gérer l'élément de menu
   button_add_menu_entry: Ajoutez un élément de menu
-  button_configure_menu_entry: Configurer l'élément de menu
+  button_configure_menu_entry: Gérer l'élément de menu
   button_delete_menu_entry: Supprimer l'élément de menu
   copy_project:
     started: Début de la copie du projet "%{source_project_name}" vers "%{target_project_name}".
@@ -601,6 +603,11 @@ fr:
   general_text_Yes: Oui
   gui_validation_error: une erreur
   gui_validation_error_plural: "%{count} erreurs"
+  instructions_after_registration: You can sign in as soon as your account has been
+    activated by clicking %{signin}.
+  instructions_after_logout: You can sign in again by clicking %{signin}.
+  instructions_after_error: You can try to sign in again by clicking %{signin}. If
+    the error persists, ask your admin for help.
   label_account: Compte
   label_activity: Activité
   label_add_another_file: Ajoutez un autre fichier
@@ -663,6 +670,7 @@ fr:
   label_close_versions: Fermer les versions complètes
   label_closed_work_packages: fermé
   label_collapse: Regrouper
+  label_configuration: configuration
   label_comment_add: Ajouter un commentaire
   label_comment_added: Commentaire ajouté
   label_comment_delete: Supprimer les commentaires
@@ -738,6 +746,7 @@ fr:
   label_group_new: Nouveau groupe
   label_group_plural: Groupes
   label_help: Aide
+  label_here: here
   label_hide: Masquer
   label_history: Historique
   label_home: Accueil
@@ -1062,6 +1071,8 @@ fr:
     quelques listes seulement)
   label_keyboard_shortcut_focus_next_item: Focus sur l'élément suivant (sur quelques
     listes seulement)
+  macro_execution_error: Error executing the macro %{macro_name}
+  macro_unavailable: Macro %{macro_name} cannot be displayed.
   mail_body_account_activation_request: 'Un nouvel utilisateur (%{value}) s''est enregistré.
     Le compte attend votre approbation:'
   mail_body_account_information: Informations sur votre compte
@@ -1147,13 +1158,14 @@ fr:
   notice_unable_delete_time_entry: Impossible de supprimer « Time Log Entry »
   notice_unable_delete_version: Impossible de supprimer la version.
   notice_automatic_set_of_standard_type: Fixer le type standard automatiquement.
+  notice_logged_out: You have been logged out.
   error_types_in_use_by_work_packages: 'Les types suivants sont toujours référencés
     par des Lots de Travaux: %{types}'
   number:
     format:
       delimiter: ''
       precision: 3
-      separator: "."
+      separator: ","
     human:
       format:
         delimiter: ''
@@ -1240,7 +1252,7 @@ fr:
   project_module_calendar: Calendrier
   project_module_work_package_tracking: Suivi du Lot de Travaux
   project_module_news: Actualités
-  project_module_repository: Référentiel
+  project_module_repository: Dépôt
   project_module_time_tracking: Suivi du temps
   project_module_wiki: Wiki
   query_fields:
@@ -1318,6 +1330,8 @@ fr:
   setting_plain_text_mail: Courriel en plein texte (pas HTML)
   setting_protocol: Protocole
   setting_repositories_encodings: Encodages de référentiels
+  setting_repository_authentication_caching_enabled: Enable caching for authentication
+    request of version control software
   setting_repository_log_display_limit: Nombre maximal des révisions affichées sur
     « file log »
   setting_rest_api_enabled: Autoriser service web REST
@@ -1424,7 +1438,7 @@ fr:
   text_select_project_modules: 'Sélectionnez les modules à activer pour ce projet:'
   text_status_changed_by_changeset: Enregistré dans « changeset » %{value}.
   text_subprojects_destroy_warning: 'Son sous-projet(s): %{value} sera aussi supprimé.'
-  text_time_logged_by_changeset: Appliqué dans « changeset » %{value}.
+  text_time_logged_by_changeset: Enregistré dans « changeset » %{value}.
   text_tip_work_package_begin_day: Lots de Travaux commençant aujourd'hui
   text_tip_work_package_begin_end_day: Lots de Travaux commençant et finissant aujourd'hui
   text_tip_work_package_end_day: Lots de Travaux finissant aujourd'hui
@@ -1482,7 +1496,7 @@ fr:
     delete_thing: Supprimer
     duration: Durée
     duration_days:
-      one: un jour
+      one: 1 jour
       other: "%{count} jours"
     edit_color: Editer la couleur
     edit_project_type: Editer le type de projet
@@ -1529,7 +1543,7 @@ fr:
         name: Nom
         status: Statut
         responsible: Responsable
-        start_date: Date de démarrage
+        start_date: Date de début
       columns: Colonnes
       comparisons: Comparaisons
       comparison:
@@ -1567,7 +1581,7 @@ fr:
       project_time_filter_absolute_timeframe: "Échéancier absolu"
       project_time_filter_relative_timeframe: "Échéancier relatif"
       project_time_filter_historical_from: de
-      project_time_filter_historical_to: pour
+      project_time_filter_historical_to: "à"
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
       project_time_filter_relative: "%{start_label} %{startspan}%{startspanunit} ago,
         %{end_label} %{endspan}%{endspanunit} from now"
@@ -1636,8 +1650,8 @@ fr:
       statuts de rapport précédents seront eux aussi supprimés.
     start: Début
     timeline: Calendrier lié
-    timelines: Calendriers liés
-    settings: Calendriers
+    timelines: Rapports des calendriers
+    settings: Calendriers liés
     vertical_work_package: Lots de Travaux verticaux
     without_project_type: Sans le projet type
     you_are_viewing_the_selected_timeline: Vous visualisez le calendrier lié selectionné
@@ -1677,9 +1691,16 @@ fr:
     status_user_and_brute_force: "%{user} et %{brute_force}"
     unlock: Déverrouiller
     unlock_and_reset_failed_logins: Déverrouiller et réinitialiser les échecs de connexion
+    no_login: This user authenticates through login by password. Since it is disabled,
+      they cannot log in.
+    password_change_unsupported: Change of password is not supported.
+    authorization_rejected: You are not allowed to sign in.
   version_status_closed: fermé
   version_status_locked: verrouillé
-  version_status_open: ouvert
+  version_status_open: ouvrir
+  note: Note
+  note_password_login_disabled: Password login has been disabled by %{configuration}.
+  warning: Warning
   warning_attachments_not_saved: "%{count} fichier(s) n'ont pu être sauvegardés."
   menu_item: "Éléments de menu"
   menu_item_setting: Visibilité

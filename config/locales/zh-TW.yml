@@ -138,11 +138,11 @@ zh-TW:
         done_ratio: "%完成"
         fixed_version: "目標版本"
         parent: "主"
-        parent_issue: "上層目錄："
-        parent_work_package: "上層目錄："
+        parent_issue: "主"
+        parent_work_package: "主"
         priority: "優先值"
         progress: "%完成"
-        responsible: "責任歸屬者"
+        responsible: "負責人"
         spent_time: "把時間花在"
         subproject: "子專案"
         time_entries: "日誌的時間"
@@ -161,6 +161,8 @@ zh-TW:
         exclusion: "預定"
         greater_than: "必須大於 %{count}"
         greater_than_or_equal_to: "必須大於或等於 %{count}"
+        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
+          length
         greater_than_start_date: "必須大於開始日期"
         inclusion: "不在列表中"
         invalid: "無效。 "
@@ -194,7 +196,7 @@ zh-TW:
             parent_id:
               cannot_be_milestone: cannot be a milestone
               cannot_be_in_another_project: cannot be in another project
-              not_a_valid_parent: is invalid
+              not_a_valid_parent: "無效。 "
               does_not_exist: does not exist
             status_id:
               status_transition_invalid: no valid transition exists from old to new
@@ -224,7 +226,7 @@ zh-TW:
           one: 1 error prohibited this %{model} from being saved
           other: "%{count} errors prohibited this %{model} from being saved"
     models:
-      attachment: File
+      attachment: "檔"
       board: Forum
       comment: Comment
       custom_field: Custom field
@@ -239,9 +241,9 @@ zh-TW:
       role:
         one: Role
         other: Roles
-      type: Type
+      type: "類型"
       planning_element: Planning element
-      project_type: Project type
+      project_type: "專案類型"
       user: User
       version: Version
       wiki: Wiki
@@ -268,18 +270,18 @@ zh-TW:
     default_columns: Default columns
     description: Description
     display_sums: Display Sums
-    due_date: Due date
+    due_date: "截止日期"
     estimated_hours: Estimated time
     firstname: First name
     group: Group
     groupname: Group name
-    is_default: Default value
+    is_default: "預設值"
     is_for_all: For all projects
     is_public: Public
     lastname: Last name
     login: Login
     mail: Email
-    name: Name
+    name: "名稱"
     password: Password
     project: Project
     role: Role
@@ -288,7 +290,7 @@ zh-TW:
     subject: Subject
     summary: Summary
     title: Title
-    type: Type
+    type: "類型"
     updated_at: Updated on
     updated_on: Updated on
     user: User
@@ -321,7 +323,7 @@ zh-TW:
   button_expand_all: Expand all
   button_list: List
   button_lock: Lock
-  button_log_time: Log time
+  button_log_time: "日誌的時間"
   button_login: Sign in
   button_move: Move
   button_move_and_follow: Move and follow
@@ -466,7 +468,7 @@ zh-TW:
   default_role_manager: Manager
   default_role_non_member: Non member
   default_role_reporter: Reporter
-  default_type: Work Package
+  default_type: "工作項目"
   default_type_bug: Bug
   default_type_feature: Feature
   default_type_support: Support
@@ -494,7 +496,7 @@ zh-TW:
   description_category_reassign: Choose category
   description_message_content: Message content
   description_my_project: You are member
-  description_notes: Notes
+  description_notes: "備註"
   description_parent_work_package: Parent work package of current
   description_project_scope: Search scope
   description_query_sort_criteria_attribute: Sort attribute
@@ -568,8 +570,13 @@ zh-TW:
   general_text_Yes: 'Yes'
   gui_validation_error: 1 error
   gui_validation_error_plural: "%{count} errors"
-  label_account: Account
-  label_activity: Activity
+  instructions_after_registration: You can sign in as soon as your account has been
+    activated by clicking %{signin}.
+  instructions_after_logout: You can sign in again by clicking %{signin}.
+  instructions_after_error: You can try to sign in again by clicking %{signin}. If
+    the error persists, ask your admin for help.
+  label_account: "帳戶"
+  label_activity: "活動"
   label_add_another_file: Add another file
   label_add_columns: Add selected columns
   label_add_note: Add a note
@@ -600,7 +607,7 @@ zh-TW:
   label_attachment_plural: Files
   label_attribute: Attribute
   label_attribute_plural: Attributes
-  label_auth_source: Authentication mode
+  label_auth_source: "身份驗證模式"
   label_auth_source_new: New authentication mode
   label_auth_source_plural: Authentication modes
   label_authentication: Authentication
@@ -630,13 +637,14 @@ zh-TW:
   label_close_versions: Close completed versions
   label_closed_work_packages: closed
   label_collapse: Collapse
+  label_configuration: configuration
   label_comment_add: Add a comment
   label_comment_added: Comment added
   label_comment_delete: Delete comments
   label_comment_plural: Comments
   label_commits_per_author: Commits per author
   label_commits_per_month: Commits per month
-  label_confirmation: Confirmation
+  label_confirmation: "確認密碼"
   label_contains: contains
   label_content: Content
   label_copied: copied
@@ -651,7 +659,7 @@ zh-TW:
   label_custom_field_new: New custom field
   label_custom_field_plural: Custom fields
   label_custom_field_default_type: Empty type
-  label_date: Date
+  label_date: "日期"
   label_date_from: From
   label_date_from_to: From %{start} to %{end}
   label_date_range: Date range
@@ -692,7 +700,7 @@ zh-TW:
   label_file_plural: Files
   label_filesystem_path: Root directory
   label_filter_add: Add filter
-  label_filter_plural: Filters
+  label_filter_plural: "篩選器"
   label_float: Float
   label_follows: follows
   label_force_user_language_to_default: Set language of users having a non allowed
@@ -704,6 +712,7 @@ zh-TW:
   label_group_new: New group
   label_group_plural: Groups
   label_help: Help
+  label_here: here
   label_hide: Hide
   label_history: History
   label_home: Home
@@ -742,7 +751,7 @@ zh-TW:
   label_jump_to_a_project: Jump to a project...
   label_language_based: Based on user's language
   label_last_changes: last %{count} changes
-  label_last_login: Last connection
+  label_last_login: "最後一次連接"
   label_last_month: last month
   label_last_n_days: last %{count} days
   label_last_week: last week
@@ -878,7 +887,7 @@ zh-TW:
   label_roadmap_overdue: "%{value} late"
   label_role_and_permissions: Roles and permissions
   label_role_new: New role
-  label_role_plural: Roles
+  label_role_plural: "角色"
   label_role_search: Search for roles
   label_scm: SCM
   label_search: Search
@@ -894,14 +903,14 @@ zh-TW:
   label_sort_highest: Move to top
   label_sort_lower: Move down
   label_sort_lowest: Move to bottom
-  label_spent_time: Spent time
+  label_spent_time: "把時間花在"
   label_start_to_end: start to end
   label_start_to_start: start to start
   label_statistics: Statistics
   label_status: Status
   label_status_updated: Work package status updated
   label_stay_logged_in: Stay logged in
-  label_string: Text
+  label_string: "文字"
   label_subproject_new: New subproject
   label_subproject_plural: Subprojects
   label_subtask_plural: Subtasks
@@ -914,14 +923,14 @@ zh-TW:
   label_this_month: this month
   label_this_week: this week
   label_this_year: this year
-  label_time_entry_plural: Spent time
+  label_time_entry_plural: "把時間花在"
   label_time_tracking: Time tracking
   label_today: today
   label_top_menu: Top Menu
   label_topic_plural: Topics
   label_total: Total
   label_type_new: New type
-  label_type_plural: Types
+  label_type_plural: "類型"
   label_ui: User Interface
   label_update_work_package_done_ratios: Update work package done ratios
   label_updated_time: Updated %{value} ago
@@ -942,7 +951,7 @@ zh-TW:
   label_user_plural: Users
   label_user_search: Search for user
   label_version_new: New version
-  label_version_plural: Versions
+  label_version_plural: "版本..."
   label_version_sharing_descendants: With subprojects
   label_version_sharing_hierarchy: With project hierarchy
   label_version_sharing_none: Not shared
@@ -1019,6 +1028,8 @@ zh-TW:
     lists only)
   label_keyboard_shortcut_focus_next_item: Focus next list element (on some lists
     only)
+  macro_execution_error: Error executing the macro %{macro_name}
+  macro_unavailable: Macro %{macro_name} cannot be displayed.
   mail_body_account_activation_request: 'A new user (%{value}) has registered. The
     account is pending your approval:'
   mail_body_account_information: Your account information
@@ -1101,6 +1112,7 @@ zh-TW:
   notice_unable_delete_time_entry: Unable to delete time log entry.
   notice_unable_delete_version: Unable to delete version.
   notice_automatic_set_of_standard_type: Set standard type automatically.
+  notice_logged_out: You have been logged out.
   error_types_in_use_by_work_packages: 'The following types are still referenced by
     work packages: %{types}'
   number:
@@ -1188,7 +1200,7 @@ zh-TW:
   permission_view_timelines: View timelines
   permission_view_wiki_edits: View wiki history
   permission_view_wiki_pages: View wiki
-  project_module_activity: Activity
+  project_module_activity: "活動"
   project_module_boards: Forums
   project_module_calendar: Calendar
   project_module_work_package_tracking: Work package tracking
@@ -1199,7 +1211,7 @@ zh-TW:
   query_fields:
     assigned_to_role: Assignee's role
     member_of_group: Assignee's group
-    subproject_id: Subproject
+    subproject_id: "子專案"
   search_input_placeholder: search ...
   setting_activity_days_default: Days displayed on project activity
   setting_app_subtitle: Application subtitle
@@ -1259,12 +1271,14 @@ zh-TW:
     for reuse
   setting_password_days_valid: Number of days, after which to enforce a password change
     (disable with 0)
-  setting_password_min_length: Minimum length
+  setting_password_min_length: "最小長度"
   setting_password_min_adhered_rules: Minimum number of required classes
   setting_per_page_options: Objects per page options
   setting_plain_text_mail: Plain text mail (no HTML)
   setting_protocol: Protocol
   setting_repositories_encodings: Repositories encodings
+  setting_repository_authentication_caching_enabled: Enable caching for authentication
+    request of version control software
   setting_repository_log_display_limit: Maximum number of revisions displayed on file
     log
   setting_rest_api_enabled: Enable REST web service
@@ -1399,9 +1413,9 @@ zh-TW:
     pm: pm
   timelines:
     admin_menu:
-      color: Color
+      color: "顏色"
       colors: Colors
-      project_type: Project type
+      project_type: "專案類型"
       project_types: Project types
     project_menu:
       planning_elements: Planning elements
@@ -1465,13 +1479,13 @@ zh-TW:
         default: default
       column:
         assigned_to: Assignee
-        type: Type
+        type: "類型"
         due_date: End date
-        name: Name
+        name: "名稱"
         status: Status
-        responsible: Responsible
+        responsible: "負責人"
         start_date: Start date
-      columns: Columns
+      columns: "列"
       comparisons: Comparisons
       comparison:
         absolute: Absolute
@@ -1614,9 +1628,16 @@ zh-TW:
     status_user_and_brute_force: "%{user} and %{brute_force}"
     unlock: Unlock
     unlock_and_reset_failed_logins: Unlock and reset failed logins
+    no_login: This user authenticates through login by password. Since it is disabled,
+      they cannot log in.
+    password_change_unsupported: Change of password is not supported.
+    authorization_rejected: You are not allowed to sign in.
   version_status_closed: closed
   version_status_locked: locked
   version_status_open: open
+  note: Note
+  note_password_login_disabled: Password login has been disabled by %{configuration}.
+  warning: Warning
   warning_attachments_not_saved: "%{count} file(s) could not be saved."
   menu_item: Menu item
   menu_item_setting: Visibility

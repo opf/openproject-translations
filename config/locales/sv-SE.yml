@@ -157,9 +157,9 @@ sv-SE:
       work_package:
         done_ratio: "% klart"
         fixed_version: Målversion
-        parent: Förälder
-        parent_issue: Förälder
-        parent_work_package: Förälder
+        parent: "Överordnad"
+        parent_issue: "Överordnad"
+        parent_work_package: "Överordnad"
         priority: Prioritet
         progress: "% klart"
         responsible: Ansvarig
@@ -182,20 +182,22 @@ sv-SE:
         exclusion: "är reserverad"
         greater_than: måste vara större än %{count}
         greater_than_or_equal_to: måste vara större än eller lika med %{count}
+        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
+          length
         greater_than_start_date: måste vara senare än startdatum
         inclusion: ingår inte i listan
         invalid: "är ogiltig"
         less_than: måste vara mindre än %{count}
         less_than_or_equal_to: måste vara mindre än eller lika med %{count}
-        not_a_date: inte är ett datum
+        not_a_date: "är inte ett datum"
         not_a_number: "är inte ett nummer"
-        not_an_integer: inte är ett heltal
+        not_an_integer: "är inte ett heltal"
         not_same_project: tillhör inte samma projekt
         odd: måste vara udda
         taken: har redan tagits
         too_long: "är för lång (maximalt är %{count} tecken)"
         too_short: "är för kort (minimum är %{count} tecken)"
-        wrong_length: har fel längd (bör vara %{count} tecken)
+        wrong_length: har fel längd (måste vara %{count} tecken)
         after: måste vara efter %{date}
         after_or_equal_to: måste vara efter eller lika med %{date}
         before: måste vara innan %{date}
@@ -231,7 +233,7 @@ sv-SE:
               numeric: numeriska (t.ex. ' 1')
               special: specialtecken (t.ex. ' %')
               reused:
-                one: har tidigare använts. Välj ett som är skiljer sig från ditt senaste.
+                one: har tidigare använts. Välj ett som skiljer sig från ditt senaste.
                 other: har tidigare använts. Välj ett som skiljer sig från dina senaste
                   %{count}.
         member:
@@ -301,7 +303,7 @@ sv-SE:
     name: Namn
     password: Lösenord
     project: Projekt
-    role: Roll
+    role: Role
     start_date: Startdatum
     status: Status
     subject: "Ämne"
@@ -316,7 +318,7 @@ sv-SE:
   button_add: Lägg till
   button_add_watcher: Lägg till bevakare
   button_annotate: Kommentera
-  button_apply: Tillämpa
+  button_apply: Tilldela
   button_archive: Arkivera
   button_back: Tillbaka
   button_cancel: Avbryt
@@ -340,7 +342,7 @@ sv-SE:
   button_expand_all: Expandera alla
   button_list: Lista
   button_lock: Lås
-  button_log_time: Tidrapportera
+  button_log_time: Logga tid
   button_login: Logga in
   button_move: Flytta
   button_move_and_follow: Flytta och följ
@@ -589,6 +591,11 @@ sv-SE:
   general_text_Yes: Ja
   gui_validation_error: 1 fel
   gui_validation_error_plural: "%{count} fel"
+  instructions_after_registration: You can sign in as soon as your account has been
+    activated by clicking %{signin}.
+  instructions_after_logout: You can sign in again by clicking %{signin}.
+  instructions_after_error: You can try to sign in again by clicking %{signin}. If
+    the error persists, ask your admin for help.
   label_account: Konto
   label_activity: Aktivitet
   label_add_another_file: Lägga till en annan fil
@@ -651,6 +658,7 @@ sv-SE:
   label_close_versions: Stäng slutförda versioner
   label_closed_work_packages: stängd
   label_collapse: Förminska
+  label_configuration: configuration
   label_comment_add: Lägg till en kommentar
   label_comment_added: Kommentar tillagd
   label_comment_delete: Ta bort kommentarer
@@ -726,6 +734,7 @@ sv-SE:
   label_group_new: Ny grupp
   label_group_plural: Grupper
   label_help: Hjälp
+  label_here: here
   label_hide: Dölj
   label_history: Historik
   label_home: Hem
@@ -769,7 +778,7 @@ sv-SE:
   label_last_login: Senaste inloggning
   label_last_month: förra månaden
   label_last_n_days: sista %{count} dagarna
-  label_last_week: Förra veckan
+  label_last_week: förra veckan
   label_latest_revision: Senaste revisionen
   label_latest_revision_plural: Senaste revisionerna
   label_ldap_authentication: LDAP autentisering
@@ -1045,6 +1054,8 @@ sv-SE:
     listor endast)
   label_keyboard_shortcut_focus_next_item: Fokusera nästa listelement (på vissa listor
     endast)
+  macro_execution_error: Error executing the macro %{macro_name}
+  macro_unavailable: Macro %{macro_name} cannot be displayed.
   mail_body_account_activation_request: 'En ny användare (%{value}) har registrerats.
     Kontot väntar på ditt godkännande:'
   mail_body_account_information: Din kontoinformation
@@ -1109,7 +1120,7 @@ sv-SE:
     under tiden.
   notice_locking_conflict_additional_information: Uppdatering(ar) kom från %{users}.
   notice_locking_conflict_reload_page: Vänligen ladda om sidan, granska ändringarna
-    och applicera dina uppdateringar igen.
+    och tilldela dina uppdateringar igen.
   notice_no_principals_found: Inga resultat hittades.
   notice_bad_request: Felaktig förfrågan.
   notice_not_authorized: Du har inte behörighet att komma åt denna sida.
@@ -1124,6 +1135,7 @@ sv-SE:
   notice_unable_delete_time_entry: Det gick inte att ta bort tidrapport.
   notice_unable_delete_version: Det gick inte att ta bort version.
   notice_automatic_set_of_standard_type: Ange standard typ automatiskt.
+  notice_logged_out: You have been logged out.
   error_types_in_use_by_work_packages: 'Följande typer refereras fortfarande av arbetspaket:
     %{types}'
   number:
@@ -1292,6 +1304,8 @@ sv-SE:
   setting_plain_text_mail: Oformaterad text i e-post (ingen HTML)
   setting_protocol: Protokoll
   setting_repositories_encodings: Teckenkodningar i versionsarkiv
+  setting_repository_authentication_caching_enabled: Enable caching for authentication
+    request of version control software
   setting_repository_log_display_limit: Maximalt antal revisioner som visas i loggfilen
   setting_rest_api_enabled: Aktivera REST webb tjänst
   setting_self_registration: Självregistrering
@@ -1549,7 +1563,7 @@ sv-SE:
     history: Historik
     new_color: Ny färg
     new_association: Nytt beroende
-    new_work_package: Nytt arbetspaket
+    new_work_package: Nya arbetspaket
     new_project_type: Ny projekttyp
     new_reporting: Ny rapportering
     new_timeline: Ny tidslinjerapport
@@ -1639,9 +1653,16 @@ sv-SE:
     status_user_and_brute_force: "%{user} och %{brute_force}"
     unlock: Lås upp
     unlock_and_reset_failed_logins: Lås upp och nollställ misslyckade inloggningsförsök
+    no_login: This user authenticates through login by password. Since it is disabled,
+      they cannot log in.
+    password_change_unsupported: Change of password is not supported.
+    authorization_rejected: You are not allowed to sign in.
   version_status_closed: stängd
   version_status_locked: låst
-  version_status_open: "öppen"
+  version_status_open: "öppna"
+  note: Note
+  note_password_login_disabled: Password login has been disabled by %{configuration}.
+  warning: Warning
   warning_attachments_not_saved: "%{count} fil(er) kunde inte sparas."
   menu_item: Menyalternativ
   menu_item_setting: Synlighet

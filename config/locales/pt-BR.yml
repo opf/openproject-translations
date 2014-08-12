@@ -102,7 +102,7 @@ pt-BR:
       time_entry:
         activity: Atividade
         hours: Horas
-        work_package: Pacote de Trabalho
+        work_package: Pacotes de trabalho
         spent_on: Data
         type: Tipo
       type:
@@ -157,8 +157,8 @@ pt-BR:
         done_ratio: "% concluído"
         fixed_version: Versão de meta
         parent: Ascendente
-        parent_issue: Pai
-        parent_work_package: Pai
+        parent_issue: Ascendente
+        parent_work_package: Ascendente
         priority: Prioridade
         progress: "% concluído"
         responsible: Responsável
@@ -181,6 +181,8 @@ pt-BR:
         exclusion: está reservado
         greater_than: deve ser maior que %{count}
         greater_than_or_equal_to: deve ser maior ou igual a %{count}
+        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
+          length
         greater_than_start_date: deve ser maior que a data de início
         inclusion: não está incluído na lista
         invalid: "é inválido"
@@ -309,7 +311,7 @@ pt-BR:
     name: Nome
     password: Senha
     project: Projeto
-    role: Função
+    role: Role
     start_date: Data de início
     status: Situação
     subject: Assunto
@@ -325,7 +327,7 @@ pt-BR:
   button_add_watcher: Adicionar observador
   button_annotate: Anotar
   button_apply: Aplicar
-  button_archive: Arquivo
+  button_archive: Arquivar
   button_back: Voltar
   button_cancel: Cancelar
   button_change: Alterar
@@ -348,7 +350,7 @@ pt-BR:
   button_expand_all: Expandir todos
   button_list: Lista
   button_lock: Bloquear
-  button_log_time: Registrar tempo
+  button_log_time: Tempo gasto
   button_login: Login
   button_move: Mover
   button_move_and_follow: Mover e seguir
@@ -421,15 +423,15 @@ pt-BR:
     - Sábado
     formats:
       default: "%d/%m/%Y"
-      long: "%d %B, %Y"
-      short: "%d %b"
+      long: "%d de %B de %Y"
+      short: "%d/%b"
     month_names:
     - 
     - Janeiro
     - Fevereiro
     - Março
     - Abril
-    - Maio
+    - Mai
     - Junho
     - Julho
     - Agosto
@@ -495,7 +497,7 @@ pt-BR:
   default_role_manager: Gerente
   default_role_non_member: Não membro
   default_role_reporter: Repórter
-  default_type: Pacotes de Trabalho
+  default_type: Pacotes de trabalho
   default_type_bug: Bug
   default_type_feature: Funcionalidade
   default_type_support: Suporte
@@ -599,6 +601,11 @@ pt-BR:
   general_text_Yes: Sim
   gui_validation_error: 1 erro
   gui_validation_error_plural: "%{count} erros"
+  instructions_after_registration: You can sign in as soon as your account has been
+    activated by clicking %{signin}.
+  instructions_after_logout: You can sign in again by clicking %{signin}.
+  instructions_after_error: You can try to sign in again by clicking %{signin}. If
+    the error persists, ask your admin for help.
   label_account: Conta
   label_activity: Atividade
   label_add_another_file: Adicione outro arquivo
@@ -661,6 +668,7 @@ pt-BR:
   label_close_versions: Fechar versões concluídas
   label_closed_work_packages: fechado
   label_collapse: Recolher
+  label_configuration: configuration
   label_comment_add: Adicionar um comentário
   label_comment_added: Comentário adicionado
   label_comment_delete: Excluir comentários
@@ -736,6 +744,7 @@ pt-BR:
   label_group_new: Novo grupo
   label_group_plural: Grupos
   label_help: Ajuda
+  label_here: here
   label_hide: Ocultar
   label_history: Histórico
   label_home: Início
@@ -788,7 +797,7 @@ pt-BR:
   label_list: Lista
   label_loading: Carregando...
   label_logged_as: Logado como
-  label_login: Registrar
+  label_login: Login
   label_logout: Fechar sessão
   label_main_menu: Menu lateral
   label_max_size: Tamanho máximo
@@ -839,7 +848,7 @@ pt-BR:
   label_notify_member_plural: Emails atualizados
   label_open_menu: Abrir menu
   label_open_work_packages: aberto
-  label_open_work_packages_plural: abertos
+  label_open_work_packages_plural: aberto
   label_optional_description: Descrição
   label_options: Opções
   label_overall_activity: Atividade global
@@ -933,7 +942,7 @@ pt-BR:
   label_start_to_end: início ao fim
   label_start_to_start: Início à Início
   label_statistics: Estatísticas
-  label_status: Status
+  label_status: Situação
   label_status_updated: Status de pacote de trabalho atualizado
   label_stay_logged_in: Permanecer logado
   label_string: Texto
@@ -992,7 +1001,7 @@ pt-BR:
   label_week: Semana
   label_wiki_content_added: Página wiki adicionada
   label_wiki_content_updated: Página wiki atualizada
-  label_wiki_toc: Tabela de Conteúdos
+  label_wiki_toc: Tabela de conteúdos
   label_wiki_dont_show_menu_item: Não mostrar esta página wiki na navegação do projeto
   label_wiki_edit: Editar wiki
   label_wiki_edit_plural: Editar wiki
@@ -1004,9 +1013,9 @@ pt-BR:
   label_wiki_show_new_page_link: Mostrar o item de submenu 'Criar nova página filho'
   label_wiki_show_submenu_item: 'Mostrar como item do submenu de '
   label_work_package: Pacote de trabalho
-  label_workflow: Fluxo de trabalho
+  label_workflow: Fluxo de Trabalho
   label_workflow_plural: Fluxos de trabalho
-  label_workflow_summary: Sumário
+  label_workflow_summary: Resumo
   label_x_closed_work_packages_abbr:
     one: 1 fechado
     other: "%{count} fechados"
@@ -1058,6 +1067,8 @@ pt-BR:
     algumas listas apenas)
   label_keyboard_shortcut_focus_next_item: Focar próxima lista de elementos (em algumas
     listas apenas)
+  macro_execution_error: Error executing the macro %{macro_name}
+  macro_unavailable: Macro %{macro_name} cannot be displayed.
   mail_body_account_activation_request: 'Um novo usuário (%{value}) registrou-se.
     A conta está aguardando sua aprovação:'
   mail_body_account_information: Suas informações de conta
@@ -1140,6 +1151,7 @@ pt-BR:
   notice_unable_delete_time_entry: Não é possível excluir a entrada de tempo.
   notice_unable_delete_version: Não é possível excluir a versão.
   notice_automatic_set_of_standard_type: Defina o tipo padrão automaticamente.
+  notice_logged_out: You have been logged out.
   error_types_in_use_by_work_packages: 'Os seguintes tipos ainda são referenciados
     por pacotes de trabalho: %{types}'
   number:
@@ -1304,12 +1316,14 @@ pt-BR:
     banidas para reutilização
   setting_password_days_valid: Número de dias, após o qual será imposta a mudança
     de senha (desabilitar com 0)
-  setting_password_min_length: Comprimento mínimo
+  setting_password_min_length: Tamanho mínimo
   setting_password_min_adhered_rules: Número mínimo de classes obrigatórias
   setting_per_page_options: Opções de objetos por página
   setting_plain_text_mail: Mensagens de texto simples (sem HTML)
   setting_protocol: Protocolo
   setting_repositories_encodings: Codificações de repositórios
+  setting_repository_authentication_caching_enabled: Enable caching for authentication
+    request of version control software
   setting_repository_log_display_limit: Número máximo de revisões exibido no arquivo
     de log
   setting_rest_api_enabled: Habilitar o serviço de web REST
@@ -1416,7 +1430,7 @@ pt-BR:
   text_status_changed_by_changeset: Aplicado no conjunto de alterações %{value}.
   text_subprojects_destroy_warning: 'Seu(s) subprojeto(s): %{value} também será(ão)
     excluído(s).'
-  text_time_logged_by_changeset: Aplicado em conjunto de alterações %{value}.
+  text_time_logged_by_changeset: Aplicado no conjunto de alterações %{value}.
   text_tip_work_package_begin_day: pacote de trabalho iniciando neste dia
   text_tip_work_package_begin_end_day: Pacote de trabalho inicia e termina neste dia
   text_tip_work_package_end_day: pacote de trabalho termina neste dia
@@ -1441,10 +1455,10 @@ pt-BR:
   time:
     am: am
     formats:
-      default: "%m/%d/%Y %I:%M %p"
-      long: "%B %d, %Y %H:%M"
-      short: "%d %b %H:%M"
-      time: "%I:%M %p"
+      default: "%d/%m/%Y %H:%M"
+      long: "%d de %B de %Y %H:%M"
+      short: "%d/%b %H:%M"
+      time: "%H:%M"
     pm: pm
   timelines:
     admin_menu:
@@ -1518,7 +1532,7 @@ pt-BR:
         type: Tipo
         due_date: Data de término
         name: Nome
-        status: Status
+        status: Situação
         responsible: Responsável
         start_date: Data de início
       columns: Colunas
@@ -1557,8 +1571,8 @@ pt-BR:
         em um determinado período de tempo
       project_time_filter_absolute_timeframe: Período de tempo absoluto
       project_time_filter_relative_timeframe: Período de tempo relativo
-      project_time_filter_historical_from: de
-      project_time_filter_historical_to: para
+      project_time_filter_historical_from: De
+      project_time_filter_historical_to: Para
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
       project_time_filter_relative: "%{start_label} %{startspan}%{startspanunit} atrás,
         %{end_label} %{endspan}%{endspanunit} agora"
@@ -1571,7 +1585,7 @@ pt-BR:
       timeframe_start: De
       timeline: Configurações Gerais
       zoom: Fator de zoom
-    history: História
+    history: Histórico
     new_color: Nova cor
     new_association: Nova dependência
     new_work_package: Novo pacote de trabalho
@@ -1626,7 +1640,7 @@ pt-BR:
       Status de geração de relatórios anteriores também serão excluídos.
     start: Início
     timeline: Relatório de cronograma
-    timelines: Relatórios de cronogramas
+    timelines: Relatórios de cronograma
     settings: Cronogramas
     vertical_work_package: Pacotes de trabalho verticais
     without_project_type: Sem o tipo de projeto
@@ -1667,9 +1681,16 @@ pt-BR:
     status_user_and_brute_force: "%{user} e %{brute_force}"
     unlock: Desbloquear
     unlock_and_reset_failed_logins: Desbloquear e redefinir logins com falha
+    no_login: This user authenticates through login by password. Since it is disabled,
+      they cannot log in.
+    password_change_unsupported: Change of password is not supported.
+    authorization_rejected: You are not allowed to sign in.
   version_status_closed: fechado
   version_status_locked: trancado
   version_status_open: aberto
+  note: Note
+  note_password_login_disabled: Password login has been disabled by %{configuration}.
+  warning: Warning
   warning_attachments_not_saved: "%{count} arquivo(s) não pôde(m) ser salvo(s)."
   menu_item: Item de menu
   menu_item_setting: Visibilidade

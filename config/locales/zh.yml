@@ -161,6 +161,8 @@ zh:
         exclusion: "是保留"
         greater_than: "必须大于 %{count}"
         greater_than_or_equal_to: "必须大于或等于 %{count}"
+        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
+          length
         greater_than_start_date: "必须大于开始日期"
         inclusion: "不包括在列表中"
         invalid: "是无效的"
@@ -192,7 +194,7 @@ zh:
             parent_id:
               cannot_be_milestone: "不能是一个里程碑"
               cannot_be_in_another_project: "不能在另一个项目中"
-              not_a_valid_parent: "无效"
+              not_a_valid_parent: "是无效的"
               does_not_exist: "不存在"
             status_id:
               status_transition_invalid: "当前用户角色没有从旧到新状态的有效过度"
@@ -277,7 +279,7 @@ zh:
     name: "名称"
     password: "密码"
     project: "项目"
-    role: "角色"
+    role: Role
     start_date: "开始日期"
     status: "状态"
     subject: "主题"
@@ -550,6 +552,11 @@ zh:
   general_text_Yes: "是"
   gui_validation_error: 1 错误
   gui_validation_error_plural: "%{count} 错误"
+  instructions_after_registration: You can sign in as soon as your account has been
+    activated by clicking %{signin}.
+  instructions_after_logout: You can sign in again by clicking %{signin}.
+  instructions_after_error: You can try to sign in again by clicking %{signin}. If
+    the error persists, ask your admin for help.
   label_account: "帐户"
   label_activity: "活动"
   label_add_another_file: "添加另一个文件"
@@ -610,6 +617,7 @@ zh:
   label_close_versions: "关闭已完成版本"
   label_closed_work_packages: "关闭"
   label_collapse: "折叠"
+  label_configuration: configuration
   label_comment_add: "添加评论"
   label_comment_added: "添加备注"
   label_comment_delete: "删除评论"
@@ -683,6 +691,7 @@ zh:
   label_group_new: "新的组"
   label_group_plural: "组"
   label_help: "帮助"
+  label_here: here
   label_hide: "隐藏"
   label_history: "历史"
   label_home: "首页"
@@ -720,7 +729,7 @@ zh:
   label_jump_to_a_project: "跳转到一个项目..."
   label_language_based: "基于用户的语言"
   label_last_changes: "最后 %{count} 更改"
-  label_last_login: "最后连接"
+  label_last_login: "最后一次连接"
   label_last_month: "上个月"
   label_last_n_days: "%{count} 天前"
   label_last_week: "上个星期"
@@ -993,6 +1002,8 @@ zh:
   label_keyboard_shortcut_go_preview: "转到预览当前编辑 （仅在编辑页)"
   label_keyboard_shortcut_focus_previous_item: "聚焦前面的列表元素 （只有某些列表)"
   label_keyboard_shortcut_focus_next_item: "聚焦下一个的列表元素 （只有某些列表)"
+  macro_execution_error: Error executing the macro %{macro_name}
+  macro_unavailable: Macro %{macro_name} cannot be displayed.
   mail_body_account_activation_request: "一个新的用户 (%{value}) 注册。该帐户正在等待您的批准："
   mail_body_account_information: "您的帐户信息"
   mail_body_account_information_external: "你可以使用 %{value} 帐号登录。"
@@ -1055,6 +1066,7 @@ zh:
   notice_unable_delete_time_entry: "不能删除时间记录条目。"
   notice_unable_delete_version: "不能删除版本。"
   notice_automatic_set_of_standard_type: "自动设置标准类型。"
+  notice_logged_out: You have been logged out.
   error_types_in_use_by_work_packages: "以下类型仍被工作包引用： %{types}"
   number:
     format:
@@ -1148,7 +1160,7 @@ zh:
   project_module_news: "新闻"
   project_module_repository: "代码库"
   project_module_time_tracking: "时间跟踪"
-  project_module_wiki: Wiki
+  project_module_wiki: "维基"
   query_fields:
     assigned_to_role: "指定人角色"
     member_of_group: "指定人用户组"
@@ -1213,6 +1225,8 @@ zh:
   setting_plain_text_mail: "纯文本邮件 (没有 HTML)"
   setting_protocol: "协议"
   setting_repositories_encodings: "代码库的编码"
+  setting_repository_authentication_caching_enabled: Enable caching for authentication
+    request of version control software
   setting_repository_log_display_limit: "在文件日志中显示的修订版本最大数目"
   setting_rest_api_enabled: "启用REST web service"
   setting_self_registration: "自助注册"
@@ -1523,9 +1537,16 @@ zh:
     status_user_and_brute_force: "%{user} 和 %{brute_force}"
     unlock: "解锁​​​​"
     unlock_and_reset_failed_logins: "解锁和重置失败的帐户"
+    no_login: This user authenticates through login by password. Since it is disabled,
+      they cannot log in.
+    password_change_unsupported: Change of password is not supported.
+    authorization_rejected: You are not allowed to sign in.
   version_status_closed: "关闭"
   version_status_locked: "锁定"
   version_status_open: "打开"
+  note: Note
+  note_password_login_disabled: Password login has been disabled by %{configuration}.
+  warning: Warning
   warning_attachments_not_saved: "%{count} 文件不能被保存。"
   menu_item: "菜单项"
   menu_item_setting: "可见性"

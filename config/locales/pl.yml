@@ -46,10 +46,10 @@ pl:
         filesize: Rozmiar
       auth_source:
         account: Konto
-        attr_firstname: Atrybuty Imienia
-        attr_lastname: Atrybuty Nazwiska
+        attr_firstname: Atrybut imienia
+        attr_lastname: Atrybut nazwiska
         attr_login: Atrybut Identyfikator logowania
-        attr_mail: Atrybuty adresu e-mail
+        attr_mail: Atrybut adresu e-mail
         base_dn: Bazowa nazwa wyróżniająca
         host: Host
         onthefly: Tworzenie użytkownika w locie
@@ -84,7 +84,7 @@ pl:
         homepage: Strona główna
         identifier: Identyfikator
         work_packages: Zadania
-        parent: Podprojekt projektu
+        parent: Projekt nadrzędny
         versions: Wersje
         project_type: Typ projektu
         responsible: Odpowiedzialny
@@ -92,10 +92,10 @@ pl:
         queries: Kwerendy
       query:
         column_names: Kolumny
-        group_by: Grupuj wyniki wg
+        group_by: Grupuj wyniki
         filters: Filtry
       repository:
-        url: URL
+        url: ADRES URL
       role:
         assignable: Zadanie może być przypisane do tej roli
       time_entry:
@@ -149,10 +149,10 @@ pl:
         name: Nazwa
         options: ''
       reporting:
-        reported_project_status_comment: Stan komentarz
+        reported_project_status_comment: Stan komentarza
         reporting_to_project: Raporty do projektu
         reported_project_status: Stan projektu
-        created_at: Stworzony
+        created_at: Utworzono
       work_package:
         done_ratio: "% wykonania"
         fixed_version: Wersja docelowa
@@ -181,6 +181,8 @@ pl:
         exclusion: jest zarezerwowany
         greater_than: musi być większa niż %{count}
         greater_than_or_equal_to: musi być większa lub równa %{count}
+        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
+          length
         greater_than_start_date: musi być większe niż data początkowa
         inclusion: nie znajduje się na liście
         invalid: jest nieprawidłowy
@@ -191,7 +193,7 @@ pl:
         not_an_integer: nie jest liczbą całkowitą
         not_same_project: nie należą do tego samego projektu
         odd: musi być nieparzyste
-        taken: podjęto już
+        taken: zostały już podjęte
         too_long: jest zbyt długi (maksymalnie %{count} znaków)
         too_short: jest zbyt krótki (minimum %{count} znaków)
         wrong_length: ma złą długość (powinno być %{count} znaków)
@@ -203,13 +205,13 @@ pl:
       models:
         project_association:
           identical_projects: nie mogą być tworzone z jednego projektu do siebie
-          project_association_not_allowed: nie pozwalają stowarzyszenia
+          project_association_not_allowed: niedozwolone zależności
         work_package:
-          is_not_a_valid_target_for_time_entries: 'Zadanie #%{id} jest nie jest właściwym
-            do ponownego rozpisania czasu.'
+          is_not_a_valid_target_for_time_entries: 'Zadanie #%{id} jest niepoprawnym
+            celem do ponownego rozpisania czasu.'
           attributes:
             due_date:
-              not_start_date: nie jest na początku dnia, mimo, że jest to wymagane
+              not_start_date: nie jest w dniu rozpoczęcia, chociaż jest to wymagane
                 dla kamieni milowych
             parent_id:
               cannot_be_milestone: nie może być kamieniem milowym
@@ -217,8 +219,8 @@ pl:
               not_a_valid_parent: jest nieprawidłowy
               does_not_exist: nie istnieje
             status_id:
-              status_transition_invalid: nie prawidłowego przejścia istnieje od starego
-                do nowego stanu bieżących ról użytkownika
+              status_transition_invalid: istnieje nie ważne przejście od starego do
+                nowego statusu dla obecnych ról użytkownika
             priority_id:
               only_active_priorities_allowed: musi być aktywny
         user:
@@ -306,7 +308,7 @@ pl:
     name: Nazwa
     password: Hasło
     project: Projekt
-    role: Rola
+    role: Role
     start_date: Data rozpoczęcia
     status: Stan
     subject: Temat
@@ -372,14 +374,15 @@ pl:
   button_configure_menu_entry: Konfigurowanie elementu menu
   button_delete_menu_entry: Usuń element menu
   copy_project:
-    started: Started to copy project "%{source_project_name}" to "%{target_project_name}".
-      You will be informed by Mail as soon as "%{target_project_name}" is available.
-    failed: Cannot copy project %{source_project_name}
-    succeeded: Created project %{target_project_name}
-    errors: Error
+    started: Rozpoczęto kopiownie projektu "%{source_project_name}" do "%{target_project_name}".
+      Zostaniesz poinformowany przez pocztę gdy tylko projekt "%{target_project_name}"
+      będzie dostępny.
+    failed: Nie można skopiować projektu %{source_project_name}
+    succeeded: Utworzono projekt %{target_project_name}
+    errors: Błąd
     text:
-      failed: Could not copy project "%{source_project_name}" to project "%{target_project_name}".
-      succeeded: Copied project "%{source_project_name}" to "%{target_project_name}".
+      failed: Nie można skopiować projektu "%{source_project_name}" do "%{target_project_name}".
+      succeeded: Skopiowano projekt "%{source_project_name}" do "%{target_project_name}".
   create_child_page: Utwórz nową stronę dziecka
   create_child_page_for: 'Utwórz nową stronę dziecka: "%{title}"'
   create_new_page: Utwórz nową stronę
@@ -603,6 +606,11 @@ pl:
   general_text_Yes: Tak
   gui_validation_error: 1 błąd
   gui_validation_error_plural: "%{count} błędy/ów"
+  instructions_after_registration: You can sign in as soon as your account has been
+    activated by clicking %{signin}.
+  instructions_after_logout: You can sign in again by clicking %{signin}.
+  instructions_after_error: You can try to sign in again by clicking %{signin}. If
+    the error persists, ask your admin for help.
   label_account: Konto
   label_activity: Działanie
   label_add_another_file: Dodaj plik
@@ -665,6 +673,7 @@ pl:
   label_close_versions: Zamknij zakończone wersje
   label_closed_work_packages: Zamknięte
   label_collapse: Zwiń
+  label_configuration: configuration
   label_comment_add: Dodaj komentarz
   label_comment_added: Komentarz dodany
   label_comment_delete: Usuń komentarze
@@ -740,6 +749,7 @@ pl:
   label_group_new: Nowa Grupa
   label_group_plural: Grupy
   label_help: Pomoc
+  label_here: here
   label_hide: Ukryj
   label_history: Historia
   label_home: Strona główna
@@ -792,7 +802,7 @@ pl:
   label_list: Lista
   label_loading: "Ładowanie..."
   label_logged_as: Zalogowany jako
-  label_login: Logowanie
+  label_login: Login
   label_logout: Wyloguj
   label_main_menu: Menu boczne
   label_max_size: Maksymalny rozmiar
@@ -841,7 +851,7 @@ pl:
   label_not_contains: nie zawierają
   label_not_equals: nie jest
   label_notify_member_plural: Email updates
-  label_open_menu: Open menu
+  label_open_menu: Otwórz menu
   label_open_work_packages: Otwarte
   label_open_work_packages_plural: Otwarte
   label_optional_description: Opis
@@ -933,18 +943,18 @@ pl:
   label_sort_highest: Przenieś na samą górę
   label_sort_lower: Przenieś niżej
   label_sort_lowest: Przenieś na sam dół
-  label_spent_time: Poświęcony czas
+  label_spent_time: Czas pracy
   label_start_to_end: od początku do końca
   label_start_to_start: rozpoczęcie-rozpoczęcie
   label_statistics: Statystyki
-  label_status: Status
+  label_status: Stan
   label_status_updated: Status zadania został zaktualizowany
   label_stay_logged_in: Pozostań zalogowany
   label_string: Tekst
   label_subproject_new: Nowy podprojekt
   label_subproject_plural: Podprojekty
   label_subtask_plural: Zadania podrzędne
-  label_summary: Podsumowanie
+  label_summary: Streszczenie
   label_system: System
   label_table_of_contents: Spis treści
   label_tag: Znacznik
@@ -953,7 +963,7 @@ pl:
   label_this_month: ten miesiąc
   label_this_week: ten tydzień
   label_this_year: ten rok
-  label_time_entry_plural: Spędzony czas
+  label_time_entry_plural: Czas pracy
   label_time_tracking: Zarządzanie czasem
   label_today: Dzisiaj
   label_top_menu: Głowne Menu
@@ -999,16 +1009,16 @@ pl:
   label_wiki_edit: Edycja wiki
   label_wiki_edit_plural: Edycja wiki
   label_wiki_navigation: Nawigacja Wiki
-  label_wiki_page: Strona wiki
+  label_wiki_page: Strony wiki
   label_wiki_page_plural: Strony wiki
   label_wiki_show_index_page_link: Pokaż element podmenu "Spis treści"
   label_wiki_show_menu_item: Pokaż jako element menu w nawigacji projektu
   label_wiki_show_new_page_link: Pokaż element podmenu "Utwórz nową stronę podrzędną"
   label_wiki_show_submenu_item: 'Pokaż jako pozycję podmenu '
-  label_work_package: Zadanie
+  label_work_package: Zadania
   label_workflow: Przepływ pracy
   label_workflow_plural: Przepływy pracy
-  label_workflow_summary: Podsumowanie
+  label_workflow_summary: Streszczenie
   label_x_closed_work_packages_abbr:
     one: 1 zamknięte
     other: "%{count} zamkniętych"
@@ -1064,6 +1074,8 @@ pl:
     lists only)
   label_keyboard_shortcut_focus_next_item: Focus next list element (on some lists
     only)
+  macro_execution_error: Error executing the macro %{macro_name}
+  macro_unavailable: Macro %{macro_name} cannot be displayed.
   mail_body_account_activation_request: 'A new user (%{value}) has registered. The
     account is pending your approval:'
   mail_body_account_information: Informacje o koncie
@@ -1146,6 +1158,7 @@ pl:
   notice_unable_delete_time_entry: Nie można usunąć wpisu dziennika.
   notice_unable_delete_version: Nie można usunąć wersji.
   notice_automatic_set_of_standard_type: Set standard type automatically.
+  notice_logged_out: You have been logged out.
   error_types_in_use_by_work_packages: 'Następujące typy są używane przez zadania:
     %{types}'
   number:
@@ -1234,10 +1247,10 @@ pl:
   permission_view_timelines: Widok osi czasu
   permission_view_wiki_edits: WIdok historii wiki
   permission_view_wiki_pages: Widok wiki
-  project_module_activity: Aktywność
+  project_module_activity: Działanie
   project_module_boards: Fora
   project_module_calendar: Kalendarz
-  project_module_work_package_tracking: Zadania
+  project_module_work_package_tracking: "Śledzenie zadania"
   project_module_news: Aktualności
   project_module_repository: Repozytorium
   project_module_time_tracking: Zarządzanie czasem
@@ -1314,6 +1327,8 @@ pl:
   setting_plain_text_mail: Poczta czystym tekstem (bez HTML)
   setting_protocol: Protokół
   setting_repositories_encodings: Kodowanie repozytorium
+  setting_repository_authentication_caching_enabled: Enable caching for authentication
+    request of version control software
   setting_repository_log_display_limit: Maksymalna liczba zmian wyświetlanych na pliku
     dziennika
   setting_rest_api_enabled: Włącz usługi sieci web REST
@@ -1516,7 +1531,7 @@ pl:
         type: Typ
         due_date: Data zakończenia
         name: Nazwa
-        status: Status
+        status: Stan
         responsible: Odpowiedzialny
         start_date: Data rozpoczęcia
       columns: Kolumny
@@ -1621,8 +1636,8 @@ pl:
       zgłoszenia statusów będą również usunięte.
     start: Start
     timeline: Raport osi czasu
-    timelines: Raporty osi czasu
-    settings: Oś czasu
+    timelines: Sprawozdania terminów
+    settings: Terminarz
     vertical_work_package: Pionowe zadania
     without_project_type: Bez typu projektu
     you_are_viewing_the_selected_timeline: Oglądasz raport zaznaczonej osi czasu
@@ -1663,9 +1678,16 @@ pl:
     status_user_and_brute_force: "%{user} i %{brute_force}"
     unlock: Odblokuj
     unlock_and_reset_failed_logins: Odblokuj i resetuj nieudane logowania
+    no_login: This user authenticates through login by password. Since it is disabled,
+      they cannot log in.
+    password_change_unsupported: Change of password is not supported.
+    authorization_rejected: You are not allowed to sign in.
   version_status_closed: Zamknięte
   version_status_locked: zablokowane
   version_status_open: Otwarte
+  note: Note
+  note_password_login_disabled: Password login has been disabled by %{configuration}.
+  warning: Warning
   warning_attachments_not_saved: "%{count} plik(ów) nie może być zapisany."
   menu_item: Element menu
   menu_item_setting: Widoczność

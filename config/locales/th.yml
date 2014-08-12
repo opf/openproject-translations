@@ -151,8 +151,8 @@ th:
         done_ratio: "% ที่แล้วเสร็จ"
         fixed_version: "เวอร์ชั่นเป้าหมาย"
         parent: "ค่าหลัก"
-        parent_issue: "หัวข้อหลัก"
-        parent_work_package: "หัวข้อหลัก"
+        parent_issue: "ค่าหลัก"
+        parent_work_package: "ค่าหลัก"
         priority: "ระดับความสำคัญ"
         progress: "% ที่แล้วเสร็จ"
         responsible: "รับผิดชอบ"
@@ -174,6 +174,8 @@ th:
         exclusion: "ถูกจองไว้แล้ว"
         greater_than: "ต้องมีค่ามากกว่า %{count}"
         greater_than_or_equal_to: "ต้องมีค่ามากกว่าหรือเท่ากับ %{count}"
+        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
+          length
         greater_than_start_date: "ต้องเป็นวันที่หลังจากวันเริ่มต้น"
         inclusion: "ไม่ได้รวมอยู่ในรายการ"
         invalid: "ไม่ถูกต้อง"
@@ -293,7 +295,7 @@ th:
     name: "ชื่อ"
     password: "รหัสผ่าน"
     project: "โครงการ"
-    role: "บทบาท"
+    role: Role
     start_date: "วันเริ่มต้น"
     status: "สถานะ"
     subject: "หัวข้อ"
@@ -413,7 +415,7 @@ th:
     - "กุมภาพันธ์"
     - "มีนาคม"
     - "เมษายน"
-    - "พฤษภาคม"
+    - "พ.ค."
     - "มิถุนายน"
     - "กรกฎาคม"
     - "สิงหาคม"
@@ -576,6 +578,11 @@ th:
   general_text_Yes: "ใช่"
   gui_validation_error: "พบ 1 ข้อผิดพลาด"
   gui_validation_error_plural: "พบ %{count} ข้อผิดพลาด"
+  instructions_after_registration: You can sign in as soon as your account has been
+    activated by clicking %{signin}.
+  instructions_after_logout: You can sign in again by clicking %{signin}.
+  instructions_after_error: You can try to sign in again by clicking %{signin}. If
+    the error persists, ask your admin for help.
   label_account: "บัญชี"
   label_activity: "กิจกรรม"
   label_add_another_file: "เพิ่มไฟล์อื่น"
@@ -636,6 +643,7 @@ th:
   label_close_versions: "ปิดเวอร์ชั่นที่เสร็จแล้ว"
   label_closed_work_packages: "ปิด"
   label_collapse: "ยุบ"
+  label_configuration: configuration
   label_comment_add: "เพิ่มความคิดเห็น"
   label_comment_added: "เพิ่มความคิดเห็นแล้ว"
   label_comment_delete: "ลบความคิดเห็น"
@@ -709,6 +717,7 @@ th:
   label_group_new: "กลุ่มใหม่"
   label_group_plural: "กลุ่ม"
   label_help: "วิธีใช้"
+  label_here: here
   label_hide: "ซ่อน"
   label_history: "ประวัติย้อนหลัง"
   label_home: "หน้าหลัก"
@@ -758,7 +767,7 @@ th:
   label_list: "รายการ"
   label_loading: "กำลังโหลด..."
   label_logged_as: "เข้าสู่ระบบในนาม"
-  label_login: "ลงชื่อเข้าใช้"
+  label_login: "ล็อคอิน"
   label_logout: "ออกจากระบบ"
   label_main_menu: "เมนูด้านข้าง"
   label_max_size: "ความยาวสูงสุด"
@@ -945,7 +954,7 @@ th:
   label_user_plural: "ผู้ใช้"
   label_user_search: "ค้นหาผู้ใช้"
   label_version_new: "เวอร์ชั่นใหม่"
-  label_version_plural: "เวอร์ชั่น"
+  label_version_plural: "รุ่น"
   label_version_sharing_descendants: "พร้อมด้วยโครงการย่อย"
   label_version_sharing_hierarchy: "พร้อมด้วยลำดับชั้นของโครงการ"
   label_version_sharing_none: "ไม่ได้แบ่งปัน"
@@ -1019,6 +1028,8 @@ th:
   label_keyboard_shortcut_go_preview: "ไปดูตัวอย่างการแก้ไขปัจจุบัน (ในหน้าแก้ไขเท่านั้น)"
   label_keyboard_shortcut_focus_previous_item: "เน้นรายการองค์ประกอบก่อนหน้านี้ (ในบางรายการเท่านั้น)"
   label_keyboard_shortcut_focus_next_item: "เน้นรายการองค์ประกอบถัดไป (ในบางรายการเท่านั้น)"
+  macro_execution_error: Error executing the macro %{macro_name}
+  macro_unavailable: Macro %{macro_name} cannot be displayed.
   mail_body_account_activation_request: "มีผู้ใช้ใหม่ (%{value}) ได้ลงทะเบียนเข้ามา
     ขณะนี้บัญชีอยู่ระหว่างการพิจารณาอนุมัติของคุณ:"
   mail_body_account_information: "ข้อมูลบัญชีของคุณ"
@@ -1090,6 +1101,7 @@ th:
   notice_unable_delete_time_entry: "ไม่สามารถลบรายการบันทึกเวลา"
   notice_unable_delete_version: "ไม่สามารถลบเวอร์ชั่น"
   notice_automatic_set_of_standard_type: "ตั้งค่าชนิดมาตรฐานโดยอัตโนมัติ"
+  notice_logged_out: You have been logged out.
   error_types_in_use_by_work_packages: "ประเภทต่อไปนี้ยังคงถูกอ้างอิงโดยชุดภารกิจ:
     %{types}"
   number:
@@ -1182,7 +1194,7 @@ th:
   project_module_calendar: "ปฏิทิน"
   project_module_work_package_tracking: "ติดตามผลชุดภารกิจ"
   project_module_news: "ข่าวสาร"
-  project_module_repository: "ที่เก็บข้อมูล"
+  project_module_repository: "ที่เก็บ"
   project_module_time_tracking: "ติดตามเวลาที่ใช้"
   project_module_wiki: "วิกิ"
   query_fields:
@@ -1252,6 +1264,8 @@ th:
   setting_plain_text_mail: "จดหมายข้อความล้วน (ไม่ใช้ HTML)"
   setting_protocol: "โปรโทคอล"
   setting_repositories_encodings: "แหล่งเก็บข้อมูลที่มีการเข้ารหัส"
+  setting_repository_authentication_caching_enabled: Enable caching for authentication
+    request of version control software
   setting_repository_log_display_limit: "จำนวนการปรับปรุงสูงสุดที่แสดงในไฟล์ log"
   setting_rest_api_enabled: "เปิดใช้งานเว็บเซอร์วิส REST "
   setting_self_registration: "การลงทะเบียนด้วยตนเอง"
@@ -1344,7 +1358,7 @@ th:
   text_select_project_modules: "เลือกโมดูลเพื่อเปิดใช้งานสำหรับโครงการ:"
   text_status_changed_by_changeset: "ใช้งานในชุดการเปลี่ยนแปลง %{value}"
   text_subprojects_destroy_warning: "โครงการย่อยของ: %{value} จะถูกลบไปด้วย"
-  text_time_logged_by_changeset: "มีการนำไปใช้ในชุดการเปลี่ยนแปลง %{value}"
+  text_time_logged_by_changeset: "ใช้งานในชุดการเปลี่ยนแปลง %{value}"
   text_tip_work_package_begin_day: "ชุดภารกิจเริ่มวันนี้"
   text_tip_work_package_begin_end_day: "ชุดภารกิจเริ่มต้นและสิ้นสุดวันนี้"
   text_tip_work_package_end_day: "ชุดภารกิจสิ้นสุดวันนี้"
@@ -1573,9 +1587,16 @@ th:
     status_user_and_brute_force: "%{user} และ %{brute_force}"
     unlock: "ปลดล็อก"
     unlock_and_reset_failed_logins: "ปลดล็อค และรีเซตค่าล็อกอินที่ล้มเหลว"
+    no_login: This user authenticates through login by password. Since it is disabled,
+      they cannot log in.
+    password_change_unsupported: Change of password is not supported.
+    authorization_rejected: You are not allowed to sign in.
   version_status_closed: "ปิด"
   version_status_locked: "ล็อก"
   version_status_open: "เปิด"
+  note: Note
+  note_password_login_disabled: Password login has been disabled by %{configuration}.
+  warning: Warning
   warning_attachments_not_saved: "มี %{count} ไฟล์ที่ไม่สามารถบันทึกได้"
   menu_item: "เมนู"
   menu_item_setting: "การมองเห็น"

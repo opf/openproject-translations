@@ -13,7 +13,7 @@ et:
           "Kustutatud kasutaja". Kuna kõik kustutatud kontode andmed seotakse selle
           kasutajakontoga, siis ei ole edaspidi võimalik eristada, kes konkreetsed
           andmed on tekitanud.
-        self: Võimalikult palju sinu poolt loodud andmetest (nt eelistused, tööpaketid,
+        self: Võimalikult palju sinu poolt loodud andmetest (nt eelistused, teemad,
           viki sissekanded) kuuluvad kustutamisele. Samas tuleb tähele panna, et andmeid
           nagu teemad ja viki sissekanded ei saa kustutada ilma, et need takistaks
           teiste kasutajate tööd. Sellepärast seotakse need andmed kasutajakontoga
@@ -31,8 +31,8 @@ et:
         self: Sinu konto kustutatakse süsteemist. Seetõttu ei saa sa enam sisse logida
           oma praeguste kasutajatunnustega. Küll aga võid sa registreerida end uuesti
           rakenduse kasutajaks.
-    error_inactive_activation_by_mail: Sinu konto ei ole aktiveeritud veel. Sulle
-      saadetud ekirjas on link, millega saad oma konto aktiveerida.
+    error_inactive_activation_by_mail: Sinu konto ei ole veel aktiivne. Sulle saadetud
+      e-kirjas on link, millega saad oma konto aktiveerida.
     error_inactive_manual_activation: Sinu konto pole aktiveeritud veel. Palun oota,
       kuni administraator aktiveerib selle.
     error_self_registration_disabled: Konto loomine on hetkel keelatud. Palun küsi
@@ -165,7 +165,7 @@ et:
         spent_time: Kulutatud aeg
         subproject: Alamprojekt
         time_entries: Logi aeg
-        type: Tüüp
+        type: Liik
         watcher: Jälgija
     errors:
       messages:
@@ -181,6 +181,8 @@ et:
         exclusion: on reserveeritud
         greater_than: peab olema suurem kui %{count}
         greater_than_or_equal_to: peab olema suurem või võrdne kui %{count}
+        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
+          length
         greater_than_start_date: peab olema alguskuupäevast hilisem
         inclusion: ei ole nimistus
         invalid: ei sobi
@@ -242,7 +244,7 @@ et:
           one: 1 viga ei võimaldanud selle %{model} salvestamist
           other: "%{count} viga ei võimaldanud selle %{model} salvestamist"
     models:
-      attachment: Manus
+      attachment: Fail
       board: Foorum
       comment: Kommentaar
       custom_field: Lisaväli
@@ -257,7 +259,7 @@ et:
       role:
         one: Roll
         other: Rolli
-      type: Tüüp
+      type: Liik
       planning_element: Planeerimise osa
       project_type: Projekti tüüp
       user: Kasutaja
@@ -300,13 +302,13 @@ et:
     name: Nimi
     password: Parool
     project: Projekt
-    role: Roll
+    role: Role
     start_date: Alguskuupäev
     status: Olek
     subject: Teema
     summary: Kokkuvõte
     title: Pealkiri
-    type: Tüüp
+    type: Liik
     updated_at: Uuendatud
     updated_on: Uuendatud
     user: Kasutaja
@@ -339,7 +341,7 @@ et:
   button_expand_all: Voldi kõik lahti
   button_list: Listi
   button_lock: Lukusta
-  button_log_time: Ajakulu
+  button_log_time: Logi aeg
   button_login: Logi sisse
   button_move: Tõsta
   button_move_and_follow: Tõsta ja järgne
@@ -494,10 +496,10 @@ et:
   default_type_milestone: Verstapost
   description_active: Aktiivne?
   description_attachment_toggle: Kuva/peida manused
-  description_autocomplete: See väli kasutab väärtuste automaatset pakkumist. Tööpaketi
+  description_autocomplete: See väli kasutab väärtuste automaatset pakkumist. Teema
     pealkirja sisestamise ajal pakutakse võimalike kandidaatide nimekirja. Võid valida
     ühe pakutavatest kandidaatidest kasutades noolteklahve ja valida saab tabulaatori
-    või reavahetuse klahviga. Alternatiivina saate sisestada kohe tööpaketi numbri.
+    või reavahetuse klahviga. Alternatiivina saate sisestada kohe teema numbri.
   description_available_columns: Saadaolevad väljad
   description_choose_project: Projektid
   description_compare_from: Võrdle alates versioonist
@@ -588,6 +590,11 @@ et:
   general_text_Yes: Jah
   gui_validation_error: 1 viga
   gui_validation_error_plural: "%{count} viga"
+  instructions_after_registration: You can sign in as soon as your account has been
+    activated by clicking %{signin}.
+  instructions_after_logout: You can sign in again by clicking %{signin}.
+  instructions_after_error: You can try to sign in again by clicking %{signin}. If
+    the error persists, ask your admin for help.
   label_account: Konto
   label_activity: Tegevus
   label_add_another_file: Lisa veel mõni fail
@@ -650,13 +657,14 @@ et:
   label_close_versions: Sule lõpetatud versioonid
   label_closed_work_packages: suletud
   label_collapse: Koonda
+  label_configuration: configuration
   label_comment_add: Lisa kommentaar
   label_comment_added: Kommentaar lisatud
   label_comment_delete: Kustuta kommentaarid
   label_comment_plural: Kommentaarid
   label_commits_per_author: Sissekandeid autori kohta
   label_commits_per_month: Sissekandeid kuu kohta
-  label_confirmation: Kinnitus
+  label_confirmation: Kinnitamine
   label_contains: sisaldab
   label_content: Sisu
   label_copied: kopeeritud
@@ -725,6 +733,7 @@ et:
   label_group_new: Uus rühm
   label_group_plural: Rühmad
   label_help: Abi
+  label_here: here
   label_hide: Peida
   label_history: Ajalugu
   label_home: Avaleht
@@ -771,7 +780,7 @@ et:
   label_ldap_authentication: LDAP autentimine
   label_less_or_equal: "<="
   label_less_than_ago: vähem kui päev tagasi
-  label_list: Nimistu
+  label_list: Listi
   label_loading: Laadimine...
   label_logged_as: Logitud sisse kui
   label_login: Logi sisse
@@ -822,11 +831,11 @@ et:
   label_none: pole
   label_not_contains: ei sisalda
   label_not_equals: ei ole
-  label_notify_member_plural: Saada liikmetele teavitused ekirjaga
+  label_notify_member_plural: Saada liikmetele teavitused e-kirjaga
   label_open_menu: Ava menüü
   label_open_work_packages: avatud
   label_open_work_packages_plural: avatud
-  label_optional_description: Teave
+  label_optional_description: Kirjeldus
   label_options: Valikud
   label_overall_activity: "Üldine tegevuste ajalugu"
   label_overall_spent_time: Kokku kulutatud aeg
@@ -907,7 +916,7 @@ et:
   label_send_test_email: Saada kontrollkiri
   label_settings: Seaded
   label_show_completed_versions: Näita lõpetatud versioone
-  label_sort: Sorteeri
+  label_sort: Järjesta
   label_sort_by: Sorteeri %{value} järgi
   label_sorted_by: Sorteeritud %{value} järgi
   label_sort_higher: Nihuta üles
@@ -1039,6 +1048,8 @@ et:
     vaid valitud loendites)
   label_keyboard_shortcut_focus_next_item: Liigu järgmisele loendi elemendile (töötab
     vaid valitud loendites)
+  macro_execution_error: Error executing the macro %{macro_name}
+  macro_unavailable: Macro %{macro_name} cannot be displayed.
   mail_body_account_activation_request: 'Uus kasutaja (%{value}) on registreerunud.
     Konto aktiveerimine ootab sinu nõusolekut:'
   mail_body_account_information: Sinu konto andmed
@@ -1099,8 +1110,8 @@ et:
   notice_work_package_done_ratios_updated: Teema edenemise astmed on uuendatud.
   notice_locking_conflict: Teine kasutaja uuendas vahepeal neid andmeid.
   notice_locking_conflict_additional_information: Uuendused on tehtud %{users} poolt.
-  notice_locking_conflict_reload_page: Palun vii oma muudatused sisse uue, toimetatud
-    leheküljele  -- laadi lehekülg uuesti ja sisesta oma muudatused uuesti.
+  notice_locking_conflict_reload_page: Palun laadi lehekülg uuesti, kontrolli tehtud
+    muudatusi ja püüa neid uuesti salvestada.
   notice_no_principals_found: "Ühtki kasutajat ega gruppi ei leitud."
   notice_bad_request: Vigane päring.
   notice_not_authorized: Sul ei ole sellele lehele ligipääsuks õigusi.
@@ -1115,6 +1126,7 @@ et:
   notice_unable_delete_time_entry: Ajakulu sissekande kustutamine ei õnnestunud.
   notice_unable_delete_version: Versiooni kustutamine ei õnnestunud.
   notice_automatic_set_of_standard_type: Vaikimisi tüüp valitakse automaatselt.
+  notice_logged_out: You have been logged out.
   error_types_in_use_by_work_packages: 'Mõned teemad viitavad järgmistele tüüpidele:
     %{types}'
   number:
@@ -1206,10 +1218,10 @@ et:
   project_module_activity: Tegevus
   project_module_boards: Foorumid
   project_module_calendar: Kalender
-  project_module_work_package_tracking: Teemasid jälgida
+  project_module_work_package_tracking: Teema jälgimine
   project_module_news: Uudised
   project_module_repository: Hoidla
-  project_module_time_tracking: Ajakulu jälgimine
+  project_module_time_tracking: Ajakulu arvestus
   project_module_wiki: Viki
   query_fields:
     assigned_to_role: Omistatud rollile
@@ -1275,13 +1287,15 @@ et:
     kasutamine on keelatud
   setting_password_days_valid: Uue parooli kohustuslik määramine antud arvu päevade
     järel (null on igavik)
-  setting_password_min_length: Lühima lubatud parooli pikkus
+  setting_password_min_length: Minimaalne pikkus
   setting_password_min_adhered_rules: Minimaalne nõutav erineva tähemärgiklassi kasutamine
     paroolis
   setting_per_page_options: Kuvatud tulemuste arv lehe kohta
   setting_plain_text_mail: E-kiri tavalise tekstina (ilma HTML-ta)
   setting_protocol: Protokoll
   setting_repositories_encodings: Manuste ja hoidlate kodeering
+  setting_repository_authentication_caching_enabled: Enable caching for authentication
+    request of version control software
   setting_repository_log_display_limit: Enim ajaloos näidatavaid sissekandeid
   setting_rest_api_enabled: Luba REST API kasutamine
   setting_self_registration: Omaloodud konto aktiveerimine
@@ -1293,7 +1307,7 @@ et:
   setting_sys_api_enabled: Hoidlate haldamine veebiteenuse kaudu
   setting_text_formatting: Tekstivormindamise abi
   setting_time_format: Aja esitusviis
-  setting_ui_theme: Visuaalne teema
+  setting_ui_theme: Teema
   setting_user_may_override_theme: Kasutajad võivad valida endale meeldiva visuaalse
     teema
   setting_accessibility_mode_for_anonymous: Võimalda külalistel kasutada hõlbustus-
@@ -1428,7 +1442,7 @@ et:
       reports: Ajakavade aruandlused
       timelines: Ajakavad
     add_project_association: Lisa sõltuvussuhe
-    associations: Sõltuvused
+    associations: Projekti sõltuvused
     board_could_not_be_saved: "(?) ei saa salvestada"
     button_delete_all: Kustuta kõik
     change: Muudatus planeerimises
@@ -1479,7 +1493,7 @@ et:
         default: vaikimisi
       column:
         assigned_to: Määratud tegija
-        type: Tüüp
+        type: Liik
         due_date: Lõppkuupäev
         name: Nimi
         status: Olek
@@ -1586,8 +1600,8 @@ et:
       Eelmised aruande olekud kustutatakse ka ära.
     start: Algus
     timeline: Perioodi aruanne
-    timelines: Perioodi aruanded
-    settings: Perioodid
+    timelines: Ajakavade aruandlused
+    settings: Ajakavad
     vertical_work_package: Vertikaalsed teemad
     without_project_type: Ilma projektitüübita
     you_are_viewing_the_selected_timeline: Sa näed valitud perioodi aruannet
@@ -1625,11 +1639,18 @@ et:
     registered: registreeritud
     reset_failed_logins: Lähtesta ebaõnnestunud sisselogimised
     status_user_and_brute_force: "%{user} ja %{brute_force}"
-    unlock: Aktiveeri
+    unlock: Ava lukust
     unlock_and_reset_failed_logins: Aktiveeri ja lähtesta ebaõnnestunud sisselogimised
+    no_login: This user authenticates through login by password. Since it is disabled,
+      they cannot log in.
+    password_change_unsupported: Change of password is not supported.
+    authorization_rejected: You are not allowed to sign in.
   version_status_closed: suletud
   version_status_locked: lukustatud
   version_status_open: avatud
+  note: Note
+  note_password_login_disabled: Password login has been disabled by %{configuration}.
+  warning: Warning
   warning_attachments_not_saved: "%{count} faili ei saa salvestada."
   menu_item: Menüüvalik
   menu_item_setting: Nähtavus

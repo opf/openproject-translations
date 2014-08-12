@@ -163,8 +163,8 @@ de:
         done_ratio: "% erledigt"
         fixed_version: Zielversion
         parent: "Übergeordnete Aufgabe"
-        parent_issue: "Übergeordneter Eintrag"
-        parent_work_package: "Übergeordneter Eintrag"
+        parent_issue: "Übergeordnete Aufgabe"
+        parent_work_package: "Übergeordnete Aufgabe"
         priority: Priorität
         progress: "% erledigt"
         responsible: Verantwortlicher
@@ -187,6 +187,8 @@ de:
         exclusion: ist nicht verfügbar
         greater_than: muss größer als %{count} sein
         greater_than_or_equal_to: muss größer oder gleich %{count} sein
+        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
+          length
         greater_than_start_date: muss größer als Anfangsdatum sein
         inclusion: ist kein gültiger Wert
         invalid: ist nicht gültig
@@ -221,7 +223,7 @@ de:
             parent_id:
               cannot_be_milestone: darf kein Meilenstein sein
               cannot_be_in_another_project: darf nicht in einem anderen Projekt sein
-              not_a_valid_parent: ist ungültig
+              not_a_valid_parent: ist nicht gültig
               does_not_exist: existiert nicht
             status_id:
               status_transition_invalid: für die aktuellen Nutzer-Rollen existiert
@@ -269,7 +271,7 @@ de:
         other: Rollen
       type: Typ
       planning_element: Planungselement
-      project_type: Projekt-Typ
+      project_type: Projekttyp
       user: Benutzer
       version: Version
       wiki: Wiki
@@ -301,7 +303,7 @@ de:
     firstname: Vorname
     group: Gruppe
     groupname: Gruppenname
-    is_default: Standardeinstellung
+    is_default: Standardwert
     is_for_all: Für alle Projekte
     is_public: "Öffentlich"
     lastname: Nachname
@@ -310,7 +312,7 @@ de:
     name: Name
     password: Kennwort
     project: Projekt
-    role: Rolle
+    role: Role
     start_date: Beginn
     status: Status
     subject: Thema
@@ -349,7 +351,7 @@ de:
   button_expand_all: Alle aufklappen
   button_list: Liste
   button_lock: Sperren
-  button_log_time: Aufwand buchen
+  button_log_time: Logzeit
   button_login: Anmelden
   button_move: Verschieben
   button_move_and_follow: Verschieben und Ticket anzeigen
@@ -373,7 +375,7 @@ de:
   button_watch: Beobachten
   button_manage_menu_entry: Menüpunkt verwalten
   button_add_menu_entry: Menüpunkt hinzufügen
-  button_configure_menu_entry: Menüpunkt konfigurieren
+  button_configure_menu_entry: Menüpunkt verwalten
   button_delete_menu_entry: Menüpunkt entfernen
   copy_project:
     started: Das Kopieren von Projekt "%{source_project_name}" nach "%{target_project_name}"
@@ -602,6 +604,11 @@ de:
   general_text_Yes: Ja
   gui_validation_error: 1 Fehler
   gui_validation_error_plural: "%{count} Fehler"
+  instructions_after_registration: You can sign in as soon as your account has been
+    activated by clicking %{signin}.
+  instructions_after_logout: You can sign in again by clicking %{signin}.
+  instructions_after_error: You can try to sign in again by clicking %{signin}. If
+    the error persists, ask your admin for help.
   label_account: Konto
   label_activity: Aktivität
   label_add_another_file: Eine weitere Datei hinzufügen
@@ -664,6 +671,7 @@ de:
   label_close_versions: Vollständige Versionen schließen
   label_closed_work_packages: geschlossen
   label_collapse: Zuklappen
+  label_configuration: configuration
   label_comment_add: Kommentar hinzufügen
   label_comment_added: Kommentar hinzugefügt
   label_comment_delete: Kommentar löschen
@@ -739,6 +747,7 @@ de:
   label_group_new: Neue Gruppe
   label_group_plural: Gruppen
   label_help: Hilfe
+  label_here: here
   label_hide: Verbergen
   label_history: Historie
   label_home: Hauptseite
@@ -925,7 +934,7 @@ de:
   label_send_test_email: Test-E-Mail senden
   label_settings: Konfiguration
   label_show_completed_versions: Abgeschlossene Versionen anzeigen
-  label_sort: Sortierung
+  label_sort: Sortieren
   label_sort_by: Sortiere nach %{value}
   label_sorted_by: sortiert nach %{value}
   label_sort_higher: Eins höher
@@ -952,7 +961,7 @@ de:
   label_this_month: aktueller Monat
   label_this_week: aktuelle Woche
   label_this_year: aktuelles Jahr
-  label_time_entry_plural: Benötigte Zeit
+  label_time_entry_plural: Aufgewendete Zeit
   label_time_tracking: Zeiterfassung
   label_today: heute
   label_top_menu: Hauptmenü
@@ -967,7 +976,7 @@ de:
   label_updated_time_by: Von %{author} vor %{age} aktualisiert
   label_used_by: Benutzt von
   label_user_activity: Aktivität von %{value}
-  label_user_anonymous: Anonym
+  label_user_anonymous: Anonymus
   label_user_mail_no_self_notified: Ich möchte nicht über Änderungen benachrichtigt
     werden, die ich selbst durchführe.
   label_user_mail_option_all: Für alle Ereignisse in all meinen Projekten
@@ -1059,6 +1068,8 @@ de:
     (nur bei einigen Listen)
   label_keyboard_shortcut_focus_next_item: Fokussiere nächstes Listenelement (nur
     bei einigen Listen)
+  macro_execution_error: Error executing the macro %{macro_name}
+  macro_unavailable: Macro %{macro_name} cannot be displayed.
   mail_body_account_activation_request: 'Ein neuer Benutzer (%{value}) hat sich registriert.
     Sein Konto wartet auf Ihre Genehmigung:'
   mail_body_account_information: Ihre Konto-Informationen
@@ -1067,7 +1078,7 @@ de:
   mail_body_lost_password: 'Benutzen Sie den folgenden Link, um Ihr Kennwort zu ändern:'
   mail_body_register: 'Um Ihr Konto zu aktivieren, benutzen Sie folgenden Link:'
   mail_body_reminder: "%{count} Tickets, die Ihnen zugewiesen sind, müssen in den
-    nächsten %{days} Tagen abgegeben werden:"
+    nächsten %{days} Tagen fertiggestellt werden:"
   mail_body_wiki_content_added: Die Wiki-Seite '%{id}' wurde von %{author} hinzugefügt.
   mail_body_wiki_content_updated: Die Wiki-Seite '%{id}' wurde von %{author} aktualisiert.
   mail_subject_account_activation_request: Antrag auf %{value} Kontoaktivierung
@@ -1144,6 +1155,7 @@ de:
     werden.
   notice_unable_delete_version: Die Version konnte nicht gelöscht werden.
   notice_automatic_set_of_standard_type: Der Standard-Typ wurde automatisch gesetzt.
+  notice_logged_out: You have been logged out.
   error_types_in_use_by_work_packages: 'Die folgenden Typen werden von Arbeitspaketen
     referenziert: %{types}'
   number:
@@ -1234,7 +1246,7 @@ de:
   project_module_activity: Aktivität
   project_module_boards: Foren
   project_module_calendar: Kalender
-  project_module_work_package_tracking: Arbeitspaket-Verfolgung
+  project_module_work_package_tracking: Arbeitspakete
   project_module_news: Neuigkeiten
   project_module_repository: Projektarchiv
   project_module_time_tracking: Zeiterfassung
@@ -1242,7 +1254,7 @@ de:
   query_fields:
     assigned_to_role: Zuständigkeitsrolle
     member_of_group: Zuständigkeitsgruppe
-    subproject_id: Teilprojekt
+    subproject_id: Unterprojekt von
   search_input_placeholder: Suche ...
   setting_activity_days_default: Anzahl Tage pro Seite der Projekt-Aktivität
   setting_app_subtitle: Applikations-Untertitel
@@ -1306,12 +1318,14 @@ de:
     wiederverwendet werden dürfen
   setting_password_days_valid: Anzahl von Tagen, nach denen ein Passwortwechsel erwzwungen
     wird (deaktivieren mit 0)
-  setting_password_min_length: Mindestlänge
+  setting_password_min_length: Minimale Länge
   setting_password_min_adhered_rules: Mindestanzahl zu verwendender Zeichenklassen
   setting_per_page_options: Objekte pro Seite
   setting_plain_text_mail: Nur reinen Text (kein HTML) senden
   setting_protocol: Protokoll
   setting_repositories_encodings: Kodierungen der Projektarchive
+  setting_repository_authentication_caching_enabled: Enable caching for authentication
+    request of version control software
   setting_repository_log_display_limit: Maximale Anzahl anzuzeigender Revisionen in
     der Historie einer Datei
   setting_rest_api_enabled: REST-Schnittstelle aktivieren
@@ -1417,7 +1431,7 @@ de:
   text_status_changed_by_changeset: Status geändert durch Changeset %{value}.
   text_subprojects_destroy_warning: Dessen Unterprojekte (%{value}) werden ebenfalls
     gelöscht.
-  text_time_logged_by_changeset: Angewendet in Changeset %{value}.
+  text_time_logged_by_changeset: Status geändert durch Changeset %{value}.
   text_tip_work_package_begin_day: Arbeitspaket, das an diesem Tag beginnt
   text_tip_work_package_begin_end_day: Arbeitspaket, das an diesem Tag beginnt und
     endet
@@ -1452,7 +1466,7 @@ de:
     admin_menu:
       color: Farbe
       colors: Farben
-      project_type: Projekt-Typ
+      project_type: Projekttyp
       project_types: Projekt-Typen
     project_menu:
       planning_elements: Planungselemente
@@ -1476,7 +1490,7 @@ de:
     duration: Dauer
     duration_days:
       one: 1 Tag
-      other: "%{count} Tage"
+      other: "%{count} Tagen"
     edit_color: Farbe bearbeiten
     edit_project_type: Projekt-Typ bearbeiten
     edit_thing: Bearbeiten
@@ -1523,7 +1537,7 @@ de:
         name: Name
         status: Status
         responsible: Verantwortlicher
-        start_date: Startdatum
+        start_date: Beginn
       columns: Spalten
       comparisons: Planungsvergleiche
       comparison:
@@ -1533,7 +1547,7 @@ de:
         compare_relative: Vergleiche aktuelle Planung mit vor %{timespan}
         compare_absolute: Vergleiche aktuelle Planung mit %{date}
       time_relative:
-        days: Tagen
+        days: Tage
         weeks: Wochen
         months: Monaten
       exclude_own_work_packages: Arbeitspakete dieses Projektes ausblenden
@@ -1543,12 +1557,12 @@ de:
       grouping_hide_group: Gruppe "%{group}" verstecken
       grouping_one: Erstes Gruppierungskriterium
       grouping_one_phrase: Ist ein Unterprojekt von
-      grouping_other: Andere
+      grouping_other: Sonstiges
       grouping_two: Zweites Gruppierungskriterium
       grouping_two_phrase: Hat eine Abhängigkeit zu Projekttyp
       hide_chart: Diagramm ausblenden
       noneElement: "(keines)"
-      noneSelection: "(keine)"
+      noneSelection: "(keines)"
       outline: Zu Beginn angezeigte Hierarchie
       parent: Zeige Unterprojekte von
       work_package_filters: Arbeitspakete filtern
@@ -1630,13 +1644,13 @@ de:
     start: Beginn
     timeline: Zeitplan-Report
     timelines: Zeitplan-Reporte
-    settings: Zeitlinie
+    settings: Zeitpläne
     vertical_work_package: Vertikale Arbeitspakete
     without_project_type: Ohne Projekt-Typ
     you_are_viewing_the_selected_timeline: Sie sehen den ausgewählten Zeitplan-Report
     zoom:
-      in: Mehr Details
-      out: Weniger Details
+      in: heranzoomen
+      out: herauszoomen
       days: Tage
       weeks: Wochen
       months: Monate
@@ -1670,9 +1684,16 @@ de:
     status_user_and_brute_force: "%{user} und %{brute_force}"
     unlock: Entsperren
     unlock_and_reset_failed_logins: Entsperren und fehlgeschlagene Logins zurücksetzen
-  version_status_closed: abgeschlossen
+    no_login: This user authenticates through login by password. Since it is disabled,
+      they cannot log in.
+    password_change_unsupported: Change of password is not supported.
+    authorization_rejected: You are not allowed to sign in.
+  version_status_closed: geschlossen
   version_status_locked: gesperrt
   version_status_open: offen
+  note: Note
+  note_password_login_disabled: Password login has been disabled by %{configuration}.
+  warning: Warning
   warning_attachments_not_saved: "%{count} Datei(en) konnten nicht gespeichert werden."
   menu_item: Menüpunkt
   menu_item_setting: Sichtbarkeit

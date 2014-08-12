@@ -186,6 +186,8 @@ es:
         exclusion: está reservado
         greater_than: debe ser mayor que %{count}
         greater_than_or_equal_to: debe ser mayor o igual a %{count}
+        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
+          length
         greater_than_start_date: debe ser mayor que la fecha de inicio
         inclusion: No está incluido en la lista
         invalid: no es válido
@@ -286,7 +288,7 @@ es:
     comments: Comentario
     content: Contenido
     created_at: Creado al
-    created_on: Creado en
+    created_on: Creado al
     custom_values: Campos Personalizados
     default_columns: Columnas predeterminadas
     description: Descripción
@@ -305,9 +307,9 @@ es:
     name: Nombre
     password: Contraseña
     project: Proyecto
-    role: Rol
+    role: Role
     start_date: Fecha de inicio
-    status: Situación
+    status: Estado
     subject: Asunto
     summary: Resumen
     title: Título
@@ -368,7 +370,7 @@ es:
   button_watch: Controlar
   button_manage_menu_entry: Configurar el menú
   button_add_menu_entry: Agregar el elemento de menú
-  button_configure_menu_entry: Configurar un elemento del menú
+  button_configure_menu_entry: Configurar el menú
   button_delete_menu_entry: Eliminar el elemento del menú
   copy_project:
     started: Empezó a copiar proyecto de '%{source_project_name}' a "%{target_project_name}".
@@ -380,7 +382,7 @@ es:
       failed: No se pudo copiar el proyecto "%{source_project_name}" al proyecto "%{target_project_name}".
       succeeded: Proyecto copiado de "%{source_project_name}" a "%{target_project_name}".
   create_child_page: Crear nueva subpágina
-  create_child_page_for: 'Crear nueva subpágin de niño: ''%{title}'''
+  create_child_page_for: 'Crear nueva subpágina hijo: ''%{title}'''
   create_new_page: Crear nueva página
   date:
     abbr_day_names:
@@ -414,7 +416,7 @@ es:
     - Viernes
     - Sábado
     formats:
-      default: "%m/%d/%Y"
+      default: "%d/%m/%Y"
       long: "%B %d, %Y"
       short: "%b %d"
     month_names:
@@ -423,7 +425,7 @@ es:
     - Febrero
     - Marzo
     - Abril
-    - Mayo
+    - May
     - Junio
     - Julio
     - Agosto
@@ -596,6 +598,11 @@ es:
   general_text_Yes: Sí
   gui_validation_error: 1 error
   gui_validation_error_plural: errores %{count}
+  instructions_after_registration: You can sign in as soon as your account has been
+    activated by clicking %{signin}.
+  instructions_after_logout: You can sign in again by clicking %{signin}.
+  instructions_after_error: You can try to sign in again by clicking %{signin}. If
+    the error persists, ask your admin for help.
   label_account: Cuenta
   label_activity: Actividad
   label_add_another_file: Agregar otro archivo
@@ -628,7 +635,7 @@ es:
   label_attachment_plural: Archivos
   label_attribute: Atributo
   label_attribute_plural: Atributos
-  label_auth_source: Modo de autentificación
+  label_auth_source: Modos de autentificación
   label_auth_source_new: Nuevo modo de autenticaficación
   label_auth_source_plural: Modos de autentificación
   label_authentication: Autentificación
@@ -658,6 +665,7 @@ es:
   label_close_versions: Cerrar versiones completadas
   label_closed_work_packages: cerrado
   label_collapse: Colapsar
+  label_configuration: configuration
   label_comment_add: Añadir un comentario
   label_comment_added: Comentario añadido
   label_comment_delete: Eliminar comentarios
@@ -677,7 +685,7 @@ es:
   label_current_status: Estado actual
   label_current_version: Version actual
   label_custom_field_new: Nuevo campo personalizado
-  label_custom_field_plural: Campos personalizados
+  label_custom_field_plural: Campos Personalizados
   label_custom_field_default_type: Tipo vacío
   label_date: Fecha
   label_date_from: De
@@ -732,6 +740,7 @@ es:
   label_group_new: Nuevo grupo
   label_group_plural: Grupos
   label_help: Ayuda
+  label_here: here
   label_hide: Ocultar
   label_history: Historial
   label_home: Inicio
@@ -784,7 +793,7 @@ es:
   label_list: Lista
   label_loading: Cargando...
   label_logged_as: Sesión iniciada como
-  label_login: Iniciar sesión
+  label_login: Ingresar
   label_logout: Cerrar sesión
   label_main_menu: Menú lateral
   label_max_size: Tamaño máximo
@@ -929,7 +938,7 @@ es:
   label_start_to_end: de principio a fin
   label_start_to_start: iniciar para iniciar
   label_statistics: Estadísticas
-  label_status: Situación
+  label_status: Estado
   label_status_updated: Estado del paquete de trabajo actualizado
   label_stay_logged_in: Mantener sesión activa
   label_string: Texto
@@ -988,7 +997,7 @@ es:
   label_week: Semana
   label_wiki_content_added: Página wiki añadida
   label_wiki_content_updated: Página wiki actualizada
-  label_wiki_toc: Tabla de contenidos
+  label_wiki_toc: Contenidos
   label_wiki_dont_show_menu_item: No mostrar esta página wiki en la navegación del
     proyecto
   label_wiki_edit: Editar Wiki
@@ -1056,6 +1065,8 @@ es:
     en algunas listas)
   label_keyboard_shortcut_focus_next_item: Activar siguiente elemento de lista (sólo
     en algunas listas)
+  macro_execution_error: Error executing the macro %{macro_name}
+  macro_unavailable: Macro %{macro_name} cannot be displayed.
   mail_body_account_activation_request: 'Ha registrado un nuevo usuario (%{value}).
     La cuenta está pendiente de aprobación:'
   mail_body_account_information: Información de su cuenta
@@ -1143,6 +1154,7 @@ es:
     hora.
   notice_unable_delete_version: No se puede eliminar la versión.
   notice_automatic_set_of_standard_type: Establecer tipo estándar automáticamente.
+  notice_logged_out: You have been logged out.
   error_types_in_use_by_work_packages: 'Los siguientes tipos siguen referenciados
     por paquetes de trabajo: %{types}'
   number:
@@ -1314,6 +1326,8 @@ es:
   setting_plain_text_mail: Correo en texto plano (sin HTML)
   setting_protocol: Protocolo
   setting_repositories_encodings: Codificación de Repositorios
+  setting_repository_authentication_caching_enabled: Enable caching for authentication
+    request of version control software
   setting_repository_log_display_limit: Numero máximo de revisiones mostradas en el
     archivo de registro
   setting_rest_api_enabled: Activar servicio web REST
@@ -1361,7 +1375,7 @@ es:
   text_default_administrator_account_changed: Se ha cambiado la cuenta de administrador
     por defecto
   text_default_encoding: 'Por defecto: UTF-8'
-  text_destroy: Eliminar
+  text_destroy: Borrar
   text_destroy_with_associated: 'Hay objetos adicionales asociados a los paquetes
     de trabajo que van a ser eliminados. Esos objetos son de los siguientes tipos:'
   text_destroy_what_to_do: "¿Qué quieres hacer?"
@@ -1480,8 +1494,8 @@ es:
     delete_thing: Borrar
     duration: Duración
     duration_days:
-      one: "%{count} día(s)"
-      other: "%{count} days"
+      one: 1 día
+      other: "%{count} días"
     edit_color: Editar colores
     edit_project_type: Editar tipo de proyecto
     edit_thing: Editar
@@ -1521,7 +1535,7 @@ es:
         date: fecha
         default: por defecto
       column:
-        assigned_to: Asignatario
+        assigned_to: Asignado a
         type: Tipo
         due_date: Fecha de finalización
         name: Nombre
@@ -1633,7 +1647,7 @@ es:
       Los informes de estados anteriores se eliminaran, también."
     start: Inicio
     timeline: Informe de línea de tiempo
-    timelines: Informes de línea de tiempo
+    timelines: Informes de cronograma
     settings: Líneas de tiempo
     vertical_work_package: Paquetes de trabajo vertical
     without_project_type: Sin tipo de proyecto
@@ -1676,9 +1690,16 @@ es:
     status_user_and_brute_force: "%{user} y %{brute_force}"
     unlock: Desbloquear
     unlock_and_reset_failed_logins: Desbloquear y resetear los inicios de sesión fallidos
+    no_login: This user authenticates through login by password. Since it is disabled,
+      they cannot log in.
+    password_change_unsupported: Change of password is not supported.
+    authorization_rejected: You are not allowed to sign in.
   version_status_closed: cerrado
   version_status_locked: bloqueado
   version_status_open: abrir
+  note: Note
+  note_password_login_disabled: Password login has been disabled by %{configuration}.
+  warning: Warning
   warning_attachments_not_saved: "%{count} archivo(s) no podrán ser salvados."
   menu_item: Elemento de menú
   menu_item_setting: Visibilidad

@@ -163,8 +163,8 @@ nl:
         done_ratio: "% voltooid"
         fixed_version: Doelversie
         parent: Bovenliggende
-        parent_issue: Bovenliggend issue
-        parent_work_package: Bovenliggend werkpakket
+        parent_issue: Bovenliggende
+        parent_work_package: Bovenliggende
         priority: Prioriteit
         progress: "% voltooid"
         responsible: Verantwoordelijk
@@ -187,6 +187,8 @@ nl:
         exclusion: is gereserveerd
         greater_than: moet groter zijn dan %{count}
         greater_than_or_equal_to: moet groter dan of gelijk zijn aan %{count}
+        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
+          length
         greater_than_start_date: moet groter zijn dan begindatum
         inclusion: is niet opgenomen in de lijst
         invalid: is ongeldig
@@ -306,7 +308,7 @@ nl:
     name: Naam
     password: Wachtwoord
     project: Project
-    role: Rol
+    role: Role
     start_date: Startdatum
     status: Status
     subject: Onderwerp
@@ -372,14 +374,16 @@ nl:
   button_configure_menu_entry: Menu-item configureren
   button_delete_menu_entry: Menu-item verwijderen
   copy_project:
-    started: Started to copy project "%{source_project_name}" to "%{target_project_name}".
-      You will be informed by Mail as soon as "%{target_project_name}" is available.
-    failed: Cannot copy project %{source_project_name}
-    succeeded: Created project %{target_project_name}
-    errors: Error
+    started: Begonnen met project "%{source_project_name}" te kopiëren naar "%{target_project_name}".
+      U wordt zo spoedig mogelijk per email op de hoogte gesteld wanneer "%{target_project_name}"
+      beschikbaar is.
+    failed: Kan project niet kopiëren %{source_project_name}
+    succeeded: Gemaakte project %{target_project_name}
+    errors: Fout
     text:
-      failed: Could not copy project "%{source_project_name}" to project "%{target_project_name}".
-      succeeded: Copied project "%{source_project_name}" to "%{target_project_name}".
+      failed: Kan project "%{target_project_name}" project "%{source_project_name}"
+        niet kopiëren.
+      succeeded: Gekopieerde project "%{source_project_name}" naar "%{target_project_name}".
   create_child_page: Nieuwe onderliggende pagina maken
   create_child_page_for: 'Maak nieuwe onderliggende pagina: "%{titel}"'
   create_new_page: Nieuwe pagina maken
@@ -560,9 +564,9 @@ nl:
     te krijgen tot de repository: %{value}'
   error_scm_not_found: De vermelding of de herziening werd niet gevonden in de repository.
   error_unable_delete_status: Het is niet mogelijk om de werkpakket status te verwijderen
-  error_unable_delete_default_status: Unable to delete default work package status.
-    Please select another default work package status before deleting the current
-    one.
+  error_unable_delete_default_status: Niet in staat de status van het standaard werkpakket
+    te verwijderen. Gelieve een andere status van het standaard werkpakket te selecteren
+    alvorens de huidige te verwijderen.
   error_unable_to_connect: Kan geen verbinding maken (%{value})
   error_workflow_copy_source: Selecteer een type rijbron of rol
   error_workflow_copy_target: Selecteer (de) type(n) en rol(len)
@@ -593,6 +597,11 @@ nl:
   general_text_Yes: Ja
   gui_validation_error: 1 fout
   gui_validation_error_plural: "%{count} fouten"
+  instructions_after_registration: You can sign in as soon as your account has been
+    activated by clicking %{signin}.
+  instructions_after_logout: You can sign in again by clicking %{signin}.
+  instructions_after_error: You can try to sign in again by clicking %{signin}. If
+    the error persists, ask your admin for help.
   label_account: Account
   label_activity: Activiteit
   label_add_another_file: Toevoegen van een ander bestand
@@ -655,6 +664,7 @@ nl:
   label_close_versions: Voltooide versies sluiten
   label_closed_work_packages: gesloten
   label_collapse: Samenvouwen
+  label_configuration: configuration
   label_comment_add: Een opmerking toevoegen
   label_comment_added: Opmerking toegevoegd
   label_comment_delete: Opmerkingen verwijderen
@@ -730,6 +740,7 @@ nl:
   label_group_new: Nieuwe groep
   label_group_plural: Groepen
   label_help: Help
+  label_here: here
   label_hide: Verbergen
   label_history: Geschiedenis
   label_home: Home
@@ -782,7 +793,7 @@ nl:
   label_list: Lijst
   label_loading: Laden...
   label_logged_as: Ingelogd als
-  label_login: Aanmelden
+  label_login: Inloggen
   label_logout: Afmelden
   label_main_menu: Submenu
   label_max_size: Maximale Grootte
@@ -831,7 +842,7 @@ nl:
   label_not_contains: bevat geen
   label_not_equals: is niet
   label_notify_member_plural: E-mail updates
-  label_open_menu: Open menu
+  label_open_menu: Menu openen
   label_open_work_packages: Open
   label_open_work_packages_plural: Open
   label_optional_description: Omschrijving
@@ -935,7 +946,7 @@ nl:
   label_subproject_new: Nieuwe subproject
   label_subproject_plural: Subprojecten
   label_subtask_plural: Subtaken
-  label_summary: Samenvatting
+  label_summary: Overzicht
   label_system: Systeem
   label_table_of_contents: Inhoudsopgave
   label_tag: Label
@@ -1000,9 +1011,9 @@ nl:
     weergeven
   label_wiki_show_submenu_item: 'Toon als submenu-item van '
   label_work_package: Werkpakket
-  label_workflow: Workflow
+  label_workflow: Werkstroom
   label_workflow_plural: Workflows
-  label_workflow_summary: Samenvatting
+  label_workflow_summary: Overzicht
   label_x_closed_work_packages_abbr:
     one: 1 gesloten
     other: "%{count} gesloten"
@@ -1053,6 +1064,8 @@ nl:
     sommige lijsten)
   label_keyboard_shortcut_focus_next_item: Focus volgende lijstelement (enkel op sommige
     lijsten)
+  macro_execution_error: Error executing the macro %{macro_name}
+  macro_unavailable: Macro %{macro_name} cannot be displayed.
   mail_body_account_activation_request: 'Een nieuwe gebruiker (%{value}) heeft zich
     geregistreerd. Het account wacht op uw goedkeuring:'
   mail_body_account_information: Uw accountinformatie
@@ -1135,6 +1148,7 @@ nl:
   notice_unable_delete_time_entry: Niet in staat om tijdlog te verwijderen.
   notice_unable_delete_version: Niet in staat om versie te verwijderen.
   notice_automatic_set_of_standard_type: Standaardtype automatisch ingesteld.
+  notice_logged_out: You have been logged out.
   error_types_in_use_by_work_packages: 'Naar de volgende typen wordt nog verwezen
     door werkpakketten: %{types}'
   number:
@@ -1224,7 +1238,7 @@ nl:
   permission_view_wiki_pages: Weergave wiki
   project_module_activity: Activiteit
   project_module_boards: Fora
-  project_module_calendar: Kalender
+  project_module_calendar: Agenda
   project_module_work_package_tracking: Werkpakket bijhouden
   project_module_news: Nieuws
   project_module_repository: Repository
@@ -1303,6 +1317,8 @@ nl:
   setting_plain_text_mail: Tekst zonder opmaak (geen HTML)
   setting_protocol: Protocol
   setting_repositories_encodings: Repositories coderingen
+  setting_repository_authentication_caching_enabled: Enable caching for authentication
+    request of version control software
   setting_repository_log_display_limit: Maximum aantal revisies weergegeven op logbestand
   setting_rest_api_enabled: REST webservice inschakelen
   setting_self_registration: Zelfregistratie
@@ -1361,16 +1377,16 @@ nl:
   text_git_repo_example: een lege en lokale repository (e.d. /gitripo, c:\gitrepo)
   text_work_package_added: Werk pakket %{id} is gerapporteerd door %{author}.
   text_work_package_category_destroy_assignments: Verwijder categorie toewijzingen
-  text_work_package_category_destroy_question: Some work packages (%{count}) are assigned
-    to this category. What do you want to do?
-  text_work_package_category_reassign_to: Reassign work packages to this category
-  text_work_package_updated: Work package %{id} has been updated by %{author}.
-  text_work_packages_destroy_confirmation: Are you sure you want to delete the selected
-    work package(s)?
+  text_work_package_category_destroy_question: Sommige werkpakketten (%{count}) worden
+    toegewezen aan deze categorie. Wat wilt u doen?
+  text_work_package_category_reassign_to: Werkpakketten toewijzen aan deze categorie
+  text_work_package_updated: Werkpakket %{id} is bijgewerkt door %{author}.
+  text_work_packages_destroy_confirmation: Weet u zeker dat u geselecteerd(e) werkpakket(ten)
+    wilt verwijderen?
   text_work_packages_ref_in_commit_messages: Referencing and fixing work packages
     in commit messages
-  text_journal_added: "%{label} %{value} added"
-  text_journal_changed: "%{label} changed from %{old} to %{new}"
+  text_journal_added: "%{label} %{value} toegevoegd"
+  text_journal_changed: "%{label} gewijzigd van %{old} naar %{new}"
   text_journal_changed_no_detail: "%{label} bijgewerkt"
   text_journal_changed_with_diff: "%{label} gewijzigd (%{link})"
   text_journal_deleted: "%{label} verwijderd (%{old})"
@@ -1391,8 +1407,8 @@ nl:
   text_powered_by: Powered by %{link}
   text_project_destroy_confirmation: Weet u zeker dat u dit project en gerelateerde
     gegevens wilt verwijderen?
-  text_project_identifier_info: Only lower case letters (a-z), numbers, dashes and
-    underscores are allowed, must start with a lower case letter.
+  text_project_identifier_info: Alleen kleine letters (a-z), cijfers, streepjes en
+    underscores (_) zijn toegestaan, moet beginnen met een kleine letter.
   text_reassign: Toewijzen aan
   text_reassign_to: 'werkpakket:'
   text_regexp_info: bijv. ^[A-Z0-9]+$
@@ -1433,21 +1449,21 @@ nl:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
       time: "%I:%M %p"
-    pm: pm
+    pm: PM
   timelines:
     admin_menu:
-      color: Color
-      colors: Colors
-      project_type: Project type
-      project_types: Project types
+      color: Kleur
+      colors: Kleuren
+      project_type: Projecttype
+      project_types: Projecttypes
     project_menu:
-      planning_elements: Planning elements
-      project_associations: Dependencies
-      reportings: Status reportings
-      reports: Timeline reports
-      timelines: Timelines
+      planning_elements: Elementen voor de planning
+      project_associations: Afhankelijkheden
+      reportings: Status rapporteringen
+      reports: Tijdlijn rapporten
+      timelines: Tijdlijnen
     add_project_association: Add dependency
-    associations: Dependencies
+    associations: Afhankelijkheden
     board_could_not_be_saved: Board could not be saved
     button_delete_all: Delete all
     change: Change in planning
@@ -1458,19 +1474,19 @@ nl:
     dates_are_calculated_based_on_sub_elements: Dates are calculated based on sub
       elements.
     delete_all: Delete all
-    delete_thing: Delete
+    delete_thing: Verwijderen
     duration: Duration
     duration_days:
-      one: 1 day
-      other: "%{count} days"
+      one: 1 dag
+      other: "%{count} dagen"
     edit_color: Edit color
     edit_project_type: Edit project type
-    edit_thing: Edit
-    edit_timeline: Edit timeline report %{timeline}
-    delete_timeline: Delete timeline report %{timeline}
-    empty: "(empty)"
-    enable_type_in_project: Enable type "%{type}"
-    end: End
+    edit_thing: Wijzig
+    edit_timeline: Bewerk tijdlijn verslag %{timeline}
+    delete_timeline: Verwijder tijdlijn verslag %{timeline}
+    empty: "(leeg)"
+    enable_type_in_project: Activeer type "%{type}"
+    end: Einde
     errors:
       not_implemented: The timeline could not be rendered because it uses a feature
         that is not yet implemented.
@@ -1494,32 +1510,32 @@ nl:
         planning_element_time_absolute_two: 'The end for work packages in a certain
           timeframe  '
       sort:
-        sortation: Sort by
-        alphabet: alphabet
-        explicit_order: explicit order
-        project_sortation: Sort projects by
-        date: date
-        default: default
+        sortation: Sorteer op
+        alphabet: alfabetisch
+        explicit_order: expliciete volgorde
+        project_sortation: Sorteer projecten op
+        date: datum
+        default: standaard
       column:
-        assigned_to: Assignee
+        assigned_to: Toegewezene
         type: Type
-        due_date: End date
-        name: Name
+        due_date: Einddatum
+        name: Naam
         status: Status
-        responsible: Responsible
-        start_date: Start date
-      columns: Columns
+        responsible: Verantwoordelijk
+        start_date: Startdatum
+      columns: Kolommen
       comparisons: Comparisons
       comparison:
         absolute: Absolute
-        none: None
+        none: Geen
         relative: Relative
         compare_relative: Compare current planning to %{timespan} ago
         compare_absolute: Compare current planning to %{date}
       time_relative:
-        days: days
-        weeks: weeks
-        months: months
+        days: dagen
+        weeks: weken
+        months: maanden
       exclude_own_work_packages: Hide work packages from this project
       exclude_reporters: Hide other projects
       exclude_empty: Hide empty projects
@@ -1527,8 +1543,8 @@ nl:
       grouping_hide_group: Hide group "%{group}"
       grouping_one: First grouping criterion
       grouping_one_phrase: Is a subproject of
-      grouping_other: Other
-      grouping_two: Second grouping criterion
+      grouping_other: Overig
+      grouping_two: Tweede criterium groeperen
       grouping_two_phrase: Has a dependency to project type
       hide_chart: Hide chart
       noneElement: "(none)"
@@ -1558,10 +1574,10 @@ nl:
       timeframe_start: from
       timeline: General Settings
       zoom: Zoom factor
-    history: History
+    history: Geschiedenis
     new_color: New color
     new_association: New dependency
-    new_work_package: New work package
+    new_work_package: Nieuw werkpakket
     new_project_type: New project type
     new_reporting: New reporting
     new_timeline: New timeline report
@@ -1579,7 +1595,7 @@ nl:
       level3: Expand level 3
       level4: Expand level 4
       level5: Expand level 5
-      all: Show all
+      all: Toon alle
     reporting_for_project:
       show: 'Status reported to project: %{title}'
       edit_delete: 'status report for project: %{title}'
@@ -1588,7 +1604,7 @@ nl:
       delete: 'Delete status: %{comment}'
       edit: 'Edit status: %{comment}'
       show: 'Status: %{comment}'
-    planning_element_update: 'Update: %{title}'
+    planning_element_update: 'Bijgewerkt: %{title}'
     work_packages_are_displayed_in_aggregations: Work packages are displayed in aggregations
     project_association_new: Add project dependency
     project_association_new_for_with: Set dependency for “%{project_a}” with
@@ -1596,7 +1612,7 @@ nl:
       “%{project_b}”
     project_association_of_type: Dependency to project of type “%{type}”
     project_type_could_not_be_saved: Project type could not be saved
-    type_could_not_be_saved: Type could not be saved
+    type_could_not_be_saved: Type kan niet worden opgeslagen
     reporting_could_not_be_saved: Reporting could not be saved
     properties: Properties
     really_delete_color: Are you sure, you want to delete the following color? Types
@@ -1611,8 +1627,8 @@ nl:
       Previous reporting statuses will be deleted, too.
     start: Start
     timeline: Timeline report
-    timelines: Timeline reports
-    settings: Timelines
+    timelines: Tijdlijn rapporten
+    settings: Tijdlijnen
     vertical_work_package: Vertical work packages
     without_project_type: Without project type
     you_are_viewing_the_selected_timeline: You are viewing the selected timeline report
@@ -1628,8 +1644,8 @@ nl:
     apply_filter: Apply preconfigured filter
   total_progress: Total progress
   user:
-    all: all
-    active: active
+    all: alle
+    active: actief
     activate: Activate
     activate_and_reset_failed_logins: Activate and reset failed logins
     authentication_provider: Authentication Provider
@@ -1649,11 +1665,18 @@ nl:
     registered: registered
     reset_failed_logins: Reset failed logins
     status_user_and_brute_force: "%{user} and %{brute_force}"
-    unlock: Unlock
+    unlock: Ontgrendelen
     unlock_and_reset_failed_logins: Unlock and reset failed logins
-  version_status_closed: closed
+    no_login: This user authenticates through login by password. Since it is disabled,
+      they cannot log in.
+    password_change_unsupported: Change of password is not supported.
+    authorization_rejected: You are not allowed to sign in.
+  version_status_closed: gesloten
   version_status_locked: locked
-  version_status_open: open
+  version_status_open: Open
+  note: Note
+  note_password_login_disabled: Password login has been disabled by %{configuration}.
+  warning: Warning
   warning_attachments_not_saved: "%{count} file(s) could not be saved."
   menu_item: Menu item
   menu_item_setting: Visibility
