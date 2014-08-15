@@ -26,6 +26,11 @@ namespace :translations do
   # one dir per OpenProject version
   crowdin_directory = ''
 
+  # Whether the .yml file is based on the js-en.yml JavaScript translation file
+  def js_translation?(translation_file_path)
+    !!(translation_file_path.basename.to_s[0..-5] =~ /\Ajs-.+\z/)
+  end
+
   task :check_for_api_key => :environment do
     env_name = 'OPENPROJECT_CROWDIN_KEY'
     raise "ERROR: please specify a crowdin API key via the #{env_name} environment variable" unless ENV[env_name]
