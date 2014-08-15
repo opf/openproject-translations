@@ -50,6 +50,11 @@ namespace :translations do
       raise "#{OpenProject::Translations::Engine.root.join 'config', 'locales'} need to be writable"
     end
 
+    # nuke locales directory to get rid of old files
+    OpenProject::Translations::Engine.root.join('config', 'locales').children.each do |file|
+      File.delete(file) if File.file?(file)
+    end
+
     crowdin = Crowdin::API.new project_id: crowdin_project_name, api_key: crowdin_project_key
 
     puts 'Downloading translations from crowdin ...'
