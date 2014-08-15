@@ -69,14 +69,11 @@ namespace :translations do
       target_directory = OpenProject::Translations::Engine.root.join 'config', 'locales'
       Zip::File.open(languages_files.path) do |zip_file|
         zip_file.glob("*/#{crowdin_directory}/*.yml").each do |entry|
-          filename = entry.name.split('/').first + '.yml'
-          filepath = target_directory.join filename
-          puts "saving #{filename}"
+          language_name = entry.name.split('/').first # the file is put in a directory containing the language name
+          filepath = target_directory.join "#{js_translation?(Pathname.new(entry.name)) ? 'js-' : ''}#{language_name}.yml"
+          puts "saving #{filepath.basename}"
 
-          if File.file? filepath
-            File.delete filepath
-          end
-
+          File.delete(filepath) if File.file?(filepath)
           File.open(filepath, 'wb') do |file|
             file.write entry.get_input_stream.read
           end
@@ -106,6 +103,15 @@ namespace :translations do
     else
       crowdin.add_file [{dest: "/#{crowdin_directory}/en.yml", source: path_to_translation.to_s, title: 'OpenProject wording', export_pattern: '%two_letters_code%.yml'}], type: 'yaml'
     end
+
+    # either add or update the english javascript translation file
+    path_to_translation = Rails.root.join 'config', 'locales', 'js-en.yml'
+    dir = crowdin.project_info['files'].find {|f| f['name'] == crowdin_directory && f['node_type'] == 'directory'}
+    if dir['files'].find {|f| f['name'] == 'js-en.yml'}
+      crowdin.update_file [{dest: "/#{crowdin_directory}/js-en.yml", source: path_to_translation.to_s, title: 'OpenProject JavaScript wording', export_pattern: 'js-%two_letters_code%.yml'}], type: 'yaml'
+    else
+      crowdin.add_file [{dest: "/#{crowdin_directory}/js-en.yml", source: path_to_translation.to_s, title: 'OpenProject JavaScript wording', export_pattern: 'js-%two_letters_code%.yml'}], type: 'yaml'
+    end
   end
 
   desc "Insert missing translation keys into all translation files. This circumvents a crowdin bug."
@@ -125,9 +131,14 @@ namespace :translations do
       # Sometimes a language has multiple variants (eg simplified chinese 'zh-TW')
       # For language variants ('zh-TW') crowdin gives us only the language key ('zh') so we replace it.
       # from /path/to/openproject-translations/config/locales/zh-TW.yml we extract 'zh-TW'
-      language_key = translation_file_path.basename.to_s[0..-5]
+      language_key = if js_translation?(translation_file_path)
+        # ignore the 'js-' prefix of js translations
+        translation_file_path.basename.to_s[3..-5]
+      else
+        translation_file_path.basename.to_s[0..-5]
+      end
 
-      # Unfortunately OpenProject have some vendored translations in jstoolbar, which
+      # Unfortunately OpenProject has some vendored translations in jstoolbar, which
       # needs different names sometimes, so we map exceptions here
       mapping = Hash.new {|hash, key| key }
       mapping['zh-CN'] = 'zh'
@@ -137,18 +148,18 @@ namespace :translations do
       mapping[language_key]
     end
 
-
     # read english translation keys from the openproject core
     english_translation = YAML.load File.read(Rails.root.join('config', 'locales', 'en.yml'))
+    english_js_translation = YAML.load File.read(Rails.root.join('config', 'locales', 'js-en.yml'))
 
     # fix missing translation keys in all translation files of this gem
     OpenProject::Translations::Engine.root.join('config', 'locales').children.select do |file_path|
       # find all .yml files in this gems' locales directory
-      file_path.file? && file_path.to_s[-4..-1] == '.yml'
+      file_path.file? && file_path.extname == '.yml'
     end.each do |translation_file|
       language_key = calculate_language_key translation_file
 
-      puts "fixing #{language_key}"
+      puts "fixing #{js_translation?(translation_file) ? 'js-' : ''}#{language_key}"
 
       # work around a crowdin bug which inserts inapropriate whitespace for the in-context localization file
       translation_yaml = File.read translation_file
@@ -156,17 +167,22 @@ namespace :translations do
         translation_yaml.gsub! /precision:0/, 'precision: 0'
       end
 
-      # add missing english keys
+      # for each translation file add missing translation keys
       translation = YAML.load translation_yaml
-      translation = {language_key => english_translation['en'].deep_merge(translation.values.first)}
+
+      # add missing english keys
+      if js_translation?(translation_file)
+        translation = {language_key => english_js_translation['en'].deep_merge(translation.values.first)}
+      else
+        translation = {language_key => english_translation['en'].deep_merge(translation.values.first)}
+      end
 
       # write file back to disk
       File.open(translation_file, 'w') do |file|
         file.write translation.to_yaml
       end
-
       # the files should be named like their translation-key
-      File.rename translation_file, OpenProject::Translations::Engine.root.join('config', 'locales', "#{language_key}.yml")
+      File.rename translation_file, OpenProject::Translations::Engine.root.join('config', 'locales', "#{js_translation?(translation_file) ? 'js-' : ''}#{language_key}.yml")
     end
   end
 end
