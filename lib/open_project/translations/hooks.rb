@@ -12,11 +12,7 @@
 # See doc/COPYRIGHT.md for more details.
 #++
 
-module OpenProject
-  module Translations
-    IN_CONTEXT_TRANSLATION_CODE = 'lol'
-    IN_CONTEXT_TRANSLATION_NAME = 'In-Context Crowdin Translation'
-
-    require "open_project/translations/engine"
+module OpenProject::Translations
+  module Hooks
   end
 end
