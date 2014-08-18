@@ -12,11 +12,16 @@
 # See doc/COPYRIGHT.md for more details.
 #++
 
-module OpenProject
-  module Translations
-    IN_CONTEXT_TRANSLATION_CODE = 'lol'
-    IN_CONTEXT_TRANSLATION_NAME = 'In-Context Crowdin Translation'
-
-    require "open_project/translations/engine"
+module OpenProject::Translations::Hooks
+  class CrowdinInContextTranslations < Redmine::Hook::ViewListener
+    def view_layouts_base_html_head(context)
+      if ::I18n.locale == :lol #the in-context translation pseudo-language
+        "<script type=\"text/javascript\">
+           var _jipt = [];
+           _jipt.push(['project', 'openproject']);
+         </script>
+         <script type=\"text/javascript\" src=\"//cdn.crowdin.com/jipt/jipt.js\"></script>".html_safe
+      end
+    end
   end
 end
