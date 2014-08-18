@@ -150,10 +150,14 @@ namespace :translations do
 
       puts "fixing #{language_key}"
 
-      # for each translation file add missing translation keys
-      translation = YAML.load File.read(translation_file)
+      # work around a crowdin bug which inserts inapropriate whitespace for the in-context localization file
+      translation_yaml = File.read translation_file
+      if language_key == 'lol'
+        translation_yaml.gsub! /precision:0/, 'precision: 0'
+      end
 
       # add missing english keys
+      translation = YAML.load translation_yaml
       translation = {language_key => english_translation['en'].deep_merge(translation.values.first)}
 
       # write file back to disk
