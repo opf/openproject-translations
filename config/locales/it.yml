@@ -6,13 +6,14 @@ it:
     deleted: Account cancellato con successo
     deletion_info:
       data_consequences:
-        other: Of the data the user created (e.g. e-mail, preferences, work packages,
-          wiki entries) as much as possible will be deleted. Note however, that data
-          like work packages and wiki entries can not be deleted without impeding
-          the work of the other users. Such data is hence reassigned to an account
-          called "Deleted user". As the data of every deleted account is reassigned
-          to this account it will not be possible to distinguish the data the user
-          created from the data of another deleted account.
+        other: I dati dell'utente creato (per esempio posta elettronica, le preferenze,
+          pacchetti di lavoro, le voci wiki) quando più possibile verranno eliminati.
+          Si noti, tuttavia, che i dati come pacchetti di lavoro e le voci wiki non
+          possono essere eliminati senza ostacolare il lavoro degli altri utenti.
+          Tali dati vengono quindi riassegnati ad un account chiamato "Utente Cancellato".
+          Come i dati di ogni account eliminato che  vengono riassegnati a questo
+          account, non sarà possibile distinguere i dati dell'utente creato dai dati
+          di un altro account eliminato.
         self: Of the data you created (e.g. e-mail, preferences, work packages, wiki
           entries) as much as possible will be deleted. Note however, that data like
           work packages and wiki entries can not be deleted without impeding the work
@@ -69,7 +70,7 @@ it:
       relation:
         delay: Ritardo
         from: Pacchetto di Lavoro
-        to: Related work package
+        to: Pacchetto di lavoro correlato
       status:
         is_closed: Pacchetto di lavoro chiuso
       journal:
@@ -80,7 +81,7 @@ it:
         homepage: Pagina iniziale
         identifier: Identificatore
         work_packages: Pacchetti di Lavoro
-        parent: Subprogetto of
+        parent: Progetto secondario di
         versions: Versioni
         project_type: Tipo di progetto
         responsible: Responsabile
@@ -160,16 +161,16 @@ it:
         progress: "% finito"
         responsible: Responsabile
         spent_time: Tempo speso
-        subproject: Subprogetto
-        time_entries: Log time
+        subproject: Progetto Secondario
+        time_entries: Registro temporale
         type: Tipo
         watcher: Osservatore
     errors:
       messages:
         accepted: deve essere accettato
         blank: non può essere vuoto
-        cant_link_a_work_package_with_a_descendant: A work package cannot be linked
-          to one of its subtasks
+        cant_link_a_work_package_with_a_descendant: Un pacchetto di lavoro non può
+          essere collegato a una delle sue sottoattività
         circular_dependency: This relation would create a circular dependency
         confirmation: doesn't match confirmation
         empty: non può essere vuoto
@@ -186,7 +187,7 @@ it:
         not_a_date: non è una data
         not_a_number: non è un numero
         not_an_integer: is not an integer
-        not_same_project: doesn't belong to the same project
+        not_same_project: non appartiene allo stesso progetto
         odd: deve essere dispari
         taken: "è già stata presa"
         too_long: is too long (maximum is %{count} characters)
@@ -206,34 +207,34 @@ it:
             target for reassigning the time entries.'
           attributes:
             due_date:
-              not_start_date: is not on start date, although this is required for
-                milestones
+              not_start_date: non è sulla data di inizio, nonostante sia obbligatorio
+                per i traguardi
             parent_id:
               cannot_be_milestone: non può essere un traguardo
               cannot_be_in_another_project: non può essere in un altro progetto
               not_a_valid_parent: is invaild
               does_not_exist: non esiste
             status_id:
-              status_transition_invalid: no valid transition exists from old to new
-                status for the current user roles
+              status_transition_invalid: nessuna transizione valida esiste dal vecchio
+                al nuovo status per i ruoli dell'utente corrente
             priority_id:
               only_active_priorities_allowed: deve essere attivo
         user:
           attributes:
             password:
-              weak: 'must contain characters of the following classes (at least %{min_count}
-                of %{all_count}): %{rules}'
+              weak: 'deve contenere caratteri delle seguenti classi (almeno %{min_count}
+                %{all_count}): %{rules}'
               lowercase: minuscolo (e.g. 'a')
               uppercase: maiuscolo (e.g. 'A')
               numeric: numerico (e.g. '1')
               special: speciale (e.g. '%')
               reused:
-                one: has been used before. Please choose one that is different from
-                  your last one.
-                other: has been used before. Please choose one that is different from
-                  your last %{count}.
+                one: "è stata utilizzato prima. Si prega di sceglierne una che è diversa
+                  dall'ultima."
+                other: "è stata utilizzato prima. Si prega di sceglierne una che è
+                  diversa dalle ultime %{count}."
         member:
-          principal_blank: Please choose at least one user or group.
+          principal_blank: Si prega di scegliere almeno un utente o un gruppo.
           role_blank: Si prega di scegliere almeno un ruolo.
       template:
         body: 'Perfavore controlla i seguenti campi:'
@@ -330,7 +331,7 @@ it:
   button_create: Crea
   button_create_and_continue: Crea e continua
   button_delete: Cancella
-  button_delete_watcher: Delete watcher %{name}
+  button_delete_watcher: Eliminare osservatore %{name}
   button_download: Scarica
   button_duplicate: Duplicato
   button_edit: Modifica
@@ -338,7 +339,7 @@ it:
   button_expand_all: Esapndi tutto
   button_list: Lista
   button_lock: Blocca
-  button_log_time: Log time
+  button_log_time: Registro temporale
   button_login: Nome Utente
   button_move: Sposta
   button_move_and_follow: Sposta e segui
@@ -543,8 +544,8 @@ it:
   description_selected_columns: Colonne selezionate
   description_sub_work_package: Sub work package of current
   description_subwork_package: Sub work package of
-  description_toc_toggle: Show/Hide table of contents
-  description_user_mail_notification: Mail notification settings
+  description_toc_toggle: Mostra/Nascondi tabella dei contenuti
+  description_user_mail_notification: Impostazioni di notifica e-mail
   description_wiki_subpages_reassign: Scegli la nuova pagina parente
   direction: ltr
   enumeration_activities: Attività (tempo di monitoraggio)
@@ -558,7 +559,8 @@ it:
   error_can_not_remove_role: Questo ruolo è in uso e non può essere eliminato.
   error_can_not_reopen_work_package_on_closed_version: Un pacchetto di lavoro assegnato
     a una versione chiusa non può essere riaperto
-  error_can_t_load_default_data: 'Default configuration could not be loaded: %{value}'
+  error_can_t_load_default_data: 'LA configurazione predefinita non può essere caricato:
+    %{value}'
   error_check_user_and_role: Per favore scegli un utente e un ruolo.
   error_work_package_done_ratios_not_updated: Work package done ratios not updated.
   error_work_package_not_found_in_project: The work package was not found or does
@@ -576,7 +578,7 @@ it:
   error_unable_delete_default_status: Unable to delete default work package status.
     Please select another default work package status before deleting the current
     one.
-  error_unable_to_connect: Unable to connect (%{value})
+  error_unable_to_connect: Impossibile connettersi (%{value})
   error_workflow_copy_source: Please select a source type or role
   error_workflow_copy_target: Please select target type(s) and role(s)
   error_menu_item_not_created: Menu item could not be added
@@ -587,7 +589,7 @@ it:
     message: Messaggio modificato
     news: Notizie
     reply: Risposto
-    time_entry: Timelog edited
+    time_entry: Registro temporale modificato
     wiki_page: Pagina wiki modificata
     work_package_closed: Pacchetto di lavoro chiuso
     work_package_edit: Pacchetto di lavoro modificato
@@ -643,8 +645,8 @@ it:
         data?
       zoom_slider: Zoom slider
     filter:
-      noneElement: "(none)"
-      noneSelection: "(none)"
+      noneElement: "(nessuno)"
+      noneSelection: "(nessuno)"
     button_check_all: Controlla tutti
     button_uncheck_all: Deseleziona tutti
     label_collapsed: collapsed
@@ -663,7 +665,7 @@ it:
   label_add_columns: Aggiungi colonne selezionate
   label_add_note: Aggiungi nota
   label_add_related_issues: Add related issue
-  label_add_related_work_packages: Add related work packages
+  label_add_related_work_packages: Aggiungi pacchetti di lavoro correlati
   label_add_subtask: Aggiungi attività secondaria
   label_added: aggiunto
   label_added_time_by: Aggiunto da %{author} %{age} fa
@@ -679,12 +681,12 @@ it:
   label_all_time: tutto il tempo
   label_all_words: Tutte le parole
   label_and_its_subprojects: "%{value} and its subprojects"
-  label_api_access_key: API access key
+  label_api_access_key: Chiave di accesso API
   label_api_access_key_created_on: API access key created %{value} ago
   label_applied_status: Stato applicato
-  label_ascending: Ascending
-  label_assigned_to_me_work_packages: Work packages assigned to me
-  label_associated_revisions: Associated revisions
+  label_ascending: Crescente
+  label_assigned_to_me_work_packages: Pacchetti di lavoro assegnati a me
+  label_associated_revisions: Revisioni associate
   label_attachment_delete: Cancella file
   label_attachment_new: Nuovo file
   label_attachment_plural: File
@@ -745,7 +747,7 @@ it:
   label_date: Data
   label_date_from: Da
   label_date_from_to: Da %{start} a %{end}
-  label_date_range: Date range
+  label_date_range: Intervallo di data
   label_date_to: A
   label_day_plural: giorni
   label_default: Predefinito
@@ -755,7 +757,7 @@ it:
   label_details: Dettagli
   label_diff: diff
   label_diff_inline: inline
-  label_diff_side_by_side: side by side
+  label_diff_side_by_side: Affiancate
   label_disabled: disabilitato
   label_display: Display
   label_display_per_page: 'Per pagina: %{value}'
@@ -804,38 +806,39 @@ it:
   label_in_less_than: in less than
   label_in_more_than: in more than
   label_incoming_emails: Incoming emails
-  label_index_by_date: Index by date
-  label_index_by_title: Index by title
+  label_index_by_date: Indice per data
+  label_index_by_title: Indice per titolo
   label_information: Informazioni
   label_information_plural: Informazioni
-  label_integer: Integer
-  label_internal: Internal
-  label_work_package_added: Work package added
+  label_integer: Intero
+  label_internal: Interno
+  label_work_package_added: Pacchetto di lavoro aggiunto
   label_work_package_category_new: Nuova Categoria
-  label_work_package_category_plural: Work package categories
-  label_work_package_hierarchy: Work Package Hierarchy
+  label_work_package_category_plural: Categorie del pacchetto lavoro
+  label_work_package_hierarchy: Gerarchia del pacchetto di lavoro
   label_work_package_new: Nuovo pacchetto di lavoro
-  label_work_package_note_added: Work package note added
-  label_work_package_edit: Edit work package %{name}
+  label_work_package_note_added: Nota del pacchetto di lavoro aggiunta
+  label_work_package_edit: Modifica pacchetto di lavoro %{name}
   label_work_package_plural: Pacchetti di lavoro
-  label_work_package_priority_updated: Work package priority updated
-  label_work_package_status_new: New status
-  label_work_package_status_plural: Work package statuses
+  label_work_package_priority_updated: Priorità del pacchetto di lavoro aggiornata
+  label_work_package_status_new: Nuovo stato
+  label_work_package_status_plural: Stati del pacchetto di lavoro
   label_work_package_tracking: Monitaraggio pacchetti di lavoro
   label_work_package_updated: Pacchetti di lavoro aggiornati
   label_work_package_view_all: Vedi tutti i pacchetti di lavoro
   label_work_package_view_all_assigned_to_me: Vedi tutti i pacchetti di lavoro assegnati
     a me
-  label_work_package_view_all_reported_by_me: View all work packages reported by me
-  label_work_package_view_all_responsible_for: View all work packages I am responsible
-    for
-  label_work_package_view_all_watched: View all watched work packages
+  label_work_package_view_all_reported_by_me: Mostra tutti i pacchetti di lavoro segnalati
+    da me
+  label_work_package_view_all_responsible_for: Mostra tutti i pacchetti di lavoro
+    che sono responsabile
+  label_work_package_view_all_watched: Mostra tutti i pacchetti di lavoro osservati
   label_work_package_watchers: Osservatori
   label_work_packages_by: Pacchetti di lavoro da %{value}
   label_journal_diff: Description Comparison
   label_jump_to_a_project: Salta nel progetto...
   label_language_based: Basato sulla lingua dell'utente
-  label_last_changes: last %{count} changes
+  label_last_changes: ultimi %{count} cambiamenti
   label_last_login: Ultima connessione
   label_last_month: last month
   label_last_n_days: ultimi %{count} giorni
@@ -851,12 +854,12 @@ it:
   label_login: Login
   label_login_with_open_id_option: or login with OpenID
   label_logout: Disconnetti
-  label_main_menu: Side Menu
+  label_main_menu: Menu laterale
   label_max_size: Dimensione massima
   label_me: me
   label_member_new: Nuovo membro
   label_member_plural: Membri
-  label_menu_item_name: Name of menu item
+  label_menu_item_name: Nome della voce di menu
   label_message_last: Ultimo messaggio
   label_message_new: Nuovo messaggio
   label_message_plural: Messaggi
@@ -864,8 +867,8 @@ it:
   label_min_max_length: Min - Max lunghezza
   label_missing_api_access_key: Missing an API access key
   label_missing_feeds_access_key: Missing a RSS access key
-  label_modification: "%{count} change"
-  label_modification_plural: "%{count} changes"
+  label_modification: "%{count} cambiamento"
+  label_modification_plural: "%{count} cambiamenti"
   label_modified: modificato
   label_module_plural: Moduli
   label_modules: Moduli
@@ -891,8 +894,8 @@ it:
   label_news_view_all: Vedi tutte le notizie
   label_next: Prossimo
   label_next_week: Prossima Settimana
-  label_no_change_option: "(No change)"
-  label_no_data: No data to display
+  label_no_change_option: "(Nessuna modifica)"
+  label_no_data: Nessun dato da visualizzare
   label_nobody: nessuno
   label_none: nessuno
   label_not_contains: non contiene
@@ -916,7 +919,7 @@ it:
   label_permissions: Permessi
   label_permissions_report: Report permessi
   label_personalize_page: Personalizza questa pagina
-  label_planning: Planning
+  label_planning: Pianificazione
   label_please_login: Perfavore accedi
   label_plugins: Plugin
   label_precedes: precedes
@@ -944,8 +947,8 @@ it:
   label_registration_activation_by_email: attivazione account da email
   label_registration_automatic_activation: attivazione automatica account
   label_registration_manual_activation: attivazione account manuale
-  label_related_work_packages: Related work packages
-  label_relates_to: related to
+  label_related_work_packages: Pacchetti di lavoro correlati
+  label_relates_to: Riferito a
   label_relation_delete: Eliminare la relazione
   label_relation_new: Nuova relazione
   label_remove_columns: Rimuovi le colonne selezionate
@@ -957,10 +960,10 @@ it:
   label_reporting: Reporting
   label_reporting_plural: Reportings
   label_repository: Repository
-  label_repository_plural: Repositories
-  label_responsible_for_work_packages: Work packages I am responsible for
+  label_repository_plural: Repository
+  label_responsible_for_work_packages: Pacchetti di lavoro che sono responsabile
   label_result_plural: Risultati
-  label_reverse_chronological_order: In reverse chronological order
+  label_reverse_chronological_order: In ordine cronologico inverso
   label_revision: Revisione
   label_revision_id: Revisione %{value}
   label_revision_plural: Revisioni
@@ -976,26 +979,26 @@ it:
   label_scm: SCM
   label_search: Cerca
   label_search_titles_only: Cerca solo il titolo
-  label_send_information: Send account information to the user
-  label_send_test_email: Send a test email
+  label_send_information: Invia le informazioni dell'account all'utente
+  label_send_test_email: Invia un email di prova
   label_settings: Impostazioni
-  label_show_completed_versions: Show completed versions
+  label_show_completed_versions: Visualizza versioni completate
   label_sort: Ordina
   label_sort_by: Ordinato da %{value}
-  label_sorted_by: sorted by %{value}
-  label_sort_higher: Move up
-  label_sort_highest: Move to top
-  label_sort_lower: Move down
-  label_sort_lowest: Move to bottom
+  label_sorted_by: ordinati per %{value}
+  label_sort_higher: Sposta Su
+  label_sort_highest: Sposta in cima
+  label_sort_lower: Sposta giu
+  label_sort_lowest: Sposta in fondo
   label_spent_time: Tempo speso
-  label_start_to_end: start to end
-  label_start_to_start: start to start
+  label_start_to_end: dall'inizio alla fine
+  label_start_to_start: dall'inizio all'inizio
   label_statistics: Statistiche
   label_status: Stato
   label_status_updated: Stato del pacchetto di lavoro aggiornato
-  label_stay_logged_in: Stay logged in
+  label_stay_logged_in: Resta connesso
   label_string: Testo
-  label_subproject_new: Nuovo subprogetto
+  label_subproject_new: Nuovo progetto secondario
   label_subproject_plural: Subprogetti
   label_subtask_plural: Subtasks
   label_sum_for: Sum for %{value}
@@ -1011,7 +1014,7 @@ it:
   label_time_entry_plural: Tempo speso
   label_time_tracking: Tempo di monitoraggio
   label_today: oggi
-  label_top_menu: Top Menu
+  label_top_menu: Menu in alto
   label_topic_plural: Discussioni
   label_total: Totale
   label_type_new: Nuovo tipo
@@ -1019,14 +1022,14 @@ it:
   label_ui: Interfaccia utente
   label_update_work_package_done_ratios: Update work package done ratios
   label_updated_time: Aggiornato %{value} fa
-  label_updated_time_at: "%{author} %{age}"
+  label_updated_time_at: "%{author}%{age}"
   label_updated_time_by: Aggiornato da %{author} %{age} fa
   label_used_by: Usato da
   label_user_activity: "%{value}'s activity"
   label_user_anonymous: Anonimo
   label_user_mail_no_self_notified: I don't want to be notified of changes that I
     make myself
-  label_user_mail_option_all: For any event on all my projects
+  label_user_mail_option_all: Per qualsiasi evento su tutti i miei progetti
   label_user_mail_option_none: Nessun evento
   label_user_mail_option_only_assigned: Only for things I am assigned to
   label_user_mail_option_only_my_events: Only for things I watch or I'm involved in
@@ -1045,7 +1048,7 @@ it:
   label_view_all_revisions: Mostra tutte le revisioni
   label_view_diff: Mostra le differenze
   label_view_revisions: Vedi revisioni
-  label_watched_work_packages: Watched work packages
+  label_watched_work_packages: Pacchetti di lavoro osservati
   label_week: Settimana
   label_wiki_content_added: Pagina wiki aggiunta
   label_wiki_content_updated: Pagina wiki aggiornata
@@ -1053,9 +1056,9 @@ it:
   label_wiki_dont_show_menu_item: Do not show this wikipage in project navigation
   label_wiki_edit: Modifica wiki
   label_wiki_edit_plural: Modifiche wiki
-  label_wiki_navigation: Wiki navigation
+  label_wiki_navigation: Navigazione wiki
   label_wiki_page: Pagina wiki
-  label_wiki_page_plural: Wiki pages
+  label_wiki_page_plural: Pagine wiki
   label_wiki_show_index_page_link: Show submenu item 'Table of Contents'
   label_wiki_show_menu_item: Show as menu item in project navigation
   label_wiki_show_new_page_link: Show submenu item 'Create new child page'
@@ -1122,8 +1125,8 @@ it:
   mail_body_wiki_content_added: The '%{id}' wiki page has been added by %{author}.
   mail_body_wiki_content_updated: The '%{id}' wiki page has been updated by %{author}.
   mail_subject_account_activation_request: "%{value} account activation request"
-  mail_subject_lost_password: Your %{value} password
-  mail_subject_register: Your %{value} account activation
+  mail_subject_lost_password: La tua %{value} password
+  mail_subject_register: La tua %{value} attivazione dell'account
   mail_subject_reminder: "%{count} work package(s) due in the next %{days} days"
   mail_subject_wiki_content_added: "'%{id}' wiki page has been added"
   mail_subject_wiki_content_updated: "'%{id}' wiki page has been updated"
@@ -1153,12 +1156,12 @@ it:
     look at your account page.
   notice_account_updated: Account aggiornato con successo.
   notice_account_wrong_password: Password sbagliata
-  notice_api_access_key_reseted: Your API access key was reset.
-  notice_can_t_change_password: This account uses an external authentication source.
-    Impossible to change the password.
+  notice_api_access_key_reseted: La chiave di accesso API è stata reimpostata.
+  notice_can_t_change_password: Questo account utilizza una fonte di autenticazione
+    esterna. Impossibile cambiare la password.
   notice_default_data_loaded: Configurazione predefinita caricata con successo.
   notice_email_error: An error occurred while sending mail (%{value})
-  notice_email_sent: An email was sent to %{value}
+  notice_email_sent: Un'email è stata inviata a %{value}
   notice_failed_to_save_work_packages: 'Failed to save %{count} work package(s) on
     %{total} selected: %{ids}.'
   notice_failed_to_save_members: 'Failed to save member(s): %{errors}.'
@@ -1190,7 +1193,7 @@ it:
     There are too many results.
     Narrow down the search by typing in the name of the new member (or group).
   notice_unable_delete_time_entry: Unable to delete time log entry.
-  notice_unable_delete_version: Unable to delete version.
+  notice_unable_delete_version: Impossibile eliminare la versione.
   notice_automatic_set_of_standard_type: Set standard type automatically.
   error_types_in_use_by_work_packages: 'The following types are still referenced by
     work packages: %{types}'
@@ -1217,7 +1220,7 @@ it:
   permission_add_work_packages: Aggiungi pacchetto di lavoro
   permission_add_messages: Postare messaggi
   permission_add_project: Crea progetto
-  permission_add_subprojects: Crea subprogetto
+  permission_add_subprojects: Crea progetti secondari
   permission_add_work_package_watchers: Aggiungi osservatori
   permission_browse_repository: Sfoglia il repository
   permission_change_wiki_parent_page: Cambia la pagina parente del wiki
@@ -1244,19 +1247,20 @@ it:
   permission_edit_reportings: Edit reportings
   permission_edit_time_entries: Edit time logs
   permission_edit_timelines: Edit timelines
-  permission_edit_wiki_pages: Edit wiki pages
-  permission_export_work_packages: Export Work Packages
-  permission_export_wiki_pages: Export wiki pages
+  permission_edit_wiki_pages: Modifica le pagine wiki
+  permission_export_work_packages: Esporta i pacchetti di lavoro
+  permission_export_wiki_pages: Esporta le pagine wiki
   permission_list_attachments: Elenco allegati
   permission_log_time: Log tempo speso
   permission_manage_boards: Gestisci forum
-  permission_manage_categories: Manage work package categories
-  permission_manage_work_package_relations: Manage work package relations
+  permission_manage_categories: Gestisci le categorie dei pacchetto di lavoro
+  permission_manage_work_package_relations: Gestisci le correlazioni del pacchetto
+    di lavoro
   permission_manage_members: Gestisci i membri
   permission_manage_news: Gestire le notizie
-  permission_manage_project_activities: Manage project activities
-  permission_manage_public_queries: Manage public queries
-  permission_manage_repository: Manage repository
+  permission_manage_project_activities: Gestire le attività del progetto
+  permission_manage_public_queries: Gestisci le query pubbliche
+  permission_manage_repository: Gestisci i repository
   permission_manage_subtasks: Manage subtasks
   permission_manage_versions: Gestisci versioni
   permission_manage_wiki: Gestisci wiki
@@ -1266,18 +1270,18 @@ it:
   permission_rename_wiki_pages: Rename wiki pages
   permission_save_queries: Salva query
   permission_select_project_modules: Select project modules
-  permission_manage_types: Select types
+  permission_manage_types: Seleziona i tipi
   permission_view_calendar: Vedi calendario
   permission_view_changesets: View changesets
   permission_view_commit_author_statistics: View commit author statistics
   permission_view_work_package_watchers: View watchers list
-  permission_view_work_packages: View Work Packages
-  permission_view_messages: View messages
+  permission_view_work_packages: Visualizza i pacchetti di lavoro
+  permission_view_messages: Visualizza i messaggi
   permission_view_project_associations: View project dependencies
   permission_view_reportings: View reportings
-  permission_view_time_entries: View spent time
+  permission_view_time_entries: Mostra il tempo trascorso
   permission_view_timelines: View tempistiche
-  permission_view_wiki_edits: View wiki history
+  permission_view_wiki_edits: Visualizza cronologia wiki
   permission_view_wiki_pages: Vedi wiki
   project_module_activity: Attività
   project_module_boards: Forum
@@ -1290,14 +1294,14 @@ it:
   query_fields:
     assigned_to_role: Assignee's role
     member_of_group: Assignee's group
-    subproject_id: Subprogetto
+    subproject_id: Progetto Secondario
   search_input_placeholder: cerca ...
   setting_activity_days_default: Days displayed on project activity
   setting_app_subtitle: Application subtitle
   setting_app_title: Titolo applicazione
-  setting_attachment_max_size: Attachment max. size
+  setting_attachment_max_size: Dimensione max. dell'allegato
   setting_autofetch_changesets: Autofetch commits
-  setting_autologin: Autologin
+  setting_autologin: Accesso automatico
   setting_available_languages: Linguaggi disponibili
   setting_bcc_recipients: Blind carbon copy recipients (bcc)
   setting_brute_force_block_after_failed_logins: Block user after this number of failed
@@ -1378,7 +1382,7 @@ it:
   setting_user_format: Users display format
   setting_users_deletable_by_admins: User accounts deletable by admins
   setting_users_deletable_by_self: Users allowed to delete their accounts
-  setting_welcome_text: Welcome text
+  setting_welcome_text: Testo di benvenuto
   setting_wiki_compression: Wiki history compression
   setting_work_package_group_assignment: Allow assignment to groups
   settings:
@@ -1487,10 +1491,10 @@ it:
   time:
     am: am
     formats:
-      default: "%m/%d/%Y %I:%M %p"
-      long: "%B %d, %Y %H:%M"
-      short: "%d %b %H:%M"
-      time: "%I:%M %p"
+      default: "%m/%d/%Y %I: %M %p"
+      long: "%B %d % %y h: %M"
+      short: "%d %b % h %M"
+      time: "%I: %M %p"
     pm: pm
   timelines:
     admin_menu:
@@ -1500,19 +1504,19 @@ it:
       project_types: Project types
     project_menu:
       planning_elements: Planning elements
-      project_associations: Dependencies
+      project_associations: Dipendenze
       reportings: Rapporti di stato
       reports: Rapporti tempistiche
       timelines: Tempistiche
     add_project_association: Aggiungi dipendenza
-    associations: Dependencies
+    associations: Dipendenze
     board_could_not_be_saved: Board could not be saved
     button_delete_all: Cancella tutti
     change: Change in planning
-    children: Child elements
-    color_could_not_be_saved: Color could not be saved
-    current_planning: Current planning
-    dates: Dates
+    children: Elementi figlio
+    color_could_not_be_saved: Il colore non può essere salvato
+    current_planning: Pianificazione corrente
+    dates: Date
     dates_are_calculated_based_on_sub_elements: Dates are calculated based on sub
       elements.
     delete_all: Cancella tutti
@@ -1521,7 +1525,7 @@ it:
     duration_days:
       one: 1 giorno
       other: "%{count} giorni"
-    edit_color: Edit color
+    edit_color: Modifica il colore
     edit_project_type: Edit project type
     edit_thing: Modifica
     edit_timeline: Edit timeline report
@@ -1581,18 +1585,18 @@ it:
       exclude_own_work_packages: Nascondere i pacchetti di lavoro da questo progetto
       exclude_reporters: Hide other projects
       exclude_empty: Hide empty projects
-      grouping: Grouping
-      grouping_hide_group: Hide group "%{group}"
+      grouping: Raggruppamento
+      grouping_hide_group: Nascondi il gruppo %{group}
       grouping_one: First grouping criterion
-      grouping_one_phrase: Is a subproject of
+      grouping_one_phrase: "È un progetto secondario di"
       grouping_other: Altro
       grouping_two: Second grouping criterion
       grouping_two_phrase: Has a dependency to project type
-      hide_chart: Hide chart
-      noneElement: "(none)"
-      noneSelection: "(none)"
+      hide_chart: Nascondere il grafico
+      noneElement: "(nessuno)"
+      noneSelection: "(nessuno)"
       outline: Initial outline expansion
-      parent: Show subprojects of
+      parent: Mostra i progetti secondari di
       work_package_filters: Filter work packages
       work_package_responsible: Show work packages with responsible
       work_package_assignee: Show work packages with assignee
@@ -1606,12 +1610,12 @@ it:
       project_time_filter_relative: from %{startspan}%{startspanunit} ago, to %{endspan}%{endspanunit}
         from now
       project_filters: Filter projects
-      project_responsible: Show projects with responsible
-      project_status: Show project status
+      project_responsible: Visualizza progetti con responsabile
+      project_status: Visualizza lo stato del progetto
       project_types: Show project types
-      timeframe: Show timeframe
-      timeframe_end: to
-      timeframe_start: from
+      timeframe: Visualizza calendario
+      timeframe_end: a
+      timeframe_start: da
       timeline: Impostazioni Generali
       zoom: Fattore di zoom
     history: Storia
@@ -1630,11 +1634,11 @@ it:
     outline: Reset Outline
     outlines:
       aggregation: Show aggregations only
-      level1: Expand level 1
-      level2: Expand level 2
-      level3: Expand level 3
-      level4: Expand level 4
-      level5: Expand level 5
+      level1: Espandi livello 1
+      level2: Espandi livello 2
+      level3: Espandi livello 3
+      level4: Espandi livello 4
+      level5: Espandi livello 5
       all: Mostra tutti
     reporting_for_project:
       show: 'Status reported to project: %{title}'
@@ -1644,7 +1648,7 @@ it:
       delete: 'Cancella stato: %{comment}'
       edit: 'Modifica stato: %{comment}'
       show: 'Stato: %{comment}'
-    planning_element_update: 'Update: %{title}'
+    planning_element_update: 'Aggiorna: %{title}'
     work_packages_are_displayed_in_aggregations: Work packages are displayed in aggregations
     project_association_new: Add project dependency
     project_association_new_for_with: Set dependency for “%{project_a}” with
@@ -1652,13 +1656,13 @@ it:
       “%{project_b}”
     project_association_of_type: Dependency to project of type “%{type}”
     project_type_could_not_be_saved: Project type could not be saved
-    type_could_not_be_saved: Type could not be saved
+    type_could_not_be_saved: Il tipo non può essere salvato
     reporting_could_not_be_saved: Reporting could not be saved
     properties: Proprietà
-    really_delete_color: Are you sure, you want to delete the following color? Types
-      using this color will not be deleted.
-    really_delete_project_association_between_project_a_and_project_b: Are you sure,
-      you want to delete the dependency between “%{project_a}” and “%{project_b}”?
+    really_delete_color: Sei sicuro di che voler eliminare il seguente colore?  I
+      tipi che utilizzano questo colore non verranno eliminati.
+    really_delete_project_association_between_project_a_and_project_b: Sei sicuro
+      di che voler eliminare la dipendenza tra "%{project_a}" e "%{project_b}"?
     really_delete_project_type: Are you sure, you want to delete the following project
       type? Projects using this type will not be deleted.
     really_delete_timeline: Are you sure, you want to delete the following timeline
@@ -1669,7 +1673,7 @@ it:
     timeline: Timeline report
     timelines: Rapporti tempistiche
     settings: Tempistiche
-    vertical_work_package: Vertical work packages
+    vertical_work_package: Pacchetti di lavoro verticali
     without_project_type: Without project type
     you_are_viewing_the_selected_timeline: You are viewing the selected timeline report
     zoom:
@@ -1681,13 +1685,13 @@ it:
       quarters: Trimestre
       years: Anni
   queries:
-    apply_filter: Apply preconfigured filter
+    apply_filter: Applicare filtro preconfigurato
   total_progress: Progressi totali
   user:
     all: tutti
     active: attivo
     activate: Attivato
-    activate_and_reset_failed_logins: Activate and reset failed logins
+    activate_and_reset_failed_logins: Attivare e ripristinare gli accessi non riusciti
     assign_random_password: Assign random password (sent to user via e-mail)
     blocked: temporaneamente bloccato
     blocked_num_failed_logins:
@@ -1700,7 +1704,7 @@ it:
     locked: bloccato permanentemente
     registered: registrato
     reset_failed_logins: Resetta accessi falliti
-    status_user_and_brute_force: "%{user} and %{brute_force}"
+    status_user_and_brute_force: "%{user} e %{brute_force}"
     unlock: Sblocca
     unlock_and_reset_failed_logins: Unlock and reset failed logins
   version_status_closed: chiuso
@@ -1720,4 +1724,4 @@ it:
   work_package:
     updated_automatically_by_child_changes: _Updated automatically by changing values
       within child work package %{child}_
-  nothing_to_preview: Nothing to preview
+  nothing_to_preview: Niente in anteprima
