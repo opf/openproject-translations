@@ -6,40 +6,41 @@ it:
     deleted: Account cancellato con successo
     deletion_info:
       data_consequences:
-        other: I dati dell'utente creato (per esempio posta elettronica, le preferenze,
-          pacchetti di lavoro, le voci wiki) quando più possibile verranno eliminati.
+        other: I dati creati dall'utente (per esempio posta elettronica, le preferenze,
+          pacchetti di lavoro, le voci wiki) verranno eliminati quando più possibile.
           Si noti, tuttavia, che i dati come pacchetti di lavoro e le voci wiki non
           possono essere eliminati senza ostacolare il lavoro degli altri utenti.
           Tali dati vengono quindi riassegnati ad un account chiamato "Utente Cancellato".
-          Come i dati di ogni account eliminato che  vengono riassegnati a questo
-          account, non sarà possibile distinguere i dati dell'utente creato dai dati
-          di un altro account eliminato.
-        self: Of the data you created (e.g. e-mail, preferences, work packages, wiki
-          entries) as much as possible will be deleted. Note however, that data like
-          work packages and wiki entries can not be deleted without impeding the work
-          of the other users. Such data is hence reassigned to an account called "Deleted
-          user". As the data of every deleted account is reassigned to this account
-          it will not be possible to distinguish the data you created from the data
-          of another deleted account.
+          Visto che i dati di ogni account eliminato vengono anch'essi riassegnati
+          a questo account, non sarà possibile distinguere i dati creati dall'utente
+          dai dati di un altro account eliminato.
+        self: I dati creati dalla tua attività (per esempio posta elettronica, le
+          preferenze, pacchetti di lavoro, le voci wiki) verranno eliminati quando
+          più possibile. Si noti, tuttavia, che i dati come pacchetti di lavoro e
+          le voci wiki non possono essere eliminati senza ostacolare il lavoro degli
+          altri utenti. Tali dati vengono quindi riassegnati ad un account chiamato
+          "Utente Cancellato". Visto che i dati di ogni account eliminato vengono
+          anch'essi riassegnati a questo account, non sarà possibile distinguere i
+          tuoi dati dai dati di un altro account eliminato.
       heading: Cancella account %{name}
       info:
         other: Cancellare l'account utente è un azione irreversibile.
         self: Cancellare il tuo account utente è un azione irreversibile.
       login_consequences:
-        other: L'account verrà cancellato dal sistema. Therefore, the user will no
-          longer be able to log in with his current credentials. He/she can choose
-          to become a user of this application again by the means this application
-          grants.
-        self: Your account will be deleted from the system. Therefore, you will no
-          longer be able to log in with your current credentials. If you choose to
-          become a user of this application again, you can do so by using the means
-          this application grants.
-    error_inactive_activation_by_mail: Your account has not yet been activated. To
-      activate your account, click on the link that was emailed to you.
-    error_inactive_manual_activation: Your account has not yet been activated. Please
-      wait for an administrator to activate your account.
-    error_self_registration_disabled: User registration is disabled on this system.
-      Please ask an administrator to create an account for you.
+        other: L'account verrà cancellato dal sistema. Pertanto l'utente non sarà
+          più in grado di accedere con le sue credenziali correnti. L'utente potrà
+          in futuro scegliere di diventare nuovamente utente di quest'applicazione.
+        self: Il tuo account verrà eliminato dal sistema. Pertanto non sarai più in
+          grado di accedere con le tue credenziali correnti. Se in futuro sceglierai
+          di diventare nuovamente utente di quest'applicazione, potrai farlo utilizzando
+          i mezzi che questa applicazione concede.
+    error_inactive_activation_by_mail: Il tuo account non è stato ancora attivato.
+      Per attivare il tuo account, clicca sul link che ti è stato inviato via email.
+    error_inactive_manual_activation: Il tuo account non è stato ancora attivato.
+      Si prega di attendere che un amministratore lo attivi.
+    error_self_registration_disabled: Su questo sistema non è possibile registrare
+      nuovi utenti. Per cortesia, contatta l'amministratore e chiedigli di creare
+      un account per te.
     login_with_auth_provider: o accedi con il tuo account esistente
   actionview_instancetag_blank_option: Perfavore seleziona
   activerecord:
@@ -56,7 +57,7 @@ it:
         attr_mail: Attributo email
         base_dn: Base DN
         host: Host
-        onthefly: On-the-fly user creation
+        onthefly: Creazione dell'utente al volo
         port: Porta
       comment:
         commented: Commentato
@@ -96,7 +97,7 @@ it:
         queries: Interrogazioni
       query:
         column_names: Colonne
-        group_by: Group results by
+        group_by: Raggruppa risultati per
         filters: Filtri
       repository:
         url: URL
@@ -117,7 +118,7 @@ it:
         admin: Amministratore
         auth_source: Modalità di autenticazione
         language: Linguaggio
-        last_login_on: Last login
+        last_login_on: Ultimo accesso
         mail_notification: Notificazioni email
         new_password: Nuova password
         password_confirmation: Conferma
@@ -178,7 +179,7 @@ it:
         cant_link_a_work_package_with_a_descendant: Un pacchetto di lavoro non può
           essere collegato a una delle sue sottoattività
         circular_dependency: Questa relazione creerebbe una dipendenza circolare
-        confirmation: doesn't match confirmation
+        confirmation: non corrisponde alla conferma
         empty: non può essere vuoto
         equal_to: deve essere uguale a %{count}
         even: deve essere pari
@@ -211,8 +212,8 @@ it:
           identical_projects: non può essere creato da un progetto a se stesso
           project_association_not_allowed: non consente le associazioni
         work_package:
-          is_not_a_valid_target_for_time_entries: 'Work package #%{id} is not a valid
-            target for reassigning the time entries.'
+          is_not_a_valid_target_for_time_entries: 'Il pacchetto di lavoro #%{id} non
+            è una destinazione valida per riassegnare le voci del tempo.'
           attributes:
             due_date:
               not_start_date: non è sulla data di inizio, nonostante sia obbligatorio
@@ -239,8 +240,8 @@ it:
               reused:
                 one: "è stata utilizzata prima. Si prega di sceglierne una che è diversa
                   dall'ultima."
-                other: "è stata utilizzato prima. Si prega di sceglierne una che è
-                  diversa dalle ultime %{count}."
+                other: "è già stata utilizzata. Si prega di sceglierne una che è diversa
+                  dalle ultime %{count}."
         member:
           principal_blank: Si prega di scegliere almeno un utente o un gruppo.
           role_blank: Si prega di scegliere almeno un ruolo.
@@ -487,7 +488,7 @@ it:
         other: ore
   default_activity_management: Gestione
   default_activity_design: Design
-  default_activity_development: Sviluppatore
+  default_activity_development: Sviluppo
   default_activity_testing: Fase di prova
   default_activity_Support: Supporto
   default_activity_Other: Altro
@@ -604,7 +605,7 @@ it:
     esterna. Per favore riprova.
   events:
     project: Progetto modificato
-    changeset: Changeset edited
+    changeset: ChangeSet modificato
     message: Messaggio modificato
     news: Notizie
     reply: Risposto
@@ -640,10 +641,10 @@ it:
   label_add_subtask: Aggiungi sotto-attività
   label_added: aggiunto
   label_added_time_by: Aggiunto da %{author} %{age} fa
-  label_additional_workflow_transitions_for_assignee: Additional transitions allowed
-    when the user is the assignee
-  label_additional_workflow_transitions_for_author: Additional transitions allowed
-    when the user is the author
+  label_additional_workflow_transitions_for_assignee: Transizioni aggiuntive consentite
+    quando l'utente è l'assegnatario
+  label_additional_workflow_transitions_for_author: Transizioni aggiuntive consentite
+    quando l'utente è l'autore
   label_administration: Amministrazione
   label_age: Età
   label_ago: giorni fa
@@ -652,7 +653,7 @@ it:
   label_all_words: Tutte le parole
   label_and_its_subprojects: "%{value} e i suoi sotto-progetti"
   label_api_access_key: Chiave di accesso API
-  label_api_access_key_created_on: API access key created %{value} ago
+  label_api_access_key_created_on: Chiave di accesso API creato %{value} fa
   label_applied_status: Stato applicato
   label_ascending: Crescente
   label_assigned_to_me_work_packages: Pacchetti di lavoro assegnati a me
@@ -671,11 +672,12 @@ it:
   label_board_locked: Chiuso
   label_board_new: Nuovo forum
   label_board_plural: Forum
-  label_board_sticky: Sticky
+  label_board_sticky: In evidenza
   label_boolean: Booleano
   label_branch: Ramo
   label_browse: Sfoglia
-  label_bulk_edit_selected_work_packages: Bulk edit selected work packages
+  label_bulk_edit_selected_work_packages: Modifica alla rinfusa dei pacchetti di lavoro
+    selezionati
   label_calendar: Calendario
   label_calendar_show: Mostra Calendario
   label_category: Categoria
@@ -697,8 +699,8 @@ it:
   label_comment_added: Commento aggiunto
   label_comment_delete: Cancella commenti
   label_comment_plural: Commenti
-  label_commits_per_author: Commits per author
-  label_commits_per_month: Commits per month
+  label_commits_per_author: Commit per autore
+  label_commits_per_month: Commit per mese
   label_confirmation: Conferma
   label_contains: contiene
   label_content: Contenuto
@@ -729,7 +731,7 @@ it:
   label_diff_inline: inline
   label_diff_side_by_side: Affiancate
   label_disabled: disabilitato
-  label_display: Display
+  label_display: Visualizza
   label_display_per_page: 'Per pagina: %{value}'
   label_display_used_statuses_only: Visualizza solo stati utilizzati da questo tipo
   label_download: "%{count} Scaricato"
@@ -737,7 +739,7 @@ it:
   label_downloads_abbr: D/L
   label_duplicated_by: duplicato da
   label_duplicates: duplicati
-  label_enable_multi_select: Toggle multiselect
+  label_enable_multi_select: Inverti multiselezione
   label_end_to_end: end to end
   label_end_to_start: end to start
   label_enumeration_new: New enumeration value
@@ -808,7 +810,7 @@ it:
   label_jump_to_a_project: Salta nel progetto...
   label_language_based: Basato sulla lingua dell'utente
   label_last_changes: ultimi %{count} cambiamenti
-  label_last_login: Last login
+  label_last_login: Ultimo accesso
   label_last_month: il mese scorso
   label_last_n_days: ultimi %{count} giorni
   label_last_week: ultima settimana
@@ -1690,8 +1692,8 @@ it:
     authentication_provider: Autenticazione del fornitore
     authentication_settings_disabled_due_to_external_authentication: Questo utente
       si autentica tramite un provider di autenticazione esterna, quindi non c'è nessuna
-      passowrd che può essere cambiata in OpenProject.
-    assign_random_password: Assegna passowrd casuale (inviata via email all'utente)
+      password che può essere cambiata in OpenProject.
+    assign_random_password: Assegna password casuale (inviata via email all'utente)
     blocked: temporaneamente bloccato
     blocked_num_failed_logins:
       one: bloccato temporaneamente (un accesso fallito)
