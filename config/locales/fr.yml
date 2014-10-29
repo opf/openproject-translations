@@ -36,6 +36,13 @@ fr:
           actuelles. Si vous décidez de devenir un utilisateur de nouveau sur cette
           application, vous pouvez faire ainsi en utilisant les moyens que cette application
           autorise.
+    error_inactive_activation_by_mail: Votre compte n'a pas encore été activé. Pour
+      activer votre compte, cliquez sur le lien qui vous a été envoyé par mail.
+    error_inactive_manual_activation: Votre compte n'a pas encore été activé. Veuillez
+      attendre qu'un administrateur active votre compte.
+    error_self_registration_disabled: L'inscription utilisateur est désactivée sur
+      ce système. Demandez à un administrateur de créer un compte pour vous.
+    login_with_auth_provider: ou connectez-vous avec votre compte existant
   actionview_instancetag_blank_option: Veuillez sélectionner
   activerecord:
     attributes:
@@ -111,7 +118,6 @@ fr:
       user:
         admin: Administrateur
         auth_source: Mode d'authentification
-        identity_url: URL OpenID
         language: Langue
         last_login_on: Dernière connexion
         mail_notification: Notifications par email
@@ -156,10 +162,10 @@ fr:
         created_at: Créé
       work_package:
         done_ratio: "% fait"
-        fixed_version: Version cible
+        fixed_version: Version
         parent: Parent
         parent_issue: Parent
-        parent_work_packae: Parent
+        parent_work_package: Parent
         priority: Priorité
         progress: "% fait"
         responsible: Responsable
@@ -182,6 +188,8 @@ fr:
         exclusion: est réservé
         greater_than: doit être supérieur à %{count}
         greater_than_or_equal_to: doit être supérieur ou égal à %{count}
+        smaller_than_or_equal_to_max_length: Doit être plus petit ou égal à la longueur
+          maximale
         greater_than_start_date: doit être supérieure à la date de début
         inclusion: n'est pas inclus dans la liste
         invalid: est invalide
@@ -268,6 +276,7 @@ fr:
       wiki: Wiki
       wiki_page: Page wiki
       workflow: Flux de travail
+      work_package: Lot de Travaux
   errors:
     header_invalid_fields: 'Il y a eu un problème avec les champs suivants:'
   activity:
@@ -470,6 +479,10 @@ fr:
       x_seconds:
         one: 1 seconde
         other: "%{count} secondes"
+    units:
+      hour:
+        one: heure
+        other: heures
   default_activity_management: Gestion
   default_activity_design: Dessin
   default_activity_development: Développement
@@ -532,7 +545,6 @@ fr:
   description_message_content: Contenu du message
   description_my_project: Vous êtes membre
   description_notes: Notes
-  description_option_toggle: Afficher/Masquer les options
   description_parent_work_package: Parent du Lot de Travaux actuel
   description_project_scope: "Étendue de la recherche"
   description_query_sort_criteria_attribute: Classer l'attribut
@@ -541,7 +553,6 @@ fr:
   description_select_work_package: Sélectionner un Lot de Travaux
   description_selected_columns: Colonnes Sélectionnées
   description_sub_work_package: Sous-Lot de Travaux de l'actuel
-  description_subwork_package: Sous-Lot de Travaux de
   description_toc_toggle: Afficher/Masquer table de matières
   description_user_mail_notification: Paramètres de notification par e-mail
   description_wiki_subpages_reassign: Assigner une nouvelle page parente
@@ -554,6 +565,7 @@ fr:
   error_can_not_delete_custom_field: Impossible de supprimer le champ personnalisé
   error_can_not_delete_type: Ce type contient des Lots de Travaux et ne peut être
     supprimé.
+  error_can_not_delete_standard_type: Les types standards ne peuvent pas être supprimés.
   error_can_not_remove_role: Ce rôle est utilisé et ne peut être supprimé.
   error_can_not_reopen_work_package_on_closed_version: Un Lot de Travaux assigné à
     une version fermée ne peut être réouvert
@@ -570,6 +582,8 @@ fr:
     -> Statuts des lots de travaux").
   error_no_type_in_project: Aucun type n'est associé à ce projet. Veuillez vérifier
     les réglages du projet.
+  error_omniauth_registration_timed_out: L'inscription via un fournisseur d'authentification
+    externe a expiré. Veuillez essayer de nouveau.
   error_scm_annotate: L'entrée n'existe pas ou ne peut pas être annotée.
   error_scm_command_failed: 'Une erreur s''est produite en essayant d''accéder au
     dépôt: %{value}'
@@ -583,6 +597,8 @@ fr:
   error_workflow_copy_target: Veuillez sélectioner une cible type(s) et rôle(s)
   error_menu_item_not_created: L'élément de menu n'a pas pu être ajouté
   error_menu_item_not_saved: L'élément de menu n'a pas pu être sauvegardé
+  error_external_authentication_failed: Une erreur s'est produite lors de l'authentification
+    externe. Veuillez essayer de nouveau.
   events:
     project: Projet édité
     changeset: Lot de modification édité
@@ -600,65 +616,18 @@ fr:
   general_first_day_of_week: '1'
   general_lang_name: Français
   general_pdf_encoding: ISO-8859-15
-  general_text_No: Non
-  general_text_Yes: Oui
   general_text_no: non
   general_text_yes: oui
+  general_text_No: Non
+  general_text_Yes: Oui
   gui_validation_error: une erreur
   gui_validation_error_plural: "%{count} erreurs"
-  js:
-    unsupported_browser:
-      title: Votre navigateur n'est pas pris en charge
-      message: Le navigateur que vous utilisez n'est plus supporté par OpenProject.
-        Veuillez mettre à jour votre navigateur.
-      learn_more: En savoir plus
-    logoff: Vous avez été déconnecté
-    redirect_login: Voulez-vous être redirigé vers la page de connexion?
-    ajax:
-      hide: Masquer
-      loading: Chargement ...
-    select2:
-      input_too_short:
-        one: Veuillez entrer encore un autre caractère
-        other: Veuillez entrer encore {{count}} autres caractères
-        zero: Please enter more characters
-      load_more: Chargement de plus de résultats ...
-      no_matches: Pas de correspondances trouvées
-      searching: Recherche ...
-      selection_too_big:
-        one: Vous ne pouvez sélectionner que {{limit}} éléments
-        other: Vous ne pouvez sélectionner que {{limit}} éléments
-        zero: You cannot select any items
-    timelines:
-      tooManyProjects: Plus de %{count} Projets. Veuillez essayez un meilleur filtre!
-      cancel: Annuler
-      save: Enregistrer
-      due_date: Date d'échéance
-      name: Nom
-      project_status: "État du projet"
-      project_type: Type de projet
-      responsible: Responsable
-      start_date: Date de début
-      error: Une erreur s'est produite.
-      create_planning_select_project: 'Projet :'
-      really_close_dialog: Voulez-vous vraiment fermer la boîte de dialogue et perdre
-        les données saisies?
-      zoom_slider: Curseur de zoom
-    filter:
-      noneElement: "(none)"
-      noneSelection: "(none)"
-    button_check_all: Tout cocher
-    button_uncheck_all: Tout désélectionner
-    label_collapsed: regroupé
-    label_expanded: "étendu"
-    label_collapse_all: Tout replier
-    label_expand_all: Tout déplier
-    label_menu_item_toggle: Afficher/Masquer les éléments de sous-menu
-    label_menu_collapse: réduire
-    label_menu_expand: développer
-    tl_toolbar:
-      zooms: Niveau de zoom
-      outlines: Niveau de hiérarchie
+  instructions_after_registration: Vous pouvez vous authentifier tant que votre compte
+    a été activé en cliquant sur %{signin}.
+  instructions_after_logout: Vous pouvez vous authentifier une seconde fois en cliquant
+    sur %{signin}.
+  instructions_after_error: Vous pouvez encore essayer de vous authentifier en cliquant
+    sur %{signin}. Si l'erreur persiste, demandez de l'aide à votre administrateur.
   label_account: Compte
   label_activity: Activité
   label_add_another_file: Ajoutez un autre fichier
@@ -677,7 +646,6 @@ fr:
   label_age: "Âge"
   label_ago: il y a %{value} jours
   label_all: tous
-  label_all_work_packages: tous les lots de travail
   label_all_time: tout le temps
   label_all_words: Tous les mots
   label_and_its_subprojects: "%{value} et ses sous-projets"
@@ -722,7 +690,7 @@ fr:
   label_close_versions: Fermer les versions complètes
   label_closed_work_packages: fermé
   label_collapse: Regrouper
-  label_collapse_all: Tout replier
+  label_configuration: configuration
   label_comment_add: Ajouter un commentaire
   label_comment_added: Commentaire ajouté
   label_comment_delete: Supprimer les commentaires
@@ -776,8 +744,6 @@ fr:
   label_environment: Environement
   label_equals: est
   label_example: Exemple
-  label_expand: "Étendre"
-  label_expand_all: Tout déplier
   label_export_to: 'Aussi valable en:'
   label_f_hour: "%{value} heure"
   label_f_hour_plural: "%{value} heures"
@@ -800,6 +766,7 @@ fr:
   label_group_new: Nouveau groupe
   label_group_plural: Groupes
   label_help: Aide
+  label_here: ici
   label_hide: Masquer
   label_history: Historique
   label_home: Accueil
@@ -853,7 +820,6 @@ fr:
   label_loading: Chargement...
   label_logged_as: Connecté en tant que
   label_login: Connexion
-  label_login_with_open_id_option: ou se connecter avec OpenID
   label_logout: Déconnexion
   label_main_menu: Menu principal
   label_max_size: Taille maximale
@@ -902,6 +868,7 @@ fr:
   label_not_contains: ne contient pas
   label_not_equals: n'est pas
   label_notify_member_plural: Alertes mail
+  label_open_menu: Ouvrir le menu
   label_open_work_packages: ouvrir
   label_open_work_packages_plural: ouvrir
   label_optional_description: Description
@@ -944,7 +911,8 @@ fr:
   label_query_plural: Requêtes personnalisées
   label_query_menu_item: Menu des requêtes
   label_read: Lire...
-  label_register: S'enregistrer
+  label_register: Enregistrer
+  label_register_with_developer: S'inscrire en tant que développeur
   label_registered_on: Enregistré sur
   label_registration_activation_by_email: activation du compte par courriel
   label_registration_automatic_activation: activation automatique du compte
@@ -1003,7 +971,6 @@ fr:
   label_subproject_new: Nouveau sous-projet
   label_subproject_plural: Sous-projets
   label_subtask_plural: Sous-tâche
-  label_sum_for: Somme de %{value}
   label_summary: Résumé
   label_system: Système
   label_table_of_contents: Table des Matières
@@ -1095,6 +1062,9 @@ fr:
     zero: no projects
   label_year: Année
   label_yesterday: hier
+  label_keyboard_function: Fonction
+  label_keyboard_shortcut: Raccourci
+  label_keyboard_accesskey: Touche de raccourci
   label_keyboard_shortcut_help_heading: Raccourcis de clavier disponibles
   label_keyboard_shortcut_within_project: 'Raccourcis liés au projet:'
   label_keyboard_shortcut_global_shortcuts: 'Raccourcis généraux:'
@@ -1121,6 +1091,8 @@ fr:
     quelques listes seulement)
   label_keyboard_shortcut_focus_next_item: Focus sur l'élément suivant (sur quelques
     listes seulement)
+  macro_execution_error: Erreur lors de l'exécution de la macro %{macro_name}
+  macro_unavailable: La macro %{macro_name} ne peut être affichée.
   mail_body_account_activation_request: 'Un nouvel utilisateur (%{value}) s''est enregistré.
     Le compte attend votre approbation:'
   mail_body_account_information: Informations sur votre compte
@@ -1145,8 +1117,6 @@ fr:
   noscript_learn_more: En savoir plus
   notice_account_activated: Votre compte a bien été activé. Vous pouvez maintenant
     vous connecter.
-  notice_account_inactive: Votre compte n'a pas encore été activé. Pour activer votre
-    compte, cliquez sur le lien qui vous a été envoyé par mail.
   notice_account_invalid_credentials: Nom d'utilisateur ou mot de passe incorrect
   notice_account_invalid_credentials_or_blocked: Nom d'utilisateur ou mot de passe
     incorrect ou le compte est bloqué dû aux nombreuses tentatives de connexion échouées.
@@ -1166,6 +1136,8 @@ fr:
     Veuillez vérifier votre page de compte.
   notice_account_updated: Le compte a été mis à jour avec succès.
   notice_account_wrong_password: Mot de passe incorrect
+  notice_account_registered_and_logged_in: Bienvenue, votre compte a été activé. Vous
+    êtes maintenant connecté.
   notice_api_access_key_reseted: Votre clé d'accès API a été réinitialisée.
   notice_can_t_change_password: Ce compte utilise une source d'authentification externe.
     Impossible de changer le mot de passe.
@@ -1206,6 +1178,7 @@ fr:
   notice_unable_delete_time_entry: Impossible de supprimer « Time Log Entry »
   notice_unable_delete_version: Impossible de supprimer la version.
   notice_automatic_set_of_standard_type: Fixer le type standard automatiquement.
+  notice_logged_out: Vous avez été déconnecté.
   error_types_in_use_by_work_packages: 'Les types suivants sont toujours référencés
     par des Lots de Travaux: %{types}'
   number:
@@ -1366,7 +1339,6 @@ fr:
   setting_mail_handler_body_delimiters: Tronquer mails après l'une de ces lignes
   setting_new_project_user_role_id: Rôle donné à un utilisateur non administrateur
     qui crée un projet
-  setting_openid: Permettre la connexion et l'enregistrement par OpenID
   setting_password_active_rules: Les classes de caractère activées
   setting_password_count_former_banned: Nombre des plus récent mots des passe utilisé
     qui sont interdit de réutilisation.
@@ -1465,6 +1437,8 @@ fr:
   text_no_configuration_data: |
     Les rôles, types, status de Lots de Travaux et workflows ne sont pas encore configurés pour l'instant.
     Il est hautement recommander de charger la configuration par défaut. Vous pourrez la modifier une fois chargée.
+  text_notice_too_many_values_are_inperformant: 'Remarque : L''affichage de plus de
+    100 articles par page peut augmenter le temps de chargement de la page.'
   text_own_membership_delete_confirmation: |-
     Vous aller enlever certaines de vos permissions et ne pourrez peut-être plus modifier le projet plus tard.
     Êtes vous sûr de vouloir continuer?
@@ -1481,7 +1455,6 @@ fr:
   text_repository_usernames_mapping: |
     Sélectionnez ou mettez à jour l'utilisateur OpenProject trouvé dans le registre de dépôt.
     Utilisateurs avec le même nom d'utilisateur pour OpenProject et le dépôt sera connecté automatiquement.
-  text_rmagick_available: RMagick disponible (optionel)
   text_select_mail_notifications: Séléctionnez les actions pour lesquelles une notification
     par mail sera envoyée.
   text_select_project_modules: 'Sélectionnez les modules à activer pour ce projet:'
@@ -1550,8 +1523,8 @@ fr:
     edit_color: Editer la couleur
     edit_project_type: Editer le type de projet
     edit_thing: "Éditer"
-    edit_timeline: Modifier l'état de la chronologie
-    delete_timeline: Effacer le rapport de la chronologie
+    edit_timeline: Editer le calendrier lié
+    delete_timeline: Supprimer le calendrier lié
     empty: "(vide)"
     enable_type_in_project: Autorise le type « %{type} »
     end: Fin
@@ -1629,9 +1602,11 @@ fr:
         certain laps de temps
       project_time_filter_absolute_timeframe: "Échéancier absolu"
       project_time_filter_relative_timeframe: "Échéancier relatif"
-      project_time_filter_historical: de %{startdate} à %{enddate}
-      project_time_filter_relative: depuis %{startspan}%{startspanunit}, à %{endspan}%{endspanunit}
-        à partir de maintenant
+      project_time_filter_historical_from: de
+      project_time_filter_historical_to: "à"
+      project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
+      project_time_filter_relative: "%{start_label} %{startspan}%{startspanunit} ago,
+        %{end_label} %{endspan}%{endspanunit} from now"
       project_filters: Filtrer les projets
       project_responsible: Afficher projets avec le responsable
       project_status: Afficher statut du projet
@@ -1718,6 +1693,10 @@ fr:
     active: actif
     activate: Activer
     activate_and_reset_failed_logins: Activer et réinitialiser les connexions echouées
+    authentication_provider: Fournisseur d'authentification
+    authentication_settings_disabled_due_to_external_authentication: Cet utilisateur
+      s'authentifie via un fournisseur d'authentification externe, il n'y a aucun
+      mot de passe dans OpenProject à changer.
     assign_random_password: Assigner un mot de passe aléatoire (envoyé à l'utilisateur
       par courrier électronique)
     blocked: verrouillé temporairement
@@ -1734,9 +1713,17 @@ fr:
     status_user_and_brute_force: "%{user} et %{brute_force}"
     unlock: Déverrouiller
     unlock_and_reset_failed_logins: Déverrouiller et réinitialiser les échecs de connexion
+    no_login: Cet utilisateur s'authentifie avec un mot de passe. Tant que cela est
+      désactivé, il ne peut s'authentifier.
+    password_change_unsupported: Le changement de mot de passe n'est pas supporté.
+    authorization_rejected: Vous n'êtes pas autorisé à vous authentifier.
   version_status_closed: fermé
   version_status_locked: verrouillé
   version_status_open: ouvrir
+  note: Note
+  note_password_login_disabled: L'authentification via mot de passe a été désactivé
+    par %{configuration}.
+  warning: Attention
   warning_attachments_not_saved: "%{count} fichier(s) n'ont pu être sauvegardés."
   menu_item: "Éléments de menu"
   menu_item_setting: Visibilité

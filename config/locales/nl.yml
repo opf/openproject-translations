@@ -36,6 +36,13 @@ nl:
           langer zitten kundig Meld u aan met uw huidige referenties. Als u ervoor
           kiest om een gebruiker van deze toepassing opnieuw te worden, kan je dus
           met behulp van de middelen deze toepassing verleent.
+    error_inactive_activation_by_mail: Uw account is nog niet geactiveerd. Klik op
+      de link in de u toegestuurde mail om uw account te activeren.
+    error_inactive_manual_activation: Uw account is nog niet geactiveerd. Wacht totdat
+      een beheerder uw account activeert.
+    error_self_registration_disabled: Gebruikersregistratie is uitgeschakeld op dit
+      systeem. Vraag een beheerder om een account voor u aan te maken.
+    login_with_auth_provider: of log in met een bestaand account
   actionview_instancetag_blank_option: Gelieve te selecteren
   activerecord:
     attributes:
@@ -111,9 +118,8 @@ nl:
       user:
         admin: Beheerder
         auth_source: Verificatiemodus
-        identity_url: OpenID URL
         language: Taal
-        last_login_on: Laatste verbinding
+        last_login_on: Last login
         mail_notification: E-mailnotificaties
         new_password: Nieuw wachtwoord
         password_confirmation: Bevestiging
@@ -155,10 +161,10 @@ nl:
         created_at: Gemaakt
       work_package:
         done_ratio: "% voltooid"
-        fixed_version: Doelversie
+        fixed_version: Versie
         parent: Bovenliggende
         parent_issue: Bovenliggende
-        parent_work_packae: Bovenliggende
+        parent_work_package: Bovenliggende
         priority: Prioriteit
         progress: "% voltooid"
         responsible: Verantwoordelijk
@@ -181,6 +187,8 @@ nl:
         exclusion: is gereserveerd
         greater_than: moet groter zijn dan %{count}
         greater_than_or_equal_to: moet groter dan of gelijk zijn aan %{count}
+        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
+          length
         greater_than_start_date: moet groter zijn dan begindatum
         inclusion: is niet opgenomen in de lijst
         invalid: is ongeldig
@@ -214,7 +222,7 @@ nl:
             parent_id:
               cannot_be_milestone: can geen mijlpaal zijn
               cannot_be_in_another_project: kan niet in een ander project
-              not_a_valid_parent: is invaild
+              not_a_valid_parent: is ongeldig
               does_not_exist: bestaat niet
             status_id:
               status_transition_invalid: er bestaat geen geldige overgang van de oude
@@ -265,6 +273,7 @@ nl:
       wiki: Wiki
       wiki_page: Wikipagina
       workflow: Werkstroom
+      work_package: Werkpakket
   errors:
     header_invalid_fields: 'Er waren problemen met de volgende velden:'
   activity:
@@ -340,7 +349,7 @@ nl:
   button_list: Lijst
   button_lock: Vergrendelen
   button_log_time: Gelogde tijd
-  button_login: Login
+  button_login: Inloggen
   button_move: Verplaatsen
   button_move_and_follow: Verplaatsen en volgen
   button_quote: Citeer
@@ -468,6 +477,10 @@ nl:
       x_seconds:
         one: 1 seconde
         other: "%{count} seconden"
+    units:
+      hour:
+        one: hour
+        other: hours
   default_activity_management: Management
   default_activity_design: Ontwerp
   default_activity_development: Ontwikkeling
@@ -530,7 +543,6 @@ nl:
   description_message_content: Bericht inhoud
   description_my_project: U bent lid
   description_notes: Notities
-  description_option_toggle: Show/Hide options
   description_parent_work_package: Bovenliggende werkpakket van huidige
   description_project_scope: Zoekbereik
   description_query_sort_criteria_attribute: Sorteren op kenmerk
@@ -539,7 +551,6 @@ nl:
   description_select_work_package: Selecteer werkpakket
   description_selected_columns: Geselecteerde kolommen
   description_sub_work_package: Sub werkpakket van huidige
-  description_subwork_package: Sub work package of
   description_toc_toggle: De inhoudsopgave weergeven/verbergen
   description_user_mail_notification: E-mail notificatie instellingen
   description_wiki_subpages_reassign: Kies nieuwe bovenliggende pagina
@@ -551,6 +562,7 @@ nl:
   error_can_not_archive_project: Dit project kan niet worden gearchiveerd
   error_can_not_delete_custom_field: Aangepast veld kan niet verwijderd worden
   error_can_not_delete_type: Dit type bevat werkpakketten en kan niet worden verwijderd.
+  error_can_not_delete_standard_type: Standaard types kunnen niet worden verwijderd.
   error_can_not_remove_role: Deze rol is in gebruik en kan niet worden verwijderd.
   error_can_not_reopen_work_package_on_closed_version: Een werkpakket toegewezen aan
     een gesloten versie kan niet worden heropend
@@ -564,6 +576,8 @@ nl:
     Controleer uw configuratie (Ga naar 'Administratie-> werkpakket statussen').
   error_no_type_in_project: Er is geen type gekoppeld aan dit project. Controleer
     de projectinstellingen.
+  error_omniauth_registration_timed_out: De registratie via een externe authenticatie-provider
+    is verlopen. Probeer het opnieuw.
   error_scm_annotate: De vermelding bestaat niet of kan niet worden gevonden.
   error_scm_command_failed: 'Er is een fout opgetreden tijdens het proberen om toegang
     te krijgen tot de repository: %{value}'
@@ -577,6 +591,8 @@ nl:
   error_workflow_copy_target: Selecteer (de) type(n) en rol(len)
   error_menu_item_not_created: Menu-item kan niet worden toegevoegd
   error_menu_item_not_saved: Menu-item kan niet worden opgeslagen
+  error_external_authentication_failed: Er heeft zich een fout voorgedaan bij de externe
+    authenticatie. Probeer het opnieuw.
   events:
     project: Project bewerkt
     changeset: Wijzigingsset bewerkt
@@ -594,65 +610,17 @@ nl:
   general_first_day_of_week: '7'
   general_lang_name: Nederlands
   general_pdf_encoding: ISO-8859-1
-  general_text_No: Nee
-  general_text_Yes: Ja
   general_text_no: Nee
   general_text_yes: Ja
+  general_text_No: Nee
+  general_text_Yes: Ja
   gui_validation_error: 1 fout
   gui_validation_error_plural: "%{count} fouten"
-  js:
-    unsupported_browser:
-      title: Your browser is not supported
-      message: The browser you are using is no longer supported by OpenProject. Please
-        update your browser.
-      learn_more: Leer meer
-    logoff: You have been logged off
-    redirect_login: Do you want to be redirected to the login page?
-    ajax:
-      hide: Verbergen
-      loading: Loading ...
-    select2:
-      input_too_short:
-        one: Please enter one more character
-        other: Please enter {{count}} more characters
-        zero: Please enter more characters
-      load_more: Loading more results ...
-      no_matches: No matches found
-      searching: Searching ...
-      selection_too_big:
-        one: You can only select one item
-        other: You can only select {{limit}} items
-        zero: You cannot select any items
-    timelines:
-      tooManyProjects: More than %{count} Projects. Please use a better filter!
-      cancel: Annuleren
-      save: Opslaan
-      due_date: Vervaldatum
-      name: Naam
-      project_status: Projectstatus
-      project_type: Projecttype
-      responsible: Verantwoordelijk
-      start_date: Startdatum
-      error: An error has occured.
-      create_planning_select_project: 'Project:'
-      really_close_dialog: Do you really want to close the dialog and loose the entered
-        data?
-      zoom_slider: Zoom slider
-    filter:
-      noneElement: "(none)"
-      noneSelection: "(none)"
-    button_check_all: Selecteer alles
-    button_uncheck_all: Deselecteer alles
-    label_collapsed: collapsed
-    label_expanded: expanded
-    label_collapse_all: Alles inklappen
-    label_expand_all: Alles uitklappen
-    label_menu_item_toggle: Show/hide submenu items
-    label_menu_collapse: collapse
-    label_menu_expand: expand
-    tl_toolbar:
-      zooms: Zoom level
-      outlines: Hierarchy level
+  instructions_after_registration: You can sign in as soon as your account has been
+    activated by clicking %{signin}.
+  instructions_after_logout: You can sign in again by clicking %{signin}.
+  instructions_after_error: You can try to sign in again by clicking %{signin}. If
+    the error persists, ask your admin for help.
   label_account: Account
   label_activity: Activiteit
   label_add_another_file: Toevoegen van een ander bestand
@@ -671,7 +639,6 @@ nl:
   label_age: Leeftijd
   label_ago: dagen geleden
   label_all: alle
-  label_all_work_packages: all work packages
   label_all_time: aller tijden
   label_all_words: Alle woorden
   label_and_its_subprojects: "%{value} en zijn subprojecten"
@@ -716,7 +683,7 @@ nl:
   label_close_versions: Voltooide versies sluiten
   label_closed_work_packages: gesloten
   label_collapse: Samenvouwen
-  label_collapse_all: Alles inklappen
+  label_configuration: configuration
   label_comment_add: Een opmerking toevoegen
   label_comment_added: Opmerking toegevoegd
   label_comment_delete: Opmerkingen verwijderen
@@ -770,8 +737,6 @@ nl:
   label_environment: Omgeving
   label_equals: is
   label_example: Voorbeeld
-  label_expand: Expand
-  label_expand_all: Alles uitklappen
   label_export_to: 'Ook verkrijgbaar in:'
   label_f_hour: "%{value} uur"
   label_f_hour_plural: "%{value} uren"
@@ -794,6 +759,7 @@ nl:
   label_group_new: Nieuwe groep
   label_group_plural: Groepen
   label_help: Help
+  label_here: here
   label_hide: Verbergen
   label_history: Geschiedenis
   label_home: Home
@@ -834,7 +800,7 @@ nl:
   label_jump_to_a_project: Ga naar een project...
   label_language_based: Op basis van de taal van gebruiker
   label_last_changes: laatste %{count} veranderingen
-  label_last_login: Laatste verbinding
+  label_last_login: Last login
   label_last_month: vorige maand
   label_last_n_days: laatste %{count} dagen
   label_last_week: Vorige week
@@ -847,7 +813,6 @@ nl:
   label_loading: Laden...
   label_logged_as: Ingelogd als
   label_login: Inloggen
-  label_login_with_open_id_option: or login with OpenID
   label_logout: Afmelden
   label_main_menu: Submenu
   label_max_size: Maximale Grootte
@@ -896,6 +861,7 @@ nl:
   label_not_contains: bevat geen
   label_not_equals: is niet
   label_notify_member_plural: E-mail updates
+  label_open_menu: Menu openen
   label_open_work_packages: Open
   label_open_work_packages_plural: Open
   label_optional_description: Omschrijving
@@ -903,7 +869,7 @@ nl:
   label_overall_activity: Totale activiteit
   label_overall_spent_time: Totale verbruikte tijd
   label_overview: Overzicht
-  label_password_lost: Lost password
+  label_password_lost: Wachtwoord vergeten
   label_password_rule_lowercase: Kleine letters
   label_password_rule_numeric: Numerieke tekens
   label_password_rule_special: Speciale tekens
@@ -938,7 +904,8 @@ nl:
   label_query_plural: Aangepaste query 's
   label_query_menu_item: Query menu-item
   label_read: Lees...
-  label_register: Register
+  label_register: Registeren
+  label_register_with_developer: Registreer als ontwikkelaar
   label_registered_on: Geregistreerd op
   label_registration_activation_by_email: account activeren via e-mail
   label_registration_automatic_activation: automatische account activatie
@@ -998,7 +965,6 @@ nl:
   label_subproject_new: Nieuwe subproject
   label_subproject_plural: Subprojecten
   label_subtask_plural: Subtaken
-  label_sum_for: Sum for %{value}
   label_summary: Overzicht
   label_system: Systeem
   label_table_of_contents: Inhoudsopgave
@@ -1089,6 +1055,9 @@ nl:
     zero: no projects
   label_year: Jaar
   label_yesterday: gisteren
+  label_keyboard_function: Functie
+  label_keyboard_shortcut: Snelkoppeling
+  label_keyboard_accesskey: toegangssleutel
   label_keyboard_shortcut_help_heading: Beschikbare sneltoetsen
   label_keyboard_shortcut_within_project: 'Project gerelateerde snelkoppelingen:'
   label_keyboard_shortcut_global_shortcuts: 'Algemene snelkoppelingen:'
@@ -1114,6 +1083,8 @@ nl:
     sommige lijsten)
   label_keyboard_shortcut_focus_next_item: Focus volgende lijstelement (enkel op sommige
     lijsten)
+  macro_execution_error: Error executing the macro %{macro_name}
+  macro_unavailable: Macro %{macro_name} cannot be displayed.
   mail_body_account_activation_request: 'Een nieuwe gebruiker (%{value}) heeft zich
     geregistreerd. Het account wacht op uw goedkeuring:'
   mail_body_account_information: Uw accountinformatie
@@ -1139,8 +1110,6 @@ nl:
   noscript_heading: JavaScript uitgeschakeld
   noscript_learn_more: Leer meer
   notice_account_activated: Uw account is geactiveerd. U kunt nu inloggen.
-  notice_account_inactive: Uw account is nog niet geactiveerd. Klik op de link in
-    de u toegestuurde mail om uw account te activeren.
   notice_account_invalid_credentials: Ongeldige gebruikersnaam of wachtwoord
   notice_account_invalid_credentials_or_blocked: Ongeldige gebruiker of wachtwoord
     of de account is geblokkeerd vanwege meerdere mislukte inlogpogingen. Als dat
@@ -1160,6 +1129,8 @@ nl:
     op uw accountpagina.
   notice_account_updated: Account is bijgewerkt.
   notice_account_wrong_password: Verkeerde wachtwoord
+  notice_account_registered_and_logged_in: Welkom, uw acount is geactiveerd. U bent
+    nu ingelogd.
   notice_api_access_key_reseted: Uw API-toegangssleutel is opnieuw ingesteld.
   notice_can_t_change_password: Dit account gebruikt een externe verificatie bron.
     Het is onmogelijk om het wachtwoord te wijzigen.
@@ -1196,6 +1167,7 @@ nl:
   notice_unable_delete_time_entry: Niet in staat om tijdlog te verwijderen.
   notice_unable_delete_version: Niet in staat om versie te verwijderen.
   notice_automatic_set_of_standard_type: Standaardtype automatisch ingesteld.
+  notice_logged_out: You have been logged out.
   error_types_in_use_by_work_packages: 'Naar de volgende typen wordt nog verwezen
     door werkpakketten: %{types}'
   number:
@@ -1353,7 +1325,6 @@ nl:
   setting_mail_handler_body_delimiters: Afkappen e-mails na een van deze lijnen
   setting_new_project_user_role_id: Rol gegeven aan een niet-admin-gebruiker die een
     project maakt
-  setting_openid: Allow OpenID login and registration
   setting_password_active_rules: Actieve tekenklassen
   setting_password_count_former_banned: Nummer van meest recent gebruikte wachtwoorden
     verboden voor hergebruik
@@ -1448,6 +1419,8 @@ nl:
   text_no_configuration_data: "Rollen, typen, werk pakket statussen en workflow zijn
     niet geconfigureerd nog. \ndit is sterk aanbevolen voor het laden van de standaardconfiguratie.
     U kunt deze wijzigen als het eenmaal geladen is."
+  text_notice_too_many_values_are_inperformant: 'Note: Displaying more than 100 items
+    per page can increase the page load time.'
   text_own_membership_delete_confirmation: "U bent bezig met het verwijderen van sommige
     of alle van uw machtigingen en kan het project hierna misschien niet meer bewerken.
     \nWilt doorgaan?"
@@ -1463,7 +1436,6 @@ nl:
   text_repository_usernames_mapping: |
     Select or update the OpenProject user mapped to each username found in the repository log.
     Users with the same OpenProject and repository username or email are automatically mapped.
-  text_rmagick_available: RMagick available (optional)
   text_select_mail_notifications: Select actions for which email notifications should
     be sent.
   text_select_project_modules: 'Select modules to enable for this project:'
@@ -1531,8 +1503,8 @@ nl:
     edit_color: Edit color
     edit_project_type: Edit project type
     edit_thing: Wijzig
-    edit_timeline: Edit timeline report
-    delete_timeline: Delete timeline report
+    edit_timeline: Bewerk tijdlijn verslag %{timeline}
+    delete_timeline: Verwijder tijdlijn verslag %{timeline}
     empty: "(leeg)"
     enable_type_in_project: Activeer type "%{type}"
     end: Einde
@@ -1609,9 +1581,11 @@ nl:
         timeframe
       project_time_filter_absolute_timeframe: Absolute timeframe
       project_time_filter_relative_timeframe: Relative timeframe
-      project_time_filter_historical: from %{startdate} to %{enddate}
-      project_time_filter_relative: from %{startspan}%{startspanunit} ago, to %{endspan}%{endspanunit}
-        from now
+      project_time_filter_historical_from: from
+      project_time_filter_historical_to: to
+      project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
+      project_time_filter_relative: "%{start_label} %{startspan}%{startspanunit} ago,
+        %{end_label} %{endspan}%{endspanunit} from now"
       project_filters: Filter projects
       project_responsible: Show projects with responsible
       project_status: Show project status
@@ -1695,6 +1669,10 @@ nl:
     active: actief
     activate: Activate
     activate_and_reset_failed_logins: Activate and reset failed logins
+    authentication_provider: Authentication Provider
+    authentication_settings_disabled_due_to_external_authentication: This user authenticates
+      via an external authentication provider, so there is no password in OpenProject
+      to be changed.
     assign_random_password: Assign random password (sent to user via e-mail)
     blocked: locked temporarily
     blocked_num_failed_logins:
@@ -1710,9 +1688,16 @@ nl:
     status_user_and_brute_force: "%{user} and %{brute_force}"
     unlock: Ontgrendelen
     unlock_and_reset_failed_logins: Unlock and reset failed logins
+    no_login: This user authenticates through login by password. Since it is disabled,
+      they cannot log in.
+    password_change_unsupported: Change of password is not supported.
+    authorization_rejected: You are not allowed to sign in.
   version_status_closed: gesloten
   version_status_locked: locked
   version_status_open: Open
+  note: Note
+  note_password_login_disabled: Password login has been disabled by %{configuration}.
+  warning: Warning
   warning_attachments_not_saved: "%{count} file(s) could not be saved."
   menu_item: Menu item
   menu_item_setting: Visibility

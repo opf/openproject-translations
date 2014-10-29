@@ -30,6 +30,13 @@ pl:
         self: Twoje konto zostanie usunięte z systemu. W związku z tym nie będziesz
           już mógł zalogować się przy użyciu bieżących poświadczeń. Będziesz natomiast
           mógł stać się użytkownikiem tej aplikacji ponownie.
+    error_inactive_activation_by_mail: Twoje konto nie zostało jeszcze aktywowane.
+      Aby aktywować swoje konto, kliknij na link, który został do Ciebie wysłany mailem.
+    error_inactive_manual_activation: Twoje konto nie zostało jeszcze aktywowane.
+      Poczekaj, aż administrator aktywuje twoje konto.
+    error_self_registration_disabled: W tym systemie zablokowano rejestrację użytkownika.
+      Zapytaj, proszę, administratora o możliwość utworzenia konta dla Ciebie.
+    login_with_auth_provider: lub zaloguj się za pomocą istniejącego konta
   actionview_instancetag_blank_option: Proszę wybrać
   activerecord:
     attributes:
@@ -105,9 +112,8 @@ pl:
       user:
         admin: Administrator
         auth_source: Tryb uwierzytelniania
-        identity_url: OpenID URL
         language: Język
-        last_login_on: Ostatnie połączenie
+        last_login_on: Ostatnie logowanie
         mail_notification: Powiadomienia e-mail
         new_password: Nowe hasło
         password_confirmation: Potwierdzenie
@@ -149,10 +155,10 @@ pl:
         created_at: Utworzono
       work_package:
         done_ratio: "% wykonania"
-        fixed_version: Wersja docelowa
+        fixed_version: Wersja
         parent: Rodzic
         parent_issue: Rodzic
-        parent_work_packae: Rodzic
+        parent_work_package: Rodzic
         priority: Priorytet
         progress: "% wykonania"
         responsible: Odpowiedzialny
@@ -175,6 +181,8 @@ pl:
         exclusion: jest zarezerwowany
         greater_than: musi być większa niż %{count}
         greater_than_or_equal_to: musi być większa lub równa %{count}
+        smaller_than_or_equal_to_max_length: musi być mniejsze lub równe maksymalnej
+          długości
         greater_than_start_date: musi być większe niż data początkowa
         inclusion: nie znajduje się na liście
         invalid: jest nieprawidłowy
@@ -208,7 +216,7 @@ pl:
             parent_id:
               cannot_be_milestone: nie może być kamieniem milowym
               cannot_be_in_another_project: nie może być w innym projekcie
-              not_a_valid_parent: is invaild
+              not_a_valid_parent: jest nieprawidłowy
               does_not_exist: nie istnieje
             status_id:
               status_transition_invalid: istnieje nie ważne przejście od starego do
@@ -265,6 +273,7 @@ pl:
       wiki: Wiki
       wiki_page: Strony wiki
       workflow: Przepływ pracy
+      work_package: Zadania
   errors:
     header_invalid_fields: 'Wystąpił problem z następującymi polami:'
   activity:
@@ -478,6 +487,11 @@ pl:
         one: 1 sekundę
         other: "%{count} sekund"
         few: "%{count} sekund"
+    units:
+      hour:
+        one: godzina
+        other: godziny
+        few: godziny
   default_activity_management: Management
   default_activity_design: Kompozycja
   default_activity_development: Development
@@ -539,7 +553,6 @@ pl:
   description_message_content: Treść wiadomości
   description_my_project: Jesteś członkiem
   description_notes: Notatki
-  description_option_toggle: Show/Hide options
   description_parent_work_package: Parent work package of current
   description_project_scope: Zakres wyszukiwania
   description_query_sort_criteria_attribute: Sortowanie atrybut
@@ -548,7 +561,6 @@ pl:
   description_select_work_package: Wybierz zadanie
   description_selected_columns: Wybrane kolumny
   description_sub_work_package: Sub work package of current
-  description_subwork_package: Sub work package of
   description_toc_toggle: Pokaż/Ukryj spis treści
   description_user_mail_notification: Ustawienia powiadomień pocztą
   description_wiki_subpages_reassign: Wybierz nową stronę nadrzędną
@@ -560,6 +572,7 @@ pl:
   error_can_not_archive_project: Ten projekt nie może być archiwizowany
   error_can_not_delete_custom_field: Nie można usunąć pola niestandardowego
   error_can_not_delete_type: Ten typ zawiera zadania i nie może być usunięty.
+  error_can_not_delete_standard_type: Nie można usunąć standardowych typów.
   error_can_not_remove_role: Ta Rola jest używana i nie można jej usunąć.
   error_can_not_reopen_work_package_on_closed_version: Nie można otworzyć zadania
     przypisanego do zamkniętej wersji
@@ -574,6 +587,8 @@ pl:
     Proszę sprawdzić konfigurację (przejdź do "Administracja-> Statusy zadań").
   error_no_type_in_project: "Żaden typ nie jest związany z tym projektem. Proszę sprawdzić
     ustawienia projektu."
+  error_omniauth_registration_timed_out: Upłynął limit czasu na zewnętrzną autoryzację.
+    Spróbuj ponownie.
   error_scm_annotate: Wpis nie istnieje lub nie może być adnotowany.
   error_scm_command_failed: 'Wystąpił błąd podczas próby dostępu do repozytorium:
     %{value}'
@@ -586,6 +601,8 @@ pl:
   error_workflow_copy_target: Wybierz docelowy typ oraz rolę
   error_menu_item_not_created: Nie można dodać elementu menu
   error_menu_item_not_saved: Nie można zapisać elementu menu
+  error_external_authentication_failed: Wystąpił błąd podczas autoryzacji zewnętrznej.
+    Proszę spróbować ponownie.
   events:
     project: Projekt edytowany
     changeset: Changeset edytowane
@@ -603,67 +620,17 @@ pl:
   general_first_day_of_week: '7'
   general_lang_name: Polish
   general_pdf_encoding: ISO-8859-2
-  general_text_No: Nie
-  general_text_Yes: Tak
   general_text_no: nie
   general_text_yes: tak
+  general_text_No: Nie
+  general_text_Yes: Tak
   gui_validation_error: 1 błąd
   gui_validation_error_plural: "%{count} błędy/ów"
-  js:
-    unsupported_browser:
-      title: Your browser is not supported
-      message: The browser you are using is no longer supported by OpenProject. Please
-        update your browser.
-      learn_more: Dowiedz się więcej
-    logoff: You have been logged off
-    redirect_login: Do you want to be redirected to the login page?
-    ajax:
-      hide: Ukryj
-      loading: Loading ...
-    select2:
-      input_too_short:
-        one: Please enter one more character
-        other: Please enter {{count}} more characters
-        zero: Please enter more characters
-        few: Please enter {{count}} more characters
-      load_more: Loading more results ...
-      no_matches: No matches found
-      searching: Searching ...
-      selection_too_big:
-        one: You can only select one item
-        other: You can only select {{limit}} items
-        zero: You cannot select any items
-        few: You can only select {{limit}} items
-    timelines:
-      tooManyProjects: More than %{count} Projects. Please use a better filter!
-      cancel: Anuluj
-      save: Zapisz
-      due_date: Termin
-      name: Nazwa
-      project_status: Stan projektu
-      project_type: Typ projektu
-      responsible: Odpowiedzialny
-      start_date: Data rozpoczęcia
-      error: An error has occured.
-      create_planning_select_project: 'Project:'
-      really_close_dialog: Do you really want to close the dialog and loose the entered
-        data?
-      zoom_slider: Zoom slider
-    filter:
-      noneElement: "(brak)"
-      noneSelection: "(brak)"
-    button_check_all: Zaznacz wszystko
-    button_uncheck_all: Odznacz wszystko
-    label_collapsed: collapsed
-    label_expanded: expanded
-    label_collapse_all: Zwiń wszystko
-    label_expand_all: Rozwiń wszystkie
-    label_menu_item_toggle: Show/hide submenu items
-    label_menu_collapse: collapse
-    label_menu_expand: expand
-    tl_toolbar:
-      zooms: Zoom level
-      outlines: Hierarchy level
+  instructions_after_registration: Możesz się zalogować w momencie gdy Twoje konto
+    zostanie aktywowane poprzez kliknięcie %{signin}.
+  instructions_after_logout: Możesz zalogować się ponownie klikając %{signin}.
+  instructions_after_error: Można spróbować się zalogować ponownie klikając %{signin}.
+    Jeśli ten błąd będzie się powtarzał, poproś swojego admina o pomoc.
   label_account: Konto
   label_activity: Działanie
   label_add_another_file: Dodaj plik
@@ -682,7 +649,6 @@ pl:
   label_age: Wiek
   label_ago: dni temu
   label_all: wszystkie
-  label_all_work_packages: all work packages
   label_all_time: cały czas
   label_all_words: Wszystkie słowa
   label_and_its_subprojects: "%{value} oraz jego projekty podrzędne"
@@ -727,7 +693,7 @@ pl:
   label_close_versions: Zamknij zakończone wersje
   label_closed_work_packages: Zamknięte
   label_collapse: Zwiń
-  label_collapse_all: Zwiń wszystko
+  label_configuration: konfiguracja
   label_comment_add: Dodaj komentarz
   label_comment_added: Komentarz dodany
   label_comment_delete: Usuń komentarze
@@ -781,8 +747,6 @@ pl:
   label_environment: "Środowisko"
   label_equals: jest
   label_example: Przykład
-  label_expand: Expand
-  label_expand_all: Rozwiń wszystkie
   label_export_to: 'Dostępne również w:'
   label_f_hour: "%{value} godzin"
   label_f_hour_plural: "%{value} godzin"
@@ -805,6 +769,7 @@ pl:
   label_group_new: Nowa Grupa
   label_group_plural: Grupy
   label_help: Pomoc
+  label_here: tutaj
   label_hide: Ukryj
   label_history: Historia
   label_home: Strona główna
@@ -845,7 +810,7 @@ pl:
   label_jump_to_a_project: Skok do projektu...
   label_language_based: Na podstawie języka użytkownika
   label_last_changes: Ostatnie %{count} zmiany
-  label_last_login: Ostatnie połączenie
+  label_last_login: Ostatnie logowanie
   label_last_month: w zeszłym miesiącu
   label_last_n_days: ostatnie %{count} dni
   label_last_week: zeszły tydzień
@@ -858,7 +823,6 @@ pl:
   label_loading: "Ładowanie..."
   label_logged_as: Zalogowany jako
   label_login: Login
-  label_login_with_open_id_option: or login with OpenID
   label_logout: Wyloguj
   label_main_menu: Menu boczne
   label_max_size: Maksymalny rozmiar
@@ -907,6 +871,7 @@ pl:
   label_not_contains: nie zawierają
   label_not_equals: nie jest
   label_notify_member_plural: Email updates
+  label_open_menu: Otwórz menu
   label_open_work_packages: Otwarte
   label_open_work_packages_plural: Otwarte
   label_optional_description: Opis
@@ -914,7 +879,7 @@ pl:
   label_overall_activity: Ogólna aktywność
   label_overall_spent_time: Całkowity spędzony czas
   label_overview: Przegląd
-  label_password_lost: Lost password
+  label_password_lost: Resetuj hasło
   label_password_rule_lowercase: Małe litery
   label_password_rule_numeric: Znaki numeryczne
   label_password_rule_special: Znaki specjalne
@@ -949,7 +914,8 @@ pl:
   label_query_plural: Zapytania niestandardowe
   label_query_menu_item: Pozycja menu zapytania
   label_read: Czytaj...
-  label_register: Register
+  label_register: Zarejestruj się
+  label_register_with_developer: Zarejestruj się jako programista
   label_registered_on: Zarejestrowany na
   label_registration_activation_by_email: aktywacja konta przez e-mail
   label_registration_automatic_activation: automatyczna aktywacja konta
@@ -1008,7 +974,6 @@ pl:
   label_subproject_new: Nowy podprojekt
   label_subproject_plural: Podprojekty
   label_subtask_plural: Zadania podrzędne
-  label_sum_for: Sum for %{value}
   label_summary: Streszczenie
   label_system: System
   label_table_of_contents: Spis treści
@@ -1101,6 +1066,9 @@ pl:
     few: "%{count} projekty"
   label_year: Rok
   label_yesterday: wczoraj
+  label_keyboard_function: Funkcja
+  label_keyboard_shortcut: Skrót
+  label_keyboard_accesskey: Accesskey
   label_keyboard_shortcut_help_heading: Dostępne skróty klawiaturowe
   label_keyboard_shortcut_within_project: 'Skróty związane z projektem:'
   label_keyboard_shortcut_global_shortcuts: 'Globalne skróty:'
@@ -1126,6 +1094,8 @@ pl:
     lists only)
   label_keyboard_shortcut_focus_next_item: Focus next list element (on some lists
     only)
+  macro_execution_error: Błąd podczas wykonywania makra %{macro_name}
+  macro_unavailable: Makro %{macro_name} nie może zostać wyświetlone.
   mail_body_account_activation_request: 'A new user (%{value}) has registered. The
     account is pending your approval:'
   mail_body_account_information: Informacje o koncie
@@ -1148,8 +1118,6 @@ pl:
   noscript_heading: Wyłączona obsługa JavaScript
   noscript_learn_more: Dowiedz się więcej
   notice_account_activated: Twoje konto zostało aktywowane. Możesz się teraz zalogować.
-  notice_account_inactive: Twoje konto nie zostało jeszcze aktywowane. Aby aktywować
-    swoje konto, kliknij na link, który został do Ciebie wysłany mailem.
   notice_account_invalid_credentials: Nieprawidłowy użytkownik lub hasło
   notice_account_invalid_credentials_or_blocked: Nieprawidłowy użytkownik lub hasło
     lub konto jest zablokowane z powodu wielu nieudanych logowań. Jeśli tak, to będzie
@@ -1169,6 +1137,8 @@ pl:
     look at your account page.
   notice_account_updated: Konto zostało pomyślnie zaktualizowane.
   notice_account_wrong_password: Nieprawidłowe hasło
+  notice_account_registered_and_logged_in: Witaj Twoje konto zostało aktywowane. Zostałeś
+    zalogowany.
   notice_api_access_key_reseted: Twój klucz dostępu API został zresetowany.
   notice_can_t_change_password: This account uses an external authentication source.
     Impossible to change the password.
@@ -1208,6 +1178,7 @@ pl:
   notice_unable_delete_time_entry: Nie można usunąć wpisu dziennika.
   notice_unable_delete_version: Nie można usunąć wersji.
   notice_automatic_set_of_standard_type: Set standard type automatically.
+  notice_logged_out: Zostałeś wylogowany.
   error_types_in_use_by_work_packages: 'Następujące typy są używane przez zadania:
     %{types}'
   number:
@@ -1365,7 +1336,6 @@ pl:
   setting_mail_handler_body_delimiters: Obcinanie e-mail po jednej z tych linii
   setting_new_project_user_role_id: Rola dla użytkownika bez uprawnień administratora,
     który tworzy projekt
-  setting_openid: Allow OpenID login and registration
   setting_password_active_rules: Aktywne klasy znaków
   setting_password_count_former_banned: Liczba ostatnio używanych haseł zakazane do
     ponownego wykorzystania
@@ -1462,6 +1432,8 @@ pl:
   text_no_configuration_data: |
     Roles, types, work package statuses and workflow have not been configured yet.
     It is highly recommended to load the default configuration. You will be able to modify it once loaded.
+  text_notice_too_many_values_are_inperformant: 'Uwaga: Wyświetlanie ponad 100 pozycji
+    na stronie może zwiększyć czas wczytywania strony.'
   text_own_membership_delete_confirmation: |
     Chcesz usunąć niektóre lub wszystkie swoje uprawnienia, przez które możesz nie być w stanie edytować tego projektu.
     Czy na pewno chcesz kontynuować?
@@ -1477,7 +1449,6 @@ pl:
   text_repository_usernames_mapping: |
     Wybierz lub zaktualizuj użytkownika OpenProject do każdego użytkownika w dzienniku repozytorium.
     Użytkownicy z tym samym loginem lub adresem e-mail w OpenProject i repozytorium są automatycznie mapowani.
-  text_rmagick_available: RMagick available (optional)
   text_select_mail_notifications: Wybierz akcje które mają być przesyłane powiadomieniami
     e-mail.
   text_select_project_modules: 'Wybierz moduły dla tego projektu:'
@@ -1546,8 +1517,8 @@ pl:
     edit_color: Edycja koloru
     edit_project_type: Edycja typu projektu
     edit_thing: Edycja
-    edit_timeline: Edit timeline report
-    delete_timeline: Delete timeline report
+    edit_timeline: Edit timeline report %{timeline}
+    delete_timeline: Delete timeline report %{timeline}
     empty: "(puste)"
     enable_type_in_project: Enable type "%{type}"
     end: Koniec
@@ -1620,9 +1591,11 @@ pl:
         timeframe
       project_time_filter_absolute_timeframe: Bezwzględny zakres
       project_time_filter_relative_timeframe: Względny zakres
-      project_time_filter_historical: from %{startdate} to %{enddate}
-      project_time_filter_relative: from %{startspan}%{startspanunit} ago, to %{endspan}%{endspanunit}
-        from now
+      project_time_filter_historical_from: od
+      project_time_filter_historical_to: do
+      project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
+      project_time_filter_relative: "%{start_label} %{startspan}%{startspanunit} ago,
+        %{end_label} %{endspan}%{endspanunit} from now"
       project_filters: Filtr projektów
       project_responsible: Pokaż projekty z odpowiedzialnym
       project_status: Pokaż status projektu
@@ -1705,6 +1678,10 @@ pl:
     active: aktywne
     activate: Aktywuj
     activate_and_reset_failed_logins: Aktywuj i resetuj nieudane logowania
+    authentication_provider: Dostawca uwierzytelnień
+    authentication_settings_disabled_due_to_external_authentication: Ten użytkownik
+      uwierzytelnia się przez zewnętrznego dostawcę uwierzytelnień, zatem hasło w
+      OpenProject nie zostanie zmienione.
     assign_random_password: Przypisanie losowego hasła (wysłane do użytkownika za
       pośrednictwem poczty e-mail)
     blocked: zablokowany tymczsowo
@@ -1722,9 +1699,16 @@ pl:
     status_user_and_brute_force: "%{user} i %{brute_force}"
     unlock: Odblokuj
     unlock_and_reset_failed_logins: Odblokuj i resetuj nieudane logowania
+    no_login: Logowanie się za pomocą hasła nie jest możliwe, ponieważ hasło zostało
+      unieważnione.
+    password_change_unsupported: Zmiana hasła nie jest obsługiwana.
+    authorization_rejected: Nie możesz się zalogować.
   version_status_closed: Zamknięte
   version_status_locked: zablokowane
   version_status_open: Otwarte
+  note: Uwaga
+  note_password_login_disabled: Logowanie poprzez hasło zostało wyłączone przez %{configuration}.
+  warning: Ostrzeżenie
   warning_attachments_not_saved: "%{count} plik(ów) nie może być zapisany."
   menu_item: Element menu
   menu_item_setting: Widoczność

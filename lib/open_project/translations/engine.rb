@@ -24,7 +24,9 @@ module OpenProject::Translations
 
     register 'openproject-translations',
              :author_url => 'https://openproject.org',
-             :requires_openproject => '>= 3.0.0pre51'
+             :requires_openproject => '>= 4.0.0'
+
+    patches [ :ApplicationHelper ]
 
     patches [ :ApplicationHelper ]
 

@@ -25,6 +25,13 @@ th:
           จะยังสามารถเป็นผู้ใช้ในแอปพลิเคชั่นนี้ได้อีกครั้งโดยการอนุญาตให้ใช้งาน"
         self: "บัญชีผู้ใช้ของคุณจะถูกลบออกจากระบบ เพราะฉะนั้น คุณจะไม่สามารถล็อกอินได้อีกต่อไป
           หากคุณต้องการกลับมาเป็นผู้ใช้แอปพลิเคชั่นนี้ใหม่อีกครั้ง คุณสามารถทำได้โดยวิธีการอนุญาตให้ใช้งานแอปพลิเคชั่น"
+    error_inactive_activation_by_mail: "บัญชีของคุณได้ไม่ได้เปิดการใช้งาน กรุณาคลิกที่ลิงค์ที่ถูกส่งไปยังอีเมลของคุณ
+      เพื่อเปิดการใช้งาน"
+    error_inactive_manual_activation: "บัญชีผู้ใช้ของคุณยังไม่ได้เปิดใช้งาน กรุณารอเพื่อให้ผู้ดูแลระบบ
+      เปิดใช้งานบัญชีผู้ใช้ของคุณเสียก่อน"
+    error_self_registration_disabled: "ระบบไม่ได้เปิดให้ผู้ใช้ลงทะเบียนใช้งานด้วยตัวเอง
+      โปรดสอบถามผู้ดูแลระบบให้สร้างบัญชีผู้ใช้ให้กับคุณ"
+    login_with_auth_provider: "หรือเข้าสู่ระบบ ด้วยบัญชีผู้ใช้ที่คุณมีอยู่แล้ว"
   actionview_instancetag_blank_option: "โปรดเลือก"
   activerecord:
     attributes:
@@ -100,9 +107,8 @@ th:
       user:
         admin: "ผู้ดูแลระบบ"
         auth_source: "โหมดการระบุตัวตนผู้ใช้"
-        identity_url: OpenID URL
         language: "ภาษา"
-        last_login_on: "ครั้งสุดท้ายที่เข้าระบบ"
+        last_login_on: Last login
         mail_notification: "อีเมล์แจ้งเตือน"
         new_password: "รหัสผ่านใหม่"
         password_confirmation: "ยืนยันรหัสผ่าน"
@@ -143,10 +149,10 @@ th:
         created_at: "ที่ถูกสร้างขึ้น"
       work_package:
         done_ratio: "% ที่แล้วเสร็จ"
-        fixed_version: "เวอร์ชั่นเป้าหมาย"
+        fixed_version: "เวอร์ชัน"
         parent: "ค่าหลัก"
         parent_issue: "ค่าหลัก"
-        parent_work_packae: "ค่าหลัก"
+        parent_work_package: "ค่าหลัก"
         priority: "ระดับความสำคัญ"
         progress: "% ที่แล้วเสร็จ"
         responsible: "รับผิดชอบ"
@@ -168,6 +174,8 @@ th:
         exclusion: "ถูกจองไว้แล้ว"
         greater_than: "ต้องมีค่ามากกว่า %{count}"
         greater_than_or_equal_to: "ต้องมีค่ามากกว่าหรือเท่ากับ %{count}"
+        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
+          length
         greater_than_start_date: "ต้องเป็นวันที่หลังจากวันเริ่มต้น"
         inclusion: "ไม่ได้รวมอยู่ในรายการ"
         invalid: "ไม่ถูกต้อง"
@@ -199,7 +207,7 @@ th:
             parent_id:
               cannot_be_milestone: "ไม่สามารถเป็น ไมล์สโตนได้"
               cannot_be_in_another_project: "ไม่สามารถใช้ในโครงการอื่นได้"
-              not_a_valid_parent: is invaild
+              not_a_valid_parent: "ไม่ถูกต้อง"
               does_not_exist: "ไม่พบ"
             status_id:
               status_transition_invalid: "ไม่พบการเปลี่ยนสถานะที่ถูกต้อง จากสถานะเดิมไปยังสถานะใหม่
@@ -252,6 +260,7 @@ th:
       wiki: "วิกิ"
       wiki_page: "หน้าวิกิ"
       workflow: "กระบวนการทำงาน"
+      work_package: "ชุดภารกิจ"
   errors:
     header_invalid_fields: "มีปัญหากับฟิลด์ต่อไปนี้:"
   activity:
@@ -455,6 +464,10 @@ th:
       x_seconds:
         one: 1 second
         other: "%{count} วินาที"
+    units:
+      hour:
+        one: hour
+        other: hours
   default_activity_management: Management
   default_activity_design: "การออกแบบ"
   default_activity_development: "การพัฒนา"
@@ -515,7 +528,6 @@ th:
   description_message_content: "เนื้อหาข้อความ"
   description_my_project: "คุณเป็นสมาชิกของ"
   description_notes: "หมายเหตุ"
-  description_option_toggle: Show/Hide options
   description_parent_work_package: "ชุดภารกิจหลัก"
   description_project_scope: "ขอบเขตการค้นหา"
   description_query_sort_criteria_attribute: "จัดเรียงแอตทริบิวต์"
@@ -524,7 +536,6 @@ th:
   description_select_work_package: "เลือกชุดภารกิจ"
   description_selected_columns: "คอลัมน์ที่เลือก"
   description_sub_work_package: "ชุดภารกิจย่อย"
-  description_subwork_package: Sub work package of
   description_toc_toggle: "แสดง/ซ่อนสารบัญ"
   description_user_mail_notification: "การตั้งค่าการแจ้งเตือนทางอีเมล"
   description_wiki_subpages_reassign: "เลือกหน้าหลักใหม่"
@@ -536,6 +547,7 @@ th:
   error_can_not_archive_project: "โครงการนี้ไม่ได้ถูกเก็บถาวร"
   error_can_not_delete_custom_field: "ไม่สามารถลบฟิลด์ที่กำหนดเองได้"
   error_can_not_delete_type: "ประเภทนี้มีชุดภารกิจและไม่สามารถลบได้"
+  error_can_not_delete_standard_type: "ไม่สามารถลบประเภทมาตรฐานได้"
   error_can_not_remove_role: "บทบาทนี้ถูกใช้อยู่และไม่สามารถลบได้"
   error_can_not_reopen_work_package_on_closed_version: "มีการมอบหมายชุดภารกิจนี้ไปยังเวอร์ชั่นที่ปิดแล้ว
     ซึ่งไม่สามารถเปิดใหม่ได้"
@@ -547,6 +559,8 @@ th:
   error_no_default_work_package_status: "ไม่ได้กำหนดค่าเริ่มต้นสถานะของชุดภารกิจ โปรดตรวจสอบการตั้งค่าของคุณ
     (ไปที่ \"การจัดการระบบ -> สถานะชุดภารกิจ\")"
   error_no_type_in_project: "ไม่พบประเภทที่เกี่ยวข้องกับโครงการนี้ โปรดตรวจสอบการตั้งค่าโครงการ"
+  error_omniauth_registration_timed_out: "หมดเวลาของการลงทะเบียนผ่านผู้ให้บริการการรับรองความถูกต้องภายนอก
+    กรุณาลองใหม่อีกครั้ง"
   error_scm_annotate: "ไม่พบรายการ จึงไม่สามารถใส่คำอธิบายประกอบได้"
   error_scm_command_failed: "เกิดข้อผิดพลาดเมื่อพยายามเข้าถึงที่เก็บข้อมูล: %{value}"
   error_scm_not_found: "ไม่พบรายการการปรับปรุงในที่เก็บข้อมูล"
@@ -558,6 +572,8 @@ th:
   error_workflow_copy_target: "กรุณาเลือกประเภทเป้าหมายและบทบาท"
   error_menu_item_not_created: "ไม่สามารถเพิ่มรายการเมนูได้"
   error_menu_item_not_saved: "ไม่สามารถบันทึกรายการเมนูได้"
+  error_external_authentication_failed: "พบข้อผิดพลาดระหว่างการตรวจสอบตัวตนภายนอก
+    กรุณาลองใหม่อีกครั้ง"
   events:
     project: "โครงการได้รับการแก้ไขแล้ว"
     changeset: "แก้ไขชุดการเปลี่ยนแปลงแล้ว"
@@ -575,65 +591,17 @@ th:
   general_first_day_of_week: '7'
   general_lang_name: "อังกฤษ"
   general_pdf_encoding: ISO-8859-1
-  general_text_No: "ไม่ใช่"
-  general_text_Yes: "ใช่"
   general_text_no: "ไม่ใช่"
   general_text_yes: "ใช่"
+  general_text_No: "ไม่ใช่"
+  general_text_Yes: "ใช่"
   gui_validation_error: "พบ 1 ข้อผิดพลาด"
   gui_validation_error_plural: "พบ %{count} ข้อผิดพลาด"
-  js:
-    unsupported_browser:
-      title: Your browser is not supported
-      message: The browser you are using is no longer supported by OpenProject. Please
-        update your browser.
-      learn_more: "เรียนรู้เพิ่มเติม"
-    logoff: You have been logged off
-    redirect_login: Do you want to be redirected to the login page?
-    ajax:
-      hide: "ซ่อน"
-      loading: Loading ...
-    select2:
-      input_too_short:
-        one: Please enter one more character
-        other: Please enter {{count}} more characters
-        zero: Please enter more characters
-      load_more: Loading more results ...
-      no_matches: No matches found
-      searching: Searching ...
-      selection_too_big:
-        one: You can only select one item
-        other: You can only select {{limit}} items
-        zero: You cannot select any items
-    timelines:
-      tooManyProjects: More than %{count} Projects. Please use a better filter!
-      cancel: "ยกเลิก"
-      save: "บันทึก"
-      due_date: "วันครบกำหนด"
-      name: "ชื่อ"
-      project_status: "สถานะของโครงการ"
-      project_type: "ประเภทของโครงการ"
-      responsible: "รับผิดชอบ"
-      start_date: "วันเริ่มต้น"
-      error: An error has occured.
-      create_planning_select_project: 'Project:'
-      really_close_dialog: Do you really want to close the dialog and loose the entered
-        data?
-      zoom_slider: Zoom slider
-    filter:
-      noneElement: "(ไม่มี)"
-      noneSelection: "(ไม่มี)"
-    button_check_all: "ตรวจสอบทั้งหมด"
-    button_uncheck_all: "ไม่เลือกเลย"
-    label_collapsed: collapsed
-    label_expanded: expanded
-    label_collapse_all: "ยุบทั้งหมด"
-    label_expand_all: "ขยายทั้งหมด"
-    label_menu_item_toggle: Show/hide submenu items
-    label_menu_collapse: collapse
-    label_menu_expand: expand
-    tl_toolbar:
-      zooms: Zoom level
-      outlines: Hierarchy level
+  instructions_after_registration: You can sign in as soon as your account has been
+    activated by clicking %{signin}.
+  instructions_after_logout: You can sign in again by clicking %{signin}.
+  instructions_after_error: You can try to sign in again by clicking %{signin}. If
+    the error persists, ask your admin for help.
   label_account: "บัญชี"
   label_activity: "กิจกรรม"
   label_add_another_file: "เพิ่มไฟล์อื่น"
@@ -650,7 +618,6 @@ th:
   label_age: "ระยะเวลา"
   label_ago: "วันที่ผ่านมา"
   label_all: "ทั้งหมด"
-  label_all_work_packages: all work packages
   label_all_time: "ตลอดเวลา"
   label_all_words: "ทุกคำ"
   label_and_its_subprojects: "%{value} และโครงการย่อยที่เกี่ยวข้องทั้งหมด"
@@ -695,7 +662,7 @@ th:
   label_close_versions: "ปิดเวอร์ชั่นที่เสร็จแล้ว"
   label_closed_work_packages: "ปิด"
   label_collapse: "ยุบ"
-  label_collapse_all: "ยุบทั้งหมด"
+  label_configuration: configuration
   label_comment_add: "เพิ่มความคิดเห็น"
   label_comment_added: "เพิ่มความคิดเห็นแล้ว"
   label_comment_delete: "ลบความคิดเห็น"
@@ -748,8 +715,6 @@ th:
   label_environment: "สภาพแวดล้อม"
   label_equals: "เป็น"
   label_example: "ตัวอย่าง"
-  label_expand: Expand
-  label_expand_all: "ขยายทั้งหมด"
   label_export_to: "ยังสามารถพบใน:"
   label_f_hour: "%{value} ชั่วโมง"
   label_f_hour_plural: "%{value} ชั่วโมง"
@@ -771,6 +736,7 @@ th:
   label_group_new: "กลุ่มใหม่"
   label_group_plural: "กลุ่ม"
   label_help: "วิธีใช้"
+  label_here: here
   label_hide: "ซ่อน"
   label_history: "ประวัติย้อนหลัง"
   label_home: "หน้าหลัก"
@@ -808,7 +774,7 @@ th:
   label_jump_to_a_project: "ไปยังโครงการ..."
   label_language_based: "ตามภาษาของผู้ใช้"
   label_last_changes: "ที่เปลี่ยนเมื่อ %{count} ครั้งที่ผ่านมา"
-  label_last_login: "ครั้งสุดท้ายที่เข้าระบบ"
+  label_last_login: Last login
   label_last_month: "เดือนก่อน"
   label_last_n_days: "เมื่อ %{count} วันก่อน"
   label_last_week: "สัปดาห์ที่แล้ว"
@@ -821,7 +787,6 @@ th:
   label_loading: "กำลังโหลด..."
   label_logged_as: "เข้าสู่ระบบในนาม"
   label_login: "ล็อคอิน"
-  label_login_with_open_id_option: or login with OpenID
   label_logout: "ออกจากระบบ"
   label_main_menu: "เมนูด้านข้าง"
   label_max_size: "ความยาวสูงสุด"
@@ -870,6 +835,7 @@ th:
   label_not_contains: "ไม่ประกอบด้วยการ"
   label_not_equals: "ไม่"
   label_notify_member_plural: "ปรับปรุงอีเมล"
+  label_open_menu: "เปิดเมนู"
   label_open_work_packages: "เปิด"
   label_open_work_packages_plural: "เปิด"
   label_optional_description: "คำอธิบาย"
@@ -877,7 +843,7 @@ th:
   label_overall_activity: "กิจกรรมในภาพรวม"
   label_overall_spent_time: "เวลาที่ใช้โดยรวม"
   label_overview: "ภาพรวม"
-  label_password_lost: Lost password
+  label_password_lost: "ลืมรหัสผ่าน"
   label_password_rule_lowercase: "ตัวพิมพ์เล็ก"
   label_password_rule_numeric: "ตัวเลข"
   label_password_rule_special: "อักขระพิเศษ"
@@ -911,7 +877,8 @@ th:
   label_query_plural: "แบบสอบถามแบบกำหนดเอง"
   label_query_menu_item: "เมนูแบบสอบถาม"
   label_read: "อ่าน..."
-  label_register: Register
+  label_register: "ลงทะเบียน"
+  label_register_with_developer: "ลงทะเบียนในฐานะผู้พัฒนา"
   label_registered_on: "ได้ลงทะเบียนใน"
   label_registration_activation_by_email: "เปิดใช้งานบัญชีทางอีเมล์"
   label_registration_automatic_activation: "เปิดใช้งานบัญชีโดยอัตโนมัติ"
@@ -970,7 +937,6 @@ th:
   label_subproject_new: "โครงการย่อยใหม่"
   label_subproject_plural: "โครงการย่อย"
   label_subtask_plural: "งานย่อย"
-  label_sum_for: Sum for %{value}
   label_summary: "สรุป"
   label_system: "ระบบ"
   label_table_of_contents: "สารบัญ"
@@ -1057,6 +1023,9 @@ th:
     zero: no projects
   label_year: "ปี"
   label_yesterday: "เมื่อวานนี้"
+  label_keyboard_function: "ฟังก์ชัน"
+  label_keyboard_shortcut: "ทางลัด"
+  label_keyboard_accesskey: "แป้นลัด"
   label_keyboard_shortcut_help_heading: "แป้นพิมพ์ลัดที่สามารถใช้ได้"
   label_keyboard_shortcut_within_project: "แป้นพิมพ์ลัดที่เกี่ยวกับโครงการ:"
   label_keyboard_shortcut_global_shortcuts: "แป้นพิมพ์ลัดที่ใช้ได้ทั่วไป:"
@@ -1078,6 +1047,8 @@ th:
   label_keyboard_shortcut_go_preview: "ไปดูตัวอย่างการแก้ไขปัจจุบัน (ในหน้าแก้ไขเท่านั้น)"
   label_keyboard_shortcut_focus_previous_item: "เน้นรายการองค์ประกอบก่อนหน้านี้ (ในบางรายการเท่านั้น)"
   label_keyboard_shortcut_focus_next_item: "เน้นรายการองค์ประกอบถัดไป (ในบางรายการเท่านั้น)"
+  macro_execution_error: Error executing the macro %{macro_name}
+  macro_unavailable: Macro %{macro_name} cannot be displayed.
   mail_body_account_activation_request: "มีผู้ใช้ใหม่ (%{value}) ได้ลงทะเบียนเข้ามา
     ขณะนี้บัญชีอยู่ระหว่างการพิจารณาอนุมัติของคุณ:"
   mail_body_account_information: "ข้อมูลบัญชีของคุณ"
@@ -1099,8 +1070,6 @@ th:
   noscript_heading: "ไม่ได้เปิดใช้ JavaScript"
   noscript_learn_more: "เรียนรู้เพิ่มเติม"
   notice_account_activated: "มีการเปิดใช้บัญชีของคุณแล้ว ตอนนี้คุณสามารถเข้าสู่ระบบได้แล้ว"
-  notice_account_inactive: "บัญชีของคุณได้ไม่ได้เปิดการใช้งาน กรุณาคลิกที่ลิงค์ที่ถูกส่งไปยังอีเมลของคุณ
-    เพื่อเปิดการใช้งาน"
   notice_account_invalid_credentials: "บัญชีผู้ใช้หรือรหัสผ่านไม่ถูกต้อง"
   notice_account_invalid_credentials_or_blocked: "บัญชีผู้ใช้หรือรหัสผ่านไม่ถูกต้อง
     หรือบัญชีผู้ใช้ถูกบล็อกไว้เนื่องจากความพยายามเข้าสู่ระบบล้มเหลว ซึ่งหากเป็นเช่นนั้น
@@ -1116,6 +1085,8 @@ th:
   notice_account_update_failed: "ไม่สามารถบันทึกการตั้งค่าบัญชีของคุณได้ โปรดดูที่รายละเอียดบัญชี"
   notice_account_updated: "ปรับปรุงบัญชีสำเร็จ"
   notice_account_wrong_password: "รหัสผ่านไม่ถูกต้อง"
+  notice_account_registered_and_logged_in: "ยินดีต้อนรับ, ได้มีการเปิดใช้บัญชีของคุณแล้ว
+    คุณสามารถล็อกอินได้ทันที"
   notice_api_access_key_reseted: "มีการรีเซตคีย์การเข้าถึง API ของคุณ"
   notice_can_t_change_password: "ไม่สามารถเปลี่ยนรหัสผ่านได้ เนื่องจากบัญชีผู้ใช้นี้
     ใช้การระบุตัวตนจากแหล่งภายนอก"
@@ -1149,6 +1120,7 @@ th:
   notice_unable_delete_time_entry: "ไม่สามารถลบรายการบันทึกเวลา"
   notice_unable_delete_version: "ไม่สามารถลบเวอร์ชั่น"
   notice_automatic_set_of_standard_type: "ตั้งค่าชนิดมาตรฐานโดยอัตโนมัติ"
+  notice_logged_out: You have been logged out.
   error_types_in_use_by_work_packages: "ประเภทต่อไปนี้ยังคงถูกอ้างอิงโดยชุดภารกิจ:
     %{types}"
   number:
@@ -1301,7 +1273,6 @@ th:
   setting_mail_handler_api_key: "คีย์ API"
   setting_mail_handler_body_delimiters: "ตัดข้อความอีเมลหลังจากเส้นนี้"
   setting_new_project_user_role_id: "บทบาทที่ให้กับผู้ใช้ที่สร้างโครงการ ซึ่งไม่ใช่ผู้ดูแลระบบ "
-  setting_openid: Allow OpenID login and registration
   setting_password_active_rules: "ประเภทของตัวอักษรที่ใช้งานได้"
   setting_password_count_former_banned: "จำนวนรหัสผ่านที่ใช้ล่าสุดที่ห้ามนำมาใช้ซ้ำ "
   setting_password_days_valid: "จำนวนวันที่บังคับให้ต้องมีการเปลี่ยนรหัสผ่าน (ปิดการใช้งาน
@@ -1389,6 +1360,8 @@ th:
   text_min_max_length_info: 0 หมายถึง ไม่มีข้อจำกัด
   text_no_configuration_data: "ยังไม่ได้มีการกำหนดค่า บาทบาท, ประเภท, สถานะของชุดภารกิจ
     \n ขอแนะนำให้โหลดค่าเริ่มต้นของการตั้งค่ามาใช้ ซึ่งคุณสามารถปรับเปลี่ยนได้หลังจากที่โหลดแล้ว"
+  text_notice_too_many_values_are_inperformant: 'Note: Displaying more than 100 items
+    per page can increase the page load time.'
   text_own_membership_delete_confirmation: "คุณกำลังลบการอนุญาตบางส่วนหรือทั้งหมด
     และไม่สามารถแก้ไขโครงการได้หลังจากนั้น \n คุณแน่ใจว่าจะดำเนินการต่อหรือไม่?"
   text_plugin_assets_writable: "สามารถบันทึก ไดเรคทอรี่ของ Plugin asset ได้"
@@ -1402,7 +1375,6 @@ th:
   text_repository_usernames_mapping: "เลือกหรือปรับปรุงผู้ใช้ของ OpenProject มีการจับคู่แต่ละ
     username ที่พบในบันทึกที่เก็บข้อมูล \n จะมีการจับคู่อัตโนมัติให้กับผู้ใช้ที่มี
     username เข้า OpenProject หรือที่เก็บข้อมูล หรืออีเมล์ที่ตรงกัน"
-  text_rmagick_available: RMagick available (optional)
   text_select_mail_notifications: "เลือกการดำเนินการสำหรับอีเมล์ที่ควรส่งการแจ้งเตือน"
   text_select_project_modules: "เลือกโมดูลเพื่อเปิดใช้งานสำหรับโครงการ:"
   text_status_changed_by_changeset: "ใช้งานในชุดการเปลี่ยนแปลง %{value}"
@@ -1465,8 +1437,8 @@ th:
     edit_color: "แก้ไขสี"
     edit_project_type: "แก้ไขชนิดของโครงการ"
     edit_thing: "แก้ไข"
-    edit_timeline: Edit timeline report
-    delete_timeline: Delete timeline report
+    edit_timeline: "แก้ไขรายงานแผนภูมิเวลา"
+    delete_timeline: "ลบแผนภูมิเวลา"
     empty: "(ว่าง)"
     enable_type_in_project: "เปิดใช้งานชนิด \"%{type}\""
     end: "สิ้นสุด"
@@ -1536,9 +1508,11 @@ th:
       project_time_filter: "โครงการที่มีชุดภารกิจของประเภทที่แน่นอนในกรอบเวลาที่แน่นอน"
       project_time_filter_absolute_timeframe: "กรอบเวลาที่แน่นอน"
       project_time_filter_relative_timeframe: "กรอบเวลาที่สัมพันธ์"
-      project_time_filter_historical: from %{startdate} to %{enddate}
-      project_time_filter_relative: from %{startspan}%{startspanunit} ago, to %{endspan}%{endspanunit}
-        from now
+      project_time_filter_historical_from: "จาก"
+      project_time_filter_historical_to: "ถึง"
+      project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
+      project_time_filter_relative: "%{start_label} %{startspan}%{startspanunit} ที่ผ่านมา,
+        %{end_label} %{endspan}%{endspanunit} ตั้งแต่บัดนี้"
       project_filters: "ตัวกรองโครงการ"
       project_responsible: "แสดงโครงการตามความรับผิดชอบ"
       project_status: "แสดงสถานะของโครงการ"
@@ -1616,6 +1590,9 @@ th:
     active: "ใช้งานอยู่"
     activate: "เปิดใช้งาน"
     activate_and_reset_failed_logins: "เปิดใช้งานและรีเซตการล็อคอินที่ล้มเหลว"
+    authentication_provider: "ผู้ให้บริการการรับรองความถูกต้องของการระบุตัวตน"
+    authentication_settings_disabled_due_to_external_authentication: "ผู้ใช้นี้ได้รับการรับรองความถูกต้องจากภายนอก
+      ดังนั้นจึงไม่มีรหัสผ่านใน OpenProject ที่สามารถเปลี่ยนแปลงได้"
     assign_random_password: "กำหนดรหัสผ่านแบบสุ่ม (ส่งไปยังผู้ใช้ผ่านทางอีเมล์)"
     blocked: "ล็อคชั่วคราว"
     blocked_num_failed_logins:
@@ -1631,9 +1608,16 @@ th:
     status_user_and_brute_force: "%{user} และ %{brute_force}"
     unlock: "ปลดล็อก"
     unlock_and_reset_failed_logins: "ปลดล็อค และรีเซตค่าล็อกอินที่ล้มเหลว"
+    no_login: This user authenticates through login by password. Since it is disabled,
+      they cannot log in.
+    password_change_unsupported: Change of password is not supported.
+    authorization_rejected: You are not allowed to sign in.
   version_status_closed: "ปิด"
   version_status_locked: "ล็อก"
   version_status_open: "เปิด"
+  note: Note
+  note_password_login_disabled: Password login has been disabled by %{configuration}.
+  warning: Warning
   warning_attachments_not_saved: "มี %{count} ไฟล์ที่ไม่สามารถบันทึกได้"
   menu_item: "เมนู"
   menu_item_setting: "การมองเห็น"
