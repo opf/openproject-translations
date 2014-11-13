@@ -15,12 +15,16 @@ zh-TW:
       login_consequences:
         other: "將從系統中刪除該帳戶。因此，使用者將不再能夠用他當前的憑據登錄。使用者可以已系統認可的方式再次成為應用程式的使用者。"
         self: "您的帳號將從系統中刪除。因此，您將不再能夠使用當前憑據登錄。如果你選擇再次成為應用程式的使用者，可以使用系統認可的的方式。"
+    error_inactive_activation_by_mail: "您的帳戶尚未啟動。要啟動您的帳戶，請按一下通過電子郵件發送給您的連結。"
+    error_inactive_manual_activation: "您的帳戶尚未啟動。請等待管理員啟動您的帳戶。"
+    error_self_registration_disabled: "此系統禁止使用者註冊。請通知管理員為您創建帳戶。"
+    login_with_auth_provider: "或使用您的現有帳戶登錄"
   actionview_instancetag_blank_option: "請選擇"
   activerecord:
     attributes:
       attachment:
         downloads: "下載"
-        filename: "檔"
+        filename: "檔案"
         filesize: "檔案大小"
       auth_source:
         account: "帳戶"
@@ -83,20 +87,19 @@ zh-TW:
         spent_on: "日期"
         type: "類型"
       type:
-        is_in_roadmap: "在規劃中顯示工作項目"
+        is_in_roadmap: "在規劃藍圖中顯示工作項目"
         in_aggregation: "工作項目匯集顯示"
         is_milestone: "工作項目顯示為時程碑"
         color: "顏色"
       user:
         admin: "管理員"
         auth_source: "身份驗證模式"
-        identity_url: OpenID URL
         language: "語言"
-        last_login_on: "最後一次連接"
+        last_login_on: "上次登入時間"
         mail_notification: "電子郵件通知"
         new_password: "新密碼"
         password_confirmation: "確認密碼"
-        force_password_change: "強制在下次登錄時更改密碼"
+        force_password_change: "強制在下次登入時更改密碼"
       user_preference:
         comments_sorting: "顯示評論"
         hide_mail: "隱藏我的電子郵件地址"
@@ -133,14 +136,14 @@ zh-TW:
         created_at: "創建"
       work_package:
         done_ratio: "%完成"
-        fixed_version: "目標版本"
+        fixed_version: "版本"
         parent: "主"
         parent_issue: "主"
-        parent_work_packae: "主"
+        parent_work_package: "主"
         priority: "優先值"
         progress: "%完成"
         responsible: "負責人"
-        spent_time: "把時間花在"
+        spent_time: "耗時"
         subproject: "子專案"
         time_entries: "日誌的時間"
         type: "類型"
@@ -158,6 +161,8 @@ zh-TW:
         exclusion: "預定"
         greater_than: "必須大於 %{count}"
         greater_than_or_equal_to: "必須大於或等於 %{count}"
+        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
+          length
         greater_than_start_date: "必須大於開始日期"
         inclusion: "不在列表中"
         invalid: "無效。 "
@@ -189,9 +194,9 @@ zh-TW:
               not_start_date: is not on start date, although this is required for
                 milestones
             parent_id:
-              cannot_be_milestone: cannot be a milestone
-              cannot_be_in_another_project: cannot be in another project
-              not_a_valid_parent: is invaild
+              cannot_be_milestone: "不能成為一個里程碑"
+              cannot_be_in_another_project: "不能在另一個專案中"
+              not_a_valid_parent: "無效。 "
               does_not_exist: "不存在"
             status_id:
               status_transition_invalid: no valid transition exists from old to new
@@ -221,7 +226,7 @@ zh-TW:
           one: 1 error prohibited this %{model} from being saved
           other: "%{count} errors prohibited this %{model} from being saved"
     models:
-      attachment: "檔"
+      attachment: "檔案"
       board: "討論區"
       comment: "意見"
       custom_field: "自訂欄位"
@@ -244,37 +249,38 @@ zh-TW:
       wiki: "維基"
       wiki_page: "維基頁面"
       workflow: "工作流程"
+      work_package: "工作項目"
   errors:
     header_invalid_fields: 'There were problems with the following fields:'
   activity:
-    created: 'Created: %{title}'
-    updated: 'Updated: %{title}'
+    created: "建立：%{title}"
+    updated: "更新：%{title}"
   attributes:
     active: "啟用"
     assigned_to: Assignee
-    attachments: Attachments
+    attachments: "附加檔"
     author: "作者"
     base: 'General Error:'
     blocks_ids: "區塊"
     category: "類別"
     comments: "意見"
     content: "內容"
-    created_at: Created on
-    created_on: Created on
+    created_at: "建立於"
+    created_on: "建立於"
     custom_values: Custom fields
     default_columns: Default columns
     description: "說明"
     display_sums: Display Sums
     due_date: "截止日期"
-    estimated_hours: Estimated time
+    estimated_hours: "預估時間"
     firstname: "名字"
     group: "團體"
     groupname: "團體名稱"
     is_default: "預設值"
     is_for_all: For all projects
-    is_public: Public
+    is_public: "公開"
     lastname: "姓："
-    login: "登錄"
+    login: "登入"
     mail: "電子郵件"
     name: "名稱"
     password: "密碼"
@@ -290,44 +296,44 @@ zh-TW:
     updated_on: Updated on
     user: "使用者"
     version: "版本"
-    work_package: Work package
+    work_package: "工作項目"
   button_add: "增加"
   button_add_watcher: "增加觀察者"
   button_annotate: Annotate
-  button_apply: "應用"
+  button_apply: "套用"
   button_archive: Archive
-  button_back: Back
+  button_back: "返回"
   button_cancel: "取消"
   button_change: "變更"
   button_change_parent_page: "變更父頁"
   button_change_password: "變更密碼"
   button_check_all: "勾選全部"
   button_clear: "清除"
-  button_collapse_all: Collapse all
+  button_collapse_all: "全部摺疊"
   button_configure: Configure
   button_copy: "複製"
   button_copy_and_follow: "複製並跟隨"
   button_create: "建立"
   button_create_and_continue: Create and continue
-  button_delete: Delete
+  button_delete: "删除"
   button_delete_watcher: Delete watcher %{name}
-  button_download: Download
-  button_duplicate: Duplicate
-  button_edit: Edit
-  button_edit_associated_wikipage: 'Edit associated Wiki page: %{page_title}'
-  button_expand_all: Expand all
+  button_download: "下載"
+  button_duplicate: "重複"
+  button_edit: "編輯"
+  button_edit_associated_wikipage: "編輯關聯的維基頁面：%{page_title}"
+  button_expand_all: "全部展開"
   button_list: "清單"
   button_lock: "鎖定"
   button_log_time: "日誌的時間"
-  button_login: "登錄"
+  button_login: "登入"
   button_move: "移動"
   button_move_and_follow: Move and follow
-  button_quote: Quote
+  button_quote: "引言"
   button_remove_widget: "移除元件"
   button_rename: "重新命名"
   button_reply: "回應"
   button_reset: "重置"
-  button_rollback: Rollback to this version
+  button_rollback: "回復到此版本"
   button_save: "儲存"
   button_show: "顯示"
   button_sort: "排序"
@@ -335,9 +341,9 @@ zh-TW:
   button_test: Test
   button_unarchive: Unarchive
   button_uncheck_all: Uncheck all
-  button_unlock: Unlock
+  button_unlock: "解除鎖定"
   button_unwatch: Unwatch
-  button_update: Update
+  button_update: "更新"
   button_view: View
   button_watch: Watch
   button_manage_menu_entry: Configure menu item
@@ -349,7 +355,7 @@ zh-TW:
       You will be informed by Mail as soon as "%{target_project_name}" is available.
     failed: Cannot copy project %{source_project_name}
     succeeded: Created project %{target_project_name}
-    errors: Error
+    errors: "錯誤"
     text:
       failed: Could not copy project "%{source_project_name}" to project "%{target_project_name}".
       succeeded: Copied project "%{source_project_name}" to "%{target_project_name}".
@@ -413,63 +419,67 @@ zh-TW:
     distance_in_words:
       about_x_hours:
         one: about 1 hour
-        other: about %{count} hours
+        other: "大約%{count}小時"
       about_x_months:
         one: about 1 month
-        other: about %{count} months
+        other: "大約%{count}個月"
       about_x_years:
         one: about 1 year
-        other: about %{count} years
+        other: "大約%{count}年"
       almost_x_years:
         one: almost 1 year
-        other: almost %{count} years
+        other: "差不多%{count}年"
       half_a_minute: half a minute
       less_than_x_minutes:
         one: less than a minute
         other: less than %{count} minutes
       less_than_x_seconds:
         one: less than 1 second
-        other: less than %{count} seconds
+        other: "少於%{count}秒"
       over_x_years:
         one: over 1 year
-        other: over %{count} years
+        other: "超過%{count}年"
       x_days:
         one: 1 day
-        other: "%{count} days"
+        other: "%{count}天"
       x_minutes:
         one: 1 minute
-        other: "%{count} minutes"
+        other: "%{count}分鐘"
       x_months:
         one: 1 month
-        other: "%{count} months"
+        other: "%{count}個月"
       x_seconds:
         one: 1 second
-        other: "%{count} seconds"
-  default_activity_management: Management
-  default_activity_design: Design
-  default_activity_development: Development
-  default_activity_testing: Testing
-  default_activity_Support: Support
-  default_activity_Other: Other
+        other: "%{count}秒"
+    units:
+      hour:
+        one: hour
+        other: hours
+  default_activity_management: "管理"
+  default_activity_design: "設計"
+  default_activity_development: "開發"
+  default_activity_testing: "測試"
+  default_activity_Support: "支援"
+  default_activity_Other: "其他"
   default_status_new: new
   default_status_specified: specified
   default_status_confirmed: confirmed
   default_status_to_be_scheduled: to be scheduled
   default_status_scheduled: scheduled
-  default_status_in_progress: in progress
+  default_status_in_progress: "進行中"
   default_status_tested: tested
   default_status_on_hold: on hold
   default_status_rejected: rejected
   default_status_closed: closed
-  default_priority_low: Low
-  default_priority_normal: Normal
-  default_priority_high: High
-  default_priority_immediate: Immediate
+  default_priority_low: "低"
+  default_priority_normal: "一般"
+  default_priority_high: "高"
+  default_priority_immediate: "立刻"
   default_project_type_customer: Customer Project
   default_project_type_internal: Internal Project
-  default_reported_project_status_green: Green
+  default_reported_project_status_green: "綠色"
   default_reported_project_status_amber: Amber
-  default_reported_project_status_red: Red
+  default_reported_project_status_red: "紅色"
   default_role_anonymous: Anonymous
   default_role_developer: Developer
   default_role_manager: Manager
@@ -477,9 +487,9 @@ zh-TW:
   default_role_reader: Reader
   default_role_member: "成員"
   default_type: "工作項目"
-  default_type_task: Task
-  default_type_deliverable: Deliverable
-  default_type_milestone: Milestone
+  default_type_task: "任務"
+  default_type_deliverable: "交付標的"
+  default_type_milestone: "里程碑"
   default_type_phase: Phase
   default_type_bug: Bug
   default_type_feature: Feature
@@ -490,7 +500,7 @@ zh-TW:
     the arrow up and arrow down key and select it with tab or enter. Alternatively
     you can enter the work package number directly.
   description_available_columns: Available Columns
-  description_choose_project: Projects
+  description_choose_project: "專案"
   description_compare_from: Compare from version
   description_compare_to: Compare to version
   description_current_position: 'You are here:'
@@ -502,31 +512,30 @@ zh-TW:
   description_enter_text: Enter text
   description_filter: Filter
   description_filter_toggle: Show/Hide filter
-  description_category_reassign: Choose category
+  description_category_reassign: "選擇類別"
   description_message_content: Message content
   description_my_project: You are member
   description_notes: "備註"
-  description_option_toggle: Show/Hide options
   description_parent_work_package: Parent work package of current
   description_project_scope: Search scope
   description_query_sort_criteria_attribute: Sort attribute
   description_query_sort_criteria_direction: Sort direction
   description_search: Searchfield
-  description_select_work_package: Select work package
+  description_select_work_package: "選取工作項目"
   description_selected_columns: Selected Columns
   description_sub_work_package: Sub work package of current
-  description_subwork_package: Sub work package of
   description_toc_toggle: Show/Hide table of contents
   description_user_mail_notification: Mail notification settings
   description_wiki_subpages_reassign: Choose new parent page
   direction: ltr
   enumeration_activities: Activities (time tracking)
-  enumeration_work_package_priorities: Work package priorities
+  enumeration_work_package_priorities: "工作項目優先權"
   enumeration_system_activity: System Activity
   enumeration_reported_project_statuses: Reported project status
   error_can_not_archive_project: This project cannot be archived
   error_can_not_delete_custom_field: Unable to delete custom field
   error_can_not_delete_type: This type contains work packages and cannot be deleted.
+  error_can_not_delete_standard_type: Standard types cannot be deleted.
   error_can_not_remove_role: This role is in use and cannot be deleted.
   error_can_not_reopen_work_package_on_closed_version: A work package assigned to
     a closed version cannot be reopened
@@ -540,6 +549,8 @@ zh-TW:
     Please check your configuration (Go to "Administration -> Work package statuses").
   error_no_type_in_project: No type is associated to this project. Please check the
     Project settings.
+  error_omniauth_registration_timed_out: The registration via an external authentication
+    provider timed out. Please try again.
   error_scm_annotate: The entry does not exist or cannot be annotated.
   error_scm_command_failed: 'An error occurred when trying to access the repository:
     %{value}'
@@ -553,6 +564,8 @@ zh-TW:
   error_workflow_copy_target: Please select target type(s) and role(s)
   error_menu_item_not_created: Menu item could not be added
   error_menu_item_not_saved: Menu item could not be saved
+  error_external_authentication_failed: An error occured during external authentication.
+    Please try again.
   events:
     project: Project edited
     changeset: Changeset edited
@@ -561,93 +574,44 @@ zh-TW:
     reply: Replied
     time_entry: Timelog edited
     wiki_page: Wiki page edited
-    work_package_closed: Work Package closed
+    work_package_closed: "工作項目關閉"
     work_package_edit: Work Package edited
     work_package_note: Work Package note added
   general_csv_decimal_separator: "."
   general_csv_encoding: UTF-8
   general_csv_separator: ","
   general_first_day_of_week: '7'
-  general_lang_name: Chinese Traditional
+  general_lang_name: "繁體中文"
   general_pdf_encoding: ISO-8859-1
-  general_text_No: 'No'
-  general_text_Yes: 'Yes'
   general_text_no: 'no'
   general_text_yes: 'yes'
+  general_text_No: 'No'
+  general_text_Yes: 'Yes'
   gui_validation_error: 1 error
   gui_validation_error_plural: "%{count} errors"
-  js:
-    unsupported_browser:
-      title: Your browser is not supported
-      message: The browser you are using is no longer supported by OpenProject. Please
-        update your browser.
-      learn_more: Learn more
-    logoff: You have been logged off
-    redirect_login: Do you want to be redirected to the login page?
-    ajax:
-      hide: Hide
-      loading: Loading ...
-    select2:
-      input_too_short:
-        one: Please enter one more character
-        other: Please enter {{count}} more characters
-        zero: Please enter more characters
-      load_more: Loading more results ...
-      no_matches: No matches found
-      searching: Searching ...
-      selection_too_big:
-        one: You can only select one item
-        other: You can only select {{limit}} items
-        zero: You cannot select any items
-    timelines:
-      tooManyProjects: More than %{count} Projects. Please use a better filter!
-      cancel: "取消"
-      save: "儲存"
-      due_date: "截止日期"
-      name: "名稱"
-      project_status: "專案狀態"
-      project_type: "專案類型"
-      responsible: "負責人"
-      start_date: "起始日期"
-      error: An error has occured.
-      create_planning_select_project: 'Project:'
-      really_close_dialog: Do you really want to close the dialog and loose the entered
-        data?
-      zoom_slider: Zoom slider
-    filter:
-      noneElement: "(none)"
-      noneSelection: "(none)"
-    button_check_all: "勾選全部"
-    button_uncheck_all: Uncheck all
-    label_collapsed: collapsed
-    label_expanded: expanded
-    label_collapse_all: Collapse all
-    label_expand_all: Expand all
-    label_menu_item_toggle: Show/hide submenu items
-    label_menu_collapse: collapse
-    label_menu_expand: expand
-    tl_toolbar:
-      zooms: Zoom level
-      outlines: Hierarchy level
+  instructions_after_registration: You can sign in as soon as your account has been
+    activated by clicking %{signin}.
+  instructions_after_logout: You can sign in again by clicking %{signin}.
+  instructions_after_error: You can try to sign in again by clicking %{signin}. If
+    the error persists, ask your admin for help.
   label_account: "帳戶"
   label_activity: "活動"
-  label_add_another_file: Add another file
+  label_add_another_file: "新增另一個檔案"
   label_add_columns: Add selected columns
   label_add_note: Add a note
   label_add_related_issues: Add related issue
   label_add_related_work_packages: Add related work packages
   label_add_subtask: Add subtask
   label_added: added
-  label_added_time_by: Added by %{author} %{age} ago
+  label_added_time_by: "由%{author}於%{age}前新增"
   label_additional_workflow_transitions_for_assignee: Additional transitions allowed
     when the user is the assignee
   label_additional_workflow_transitions_for_author: Additional transitions allowed
     when the user is the author
   label_administration: Administration
   label_age: Age
-  label_ago: days ago
+  label_ago: "天前"
   label_all: all
-  label_all_work_packages: all work packages
   label_all_time: all time
   label_all_words: All words
   label_and_its_subprojects: "%{value} and its subprojects"
@@ -655,11 +619,11 @@ zh-TW:
   label_api_access_key_created_on: API access key created %{value} ago
   label_applied_status: Applied status
   label_ascending: Ascending
-  label_assigned_to_me_work_packages: Work packages assigned to me
+  label_assigned_to_me_work_packages: "分配給我的工作項目"
   label_associated_revisions: Associated revisions
   label_attachment_delete: Delete file
   label_attachment_new: New file
-  label_attachment_plural: Files
+  label_attachment_plural: "檔案"
   label_attribute: Attribute
   label_attribute_plural: Attributes
   label_auth_source: "身份驗證模式"
@@ -676,13 +640,13 @@ zh-TW:
   label_branch: Branch
   label_browse: Browse
   label_bulk_edit_selected_work_packages: Bulk edit selected work packages
-  label_calendar: Calendar
-  label_calendar_show: Show Calendar
+  label_calendar: "行事曆"
+  label_calendar_show: "顯示行事曆"
   label_category: "類別"
   label_wiki_menu_item: Wiki menu item
   label_select_main_menu_item: Select new main menu item
   label_change_plural: Changes
-  label_change_properties: Change properties
+  label_change_properties: "更改屬性"
   label_change_status: Change status
   label_change_view_all: View all changes
   label_changes_details: Details of all changes
@@ -692,7 +656,7 @@ zh-TW:
   label_close_versions: Close completed versions
   label_closed_work_packages: closed
   label_collapse: Collapse
-  label_collapse_all: Collapse all
+  label_configuration: configuration
   label_comment_add: Add a comment
   label_comment_added: Comment added
   label_comment_delete: Delete comments
@@ -721,7 +685,7 @@ zh-TW:
   label_date_to: To
   label_day_plural: days
   label_default: Default
-  label_deleted: deleted
+  label_deleted: "已刪除"
   label_deleted_custom_field: "(deleted custom field)"
   label_descending: Descending
   label_details: Details
@@ -743,10 +707,8 @@ zh-TW:
   label_enumeration_new: New enumeration value
   label_enumerations: Enumerations
   label_environment: Environment
-  label_equals: is
+  label_equals: "是"
   label_example: Example
-  label_expand: Expand
-  label_expand_all: Expand all
   label_export_to: 'Also available in:'
   label_f_hour: "%{value} hour"
   label_f_hour_plural: "%{value} hours"
@@ -754,7 +716,7 @@ zh-TW:
   label_feeds_access_key: RSS access key
   label_feeds_access_key_created_on: RSS access key created %{value} ago
   label_file_added: File added
-  label_file_plural: Files
+  label_file_plural: "檔案"
   label_filesystem_path: Root directory
   label_filter_add: Add filter
   label_filter_plural: "篩選器"
@@ -769,8 +731,9 @@ zh-TW:
   label_group_new: New group
   label_group_plural: Groups
   label_help: Help
+  label_here: here
   label_hide: Hide
-  label_history: History
+  label_history: "歷史"
   label_home: Home
   label_in: in
   label_in_less_than: in less than
@@ -796,7 +759,7 @@ zh-TW:
   label_work_package_tracking: Work package tracking
   label_work_package_updated: Work package updated
   label_work_package_view_all: View all work packages
-  label_work_package_view_all_assigned_to_me: View all work packages assigned to me
+  label_work_package_view_all_assigned_to_me: "檢視所有分配給我的工作項目"
   label_work_package_view_all_reported_by_me: View all work packages reported by me
   label_work_package_view_all_responsible_for: View all work packages I am responsible
     for
@@ -807,8 +770,8 @@ zh-TW:
   label_jump_to_a_project: Jump to a project...
   label_language_based: Based on user's language
   label_last_changes: last %{count} changes
-  label_last_login: "最後一次連接"
-  label_last_month: last month
+  label_last_login: "上次登入時間"
+  label_last_month: "上個月"
   label_last_n_days: last %{count} days
   label_last_week: last week
   label_latest_revision: Latest revision
@@ -820,7 +783,6 @@ zh-TW:
   label_loading: Loading...
   label_logged_as: Logged in as
   label_login: "登入"
-  label_login_with_open_id_option: or login with OpenID
   label_logout: Sign out
   label_main_menu: Side Menu
   label_max_size: Maximum size
@@ -840,16 +802,16 @@ zh-TW:
   label_modified: modified
   label_module_plural: Modules
   label_modules: Modules
-  label_month: Month
+  label_month: "月份"
   label_months_from: months from
   label_more: More
   label_more_than_ago: more than days ago
   label_move_work_package: Move work package
-  label_my_account: My account
-  label_my_account_data: My account data
-  label_my_page: My page
-  label_my_page_block: My page block
-  label_my_projects: My projects
+  label_my_account: "我的帳號"
+  label_my_account_data: "我的帳號資料"
+  label_my_page: "我的首頁"
+  label_my_page_block: "我的首頁區塊"
+  label_my_projects: "我的專案"
   label_my_queries: My custom queries
   label_new: New
   label_new_statuses_allowed: New statuses allowed
@@ -863,21 +825,22 @@ zh-TW:
   label_next: Next
   label_next_week: Next week
   label_no_change_option: "(No change)"
-  label_no_data: No data to display
+  label_no_data: "沒有資料可顯示"
   label_nobody: nobody
   label_none: none
   label_not_contains: doesn't contain
-  label_not_equals: is not
+  label_not_equals: "不是"
   label_notify_member_plural: Email updates
+  label_open_menu: Open menu
   label_open_work_packages: open
   label_open_work_packages_plural: open
   label_optional_description: "說明"
   label_options: Options
   label_overall_activity: Overall activity
-  label_overall_spent_time: Overall spent time
-  label_overview: Overview
-  label_password_lost: Lost password
-  label_password_rule_lowercase: Lowercase
+  label_overall_spent_time: "總體耗時"
+  label_overview: "概要"
+  label_password_lost: Forgot your password?
+  label_password_rule_lowercase: "小寫"
   label_password_rule_numeric: Numeric Characters
   label_password_rule_special: Special Characters
   label_password_rule_uppercase: Uppercase
@@ -892,25 +855,26 @@ zh-TW:
   label_plugins: Plugins
   label_precedes: precedes
   label_preferences: Preferences
-  label_preview: Preview
+  label_preview: "預覽"
   label_previous: Previous
   label_previous_week: Previous week
   label_principal_search: Search for users or groups
   label_profile: Profile
-  label_project_all: All Projects
+  label_project_all: "所有專案"
   label_project_copy_notifications: Send email notifications during the project copy
   label_project_latest: Latest projects
   label_project_default_type: Allow empty type
   label_project_new: New project
-  label_project_plural: Projects
-  label_project_settings: Project settings
-  label_project_view_all: View all projects
+  label_project_plural: "專案"
+  label_project_settings: "專案設定"
+  label_project_view_all: "檢視所有專案"
   label_public_projects: Public projects
   label_query_new: New query
   label_query_plural: Custom queries
   label_query_menu_item: Query menu item
   label_read: Read...
-  label_register: Register
+  label_register: Create a new account
+  label_register_with_developer: Register as developer
   label_registered_on: Registered on
   label_registration_activation_by_email: account activation by email
   label_registration_automatic_activation: automatic account activation
@@ -935,9 +899,9 @@ zh-TW:
   label_revision: Revision
   label_revision_id: Revision %{value}
   label_revision_plural: Revisions
-  label_roadmap: Roadmap
-  label_roadmap_edit: Edit roadmap %{name}
-  label_roadmap_due_in: Due in %{value}
+  label_roadmap: "規劃藍圖"
+  label_roadmap_edit: "編輯規劃藍圖 %{name}"
+  label_roadmap_due_in: "截止於%{value}"
   label_roadmap_no_work_packages: No work packages for this version
   label_roadmap_overdue: "%{value} late"
   label_role_and_permissions: Roles and permissions
@@ -956,9 +920,9 @@ zh-TW:
   label_sorted_by: sorted by %{value}
   label_sort_higher: Move up
   label_sort_highest: Move to top
-  label_sort_lower: Move down
-  label_sort_lowest: Move to bottom
-  label_spent_time: "把時間花在"
+  label_sort_lower: "往下移動"
+  label_sort_lowest: "移到底部"
+  label_spent_time: "耗時"
   label_start_to_end: start to end
   label_start_to_start: start to start
   label_statistics: Statistics
@@ -969,17 +933,16 @@ zh-TW:
   label_subproject_new: New subproject
   label_subproject_plural: Subprojects
   label_subtask_plural: Subtasks
-  label_sum_for: Sum for %{value}
   label_summary: "大綱"
   label_system: System
   label_table_of_contents: Table of Contents
   label_tag: Tag
   label_text: Long text
-  label_theme: Theme
-  label_this_month: this month
+  label_theme: "佈景主題"
+  label_this_month: "本月"
   label_this_week: this week
-  label_this_year: this year
-  label_time_entry_plural: "把時間花在"
+  label_this_year: "今年"
+  label_time_entry_plural: "耗時"
   label_time_tracking: Time tracking
   label_today: today
   label_top_menu: Top Menu
@@ -989,9 +952,9 @@ zh-TW:
   label_type_plural: "類型"
   label_ui: User Interface
   label_update_work_package_done_ratios: Update work package done ratios
-  label_updated_time: Updated %{value} ago
+  label_updated_time: "%{value}前更新"
   label_updated_time_at: "%{author} %{age}"
-  label_updated_time_by: Updated by %{author} %{age} ago
+  label_updated_time_by: "由%{author}於%{age}前更新"
   label_used_by: Used by
   label_user_activity: "%{value}'s activity"
   label_user_anonymous: Anonymous
@@ -1031,7 +994,7 @@ zh-TW:
   label_wiki_show_menu_item: Show as menu item in project navigation
   label_wiki_show_new_page_link: Show submenu item 'Create new child page'
   label_wiki_show_submenu_item: 'Show as submenu item of '
-  label_work_package: Work package
+  label_work_package: "工作項目"
   label_workflow: "工作流程"
   label_workflow_plural: Workflows
   label_workflow_summary: "大綱"
@@ -1053,24 +1016,27 @@ zh-TW:
     zero: 0 open / %{total}
   label_x_projects:
     one: 1 project
-    other: "%{count} projects"
+    other: "%{count}個專案"
     zero: no projects
-  label_year: Year
+  label_year: "年份"
   label_yesterday: yesterday
+  label_keyboard_function: Function
+  label_keyboard_shortcut: Shortcut
+  label_keyboard_accesskey: Accesskey
   label_keyboard_shortcut_help_heading: Available Keyboard Shortcuts
   label_keyboard_shortcut_within_project: 'Project related shortcuts:'
   label_keyboard_shortcut_global_shortcuts: 'Global shortcuts:'
   label_keyboard_shortcut_some_pages_only: 'Special shortcuts:'
   label_keyboard_shortcut_search_global: Global search
   label_keyboard_shortcut_search_project: Find a project
-  label_keyboard_shortcut_go_my_page: Go to My Page
+  label_keyboard_shortcut_go_my_page: "前往我的首頁"
   label_keyboard_shortcut_show_help: Show this help message
-  label_keyboard_shortcut_go_overview: Go to project overview
-  label_keyboard_shortcut_go_work_package: Go to project work packages
-  label_keyboard_shortcut_go_wiki: Go to project wiki
-  label_keyboard_shortcut_go_activity: Go to project activities
-  label_keyboard_shortcut_go_calendar: Go to project calendar
-  label_keyboard_shortcut_go_news: Go to project news
+  label_keyboard_shortcut_go_overview: "前往專案概要"
+  label_keyboard_shortcut_go_work_package: "前往專案迎工作項目"
+  label_keyboard_shortcut_go_wiki: "前往專案維基"
+  label_keyboard_shortcut_go_activity: "前往專案活動"
+  label_keyboard_shortcut_go_calendar: "前往專案行事曆"
+  label_keyboard_shortcut_go_news: "前往專案新聞"
   label_keyboard_shortcut_go_timelines: Go to timelines
   label_keyboard_shortcut_new_work_package: Create new work package
   label_keyboard_shortcut_go_edit: Go to edit the current item (on detail pages only)
@@ -1081,6 +1047,8 @@ zh-TW:
     lists only)
   label_keyboard_shortcut_focus_next_item: Focus next list element (on some lists
     only)
+  macro_execution_error: Error executing the macro %{macro_name}
+  macro_unavailable: Macro %{macro_name} cannot be displayed.
   mail_body_account_activation_request: 'A new user (%{value}) has registered. The
     account is pending your approval:'
   mail_body_account_information: Your account information
@@ -1098,12 +1066,11 @@ zh-TW:
   mail_subject_reminder: "%{count} work package(s) due in the next %{days} days"
   mail_subject_wiki_content_added: "'%{id}' wiki page has been added"
   mail_subject_wiki_content_updated: "'%{id}' wiki page has been updated"
-  more_actions: More functions
+  more_actions: "更多功能"
   noscript_description: You need to activate JavaScript in order to use OpenProject!
   noscript_heading: JavaScript disabled
   noscript_learn_more: Learn more
   notice_account_activated: Your account has been activated. You can now log in.
-  notice_account_inactive: "您的帳戶尚未啟動。要啟動您的帳戶，請按一下通過電子郵件發送給您的連結。"
   notice_account_invalid_credentials: Invalid user or password
   notice_account_invalid_credentials_or_blocked: Invalid user or password or the account
     is blocked due to multiple failed login attempts. If so, it will be unblocked
@@ -1123,6 +1090,8 @@ zh-TW:
     look at your account page.
   notice_account_updated: Account was successfully updated.
   notice_account_wrong_password: Wrong password
+  notice_account_registered_and_logged_in: Welcome, your account has been activated.
+    You are logged in now.
   notice_api_access_key_reseted: Your API access key was reset.
   notice_can_t_change_password: This account uses an external authentication source.
     Impossible to change the password.
@@ -1144,8 +1113,7 @@ zh-TW:
   notice_locking_conflict: Information has been updated by at least one other user
     in the meantime.
   notice_locking_conflict_additional_information: The update(s) came from %{users}.
-  notice_locking_conflict_reload_page: Please reload the page, review the changes
-    and reapply your updates.
+  notice_locking_conflict_reload_page: "請重新載入頁面，檢查所做的更改並重新套用您的更新。"
   notice_no_principals_found: No results found.
   notice_bad_request: Bad Request.
   notice_not_authorized: You are not authorized to access this page.
@@ -1162,6 +1130,7 @@ zh-TW:
   notice_unable_delete_time_entry: Unable to delete time log entry.
   notice_unable_delete_version: Unable to delete version.
   notice_automatic_set_of_standard_type: Set standard type automatically.
+  notice_logged_out: You have been logged out.
   error_types_in_use_by_work_packages: 'The following types are still referenced by
     work packages: %{types}'
   number:
@@ -1209,7 +1178,7 @@ zh-TW:
   permission_edit_own_work_package_notes: Edit own notes
   permission_edit_own_messages: Edit own messages
   permission_edit_own_time_entries: Edit own time logs
-  permission_edit_project: Edit project
+  permission_edit_project: "編輯專案"
   permission_edit_project_associations: Edit project dependencies
   permission_edit_reportings: Edit reportings
   permission_edit_time_entries: Edit time logs
@@ -1218,7 +1187,7 @@ zh-TW:
   permission_export_work_packages: Export Work Packages
   permission_export_wiki_pages: Export wiki pages
   permission_list_attachments: List attachments
-  permission_log_time: Log spent time
+  permission_log_time: "記錄耗時"
   permission_manage_boards: Manage forums
   permission_manage_categories: Manage work package categories
   permission_manage_work_package_relations: Manage work package relations
@@ -1237,7 +1206,7 @@ zh-TW:
   permission_save_queries: Save queries
   permission_select_project_modules: Select project modules
   permission_manage_types: Select types
-  permission_view_calendar: View calendar
+  permission_view_calendar: "檢視行事曆"
   permission_view_changesets: View changesets
   permission_view_commit_author_statistics: View commit author statistics
   permission_view_work_package_watchers: View watchers list
@@ -1245,13 +1214,13 @@ zh-TW:
   permission_view_messages: View messages
   permission_view_project_associations: View project dependencies
   permission_view_reportings: View reportings
-  permission_view_time_entries: View spent time
+  permission_view_time_entries: "檢視耗時"
   permission_view_timelines: View timelines
-  permission_view_wiki_edits: View wiki history
+  permission_view_wiki_edits: "檢視維基歷史"
   permission_view_wiki_pages: View wiki
   project_module_activity: "活動"
   project_module_boards: Forums
-  project_module_calendar: Calendar
+  project_module_calendar: "行事曆"
   project_module_work_package_tracking: Work package tracking
   project_module_news: "新知"
   project_module_repository: Repository
@@ -1315,7 +1284,6 @@ zh-TW:
   setting_mail_handler_api_key: API key
   setting_mail_handler_body_delimiters: Truncate emails after one of these lines
   setting_new_project_user_role_id: Role given to a non-admin user who creates a project
-  setting_openid: Allow OpenID login and registration
   setting_password_active_rules: Active character classes
   setting_password_count_former_banned: Number of most recently used passwords banned
     for reuse
@@ -1337,23 +1305,23 @@ zh-TW:
   setting_session_ttl: Session expiry time after inactivity
   setting_session_ttl_hint: Value below 5 works like disabled
   setting_session_ttl_enabled: Session expires
-  setting_start_of_week: Start calendars on
+  setting_start_of_week: "行事曆始於"
   setting_sys_api_enabled: Enable WS for repository management
   setting_text_formatting: Text formatting
   setting_time_format: Time format
-  setting_ui_theme: Theme
-  setting_user_may_override_theme: Users may choose their own themes
+  setting_ui_theme: "佈景主題"
+  setting_user_may_override_theme: "使用者可以選擇自己的佈景主題"
   setting_accessibility_mode_for_anonymous: Enable accessibility mode for anonymous
     users
   setting_user_format: Users display format
   setting_users_deletable_by_admins: User accounts deletable by admins
   setting_users_deletable_by_self: Users allowed to delete their accounts
   setting_welcome_text: Welcome text
-  setting_wiki_compression: Wiki history compression
+  setting_wiki_compression: "維基歷史壓縮"
   setting_work_package_group_assignment: Allow assignment to groups
   settings:
     general: General
-    other: Other
+    other: "其他"
     passwords: Passwords
     session: Session
     brute_force_prevention: Automated user blocking
@@ -1361,7 +1329,7 @@ zh-TW:
   status_active: active
   support:
     array:
-      sentence_connector: and
+      sentence_connector: "和"
       skip_last_comma: 'false'
   text_analyze: 'Further analyze: %{subject}'
   text_are_you_sure: Are you sure?
@@ -1373,7 +1341,7 @@ zh-TW:
   text_custom_field_possible_values_info: One line for each value
   text_default_administrator_account_changed: Default administrator account changed
   text_default_encoding: 'Default: UTF-8'
-  text_destroy: Delete
+  text_destroy: "删除"
   text_destroy_with_associated: 'There are additional objects assossociated with the
     work package(s) that are to be deleted. Those objects are of the following types:'
   text_destroy_what_to_do: What do you want to do?
@@ -1388,8 +1356,7 @@ zh-TW:
   text_git_repo_example: a bare and local repository (e.g. /gitrepo, c:\gitrepo)
   text_work_package_added: Work package %{id} has been reported by %{author}.
   text_work_package_category_destroy_assignments: Remove category assignments
-  text_work_package_category_destroy_question: Some work packages (%{count}) are assigned
-    to this category. What do you want to do?
+  text_work_package_category_destroy_question: "一些工作項目(%{count})被分配給此類別。你想要做什麼？"
   text_work_package_category_reassign_to: Reassign work packages to this category
   text_work_package_updated: Work package %{id} has been updated by %{author}.
   text_work_packages_destroy_confirmation: Are you sure you want to delete the selected
@@ -1400,8 +1367,8 @@ zh-TW:
   text_journal_changed: "%{label} changed from %{old} to %{new}"
   text_journal_changed_no_detail: "%{label} updated"
   text_journal_changed_with_diff: "%{label} changed (%{link})"
-  text_journal_deleted: "%{label} deleted (%{old})"
-  text_journal_deleted_with_diff: "%{label} deleted (%{link})"
+  text_journal_deleted: "%{label}已刪除 (%{old})"
+  text_journal_deleted_with_diff: "%{label}已刪除 (%{link})"
   text_journal_set_to: "%{label} set to %{value}"
   text_journal_set_with_diff: "%{label} set (%{link})"
   text_length_between: Length between %{min} and %{max} characters.
@@ -1411,6 +1378,8 @@ zh-TW:
   text_no_configuration_data: |
     Roles, types, work package statuses and workflow have not been configured yet.
     It is highly recommended to load the default configuration. You will be able to modify it once loaded.
+  text_notice_too_many_values_are_inperformant: 'Note: Displaying more than 100 items
+    per page can increase the page load time.'
   text_own_membership_delete_confirmation: |
     You are about to remove some or all of your permissions and may no longer be able to edit this project after that.
     Are you sure you want to continue?
@@ -1426,7 +1395,6 @@ zh-TW:
   text_repository_usernames_mapping: |
     Select or update the OpenProject user mapped to each username found in the repository log.
     Users with the same OpenProject and repository username or email are automatically mapped.
-  text_rmagick_available: RMagick available (optional)
   text_select_mail_notifications: Select actions for which email notifications should
     be sent.
   text_select_project_modules: 'Select modules to enable for this project:'
@@ -1486,16 +1454,16 @@ zh-TW:
     dates_are_calculated_based_on_sub_elements: Dates are calculated based on sub
       elements.
     delete_all: Delete all
-    delete_thing: Delete
+    delete_thing: "删除"
     duration: Duration
     duration_days:
       one: 1 day
-      other: "%{count} days"
+      other: "%{count}天"
     edit_color: Edit color
     edit_project_type: Edit project type
-    edit_thing: Edit
-    edit_timeline: Edit timeline report
-    delete_timeline: Delete timeline report
+    edit_thing: "編輯"
+    edit_timeline: Edit timeline report %{timeline}
+    delete_timeline: Delete timeline report %{timeline}
     empty: "(empty)"
     enable_type_in_project: Enable type "%{type}"
     end: End
@@ -1531,7 +1499,7 @@ zh-TW:
       column:
         assigned_to: Assignee
         type: "類型"
-        due_date: End date
+        due_date: "結束日期"
         name: "名稱"
         status: "狀態"
         responsible: "負責人"
@@ -1546,16 +1514,16 @@ zh-TW:
         compare_absolute: Compare current planning to %{date}
       time_relative:
         days: days
-        weeks: weeks
-        months: months
+        weeks: "週"
+        months: "月"
       exclude_own_work_packages: Hide work packages from this project
-      exclude_reporters: Hide other projects
+      exclude_reporters: "隱藏其他專案"
       exclude_empty: Hide empty projects
       grouping: Grouping
       grouping_hide_group: Hide group "%{group}"
       grouping_one: First grouping criterion
       grouping_one_phrase: Is a subproject of
-      grouping_other: Other
+      grouping_other: "其他"
       grouping_two: Second grouping criterion
       grouping_two_phrase: Has a dependency to project type
       hide_chart: Hide chart
@@ -1572,9 +1540,11 @@ zh-TW:
         timeframe
       project_time_filter_absolute_timeframe: Absolute timeframe
       project_time_filter_relative_timeframe: Relative timeframe
-      project_time_filter_historical: from %{startdate} to %{enddate}
-      project_time_filter_relative: from %{startspan}%{startspanunit} ago, to %{endspan}%{endspanunit}
-        from now
+      project_time_filter_historical_from: from
+      project_time_filter_historical_to: to
+      project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
+      project_time_filter_relative: "%{start_label} %{startspan}%{startspanunit} ago,
+        %{end_label} %{endspan}%{endspanunit} from now"
       project_filters: Filter projects
       project_responsible: Show projects with responsible
       project_status: Show project status
@@ -1584,7 +1554,7 @@ zh-TW:
       timeframe_start: from
       timeline: General Settings
       zoom: Zoom factor
-    history: History
+    history: "歷史"
     new_color: New color
     new_association: New dependency
     new_work_package: New work package
@@ -1600,12 +1570,12 @@ zh-TW:
     outline: Reset Outline
     outlines:
       aggregation: Show aggregations only
-      level1: Expand level 1
-      level2: Expand level 2
-      level3: Expand level 3
-      level4: Expand level 4
-      level5: Expand level 5
-      all: Show all
+      level1: "展開第1層"
+      level2: "展開第2層"
+      level3: "展開第3層"
+      level4: "展開第4層"
+      level5: "展開第5層"
+      all: "顯示全部"
     reporting_for_project:
       show: 'Status reported to project: %{title}'
       edit_delete: 'status report for project: %{title}'
@@ -1645,24 +1615,28 @@ zh-TW:
     zoom:
       in: Zoom in
       out: Zoom out
-      days: Days
-      weeks: Weeks
-      months: Months
-      quarters: Quarters
-      years: Years
+      days: "日"
+      weeks: "週"
+      months: "月"
+      quarters: "季"
+      years: "年"
   queries:
     apply_filter: Apply preconfigured filter
-  total_progress: Total progress
+  total_progress: "總進度"
   user:
     all: all
     active: active
     activate: Activate
     activate_and_reset_failed_logins: Activate and reset failed logins
+    authentication_provider: Authentication Provider
+    authentication_settings_disabled_due_to_external_authentication: This user authenticates
+      via an external authentication provider, so there is no password in OpenProject
+      to be changed.
     assign_random_password: Assign random password (sent to user via e-mail)
-    blocked: locked temporarily
+    blocked: "暫時鎖定"
     blocked_num_failed_logins:
       one: locked temporarily (one failed login attempt)
-      other: locked temporarily (%{count} failed login attempts)
+      other: "暫時鎖定 (%{count}次失敗的登入)"
     deleted: Deleted user
     error_status_change_failed: 'Changing the user status failed due to the following
       errors: %{errors}'
@@ -1671,11 +1645,18 @@ zh-TW:
     registered: registered
     reset_failed_logins: Reset failed logins
     status_user_and_brute_force: "%{user} and %{brute_force}"
-    unlock: Unlock
+    unlock: "解除鎖定"
     unlock_and_reset_failed_logins: Unlock and reset failed logins
+    no_login: This user authenticates through login by password. Since it is disabled,
+      they cannot log in.
+    password_change_unsupported: Change of password is not supported.
+    authorization_rejected: "你不被允許登入。"
   version_status_closed: closed
   version_status_locked: locked
   version_status_open: open
+  note: Note
+  note_password_login_disabled: Password login has been disabled by %{configuration}.
+  warning: Warning
   warning_attachments_not_saved: "%{count} file(s) could not be saved."
   menu_item: Menu item
   menu_item_setting: Visibility
@@ -1690,4 +1671,4 @@ zh-TW:
   work_package:
     updated_automatically_by_child_changes: _Updated automatically by changing values
       within child work package %{child}_
-  nothing_to_preview: Nothing to preview
+  nothing_to_preview: "沒有內容可預覽"

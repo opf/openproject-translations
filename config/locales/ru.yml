@@ -31,6 +31,13 @@ ru:
           не сможете войти в систему с текущими учетными данными. Если  снова хотите
           \ стать пользователем, то делайте это через средства пердоставления прав
           этого приложения."
+    error_inactive_activation_by_mail: "Ваша учетная запись не была активирована.
+      Для активации нажмите на ссылку, высланную вам по электронной почте."
+    error_inactive_manual_activation: "Ваша учетная запись не была активирована. Пожалуйста,
+      подождите пока администратор активирует Вашу учетную запись."
+    error_self_registration_disabled: "Регистрация пользователя в этой системе отключена.
+      Попросите администратора создать учетную запись для Вас."
+    login_with_auth_provider: "или войдите своей учетной записью"
   actionview_instancetag_blank_option: "Пожалуйста, выберите"
   activerecord:
     attributes:
@@ -101,14 +108,13 @@ ru:
       type:
         is_in_roadmap: "Пакеты работ, отображаемые в дорожной карте"
         in_aggregation: "Пакет работ, отображаемый в объединении"
-        is_milestone: "Пакет работ, отображаемый как ключевой момент"
+        is_milestone: "Комплекс работ отображаемый как веха"
         color: "Цвет"
       user:
         admin: "Администратор"
         auth_source: "Способ аутентификации"
-        identity_url: "Неверный URL"
         language: "Язык"
-        last_login_on: "Последнее соединение"
+        last_login_on: "Последний вход в систему"
         mail_notification: "Уведомления по электронной почте"
         new_password: "Новый пароль"
         password_confirmation: "Подтверждение"
@@ -150,10 +156,10 @@ ru:
         created_at: "Создан"
       work_package:
         done_ratio: "% сделано"
-        fixed_version: "Целевая версия"
+        fixed_version: "Этап"
         parent: "Родитель"
         parent_issue: "Родитель"
-        parent_work_packae: "Родитель"
+        parent_work_package: "Родитель"
         priority: "Приоритет"
         progress: "% сделано"
         responsible: "Ответственный"
@@ -176,6 +182,8 @@ ru:
         exclusion: "зарезервировано"
         greater_than: "должно быть больше %{count}"
         greater_than_or_equal_to: "должно быть больше или равно %{count}"
+        smaller_than_or_equal_to_max_length: "должно быть меньше или равно максимуму
+          длины"
         greater_than_start_date: "должно быть позднее, чем дата начала"
         inclusion: "не входит в список"
         invalid: "неверный"
@@ -266,6 +274,7 @@ ru:
       wiki: Wiki
       wiki_page: Wiki-страница
       workflow: "Переход"
+      work_package: "Пакет работ"
   errors:
     header_invalid_fields: "Были проблемы со следующими полями:"
   activity:
@@ -341,7 +350,7 @@ ru:
   button_list: "Список"
   button_lock: "Заблокировать"
   button_log_time: "Учет времени"
-  button_login: "Входное имя"
+  button_login: "Войти"
   button_move: "Переместить"
   button_move_and_follow: "Переместить и следовать"
   button_quote: "Цитата"
@@ -479,6 +488,11 @@ ru:
         one: 1 секунда
         other: "%{count} секунд"
         few: "%{count} секунды"
+    units:
+      hour:
+        one: "час"
+        other: "часов"
+        few: "часа"
   default_activity_management: "Управление"
   default_activity_design: "Дизайн"
   default_activity_development: "Разработка"
@@ -540,7 +554,6 @@ ru:
   description_message_content: "Содержание сообщения"
   description_my_project: "Вы являетесь участником"
   description_notes: "Примечания"
-  description_option_toggle: "Показать/скрыть параметры"
   description_parent_work_package: "Родительский пакет работ для текущего"
   description_project_scope: "Область поиска"
   description_query_sort_criteria_attribute: "Атрибут сортировки"
@@ -549,7 +562,6 @@ ru:
   description_select_work_package: "Выберите пакет работ"
   description_selected_columns: "Выбранные столбцы"
   description_sub_work_package: "Вложенный пакет работ текущего"
-  description_subwork_package: "Дочерний пакет работ от"
   description_toc_toggle: "Показать/скрыть оглавление"
   description_user_mail_notification: "Настройки почтовых уведомлений"
   description_wiki_subpages_reassign: "Укажите новую родительскую страницу"
@@ -561,6 +573,7 @@ ru:
   error_can_not_archive_project: "Этот проект не может быть отправлен в архив"
   error_can_not_delete_custom_field: "Не удается удалить настраиваемое поле"
   error_can_not_delete_type: "Этот тип содержит пакет работ и не может быть удален."
+  error_can_not_delete_standard_type: "Стандартные типы не могут быть удалены."
   error_can_not_remove_role: "Эта роль используется и не может быть удалена."
   error_can_not_reopen_work_package_on_closed_version: "Пакет работ, назначенный закрытому
     этапу не может быть открыть снова"
@@ -577,6 +590,8 @@ ru:
     пакета работ»)."
   error_no_type_in_project: "Тип не связан с этим проектом. Пожалуйста, проверьте
     параметры проекта."
+  error_omniauth_registration_timed_out: "Время регистрации через провайдера истекло.
+    Пожалуйста, попробуйте еще раз."
   error_scm_annotate: "Статья не существует или не может быть описана."
   error_scm_command_failed: "Произошла ошибка при попытке доступа к хранилищу: %{value}"
   error_scm_not_found: "Ни статья, ни ее исправленная версия в репозитории не найдены."
@@ -589,6 +604,8 @@ ru:
   error_workflow_copy_target: "Пожалуйста, выберите целевые тип(ы) и роль(ли)"
   error_menu_item_not_created: "Пункт меню не может быть добавлен"
   error_menu_item_not_saved: "Пункт меню не может быть сохранен"
+  error_external_authentication_failed: "Ошибка внешней аутентификации. Пожалуйста,
+    попробуйте еще раз."
   events:
     project: "Проект отредактирован"
     changeset: "Набор изменений отредактирован"
@@ -606,68 +623,17 @@ ru:
   general_first_day_of_week: '7'
   general_lang_name: Pyccĸий
   general_pdf_encoding: ISO-8859-1
-  general_text_No: "Нет"
-  general_text_Yes: "Да"
   general_text_no: "нет"
   general_text_yes: "да"
+  general_text_No: "Нет"
+  general_text_Yes: "Да"
   gui_validation_error: 1 ошибка
   gui_validation_error_plural: "%{count} ошибок"
-  js:
-    unsupported_browser:
-      title: "Ваш браузер не поддерживается"
-      message: "Вы используете браузер больше не поддерживается OpenProject. Пожалуйста,
-        обновите ваш браузер."
-      learn_more: "Узнать больше"
-    logoff: "Вы вышли из системы"
-    redirect_login: "Вас перенаправить на страницу входа в систему?"
-    ajax:
-      hide: "Скрыть"
-      loading: "Загрузка ..."
-    select2:
-      input_too_short:
-        one: "Пожалуйста, введите еще один  символ"
-        other: "Пожалуйста, введите еще один символ"
-        zero: Please enter more characters
-        few: "Пожалуйста, введите еще $n символ(-ов)"
-      load_more: "Загрузка дополнительных результатов ..."
-      no_matches: "Совпадения не найдены"
-      searching: "Поиск ..."
-      selection_too_big:
-        one: "Вы можете выбрать только один элемент"
-        other: You can only select {{limit}} items
-        zero: You cannot select any items
-        few: You can only select {{limit}} items
-    timelines:
-      tooManyProjects: "Больше чем %{count} проектов. Пожалуйста, используйте более
-        точный фильтр!"
-      cancel: "Отмена"
-      save: "Сохранить"
-      due_date: "Дата выполнения"
-      name: "Имя"
-      project_status: "Состояние проекта"
-      project_type: "Тип проекта"
-      responsible: "Ответственный"
-      start_date: "Дата начала"
-      error: "Произошла ошибка."
-      create_planning_select_project: "Проект:"
-      really_close_dialog: "Вы действительно хотите закрыть диалоговое окно и потерять
-        введенные данные?"
-      zoom_slider: "Ползунок масштаба"
-    filter:
-      noneElement: "(нет)"
-      noneSelection: "(нет)"
-    button_check_all: "Выделить все"
-    button_uncheck_all: "Снять все отметки"
-    label_collapsed: "обрушилась"
-    label_expanded: "расширено"
-    label_collapse_all: "Свернуть все"
-    label_expand_all: "Развернуть все"
-    label_menu_item_toggle: "Показать/скрыть элементы вложенного меню"
-    label_menu_collapse: "свернуть"
-    label_menu_expand: "развернуть"
-    tl_toolbar:
-      zooms: "Степень масштабирования"
-      outlines: "Уровень иерархии"
+  instructions_after_registration: "Вы сможете войти как только ваша учетная запись
+    будет активирована, нажав %{signin}."
+  instructions_after_logout: "Вы можете войти в снова, нажав %{signin}."
+  instructions_after_error: "Вы можете попробовать войти снова, нажав %{signin}. Если
+    ошибка повторится, обратитесь к вашему администратору за помощью."
   label_account: "Учетная запись"
   label_activity: "Деятельность"
   label_add_another_file: "Добавьте еще один файл"
@@ -686,7 +652,6 @@ ru:
   label_age: "Возраст"
   label_ago: "дней назад"
   label_all: "все"
-  label_all_work_packages: "Все пакеты работ"
   label_all_time: "все время"
   label_all_words: "Все слова"
   label_and_its_subprojects: "%{value} и его подпроектов"
@@ -731,7 +696,7 @@ ru:
   label_close_versions: "Закрыть завершённые этапы"
   label_closed_work_packages: "закрыто"
   label_collapse: "Свернуть"
-  label_collapse_all: "Свернуть все"
+  label_configuration: "Настройки"
   label_comment_add: "Добавить комментарий"
   label_comment_added: "Комментарий добавлен"
   label_comment_delete: "Удалить комментарии"
@@ -784,8 +749,6 @@ ru:
   label_environment: "Переменные среды"
   label_equals: "—"
   label_example: "Пример"
-  label_expand: "Развернуть"
-  label_expand_all: "Развернуть все"
   label_export_to: "Также доступна на:"
   label_f_hour: "%{value} часов"
   label_f_hour_plural: "%{value} часов"
@@ -808,6 +771,7 @@ ru:
   label_group_new: "Новая группа"
   label_group_plural: "Группы"
   label_help: "Справка"
+  label_here: "здесь"
   label_hide: "Скрыть"
   label_history: "История"
   label_home: "Главная"
@@ -848,7 +812,7 @@ ru:
   label_jump_to_a_project: "Перейти к проекту..."
   label_language_based: "Основанный на языке пользователя"
   label_last_changes: "последние %{count} изменений"
-  label_last_login: "Последнее соединение"
+  label_last_login: "Последний вход в систему"
   label_last_month: "Последний месяц"
   label_last_n_days: "последние %{count} дней"
   label_last_week: "На прошлой неделе"
@@ -861,7 +825,6 @@ ru:
   label_loading: "Загрузка..."
   label_logged_as: "Войти в систему как"
   label_login: "Войти"
-  label_login_with_open_id_option: "или войти с OpenID"
   label_logout: "Выход"
   label_main_menu: "Боковое меню"
   label_max_size: "Максимальный размер"
@@ -910,6 +873,7 @@ ru:
   label_not_contains: "не содержит"
   label_not_equals: "не"
   label_notify_member_plural: "Уведомление электронной почтой"
+  label_open_menu: "Открыть меню"
   label_open_work_packages: "открыть"
   label_open_work_packages_plural: "открыть"
   label_optional_description: "Описание"
@@ -917,7 +881,7 @@ ru:
   label_overall_activity: "Общая деятельность"
   label_overall_spent_time: "Суммарное потраченное время"
   label_overview: "Обзор"
-  label_password_lost: "Забыл пароль"
+  label_password_lost: "Забыли пароль?"
   label_password_rule_lowercase: "Нижний регистр"
   label_password_rule_numeric: "Числовые символы"
   label_password_rule_special: "Специальные символы"
@@ -952,7 +916,8 @@ ru:
   label_query_plural: "Пользовательские запросы"
   label_query_menu_item: "Пункт меню запроса"
   label_read: "Читать..."
-  label_register: "Регистрация"
+  label_register: "Создайте новую учетную запись"
+  label_register_with_developer: "Зарегистрируйтесь как разработчик"
   label_registered_on: "Зарегистрированы на"
   label_registration_activation_by_email: "Активация учетной записи по электронной
     почте"
@@ -1012,7 +977,6 @@ ru:
   label_subproject_new: "Новый подпроект"
   label_subproject_plural: "Подпроекты"
   label_subtask_plural: "Подзадачи"
-  label_sum_for: "Сумма %{value}"
   label_summary: "Резюме"
   label_system: "Система"
   label_table_of_contents: "Содержание"
@@ -1107,6 +1071,9 @@ ru:
     few: "%{count} проекта"
   label_year: "Год"
   label_yesterday: "вчера"
+  label_keyboard_function: "Функция"
+  label_keyboard_shortcut: "Ярлык"
+  label_keyboard_accesskey: "Клавиша доступа"
   label_keyboard_shortcut_help_heading: "Доступные сочетания клавиш"
   label_keyboard_shortcut_within_project: "Сочетания клавиш, связанные с проектом:"
   label_keyboard_shortcut_global_shortcuts: "Глобальные сочетания клавиш:"
@@ -1133,6 +1100,8 @@ ru:
     списка (только на текущих списках)"
   label_keyboard_shortcut_focus_next_item: "Сфокусироваться на  следующем элементе
     списка (только на текущих списках)"
+  macro_execution_error: "Ошибка при выполнении макроса %{macro_name}"
+  macro_unavailable: "Макрос %{macro_name} не может быть отображен."
   mail_body_account_activation_request: "Новый пользователь (%{value}) зарегистрирован.
     Учетная запись ожидает вашего подтверждения:"
   mail_body_account_information: "Информация о вашей учетной записи"
@@ -1157,8 +1126,6 @@ ru:
   noscript_learn_more: "Узнать больше"
   notice_account_activated: "Ваша учетная запись успешно активирована. Теперь Вы можете
     войти в систему."
-  notice_account_inactive: "Ваша учетная запись не была активирована. Для активации
-    нажмите на ссылку, высланную вам по электронной почте."
   notice_account_invalid_credentials: "Неправильное имя пользователя или пароль"
   notice_account_invalid_credentials_or_blocked: "Неправильное имя пользователя/пароль
     или учетная запись была заблокирована из-за многочисленных неуспешных попыток
@@ -1177,6 +1144,8 @@ ru:
     Пожалуйста, просмотрите страницу Вашей учетной записи ещё раз."
   notice_account_updated: "Учетная запись успешно обновлёна."
   notice_account_wrong_password: "Неправильный пароль"
+  notice_account_registered_and_logged_in: "Добро пожаловать. Ваш аккаунт активирован.
+    Вы вошли в систему."
   notice_api_access_key_reseted: "Ваш API-ключ доступа был сброшен."
   notice_can_t_change_password: "Эта учетная запись использует механизм внешней аутентификации.
     Невозможно изменить пароль."
@@ -1215,6 +1184,7 @@ ru:
   notice_unable_delete_time_entry: "Не удается удалить учетную запись о времени."
   notice_unable_delete_version: "Не удается удалить версию."
   notice_automatic_set_of_standard_type: "Установить стандартный тип автоматически."
+  notice_logged_out: "Вы вышли из системы."
   error_types_in_use_by_work_packages: "На следующие типы: %{types}, по прежнему ссылаются
     пакеты работ"
   number:
@@ -1375,7 +1345,6 @@ ru:
   setting_mail_handler_api_key: API-ключ
   setting_mail_handler_body_delimiters: "Усечение сообщений после одной из этих линий"
   setting_new_project_user_role_id: "Роль, назначаемая пользователю-создателю проекта"
-  setting_openid: "Разрешить вход с OpenID и регистрацию"
   setting_password_active_rules: "Активные классы символов"
   setting_password_count_former_banned: "Количество паролей, запрещенных для повторного
     использования"
@@ -1475,6 +1444,8 @@ ru:
   text_no_configuration_data: "Еще не настроены роли, типы,  статусы пакетов работ
     и переходы. Настоятельно рекомендуется  загрузка  конфигурации по умолчанию. Вы
     сможете вносить изменения сразу после ее загрузки."
+  text_notice_too_many_values_are_inperformant: "Примечание: Отображение более чем
+    100 элементов на странице может увеличить время загрузки."
   text_own_membership_delete_confirmation: "Вы собираетесь удалить все или некоторые
     разрешения, доступные Вам. Вы не сможете редактировать проект после этого действия.
     Вы уверены?"
@@ -1491,7 +1462,6 @@ ru:
     сопоставленного с именами пользователей найдеными в журнале репозитория. Пользователи
     с одинаковыми именами в OpenProject и в репозитории или почте будут сопоставлены
     автоматически."
-  text_rmagick_available: RMagick наличии (необязателен)
   text_select_mail_notifications: "Выберите действия, для которых следует направлять
     уведомления по электронной почте."
   text_select_project_modules: "Выберите модули, которые будут включены в этот проект:"
@@ -1562,8 +1532,8 @@ ru:
     edit_color: "Изменить цвет"
     edit_project_type: "Редактировать тип проекта"
     edit_thing: "Правка"
-    edit_timeline: "Редактировать отчет по графику"
-    delete_timeline: "Удалить отчет по графику"
+    edit_timeline: "Редактировать отчет по графику %{timeline}"
+    delete_timeline: "Удалить отчет графика  %{timeline}"
     empty: "(пусто)"
     enable_type_in_project: "Разрешить тип «%{type}»"
     end: "Конец"
@@ -1640,9 +1610,11 @@ ru:
         сроки"
       project_time_filter_absolute_timeframe: "Абсолютный срок"
       project_time_filter_relative_timeframe: "Относительный срок"
-      project_time_filter_historical: "с %{startdate} по %{enddate}"
-      project_time_filter_relative: "от %{endspan} %{endspanunit} в прошлом до  %{startspan}
-        %{startspanunit} сейчас"
+      project_time_filter_historical_from: "от"
+      project_time_filter_historical_to: "до"
+      project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
+      project_time_filter_relative: "%{start_label} %{startspan} %{startspanunit}
+        назад, %{end_label} %{endspan} %{endspanunit} с этого момента"
       project_filters: "Фильтр проектов"
       project_responsible: "Показать проекты с ответственным"
       project_status: "Показать статус проекта"
@@ -1727,6 +1699,10 @@ ru:
     activate: "Активировать"
     activate_and_reset_failed_logins: "Активировать и сбросить счетчтик неудачных
       попыток входа"
+    authentication_provider: "Поставщик проверки подлинности"
+    authentication_settings_disabled_due_to_external_authentication: "Пользователь
+      аутентифицируется провайдером, поэтому пароль в OpenProject изменен быть не
+      может."
     assign_random_password: "Назначить случайный пароль (отправить пользователю по
       электронной почте)"
     blocked: "Временно заблокирован"
@@ -1744,9 +1720,16 @@ ru:
     status_user_and_brute_force: "%{user} и %{brute_force}"
     unlock: "Разблокировать"
     unlock_and_reset_failed_logins: "Разблокировать и сбросить неудачные попытки входа"
+    no_login: "Этот пользователь для входа использет логин и пароль. Т.к.  аутентификация
+      по паролю отключена, войти он не может."
+    password_change_unsupported: "Смена пароля не поддерживается."
+    authorization_rejected: "У вас нет разрешения на вход."
   version_status_closed: "закрыто"
   version_status_locked: "заблокировано"
   version_status_open: "открыть"
+  note: "Заметка"
+  note_password_login_disabled: "Вход по паролю был отключен через параметры %{configuration}."
+  warning: "Предупреждение"
   warning_attachments_not_saved: "%{count} файл(-ов) не может быть сохранен(-о)."
   menu_item: "Пункт меню"
   menu_item_setting: "Видимость"

@@ -31,6 +31,13 @@ et:
         self: Sinu konto kustutatakse süsteemist. Seetõttu ei saa sa enam sisse logida
           oma praeguste kasutajatunnustega. Küll aga võid sa registreerida end uuesti
           rakenduse kasutajaks.
+    error_inactive_activation_by_mail: Sinu konto ei ole veel aktiivne. Sulle saadetud
+      e-kirjas on link, millega saad oma konto aktiveerida.
+    error_inactive_manual_activation: Sinu konto pole aktiveeritud veel. Palun oota,
+      kuni administraator aktiveerib selle.
+    error_self_registration_disabled: Konto loomine on hetkel keelatud. Palun küsi
+      administraatoril tekitada konto sulle.
+    login_with_auth_provider: või logi sisse oma olemasoleva kontoga
   actionview_instancetag_blank_option: Palun vali
   activerecord:
     attributes:
@@ -106,9 +113,8 @@ et:
       user:
         admin: Administraator
         auth_source: Autentimise viis
-        identity_url: OpenID URL
         language: Keel
-        last_login_on: Viimati sisselogitud
+        last_login_on: Last login
         mail_notification: Eposti märguandmed
         new_password: Uus parool
         password_confirmation: Kinnitamine
@@ -149,10 +155,10 @@ et:
         created_at: Loodud
       work_package:
         done_ratio: "% valmis"
-        fixed_version: Sihtversioon
+        fixed_version: Versioon
         parent: Pärineb teemast
         parent_issue: Pärineb teemast
-        parent_work_packae: Pärineb teemast
+        parent_work_package: Pärineb teemast
         priority: Prioriteet
         progress: "% valmis"
         responsible: Vastutaja
@@ -175,6 +181,8 @@ et:
         exclusion: on reserveeritud
         greater_than: peab olema suurem kui %{count}
         greater_than_or_equal_to: peab olema suurem või võrdne kui %{count}
+        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
+          length
         greater_than_start_date: peab olema alguskuupäevast hilisem
         inclusion: ei ole nimistus
         invalid: ei sobi
@@ -207,7 +215,7 @@ et:
             parent_id:
               cannot_be_milestone: ei sobi verstapostiks
               cannot_be_in_another_project: ei saa esineda teises projektis
-              not_a_valid_parent: is invaild
+              not_a_valid_parent: ei sobi
               does_not_exist: pole olemas
             status_id:
               status_transition_invalid: Praeguse kasutaja rollide jaoks ei leidu
@@ -259,6 +267,7 @@ et:
       wiki: Viki
       wiki_page: Viki leht
       workflow: Töövoog
+      work_package: Teema
   errors:
     header_invalid_fields: 'Järgmiste väljadega esines tõrkeid:'
   activity:
@@ -462,6 +471,10 @@ et:
       x_seconds:
         one: 1 sekund
         other: "%{count} sekundit"
+    units:
+      hour:
+        one: hour
+        other: hours
   default_activity_management: Management
   default_activity_design: Kavandamine
   default_activity_development: Arendamine
@@ -523,7 +536,6 @@ et:
   description_message_content: Sõnumi sisu
   description_my_project: Oled liige
   description_notes: Märkmed
-  description_option_toggle: Show/Hide options
   description_parent_work_package: Teema sisaldub teises teemas
   description_project_scope: Otsingu ulatus
   description_query_sort_criteria_attribute: Sortimise alus
@@ -532,7 +544,6 @@ et:
   description_select_work_package: Vali teema
   description_selected_columns: Valitud väljad
   description_sub_work_package: Teema sisaldab alamteemasid
-  description_subwork_package: Sub work package of
   description_toc_toggle: Kuva/peida sisukord
   description_user_mail_notification: E-posti teatise seaded
   description_wiki_subpages_reassign: Vali uus ülemleht
@@ -544,6 +555,7 @@ et:
   error_can_not_archive_project: Seda projekti ei saa arhiveerida
   error_can_not_delete_custom_field: Lisavälja ei saa kustutada
   error_can_not_delete_type: Tüüp on mõnes teemas kasutusel ja seda ei saa kustutada.
+  error_can_not_delete_standard_type: Standardseid tüüpe ei saa kustutada.
   error_can_not_remove_role: See roll on kasutuses ja seda ei saa kustutada.
   error_can_not_reopen_work_package_on_closed_version: Suletud versiooni juurde kuulunud
     teemat ei saa taasavada
@@ -557,6 +569,8 @@ et:
     üle ("Seadistused -> Teemade olekud").
   error_no_type_in_project: "Ühtegi tüüpi ei ole seotud selle projektiga. Palun kontrolli
     projekti seadeid."
+  error_omniauth_registration_timed_out: Registreerimine välise autentija kaudu aegus.
+    Palun proovi uuesti.
   error_scm_annotate: Sissekannet pole olemas või ei saa seda annoteerida.
   error_scm_command_failed: 'Juurdepääsu katsel versioonihalduse süsteemile ilmnes
     tõrge: %{value}'
@@ -570,6 +584,8 @@ et:
   error_workflow_copy_target: Palun vali sihtpunkti tüübid ja rollid
   error_menu_item_not_created: Menüü üksust ei saanud lisada
   error_menu_item_not_saved: Menüü üksust ei saanud salvestada
+  error_external_authentication_failed: Välisel autentimisel ilmnes tõrge. Palun proovi
+    uuesti.
   events:
     project: Projekti on muudetud
     changeset: Toimikut on muudetud
@@ -587,65 +603,17 @@ et:
   general_first_day_of_week: '1'
   general_lang_name: Eesti
   general_pdf_encoding: ISO-8859-1
-  general_text_No: Ei
-  general_text_Yes: Jah
   general_text_no: ei
   general_text_yes: jah
+  general_text_No: Ei
+  general_text_Yes: Jah
   gui_validation_error: 1 viga
   gui_validation_error_plural: "%{count} viga"
-  js:
-    unsupported_browser:
-      title: Your browser is not supported
-      message: The browser you are using is no longer supported by OpenProject. Please
-        update your browser.
-      learn_more: Loe rohkem
-    logoff: You have been logged off
-    redirect_login: Do you want to be redirected to the login page?
-    ajax:
-      hide: Peida
-      loading: Loading ...
-    select2:
-      input_too_short:
-        one: Please enter one more character
-        other: Please enter {{count}} more characters
-        zero: Please enter more characters
-      load_more: Loading more results ...
-      no_matches: No matches found
-      searching: Searching ...
-      selection_too_big:
-        one: You can only select one item
-        other: You can only select {{limit}} items
-        zero: You cannot select any items
-    timelines:
-      tooManyProjects: More than %{count} Projects. Please use a better filter!
-      cancel: Tühista
-      save: Salvesta
-      due_date: Tähtaeg
-      name: Nimi
-      project_status: Projekti olek
-      project_type: Projekti tüüp
-      responsible: Vastutaja
-      start_date: Alguskuupäev
-      error: An error has occured.
-      create_planning_select_project: 'Project:'
-      really_close_dialog: Do you really want to close the dialog and loose the entered
-        data?
-      zoom_slider: Zoom slider
-    filter:
-      noneElement: "(pole)"
-      noneSelection: "(pole)"
-    button_check_all: Märgi kõik
-    button_uncheck_all: Nulli valik
-    label_collapsed: collapsed
-    label_expanded: expanded
-    label_collapse_all: Ahenda kõik
-    label_expand_all: Voldi kõik lahti
-    label_menu_item_toggle: Show/hide submenu items
-    label_menu_collapse: collapse
-    label_menu_expand: expand
-    tl_toolbar:
-      zooms: Zoom level
-      outlines: Hierarchy level
+  instructions_after_registration: You can sign in as soon as your account has been
+    activated by clicking %{signin}.
+  instructions_after_logout: You can sign in again by clicking %{signin}.
+  instructions_after_error: You can try to sign in again by clicking %{signin}. If
+    the error persists, ask your admin for help.
   label_account: Konto
   label_activity: Tegevus
   label_add_another_file: Lisa veel mõni fail
@@ -664,7 +632,6 @@ et:
   label_age: Vanus
   label_ago: päeva tagasi
   label_all: kõik
-  label_all_work_packages: all work packages
   label_all_time: kogu aeg
   label_all_words: Kõik sõnad
   label_and_its_subprojects: "%{value} ja selle alamprojektid"
@@ -709,7 +676,7 @@ et:
   label_close_versions: Sule lõpetatud versioonid
   label_closed_work_packages: suletud
   label_collapse: Koonda
-  label_collapse_all: Ahenda kõik
+  label_configuration: configuration
   label_comment_add: Lisa kommentaar
   label_comment_added: Kommentaar lisatud
   label_comment_delete: Kustuta kommentaarid
@@ -763,8 +730,6 @@ et:
   label_environment: Keskkond
   label_equals: võrdub
   label_example: Näide
-  label_expand: Expand
-  label_expand_all: Voldi kõik lahti
   label_export_to: 'Saadaval ka:'
   label_f_hour: "%{value} tund"
   label_f_hour_plural: "%{value} tundi"
@@ -787,6 +752,7 @@ et:
   label_group_new: Uus rühm
   label_group_plural: Rühmad
   label_help: Abi
+  label_here: here
   label_hide: Peida
   label_history: Ajalugu
   label_home: Avaleht
@@ -824,7 +790,7 @@ et:
   label_jump_to_a_project: Mine projekti...
   label_language_based: Põhineb kasutaja keelel
   label_last_changes: "%{count} viimast muudatust"
-  label_last_login: Viimati sisselogitud
+  label_last_login: Last login
   label_last_month: eelmisel kuul
   label_last_n_days: viimasel %{count} päeval
   label_last_week: eelmisel nädalal
@@ -837,7 +803,6 @@ et:
   label_loading: Laadimine...
   label_logged_as: Logitud sisse kui
   label_login: Logi sisse
-  label_login_with_open_id_option: or login with OpenID
   label_logout: Logi välja
   label_main_menu: "Ääremenüü"
   label_max_size: Maksimaalne suurus
@@ -886,6 +851,7 @@ et:
   label_not_contains: ei sisalda
   label_not_equals: ei ole
   label_notify_member_plural: Saada liikmetele teavitused e-kirjaga
+  label_open_menu: Ava menüü
   label_open_work_packages: avatud
   label_open_work_packages_plural: avatud
   label_optional_description: Kirjeldus
@@ -893,7 +859,7 @@ et:
   label_overall_activity: "Üldine tegevuste ajalugu"
   label_overall_spent_time: Kokku kulutatud aeg
   label_overview: "Ülevaade"
-  label_password_lost: Lost password
+  label_password_lost: Unustasid parooli
   label_password_rule_lowercase: Väiketäheline
   label_password_rule_numeric: Numbrid
   label_password_rule_special: Erimärgid
@@ -927,7 +893,8 @@ et:
   label_query_plural: Kohandatud päringud
   label_query_menu_item: Päringu menüüvalik
   label_read: Loe...
-  label_register: Register
+  label_register: Registreeru
+  label_register_with_developer: Registreeru kui arendaja
   label_registered_on: Registreeritud
   label_registration_activation_by_email: konto aktiveerimine e-posti teel
   label_registration_automatic_activation: automaatne konto aktiveerimine
@@ -986,7 +953,6 @@ et:
   label_subproject_new: Uus alamprojekt
   label_subproject_plural: Alamprojektid
   label_subtask_plural: Alamteemad
-  label_sum_for: Sum for %{value}
   label_summary: Kokkuvõte
   label_system: Süsteem
   label_table_of_contents: Sisukord
@@ -1075,6 +1041,9 @@ et:
     zero: no projects
   label_year: Aasta
   label_yesterday: eile
+  label_keyboard_function: Funktsioon
+  label_keyboard_shortcut: Otsetee
+  label_keyboard_accesskey: Kiirklahv
   label_keyboard_shortcut_help_heading: Saadavalolevad kiirklahvid
   label_keyboard_shortcut_within_project: 'Projektiga seotud kiirklahvid:'
   label_keyboard_shortcut_global_shortcuts: 'Igal pool töötavad kiirklahvid:'
@@ -1098,6 +1067,8 @@ et:
     vaid valitud loendites)
   label_keyboard_shortcut_focus_next_item: Liigu järgmisele loendi elemendile (töötab
     vaid valitud loendites)
+  macro_execution_error: Error executing the macro %{macro_name}
+  macro_unavailable: Macro %{macro_name} cannot be displayed.
   mail_body_account_activation_request: 'Uus kasutaja (%{value}) on registreerunud.
     Konto aktiveerimine ootab sinu nõusolekut:'
   mail_body_account_information: Sinu konto andmed
@@ -1121,8 +1092,6 @@ et:
   noscript_heading: JavaScript ei ole sisselülitatud
   noscript_learn_more: Loe rohkem
   notice_account_activated: Su konto on aktiveeritud. Saad nüüd sisse logida.
-  notice_account_inactive: Sinu konto ei ole veel aktiivne. Sulle saadetud e-kirjas
-    on link, millega saad oma konto aktiveerida.
   notice_account_invalid_credentials: Vale kasutajanimi või parool
   notice_account_invalid_credentials_or_blocked: Sisestatud kasutajanimi ja parool
     ei ole õiged või on kasutajakonto blokeeritud mitmekordse nurjunud sisselogimiskatse
@@ -1140,6 +1109,8 @@ et:
     konto sätteid.
   notice_account_updated: Konto on õnnelikult uuendatud.
   notice_account_wrong_password: Vale parool
+  notice_account_registered_and_logged_in: Tere, teie konto on aktiveeritud. Teid
+    logitakse nüüd sisse.
   notice_api_access_key_reseted: Sinu API juurdepääsuvõti nulliti.
   notice_can_t_change_password: See konto kasutab välist autentimisallikat. Siin ei
     saa selle konto parooli vahetada.
@@ -1174,6 +1145,7 @@ et:
   notice_unable_delete_time_entry: Ajakulu sissekande kustutamine ei õnnestunud.
   notice_unable_delete_version: Versiooni kustutamine ei õnnestunud.
   notice_automatic_set_of_standard_type: Vaikimisi tüüp valitakse automaatselt.
+  notice_logged_out: You have been logged out.
   error_types_in_use_by_work_packages: 'Mõned teemad viitavad järgmistele tüüpidele:
     %{types}'
   number:
@@ -1329,7 +1301,6 @@ et:
   setting_mail_handler_api_key: Veebiteenuse API võti
   setting_mail_handler_body_delimiters: Kärbi e-kirja lõpp peale sellist rida
   setting_new_project_user_role_id: Projekti looja vaikimisi roll oma loodud projektis
-  setting_openid: Allow OpenID login and registration
   setting_password_active_rules: Võimaldatud tähemärgid
   setting_password_count_former_banned: Arv kordi kui eelnevalt kasutatud parooli
     kasutamine on keelatud
@@ -1430,6 +1401,8 @@ et:
   text_no_configuration_data: |-
     Rollid, valdkonnad, olekud ja töövood ei ole veel seadistatud.
     Väga soovitav on laadida vaikeasetused. Peale laadimist saad neid ise muuta.
+  text_notice_too_many_values_are_inperformant: 'Note: Displaying more than 100 items
+    per page can increase the page load time.'
   text_own_membership_delete_confirmation: |
     Sa võtad endalt ära osa või kõik õigused ega saa edaspidi seda projekti võib-olla enam muuta.
     Oled sa jätkamises kindel?
@@ -1444,7 +1417,6 @@ et:
   text_regexp_info: ehk teisisõnu ^[A-Z0-9]+$
   text_repository_usernames_mapping: Seosta OpenProject kasutaja hoidlasse sissekannete
     tegijaga. Sama nime või e-postiga kasutajad seostatakse automaatselt.
-  text_rmagick_available: RMagick available (optional)
   text_select_mail_notifications: Tegevused, millest peaks e-kirjaga teavitama.
   text_select_project_modules: 'Projektis kasutatavad moodulid:'
   text_status_changed_by_changeset: Kehtestati toimikus %{value}.
@@ -1510,8 +1482,8 @@ et:
     edit_color: Muuda värvi
     edit_project_type: Muuda projekti tüüpi
     edit_thing: Muuda
-    edit_timeline: Edit timeline report
-    delete_timeline: Delete timeline report
+    edit_timeline: Muuda ajakulu sissekannet %{timeline}
+    delete_timeline: Kustuta ajakulu aruanne %{timeline}
     empty: "(tühi)"
     enable_type_in_project: Luba kasutada tüüpi "%{type}" projektis
     end: Lõpp
@@ -1583,9 +1555,11 @@ et:
       project_time_filter: Projektid teatud teema tüübiga ja teatud ajakavaga
       project_time_filter_absolute_timeframe: Absoluutne ajakava
       project_time_filter_relative_timeframe: Suhteline ajakava
-      project_time_filter_historical: from %{startdate} to %{enddate}
-      project_time_filter_relative: from %{startspan}%{startspanunit} ago, to %{endspan}%{endspanunit}
-        from now
+      project_time_filter_historical_from: alates
+      project_time_filter_historical_to: kuni
+      project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
+      project_time_filter_relative: "%{start_label} %{startspan}%{startspanunit} tagasi,
+        %{end_label} %{endspan}%{endspanunit} praegusest"
       project_filters: Filtreeri projektid
       project_responsible: Näita projektid mis kuuluvad
       project_status: Kuva projekti olek
@@ -1668,6 +1642,10 @@ et:
     active: aktiivne
     activate: Aktiveerimine
     activate_and_reset_failed_logins: Aktiveeri ja unusta ebaõnnestunud sisselogimised
+    authentication_provider: Autentimisteenuse pakkuja
+    authentication_settings_disabled_due_to_external_authentication: See kasutaja
+      autendib end välise autentimisteenuse pakkuja abil, seega ei saa parooli OpenProject'is
+      muuta.
     assign_random_password: Määratakse juhuslik parool (saadetakse kasutajale e-posti
       teel)
     blocked: ajutiselt blokeeritud
@@ -1684,9 +1662,16 @@ et:
     status_user_and_brute_force: "%{user} ja %{brute_force}"
     unlock: Ava lukust
     unlock_and_reset_failed_logins: Aktiveeri ja lähtesta ebaõnnestunud sisselogimised
+    no_login: This user authenticates through login by password. Since it is disabled,
+      they cannot log in.
+    password_change_unsupported: Change of password is not supported.
+    authorization_rejected: You are not allowed to sign in.
   version_status_closed: suletud
   version_status_locked: lukustatud
   version_status_open: avatud
+  note: Note
+  note_password_login_disabled: Password login has been disabled by %{configuration}.
+  warning: Warning
   warning_attachments_not_saved: "%{count} faili ei saa salvestada."
   menu_item: Menüüvalik
   menu_item_setting: Nähtavus

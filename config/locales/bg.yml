@@ -33,6 +33,13 @@ bg:
           longer be able to log in with your current credentials. If you choose to
           become a user of this application again, you can do so by using the means
           this application grants.
+    error_inactive_activation_by_mail: Your account has not yet been activated. To
+      activate your account, click on the link that was emailed to you.
+    error_inactive_manual_activation: Your account has not yet been activated. Please
+      wait for an administrator to activate your account.
+    error_self_registration_disabled: User registration is disabled on this system.
+      Please ask an administrator to create an account for you.
+    login_with_auth_provider: or sign in with your existing account
   actionview_instancetag_blank_option: "Моля изберете"
   activerecord:
     attributes:
@@ -108,9 +115,8 @@ bg:
       user:
         admin: Administrator
         auth_source: Authentication mode
-        identity_url: OpenID Адрес
         language: Language
-        last_login_on: "Последната връзка"
+        last_login_on: Last login
         mail_notification: Email notifications
         new_password: New password
         password_confirmation: Confirmation
@@ -151,10 +157,10 @@ bg:
         created_at: Created
       work_package:
         done_ratio: "% done"
-        fixed_version: "Целева версия"
+        fixed_version: Version
         parent: Parent
         parent_issue: Parent
-        parent_work_packae: Parent
+        parent_work_package: Parent
         priority: Priority
         progress: "% done"
         responsible: Responsible
@@ -177,6 +183,8 @@ bg:
         exclusion: is reserved
         greater_than: must be greater than %{count}
         greater_than_or_equal_to: must be greater than or equal to %{count}
+        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
+          length
         greater_than_start_date: must be greater than start date
         inclusion: is not included in the list
         invalid: is invalid
@@ -210,7 +218,7 @@ bg:
             parent_id:
               cannot_be_milestone: cannot be a milestone
               cannot_be_in_another_project: cannot be in another project
-              not_a_valid_parent: "е невалидно"
+              not_a_valid_parent: is invalid
               does_not_exist: does not exist
             status_id:
               status_transition_invalid: no valid transition exists from old to new
@@ -263,6 +271,7 @@ bg:
       wiki: Wiki
       wiki_page: Wiki page
       workflow: Workflow
+      work_package: Work package
   errors:
     header_invalid_fields: 'There were problems with the following fields:'
   activity:
@@ -338,7 +347,7 @@ bg:
   button_list: List
   button_lock: Lock
   button_log_time: Log time
-  button_login: Login
+  button_login: Sign in
   button_move: Move
   button_move_and_follow: Move and follow
   button_quote: Quote
@@ -464,6 +473,10 @@ bg:
       x_seconds:
         one: 1 second
         other: "%{count} seconds"
+    units:
+      hour:
+        one: hour
+        other: hours
   default_activity_management: "Управление"
   default_activity_design: Design
   default_activity_development: Development
@@ -525,7 +538,6 @@ bg:
   description_message_content: Message content
   description_my_project: You are member
   description_notes: Notes
-  description_option_toggle: "Показване/скриване на опциите"
   description_parent_work_package: Parent work package of current
   description_project_scope: Search scope
   description_query_sort_criteria_attribute: Sort attribute
@@ -534,7 +546,6 @@ bg:
   description_select_work_package: Select work package
   description_selected_columns: Selected Columns
   description_sub_work_package: Sub work package of current
-  description_subwork_package: "Под работен пакет на"
   description_toc_toggle: Show/Hide table of contents
   description_user_mail_notification: Mail notification settings
   description_wiki_subpages_reassign: Choose new parent page
@@ -546,6 +557,7 @@ bg:
   error_can_not_archive_project: This project cannot be archived
   error_can_not_delete_custom_field: Unable to delete custom field
   error_can_not_delete_type: This type contains work packages and cannot be deleted.
+  error_can_not_delete_standard_type: Standard types cannot be deleted.
   error_can_not_remove_role: This role is in use and cannot be deleted.
   error_can_not_reopen_work_package_on_closed_version: A work package assigned to
     a closed version cannot be reopened
@@ -559,6 +571,8 @@ bg:
     Please check your configuration (Go to "Administration -> Work package statuses").
   error_no_type_in_project: No type is associated to this project. Please check the
     Project settings.
+  error_omniauth_registration_timed_out: The registration via an external authentication
+    provider timed out. Please try again.
   error_scm_annotate: The entry does not exist or cannot be annotated.
   error_scm_command_failed: 'An error occurred when trying to access the repository:
     %{value}'
@@ -572,6 +586,8 @@ bg:
   error_workflow_copy_target: Please select target type(s) and role(s)
   error_menu_item_not_created: Menu item could not be added
   error_menu_item_not_saved: Menu item could not be saved
+  error_external_authentication_failed: An error occured during external authentication.
+    Please try again.
   events:
     project: Project edited
     changeset: Changeset edited
@@ -587,68 +603,19 @@ bg:
   general_csv_encoding: UTF-8
   general_csv_separator: ","
   general_first_day_of_week: '7'
-  general_lang_name: English
+  general_lang_name: "Български"
   general_pdf_encoding: ISO-8859-1
-  general_text_No: 'No'
-  general_text_Yes: 'Yes'
   general_text_no: 'no'
   general_text_yes: 'yes'
+  general_text_No: 'No'
+  general_text_Yes: 'Yes'
   gui_validation_error: 1 error
   gui_validation_error_plural: "%{count} errors"
-  js:
-    unsupported_browser:
-      title: "Вашият браузър не се поддържа"
-      message: "Браузъра, който използвате не се поддържа от OpenProject. Актуализирайте
-        вашия браузър."
-      learn_more: Learn more
-    logoff: "Вие излязохте"
-    redirect_login: "Искате ли да бъдете пренасочени към страницата за вход?"
-    ajax:
-      hide: Hide
-      loading: "Зареждане ..."
-    select2:
-      input_too_short:
-        one: "Моля, въведете още един знак"
-        other: "Моля, въведете още {{count}} знаци"
-        zero: Please enter more characters
-      load_more: "Зареждане на още резултати..."
-      no_matches: "Не са намерени съвпадения"
-      searching: "Търсене..."
-      selection_too_big:
-        one: "Можете да изберете само един елемент"
-        other: "Можете да изберете само {{limit}} елементта"
-        zero: You cannot select any items
-    timelines:
-      tooManyProjects: "Намерени са повече от %{count} проекта. Моля, използвайте
-        по-точен филтър!"
-      cancel: Cancel
-      save: Save
-      due_date: Due date
-      name: Name
-      project_status: Project status
-      project_type: Project type
-      responsible: Responsible
-      start_date: Start date
-      error: "Възникна грешка."
-      create_planning_select_project: "Проект:"
-      really_close_dialog: "Наистина ли искате да затворите диалоговия прозорец и
-        да загубите въведените данни?"
-      zoom_slider: "Плъзгач за мащабиране"
-    filter:
-      noneElement: "(none)"
-      noneSelection: "(none)"
-    button_check_all: Check all
-    button_uncheck_all: Uncheck all
-    label_collapsed: "свита"
-    label_expanded: "разширена"
-    label_collapse_all: Collapse all
-    label_expand_all: Expand all
-    label_menu_item_toggle: "Покажи/Скрий подменю позиции"
-    label_menu_collapse: "събери"
-    label_menu_expand: "разтвори"
-    tl_toolbar:
-      zooms: "Ниво на мащабиране"
-      outlines: "Йерархично ниво"
+  instructions_after_registration: You can sign in as soon as your account has been
+    activated by clicking %{signin}.
+  instructions_after_logout: You can sign in again by clicking %{signin}.
+  instructions_after_error: You can try to sign in again by clicking %{signin}. If
+    the error persists, ask your admin for help.
   label_account: "Акаунт"
   label_activity: Activity
   label_add_another_file: Add another file
@@ -667,7 +634,6 @@ bg:
   label_age: Age
   label_ago: days ago
   label_all: all
-  label_all_work_packages: "всички работни пакети"
   label_all_time: all time
   label_all_words: All words
   label_and_its_subprojects: "%{value} and its subprojects"
@@ -712,7 +678,7 @@ bg:
   label_close_versions: Close completed versions
   label_closed_work_packages: closed
   label_collapse: Collapse
-  label_collapse_all: Collapse all
+  label_configuration: configuration
   label_comment_add: Add a comment
   label_comment_added: Comment added
   label_comment_delete: Delete comments
@@ -765,8 +731,6 @@ bg:
   label_environment: Environment
   label_equals: is
   label_example: Example
-  label_expand: "Разтвори"
-  label_expand_all: Expand all
   label_export_to: 'Also available in:'
   label_f_hour: "%{value} hour"
   label_f_hour_plural: "%{value} hours"
@@ -789,6 +753,7 @@ bg:
   label_group_new: New group
   label_group_plural: Groups
   label_help: Help
+  label_here: here
   label_hide: Hide
   label_history: History
   label_home: Home
@@ -827,7 +792,7 @@ bg:
   label_jump_to_a_project: Jump to a project...
   label_language_based: Based on user's language
   label_last_changes: last %{count} changes
-  label_last_login: "Последната връзка"
+  label_last_login: Last login
   label_last_month: last month
   label_last_n_days: last %{count} days
   label_last_week: last week
@@ -840,7 +805,6 @@ bg:
   label_loading: Loading...
   label_logged_as: Logged in as
   label_login: Sign in
-  label_login_with_open_id_option: "или влезте с OpenID"
   label_logout: Sign out
   label_main_menu: Side Menu
   label_max_size: Maximum size
@@ -889,6 +853,7 @@ bg:
   label_not_contains: doesn't contain
   label_not_equals: is not
   label_notify_member_plural: Email updates
+  label_open_menu: Open menu
   label_open_work_packages: open
   label_open_work_packages_plural: open
   label_optional_description: Description
@@ -896,7 +861,7 @@ bg:
   label_overall_activity: Overall activity
   label_overall_spent_time: Overall spent time
   label_overview: Overview
-  label_password_lost: "Загубена парола"
+  label_password_lost: Forgot your password?
   label_password_rule_lowercase: Lowercase
   label_password_rule_numeric: Numeric Characters
   label_password_rule_special: Special Characters
@@ -930,7 +895,8 @@ bg:
   label_query_plural: Custom queries
   label_query_menu_item: Query menu item
   label_read: Read...
-  label_register: "Регистрация"
+  label_register: Create a new account
+  label_register_with_developer: Register as developer
   label_registered_on: Registered on
   label_registration_activation_by_email: account activation by email
   label_registration_automatic_activation: automatic account activation
@@ -989,7 +955,6 @@ bg:
   label_subproject_new: New subproject
   label_subproject_plural: Subprojects
   label_subtask_plural: Subtasks
-  label_sum_for: "Сума за %{value}"
   label_summary: Summary
   label_system: System
   label_table_of_contents: Table of Contents
@@ -1077,6 +1042,9 @@ bg:
     zero: no projects
   label_year: Year
   label_yesterday: yesterday
+  label_keyboard_function: Function
+  label_keyboard_shortcut: Shortcut
+  label_keyboard_accesskey: Accesskey
   label_keyboard_shortcut_help_heading: Available Keyboard Shortcuts
   label_keyboard_shortcut_within_project: 'Project related shortcuts:'
   label_keyboard_shortcut_global_shortcuts: 'Global shortcuts:'
@@ -1101,6 +1069,8 @@ bg:
     lists only)
   label_keyboard_shortcut_focus_next_item: Focus next list element (on some lists
     only)
+  macro_execution_error: Error executing the macro %{macro_name}
+  macro_unavailable: Macro %{macro_name} cannot be displayed.
   mail_body_account_activation_request: 'A new user (%{value}) has registered. The
     account is pending your approval:'
   mail_body_account_information: Your account information
@@ -1123,8 +1093,6 @@ bg:
   noscript_heading: JavaScript disabled
   noscript_learn_more: Learn more
   notice_account_activated: Your account has been activated. You can now log in.
-  notice_account_inactive: Your account has not yet been activated. To activate your
-    account, click on the link that was emailed to you.
   notice_account_invalid_credentials: Invalid user or password
   notice_account_invalid_credentials_or_blocked: Invalid user or password or the account
     is blocked due to multiple failed login attempts. If so, it will be unblocked
@@ -1144,6 +1112,8 @@ bg:
     look at your account page.
   notice_account_updated: Account was successfully updated.
   notice_account_wrong_password: Wrong password
+  notice_account_registered_and_logged_in: Welcome, your account has been activated.
+    You are logged in now.
   notice_api_access_key_reseted: Your API access key was reset.
   notice_can_t_change_password: This account uses an external authentication source.
     Impossible to change the password.
@@ -1183,6 +1153,7 @@ bg:
   notice_unable_delete_time_entry: Unable to delete time log entry.
   notice_unable_delete_version: Unable to delete version.
   notice_automatic_set_of_standard_type: Set standard type automatically.
+  notice_logged_out: You have been logged out.
   error_types_in_use_by_work_packages: 'The following types are still referenced by
     work packages: %{types}'
   number:
@@ -1336,7 +1307,6 @@ bg:
   setting_mail_handler_api_key: API key
   setting_mail_handler_body_delimiters: Truncate emails after one of these lines
   setting_new_project_user_role_id: Role given to a non-admin user who creates a project
-  setting_openid: "Позволи ползването на OpenID за вход и регистрация"
   setting_password_active_rules: Active character classes
   setting_password_count_former_banned: Number of most recently used passwords banned
     for reuse
@@ -1432,6 +1402,8 @@ bg:
   text_no_configuration_data: |
     Roles, types, work package statuses and workflow have not been configured yet.
     It is highly recommended to load the default configuration. You will be able to modify it once loaded.
+  text_notice_too_many_values_are_inperformant: 'Note: Displaying more than 100 items
+    per page can increase the page load time.'
   text_own_membership_delete_confirmation: |
     You are about to remove some or all of your permissions and may no longer be able to edit this project after that.
     Are you sure you want to continue?
@@ -1447,7 +1419,6 @@ bg:
   text_repository_usernames_mapping: |
     Select or update the OpenProject user mapped to each username found in the repository log.
     Users with the same OpenProject and repository username or email are automatically mapped.
-  text_rmagick_available: RMagick e в наличност (по избор)
   text_select_mail_notifications: Select actions for which email notifications should
     be sent.
   text_select_project_modules: 'Select modules to enable for this project:'
@@ -1515,8 +1486,8 @@ bg:
     edit_color: Edit color
     edit_project_type: Edit project type
     edit_thing: Edit
-    edit_timeline: "Редактиране на отчет за времевата скала"
-    delete_timeline: "Изтриване на отчет на времевата скала"
+    edit_timeline: Edit timeline report %{timeline}
+    delete_timeline: Delete timeline report %{timeline}
     empty: "(empty)"
     enable_type_in_project: Enable type "%{type}"
     end: End
@@ -1593,9 +1564,11 @@ bg:
         timeframe
       project_time_filter_absolute_timeframe: Absolute timeframe
       project_time_filter_relative_timeframe: Relative timeframe
-      project_time_filter_historical: "от %{startdate} до %{enddate}"
-      project_time_filter_relative: "от преди %{startspan}%{startspanunit}, спрямо
-        %{endspan}%{endspanunit} от сега"
+      project_time_filter_historical_from: from
+      project_time_filter_historical_to: to
+      project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
+      project_time_filter_relative: "%{start_label} %{startspan}%{startspanunit} ago,
+        %{end_label} %{endspan}%{endspanunit} from now"
       project_filters: Filter projects
       project_responsible: Show projects with responsible
       project_status: Show project status
@@ -1679,6 +1652,10 @@ bg:
     active: active
     activate: Activate
     activate_and_reset_failed_logins: Activate and reset failed logins
+    authentication_provider: Authentication Provider
+    authentication_settings_disabled_due_to_external_authentication: This user authenticates
+      via an external authentication provider, so there is no password in OpenProject
+      to be changed.
     assign_random_password: Assign random password (sent to user via e-mail)
     blocked: locked temporarily
     blocked_num_failed_logins:
@@ -1694,9 +1671,16 @@ bg:
     status_user_and_brute_force: "%{user} and %{brute_force}"
     unlock: Unlock
     unlock_and_reset_failed_logins: Unlock and reset failed logins
+    no_login: This user authenticates through login by password. Since it is disabled,
+      they cannot log in.
+    password_change_unsupported: Change of password is not supported.
+    authorization_rejected: You are not allowed to sign in.
   version_status_closed: closed
   version_status_locked: locked
   version_status_open: open
+  note: Note
+  note_password_login_disabled: Password login has been disabled by %{configuration}.
+  warning: Warning
   warning_attachments_not_saved: "%{count} file(s) could not be saved."
   menu_item: Menu item
   menu_item_setting: Visibility

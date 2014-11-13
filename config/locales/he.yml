@@ -27,6 +27,13 @@ he:
         self: "חשבונך יימחק מהמערכת. לפיכך, לא תוכל להכנס באמצעות האישור הקיים. אם
           תבחר להפוך למשתמש של האפליקצייה שוב, תוכל לעשות זאת שוב על-ידי האפשרויות
           השאפליקצייה מאפשרת."
+    error_inactive_activation_by_mail: "החשבון שלך עדיין לא הופעל. כדי להפעיל את חשבונך,
+      לחץ על הקישור שנשלח לדוא״ל שלך."
+    error_inactive_manual_activation: "החשבון שלך עדיין לא הופעל. אנא המתן לפעלת חשבונך
+      על-ידי מנהל המערכת."
+    error_self_registration_disabled: "רישום משתמש אינה אפשרית במערכת זו. אנא בקש
+      ממנהל מערכת שיצור חשבון עבורך."
+    login_with_auth_provider: "או היכנס באמצעות החשבון הקיים שלך"
   actionview_instancetag_blank_option: "אנא בחר"
   activerecord:
     attributes:
@@ -102,9 +109,8 @@ he:
       user:
         admin: "מנהל מערכת"
         auth_source: "מצב אימות"
-        identity_url: OpenID URL
         language: "שפה"
-        last_login_on: "חיבור אחרון"
+        last_login_on: Last login
         mail_notification: "התראות דוא\"ל"
         new_password: "סיסמה חדשה"
         password_confirmation: "אימות"
@@ -145,10 +151,10 @@ he:
         created_at: "נוצר"
       work_package:
         done_ratio: "% נעשה"
-        fixed_version: "גירסת היעד"
+        fixed_version: "גירסה"
         parent: "אב"
         parent_issue: "אב"
-        parent_work_packae: "אב"
+        parent_work_package: "אב"
         priority: "עדיפות"
         progress: "% נעשה"
         responsible: "אחראי על"
@@ -171,6 +177,8 @@ he:
         exclusion: "שמור"
         greater_than: "חייב להיות גדול מ- %{count}"
         greater_than_or_equal_to: "חייב להיות גדול או שווה ל- %{count}"
+        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
+          length
         greater_than_start_date: "צריך להיות גדול יותר מאשר תאריך ההתחלה"
         inclusion: "אינו נכלל ברשימה"
         invalid: "אינו חוקי"
@@ -203,7 +211,7 @@ he:
             parent_id:
               cannot_be_milestone: "לא יכול להיות אבן דרך"
               cannot_be_in_another_project: "לא יכול להיות בפרוייקט אחר"
-              not_a_valid_parent: is invaild
+              not_a_valid_parent: "אינו חוקי"
               does_not_exist: "לא קיים"
             status_id:
               status_transition_invalid: "אין העברה חוקית מהסטטוס הישן לחדש עבור תפקידי
@@ -254,6 +262,7 @@ he:
       wiki: "ויקי"
       wiki_page: "דף ויקי"
       workflow: "זרימת עבודה"
+      work_package: "חבילת עבודה"
   errors:
     header_invalid_fields: "היו בעיות עם השדות הבאים:"
   activity:
@@ -455,6 +464,10 @@ he:
       x_seconds:
         one: "שנייה"
         other: "%{count} שניות"
+    units:
+      hour:
+        one: hour
+        other: hours
   default_activity_management: Management
   default_activity_design: "עיצוב"
   default_activity_development: "פיתוח"
@@ -515,7 +528,6 @@ he:
   description_message_content: "תוכן ההודעה"
   description_my_project: "הינך חבר"
   description_notes: "הערות"
-  description_option_toggle: Show/Hide options
   description_parent_work_package: "חבילת עבודה אב של הנוכחי"
   description_project_scope: "טווח החיפוש"
   description_query_sort_criteria_attribute: "מיין תכונה"
@@ -524,7 +536,6 @@ he:
   description_select_work_package: "בחר חבילת עבודה"
   description_selected_columns: "עמודות נבחרות"
   description_sub_work_package: "תת חבילת עבודה של הנוכחי"
-  description_subwork_package: Sub work package of
   description_toc_toggle: "הצגה/הסתרה של תוכן עניינים"
   description_user_mail_notification: "הגדרות הודעות דואר"
   description_wiki_subpages_reassign: "בחר דף אב חדש"
@@ -536,6 +547,7 @@ he:
   error_can_not_archive_project: "פרויקט זה לא יאוחסן בארכיון"
   error_can_not_delete_custom_field: "אין אפשרות למחוק שדה מותאם אישית"
   error_can_not_delete_type: "סוג זה מכיל חבילות עבודה, ואין יכול להמחק."
+  error_can_not_delete_standard_type: "אין אפשרות למחוק את הסוגים הסטנדרטיים."
   error_can_not_remove_role: "תפקיד זה נמצא בשימוש ואינו יכול להמחק."
   error_can_not_reopen_work_package_on_closed_version: "חבילת עבודה השייכת לגרסה שנסגרה
     אינה יכולה להפתח מחדש"
@@ -548,6 +560,8 @@ he:
   error_no_default_work_package_status: "אין הגדרת סטטוס ברירת מחדל לחבילת עבודה.
     אנא בדוק את ההגדרות שלך (לך אל ״ניהול -> סטטוסי חבילת עבודה״)."
   error_no_type_in_project: "אין סוג המשויך לפרויקט זה. אנא בדוק את הגדרות הפרוייקט."
+  error_omniauth_registration_timed_out: "הרישום באמצעותספק אימות חיצוני פג תוקף.
+    אנא נסה שוב."
   error_scm_annotate: "הערה לא קימת או שלא ניתן להוסף הערות."
   error_scm_command_failed: "אירעה שגיאה בעת ניסיון לגשת למאגר : %{value}"
   error_scm_not_found: The entry or revision was not found in the repository.
@@ -560,6 +574,8 @@ he:
   error_workflow_copy_target: Please select target type(s) and role(s)
   error_menu_item_not_created: Menu item could not be added
   error_menu_item_not_saved: Menu item could not be saved
+  error_external_authentication_failed: An error occured during external authentication.
+    Please try again.
   events:
     project: "הפרויקט נערך"
     changeset: "אוסף שינוים נערך"
@@ -577,65 +593,17 @@ he:
   general_first_day_of_week: '7'
   general_lang_name: "אנגלית"
   general_pdf_encoding: ISO-8859-1
-  general_text_No: "לא"
-  general_text_Yes: "כן"
   general_text_no: "לא"
   general_text_yes: "כן"
+  general_text_No: "לא"
+  general_text_Yes: "כן"
   gui_validation_error: "שגיאה אחת"
   gui_validation_error_plural: "%{count} שגיאות"
-  js:
-    unsupported_browser:
-      title: Your browser is not supported
-      message: The browser you are using is no longer supported by OpenProject. Please
-        update your browser.
-      learn_more: Learn more
-    logoff: You have been logged off
-    redirect_login: Do you want to be redirected to the login page?
-    ajax:
-      hide: Hide
-      loading: Loading ...
-    select2:
-      input_too_short:
-        one: Please enter one more character
-        other: Please enter {{count}} more characters
-        zero: Please enter more characters
-      load_more: Loading more results ...
-      no_matches: No matches found
-      searching: Searching ...
-      selection_too_big:
-        one: You can only select one item
-        other: You can only select {{limit}} items
-        zero: You cannot select any items
-    timelines:
-      tooManyProjects: More than %{count} Projects. Please use a better filter!
-      cancel: "ביטול"
-      save: "שמור"
-      due_date: "תאריך יעד"
-      name: "שם"
-      project_status: "מצב הפרוייקט"
-      project_type: "סוג פרוייקט"
-      responsible: "אחראי על"
-      start_date: "תאריך התחלה"
-      error: An error has occured.
-      create_planning_select_project: 'Project:'
-      really_close_dialog: Do you really want to close the dialog and loose the entered
-        data?
-      zoom_slider: Zoom slider
-    filter:
-      noneElement: "(none)"
-      noneSelection: "(none)"
-    button_check_all: "סמן את כולם"
-    button_uncheck_all: "נקה הכל"
-    label_collapsed: collapsed
-    label_expanded: expanded
-    label_collapse_all: "סגור הכל"
-    label_expand_all: "הרחב הכל"
-    label_menu_item_toggle: Show/hide submenu items
-    label_menu_collapse: collapse
-    label_menu_expand: expand
-    tl_toolbar:
-      zooms: Zoom level
-      outlines: Hierarchy level
+  instructions_after_registration: You can sign in as soon as your account has been
+    activated by clicking %{signin}.
+  instructions_after_logout: You can sign in again by clicking %{signin}.
+  instructions_after_error: You can try to sign in again by clicking %{signin}. If
+    the error persists, ask your admin for help.
   label_account: "חשבון"
   label_activity: "פעילות"
   label_add_another_file: "הוספת קובץ נוסף"
@@ -654,7 +622,6 @@ he:
   label_age: "גיל"
   label_ago: "ימים לפני"
   label_all: "כל"
-  label_all_work_packages: all work packages
   label_all_time: "כל הזמנים"
   label_all_words: "כל המילים"
   label_and_its_subprojects: "%{value} and its subprojects"
@@ -699,7 +666,7 @@ he:
   label_close_versions: "סגור גרסאות שהושלמו"
   label_closed_work_packages: "סגור"
   label_collapse: Collapse
-  label_collapse_all: "סגור הכל"
+  label_configuration: configuration
   label_comment_add: Add a comment
   label_comment_added: Comment added
   label_comment_delete: "מחק תגובות"
@@ -752,8 +719,6 @@ he:
   label_environment: "סביבה"
   label_equals: "הינו"
   label_example: "דוגמה"
-  label_expand: Expand
-  label_expand_all: "הרחב הכל"
   label_export_to: 'Also available in:'
   label_f_hour: "%{value} hour"
   label_f_hour_plural: "%{value} hours"
@@ -776,6 +741,7 @@ he:
   label_group_new: New group
   label_group_plural: Groups
   label_help: Help
+  label_here: here
   label_hide: Hide
   label_history: History
   label_home: Home
@@ -814,7 +780,7 @@ he:
   label_jump_to_a_project: "קפוץ אל פרוייקט..."
   label_language_based: Based on user's language
   label_last_changes: last %{count} changes
-  label_last_login: "חיבור אחרון"
+  label_last_login: Last login
   label_last_month: "חודש שעבר"
   label_last_n_days: last %{count} days
   label_last_week: "שבוע שעבר"
@@ -827,7 +793,6 @@ he:
   label_loading: "טוען..."
   label_logged_as: "מחובר בשם"
   label_login: "לוג-אין"
-  label_login_with_open_id_option: or login with OpenID
   label_logout: "התנתק"
   label_main_menu: "תפריט צד"
   label_max_size: "גודל מרבי"
@@ -876,6 +841,7 @@ he:
   label_not_contains: doesn't contain
   label_not_equals: is not
   label_notify_member_plural: Email updates
+  label_open_menu: Open menu
   label_open_work_packages: open
   label_open_work_packages_plural: open
   label_optional_description: "תיאור"
@@ -883,7 +849,7 @@ he:
   label_overall_activity: Overall activity
   label_overall_spent_time: Overall spent time
   label_overview: Overview
-  label_password_lost: Lost password
+  label_password_lost: Forgot your password?
   label_password_rule_lowercase: Lowercase
   label_password_rule_numeric: Numeric Characters
   label_password_rule_special: Special Characters
@@ -917,7 +883,8 @@ he:
   label_query_plural: Custom queries
   label_query_menu_item: Query menu item
   label_read: Read...
-  label_register: Register
+  label_register: Create a new account
+  label_register_with_developer: Register as developer
   label_registered_on: Registered on
   label_registration_activation_by_email: account activation by email
   label_registration_automatic_activation: automatic account activation
@@ -976,7 +943,6 @@ he:
   label_subproject_new: New subproject
   label_subproject_plural: Subprojects
   label_subtask_plural: Subtasks
-  label_sum_for: Sum for %{value}
   label_summary: "פירוט"
   label_system: System
   label_table_of_contents: Table of Contents
@@ -1064,6 +1030,9 @@ he:
     zero: no projects
   label_year: Year
   label_yesterday: yesterday
+  label_keyboard_function: Function
+  label_keyboard_shortcut: Shortcut
+  label_keyboard_accesskey: Accesskey
   label_keyboard_shortcut_help_heading: Available Keyboard Shortcuts
   label_keyboard_shortcut_within_project: 'Project related shortcuts:'
   label_keyboard_shortcut_global_shortcuts: 'Global shortcuts:'
@@ -1088,6 +1057,8 @@ he:
     lists only)
   label_keyboard_shortcut_focus_next_item: Focus next list element (on some lists
     only)
+  macro_execution_error: Error executing the macro %{macro_name}
+  macro_unavailable: Macro %{macro_name} cannot be displayed.
   mail_body_account_activation_request: 'A new user (%{value}) has registered. The
     account is pending your approval:'
   mail_body_account_information: Your account information
@@ -1110,8 +1081,6 @@ he:
   noscript_heading: JavaScript disabled
   noscript_learn_more: Learn more
   notice_account_activated: Your account has been activated. You can now log in.
-  notice_account_inactive: "החשבון שלך עדיין לא הופעל. כדי להפעיל את חשבונך, לחץ על
-    הקישור שנשלח לדוא״ל שלך."
   notice_account_invalid_credentials: Invalid user or password
   notice_account_invalid_credentials_or_blocked: Invalid user or password or the account
     is blocked due to multiple failed login attempts. If so, it will be unblocked
@@ -1131,6 +1100,8 @@ he:
     look at your account page.
   notice_account_updated: Account was successfully updated.
   notice_account_wrong_password: Wrong password
+  notice_account_registered_and_logged_in: Welcome, your account has been activated.
+    You are logged in now.
   notice_api_access_key_reseted: Your API access key was reset.
   notice_can_t_change_password: This account uses an external authentication source.
     Impossible to change the password.
@@ -1170,6 +1141,7 @@ he:
   notice_unable_delete_time_entry: Unable to delete time log entry.
   notice_unable_delete_version: Unable to delete version.
   notice_automatic_set_of_standard_type: Set standard type automatically.
+  notice_logged_out: You have been logged out.
   error_types_in_use_by_work_packages: 'The following types are still referenced by
     work packages: %{types}'
   number:
@@ -1323,7 +1295,6 @@ he:
   setting_mail_handler_api_key: API key
   setting_mail_handler_body_delimiters: Truncate emails after one of these lines
   setting_new_project_user_role_id: Role given to a non-admin user who creates a project
-  setting_openid: Allow OpenID login and registration
   setting_password_active_rules: Active character classes
   setting_password_count_former_banned: Number of most recently used passwords banned
     for reuse
@@ -1419,6 +1390,8 @@ he:
   text_no_configuration_data: |
     Roles, types, work package statuses and workflow have not been configured yet.
     It is highly recommended to load the default configuration. You will be able to modify it once loaded.
+  text_notice_too_many_values_are_inperformant: 'Note: Displaying more than 100 items
+    per page can increase the page load time.'
   text_own_membership_delete_confirmation: |
     You are about to remove some or all of your permissions and may no longer be able to edit this project after that.
     Are you sure you want to continue?
@@ -1434,7 +1407,6 @@ he:
   text_repository_usernames_mapping: |
     Select or update the OpenProject user mapped to each username found in the repository log.
     Users with the same OpenProject and repository username or email are automatically mapped.
-  text_rmagick_available: RMagick available (optional)
   text_select_mail_notifications: Select actions for which email notifications should
     be sent.
   text_select_project_modules: 'Select modules to enable for this project:'
@@ -1502,8 +1474,8 @@ he:
     edit_color: Edit color
     edit_project_type: Edit project type
     edit_thing: "עריכה"
-    edit_timeline: Edit timeline report
-    delete_timeline: Delete timeline report
+    edit_timeline: Edit timeline report %{timeline}
+    delete_timeline: Delete timeline report %{timeline}
     empty: "(empty)"
     enable_type_in_project: Enable type "%{type}"
     end: End
@@ -1580,9 +1552,11 @@ he:
         timeframe
       project_time_filter_absolute_timeframe: Absolute timeframe
       project_time_filter_relative_timeframe: Relative timeframe
-      project_time_filter_historical: from %{startdate} to %{enddate}
-      project_time_filter_relative: from %{startspan}%{startspanunit} ago, to %{endspan}%{endspanunit}
-        from now
+      project_time_filter_historical_from: from
+      project_time_filter_historical_to: to
+      project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
+      project_time_filter_relative: "%{start_label} %{startspan}%{startspanunit} ago,
+        %{end_label} %{endspan}%{endspanunit} from now"
       project_filters: Filter projects
       project_responsible: Show projects with responsible
       project_status: Show project status
@@ -1666,6 +1640,10 @@ he:
     active: active
     activate: Activate
     activate_and_reset_failed_logins: Activate and reset failed logins
+    authentication_provider: Authentication Provider
+    authentication_settings_disabled_due_to_external_authentication: This user authenticates
+      via an external authentication provider, so there is no password in OpenProject
+      to be changed.
     assign_random_password: Assign random password (sent to user via e-mail)
     blocked: locked temporarily
     blocked_num_failed_logins:
@@ -1681,9 +1659,16 @@ he:
     status_user_and_brute_force: "%{user} and %{brute_force}"
     unlock: "בטל נעילה"
     unlock_and_reset_failed_logins: Unlock and reset failed logins
+    no_login: This user authenticates through login by password. Since it is disabled,
+      they cannot log in.
+    password_change_unsupported: Change of password is not supported.
+    authorization_rejected: You are not allowed to sign in.
   version_status_closed: "סגור"
   version_status_locked: locked
   version_status_open: open
+  note: Note
+  note_password_login_disabled: Password login has been disabled by %{configuration}.
+  warning: Warning
   warning_attachments_not_saved: "%{count} file(s) could not be saved."
   menu_item: Menu item
   menu_item_setting: Visibility

@@ -34,6 +34,14 @@ it:
           grado di accedere con le tue credenziali correnti. Se in futuro sceglierai
           di diventare nuovamente utente di quest'applicazione, potrai farlo utilizzando
           i mezzi che questa applicazione concede.
+    error_inactive_activation_by_mail: Il tuo account non è stato ancora attivato.
+      Per attivare il tuo account, clicca sul link che ti è stato inviato via email.
+    error_inactive_manual_activation: Il tuo account non è stato ancora attivato.
+      Si prega di attendere che un amministratore lo attivi.
+    error_self_registration_disabled: Su questo sistema non è possibile registrare
+      nuovi utenti. Per cortesia, contatta l'amministratore e chiedigli di creare
+      un account per te.
+    login_with_auth_provider: o accedi con il tuo account esistente
   actionview_instancetag_blank_option: Perfavore seleziona
   activerecord:
     attributes:
@@ -109,9 +117,8 @@ it:
       user:
         admin: Amministratore
         auth_source: Modalità di autenticazione
-        identity_url: OpenID URL
         language: Linguaggio
-        last_login_on: Ultima connessione
+        last_login_on: Ultimo accesso
         mail_notification: Notificazioni email
         new_password: Nuova password
         password_confirmation: Conferma
@@ -153,10 +160,10 @@ it:
         created_at: Creato
       work_package:
         done_ratio: "% finito"
-        fixed_version: Versione di destinazione
+        fixed_version: Versione
         parent: Genitore
         parent_issue: Genitore
-        parent_work_packae: Genitore
+        parent_work_package: Genitore
         priority: Priorità
         progress: "% finito"
         responsible: Responsabile
@@ -179,6 +186,8 @@ it:
         exclusion: "è riservato"
         greater_than: deve essere maggiore di %{count}
         greater_than_or_equal_to: deve essere maggiore o uguale di %{count}
+        smaller_than_or_equal_to_max_length: deve essere minore o uguale alla lunghezza
+          massima
         greater_than_start_date: deve essere maggiore della data di inizio
         inclusion: non è incluso nella lista
         invalid: non è valido
@@ -212,7 +221,7 @@ it:
             parent_id:
               cannot_be_milestone: non può essere un traguardo
               cannot_be_in_another_project: non può essere in un altro progetto
-              not_a_valid_parent: "è invaildo"
+              not_a_valid_parent: non è valido
               does_not_exist: non esiste
             status_id:
               status_transition_invalid: nessuna transizione valida esiste dal vecchio
@@ -265,6 +274,7 @@ it:
       wiki: Wiki
       wiki_page: Pagina wiki
       workflow: Flusso di lavoro
+      work_package: Pacchetto di lavoro
   errors:
     header_invalid_fields: 'Ci sono stati dei problemi con i seguenti campi:'
   activity:
@@ -340,7 +350,7 @@ it:
   button_list: Lista
   button_lock: Blocca
   button_log_time: Registro temporale
-  button_login: Nome Utente
+  button_login: Login
   button_move: Sposta
   button_move_and_follow: Sposta e segui
   button_quote: Cita
@@ -472,6 +482,10 @@ it:
       x_seconds:
         one: 1 secondo
         other: "%{count} secondi"
+    units:
+      hour:
+        one: ora
+        other: ore
   default_activity_management: Gestione
   default_activity_design: Design
   default_activity_development: Sviluppo
@@ -505,7 +519,7 @@ it:
   default_role_member: Membro
   default_type: Pacchetto di Lavoro
   default_type_task: Attività
-  default_type_deliverable: Deliverable
+  default_type_deliverable: Consegnabile
   default_type_milestone: Traguardo
   default_type_phase: Fase
   default_type_bug: Bug
@@ -535,7 +549,6 @@ it:
   description_message_content: Contenuto del messaggio
   description_my_project: Sei membro
   description_notes: Note
-  description_option_toggle: Mostra/Nascondi opzioni
   description_parent_work_package: Pacchetto di lavoro padre corrente
   description_project_scope: Ambito di ricerca
   description_query_sort_criteria_attribute: Attributo dell'ordinamento
@@ -544,7 +557,6 @@ it:
   description_select_work_package: Seleziona pacchetto di lavoro
   description_selected_columns: Colonne selezionate
   description_sub_work_package: Sotto-pacchetto di lavoro corrente
-  description_subwork_package: Pacchetto di lavoro secondari di
   description_toc_toggle: Mostra/Nascondi tabella dei contenuti
   description_user_mail_notification: Impostazioni di notifica e-mail
   description_wiki_subpages_reassign: Scegli la nuova pagina parente
@@ -557,6 +569,7 @@ it:
   error_can_not_delete_custom_field: Impossibile eliminare il campo personalizzato
   error_can_not_delete_type: Questo tipo contiene i pacchetti di lavoro e non può
     essere eliminato.
+  error_can_not_delete_standard_type: Tipi standard non possono essere eliminati.
   error_can_not_remove_role: Questo ruolo è in uso e non può essere eliminato.
   error_can_not_reopen_work_package_on_closed_version: Un pacchetto di lavoro assegnato
     a una versione chiusa non può essere riaperto
@@ -573,6 +586,8 @@ it:
     di lavoro").
   error_no_type_in_project: Nessun tipo è associato a questo progetto. Si prega di
     controllare le impostazioni del progetto.
+  error_omniauth_registration_timed_out: La registrazione tramite un provider di autenticazione
+    esterno è scaduta. Per favore riprova.
   error_scm_annotate: La voce non esiste o non può essere annotata.
   error_scm_command_failed: 'Si è verificato un errore quando si tenta di accedere
     al repository: %{value}'
@@ -586,6 +601,8 @@ it:
   error_workflow_copy_target: Perfavore seleziona tipo(i) di destinazione e ruolo(i)
   error_menu_item_not_created: La voce di menu non può essere aggiunta
   error_menu_item_not_saved: La voce di menu non può essere salvata
+  error_external_authentication_failed: Si è verificato un errore durante l'autenticazione
+    esterna. Per favore riprova.
   events:
     project: Progetto modificato
     changeset: ChangeSet modificato
@@ -603,65 +620,17 @@ it:
   general_first_day_of_week: '7'
   general_lang_name: Italiano
   general_pdf_encoding: ISO-8859-1
-  general_text_No: 'No'
-  general_text_Yes: Si
   general_text_no: 'No'
   general_text_yes: si
+  general_text_No: 'No'
+  general_text_Yes: Si
   gui_validation_error: 1 errore
   gui_validation_error_plural: "%{count} errori"
-  js:
-    unsupported_browser:
-      title: Il tuo browser non è supportato
-      message: Il browser che si utilizza non è più supportato da OpenProject. Si
-        prega di aggiornare il browser.
-      learn_more: Scopri di più
-    logoff: Ti sei appena disconnesso
-    redirect_login: Vuoi essere reindirizzato alla pagina d'accesso?
-    ajax:
-      hide: Nascondi
-      loading: Caricamento ...
-    select2:
-      input_too_short:
-        one: Perfavore inserisci un altro carattere
-        other: Perfavore inserisci {{count}} caratteri in più
-        zero: Please enter more characters
-      load_more: Carica altri risultati ...
-      no_matches: Nessuna corrispondenza trovata
-      searching: Ricerca ...
-      selection_too_big:
-        one: Puoi selezionare solo un oggetto
-        other: Puoi selezionare {{limit}} oggetti
-        zero: You cannot select any items
-    timelines:
-      tooManyProjects: More than %{count} Projects. Please use a better filter!
-      cancel: Cancella
-      save: Salva
-      due_date: Data di fine
-      name: Nome
-      project_status: Stato del progetto
-      project_type: Tipo di progetto
-      responsible: Responsabile
-      start_date: Data di inizio
-      error: Si è verificato un errore.
-      create_planning_select_project: 'Progetto:'
-      really_close_dialog: Do you really want to close the dialog and loose the entered
-        data?
-      zoom_slider: Zoom slider
-    filter:
-      noneElement: "(nessuno)"
-      noneSelection: "(nessuno)"
-    button_check_all: Controlla tutti
-    button_uncheck_all: Deseleziona tutti
-    label_collapsed: collapsed
-    label_expanded: expanded
-    label_collapse_all: Comprimi Tutto
-    label_expand_all: Esapndi tutto
-    label_menu_item_toggle: Show/hide submenu items
-    label_menu_collapse: collapse
-    label_menu_expand: expand
-    tl_toolbar:
-      zooms: Zoom level
-      outlines: Hierarchy level
+  instructions_after_registration: Puoi accedere non appena il tuo account è stato
+    attivato cliccando %{signin}.
+  instructions_after_logout: Può accedere nuovamente cliccando %{signin}.
+  instructions_after_error: Si può provare ad accedere nuovamente cliccando %{signin}.
+    Se l'errore persiste, chiedi aiuto al tuo amministratore.
   label_account: Account
   label_activity: Attività
   label_add_another_file: Aggiungi un altro file
@@ -680,7 +649,6 @@ it:
   label_age: Età
   label_ago: giorni fa
   label_all: tutti
-  label_all_work_packages: all work packages
   label_all_time: tutto il tempo
   label_all_words: Tutte le parole
   label_and_its_subprojects: "%{value} e i suoi sotto-progetti"
@@ -726,7 +694,7 @@ it:
   label_close_versions: Chiudi le versioni complete
   label_closed_work_packages: chiuso
   label_collapse: Comprimi
-  label_collapse_all: Comprimi Tutto
+  label_configuration: configurazione
   label_comment_add: Inserisci un commento
   label_comment_added: Commento aggiunto
   label_comment_delete: Cancella commenti
@@ -779,8 +747,6 @@ it:
   label_environment: Ambiente
   label_equals: "è"
   label_example: Esempio
-  label_expand: Espandi
-  label_expand_all: Esapndi tutto
   label_export_to: 'Disponibile anche in:'
   label_f_hour: "%{value} ora"
   label_f_hour_plural: "%{value} ore"
@@ -803,6 +769,7 @@ it:
   label_group_new: Nuovo gruppo
   label_group_plural: Gruppi
   label_help: Aiuti
+  label_here: qui
   label_hide: Nascondi
   label_history: Storia
   label_home: Casa
@@ -843,7 +810,7 @@ it:
   label_jump_to_a_project: Salta nel progetto...
   label_language_based: Basato sulla lingua dell'utente
   label_last_changes: ultimi %{count} cambiamenti
-  label_last_login: Ultima connessione
+  label_last_login: Ultimo accesso
   label_last_month: il mese scorso
   label_last_n_days: ultimi %{count} giorni
   label_last_week: ultima settimana
@@ -856,7 +823,6 @@ it:
   label_loading: Caricamento...
   label_logged_as: Acceduto come
   label_login: Login
-  label_login_with_open_id_option: or login with OpenID
   label_logout: Disconnetti
   label_main_menu: Menu laterale
   label_max_size: Dimensione massima
@@ -905,6 +871,7 @@ it:
   label_not_contains: non contiene
   label_not_equals: non è
   label_notify_member_plural: Aggiornamenti email
+  label_open_menu: Apri menu
   label_open_work_packages: aperto
   label_open_work_packages_plural: aperto
   label_optional_description: Descrizione
@@ -912,7 +879,7 @@ it:
   label_overall_activity: Attività complessiva
   label_overall_spent_time: Tempo complessivo trascorso
   label_overview: Panoramica
-  label_password_lost: Password smarrita
+  label_password_lost: Password dimenticata
   label_password_rule_lowercase: Minuscolo
   label_password_rule_numeric: Caratteri numerici
   label_password_rule_special: Caratteri speciali
@@ -947,7 +914,8 @@ it:
   label_query_plural: Query personalizzate
   label_query_menu_item: Voce meù query
   label_read: Leggi...
-  label_register: Registra
+  label_register: Registrati
+  label_register_with_developer: Registrarsi come sviluppatore
   label_registered_on: Registrato su
   label_registration_activation_by_email: attivazione account da email
   label_registration_automatic_activation: attivazione automatica account
@@ -1006,7 +974,6 @@ it:
   label_subproject_new: Nuovo sotto-progetto
   label_subproject_plural: Sotto-progetti
   label_subtask_plural: Attività secondarie
-  label_sum_for: Sum for %{value}
   label_summary: Sommario
   label_system: Sistema
   label_table_of_contents: Tabella dei contenuti
@@ -1096,6 +1063,9 @@ it:
     zero: no projects
   label_year: Anno
   label_yesterday: ieri
+  label_keyboard_function: Funzione
+  label_keyboard_shortcut: Collegamento
+  label_keyboard_accesskey: Chiave di accesso
   label_keyboard_shortcut_help_heading: Scorciatoie da tastiera disponibili
   label_keyboard_shortcut_within_project: 'Scorciatoie dei progetti connessi:'
   label_keyboard_shortcut_global_shortcuts: 'Collegamenti globali:'
@@ -1121,6 +1091,8 @@ it:
     (solo su alcune liste)
   label_keyboard_shortcut_focus_next_item: Focus next list element (on some lists
     only)
+  macro_execution_error: Errore nell'esecuzione del macro %{macro_name}
+  macro_unavailable: Macro %{macro_name} cannot be displayed.
   mail_body_account_activation_request: 'Un nuovo utente (%{value}) si è registrato.
     L''account è in attesa di approvazione:'
   mail_body_account_information: Informazioni sul tuo account
@@ -1143,8 +1115,6 @@ it:
   noscript_heading: JavaScript disabilitato
   noscript_learn_more: Scopri di più
   notice_account_activated: IL tuo account è stato attivato. Ora puoi accedere.
-  notice_account_inactive: Il tuo account non è stato ancora attivato. Per attivare
-    il tuo account, clicca sul link che ti è stato inviato via email.
   notice_account_invalid_credentials: Utente o Password non validi
   notice_account_invalid_credentials_or_blocked: Invalid user or password or the account
     is blocked due to multiple failed login attempts. If so, it will be unblocked
@@ -1164,6 +1134,8 @@ it:
     Perfavore dai un'occhiata alla pagina del tuo account.
   notice_account_updated: Account aggiornato con successo.
   notice_account_wrong_password: Password sbagliata
+  notice_account_registered_and_logged_in: Benvenuto, il tuo account è stato attivato.
+    Sei già connesso.
   notice_api_access_key_reseted: La chiave di accesso API è stata reimpostata.
   notice_can_t_change_password: Questo account utilizza una fonte di autenticazione
     esterna. Impossibile cambiare la password.
@@ -1204,6 +1176,7 @@ it:
   notice_unable_delete_time_entry: Impossibile eliminare la voce del registro temporale.
   notice_unable_delete_version: Impossibile eliminare la versione.
   notice_automatic_set_of_standard_type: Impostare automaticamente il tipo predefinito.
+  notice_logged_out: Ti sei appena disconnesso.
   error_types_in_use_by_work_packages: 'I seguenti pacchetti tipi fanno ancora riferimento
     ai pacchetti di lavoro: %{types}'
   number:
@@ -1362,7 +1335,6 @@ it:
   setting_mail_handler_body_delimiters: Troncare email dopo una di queste linee
   setting_new_project_user_role_id: Ruolo assegnato ad un utente non amministratore
     che crea un progetto
-  setting_openid: Allow OpenID login and registration
   setting_password_active_rules: Active character classes
   setting_password_count_former_banned: Number of most recently used passwords banned
     for reuse
@@ -1461,6 +1433,8 @@ it:
   text_no_configuration_data: |
     Roles, types, work package statuses and workflow have not been configured yet.
     It is highly recommended to load the default configuration. You will be able to modify it once loaded.
+  text_notice_too_many_values_are_inperformant: 'Note: Displaying more than 100 items
+    per page can increase the page load time.'
   text_own_membership_delete_confirmation: |
     You are about to remove some or all of your permissions and may no longer be able to edit this project after that.
     Are you sure you want to continue?
@@ -1476,7 +1450,6 @@ it:
   text_repository_usernames_mapping: Seleziona o aggiorna l'utente OpenProject mappato
     per ogni nome utente trovato nel registro dell'archivio. Gli utenti con lo stesso
     nome utente  e repository OpenProject o e-mail vengono mappati automaticamente.
-  text_rmagick_available: RMagick available (optional)
   text_select_mail_notifications: Seleziona le azioni per cui l'e-mail deve essere
     inviata.
   text_select_project_modules: 'Seleziona i moduli per abilitare per questo progetto:'
@@ -1546,8 +1519,8 @@ it:
     edit_color: Modifica il colore
     edit_project_type: Modifica il tipo del progetto
     edit_thing: Modifica
-    edit_timeline: Edit timeline report
-    delete_timeline: Delete timeline report
+    edit_timeline: Modifica la segnalazione della sequenza temporale %{timeline}
+    delete_timeline: Elimina la segnalazione della sequenza temporale %{timeline}
     empty: "(vuoto)"
     enable_type_in_project: Abilita il tipo %{type}
     end: Fine
@@ -1626,6 +1599,8 @@ it:
         timeframe
       project_time_filter_absolute_timeframe: Sequenza temporale assoluta
       project_time_filter_relative_timeframe: Relative timeframe
+      project_time_filter_historical_from: da
+      project_time_filter_historical_to: a
       project_time_filter_historical: from %{startdate} to %{enddate}
       project_time_filter_relative: from %{startspan}%{startspanunit} ago, to %{endspan}%{endspanunit}
         from now
@@ -1714,6 +1689,10 @@ it:
     active: attivo
     activate: Attivato
     activate_and_reset_failed_logins: Attivare e ripristinare gli accessi non riusciti
+    authentication_provider: Autenticazione del fornitore
+    authentication_settings_disabled_due_to_external_authentication: Questo utente
+      si autentica tramite un provider di autenticazione esterna, quindi non c'è nessuna
+      password che può essere cambiata in OpenProject.
     assign_random_password: Assegna password casuale (inviata via email all'utente)
     blocked: temporaneamente bloccato
     blocked_num_failed_logins:
@@ -1729,9 +1708,17 @@ it:
     status_user_and_brute_force: "%{user} e %{brute_force}"
     unlock: Sblocca
     unlock_and_reset_failed_logins: Sblocca e reimposta gli accessi non riusciti
+    no_login: Questo utente autentica attraverso l'accesso tramite password. Finché
+      è disabilitato, non potrà accedere.
+    password_change_unsupported: La modifica della password non è supportata.
+    authorization_rejected: Non ti è consentito accedere.
   version_status_closed: chiuso
   version_status_locked: bloccato
   version_status_open: aperto
+  note: Nota
+  note_password_login_disabled: La password d'accesso è stata disabilitata tramite
+    %{configuration}.
+  warning: Attenzione
   warning_attachments_not_saved: "%{count} file non possono essere salvati."
   menu_item: Voce di menu
   menu_item_setting: Visibilità

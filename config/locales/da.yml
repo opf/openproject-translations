@@ -31,6 +31,13 @@ da:
         self: Din konto vil blive slettet fra systemet. Derfor vil du ikke længere
           kunne logge ind med dine nuværende oplysninger. Du vil dog kunne blive bruger
           af denne app igen med en ny registrering.
+    error_inactive_activation_by_mail: Din konto er endnu ikke blevet aktiveret. For
+      at aktivere din konto, klik på det link, der blev sendt til dig.
+    error_inactive_manual_activation: Din konto er endnu ikke blevet aktiveret. Vent
+      venligst på at en administrator aktiverer din konto.
+    error_self_registration_disabled: Brugerregistrering er deaktiveret på dette system.
+      Vær venlig at bede en administrator oprette en konto til dig.
+    login_with_auth_provider: eller log på med din eksisterende konto
   actionview_instancetag_blank_option: Vælg venligst
   activerecord:
     attributes:
@@ -106,9 +113,8 @@ da:
       user:
         admin: Administrator
         auth_source: Godkendelsestilstand
-        identity_url: OpenID URL
         language: Sprog
-        last_login_on: Seneste forbindelse
+        last_login_on: Last login
         mail_notification: E-mailpåmindelser
         new_password: Ny adgangskode
         password_confirmation: Bekræftelse
@@ -150,10 +156,10 @@ da:
         created_at: Oprettet
       work_package:
         done_ratio: "% udført"
-        fixed_version: "Ønsket version"
+        fixed_version: Version
         parent: Overordnet
         parent_issue: Overordnet
-        parent_work_packae: Overordnet
+        parent_work_package: Overordnet
         priority: Prioritet
         progress: "% udført"
         responsible: Ansvarlig
@@ -176,6 +182,8 @@ da:
         exclusion: er reserveret
         greater_than: skal være større end %{count}
         greater_than_or_equal_to: skal være større end eller lig med %{count}
+        smaller_than_or_equal_to_max_length: skal vær mindre end eller lig den maksimale
+          længde
         greater_than_start_date: skal være senere end startdatoen
         inclusion: er ikke medtaget på listen
         invalid: er ugyldig
@@ -208,7 +216,7 @@ da:
             parent_id:
               cannot_be_milestone: kan ikke være en milepæl
               cannot_be_in_another_project: kan ikke være i et andet projekt
-              not_a_valid_parent: is invaild
+              not_a_valid_parent: er ugyldig
               does_not_exist: findes ikke
             status_id:
               status_transition_invalid: der findes ingen gyldig overgang fra gammel
@@ -260,6 +268,7 @@ da:
       wiki: Wiki
       wiki_page: Wiki-side
       workflow: Arbejdsstrøm
+      work_package: Arbejdspakke
   errors:
     header_invalid_fields: 'Der var problemer med disse felter:'
   activity:
@@ -335,7 +344,7 @@ da:
   button_list: List
   button_lock: Lås
   button_log_time: Log tidspunkt
-  button_login: Login
+  button_login: Log ind
   button_move: Flyt
   button_move_and_follow: Flyt og følg
   button_quote: Citer
@@ -462,6 +471,10 @@ da:
       x_seconds:
         one: 1 sekund
         other: "%{count} sekunder"
+    units:
+      hour:
+        one: time
+        other: timer
   default_activity_management: Management
   default_activity_design: Design
   default_activity_development: Udvikling
@@ -523,7 +536,6 @@ da:
   description_message_content: Meddelelsens indhold
   description_my_project: Du er medlem
   description_notes: Noter
-  description_option_toggle: Show/Hide options
   description_parent_work_package: Overordnet arbejdspakken for denne
   description_project_scope: Bredde af søgning
   description_query_sort_criteria_attribute: Sorteringsegenskab
@@ -532,7 +544,6 @@ da:
   description_select_work_package: Vælg arbejdspakke
   description_selected_columns: Valgte kolonner
   description_sub_work_package: Underordnet arbejdspakke til denne
-  description_subwork_package: Sub work package of
   description_toc_toggle: Vis/Skjul indholdsfortegnelse
   description_user_mail_notification: Indstillinger for e-mailadvisering
   description_wiki_subpages_reassign: Vælg ny overordnet side
@@ -544,6 +555,7 @@ da:
   error_can_not_archive_project: Dette projekt kan ikke arkiveres
   error_can_not_delete_custom_field: Kan ikke slette det selvvalgte felt
   error_can_not_delete_type: Denne type indeholder arbejdspakker og kan ikke slettes.
+  error_can_not_delete_standard_type: Standardtyper kan  ikke slettes.
   error_can_not_remove_role: Denne rolle er i brug og kan ikke slettes.
   error_can_not_reopen_work_package_on_closed_version: En arbejdspakke der er knyttet
     til en lukket version kan ikke åbnes igen
@@ -559,6 +571,8 @@ da:
     Status for arbejdspakker").
   error_no_type_in_project: Der er ikke tilknyttet en type til dette projekt. Tjek
     venligst projektindstillingerne.
+  error_omniauth_registration_timed_out: Registrering via en ekstern godkendelsestjeneste
+    er udløbet. Prøv venligst igen.
   error_scm_annotate: Indholdet findes ikke eller der kan ikke tilføjes nyt.
   error_scm_command_failed: 'Der optod en fejl da du forsøgte at tilgå arkivet: %{value}'
   error_scm_not_found: Indholdet eller ændring findes ikke i arkivet.
@@ -571,6 +585,8 @@ da:
   error_workflow_copy_target: Vælg venligst type(r) og rolle(r) for mål
   error_menu_item_not_created: Menupunktet kunne ikke tilføjes
   error_menu_item_not_saved: Menupunktet kunne ikke gemmes
+  error_external_authentication_failed: Der opstod en fejl ved den eksterne godkendelse.
+    Prøv venligst igen.
   events:
     project: Projekt er redigeret
     changeset: Pakken af ændringer er redigeret
@@ -588,65 +604,17 @@ da:
   general_first_day_of_week: '1'
   general_lang_name: Dansk
   general_pdf_encoding: ISO-8859-1
-  general_text_No: Nej
-  general_text_Yes: Ja
   general_text_no: nej
   general_text_yes: ja
+  general_text_No: Nej
+  general_text_Yes: Ja
   gui_validation_error: 1 fejl
   gui_validation_error_plural: "%{count} fejl"
-  js:
-    unsupported_browser:
-      title: Your browser is not supported
-      message: The browser you are using is no longer supported by OpenProject. Please
-        update your browser.
-      learn_more: Learn more
-    logoff: You have been logged off
-    redirect_login: Do you want to be redirected to the login page?
-    ajax:
-      hide: Gem
-      loading: Loading ...
-    select2:
-      input_too_short:
-        one: Please enter one more character
-        other: Please enter {{count}} more characters
-        zero: Please enter more characters
-      load_more: Loading more results ...
-      no_matches: No matches found
-      searching: Searching ...
-      selection_too_big:
-        one: You can only select one item
-        other: You can only select {{limit}} items
-        zero: You cannot select any items
-    timelines:
-      tooManyProjects: More than %{count} Projects. Please use a better filter!
-      cancel: Annuller
-      save: Gem
-      due_date: Forfaldsdato
-      name: Navn
-      project_status: Projektstatus
-      project_type: Projekttype
-      responsible: Ansvarlig
-      start_date: Start dato
-      error: An error has occured.
-      create_planning_select_project: 'Project:'
-      really_close_dialog: Do you really want to close the dialog and loose the entered
-        data?
-      zoom_slider: Zoom slider
-    filter:
-      noneElement: "(none)"
-      noneSelection: "(none)"
-    button_check_all: Vælg alt
-    button_uncheck_all: Fjern alle markeringer
-    label_collapsed: collapsed
-    label_expanded: expanded
-    label_collapse_all: Fold alle sammen
-    label_expand_all: Fold alle ud
-    label_menu_item_toggle: Show/hide submenu items
-    label_menu_collapse: collapse
-    label_menu_expand: expand
-    tl_toolbar:
-      zooms: Zoom level
-      outlines: Hierarchy level
+  instructions_after_registration: Du kan logge ind så snart din konto er blevet aktiveret
+    ved at klikke %{signin}.
+  instructions_after_logout: Du kan logge ind igen ved at klikke %{signin}.
+  instructions_after_error: Du kan forsøge at logge ind igen ved at klikke %{signin}.
+    Hvis fejlen stadig opstår, spørg da admin. efter hjælp.
   label_account: Konto
   label_activity: Aktivitet
   label_add_another_file: Tilføj en anden fil
@@ -665,7 +633,6 @@ da:
   label_age: Alder
   label_ago: dage siden
   label_all: alle
-  label_all_work_packages: all work packages
   label_all_time: alle tider
   label_all_words: Alle ord
   label_and_its_subprojects: "%{value} og dets delprojekter"
@@ -710,7 +677,7 @@ da:
   label_close_versions: Luk afsluttede versioner
   label_closed_work_packages: lukket
   label_collapse: Fold sammen
-  label_collapse_all: Fold alle sammen
+  label_configuration: opsætning
   label_comment_add: Tilføj kommentar
   label_comment_added: Kommentar tilføjet
   label_comment_delete: Slet kommentarer
@@ -763,8 +730,6 @@ da:
   label_environment: Miljø
   label_equals: er
   label_example: Eksempel
-  label_expand: Expand
-  label_expand_all: Fold alle ud
   label_export_to: 'Også til rådighed i:'
   label_f_hour: "%{value} time"
   label_f_hour_plural: "%{value} timer"
@@ -787,6 +752,7 @@ da:
   label_group_new: Ny gruppe
   label_group_plural: Grupper
   label_help: Hjælp
+  label_here: her
   label_hide: Gem
   label_history: Historik
   label_home: Hjem
@@ -827,7 +793,7 @@ da:
   label_jump_to_a_project: Gå til et projekt...
   label_language_based: Baseret på brugerens sprog
   label_last_changes: seneste %{count} ændringer
-  label_last_login: Seneste forbindelse
+  label_last_login: Last login
   label_last_month: seneste måned
   label_last_n_days: seneste %{count} dage
   label_last_week: seneste uge
@@ -840,7 +806,6 @@ da:
   label_loading: Henter...
   label_logged_as: Logget ind som
   label_login: Log ind
-  label_login_with_open_id_option: or login with OpenID
   label_logout: Log ud
   label_main_menu: Sidemenu
   label_max_size: Maksimal størrelse
@@ -889,6 +854,7 @@ da:
   label_not_contains: doesn't contain
   label_not_equals: is not
   label_notify_member_plural: Email updates
+  label_open_menu: Open menu
   label_open_work_packages: open
   label_open_work_packages_plural: open
   label_optional_description: Beskrivelse
@@ -896,7 +862,7 @@ da:
   label_overall_activity: Samlet aktivitet
   label_overall_spent_time: Samlet brugt tid
   label_overview: Overblik
-  label_password_lost: Lost password
+  label_password_lost: Glemt din adgangskode?
   label_password_rule_lowercase: Små bogstaver
   label_password_rule_numeric: Tal
   label_password_rule_special: Specialtegn
@@ -930,7 +896,8 @@ da:
   label_query_plural: Selvvalgte forespørgsler
   label_query_menu_item: Query menu item
   label_read: Read...
-  label_register: Register
+  label_register: Create a new account
+  label_register_with_developer: Register as developer
   label_registered_on: Registered on
   label_registration_activation_by_email: account activation by email
   label_registration_automatic_activation: automatic account activation
@@ -989,7 +956,6 @@ da:
   label_subproject_new: New subproject
   label_subproject_plural: Subprojects
   label_subtask_plural: Subtasks
-  label_sum_for: Sum for %{value}
   label_summary: Opsummering
   label_system: System
   label_table_of_contents: Table of Contents
@@ -1077,6 +1043,9 @@ da:
     zero: no projects
   label_year: Year
   label_yesterday: yesterday
+  label_keyboard_function: Function
+  label_keyboard_shortcut: Shortcut
+  label_keyboard_accesskey: Accesskey
   label_keyboard_shortcut_help_heading: Available Keyboard Shortcuts
   label_keyboard_shortcut_within_project: 'Project related shortcuts:'
   label_keyboard_shortcut_global_shortcuts: 'Global shortcuts:'
@@ -1101,6 +1070,8 @@ da:
     lists only)
   label_keyboard_shortcut_focus_next_item: Focus next list element (on some lists
     only)
+  macro_execution_error: Error executing the macro %{macro_name}
+  macro_unavailable: Macro %{macro_name} cannot be displayed.
   mail_body_account_activation_request: 'A new user (%{value}) has registered. The
     account is pending your approval:'
   mail_body_account_information: Your account information
@@ -1123,8 +1094,6 @@ da:
   noscript_heading: JavaScript disabled
   noscript_learn_more: Learn more
   notice_account_activated: Your account has been activated. You can now log in.
-  notice_account_inactive: Din konto er endnu ikke blevet aktiveret. For at aktivere
-    din konto, klik på det link, der blev sendt til dig.
   notice_account_invalid_credentials: Invalid user or password
   notice_account_invalid_credentials_or_blocked: Invalid user or password or the account
     is blocked due to multiple failed login attempts. If so, it will be unblocked
@@ -1144,6 +1113,8 @@ da:
     look at your account page.
   notice_account_updated: Account was successfully updated.
   notice_account_wrong_password: Wrong password
+  notice_account_registered_and_logged_in: Welcome, your account has been activated.
+    You are logged in now.
   notice_api_access_key_reseted: Din adgangsnøgle til API blev nulstillet.
   notice_can_t_change_password: This account uses an external authentication source.
     Impossible to change the password.
@@ -1183,6 +1154,7 @@ da:
   notice_unable_delete_time_entry: Unable to delete time log entry.
   notice_unable_delete_version: Unable to delete version.
   notice_automatic_set_of_standard_type: Set standard type automatically.
+  notice_logged_out: You have been logged out.
   error_types_in_use_by_work_packages: 'The following types are still referenced by
     work packages: %{types}'
   number:
@@ -1336,7 +1308,6 @@ da:
   setting_mail_handler_api_key: API key
   setting_mail_handler_body_delimiters: Truncate emails after one of these lines
   setting_new_project_user_role_id: Role given to a non-admin user who creates a project
-  setting_openid: Allow OpenID login and registration
   setting_password_active_rules: Active character classes
   setting_password_count_former_banned: Number of most recently used passwords banned
     for reuse
@@ -1432,6 +1403,8 @@ da:
   text_no_configuration_data: Roller, typer, statusser for arbejdspakker og arbejdsgange
     er endnu ikke sat op. Det anbefales stærkt at hente forhåndsopsætningen. Du vil
     kunne ændre den når den er indlæst.
+  text_notice_too_many_values_are_inperformant: 'Note: Displaying more than 100 items
+    per page can increase the page load time.'
   text_own_membership_delete_confirmation: |
     You are about to remove some or all of your permissions and may no longer be able to edit this project after that.
     Are you sure you want to continue?
@@ -1447,7 +1420,6 @@ da:
   text_repository_usernames_mapping: |
     Select or update the OpenProject user mapped to each username found in the repository log.
     Users with the same OpenProject and repository username or email are automatically mapped.
-  text_rmagick_available: RMagick available (optional)
   text_select_mail_notifications: Select actions for which email notifications should
     be sent.
   text_select_project_modules: 'Select modules to enable for this project:'
@@ -1515,8 +1487,8 @@ da:
     edit_color: Edit color
     edit_project_type: Edit project type
     edit_thing: Rediger
-    edit_timeline: Edit timeline report
-    delete_timeline: Delete timeline report
+    edit_timeline: Edit timeline report %{timeline}
+    delete_timeline: Delete timeline report %{timeline}
     empty: "(empty)"
     enable_type_in_project: Enable type "%{type}"
     end: End
@@ -1593,9 +1565,11 @@ da:
         timeframe
       project_time_filter_absolute_timeframe: Absolute timeframe
       project_time_filter_relative_timeframe: Relative timeframe
-      project_time_filter_historical: from %{startdate} to %{enddate}
-      project_time_filter_relative: from %{startspan}%{startspanunit} ago, to %{endspan}%{endspanunit}
-        from now
+      project_time_filter_historical_from: from
+      project_time_filter_historical_to: to
+      project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
+      project_time_filter_relative: "%{start_label} %{startspan}%{startspanunit} ago,
+        %{end_label} %{endspan}%{endspanunit} from now"
       project_filters: Filter projects
       project_responsible: Show projects with responsible
       project_status: Show project status
@@ -1680,6 +1654,10 @@ da:
     activate: Aktiver
     activate_and_reset_failed_logins: Aktiver og nulstil mislykkede forsøg på at logge
       ind
+    authentication_provider: Godkendelsetjeneste
+    authentication_settings_disabled_due_to_external_authentication: Denne bruger
+      logger på gennem en ekstern godkendelsestjeneste, så der er ikke en OpenProject-adgangskode,
+      der kan ændres.
     assign_random_password: Tildel tilfældig adgangskode (sendt til bruger med e-mail)
     blocked: Midlertid spærret
     blocked_num_failed_logins:
@@ -1696,9 +1674,16 @@ da:
     unlock: Lås op
     unlock_and_reset_failed_logins: Lås mislykkede forsøg på at logge ind op, og nulstil
       dem
+    no_login: This user authenticates through login by password. Since it is disabled,
+      they cannot log in.
+    password_change_unsupported: Change of password is not supported.
+    authorization_rejected: You are not allowed to sign in.
   version_status_closed: lukket
   version_status_locked: Spærret
   version_status_open: open
+  note: Note
+  note_password_login_disabled: Password login has been disabled by %{configuration}.
+  warning: Warning
   warning_attachments_not_saved: "%{count} file(r) kunne ikke gemmes."
   menu_item: Menupunkt
   menu_item_setting: Synlighed

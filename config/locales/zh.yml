@@ -15,6 +15,10 @@ zh:
       login_consequences:
         other: "将从系统中删除该帐户。因此，用户将不再能够用他当前的凭据登录。用户可以选择由该应用程序允许的方式再次成为此应用程序的用户。"
         self: "将从系统中删除您的帐户。因此，您将不再能够使用您的当前凭据登录。如果你选择再次成为此应用程序的用户，你可以通过此应用程序所允许的方式进行。"
+    error_inactive_activation_by_mail: "您的帐户尚未激活。要激活您的帐户，请单击通过电子邮件发送到您的链接。"
+    error_inactive_manual_activation: "您的帐户尚未激活。请等待管理员激活您的帐户。"
+    error_self_registration_disabled: "此系统上禁用了用户注册。请让管理员为您创建帐户。"
+    login_with_auth_provider: "或使用您的现有帐户登录"
   actionview_instancetag_blank_option: "请选择"
   activerecord:
     attributes:
@@ -90,9 +94,8 @@ zh:
       user:
         admin: "管理员"
         auth_source: "身份验证模式"
-        identity_url: OpenID URL
         language: "语言"
-        last_login_on: "最后一次连接"
+        last_login_on: "上次登录"
         mail_notification: "电子邮件通知"
         new_password: "新密码"
         password_confirmation: "确认"
@@ -133,10 +136,10 @@ zh:
         created_at: "已创建"
       work_package:
         done_ratio: "%完成"
-        fixed_version: "目标版本"
+        fixed_version: "版本"
         parent: "父"
         parent_issue: "父"
-        parent_work_packae: "父"
+        parent_work_package: "父"
         priority: "优先级"
         progress: "%完成"
         responsible: "责任人"
@@ -158,6 +161,7 @@ zh:
         exclusion: "是保留"
         greater_than: "必须大于 %{count}"
         greater_than_or_equal_to: "必须大于或等于 %{count}"
+        smaller_than_or_equal_to_max_length: "必须小于或等于最大长度"
         greater_than_start_date: "必须大于开始日期"
         inclusion: "不包括在列表中"
         invalid: "是无效的"
@@ -189,7 +193,7 @@ zh:
             parent_id:
               cannot_be_milestone: "不能是一个里程碑"
               cannot_be_in_another_project: "不能在另一个项目中"
-              not_a_valid_parent: "无效"
+              not_a_valid_parent: "是无效的"
               does_not_exist: "不存在"
             status_id:
               status_transition_invalid: "当前用户角色没有从旧到新状态的有效过度"
@@ -239,6 +243,7 @@ zh:
       wiki: "维基"
       wiki_page: "维基页面"
       workflow: "工作流"
+      work_package: "工作包"
   errors:
     header_invalid_fields: "以下字段有问题："
   activity:
@@ -439,6 +444,10 @@ zh:
       x_seconds:
         one: 1 second
         other: "%{count} 秒"
+    units:
+      hour:
+        one: hour
+        other: "小时"
   default_activity_management: "管理"
   default_activity_design: "设计"
   default_activity_development: "开发"
@@ -497,7 +506,6 @@ zh:
   description_message_content: "消息内容"
   description_my_project: "您是成员"
   description_notes: "备注"
-  description_option_toggle: "显示/隐藏选项"
   description_parent_work_package: "当前的父工作包"
   description_project_scope: "搜索范围"
   description_query_sort_criteria_attribute: "排序属性"
@@ -506,7 +514,6 @@ zh:
   description_select_work_package: "选择工作包"
   description_selected_columns: "选定的列"
   description_sub_work_package: "当前的子工作包"
-  description_subwork_package: "子工作包属于"
   description_toc_toggle: "显示/隐藏表的内容"
   description_user_mail_notification: "邮件通知设置"
   description_wiki_subpages_reassign: "选择新的父页"
@@ -518,6 +525,7 @@ zh:
   error_can_not_archive_project: "此项目不能存档"
   error_can_not_delete_custom_field: "无法删除自定义字段"
   error_can_not_delete_type: "这种类型包含工作包，不能被删除。"
+  error_can_not_delete_standard_type: "标准类型不能被删除。"
   error_can_not_remove_role: "该角色正在使用，无法删除。"
   error_can_not_reopen_work_package_on_closed_version: "不能重新打开一个已经分配给已关闭版本的工作包"
   error_can_t_load_default_data: "不能加载默认配置： %{value}"
@@ -527,6 +535,7 @@ zh:
   error_must_be_project_member: "必须是项目成员"
   error_no_default_work_package_status: "没有定义默认的工作包状态。请检查您的配置 （转到\"管理-> 工作包状态\"）。"
   error_no_type_in_project: "没有类型与此项目关联。请检查的项目设置。"
+  error_omniauth_registration_timed_out: "通过外部身份验证提供程序注册超时。请再试一次。"
   error_scm_annotate: "该条目不存在，或不能进行批注。"
   error_scm_command_failed: "当试图访问该代码库时出现错误: %{value}"
   error_scm_not_found: "在代码库中未找到的条目或修正版本。"
@@ -537,6 +546,7 @@ zh:
   error_workflow_copy_target: "请选择目标类型和角色"
   error_menu_item_not_created: "不能添加菜单项"
   error_menu_item_not_saved: "不能保存菜单项"
+  error_external_authentication_failed: "在外部身份验证期间出错。请再试一次。"
   events:
     project: "编辑项目"
     changeset: "编辑变更集"
@@ -554,63 +564,15 @@ zh:
   general_first_day_of_week: '7'
   general_lang_name: "简体中文"
   general_pdf_encoding: ISO-8859-1
-  general_text_No: "否"
-  general_text_Yes: "是"
   general_text_no: "否"
   general_text_yes: "是"
+  general_text_No: "否"
+  general_text_Yes: "是"
   gui_validation_error: 1 错误
   gui_validation_error_plural: "%{count} 错误"
-  js:
-    unsupported_browser:
-      title: "不支持您的浏览器"
-      message: OpenProject 不再支持您所使用的浏览器。请更新您的浏览器。
-      learn_more: "了解更多信息"
-    logoff: "您已注销"
-    redirect_login: "你想要被重定向到登录页吗？"
-    ajax:
-      hide: "隐藏"
-      loading: "加载中..."
-    select2:
-      input_too_short:
-        one: Please enter one more character
-        other: "请输入额外的 {{count}} 字符"
-        zero: Please enter more characters
-      load_more: "正在加载更多的结果..."
-      no_matches: "未找到匹配项"
-      searching: "正在搜索..."
-      selection_too_big:
-        one: You can only select one item
-        other: "您可以只选择 {{limit}} 项目"
-        zero: You cannot select any items
-    timelines:
-      tooManyProjects: "超过 %{count} 个项目。请使用一个更好的筛选器 ！"
-      cancel: "取消"
-      save: "保存"
-      due_date: "截止日期"
-      name: "名称"
-      project_status: "项目状态"
-      project_type: "项目类型"
-      responsible: "责任人"
-      start_date: "开始日期"
-      error: "发生了错误。"
-      create_planning_select_project: "项目："
-      really_close_dialog: "你真的想要关闭对话框并丢失输入的数据吗？"
-      zoom_slider: "缩放滑块"
-    filter:
-      noneElement: "(无)"
-      noneSelection: "(无)"
-    button_check_all: "全选"
-    button_uncheck_all: "全部不选"
-    label_collapsed: "折叠"
-    label_expanded: "展开"
-    label_collapse_all: "全部折叠"
-    label_expand_all: "全部展开"
-    label_menu_item_toggle: "显示/隐藏子菜单项"
-    label_menu_collapse: "折叠"
-    label_menu_expand: "展开"
-    tl_toolbar:
-      zooms: "缩放级别"
-      outlines: "层次结构级别"
+  instructions_after_registration: "只要您的帐户已被激活您可以点击 %{signin} 登录。"
+  instructions_after_logout: "你可以点击 %{signin} 重新登录。"
+  instructions_after_error: "你可以尝试点击 %{signin} 重新登录。如果错误仍然存在，请向您的管理员寻求帮助。"
   label_account: "帐户"
   label_activity: "活动"
   label_add_another_file: "添加另一个文件"
@@ -627,7 +589,6 @@ zh:
   label_age: "年龄"
   label_ago: "天前"
   label_all: "所有"
-  label_all_work_packages: "所有工作包"
   label_all_time: "所有的时间"
   label_all_words: "所有的词"
   label_and_its_subprojects: "%{value} 及其子项目"
@@ -672,7 +633,7 @@ zh:
   label_close_versions: "关闭已完成版本"
   label_closed_work_packages: "关闭"
   label_collapse: "折叠"
-  label_collapse_all: "全部折叠"
+  label_configuration: "配置"
   label_comment_add: "添加评论"
   label_comment_added: "添加备注"
   label_comment_delete: "删除评论"
@@ -725,8 +686,6 @@ zh:
   label_environment: "环境"
   label_equals: "是"
   label_example: "示例"
-  label_expand: "展开"
-  label_expand_all: "全部展开"
   label_export_to: "在其中也可用："
   label_f_hour: "%{value} 小时"
   label_f_hour_plural: "%{value} 小时"
@@ -748,6 +707,7 @@ zh:
   label_group_new: "新的组"
   label_group_plural: "组"
   label_help: "帮助"
+  label_here: "这里"
   label_hide: "隐藏"
   label_history: "历史"
   label_home: "首页"
@@ -785,7 +745,7 @@ zh:
   label_jump_to_a_project: "跳转到一个项目..."
   label_language_based: "基于用户的语言"
   label_last_changes: "最后 %{count} 更改"
-  label_last_login: "最后一次连接"
+  label_last_login: "上次登录"
   label_last_month: "上个月"
   label_last_n_days: "%{count} 天前"
   label_last_week: "上个星期"
@@ -798,7 +758,6 @@ zh:
   label_loading: "正在加载..."
   label_logged_as: "登录用户名"
   label_login: "登录"
-  label_login_with_open_id_option: "或使用 OpenID 登录"
   label_logout: "注销"
   label_main_menu: "侧边菜单"
   label_max_size: "最大"
@@ -847,6 +806,7 @@ zh:
   label_not_contains: "不包含"
   label_not_equals: "不是"
   label_notify_member_plural: "电子邮件更新"
+  label_open_menu: "打开菜单"
   label_open_work_packages: "打开"
   label_open_work_packages_plural: "打开"
   label_optional_description: "描述"
@@ -854,7 +814,7 @@ zh:
   label_overall_activity: "总体活动"
   label_overall_spent_time: "花的总时间"
   label_overview: "概述"
-  label_password_lost: "丢失密码"
+  label_password_lost: "丢失的密码"
   label_password_rule_lowercase: "小写"
   label_password_rule_numeric: "数字字符"
   label_password_rule_special: "特殊字符"
@@ -889,6 +849,7 @@ zh:
   label_query_menu_item: "查询菜单项"
   label_read: "阅读..."
   label_register: "注册"
+  label_register_with_developer: "注册成为开发人员"
   label_registered_on: "注册于"
   label_registration_activation_by_email: "通过电子邮件激活帐户"
   label_registration_automatic_activation: "自动帐户激活"
@@ -947,7 +908,6 @@ zh:
   label_subproject_new: "新的子项目"
   label_subproject_plural: "子项目"
   label_subtask_plural: "子任务"
-  label_sum_for: "%{value} 的总和"
   label_summary: "摘要"
   label_system: "系统"
   label_table_of_contents: "目录"
@@ -1034,6 +994,9 @@ zh:
     zero: no projects
   label_year: "年"
   label_yesterday: "昨天"
+  label_keyboard_function: "功能"
+  label_keyboard_shortcut: "快捷方式"
+  label_keyboard_accesskey: "访问键"
   label_keyboard_shortcut_help_heading: "可用的键盘快捷键"
   label_keyboard_shortcut_within_project: "项目相关的快捷方式:"
   label_keyboard_shortcut_global_shortcuts: "全局快捷方式："
@@ -1055,6 +1018,8 @@ zh:
   label_keyboard_shortcut_go_preview: "转到预览当前编辑 （仅在编辑页)"
   label_keyboard_shortcut_focus_previous_item: "聚焦前面的列表元素 （只有某些列表)"
   label_keyboard_shortcut_focus_next_item: "聚焦下一个的列表元素 （只有某些列表)"
+  macro_execution_error: "执行宏 %{macro_name} 出错"
+  macro_unavailable: "无法显示宏 %{macro_name} 。"
   mail_body_account_activation_request: "一个新的用户 (%{value}) 注册。该帐户正在等待您的批准："
   mail_body_account_information: "您的帐户信息"
   mail_body_account_information_external: "你可以使用 %{value} 帐号登录。"
@@ -1074,7 +1039,6 @@ zh:
   noscript_heading: JavaScript 被禁用
   noscript_learn_more: "了解更多信息"
   notice_account_activated: "您的帐户已激活。您现在可以登录。"
-  notice_account_inactive: "您的帐户尚未激活。要激活您的帐户，请单击通过电子邮件发送到您的链接。"
   notice_account_invalid_credentials: "无效的用户名或密码"
   notice_account_invalid_credentials_or_blocked: "无效的用户或密码或帐户由于多个失败的登录尝试被阻止。如果是这样，它将自动在短时间内解除。"
   notice_account_lost_email_sent: "一个说明选择新密码的电子邮件已经发送给你。"
@@ -1087,6 +1051,7 @@ zh:
   notice_account_update_failed: "帐户设置不能保存。请看查看您的帐户页面。"
   notice_account_updated: "帐户已成功更新。"
   notice_account_wrong_password: "密码错误"
+  notice_account_registered_and_logged_in: "欢迎，您的帐户已激活。您现在已登录。"
   notice_api_access_key_reseted: "您的 API 访问密钥被重置。"
   notice_can_t_change_password: "此帐户使用外部身份验证源。无法更改密码。"
   notice_default_data_loaded: "成功加载默认配置。"
@@ -1117,6 +1082,7 @@ zh:
   notice_unable_delete_time_entry: "不能删除时间记录条目。"
   notice_unable_delete_version: "不能删除版本。"
   notice_automatic_set_of_standard_type: "自动设置标准类型。"
+  notice_logged_out: "您已被注销。"
   error_types_in_use_by_work_packages: "以下类型仍被工作包引用： %{types}"
   number:
     format:
@@ -1266,7 +1232,6 @@ zh:
   setting_mail_handler_api_key: API 密钥
   setting_mail_handler_body_delimiters: "在这些行之后截断电子邮件"
   setting_new_project_user_role_id: "给创建项目的非管理员用户的角色"
-  setting_openid: "允许 OpenID 登录和注册"
   setting_password_active_rules: "激活支付类型"
   setting_password_count_former_banned: "禁止重复使用最近使用密码的数量"
   setting_password_days_valid: "几天后，强制执行密码更改 （禁用与 0）"
@@ -1349,6 +1314,7 @@ zh:
   text_load_default_configuration: "加载默认配置"
   text_min_max_length_info: 0 表示没有限制
   text_no_configuration_data: "角色、 类型、 工作包状态和工作流有尚未配置。 \n强烈建议加载默认配置。加载完成后你将能够修改它。"
+  text_notice_too_many_values_are_inperformant: "注意： 每个页面显示超过 100 个项目会增加页面加载时间。"
   text_own_membership_delete_confirmation: "您将要删除部分或全部的权限，可能不能够在那之后编辑此项目。 \n您确定要继续吗？"
   text_plugin_assets_writable: "插件资产目录可写"
   text_powered_by: Powered by %{link}
@@ -1360,7 +1326,6 @@ zh:
   text_repository_usernames_mapping: |-
     选择或更新每个在代码库日志中发现的用户名所映射的OpenProject用户。
     与OpenProject和代码库用户名或电子邮件相同的用户已被自动更新。
-  text_rmagick_available: RMagick 可用 （可选）
   text_select_mail_notifications: "选择邮件通知应该被发送的动作。"
   text_select_project_modules: "选择要为此项目启用的模块："
   text_status_changed_by_changeset: "被实施在变更集 %{value} 中。"
@@ -1491,8 +1456,11 @@ zh:
       project_time_filter: "项目具有在一定时间段中的某类型工作包"
       project_time_filter_absolute_timeframe: "绝对时间段"
       project_time_filter_relative_timeframe: "相对时间段"
-      project_time_filter_historical: "从 %{startdate} 到 %{enddate}"
-      project_time_filter_relative: "从 %{startspan}%{startspanunit} 之前，到距今 %{endspanunit}%{endspan} "
+      project_time_filter_historical_from: "从"
+      project_time_filter_historical_to: "到"
+      project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
+      project_time_filter_relative: "%{start_label} %{startspan} %{startspanunit}
+        前，从现在起的 %{end_label} %{endspan} %{endspanunit}"
       project_filters: "筛选项目"
       project_responsible: "显示项目与责任人"
       project_status: "显示项目的状态"
@@ -1568,6 +1536,9 @@ zh:
     active: "激活"
     activate: "激活"
     activate_and_reset_failed_logins: "激活和重置失败的帐户"
+    authentication_provider: "身份验证提供程序"
+    authentication_settings_disabled_due_to_external_authentication: "此用户验证通过外部身份验证提供程序，所以在
+      OpenProject 中没有密码将被改变。"
     assign_random_password: "分配随机密码 （用户通过电子邮件发送）"
     blocked: "暂时锁定"
     blocked_num_failed_logins:
@@ -1582,9 +1553,15 @@ zh:
     status_user_and_brute_force: "%{user} 和 %{brute_force}"
     unlock: "解锁​​​​"
     unlock_and_reset_failed_logins: "解锁和重置失败的帐户"
+    no_login: "此用户对通过登录密码进行身份验证。因为被禁用，所以他们不能登录。"
+    password_change_unsupported: "不支持更改密码。"
+    authorization_rejected: "你不允许登录。"
   version_status_closed: "关闭"
   version_status_locked: "锁定"
   version_status_open: "打开"
+  note: "请注意"
+  note_password_login_disabled: "密码登录已被 %{configuration} 禁用。"
+  warning: "警告"
   warning_attachments_not_saved: "%{count} 文件不能被保存。"
   menu_item: "菜单项"
   menu_item_setting: "可见性"
