@@ -47,7 +47,7 @@ ja:
         is_filter: "フィルターとして使用"
         is_required: "必須"
         max_length: "最大値の長さ"
-        min_length: "最小値"
+        min_length: "最短長"
         possible_values: "使用可能な値"
         regexp: "正規表現"
         searchable: "検索対象"
@@ -145,9 +145,9 @@ ja:
         priority: "優先度"
         progress: "% 完了"
         responsible: "責任者"
-        spent_time: "経過時間"
+        spent_time: "作業時間の記録"
         subproject: "子プロジェクト"
-        time_entries: "活動時刻"
+        time_entries: "記録時刻"
         type: "種類"
         watcher: "ウォッチャー"
     errors:
@@ -176,7 +176,7 @@ ja:
         odd: "奇数でなければなりません。"
         taken: "既に使用されています。"
         too_long: "長すぎています（最大%{count}文字）。"
-        too_short: "短すぎています（最小%{count}文字）。"
+        too_short: "短すぎています（最短は%{count}文字）。"
         wrong_length: "長さが無効です（%{count}文字でなければなりません）。"
         after: "%{date}の後でなければなりません。"
         after_or_equal_to: "%{date}以降でなければなりません。"
@@ -188,7 +188,7 @@ ja:
           identical_projects: "同じプロジェクトから作成することはできません。"
           project_association_not_allowed: "関連付けを許可していません。"
         work_package:
-          is_not_a_valid_target_for_time_entries: "時間記録を再割り当てるに対して、作業項目#%{id}は対象外である。"
+          is_not_a_valid_target_for_time_entries: "記録された作業時間を再割り当てるに対して、作業項目#%{id}は対象外である。"
           attributes:
             due_date:
               not_start_date: "マイルストーンでは必要ですが、開始日になっていません。"
@@ -320,7 +320,7 @@ ja:
   button_expand_all: "全てを展開"
   button_list: "リスト"
   button_lock: "ロック"
-  button_log_time: "活動時刻"
+  button_log_time: "記録時刻"
   button_login: "ログイン"
   button_move: "移動"
   button_move_and_follow: "移動して次"
@@ -347,7 +347,7 @@ ja:
   button_configure_menu_entry: "メニュー項目を設定"
   button_delete_menu_entry: "メニュー項目を削除"
   copy_project:
-    started: "プロジェクト「%{source_project_name}」を「%{target_project_name}」コピーを開始しました。「%{target_project_name}」が利用できるようになるとすぐにメールで通知されます。"
+    started: "プロジェクト「%{source_project_name}」を「%{target_project_name}」にコピーを開始しました。「%{target_project_name}」が利用可能になる次第、メールで通知されます。"
     failed: "プロジェクト「%{source_project_name}」をコピーできません。"
     succeeded: "「%{target_project_name}」プロジェクトを作成しました。"
     errors: "エラー！"
@@ -580,7 +580,7 @@ ja:
   label_add_another_file: "別のファイルを追加する"
   label_add_columns: "選択した列を追加する"
   label_add_note: "注記を追加する"
-  label_add_related_issues: "関連するトラッカーを追加する。"
+  label_add_related_issues: "関連するトラッカーを追加"
   label_add_related_work_packages: "関連する作業項目を追加する"
   label_add_subtask: "子タスクを追加する"
   label_added: "追加された"
@@ -771,7 +771,7 @@ ja:
   label_message_new: "新規メッセージ"
   label_message_plural: "メッセージ"
   label_message_posted: "メッセージが追加されました。"
-  label_min_max_length: "最小 - 最大長"
+  label_min_max_length: "最短 - 最大長"
   label_missing_api_access_key: APIアクセスキーがありません。
   label_missing_feeds_access_key: RSSのアクセス キーがありません。
   label_modification: "%{count}つの変更"
@@ -814,7 +814,7 @@ ja:
   label_optional_description: "説明"
   label_options: "オプション"
   label_overall_activity: "全ての活動"
-  label_overall_spent_time: "全体的に費やした時間"
+  label_overall_spent_time: "全体の作業時間の記録"
   label_overview: "概要"
   label_password_lost: "パスワードをお忘れですか？"
   label_password_rule_lowercase: "小文字"
@@ -899,7 +899,7 @@ ja:
   label_sort_highest: "一番上へ移動"
   label_sort_lower: "下へ移動"
   label_sort_lowest: "一番下へ移動"
-  label_spent_time: "経過時間"
+  label_spent_time: "作業時間の記録"
   label_start_to_end: "開始から終了まで"
   label_start_to_start: "開始から開始まで"
   label_statistics: "統計情報"
@@ -919,7 +919,7 @@ ja:
   label_this_month: "今月"
   label_this_week: "今週"
   label_this_year: "今年"
-  label_time_entry_plural: "経過時間"
+  label_time_entry_plural: "作業時間の記録"
   label_time_tracking: "時間の追跡"
   label_today: "今日"
   label_top_menu: "トップメニュー"
@@ -935,31 +935,30 @@ ja:
   label_used_by: "使用している相手"
   label_user_activity: "%{value}の活動"
   label_user_anonymous: "匿名"
-  label_user_mail_no_self_notified: I don't want to be notified of changes that I
-    make myself
-  label_user_mail_option_all: For any event on all my projects
-  label_user_mail_option_none: No events
-  label_user_mail_option_only_assigned: Only for things I am assigned to
-  label_user_mail_option_only_my_events: Only for things I watch or I'm involved in
-  label_user_mail_option_only_owner: Only for things I am the owner of
-  label_user_mail_option_selected: For any event on the selected projects only...
-  label_user_new: New user
-  label_user_plural: Users
-  label_user_search: Search for user
-  label_version_new: New version
+  label_user_mail_no_self_notified: "自分による変更を通知されたくない"
+  label_user_mail_option_all: "自分の全てのプロジェクトで全てのイベントに対して"
+  label_user_mail_option_none: "イベントなし"
+  label_user_mail_option_only_assigned: "自分が担当している物事のみ"
+  label_user_mail_option_only_my_events: "自分がウォッチや関連している物事のみ"
+  label_user_mail_option_only_owner: "自分が持ち主になっている物事のみ"
+  label_user_mail_option_selected: "選択されたプロジェクト上のみ、全てのイベント..."
+  label_user_new: "新規ユーザー"
+  label_user_plural: "ユーザー"
+  label_user_search: "ユーザーを検索"
+  label_version_new: "新しいバージョン"
   label_version_plural: "バージョン"
   label_version_sharing_descendants: "子プロジェクト付き"
-  label_version_sharing_hierarchy: With project hierarchy
-  label_version_sharing_none: Not shared
-  label_version_sharing_system: With all projects
-  label_version_sharing_tree: With project tree
+  label_version_sharing_hierarchy: "プロジェクトの階層付き"
+  label_version_sharing_none: "共有なし"
+  label_version_sharing_system: "全てのプロジェクトに対し"
+  label_version_sharing_tree: "プロジェクのトツリー構造付き"
   label_view_all_revisions: "全てのリビジョンを表示"
   label_view_diff: "差分を表示"
   label_view_revisions: "リビジョンを表示"
   label_watched_work_packages: "ウォッチされている作業項目"
-  label_week: Week
-  label_wiki_content_added: Wiki page added
-  label_wiki_content_updated: Wiki page updated
+  label_week: "週"
+  label_wiki_content_added: Wikiページを追加
+  label_wiki_content_updated: Wikiページを更新
   label_wiki_toc: "目次"
   label_wiki_dont_show_menu_item: Do not show this wikipage in project navigation
   label_wiki_edit: Wiki edit
@@ -1140,17 +1139,17 @@ ja:
   permission_edit_messages: Edit messages
   permission_edit_own_work_package_notes: "自分の注記の編集"
   permission_edit_own_messages: Edit own messages
-  permission_edit_own_time_entries: Edit own time logs
+  permission_edit_own_time_entries: "自分の作業時間記録をの編集"
   permission_edit_project: Edit project
   permission_edit_project_associations: Edit project dependencies
   permission_edit_reportings: Edit reportings
-  permission_edit_time_entries: Edit time logs
+  permission_edit_time_entries: "作業時間記録をの編集"
   permission_edit_timelines: "時系列の編集"
   permission_edit_wiki_pages: Edit wiki pages
   permission_export_work_packages: "作業項目のエクスポート"
   permission_export_wiki_pages: Export wiki pages
   permission_list_attachments: List attachments
-  permission_log_time: Log spent time
+  permission_log_time: "作業時間の記録"
   permission_manage_boards: Manage forums
   permission_manage_categories: "仕事項目のカテゴリを管理"
   permission_manage_work_package_relations: "作業項目の関連の管理"
@@ -1177,7 +1176,7 @@ ja:
   permission_view_messages: "メッセージの閲覧"
   permission_view_project_associations: "プロジェクトの依存関係の閲覧"
   permission_view_reportings: "レポートの閲覧"
-  permission_view_time_entries: "費やした時間の閲覧"
+  permission_view_time_entries: "作業時間記録の閲覧"
   permission_view_timelines: "時系列の閲覧"
   permission_view_wiki_edits: Wiki 履歴の閲覧
   permission_view_wiki_pages: Wiki の閲覧
@@ -1250,7 +1249,7 @@ ja:
     for reuse
   setting_password_days_valid: Number of days, after which to enforce a password change
     (disable with 0)
-  setting_password_min_length: "最小値"
+  setting_password_min_length: "最短長"
   setting_password_min_adhered_rules: Minimum number of required classes
   setting_per_page_options: Objects per page options
   setting_plain_text_mail: Plain text mail (no HTML)
@@ -1321,14 +1320,14 @@ ja:
   text_work_package_updated: "作業項目%{id}が%{author}によって更新されました。"
   text_work_packages_destroy_confirmation: "選択した作業項目を削除してもよろしいですか？"
   text_work_packages_ref_in_commit_messages: "コミットメッセージ内で作業項目の参照を修正"
-  text_journal_added: "%{label} %{value} added"
-  text_journal_changed: "%{label} changed from %{old} to %{new}"
-  text_journal_changed_no_detail: "%{label} updated"
-  text_journal_changed_with_diff: "%{label} changed (%{link})"
-  text_journal_deleted: "%{label} deleted (%{old})"
-  text_journal_deleted_with_diff: "%{label} deleted (%{link})"
-  text_journal_set_to: "%{label} set to %{value}"
-  text_journal_set_with_diff: "%{label} set (%{link})"
+  text_journal_added: "%{label} %{value}を追加"
+  text_journal_changed: "%{label} %{old} から %{new}に変更"
+  text_journal_changed_no_detail: "%{label} 更新"
+  text_journal_changed_with_diff: "%{label} 「%{link}」を変更"
+  text_journal_deleted: "%{label} 「%{old}」を削除"
+  text_journal_deleted_with_diff: "%{label} 「%{link}」を削除"
+  text_journal_set_to: "%{label} %{value}に設定"
+  text_journal_set_with_diff: "%{label} 「%{link}」に設定"
   text_length_between: Length between %{min} and %{max} characters.
   text_line_separated: Multiple values allowed (one line for each value).
   text_load_default_configuration: Load the default configuration
@@ -1357,12 +1356,12 @@ ja:
   text_status_changed_by_changeset: Applied in changeset %{value}.
   text_subprojects_destroy_warning: "子プロジェクト: %{value}も削除されます。"
   text_time_logged_by_changeset: Applied in changeset %{value}.
-  text_tip_work_package_begin_day: "今日開始した作業項目"
-  text_tip_work_package_begin_end_day: "今日開始して終了する作業項目"
-  text_tip_work_package_end_day: "今日終了する作業項目"
+  text_tip_work_package_begin_day: "この日に開始する作業項目"
+  text_tip_work_package_begin_end_day: "この日に開始．終了する作業項目"
+  text_tip_work_package_end_day: "この日に終了する作業項目"
   text_type_no_workflow: No workflow defined for this type
   text_unallowed_characters: Unallowed characters
-  text_user_mail_option: "選択されていないプロジェクトの場合、ウォッチまたは関与（例えば. 作業項目の作成者や担当者）している対象物のみ通知を受け取ります。"
+  text_user_mail_option: "未選択プロジェクトでは、ウォッチまたは関与している事柄（例： 自分が作成者又は担当者）のみメールが送信されます。"
   text_user_wrote: "%{value} wrote:"
   text_warn_on_leaving_unsaved: The current page contains unsaved text that will be
     lost if you leave this page.
