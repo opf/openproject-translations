@@ -14,6 +14,6 @@
 
 module OpenProject
   module Translations
-    VERSION = "3.0.13"
+    VERSION = "3.0.16"
   end
 end
