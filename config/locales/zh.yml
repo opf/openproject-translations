@@ -196,7 +196,8 @@ zh:
               not_a_valid_parent: "是无效的"
               does_not_exist: "不存在"
             status_id:
-              status_transition_invalid: "当前用户角色没有从旧到新状态的有效过度"
+              status_transition_invalid: is invalid because no valid transition exists
+                from old to new status for the current user's roles
             priority_id:
               only_active_priorities_allowed: "需要被激活"
         user:
@@ -252,6 +253,7 @@ zh:
   attributes:
     active: "激活"
     assigned_to: "指定人"
+    assignee: "指定人"
     attachments: "附件"
     author: "作者"
     base: "一般错误："
@@ -279,6 +281,7 @@ zh:
     name: "名称"
     password: "密码"
     project: "项目"
+    responsible: "责任人"
     role: Role
     start_date: "开始日期"
     status: "状态"
@@ -1573,3 +1576,24 @@ zh:
   work_package:
     updated_automatically_by_child_changes: _自动更新由于改变子工作包 %{child} 内的值_
   nothing_to_preview: "没有什么要预览"
+  api_v3:
+    errors:
+      code_401: You need to be authenticated to access this resource.
+      code_403: You are not authorized to access this resource.
+      code_404: Couldn't find %{type} with id=%{id}
+      code_409: Couldn't update the resource because of conflicting modifications.
+      invalid_content_type: Expected CONTENT-TYPE to be '%{content_type}' but got
+        '%{actual}'.
+      invalid_resource: For property '%{property}' a resource of type '%{expected}'
+        is expected but got a resource of type '%{actual}'.
+      multiple_errors: Multiple fields violated their constraints.
+      parse_error: The request body was neither empty, nor did it contain a single
+        JSON object.
+      writing_read_only_attributes: You must not write a read-only attribute.
+      render:
+        context_not_found: No context found.
+        unsupported_context: Unsupported context found.
+        context_object_not_found: Cannot find the resource given with the context.
+      validation:
+        invalid_user_assigned_to_work_package: The chosen user is not allowed to be
+          '%{property}' for this work package.

@@ -226,8 +226,8 @@ de:
               not_a_valid_parent: ist nicht gültig
               does_not_exist: existiert nicht
             status_id:
-              status_transition_invalid: für die aktuellen Nutzer-Rollen existiert
-                kein valider Übergang vom alten zum neuen Status
+              status_transition_invalid: is invalid because no valid transition exists
+                from old to new status for the current user's roles
             priority_id:
               only_active_priorities_allowed: muss aktiv sein
         user:
@@ -286,6 +286,7 @@ de:
   attributes:
     active: Aktiv
     assigned_to: Zugewiesen an
+    assignee: Zugewiesen an
     attachments: Anhänge
     author: Autor
     base: 'Allgemeiner Fehler:'
@@ -313,6 +314,7 @@ de:
     name: Name
     password: Kennwort
     project: Projekt
+    responsible: Verantwortlicher
     role: Role
     start_date: Beginn
     status: Status
@@ -1733,3 +1735,24 @@ de:
     updated_automatically_by_child_changes: _Automatisch durch die Änderungen in %{child}
       aktualisert_
   nothing_to_preview: Keine Vorschau verfügbar
+  api_v3:
+    errors:
+      code_401: You need to be authenticated to access this resource.
+      code_403: You are not authorized to access this resource.
+      code_404: Couldn't find %{type} with id=%{id}
+      code_409: Couldn't update the resource because of conflicting modifications.
+      invalid_content_type: Expected CONTENT-TYPE to be '%{content_type}' but got
+        '%{actual}'.
+      invalid_resource: For property '%{property}' a resource of type '%{expected}'
+        is expected but got a resource of type '%{actual}'.
+      multiple_errors: Multiple fields violated their constraints.
+      parse_error: The request body was neither empty, nor did it contain a single
+        JSON object.
+      writing_read_only_attributes: You must not write a read-only attribute.
+      render:
+        context_not_found: No context found.
+        unsupported_context: Unsupported context found.
+        context_object_not_found: Cannot find the resource given with the context.
+      validation:
+        invalid_user_assigned_to_work_package: The chosen user is not allowed to be
+          '%{property}' for this work package.
