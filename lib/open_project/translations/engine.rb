@@ -26,16 +26,19 @@ module OpenProject::Translations
 
     patches [ :ApplicationHelper ]
 
+    initializer 'translations.disable_core_specs' do
+      require File.join(File.dirname(__FILE__), 'disabled_specs')
+    end
+
+    initializer 'translations.register_test_path' do |app|
+      app.config.plugins_to_test_paths << root
+    end
+
     config.to_prepare do
       # the patches helper does not work for patches in the Redmine module, so we patch things manually now
       Redmine::I18n # let rails do some autoloading magic with Redmine::I18n
       require_dependency 'open_project/translations/patches'
       require_dependency 'open_project/translations/patches/redmine_i18n_patch'
-    end
-
-    initializer 'translations.register_test_path' do |app|
-      require File.join(File.dirname(__FILE__), 'disabled_specs')
-      app.config.plugins_to_test_paths << root
     end
 
     initializer 'translations.hooks' do
