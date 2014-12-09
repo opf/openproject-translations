@@ -35,6 +35,11 @@ module OpenProject::Translations
       require_dependency 'open_project/translations/patches/redmine_i18n_patch'
     end
 
+    initializer 'translations.register_test_path' do |app|
+      require File.join(File.dirname(__FILE__), 'disabled_specs')
+      app.config.plugins_to_test_paths << root
+    end
+
     initializer 'translations.hooks' do
       require_dependency 'open_project/translations/hooks'
       require_dependency 'open_project/translations/hooks/crowdin_in_context_translation_hook'
