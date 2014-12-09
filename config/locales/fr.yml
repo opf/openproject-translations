@@ -199,15 +199,15 @@ fr:
         not_a_number: n'est pas un nombre
         not_an_integer: n'est pas un entier
         not_same_project: n'appartient pas au même projet
-        odd: doit être pair
+        odd: doit être impair
         taken: a déjà été pris
         too_long: est trop long (maximum est de %{count} caractères)
         too_short: est trop court (minimum %{count} caractères)
         wrong_length: est de mauvaise longueur (devrait être %{count} caractères)
-        after: doit être après %{date}
-        after_or_equal_to: Doit être après ou égal à %{date}
-        before: doit être avant %{date}
-        before_or_equal_to: Doit être avant ou égal à %{date}
+        after: doit être après le %{date}
+        after_or_equal_to: Doit être après ou le %{date}
+        before: doit être avant le %{date}
+        before_or_equal_to: Doit être avant ou le %{date}
         could_not_be_copied: n'a pas pu être copié (entièrement)
       models:
         project_association:
@@ -219,15 +219,16 @@ fr:
           attributes:
             due_date:
               not_start_date: n'est pas sur la date de démarrage, bien que cela soit
-                requis pour les jalon
+                requis pour les étapes
             parent_id:
               cannot_be_milestone: ne peut pas être un jalon
               cannot_be_in_another_project: ne peut pas être dans un autre projet
               not_a_valid_parent: est invalide
               does_not_exist: n'existe pas
             status_id:
-              status_transition_invalid: is invalid because no valid transition exists
-                from old to new status for the current user's roles
+              status_transition_invalid: n'est pas valide, car aucune transition valide
+                n'existe de l'ancien au nouveau statut pour les rôles de l'utilisateur
+                actuel
             priority_id:
               only_active_priorities_allowed: ont besoin d'être actif
         user:
@@ -327,7 +328,7 @@ fr:
     version: Version
     work_package: Lot de Travaux
   button_add: Ajouter
-  button_add_watcher: Ajouter un abonné
+  button_add_watcher: Ajouter un observateur
   button_annotate: Annoter
   button_apply: Appliquer
   button_archive: Archive
@@ -519,7 +520,7 @@ fr:
   default_type: Lot de Travaux
   default_type_task: Tâche
   default_type_deliverable: Livrable
-  default_type_milestone: Jalon
+  default_type_milestone: "Étape"
   default_type_phase: Phase
   default_type_bug: Bug
   default_type_feature: Fonctionnalité
@@ -531,8 +532,8 @@ fr:
     Tab ou Entrée. Sinon, vous pouvez entrer le numéro de Lots de Travaux directement.
   description_available_columns: Colonnes disponibles
   description_choose_project: Projets
-  description_compare_from: Comparaison de version
-  description_compare_to: Comparer à la version
+  description_compare_from: Comparer depuis la version
+  description_compare_to: Comparer vers la version
   description_current_position: 'Vous êtes ici:'
   description_date_from: Entrer la date de début
   description_date_range_interval: Choisir la pèriode en sélectionnant la date de
@@ -758,7 +759,7 @@ fr:
   label_filter_add: Ajouter le filtre
   label_filter_plural: Filtres
   label_float: Flottant
-  label_follows: suit
+  label_follows: suivi
   label_force_user_language_to_default: Pour cet utilisateur, revenir au langage par
     defaut
   label_general: Général
@@ -802,8 +803,8 @@ fr:
     par moi
   label_work_package_view_all_responsible_for: Voir tous les Lots de Travaux dont
     je suis responsable
-  label_work_package_view_all_watched: Voir tous les Lots de Travaux abonnés
-  label_work_package_watchers: Abonnés
+  label_work_package_view_all_watched: Voir tous les Lots de Travaux Observés
+  label_work_package_watchers: Observateurs
   label_work_packages_by: Lots de Travaux par %{value}
   label_journal_diff: Comparaison de description
   label_jump_to_a_project: Aller à un projet...
@@ -941,7 +942,7 @@ fr:
   label_revision_plural: Révisions
   label_roadmap: Feuille de route
   label_roadmap_edit: Modifier la feuille de route %{name}
-  label_roadmap_due_in: Date limite dans %{value}
+  label_roadmap_due_in: Date limite %{value}
   label_roadmap_no_work_packages: Aucun Lot de Travaux pour cette version
   label_roadmap_overdue: "%{value} de retard"
   label_role_and_permissions: Rôles et Permissions
@@ -1081,7 +1082,7 @@ fr:
   label_keyboard_shortcut_go_activity: Aller aux activités du projet
   label_keyboard_shortcut_go_calendar: Aller au calendrier du projet
   label_keyboard_shortcut_go_news: Aller aux actualités du projet
-  label_keyboard_shortcut_go_timelines: Aller aux calendrier lié
+  label_keyboard_shortcut_go_timelines: Aller à la vue Chronologique
   label_keyboard_shortcut_new_work_package: Créer un nouveau Lot de Travaux
   label_keyboard_shortcut_go_edit: Aller à l'edition de la tâche en cours (page des
     détails seulement)
@@ -1213,13 +1214,13 @@ fr:
   permission_comment_news: Commenter actualité
   permission_commit_access: Commit Access
   permission_copy_projects: Copier les projets
-  permission_delete_work_package_watchers: Supprimer des abonnés
+  permission_delete_work_package_watchers: Supprimer des observateurs
   permission_delete_work_packages: Supprimer des Lots de Travaux
   permission_delete_messages: Supprimer les messages
   permission_delete_own_messages: Supprimer mes propre messages
   permission_delete_project_associations: Supprimer les dépendances du projet
   permission_delete_reportings: Supprimer les rapports
-  permission_delete_timelines: Supprimer les calendriers liés
+  permission_delete_timelines: Supprimer les vues chronologique liés
   permission_delete_wiki_pages: Supprimer les pages wiki
   permission_delete_wiki_pages_attachments: Supprimer piéces-jointes
   permission_edit_work_package_notes: Editer des notes
@@ -1232,7 +1233,7 @@ fr:
   permission_edit_project_associations: Editer le dépendance du project
   permission_edit_reportings: Editer les rapports
   permission_edit_time_entries: Editer « time logs »
-  permission_edit_timelines: Editer les calendriers liés
+  permission_edit_timelines: "Éditer les vues Chronologiques liés"
   permission_edit_wiki_pages: Editer les pages wiki
   permission_export_work_packages: Exporter les Lots de Travaux
   permission_export_wiki_pages: Exporter les pages wiki
@@ -1260,13 +1261,13 @@ fr:
   permission_view_changesets: Afficher le lot de modifications
   permission_view_commit_author_statistics: Voir les statistiques des auteurs des
     « commits »
-  permission_view_work_package_watchers: Voir la liste des abonnés
+  permission_view_work_package_watchers: Voir la liste des observateurs
   permission_view_work_packages: Voir les Lots de Travaux
   permission_view_messages: Voir messages
   permission_view_project_associations: Voir dépendances du projet
   permission_view_reportings: Voir les rapports
   permission_view_time_entries: Voir temps passé
-  permission_view_timelines: Voir les calendriers liés
+  permission_view_timelines: Voir les vues Chronologiques liés
   permission_view_wiki_edits: Voir historique du wiki
   permission_view_wiki_pages: Voir le wiki
   project_module_activity: Activité
@@ -1321,8 +1322,8 @@ fr:
   setting_gravatar_default: Image Gravatar par défaut
   setting_gravatar_enabled: Utiliser les icônes Gravatar
   setting_host_name: Nom d'hôte
-  setting_work_package_done_ratio: Calculer le Taux d'avancement du lot de travail
-    avec...
+  setting_work_package_done_ratio: Calculer le Taux d'avancement du lot de travaux
+    avec
   setting_work_package_done_ratio_field: Utiliser le champ Lot de Travaux
   setting_work_package_done_ratio_status: Utiliser le statut des Lots de Travaux
   setting_work_package_done_ratio_disabled: Désactiver (cacher l'avancement)
@@ -1503,8 +1504,8 @@ fr:
       planning_elements: Eléments de planning
       project_associations: Dépendances
       reportings: Rapports des statuts
-      reports: Rapports des calendriers
-      timelines: Calendriers liés
+      reports: Rapport Chronologique
+      timelines: Chronologie
     add_project_association: Ajouter une dépendance
     associations: Dépendances
     board_could_not_be_saved: Le tableau n'a pas pu être enregistré
@@ -1525,20 +1526,21 @@ fr:
     edit_color: Editer la couleur
     edit_project_type: Editer le type de projet
     edit_thing: "Éditer"
-    edit_timeline: Editer le calendrier lié
-    delete_timeline: Supprimer le calendrier lié
+    edit_timeline: "Éditer le rapport Chronologique %{timeline}"
+    delete_timeline: Supprimer le rapport Chronologique %{timeline}
     empty: "(vide)"
     enable_type_in_project: Autorise le type « %{type} »
     end: Fin
     errors:
-      not_implemented: Le calendrier ne peut être affiché parce qu’il utilise une
+      not_implemented: La Chronologie ne peut être affiché parce qu’il utilise une
         fonctionnalité qui n'est pas encore implémentée.
-      report_comparison: Le calendrier ne peut afficher les comparaisons configurées.
+      report_comparison: La vue Chronologique ne peut afficher les comparaisons configurées.
         Veuillez consulter la section appropriée dans la configuration, réinitialiser
         peut aider à résoudre ce problème.
-      report_epicfail: Le calendrier ne peut pas être chargé à cause d'une erreur
-        inattendue.
-      report_timeout: Le calendrier ne peut être chargé dans un laps de temps raisonnable.
+      report_epicfail: La vue Chronologique ne peut pas être chargé à cause d'une
+        erreur inattendue.
+      report_timeout: La vue Chronologique ne peut être chargé dans un laps de temps
+        raisonnable.
     filter:
       errors:
         timeframe_start: Début de l'échéancier
@@ -1668,14 +1670,15 @@ fr:
       ?
     really_delete_project_type: Voulez-vous vraiment supprimer le projet type suivant?
       Les projets utilisant ce type ne seront pas supprimés.
-    really_delete_timeline: Voulez-vous vraiment supprimer le calendrier lié suivant
-      ? Les Lots de Travaux présentés dans ce calendrier lié ne seront pas supprimés.
+    really_delete_timeline: Voulez-vous vraiment supprimer le rapport Chronologique
+      suivant ? Les Lots de Travaux présentés dans ce rapport Chronologique ne seront
+      pas supprimés.
     really_delete_reporting: Voulez-vous vraiment supprimer le rapport suivant? Les
       statuts de rapport précédents seront eux aussi supprimés.
     start: Début
-    timeline: Calendrier lié
-    timelines: Rapports des calendriers
-    settings: Calendriers liés
+    timeline: Rapport Chronologique
+    timelines: Rapport Chronologique
+    settings: Chronologie
     vertical_work_package: Lots de Travaux verticaux
     without_project_type: Sans le projet type
     you_are_viewing_the_selected_timeline: Vous visualisez le calendrier lié selectionné
@@ -1744,22 +1747,24 @@ fr:
   nothing_to_preview: Rien à afficher en apperçu
   api_v3:
     errors:
-      code_401: You need to be authenticated to access this resource.
-      code_403: You are not authorized to access this resource.
-      code_404: Couldn't find %{type} with id=%{id}
-      code_409: Couldn't update the resource because of conflicting modifications.
-      invalid_content_type: Expected CONTENT-TYPE to be '%{content_type}' but got
-        '%{actual}'.
-      invalid_resource: For property '%{property}' a resource of type '%{expected}'
-        is expected but got a resource of type '%{actual}'.
-      multiple_errors: Multiple fields violated their constraints.
-      parse_error: The request body was neither empty, nor did it contain a single
-        JSON object.
-      writing_read_only_attributes: You must not write a read-only attribute.
+      code_401: Vous devez être authentifié pour accéder à cette ressource.
+      code_403: Vous n'êtes pas autorisé à accéder à cette ressource.
+      code_404: Impossible de trouver le %{type} avec l' id =%{id}
+      code_409: Ne pouvait pas mettre à jour la ressource en raison de modifications
+        conflictuelles.
+      invalid_content_type: CONTENT-TYPE attendu «%{content_type} » , mais est à «%{actual}
+        ».
+      invalid_resource: Pour la propriété «%{property} » une ressource de type «%{expected}
+        » est attendue mais a obtenu une ressource de type «%{actual} ».
+      multiple_errors: Plusieurs champs ont violé leurs contraintes.
+      parse_error: Le corps de la demande n'était ni vide, ni contenant un objet JSON.
+      writing_read_only_attributes: Vous ne devez pas écrire un attribut en lecture
+        seule.
       render:
-        context_not_found: No context found.
-        unsupported_context: Unsupported context found.
-        context_object_not_found: Cannot find the resource given with the context.
+        context_not_found: Aucun contexte trouvé.
+        unsupported_context: Contexte trouvé non supporté.
+        context_object_not_found: Impossible de trouver la ressource donnée avec ce
+          contexte.
       validation:
-        invalid_user_assigned_to_work_package: The chosen user is not allowed to be
-          '%{property}' for this work package.
+        invalid_user_assigned_to_work_package: L'utilisateur choisi ne doit pas être
+          '%{property} ' pour ce paquet de travail.
