@@ -7,16 +7,16 @@ ja:
     deletion_info:
       data_consequences:
         other: "ユーザーが作成した殆どのデータ (例えば電子メール、設定、作業項目 、wiki記載 )が削除されます。ただし、他のユーザーの作業を妨害することがなく作業項目やwiki
-          記載のようなデータは削除できません。それ故に、このようなデータは「削除されたユーザ」と呼ばれるアカウントに再割り当てます。すべての削除されたアカウントのデータがこのアカウントに再割り当ているので削除された別のユーザーのデータと区別することができません。"
+          記載のようなデータは削除できません。それ故に、このようなデータは「削除されたユーザ」と呼ばれるアカウントに再割り当てます。削除された全てのアカウントのデータがこのアカウントに再割り当ているので、削除された別のユーザーのデータと区別できなくなります。"
         self: "ユーザーが作成した殆どのデータ (例えば電子メール、設定、作業項目 、wiki記載 )が削除されます。ただし、他のユーザーの作業を妨害することがなく作業項目やwiki
-          記載のようなデータは削除できません。それ故に、このようなデータは「削除されたユーザ」と呼ばれるアカウントに再割り当てます。すべての削除されたアカウントのデータがこのアカウントに再割り当ているので削除された別のユーザーのデータと区別することができません。"
+          記載のようなデータは削除できません。それ故に、このようなデータは「削除されたユーザ」と呼ばれるアカウントに再割り当てます。削除された全てのアカウントのデータがこのアカウントに再割り当ているので、削除された別のユーザーのデータと区別できなくなります。"
       heading: "アカウント名「 %{name} 」を削除します。"
       info:
         other: "ユーザーアカウントの削除は復元できない操作です。"
         self: "アカウントの削除は復元できない操作です。"
       login_consequences:
-        other: "このアカウントはシステムから削除されます。したがって、このユーザーは現在の認証情報でログインすることができません。再度このアプリケーションのユーザーになることは可能です。"
-        self: "このアカウントはシステムから削除されます。したがって、このユーザーは現在の認証情報でログインすることができません。再度このアプリケーションのユーザーになることは可能です。"
+        other: "このアカウントはシステムから削除されます。したがって、このユーザーは現在の認証情報でログイン不可能になります。再度このアプリケーションのユーザーになることは可能です。"
+        self: "自分のアカウントはシステムから削除されます。したがって、自分が現在の認証情報でログイン不可能になります。再度このアプリケーションのユーザーになることは可能です。"
     error_inactive_activation_by_mail: "あなたのアカウントは未だ有効されていません。あなたに送信された電子メール内のリンクをクリックしてアカウントを有効化できます。"
     error_inactive_manual_activation: "あなたのアカウントは未だ有効化されていません。管理者がアカウントを有効化するまでにお待ちください。"
     error_self_registration_disabled: "このシステムでは、ユーザー登録が無効化されています。アカウントを作成するには管理者にお問い合わせください。"
@@ -31,7 +31,7 @@ ja:
       auth_source:
         account: "アカウント"
         attr_firstname: "「名前」属性"
-        attr_lastname: "「氏名」属性"
+        attr_lastname: "「苗字」属性"
         attr_login: "「ログイン」属性"
         attr_mail: "「メール」属性"
         base_dn: "ベースDN"
@@ -48,7 +48,7 @@ ja:
         is_required: "必須"
         max_length: "最大値の長さ"
         min_length: "最短長"
-        possible_values: "使用可能な値"
+        possible_values: "設定可能な値"
         regexp: "正規表現"
         searchable: "検索対象"
         visible: "可視"
@@ -81,7 +81,7 @@ ja:
       repository:
         url: URL
       role:
-        assignable: "この役割に作業項目は割り当てることができます"
+        assignable: "この役割に作業項目を割り当て可能"
       time_entry:
         activity: "活動"
         hours: "時間"
@@ -104,10 +104,10 @@ ja:
         force_password_change: "次回のログイン時にパスワード変更を強制する"
       user_preference:
         comments_sorting: "コメントを表示"
-        hide_mail: "電子メールアドレスを非表示"
+        hide_mail: "電子メールアドレスを未公開"
         impaired: "アクセシビリティモード"
         time_zone: "タイムゾーン"
-        warn_on_leaving_unsaved: "保存されていないページから移動すると警告を表示する"
+        warn_on_leaving_unsaved: "データを保存せずにページから移動するときに警告を表示"
       version:
         effective_date: "期限"
         sharing: "共有"
@@ -214,7 +214,7 @@ ja:
                   your last one.
                 other: "以前に使用されています。前回の%{count}つから異なっているのを選択してください。"
         member:
-          principal_blank: "少なくとも1つのユーザーまたはグループを選択してください。"
+          principal_blank: "一つ以上のユーザーまたはグループを選択してください。"
           role_blank: 1つ以上の役割を選択してください。
       template:
         body: "次のフィールドをチェックしてください："
@@ -225,7 +225,7 @@ ja:
       attachment: "ファイル"
       board: "フォーラム"
       comment: "コメント"
-      custom_field: "ユーザー設定フィールド"
+      custom_field: "カスタムフィールド"
       group: "グループ"
       issue: "トラッカー"
       category: "カテゴリ"
@@ -263,7 +263,7 @@ ja:
     content: "内容"
     created_at: "作成日時:"
     created_on: "作成日時:"
-    custom_values: "ユーザー設定フィールド"
+    custom_values: "カスタムフィールド"
     default_columns: "既定の列"
     description: "説明"
     display_sums: "合計を表示"
@@ -275,7 +275,7 @@ ja:
     is_default: "デフォルト値"
     is_for_all: "すべてのプロジェクト用"
     is_public: "公開"
-    lastname: "名字"
+    lastname: "苗字"
     login: "ログイン名"
     mail: "電子メール"
     name: "名称"
@@ -490,7 +490,7 @@ ja:
   default_type_feature: "機能"
   description_active: "有効？"
   description_attachment_toggle: "添付ファイルの表示/非表示"
-  description_autocomplete: "このフィールドは、オートコンプリートを使用します。作業項目のタイトルを入力中は可能な候補者のリストが表示されます。　矢印キーを利用していずれかを選んで、タブキーかＥｎｔｅｒキーで選択することができます。または作業項目の番号を直接入力できます。"
+  description_autocomplete: "このフィールドは、オートコンプリートを使用します。作業項目のタイトルを入力中は可能な候補のリストが表示されます。矢印キーを利用していずれかを選んで、タブキーかＥｎｔｅｒキーで選択できます。または作業項目の番号を直接入力できます。"
   description_available_columns: "利用可能な列"
   description_choose_project: "プロジェクト"
   description_compare_from: "バージョンから比較する。"
@@ -525,12 +525,12 @@ ja:
   enumeration_system_activity: "システムの活動"
   enumeration_reported_project_statuses: "プロジェクトの報告された進捗状況"
   error_can_not_archive_project: "このプロジェクトをアーカイブすることはできません。"
-  error_can_not_delete_custom_field: "ユーザー設定フィールドは削除できません。"
+  error_can_not_delete_custom_field: "カスタムフィールドを削除できませんでした。"
   error_can_not_delete_type: "この型は作業項目が含まれているため、削除できません。"
   error_can_not_delete_standard_type: "標準型は削除できません。"
   error_can_not_remove_role: "この役割が使用中のため、削除できません。"
   error_can_not_reopen_work_package_on_closed_version: "終了したバージョンに割り当てた作業項目は再度開くことはできません。"
-  error_can_t_load_default_data: "デフォルトの設定を読み込むことができませんでした: %{value}"
+  error_can_t_load_default_data: "デフォルトの設定を読み込めません: %{value}"
   error_check_user_and_role: "ユーザーと役割を選択してください。"
   error_work_package_done_ratios_not_updated: "作業項目の達成率が更新されていません。"
   error_work_package_not_found_in_project: "作業項目が見つからないか、このプロジェクトに属してないかです。"
@@ -595,10 +595,10 @@ ja:
   label_all_words: "全ての単語"
   label_and_its_subprojects: "%{value}とその子プロジェクト"
   label_api_access_key: APIアクセスキー
-  label_api_access_key_created_on: APIアクセスキーが%{value}前に作成されました。
+  label_api_access_key_created_on: APIアクセスキーが%{value}前に作成されました
   label_applied_status: "適用されたステータス"
   label_ascending: "上昇"
-  label_assigned_to_me_work_packages: "自分に割り当ている作業項目"
+  label_assigned_to_me_work_packages: "担当している作業項目"
   label_associated_revisions: "関連するリビジョン"
   label_attachment_delete: "ファイルを削除"
   label_attachment_new: "新しいファイル"
@@ -654,8 +654,8 @@ ja:
   label_core_version: "メインのバージョン"
   label_current_status: "現在のステータス"
   label_current_version: "現在のバージョン"
-  label_custom_field_new: "新しいユーザー設定フィールド"
-  label_custom_field_plural: "ユーザー設定フィールド"
+  label_custom_field_new: "新規カスタムフィールド"
+  label_custom_field_plural: "カスタムフィールド"
   label_custom_field_default_type: "空の型"
   label_date: "日付"
   label_date_from: "から"
@@ -665,7 +665,7 @@ ja:
   label_day_plural: " 日"
   label_default: "既定値"
   label_deleted: "削除された"
-  label_deleted_custom_field: "（削除されたユーザー設定フィールド）"
+  label_deleted_custom_field: "（削除したカスタムフィールド）"
   label_descending: "降順"
   label_details: "詳細"
   label_diff: "差分"
@@ -693,7 +693,7 @@ ja:
   label_f_hour_plural: "%{value}時間"
   label_feed_plural: "フィード"
   label_feeds_access_key: RSSのアクセスキー
-  label_feeds_access_key_created_on: RSSアクセスキーが%{value}前に作成されました。
+  label_feeds_access_key_created_on: RSSアクセスキーが%{value}前に作成されました
   label_file_added: "ファイルの追加"
   label_file_plural: "ファイルを添付"
   label_filesystem_path: "ルートディレクトリ"
@@ -737,10 +737,10 @@ ja:
   label_work_package_tracking: "作業項目の追跡"
   label_work_package_updated: "作業項目の更新"
   label_work_package_view_all: "全ての作業項目を表示"
-  label_work_package_view_all_assigned_to_me: "自分に割り当ている全ての作業項目を表示"
+  label_work_package_view_all_assigned_to_me: "自分が担当ている全ての作業項目を表示"
   label_work_package_view_all_reported_by_me: "自分が報告した全ての作業項目を表示"
-  label_work_package_view_all_responsible_for: "自分が責任である全ての作業項目を表示"
-  label_work_package_view_all_watched: "ウォッチている全ての作業項目を表示"
+  label_work_package_view_all_responsible_for: "自分が責任者である全ての作業項目を表示"
+  label_work_package_view_all_watched: "自分がウォッチている全ての作業項目を表示"
   label_work_package_watchers: "ウォッチャー"
   label_work_packages_by: "%{value}による作業項目"
   label_journal_diff: "説明の比較"
@@ -1054,14 +1054,14 @@ ja:
   notice_account_updated: "アカウントが正常に更新されました。"
   notice_account_wrong_password: "パスワードが正しくありません。"
   notice_account_registered_and_logged_in: "ようこそ、アカウントが有効になりました。今ログインしています。"
-  notice_api_access_key_reseted: "あなたのAPI アクセスキーがリセットされました。"
+  notice_api_access_key_reseted: APIアクセスキーを初期化しました。
   notice_can_t_change_password: "このアカウントは、外部認証元を使用します。パスワードの変更は不可能です。"
   notice_default_data_loaded: "デフォルトの設定を正常に読み込みました。"
   notice_email_error: "電子メール「%{value}」の送信中にエラーが発生しました。"
   notice_email_sent: "%{value}にメールが送信されました。"
   notice_failed_to_save_work_packages: "選択された%{total}つの%{ids}の中に%{count}つの作業項目が保存されませんでした。"
   notice_failed_to_save_members: "メンバーの保存に失敗しました：%{errors}。"
-  notice_feeds_access_key_reseted: "あなたのRSS アクセスキーがリセットされました。"
+  notice_feeds_access_key_reseted: RSSアクセスキーを初期化しました。
   notice_file_not_found: "アクセスしようとしていたページが存在しないか削除されています。"
   notice_forced_logout: "%{ttl_time}分間の非活動後、あなたは自動的にログアウトされました。"
   notice_internal_server_error: "アクセスしようとしていたページにエラーが発生しました。継続して問題が発生している場合、%{app_title}の管理者にお問い合わせください。"
@@ -1251,12 +1251,12 @@ ja:
   setting_session_ttl_enabled: "セッションの有効期限が切れる"
   setting_start_of_week: "カレンダーの開始日"
   setting_sys_api_enabled: "リポジトリ管理用にWSを有効にする"
-  setting_text_formatting: "テキストの書式は"
+  setting_text_formatting: "テキストの書式"
   setting_time_format: "時刻の形式"
   setting_ui_theme: "テーマ"
   setting_user_may_override_theme: "ユーザーが個々のテーマを選択できる"
   setting_accessibility_mode_for_anonymous: "匿名ユーザー向けにアクセシビリティモードを有効"
-  setting_user_format: "ユーザーの表示形式"
+  setting_user_format: "ユーザー情報の形式"
   setting_users_deletable_by_admins: "管理者がユーザーアカウントを削除可能"
   setting_users_deletable_by_self: "ユーザーが自分のアカウントを削除可能"
   setting_welcome_text: "ようこそのメッセージ"
@@ -1314,8 +1314,8 @@ ja:
   text_load_default_configuration: "デフォルトの設定を読み込む"
   text_min_max_length_info: 0は制限なしにする
   text_no_configuration_data: "ワークフローや作業項目のステータスや役割種類や型などが設定されていません。デフォルトの設定をロードすることを強くお勧めします。ロードされた後に変更できます。"
-  text_notice_too_many_values_are_inperformant: "注: 1ページあたり100以上の項目を表示すると読み込み時間が増加ことがあります。"
-  text_own_membership_delete_confirmation: "アクセス許可の一部またはすべてを削除しようとしてますが、その後にプロジェクトを編集することができない可能性があります。続けしてもよろしいですか？"
+  text_notice_too_many_values_are_inperformant: "注: 1ページあたり100以上の項目を表示すると読み込み時間が増加することがあります。"
+  text_own_membership_delete_confirmation: "アクセス許可の一部またはすべてを削除しようとしてますが、その後にプロジェクトを編集できない可能性があります。続けしてもよろしいですか？"
   text_plugin_assets_writable: "プラグインのディレクトリが書き込み可能"
   text_powered_by: Powered by %{link}
   text_project_destroy_confirmation: "このプロジェクトと関連するデータを削除してもよろしいですか？"
@@ -1330,7 +1330,7 @@ ja:
   text_subprojects_destroy_warning: "子プロジェクト: %{value}も削除されます。"
   text_time_logged_by_changeset: "変更セット%{value}で適用されています。"
   text_tip_work_package_begin_day: "この日に開始する作業項目"
-  text_tip_work_package_begin_end_day: "この日に開始．終了する作業項目"
+  text_tip_work_package_begin_end_day: "この日に開始と終了する作業項目"
   text_tip_work_package_end_day: "この日に終了する作業項目"
   text_type_no_workflow: "この型に対して定義されているワークフローなし"
   text_unallowed_characters: "禁止されている文字"
@@ -1390,7 +1390,7 @@ ja:
     enable_type_in_project: "型「%{type}」を有効にする"
     end: "終了"
     errors:
-      not_implemented: "まだ実装されていない機能を使用するため、タイムラインを表示することができません。"
+      not_implemented: "まだ実装されていない機能を使用するため、タイムラインが表示できません。"
       report_comparison: "設定された比較表はタイムラインで表示できません。該当する設定部分をご確認ください。設定をリセットすることにより、この問題を解決するに役立つことがあります。"
       report_epicfail: "タイムラインは予期しないエラーのため読み込めませんでした。"
       report_timeout: "タイムラインは適切な時間内に読み込めませんでした。"
@@ -1472,9 +1472,9 @@ ja:
     new_color: "新しい色"
     new_association: "新しい依存関係"
     new_work_package: "新しい作業項目"
-    new_project_type: "新しいプロジェクトの種類"
-    new_reporting: "新しいレポート"
-    new_timeline: "新しいタイムラインレポート"
+    new_project_type: "新規プロジェクト種類"
+    new_reporting: "新規レポート"
+    new_timeline: "新規タイムラインレポート"
     no_projects_for_reporting_available: "レポート関係が作成できるプロジェクトがありません。"
     no_right_to_view_timeline: "リンク先のタイムラインを表示できる権限がありません。"
     no_timeline_for_id: ID%{id}を持つタイムラインは存在しません。
@@ -1564,7 +1564,7 @@ ja:
   menu_item_setting: "可視性"
   wiki_menu_item_for: Wikiページ"%{title}"のメニュー項目
   wiki_menu_item_setting: "可視性"
-  wiki_menu_item_new_main_item_explanation: "唯一の主なＷｉｋｉメニュー項目が削除されます。新しい主要な項目が生成されるためにＷｉｋｉページを選択する必要があります。Ｗｉｋｉを削除するには、プロジェクト管理者によってＷｉｋｉモジュールを無効にすることができます。"
+  wiki_menu_item_new_main_item_explanation: "唯一の主なＷｉｋｉメニュー項目が削除されます。新しい主要項目が生成するためにＷｉｋｉページを選択する必要があります。Ｗｉｋｉを削除するには、プロジェクト管理者によってＷｉｋｉモジュールを無効にすることができます。"
   wiki_menu_item_delete_not_permitted: "唯一のＷｉｋｉページにあるＷｉｋｉメニュー項目は削除できません。"
   query_menu_item_for: "クエリ\"%{title}\"のメニュー項目"
   work_package:
