@@ -232,17 +232,18 @@ et:
               numeric: arvuline (nt 1, 2, 3)
               special: erimärk (nt %, &)
               reused:
-                one: Vali uus parool, mis erineb eelmisest paroolist.
-                other: Vali uus parool, mis erineb eelmiselt kasutatud %{count}-st
-                  paroolist.
+                one: has been used before. Please choose one that is different from
+                  your last one.
+                other: has been used before. Please choose one that is different from
+                  your last %{count}.
         member:
           principal_blank: Vali vähemalt üks kasutaja või grupp.
           role_blank: Vali vähemalt üks roll.
       template:
         body: 'Kontrolli järgnevad väljad:'
         header:
-          one: 1 viga ei võimaldanud selle %{model} salvestamist
-          other: "%{count} viga ei võimaldanud selle %{model} salvestamist"
+          one: 1 error prohibited this %{model} from being saved
+          other: "%{count} errors prohibited this %{model} from being saved"
     models:
       attachment: Fail
       board: Foorum
@@ -257,8 +258,8 @@ et:
       project: Projekt
       query: Kohandatud päring
       role:
-        one: Roll
-        other: Rolli
+        one: Role
+        other: Roles
       type: Liik
       planning_element: Planeerimise osa
       project_type: Projekti tüüp
@@ -438,39 +439,39 @@ et:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: umbes 1 tund
-        other: umbes %{count} tundi
+        one: about 1 hour
+        other: about %{count} hours
       about_x_months:
-        one: umbes 1 kuu
-        other: umbes %{count} kuud
+        one: about 1 month
+        other: about %{count} months
       about_x_years:
-        one: umbes 1 aasta
-        other: umbes %{count} aastat
+        one: about 1 year
+        other: about %{count} years
       almost_x_years:
-        one: peaaegu 1 aasta
-        other: peaaegu %{count} aastat
+        one: almost 1 year
+        other: almost %{count} years
       half_a_minute: pool minutit
       less_than_x_minutes:
-        one: vähem kui minut
-        other: vähem kui %{count} minutit
+        one: less than a minute
+        other: less than %{count} minutes
       less_than_x_seconds:
-        one: vähem kui sekund
-        other: vähem kui %{count} sekundit
+        one: less than 1 second
+        other: less than %{count} seconds
       over_x_years:
-        one: rohkem kui aasta
-        other: rohkem kui %{count} aastat
+        one: over 1 year
+        other: over %{count} years
       x_days:
-        one: 1 päev
-        other: "%{count} päeva"
+        one: 1 day
+        other: "%{count} days"
       x_minutes:
-        one: 1 minut
-        other: "%{count} minutit"
+        one: 1 minute
+        other: "%{count} minutes"
       x_months:
-        one: 1 kuu
-        other: "%{count} kuud"
+        one: 1 month
+        other: "%{count} months"
       x_seconds:
-        one: 1 sekund
-        other: "%{count} sekundit"
+        one: 1 second
+        other: "%{count} seconds"
     units:
       hour:
         one: hour
@@ -1020,24 +1021,24 @@ et:
   label_workflow_plural: Töövood
   label_workflow_summary: Kokkuvõte
   label_x_closed_work_packages_abbr:
-    one: 1 suletud
-    other: "%{count} suletud"
+    one: 1 closed
+    other: "%{count} closed"
     zero: 0 closed
   label_x_comments:
-    one: 1 kommentaar
-    other: "%{count} kommentaari"
+    one: 1 comment
+    other: "%{count} comments"
     zero: no comments
   label_x_open_work_packages_abbr:
-    one: 1 avatud
-    other: "%{count} avatud"
+    one: 1 open
+    other: "%{count} open"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
-    one: 1 avatud %{total}-st
-    other: "%{count} avatud %{total}-st"
+    one: 1 open / %{total}
+    other: "%{count} open / %{total}"
     zero: 0 open / %{total}
   label_x_projects:
-    one: 1 projekt
-    other: "%{count} projekti"
+    one: 1 project
+    other: "%{count} projects"
     zero: no projects
   label_year: Aasta
   label_yesterday: eile
@@ -1161,8 +1162,8 @@ et:
         format: "%n %u"
         units:
           byte:
-            one: Bait
-            other: Baiti
+            one: Byte
+            other: Bytes
           gb: GB
           kb: KB
           mb: MB
@@ -1477,8 +1478,8 @@ et:
     delete_thing: Kustuta
     duration: kestus
     duration_days:
-      one: 1 päev
-      other: "%{count} päeva"
+      one: 1 day
+      other: "%{count} days"
     edit_color: Muuda värvi
     edit_project_type: Muuda projekti tüüpi
     edit_thing: Muuda
@@ -1650,8 +1651,8 @@ et:
       teel)
     blocked: ajutiselt blokeeritud
     blocked_num_failed_logins:
-      one: ajutiselt blokeeritud (üks ebaõnnestunud sisselogimise katse)
-      other: ajutiselt blokeeritud (%{count} ebaõnnestunud sisselogimise katset)
+      one: locked temporarily (one failed login attempt)
+      other: locked temporarily (%{count} failed login attempts)
     deleted: Kustutatud kasutaja
     error_status_change_failed: 'Kasutaja oleku muutmine nurjus järgmiste tõrgete
       tõttu: %{errors}'
