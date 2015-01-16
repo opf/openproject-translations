@@ -220,8 +220,9 @@ sk:
               not_a_valid_parent: is invalid
               does_not_exist: does not exist
             status_id:
-              status_transition_invalid: is invalid because no valid transition exists
-                from old to new status for the current user's roles
+              status_transition_invalid: je neplatný, pretože neexistuje žiadny platný
+                prechod zo starého na nový stav v prípade aktuálne pridelených rolí
+                používateľa
             priority_id:
               only_active_priorities_allowed: needs to be active
         user:
@@ -234,8 +235,8 @@ sk:
               numeric: numeric (e.g. '1')
               special: special (e.g. '%')
               reused:
-                one: has been used before. Please choose one that is different from
-                  your last one.
+                one: už bol predtým použitý. Prosím, vyberte odlišnú voľbu ako tú,
+                  ktorá bola zvolená naposledy.
                 other: has been used before. Please choose one that is different from
                   your last %{count}.
                 few: has been used before. Please choose one that is different from
@@ -246,9 +247,9 @@ sk:
       template:
         body: 'Please check the following fields:'
         header:
-          one: 1 error prohibited this %{model} from being saved
-          other: "%{count} errors prohibited this %{model} from being saved"
-          few: "%{count} errors prohibited this %{model} from being saved"
+          one: 1 chyba zabránila uloženiu tohto %{model}
+          other: "%{count} chýb zabránilo uloženiu tohto %{model}"
+          few: "%{count} chýb zabránilo uloženiu tohto %{model}"
     models:
       attachment: File
       board: Forum
@@ -265,7 +266,7 @@ sk:
       role:
         one: Rola
         other: Role
-        few: Roles
+        few: Role
       type: Type
       planning_element: Planning element
       project_type: Project type
@@ -448,52 +449,52 @@ sk:
       about_x_hours:
         one: približne 1 hodina
         other: približne %{count} hodín
-        few: about %{count} hours
+        few: približne %{count} hodiny
       about_x_months:
         one: približne 1 mesiac
         other: približne %{count} mesiacov
-        few: about %{count} months
+        few: približne %{count} mesiace
       about_x_years:
         one: približne 1 rok
         other: približne %{count} rokov
-        few: about %{count} years
+        few: približne %{count} roky
       almost_x_years:
         one: takmer 1 rok
         other: takmer %{count} rokov
-        few: almost %{count} years
+        few: takmer %{count} roky
       half_a_minute: half a minute
       less_than_x_minutes:
-        one: less than a minute
-        other: less than %{count} minutes
-        few: less than %{count} minutes
+        one: menej než minúta
+        other: menej než %{count} minút
+        few: menej než %{count} minúty
       less_than_x_seconds:
-        one: less than 1 second
-        other: less than %{count} seconds
-        few: less than %{count} seconds
+        one: menej než sekunda
+        other: menej ako %{count} sekúnd
+        few: menej ako %{count} sekúndy
       over_x_years:
-        one: over 1 year
-        other: over %{count} years
-        few: over %{count} years
+        one: viac ako 1 rok
+        other: viac ako %{count} rokov
+        few: viac ako %{count} roky
       x_days:
-        one: 1 day
-        other: "%{count} days"
+        one: 1 deň
+        other: "%{count} dní"
         few: "%{count} days"
       x_minutes:
-        one: 1 minute
-        other: "%{count} minutes"
+        one: 1 minúta
+        other: "%{count} minút"
         few: "%{count} minutes"
       x_months:
-        one: 1 month
-        other: "%{count} months"
+        one: 1 mesiac
+        other: "%{count} mesiacov"
         few: "%{count} months"
       x_seconds:
-        one: 1 second
-        other: "%{count} seconds"
+        one: 1 sekunda
+        other: "%{count} sekúnd"
         few: "%{count} seconds"
     units:
       hour:
-        one: hour
-        other: hours
+        one: hodina
+        other: hodín
         few: hours
   default_activity_management: Management
   default_activity_design: Design
@@ -1039,28 +1040,28 @@ sk:
   label_workflow_plural: Workflows
   label_workflow_summary: Summary
   label_x_closed_work_packages_abbr:
-    one: 1 closed
-    other: "%{count} closed"
+    one: 1 uzatvorená
+    other: "%{count} uzatvorených"
     zero: 0 closed
     few: "%{count} closed"
   label_x_comments:
-    one: 1 comment
-    other: "%{count} comments"
+    one: 1 komentár
+    other: "%{count} komentárov"
     zero: no comments
     few: "%{count} comments"
   label_x_open_work_packages_abbr:
-    one: 1 open
-    other: "%{count} open"
+    one: 1 otvorená
+    other: "%{count} otvorených"
     zero: 0 open
     few: "%{count} open"
   label_x_open_work_packages_abbr_on_total:
-    one: 1 open / %{total}
-    other: "%{count} open / %{total}"
+    one: 1 otvorená / %{total}
+    other: "%{count} otvorených / %{total}"
     zero: 0 open / %{total}
     few: "%{count} open / %{total}"
   label_x_projects:
-    one: 1 project
-    other: "%{count} projects"
+    one: 1 projekt
+    other: "%{count} projektov"
     zero: no projects
     few: "%{count} projects"
   label_year: Year
@@ -1192,8 +1193,8 @@ sk:
         format: "%n %u"
         units:
           byte:
-            one: Byte
-            other: Bytes
+            one: Bajt
+            other: Bajtov
             few: Bytes
           gb: GB
           kb: kB
@@ -1505,8 +1506,8 @@ sk:
     delete_thing: Delete
     duration: Duration
     duration_days:
-      one: 1 day
-      other: "%{count} days"
+      one: 1 deň
+      other: "%{count} dní"
       few: "%{count} days"
     edit_color: Edit color
     edit_project_type: Edit project type
@@ -1684,8 +1685,8 @@ sk:
     assign_random_password: Assign random password (sent to user via e-mail)
     blocked: locked temporarily
     blocked_num_failed_logins:
-      one: locked temporarily (one failed login attempt)
-      other: locked temporarily (%{count} failed login attempts)
+      one: dočasne zamknuté (jeden neúspešný pokus o prihlásenie)
+      other: dočasne zamknuté (%{count} neúspešných pokusov o prihlásenie)
       few: locked temporarily (%{count} failed login attempts)
     deleted: Deleted user
     error_status_change_failed: 'Changing the user status failed due to the following
@@ -1724,24 +1725,26 @@ sk:
   nothing_to_preview: Nothing to preview
   api_v3:
     errors:
-      code_401: You need to be authenticated to access this resource.
-      code_403: You are not authorized to access this resource.
-      code_404: Couldn't find %{type} with id=%{id}
-      code_409: Couldn't update the resource because of conflicting modifications.
-      invalid_content_type: Expected CONTENT-TYPE to be '%{content_type}' but got
-        '%{actual}'.
-      invalid_resource: For property '%{property}' a resource of type '%{expected}'
-        is expected but got a resource of type '%{actual}'.
-      invalid_user_status_transition: The current user account status does not allow
-        this operation.
-      multiple_errors: Multiple fields violated their constraints.
-      parse_error: The request body was neither empty, nor did it contain a single
-        JSON object.
-      writing_read_only_attributes: You must not write a read-only attribute.
+      code_401: Pre prístup k tomuto prostriedku musíte byť autentifikovaný.
+      code_403: Nemáte oprávnenie na prístup k tomuto prostriedku.
+      code_404: Nebolo možné nájsť %{type} s ID =%{id}
+      code_409: Nepodarilo sa aktualizovať prostriedok kvôli konfliktným modifikáciam.
+      invalid_content_type: Očakávaný typ obsahu je "%{content_type}", dodaný bol
+        však "%{actual}".
+      invalid_resource: Vlastnosť "%{property}" očakávala typ prostriedku "%{expected}",
+        dodaný prostriedok je však typu "%{actual}".
+      invalid_user_status_transition: "Účet aktuálneho používateľa nemá oprávnenie
+        na vykonanie tejto operácie."
+      multiple_errors: Hodnoty viacerých polí porušili definované obmedzenia.
+      parse_error: Telo prichádzajúcej požiadavky nebolo ani prázdne, ani neobsahovalo
+        práve jeden JSON objekt.
+      writing_read_only_attributes: Nie je možné meniť atribút, ktorý je určený len
+        na čítanie.
       render:
-        context_not_found: No context found.
-        unsupported_context: Unsupported context found.
-        context_object_not_found: Cannot find the resource given with the context.
+        context_not_found: "Žiadny obsah nebol nájdený."
+        unsupported_context: Nájdený nepodporovaný obsah.
+        context_object_not_found: Pre vložené vstupné podmienky neboli nájdené žiadne
+          prostriedky.
       validation:
-        invalid_user_assigned_to_work_package: The chosen user is not allowed to be
-          '%{property}' for this work package.
+        invalid_user_assigned_to_work_package: Zvolený používateľ nemôže byť "%{property}"
+          v prípade tohto pracovného balíčka.
