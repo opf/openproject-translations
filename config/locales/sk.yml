@@ -178,22 +178,22 @@ sk:
         confirmation: doesn't match confirmation
         empty: nemôže byť prázdny
         equal_to: musí byť rovný %{count}
-        even: must be even
+        even: musí byť párne
         exclusion: is reserved
-        greater_than: must be greater than %{count}
-        greater_than_or_equal_to: must be greater than or equal to %{count}
-        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
-          length
-        greater_than_start_date: must be greater than start date
-        inclusion: is not included in the list
-        invalid: is invalid
-        less_than: must be less than %{count}
-        less_than_or_equal_to: must be less than or equal to %{count}
-        not_a_date: is not a date
-        not_a_number: is not a number
-        not_an_integer: is not an integer
-        not_same_project: doesn't belong to the same project
-        odd: must be odd
+        greater_than: musí byť väčšie ako %{count}
+        greater_than_or_equal_to: musí byť väčšie alebo rovné ako %{count}
+        smaller_than_or_equal_to_max_length: musí byť menšie alebo rovné ako maximálne
+          dĺžka
+        greater_than_start_date: musí byť väčšie ako počiatočný dátum
+        inclusion: nie je zahrnutá v zozname
+        invalid: je neplatný
+        less_than: musí byť menšie ako %{count}
+        less_than_or_equal_to: musí byť menšie alebo rovné ako %{count}
+        not_a_date: nie je platný dátum
+        not_a_number: nie je číslo
+        not_an_integer: nie je celé číslo
+        not_same_project: nepodlieha rovnakému projektu
+        odd: musí byť nepárne
         taken: has already been taken
         too_long: is too long (maximum is %{count} characters)
         too_short: is too short (minimum is %{count} characters)
@@ -217,7 +217,7 @@ sk:
             parent_id:
               cannot_be_milestone: nemôže predstavovať míľnik
               cannot_be_in_another_project: nemôže byť v inom projekte
-              not_a_valid_parent: is invalid
+              not_a_valid_parent: je neplatný
               does_not_exist: neexistuje
             status_id:
               status_transition_invalid: no valid transition exists from old to new
@@ -244,20 +244,20 @@ sk:
           principal_blank: Please choose at least one user or group.
           role_blank: Vyberte aspoň jednu rolu.
       template:
-        body: 'Please check the following fields:'
+        body: 'Skontrolujte nasledujúce polia:'
         header:
           one: 1 chyba zabránila uloženiu tohto %{model}
           other: "%{count} chýb zabránilo uloženiu tohto %{model}"
           few: "%{count} chyby zabránili uloženiu tohto %{model}"
     models:
       attachment: Súbor
-      board: Forum
-      comment: Comment
-      custom_field: Custom field
-      group: Group
-      issue: Issue
-      category: Category
-      status: Work package status
+      board: Fórum
+      comment: Komentár
+      custom_field: Vlastné pole
+      group: Skupina
+      issue: Problém
+      category: Kategória
+      status: Stav pracovného balíčka
       member: "Člen"
       news: Novinky
       project: Projekt
@@ -287,8 +287,8 @@ sk:
     author: Autor
     base: 'Všeobecná chyba:'
     blocks_ids: Blocks
-    category: Category
-    comments: Comment
+    category: Kategória
+    comments: Komentár
     content: Obsah
     created_at: Vytvorené
     created_on: Vytvorené
@@ -299,7 +299,7 @@ sk:
     due_date: Do dátumu
     estimated_hours: Predpokladaný čas
     firstname: Krstné meno
-    group: Group
+    group: Skupina
     groupname: Názov skupiny
     is_default: Predvolená hodnota
     is_for_all: Pre všetky projekty
@@ -338,20 +338,20 @@ sk:
   button_configure: Configure
   button_copy: Copy
   button_copy_and_follow: Copy and follow
-  button_create: Create
-  button_create_and_continue: Create and continue
-  button_delete: Delete
-  button_delete_watcher: Delete watcher %{name}
-  button_download: Download
-  button_duplicate: Duplicate
-  button_edit: Edit
-  button_edit_associated_wikipage: 'Edit associated Wiki page: %{page_title}'
-  button_expand_all: Expand all
-  button_list: List
-  button_lock: Lock
+  button_create: Vytvoriť
+  button_create_and_continue: Vytvoriť a pokračovať
+  button_delete: Odstrániť
+  button_delete_watcher: Odobrať pozorovateľa %{name}
+  button_download: Prevziať
+  button_duplicate: Duplikovať
+  button_edit: Upraviť
+  button_edit_associated_wikipage: 'Upraviť naviazanú Wiki stránku: %{page_title}'
+  button_expand_all: Rozbaliť všetko
+  button_list: Zoznam
+  button_lock: Uzamknúť
   button_log_time: Zaprotokoluj čas
-  button_login: Sign in
-  button_move: Move
+  button_login: Zaregistrovať sa
+  button_move: Presunúť
   button_move_and_follow: Move and follow
   button_quote: Quote
   button_remove_widget: Remove widget
@@ -365,21 +365,21 @@ sk:
   button_submit: Submit
   button_test: Test
   button_unarchive: Unarchive
-  button_uncheck_all: Uncheck all
-  button_unlock: Unlock
-  button_unwatch: Unwatch
-  button_update: Update
-  button_view: View
-  button_watch: Watch
-  button_manage_menu_entry: Configure menu item
-  button_add_menu_entry: Add menu item
-  button_configure_menu_entry: Configure menu item
-  button_delete_menu_entry: Delete menu item
+  button_uncheck_all: Odznačiť všetky
+  button_unlock: Odomknúť
+  button_unwatch: Prestať pozorovať
+  button_update: Aktualizovať
+  button_view: Zobraziť
+  button_watch: Začať pozorovať
+  button_manage_menu_entry: Nakonfigurovať položku menu
+  button_add_menu_entry: Pridať položku menu
+  button_configure_menu_entry: Nakonfigurovať položku menu
+  button_delete_menu_entry: Odstrániť položku menu
   copy_project:
-    started: Started to copy project "%{source_project_name}" to "%{target_project_name}".
-      You will be informed by Mail as soon as "%{target_project_name}" is available.
-    failed: Cannot copy project %{source_project_name}
-    succeeded: Created project %{target_project_name}
+    started: Začalo sa kopírovanie projektu "%{source_project_name}" do projektu "%{target_project_name}".
+      Budete informovaní mailom hneď ako bude "%{target_project_name}" k dispozícii.
+    failed: Nie je možné kopírovať projekt %{source_project_name}
+    succeeded: Projekt %{target_project_name} bol vytvorený
     errors: Chyba
     text:
       failed: Nepodarilo sa skopírovať projekt "%{source_project_name}" do projektu
@@ -495,8 +495,8 @@ sk:
         other: hodín
         few: hodiny
   default_activity_management: Riadenie
-  default_activity_design: Design
-  default_activity_development: Development
+  default_activity_design: Návrh
+  default_activity_development: Vývoj
   default_activity_testing: Testovanie
   default_activity_Support: Podpora
   default_activity_Other: Other
@@ -510,10 +510,10 @@ sk:
   default_status_on_hold: pozastavené
   default_status_rejected: zamietnuté
   default_status_closed: uzatvorené
-  default_priority_low: Low
-  default_priority_normal: Normal
-  default_priority_high: High
-  default_priority_immediate: Immediate
+  default_priority_low: Nízka
+  default_priority_normal: Normálna
+  default_priority_high: Vysoká
+  default_priority_immediate: Okamžité
   default_project_type_customer: Zákaznícky projekt
   default_project_type_internal: Interný projekt
   default_reported_project_status_green: Zelená
@@ -528,43 +528,43 @@ sk:
   default_type: Pracovný balíček
   default_type_task: "Úloha"
   default_type_deliverable: Výstup
-  default_type_milestone: Milestone
-  default_type_phase: Phase
-  default_type_bug: Bug
-  default_type_feature: Feature
-  description_active: Active?
-  description_attachment_toggle: Show/Hide attachments
+  default_type_milestone: Míľnik
+  default_type_phase: Fáza
+  default_type_bug: Chyba
+  default_type_feature: Nová funkcia
+  description_active: Aktívny?
+  description_attachment_toggle: Zobraziť / skryť prílohy
   description_autocomplete: This field uses autocomplete. While typing the title of
     a work package you will receive a list of possible candidates. Choose one using
     the arrow up and arrow down key and select it with tab or enter. Alternatively
     you can enter the work package number directly.
-  description_available_columns: Available Columns
-  description_choose_project: Projects
+  description_available_columns: Dostupné stĺpce
+  description_choose_project: Projekty
   description_compare_from: Compare from version
   description_compare_to: Compare to version
   description_current_position: 'You are here:'
   description_date_from: Enter start date
   description_date_range_interval: Choose range by selecting start and end date
   description_date_range_list: Choose range from list
-  description_date_to: Enter end date
-  description_enter_number: Enter number
-  description_enter_text: Enter text
-  description_filter: Filter
-  description_filter_toggle: Show/Hide filter
-  description_category_reassign: Choose category
-  description_message_content: Message content
-  description_my_project: You are member
+  description_date_to: Zadajte koncový dátum
+  description_enter_number: Zadajte číslo
+  description_enter_text: Zadajte text
+  description_filter: Filtrovať
+  description_filter_toggle: Zobraziť / skryť filter
+  description_category_reassign: Vyberte kategóriu
+  description_message_content: Obsah správy
+  description_my_project: Ste členom
   description_notes: Poznámky
-  description_parent_work_package: Parent work package of current
-  description_project_scope: Search scope
-  description_query_sort_criteria_attribute: Sort attribute
-  description_query_sort_criteria_direction: Sort direction
+  description_parent_work_package: Nadriadený pracovný balíček aktuálneho
+  description_project_scope: Rozsah vyhľadávania
+  description_query_sort_criteria_attribute: Zoraďovací atribút
+  description_query_sort_criteria_direction: Smer zoradenia
   description_search: Searchfield
   description_select_work_package: Zvoľte pracovný balíček
   description_selected_columns: Vybraté stĺpce
-  description_sub_work_package: Sub work package of current
-  description_toc_toggle: Show/Hide table of contents
-  description_user_mail_notification: Mail notification settings
+  description_sub_work_package: Podriadený pracovný balíček aktuálneho
+  description_toc_toggle: Zobraziť / skryť obsah
+  description_user_mail_notification: Nastavenia e-mail notifikácie
   description_wiki_subpages_reassign: Choose new parent page
   direction: ltr
   enumeration_activities: Activities (time tracking)
@@ -623,11 +623,11 @@ sk:
   general_lang_name: Slovenčina
   general_pdf_encoding: ISO-8859-1
   general_text_no: 'no'
-  general_text_yes: 'yes'
-  general_text_No: 'No'
-  general_text_Yes: 'Yes'
-  gui_validation_error: 1 error
-  gui_validation_error_plural: "%{count} errors"
+  general_text_yes: "áno"
+  general_text_No: Nie
+  general_text_Yes: "Áno"
+  gui_validation_error: 1 chyba
+  gui_validation_error_plural: "%{count} chýb"
   instructions_after_registration: You can sign in as soon as your account has been
     activated by clicking %{signin}.
   instructions_after_logout: You can sign in again by clicking %{signin}.
@@ -635,29 +635,29 @@ sk:
     the error persists, ask your admin for help.
   label_account: "Účet"
   label_activity: "Činnosť"
-  label_add_another_file: Add another file
-  label_add_columns: Add selected columns
-  label_add_note: Add a note
-  label_add_related_issues: Add related issue
-  label_add_related_work_packages: Add related work packages
-  label_add_subtask: Add subtask
-  label_added: added
-  label_added_time_by: Added by %{author} %{age} ago
+  label_add_another_file: Pridať ďalší súbor
+  label_add_columns: Pridať vybraté stĺpce
+  label_add_note: Pridať poznámku
+  label_add_related_issues: Pridať naviazaný problém
+  label_add_related_work_packages: Pridať naviazaný pracovný balíček
+  label_add_subtask: Pridať podúlohu
+  label_added: pridané
+  label_added_time_by: Pridal %{author} %{age} vzad
   label_additional_workflow_transitions_for_assignee: Additional transitions allowed
     when the user is the assignee
   label_additional_workflow_transitions_for_author: Additional transitions allowed
     when the user is the author
-  label_administration: Administration
-  label_age: Age
+  label_administration: Administrácia
+  label_age: Vek
   label_ago: dní späť
-  label_all: all
-  label_all_time: all time
-  label_all_words: All words
-  label_and_its_subprojects: "%{value} and its subprojects"
-  label_api_access_key: API access key
-  label_api_access_key_created_on: API access key created %{value} ago
-  label_applied_status: Applied status
-  label_ascending: Ascending
+  label_all: Všetky
+  label_all_time: všetok čas
+  label_all_words: Všetky slová
+  label_and_its_subprojects: "%{value} a jemu podriadené projekty"
+  label_api_access_key: Prístupový kľúč API
+  label_api_access_key_created_on: Prístupový kľúč pre API vytvorený %{value} vzad
+  label_applied_status: Aplikovaný stav
+  label_ascending: Vzostupne
   label_assigned_to_me_work_packages: Work packages assigned to me
   label_associated_revisions: Associated revisions
   label_attachment_delete: Delete file
@@ -672,16 +672,16 @@ sk:
   label_blocked_by: blocked by
   label_blocks: blocks
   label_board_locked: Locked
-  label_board_new: New forum
+  label_board_new: Nové fórum
   label_board_plural: Forums
   label_board_sticky: Sticky
   label_boolean: Boolean
   label_branch: Branch
   label_browse: Browse
   label_bulk_edit_selected_work_packages: Bulk edit selected work packages
-  label_calendar: Calendar
-  label_calendar_show: Show Calendar
-  label_category: Category
+  label_calendar: Kalendár
+  label_calendar_show: Zobraziť kalendár
+  label_category: Kategória
   label_wiki_menu_item: Wiki menu item
   label_select_main_menu_item: Select new main menu item
   label_change_plural: Changes
@@ -711,20 +711,20 @@ sk:
   label_copy_target: Target
   label_copy_workflow_from: Copy workflow from
   label_copy_project: Copy project
-  label_core_version: Core version
-  label_current_status: Current status
-  label_current_version: Current version
-  label_custom_field_new: New custom field
+  label_core_version: Základná verzia
+  label_current_status: Aktuálny stav
+  label_current_version: Aktuálna verzia
+  label_custom_field_new: Nové vlastné pole
   label_custom_field_plural: Vlastné polia
-  label_custom_field_default_type: Empty type
+  label_custom_field_default_type: Prázdny typ
   label_date: Dátum
-  label_date_from: From
-  label_date_from_to: From %{start} to %{end}
-  label_date_range: Date range
-  label_date_to: To
+  label_date_from: Od
+  label_date_from_to: Od %{start} do %{end}
+  label_date_range: "Časové obdobie"
+  label_date_to: Do
   label_day_plural: dní
-  label_default: Default
-  label_deleted: deleted
+  label_default: Predvolený
+  label_deleted: odstránené
   label_deleted_custom_field: "(deleted custom field)"
   label_descending: Descending
   label_details: Details
@@ -818,10 +818,10 @@ sk:
   label_ldap_authentication: LDAP authentication
   label_less_or_equal: "<="
   label_less_than_ago: pred necelým dňom
-  label_list: List
+  label_list: Zoznam
   label_loading: Loading...
   label_logged_as: Logged in as
-  label_login: Sign in
+  label_login: Zaregistrovať sa
   label_logout: Sign out
   label_main_menu: Side Menu
   label_max_size: Maximum size
@@ -904,7 +904,7 @@ sk:
   label_project_latest: Latest projects
   label_project_default_type: Allow empty type
   label_project_new: New project
-  label_project_plural: Projects
+  label_project_plural: Projekty
   label_project_settings: Project settings
   label_project_view_all: View all projects
   label_public_projects: Public projects
@@ -1266,7 +1266,7 @@ sk:
   permission_view_wiki_pages: View wiki
   project_module_activity: "Činnosť"
   project_module_boards: Forums
-  project_module_calendar: Calendar
+  project_module_calendar: Kalendár
   project_module_work_package_tracking: Work package tracking
   project_module_news: Novinky
   project_module_repository: Repository
@@ -1388,7 +1388,7 @@ sk:
   text_custom_field_possible_values_info: One line for each value
   text_default_administrator_account_changed: Default administrator account changed
   text_default_encoding: 'Default: UTF-8'
-  text_destroy: Delete
+  text_destroy: Odstrániť
   text_destroy_with_associated: 'There are additional objects assossociated with the
     work package(s) that are to be deleted. Those objects are of the following types:'
   text_destroy_what_to_do: What do you want to do?
@@ -1502,7 +1502,7 @@ sk:
     dates_are_calculated_based_on_sub_elements: Dates are calculated based on sub
       elements.
     delete_all: Delete all
-    delete_thing: Delete
+    delete_thing: Odstrániť
     duration: Duration
     duration_days:
       one: 1 deň
@@ -1510,7 +1510,7 @@ sk:
       few: "%{count} dni"
     edit_color: Edit color
     edit_project_type: Edit project type
-    edit_thing: Edit
+    edit_thing: Upraviť
     edit_timeline: Edit timeline report %{timeline}
     delete_timeline: Delete timeline report %{timeline}
     empty: "(empty)"
@@ -1673,7 +1673,7 @@ sk:
     apply_filter: Apply preconfigured filter
   total_progress: Total progress
   user:
-    all: all
+    all: Všetky
     active: active
     activate: Activate
     activate_and_reset_failed_logins: Activate and reset failed logins
@@ -1695,7 +1695,7 @@ sk:
     registered: registered
     reset_failed_logins: Reset failed logins
     status_user_and_brute_force: "%{user} and %{brute_force}"
-    unlock: Unlock
+    unlock: Odomknúť
     unlock_and_reset_failed_logins: Unlock and reset failed logins
     no_login: This user authenticates through login by password. Since it is disabled,
       they cannot log in.
