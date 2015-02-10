@@ -210,8 +210,8 @@ ko:
               not_a_valid_parent: is invalid
               does_not_exist: does not exist
             status_id:
-              status_transition_invalid: is invalid because no valid transition exists
-                from old to new status for the current user's roles
+              status_transition_invalid: "유효한 전환 이전에서 현재 사용자의 역할에 대한 새로운 상태로 존재 하기
+                때문에 유효 하지 않습니다."
             priority_id:
               only_active_priorities_allowed: needs to be active
         user:
@@ -226,8 +226,7 @@ ko:
               reused:
                 one: has been used before. Please choose one that is different from
                   your last one.
-                other: has been used before. Please choose one that is different from
-                  your last %{count}.
+                other: "이미 사용되었습니다. 마지막 %{count} 번과는 다른 것을 사용하십시오. "
         member:
           principal_blank: Please choose at least one user or group.
           role_blank: Please choose at least one role.
@@ -235,7 +234,7 @@ ko:
         body: 'Please check the following fields:'
         header:
           one: 1 error prohibited this %{model} from being saved
-          other: "%{count} errors prohibited this %{model} from being saved"
+          other: "%{count} 오류 때문에 %{model} 을 저장할 수 없습니다."
     models:
       attachment: "파일"
       board: Forum
@@ -251,7 +250,7 @@ ko:
       query: Custom query
       role:
         one: Role
-        other: Roles
+        other: "역활"
       type: Type
       planning_element: Planning element
       project_type: Project type
@@ -297,6 +296,7 @@ ko:
     mail: Email
     name: Name
     password: Password
+    priority: Priority
     project: Project
     responsible: Responsible
     role: Role
@@ -433,42 +433,42 @@ ko:
     distance_in_words:
       about_x_hours:
         one: about 1 hour
-        other: about %{count} hours
+        other: "약 %{count} 시간"
       about_x_months:
         one: about 1 month
-        other: about %{count} months
+        other: "약 %{count} 개월"
       about_x_years:
         one: about 1 year
-        other: about %{count} years
+        other: "약 %{count} 년"
       almost_x_years:
         one: almost 1 year
-        other: almost %{count} years
+        other: "거의 %{count} 년"
       half_a_minute: half a minute
       less_than_x_minutes:
         one: less than a minute
-        other: less than %{count} minutes
+        other: "%{count} 분 이만"
       less_than_x_seconds:
         one: less than 1 second
-        other: less than %{count} seconds
+        other: "%{count} 초 미만"
       over_x_years:
         one: over 1 year
-        other: over %{count} years
+        other: "%{count} 년 초과"
       x_days:
         one: 1 day
-        other: "%{count} days"
+        other: "%{count} 일"
       x_minutes:
         one: 1 minute
-        other: "%{count} minutes"
+        other: "%{count} 분"
       x_months:
         one: 1 month
-        other: "%{count} months"
+        other: "%{count} 개월"
       x_seconds:
         one: 1 second
-        other: "%{count} seconds"
+        other: "%{count} 초"
     units:
       hour:
         one: hour
-        other: hours
+        other: "시간"
   default_activity_management: "관리"
   default_activity_design: Design
   default_activity_development: Development
@@ -569,7 +569,8 @@ ko:
   error_scm_command_failed: 'An error occurred when trying to access the repository:
     %{value}'
   error_scm_not_found: The entry or revision was not found in the repository.
-  error_unable_delete_status: Unable to delete work package status
+  error_unable_delete_status: Unable to delete work package status because it contains
+    work packages.
   error_unable_delete_default_status: Unable to delete default work package status.
     Please select another default work package status before deleting the current
     one.
@@ -1014,23 +1015,23 @@ ko:
   label_workflow_summary: Summary
   label_x_closed_work_packages_abbr:
     one: 1 closed
-    other: "%{count} closed"
+    other: "%{count} 마감"
     zero: 0 closed
   label_x_comments:
     one: 1 comment
-    other: "%{count} comments"
+    other: "댓글 %{count}개"
     zero: no comments
   label_x_open_work_packages_abbr:
     one: 1 open
-    other: "%{count} open"
+    other: "%{count} 오픈"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
     one: 1 open / %{total}
-    other: "%{count} open / %{total}"
+    other: "%{count} 오픈 / %{total}"
     zero: 0 open / %{total}
   label_x_projects:
     one: 1 project
-    other: "%{count} projects"
+    other: "%{count} 프로젝트"
     zero: no projects
   label_year: Year
   label_yesterday: yesterday
@@ -1162,7 +1163,7 @@ ko:
         units:
           byte:
             one: Byte
-            other: Bytes
+            other: "바이트"
           gb: GB
           kb: kB
           mb: MB
@@ -1474,7 +1475,7 @@ ko:
     duration: Duration
     duration_days:
       one: 1 day
-      other: "%{count} days"
+      other: "%{count} 일"
     edit_color: Edit color
     edit_project_type: Edit project type
     edit_thing: Edit
@@ -1652,7 +1653,7 @@ ko:
     blocked: locked temporarily
     blocked_num_failed_logins:
       one: locked temporarily (one failed login attempt)
-      other: locked temporarily (%{count} failed login attempts)
+      other: "일시적으로 잠김 (%{count} 로그인 시도 실패)"
     deleted: Deleted user
     error_status_change_failed: 'Changing the user status failed due to the following
       errors: %{errors}'
@@ -1690,24 +1691,25 @@ ko:
   nothing_to_preview: Nothing to preview
   api_v3:
     errors:
-      code_401: You need to be authenticated to access this resource.
-      code_403: You are not authorized to access this resource.
-      code_404: Couldn't find %{type} with id=%{id}
-      code_409: Couldn't update the resource because of conflicting modifications.
-      invalid_content_type: Expected CONTENT-TYPE to be '%{content_type}' but got
-        '%{actual}'.
-      invalid_resource: For property '%{property}' a resource of type '%{expected}'
-        is expected but got a resource of type '%{actual}'.
-      invalid_user_status_transition: The current user account status does not allow
-        this operation.
-      multiple_errors: Multiple fields violated their constraints.
+      code_401: "접근하기 위해서 인증해야 합니다."
+      code_403: "접근 권한이 없습니다."
+      code_404: "%{id}로/으로 %{type} 을/를 찾을 수 없습니다."
+      code_409: "수정사항이 출동되어 업데이트 할 수 없습니다."
+      invalid_content_type: "예상되는 CONTENT-TYPE 은 '%{content_type}' 이지만, '%{actual}'
+        을 응답 받았습니다."
+      invalid_resource: "속성 '%{property}' 형식의 리소스에 대 한 '%{expected}' 예상 하지만 '%{actual}'
+        형식의 리소스를 가지고 있습니다."
+      invalid_user_status_transition: "현재 사용자의 계정 상태는이 작업을 허용 하지 않습니다."
+      multiple_errors: "여러 필드가 조건에 부합하지 않습니다."
       parse_error: The request body was neither empty, nor did it contain a single
         JSON object.
-      writing_read_only_attributes: You must not write a read-only attribute.
+      writing_read_only_attributes: "읽기 전용 특성은 변경할 수 없습니다."
+      invalid_format: 'Invalid format for property ''%{property}'': Expected format
+        like ''%{expected_format}'', but got ''%{actual}''.'
       render:
-        context_not_found: No context found.
-        unsupported_context: Unsupported context found.
-        context_object_not_found: Cannot find the resource given with the context.
+        context_not_found: "찾을 수 없음"
+        unsupported_context: "지원되지 않는 문맥 발견"
+        context_object_not_found: "해당 문맥으로 리소스를 찾을 수 없습니다."
       validation:
-        invalid_user_assigned_to_work_package: The chosen user is not allowed to be
-          '%{property}' for this work package.
+        invalid_user_assigned_to_work_package: "선택한 사용자는 이 작업 패키지에 대해 '%{property}'
+          허가되지 않았습니다."

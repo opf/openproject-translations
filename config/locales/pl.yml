@@ -46,7 +46,7 @@ pl:
         filesize: Rozmiar
       auth_source:
         account: Konto
-        attr_firstname: Atrybut imienia
+        attr_firstname: Atrybut imię
         attr_lastname: Atrybuty nazwiska
         attr_login: Atrybut Identyfikator logowania
         attr_mail: Atrybut adresu e-mail
@@ -310,6 +310,7 @@ pl:
     mail: Adres e-mail
     name: Nazwa
     password: Hasło
+    priority: Priorytet
     project: Projekt
     responsible: Odpowiedzialny
     role: Role
@@ -596,7 +597,8 @@ pl:
   error_scm_command_failed: 'Wystąpił błąd podczas próby dostępu do repozytorium:
     %{value}'
   error_scm_not_found: Nie znaleziono wpisu lub zmiany w repozytorium.
-  error_unable_delete_status: Nie można usunąć statusu zadania
+  error_unable_delete_status: Unable to delete work package status because it contains
+    work packages.
   error_unable_delete_default_status: Nie można usunąć domyślnego statusu zadania.
     Proszę wybrać inny status jako domyślny przed usunięcięm obecnego.
   error_unable_to_connect: Nie można połączyć (%{value})
@@ -1743,6 +1745,8 @@ pl:
       multiple_errors: Wiele pól narusza swoje ograniczenia.
       parse_error: Treści żądania była pusta, lub zawierała pojedynczy obiekt JSON.
       writing_read_only_attributes: Nie możesz zapisać atrybutu tylko do odczytu.
+      invalid_format: 'Invalid format for property ''%{property}'': Expected format
+        like ''%{expected_format}'', but got ''%{actual}''.'
       render:
         context_not_found: Nie znaleziono kontekstu.
         unsupported_context: Znaleziono nieobsługiwany kontekst.

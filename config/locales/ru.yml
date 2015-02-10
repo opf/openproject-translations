@@ -84,9 +84,9 @@ ru:
       project:
         homepage: "Главная страница"
         identifier: "Идентификатор"
-        work_packages: "Пакеты работ"
+        work_packages: "Задачи"
         parent: "Подпроект"
-        versions: "Этапы"
+        versions: "Версии"
         project_type: "Тип проекта"
         responsible: "Ответственный"
         types: "Типы"
@@ -106,7 +106,7 @@ ru:
         spent_on: "Дата"
         type: "Тип"
       type:
-        is_in_roadmap: "Пакеты работ, отображаемые в плане мероприятий"
+        is_in_roadmap: "Пакеты работ, отображаемые в плане развития"
         in_aggregation: "Пакет работ, отображаемый в объединении"
         is_milestone: "Пакет работ отображаемый как веха"
         color: "Цвет"
@@ -311,6 +311,7 @@ ru:
     mail: "Электронная почта"
     name: "Имя"
     password: "Пароль"
+    priority: "Приоритет"
     project: "Проект"
     responsible: "Ответственный"
     role: Role
@@ -598,7 +599,8 @@ ru:
   error_scm_annotate: "Статья не существует или не может быть описана."
   error_scm_command_failed: "Произошла ошибка при попытке доступа к хранилищу: %{value}"
   error_scm_not_found: "Ни статья, ни ее исправленная версия в репозитории не найдены."
-  error_unable_delete_status: "Не удается удалить статус пакета работ"
+  error_unable_delete_status: Unable to delete work package status because it contains
+    work packages.
   error_unable_delete_default_status: "Не удается удалить статус работы пакета по
     умолчанию. Пожалуйста, выберите другой статус работы пакета по умолчанию перед
     удалением текущего."
@@ -651,7 +653,7 @@ ru:
     если пользователь является правопреемником"
   label_additional_workflow_transitions_for_author: "Дополнительные переходы допускаются,
     если пользователь является автором"
-  label_administration: "Администрация"
+  label_administration: "Администрирование"
   label_age: "Возраст"
   label_ago: "дней назад"
   label_all: "все"
@@ -723,7 +725,7 @@ ru:
   label_custom_field_default_type: "Пустой тип"
   label_date: "Дата"
   label_date_from: "От"
-  label_date_from_to: "От %{start} до %{end}"
+  label_date_from_to: C %{start} до %{end}
   label_date_range: "Диапазон дат"
   label_date_to: "Кому"
   label_day_plural: "дней"
@@ -752,7 +754,7 @@ ru:
   label_environment: "Переменные среды"
   label_equals: "—"
   label_example: "Пример"
-  label_export_to: "Также доступна на:"
+  label_export_to: "Скачать как:"
   label_f_hour: "%{value} часов"
   label_f_hour_plural: "%{value} часов"
   label_feed_plural: "Ленты"
@@ -946,9 +948,9 @@ ru:
   label_revision: "Редакция"
   label_revision_id: "Редакция %{value}"
   label_revision_plural: "Редакции"
-  label_roadmap: "План мероприятий"
+  label_roadmap: "Этапы проекта"
   label_roadmap_edit: "Редактировать план мероприятий %{name}"
-  label_roadmap_due_in: "В связи с %{value}"
+  label_roadmap_due_in: "Завершится через %{value}"
   label_roadmap_no_work_packages: "Нет комплексов работ для этой версии"
   label_roadmap_overdue: "%{value} позднее"
   label_role_and_permissions: "Роли и разрешения"
@@ -1017,8 +1019,8 @@ ru:
   label_user_new: "Новый пользователь"
   label_user_plural: "Пользователи"
   label_user_search: "Найти пользователя"
-  label_version_new: "Новый этап"
-  label_version_plural: "Этапы"
+  label_version_new: "Новая версия"
+  label_version_plural: "Версии"
   label_version_sharing_descendants: "С подпроектами"
   label_version_sharing_hierarchy: "С иерархией проектов"
   label_version_sharing_none: "Не в совместном использовании"
@@ -1765,6 +1767,8 @@ ru:
       parse_error: "Тело запроса было ни пустым, ни содержало единичный объект JSON."
       writing_read_only_attributes: "Вы не должны перезаписывать атрибут являющийся
         только для чтения."
+      invalid_format: 'Invalid format for property ''%{property}'': Expected format
+        like ''%{expected_format}'', but got ''%{actual}''.'
       render:
         context_not_found: "Содержимое не найдено."
         unsupported_context: "Найден неподдерживаемый контекст."

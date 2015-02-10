@@ -296,7 +296,7 @@ da:
     firstname: Fornavn
     group: Gruppe
     groupname: Gruppenavn
-    id: ID
+    id: Id
     is_default: Forhåndsvalgt værdi
     is_for_all: For alle projekter
     is_public: Offentlig
@@ -305,6 +305,7 @@ da:
     mail: E-mail
     name: Navn
     password: Adgangskode
+    priority: Prioritet
     project: Projekt
     responsible: Ansvarlig
     role: Role
@@ -491,7 +492,7 @@ da:
   default_status_scheduled: planlagt
   default_status_in_progress: under bearbejdelse
   default_status_tested: testet
-  default_status_on_hold: hvilende
+  default_status_on_hold: på hold
   default_status_rejected: afvist
   default_status_closed: lukket
   default_priority_low: Lav
@@ -511,7 +512,7 @@ da:
   default_role_member: Medlem
   default_type: Arbejdspakke
   default_type_task: Opgave
-  default_type_deliverable: Leveringsklar
+  default_type_deliverable: Leverance
   default_type_milestone: Milepæl
   default_type_phase: Fase
   default_type_bug: Fejl
@@ -579,7 +580,8 @@ da:
   error_scm_annotate: Indholdet findes ikke eller der kan ikke tilføjes nyt.
   error_scm_command_failed: 'Der optod en fejl da du forsøgte at tilgå arkivet: %{value}'
   error_scm_not_found: Indholdet eller ændring findes ikke i arkivet.
-  error_unable_delete_status: Det er ikke muligt at slette status for arbejdspakken
+  error_unable_delete_status: Unable to delete work package status because it contains
+    work packages.
   error_unable_delete_default_status: Det er ikke muligt at slette forhåndsværdien
     for arbejdspakkens status. Vælg venligst en anden status for arbejdspakken før
     den nuværende slettes.
@@ -1026,24 +1028,24 @@ da:
   label_workflow_plural: Arbejdsprocesser
   label_workflow_summary: Opsummering
   label_x_closed_work_packages_abbr:
-    one: 1 closed
-    other: "%{count} closed"
+    one: 1 lukket
+    other: "%{count} lukket"
     zero: 0 closed
   label_x_comments:
-    one: 1 comment
-    other: "%{count} comments"
+    one: 1 kommentar
+    other: "%{count} kommentarer"
     zero: no comments
   label_x_open_work_packages_abbr:
-    one: 1 open
-    other: "%{count} open"
+    one: 1 åben
+    other: "%{count} åbne"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
-    one: 1 open / %{total}
-    other: "%{count} open / %{total}"
+    one: 1 åben /%{total}
+    other: "%{count} åbne /%{total}"
     zero: 0 open / %{total}
   label_x_projects:
-    one: 1 project
-    other: "%{count} projects"
+    one: 1 projekt
+    other: "%{count} projekter"
     zero: no projects
   label_year: Year
   label_yesterday: yesterday
@@ -1707,24 +1709,25 @@ da:
   nothing_to_preview: Intet at forhåndsvise
   api_v3:
     errors:
-      code_401: You need to be authenticated to access this resource.
-      code_403: You are not authorized to access this resource.
-      code_404: Couldn't find %{type} with id=%{id}
-      code_409: Couldn't update the resource because of conflicting modifications.
-      invalid_content_type: Expected CONTENT-TYPE to be '%{content_type}' but got
-        '%{actual}'.
-      invalid_resource: For property '%{property}' a resource of type '%{expected}'
-        is expected but got a resource of type '%{actual}'.
-      invalid_user_status_transition: The current user account status does not allow
-        this operation.
-      multiple_errors: Multiple fields violated their constraints.
-      parse_error: The request body was neither empty, nor did it contain a single
-        JSON object.
-      writing_read_only_attributes: You must not write a read-only attribute.
+      code_401: Du skal være logget ind for at få adgang til denne ressource.
+      code_403: Du har ikke tilladelse til at få adgang til denne ressource.
+      code_404: Kunne ikke finde %{type} med id =%{id}
+      code_409: Kunne ikke opdatere ressourcen på grund af modstridende ændringer.
+      invalid_content_type: Forventet CONTENT-TYPE skal være '%{content_type}' men
+        fik '%{actual}'.
+      invalid_resource: For egenskaben '%{property}' en ressource af typen '%{expected}'
+        er forventet men fik en ressource af typen '%{actual}'.
+      invalid_user_status_transition: Den aktuelle bruger konto status tillader ikke
+        denne handling.
+      multiple_errors: Flere felter overskred deres begrænsninger.
+      parse_error: Forespørgsel var enten tom, eller inholdt ikke ét enkelt JSON objekt.
+      writing_read_only_attributes: Du må ikke skrive til en skrivebeskyttet attribut.
+      invalid_format: 'Invalid format for property ''%{property}'': Expected format
+        like ''%{expected_format}'', but got ''%{actual}''.'
       render:
-        context_not_found: No context found.
-        unsupported_context: Unsupported context found.
-        context_object_not_found: Cannot find the resource given with the context.
+        context_not_found: Ingen indhold fundet.
+        unsupported_context: Ikke-understøttet indhold fundet.
+        context_object_not_found: Kan ikke finde den pågældende ressource.
       validation:
-        invalid_user_assigned_to_work_package: The chosen user is not allowed to be
-          '%{property}' for this work package.
+        invalid_user_assigned_to_work_package: Den valgte bruger er ikke tilladt at
+          være '%{property}' for denne arbejdspakke.
