@@ -248,7 +248,7 @@ es:
         body: 'Por favor revise los siguientes campos:'
         header:
           one: 1 error no permite guardar este %{model}
-          other: Este %{count} de %{model}  no se guardará
+          other: "%{count} errores no permiten guardar este %{model}"
     models:
       attachment: Archivo
       board: Foro
@@ -486,7 +486,7 @@ es:
   default_activity_management: Administración
   default_activity_design: Diseño
   default_activity_development: Desarrollo
-  default_activity_testing: Realizando Pruebas
+  default_activity_testing: Probando
   default_activity_Support: Soporte
   default_activity_Other: Otros
   default_status_new: nuevo
@@ -506,7 +506,7 @@ es:
   default_project_type_customer: Proyecto del cliente
   default_project_type_internal: Proyecto Interno
   default_reported_project_status_green: Verde
-  default_reported_project_status_amber: Ambar
+  default_reported_project_status_amber: Amarillo
   default_reported_project_status_red: Rojo
   default_role_anonymous: Anónimo
   default_role_developer: Desarrollador
@@ -589,8 +589,8 @@ es:
   error_scm_command_failed: 'Se produjo un error al intentar acceder al repositorio:
     %{value}'
   error_scm_not_found: La entrada o la revisión no se encontró en el repositorio.
-  error_unable_delete_status: Unable to delete work package status because it contains
-    work packages.
+  error_unable_delete_status: No se puede eliminar el estado del paquete de trabajo
+    porque contiene paquetes de trabajo.
   error_unable_delete_default_status: No se puede eliminar el estado del paquete trabajo
     por defecto. Por favor, seleccione otro estado de trabajo predeterminado antes
     de eliminar el actual.
@@ -1750,21 +1750,22 @@ es:
       code_401: Tiene que estar autenticado para acceder a este recurso.
       code_403: No está autorizado a acceder a este recurso.
       code_404: No se pudo encontrar %{type} con id=%{id}
-      code_409: No se pudo actualizar el recurso debido a modificaciones conflictivas.
+      code_409: No se pudo actualizar el recurso debido a modificaciones en conflicto.
       invalid_content_type: Se esperaba que el CONTENT-TYPE fuera '%{content_type}'
         pero se obtuvo '%{actual}'.
       invalid_resource: Para la propiedad '%{property}' se esperaba un recurso del
         tipo '%{expected}' pero se obtuvo un recurso de tipo '%{actual}'.
       invalid_user_status_transition: El estado actual de la cuenta del usuario no
         permite esta operación.
+      missing_content_type: not specified
       multiple_errors: Varios campos violan sus limitaciones.
       parse_error: El cuerpo de la solicitud o era vacía, o no contenía un solo objeto
         JSON.
       writing_read_only_attributes: No debería escribir un atributo de solo lectura.
-      invalid_format: 'Invalid format for property ''%{property}'': Expected format
-        like ''%{expected_format}'', but got ''%{actual}''.'
+      invalid_format: 'Format inválido para la propiedad ''%{property}'': Format esperado
+        como ''%{expected_format}'', pero se recibió ''%{actual}''.'
       render:
-        context_not_found: No se ha encontrado contexto.
+        context_not_found: No se ha encontrado el contexto.
         unsupported_context: Se ha encontrado un contexto no soportado.
         context_object_not_found: No se ha podido encontrar el recurso dado el contexto.
       validation:
