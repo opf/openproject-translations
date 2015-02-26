@@ -107,7 +107,6 @@ de:
       time_entry:
         activity: Aktivität
         hours: Stunden
-        work_package: Arbeitspaket
         spent_on: Datum
         type: Typ
       type:
@@ -230,6 +229,10 @@ de:
                 from old to new status for the current user's roles
             priority_id:
               only_active_priorities_allowed: muss aktiv sein
+            category:
+              only_same_project_categories_allowed: The category of a work package
+                must be within the same project as the work package.
+              does_not_exist: The specified category does not exist.
         user:
           attributes:
             password:
@@ -292,6 +295,7 @@ de:
     base: 'Allgemeiner Fehler:'
     blocks_ids: Blockiert
     category: Kategorie
+    comment: Kommentar
     comments: Kommentar
     content: Inhalt
     created_at: Angelegt am
@@ -302,6 +306,7 @@ de:
     display_sums: Summen anzeigen
     due_date: Abgabedatum
     estimated_hours: Geschätzter Aufwand
+    estimated_time: Geschätzter Aufwand
     firstname: Vorname
     group: Gruppe
     groupname: Gruppenname
@@ -309,6 +314,7 @@ de:
     is_default: Standardwert
     is_for_all: Für alle Projekte
     is_public: "Öffentlich"
+    issue: Arbeitspaket
     lastname: Nachname
     login: Mitgliedsname
     mail: E-Mail
@@ -1571,7 +1577,8 @@ de:
         absolute: Absolut
         none: Kein Planungsvergleich
         relative: Relativ
-        compare_relative: Vergleiche aktuelle Planung mit vor %{timespan}
+        compare_relative_prefix: Compare current planning to
+        compare_relative_suffix: ago
         compare_absolute: Vergleiche aktuelle Planung mit %{date}
       time_relative:
         days: Tage
@@ -1598,8 +1605,7 @@ de:
       types: Typ anzeigen
       status: Status anzeigen
       project_time_filter: Projekte mit Arbeitspaket eines Typs in einem Zeitfenster
-      project_time_filter_absolute_timeframe: Absolutes Zeitfenster
-      project_time_filter_relative_timeframe: Relatives Zeitfenster
+      project_time_filter_timeframe: Timeframe
       project_time_filter_historical_from: von
       project_time_filter_historical_to: bis
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1739,10 +1745,13 @@ de:
       aktualisert_
   nothing_to_preview: Keine Vorschau verfügbar
   api_v3:
+    attributes:
+      _type: Resource Type
+      lock_version: Lock Version
     errors:
       code_401: Sie müssen sich authentifizieren, um auf diese Ressource zuzugreifen.
       code_403: Sie sind nicht berechtigt auf diese Ressource zuzugreifen.
-      code_404: Konnte %{type} mit Id =%{id} nicht finden
+      code_404: The requested resource could not be found.
       code_409: Die Ressource konnte aufgrund widersprüchlicher Änderung nicht aktualisiert
         werden.
       invalid_content_type: CONTENT-TYPE '%{content_type}' wurde erwartet, aber '%{actual}'
@@ -1766,3 +1775,5 @@ de:
       validation:
         invalid_user_assigned_to_work_package: Der gewählte Benutzer darf nicht '%{property}'
           für dieses Arbeitspaket werden.
+    resources:
+      schema: Schema

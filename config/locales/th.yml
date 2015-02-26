@@ -96,7 +96,6 @@ th:
       time_entry:
         activity: "กิจกรรม"
         hours: "ชั่วโมง"
-        work_package: "ชุดภารกิจ"
         spent_on: "วันที่"
         type: "ประเภท"
       type:
@@ -214,6 +213,10 @@ th:
                 from old to new status for the current user's roles
             priority_id:
               only_active_priorities_allowed: "จำเป็นต้องเปิดใช้งาน"
+            category:
+              only_same_project_categories_allowed: The category of a work package
+                must be within the same project as the work package.
+              does_not_exist: The specified category does not exist.
         user:
           attributes:
             password:
@@ -275,6 +278,7 @@ th:
     base: "ข้อผิดพลาดทั่วไป:"
     blocks_ids: "บล็อก"
     category: "ประเภท"
+    comment: "ความคิดเห็น"
     comments: "ความคิดเห็น"
     content: "เนื้อหา"
     created_at: "สร้างเมื่อ"
@@ -285,6 +289,7 @@ th:
     display_sums: "แสดงยอดรวม"
     due_date: "วันครบกำหนด"
     estimated_hours: "ระยะเวลาโดยประมาณ"
+    estimated_time: "ระยะเวลาโดยประมาณ"
     firstname: "ชื่อ"
     group: "กลุ่ม"
     groupname: "ชื่อกลุ่ม"
@@ -292,6 +297,7 @@ th:
     is_default: "ค่าเริ่มต้น"
     is_for_all: "สำหรับทุกโครงการ"
     is_public: "สาธารณะ"
+    issue: "ชุดภารกิจ"
     lastname: "นามสกุล"
     login: "ล็อคอิน"
     mail: "อีเมล"
@@ -1484,7 +1490,8 @@ th:
         absolute: "แน่นอน"
         none: "ไม่มี"
         relative: "ความสัมพันธ์"
-        compare_relative: "เปรียบเทียบการวางแผนปัจจุบัน กับ %{timespan} ที่ผ่านมา"
+        compare_relative_prefix: Compare current planning to
+        compare_relative_suffix: ago
         compare_absolute: "เปรียบเทียบการวางแผนปัจจุบัน กับ %{date}"
       time_relative:
         days: "วัน"
@@ -1511,8 +1518,7 @@ th:
       types: "แสดงชนิด"
       status: "แสดงสถานะ"
       project_time_filter: "โครงการที่มีชุดภารกิจของประเภทที่แน่นอนในกรอบเวลาที่แน่นอน"
-      project_time_filter_absolute_timeframe: "กรอบเวลาที่แน่นอน"
-      project_time_filter_relative_timeframe: "กรอบเวลาที่สัมพันธ์"
+      project_time_filter_timeframe: Timeframe
       project_time_filter_historical_from: "จาก"
       project_time_filter_historical_to: "ถึง"
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1637,10 +1643,13 @@ th:
       %{child}_
   nothing_to_preview: "ไม่มีอะไรให้แสดงเป็นตัวอย่าง"
   api_v3:
+    attributes:
+      _type: Resource Type
+      lock_version: Lock Version
     errors:
       code_401: You need to be authenticated to access this resource.
       code_403: You are not authorized to access this resource.
-      code_404: Couldn't find %{type} with id=%{id}
+      code_404: The requested resource could not be found.
       code_409: Couldn't update the resource because of conflicting modifications.
       invalid_content_type: Expected CONTENT-TYPE to be '%{content_type}' but got
         '%{actual}'.
@@ -1662,3 +1671,5 @@ th:
       validation:
         invalid_user_assigned_to_work_package: The chosen user is not allowed to be
           '%{property}' for this work package.
+    resources:
+      schema: Schema

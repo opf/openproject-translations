@@ -104,7 +104,6 @@ lt:
       time_entry:
         activity: Veikla
         hours: Hours
-        work_package: Darbų paketas
         spent_on: Data
         type: Rūšis
       type:
@@ -225,6 +224,10 @@ lt:
                 from old to new status for the current user's roles
             priority_id:
               only_active_priorities_allowed: needs to be active
+            category:
+              only_same_project_categories_allowed: The category of a work package
+                must be within the same project as the work package.
+              does_not_exist: The specified category does not exist.
         user:
           attributes:
             password:
@@ -290,6 +293,7 @@ lt:
     base: 'General Error:'
     blocks_ids: Blocks
     category: Category
+    comment: Comment
     comments: Comment
     content: Content
     created_at: Created on
@@ -300,6 +304,7 @@ lt:
     display_sums: Display Sums
     due_date: Due date
     estimated_hours: Estimated time
+    estimated_time: Estimated time
     firstname: First name
     group: Group
     groupname: Group name
@@ -307,6 +312,7 @@ lt:
     is_default: Default value
     is_for_all: For all projects
     is_public: Public
+    issue: Work package
     lastname: Last name
     login: Login
     mail: Email
@@ -1562,7 +1568,8 @@ lt:
         absolute: Absolute
         none: None
         relative: Relative
-        compare_relative: Compare current planning to %{timespan} ago
+        compare_relative_prefix: Compare current planning to
+        compare_relative_suffix: ago
         compare_absolute: Compare current planning to %{date}
       time_relative:
         days: days
@@ -1590,8 +1597,7 @@ lt:
       status: Show status
       project_time_filter: Projects with a work package of a certain type in a certain
         timeframe
-      project_time_filter_absolute_timeframe: Absolute timeframe
-      project_time_filter_relative_timeframe: Relative timeframe
+      project_time_filter_timeframe: Timeframe
       project_time_filter_historical_from: from
       project_time_filter_historical_to: to
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1726,10 +1732,13 @@ lt:
       within child work package %{child}_
   nothing_to_preview: Nothing to preview
   api_v3:
+    attributes:
+      _type: Resource Type
+      lock_version: Lock Version
     errors:
       code_401: You need to be authenticated to access this resource.
       code_403: You are not authorized to access this resource.
-      code_404: Couldn't find %{type} with id=%{id}
+      code_404: The requested resource could not be found.
       code_409: Couldn't update the resource because of conflicting modifications.
       invalid_content_type: Expected CONTENT-TYPE to be '%{content_type}' but got
         '%{actual}'.
@@ -1751,3 +1760,5 @@ lt:
       validation:
         invalid_user_assigned_to_work_package: The chosen user is not allowed to be
           '%{property}' for this work package.
+    resources:
+      schema: Schema

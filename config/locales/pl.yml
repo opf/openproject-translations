@@ -101,7 +101,6 @@ pl:
       time_entry:
         activity: Działanie
         hours: Godziny
-        work_package: Zadania
         spent_on: Data
         type: Typ
       type:
@@ -223,6 +222,10 @@ pl:
                 przejście ze starego do nowego statusu dla aktualnej roli użytkownika
             priority_id:
               only_active_priorities_allowed: musi być aktywny
+            category:
+              only_same_project_categories_allowed: The category of a work package
+                must be within the same project as the work package.
+              does_not_exist: The specified category does not exist.
         user:
           attributes:
             password:
@@ -288,6 +291,7 @@ pl:
     base: 'Błąd ogólny:'
     blocks_ids: Bloki
     category: Kategoria
+    comment: Komentarz
     comments: Komentarz
     content: Zawartość
     created_at: Utworzone
@@ -298,6 +302,7 @@ pl:
     display_sums: Wyświetlanie sumy
     due_date: Termin
     estimated_hours: Szacowany czas
+    estimated_time: Szacowany czas
     firstname: Imię
     group: Grupa
     groupname: Nazwa grupy
@@ -305,6 +310,7 @@ pl:
     is_default: Wartość domyślna
     is_for_all: Dla wszystkich projektów
     is_public: Publicznego
+    issue: Zadania
     lastname: Nazwisko
     login: Login
     mail: Adres e-mail
@@ -1566,7 +1572,8 @@ pl:
         absolute: Bezwzględne
         none: Brak
         relative: Względne
-        compare_relative: Porównanie bieżącego planowania do %{timespan} wstecz
+        compare_relative_prefix: Compare current planning to
+        compare_relative_suffix: ago
         compare_absolute: Porównanie bieżącego planowania do %{date}
       time_relative:
         days: dni
@@ -1594,8 +1601,7 @@ pl:
       status: Pokaż status
       project_time_filter: Projects with a work package of a certain type in a certain
         timeframe
-      project_time_filter_absolute_timeframe: Bezwzględny zakres
-      project_time_filter_relative_timeframe: Względny zakres
+      project_time_filter_timeframe: Timeframe
       project_time_filter_historical_from: od
       project_time_filter_historical_to: do
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1731,10 +1737,13 @@ pl:
       wartości wewnątrz podrzędnego zadania %{child}_
   nothing_to_preview: Nie ma nic do podglądu
   api_v3:
+    attributes:
+      _type: Resource Type
+      lock_version: Lock Version
     errors:
       code_401: Musisz być uwierzytelniony, aby otrzymać dostęp do tego zasobu.
       code_403: Nie masz uprawnień do tego zasobu.
-      code_404: Nie można znaleźć %{type} o id=%{id}
+      code_404: The requested resource could not be found.
       code_409: Nie można zaktualizować zasobu ze względu na konfliktujące modyfikacje.
       invalid_content_type: Oczekiwano CONTENT-TYPE '%{content_type}' a otrzymano
         '%{actual}'.
@@ -1755,3 +1764,5 @@ pl:
       validation:
         invalid_user_assigned_to_work_package: Wybrany użytkownik nie może być '%{property}'
           dla tego pakietu roboczego.
+    resources:
+      schema: Schema

@@ -92,7 +92,6 @@ id:
       time_entry:
         activity: Activity
         hours: Jam
-        work_package: Work Package
         spent_on: Tanggal
         type: Tipe
       type:
@@ -214,6 +213,10 @@ id:
                 ada dari tua untuk status baru untuk peran pengguna saat ini
             priority_id:
               only_active_priorities_allowed: harus aktif
+            category:
+              only_same_project_categories_allowed: The category of a work package
+                must be within the same project as the work package.
+              does_not_exist: The specified category does not exist.
         user:
           attributes:
             password:
@@ -275,6 +278,7 @@ id:
     base: 'Error :'
     blocks_ids: Blok
     category: Kategori
+    comment: Komentar
     comments: Komentar
     content: Konten
     created_at: Dibuat
@@ -285,6 +289,7 @@ id:
     display_sums: Tampilkan jumlah
     due_date: Tenggat waktu
     estimated_hours: Estimasi Waktu
+    estimated_time: Estimasi Waktu
     firstname: Nama depan
     group: Grup
     groupname: Nama grup
@@ -292,6 +297,7 @@ id:
     is_default: Nilai default
     is_for_all: Untuk semua Project
     is_public: Publik
+    issue: Paket-Penugasan
     lastname: Nama belakang
     login: Login
     mail: Email
@@ -1524,8 +1530,8 @@ id:
         absolute: Absolut
         none: Kosong
         relative: Relatif
-        compare_relative: Bandingkan perencanaan saat ini dengan %{timespan} yang
-          lalu
+        compare_relative_prefix: Compare current planning to
+        compare_relative_suffix: ago
         compare_absolute: Bandingkan perencanaan saat ini dengan %{date}
       time_relative:
         days: hari
@@ -1553,8 +1559,7 @@ id:
       status: Tunjukkan status
       project_time_filter: Project dengan Paket-Penugasan Tipe tertentu, dalam jangka
         waktu tertentu
-      project_time_filter_absolute_timeframe: Absolut Timeframe
-      project_time_filter_relative_timeframe: Relatif Timeframe
+      project_time_filter_timeframe: Timeframe
       project_time_filter_historical_from: dari
       project_time_filter_historical_to: untuk
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1684,10 +1689,13 @@ id:
       dari turunan Paket-Penugasan %{child}_
   nothing_to_preview: Tidak ada pre-view
   api_v3:
+    attributes:
+      _type: Resource Type
+      lock_version: Lock Version
     errors:
       code_401: Anda perlu dikonfirmasi untuk mengakses sumber ini.
       code_403: Anda tidak diizinkan untuk mengakses sumber ini.
-      code_404: Tidak bisa menemukan %{type} dengan id =%{id}
+      code_404: The requested resource could not be found.
       code_409: Tidak dapat memperbarui sumber karena bertentangan modifikasi.
       invalid_content_type: Diharapkan CONTENT-TYPE untuk menjadi '%{content_type}'
         tetapi mendapat '%{actual}'.
@@ -1710,3 +1718,5 @@ id:
       validation:
         invalid_user_assigned_to_work_package: Pilihan pengguna tidak diperbolehkan
           untuk menjadi '%{property}' untuk paket pekerjaan ini.
+    resources:
+      schema: Schema

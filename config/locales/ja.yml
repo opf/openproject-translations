@@ -85,7 +85,6 @@ ja:
       time_entry:
         activity: "活動"
         hours: "時間"
-        work_package: "作業項目"
         spent_on: "日付"
         type: "種別"
       type:
@@ -201,6 +200,10 @@ ja:
               status_transition_invalid: "ユーザーの現在の役割では旧ステータスから新ステータスへの有効な遷移がないため無効"
             priority_id:
               only_active_priorities_allowed: "は有効である必要があります。"
+            category:
+              only_same_project_categories_allowed: The category of a work package
+                must be within the same project as the work package.
+              does_not_exist: The specified category does not exist.
         user:
           attributes:
             password:
@@ -260,6 +263,7 @@ ja:
     base: "一般的なエラー:"
     blocks_ids: "ブロック"
     category: "カテゴリ"
+    comment: "コメント"
     comments: "コメント"
     content: "内容"
     created_at: "作成日時"
@@ -270,6 +274,7 @@ ja:
     display_sums: "合計を表示"
     due_date: "期限"
     estimated_hours: "予定工数"
+    estimated_time: "予定工数"
     firstname: "名前"
     group: "グループ"
     groupname: "グループ名"
@@ -277,6 +282,7 @@ ja:
     is_default: "デフォルト値"
     is_for_all: "全プロジェクト向け"
     is_public: "公開"
+    issue: "作業項目"
     lastname: "苗字"
     login: "ログイン名"
     mail: "電子メールアドレス"
@@ -1437,7 +1443,8 @@ ja:
         absolute: "絶対的"
         none: "なし"
         relative: "相対的"
-        compare_relative: "現在の計画を%{timespan}前と比較する"
+        compare_relative_prefix: Compare current planning to
+        compare_relative_suffix: ago
         compare_absolute: "現在計画を%{date}と比較する"
       time_relative:
         days: " 日"
@@ -1464,8 +1471,7 @@ ja:
       types: "作業項目の型を表示"
       status: "ステータスを表示"
       project_time_filter: "特定の期間に特定の作業項目を持つプロジェクト"
-      project_time_filter_absolute_timeframe: "絶対的な期間"
-      project_time_filter_relative_timeframe: "相対的な期間"
+      project_time_filter_timeframe: Timeframe
       project_time_filter_historical_from: "から"
       project_time_filter_historical_to: "まで"
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1583,10 +1589,13 @@ ja:
     updated_automatically_by_child_changes: _子作業項目%{child}の変更による自動更新されました_
   nothing_to_preview: "プレビューできるものは何もありません。"
   api_v3:
+    attributes:
+      _type: Resource Type
+      lock_version: Lock Version
     errors:
       code_401: "このリソースへのアクセスするには認証を行う必要があります。"
       code_403: "このリソースにアクセスする権限がありません。"
-      code_404: id=%{id}を持つ%{type}を見つかりません。
+      code_404: The requested resource could not be found.
       code_409: "変更が競合しているため、リソースを更新できませんでした。"
       invalid_content_type: "コンテンツの種類は'%{content_type}'を期待されたが '%{actual}'を得ました。"
       invalid_resource: "'%{property}'のプロパティに関して%{expected}'の種類のリソースを期待されたが、'%{actual}'の種類のリソースを得ました。"
@@ -1604,3 +1613,5 @@ ja:
         context_object_not_found: "コンテキストで指定されたリソースが見つかりません。"
       validation:
         invalid_user_assigned_to_work_package: "選ばれたユーザーは、この作業項目の'%{property}' にすることはできません。"
+    resources:
+      schema: Schema

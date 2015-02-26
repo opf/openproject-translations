@@ -98,7 +98,6 @@ he:
       time_entry:
         activity: "פעילות"
         hours: "שעות"
-        work_package: "חבילת עבודה"
         spent_on: "תאריך"
         type: "סוג"
       type:
@@ -218,6 +217,10 @@ he:
                 from old to new status for the current user's roles
             priority_id:
               only_active_priorities_allowed: "צריך להיות פעיל"
+            category:
+              only_same_project_categories_allowed: The category of a work package
+                must be within the same project as the work package.
+              does_not_exist: The specified category does not exist.
         user:
           attributes:
             password:
@@ -277,6 +280,7 @@ he:
     base: "שגיאה כללית:"
     blocks_ids: "בלוקים"
     category: "קטגוריה"
+    comment: "תגובה"
     comments: "תגובה"
     content: "תוכן"
     created_at: "נוצר ב-"
@@ -287,6 +291,7 @@ he:
     display_sums: "הצג סכומים"
     due_date: "תאריך יעד"
     estimated_hours: "זמן משוער"
+    estimated_time: "זמן משוער"
     firstname: "שם פרטי"
     group: "קבוצה"
     groupname: "שם הקבוצה"
@@ -294,6 +299,7 @@ he:
     is_default: "ערך ברירת המחדל"
     is_for_all: "עבור כל הפרוייקטים"
     is_public: "ציבורי"
+    issue: "חבילת עבודה"
     lastname: "שם משפחה"
     login: "לוג-אין"
     mail: "אימייל"
@@ -1527,7 +1533,8 @@ he:
         absolute: Absolute
         none: None
         relative: Relative
-        compare_relative: Compare current planning to %{timespan} ago
+        compare_relative_prefix: Compare current planning to
+        compare_relative_suffix: ago
         compare_absolute: Compare current planning to %{date}
       time_relative:
         days: "ימים"
@@ -1555,8 +1562,7 @@ he:
       status: Show status
       project_time_filter: Projects with a work package of a certain type in a certain
         timeframe
-      project_time_filter_absolute_timeframe: Absolute timeframe
-      project_time_filter_relative_timeframe: Relative timeframe
+      project_time_filter_timeframe: Timeframe
       project_time_filter_historical_from: from
       project_time_filter_historical_to: to
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1690,10 +1696,13 @@ he:
       within child work package %{child}_
   nothing_to_preview: Nothing to preview
   api_v3:
+    attributes:
+      _type: Resource Type
+      lock_version: Lock Version
     errors:
       code_401: You need to be authenticated to access this resource.
       code_403: You are not authorized to access this resource.
-      code_404: Couldn't find %{type} with id=%{id}
+      code_404: The requested resource could not be found.
       code_409: Couldn't update the resource because of conflicting modifications.
       invalid_content_type: Expected CONTENT-TYPE to be '%{content_type}' but got
         '%{actual}'.
@@ -1715,3 +1724,5 @@ he:
       validation:
         invalid_user_assigned_to_work_package: The chosen user is not allowed to be
           '%{property}' for this work package.
+    resources:
+      schema: Schema

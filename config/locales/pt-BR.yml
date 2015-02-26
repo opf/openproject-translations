@@ -102,7 +102,6 @@ pt-BR:
       time_entry:
         activity: Atividade
         hours: Horas
-        work_package: Pacotes de trabalho
         spent_on: Data
         type: Tipo
       type:
@@ -223,6 +222,10 @@ pt-BR:
                 do antigo para o novo status para o papel do usuário atual"
             priority_id:
               only_active_priorities_allowed: precisa ser ativo
+            category:
+              only_same_project_categories_allowed: The category of a work package
+                must be within the same project as the work package.
+              does_not_exist: The specified category does not exist.
         user:
           attributes:
             password:
@@ -288,6 +291,7 @@ pt-BR:
     base: 'Erro geral:'
     blocks_ids: Blocos
     category: Categoria
+    comment: Comentário
     comments: Comentário
     content: Conteúdo
     created_at: Criado em
@@ -298,6 +302,7 @@ pt-BR:
     display_sums: Exibir somas
     due_date: Prazo
     estimated_hours: Tempo estimado
+    estimated_time: Tempo estimado
     firstname: Nome
     group: Grupo
     groupname: Nome do grupo
@@ -305,6 +310,7 @@ pt-BR:
     is_default: Valor padrão
     is_for_all: Para todos os projetos
     is_public: Público
+    issue: Pacote de trabalho
     lastname: Sobrenome
     login: Login
     mail: E-mail
@@ -587,8 +593,8 @@ pt-BR:
   error_scm_annotate: A entrada não existe ou não pode ser anotada.
   error_scm_command_failed: 'Ocorreu um erro ao tentar acessar o repositório: %{value}'
   error_scm_not_found: A entrada ou a revisão não foi encontrado no repositório.
-  error_unable_delete_status: Unable to delete work package status because it contains
-    work packages.
+  error_unable_delete_status: Não é possível excluir o status do pacote de trabalho
+    pois contém os pacotes de trabalho.
   error_unable_delete_default_status: Não é possível excluir o status do pacote de
     trabalho padrão. Selecione outro estado do pacote de trabalho padrão antes de
     excluir o atual.
@@ -1564,7 +1570,8 @@ pt-BR:
         absolute: Absoluto
         none: Nenhum
         relative: Relativo
-        compare_relative: Comparar o planejamento atual com %{timespan} atrás
+        compare_relative_prefix: Compare current planning to
+        compare_relative_suffix: ago
         compare_absolute: Comparar o planejamento atual com %{date}
       time_relative:
         days: dias
@@ -1592,8 +1599,7 @@ pt-BR:
       status: Mostrar status
       project_time_filter: Projetos com um pacote de trabalho de um determinado tipo
         em um determinado período de tempo
-      project_time_filter_absolute_timeframe: Período de tempo absoluto
-      project_time_filter_relative_timeframe: Período de tempo relativo
+      project_time_filter_timeframe: Timeframe
       project_time_filter_historical_from: De
       project_time_filter_historical_to: Para
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1731,10 +1737,13 @@ pt-BR:
       valores dentro do pacote de trabalho filho %{child}_
   nothing_to_preview: Nada para Visualizar
   api_v3:
+    attributes:
+      _type: Resource Type
+      lock_version: Lock Version
     errors:
       code_401: Você precisa estar autenticado para acessar este recurso.
       code_403: Você não está autorizado a acessar este recurso.
-      code_404: Não foi possível encontrar %{type} com id =%{id}
+      code_404: The requested resource could not be found.
       code_409: Não foi possível atualizar o recurso devido a modificações conflitantes.
       invalid_content_type: CONTENT-TYPE esperado '%{content_type}' mas '%{actual}'
         encontrado.
@@ -1742,13 +1751,13 @@ pt-BR:
         é esperado, mas tem um recurso do tipo '%{actual}'.
       invalid_user_status_transition: O status da conta do usuário atual não permite
         esta operação.
-      missing_content_type: not specified
+      missing_content_type: Não especificado
       multiple_errors: Vários campos violaram suas restrições.
       parse_error: O corpo da solicitação não era vazio nem continha um objeto JSON
         único.
       writing_read_only_attributes: Você não pode escrever um atributo somente leitura.
-      invalid_format: 'Invalid format for property ''%{property}'': Expected format
-        like ''%{expected_format}'', but got ''%{actual}''.'
+      invalid_format: 'Formato inválido para a propriedade ''%{property}'': Formato
+        esperado como ''%{expected_format}'', mas tem ''%{actual}''.'
       render:
         context_not_found: Nenhum contexto encontrado.
         unsupported_context: Contexto não suportado encontrado.
@@ -1756,3 +1765,5 @@ pt-BR:
       validation:
         invalid_user_assigned_to_work_package: O usuário selecionado não tem permissão
           de '%{property}' neste pacote de trabalho.
+    resources:
+      schema: Schema

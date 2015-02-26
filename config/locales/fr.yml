@@ -107,7 +107,6 @@ fr:
       time_entry:
         activity: Activité
         hours: Heures
-        work_package: Lot de Travaux
         spent_on: Date
         type: Type
       type:
@@ -231,6 +230,10 @@ fr:
                 actuel
             priority_id:
               only_active_priorities_allowed: ont besoin d'être actif
+            category:
+              only_same_project_categories_allowed: The category of a work package
+                must be within the same project as the work package.
+              does_not_exist: The specified category does not exist.
         user:
           attributes:
             password:
@@ -292,6 +295,7 @@ fr:
     base: 'Erreur générale:'
     blocks_ids: Blocs
     category: Catégorie
+    comment: Commentaire
     comments: Commentaire
     content: Contenu
     created_at: Créé le
@@ -302,6 +306,7 @@ fr:
     display_sums: Affichage des sommes
     due_date: Date d'échéance
     estimated_hours: Durée estimée
+    estimated_time: Durée estimée
     firstname: Prénom
     group: Groupe
     groupname: Nom du groupe
@@ -309,6 +314,7 @@ fr:
     is_default: Valeur par défaut
     is_for_all: Pour tous les projets
     is_public: Public
+    issue: Lot de Travaux
     lastname: Nom de famille
     login: Connexion
     mail: Messagerie
@@ -1579,7 +1585,8 @@ fr:
         absolute: Absolue
         none: Aucun
         relative: Relatif
-        compare_relative: Comparer le planning actuel à il y a %{timespan}
+        compare_relative_prefix: Compare current planning to
+        compare_relative_suffix: ago
         compare_absolute: Comparer le planning actuel à  %{date}
       time_relative:
         days: jours
@@ -1607,8 +1614,7 @@ fr:
       status: Afficher statut
       project_time_filter: Projets avec un Lot de Travaux d'un certain type en un
         certain laps de temps
-      project_time_filter_absolute_timeframe: "Échéancier absolu"
-      project_time_filter_relative_timeframe: "Échéancier relatif"
+      project_time_filter_timeframe: Timeframe
       project_time_filter_historical_from: de
       project_time_filter_historical_to: "à"
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1749,10 +1755,13 @@ fr:
       les valeurs dans le lot de travail enfant %{child}_
   nothing_to_preview: Rien à afficher en apperçu
   api_v3:
+    attributes:
+      _type: Resource Type
+      lock_version: Lock Version
     errors:
       code_401: Vous devez être authentifié pour accéder à cette ressource.
       code_403: Vous n'êtes pas autorisé à accéder à cette ressource.
-      code_404: Impossible de trouver le %{type} avec l' id =%{id}
+      code_404: The requested resource could not be found.
       code_409: Ne pouvait pas mettre à jour la ressource en raison de modifications
         conflictuelles.
       invalid_content_type: CONTENT-TYPE attendu «%{content_type} » , mais est à «%{actual}
@@ -1776,3 +1785,5 @@ fr:
       validation:
         invalid_user_assigned_to_work_package: L'utilisateur choisi ne doit pas être
           '%{property} ' pour ce paquet de travail.
+    resources:
+      schema: Schema

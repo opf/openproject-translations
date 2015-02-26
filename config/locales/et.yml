@@ -102,7 +102,6 @@ et:
       time_entry:
         activity: Tegevus
         hours: Tunnid
-        work_package: Teema
         spent_on: Kuupäev
         type: Liik
       type:
@@ -222,6 +221,10 @@ et:
                 from old to new status for the current user's roles
             priority_id:
               only_active_priorities_allowed: peab olema aktiivne
+            category:
+              only_same_project_categories_allowed: The category of a work package
+                must be within the same project as the work package.
+              does_not_exist: The specified category does not exist.
         user:
           attributes:
             password:
@@ -282,6 +285,7 @@ et:
     base: "Üldine tõrge:"
     blocks_ids: Plokid
     category: Kategooria
+    comment: Kommentaar
     comments: Kommentaar
     content: Sisu
     created_at: Loodud
@@ -292,6 +296,7 @@ et:
     display_sums: Kuva summasid
     due_date: Tähtaeg
     estimated_hours: Eeldatav ajakulu
+    estimated_time: Eeldatav ajakulu
     firstname: Eesnimi
     group: Grupp
     groupname: Grupi nimi
@@ -299,6 +304,7 @@ et:
     is_default: Vaikeväärtus
     is_for_all: Kõikide projektide jaoks
     is_public: Avalik
+    issue: Teema
     lastname: Perekonnanimi
     login: Logi sisse
     mail: E-posti aadress
@@ -1531,7 +1537,8 @@ et:
         absolute: Absoluutne
         none: Mittemingi
         relative: Suhteline
-        compare_relative: Võrdle kehtivat plaani plaaniga %{timespan} tagasi
+        compare_relative_prefix: Compare current planning to
+        compare_relative_suffix: ago
         compare_absolute: Võrdle praegust plaani kuupäeval %{date} kehtinud plaaniga
       time_relative:
         days: päeva
@@ -1558,8 +1565,7 @@ et:
       types: Kuva tüübid
       status: Kuva olek
       project_time_filter: Projektid teatud teema tüübiga ja teatud ajakavaga
-      project_time_filter_absolute_timeframe: Absoluutne ajakava
-      project_time_filter_relative_timeframe: Suhteline ajakava
+      project_time_filter_timeframe: Timeframe
       project_time_filter_historical_from: alates
       project_time_filter_historical_to: kuni
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1693,10 +1699,13 @@ et:
       %{child}_
   nothing_to_preview: Eelvaateks pole midagi näidata
   api_v3:
+    attributes:
+      _type: Resource Type
+      lock_version: Lock Version
     errors:
       code_401: You need to be authenticated to access this resource.
       code_403: You are not authorized to access this resource.
-      code_404: Couldn't find %{type} with id=%{id}
+      code_404: The requested resource could not be found.
       code_409: Couldn't update the resource because of conflicting modifications.
       invalid_content_type: Expected CONTENT-TYPE to be '%{content_type}' but got
         '%{actual}'.
@@ -1718,3 +1727,5 @@ et:
       validation:
         invalid_user_assigned_to_work_package: The chosen user is not allowed to be
           '%{property}' for this work package.
+    resources:
+      schema: Schema

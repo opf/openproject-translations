@@ -102,7 +102,6 @@ da:
       time_entry:
         activity: Aktivitet
         hours: Timer
-        work_package: Arbejdspakke
         spent_on: Dato
         type: Type
       type:
@@ -223,6 +222,10 @@ da:
                 fra gammel til ny status for den aktuelle brugers roller
             priority_id:
               only_active_priorities_allowed: skal være aktiv
+            category:
+              only_same_project_categories_allowed: The category of a work package
+                must be within the same project as the work package.
+              does_not_exist: The specified category does not exist.
         user:
           attributes:
             password:
@@ -283,6 +286,7 @@ da:
     base: 'Generel fejl:'
     blocks_ids: Blokke
     category: Kategori
+    comment: Kommentar
     comments: Kommentar
     content: Indhold
     created_at: Oprettet den
@@ -293,6 +297,7 @@ da:
     display_sums: Vis totaler
     due_date: Forfaldsdato
     estimated_hours: Anslået tid
+    estimated_time: Anslået tid
     firstname: Fornavn
     group: Gruppe
     groupname: Gruppenavn
@@ -300,6 +305,7 @@ da:
     is_default: Forhåndsvalgt værdi
     is_for_all: For alle projekter
     is_public: Offentlig
+    issue: Arbejdspakke
     lastname: Efternavn
     login: Login
     mail: E-mail
@@ -1542,7 +1548,8 @@ da:
         absolute: Absolute
         none: None
         relative: Relative
-        compare_relative: Compare current planning to %{timespan} ago
+        compare_relative_prefix: Compare current planning to
+        compare_relative_suffix: ago
         compare_absolute: Compare current planning to %{date}
       time_relative:
         days: dage
@@ -1570,8 +1577,7 @@ da:
       status: Show status
       project_time_filter: Projects with a work package of a certain type in a certain
         timeframe
-      project_time_filter_absolute_timeframe: Absolute timeframe
-      project_time_filter_relative_timeframe: Relative timeframe
+      project_time_filter_timeframe: Timeframe
       project_time_filter_historical_from: from
       project_time_filter_historical_to: to
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1708,10 +1714,13 @@ da:
       i underordnet arbejdspakke %{child} _
   nothing_to_preview: Intet at forhåndsvise
   api_v3:
+    attributes:
+      _type: Resource Type
+      lock_version: Lock Version
     errors:
       code_401: Du skal være logget ind for at få adgang til denne ressource.
       code_403: Du har ikke tilladelse til at få adgang til denne ressource.
-      code_404: Kunne ikke finde %{type} med id =%{id}
+      code_404: The requested resource could not be found.
       code_409: Kunne ikke opdatere ressourcen på grund af modstridende ændringer.
       invalid_content_type: Forventet CONTENT-TYPE skal være '%{content_type}' men
         fik '%{actual}'.
@@ -1732,3 +1741,5 @@ da:
       validation:
         invalid_user_assigned_to_work_package: Den valgte bruger er ikke tilladt at
           være '%{property}' for denne arbejdspakke.
+    resources:
+      schema: Schema

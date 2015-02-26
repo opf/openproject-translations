@@ -101,7 +101,6 @@ hu:
       time_entry:
         activity: Tevékenység
         hours: "Óra"
-        work_package: Munkacsomag
         spent_on: Dátum
         type: Típus
       type:
@@ -222,6 +221,10 @@ hu:
                 from old to new status for the current user's roles
             priority_id:
               only_active_priorities_allowed: Aktívnak kell lenni
+            category:
+              only_same_project_categories_allowed: The category of a work package
+                must be within the same project as the work package.
+              does_not_exist: The specified category does not exist.
         user:
           attributes:
             password:
@@ -283,6 +286,7 @@ hu:
     base: "Általános hiba:"
     blocks_ids: Blokkok
     category: Kategória
+    comment: Vélemény
     comments: Vélemény
     content: Tartalom
     created_at: Létrehozva
@@ -293,6 +297,7 @@ hu:
     display_sums: Megjelenitendő összegek
     due_date: Lejárati időpont
     estimated_hours: Tervezett időpont
+    estimated_time: Tervezett időpont
     firstname: Keresztnév
     group: Csoport
     groupname: Csoport neve
@@ -300,6 +305,7 @@ hu:
     is_default: Alap érték
     is_for_all: Minden projekthez
     is_public: Nyilvános
+    issue: Munkacsomag
     lastname: Vezetéknév
     login: Bejelentkezés
     mail: Email
@@ -1555,8 +1561,8 @@ hu:
         absolute: Abszolút
         none: Egyik sem
         relative: Relatív
-        compare_relative: Hasonlítsa össze a jelenlegi tervezési %{timespan} ezelőtti
-          időtávot
+        compare_relative_prefix: Compare current planning to
+        compare_relative_suffix: ago
         compare_absolute: Hasonlítsa össze a jelenlegi tervezési  %{date} időpont
       time_relative:
         days: napok
@@ -1584,8 +1590,7 @@ hu:
       status: "Állapot megjelenítése"
       project_time_filter: Egy bizonyos típusú egy bizonyos időn belüli  projektek
         a munka csomagokkal
-      project_time_filter_absolute_timeframe: Abszolút időkeret
-      project_time_filter_relative_timeframe: Relatív időkeret
+      project_time_filter_timeframe: Timeframe
       project_time_filter_historical_from: tól
       project_time_filter_historical_to: címzett
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1723,10 +1728,13 @@ hu:
       belöl a gyermek munkacsomag %{child} alapján
   nothing_to_preview: Nincs előnézet
   api_v3:
+    attributes:
+      _type: Resource Type
+      lock_version: Lock Version
     errors:
       code_401: You need to be authenticated to access this resource.
       code_403: You are not authorized to access this resource.
-      code_404: Couldn't find %{type} with id=%{id}
+      code_404: The requested resource could not be found.
       code_409: Couldn't update the resource because of conflicting modifications.
       invalid_content_type: Expected CONTENT-TYPE to be '%{content_type}' but got
         '%{actual}'.
@@ -1748,3 +1756,5 @@ hu:
       validation:
         invalid_user_assigned_to_work_package: The chosen user is not allowed to be
           '%{property}' for this work package.
+    resources:
+      schema: Schema

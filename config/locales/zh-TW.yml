@@ -83,7 +83,6 @@ zh-TW:
       time_entry:
         activity: "活動"
         hours: "小時"
-        work_package: "工作項目"
         spent_on: "日期"
         type: "類型"
       type:
@@ -203,6 +202,10 @@ zh-TW:
                 無效，因為目前的角色並未被定義可以從目前的狀態轉移到新的狀態
             priority_id:
               only_active_priorities_allowed: "必須是啟用的"
+            category:
+              only_same_project_categories_allowed: The category of a work package
+                must be within the same project as the work package.
+              does_not_exist: The specified category does not exist.
         user:
           attributes:
             password:
@@ -264,6 +267,7 @@ zh-TW:
     base: "一般錯誤:"
     blocks_ids: "區塊"
     category: "類別"
+    comment: "評論"
     comments: "評論"
     content: "內容"
     created_at: "建立於"
@@ -274,6 +278,7 @@ zh-TW:
     display_sums: "顯示加總"
     due_date: "截止日期"
     estimated_hours: "預估時間"
+    estimated_time: "預估時間"
     firstname: "名字"
     group: "群組"
     groupname: "團體名稱"
@@ -281,6 +286,7 @@ zh-TW:
     is_default: "預設值"
     is_for_all: "對所有的專案"
     is_public: "公開"
+    issue: "工作項目"
     lastname: "姓："
     login: "登入"
     mail: "電子郵件"
@@ -1502,7 +1508,8 @@ zh-TW:
         absolute: "絕對"
         none: "無"
         relative: "相對"
-        compare_relative: Compare current planning to %{timespan} ago
+        compare_relative_prefix: Compare current planning to
+        compare_relative_suffix: ago
         compare_absolute: Compare current planning to %{date}
       time_relative:
         days: days
@@ -1530,8 +1537,7 @@ zh-TW:
       status: "顯示狀態"
       project_time_filter: Projects with a work package of a certain type in a certain
         timeframe
-      project_time_filter_absolute_timeframe: Absolute timeframe
-      project_time_filter_relative_timeframe: Relative timeframe
+      project_time_filter_timeframe: Timeframe
       project_time_filter_historical_from: from
       project_time_filter_historical_to: to
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1663,6 +1669,9 @@ zh-TW:
       within child work package %{child}_
   nothing_to_preview: "沒有內容可預覽"
   api_v3:
+    attributes:
+      _type: Resource Type
+      lock_version: Lock Version
     errors:
       code_401: |
         You need to be authenticated to access this resource.
@@ -1670,7 +1679,7 @@ zh-TW:
       code_403: |
         You are not authorized to access this resource.
         您未被授權使用這個資源。
-      code_404: "找不到 id 為 %{id} 的 %{type}"
+      code_404: The requested resource could not be found.
       code_409: |
         Couldn't update the resource because of conflicting modifications.
         因為修改的衝突，所以無法更新這個資源。
@@ -1703,3 +1712,5 @@ zh-TW:
           無法找到本文對應的資源。
       validation:
         invalid_user_assigned_to_work_package: "所指定的使用者不允許成為工作項目的 '%{property}' 。"
+    resources:
+      schema: Schema

@@ -93,7 +93,6 @@ ko:
       time_entry:
         activity: Activity
         hours: Hours
-        work_package: Work Package
         spent_on: Date
         type: Type
       type:
@@ -214,6 +213,10 @@ ko:
                 때문에 유효 하지 않습니다."
             priority_id:
               only_active_priorities_allowed: needs to be active
+            category:
+              only_same_project_categories_allowed: The category of a work package
+                must be within the same project as the work package.
+              does_not_exist: The specified category does not exist.
         user:
           attributes:
             password:
@@ -274,6 +277,7 @@ ko:
     base: 'General Error:'
     blocks_ids: Blocks
     category: Category
+    comment: Comment
     comments: Comment
     content: Content
     created_at: Created on
@@ -284,6 +288,7 @@ ko:
     display_sums: Display Sums
     due_date: Due date
     estimated_hours: Estimated time
+    estimated_time: Estimated time
     firstname: First name
     group: Group
     groupname: Group name
@@ -291,6 +296,7 @@ ko:
     is_default: "기본값"
     is_for_all: For all projects
     is_public: Public
+    issue: Work package
     lastname: Last name
     login: Login
     mail: Email
@@ -1527,7 +1533,8 @@ ko:
         absolute: Absolute
         none: None
         relative: Relative
-        compare_relative: Compare current planning to %{timespan} ago
+        compare_relative_prefix: Compare current planning to
+        compare_relative_suffix: ago
         compare_absolute: Compare current planning to %{date}
       time_relative:
         days: days
@@ -1555,8 +1562,7 @@ ko:
       status: Show status
       project_time_filter: Projects with a work package of a certain type in a certain
         timeframe
-      project_time_filter_absolute_timeframe: Absolute timeframe
-      project_time_filter_relative_timeframe: Relative timeframe
+      project_time_filter_timeframe: Timeframe
       project_time_filter_historical_from: from
       project_time_filter_historical_to: to
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1690,10 +1696,13 @@ ko:
       within child work package %{child}_
   nothing_to_preview: Nothing to preview
   api_v3:
+    attributes:
+      _type: Resource Type
+      lock_version: Lock Version
     errors:
       code_401: "접근하기 위해서 인증해야 합니다."
       code_403: "접근 권한이 없습니다."
-      code_404: "%{id}로/으로 %{type} 을/를 찾을 수 없습니다."
+      code_404: The requested resource could not be found.
       code_409: "수정사항이 출동되어 업데이트 할 수 없습니다."
       invalid_content_type: "예상되는 CONTENT-TYPE 은 '%{content_type}' 이지만, '%{actual}'
         을 응답 받았습니다."
@@ -1714,3 +1723,5 @@ ko:
       validation:
         invalid_user_assigned_to_work_package: "선택한 사용자는 이 작업 패키지에 대해 '%{property}'
           허가되지 않았습니다."
+    resources:
+      schema: Schema

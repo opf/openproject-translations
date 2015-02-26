@@ -106,7 +106,6 @@ es:
       time_entry:
         activity: Actividad
         hours: Horas
-        work_package: Paquete de trabajo
         spent_on: Fecha
         type: Tipo
       type:
@@ -228,6 +227,10 @@ es:
                 desde el estado antiguo al nuevo para los roles del usuario actual
             priority_id:
               only_active_priorities_allowed: debe estar activo
+            category:
+              only_same_project_categories_allowed: The category of a work package
+                must be within the same project as the work package.
+              does_not_exist: The specified category does not exist.
         user:
           attributes:
             password:
@@ -288,6 +291,7 @@ es:
     base: 'Error general:'
     blocks_ids: Bloques
     category: Categoría
+    comment: Comentario
     comments: Comentario
     content: Contenido
     created_at: Creado en
@@ -298,6 +302,7 @@ es:
     display_sums: Mostrar sumas
     due_date: Fecha de vencimiento
     estimated_hours: Tiempo estimado
+    estimated_time: Tiempo estimado
     firstname: Nombre
     group: Grupo
     groupname: Nombre del grupo
@@ -305,6 +310,7 @@ es:
     is_default: Valor predeterminado
     is_for_all: Para todos los proyectos
     is_public: Público
+    issue: Paquete de trabajo
     lastname: Apellido
     login: Ingresar
     mail: Correo electrónico
@@ -1576,7 +1582,8 @@ es:
         absolute: Absoluto
         none: Ninguno
         relative: Relativo
-        compare_relative: Comparar la planificación actual hace %{timespan}
+        compare_relative_prefix: Compare current planning to
+        compare_relative_suffix: ago
         compare_absolute: Comparar la planificación actual al %{date}
       time_relative:
         days: días
@@ -1604,8 +1611,7 @@ es:
       status: Mostrar estado
       project_time_filter: Proyectos con paquete de trabajo de un tipo determinado
         en un plazo
-      project_time_filter_absolute_timeframe: Marco de tiempo absoludo
-      project_time_filter_relative_timeframe: Plazo relativo
+      project_time_filter_timeframe: Timeframe
       project_time_filter_historical_from: De
       project_time_filter_historical_to: a
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1746,10 +1752,13 @@ es:
       los valores en el paquete de trabajo hijo %{child}_
   nothing_to_preview: Nada para previsualizar
   api_v3:
+    attributes:
+      _type: Resource Type
+      lock_version: Lock Version
     errors:
       code_401: Tiene que estar autenticado para acceder a este recurso.
       code_403: No está autorizado a acceder a este recurso.
-      code_404: No se pudo encontrar %{type} con id=%{id}
+      code_404: The requested resource could not be found.
       code_409: No se pudo actualizar el recurso debido a modificaciones en conflicto.
       invalid_content_type: Se esperaba que el CONTENT-TYPE fuera '%{content_type}'
         pero se obtuvo '%{actual}'.
@@ -1771,3 +1780,5 @@ es:
       validation:
         invalid_user_assigned_to_work_package: El usuario elegido no tiene permiso
           para ser '%{property}' para este paquete de trabajo.
+    resources:
+      schema: Schema

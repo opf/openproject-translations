@@ -83,7 +83,6 @@ zh:
       time_entry:
         activity: "活动"
         hours: "小时"
-        work_package: "工作包"
         spent_on: "日期"
         type: "类型"
       type:
@@ -199,6 +198,10 @@ zh:
               status_transition_invalid: "是无效的因为当前用户的角色没有有效的从旧到新的状态的过渡"
             priority_id:
               only_active_priorities_allowed: "需要被激活"
+            category:
+              only_same_project_categories_allowed: The category of a work package
+                must be within the same project as the work package.
+              does_not_exist: The specified category does not exist.
         user:
           attributes:
             password:
@@ -258,6 +261,7 @@ zh:
     base: "一般错误："
     blocks_ids: "块"
     category: "类别"
+    comment: "评论"
     comments: "评论"
     content: "内容"
     created_at: "创建"
@@ -268,6 +272,7 @@ zh:
     display_sums: "显示汇总"
     due_date: "截止日期"
     estimated_hours: "估计的时间"
+    estimated_time: "估计的时间"
     firstname: "名字"
     group: "组"
     groupname: "组名称"
@@ -275,6 +280,7 @@ zh:
     is_default: "默认值"
     is_for_all: "为所有项目"
     is_public: "公开"
+    issue: "工作包"
     lastname: "姓氏"
     login: "登录"
     mail: "电子邮件"
@@ -1432,7 +1438,8 @@ zh:
         absolute: "绝对"
         none: "无"
         relative: "相对"
-        compare_relative: "对比当前计划与 %{timespan} 前"
+        compare_relative_prefix: Compare current planning to
+        compare_relative_suffix: ago
         compare_absolute: "对比当前计划和 %{date}"
       time_relative:
         days: "天"
@@ -1459,8 +1466,7 @@ zh:
       types: "显示类型"
       status: "显示状态"
       project_time_filter: "项目具有在一定时间段中的某类型工作包"
-      project_time_filter_absolute_timeframe: "绝对时间段"
-      project_time_filter_relative_timeframe: "相对时间段"
+      project_time_filter_timeframe: Timeframe
       project_time_filter_historical_from: "从"
       project_time_filter_historical_to: "到"
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1579,10 +1585,13 @@ zh:
     updated_automatically_by_child_changes: _自动更新由于改变子工作包 %{child} 内的值_
   nothing_to_preview: "没有什么要预览"
   api_v3:
+    attributes:
+      _type: Resource Type
+      lock_version: Lock Version
     errors:
       code_401: "你需要被授权访问该资源。"
       code_403: "您无权访问此资源。"
-      code_404: "找不到id=%{id}的%{type}"
+      code_404: The requested resource could not be found.
       code_409: "无法更新资源，因为发生冲突的修改。"
       invalid_content_type: "预期CONTENT-TYPE为%{content_type}，但是获得了'%{actual}'。"
       invalid_resource: "对于属性'%{property}'，预期获得类型为'%{expected}'的资源，但是获得了类型'%{actual}'的资源。"
@@ -1600,3 +1609,5 @@ zh:
         context_object_not_found: "找不到与上下文给出的资源。"
       validation:
         invalid_user_assigned_to_work_package: "所选的用户不允许为此工作包的 '%{property}'。"
+    resources:
+      schema: Schema

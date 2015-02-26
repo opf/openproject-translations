@@ -103,7 +103,6 @@ sv-SE:
       time_entry:
         activity: Aktivitet
         hours: Timmar
-        work_package: Arbetspaket
         spent_on: Datum
         type: Typ
       type:
@@ -224,6 +223,10 @@ sv-SE:
                 roller"
             priority_id:
               only_active_priorities_allowed: måste vara aktiv
+            category:
+              only_same_project_categories_allowed: The category of a work package
+                must be within the same project as the work package.
+              does_not_exist: The specified category does not exist.
         user:
           attributes:
             password:
@@ -284,6 +287,7 @@ sv-SE:
     base: 'Allmänt fel:'
     blocks_ids: Block
     category: Kategori
+    comment: Kommentar
     comments: Kommentar
     content: Innehåll
     created_at: Skapat den
@@ -294,6 +298,7 @@ sv-SE:
     display_sums: Visa summor
     due_date: Förfallodatum
     estimated_hours: Beräknad tid
+    estimated_time: Beräknad tid
     firstname: Förnamn
     group: Grupp
     groupname: Gruppens namn
@@ -301,6 +306,7 @@ sv-SE:
     is_default: Standardvärde
     is_for_all: För alla projekt
     is_public: Offentlig
+    issue: Arbetspaket
     lastname: Efternamn
     login: Användarnamn
     mail: E-post
@@ -1543,7 +1549,8 @@ sv-SE:
         absolute: Absolut
         none: Ingen
         relative: Relativ
-        compare_relative: Jämföra nuvarande tidsplan med %{timespan} sedan
+        compare_relative_prefix: Compare current planning to
+        compare_relative_suffix: ago
         compare_absolute: Jämför nuvarande tidsplanering till %{date}
       time_relative:
         days: dagar
@@ -1571,8 +1578,7 @@ sv-SE:
       status: Visa status
       project_time_filter: Projekt med ett arbetspaket av en viss typ inom en viss
         tidsram
-      project_time_filter_absolute_timeframe: Absolut tidsram
-      project_time_filter_relative_timeframe: Relativ tidsram
+      project_time_filter_timeframe: Timeframe
       project_time_filter_historical_from: från
       project_time_filter_historical_to: till
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1706,10 +1712,13 @@ sv-SE:
       värdena för underarbetspaket %{child} _
   nothing_to_preview: Ingenting att förhandsgranska
   api_v3:
+    attributes:
+      _type: Resource Type
+      lock_version: Lock Version
     errors:
       code_401: Du måste autentiseras för att få tillgång till denna resurs.
       code_403: Du har inte behörighet att få tillgång till denna resurs.
-      code_404: Kunde inte hitta %{type} med id =%{id}
+      code_404: The requested resource could not be found.
       code_409: Kunde inte uppdatera resursen på grund av motstridiga ändringar.
       invalid_content_type: Förväntade att CONTENT-TYPE var "%{content_type}" men
         erhöll istället "%{actual}".
@@ -1730,3 +1739,5 @@ sv-SE:
       validation:
         invalid_user_assigned_to_work_package: Den valda användaren tillåts inte att
           vara "%{property}" för detta arbetspaket.
+    resources:
+      schema: Schema
