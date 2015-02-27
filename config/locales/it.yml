@@ -228,9 +228,10 @@ it:
             priority_id:
               only_active_priorities_allowed: deve essere attivo
             category:
-              only_same_project_categories_allowed: The category of a work package
-                must be within the same project as the work package.
-              does_not_exist: The specified category does not exist.
+              only_same_project_categories_allowed: La categoria di un pacchetto di
+                lavoro deve essere contenuta nel medesimo progetto del pacchetto di
+                lavoro.
+              does_not_exist: La categoria specificata non esiste.
         user:
           attributes:
             password:
@@ -602,8 +603,8 @@ it:
   error_scm_command_failed: 'Si è verificato un errore quando si tenta di accedere
     al repository: %{value}'
   error_scm_not_found: La voce o la revisione non è stata trovata nel repository.
-  error_unable_delete_status: Unable to delete work package status because it contains
-    work packages.
+  error_unable_delete_status: Impossibile eliminare lo stato del pacchetto lavoro
+    perché contiene pacchetti di lavoro.
   error_unable_delete_default_status: Impossibile eliminare lo stato del pacchetto
     di lavoro predefinito. Si prega di selezionare un altro stato di pacchetto di
     lavoro predefinito prima di cancellare quello attuale.
@@ -1057,7 +1058,7 @@ it:
     other: "%{count} chiusi"
     zero: 0 closed
   label_x_comments:
-    one: 1 comment
+    one: 1 commento
     other: "%{count} commenti"
     zero: no comments
   label_x_open_work_packages_abbr:
@@ -1069,7 +1070,7 @@ it:
     other: "%{count} aperti / %{total}"
     zero: 0 open / %{total}
   label_x_projects:
-    one: 1 project
+    one: 1 progetto
     other: "%{count} progetti"
     zero: no projects
   label_year: Anno
@@ -1498,6 +1499,10 @@ it:
       short: "%d %b % h %M"
       time: "%I: %M %p"
     pm: pm
+  timeframe:
+    show: Show timeframe
+    end: to
+    start: from
   timelines:
     admin_menu:
       color: Colore
@@ -1580,8 +1585,8 @@ it:
         absolute: Assoluto
         none: Nessuno
         relative: Relativo
-        compare_relative_prefix: Compare current planning to
-        compare_relative_suffix: ago
+        compare_relative_prefix: Confrontare l'attuale pianificazione con
+        compare_relative_suffix: fa
         compare_absolute: Confrontare l'attuale pianificazione a %{date}
       time_relative:
         days: giorni
@@ -1609,7 +1614,7 @@ it:
       status: Mostra stati
       project_time_filter: Progetti con un pacchetto di lavoro di un certo tipo in
         un certo lasso di tempo
-      project_time_filter_timeframe: Timeframe
+      project_time_filter_timeframe: Lasso di tempo
       project_time_filter_historical_from: da
       project_time_filter_historical_to: a
       project_time_filter_historical: from %{startdate} to %{enddate}
@@ -1748,26 +1753,26 @@ it:
   nothing_to_preview: Niente in anteprima
   api_v3:
     attributes:
-      _type: Resource Type
-      lock_version: Lock Version
+      _type: Tipo Risorsa
+      lock_version: Blocca Versione
     errors:
       code_401: Devi essere autenticato per accedere a questa risorsa.
       code_403: Non siete autorizzati ad accedere a questa risorsa.
-      code_404: The requested resource could not be found.
+      code_404: La risorsa richiesta non è stata trovata.
       code_409: Non ha potuto aggiornare la risorsa a causa delle modifiche in conflitto.
       invalid_content_type: Il  CONTENT-TYPE avrebbe dovuto essere '%{content_type}',
         ma si è ottenuto '%{actual}'.
       invalid_resource: Per la proprietà '%{property}' una risorsa di tipo '%{expected}'
         è previsto, ma ha ottenuto una risorsa di tipo '%{actual}'.
-      invalid_user_status_transition: The current user account status does not allow
-        this operation.
-      missing_content_type: not specified
+      invalid_user_status_transition: L'attuale stato dell'account utente non consente
+        questa operazione.
+      missing_content_type: non specificato
       multiple_errors: Più campi violano i vincoli.
       parse_error: Il corpo della richiesta era né vuota, né conteneva un singolo
         oggetto JSON.
       writing_read_only_attributes: Non devi scrivere un attributo di sola lettura.
-      invalid_format: 'Invalid format for property ''%{property}'': Expected format
-        like ''%{expected_format}'', but got ''%{actual}''.'
+      invalid_format: 'Formato non valido per la proprietà ''%{property}'': previsto
+        un formato del tipo ''%{expected_format}'', rispetto al tipo attuale ''%{actual}''.'
       render:
         context_not_found: Nessun contesto trovato.
         unsupported_context: Trovato contesto non supportato.
