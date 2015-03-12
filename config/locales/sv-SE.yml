@@ -227,6 +227,9 @@ sv-SE:
               only_same_project_categories_allowed: The category of a work package
                 must be within the same project as the work package.
               does_not_exist: The specified category does not exist.
+            estimated_hours:
+              only_values_greater_or_equal_zeroes_allowed: The estimated hours must
+                be >= 0.
         user:
           attributes:
             password:
@@ -1732,7 +1735,7 @@ sv-SE:
       invalid_user_status_transition: Statusen på den aktuella användarens konto tillåter
         inte denna operation.
       missing_content_type: not specified
-      multiple_errors: Multipla fält bröt mot sina restriktioner.
+      multiple_errors: Multiple field constraints have been violated.
       parse_error: Förfrågan var varken tom eller innehöll ett enda JSON objekt.
       writing_read_only_attributes: Du får inte skriva till ett skrivskyddat attribut.
       invalid_format: 'Invalid format for property ''%{property}'': Expected format
@@ -1744,5 +1747,8 @@ sv-SE:
       validation:
         invalid_user_assigned_to_work_package: Den valda användaren tillåts inte att
           vara "%{property}" för detta arbetspaket.
+        estimated_hours: Estimated hours cannot be set on parent work packages.
+        done_ratio: Done ratio cannot be set on parent work packages, when it is inferred
+          by status or when it is disabled.
     resources:
       schema: Schema

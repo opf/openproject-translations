@@ -217,6 +217,9 @@ ko:
               only_same_project_categories_allowed: The category of a work package
                 must be within the same project as the work package.
               does_not_exist: The specified category does not exist.
+            estimated_hours:
+              only_values_greater_or_equal_zeroes_allowed: The estimated hours must
+                be >= 0.
         user:
           attributes:
             password:
@@ -1715,7 +1718,7 @@ ko:
         but got '%{actual}'.
       invalid_user_status_transition: "현재 사용자의 계정 상태는이 작업을 허용 하지 않습니다."
       missing_content_type: not specified
-      multiple_errors: "여러 필드가 조건에 부합하지 않습니다."
+      multiple_errors: Multiple field constraints have been violated.
       parse_error: The request body was neither empty, nor did it contain a single
         JSON object.
       writing_read_only_attributes: "읽기 전용 특성은 변경할 수 없습니다."
@@ -1728,5 +1731,8 @@ ko:
       validation:
         invalid_user_assigned_to_work_package: "선택한 사용자는 이 작업 패키지에 대해 '%{property}'
           허가되지 않았습니다."
+        estimated_hours: Estimated hours cannot be set on parent work packages.
+        done_ratio: Done ratio cannot be set on parent work packages, when it is inferred
+          by status or when it is disabled.
     resources:
       schema: Schema

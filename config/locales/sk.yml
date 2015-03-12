@@ -227,6 +227,9 @@ sk:
               only_same_project_categories_allowed: Kategória pracovného balíčka sa
                 musí nachádzať v rámci rovnakého projektu ako pracovný balíček.
               does_not_exist: "Špecifikovaná kategória neexistuje."
+            estimated_hours:
+              only_values_greater_or_equal_zeroes_allowed: The estimated hours must
+                be >= 0.
         user:
           attributes:
             password:
@@ -1755,7 +1758,7 @@ sk:
       invalid_user_status_transition: "Účet aktuálneho používateľa nemá oprávnenie
         na vykonanie tejto operácie."
       missing_content_type: nešpecifikovaný
-      multiple_errors: Hodnoty viacerých polí porušili definované obmedzenia.
+      multiple_errors: Multiple field constraints have been violated.
       parse_error: Telo prichádzajúcej požiadavky nebolo ani prázdne, ani neobsahovalo
         práve jeden JSON objekt.
       writing_read_only_attributes: Nie je možné meniť atribút, ktorý je určený len
@@ -1770,5 +1773,8 @@ sk:
       validation:
         invalid_user_assigned_to_work_package: Zvolený používateľ nemôže byť "%{property}"
           v prípade tohto pracovného balíčka.
+        estimated_hours: Estimated hours cannot be set on parent work packages.
+        done_ratio: Done ratio cannot be set on parent work packages, when it is inferred
+          by status or when it is disabled.
     resources:
       schema: Schéma

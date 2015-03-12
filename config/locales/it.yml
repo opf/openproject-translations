@@ -232,6 +232,9 @@ it:
                 lavoro deve essere contenuta nel medesimo progetto del pacchetto di
                 lavoro.
               does_not_exist: La categoria specificata non esiste.
+            estimated_hours:
+              only_values_greater_or_equal_zeroes_allowed: The estimated hours must
+                be >= 0.
         user:
           attributes:
             password:
@@ -1769,7 +1772,7 @@ it:
       invalid_user_status_transition: L'attuale stato dell'account utente non consente
         questa operazione.
       missing_content_type: non specificato
-      multiple_errors: Più campi violano i vincoli.
+      multiple_errors: Multiple field constraints have been violated.
       parse_error: Il corpo della richiesta era né vuota, né conteneva un singolo
         oggetto JSON.
       writing_read_only_attributes: Non devi scrivere un attributo di sola lettura.
@@ -1782,5 +1785,8 @@ it:
       validation:
         invalid_user_assigned_to_work_package: L'utente scelto non è consentito di
           essere '%{property}' per questo pacchetto di lavoro.
+        estimated_hours: Estimated hours cannot be set on parent work packages.
+        done_ratio: Done ratio cannot be set on parent work packages, when it is inferred
+          by status or when it is disabled.
     resources:
       schema: Schema

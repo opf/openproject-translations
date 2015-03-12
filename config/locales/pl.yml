@@ -226,6 +226,9 @@ pl:
               only_same_project_categories_allowed: The category of a work package
                 must be within the same project as the work package.
               does_not_exist: The specified category does not exist.
+            estimated_hours:
+              only_values_greater_or_equal_zeroes_allowed: The estimated hours must
+                be >= 0.
         user:
           attributes:
             password:
@@ -1578,7 +1581,7 @@ pl:
         none: Brak
         relative: Względne
         compare_relative_prefix: Compare current planning to
-        compare_relative_suffix: ago
+        compare_relative_suffix: temu
         compare_absolute: Porównanie bieżącego planowania do %{date}
       time_relative:
         days: dni
@@ -1743,12 +1746,12 @@ pl:
   nothing_to_preview: Nie ma nic do podglądu
   api_v3:
     attributes:
-      _type: Resource Type
-      lock_version: Lock Version
+      _type: Typ zasobu
+      lock_version: Wersja zablokowana
     errors:
       code_401: Musisz być uwierzytelniony, aby otrzymać dostęp do tego zasobu.
       code_403: Nie masz uprawnień do tego zasobu.
-      code_404: The requested resource could not be found.
+      code_404: Nie można odnaleźć żądanego zasobu.
       code_409: Nie można zaktualizować zasobu ze względu na konfliktujące modyfikacje.
       invalid_content_type: Oczekiwano CONTENT-TYPE '%{content_type}' a otrzymano
         '%{actual}'.
@@ -1756,8 +1759,8 @@ pl:
         but got '%{actual}'.
       invalid_user_status_transition: Aktualny stan konta użytkownika nie zezwala
         na wykonanie tej operacji.
-      missing_content_type: not specified
-      multiple_errors: Wiele pól narusza swoje ograniczenia.
+      missing_content_type: nie określono
+      multiple_errors: Multiple field constraints have been violated.
       parse_error: Treści żądania była pusta, lub zawierała pojedynczy obiekt JSON.
       writing_read_only_attributes: Nie możesz zapisać atrybutu tylko do odczytu.
       invalid_format: 'Błędny format dla własności ''%{property}'': Format oczekiwany
@@ -1769,5 +1772,8 @@ pl:
       validation:
         invalid_user_assigned_to_work_package: Wybrany użytkownik nie może być '%{property}'
           dla tego pakietu roboczego.
+        estimated_hours: Estimated hours cannot be set on parent work packages.
+        done_ratio: Done ratio cannot be set on parent work packages, when it is inferred
+          by status or when it is disabled.
     resources:
-      schema: Schema
+      schema: Schemat

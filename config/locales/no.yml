@@ -228,6 +228,9 @@
               only_same_project_categories_allowed: The category of a work package
                 must be within the same project as the work package.
               does_not_exist: The specified category does not exist.
+            estimated_hours:
+              only_values_greater_or_equal_zeroes_allowed: The estimated hours must
+                be >= 0.
         user:
           attributes:
             password:
@@ -1728,7 +1731,7 @@
       invalid_user_status_transition: Kontostatusen til gjeldende brukerkonto tillater
         ikke denne operasjonen.
       missing_content_type: not specified
-      multiple_errors: Flere felter bryter med sine restriksjoner.
+      multiple_errors: Multiple field constraints have been violated.
       parse_error: Innholdet i forespørselen var tomt og inneholder heller ikke ett
         eneste JSON-objekt.
       writing_read_only_attributes: Du kan ikke skrive til et skrivebeskyttet attributt.
@@ -1741,5 +1744,8 @@
       validation:
         invalid_user_assigned_to_work_package: Valgt bruker har ikke de nødvendige
           rettighetene til å være '%{property}' for denne arbeidspakken.
+        estimated_hours: Estimated hours cannot be set on parent work packages.
+        done_ratio: Done ratio cannot be set on parent work packages, when it is inferred
+          by status or when it is disabled.
     resources:
       schema: Schema

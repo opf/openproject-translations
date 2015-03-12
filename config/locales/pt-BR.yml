@@ -226,6 +226,9 @@ pt-BR:
               only_same_project_categories_allowed: A categoria de um pacote de trabalho
                 deve estar dentro do mesmo projeto do pacote de trabalho.
               does_not_exist: Categoria especificada não existe.
+            estimated_hours:
+              only_values_greater_or_equal_zeroes_allowed: The estimated hours must
+                be >= 0.
         user:
           attributes:
             password:
@@ -1758,7 +1761,7 @@ pt-BR:
       invalid_user_status_transition: O status da conta do usuário atual não permite
         esta operação.
       missing_content_type: Não especificado
-      multiple_errors: Vários campos violaram suas restrições.
+      multiple_errors: Multiple field constraints have been violated.
       parse_error: O corpo da solicitação não era vazio nem continha um objeto JSON
         único.
       writing_read_only_attributes: Você não pode escrever um atributo somente leitura.
@@ -1771,5 +1774,8 @@ pt-BR:
       validation:
         invalid_user_assigned_to_work_package: O usuário selecionado não tem permissão
           de '%{property}' neste pacote de trabalho.
+        estimated_hours: Estimated hours cannot be set on parent work packages.
+        done_ratio: Done ratio cannot be set on parent work packages, when it is inferred
+          by status or when it is disabled.
     resources:
       schema: Esquema
