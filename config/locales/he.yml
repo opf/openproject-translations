@@ -213,14 +213,14 @@ he:
               not_a_valid_parent: "אינו חוקי"
               does_not_exist: "לא קיים"
             status_id:
-              status_transition_invalid: is invalid because no valid transition exists
-                from old to new status for the current user's roles
+              status_transition_invalid: "אינו חוקי מכיוון שלא קיים תרגום תקף ממצב
+                ישן לחדש עבור התפקידים של המשתמש הנוכחי"
             priority_id:
               only_active_priorities_allowed: "צריך להיות פעיל"
             category:
-              only_same_project_categories_allowed: The category of a work package
-                must be within the same project as the work package.
-              does_not_exist: The specified category does not exist.
+              only_same_project_categories_allowed: "הקטגוריה של חבילת עבודה חייבת
+                להיות בתוך אותו פרוייקט כמו חבילת עבודה."
+              does_not_exist: "הקטגוריה שצוינה אינה קיימת."
         user:
           attributes:
             password:
@@ -295,7 +295,7 @@ he:
     firstname: "שם פרטי"
     group: "קבוצה"
     groupname: "שם הקבוצה"
-    id: ID
+    id: "מזהה"
     is_default: "ערך ברירת המחדל"
     is_for_all: "עבור כל הפרוייקטים"
     is_public: "ציבורי"
@@ -575,8 +575,8 @@ he:
   error_scm_annotate: "הערה לא קימת או שלא ניתן להוסף הערות."
   error_scm_command_failed: "אירעה שגיאה בעת ניסיון לגשת למאגר : %{value}"
   error_scm_not_found: The entry or revision was not found in the repository.
-  error_unable_delete_status: Unable to delete work package status because it contains
-    work packages.
+  error_unable_delete_status: "אין אפשרות למחוק מצב חבילת עבודה מאחר והיא מכילה חבילות
+    עבודה."
   error_unable_delete_default_status: Unable to delete default work package status.
     Please select another default work package status before deleting the current
     one.
@@ -1020,24 +1020,24 @@ he:
   label_workflow_plural: Workflows
   label_workflow_summary: "פירוט"
   label_x_closed_work_packages_abbr:
-    one: 1 closed
-    other: "%{count} closed"
+    one: "סגור"
+    other: "%{count} סגורים"
     zero: 0 closed
   label_x_comments:
-    one: 1 comment
-    other: "%{count} comments"
+    one: "הערה"
+    other: "%{count} תגובות"
     zero: no comments
   label_x_open_work_packages_abbr:
-    one: 1 open
-    other: "%{count} open"
+    one: "פתוח"
+    other: "%{count} פתוחים"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
-    one: 1 open / %{total}
-    other: "%{count} open / %{total}"
+    one: 1 פתוח / %{total}
+    other: "%{count} פתוחים / %{total}"
     zero: 0 open / %{total}
   label_x_projects:
-    one: 1 project
-    other: "%{count} projects"
+    one: "פרויקט"
+    other: "פרויקטים %{count}"
     zero: no projects
   label_year: Year
   label_yesterday: "אתמול"
@@ -1060,7 +1060,7 @@ he:
   label_keyboard_shortcut_go_news: Go to project news
   label_keyboard_shortcut_go_timelines: Go to timelines
   label_keyboard_shortcut_new_work_package: Create new work package
-  label_keyboard_shortcut_details_package: Show work packages details pane
+  label_keyboard_shortcut_details_package: "הצג חלונית הפרטי חבילות עבודה"
   label_keyboard_shortcut_go_edit: Go to edit the current item (on detail pages only)
   label_keyboard_shortcut_open_more_menu: Open more-menu (on detail pages only)
   label_keyboard_shortcut_go_preview: Go to preview the current edit (on edit pages
@@ -1538,8 +1538,8 @@ he:
         absolute: Absolute
         none: None
         relative: Relative
-        compare_relative_prefix: Compare current planning to
-        compare_relative_suffix: ago
+        compare_relative_prefix: "להשוות הנוכחי למתכנן"
+        compare_relative_suffix: "לפני"
         compare_absolute: Compare current planning to %{date}
       time_relative:
         days: "ימים"
@@ -1567,7 +1567,7 @@ he:
       status: Show status
       project_time_filter: Projects with a work package of a certain type in a certain
         timeframe
-      project_time_filter_timeframe: Timeframe
+      project_time_filter_timeframe: "מסגרת הזמן"
       project_time_filter_historical_from: from
       project_time_filter_historical_to: to
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1663,8 +1663,8 @@ he:
     assign_random_password: Assign random password (sent to user via e-mail)
     blocked: locked temporarily
     blocked_num_failed_logins:
-      one: locked temporarily (one failed login attempt)
-      other: locked temporarily (%{count} failed login attempts)
+      one: "נעול באופן זמני (נסיון כניסה כושל אחד)"
+      other: "נעול זמנית (%{count} ניסיונות כניסה)"
     deleted: Deleted user
     error_status_change_failed: 'Changing the user status failed due to the following
       errors: %{errors}'
@@ -1702,32 +1702,30 @@ he:
   nothing_to_preview: Nothing to preview
   api_v3:
     attributes:
-      _type: Resource Type
-      lock_version: Lock Version
+      _type: "סוג משאב"
+      lock_version: "גרסת מנעול"
     errors:
-      code_401: You need to be authenticated to access this resource.
-      code_403: You are not authorized to access this resource.
-      code_404: The requested resource could not be found.
-      code_409: Couldn't update the resource because of conflicting modifications.
-      invalid_content_type: Expected CONTENT-TYPE to be '%{content_type}' but got
-        '%{actual}'.
-      invalid_resource: For property '%{property}' a link like '%{expected}' is expected,
-        but got '%{actual}'.
-      invalid_user_status_transition: The current user account status does not allow
-        this operation.
-      missing_content_type: not specified
-      multiple_errors: Multiple fields violated their constraints.
-      parse_error: The request body was neither empty, nor did it contain a single
-        JSON object.
-      writing_read_only_attributes: You must not write a read-only attribute.
-      invalid_format: 'Invalid format for property ''%{property}'': Expected format
-        like ''%{expected_format}'', but got ''%{actual}''.'
+      code_401: "אתה צריך להיות מאומת כדי לגשת למשאב זה."
+      code_403: "אתה לא מורשה כדי לקבל גישה למשאב זה."
+      code_404: "המשאב המבוקש לא נמצא."
+      code_409: "לא יכולתי לעדכן את המשאב בשל שינויים סותרים."
+      invalid_content_type: "\"סוג התוכן\" הצפוי תריך להיות '%{content_type}' אבל
+        הוזן '%{actual}'."
+      invalid_resource: "המאפיין '%{property}' קישור כמו '%{expected}' צפוי, אבל התקבל
+        '%{actual}'."
+      invalid_user_status_transition: "המצב חשבון המשתמש הנוכחי אינו מאפשר פעולה זו."
+      missing_content_type: "לא מוגדר"
+      multiple_errors: "שדות מרובים הפרו את האילוצים שלהן."
+      parse_error: "גוף הבקשה היה ריק או לא הכיל אובייקט JSON בודד."
+      writing_read_only_attributes: "אתה חייב שלא לכתוב תכונה לקריאה בלבד."
+      invalid_format: "תבנית לא חוקית של מאפיין '%{property}': תבנית צפוייה לדוגמה
+        '%{expected_format}', אבל נכתב '%{actual}'."
       render:
-        context_not_found: No context found.
-        unsupported_context: Unsupported context found.
-        context_object_not_found: Cannot find the resource given with the context.
+        context_not_found: "לא נימצא הקשר."
+        unsupported_context: "נימצא הקשר שלא ניתמך."
+        context_object_not_found: "לא ניתן לאתר את המשאב בהקשר זה."
       validation:
-        invalid_user_assigned_to_work_package: The chosen user is not allowed to be
-          '%{property}' for this work package.
+        invalid_user_assigned_to_work_package: "לא ניתן לבחור  '%{property}' עבור
+          המשתמש בחבילת עבודה זו."
     resources:
-      schema: Schema
+      schema: "סכימה"
