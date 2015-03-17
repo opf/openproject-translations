@@ -224,17 +224,18 @@ nl:
               not_a_valid_parent: is ongeldig
               does_not_exist: bestaat niet
             status_id:
-              status_transition_invalid: is invalid because no valid transition exists
-                from old to new status for the current user's roles
+              status_transition_invalid: is ongeldig want er bestaat geen geldige
+                transitie van de oude naar de nieuwe status voor rol van de huidige
+                gebruiker
             priority_id:
               only_active_priorities_allowed: moet actief zijn
             category:
-              only_same_project_categories_allowed: The category of a work package
-                must be within the same project as the work package.
-              does_not_exist: The specified category does not exist.
+              only_same_project_categories_allowed: De categorie van het werkpakket  moet
+                binnen hetzelfde project bestaan als het werkpakket.
+              does_not_exist: De gekozen categorie bestaat niet.
             estimated_hours:
-              only_values_greater_or_equal_zeroes_allowed: The estimated hours must
-                be >= 0.
+              only_values_greater_or_equal_zeroes_allowed: Geschatte uren moeten >=
+                0.
         user:
           attributes:
             password:
@@ -246,7 +247,8 @@ nl:
               special: speciale (bijvoorbeeld ' %')
               reused:
                 one: is reeds eerder gebruikt. Kies een die verschilt van uw laatste.
-                other: is reeds eerder gebruikt. Kies een die verschilt van uw laatste  %{count}.
+                other: is reeds eerder gebruikt. Kies er één die verschilt van uw
+                  laatste  %{count}.
         member:
           principal_blank: Kies ten minste één gebruiker of groep.
           role_blank: Kies ten minste één rol.
@@ -492,8 +494,8 @@ nl:
         other: "%{count} seconden"
     units:
       hour:
-        one: hour
-        other: hours
+        one: uur
+        other: uren
   default_activity_management: Management
   default_activity_design: Ontwerp
   default_activity_development: Ontwikkeling
@@ -595,8 +597,8 @@ nl:
   error_scm_command_failed: 'Er is een fout opgetreden tijdens het proberen om toegang
     te krijgen tot de repository: %{value}'
   error_scm_not_found: De vermelding of de herziening werd niet gevonden in de repository.
-  error_unable_delete_status: Unable to delete work package status because it contains
-    work packages.
+  error_unable_delete_status: Kan deze status niet verwijderen omdat er werkpakketten
+    zijn die deze status gebruiken.
   error_unable_delete_default_status: Niet in staat de status van het standaard werkpakket
     te verwijderen. Gelieve een andere status van het standaard werkpakket te selecteren
     alvorens de huidige te verwijderen.
@@ -743,6 +745,7 @@ nl:
   label_downloads_abbr: D/L
   label_duplicated_by: gedupliceerd door
   label_duplicates: duplicaten
+  label_edit: Wijzig
   label_enable_multi_select: Omschakelen multiselect
   label_end_to_end: einde tot einde
   label_end_to_start: einde tot start
@@ -1088,7 +1091,7 @@ nl:
   label_keyboard_shortcut_go_news: Ga naar Projectnieuws
   label_keyboard_shortcut_go_timelines: Ga naar tijdlijnen
   label_keyboard_shortcut_new_work_package: Nieuw werkpakket maken
-  label_keyboard_shortcut_details_package: Show work packages details pane
+  label_keyboard_shortcut_details_package: Toon detailvlak van het werkpakket
   label_keyboard_shortcut_go_edit: Ga naar het bewerken van het huidige item (enkel
     op de detailpagina's)
   label_keyboard_shortcut_open_more_menu: Meer-menu openen (enkel op de detailpagina's)
@@ -1570,8 +1573,8 @@ nl:
         absolute: Absolute
         none: Geen
         relative: Relative
-        compare_relative_prefix: Compare current planning to
-        compare_relative_suffix: ago
+        compare_relative_prefix: Vergelijk de huidige planning met
+        compare_relative_suffix: geleden
         compare_absolute: Compare current planning to %{date}
       time_relative:
         days: dagen
@@ -1599,7 +1602,7 @@ nl:
       status: Show status
       project_time_filter: Projects with a work package of a certain type in a certain
         timeframe
-      project_time_filter_timeframe: Timeframe
+      project_time_filter_timeframe: Periode
       project_time_filter_historical_from: from
       project_time_filter_historical_to: to
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1695,8 +1698,8 @@ nl:
     assign_random_password: Assign random password (sent to user via e-mail)
     blocked: locked temporarily
     blocked_num_failed_logins:
-      one: locked temporarily (one failed login attempt)
-      other: locked temporarily (%{count} failed login attempts)
+      one: tijdelijk vergrendeld (een mislukte inlogpoging)
+      other: tijdelijk vergrendeld (%{count} mislukte inlogpogingen)
     deleted: Deleted user
     error_status_change_failed: 'Changing the user status failed due to the following
       errors: %{errors}'
@@ -1734,35 +1737,34 @@ nl:
   nothing_to_preview: Nothing to preview
   api_v3:
     attributes:
-      _type: Resource Type
-      lock_version: Lock Version
+      lock_version: Vergrendel versie
     errors:
-      code_401: You need to be authenticated to access this resource.
-      code_403: You are not authorized to access this resource.
-      code_404: The requested resource could not be found.
-      code_409: Couldn't update the resource because of conflicting modifications.
-      invalid_content_type: Expected CONTENT-TYPE to be '%{content_type}' but got
-        '%{actual}'.
-      invalid_resource: For property '%{property}' a link like '%{expected}' is expected,
-        but got '%{actual}'.
-      invalid_user_status_transition: The current user account status does not allow
-        this operation.
-      missing_content_type: not specified
-      multiple_errors: Multiple field constraints have been violated.
-      parse_error: The request body was neither empty, nor did it contain a single
-        JSON object.
-      writing_read_only_attributes: You must not write a read-only attribute.
-      invalid_format: 'Invalid format for property ''%{property}'': Expected format
-        like ''%{expected_format}'', but got ''%{actual}''.'
+      code_401: U moet geauthenticeerd zijn om toegang te hebben tot deze resource.
+      code_403: U bent niet gemachtigd om toegang te hebben tot deze resource.
+      code_404: De gevraagde resource kan niet worden gevonden.
+      code_409: Door conflicterende wijzigingen kan deze resource niet worden bijgewerkt.
+      invalid_content_type: CONTENT-TYPE  '%{content_type}' werd verwacht, maar '%{actual}'
+        werd ingegeven.
+      invalid_resource: Eigenschap '%{property}' verwacht een link zoals '%{expected}',
+        maar kreeg '%{actual}'.
+      invalid_user_status_transition: De accountstatus van de huidige gebruiker laat
+        deze actie niet toe.
+      missing_content_type: niet bepaald
+      multiple_errors: Meerdere veldbeperkingen werden overtreden.
+      parse_error: De aanvraag is niet leeg en bevat ook geen single JSON object.
+      writing_read_only_attributes: U mag geen read-only attribuut schrijven.
+      invalid_format: 'Ongeldig formaat voor eigenschap ''%{property}'': een formaat
+        zoals ''%{expected_format}'' wordt verwacht, maar ''%{actual}'' werd ingegeven.'
       render:
-        context_not_found: No context found.
-        unsupported_context: Unsupported context found.
-        context_object_not_found: Cannot find the resource given with the context.
+        context_not_found: Geen context gevonden.
+        unsupported_context: Niet ondersteunde context gevonden.
+        context_object_not_found: De resource bij de context kan niet worden gevonden.
       validation:
-        invalid_user_assigned_to_work_package: The chosen user is not allowed to be
-          '%{property}' for this work package.
-        estimated_hours: Estimated hours cannot be set on parent work packages.
-        done_ratio: Done ratio cannot be set on parent work packages, when it is inferred
-          by status or when it is disabled.
+        invalid_user_assigned_to_work_package: De gekozen gebruiker kan geen '%{property}'
+          zijn voor dit werkpakket.
+        estimated_hours: Geschatte uren uren kunnen niet op ouderwerkpaketten worden
+          gezet.
+        done_ratio: De vooruitgangsratio kan niet op een ouderwerkpakket worden gezet
+          wanneer die uit de status wordt afgeleid of is uitgeschakeld.
     resources:
       schema: Schema

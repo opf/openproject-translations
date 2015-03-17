@@ -231,12 +231,12 @@ fr:
             priority_id:
               only_active_priorities_allowed: ont besoin d'être actif
             category:
-              only_same_project_categories_allowed: The category of a work package
-                must be within the same project as the work package.
-              does_not_exist: The specified category does not exist.
+              only_same_project_categories_allowed: La catégorie du module de travail
+                doit faire partie du même projet que le module de travail.
+              does_not_exist: La catégorie spécifiée n'existe pas.
             estimated_hours:
-              only_values_greater_or_equal_zeroes_allowed: The estimated hours must
-                be >= 0.
+              only_values_greater_or_equal_zeroes_allowed: Le nombre d'heures estimé
+                doit être >= 0.
         user:
           attributes:
             password:
@@ -602,8 +602,8 @@ fr:
   error_scm_command_failed: 'Une erreur s''est produite en essayant d''accéder au
     dépôt: %{value}'
   error_scm_not_found: L'entrée ou la révision n'a pas été trouvée dans le dépôt.
-  error_unable_delete_status: Unable to delete work package status because it contains
-    work packages.
+  error_unable_delete_status: Impossible de supprimer le statut du module de travail
+    car il contient des modules de travail.
   error_unable_delete_default_status: Impossible de supprimer le statut de lot de
     travaux par défaut. Veuillez sélectionner un autre statut de lot de travaux par
     défaut avant de supprimer l'actuel.
@@ -751,6 +751,7 @@ fr:
   label_downloads_abbr: Téléchargement
   label_duplicated_by: dupliqué par
   label_duplicates: doublons
+  label_edit: "Éditer"
   label_enable_multi_select: Basculer multisélection
   label_end_to_end: bout à bout
   label_end_to_start: fin à début
@@ -1593,7 +1594,7 @@ fr:
         absolute: Absolue
         none: Aucun
         relative: Relatif
-        compare_relative_prefix: Compare current planning to
+        compare_relative_prefix: Comparer le planning actuel à
         compare_relative_suffix: ago
         compare_absolute: Comparer le planning actuel à  %{date}
       time_relative:
@@ -1764,27 +1765,27 @@ fr:
   nothing_to_preview: Rien à afficher en apperçu
   api_v3:
     attributes:
-      _type: Resource Type
       lock_version: Lock Version
     errors:
       code_401: Vous devez être authentifié pour accéder à cette ressource.
       code_403: Vous n'êtes pas autorisé à accéder à cette ressource.
-      code_404: The requested resource could not be found.
+      code_404: La ressource demandée est introuvable.
       code_409: Ne pouvait pas mettre à jour la ressource en raison de modifications
         conflictuelles.
       invalid_content_type: CONTENT-TYPE attendu «%{content_type} » , mais est à «%{actual}
         ».
-      invalid_resource: For property '%{property}' a link like '%{expected}' is expected,
-        but got '%{actual}'.
+      invalid_resource: "\"%{actual}\" est invalide, car la propriété \"%{property}\"
+        requiert un lien de type \"%{expected}\"."
       invalid_user_status_transition: L'état du compte de l'utilisateur ne permet
         pas cette opération.
-      missing_content_type: not specified
-      multiple_errors: Multiple field constraints have been violated.
+      missing_content_type: non spécifié
+      multiple_errors: Plusieurs contraintes de champ n'ont pas été respectées.
       parse_error: Le corps de la demande n'était ni vide, ni contenant un objet JSON.
       writing_read_only_attributes: Vous ne devez pas écrire un attribut en lecture
         seule.
-      invalid_format: 'Invalid format for property ''%{property}'': Expected format
-        like ''%{expected_format}'', but got ''%{actual}''.'
+      invalid_format: 'Format invalide pour la propriété "%{property}" : un format
+        de type "%{expected_format}" est requis, mais la valeur invalide "%{actual}"
+        a été reçue.'
       render:
         context_not_found: Aucun contexte trouvé.
         unsupported_context: Contexte trouvé non supporté.
@@ -1793,8 +1794,9 @@ fr:
       validation:
         invalid_user_assigned_to_work_package: L'utilisateur choisi ne doit pas être
           '%{property} ' pour ce paquet de travail.
-        estimated_hours: Estimated hours cannot be set on parent work packages.
-        done_ratio: Done ratio cannot be set on parent work packages, when it is inferred
-          by status or when it is disabled.
+        estimated_hours: Le nombre d'heures estimé ne peut être défini sur les modules
+          de travail parents.
+        done_ratio: Le taux d'avancement ne peut être défini sur les modules de travail
+          parents lorsqu'il est déduit en fonction du statut, ou lorsqu'il est désactivé.
     resources:
-      schema: Schema
+      schema: Schéma
