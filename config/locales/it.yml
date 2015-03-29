@@ -188,7 +188,7 @@ it:
         smaller_than_or_equal_to_max_length: deve essere minore o uguale alla lunghezza
           massima
         greater_than_start_date: deve essere maggiore della data di inizio
-        inclusion: non è incluso nella lista
+        inclusion: is not set to one of the allowed values
         invalid: non è valido
         less_than: deve essere inferiore di %{count}
         less_than_or_equal_to: deve essere inferiore o uguale di %{count}
@@ -210,6 +210,9 @@ it:
         project_association:
           identical_projects: non può essere creato da un progetto a se stesso
           project_association_not_allowed: non consente le associazioni
+        repository:
+          not_whitelisted: is not allowed by the configuration
+          no_directory: is not a directory
         work_package:
           is_not_a_valid_target_for_time_entries: 'Il pacchetto di lavoro #%{id} non
             è una destinazione valida per riassegnare le voci del tempo.'
@@ -1779,9 +1782,9 @@ it:
       invalid_format: 'Formato non valido per la proprietà ''%{property}'': previsto
         un formato del tipo ''%{expected_format}'', rispetto al tipo attuale ''%{actual}''.'
       render:
-        context_not_found: Nessun contesto trovato.
-        unsupported_context: Trovato contesto non supportato.
-        context_object_not_found: Impossibile trovare la risorsa data con il contesto.
+        context_not_parsable: The context provided is not a link to a resource.
+        unsupported_context: The resource given is not supported as context.
+        context_object_not_found: Cannot find the resource given as the context.
       validation:
         invalid_user_assigned_to_work_package: L'utente scelto non è consentito di
           essere '%{property}' per questo pacchetto di lavoro.
@@ -1789,5 +1792,7 @@ it:
           di lavoro del padre.
         done_ratio: Il rapporto del lavoro svolto non può essere impostata su pacchetti
           di lavoro del padre, quando esso viene dedotto dallo stato o quando è disabilitato.
+        start_date: Start date cannot be set on parent work packages.
+        due_date: Due date cannot be set on parent work packages.
     resources:
       schema: Schema

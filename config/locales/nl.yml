@@ -189,7 +189,7 @@ nl:
         smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
           length
         greater_than_start_date: moet groter zijn dan begindatum
-        inclusion: is niet opgenomen in de lijst
+        inclusion: is not set to one of the allowed values
         invalid: is ongeldig
         less_than: moet minder dan %{count}
         less_than_or_equal_to: moet kleiner zijn dan of gelijk aan %{count}
@@ -211,6 +211,9 @@ nl:
         project_association:
           identical_projects: kan niet worden gemaakt van het ene project naar zichzelf
           project_association_not_allowed: staat geen associaties toe
+        repository:
+          not_whitelisted: is not allowed by the configuration
+          no_directory: is not a directory
         work_package:
           is_not_a_valid_target_for_time_entries: 'Werkpakket #%{id} is niet een geldig
             doel voor het opnieuw toewijzen van de tijden.'
@@ -1756,9 +1759,9 @@ nl:
       invalid_format: 'Ongeldig formaat voor eigenschap ''%{property}'': een formaat
         zoals ''%{expected_format}'' wordt verwacht, maar ''%{actual}'' werd ingegeven.'
       render:
-        context_not_found: Geen context gevonden.
-        unsupported_context: Niet ondersteunde context gevonden.
-        context_object_not_found: De resource bij de context kan niet worden gevonden.
+        context_not_parsable: The context provided is not a link to a resource.
+        unsupported_context: The resource given is not supported as context.
+        context_object_not_found: Cannot find the resource given as the context.
       validation:
         invalid_user_assigned_to_work_package: De gekozen gebruiker kan geen '%{property}'
           zijn voor dit werkpakket.
@@ -1766,5 +1769,7 @@ nl:
           gezet.
         done_ratio: De vooruitgangsratio kan niet op een ouderwerkpakket worden gezet
           wanneer die uit de status wordt afgeleid of is uitgeschakeld.
+        start_date: Start date cannot be set on parent work packages.
+        due_date: Due date cannot be set on parent work packages.
     resources:
       schema: Schema

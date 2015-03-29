@@ -179,7 +179,7 @@ he:
         smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
           length
         greater_than_start_date: "צריך להיות גדול יותר מאשר תאריך ההתחלה"
-        inclusion: "אינו נכלל ברשימה"
+        inclusion: is not set to one of the allowed values
         invalid: "אינו חוקי"
         less_than: "חייב להיות קטן מ- %{count}"
         less_than_or_equal_to: "חייב להיות קטן או שווה ל- %{count}"
@@ -201,6 +201,9 @@ he:
         project_association:
           identical_projects: "לא ניתן ליצור מפרוייקט אחד אל עצמו"
           project_association_not_allowed: "אינו מאפשר שיוכים"
+        repository:
+          not_whitelisted: is not allowed by the configuration
+          no_directory: is not a directory
         work_package:
           is_not_a_valid_target_for_time_entries: "חבילת עבודה #%{id} אינה יעד אפשרי
             לשיוך של ערכי הזמן."
@@ -1724,14 +1727,16 @@ he:
       invalid_format: "תבנית לא חוקית של מאפיין '%{property}': תבנית צפוייה לדוגמה
         '%{expected_format}', אבל נכתב '%{actual}'."
       render:
-        context_not_found: "לא נימצא הקשר."
-        unsupported_context: "נימצא הקשר שלא ניתמך."
-        context_object_not_found: "לא ניתן לאתר את המשאב בהקשר זה."
+        context_not_parsable: The context provided is not a link to a resource.
+        unsupported_context: The resource given is not supported as context.
+        context_object_not_found: Cannot find the resource given as the context.
       validation:
         invalid_user_assigned_to_work_package: "לא ניתן לבחור  '%{property}' עבור
           המשתמש בחבילת עבודה זו."
         estimated_hours: Estimated hours cannot be set on parent work packages.
         done_ratio: Done ratio cannot be set on parent work packages, when it is inferred
           by status or when it is disabled.
+        start_date: Start date cannot be set on parent work packages.
+        due_date: Due date cannot be set on parent work packages.
     resources:
       schema: "סכימה"

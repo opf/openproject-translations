@@ -183,7 +183,7 @@ pl:
         smaller_than_or_equal_to_max_length: musi być mniejsze lub równe maksymalnej
           długości
         greater_than_start_date: musi być większe niż data początkowa
-        inclusion: nie znajduje się na liście
+        inclusion: is not set to one of the allowed values
         invalid: jest nieprawidłowy
         less_than: musi być mniejsza niż %{count}
         less_than_or_equal_to: musi być większa niż %{count}
@@ -205,6 +205,9 @@ pl:
         project_association:
           identical_projects: nie mogą być tworzone z jednego projektu do siebie
           project_association_not_allowed: niedozwolone asocjacje
+        repository:
+          not_whitelisted: is not allowed by the configuration
+          no_directory: is not a directory
         work_package:
           is_not_a_valid_target_for_time_entries: 'Zadanie #%{id} jest niepoprawnym
             celem do ponownego rozpisania czasu.'
@@ -1766,14 +1769,16 @@ pl:
       invalid_format: 'Błędny format dla własności ''%{property}'': Format oczekiwany
         ''%{expected_format}'', otrzymano ''%{actual}''.'
       render:
-        context_not_found: Nie znaleziono kontekstu.
-        unsupported_context: Znaleziono nieobsługiwany kontekst.
-        context_object_not_found: Nie można odnaleźć zasobu z podanym kontekstem.
+        context_not_parsable: The context provided is not a link to a resource.
+        unsupported_context: The resource given is not supported as context.
+        context_object_not_found: Cannot find the resource given as the context.
       validation:
         invalid_user_assigned_to_work_package: Wybrany użytkownik nie może być '%{property}'
           dla tego pakietu roboczego.
         estimated_hours: Estimated hours cannot be set on parent work packages.
         done_ratio: Done ratio cannot be set on parent work packages, when it is inferred
           by status or when it is disabled.
+        start_date: Start date cannot be set on parent work packages.
+        due_date: Due date cannot be set on parent work packages.
     resources:
       schema: Schemat

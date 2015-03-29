@@ -184,7 +184,7 @@ da:
         smaller_than_or_equal_to_max_length: skal vær mindre end eller lig den maksimale
           længde
         greater_than_start_date: skal være senere end startdatoen
-        inclusion: er ikke medtaget på listen
+        inclusion: is not set to one of the allowed values
         invalid: er ugyldig
         less_than: skal være mindre end %{count}}
         less_than_or_equal_to: skal være mindre end eller lig med  %{count}
@@ -206,6 +206,9 @@ da:
         project_association:
           identical_projects: kan ikke oprettes fra et projekt til sig selv
           project_association_not_allowed: tillader ikke sammensætninger
+        repository:
+          not_whitelisted: is not allowed by the configuration
+          no_directory: is not a directory
         work_package:
           is_not_a_valid_target_for_time_entries: 'Arbejdspakke # %{id} er ikke et
             gyldig mål for genfordeling af tider.'
@@ -1743,14 +1746,16 @@ da:
       invalid_format: 'Invalid format for property ''%{property}'': Expected format
         like ''%{expected_format}'', but got ''%{actual}''.'
       render:
-        context_not_found: Ingen indhold fundet.
-        unsupported_context: Ikke-understøttet indhold fundet.
-        context_object_not_found: Kan ikke finde den pågældende ressource.
+        context_not_parsable: The context provided is not a link to a resource.
+        unsupported_context: The resource given is not supported as context.
+        context_object_not_found: Cannot find the resource given as the context.
       validation:
         invalid_user_assigned_to_work_package: Den valgte bruger er ikke tilladt at
           være '%{property}' for denne arbejdspakke.
         estimated_hours: Estimated hours cannot be set on parent work packages.
         done_ratio: Done ratio cannot be set on parent work packages, when it is inferred
           by status or when it is disabled.
+        start_date: Start date cannot be set on parent work packages.
+        due_date: Due date cannot be set on parent work packages.
     resources:
       schema: Schema

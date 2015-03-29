@@ -183,7 +183,7 @@ sk:
         smaller_than_or_equal_to_max_length: musí byť menšie alebo rovné ako maximálne
           dĺžka
         greater_than_start_date: musí byť väčšie ako počiatočný dátum
-        inclusion: nie je zahrnutá v zozname
+        inclusion: is not set to one of the allowed values
         invalid: je neplatný
         less_than: musí byť menšie ako %{count}
         less_than_or_equal_to: musí byť menšie alebo rovné ako %{count}
@@ -205,6 +205,9 @@ sk:
         project_association:
           identical_projects: projekt nemôže byť previazaný sám so sebou
           project_association_not_allowed: nedovoľuje vytváranie väzieb na iné projekty
+        repository:
+          not_whitelisted: is not allowed by the configuration
+          no_directory: is not a directory
         work_package:
           is_not_a_valid_target_for_time_entries: 'Work package #%{id} is not a valid
             target for reassigning the time entries.'
@@ -1766,15 +1769,16 @@ sk:
       invalid_format: 'Neplatný formát parametra "%{property}": systémom očakávaný
         formát je "%{expected_format}", používateľ dodal "%{actual}".'
       render:
-        context_not_found: "Žiadny obsah nebol nájdený."
-        unsupported_context: Nájdený nepodporovaný obsah.
-        context_object_not_found: Pre vložené vstupné podmienky neboli nájdené žiadne
-          prostriedky.
+        context_not_parsable: The context provided is not a link to a resource.
+        unsupported_context: The resource given is not supported as context.
+        context_object_not_found: Cannot find the resource given as the context.
       validation:
         invalid_user_assigned_to_work_package: Zvolený používateľ nemôže byť "%{property}"
           v prípade tohto pracovného balíčka.
         estimated_hours: Estimated hours cannot be set on parent work packages.
         done_ratio: Done ratio cannot be set on parent work packages, when it is inferred
           by status or when it is disabled.
+        start_date: Start date cannot be set on parent work packages.
+        due_date: Due date cannot be set on parent work packages.
     resources:
       schema: Schéma

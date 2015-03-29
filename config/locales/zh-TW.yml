@@ -162,7 +162,7 @@ zh-TW:
         greater_than_or_equal_to: "必須大於或等於 %{count}"
         smaller_than_or_equal_to_max_length: "必須小於或等於最大長度"
         greater_than_start_date: "必須大於開始日期"
-        inclusion: "不在清單中"
+        inclusion: is not set to one of the allowed values
         invalid: "無效。 "
         less_than: "必須小於 %{count}"
         less_than_or_equal_to: "必須小於或等於 %{count}"
@@ -184,6 +184,9 @@ zh-TW:
         project_association:
           identical_projects: "不能在專案本身建立"
           project_association_not_allowed: "不允許建立關聯"
+        repository:
+          not_whitelisted: is not allowed by the configuration
+          no_directory: is not a directory
         work_package:
           is_not_a_valid_target_for_time_entries: 'Work package #%{id} is not a valid
             target for reassigning the time entries.'
@@ -1707,19 +1710,15 @@ zh-TW:
       invalid_format: 'Invalid format for property ''%{property}'': Expected format
         like ''%{expected_format}'', but got ''%{actual}''.'
       render:
-        context_not_found: |
-          No context found.
-          沒找到本文。
-        unsupported_context: |
-          Unsupported context found.
-          發現未支援的本文。
-        context_object_not_found: |
-          Cannot find the resource given with the context.
-          無法找到本文對應的資源。
+        context_not_parsable: The context provided is not a link to a resource.
+        unsupported_context: The resource given is not supported as context.
+        context_object_not_found: Cannot find the resource given as the context.
       validation:
         invalid_user_assigned_to_work_package: "所指定的使用者不允許成為工作項目的 '%{property}' 。"
         estimated_hours: Estimated hours cannot be set on parent work packages.
         done_ratio: Done ratio cannot be set on parent work packages, when it is inferred
           by status or when it is disabled.
+        start_date: Start date cannot be set on parent work packages.
+        due_date: Due date cannot be set on parent work packages.
     resources:
       schema: Schema
