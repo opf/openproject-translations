@@ -207,6 +207,9 @@ ru:
         project_association:
           identical_projects: "не может быть создана  с самим собой"
           project_association_not_allowed: "не разрешает ассоциации"
+        repository:
+          not_whitelisted: "не допускается  конфигурацией"
+          no_directory: "не является каталогом"
         work_package:
           is_not_a_valid_target_for_time_entries: "Группа работ #%{id} не является
             допустимым объектом переназначение времени записи."
@@ -237,8 +240,8 @@ ru:
                   последнего."
                 other: "использовался раньше. Пожалуйста, выберите отличный от ваших
                   последних %{count}."
-                few: has been used before. Please choose one that is different from
-                  your last %{count}.
+                few: "использовался раньше. Пожалуйста, выберите такой, который отличается
+                  от вашего последнего %{count}."
         member:
           principal_blank: "Пожалуйста, выберите по крайней мере одного пользователя
             или группу."
@@ -248,7 +251,7 @@ ru:
         header:
           one: 1 ошибка не позволяет сохранить эту %{model}
           other: "%{count} ошибк не позволяет сохранить эту %{model}"
-          few: "%{count} errors prohibited this %{model} from being saved"
+          few: "%{count} ошибок препятствуют сохранению %{model}"
     models:
       attachment: "Файл"
       board: "Форум"
@@ -265,7 +268,7 @@ ru:
       role:
         one: "Роль"
         other: Roles
-        few: Roles
+        few: "Роли"
       type: "Тип"
       planning_element: "Элемент планирования"
       project_type: "Тип проекта"
@@ -446,53 +449,53 @@ ru:
       about_x_hours:
         one: "примерно 1 час"
         other: "около %{count} часов"
-        few: about %{count} hours
+        few: "около %{count} часов"
       about_x_months:
         one: "около месяца"
         other: "примерно %{count} месяцев"
-        few: about %{count} months
+        few: "примерно %{count} месяцев"
       about_x_years:
         one: "около года"
         other: "примерно %{count} лет"
-        few: about %{count} years
+        few: "примерно %{count} лет"
       almost_x_years:
         one: "почти 1 год"
         other: "примерно %{count} лет"
-        few: almost %{count} years
+        few: "примерно %{count} лет"
       half_a_minute: "полминуты"
       less_than_x_minutes:
         one: "менее минуты"
         other: "менее %{count} минут"
-        few: less than %{count} minutes
+        few: "менее %{count} минут"
       less_than_x_seconds:
         one: "меньше секунды"
         other: "меньше %{count} секунд"
-        few: less than %{count} seconds
+        few: "меньше %{count} секунд"
       over_x_years:
         one: "более 1 года"
         other: "более %{count} лет"
-        few: over %{count} years
+        few: "более %{count} лет"
       x_days:
         one: "День"
         other: "%{count} дней"
-        few: "%{count} days"
+        few: "%{count} дней"
       x_minutes:
         one: 1 минута
         other: "%{count} минут"
-        few: "%{count} minutes"
+        few: "%{count} минут"
       x_months:
         one: 1 месяц
         other: "%{count} месяцев"
-        few: "%{count} months"
+        few: "%{count} месяцев"
       x_seconds:
         one: 1 секунда
         other: "%{count} секунд"
-        few: "%{count} seconds"
+        few: "%{count} секунд"
     units:
       hour:
         one: "час"
         other: "часов"
-        few: hours
+        few: "часов"
   default_activity_management: "Управление"
   default_activity_design: "Дизайн"
   default_activity_development: "Разработка"
@@ -1045,30 +1048,30 @@ ru:
   label_workflow_plural: "Рабочие потоки"
   label_workflow_summary: "Резюме"
   label_x_closed_work_packages_abbr:
-    one: 1 closed
-    other: "%{count} closed"
+    one: 1 закрыто
+    other: "%{count} закрыты"
     zero: 0 closed
     few: "%{count} закрыто"
   label_x_comments:
     one: 1 комментарий
     other: "%{count} комментариев"
     zero: no comments
-    few: "%{count} comments"
+    few: "%{count} комментариев"
   label_x_open_work_packages_abbr:
     one: 1 открыт
     other: "%{count} открыто"
     zero: 0 open
-    few: "%{count} open"
+    few: "%{count} открыто"
   label_x_open_work_packages_abbr_on_total:
     one: 1 открыт / %{total}
     other: "%{count} открыто / %{total}"
     zero: 0 open / %{total}
-    few: "%{count} open / %{total}"
+    few: "%{count} открыто / %{total}"
   label_x_projects:
     one: 1 проект
     other: "%{count} проектов"
     zero: no projects
-    few: "%{count} projects"
+    few: "%{count} проектов"
   label_year: "Год"
   label_yesterday: "вчера"
   label_keyboard_function: "Функция"
@@ -1202,7 +1205,7 @@ ru:
           byte:
             one: "Байт"
             other: Bytes
-            few: Bytes
+            few: "Байт"
           gb: "ГБ"
           kb: "кБ"
           mb: "МБ"
@@ -1709,7 +1712,7 @@ ru:
     blocked_num_failed_logins:
       one: "временно заблокирован (одна неудачная попытка входа)"
       other: "временно заблокирован (%{count} неудачных попыток входа)"
-      few: locked temporarily (%{count} failed login attempts)
+      few: "временно заблокирован (%{count} неудачных попыток входа)"
     deleted: "Удалённый пользователь"
     error_status_change_failed: "Изменение статуса пользователя не удалось из-за следующей
       ошибки: %{errors}"
