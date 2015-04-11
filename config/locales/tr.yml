@@ -186,7 +186,7 @@ tr:
         smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
           length
         greater_than_start_date: must be greater than start date
-        inclusion: is not set to one of the allowed values
+        inclusion: izin verilen değerlerden biri seçilmemiştir
         invalid: is invalid
         less_than: must be less than %{count}
         less_than_or_equal_to: must be less than or equal to %{count}
@@ -224,17 +224,16 @@ tr:
               not_a_valid_parent: is invalid
               does_not_exist: does not exist
             status_id:
-              status_transition_invalid: is invalid because no valid transition exists
-                from old to new status for the current user's roles
+              status_transition_invalid: geçersizdir çünkü mevcut kullanıcı rolü için
+                eski statüden yenisine geçerli bir çevrim mevcut değildir
             priority_id:
               only_active_priorities_allowed: needs to be active
             category:
-              only_same_project_categories_allowed: The category of a work package
-                must be within the same project as the work package.
-              does_not_exist: The specified category does not exist.
+              only_same_project_categories_allowed: Bir iş paketinin kategorisi iş
+                paketi ile aynı proje içinde olmalıdır.
+              does_not_exist: Belirtilen kategori yok.
             estimated_hours:
-              only_values_greater_or_equal_zeroes_allowed: The estimated hours must
-                be >= 0.
+              only_values_greater_or_equal_zeroes_allowed: Tahmini saat >= 0 olmalıdır.
         user:
           attributes:
             password:
@@ -594,8 +593,7 @@ tr:
   error_scm_command_failed: 'An error occurred when trying to access the repository:
     %{value}'
   error_scm_not_found: The entry or revision was not found in the repository.
-  error_unable_delete_status: Unable to delete work package status because it contains
-    work packages.
+  error_unable_delete_status: "İş paketi statüsü silinemedi çünkü iş paketleri içermektedir."
   error_unable_delete_default_status: Unable to delete default work package status.
     Please select another default work package status before deleting the current
     one.
@@ -1558,7 +1556,7 @@ tr:
         absolute: Absolute
         none: None
         relative: Relative
-        compare_relative_prefix: Compare current planning to
+        compare_relative_prefix: Mevcut planlama ile kıyasla
         compare_relative_suffix: ago
         compare_absolute: Compare current planning to %{date}
       time_relative:
@@ -1724,12 +1722,12 @@ tr:
     attributes:
       lock_version: Lock Version
     errors:
-      code_401: You need to be authenticated to access this resource.
-      code_403: You are not authorized to access this resource.
-      code_404: The requested resource could not be found.
-      code_409: Couldn't update the resource because of conflicting modifications.
-      invalid_content_type: Expected CONTENT-TYPE to be '%{content_type}' but got
-        '%{actual}'.
+      code_401: Bu kaynağa erişim sağlayabilmeniz için yetkilendirilmiş olmalısınız
+      code_403: Bu kaynağa erişim için yetkiniz yoktur.
+      code_404: "İstenen kaynak bulunamadı."
+      code_409: "Çakışan geliştirmeler sebebiyle kaynak güncellenememiştir."
+      invalid_content_type: Beklenen içerik tipi '%{content_type}' ancak gerçekte
+        olan '%{actual}.
       invalid_resource: For property '%{property}' a link like '%{expected}' is expected,
         but got '%{actual}'.
       invalid_user_status_transition: The current user account status does not allow
@@ -1754,4 +1752,4 @@ tr:
         start_date: Start date cannot be set on parent work packages.
         due_date: Due date cannot be set on parent work packages.
     resources:
-      schema: Schema
+      schema: "Şema"

@@ -235,8 +235,8 @@ th:
               reused:
                 one: has been used before. Please choose one that is different from
                   your last one.
-                other: "รหัสผ่านนี้ถูกใช้ไปแล้ว โปรดเลือกรหัสผ่านใหม่ที่แตกต่างจากรหัสเมื่อ
-                  %{count} ครั้งที่ผ่านมา"
+                other: has been used before. Please choose one that is different from
+                  your last %{count}.
         member:
           principal_blank: "โปรดเลือกอย่างน้อยหนึ่งผู้ใช้หรือหนึ่งกลุ่ม"
           role_blank: "โปรดเลือกอย่างน้อยหนึ่งบทบาท"
@@ -244,7 +244,7 @@ th:
         body: "กรุณาตรวจสอบฟิลด์ต่อไปนี้:"
         header:
           one: 1 error prohibited this %{model} from being saved
-          other: "พบ %{count} ข้อผิดพลาด ไม่สามารถบันทึก %{model} นี้ได้"
+          other: "%{count} errors prohibited this %{model} from being saved"
     models:
       attachment: "ไฟล์"
       board: "ฟอรั่ม"
@@ -260,7 +260,7 @@ th:
       query: "การสอบถามที่กำหนดเอง"
       role:
         one: Role
-        other: "บทบาท"
+        other: Roles
       type: "ประเภท"
       planning_element: "องค์ประกอบของการวางแผน"
       project_type: "ประเภทของโครงการ"
@@ -448,38 +448,38 @@ th:
     distance_in_words:
       about_x_hours:
         one: about 1 hour
-        other: "ประมาณ %{count} ชั่วโมง"
+        other: about %{count} hours
       about_x_months:
         one: about 1 month
-        other: "ประมาณ %{count} เดือน"
+        other: about %{count} months
       about_x_years:
         one: about 1 year
-        other: "ประมาณ %{count} ปี"
+        other: about %{count} years
       almost_x_years:
         one: almost 1 year
-        other: "เกือบ %{count} ปี"
+        other: almost %{count} years
       half_a_minute: "ครึ่งนาที"
       less_than_x_minutes:
         one: less than a minute
-        other: "น้อยกว่า %{count} นาที"
+        other: less than %{count} minutes
       less_than_x_seconds:
         one: less than 1 second
-        other: "น้อยกว่า %{count} วินาที"
+        other: less than %{count} seconds
       over_x_years:
         one: over 1 year
-        other: "เกิน %{count} ปี"
+        other: over %{count} years
       x_days:
         one: 1 day
-        other: "%{count} วัน"
+        other: "%{count} days"
       x_minutes:
         one: 1 minute
-        other: "%{count} นาที"
+        other: "%{count} minutes"
       x_months:
         one: 1 month
-        other: "%{count} เดือน"
+        other: "%{count} months"
       x_seconds:
         one: 1 second
-        other: "%{count} วินาที"
+        other: "%{count} seconds"
     units:
       hour:
         one: hour
@@ -1021,23 +1021,23 @@ th:
   label_workflow_summary: "สรุป"
   label_x_closed_work_packages_abbr:
     one: 1 closed
-    other: "ปิดแล้ว %{count}"
+    other: "%{count} closed"
     zero: 0 closed
   label_x_comments:
     one: 1 comment
-    other: "มี %{count} ความคิดเห็น"
+    other: "%{count} comments"
     zero: no comments
   label_x_open_work_packages_abbr:
     one: 1 open
-    other: "มี %{count} เปิดอยู่"
+    other: "%{count} open"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
     one: 1 open / %{total}
-    other: "มี %{count} เปิดอยู่ / จากทั้งหมด %{total}"
+    other: "%{count} open / %{total}"
     zero: 0 open / %{total}
   label_x_projects:
     one: 1 project
-    other: "%{count} โครงการ"
+    other: "%{count} projects"
     zero: no projects
   label_year: "ปี"
   label_yesterday: "เมื่อวานนี้"
@@ -1156,7 +1156,7 @@ th:
         units:
           byte:
             one: Byte
-            other: "ไบต์"
+            other: Bytes
           gb: "กิกะไบต์"
           kb: "กิโลไบต์"
           mb: "เมกะไบต์"
@@ -1456,7 +1456,7 @@ th:
     duration: "ระยะเวลา"
     duration_days:
       one: 1 day
-      other: "%{count} วัน"
+      other: "%{count} days"
     edit_color: "แก้ไขสี"
     edit_project_type: "แก้ไขชนิดของโครงการ"
     edit_thing: "แก้ไข"
@@ -1620,7 +1620,7 @@ th:
     blocked: "ล็อคชั่วคราว"
     blocked_num_failed_logins:
       one: locked temporarily (one failed login attempt)
-      other: "ถูกล็อคชั่วคราว (เนื่องจากผิดพลาด %{count} ครั้งในการพยายามล็อคอิน)"
+      other: locked temporarily (%{count} failed login attempts)
     deleted: "ผู้ใช้ที่ถูกลบ"
     error_status_change_failed: "ล้มเหลวในการเปลี่ยนสถานะของผู้ใช้เนื่องจากข้อผิดพลาดต่อไปนี้:
       %{errors}"
