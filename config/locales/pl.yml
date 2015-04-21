@@ -207,8 +207,8 @@ pl:
           identical_projects: nie mogą być tworzone z jednego projektu do siebie
           project_association_not_allowed: niedozwolone asocjacje
         repository:
-          not_whitelisted: is not allowed by the configuration
-          no_directory: is not a directory
+          not_whitelisted: nie jest dozwolone w tej konfiguracji
+          no_directory: nie jest katalogiem
         work_package:
           is_not_a_valid_target_for_time_entries: 'Zadanie #%{id} jest niepoprawnym
             celem do ponownego rozpisania czasu.'
@@ -236,21 +236,18 @@ pl:
               numeric: liczbowe (np. 1)
               special: specjalne (np. '%')
               reused:
-                one: has been used before. Please choose one that is different from
-                  your last one.
-                other: has been used before. Please choose one that is different from
-                  your last %{count}.
-                few: has been used before. Please choose one that is different from
-                  your last %{count}.
+                one: było użyte wcześniej. Proszę wybrać inne niż ostatnio.
+                other: było użyte wcześniej. Proszę wybrać inne niż %{count} ostatnich.
+                few: było użyte wcześniej. Proszę wybrać inne niż %{count} ostatnich.
         member:
           principal_blank: Wybierz co najmniej jeden użytkownik lub Grupa.
           role_blank: Proszę wybrać przynajmniej jedną rolę.
       template:
         body: 'Sprawdź następujące pola:'
         header:
-          one: 1 error prohibited this %{model} from being saved
-          other: "%{count} errors prohibited this %{model} from being saved"
-          few: "%{count} errors prohibited this %{model} from being saved"
+          one: 1 błąd spowodował niezapisanie bieżącego %{model}
+          other: "%{count} błędów spowodowało niezapisanie bieżącego %{model}"
+          few: "%{count} błędów spowodowało niezapisanie bieżącego %{model}"
     models:
       attachment: Plik
       board: Forum
@@ -265,9 +262,9 @@ pl:
       project: Projekt
       query: Kwerenda użytkownika
       role:
-        one: Role
-        other: Roles
-        few: Roles
+        one: Rola
+        other: Role
+        few: Role
       type: Typ
       planning_element: Elementem planowania
       project_type: Typ projektu
@@ -446,55 +443,55 @@ pl:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: about 1 hour
-        other: about %{count} hours
-        few: about %{count} hours
+        one: około 1 godziny
+        other: około %{count} godzin
+        few: około %{count} godzin
       about_x_months:
-        one: about 1 month
-        other: about %{count} months
-        few: about %{count} months
+        one: około 1 miesiąca
+        other: około %{count} miesięcy
+        few: około %{count} miesięcy
       about_x_years:
-        one: about 1 year
-        other: about %{count} years
-        few: about %{count} years
+        one: około 1 roku
+        other: około %{count} lat
+        few: około %{count} lat
       almost_x_years:
-        one: almost 1 year
-        other: almost %{count} years
-        few: almost %{count} years
+        one: prawie 1 rok
+        other: prawie %{count} lat
+        few: prawie %{count} lat
       half_a_minute: pół minuty
       less_than_x_minutes:
-        one: less than a minute
-        other: less than %{count} minutes
-        few: less than %{count} minutes
+        one: mniej niż minuta
+        other: mniej niż %{count} minut
+        few: mniej niż %{count} minut
       less_than_x_seconds:
-        one: less than 1 second
-        other: less than %{count} seconds
-        few: less than %{count} seconds
+        one: mniej niż 1 sekunda
+        other: mniej niż %{count} sekund
+        few: mniej niż %{count} sekund
       over_x_years:
-        one: over 1 year
-        other: over %{count} years
-        few: over %{count} years
+        one: ponad 1 rok
+        other: ponad %{count} lat
+        few: ponad %{count} lat
       x_days:
-        one: 1 day
-        other: "%{count} days"
-        few: "%{count} days"
+        one: 1 dzień
+        other: "%{count} dni"
+        few: "%{count} dni"
       x_minutes:
-        one: 1 minute
-        other: "%{count} minutes"
-        few: "%{count} minutes"
+        one: 1 minuta
+        other: "%{count} minut"
+        few: "%{count} minut"
       x_months:
-        one: 1 month
-        other: "%{count} months"
-        few: "%{count} months"
+        one: 1 miesiąc
+        other: "%{count} miesięcy"
+        few: "%{count} miesięcy"
       x_seconds:
-        one: 1 second
-        other: "%{count} seconds"
-        few: "%{count} seconds"
+        one: 1 sekunda
+        other: "%{count} sekund"
+        few: "%{count} sekund"
     units:
       hour:
-        one: hour
-        other: hours
-        few: hours
+        one: godzina
+        other: godziny
+        few: godziny
   default_activity_management: Zarządzanie
   default_activity_design: Kompozycja
   default_activity_development: Development
@@ -1043,30 +1040,30 @@ pl:
   label_workflow_plural: Przepływy pracy
   label_workflow_summary: Streszczenie
   label_x_closed_work_packages_abbr:
-    one: 1 closed
-    other: "%{count} closed"
+    one: 1 zamknięte
+    other: "%{count} zamkniętych"
     zero: 0 closed
-    few: "%{count} closed"
+    few: "%{count} zamkniętych"
   label_x_comments:
-    one: 1 comment
-    other: "%{count} comments"
+    one: 1 komentarz
+    other: "%{count} komentarzy"
     zero: no comments
-    few: "%{count} comments"
+    few: "%{count} komentarzy"
   label_x_open_work_packages_abbr:
-    one: 1 open
-    other: "%{count} open"
+    one: 1 otwarte
+    other: "%{count} otwartych"
     zero: 0 open
-    few: "%{count} open"
+    few: "%{count} otwartych"
   label_x_open_work_packages_abbr_on_total:
-    one: 1 open / %{total}
-    other: "%{count} open / %{total}"
+    one: 1 otwarte / %{total}
+    other: "%{count} otwartych / %{total}"
     zero: 0 open / %{total}
-    few: "%{count} open / %{total}"
+    few: "%{count} otwartych / %{total}"
   label_x_projects:
-    one: 1 project
-    other: "%{count} projects"
+    one: 1 projekt
+    other: "%{count} projektów"
     zero: no projects
-    few: "%{count} projects"
+    few: "%{count} projektów"
   label_year: Rok
   label_yesterday: wczoraj
   label_keyboard_function: Funkcja
@@ -1197,9 +1194,9 @@ pl:
         format: "%n %u"
         units:
           byte:
-            one: Byte
-            other: Bytes
-            few: Bytes
+            one: Bajt
+            other: Bajtów
+            few: Bajtów
           gb: GB
           kb: kB
           mb: MB
@@ -1514,9 +1511,9 @@ pl:
     delete_thing: Usuń
     duration: Czas trwania
     duration_days:
-      one: 1 day
-      other: "%{count} days"
-      few: "%{count} days"
+      one: 1 dzień
+      other: "%{count} dni"
+      few: "%{count} dni"
     edit_color: Edycja koloru
     edit_project_type: Edycja typu projektu
     edit_thing: Edycja
@@ -1689,9 +1686,9 @@ pl:
       pośrednictwem poczty e-mail)
     blocked: zablokowany tymczsowo
     blocked_num_failed_logins:
-      one: locked temporarily (one failed login attempt)
-      other: locked temporarily (%{count} failed login attempts)
-      few: locked temporarily (%{count} failed login attempts)
+      one: tymczasowo zablokowane (jedna nieudana próba zalogowania)
+      other: tymczasowo zablokowane (%{count} nieudanych prób zalogowania)
+      few: tymczasowo zablokowane (%{count} nieudanych prób zalogowania)
     deleted: Usunięty uźytkownik
     error_status_change_failed: 'Zmiana statusu użytkownika nie powiodło się z powodu
       następujących błędów: %{errors}'
