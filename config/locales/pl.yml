@@ -183,7 +183,7 @@ pl:
         smaller_than_or_equal_to_max_length: musi być mniejsze lub równe maksymalnej
           długości
         greater_than_start_date: musi być większe niż data początkowa
-        inclusion: is not set to one of the allowed values
+        inclusion: ma wartość spoza dozwolonych
         invalid: jest nieprawidłowy
         less_than: musi być mniejsza niż %{count}
         less_than_or_equal_to: musi być większa niż %{count}
@@ -206,8 +206,8 @@ pl:
           identical_projects: nie mogą być tworzone z jednego projektu do siebie
           project_association_not_allowed: niedozwolone asocjacje
         repository:
-          not_whitelisted: is not allowed by the configuration
-          no_directory: is not a directory
+          not_whitelisted: nie jest dozwolone w tej konfiguracji
+          no_directory: nie jest katalogiem
         work_package:
           is_not_a_valid_target_for_time_entries: 'Zadanie #%{id} jest niepoprawnym
             celem do ponownego rozpisania czasu.'
@@ -228,10 +228,10 @@ pl:
             category:
               only_same_project_categories_allowed: The category of a work package
                 must be within the same project as the work package.
-              does_not_exist: The specified category does not exist.
+              does_not_exist: Podana kategoria nie istnieje.
             estimated_hours:
-              only_values_greater_or_equal_zeroes_allowed: The estimated hours must
-                be >= 0.
+              only_values_greater_or_equal_zeroes_allowed: Szacowane godziny muszą
+                być >= 0.
         user:
           attributes:
             password:
@@ -1103,7 +1103,7 @@ pl:
   label_keyboard_shortcut_go_news: Przejdź do wiadomości projektu
   label_keyboard_shortcut_go_timelines: Przejdź do osi czasu
   label_keyboard_shortcut_new_work_package: Tworzenie nowego zadania
-  label_keyboard_shortcut_details_package: Show work packages details pane
+  label_keyboard_shortcut_details_package: Pokaż pasek właściwości zadań
   label_keyboard_shortcut_go_edit: Przejdź do edycji bieżącej pozycji (tylko na stronach
     szczegółowych)
   label_keyboard_shortcut_open_more_menu: Open more-menu (on detail pages only)
@@ -1584,7 +1584,7 @@ pl:
         absolute: Bezwzględne
         none: Brak
         relative: Względne
-        compare_relative_prefix: Compare current planning to
+        compare_relative_prefix: Porównaj bieżący plan z
         compare_relative_suffix: temu
         compare_absolute: Porównanie bieżącego planowania do %{date}
       time_relative:
@@ -1758,8 +1758,9 @@ pl:
       code_409: Nie można zaktualizować zasobu ze względu na konfliktujące modyfikacje.
       invalid_content_type: Oczekiwano CONTENT-TYPE '%{content_type}' a otrzymano
         '%{actual}'.
-      invalid_resource: For property '%{property}' a link like '%{expected}' is expected,
-        but got '%{actual}'.
+      invalid_resource: Dla właściwości '%{property}' wymagany jest link taki jak
+        '%{expected}', dostarczono '%{actual}'.
+      invalid_relation: The relation is invalid.
       invalid_user_status_transition: Aktualny stan konta użytkownika nie zezwala
         na wykonanie tej operacji.
       missing_content_type: nie określono
@@ -1775,7 +1776,7 @@ pl:
       validation:
         invalid_user_assigned_to_work_package: Wybrany użytkownik nie może być '%{property}'
           dla tego pakietu roboczego.
-        estimated_hours: Estimated hours cannot be set on parent work packages.
+        estimated_hours: Nie można ustawić szacunku godzinowego dla zadań nadrzędnych.
         done_ratio: Done ratio cannot be set on parent work packages, when it is inferred
           by status or when it is disabled.
         start_date: Start date cannot be set on parent work packages.

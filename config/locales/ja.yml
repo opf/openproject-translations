@@ -164,7 +164,7 @@ ja:
         greater_than_or_equal_to: "は%{count}以上の値にしてください。"
         smaller_than_or_equal_to_max_length: "は最大長さより以下でなければなりません。"
         greater_than_start_date: "は開始日より後にしてください。"
-        inclusion: is not set to one of the allowed values
+        inclusion: "は許可されている値ではありません。"
         invalid: "は不正な値です。"
         less_than: "は%{count}より小さい値にしてください。"
         less_than_or_equal_to: "は%{count}以下の値にしてください。"
@@ -204,12 +204,10 @@ ja:
             priority_id:
               only_active_priorities_allowed: "は有効である必要があります。"
             category:
-              only_same_project_categories_allowed: The category of a work package
-                must be within the same project as the work package.
-              does_not_exist: The specified category does not exist.
+              only_same_project_categories_allowed: "ワークパッケージのカテゴリは、同じプロジェクト内にそのワークパッケージでなければなりません。"
+              does_not_exist: "指定されたカテゴリは存在しません。"
             estimated_hours:
-              only_values_greater_or_equal_zeroes_allowed: The estimated hours must
-                be >= 0.
+              only_values_greater_or_equal_zeroes_allowed: "期待される時間はゼロ以上でなくてはなりません。"
         user:
           attributes:
             password:
@@ -558,8 +556,7 @@ ja:
   error_scm_annotate: "エントリが存在しない、もしくは注釈を付けることができません。"
   error_scm_command_failed: "「%{value}」リポジトリにアクセスしようとしてエラーが発生しました。"
   error_scm_not_found: "リポジトリに、エントリ/リビジョンが存在しません。"
-  error_unable_delete_status: Unable to delete work package status because it contains
-    work packages.
+  error_unable_delete_status: "ワークパッケージを含んでいるため、ワークパッケージのステータスを削除できません。"
   error_unable_delete_default_status: "作業項目の既定のステータスを削除できません。削除する前に別の既定値を選択してください。"
   error_unable_to_connect: "接続できません。 （%{value}）"
   error_workflow_copy_source: "コピー元となる型または役割を選択してください。"
@@ -1034,7 +1031,7 @@ ja:
   label_keyboard_shortcut_go_news: "プロジェクトのニュースへ移動"
   label_keyboard_shortcut_go_timelines: "タイムラインへ移動"
   label_keyboard_shortcut_new_work_package: "新しい作業項目を作成"
-  label_keyboard_shortcut_details_package: Show work packages details pane
+  label_keyboard_shortcut_details_package: "ワークパッケージ詳細ペインを表示"
   label_keyboard_shortcut_go_edit: "この項目を編集へ移動（詳細ページのみ）"
   label_keyboard_shortcut_open_more_menu: "他のメニュー項目を開く（詳細ページのみ）"
   label_keyboard_shortcut_go_preview: "現在の編集のプレビューへ移動（編集ページのみ）"
@@ -1456,8 +1453,8 @@ ja:
         absolute: "絶対的"
         none: "なし"
         relative: "相対的"
-        compare_relative_prefix: Compare current planning to
-        compare_relative_suffix: ago
+        compare_relative_prefix: "現在の計画をこれに比較します。"
+        compare_relative_suffix: "前"
         compare_absolute: "現在計画を%{date}と比較する"
       time_relative:
         days: " 日"
@@ -1484,7 +1481,7 @@ ja:
       types: "作業項目の型を表示"
       status: "ステータスを表示"
       project_time_filter: "特定の期間に特定の作業項目を持つプロジェクト"
-      project_time_filter_timeframe: Timeframe
+      project_time_filter_timeframe: "タイムフレーム"
       project_time_filter_historical_from: "から"
       project_time_filter_historical_to: "まで"
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1603,33 +1600,32 @@ ja:
   nothing_to_preview: "プレビューできるものは何もありません。"
   api_v3:
     attributes:
-      lock_version: Lock Version
+      lock_version: "ロックバージョン"
     errors:
       code_401: "このリソースへのアクセスするには認証を行う必要があります。"
       code_403: "このリソースにアクセスする権限がありません。"
-      code_404: The requested resource could not be found.
+      code_404: "要求したリソースが見つかりません。"
       code_409: "変更が競合しているため、リソースを更新できませんでした。"
       invalid_content_type: "コンテンツの種類は'%{content_type}'を期待されたが '%{actual}'を得ました。"
-      invalid_resource: For property '%{property}' a link like '%{expected}' is expected,
-        but got '%{actual}'.
-      invalid_user_status_transition: The current user account status does not allow
-        this operation.
-      missing_content_type: not specified
-      multiple_errors: Multiple field constraints have been violated.
+      invalid_resource: "プロパティ '%{property}' は '%{expected}'のようなリンクであることが期待されていますが実際は
+        '%{actual}'が指定されています。"
+      invalid_relation: The relation is invalid.
+      invalid_user_status_transition: "現在のユーザのアカウントステータスはこの操作を許可していません。"
+      missing_content_type: "指定されていません。"
+      multiple_errors: "複数フィールド制限に違反が生じました。"
       parse_error: "リクエストの内容は空でもないし、1つの JSONオブジェクトも含まれていません。"
       writing_read_only_attributes: "読み取り専用の属性を書き込みできません。"
-      invalid_format: 'Invalid format for property ''%{property}'': Expected format
-        like ''%{expected_format}'', but got ''%{actual}''.'
+      invalid_format: "不正なフォーマットのプロパティ '%{property}': 期待されるフォーマットは '%{expected_format}',
+        ですが '%{actual}'を受け取りました."
       render:
-        context_not_parsable: The context provided is not a link to a resource.
-        unsupported_context: The resource given is not supported as context.
-        context_object_not_found: Cannot find the resource given as the context.
+        context_not_parsable: "このコンテキストはリソースへのリンクではありません。"
+        unsupported_context: "指定されたリソースは、コンテキストとしてはサポートされません。"
+        context_object_not_found: "コンテキストで指定されたリソースが見つかりません。"
       validation:
         invalid_user_assigned_to_work_package: "選ばれたユーザーは、この作業項目の'%{property}' にすることはできません。"
-        estimated_hours: Estimated hours cannot be set on parent work packages.
-        done_ratio: Done ratio cannot be set on parent work packages, when it is inferred
-          by status or when it is disabled.
-        start_date: Start date cannot be set on parent work packages.
-        due_date: Due date cannot be set on parent work packages.
+        estimated_hours: "推定時間は、親ワークパッケージに設定できません。"
+        done_ratio: "完了率はそのステータスにより推定または無効にされている場合、親ワークパッケージにセットすることはできません。"
+        start_date: "開始日は、親ワークパッケージに設定できません。"
+        due_date: "締切日は親ワークパッケージに設定することはできません。"
     resources:
-      schema: Schema
+      schema: "スキーマ"
