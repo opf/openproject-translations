@@ -32,7 +32,7 @@ Then update your bundle with the following commands executed from your openproje
 
 <pre>
 bundle install
-bundle exec rake assets:precompile
+RAILS_ENV=production bundle exec rake assets:precompile
 </pre>
 
 and restart the OpenProject server.
