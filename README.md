@@ -22,10 +22,10 @@ We plan to release this plugin every time an OpenProject core release is done.
 
 ## Plugin Installation
 
-Edit the `Gemfile.plugins` file in your openproject-installation directory to contain the following lines:
+Edit the `Gemfile.plugins` file in your openproject-installation directory to contain the following lines (if you use a different OpenProject version than OpenProject 4.1, adapt `:branch => "stable/4.1"` to your OpenProject version):
 
 <pre>
-gem "openproject-translations", :git => 'https://github.com/opf/openproject-translations.git', :branch => 'stable'
+gem "openproject-translations", :git => 'https://github.com/opf/openproject-translations.git', :branch => 'stable/4.1'
 </pre>
 
 Then update your bundle with the following commands executed from your openproject directory:
