@@ -43,6 +43,7 @@ da:
     attributes:
       attachment:
         downloads: Hentninger
+        file: Fil
         filename: Fil
         filesize: Størrelse
       auth_source:
@@ -179,6 +180,7 @@ da:
         equal_to: skal være lig med %{count}
         even: skal være lige
         exclusion: er reserveret
+        file_too_large: is too large (maximum size is %{count} Bytes)
         greater_than: skal være større end %{count}
         greater_than_or_equal_to: skal være større end eller lig med %{count}
         smaller_than_or_equal_to_max_length: skal vær mindre end eller lig den maksimale
@@ -1738,28 +1740,30 @@ da:
       code_409: Kunne ikke opdatere ressourcen på grund af modstridende ændringer.
       invalid_content_type: Forventet CONTENT-TYPE skal være '%{content_type}' men
         fik '%{actual}'.
+      invalid_format: 'Invalid format for property ''%{property}'': Expected format
+        like ''%{expected_format}'', but got ''%{actual}''.'
+      invalid_json: The request could not be parsed as JSON.
+      invalid_relation: The relation is invalid.
       invalid_resource: For property '%{property}' a link like '%{expected}' is expected,
         but got '%{actual}'.
-      invalid_relation: The relation is invalid.
       invalid_user_status_transition: Den aktuelle bruger konto status tillader ikke
         denne handling.
       missing_content_type: not specified
+      multipart_body_error: The request body did not contain the expected multipart
+        parts.
       multiple_errors: Multiple field constraints have been violated.
-      parse_error: Forespørgsel var enten tom, eller inholdt ikke ét enkelt JSON objekt.
       writing_read_only_attributes: Du må ikke skrive til en skrivebeskyttet attribut.
-      invalid_format: 'Invalid format for property ''%{property}'': Expected format
-        like ''%{expected_format}'', but got ''%{actual}''.'
       render:
         context_not_parsable: The context provided is not a link to a resource.
         unsupported_context: The resource given is not supported as context.
         context_object_not_found: Cannot find the resource given as the context.
       validation:
-        invalid_user_assigned_to_work_package: Den valgte bruger er ikke tilladt at
-          være '%{property}' for denne arbejdspakke.
-        estimated_hours: Estimated hours cannot be set on parent work packages.
         done_ratio: Done ratio cannot be set on parent work packages, when it is inferred
           by status or when it is disabled.
-        start_date: Start date cannot be set on parent work packages.
         due_date: Due date cannot be set on parent work packages.
+        estimated_hours: Estimated hours cannot be set on parent work packages.
+        invalid_user_assigned_to_work_package: Den valgte bruger er ikke tilladt at
+          være '%{property}' for denne arbejdspakke.
+        start_date: Start date cannot be set on parent work packages.
     resources:
       schema: Schema

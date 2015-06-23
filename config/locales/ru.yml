@@ -43,6 +43,7 @@ ru:
     attributes:
       attachment:
         downloads: "Загрузки"
+        file: "Файл"
         filename: "Файл"
         filesize: "Размер"
       auth_source:
@@ -179,6 +180,7 @@ ru:
         equal_to: "должно быть равно %{count}"
         even: "должно быть четным"
         exclusion: "зарезервировано"
+        file_too_large: is too large (maximum size is %{count} Bytes)
         greater_than: "должно превышать %{count}"
         greater_than_or_equal_to: "должно быть больше или равно %{count}"
         smaller_than_or_equal_to_max_length: "должно быть меньше или равно максимуму
@@ -1780,31 +1782,33 @@ ru:
       code_409: "Не удалось обновить ресурс из-за конфликтующих изменений."
       invalid_content_type: "Ожидаемый CONTENT-TYPE должен быть быть «%{content_type}»,
         но получил «%{actual}»."
+      invalid_format: "Недопустимый формат свойства «%{property}»: ожидаемый формат
+        «%{expected_format}», но получил «%{actual}»."
+      invalid_json: The request could not be parsed as JSON.
+      invalid_relation: "Отношение является недопустимым."
       invalid_resource: "Для свойства «%{property}» ожидается ссылка как «%{expected}»
         , но получена «%{actual}»."
-      invalid_relation: "Отношение является недопустимым."
       invalid_user_status_transition: "Состояние учетной записи текущего пользователя
         не поддерживает эту операцию."
       missing_content_type: "Не определено"
+      multipart_body_error: The request body did not contain the expected multipart
+        parts.
       multiple_errors: "Для нескольких полей были нарушены ограничения."
-      parse_error: "Тело запроса было ни пустым, ни содержало единичный объект JSON."
       writing_read_only_attributes: "Вы не должны перезаписывать атрибут являющийся
         только для чтения."
-      invalid_format: "Недопустимый формат свойства «%{property}»: ожидаемый формат
-        «%{expected_format}», но получил «%{actual}»."
       render:
         context_not_parsable: "Предоставленного контекста не является ссылка на ресурс."
         unsupported_context: "Ресурс не поддерживается как контекст."
         context_object_not_found: "Не удается найти ресурс заданный как контекст."
       validation:
-        invalid_user_assigned_to_work_package: "Выбранный пользователь не может быть
-          «%{property}» для этого пакета работ."
-        estimated_hours: "Предполагаемое количество часов не может быть задано для
-          родительских пакетов."
         done_ratio: "Установленное соотношение нельзя задать для родительских пакетов
           работ, когда оно задается статусом или  отключено."
-        start_date: "Дата начала не может быть задана на родительских  пакетах работ."
         due_date: "Ожидаемую дату окончания нельзя задать для родительских пакетов
           работ."
+        estimated_hours: "Предполагаемое количество часов не может быть задано для
+          родительских пакетов."
+        invalid_user_assigned_to_work_package: "Выбранный пользователь не может быть
+          «%{property}» для этого пакета работ."
+        start_date: "Дата начала не может быть задана на родительских  пакетах работ."
     resources:
       schema: "Схема"

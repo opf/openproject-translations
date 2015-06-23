@@ -44,6 +44,7 @@ sv-SE:
     attributes:
       attachment:
         downloads: Nedladdningar
+        file: Fil
         filename: Fil
         filesize: Filstorlek
       auth_source:
@@ -179,6 +180,7 @@ sv-SE:
         equal_to: måste vara lika med %{count}
         even: måste vara jämn
         exclusion: "är reserverad"
+        file_too_large: is too large (maximum size is %{count} Bytes)
         greater_than: måste vara större än %{count}
         greater_than_or_equal_to: måste vara större än eller lika med %{count}
         smaller_than_or_equal_to_max_length: måste vara mindre än eller lika med maximal
@@ -1736,28 +1738,30 @@ sv-SE:
       code_409: Kunde inte uppdatera resursen på grund av motstridiga ändringar.
       invalid_content_type: Förväntade att CONTENT-TYPE var "%{content_type}" men
         erhöll istället "%{actual}".
+      invalid_format: 'Ogiltigt format för egenskapen ''%{property}'': förväntat format
+        är ''%{expected_format}'', men fick ''%{actual}''.'
+      invalid_json: The request could not be parsed as JSON.
+      invalid_relation: The relation is invalid.
       invalid_resource: För egenskapen '%{property}' är en länk av typen '%{expected}'
         väntad, men fick "%{actual}".
-      invalid_relation: The relation is invalid.
       invalid_user_status_transition: Statusen på den aktuella användarens konto tillåter
         inte denna operation.
       missing_content_type: inte angiven
+      multipart_body_error: The request body did not contain the expected multipart
+        parts.
       multiple_errors: Flera villkor för fält har överträtts.
-      parse_error: Förfrågan var varken tom eller innehöll ett enda JSON objekt.
       writing_read_only_attributes: Du får inte skriva till ett skrivskyddat attribut.
-      invalid_format: 'Ogiltigt format för egenskapen ''%{property}'': förväntat format
-        är ''%{expected_format}'', men fick ''%{actual}''.'
       render:
         context_not_parsable: Kontexten som angavs är inte en länk till en resurs.
         unsupported_context: Resursen som angavs stöds inte som kontext.
         context_object_not_found: Kan inte hitta den angivna resursen som kontext.
       validation:
-        invalid_user_assigned_to_work_package: Den valda användaren tillåts inte att
-          vara "%{property}" för detta arbetspaket.
-        estimated_hours: Beräknade timmar kan inte anges för överordnade arbetspaket.
         done_ratio: Andel avslutat kan inte anges för överordnade arbetspaket, när
           det är angivet av status eller när det är inaktiverat.
-        start_date: Startdatum kan inte anges för överordnade arbetspaket.
         due_date: Förfallodatum kan inte anges för överordnade arbetspaket.
+        estimated_hours: Beräknade timmar kan inte anges för överordnade arbetspaket.
+        invalid_user_assigned_to_work_package: Den valda användaren tillåts inte att
+          vara "%{property}" för detta arbetspaket.
+        start_date: Startdatum kan inte anges för överordnade arbetspaket.
     resources:
       schema: Schema

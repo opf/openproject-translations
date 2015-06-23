@@ -47,6 +47,7 @@ it:
     attributes:
       attachment:
         downloads: Scaricati
+        file: File
         filename: File
         filesize: Grandezza
       auth_source:
@@ -183,6 +184,7 @@ it:
         equal_to: deve essere uguale a %{count}
         even: deve essere pari
         exclusion: "è riservato"
+        file_too_large: is too large (maximum size is %{count} Bytes)
         greater_than: deve essere maggiore di %{count}
         greater_than_or_equal_to: deve essere maggiore o uguale di %{count}
         smaller_than_or_equal_to_max_length: deve essere minore o uguale alla lunghezza
@@ -1766,32 +1768,33 @@ it:
       code_409: Non ha potuto aggiornare la risorsa a causa delle modifiche in conflitto.
       invalid_content_type: Il  CONTENT-TYPE avrebbe dovuto essere '%{content_type}',
         ma si è ottenuto '%{actual}'.
+      invalid_format: 'Formato non valido per la proprietà ''%{property}'': previsto
+        un formato del tipo ''%{expected_format}'', rispetto al tipo attuale ''%{actual}''.'
+      invalid_json: The request could not be parsed as JSON.
+      invalid_relation: The relation is invalid.
       invalid_resource: Per la proprietà '%{property}' il link atteso è '%{expected}',
         ma si è ottenuto '%{actual}'.
-      invalid_relation: The relation is invalid.
       invalid_user_status_transition: L'attuale stato dell'account utente non consente
         questa operazione.
       missing_content_type: non specificato
+      multipart_body_error: The request body did not contain the expected multipart
+        parts.
       multiple_errors: Più vincoli di campo sono stati violati.
-      parse_error: Il corpo della richiesta era né vuota, né conteneva un singolo
-        oggetto JSON.
       writing_read_only_attributes: Non devi scrivere un attributo di sola lettura.
-      invalid_format: 'Formato non valido per la proprietà ''%{property}'': previsto
-        un formato del tipo ''%{expected_format}'', rispetto al tipo attuale ''%{actual}''.'
       render:
         context_not_parsable: Il contesto fornito non è un collegamento a una risorsa.
         unsupported_context: La risorsa non è supportata come contesto.
         context_object_not_found: Impossibile trovare la risorsa indicata come contesto.
       validation:
-        invalid_user_assigned_to_work_package: L'utente scelto non è consentito di
-          essere '%{property}' per questo pacchetto di lavoro.
-        estimated_hours: Le ore stimate non possono essere impostate su pacchetti
-          di lavoro del padre.
         done_ratio: Il rapporto del lavoro svolto non può essere impostata su pacchetti
           di lavoro del padre, quando esso viene dedotto dallo stato o quando è disabilitato.
-        start_date: Data di inizio non può essere impostata su pacchetti di lavoro
-          del padre.
         due_date: La data di scadenza non può essere impostata su pacchetti di lavoro
+          del padre.
+        estimated_hours: Le ore stimate non possono essere impostate su pacchetti
+          di lavoro del padre.
+        invalid_user_assigned_to_work_package: L'utente scelto non è consentito di
+          essere '%{property}' per questo pacchetto di lavoro.
+        start_date: Data di inizio non può essere impostata su pacchetti di lavoro
           del padre.
     resources:
       schema: Schema

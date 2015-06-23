@@ -26,6 +26,7 @@ ja:
     attributes:
       attachment:
         downloads: "ダウンロード数"
+        file: "ファイル"
         filename: "ファイル"
         filesize: "サイズ"
       auth_source:
@@ -160,6 +161,7 @@ ja:
         equal_to: "は%{count}に等しくしてください。"
         even: "は偶数にしてください。"
         exclusion: "は予約されています。"
+        file_too_large: is too large (maximum size is %{count} Bytes)
         greater_than: "は%{count}より大きい値にしてください。"
         greater_than_or_equal_to: "は%{count}以上の値にしてください。"
         smaller_than_or_equal_to_max_length: "は最大長さより以下でなければなりません。"
@@ -1609,25 +1611,27 @@ ja:
       code_404: "要求したリソースが見つかりません。"
       code_409: "変更が競合しているため、リソースを更新できませんでした。"
       invalid_content_type: "コンテンツの種類は'%{content_type}'を期待されたが '%{actual}'を得ました。"
-      invalid_resource: "プロパティ '%{property}' は '%{expected}'のようなリンクであることが期待されていますが実際は
-        '%{actual}'が指定されています。"
-      invalid_relation: The relation is invalid.
-      invalid_user_status_transition: "現在のユーザのアカウントステータスはこの操作を許可していません。"
-      missing_content_type: "指定されていません。"
-      multiple_errors: "複数フィールド制限に違反が生じました。"
-      parse_error: "リクエストの内容は空でもないし、1つの JSONオブジェクトも含まれていません。"
-      writing_read_only_attributes: "読み取り専用の属性を書き込みできません。"
       invalid_format: "不正なフォーマットのプロパティ '%{property}': 期待されるフォーマットは '%{expected_format}',
         ですが '%{actual}'を受け取りました."
+      invalid_json: The request could not be parsed as JSON.
+      invalid_relation: The relation is invalid.
+      invalid_resource: "プロパティ '%{property}' は '%{expected}'のようなリンクであることが期待されていますが実際は
+        '%{actual}'が指定されています。"
+      invalid_user_status_transition: "現在のユーザのアカウントステータスはこの操作を許可していません。"
+      missing_content_type: "指定されていません。"
+      multipart_body_error: The request body did not contain the expected multipart
+        parts.
+      multiple_errors: "複数フィールド制限に違反が生じました。"
+      writing_read_only_attributes: "読み取り専用の属性を書き込みできません。"
       render:
         context_not_parsable: "このコンテキストはリソースへのリンクではありません。"
         unsupported_context: "指定されたリソースは、コンテキストとしてはサポートされません。"
         context_object_not_found: "コンテキストで指定されたリソースが見つかりません。"
       validation:
-        invalid_user_assigned_to_work_package: "選ばれたユーザーは、この作業項目の'%{property}' にすることはできません。"
-        estimated_hours: "推定時間は、親ワークパッケージに設定できません。"
         done_ratio: "完了率はそのステータスにより推定または無効にされている場合、親ワークパッケージにセットすることはできません。"
-        start_date: "開始日は、親ワークパッケージに設定できません。"
         due_date: "締切日は親ワークパッケージに設定することはできません。"
+        estimated_hours: "推定時間は、親ワークパッケージに設定できません。"
+        invalid_user_assigned_to_work_package: "選ばれたユーザーは、この作業項目の'%{property}' にすることはできません。"
+        start_date: "開始日は、親ワークパッケージに設定できません。"
     resources:
       schema: "スキーマ"

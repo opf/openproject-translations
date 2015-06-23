@@ -48,6 +48,7 @@ fr:
     attributes:
       attachment:
         downloads: Téléchargements
+        file: Fichier
         filename: Fichier
         filesize: Taille
       auth_source:
@@ -185,6 +186,7 @@ fr:
         equal_to: doit être égal à %{count}
         even: doit être le même
         exclusion: est réservé
+        file_too_large: is too large (maximum size is %{count} Bytes)
         greater_than: doit être supérieur à %{count}
         greater_than_or_equal_to: doit être supérieur ou égal à %{count}
         smaller_than_or_equal_to_max_length: Doit être plus petit ou égal à la longueur
@@ -1780,34 +1782,36 @@ fr:
         conflictuelles.
       invalid_content_type: CONTENT-TYPE attendu «%{content_type} » , mais est à «%{actual}
         ».
-      invalid_resource: '"%{actual}" est invalide, car la propriété "%{property}"
-        requiert un lien de type "%{expected}".'
-      invalid_relation: La relation n'est pas valide.
-      invalid_user_status_transition: L'état du compte de l'utilisateur ne permet
-        pas cette opération.
-      missing_content_type: non spécifié
-      multiple_errors: Plusieurs contraintes de champ n'ont pas été respectées.
-      parse_error: Le corps de la demande n'était ni vide, ni contenant un objet JSON.
-      writing_read_only_attributes: Vous ne devez pas écrire un attribut en lecture
-        seule.
       invalid_format: 'Format invalide pour la propriété "%{property}" : un format
         de type "%{expected_format}" est requis, mais la valeur invalide "%{actual}"
         a été reçue.'
+      invalid_json: The request could not be parsed as JSON.
+      invalid_relation: La relation n'est pas valide.
+      invalid_resource: '"%{actual}" est invalide, car la propriété "%{property}"
+        requiert un lien de type "%{expected}".'
+      invalid_user_status_transition: L'état du compte de l'utilisateur ne permet
+        pas cette opération.
+      missing_content_type: non spécifié
+      multipart_body_error: The request body did not contain the expected multipart
+        parts.
+      multiple_errors: Plusieurs contraintes de champ n'ont pas été respectées.
+      writing_read_only_attributes: Vous ne devez pas écrire un attribut en lecture
+        seule.
       render:
         context_not_parsable: Le contexte fourni n'est pas un lien vers une ressource.
         unsupported_context: La ressource donnée n'est pas prise en charge comme contexte.
         context_object_not_found: Impossible de trouver la ressource donnée comme
           contexte.
       validation:
-        invalid_user_assigned_to_work_package: L'utilisateur choisi ne doit pas être
-          '%{property} ' pour ce paquet de travail.
-        estimated_hours: Le nombre d'heures estimé ne peut être défini sur les modules
-          de travail parents.
         done_ratio: Le taux d'avancement ne peut être défini sur les modules de travail
           parents lorsqu'il est déduit en fonction du statut, ou lorsqu'il est désactivé.
-        start_date: La date de début ne peut pas être définie dans les lots de travaux
-          parents.
         due_date: La date d'échéance ne peut pas être définie dans les lots de travaux
+          parents.
+        estimated_hours: Le nombre d'heures estimé ne peut être défini sur les modules
+          de travail parents.
+        invalid_user_assigned_to_work_package: L'utilisateur choisi ne doit pas être
+          '%{property} ' pour ce paquet de travail.
+        start_date: La date de début ne peut pas être définie dans les lots de travaux
           parents.
     resources:
       schema: Schéma

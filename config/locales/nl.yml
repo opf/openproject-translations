@@ -48,6 +48,7 @@ nl:
     attributes:
       attachment:
         downloads: Downloads
+        file: Bestand
         filename: Bestand
         filesize: Grootte
       auth_source:
@@ -184,6 +185,7 @@ nl:
         equal_to: moet gelijk zijn aan %{count}
         even: moet gelijk zijn
         exclusion: is gereserveerd
+        file_too_large: is too large (maximum size is %{count} Bytes)
         greater_than: moet groter zijn dan %{count}
         greater_than_or_equal_to: moet groter dan of gelijk zijn aan %{count}
         smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
@@ -1751,29 +1753,31 @@ nl:
       code_409: Door conflicterende wijzigingen kan deze resource niet worden bijgewerkt.
       invalid_content_type: CONTENT-TYPE  '%{content_type}' werd verwacht, maar '%{actual}'
         werd ingegeven.
+      invalid_format: 'Ongeldig formaat voor eigenschap ''%{property}'': een formaat
+        zoals ''%{expected_format}'' wordt verwacht, maar ''%{actual}'' werd ingegeven.'
+      invalid_json: The request could not be parsed as JSON.
+      invalid_relation: The relation is invalid.
       invalid_resource: Eigenschap '%{property}' verwacht een link zoals '%{expected}',
         maar kreeg '%{actual}'.
-      invalid_relation: The relation is invalid.
       invalid_user_status_transition: De accountstatus van de huidige gebruiker laat
         deze actie niet toe.
       missing_content_type: niet bepaald
+      multipart_body_error: The request body did not contain the expected multipart
+        parts.
       multiple_errors: Meerdere veldbeperkingen werden overtreden.
-      parse_error: De aanvraag is niet leeg en bevat ook geen single JSON object.
       writing_read_only_attributes: U mag geen read-only attribuut schrijven.
-      invalid_format: 'Ongeldig formaat voor eigenschap ''%{property}'': een formaat
-        zoals ''%{expected_format}'' wordt verwacht, maar ''%{actual}'' werd ingegeven.'
       render:
         context_not_parsable: The context provided is not a link to a resource.
         unsupported_context: The resource given is not supported as context.
         context_object_not_found: Cannot find the resource given as the context.
       validation:
-        invalid_user_assigned_to_work_package: De gekozen gebruiker kan geen '%{property}'
-          zijn voor dit werkpakket.
-        estimated_hours: Geschatte uren uren kunnen niet op ouderwerkpaketten worden
-          gezet.
         done_ratio: De vooruitgangsratio kan niet op een ouderwerkpakket worden gezet
           wanneer die uit de status wordt afgeleid of is uitgeschakeld.
-        start_date: Start date cannot be set on parent work packages.
         due_date: Due date cannot be set on parent work packages.
+        estimated_hours: Geschatte uren uren kunnen niet op ouderwerkpaketten worden
+          gezet.
+        invalid_user_assigned_to_work_package: De gekozen gebruiker kan geen '%{property}'
+          zijn voor dit werkpakket.
+        start_date: Start date cannot be set on parent work packages.
     resources:
       schema: Schema

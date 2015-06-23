@@ -47,6 +47,7 @@ es:
     attributes:
       attachment:
         downloads: Descargas
+        file: Archivo
         filename: Archivo
         filesize: Tamaño
       auth_source:
@@ -183,6 +184,7 @@ es:
         equal_to: debe ser igual a %{count}
         even: debe ser incluido
         exclusion: está reservado
+        file_too_large: is too large (maximum size is %{count} Bytes)
         greater_than: debe ser mayor que %{count}
         greater_than_or_equal_to: debe ser mayor o igual a %{count}
         smaller_than_or_equal_to_max_length: Debe ser menor o igual que el tamaño
@@ -1777,33 +1779,34 @@ es:
       code_409: No se pudo actualizar el recurso debido a modificaciones en conflicto.
       invalid_content_type: Se esperaba que el CONTENT-TYPE fuera '%{content_type}'
         pero se obtuvo '%{actual}'.
+      invalid_format: 'Formato inválido para la propiedad ''%{property}'': Formato
+        esperado como ''%{expected_format}'', pero se recibió ''%{actual}''.'
+      invalid_json: The request could not be parsed as JSON.
+      invalid_relation: La relación no es válida.
       invalid_resource: Para la propiedad '%{property}' se espera un enlace como '%{expected}',
         pero obtiene '%{actual}'.
-      invalid_relation: La relación no es válida.
       invalid_user_status_transition: El estado actual de la cuenta del usuario no
         permite esta operación.
       missing_content_type: sin especificar
+      multipart_body_error: The request body did not contain the expected multipart
+        parts.
       multiple_errors: Múltiples limitaciones de campo han sido violadas.
-      parse_error: El cuerpo de la solicitud o era vacía, o no contenía un solo objeto
-        JSON.
       writing_read_only_attributes: No debería escribir un atributo de solo lectura.
-      invalid_format: 'Formato inválido para la propiedad ''%{property}'': Formato
-        esperado como ''%{expected_format}'', pero se recibió ''%{actual}''.'
       render:
         context_not_parsable: El contexto proporcionado no es un enlace a un recurso.
         unsupported_context: El recurso dado no es soportado como contexto.
         context_object_not_found: No se ha podido encontrar el recurso dado como el
           contexto.
       validation:
-        invalid_user_assigned_to_work_package: El usuario elegido no tiene permiso
-          para ser '%{property}' para este paquete de trabajo.
-        estimated_hours: Las horas estimadas no pueden ser establecidas en paquetes
-          de trabajo padres.
         done_ratio: La proporción de Realizado no puede ser establecida en paquetes
           de trabajo padres, cuando está controlada por el estado o cuando está deshabilitada.
-        start_date: La fecha de inicio no puede ser establecida en paquetes de trabajo
-          padres.
         due_date: La fecha de vencimiento no puede ser establecida en paquetes de
           trabajo padre.
+        estimated_hours: Las horas estimadas no pueden ser establecidas en paquetes
+          de trabajo padres.
+        invalid_user_assigned_to_work_package: El usuario elegido no tiene permiso
+          para ser '%{property}' para este paquete de trabajo.
+        start_date: La fecha de inicio no puede ser establecida en paquetes de trabajo
+          padres.
     resources:
       schema: Esquema
