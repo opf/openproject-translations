@@ -1,5 +1,5 @@
 module TmpDirectory
-  def create_tmp_directory(delete: nil)
+  def create_tmp_directory(delete: false)
     tmp_path = File.join(FileUtils.pwd, 'tmp')
     if delete
       FileUtils.rm_rf tmp_path
