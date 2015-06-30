@@ -34,9 +34,13 @@ class LocalesUpdater
         # todo or should we merge this branch into the next ('push vs pull')
         git_repo.merge(previous_branch, '-Xours') if previous_branch
         git_repo.within_repo do
-          upload_english
-          request_build
-          download_and_replace_locales
+          begin
+            upload_english
+            request_build
+            download_and_replace_locales
+          rescue Crowdin::API::Errors::Error => e
+            puts "Error during update of #{name}: #{e.message}"
+          end
           fix_missing_keys
         end
         git_repo.add('config/locales')
@@ -75,7 +79,6 @@ class LocalesUpdater
   end
 
   def self.upload_english
-    # todo what errors should we catch here?
     # create crowdin directory just in case it doesn't exist.
     crowdin = create_crowdin_handle
     dir = crowdin.project_info['files'].find {|f| f['name'] == @crowdin_directory && f['node_type'] == 'directory'}
@@ -103,7 +106,7 @@ class LocalesUpdater
   end
 
   def self.request_build
-    # todo what errors to catch? maybe this could run into a timeout
+    # todo maybe this could run into a timeout?
     crowdin = create_crowdin_handle
     crowdin.export_translations
   end
@@ -113,7 +116,6 @@ class LocalesUpdater
   end
 
   def self.download_and_replace_locales
-    # todo what errors to catch here?
     # todo delete all locales here? maybe for the case that
     # we do not support a language anymore.
     begin
