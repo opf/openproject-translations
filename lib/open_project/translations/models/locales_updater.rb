@@ -48,34 +48,30 @@ class LocalesUpdater
   end
 
   def self.plugins_with_locales
-    # todo get list from file
+    configuration[:plugins]
+  end
+
+  def self.configuration
     # todo raise error if something is missing
-    # todo how to handle api_keys? i will commit this one for now and invalidate it later
-    {'OpenProject-Backlogs' =>
-     {
-       uri: 'git@github.com:finnlabs/openproject-backlogs',
-       api_key: 'b3ab6c978bc9a15d0e3db9161053fe2a',
-       project_id: 'openproject-backlogs'
-     }
-    }
+    @configuration ||= begin
+      configuration_file = Pathname(__FILE__) + '../../../../../'
+    configuration_file = configuration_file + 'configuration.yml'
+    YAML.load_file(configuration_file)
+    end
   end
 
   def self.set_crowdin_specifics(configuration_hash)
     @project_id = configuration_hash[:project_id]
     @api_key = configuration_hash[:api_key]
-    # todo get this value (from configuration or via something
-    # like Openproject::VERSION.to_semver?)
-    @crowdin_directory = '4.2.0-alpha'
+    @crowdin_directory = configuration[:crowdin_directory]
   end
 
   def self.branch
-    # todo get this dynamically
-    'release/4.2'
+    configuration[:branch]
   end
 
   def self.previous_branch
-    # todo get this dynamically
-    'release/4.1'
+    configuration[:previous_branch]
   end
 
   def self.upload_english
