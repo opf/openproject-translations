@@ -15,40 +15,35 @@ class LocalesUpdater
   def self.update_all_locales_of_all_repos(debug: true)
     repos_to_update = plugins_with_locales
 
-    tmp_path = create_tmp_directory(delete: true)
-
-    Dir.chdir tmp_path do
+    within_tmp_directory(delete_if_exists: true, debug: debug) do
       repos_to_update.each do |name, specifics|
         # todo each branch
         uri = specifics[:uri]
         set_crowdin_specifics(specifics)
 
-        FileUtils.rm_rf name
-        Dir.mkdir name
+        within_tmp_directory(path: File.join(FileUtils.pwd, name), debug: debug) do
+          git_repo = GitRepository.new(uri, FileUtils.pwd)
+          git_repo.clone_or_pull
 
-        repo_path = name
-        git_repo = GitRepository.new(uri, repo_path)
-        git_repo.clone_or_pull
-
-        git_repo.checkout(branch)
-        # todo or should we merge this branch into the next ('push vs pull')
-        git_repo.merge(previous_branch, '-Xours') if previous_branch
-        git_repo.within_repo do
-          begin
-            upload_english
-            request_build
-            download_and_replace_locales
-          rescue Crowdin::API::Errors::Error => e
-            puts "Error during update of #{name}: #{e.message}"
+          git_repo.checkout(branch)
+          # todo or should we merge this branch into the next ('push vs pull')
+          git_repo.merge(previous_branch, '-Xours') if previous_branch
+          git_repo.within_repo do
+            begin
+              upload_english
+              request_build
+              download_and_replace_locales
+            rescue Crowdin::API::Errors::Error => e
+              puts "Error during update of #{name}: #{e.message}"
+            end
+            fix_missing_keys
           end
-          fix_missing_keys
+          git_repo.add('config/locales')
+          git_repo.commit('update locales from crowdin')
+          git_repo.push(branch) unless debug
         end
-        git_repo.add('config/locales')
-        git_repo.commit('update locales from crowdin')
-        git_repo.push(branch) unless debug
       end
     end
-    delete_tmp_folder(tmp_path) unless debug
   end
 
   def self.plugins_with_locales
@@ -179,9 +174,5 @@ class LocalesUpdater
     # todo this should not be necessary anymore
     # since crowdin already replaces missing keys with
     # the english ones
-  end
-
-  def self.delete_tmp_folder(path)
-    FileUtils.rm_rf path
   end
 end
