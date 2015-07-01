@@ -8,18 +8,8 @@ class GitRepository
     @path = path
   end
 
-  def clone_or_pull
-    if File.directory? File.join(@path, '.git')
-      within_repo do
-        run_command "git fetch"
-      end
-    #elsif File.directory? @path
-      # maybe we should:
-      # raise "Cannot checkout #{@uri} to #{@path}. Directory already exists but has no .git folder."
-      # or ask if the directory should be overwritten
-    else
-      run_command "git clone #{@uri} #{@path}"
-    end
+  def clone
+    run_command "git clone #{@uri} #{@path}"
   end
 
   def checkout(ref)
