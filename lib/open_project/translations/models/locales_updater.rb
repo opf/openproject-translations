@@ -103,7 +103,7 @@ class LocalesUpdater
 
           # only take translations with enough percent translated
           # todo do we require 100% here?
-          next unless translation_status_high_enough?(language_name, ACCEPTANCE_LEVEL)
+          next unless @i18n_provider.translation_status_high_enough?(language_name, ACCEPTANCE_LEVEL)
 
           filepath = target_directory.join "#{js_translation?(Pathname.new(entry.name)) ? 'js-' : ''}#{language_name}.yml"
 
@@ -116,17 +116,6 @@ class LocalesUpdater
     ensure
       unlink_temp_file(languages_files)
     end
-  end
-
-  def self.translation_status_high_enough?(code, percent)
-    @translations_statuses ||= begin
-      crowdin = create_crowdin_handle
-      crowdin.translations_status
-    end
-    translation_status = @translations_statuses.select do |translation|
-      translation['code'] == code
-    end
-    translation_status.first['translated_progress'].to_i >= percent
   end
 
   def self.create_temp_file(filename)
