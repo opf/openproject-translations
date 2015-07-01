@@ -11,6 +11,7 @@ require_relative './git_repository'
 
 ENGLISH_TRANLATION_FILE = 'en.yml'
 ENGLISH_JS_TRANLATION_FILE = 'js-en.yml'
+ACCEPTANCE_LEVEL = ENV['ACCEPTANCE_LEVEL'] || 100
 
 class LocalesUpdater
   extend TmpDirectory
@@ -132,7 +133,7 @@ class LocalesUpdater
 
           # only take translations with enough percent translated
           # todo do we require 100% here?
-          next unless translation_status_high_enough?(language_name, 100)
+          next unless translation_status_high_enough?(language_name, ACCEPTANCE_LEVEL)
 
           filepath = target_directory.join "#{js_translation?(Pathname.new(entry.name)) ? 'js-' : ''}#{language_name}.yml"
 
