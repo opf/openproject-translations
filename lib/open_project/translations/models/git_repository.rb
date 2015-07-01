@@ -42,7 +42,7 @@ class GitRepository
     end
   end
 
-  def push(push_tags = nil)
+  def push(push_tags = false)
     command = 'git push'
     command << ' --tags' if push_tags
     within_repo do
