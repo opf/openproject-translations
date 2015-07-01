@@ -81,22 +81,27 @@ class LocalesUpdater
       crowdin.add_directory(@crowdin_directory)
     end
 
-    # either add or update the english translation file
-    path_to_translation = File.join 'config', 'locales', 'en.yml'
-    dir = crowdin.project_info['files'].find {|f| f['name'] == @crowdin_directory && f['node_type'] == 'directory'}
-    if dir['files'].find {|f| f['name'] == 'en.yml'}
-      crowdin.update_file [{dest: "/#{@crowdin_directory}/en.yml", source: path_to_translation.to_s, title: 'OpenProject wording', export_pattern: '%two_letters_code%.yml'}], type: 'yaml'
-    else
-      crowdin.add_file [{dest: "/#{@crowdin_directory}/en.yml", source: path_to_translation.to_s, title: 'OpenProject wording', export_pattern: '%two_letters_code%.yml'}], type: 'yaml'
-    end
-
-    # either add or update the english javascript translation file
-    path_to_translation = File.join 'config', 'locales', 'js-en.yml'
-    dir = crowdin.project_info['files'].find {|f| f['name'] == @crowdin_directory && f['node_type'] == 'directory'}
-    if dir['files'].find {|f| f['name'] == 'js-en.yml'}
-      crowdin.update_file [{dest: "/#{@crowdin_directory}/js-en.yml", source: path_to_translation.to_s, title: 'OpenProject JavaScript wording', export_pattern: 'js-%two_letters_code%.yml'}], type: 'yaml'
-    else
-      crowdin.add_file [{dest: "/#{@crowdin_directory}/js-en.yml", source: path_to_translation.to_s, title: 'OpenProject JavaScript wording', export_pattern: 'js-%two_letters_code%.yml'}], type: 'yaml'
+    # either add or update the english (js) translation file
+    titles = {
+      'en.yml' => 'OpenProject Wording',
+      'js-en.yml' => 'OpenProject JavaScript Wording'
+    }
+    %w(en.yml js-en.yml).each do |translation_file|
+      path_to_translation = File.join 'config', 'locales', translation_file
+      dir = crowdin.project_info['files'].find {|f| f['name'] == @crowdin_directory && f['node_type'] == 'directory'}
+      if dir['files'].find {|f| f['name'] == translation_file}
+        crowdin.update_file [{dest: "/#{@crowdin_directory}/#{translation_file}",
+                              source: path_to_translation.to_s,
+                              title: titles[translation_file],
+                              export_pattern: '%two_letters_code%.yml'}],
+                              type: 'yaml'
+      else
+        crowdin.add_file [{dest: "/#{@crowdin_directory}/#{translation_file}",
+                           source: path_to_translation.to_s,
+                           title: titles[translation_file],
+                           export_pattern: '%two_letters_code%.yml'}],
+                           type: 'yaml'
+      end
     end
   end
 
