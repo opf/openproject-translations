@@ -21,11 +21,11 @@ class LocalesUpdater
     repos_to_update = plugins_with_locales
 
     within_tmp_directory(delete_if_exists: true, debug: debug) do
-      repos_to_update.each do |name, specifics|
+      repos_to_update.each do |plugin_name, specifics|
         # todo each branch
         create_i18n_handle(specifics)
 
-        within_tmp_directory(path: File.join(FileUtils.pwd, name), debug: debug) do
+        within_tmp_directory(path: File.join(FileUtils.pwd, plugin_name), debug: debug) do
           uri = specifics[:uri]
           git_repo = GitRepository.new(uri, FileUtils.pwd)
           git_repo.clone
