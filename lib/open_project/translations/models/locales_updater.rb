@@ -33,9 +33,7 @@ class LocalesUpdater
             request_build
             download_and_replace_locales
           end
-          git_repo.add('config/locales')
-          git_repo.commit('update locales from crowdin')
-          git_repo.push(branch) unless debug
+          commit_and_push_plugin_repo(git_repo, debug)
         end
       end
     end
@@ -58,13 +56,19 @@ class LocalesUpdater
   end
 
   def self.setup_plugin_repo(uri, path)
-    git_repo = GitRepository.new(uri, path)
-    git_repo.clone
+    plugin_repo = GitRepository.new(uri, path)
+    plugin_repo.clone
 
-    git_repo.checkout(branch)
+    plugin_repo.checkout(branch)
     # todo or should we merge this branch into the next ('push vs pull')
-    git_repo.merge(previous_branch, strategy: :ours) if previous_branch
-    git_repo
+    plugin_repo.merge(previous_branch, strategy: :ours) if previous_branch
+    plugin_repo
+  end
+
+  def self.commit_and_push_plugin_repo(plugin_repo, debug)
+    plugin_repo.add('config/locales')
+    plugin_repo.commit('update locales from crowdin')
+    plugin_repo.push(branch) unless debug
   end
 
   def self.create_i18n_handle(configuration_hash)
