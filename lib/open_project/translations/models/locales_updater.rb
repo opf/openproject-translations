@@ -28,7 +28,6 @@ class LocalesUpdater
         within_tmp_directory(path: File.join(FileUtils.pwd, plugin_name), debug: debug) do
           git_repo = setup_plugin_repo(specifics[:uri], FileUtils.pwd)
           git_repo.within_repo do
-            # todo rescue should be in provider class
             upload_english
             request_build
             download_and_replace_locales
@@ -60,7 +59,6 @@ class LocalesUpdater
     plugin_repo.clone
 
     plugin_repo.checkout(branch)
-    # todo or should we merge this branch into the next ('push vs pull')
     plugin_repo.merge(previous_branch, strategy: :ours) if previous_branch
     plugin_repo
   end
