@@ -1,13 +1,13 @@
 # todo those ought to be in the gemspec
 require 'tempfile'
 require 'crowdin-api'
-require 'yaml'
 require 'zip'
 require 'pathname'
 require 'fileutils'
 
 require_relative '../helpers/tmp_directory'
 require_relative './git_repository'
+require_relative './locales_updater_configuration'
 
 ENGLISH_TRANLATION_FILE = 'en.yml'
 ENGLISH_JS_TRANLATION_FILE = 'js-en.yml'
@@ -55,12 +55,7 @@ class LocalesUpdater
   end
 
   def self.configuration
-    # todo raise error if something is missing
-    @configuration ||= begin
-      configuration_file = Pathname(__FILE__) + '../../../../../'
-    configuration_file = configuration_file + 'configuration.yml'
-    YAML.load_file(configuration_file)
-    end
+    LocalesUpdaterConfiguration.configuration
   end
 
   def self.set_crowdin_specifics(configuration_hash)
