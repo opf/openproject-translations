@@ -58,8 +58,8 @@ class GitRepository
 
   def merge(their_branch, options = nil)
     command = "git merge origin/#{their_branch}"
-    command = command + ' ' + options if options
-    command = command + " -m \"Merge branch '#{their_branch}' into #{branch}'\""
+    command += ' ' + options if options
+    command += " -m \"Merge branch '#{their_branch}' into #{branch}'\""
     within_repo do
       run_command command
     end
