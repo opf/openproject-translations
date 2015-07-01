@@ -26,13 +26,7 @@ class LocalesUpdater
         create_i18n_handle(specifics)
 
         within_tmp_directory(path: File.join(FileUtils.pwd, plugin_name), debug: debug) do
-          uri = specifics[:uri]
-          git_repo = GitRepository.new(uri, FileUtils.pwd)
-          git_repo.clone
-
-          git_repo.checkout(branch)
-          # todo or should we merge this branch into the next ('push vs pull')
-          git_repo.merge(previous_branch, strategy: :ours) if previous_branch
+          git_repo = setup_plugin_repo(specifics[:uri], FileUtils.pwd)
           git_repo.within_repo do
             # todo rescue should be in provider class
             upload_english
@@ -61,6 +55,16 @@ class LocalesUpdater
 
   def self.previous_branch
     configuration[:previous_branch]
+  end
+
+  def self.setup_plugin_repo(uri, path)
+    git_repo = GitRepository.new(uri, path)
+    git_repo.clone
+
+    git_repo.checkout(branch)
+    # todo or should we merge this branch into the next ('push vs pull')
+    git_repo.merge(previous_branch, strategy: :ours) if previous_branch
+    git_repo
   end
 
   def self.create_i18n_handle(configuration_hash)
