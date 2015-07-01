@@ -23,7 +23,7 @@ class LocalesUpdater
 
         within_tmp_directory(path: File.join(FileUtils.pwd, name), debug: debug) do
           git_repo = GitRepository.new(uri, FileUtils.pwd)
-          git_repo.clone_or_pull
+          git_repo.clone
 
           git_repo.checkout(branch)
           # todo or should we merge this branch into the next ('push vs pull')
