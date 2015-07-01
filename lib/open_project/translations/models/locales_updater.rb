@@ -31,7 +31,7 @@ class LocalesUpdater
 
           git_repo.checkout(branch)
           # todo or should we merge this branch into the next ('push vs pull')
-          git_repo.merge(previous_branch, '-Xours') if previous_branch
+          git_repo.merge(previous_branch, strategy: :ours) if previous_branch
           git_repo.within_repo do
             begin
               upload_english

@@ -56,9 +56,9 @@ class GitRepository
     end
   end
 
-  def merge(their_branch, options = nil)
+  def merge(their_branch, options = {})
     command = "git merge origin/#{their_branch}"
-    command += ' ' + options if options
+    command += ' ' + '-Xours' if options[:strategy] == :ours
     command += " -m \"Merge branch '#{their_branch}' into #{branch}'\""
     within_repo do
       run_command command
