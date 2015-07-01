@@ -7,6 +7,7 @@ require 'fileutils'
 
 require_relative '../helpers/tmp_directory'
 require_relative './git_repository'
+require_relative './i18n_provider'
 require_relative './locales_updater_configuration'
 
 ENGLISH_TRANLATION_FILE = 'en.yml'
@@ -22,10 +23,10 @@ class LocalesUpdater
     within_tmp_directory(delete_if_exists: true, debug: debug) do
       repos_to_update.each do |name, specifics|
         # todo each branch
-        uri = specifics[:uri]
-        set_crowdin_specifics(specifics)
+        create_i18n_handle(specifics)
 
         within_tmp_directory(path: File.join(FileUtils.pwd, name), debug: debug) do
+          uri = specifics[:uri]
           git_repo = GitRepository.new(uri, FileUtils.pwd)
           git_repo.clone
 
@@ -33,14 +34,16 @@ class LocalesUpdater
           # todo or should we merge this branch into the next ('push vs pull')
           git_repo.merge(previous_branch, strategy: :ours) if previous_branch
           git_repo.within_repo do
+            # todo rescue should be in provider class
             begin
               upload_english
+
               request_build
               download_and_replace_locales
             rescue Crowdin::API::Errors::Error => e
               puts "Error during update of #{name}: #{e.message}"
+              exit
             end
-            fix_missing_keys
           end
           git_repo.add('config/locales')
           git_repo.commit('update locales from crowdin')
@@ -58,12 +61,6 @@ class LocalesUpdater
     LocalesUpdaterConfiguration.configuration
   end
 
-  def self.set_crowdin_specifics(configuration_hash)
-    @project_id = configuration_hash[:project_id]
-    @api_key = configuration_hash[:api_key]
-    @crowdin_directory = configuration[:crowdin_directory]
-  end
-
   def self.branch
     configuration[:branch]
   end
@@ -72,14 +69,16 @@ class LocalesUpdater
     configuration[:previous_branch]
   end
 
-  def self.upload_english
-    # create crowdin directory just in case it doesn't exist.
-    crowdin = create_crowdin_handle
-    dir = crowdin.project_info['files'].find {|f| f['name'] == @crowdin_directory && f['node_type'] == 'directory'}
-    unless dir
-      crowdin.add_directory(@crowdin_directory)
+  def self.create_i18n_handle(configuration_hash)
+    @i18n_provider ||= begin
+      project_id = configuration_hash[:project_id]
+      api_key = configuration_hash[:api_key]
+      version = configuration_hash[:version]
+      I18nProvider.new(project_id, api_key, version)
     end
+  end
 
+  def self.upload_english
     # either add or update the english (js) translation file
     titles = {
       ENGLISH_TRANLATION_FILE => 'OpenProject Wording',
@@ -87,31 +86,13 @@ class LocalesUpdater
     }
     [ENGLISH_TRANLATION_FILE, ENGLISH_JS_TRANLATION_FILE].each do |translation_file|
       path_to_translation = File.join 'config', 'locales', translation_file
-      dir = crowdin.project_info['files'].find {|f| f['name'] == @crowdin_directory && f['node_type'] == 'directory'}
-      if dir['files'].find {|f| f['name'] == translation_file}
-        crowdin.update_file [{dest: "/#{@crowdin_directory}/#{translation_file}",
-                              source: path_to_translation.to_s,
-                              title: titles[translation_file],
-                              export_pattern: '%two_letters_code%.yml'}],
-                              type: 'yaml'
-      else
-        crowdin.add_file [{dest: "/#{@crowdin_directory}/#{translation_file}",
-                           source: path_to_translation.to_s,
-                           title: titles[translation_file],
-                           export_pattern: '%two_letters_code%.yml'}],
-                           type: 'yaml'
-      end
+      title = titles[translation_file]
+      @i18n_provider.upload_english(translation_file, path_to_translation, title)
     end
   end
 
   def self.request_build
-    # todo maybe this could run into a timeout?
-    crowdin = create_crowdin_handle
-    crowdin.export_translations
-  end
-
-  def self.create_crowdin_handle
-    Crowdin::API.new project_id: @project_id, api_key: @api_key
+    @i18n_provider.request_build
   end
 
   def self.download_and_replace_locales
@@ -119,7 +100,7 @@ class LocalesUpdater
     # we do not support a language anymore.
     begin
       languages_files = create_temp_file('crowdin_translations')
-      download_from_crowding(languages_files.path)
+      @i18n_provider.download_locales(languages_files.path)
 
       target_directory = Pathname(File.join('config', 'locales'))
       Zip::File.open(languages_files.path) do |zip_file|
@@ -158,12 +139,6 @@ class LocalesUpdater
     tempfile = Tempfile.new(filename)
     tempfile.close
     tempfile
-  end
-
-  def self.download_from_crowding(output)
-    # todo what about errors? maybe a timeout?
-    crowdin = create_crowdin_handle
-    crowdin.download_translation 'all', output: output
   end
 
   def self.js_translation?(translation_file_path)
