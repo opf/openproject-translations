@@ -66,4 +66,15 @@ class I18nProvider
       puts "Error during update of #{@project_id}: #{e.message}"
     end
   end
+
+  def translation_status_high_enough?(code, percent)
+    @translations_statuses ||= begin
+      crowdin = create_crowdin_handle
+      crowdin.translations_status
+    end
+    translation_status = @translations_statuses.select do |translation|
+      translation['code'] == code
+    end
+    translation_status.first['translated_progress'].to_i >= percent
+  end
 end
