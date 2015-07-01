@@ -10,8 +10,8 @@ require_relative './git_repository'
 require_relative './i18n_provider'
 require_relative './locales_updater_configuration'
 
-ENGLISH_TRANLATION_FILE = 'en.yml'
-ENGLISH_JS_TRANLATION_FILE = 'js-en.yml'
+ENGLISH_TRANSLATION_FILE = 'en.yml'
+ENGLISH_JS_TRANSLATION_FILE = 'js-en.yml'
 ACCEPTANCE_LEVEL = ENV['ACCEPTANCE_LEVEL'] || 100
 
 class LocalesUpdater
@@ -81,10 +81,10 @@ class LocalesUpdater
   def self.upload_english
     # either add or update the english (js) translation file
     titles = {
-      ENGLISH_TRANLATION_FILE => 'OpenProject Wording',
-      ENGLISH_JS_TRANLATION_FILE => 'OpenProject JavaScript Wording'
+      ENGLISH_TRANSLATION_FILE => 'OpenProject Wording',
+      ENGLISH_JS_TRANSLATION_FILE => 'OpenProject JavaScript Wording'
     }
-    [ENGLISH_TRANLATION_FILE, ENGLISH_JS_TRANLATION_FILE].each do |translation_file|
+    [ENGLISH_TRANSLATION_FILE, ENGLISH_JS_TRANSLATION_FILE].each do |translation_file|
       path_to_translation = File.join 'config', 'locales', translation_file
       title = titles[translation_file]
       @i18n_provider.upload_english(translation_file, path_to_translation, title)
