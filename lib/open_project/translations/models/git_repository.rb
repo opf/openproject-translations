@@ -14,8 +14,6 @@ class GitRepository
 
   def checkout(ref)
     within_repo do
-      # todo this does not need to be a branch..
-      @branch = ref
       run_command "git checkout --force '#{ref}' --"
     end
   end
@@ -52,10 +50,16 @@ class GitRepository
     end
   end
 
+  def branch
+    within_repo do
+      run_command 'git rev-parse --abbrev-ref HEAD'
+    end
+  end
+
   def merge(their_branch, options = nil)
     command = "git merge origin/#{their_branch}"
     command = command + ' ' + options if options
-    command = command + " -m \"Merge branch '#{their_branch}' into #{@branch}'\""
+    command = command + " -m \"Merge branch '#{their_branch}' into #{branch}'\""
     within_repo do
       run_command command
     end
