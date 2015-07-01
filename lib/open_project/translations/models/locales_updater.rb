@@ -35,15 +35,9 @@ class LocalesUpdater
           git_repo.merge(previous_branch, strategy: :ours) if previous_branch
           git_repo.within_repo do
             # todo rescue should be in provider class
-            begin
-              upload_english
-
-              request_build
-              download_and_replace_locales
-            rescue Crowdin::API::Errors::Error => e
-              puts "Error during update of #{name}: #{e.message}"
-              exit
-            end
+            upload_english
+            request_build
+            download_and_replace_locales
           end
           git_repo.add('config/locales')
           git_repo.commit('update locales from crowdin')

@@ -21,37 +21,49 @@ class I18nProvider
     crowdin = create_handle
 
     # create crowdin directory just in case it doesn't exist.
-    dir = crowdin.project_info['files'].find {|f| f['name'] == @crowdin_directory && f['node_type'] == 'directory'}
-    unless dir
-      crowdin.add_directory(@crowdin_directory)
-    end
+    begin
+      dir = crowdin.project_info['files'].find {|f| f['name'] == @crowdin_directory && f['node_type'] == 'directory'}
+      unless dir
+        crowdin.add_directory(@crowdin_directory)
+      end
 
-    dir = crowdin.project_info['files'].find {|f| f['name'] == @crowdin_directory && f['node_type'] == 'directory'}
+      dir = crowdin.project_info['files'].find {|f| f['name'] == @crowdin_directory && f['node_type'] == 'directory'}
 
-    if dir['files'].find {|f| f['name'] == translation_file}
-      crowdin.update_file [{dest: "/#{@crowdin_directory}/#{translation_file}",
-                            source: path_to_translation.to_s,
-                            title: title,
-                            export_pattern: '%two_letters_code%.yml'}],
-                            type: 'yaml'
-    else
-      crowdin.add_file [{dest: "/#{@crowdin_directory}/#{translation_file}",
-                         source: path_to_translation.to_s,
-                         title: title,
-                         export_pattern: '%two_letters_code%.yml'}],
-                         type: 'yaml'
+      if dir['files'].find {|f| f['name'] == translation_file}
+        crowdin.update_file [{dest: "/#{@crowdin_directory}/#{translation_file}",
+                              source: path_to_translation.to_s,
+                              title: title,
+                              export_pattern: '%two_letters_code%.yml'}],
+                              type: 'yaml'
+      else
+        crowdin.add_file [{dest: "/#{@crowdin_directory}/#{translation_file}",
+                           source: path_to_translation.to_s,
+                           title: title,
+                           export_pattern: '%two_letters_code%.yml'}],
+                           type: 'yaml'
+      end
+    rescue Crowdin::API::Errors::Error => e
+      puts "Error during update of #{@project_de}: #{e.message}"
     end
   end
 
   def request_build
     # todo maybe this could run into a timeout?
-    crowdin = create_handle
-    crowdin.export_translations
+    begin
+      crowdin = create_handle
+      crowdin.export_translations
+    rescue Crowdin::API::Errors::Error => e
+      puts "Error during update of #{@project_id}: #{e.message}"
+    end
   end
 
   def download_locales(output)
     # todo what about errors? maybe a timeout?
-    crowdin = create_handle
-    crowdin.download_translation 'all', output: output
+    begin
+      crowdin = create_handle
+      crowdin.download_translation 'all', output: output
+    rescue Crowdin::API::Errors::Error => e
+      puts "Error during update of #{@project_id}: #{e.message}"
+    end
   end
 end
