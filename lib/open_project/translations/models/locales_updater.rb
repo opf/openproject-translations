@@ -9,6 +9,9 @@ require 'fileutils'
 require_relative '../helpers/tmp_directory'
 require_relative './git_repository'
 
+ENGLISH_TRANLATION_FILE = 'en.yml'
+ENGLISH_JS_TRANLATION_FILE = 'js-en.yml'
+
 class LocalesUpdater
   extend TmpDirectory
 
@@ -83,10 +86,10 @@ class LocalesUpdater
 
     # either add or update the english (js) translation file
     titles = {
-      'en.yml' => 'OpenProject Wording',
-      'js-en.yml' => 'OpenProject JavaScript Wording'
+      ENGLISH_TRANLATION_FILE => 'OpenProject Wording',
+      ENGLISH_JS_TRANLATION_FILE => 'OpenProject JavaScript Wording'
     }
-    %w(en.yml js-en.yml).each do |translation_file|
+    [ENGLISH_TRANLATION_FILE, ENGLISH_JS_TRANLATION_FILE].each do |translation_file|
       path_to_translation = File.join 'config', 'locales', translation_file
       dir = crowdin.project_info['files'].find {|f| f['name'] == @crowdin_directory && f['node_type'] == 'directory'}
       if dir['files'].find {|f| f['name'] == translation_file}
