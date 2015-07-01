@@ -137,10 +137,4 @@ class LocalesUpdater
   def self.unlink_temp_file(tempfile)
     tempfile.unlink
   end
-
-  def self.fix_missing_keys
-    # todo this should not be necessary anymore
-    # since crowdin already replaces missing keys with
-    # the english ones
-  end
 end
