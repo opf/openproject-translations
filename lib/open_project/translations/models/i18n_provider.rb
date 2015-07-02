@@ -45,6 +45,7 @@ class I18nProvider
   end
 
   def add_directory_if_missing
+    crowdin = create_handle
     unless crowdin.project_info['files'].find {|f| f['name'] == @crowdin_directory && f['node_type'] == 'directory'}
       crowdin.add_directory(@crowdin_directory)
     end
