@@ -39,9 +39,13 @@ class I18nProvider
   end
 
   def add_directory_if_missing
-    unless @crowdin.project_info['files'].find {|f| f['name'] == @crowdin_directory && f['node_type'] == 'directory'}
+    unless crowdin_directory_exists?
       @crowdin.add_directory(@crowdin_directory)
     end
+  end
+
+  def crowdin_directory_exists?
+    @crowdin.project_info['files'].find {|f| f['name'] == @crowdin_directory && f['node_type'] == 'directory'}
   end
 
   def file_exists_in_directory?(file)
