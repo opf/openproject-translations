@@ -1,8 +1,11 @@
+require 'mixlib/shellout'
+
 module RunCommand
   def run_command(command)
-    # todo we need the output from the command e.g. for the branch in GitRepository
-    # todo we should check if the command succeeds.
-    # especially if we use mixlib's shellout which suppresses the output
-    system(command)
+    shell = Mixlib::ShellOut.new(command)
+    shell.run_command
+    raise "The following command returned an error: #{command}" if shell.error?
+
+    shell.stdout.gsub(/\n$/, '')
   end
 end
