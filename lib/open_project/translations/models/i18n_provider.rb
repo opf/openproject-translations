@@ -1,4 +1,5 @@
 require 'yaml'
+require 'crowdin-api'
 
 require_relative './locales_updater_configuration.rb'
 

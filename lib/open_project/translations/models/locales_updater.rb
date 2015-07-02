@@ -1,6 +1,5 @@
 # todo those ought to be in the gemspec
 require 'tempfile'
-require 'crowdin-api'
 require 'zip'
 require 'pathname'
 require 'fileutils'
