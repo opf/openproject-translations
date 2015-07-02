@@ -94,6 +94,10 @@ class I18nProvider
     translation_status = @translations_statuses.select do |translation|
       translation['code'] == code
     end
-    translation_status.first['translated_progress'].to_i >= percent
+    if translation_status == []
+      nil
+    else
+      translation_status.first['translated_progress'].to_i >= percent
+    end
   end
 end
