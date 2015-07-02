@@ -18,7 +18,6 @@ class LocalesUpdater
 
     within_tmp_directory(delete_if_exists: true, debug: debug) do
       repos_to_update.each do |plugin_name, specifics|
-        # todo each branch
         update_i18n_handle(specifics)
 
         within_tmp_directory(path: File.join(FileUtils.pwd, plugin_name), debug: debug) do
