@@ -21,19 +21,25 @@ class LocalesUpdater
         update_i18n_handle(specifics)
 
         within_tmp_directory(path: File.join(FileUtils.pwd, plugin_name), debug: debug) do
-          git_repo = setup_plugin_repo(specifics[:uri], FileUtils.pwd)
-          git_repo.within_repo do
+          within_plugin_repo(uri: specifics[:uri], path: FileUtils.pwd, debug: debug) do
             upload_english
             request_build
             download_and_replace_locales
           end
-          commit_and_push_plugin_repo(git_repo, debug)
         end
       end
     end
   end
 
   private
+
+  def within_plugin_repo(uri:, path:, debug:)
+    git_repo = setup_plugin_repo(uri, path)
+    git_repo.within_repo do
+      yield
+    end
+    commit_and_push_plugin_repo(git_repo, debug)
+  end
 
   def plugins_with_locales
     configuration[:plugins]
@@ -103,11 +109,14 @@ class LocalesUpdater
       next unless @i18n_provider.translation_status_high_enough?(language_name, ACCEPTANCE_LEVEL)
 
       filepath = target_directory.join "#{js_translation?(Pathname.new(entry.name)) ? 'js-' : ''}#{language_name}.yml"
+      replace_file(filepath, entry)
+    end
+  end
 
-      File.delete(filepath) if File.file?(filepath)
-      File.open(filepath, 'wb') do |file|
-        file.write entry.get_input_stream.read
-      end
+  def replace_file(filepath, new_file)
+    File.delete(filepath) if File.file?(filepath)
+    File.open(filepath, 'wb') do |file|
+      file.write new_file.get_input_stream.read
     end
   end
 
