@@ -23,13 +23,9 @@ class I18nProvider
 
     # create crowdin directory just in case it doesn't exist.
     begin
-      dir = crowdin.project_info['files'].find {|f| f['name'] == @crowdin_directory && f['node_type'] == 'directory'}
-      unless dir
-        crowdin.add_directory(@crowdin_directory)
-      end
+      add_directory_if_missing
 
       dir = crowdin.project_info['files'].find {|f| f['name'] == @crowdin_directory && f['node_type'] == 'directory'}
-
       if dir['files'].find {|f| f['name'] == translation_file}
         crowdin.update_file [{dest: "/#{@crowdin_directory}/#{translation_file}",
                               source: path_to_translation.to_s,
@@ -45,6 +41,12 @@ class I18nProvider
       end
     rescue Crowdin::API::Errors::Error => e
       puts "Error during update of #{@project_de}: #{e.message}"
+    end
+  end
+
+  def add_directory_if_missing
+    unless crowdin.project_info['files'].find {|f| f['name'] == @crowdin_directory && f['node_type'] == 'directory'}
+      crowdin.add_directory(@crowdin_directory)
     end
   end
 
