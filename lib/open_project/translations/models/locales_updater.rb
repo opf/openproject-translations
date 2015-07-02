@@ -11,15 +11,15 @@ ENGLISH_JS_TRANSLATION_FILE = 'js-en.yml'
 ACCEPTANCE_LEVEL = ENV['ACCEPTANCE_LEVEL'].to_i || 100
 
 class LocalesUpdater
-  extend TmpDirectory
+  include TmpDirectory
 
-  def self.update_all_locales_of_all_repos(debug: true)
+  def update_all_locales_of_all_repos(debug: true)
     repos_to_update = plugins_with_locales
 
     within_tmp_directory(delete_if_exists: true, debug: debug) do
       repos_to_update.each do |plugin_name, specifics|
         # todo each branch
-        create_i18n_handle(specifics)
+        update_i18n_handle(specifics)
 
         within_tmp_directory(path: File.join(FileUtils.pwd, plugin_name), debug: debug) do
           git_repo = setup_plugin_repo(specifics[:uri], FileUtils.pwd)
@@ -34,23 +34,34 @@ class LocalesUpdater
     end
   end
 
-  def self.plugins_with_locales
+  private
+
+  def plugins_with_locales
     configuration[:plugins]
   end
 
-  def self.configuration
+  def configuration
     LocalesUpdaterConfiguration.configuration
   end
 
-  def self.branch
+  def update_i18n_handle(configuration_hash)
+    @i18n_provider = begin
+      project_id = configuration_hash[:project_id]
+      api_key = configuration_hash[:api_key]
+      version = configuration_hash[:version]
+      I18nProvider.new(project_id, api_key, version)
+    end
+  end
+
+  def branch
     configuration[:branch]
   end
 
-  def self.previous_branch
+  def previous_branch
     configuration[:previous_branch]
   end
 
-  def self.setup_plugin_repo(uri, path)
+  def setup_plugin_repo(uri, path)
     plugin_repo = GitRepository.new(uri, path)
     plugin_repo.clone
 
@@ -59,22 +70,13 @@ class LocalesUpdater
     plugin_repo
   end
 
-  def self.commit_and_push_plugin_repo(plugin_repo, debug)
+  def commit_and_push_plugin_repo(plugin_repo, debug)
     plugin_repo.add('config/locales')
     plugin_repo.commit('update locales from crowdin')
     plugin_repo.push(branch) unless debug
   end
 
-  def self.create_i18n_handle(configuration_hash)
-    @i18n_provider ||= begin
-      project_id = configuration_hash[:project_id]
-      api_key = configuration_hash[:api_key]
-      version = configuration_hash[:version]
-      I18nProvider.new(project_id, api_key, version)
-    end
-  end
-
-  def self.upload_english
+  def upload_english
     # either add or update the english (js) translation file
     titles = {
       ENGLISH_TRANSLATION_FILE => 'OpenProject Wording',
@@ -87,11 +89,11 @@ class LocalesUpdater
     end
   end
 
-  def self.request_build
+  def request_build
     @i18n_provider.request_build
   end
 
-  def self.download_and_replace_locales
+  def download_and_replace_locales
     # todo delete all locales here? maybe for the case that
     # we do not support a language anymore.
     target_directory = Pathname(File.join('config', 'locales'))
@@ -110,7 +112,7 @@ class LocalesUpdater
     end
   end
 
-  def self.js_translation?(translation_file_path)
+  def js_translation?(translation_file_path)
     !!(translation_file_path.basename.to_s[0..-5] =~ /\Ajs-.+\z/)
   end
 end
