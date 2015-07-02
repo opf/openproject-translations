@@ -1,6 +1,3 @@
-# todo those ought to be in the gemspec
-require 'tempfile'
-require 'zip'
 require 'pathname'
 require 'fileutils'
 
@@ -97,43 +94,23 @@ class LocalesUpdater
   def self.download_and_replace_locales
     # todo delete all locales here? maybe for the case that
     # we do not support a language anymore.
-    begin
-      languages_files = create_temp_file('crowdin_translations')
-      @i18n_provider.download_locales(languages_files.path)
+    target_directory = Pathname(File.join('config', 'locales'))
+    @i18n_provider.each_locale do |entry|
+      language_name = entry.name.split('/').first # the file is put in a directory containing the language name
 
-      target_directory = Pathname(File.join('config', 'locales'))
-      Zip::File.open(languages_files.path) do |zip_file|
-        zip_file.glob("*/#{@crowdin_directory}/*.yml").each do |entry|
-          language_name = entry.name.split('/').first # the file is put in a directory containing the language name
+      # only take translations with enough percent translated
+      next unless @i18n_provider.translation_status_high_enough?(language_name, ACCEPTANCE_LEVEL)
 
-          # only take translations with enough percent translated
-          # todo do we require 100% here?
-          next unless @i18n_provider.translation_status_high_enough?(language_name, ACCEPTANCE_LEVEL)
+      filepath = target_directory.join "#{js_translation?(Pathname.new(entry.name)) ? 'js-' : ''}#{language_name}.yml"
 
-          filepath = target_directory.join "#{js_translation?(Pathname.new(entry.name)) ? 'js-' : ''}#{language_name}.yml"
-
-          File.delete(filepath) if File.file?(filepath)
-          File.open(filepath, 'wb') do |file|
-            file.write entry.get_input_stream.read
-          end
-        end
+      File.delete(filepath) if File.file?(filepath)
+      File.open(filepath, 'wb') do |file|
+        file.write entry.get_input_stream.read
       end
-    ensure
-      unlink_temp_file(languages_files)
     end
-  end
-
-  def self.create_temp_file(filename)
-    tempfile = Tempfile.new(filename)
-    tempfile.close
-    tempfile
   end
 
   def self.js_translation?(translation_file_path)
     !!(translation_file_path.basename.to_s[0..-5] =~ /\Ajs-.+\z/)
-  end
-
-  def self.unlink_temp_file(tempfile)
-    tempfile.unlink
   end
 end

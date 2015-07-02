@@ -1,5 +1,7 @@
 require 'yaml'
 require 'crowdin-api'
+require 'tempfile'
+require 'zip'
 
 require_relative './locales_updater_configuration.rb'
 
@@ -87,6 +89,20 @@ class I18nProvider
     end
   end
 
+  def each_locale
+    begin
+      languages_files = create_temp_file('crowdin_translations')
+      download_locales(languages_files.path)
+      Zip::File.open(languages_files.path) do |zip_file|
+        zip_file.glob("*/#{@crowdin_directory}/*.yml").each do |entry|
+          yield entry
+        end
+      end
+    ensure
+      unlink_temp_file(languages_files)
+    end
+  end
+
   def translation_status_high_enough?(code, percent)
     @translations_statuses ||= begin
       @crowdin.translations_status
@@ -99,5 +115,15 @@ class I18nProvider
     else
       translation_status.first['translated_progress'].to_i >= percent
     end
+  end
+
+  def create_temp_file(filename)
+    tempfile = Tempfile.new(filename)
+    tempfile.close
+    tempfile
+  end
+
+    def unlink_temp_file(tempfile)
+    tempfile.unlink
   end
 end
