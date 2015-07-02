@@ -111,7 +111,7 @@ class I18nProvider
       translation['code'] == code
     end
     if translation_status == []
-      nil
+      false
     else
       translation_status.first['translated_progress'].to_i >= percent
     end
