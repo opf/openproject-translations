@@ -46,7 +46,7 @@ class GitRepository
     command = 'git push'
     command << ' --tags' if push_tags
     within_repo do
-      run_command 'git push'
+      run_command command
     end
   end
 
