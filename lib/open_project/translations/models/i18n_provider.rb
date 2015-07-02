@@ -19,25 +19,18 @@ class I18nProvider
   end
 
   def upload_english(translation_file, path_to_translation, title)
-    crowdin = create_handle
-
     # create crowdin directory just in case it doesn't exist.
     begin
       add_directory_if_missing
 
-      dir = crowdin.project_info['files'].find {|f| f['name'] == @crowdin_directory && f['node_type'] == 'directory'}
-      if dir['files'].find {|f| f['name'] == translation_file}
-        crowdin.update_file [{dest: "/#{@crowdin_directory}/#{translation_file}",
-                              source: path_to_translation.to_s,
-                              title: title,
-                              export_pattern: '%two_letters_code%.yml'}],
-                              type: 'yaml'
+      if file_exists_in_directory?(translation_file)
+        update_file(dest: "/#{@crowdin_directory}/#{translation_file}",
+                    source: path_to_translation.to_s,
+                    title: title)
       else
-        crowdin.add_file [{dest: "/#{@crowdin_directory}/#{translation_file}",
-                           source: path_to_translation.to_s,
-                           title: title,
-                           export_pattern: '%two_letters_code%.yml'}],
-                           type: 'yaml'
+        add_file(dest: "/#{@crowdin_directory}/#{translation_file}",
+                    source: path_to_translation.to_s,
+                    title: title)
       end
     rescue Crowdin::API::Errors::Error => e
       puts "Error during update of #{@project_de}: #{e.message}"
@@ -49,6 +42,30 @@ class I18nProvider
     unless crowdin.project_info['files'].find {|f| f['name'] == @crowdin_directory && f['node_type'] == 'directory'}
       crowdin.add_directory(@crowdin_directory)
     end
+  end
+
+  def file_exists_in_directory?(file)
+    crowdin = create_handle
+    directory = crowdin.project_info['files'].find {|f| f['name'] == @crowdin_directory && f['node_type'] == 'directory'}
+    directory['files'].find {|f| f['name'] == file}
+  end
+
+  def update_file(dest:, source:, title:)
+    crowdin = create_handle
+    crowdin.update_file [{dest: dest,
+                          source: source,
+                          title: title,
+                          export_pattern: '%two_letters_code%.yml'}],
+                          type: 'yaml'
+  end
+
+  def add_file(dest:, source:, title:)
+    crowdin = create_handle
+    crowdin.add_file [{dest: dest,
+                          source: source,
+                          title: title,
+                          export_pattern: '%two_letters_code%.yml'}],
+                          type: 'yaml'
   end
 
   def request_build
