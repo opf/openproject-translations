@@ -8,7 +8,7 @@ require_relative './locales_updater_configuration'
 
 ENGLISH_TRANSLATION_FILE = 'en.yml'
 ENGLISH_JS_TRANSLATION_FILE = 'js-en.yml'
-ACCEPTANCE_LEVEL = ENV['ACCEPTANCE_LEVEL'].to_i || 100
+ACCEPTANCE_LEVEL = ENV['ACCEPTANCE_LEVEL'].nil? ? 100: ENV['ACCEPTANCE_LEVEL'].to_i
 
 class LocalesUpdater
   include TmpDirectory
