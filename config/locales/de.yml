@@ -185,13 +185,13 @@ de:
         equal_to: muss genau %{count} sein
         even: muss gerade sein
         exclusion: ist nicht verfügbar
-        file_too_large: is too large (maximum size is %{count} Bytes)
+        file_too_large: ist zu groß (nicht mehr als %{count} Bytes erlaubt)
         greater_than: muss größer als %{count} sein
         greater_than_or_equal_to: muss größer oder gleich %{count} sein
         smaller_than_or_equal_to_max_length: muss kleiner als oder gleich der maximalen
           Länge sein
         greater_than_start_date: muss größer als Anfangsdatum sein
-        inclusion: is not set to one of the allowed values
+        inclusion: ist nicht auf einen erlaubten Wert gesetzt
         invalid: ist nicht gültig
         less_than: muss kleiner als %{count} sein
         less_than_or_equal_to: muss kleiner oder gleich %{count} sein
@@ -215,8 +215,8 @@ de:
             werden
           project_association_not_allowed: erlaubt keine Projekt-Abhängigkeiten
         repository:
-          not_whitelisted: is not allowed by the configuration
-          no_directory: is not a directory
+          not_whitelisted: wird durch die Konfiguration nicht erlaubt
+          no_directory: ist kein Verzeichnis
         work_package:
           is_not_a_valid_target_for_time_entries: 'Arbeitspaket #%{id} ist kein gültiges
             Ziel für die Zuordnung der Zeiterfassungseinträge.'
@@ -230,17 +230,17 @@ de:
               not_a_valid_parent: ist nicht gültig
               does_not_exist: existiert nicht
             status_id:
-              status_transition_invalid: is invalid because no valid transition exists
-                from old to new status for the current user's roles
+              status_transition_invalid: ist ungültig da kein valider Übergang vom
+                alten zum neuen Status für die aktuellen Rollen des Nutzers existiert
             priority_id:
               only_active_priorities_allowed: muss aktiv sein
             category:
-              only_same_project_categories_allowed: The category of a work package
-                must be within the same project as the work package.
-              does_not_exist: The specified category does not exist.
+              only_same_project_categories_allowed: Ein Arbeitpaket und seine Kategorie
+                müssen im selben Projekt sein.
+              does_not_exist: Die angegebene Kategorie existiert nicht.
             estimated_hours:
-              only_values_greater_or_equal_zeroes_allowed: The estimated hours must
-                be >= 0.
+              only_values_greater_or_equal_zeroes_allowed: Der geschätzte Aufwand
+                muss >= 0 sein.
         user:
           attributes:
             password:
@@ -251,18 +251,19 @@ de:
               numeric: Ziffern (z.B. '1')
               special: Sonderzeichen (z.B. '%')
               reused:
-                one: has been used before. Please choose one that is different from
-                  your last one.
-                other: has been used before. Please choose one that is different from
-                  your last %{count}.
+                one: wurde bereits verwendet. Bitte wählen Sie eines, das sich vom
+                  letzten unterscheidet.
+                other: wurde bereits verwendet. Bitte wählen Sie eines, das sich von
+                  den letzten %{count} unterscheidet.
         member:
           principal_blank: Bitte wählen Sie mindestens einen Benutzer oder eine Gruppe.
           role_blank: Bitte wählen Sie mindestens eine Rolle.
       template:
         body: 'Bitte überprüfen Sie die folgenden Felder:'
         header:
-          one: 1 error prohibited this %{model} from being saved
-          other: "%{count} errors prohibited this %{model} from being saved"
+          one: 'Dieses %{model}-Objekt konnte nicht gespeichert werden: %{count} Fehler.'
+          other: 'Dieses %{model}-Objekt konnte nicht gespeichert werden: %{count}
+            Fehler.'
     models:
       attachment: Datei
       board: Forum
@@ -277,8 +278,8 @@ de:
       project: Projekt
       query: Benutzerdefinierte Abfrage
       role:
-        one: Role
-        other: Roles
+        one: Rolle
+        other: Rollen
       type: Typ
       planning_element: Planungselement
       project_type: Projekttyp
@@ -466,43 +467,43 @@ de:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: about 1 hour
-        other: about %{count} hours
+        one: etwa 1 Stunde
+        other: etwa %{count} Stunden
       about_x_months:
-        one: about 1 month
-        other: about %{count} months
+        one: etwa 1 Monat
+        other: etwa %{count} Monate
       about_x_years:
-        one: about 1 year
-        other: about %{count} years
+        one: etwa 1 Jahr
+        other: etwa %{count} Jahre
       almost_x_years:
-        one: almost 1 year
-        other: almost %{count} years
+        one: fast 1 Jahr
+        other: fast %{count} Jahre
       half_a_minute: eine halbe Minute
       less_than_x_minutes:
-        one: less than a minute
-        other: less than %{count} minutes
+        one: weniger als 1 Minute
+        other: weniger als %{count} Minuten
       less_than_x_seconds:
         one: less than 1 second
         other: less than %{count} seconds
       over_x_years:
-        one: over 1 year
-        other: over %{count} years
+        one: mehr als 1 Jahr
+        other: mehr als %{count} Jahre
       x_days:
-        one: 1 day
-        other: "%{count} days"
+        one: 1 Tag
+        other: "%{count} Tagen"
       x_minutes:
-        one: 1 minute
-        other: "%{count} minutes"
+        one: 1 Minute
+        other: "%{count} Minuten"
       x_months:
-        one: 1 month
-        other: "%{count} months"
+        one: 1 Monat
+        other: "%{count} Monaten"
       x_seconds:
-        one: 1 second
-        other: "%{count} seconds"
+        one: 1 Sekunde
+        other: "%{count} Sekunden"
     units:
       hour:
-        one: hour
-        other: hours
+        one: Stunde
+        other: Stunden
   default_activity_management: Management
   default_activity_design: Design
   default_activity_development: Entwicklung
@@ -606,8 +607,8 @@ de:
   error_scm_command_failed: 'Beim Zugriff auf das Projektarchiv ist ein Fehler aufgetreten:
     %{value}'
   error_scm_not_found: Eintrag und/oder Revision existiert nicht im Projektarchiv.
-  error_unable_delete_status: Unable to delete work package status because it contains
-    work packages.
+  error_unable_delete_status: Der Arbeitspaket-Status konnte nicht gelöscht werden,
+    da er Arbeitspakete enthält.
   error_unable_delete_default_status: Der Standardstatus für neue Arbeitspakete kann
     nicht gelöscht werden. Bitte wählen Sie einen anderen Standardstatus, bevor Sie
     diesen Status löschen.
@@ -1001,6 +1002,7 @@ de:
   label_this_week: aktuelle Woche
   label_this_year: aktuelles Jahr
   label_time_entry_plural: Aufgewendete Zeit
+  label_time_sheet_menu: Time sheet
   label_time_tracking: Zeiterfassung
   label_today: heute
   label_top_menu: Hauptmenü
@@ -1059,24 +1061,24 @@ de:
   label_workflow_plural: Arbeitsabläufe
   label_workflow_summary: Zusammenfassung
   label_x_closed_work_packages_abbr:
-    one: 1 closed
-    other: "%{count} closed"
+    one: 1 geschlossen
+    other: "%{count} geschlossen"
     zero: 0 closed
   label_x_comments:
-    one: 1 comment
-    other: "%{count} comments"
+    one: 1 Kommentar
+    other: "%{count} Kommentare"
     zero: no comments
   label_x_open_work_packages_abbr:
-    one: 1 open
-    other: "%{count} open"
+    one: 1 offen
+    other: "%{count} offen"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
-    one: 1 open / %{total}
-    other: "%{count} open / %{total}"
+    one: 1 offen / %{total}
+    other: "%{count} offen / %{total}"
     zero: 0 open / %{total}
   label_x_projects:
-    one: 1 project
-    other: "%{count} projects"
+    one: 1 Projekt
+    other: "%{count} Projekte"
     zero: no projects
   label_year: Jahr
   label_yesterday: gestern
@@ -1099,7 +1101,7 @@ de:
   label_keyboard_shortcut_go_news: Gehe zu den Projekt News
   label_keyboard_shortcut_go_timelines: Gehe zur Zeitpläne Seite
   label_keyboard_shortcut_new_work_package: Erstelle neues Arbeitspaket
-  label_keyboard_shortcut_details_package: Show work packages details pane
+  label_keyboard_shortcut_details_package: Arbeitspaketdetails anzeigen
   label_keyboard_shortcut_go_edit: Gehe zur Bearbeiten-Ansicht (nur auf Detailseiten)
   label_keyboard_shortcut_open_more_menu: "Öffne 'Weitere-Aktionen' Menü (nur auf
     Detailseiten)"
@@ -1108,7 +1110,7 @@ de:
     (nur bei einigen Listen)
   label_keyboard_shortcut_focus_next_item: Fokussiere nächstes Listenelement (nur
     bei einigen Listen)
-  label_visible_elements: Visible elements
+  label_visible_elements: Sichtbare Elemente
   macro_execution_error: Fehler beim Ausführen des Makros %{macro_name}
   macro_unavailable: Das Makro %{macro_name} kann nicht angezeigt werden.
   mail_body_account_activation_request: 'Ein neuer Benutzer (%{value}) hat sich registriert.
@@ -1536,8 +1538,8 @@ de:
     delete_thing: Löschen
     duration: Dauer
     duration_days:
-      one: 1 day
-      other: "%{count} days"
+      one: 1 Tag
+      other: "%{count} Tage"
     edit_color: Farbe bearbeiten
     edit_project_type: Projekt-Typ bearbeiten
     edit_thing: Bearbeiten
@@ -1591,8 +1593,8 @@ de:
         absolute: Absolut
         none: Kein Planungsvergleich
         relative: Relativ
-        compare_relative_prefix: Compare current planning to
-        compare_relative_suffix: ago
+        compare_relative_prefix: Vergleiche aktuelle Planung mit vor
+        compare_relative_suffix: vor
         compare_absolute: Vergleiche aktuelle Planung mit %{date}
       time_relative:
         days: Tage
@@ -1619,7 +1621,7 @@ de:
       types: Typ anzeigen
       status: Status anzeigen
       project_time_filter: Projekte mit Arbeitspaket eines Typs in einem Zeitfenster
-      project_time_filter_timeframe: Timeframe
+      project_time_filter_timeframe: Zeitausschnitt
       project_time_filter_historical_from: von
       project_time_filter_historical_to: bis
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1719,8 +1721,8 @@ de:
       geschickt)
     blocked: temporär gesperrt
     blocked_num_failed_logins:
-      one: locked temporarily (one failed login attempt)
-      other: locked temporarily (%{count} failed login attempts)
+      one: temporär gesperrt (ein fehlgeschlagener Loginversuch)
+      other: temporär gesperrt (%{count} fehlgeschlagene Loginversuche)
     deleted: Gelöschter Nutzer
     error_status_change_failed: 'Der Nutzerstatus konnte nicht geändert werden aufgrund
       folgender Fehler: %{errors}'
@@ -1760,40 +1762,46 @@ de:
   nothing_to_preview: Keine Vorschau verfügbar
   api_v3:
     attributes:
-      lock_version: Version sperren
+      lock_version: Sperrversion
     errors:
-      code_401: Sie müssen sich authentifizieren, um auf diese Ressource zuzugreifen.
-      code_401_wrong_credentials: You did not provide the correct credentials.
+      code_401: Sie müssen sich authentifizieren, um auf die Ressource zugreifen zu
+        können.
+      code_401_wrong_credentials: Die von Ihnen benutzten Zugangsdaten sind nicht
+        korrekt.
       code_403: Sie sind nicht berechtigt auf diese Ressource zuzugreifen.
-      code_404: The requested resource could not be found.
-      code_409: Die Ressource konnte aufgrund widersprüchlicher Änderung nicht aktualisiert
+      code_404: Die angeforderte Ressource konnte nicht gefunden werden.
+      code_409: Die Ressource konnte wegen parallelen Zugriffs nicht aktualisiert
         werden.
-      invalid_content_type: CONTENT-TYPE '%{content_type}' wurde erwartet, aber '%{actual}'
-        wurde eingegeben.
-      invalid_format: 'Invalid format for property ''%{property}'': Expected format
-        like ''%{expected_format}'', but got ''%{actual}''.'
-      invalid_json: The request could not be parsed as JSON.
-      invalid_relation: The relation is invalid.
-      invalid_resource: For property '%{property}' a link like '%{expected}' is expected,
-        but got '%{actual}'.
-      invalid_user_status_transition: The current user account status does not allow
-        this operation.
-      missing_content_type: not specified
-      multipart_body_error: The request body did not contain the expected multipart
-        parts.
-      multiple_errors: Multiple field constraints have been violated.
-      writing_read_only_attributes: Sie dürfen kein Nur-Lese-Attribut schreiben.
+      invalid_content_type: Es wird der CONTENT-TYPE '%{content_type}' erwartet, es
+        wurde aber der CONTENT-TYP '%{actual}' gesandt.
+      invalid_format: 'Ungültiges Format für Eigenschaft ''%{property}'': Ein Format
+        der Art ''%{expected_format}'' wurde erwartet, aber ''%{actual}'' wurde übergeben.'
+      invalid_json: Die Anfrage konnte nicht als JSON analysiert werden.
+      invalid_relation: Die Beziehung ist ungültig.
+      invalid_resource: Für die Eigenschaft '%{property}' wird ein Link wie '%{expected}'
+        erwartet. Gesandt wurde '%{actual}'.
+      invalid_user_status_transition: Für diesen Nutzeraccount ist die angeforderte
+        Statusänderung nicht zulässig.
+      missing_content_type: nicht angegeben
+      missing_request_body: There was no request body.
+      multipart_body_error: Die Anfrage enthielt nicht die erwarteten Multipart Abschnitte.
+      multiple_errors: Die Integrität mehrerer Eigenschaften wurde verletzt.
+      writing_read_only_attributes: Nur-lesbare Eigeschaften dürfen nicht geschrieben
+        werden.
       render:
-        context_not_parsable: The context provided is not a link to a resource.
-        unsupported_context: The resource given is not supported as context.
-        context_object_not_found: Cannot find the resource given as the context.
+        context_not_parsable: Der übergebene Kontext ist kein Link zu einer Ressource.
+        unsupported_context: Die übergebene Ressource wird nicht als Kontext unterstützt.
+        context_object_not_found: Die als Kontext übergebene Ressource konnte nicht
+          gefunden werden.
       validation:
-        done_ratio: Done ratio cannot be set on parent work packages, when it is inferred
-          by status or when it is disabled.
-        due_date: Due date cannot be set on parent work packages.
-        estimated_hours: Estimated hours cannot be set on parent work packages.
-        invalid_user_assigned_to_work_package: Der gewählte Benutzer darf nicht '%{property}'
-          für dieses Arbeitspaket werden.
-        start_date: Start date cannot be set on parent work packages.
+        done_ratio: Der Fortschritt kann nicht gesetzt werden falls es sich um ein
+          Eltern-Arbeitspaket handelt, er durch den Status definiert wird oder wenn
+          er komplett deaktiviert wurde.
+        due_date: Das Enddatum kann für Eltern-Arbeitspakete nicht gesetzt werden.
+        estimated_hours: Der geschätzte Aufwand kann für Eltern-Arbeitspakete nicht
+          gesetzt werden.
+        invalid_user_assigned_to_work_package: Der gewählte Nutzer darf dem Arbeitspaket
+          nicht als '%{property}' zugewiesen werden.
+        start_date: Das Startdatum kann für Eltern-Arbeitspakete nicht gesetzt werden.
     resources:
       schema: Schema
