@@ -21,7 +21,7 @@ class LocalesUpdater
         update_i18n_handle(specifics)
 
         within_tmp_directory(path: File.join(FileUtils.pwd, plugin_name), debug: debug) do
-          within_plugin_repo(uri: specifics[:uri], path: FileUtils.pwd, debug: debug) do
+          within_plugin_repo(configuration_hash: specifics, path: FileUtils.pwd, debug: debug) do
             upload_english
             request_build
             download_and_replace_locales
@@ -33,8 +33,8 @@ class LocalesUpdater
 
   private
 
-  def within_plugin_repo(uri:, path:, debug:)
-    setup_plugin_repo(uri, path)
+  def within_plugin_repo(configuration_hash:, path:, debug:)
+    setup_plugin_repo(configuration_hash, path)
     @plugin_repo.within_repo do
       yield
     end
@@ -58,15 +58,11 @@ class LocalesUpdater
     end
   end
 
-  def branch
-    configuration[:branch]
-  end
+  def setup_plugin_repo(configuration_hash, path)
+    uri = configuration_hash[:uri]
+    branch = configuration_hash[:branch]
+    previous_branch = configuration_hash[:previous_branch]
 
-  def previous_branch
-    configuration[:previous_branch]
-  end
-
-  def setup_plugin_repo(uri, path)
     @plugin_repo = GitRepository.new(uri, path)
     @plugin_repo.clone
 
