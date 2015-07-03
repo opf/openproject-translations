@@ -74,7 +74,7 @@ class LocalesUpdater
   def commit_and_push_plugin_repo(debug)
     @plugin_repo.add('config/locales')
     @plugin_repo.commit('update locales from crowdin')
-    @plugin_repo.push(branch) unless debug
+    @plugin_repo.push unless debug
   end
 
   def upload_english
