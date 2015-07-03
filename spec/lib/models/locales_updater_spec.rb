@@ -54,11 +54,12 @@ describe LocalesUpdater do
       allow(locales_updater).to receive(:request_build)
       allow(locales_updater).to receive(:update_i18n_handle)
       allow(locales_updater).to receive(:replace_file)
-      locales_updater.instance_variable_set(:@i18n_provider, i18n_provider)
       allow(i18n_provider).to receive(:each_locale).and_yield(entry)
       allow(entry).to receive(:name).and_return(entry_name)
 
-      expect(i18n_provider).to receive(:translation_status_high_enough?).with('en',100)
+      locales_updater.instance_variable_set(:@i18n_provider, i18n_provider)
+
+      expect(i18n_provider).to receive(:translation_status_high_enough?).with('en', 100)
       locales_updater.update_all_locales_of_all_repos
     end
 
@@ -68,16 +69,29 @@ describe LocalesUpdater do
       allow(locales_updater).to receive(:request_build)
       allow(locales_updater).to receive(:update_i18n_handle)
       allow(i18n_provider).to receive(:translation_status_high_enough?).and_return(true)
-      locales_updater.instance_variable_set(:@i18n_provider, i18n_provider)
       allow(i18n_provider).to receive(:each_locale).and_yield(entry)
       allow(entry).to receive(:name).and_return(entry_name)
+
+      locales_updater.instance_variable_set(:@i18n_provider, i18n_provider)
 
       expect(locales_updater).to receive(:replace_file)
       locales_updater.update_all_locales_of_all_repos
     end
 
-    it 'commits and pushes changes to the repo' do
+    let(:plugin_repo) { instance_double(GitRepository) }
+    it 'adds, commits and pushes changes to the repo' do
+      allow(locales_updater).to receive(:upload_english)
+      allow(locales_updater).to receive(:request_build)
+      allow(locales_updater).to receive(:download_and_replace_locales)
+      allow(locales_updater).to receive(:setup_plugin_repo)
+      allow(plugin_repo).to receive(:within_repo)
 
+      locales_updater.instance_variable_set(:@plugin_repo, plugin_repo)
+
+      expect(plugin_repo).to receive(:add)
+      expect(plugin_repo).to receive(:commit)
+      expect(plugin_repo).to receive(:push)
+      locales_updater.update_all_locales_of_all_repos(debug: false)
     end
   end
 end
