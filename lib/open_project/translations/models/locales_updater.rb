@@ -34,11 +34,11 @@ class LocalesUpdater
   private
 
   def within_plugin_repo(uri:, path:, debug:)
-    git_repo = setup_plugin_repo(uri, path)
-    git_repo.within_repo do
+    setup_plugin_repo(uri, path)
+    @plugin_repo.within_repo do
       yield
     end
-    commit_and_push_plugin_repo(git_repo, debug)
+    commit_and_push_plugin_repo(debug)
   end
 
   def plugins_with_locales
@@ -67,18 +67,18 @@ class LocalesUpdater
   end
 
   def setup_plugin_repo(uri, path)
-    plugin_repo = GitRepository.new(uri, path)
-    plugin_repo.clone
+    @plugin_repo = GitRepository.new(uri, path)
+    @plugin_repo.clone
 
-    plugin_repo.checkout(branch)
-    plugin_repo.merge(previous_branch, strategy: :ours) if previous_branch
-    plugin_repo
+    @plugin_repo.checkout(branch)
+    @plugin_repo.merge(previous_branch, strategy: :ours) if previous_branch
+    @plugin_repo
   end
 
-  def commit_and_push_plugin_repo(plugin_repo, debug)
-    plugin_repo.add('config/locales')
-    plugin_repo.commit('update locales from crowdin')
-    plugin_repo.push(branch) unless debug
+  def commit_and_push_plugin_repo(debug)
+    @plugin_repo.add('config/locales')
+    @plugin_repo.commit('update locales from crowdin')
+    @plugin_repo.push(branch) unless debug
   end
 
   def upload_english
