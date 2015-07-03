@@ -3,8 +3,6 @@ require 'crowdin-api'
 require 'tempfile'
 require 'zip'
 
-require_relative './locales_updater_configuration.rb'
-
 class I18nProvider
   def initialize(project_id, api_key, crowdin_directory)
     @project_id = project_id
@@ -15,10 +13,6 @@ class I18nProvider
 
   def create_handle
     Crowdin::API.new project_id: @project_id, api_key: @api_key
-  end
-
-  def configuration
-    LocalesUpdaterConfiguration.configuration
   end
 
   def upload_english(translation_file, path_to_translation, title)
@@ -123,7 +117,7 @@ class I18nProvider
     tempfile
   end
 
-    def unlink_temp_file(tempfile)
+  def unlink_temp_file(tempfile)
     tempfile.unlink
   end
 end
