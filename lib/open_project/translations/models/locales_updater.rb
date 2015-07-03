@@ -90,7 +90,9 @@ class LocalesUpdater
     [ENGLISH_TRANSLATION_FILE, ENGLISH_JS_TRANSLATION_FILE].each do |translation_file|
       path_to_translation = File.join 'config', 'locales', translation_file
       title = titles[translation_file]
-      @i18n_provider.upload_english(translation_file, path_to_translation, title)
+      if File.exist?(path_to_translation)
+        @i18n_provider.upload_english(translation_file, path_to_translation, title)
+      end
     end
   end
 
