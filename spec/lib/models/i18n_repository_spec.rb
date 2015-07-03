@@ -21,14 +21,6 @@ describe I18nProvider do
     end
   end
 
-  describe '#configuration' do
-    let(:configuration) { {'test' => 'hash' } }
-    it 'uses the LocalesUpdaterConfiguration' do
-      allow(LocalesUpdaterConfiguration).to receive(:configuration).and_return(configuration)
-      expect(i18n_provider.configuration).to eql(configuration)
-    end
-  end
-
   describe '#upload_english' do
     let(:crowdin) { instance_double(Crowdin::API) }
     let(:translation_file) { 'test-file' }
