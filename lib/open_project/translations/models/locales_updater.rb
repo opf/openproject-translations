@@ -81,8 +81,8 @@ class LocalesUpdater
   def upload_english(plugin_name)
     # either add or update the english (js) translation file
     titles = {
-      ENGLISH_TRANSLATION_FILE => plugin_name +' Wording',
-      ENGLISH_JS_TRANSLATION_FILE => plugin_name + ' JavaScript Wording'
+      ENGLISH_TRANSLATION_FILE => "#{plugin_name} Wording",
+      ENGLISH_JS_TRANSLATION_FILE => "#{plugin_name} JavaScript Wording"
     }
     [ENGLISH_TRANSLATION_FILE, ENGLISH_JS_TRANSLATION_FILE].each do |translation_file|
       path_to_translation = Pathname.new('config') + 'locales' + translation_file
