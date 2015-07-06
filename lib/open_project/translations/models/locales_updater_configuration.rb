@@ -29,7 +29,7 @@ class LocalesUpdaterConfiguration
   end
 
   def self.check_for_required_keys
-    @configuration[:plugins].each do |plugin_name, specifics|
+    @configuration[:plugins].each do |plugin_name, _|
       REQUIRED_KEYS.each do |key|
         if @configuration[:plugins][plugin_name].nil?
           raise "Configuration file has empty configuration for plugin #{plugin_name}"
