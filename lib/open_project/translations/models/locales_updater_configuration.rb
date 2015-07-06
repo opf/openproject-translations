@@ -2,7 +2,7 @@ require 'yaml'
 
 class LocalesUpdaterConfiguration
   REQUIRED_KEYS = [:uri, :api_key, :project_id, :version,
-  :version, :branch]
+                   :version, :branch]
 
   def self.path_to_configuration_file
     ENV['CONFIGURATION_FILE'] || begin

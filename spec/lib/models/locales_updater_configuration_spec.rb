@@ -11,7 +11,7 @@ describe LocalesUpdaterConfiguration do
     end
 
     let(:configuration) do
-      hash = { plugins: {'test' => {} } }
+      hash = { plugins: { 'test' => {} } }
       LocalesUpdaterConfiguration::REQUIRED_KEYS.each do |key|
         hash[:plugins]['test'][key] = 'test'
       end
@@ -20,11 +20,11 @@ describe LocalesUpdaterConfiguration do
 
     LocalesUpdaterConfiguration::REQUIRED_KEYS.each do |key|
       context "with a configuration without '#{key}' key" do
-          let(:altered_configuration) do
-            hash = configuration
-            hash[:plugins]['test'][key] = nil
-            hash
-          end
+        let(:altered_configuration) do
+          hash = configuration
+          hash[:plugins]['test'][key] = nil
+          hash
+        end
 
         it 'raises an error' do
           LocalesUpdaterConfiguration.instance_variable_set(:@configuration,
