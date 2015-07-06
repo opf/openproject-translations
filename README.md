@@ -12,8 +12,7 @@ We plan to release this plugin every time an OpenProject core release is done.
 **Beware**:
 
 * when translating `general_lang_name` do not translate the word 'English', but fill in the name of the language you are currently translating
-* This plugin adds translations for the OpenProject core, but not for plugins. If you want a plugin translated to your language, please contact the plugin maintainer.
-
+* This plugin adds translations for the OpenProject core, but not for plugins. But it provides a rake task to update the locales of plugins translated on Crowdin, namely `rake translations_for_plugins:update`. This rake task takes its configuration from a file. See `configuration.yml.example` for an example.
 
 ## Requirements
 
