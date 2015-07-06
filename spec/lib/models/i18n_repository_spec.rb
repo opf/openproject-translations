@@ -26,13 +26,14 @@ describe I18nProvider do
     let(:translation_file) { 'test-file' }
     let(:path_to_translation) { 'test-path' }
     let(:title) { 'test-title' }
+    let(:export_pattern) { '' }
 
     it 'creates crowdin directory if missing' do
       allow(i18n_provider).to receive(:file_exists_in_directory?).and_return(true)
       allow(i18n_provider).to receive(:update_file)
 
       expect(i18n_provider).to receive(:add_directory_if_missing)
-      i18n_provider.upload_english(translation_file, path_to_translation, title)
+      i18n_provider.upload_english(translation_file, path_to_translation, title, export_pattern)
     end
 
     context 'with the file already on Crowdin' do
@@ -44,7 +45,7 @@ describe I18nProvider do
         allow(i18n_provider).to receive(:add_directory_if_missing)
 
         expect(i18n_provider).to receive(:update_file)
-        i18n_provider.upload_english(translation_file, path_to_translation, title)
+        i18n_provider.upload_english(translation_file, path_to_translation, title, export_pattern)
       end
     end
 
@@ -57,7 +58,7 @@ describe I18nProvider do
         allow(i18n_provider).to receive(:add_directory_if_missing)
 
         expect(i18n_provider).to receive(:add_file)
-        i18n_provider.upload_english(translation_file, path_to_translation, title)
+        i18n_provider.upload_english(translation_file, path_to_translation, title, export_pattern)
       end
     end
   end
