@@ -8,7 +8,6 @@ require_relative './locales_updater_configuration'
 
 ENGLISH_TRANSLATION_FILE = 'en.yml'
 ENGLISH_JS_TRANSLATION_FILE = 'js-en.yml'
-ACCEPTANCE_LEVEL = ENV['ACCEPTANCE_LEVEL'].nil? ? 100: ENV['ACCEPTANCE_LEVEL'].to_i
 
 class LocalesUpdater
   include TmpDirectory
@@ -107,11 +106,16 @@ class LocalesUpdater
       language_name = entry.name.split('/').first # the file is put in a directory containing the language name
 
       # only take translations with enough percent translated
-      next unless @i18n_provider.translation_status_high_enough?(language_name, ACCEPTANCE_LEVEL)
+      next unless @i18n_provider.translation_status_high_enough?(language_name, acceptance_level)
 
       filepath = target_directory.join "#{js_translation?(Pathname.new(entry.name)) ? 'js-' : ''}#{language_name}.yml"
       replace_file(filepath, entry)
     end
+  end
+
+  def acceptance_level
+    return 100 if ENV['ACCEPTANCE_LEVEL'].nil?
+    ENV['ACCEPTANCE_LEVEL'].to_i
   end
 
   def replace_file(filepath, new_file)
