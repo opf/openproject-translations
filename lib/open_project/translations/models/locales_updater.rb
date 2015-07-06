@@ -22,8 +22,10 @@ class LocalesUpdater
 
         within_tmp_directory(path: File.join(FileUtils.pwd, plugin_name), debug: debug) do
           within_plugin_repo(configuration_hash: specifics, path: FileUtils.pwd, debug: debug) do
+            puts "Uploading english for #{plugin_name}"
             upload_english
             request_build
+            puts "Downloading translations for #{plugin_name}"
             download_and_replace_locales
           end
         end
