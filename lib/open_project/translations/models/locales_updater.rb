@@ -23,7 +23,7 @@ class LocalesUpdater
         within_tmp_directory(path: File.join(FileUtils.pwd, plugin_name), debug: debug) do
           within_plugin_repo(configuration_hash: specifics, path: FileUtils.pwd, debug: debug) do
             puts "Uploading english for #{plugin_name}"
-            upload_english
+            upload_english(plugin_name)
             request_build
             puts "Downloading translations for #{plugin_name}"
             download_and_replace_locales
@@ -79,11 +79,11 @@ class LocalesUpdater
     @plugin_repo.push unless debug
   end
 
-  def upload_english
+  def upload_english(plugin_name)
     # either add or update the english (js) translation file
     titles = {
-      ENGLISH_TRANSLATION_FILE => 'OpenProject Wording',
-      ENGLISH_JS_TRANSLATION_FILE => 'OpenProject JavaScript Wording'
+      ENGLISH_TRANSLATION_FILE => plugin_name +' Wording',
+      ENGLISH_JS_TRANSLATION_FILE => plugin_name + ' JavaScript Wording'
     }
     [ENGLISH_TRANSLATION_FILE, ENGLISH_JS_TRANSLATION_FILE].each do |translation_file|
       path_to_translation = Pathname.new('config') + 'locales' + translation_file
