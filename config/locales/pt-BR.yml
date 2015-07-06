@@ -102,6 +102,7 @@ pt-BR:
       time_entry:
         activity: Atividade
         hours: Horas
+        work_package: Pacotes de trabalho
         spent_on: Data
         type: Tipo
       type:
@@ -183,7 +184,7 @@ pt-BR:
         smaller_than_or_equal_to_max_length: deve ser menor ou igual ao comprimento
           máximo
         greater_than_start_date: deve ser maior que a data de início
-        inclusion: Não está definido como um dos valores permitidos
+        inclusion: não está incluído na lista
         invalid: "é inválido"
         less_than: deve ser menor que %{count}
         less_than_or_equal_to: deve ser menor ou igual a %{count}
@@ -221,17 +222,10 @@ pt-BR:
               not_a_valid_parent: "é inválido"
               does_not_exist: não existe
             status_id:
-              status_transition_invalid: "é inválido porque não existe transição válida
-                do antigo para o novo status para o papel do usuário atual"
+              status_transition_invalid: não há transição válida do velho para o novo
+                status para as funções do usuário atual
             priority_id:
               only_active_priorities_allowed: precisa ser ativo
-            category:
-              only_same_project_categories_allowed: A categoria de um pacote de trabalho
-                deve estar dentro do mesmo projeto do pacote de trabalho.
-              does_not_exist: Categoria especificada não existe.
-            estimated_hours:
-              only_values_greater_or_equal_zeroes_allowed: O número estimado de horas
-                deve ser >= 0.
         user:
           attributes:
             password:
@@ -287,13 +281,11 @@ pt-BR:
   attributes:
     active: Ativo
     assigned_to: Atribuído
-    assignee: Atribuído
     attachments: Anexos
     author: Autor
     base: 'Erro geral:'
     blocks_ids: Blocos
     category: Categoria
-    comment: Comentário
     comments: Comentário
     content: Conteúdo
     created_at: Criado em
@@ -304,23 +296,18 @@ pt-BR:
     display_sums: Exibir somas
     due_date: Prazo
     estimated_hours: Tempo estimado
-    estimated_time: Tempo estimado
     firstname: Nome
     group: Grupo
     groupname: Nome do grupo
-    id: ID
     is_default: Valor padrão
     is_for_all: Para todos os projetos
     is_public: Público
-    issue: Pacote de trabalho
     lastname: Sobrenome
     login: Login
     mail: E-mail
     name: Nome
     password: Senha
-    priority: Prioridade
     project: Projeto
-    responsible: Responsável
     role: Papel
     start_date: Data de início
     status: Situação
@@ -595,8 +582,7 @@ pt-BR:
   error_scm_annotate: A entrada não existe ou não pode ser anotada.
   error_scm_command_failed: 'Ocorreu um erro ao tentar acessar o repositório: %{value}'
   error_scm_not_found: A entrada ou a revisão não foi encontrado no repositório.
-  error_unable_delete_status: Não é possível excluir o status do pacote de trabalho,
-    porque ele contém pacotes de trabalho.
+  error_unable_delete_status: Não é possível excluir o status do pacote de trabalho
   error_unable_delete_default_status: Não é possível excluir o status do pacote de
     trabalho padrão. Selecione outro estado do pacote de trabalho padrão antes de
     excluir o atual.
@@ -743,7 +729,6 @@ pt-BR:
   label_downloads_abbr: D/L
   label_duplicated_by: duplicado por
   label_duplicates: duplicados
-  label_edit: Editar
   label_enable_multi_select: Alterna para multiseleção
   label_end_to_end: fim para fim
   label_end_to_start: fim para início
@@ -771,7 +756,6 @@ pt-BR:
   label_generate_key: Gerar uma chave
   label_git_path: Caminho para o diretório .git
   label_greater_or_equal: ">="
-  label_group_by: Agrupar por
   label_group_new: Novo grupo
   label_group_plural: Grupos
   label_help: Ajuda
@@ -811,6 +795,7 @@ pt-BR:
     sob minha responsabilidade
   label_work_package_view_all_watched: Exibir todos os pacotes de trabalho observados
   label_work_package_watchers: Observadores
+  label_work_packages_by: Pacotes de trabalho por %{value}
   label_journal_diff: Comparação de Descrição
   label_jump_to_a_project: Saltar para um projeto...
   label_language_based: Com base no idioma do usuário
@@ -1087,8 +1072,6 @@ pt-BR:
   label_keyboard_shortcut_go_news: Ir para notícias do projeto
   label_keyboard_shortcut_go_timelines: Ir para cronogramas
   label_keyboard_shortcut_new_work_package: Criar novo pacote de trabalho
-  label_keyboard_shortcut_details_package: Mostrar o painel de detalhes de pacotes
-    de trabalho
   label_keyboard_shortcut_go_edit: Ir para edição  do item atual (somente nas páginas
     de detalhes)
   label_keyboard_shortcut_open_more_menu: Menu mais aberto (somente nas páginas de
@@ -1099,7 +1082,6 @@ pt-BR:
     algumas listas apenas)
   label_keyboard_shortcut_focus_next_item: Focar próxima lista de elementos (em algumas
     listas apenas)
-  label_visible_elements: Visible elements
   macro_execution_error: Erro de execução da macro %{macro_name}
   macro_unavailable: Macro %{macro_name} não pode ser exibida.
   mail_body_account_activation_request: 'Um novo usuário (%{value}) registrou-se.
@@ -1495,10 +1477,6 @@ pt-BR:
       short: "%d/%b %H:%M"
       time: "%H:%M"
     pm: pm
-  timeframe:
-    show: Mostrar calendário
-    end: Para
-    start: De
   timelines:
     admin_menu:
       color: Cor
@@ -1580,8 +1558,7 @@ pt-BR:
         absolute: Absoluto
         none: Nenhum
         relative: Relativo
-        compare_relative_prefix: Comparar o planejamento atual com
-        compare_relative_suffix: atrás
+        compare_relative: Comparar o planejamento atual com %{timespan} atrás
         compare_absolute: Comparar o planejamento atual com %{date}
       time_relative:
         days: dias
@@ -1609,7 +1586,8 @@ pt-BR:
       status: Mostrar status
       project_time_filter: Projetos com um pacote de trabalho de um determinado tipo
         em um determinado período de tempo
-      project_time_filter_timeframe: Período de tempo
+      project_time_filter_absolute_timeframe: Período de tempo absoluto
+      project_time_filter_relative_timeframe: Período de tempo relativo
       project_time_filter_historical_from: De
       project_time_filter_historical_to: Para
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1746,40 +1724,3 @@ pt-BR:
     updated_automatically_by_child_changes: _Atualizado automaticamente, alterando
       valores dentro do pacote de trabalho filho %{child}_
   nothing_to_preview: Nada para Visualizar
-  api_v3:
-    attributes:
-      lock_version: Bloquear versão
-    errors:
-      code_401: Você precisa estar autenticado para acessar este recurso.
-      code_403: Você não está autorizado a acessar este recurso.
-      code_404: O recurso solicitado não pôde ser encontrado.
-      code_409: Não foi possível atualizar o recurso devido a modificações conflitantes.
-      invalid_content_type: CONTENT-TYPE esperado '%{content_type}' mas '%{actual}'
-        encontrado.
-      invalid_resource: Para a propriedade '%{property}' é esperado um link como '%{expected}'
-        mas foi encontrado '%{actual}'.
-      invalid_relation: The relation is invalid.
-      invalid_user_status_transition: O status da conta do usuário atual não permite
-        esta operação.
-      missing_content_type: Não especificado
-      multiple_errors: Várias restrições de campo foram violadas.
-      parse_error: O corpo da solicitação não era vazio nem continha um objeto JSON
-        único.
-      writing_read_only_attributes: Você não pode escrever um atributo somente leitura.
-      invalid_format: 'Formato inválido para a propriedade ''%{property}'': Formato
-        esperado como ''%{expected_format}'', mas tem ''%{actual}''.'
-      render:
-        context_not_parsable: O contexto fornecido não é um link para o recurso.
-        unsupported_context: O recurso dado não esta suportado como contexto.
-        context_object_not_found: Não é possível encontrar o recurso dado como contexto.
-      validation:
-        invalid_user_assigned_to_work_package: O usuário selecionado não tem permissão
-          de '%{property}' neste pacote de trabalho.
-        estimated_hours: Número estimado de horas não pode ser definido em pacotes
-          de trabalho do pai.
-        done_ratio: Percentual de conclusão não pode ser definido em pacotes de trabalho
-          do pai, quando ele é inferido pelo estatuto ou quando ele está desativado.
-        start_date: Data de início não pode ser definida no pacote de trabalho pai.
-        due_date: O prazo não pode ser definido no pacote de trabalho pai.
-    resources:
-      schema: Esquema

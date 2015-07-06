@@ -83,6 +83,7 @@ zh:
       time_entry:
         activity: "活动"
         hours: "小时"
+        work_package: "工作包"
         spent_on: "日期"
         type: "类型"
       type:
@@ -162,7 +163,7 @@ zh:
         greater_than_or_equal_to: "必须大于或等于 %{count}"
         smaller_than_or_equal_to_max_length: "必须小于或等于最大长度"
         greater_than_start_date: "必须大于开始日期"
-        inclusion: is not set to one of the allowed values
+        inclusion: "不包括在列表中"
         invalid: "是无效的"
         less_than: "必须小于 %{count}"
         less_than_or_equal_to: "必须小于或等于 %{count}"
@@ -198,16 +199,9 @@ zh:
               not_a_valid_parent: "是无效的"
               does_not_exist: "不存在"
             status_id:
-              status_transition_invalid: "是无效的因为当前用户的角色没有有效的从旧到新的状态的过渡"
+              status_transition_invalid: "当前用户角色没有从旧到新状态的有效过度"
             priority_id:
               only_active_priorities_allowed: "需要被激活"
-            category:
-              only_same_project_categories_allowed: The category of a work package
-                must be within the same project as the work package.
-              does_not_exist: The specified category does not exist.
-            estimated_hours:
-              only_values_greater_or_equal_zeroes_allowed: The estimated hours must
-                be >= 0.
         user:
           attributes:
             password:
@@ -262,13 +256,11 @@ zh:
   attributes:
     active: "激活"
     assigned_to: "指定人"
-    assignee: "指定人"
     attachments: "附件"
     author: "作者"
     base: "一般错误："
     blocks_ids: "块"
     category: "类别"
-    comment: "评论"
     comments: "评论"
     content: "内容"
     created_at: "创建"
@@ -279,23 +271,18 @@ zh:
     display_sums: "显示汇总"
     due_date: "截止日期"
     estimated_hours: "估计的时间"
-    estimated_time: "估计的时间"
     firstname: "名字"
     group: "组"
     groupname: "组名称"
-    id: ID
     is_default: "默认值"
     is_for_all: "为所有项目"
     is_public: "公开"
-    issue: "工作包"
     lastname: "姓氏"
     login: "登录"
     mail: "电子邮件"
     name: "名称"
     password: "密码"
-    priority: "优先级"
     project: "项目"
-    responsible: "责任人"
     role: Role
     start_date: "开始日期"
     status: "状态"
@@ -362,15 +349,15 @@ zh:
   button_configure_menu_entry: "配置菜单项"
   button_delete_menu_entry: "删除菜单项"
   copy_project:
-    started: "开始复制项目\"%{source_project_name}\"到\"%{target_project_name}\"。您将尽快通过邮件告知\"%{target_project_name}\"是可用。"
+    started: 开始复制项目"%{source_project_name}"到"%{target_project_name}"。您将尽快通过邮件告知"%{target_project_name}"是可用。
     failed: "无法复制项目 %{source_project_name}"
     succeeded: "创建的项目 %{target_project_name}"
     errors: "错误"
     text:
-      failed: "无法将项目\"%{source_project_name}\"复制到项目\"%{target_project_name}\"。"
-      succeeded: "已复制项目\"%{source_project_name}\"到\"%{target_project_name}\"。"
+      failed: 无法将项目"%{source_project_name}"复制到项目"%{target_project_name}"。
+      succeeded: 已复制项目"%{source_project_name}"到"%{target_project_name}"。
   create_child_page: "创建新的子页面"
-  create_child_page_for: "创建新的子页面：\"%{title}\""
+  create_child_page_for: 创建新的子页面："%{title}"
   create_new_page: "创建新页"
   date:
     abbr_day_names:
@@ -550,14 +537,13 @@ zh:
   error_work_package_done_ratios_not_updated: "工作包完成比率不更新。"
   error_work_package_not_found_in_project: "工作包找不到或不属于此项目"
   error_must_be_project_member: "必须是项目成员"
-  error_no_default_work_package_status: "没有定义默认的工作包状态。请检查您的配置 （转到\"管理-> 工作包状态\"）。"
+  error_no_default_work_package_status: 没有定义默认的工作包状态。请检查您的配置 （转到"管理-> 工作包状态"）。
   error_no_type_in_project: "没有类型与此项目关联。请检查的项目设置。"
   error_omniauth_registration_timed_out: "通过外部身份验证提供程序注册超时。请再试一次。"
   error_scm_annotate: "该条目不存在，或不能进行批注。"
   error_scm_command_failed: "当试图访问该代码库时出现错误: %{value}"
   error_scm_not_found: "在代码库中未找到的条目或修正版本。"
-  error_unable_delete_status: Unable to delete work package status because it contains
-    work packages.
+  error_unable_delete_status: "无法删除工作包状态"
   error_unable_delete_default_status: "不能删除默认的工作包状态。请在删除当前之前选择另一种默认的工作包状态。"
   error_unable_to_connect: "无法连接 (%{value})"
   error_workflow_copy_source: "请选择源类型或角色"
@@ -696,7 +682,6 @@ zh:
   label_downloads_abbr: D/L
   label_duplicated_by: "复制于"
   label_duplicates: "复制"
-  label_edit: "编辑"
   label_enable_multi_select: "切换多选"
   label_end_to_end: "结束结束"
   label_end_to_start: "结束开始"
@@ -723,7 +708,6 @@ zh:
   label_generate_key: "生成密钥"
   label_git_path: ".git 目录的路径"
   label_greater_or_equal: ">="
-  label_group_by: "分组按照"
   label_group_new: "新的组"
   label_group_plural: "组"
   label_help: "帮助"
@@ -760,6 +744,7 @@ zh:
   label_work_package_view_all_responsible_for: "查看所有我要负责的工作包"
   label_work_package_view_all_watched: "查看所有被关注的工作包"
   label_work_package_watchers: "关注人"
+  label_work_packages_by: "工作包由 %{value}"
   label_journal_diff: "描述的对比"
   label_jump_to_a_project: "跳转到一个项目..."
   label_language_based: "基于用户的语言"
@@ -1032,13 +1017,11 @@ zh:
   label_keyboard_shortcut_go_news: "转到项目新闻"
   label_keyboard_shortcut_go_timelines: "转到时间线"
   label_keyboard_shortcut_new_work_package: "创建新的工作包"
-  label_keyboard_shortcut_details_package: Show work packages details pane
   label_keyboard_shortcut_go_edit: "转到要编辑当前项 （仅在详细信息页)"
   label_keyboard_shortcut_open_more_menu: "打开更多菜单 （在详细信息页)"
   label_keyboard_shortcut_go_preview: "转到预览当前编辑 （仅在编辑页)"
   label_keyboard_shortcut_focus_previous_item: "聚焦前面的列表元素 （只有某些列表)"
   label_keyboard_shortcut_focus_next_item: "聚焦下一个的列表元素 （只有某些列表)"
-  label_visible_elements: Visible elements
   macro_execution_error: "执行宏 %{macro_name} 出错"
   macro_unavailable: "无法显示宏 %{macro_name} 。"
   mail_body_account_activation_request: "一个新的用户 (%{value}) 注册。该帐户正在等待您的批准："
@@ -1376,10 +1359,6 @@ zh:
       short: "%d %b %H:%M"
       time: "%I:%M %p"
     pm: "下午"
-  timeframe:
-    show: "显示时间段"
-    end: "到"
-    start: "从"
   timelines:
     admin_menu:
       color: "颜色"
@@ -1414,7 +1393,7 @@ zh:
     edit_timeline: "编辑时间线报告"
     delete_timeline: "删除时间线报告"
     empty: "(空)"
-    enable_type_in_project: "启用类型\"%{type}\""
+    enable_type_in_project: 启用类型"%{type}"
     end: "结束"
     errors:
       not_implemented: "不会呈现时间轴，因为它使用了一种尚未实现的功能。"
@@ -1452,8 +1431,7 @@ zh:
         absolute: "绝对"
         none: "无"
         relative: "相对"
-        compare_relative_prefix: Compare current planning to
-        compare_relative_suffix: ago
+        compare_relative: "对比当前计划与 %{timespan} 前"
         compare_absolute: "对比当前计划和 %{date}"
       time_relative:
         days: "天"
@@ -1463,7 +1441,7 @@ zh:
       exclude_reporters: "隐藏其他项目"
       exclude_empty: "隐藏空项目"
       grouping: "分组"
-      grouping_hide_group: "隐藏组\"%{group}\""
+      grouping_hide_group: 隐藏组"%{group}"
       grouping_one: "第一个分组标准"
       grouping_one_phrase: "是一个子项目属于"
       grouping_other: "其他"
@@ -1480,7 +1458,8 @@ zh:
       types: "显示类型"
       status: "显示状态"
       project_time_filter: "项目具有在一定时间段中的某类型工作包"
-      project_time_filter_timeframe: Timeframe
+      project_time_filter_absolute_timeframe: "绝对时间段"
+      project_time_filter_relative_timeframe: "相对时间段"
       project_time_filter_historical_from: "从"
       project_time_filter_historical_to: "到"
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1527,14 +1506,14 @@ zh:
     work_packages_are_displayed_in_aggregations: "项目包显示为聚合"
     project_association_new: "添加项目依赖项"
     project_association_new_for_with: "为 %{project_a} 设置依赖项"
-    project_association_with_other: "项目\"%{project_a}\"与\"%{project_b}\"之间的依赖关系"
-    project_association_of_type: "类型为\"%{type}\"的项目的依赖项"
+    project_association_with_other: 项目"%{project_a}"与"%{project_b}"之间的依赖关系
+    project_association_of_type: 类型为"%{type}"的项目的依赖项
     project_type_could_not_be_saved: "项目类型不能保存"
     type_could_not_be_saved: "无法保存类型"
     reporting_could_not_be_saved: "不能保存报告"
     properties: "属性"
     really_delete_color: "您确定您要删除以下颜色？使用这种颜色的类型不会被删除。"
-    really_delete_project_association_between_project_a_and_project_b: "您确定您要删除\"%{project_a}\"和\"%{project_b}\"之间的依赖关系吗?"
+    really_delete_project_association_between_project_a_and_project_b: 您确定您要删除"%{project_a}"和"%{project_b}"之间的依赖关系吗?
     really_delete_project_type: "您确定你要删除以下项目类型？使用这种类型的项目不会被删除。"
     really_delete_timeline: "您确定您要删除以下时间线报告？在该时间线报告中的工作包不会被删除。"
     really_delete_reporting: "您确定您要删除以下报告吗？之前的报告状态也会被删除。"
@@ -1594,40 +1573,7 @@ zh:
   wiki_menu_item_setting: "可见性"
   wiki_menu_item_new_main_item_explanation: "您正在删除唯一的主wiki菜单项。您现在需要选择一个wiki页面生成新的主项目。若要删除wiki，wiki模块可以由管理员停用。"
   wiki_menu_item_delete_not_permitted: "不能删除唯一 wiki 页面的 wiki 菜单项。"
-  query_menu_item_for: "查询\"%{title}\"的菜单项"
+  query_menu_item_for: 查询"%{title}"的菜单项
   work_package:
     updated_automatically_by_child_changes: _自动更新由于改变子工作包 %{child} 内的值_
   nothing_to_preview: "没有什么要预览"
-  api_v3:
-    attributes:
-      lock_version: Lock Version
-    errors:
-      code_401: "你需要被授权访问该资源。"
-      code_403: "您无权访问此资源。"
-      code_404: The requested resource could not be found.
-      code_409: "无法更新资源，因为发生冲突的修改。"
-      invalid_content_type: "预期CONTENT-TYPE为%{content_type}，但是获得了'%{actual}'。"
-      invalid_resource: For property '%{property}' a link like '%{expected}' is expected,
-        but got '%{actual}'.
-      invalid_relation: The relation is invalid.
-      invalid_user_status_transition: The current user account status does not allow
-        this operation.
-      missing_content_type: not specified
-      multiple_errors: Multiple field constraints have been violated.
-      parse_error: "请求主体既不是空的也没有包括一个单一的 JSON 对象。"
-      writing_read_only_attributes: "你不能写入只读属性。"
-      invalid_format: 'Invalid format for property ''%{property}'': Expected format
-        like ''%{expected_format}'', but got ''%{actual}''.'
-      render:
-        context_not_parsable: The context provided is not a link to a resource.
-        unsupported_context: The resource given is not supported as context.
-        context_object_not_found: Cannot find the resource given as the context.
-      validation:
-        invalid_user_assigned_to_work_package: "所选的用户不允许为此工作包的 '%{property}'。"
-        estimated_hours: Estimated hours cannot be set on parent work packages.
-        done_ratio: Done ratio cannot be set on parent work packages, when it is inferred
-          by status or when it is disabled.
-        start_date: Start date cannot be set on parent work packages.
-        due_date: Due date cannot be set on parent work packages.
-    resources:
-      schema: Schema

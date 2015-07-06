@@ -103,6 +103,7 @@ sv-SE:
       time_entry:
         activity: Aktivitet
         hours: Timmar
+        work_package: Arbetspaket
         spent_on: Datum
         type: Typ
       type:
@@ -184,7 +185,7 @@ sv-SE:
         smaller_than_or_equal_to_max_length: måste vara mindre än eller lika med maximal
           längd
         greater_than_start_date: måste vara senare än startdatum
-        inclusion: inte är inställd på ett av de tillåtna värdena
+        inclusion: ingår inte i listan
         invalid: "är ogiltig"
         less_than: måste vara mindre än %{count}
         less_than_or_equal_to: måste vara mindre än eller lika med %{count}
@@ -221,18 +222,10 @@ sv-SE:
               not_a_valid_parent: "är ogiltig"
               does_not_exist: finns inte
             status_id:
-              status_transition_invalid: "är ogiltig eftersom det finns någon giltig
-                övergång ifrån den gamla till nya statusen för den aktuella användarens
-                roller"
+              status_transition_invalid: ingen giltig övergång finns från den gamla
+                statusen till de nya statusen för de aktuella användarrollerna
             priority_id:
               only_active_priorities_allowed: måste vara aktiv
-            category:
-              only_same_project_categories_allowed: Kategorin för ett arbetspaket
-                måste tillhöra samma projekt som arbetspaketet.
-              does_not_exist: Den angivna kategorin finns inte.
-            estimated_hours:
-              only_values_greater_or_equal_zeroes_allowed: De uppskattade timmarna
-                måste vara större eller lika med noll.
         user:
           attributes:
             password:
@@ -243,18 +236,17 @@ sv-SE:
               numeric: numeriska (t.ex. ' 1')
               special: specialtecken (t.ex. ' %')
               reused:
-                one: has been used before. Please choose one that is different from
-                  your last one.
-                other: has been used before. Please choose one that is different from
-                  your last %{count}.
+                one: har tidigare använts. Välj ett som skiljer sig från ditt senaste.
+                other: har tidigare använts. Välj ett som skiljer sig från dina senaste
+                  %{count}.
         member:
           principal_blank: Välj minst en användare eller grupp.
           role_blank: Välj minst en roll.
       template:
         body: 'Kontrollera följande fält:'
         header:
-          one: 1 error prohibited this %{model} from being saved
-          other: "%{count} errors prohibited this %{model} from being saved"
+          one: Ett fel hindrade %{model} från att sparas
+          other: "%{count} fel hindrade %{model} från att sparas"
     models:
       attachment: Fil
       board: Forum
@@ -269,8 +261,8 @@ sv-SE:
       project: Projekt
       query: Anpassad fråga
       role:
-        one: Role
-        other: Roles
+        one: Roll
+        other: Roll
       type: Typ
       planning_element: Planeringselement
       project_type: Projekttyp
@@ -288,13 +280,11 @@ sv-SE:
   attributes:
     active: Aktiv
     assigned_to: Tilldelad till
-    assignee: Tilldelad till
     attachments: Bilagor
     author: Författare
     base: 'Allmänt fel:'
     blocks_ids: Block
     category: Kategori
-    comment: Kommentar
     comments: Kommentar
     content: Innehåll
     created_at: Skapat den
@@ -305,23 +295,18 @@ sv-SE:
     display_sums: Visa summor
     due_date: Förfallodatum
     estimated_hours: Beräknad tid
-    estimated_time: Beräknad tid
     firstname: Förnamn
     group: Grupp
     groupname: Gruppens namn
-    id: ID
     is_default: Standardvärde
     is_for_all: För alla projekt
     is_public: Offentlig
-    issue: Arbetspaket
     lastname: Efternamn
     login: Användarnamn
     mail: E-post
     name: Namn
     password: Lösenord
-    priority: Prioritet
     project: Projekt
-    responsible: Ansvarig
     role: Role
     start_date: Startdatum
     status: Status
@@ -456,43 +441,43 @@ sv-SE:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: about 1 hour
-        other: about %{count} hours
+        one: ungefär en timme
+        other: ungefär %{count} timmar
       about_x_months:
-        one: about 1 month
-        other: about %{count} months
+        one: ungefär en månad
+        other: ungefär %{count} månader
       about_x_years:
-        one: about 1 year
-        other: about %{count} years
+        one: ungefär ett år
+        other: ungefär %{count} år
       almost_x_years:
-        one: almost 1 year
-        other: almost %{count} years
+        one: nästan ett år
+        other: nästan %{count} år
       half_a_minute: en halv minut
       less_than_x_minutes:
-        one: less than a minute
-        other: less than %{count} minutes
+        one: mindre än en minut
+        other: mindre än %{count} minuter
       less_than_x_seconds:
-        one: less than 1 second
-        other: less than %{count} seconds
+        one: mindre än en sekund
+        other: mindre än %{count} sekunder
       over_x_years:
-        one: over 1 year
-        other: over %{count} years
+        one: "över ett år"
+        other: "över %{count} år"
       x_days:
-        one: 1 day
-        other: "%{count} days"
+        one: en dag
+        other: "%{count} dagar"
       x_minutes:
-        one: 1 minute
-        other: "%{count} minutes"
+        one: en minut
+        other: "%{count} minuter"
       x_months:
-        one: 1 month
-        other: "%{count} months"
+        one: en månad
+        other: "%{count} månader"
       x_seconds:
-        one: 1 second
-        other: "%{count} seconds"
+        one: en sekund
+        other: "%{count} sekunder"
     units:
       hour:
-        one: hour
-        other: hours
+        one: timme
+        other: timmar
   default_activity_management: Hantering
   default_activity_design: Design
   default_activity_development: Utveckling
@@ -594,8 +579,7 @@ sv-SE:
   error_scm_command_failed: 'Ett fel uppstod när du försökte komma åt versionsarkivet:
     %{value}'
   error_scm_not_found: Den posten eller revision finns inte i versionsarkivet.
-  error_unable_delete_status: Kan inte ta bort typen status eftersom den används av
-    arbetspaket.
+  error_unable_delete_status: Det går inte att ta bort statusen för arbetspaketet
   error_unable_delete_default_status: Det går inte att ta bort standardvärde för status
     för arbetspaket. Välj ett annat standardvärde för status för arbetspaket innan
     du tar bort det nuvarande.
@@ -742,7 +726,6 @@ sv-SE:
   label_downloads_abbr: D/L
   label_duplicated_by: duplicerad genom
   label_duplicates: dubblett av
-  label_edit: Redigera
   label_enable_multi_select: Växla multival
   label_end_to_end: slut till slut
   label_end_to_start: slut till start
@@ -770,7 +753,6 @@ sv-SE:
   label_generate_key: Generera en nyckel
   label_git_path: Sökväg till .git katalog
   label_greater_or_equal: ">="
-  label_group_by: Gruppera efter
   label_group_new: Ny grupp
   label_group_plural: Grupper
   label_help: Hjälp
@@ -810,6 +792,7 @@ sv-SE:
     för
   label_work_package_view_all_watched: Visa alla bevakade arbetspaket
   label_work_package_watchers: Bevakare
+  label_work_packages_by: Arbetspaket med %{value}
   label_journal_diff: Jämför beskrivning
   label_jump_to_a_project: Hoppa till projekt...
   label_language_based: Baserat på användarens språk
@@ -1044,24 +1027,24 @@ sv-SE:
   label_workflow_plural: Arbetsflöden
   label_workflow_summary: Sammanfattning
   label_x_closed_work_packages_abbr:
-    one: 1 closed
-    other: "%{count} closed"
+    one: en stängd
+    other: "%{count} stängda"
     zero: 0 closed
   label_x_comments:
-    one: 1 comment
-    other: "%{count} comments"
+    one: en kommentar
+    other: "%{count} kommentarer"
     zero: no comments
   label_x_open_work_packages_abbr:
-    one: 1 open
-    other: "%{count} open"
+    one: en öppen
+    other: "%{count} öppna"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
-    one: 1 open / %{total}
-    other: "%{count} open / %{total}"
+    one: en öppen / %{total}
+    other: "%{count} öppna / %{total}"
     zero: 0 open / %{total}
   label_x_projects:
-    one: 1 project
-    other: "%{count} projects"
+    one: ett projekt
+    other: "%{count} projekt"
     zero: no projects
   label_year: "År"
   label_yesterday: igår
@@ -1084,7 +1067,6 @@ sv-SE:
   label_keyboard_shortcut_go_news: Gå till projektnyheter
   label_keyboard_shortcut_go_timelines: Gå till tidslinjer
   label_keyboard_shortcut_new_work_package: Skapa nya arbetspaket
-  label_keyboard_shortcut_details_package: Visa informationsfönstret för arbetspaket
   label_keyboard_shortcut_go_edit: Gå till redigering av den aktuella artikeln (på
     detaljsidor endast)
   label_keyboard_shortcut_open_more_menu: "Öppna mer-menyn (på detaljsidor endast)"
@@ -1094,7 +1076,6 @@ sv-SE:
     listor endast)
   label_keyboard_shortcut_focus_next_item: Fokusera nästa listelement (på vissa listor
     endast)
-  label_visible_elements: Visible elements
   macro_execution_error: Fel under körning av makrot %{macro_name}
   macro_unavailable: Makrot %{macro_name} kan inte visas.
   mail_body_account_activation_request: 'En ny användare (%{value}) har registrerats.
@@ -1480,10 +1461,6 @@ sv-SE:
       short: "%d %b %H:%M:%S"
       time: "%H:%M:%S"
     pm: em
-  timeframe:
-    show: Visa tidsram
-    end: till
-    start: från
   timelines:
     admin_menu:
       color: Färg
@@ -1510,8 +1487,8 @@ sv-SE:
     delete_thing: Ta bort
     duration: Varaktighet
     duration_days:
-      one: 1 day
-      other: "%{count} days"
+      one: en dag
+      other: "%{count} dagar"
     edit_color: Redigera färg
     edit_project_type: Redigera projekttyp
     edit_thing: Redigera
@@ -1563,8 +1540,7 @@ sv-SE:
         absolute: Absolut
         none: Ingen
         relative: Relativ
-        compare_relative_prefix: Jämför nuvarande plan med
-        compare_relative_suffix: " sedan"
+        compare_relative: Jämföra nuvarande tidsplan med %{timespan} sedan
         compare_absolute: Jämför nuvarande tidsplanering till %{date}
       time_relative:
         days: dagar
@@ -1592,7 +1568,8 @@ sv-SE:
       status: Visa status
       project_time_filter: Projekt med ett arbetspaket av en viss typ inom en viss
         tidsram
-      project_time_filter_timeframe: Tidsram
+      project_time_filter_absolute_timeframe: Absolut tidsram
+      project_time_filter_relative_timeframe: Relativ tidsram
       project_time_filter_historical_from: från
       project_time_filter_historical_to: till
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1649,8 +1626,8 @@ sv-SE:
     properties: Egenskaper
     really_delete_color: "Är du säker på att du vill ta bort följande färg? Typer
       med den här färgen kommer inte att raderas."
-    really_delete_project_association_between_project_a_and_project_b: "Är du säker
-      på att du vill ta bort beroendet mellan \"%{project_a}\" och \"%{project_b}\"?"
+    really_delete_project_association_between_project_a_and_project_b: Är du säker
+      på att du vill ta bort beroendet mellan "%{project_a}" och "%{project_b}"?
     really_delete_project_type: "Är du säker på att du vill ta bort följande projekttyp?
       Projekt som använder denna typ raderas inte."
     really_delete_timeline: "Är du säker på att du vill ta bort följande tidslinjerapport?
@@ -1688,8 +1665,8 @@ sv-SE:
       via E-post)
     blocked: tillfälligt låst
     blocked_num_failed_logins:
-      one: locked temporarily (one failed login attempt)
-      other: locked temporarily (%{count} failed login attempts)
+      one: tillfälligt låst (ett misslyckat inloggningsförsök)
+      other: tillfälligt låst (%{count} misslyckade inloggningsförsök)
     deleted: Raderad användare
     error_status_change_failed: 'Misslyckades med att ändra användarstatus på grund
       av följande fel: %{errors}'
@@ -1725,38 +1702,3 @@ sv-SE:
     updated_automatically_by_child_changes: _Uppdateras automatiskt genom att ändra
       värdena för underarbetspaket %{child} _
   nothing_to_preview: Ingenting att förhandsgranska
-  api_v3:
-    attributes:
-      lock_version: Lås version
-    errors:
-      code_401: Du måste autentiseras för att få tillgång till denna resurs.
-      code_403: Du har inte behörighet att få tillgång till denna resurs.
-      code_404: Den begärda resursen kunde inte hittas.
-      code_409: Kunde inte uppdatera resursen på grund av motstridiga ändringar.
-      invalid_content_type: Förväntade att CONTENT-TYPE var "%{content_type}" men
-        erhöll istället "%{actual}".
-      invalid_resource: För egenskapen '%{property}' är en länk av typen '%{expected}'
-        väntad, men fick "%{actual}".
-      invalid_relation: The relation is invalid.
-      invalid_user_status_transition: Statusen på den aktuella användarens konto tillåter
-        inte denna operation.
-      missing_content_type: inte angiven
-      multiple_errors: Flera villkor för fält har överträtts.
-      parse_error: Förfrågan var varken tom eller innehöll ett enda JSON objekt.
-      writing_read_only_attributes: Du får inte skriva till ett skrivskyddat attribut.
-      invalid_format: 'Ogiltigt format för egenskapen ''%{property}'': förväntat format
-        är ''%{expected_format}'', men fick ''%{actual}''.'
-      render:
-        context_not_parsable: Kontexten som angavs är inte en länk till en resurs.
-        unsupported_context: Resursen som angavs stöds inte som kontext.
-        context_object_not_found: Kan inte hitta den angivna resursen som kontext.
-      validation:
-        invalid_user_assigned_to_work_package: Den valda användaren tillåts inte att
-          vara "%{property}" för detta arbetspaket.
-        estimated_hours: Beräknade timmar kan inte anges för överordnade arbetspaket.
-        done_ratio: Andel avslutat kan inte anges för överordnade arbetspaket, när
-          det är angivet av status eller när det är inaktiverat.
-        start_date: Startdatum kan inte anges för överordnade arbetspaket.
-        due_date: Förfallodatum kan inte anges för överordnade arbetspaket.
-    resources:
-      schema: Schema

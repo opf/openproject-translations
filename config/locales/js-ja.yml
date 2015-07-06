@@ -4,7 +4,6 @@ ja:
     ajax:
       hide: "非表示"
       loading: "ロード中..."
-    close_popup_title: Close popup
     button_add_watcher: "ウォッチャーを追加"
     button_cancel: "キャンセル"
     button_check_all: "全てを選択"
@@ -68,9 +67,11 @@ ja:
     label_format_csv: CSV
     label_format_pdf: PDF
     label_format_pdf_with_descriptions: "説明付きPDF"
+    label_format_xls: XLS
+    label_format_xls_with_descriptions: "説明付きXLS"
     label_greater_or_equal: ">="
     label_group_by: "グループ"
-    label_hide_attributes: "未入力を隠す"
+    label_hide_attributes: "空の属性を非表示"
     label_hide_column: "列を非表示"
     label_in: "今日から○日後"
     label_in_less_than: "今日から○日後以前"
@@ -84,6 +85,8 @@ ja:
     label_menu_collapse: "以下を非表示"
     label_menu_expand: "展開"
     label_more_than_ago: "今日より○日前以前"
+    label_move_column_left: "列を左に移動"
+    label_move_column_right: "列を右に移動"
     label_next: "次へ"
     label_no_data: "表示できるデータがありません。"
     label_no_due_date: "完了日なし"
@@ -101,7 +104,7 @@ ja:
     label_select_watcher: "ウォッチャーを選択..."
     label_selected_filter_list: "選択されたフィルター"
     label_share: "共有"
-    label_show_attributes: "全てを表示"
+    label_show_attributes: "すべての属性を表示"
     label_show_in_menu: "ページをメニューに表示"
     label_sort_by: "並べ替え"
     label_sorted_by: "並べ替えされた"
@@ -120,10 +123,9 @@ ja:
     label_work_package_details_you_are_here: "あなたは %{type} %{subject}で %{tab} タブにいます。"
     label_unwatch_work_package: "作業項目のウォッチを削除"
     label_uploaded_by: "アップロードした人"
-    label_global_queries: "共有された問い合わせ"
-    label_custom_queries: "プライベートな問い合わせ"
+    label_global_queries: "グローバル クエリ"
+    label_custom_queries: "カスタムクエリ"
     label_columns: "列"
-    label_click_to_enter_description: "クリックして説明を入力する..."
     text_are_you_sure: "よろしいですか？"
     filter_labels:
       assigned_to: "担当者"
@@ -156,7 +158,7 @@ ja:
     relation_labels:
       parent: "親項目"
       children: "子"
-      relates: "関連先"
+      relatedTo: "関連先"
       duplicates: "重複"
       duplicated: "重複された"
       blocks: "ブロック"
@@ -173,7 +175,6 @@ ja:
       add_blocked_by: "ブロックさせたタスクを追加"
       add_precedes: "先立つタスクを追加"
       add_follows: "跡継ぎタスクを追加"
-    field_value_enter_prompt: "'%{field}'の値を入力"
     select2:
       input_too_short:
         one: Please enter one more character
@@ -241,8 +242,8 @@ ja:
       zooms: "ズームレベル"
       outlines: "階層レベル"
     unsupported_browser:
-      title: "このブラウザーのバージョンはサポートされていません。"
-      message: "ご利用されているブラウザは、もはやOpenProjectによってサポートされていません。お使いのブラウザを更新してください。"
+      title: "お使いのブラウザーはサポートされていません。"
+      message: "使用しているブラウザは、もはやOpenProjectによってサポートされていません。お使いのブラウザを更新してください。"
       learn_more: "もっと詳しく"
     wiki_formatting:
       strong: "強調"
@@ -267,23 +268,14 @@ ja:
       description_options_hide: "オプションを非表示"
       description_options_show: "オプションを表示"
       error: "エラーが発生しました。"
-      label_enable_multi_select: "複数の選択を許可"
-      label_disable_multi_select: "複数の選択を禁止"
+      label_enable_multi_select: "複数選択の切り替え"
       label_filter_add: "フィルターを追加"
       label_options: "オプション"
-      label_column_multiselect: 'Combined dropdown field: Select with arrow keys,
-        confirm selection with enter, delete with backspace'
-      label_column_select: 'Status - Combined dropdown field: Selection with auto-completion.'
       message_error_during_bulk_delete: "作業項目を削除する際にエラーが発生しました。"
       message_successful_bulk_delete: "作業項目が正常に削除されました。"
       no_results:
         title: "表示できる作業項目がありません。"
         description_html: "<p>作業項目が作成されていないかすべての作業項目が除外されています。</p>。"
-      property_groups:
-        details: "詳細"
-        people: "人"
-        estimatesAndTime: "見積もりと 時間"
-        other: "その他"
       properties:
         assignee: "担当者"
         author: "作成者"
@@ -305,7 +297,6 @@ ja:
         type: "種別"
         updatedAt: "更新日時"
         versionName: "バージョン"
-        version: "バージョン"
       query:
         column_names: "列"
         group_by: "グループ化"
@@ -341,12 +332,12 @@ ja:
         save_as: "名前を付けて保存"
         export: "出力..."
         share: "共有..."
-        page_settings: "問い合わせ名を変更。。。"
+        page_settings: "ページ設定..."
         delete: "削除"
       filter: "フィルタ"
       unselected_title: "作業項目"
     modals:
-      label_settings: "問い合わせ名を変更"
+      label_settings: "設定"
       label_name: "名称"
       label_delete_page: "現在のページを削除"
       button_apply: "適用"
@@ -360,20 +351,7 @@ ja:
     relations:
       empty: "関係は存在しません"
       delete: "関連の削除"
-    inplace:
-      button_edit: "%{attribute}: 編集"
-      button_save: "%{attribute}: 保存"
-      button_save_and_send: "%{attribute}: 保存してメールを送信"
-      button_cancel: "%{attribute}: キャンセル"
-      link_formatting_help: "テキストの書式"
-      btn_preview_enable: "プレビュー"
-      btn_preview_disable: "プレビューを無効にする"
-      null_value_label: "値なし"
-      errors:
-        required: "%{field} cannot be empty"
-        number: "%{field} is not a valid number"
     error_could_not_resolve_version_name: "バージョン名を解決できませんでした。"
-    error_could_not_resolve_user_name: "ユーザ名を特定できません"
     units:
       hour:
         one: 1 hour

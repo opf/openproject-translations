@@ -4,7 +4,6 @@ zh-TW:
     ajax:
       hide: "隱藏"
       loading: "正在載入…"
-    close_popup_title: Close popup
     button_add_watcher: "新增監看者"
     button_cancel: "取消"
     button_check_all: "勾選全部"
@@ -68,9 +67,11 @@ zh-TW:
     label_format_csv: CSV
     label_format_pdf: PDF
     label_format_pdf_with_descriptions: "有說明的 PDF 檔"
+    label_format_xls: XLS
+    label_format_xls_with_descriptions: "有說明的 XLS 檔"
     label_greater_or_equal: ">="
     label_group_by: "分組依據"
-    label_hide_attributes: Hide empty
+    label_hide_attributes: "隱藏空屬性"
     label_hide_column: "隱藏欄"
     label_in: in
     label_in_less_than: in less than
@@ -84,6 +85,8 @@ zh-TW:
     label_menu_collapse: "摺疊"
     label_menu_expand: expand
     label_more_than_ago: more than days ago
+    label_move_column_left: "左移欄"
+    label_move_column_right: "右移欄"
     label_next: Next
     label_no_data: "沒有資料可顯示"
     label_no_due_date: "無結束日期"
@@ -101,7 +104,7 @@ zh-TW:
     label_select_watcher: "選擇監看者"
     label_selected_filter_list: "所選的篩選器"
     label_share: "分享"
-    label_show_attributes: "顯示全部"
+    label_show_attributes: "顯示所有屬性"
     label_show_in_menu: "在功能表中顯示頁面"
     label_sort_by: "排序方式"
     label_sorted_by: "排序條件"
@@ -120,10 +123,9 @@ zh-TW:
     label_work_package_details_you_are_here: "目前在  %{type} %{subject} 的第 %{tab} 個頁籤"
     label_unwatch_work_package: "取消監看工作項目"
     label_uploaded_by: "上傳者"
-    label_global_queries: Shared queries
-    label_custom_queries: Private queries
+    label_global_queries: "全域查詢"
+    label_custom_queries: "自訂查詢"
     label_columns: "欄"
-    label_click_to_enter_description: "點擊此處輸入描述…"
     text_are_you_sure: "是否確定？"
     filter_labels:
       assigned_to: "負責執行者"
@@ -156,7 +158,7 @@ zh-TW:
     relation_labels:
       parent: "主"
       children: "子階"
-      relates: "關聯於"
+      relatedTo: "關聯於"
       duplicates: "重複"
       duplicated: "標示重複者"
       blocks: "區塊"
@@ -173,18 +175,17 @@ zh-TW:
       add_blocked_by: "新增標示禁止者"
       add_precedes: "新增上級"
       add_follows: "新增從級"
-    field_value_enter_prompt: Enter a value for '%{field}'
     select2:
       input_too_short:
         one: Please enter one more character
-        other: "請更多的字元，輸入 {{count}}"
+        other: Please enter {{count}} more characters
         zero: Please enter more characters
       load_more: Loading more results ...
       no_matches: No matches found
       searching: "正在搜尋…"
       selection_too_big:
         one: You can only select one item
-        other: "您可以只選擇 {{limit}} 專案"
+        other: You can only select {{limit}} items
         zero: You cannot select any items
     text_work_packages_destroy_confirmation: Are you sure you want to delete the selected
       work package(s)?
@@ -246,8 +247,9 @@ zh-TW:
       zooms: Zoom level
       outlines: Hierarchy level
     unsupported_browser:
-      title: "系統不支援您的瀏覽器版本"
-      message: Openproject 不再支援您正在使用的瀏覽器版本，請更新您的瀏覽器。
+      title: "您的瀏覽器不支援"
+      message: The browser you are using is no longer supported by OpenProject. Please
+        update your browser.
       learn_more: Learn more
     wiki_formatting:
       strong: "粗體"
@@ -272,23 +274,14 @@ zh-TW:
       description_options_hide: "隱藏選項"
       description_options_show: "顯示選項"
       error: An error has occured.
-      label_enable_multi_select: Enable multiselect
-      label_disable_multi_select: Disable multiselect
+      label_enable_multi_select: Toggle multiselect
       label_filter_add: "新增篩選器"
       label_options: Options
-      label_column_multiselect: 'Combined dropdown field: Select with arrow keys,
-        confirm selection with enter, delete with backspace'
-      label_column_select: 'Status - Combined dropdown field: Selection with auto-completion.'
       message_error_during_bulk_delete: "刪除工作項目時發生錯誤"
       message_successful_bulk_delete: "成功刪除工作項目"
       no_results:
         title: "無工作項目可顯示"
         description_html: "<p>專案無工作項目或是被篩選器把工作項目隱藏了</p>"
-      property_groups:
-        details: Details
-        people: "人員"
-        estimatesAndTime: "預估與時間"
-        other: "其他"
       properties:
         assignee: "負責執行者"
         author: "作者"
@@ -310,7 +303,6 @@ zh-TW:
         type: "類型"
         updatedAt: "更新於"
         versionName: "版本"
-        version: "版本"
       query:
         column_names: "欄"
         group_by: "分組依據"
@@ -346,12 +338,12 @@ zh-TW:
         save_as: "另存為…"
         export: "匯出..."
         share: "分享…"
-        page_settings: Rename query ...
+        page_settings: "頁面設定..."
         delete: "删除"
       filter: "篩選器"
       unselected_title: "工作項目"
     modals:
-      label_settings: Rename query
+      label_settings: "設定"
       label_name: "名稱"
       label_delete_page: "刪除本頁"
       button_apply: "套用"
@@ -365,20 +357,7 @@ zh-TW:
     relations:
       empty: "無關連存在"
       delete: Delete relation
-    inplace:
-      button_edit: "%{attribute}: Edit"
-      button_save: "%{attribute}: Save"
-      button_save_and_send: "%{attribute}: Save and send email"
-      button_cancel: "%{attribute}: Cancel"
-      link_formatting_help: Text formatting
-      btn_preview_enable: "預覽"
-      btn_preview_disable: "停用預覽"
-      null_value_label: No value
-      errors:
-        required: "%{field} cannot be empty"
-        number: "%{field} is not a valid number"
     error_could_not_resolve_version_name: "無法解析版本名稱"
-    error_could_not_resolve_user_name: Couldn't resolve user name
     units:
       hour:
         one: 1 hour

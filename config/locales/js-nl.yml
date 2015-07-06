@@ -3,8 +3,7 @@ nl:
   js:
     ajax:
       hide: Verbergen
-      loading: Loading ...
-    close_popup_title: Close popup
+      loading: Bezig met laden ...
     button_add_watcher: Watcher toevoegen
     button_cancel: Annuleren
     button_check_all: Selecteer alles
@@ -68,9 +67,11 @@ nl:
     label_format_csv: CSV
     label_format_pdf: PDF
     label_format_pdf_with_descriptions: PDF with descriptions
+    label_format_xls: XLS
+    label_format_xls_with_descriptions: XLS with descriptions
     label_greater_or_equal: ">="
     label_group_by: Group by
-    label_hide_attributes: Verberg lege
+    label_hide_attributes: Hide empty attributes
     label_hide_column: Hide column
     label_in: in
     label_in_less_than: in minder dan
@@ -84,6 +85,8 @@ nl:
     label_menu_collapse: collapse
     label_menu_expand: expand
     label_more_than_ago: meer dan dagen geleden
+    label_move_column_left: Move column left
+    label_move_column_right: Move column right
     label_next: Volgende
     label_no_data: Geen gegevens om weer te geven
     label_no_due_date: no end date
@@ -101,7 +104,7 @@ nl:
     label_select_watcher: Select a watcher...
     label_selected_filter_list: Geselecteerde filters
     label_share: Share
-    label_show_attributes: Toon alle
+    label_show_attributes: Show all attributes
     label_show_in_menu: Show page in menu
     label_sort_by: Sorteer op
     label_sorted_by: sorted by
@@ -121,10 +124,9 @@ nl:
       %{subject}.
     label_unwatch_work_package: Unwatch work package
     label_uploaded_by: Uploaded by
-    label_global_queries: Gedeelde zoekopdrachten
-    label_custom_queries: Persoonlijke zoekopdrachten
+    label_global_queries: Global queries
+    label_custom_queries: Aangepaste query 's
     label_columns: Kolommen
-    label_click_to_enter_description: Klik om omschrijving in te geven...
     text_are_you_sure: Weet u het zeker?
     filter_labels:
       assigned_to: Toegewezene
@@ -157,7 +159,7 @@ nl:
     relation_labels:
       parent: Bovenliggende
       children: Children
-      relates: Related To
+      relatedTo: Related To
       duplicates: Duplicates
       duplicated: Duplicated by
       blocks: Blokken
@@ -174,15 +176,14 @@ nl:
       add_blocked_by: Add blocked by
       add_precedes: Add precedes
       add_follows: Add follows
-    field_value_enter_prompt: Breng een waarde in voor veld '%{field}'
     select2:
       input_too_short:
         one: Please enter one more character
         other: Please enter {{count}} more characters
         zero: Please enter more characters
-      load_more: Loading more results ...
-      no_matches: No matches found
-      searching: Searching ...
+      load_more: Meer resultaten laden ...
+      no_matches: Geen overeenkomsten gevonden
+      searching: Bezig met zoeken ...
       selection_too_big:
         one: You can only select one item
         other: You can only select {{limit}} items
@@ -196,7 +197,7 @@ nl:
       change: Change in planning
       due_date: Vervaldatum
       empty: "(leeg)"
-      error: An error has occured.
+      error: Er is een fout opgetreden.
       errors:
         not_implemented: The timeline could not be rendered because it uses a feature
           that is not yet implemented.
@@ -235,7 +236,7 @@ nl:
       responsible: Verantwoordelijk
       save: Opslaan
       start_date: Startdatum
-      tooManyProjects: More than %{count} Projects. Please use a better filter!
+      tooManyProjects: Meer dan %{count} projecten. Gebruik een beter filter!
       zoom:
         in: Zoom in
         out: Zoom out
@@ -249,9 +250,9 @@ nl:
       zooms: Zoom level
       outlines: Hierarchy level
     unsupported_browser:
-      title: Uw browserversie wordt niet ondersteund
-      message: De browserversie die u gebruikt wordt niet meer ondersteund door Openproject.
-        Gebruik een recentere versie van uw browser.
+      title: Uw browser wordt niet ondersteund
+      message: De browser die u gebruikt wordt niet langer ondersteund door OpenProject.
+        Update uw browser om OpenPrjoject te kunnen gebruiken.
       learn_more: Leer meer
     wiki_formatting:
       strong: Strong
@@ -275,14 +276,10 @@ nl:
       description_enter_text: Tekst invoeren
       description_options_hide: Hide options
       description_options_show: Show options
-      error: An error has occured.
-      label_enable_multi_select: Laat meerkeuze toe
-      label_disable_multi_select: Laat meerkeuze niet toe
+      error: Er is een fout opgetreden.
+      label_enable_multi_select: Omschakelen multiselect
       label_filter_add: Filter toevoegen
       label_options: Opties
-      label_column_multiselect: 'Combined dropdown field: Select with arrow keys,
-        confirm selection with enter, delete with backspace'
-      label_column_select: 'Status - Combined dropdown field: Selection with auto-completion.'
       message_error_during_bulk_delete: An error occurred while trying to delete work
         packages.
       message_successful_bulk_delete: Successfully deleted work packages.
@@ -290,11 +287,6 @@ nl:
         title: Geen werkpakketten om weer te geven
         description_html: "<p>Either none have been created or all work packages are
           filtered out.</p>"
-      property_groups:
-        details: Details
-        people: Mensen
-        estimatesAndTime: Schattingen en tijden
-        other: Overig
       properties:
         assignee: Toegewezene
         author: Auteur
@@ -316,7 +308,6 @@ nl:
         type: Type
         updatedAt: Bijgewerkt op
         versionName: Versie
-        version: Versie
       query:
         column_names: Kolommen
         group_by: Groepeer resultaten op
@@ -352,12 +343,12 @@ nl:
         save_as: Save as ...
         export: Export ...
         share: Share ...
-        page_settings: Zoekopdracht hernoemen...
+        page_settings: Page settings ...
         delete: Verwijderen
       filter: Filter
       unselected_title: Werkpakketten
     modals:
-      label_settings: Hernoem zoekopdracht
+      label_settings: Instellingen
       label_name: Naam
       label_delete_page: Delete current page
       button_apply: Toepassen
@@ -371,20 +362,7 @@ nl:
     relations:
       empty: No relation exists
       delete: Relatie verwijderen
-    inplace:
-      button_edit: "%{attribute}: Bewerken"
-      button_save: "%{attribute}: Bewaren"
-      button_save_and_send: "%{attribute}: Bewaar en stuur e-mail"
-      button_cancel: "%{attribute}: Afbreken"
-      link_formatting_help: Opmaak van tekst
-      btn_preview_enable: Voorbeeld
-      btn_preview_disable: Voorbeeld uitschakelen
-      null_value_label: Geen waarde
-      errors:
-        required: "%{field} cannot be empty"
-        number: "%{field} is not a valid number"
     error_could_not_resolve_version_name: Kan de verstane niet vinden
-    error_could_not_resolve_user_name: Kan de gebruikersnaam niet vinden
     units:
       hour:
         one: 1 hour

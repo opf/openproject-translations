@@ -101,6 +101,7 @@ hu:
       time_entry:
         activity: Tevékenység
         hours: "Óra"
+        work_package: Munkacsomag
         spent_on: Dátum
         type: Típus
       type:
@@ -183,7 +184,7 @@ hu:
         smaller_than_or_equal_to_max_length: Kisebbnek kell lennie, mint, vagy egyenlő,
           maximális hossz
         greater_than_start_date: Nagyobbnak kell lennie, mint a kezdő dátum
-        inclusion: is not set to one of the allowed values
+        inclusion: Nem szerepel a listán
         invalid: "Érvénytelen"
         less_than: Kisebbnek kell lennie, mint %{count}
         less_than_or_equal_to: Kisebbnek kell lennie, mint, vagy egyenlő, %{count}
@@ -220,17 +221,10 @@ hu:
               not_a_valid_parent: "Érvénytelen"
               does_not_exist: Nem létezik
             status_id:
-              status_transition_invalid: is invalid because no valid transition exists
-                from old to new status for the current user's roles
+              status_transition_invalid: Nem  létezik érvényes átmenet a régi és az
+                új állapotban az aktuális felhasználói szerepköröknél
             priority_id:
               only_active_priorities_allowed: Aktívnak kell lenni
-            category:
-              only_same_project_categories_allowed: The category of a work package
-                must be within the same project as the work package.
-              does_not_exist: The specified category does not exist.
-            estimated_hours:
-              only_values_greater_or_equal_zeroes_allowed: The estimated hours must
-                be >= 0.
         user:
           attributes:
             password:
@@ -286,13 +280,11 @@ hu:
   attributes:
     active: Aktív
     assigned_to: Megbízott
-    assignee: Megbízott
     attachments: Csatolmány
     author: Szerző
     base: "Általános hiba:"
     blocks_ids: Blokkok
     category: Kategória
-    comment: Vélemény
     comments: Vélemény
     content: Tartalom
     created_at: Létrehozva
@@ -303,23 +295,18 @@ hu:
     display_sums: Megjelenitendő összegek
     due_date: Lejárati időpont
     estimated_hours: Tervezett időpont
-    estimated_time: Tervezett időpont
     firstname: Keresztnév
     group: Csoport
     groupname: Csoport neve
-    id: ID
     is_default: Alap érték
     is_for_all: Minden projekthez
     is_public: Nyilvános
-    issue: Munkacsomag
     lastname: Vezetéknév
     login: Bejelentkezés
     mail: Email
     name: Név
     password: Jelszó
-    priority: Fontosság
     project: Projekt
-    responsible: Felelős
     role: Role
     start_date: Indulási dátum
     status: "Állapot"
@@ -398,7 +385,7 @@ hu:
       succeeded: A "%{source_project_name}" projekt átmásolva a "%{target_project_name}"
         projektbe.
   create_child_page: "Új gyermek oldal létrehozása"
-  create_child_page_for: "Új gyermek oldal létrehozása: \"%{title}\""
+  create_child_page_for: 'Új gyermek oldal létrehozása: "%{title}"'
   create_new_page: "Új oldal létrehozása"
   date:
     abbr_day_names:
@@ -597,8 +584,7 @@ hu:
   error_scm_command_failed: 'Hiba mikor kipróbáláshoz el akarja érni a repository:
     %{value}'
   error_scm_not_found: A bejegyzés vagy a revízió  a csomagtárolóban  nem található.
-  error_unable_delete_status: Unable to delete work package status because it contains
-    work packages.
+  error_unable_delete_status: Nem lehet törölni a munkacsomag állapotát
   error_unable_delete_default_status: Nem tudom törtölni az alapértelmezett munkacsomag
     állapotát. Kérjük, válasszon egy másik alapértelmezett munka csomag állapotot,
     mielött ezt törli.
@@ -745,7 +731,6 @@ hu:
   label_downloads_abbr: D/L
   label_duplicated_by: duplázott
   label_duplicates: Ismétlődések
-  label_edit: Szerkesztés
   label_enable_multi_select: Multiselect ki-/ bekapcsolása
   label_end_to_end: végétől a végéig
   label_end_to_start: végétől az elejéig
@@ -773,7 +758,6 @@ hu:
   label_generate_key: Létrehoz egy kulcsot
   label_git_path: ".Git könyvtár elérési útja"
   label_greater_or_equal: ">="
-  label_group_by: Csoportosítás a következők szerint
   label_group_new: "Új csoport"
   label_group_plural: Csoportok
   label_help: Segítség
@@ -813,6 +797,7 @@ hu:
     amelyért én vagyok a felelős
   label_work_package_view_all_watched: Az összes megfigyelt munkacsomag megtekintése
   label_work_package_watchers: Megfigyelők
+  label_work_packages_by: A munkacsomagok %{value}
   label_journal_diff: Leírás összehasonlítás
   label_jump_to_a_project: Ugrás a projekthez
   label_language_based: A felhasználói nyelv alapján
@@ -1089,7 +1074,6 @@ hu:
   label_keyboard_shortcut_go_news: Tovább a projekt híreihez
   label_keyboard_shortcut_go_timelines: Ugrás az idővonalakhoz
   label_keyboard_shortcut_new_work_package: "Új munkacsomag létrehozása"
-  label_keyboard_shortcut_details_package: Show work packages details pane
   label_keyboard_shortcut_go_edit: Tovább a "jelenlegi tétel szerkesztésére" (csak
     a részletes oldalak)
   label_keyboard_shortcut_open_more_menu: Több menü megnyitása (csak a részletes lapok)
@@ -1099,7 +1083,6 @@ hu:
     (csak néhány lista)
   label_keyboard_shortcut_focus_next_item: Középpontban a következő lista elemei (csak
     néhány lista)
-  label_visible_elements: Visible elements
   macro_execution_error: Hiba a makro %{macro_name} végrehajtásában
   macro_unavailable: A %{macro_name} makró nem jeleníthető meg.
   mail_body_account_activation_request: "Új felhasználó (%{value}) regisztrálva van.
@@ -1490,10 +1473,6 @@ hu:
       short: "%d %b %H:%M"
       time: "%I:%M %p"
     pm: Délután
-  timeframe:
-    show: Mutasd az időkeretet
-    end: címzett
-    start: tól
   timelines:
     admin_menu:
       color: Szín
@@ -1574,8 +1553,8 @@ hu:
         absolute: Abszolút
         none: Egyik sem
         relative: Relatív
-        compare_relative_prefix: Compare current planning to
-        compare_relative_suffix: ago
+        compare_relative: Hasonlítsa össze a jelenlegi tervezési %{timespan} ezelőtti
+          időtávot
         compare_absolute: Hasonlítsa össze a jelenlegi tervezési  %{date} időpont
       time_relative:
         days: napok
@@ -1603,7 +1582,8 @@ hu:
       status: "Állapot megjelenítése"
       project_time_filter: Egy bizonyos típusú egy bizonyos időn belüli  projektek
         a munka csomagokkal
-      project_time_filter_timeframe: Timeframe
+      project_time_filter_absolute_timeframe: Abszolút időkeret
+      project_time_filter_relative_timeframe: Relatív időkeret
       project_time_filter_historical_from: tól
       project_time_filter_historical_to: címzett
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1651,7 +1631,7 @@ hu:
     planning_element_update: 'Frissítve: %{title}'
     work_packages_are_displayed_in_aggregations: Munkacsomagok megjelenítése csoportokban
     project_association_new: Projekt függőségek hozzáadása
-    project_association_new_for_with: "\"%{project_a}\" függőségeinek a beállítása"
+    project_association_new_for_with: '"%{project_a}" függőségeinek a beállítása'
     project_association_with_other: Projekt függősége "%{project_a}" és "%{project_b}"
       között
     project_association_of_type: Projekt típus "%{type}" függőségei
@@ -1740,39 +1720,3 @@ hu:
     updated_automatically_by_child_changes: Automatikusan frissíti a változó értékeken
       belöl a gyermek munkacsomag %{child} alapján
   nothing_to_preview: Nincs előnézet
-  api_v3:
-    attributes:
-      lock_version: Lock Version
-    errors:
-      code_401: You need to be authenticated to access this resource.
-      code_403: You are not authorized to access this resource.
-      code_404: The requested resource could not be found.
-      code_409: Couldn't update the resource because of conflicting modifications.
-      invalid_content_type: Expected CONTENT-TYPE to be '%{content_type}' but got
-        '%{actual}'.
-      invalid_resource: For property '%{property}' a link like '%{expected}' is expected,
-        but got '%{actual}'.
-      invalid_relation: The relation is invalid.
-      invalid_user_status_transition: The current user account status does not allow
-        this operation.
-      missing_content_type: not specified
-      multiple_errors: Multiple field constraints have been violated.
-      parse_error: The request body was neither empty, nor did it contain a single
-        JSON object.
-      writing_read_only_attributes: You must not write a read-only attribute.
-      invalid_format: 'Invalid format for property ''%{property}'': Expected format
-        like ''%{expected_format}'', but got ''%{actual}''.'
-      render:
-        context_not_parsable: The context provided is not a link to a resource.
-        unsupported_context: The resource given is not supported as context.
-        context_object_not_found: Cannot find the resource given as the context.
-      validation:
-        invalid_user_assigned_to_work_package: The chosen user is not allowed to be
-          '%{property}' for this work package.
-        estimated_hours: Estimated hours cannot be set on parent work packages.
-        done_ratio: Done ratio cannot be set on parent work packages, when it is inferred
-          by status or when it is disabled.
-        start_date: Start date cannot be set on parent work packages.
-        due_date: Due date cannot be set on parent work packages.
-    resources:
-      schema: Schema

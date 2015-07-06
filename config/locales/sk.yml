@@ -102,6 +102,7 @@ sk:
       time_entry:
         activity: "Činnosť"
         hours: Hodín
+        work_package: Pracovný balíček
         spent_on: Dátum
         type: Typ
       type:
@@ -183,7 +184,7 @@ sk:
         smaller_than_or_equal_to_max_length: musí byť menšie alebo rovné ako maximálne
           dĺžka
         greater_than_start_date: musí byť väčšie ako počiatočný dátum
-        inclusion: is not set to one of the allowed values
+        inclusion: nie je zahrnutá v zozname
         invalid: je neplatný
         less_than: musí byť menšie ako %{count}
         less_than_or_equal_to: musí byť menšie alebo rovné ako %{count}
@@ -206,8 +207,8 @@ sk:
           identical_projects: projekt nemôže byť previazaný sám so sebou
           project_association_not_allowed: nedovoľuje vytváranie väzieb na iné projekty
         repository:
-          not_whitelisted: is not allowed by the configuration
-          no_directory: is not a directory
+          not_whitelisted: nie je povolené aktuálnou konfiguráciou
+          no_directory: nie je adresár
         work_package:
           is_not_a_valid_target_for_time_entries: 'Work package #%{id} is not a valid
             target for reassigning the time entries.'
@@ -221,18 +222,10 @@ sk:
               not_a_valid_parent: je neplatný
               does_not_exist: neexistuje
             status_id:
-              status_transition_invalid: je neplatný, pretože neexistuje žiadny platný
-                prechod zo starého na nový stav v prípade aktuálne pridelených rolí
-                používateľa
+              status_transition_invalid: no valid transition exists from old to new
+                status for the current user roles
             priority_id:
               only_active_priorities_allowed: musí byť aktívna
-            category:
-              only_same_project_categories_allowed: Kategória pracovného balíčka sa
-                musí nachádzať v rámci rovnakého projektu ako pracovný balíček.
-              does_not_exist: "Špecifikovaná kategória neexistuje."
-            estimated_hours:
-              only_values_greater_or_equal_zeroes_allowed: The estimated hours must
-                be >= 0.
         user:
           attributes:
             password:
@@ -241,7 +234,7 @@ sk:
               lowercase: malé písmená (napríklad "a")
               uppercase: veľké písmená (napríklad "A")
               numeric: "Čísla (napríklad 1)"
-              special: "Špeciálne znaky (napríklad \"%\")"
+              special: Špeciálne znaky (napríklad "%")
               reused:
                 one: has been used before. Please choose one that is different from
                   your last one.
@@ -292,13 +285,11 @@ sk:
   attributes:
     active: Aktívny
     assigned_to: Priradené
-    assignee: Priradené
     attachments: Prílohy
     author: Autor
     base: 'Všeobecná chyba:'
     blocks_ids: Blocks
     category: Kategória
-    comment: Komentár
     comments: Komentár
     content: Obsah
     created_at: Vytvorené
@@ -309,23 +300,18 @@ sk:
     display_sums: Zobraziť súčty
     due_date: Do dátumu
     estimated_hours: Predpokladaný čas
-    estimated_time: Predpokladaný čas
     firstname: Krstné meno
     group: Skupina
     groupname: Názov skupiny
-    id: ID
     is_default: Predvolená hodnota
     is_for_all: Pre všetky projekty
     is_public: Verejný
-    issue: Pracovný balíček
     lastname: Priezvisko
     login: Prihlasovacie meno
     mail: E-mail
     name: Názov
     password: Heslo
-    priority: Priorita
     project: Projekt
-    responsible: Zodpovedný
     role: Rola
     start_date: Dátum začiatku
     status: Stav
@@ -610,8 +596,7 @@ sk:
   error_scm_command_failed: 'An error occurred when trying to access the repository:
     %{value}'
   error_scm_not_found: Položka alebo revízia nebola nájdená v repozitári.
-  error_unable_delete_status: Nedá sa odstrániť stav pracovného balíčka, pretože sa
-    aktuálne používa jedným alebo viacerými pracovnými balíčkami.
+  error_unable_delete_status: Unable to delete work package status
   error_unable_delete_default_status: Unable to delete default work package status.
     Please select another default work package status before deleting the current
     one.
@@ -757,7 +742,6 @@ sk:
   label_downloads_abbr: D/L
   label_duplicated_by: duplicated by
   label_duplicates: duplicates
-  label_edit: Upraviť
   label_enable_multi_select: Toggle multiselect
   label_end_to_end: end to end
   label_end_to_start: end to start
@@ -785,7 +769,6 @@ sk:
   label_generate_key: Vygenerovať kľúč
   label_git_path: Cesta ku .git adresáru
   label_greater_or_equal: ">="
-  label_group_by: Zoskupiť podľa
   label_group_new: Nová skupina
   label_group_plural: Skupiny
   label_help: Nápoveda
@@ -816,13 +799,16 @@ sk:
   label_work_package_status_plural: Stavy pracovného balíčka
   label_work_package_tracking: Work package tracking
   label_work_package_updated: Work package updated
-  label_work_package_view_all: View all work packages
-  label_work_package_view_all_assigned_to_me: View all work packages assigned to me
-  label_work_package_view_all_reported_by_me: View all work packages reported by me
-  label_work_package_view_all_responsible_for: View all work packages I am responsible
-    for
-  label_work_package_view_all_watched: View all watched work packages
+  label_work_package_view_all: Zobraziť všetky pracovné balíčky
+  label_work_package_view_all_assigned_to_me: Zobraziť všetky pracovné balíčky priradené
+    mne
+  label_work_package_view_all_reported_by_me: Zobraziť všetky pracovné balíčky hlásené
+    mnou
+  label_work_package_view_all_responsible_for: Zobraziť všetky pracovné balíčky, za
+    ktoré som zodpovedný
+  label_work_package_view_all_watched: Zobraziť všetky sledované pracovné balíčky
   label_work_package_watchers: Pozorovatelia
+  label_work_packages_by: Work packages by %{value}
   label_journal_diff: Description Comparison
   label_jump_to_a_project: Jump to a project...
   label_language_based: Based on user's language
@@ -874,11 +860,11 @@ sk:
   label_new_statuses_allowed: New statuses allowed
   label_news_added: News added
   label_news_comment_added: Comment added to a news
-  label_news_latest: Latest news
+  label_news_latest: Najnovšie novinky
   label_news_new: Add news
   label_news_edit: Edit news
   label_news_plural: Novinky
-  label_news_view_all: View all news
+  label_news_view_all: Zobraziť všetky novinky
   label_next: Next
   label_next_week: Next week
   label_no_change_option: "(No change)"
@@ -902,7 +888,7 @@ sk:
   label_password_rule_special: Special Characters
   label_password_rule_uppercase: Uppercase
   label_path_encoding: Path encoding
-  label_pdf_with_descriptions: PDF with Descriptions
+  label_pdf_with_descriptions: PDF s popisom
   label_per_page: Per page
   label_permissions: Permissions
   label_permissions_report: Permissions report
@@ -1101,7 +1087,6 @@ sk:
   label_keyboard_shortcut_go_news: Go to project news
   label_keyboard_shortcut_go_timelines: Go to timelines
   label_keyboard_shortcut_new_work_package: Vytvoriť nový pracovný balíček
-  label_keyboard_shortcut_details_package: Show work packages details pane
   label_keyboard_shortcut_go_edit: Go to edit the current item (on detail pages only)
   label_keyboard_shortcut_open_more_menu: Open more-menu (on detail pages only)
   label_keyboard_shortcut_go_preview: Go to preview the current edit (on edit pages
@@ -1110,7 +1095,6 @@ sk:
     lists only)
   label_keyboard_shortcut_focus_next_item: Focus next list element (on some lists
     only)
-  label_visible_elements: Visible elements
   macro_execution_error: Error executing the macro %{macro_name}
   macro_unavailable: Macro %{macro_name} cannot be displayed.
   mail_body_account_activation_request: 'A new user (%{value}) has registered. The
@@ -1132,7 +1116,7 @@ sk:
   mail_subject_wiki_content_added: "'%{id}' wiki page has been added"
   mail_subject_wiki_content_updated: "'%{id}' wiki page has been updated"
   more_actions: More functions
-  noscript_description: You need to activate JavaScript in order to use OpenProject!
+  noscript_description: Musíte aktivovať JavaScript, aby ste mohli používať OpenProject!
   noscript_heading: JavaScript disabled
   noscript_learn_more: Learn more
   notice_account_activated: Your account has been activated. You can now log in.
@@ -1499,10 +1483,6 @@ sk:
       short: "%d %b %H:%M"
       time: "%I:%M %p"
     pm: pm
-  timeframe:
-    show: Show timeframe
-    end: do
-    start: od
   timelines:
     admin_menu:
       color: Farba
@@ -1584,8 +1564,7 @@ sk:
         absolute: Absolútna
         none: "Žiadny"
         relative: Relatívna
-        compare_relative_prefix: Porovnať aktuálne plánovanie voči
-        compare_relative_suffix: vzad
+        compare_relative: Compare current planning to %{timespan} ago
         compare_absolute: Compare current planning to %{date}
       time_relative:
         days: dní
@@ -1613,7 +1592,8 @@ sk:
       status: Show status
       project_time_filter: Projects with a work package of a certain type in a certain
         timeframe
-      project_time_filter_timeframe: "Časový rámec"
+      project_time_filter_absolute_timeframe: Absolute timeframe
+      project_time_filter_relative_timeframe: Relative timeframe
       project_time_filter_historical_from: od
       project_time_filter_historical_to: do
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1747,40 +1727,3 @@ sk:
     updated_automatically_by_child_changes: _Modifikované automaticky z dôvodu zmeny
       hodnôt v rámci podradeného pracovného balíčka %{child}_
   nothing_to_preview: Nič na zobrazenie náhľadu
-  api_v3:
-    attributes:
-      lock_version: Lock Version
-    errors:
-      code_401: Pre prístup k tomuto prostriedku musíte byť autentifikovaný.
-      code_403: Nemáte oprávnenie na prístup k tomuto prostriedku.
-      code_404: Požadovaný prostriedok sa nenašiel.
-      code_409: Nepodarilo sa aktualizovať prostriedok kvôli konfliktným modifikáciam.
-      invalid_content_type: Očakávaný typ obsahu je "%{content_type}", dodaný bol
-        však "%{actual}".
-      invalid_resource: For property '%{property}' a link like '%{expected}' is expected,
-        but got '%{actual}'.
-      invalid_relation: The relation is invalid.
-      invalid_user_status_transition: "Účet aktuálneho používateľa nemá oprávnenie
-        na vykonanie tejto operácie."
-      missing_content_type: nešpecifikovaný
-      multiple_errors: Multiple field constraints have been violated.
-      parse_error: Telo prichádzajúcej požiadavky nebolo ani prázdne, ani neobsahovalo
-        práve jeden JSON objekt.
-      writing_read_only_attributes: Nie je možné meniť atribút, ktorý je určený len
-        na čítanie.
-      invalid_format: 'Neplatný formát parametra "%{property}": systémom očakávaný
-        formát je "%{expected_format}", používateľ dodal "%{actual}".'
-      render:
-        context_not_parsable: The context provided is not a link to a resource.
-        unsupported_context: The resource given is not supported as context.
-        context_object_not_found: Cannot find the resource given as the context.
-      validation:
-        invalid_user_assigned_to_work_package: Zvolený používateľ nemôže byť "%{property}"
-          v prípade tohto pracovného balíčka.
-        estimated_hours: Estimated hours cannot be set on parent work packages.
-        done_ratio: Done ratio cannot be set on parent work packages, when it is inferred
-          by status or when it is disabled.
-        start_date: Start date cannot be set on parent work packages.
-        due_date: Due date cannot be set on parent work packages.
-    resources:
-      schema: Schéma

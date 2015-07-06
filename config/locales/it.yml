@@ -106,6 +106,7 @@ it:
       time_entry:
         activity: Attività
         hours: Ore
+        work_package: Pacchetto di Lavoro
         spent_on: Data
         type: Tipo
       type:
@@ -188,7 +189,7 @@ it:
         smaller_than_or_equal_to_max_length: deve essere minore o uguale alla lunghezza
           massima
         greater_than_start_date: deve essere maggiore della data di inizio
-        inclusion: non è impostata su uno dei valori consentiti
+        inclusion: non è incluso nella lista
         invalid: non è valido
         less_than: deve essere inferiore di %{count}
         less_than_or_equal_to: deve essere inferiore o uguale di %{count}
@@ -211,8 +212,8 @@ it:
           identical_projects: non può essere creato da un progetto a se stesso
           project_association_not_allowed: non consente le associazioni
         repository:
-          not_whitelisted: is not allowed by the configuration
-          no_directory: is not a directory
+          not_whitelisted: non è consentito dalla configurazione
+          no_directory: non è una directory
         work_package:
           is_not_a_valid_target_for_time_entries: 'Il pacchetto di lavoro #%{id} non
             è una destinazione valida per riassegnare le voci del tempo.'
@@ -226,18 +227,10 @@ it:
               not_a_valid_parent: non è valido
               does_not_exist: non esiste
             status_id:
-              status_transition_invalid: non è valido perché nessuna transizione valida
-                esiste dal vecchio al nuovo status per i ruoli dell'utente corrente
+              status_transition_invalid: nessuna transizione valida esiste dal vecchio
+                al nuovo status per i ruoli dell'utente corrente
             priority_id:
               only_active_priorities_allowed: deve essere attivo
-            category:
-              only_same_project_categories_allowed: La categoria di un pacchetto di
-                lavoro deve essere contenuta nel medesimo progetto del pacchetto di
-                lavoro.
-              does_not_exist: La categoria specificata non esiste.
-            estimated_hours:
-              only_values_greater_or_equal_zeroes_allowed: Le ore stimate devono essere
-                >= 0.
         user:
           attributes:
             password:
@@ -293,13 +286,11 @@ it:
   attributes:
     active: Attivo
     assigned_to: Assegnatario
-    assignee: Assegnatario
     attachments: Allegati
     author: Autore
     base: 'Errore Generale:'
     blocks_ids: Blocchi
     category: Categoria
-    comment: Commento
     comments: Commento
     content: Contenuto
     created_at: Creato nel
@@ -310,23 +301,18 @@ it:
     display_sums: Visualizza somme
     due_date: Data di fine
     estimated_hours: Tempo stimato
-    estimated_time: Tempo stimato
     firstname: Nome
     group: Gruppo
     groupname: Nome gruppo
-    id: ID
     is_default: Valore predefinito
     is_for_all: Per tutti progetti
     is_public: Pubblico
-    issue: Pacchetto di lavoro
     lastname: Cognome
     login: Nome Utente
     mail: Email
     name: Nome
     password: Password
-    priority: Priorità
     project: Progetto
-    responsible: Responsabile
     role: Role
     start_date: Data di inizio
     status: Stato
@@ -603,8 +589,7 @@ it:
   error_scm_command_failed: 'Si è verificato un errore quando si tenta di accedere
     al repository: %{value}'
   error_scm_not_found: La voce o la revisione non è stata trovata nel repository.
-  error_unable_delete_status: Impossibile eliminare lo stato del pacchetto lavoro
-    perché contiene pacchetti di lavoro.
+  error_unable_delete_status: Impossibile eliminare lo stato del pacchetto di lavoro
   error_unable_delete_default_status: Impossibile eliminare lo stato del pacchetto
     di lavoro predefinito. Si prega di selezionare un altro stato di pacchetto di
     lavoro predefinito prima di cancellare quello attuale.
@@ -751,7 +736,6 @@ it:
   label_downloads_abbr: D/L
   label_duplicated_by: duplicato da
   label_duplicates: duplicati
-  label_edit: Modifica
   label_enable_multi_select: Inverti multiselezione
   label_end_to_end: end to end
   label_end_to_start: da fine a inizio
@@ -779,7 +763,6 @@ it:
   label_generate_key: Genera chiave
   label_git_path: Percorso per la cartella .git
   label_greater_or_equal: ">="
-  label_group_by: Raggruppa secondo
   label_group_new: Nuovo gruppo
   label_group_plural: Gruppi
   label_help: Aiuti
@@ -819,6 +802,7 @@ it:
     che sono responsabili
   label_work_package_view_all_watched: Mostra tutti i pacchetti di lavoro osservati
   label_work_package_watchers: Osservatori
+  label_work_packages_by: Pacchetti di lavoro da %{value}
   label_journal_diff: Descrizione del confronto
   label_jump_to_a_project: Salta nel progetto...
   label_language_based: Basato sulla lingua dell'utente
@@ -1095,8 +1079,6 @@ it:
   label_keyboard_shortcut_go_news: Vai alle notizie progetto
   label_keyboard_shortcut_go_timelines: Vai alle sequenze temporali
   label_keyboard_shortcut_new_work_package: Crea nuovo pacchetto di lavoro
-  label_keyboard_shortcut_details_package: Visualizza il pannello di dettaglio dei
-    pacchetti di lavoro
   label_keyboard_shortcut_go_edit: Vai a modificare la voce corrente (solo nelle pagine
     di dettaglio)
   label_keyboard_shortcut_open_more_menu: Apri altri-menù (solo nelle pagine di dettaglio)
@@ -1106,7 +1088,6 @@ it:
     (solo su alcune liste)
   label_keyboard_shortcut_focus_next_item: Focus next list element (on some lists
     only)
-  label_visible_elements: Visible elements
   macro_execution_error: Errore nell'esecuzione del macro %{macro_name}
   macro_unavailable: Non può essere visualizzata la macro %{macro_name}.
   mail_body_account_activation_request: 'Un nuovo utente (%{value}) si è registrato.
@@ -1503,10 +1484,6 @@ it:
       short: "%d %b % h %M"
       time: "%I: %M %p"
     pm: pm
-  timeframe:
-    show: Visualizza calendario
-    end: a
-    start: da
   timelines:
     admin_menu:
       color: Colore
@@ -1589,8 +1566,7 @@ it:
         absolute: Assoluto
         none: Nessuno
         relative: Relativo
-        compare_relative_prefix: Confrontare l'attuale pianificazione con
-        compare_relative_suffix: fa
+        compare_relative: Confrontare l'attuale pianificazione al %{timespan} fa
         compare_absolute: Confrontare l'attuale pianificazione a %{date}
       time_relative:
         days: giorni
@@ -1618,7 +1594,8 @@ it:
       status: Mostra stati
       project_time_filter: Progetti con un pacchetto di lavoro di un certo tipo in
         un certo lasso di tempo
-      project_time_filter_timeframe: Lasso di tempo
+      project_time_filter_absolute_timeframe: Sequenza temporale assoluta
+      project_time_filter_relative_timeframe: Relative timeframe
       project_time_filter_historical_from: da
       project_time_filter_historical_to: a
       project_time_filter_historical: from %{startdate} to %{enddate}
@@ -1755,42 +1732,3 @@ it:
     updated_automatically_by_child_changes: _Aggiornato automaticammente cambiando
       i valori all'interno del pacchetto di lavoro figlio %{child}_
   nothing_to_preview: Niente in anteprima
-  api_v3:
-    attributes:
-      lock_version: Blocca Versione
-    errors:
-      code_401: Devi essere autenticato per accedere a questa risorsa.
-      code_403: Non siete autorizzati ad accedere a questa risorsa.
-      code_404: La risorsa richiesta non è stata trovata.
-      code_409: Non ha potuto aggiornare la risorsa a causa delle modifiche in conflitto.
-      invalid_content_type: Il  CONTENT-TYPE avrebbe dovuto essere '%{content_type}',
-        ma si è ottenuto '%{actual}'.
-      invalid_resource: Per la proprietà '%{property}' il link atteso è '%{expected}',
-        ma si è ottenuto '%{actual}'.
-      invalid_relation: The relation is invalid.
-      invalid_user_status_transition: L'attuale stato dell'account utente non consente
-        questa operazione.
-      missing_content_type: non specificato
-      multiple_errors: Più vincoli di campo sono stati violati.
-      parse_error: Il corpo della richiesta era né vuota, né conteneva un singolo
-        oggetto JSON.
-      writing_read_only_attributes: Non devi scrivere un attributo di sola lettura.
-      invalid_format: 'Formato non valido per la proprietà ''%{property}'': previsto
-        un formato del tipo ''%{expected_format}'', rispetto al tipo attuale ''%{actual}''.'
-      render:
-        context_not_parsable: Il contesto fornito non è un collegamento a una risorsa.
-        unsupported_context: La risorsa non è supportata come contesto.
-        context_object_not_found: Impossibile trovare la risorsa indicata come contesto.
-      validation:
-        invalid_user_assigned_to_work_package: L'utente scelto non è consentito di
-          essere '%{property}' per questo pacchetto di lavoro.
-        estimated_hours: Le ore stimate non possono essere impostate su pacchetti
-          di lavoro del padre.
-        done_ratio: Il rapporto del lavoro svolto non può essere impostata su pacchetti
-          di lavoro del padre, quando esso viene dedotto dallo stato o quando è disabilitato.
-        start_date: Data di inizio non può essere impostata su pacchetti di lavoro
-          del padre.
-        due_date: La data di scadenza non può essere impostata su pacchetti di lavoro
-          del padre.
-    resources:
-      schema: Schema

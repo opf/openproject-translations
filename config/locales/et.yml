@@ -102,6 +102,7 @@ et:
       time_entry:
         activity: Tegevus
         hours: Tunnid
+        work_package: Teema
         spent_on: Kuupäev
         type: Liik
       type:
@@ -183,7 +184,7 @@ et:
         smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
           length
         greater_than_start_date: peab olema alguskuupäevast hilisem
-        inclusion: is not set to one of the allowed values
+        inclusion: ei ole nimistus
         invalid: ei sobi
         less_than: peab olema väiksem kui %{count}
         less_than_or_equal_to: peab olema väiksem või võrdne kui %{count}
@@ -220,17 +221,10 @@ et:
               not_a_valid_parent: ei sobi
               does_not_exist: pole olemas
             status_id:
-              status_transition_invalid: is invalid because no valid transition exists
-                from old to new status for the current user's roles
+              status_transition_invalid: Praeguse kasutaja rollide jaoks ei leidu
+                lubatud üleminekut vanalt olekult uuele
             priority_id:
               only_active_priorities_allowed: peab olema aktiivne
-            category:
-              only_same_project_categories_allowed: The category of a work package
-                must be within the same project as the work package.
-              does_not_exist: The specified category does not exist.
-            estimated_hours:
-              only_values_greater_or_equal_zeroes_allowed: The estimated hours must
-                be >= 0.
         user:
           attributes:
             password:
@@ -286,13 +280,11 @@ et:
   attributes:
     active: Aktiivne
     assigned_to: Määratud tegija
-    assignee: Määratud tegija
     attachments: Manused
     author: Autor
     base: "Üldine tõrge:"
     blocks_ids: Plokid
     category: Kategooria
-    comment: Kommentaar
     comments: Kommentaar
     content: Sisu
     created_at: Loodud
@@ -303,23 +295,18 @@ et:
     display_sums: Kuva summasid
     due_date: Tähtaeg
     estimated_hours: Eeldatav ajakulu
-    estimated_time: Eeldatav ajakulu
     firstname: Eesnimi
     group: Grupp
     groupname: Grupi nimi
-    id: ID
     is_default: Vaikeväärtus
     is_for_all: Kõikide projektide jaoks
     is_public: Avalik
-    issue: Teema
     lastname: Perekonnanimi
     login: Logi sisse
     mail: E-posti aadress
     name: Nimi
     password: Parool
-    priority: Prioriteet
     project: Projekt
-    responsible: Vastutaja
     role: Role
     start_date: Alguskuupäev
     status: Olek
@@ -593,8 +580,7 @@ et:
     tõrge: %{value}'
   error_scm_not_found: Versioonihalduse süsteemis ei leidunud otsitavat sissekannet
     või versiooni.
-  error_unable_delete_status: Unable to delete work package status because it contains
-    work packages.
+  error_unable_delete_status: Oleku kustutamine ei õnnestunud
   error_unable_delete_default_status: Pole võimalik kustutada teemade vaikimisi staatust.
     Palun vali uus vaikimisi väärtus enne kui kustutad praeguse.
   error_unable_to_connect: "Ühenduse loomine ebaõnnestus (%{value})"
@@ -740,7 +726,6 @@ et:
   label_downloads_abbr: A/L
   label_duplicated_by: dubleeris
   label_duplicates: duplikaadid
-  label_edit: Muuda
   label_enable_multi_select: Võimalda mitmene valik
   label_end_to_end: otsast lõpuni
   label_end_to_start: lõpust alguseni
@@ -768,7 +753,6 @@ et:
   label_generate_key: Genereeri võti
   label_git_path: Tee .git kataloog
   label_greater_or_equal: ">="
-  label_group_by: Group by
   label_group_new: Uus rühm
   label_group_plural: Rühmad
   label_help: Abi
@@ -805,6 +789,7 @@ et:
   label_work_package_view_all_responsible_for: Kuva kõik minu vastutusel olevad teemad
   label_work_package_view_all_watched: Kuva kõik jälgimisel olevad teemad
   label_work_package_watchers: Jälgijad
+  label_work_packages_by: Teemad %{value} järgi
   label_journal_diff: Kirjelduse võrdlus
   label_jump_to_a_project: Mine projekti...
   label_language_based: Põhineb kasutaja keelel
@@ -1079,7 +1064,6 @@ et:
   label_keyboard_shortcut_go_news: Mine projekti uudiste juurde
   label_keyboard_shortcut_go_timelines: Mine ajakava juurde
   label_keyboard_shortcut_new_work_package: Lisa uus teema
-  label_keyboard_shortcut_details_package: Show work packages details pane
   label_keyboard_shortcut_go_edit: Muuda valitut üksust (üksikasjade lehel)
   label_keyboard_shortcut_open_more_menu: Ava "näita rohkem" menüü (üksikasjade lehel)
   label_keyboard_shortcut_go_preview: Näita eelvaadet (ainult toimetamisel)
@@ -1087,7 +1071,6 @@ et:
     vaid valitud loendites)
   label_keyboard_shortcut_focus_next_item: Liigu järgmisele loendi elemendile (töötab
     vaid valitud loendites)
-  label_visible_elements: Visible elements
   macro_execution_error: Error executing the macro %{macro_name}
   macro_unavailable: Macro %{macro_name} cannot be displayed.
   mail_body_account_activation_request: 'Uus kasutaja (%{value}) on registreerunud.
@@ -1471,10 +1454,6 @@ et:
       short: "%d %b %H:%M"
       time: "%I:%M %p"
     pm: pärast lõunat
-  timeframe:
-    show: Kuva ajakava
-    end: kuni
-    start: alates
   timelines:
     admin_menu:
       color: Värv
@@ -1551,8 +1530,7 @@ et:
         absolute: Absoluutne
         none: Mittemingi
         relative: Suhteline
-        compare_relative_prefix: Compare current planning to
-        compare_relative_suffix: ago
+        compare_relative: Võrdle kehtivat plaani plaaniga %{timespan} tagasi
         compare_absolute: Võrdle praegust plaani kuupäeval %{date} kehtinud plaaniga
       time_relative:
         days: päeva
@@ -1579,7 +1557,8 @@ et:
       types: Kuva tüübid
       status: Kuva olek
       project_time_filter: Projektid teatud teema tüübiga ja teatud ajakavaga
-      project_time_filter_timeframe: Timeframe
+      project_time_filter_absolute_timeframe: Absoluutne ajakava
+      project_time_filter_relative_timeframe: Suhteline ajakava
       project_time_filter_historical_from: alates
       project_time_filter_historical_to: kuni
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1712,39 +1691,3 @@ et:
     updated_automatically_by_child_changes: _Uuendati automaatselt, kuna muudeti alamteemat
       %{child}_
   nothing_to_preview: Eelvaateks pole midagi näidata
-  api_v3:
-    attributes:
-      lock_version: Lock Version
-    errors:
-      code_401: You need to be authenticated to access this resource.
-      code_403: You are not authorized to access this resource.
-      code_404: The requested resource could not be found.
-      code_409: Couldn't update the resource because of conflicting modifications.
-      invalid_content_type: Expected CONTENT-TYPE to be '%{content_type}' but got
-        '%{actual}'.
-      invalid_resource: For property '%{property}' a link like '%{expected}' is expected,
-        but got '%{actual}'.
-      invalid_relation: The relation is invalid.
-      invalid_user_status_transition: The current user account status does not allow
-        this operation.
-      missing_content_type: not specified
-      multiple_errors: Multiple field constraints have been violated.
-      parse_error: The request body was neither empty, nor did it contain a single
-        JSON object.
-      writing_read_only_attributes: You must not write a read-only attribute.
-      invalid_format: 'Invalid format for property ''%{property}'': Expected format
-        like ''%{expected_format}'', but got ''%{actual}''.'
-      render:
-        context_not_parsable: The context provided is not a link to a resource.
-        unsupported_context: The resource given is not supported as context.
-        context_object_not_found: Cannot find the resource given as the context.
-      validation:
-        invalid_user_assigned_to_work_package: The chosen user is not allowed to be
-          '%{property}' for this work package.
-        estimated_hours: Estimated hours cannot be set on parent work packages.
-        done_ratio: Done ratio cannot be set on parent work packages, when it is inferred
-          by status or when it is disabled.
-        start_date: Start date cannot be set on parent work packages.
-        due_date: Due date cannot be set on parent work packages.
-    resources:
-      schema: Schema

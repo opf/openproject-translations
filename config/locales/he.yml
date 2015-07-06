@@ -98,6 +98,7 @@ he:
       time_entry:
         activity: "פעילות"
         hours: "שעות"
+        work_package: "חבילת עבודה"
         spent_on: "תאריך"
         type: "סוג"
       type:
@@ -110,7 +111,7 @@ he:
         auth_source: "מצב אימות"
         language: "שפה"
         last_login_on: "כניסה אחרונה"
-        mail_notification: "התראות דוא\"ל"
+        mail_notification: התראות דוא"ל
         new_password: "סיסמה חדשה"
         password_confirmation: "אימות"
         force_password_change: "לאכוף שינוי סיסמה בכניסה הבאה"
@@ -179,7 +180,7 @@ he:
         smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
           length
         greater_than_start_date: "צריך להיות גדול יותר מאשר תאריך ההתחלה"
-        inclusion: is not set to one of the allowed values
+        inclusion: "אינו נכלל ברשימה"
         invalid: "אינו חוקי"
         less_than: "חייב להיות קטן מ- %{count}"
         less_than_or_equal_to: "חייב להיות קטן או שווה ל- %{count}"
@@ -216,17 +217,10 @@ he:
               not_a_valid_parent: "אינו חוקי"
               does_not_exist: "לא קיים"
             status_id:
-              status_transition_invalid: "אינו חוקי מכיוון שלא קיים תרגום תקף ממצב
-                ישן לחדש עבור התפקידים של המשתמש הנוכחי"
+              status_transition_invalid: "אין העברה חוקית מהסטטוס הישן לחדש עבור תפקידי
+                המשתמש הנוכחי"
             priority_id:
               only_active_priorities_allowed: "צריך להיות פעיל"
-            category:
-              only_same_project_categories_allowed: "הקטגוריה של חבילת עבודה חייבת
-                להיות בתוך אותו פרוייקט כמו חבילת עבודה."
-              does_not_exist: "הקטגוריה שצוינה אינה קיימת."
-            estimated_hours:
-              only_values_greater_or_equal_zeroes_allowed: The estimated hours must
-                be >= 0.
         user:
           attributes:
             password:
@@ -282,13 +276,11 @@ he:
   attributes:
     active: "פעיל"
     assigned_to: "משויך אל"
-    assignee: "משויך אל"
     attachments: "קבצים מצורפים"
     author: "מחבר"
     base: "שגיאה כללית:"
     blocks_ids: "בלוקים"
     category: "קטגוריה"
-    comment: "תגובה"
     comments: "תגובה"
     content: "תוכן"
     created_at: "נוצר ב-"
@@ -299,23 +291,18 @@ he:
     display_sums: "הצג סכומים"
     due_date: "תאריך יעד"
     estimated_hours: "זמן משוער"
-    estimated_time: "זמן משוער"
     firstname: "שם פרטי"
     group: "קבוצה"
     groupname: "שם הקבוצה"
-    id: "מזהה"
     is_default: "ערך ברירת המחדל"
     is_for_all: "עבור כל הפרוייקטים"
     is_public: "ציבורי"
-    issue: "חבילת עבודה"
     lastname: "שם משפחה"
     login: "לוג-אין"
     mail: "אימייל"
     name: "שם"
     password: "סיסמה"
-    priority: "עדיפות"
     project: "פרוייקט"
-    responsible: "אחראי על"
     role: Role
     start_date: "תאריך התחלה"
     status: "מצב"
@@ -583,8 +570,7 @@ he:
   error_scm_annotate: "הערה לא קימת או שלא ניתן להוסף הערות."
   error_scm_command_failed: "אירעה שגיאה בעת ניסיון לגשת למאגר : %{value}"
   error_scm_not_found: The entry or revision was not found in the repository.
-  error_unable_delete_status: "אין אפשרות למחוק מצב חבילת עבודה מאחר והיא מכילה חבילות
-    עבודה."
+  error_unable_delete_status: Unable to delete work package status
   error_unable_delete_default_status: Unable to delete default work package status.
     Please select another default work package status before deleting the current
     one.
@@ -730,7 +716,6 @@ he:
   label_downloads_abbr: D/L
   label_duplicated_by: "משוכפל על-ידי"
   label_duplicates: "פריטים כפולים"
-  label_edit: "עריכה"
   label_enable_multi_select: Toggle multiselect
   label_end_to_end: end to end
   label_end_to_start: end to start
@@ -758,7 +743,6 @@ he:
   label_generate_key: "ליצור מפתח"
   label_git_path: Path to .git directory
   label_greater_or_equal: ">="
-  label_group_by: "קבץ לפי"
   label_group_new: "קבוצה חדשה"
   label_group_plural: "קבוצות"
   label_help: "עזרה"
@@ -796,6 +780,7 @@ he:
     for
   label_work_package_view_all_watched: View all watched work packages
   label_work_package_watchers: "צופים"
+  label_work_packages_by: Work packages by %{value}
   label_journal_diff: Description Comparison
   label_jump_to_a_project: "קפוץ אל פרוייקט..."
   label_language_based: Based on user's language
@@ -977,7 +962,7 @@ he:
   label_today: today
   label_top_menu: Top Menu
   label_topic_plural: Topics
-  label_total: "סה\"כ"
+  label_total: סה"כ
   label_type_new: "סוג חדש"
   label_type_plural: "סוגים"
   label_ui: "ממשק משתמש"
@@ -1069,7 +1054,6 @@ he:
   label_keyboard_shortcut_go_news: Go to project news
   label_keyboard_shortcut_go_timelines: Go to timelines
   label_keyboard_shortcut_new_work_package: Create new work package
-  label_keyboard_shortcut_details_package: "הצג חלונית הפרטי חבילות עבודה"
   label_keyboard_shortcut_go_edit: Go to edit the current item (on detail pages only)
   label_keyboard_shortcut_open_more_menu: Open more-menu (on detail pages only)
   label_keyboard_shortcut_go_preview: Go to preview the current edit (on edit pages
@@ -1078,7 +1062,6 @@ he:
     lists only)
   label_keyboard_shortcut_focus_next_item: Focus next list element (on some lists
     only)
-  label_visible_elements: Visible elements
   macro_execution_error: Error executing the macro %{macro_name}
   macro_unavailable: Macro %{macro_name} cannot be displayed.
   mail_body_account_activation_request: 'A new user (%{value}) has registered. The
@@ -1464,10 +1447,6 @@ he:
       short: "%d %b %H:%M"
       time: "%I:%M %p"
     pm: pm
-  timeframe:
-    show: Show timeframe
-    end: to
-    start: from
   timelines:
     admin_menu:
       color: "צבע"
@@ -1548,8 +1527,7 @@ he:
         absolute: Absolute
         none: None
         relative: Relative
-        compare_relative_prefix: "להשוות הנוכחי למתכנן"
-        compare_relative_suffix: "לפני"
+        compare_relative: Compare current planning to %{timespan} ago
         compare_absolute: Compare current planning to %{date}
       time_relative:
         days: "ימים"
@@ -1577,7 +1555,8 @@ he:
       status: Show status
       project_time_filter: Projects with a work package of a certain type in a certain
         timeframe
-      project_time_filter_timeframe: "מסגרת הזמן"
+      project_time_filter_absolute_timeframe: Absolute timeframe
+      project_time_filter_relative_timeframe: Relative timeframe
       project_time_filter_historical_from: from
       project_time_filter_historical_to: to
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1710,37 +1689,3 @@ he:
     updated_automatically_by_child_changes: _Updated automatically by changing values
       within child work package %{child}_
   nothing_to_preview: Nothing to preview
-  api_v3:
-    attributes:
-      lock_version: "גרסת מנעול"
-    errors:
-      code_401: "אתה צריך להיות מאומת כדי לגשת למשאב זה."
-      code_403: "אתה לא מורשה כדי לקבל גישה למשאב זה."
-      code_404: "המשאב המבוקש לא נמצא."
-      code_409: "לא יכולתי לעדכן את המשאב בשל שינויים סותרים."
-      invalid_content_type: "\"סוג התוכן\" הצפוי תריך להיות '%{content_type}' אבל
-        הוזן '%{actual}'."
-      invalid_resource: "המאפיין '%{property}' קישור כמו '%{expected}' צפוי, אבל התקבל
-        '%{actual}'."
-      invalid_relation: The relation is invalid.
-      invalid_user_status_transition: "המצב חשבון המשתמש הנוכחי אינו מאפשר פעולה זו."
-      missing_content_type: "לא מוגדר"
-      multiple_errors: Multiple field constraints have been violated.
-      parse_error: "גוף הבקשה היה ריק או לא הכיל אובייקט JSON בודד."
-      writing_read_only_attributes: "אתה חייב שלא לכתוב תכונה לקריאה בלבד."
-      invalid_format: "תבנית לא חוקית של מאפיין '%{property}': תבנית צפוייה לדוגמה
-        '%{expected_format}', אבל נכתב '%{actual}'."
-      render:
-        context_not_parsable: The context provided is not a link to a resource.
-        unsupported_context: The resource given is not supported as context.
-        context_object_not_found: Cannot find the resource given as the context.
-      validation:
-        invalid_user_assigned_to_work_package: "לא ניתן לבחור  '%{property}' עבור
-          המשתמש בחבילת עבודה זו."
-        estimated_hours: Estimated hours cannot be set on parent work packages.
-        done_ratio: Done ratio cannot be set on parent work packages, when it is inferred
-          by status or when it is disabled.
-        start_date: Start date cannot be set on parent work packages.
-        due_date: Due date cannot be set on parent work packages.
-    resources:
-      schema: "סכימה"

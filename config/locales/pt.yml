@@ -102,6 +102,7 @@ pt:
       time_entry:
         activity: Atividade
         hours: Horas
+        work_package: Formulário
         spent_on: Data
         type: Tipo
       type:
@@ -183,7 +184,7 @@ pt:
         smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
           length
         greater_than_start_date: deve ser maior que a data de início
-        inclusion: is not set to one of the allowed values
+        inclusion: Não está incluído na lista
         invalid: "é inválido"
         less_than: deve ser menor que % {count}
         less_than_or_equal_to: deve ser menor ou igual a %{count}
@@ -221,17 +222,10 @@ pt:
               not_a_valid_parent: "é inválido"
               does_not_exist: não existe
             status_id:
-              status_transition_invalid: "é inválido porque nenhuma transição válida
-                existe entre o status antigo e novo da função atual deste usuário"
+              status_transition_invalid: no valid transition exists from old to new
+                status for the current user roles
             priority_id:
               only_active_priorities_allowed: tem de estar ativo
-            category:
-              only_same_project_categories_allowed: A categoria de um pacote de trabalho
-                deve estar dentro do mesmo projeto que o pacote de trabalho.
-              does_not_exist: A categoria especificada não existe.
-            estimated_hours:
-              only_values_greater_or_equal_zeroes_allowed: O número estimado de horas
-                deve ser >=0.
         user:
           attributes:
             password:
@@ -287,13 +281,11 @@ pt:
   attributes:
     active: Ativo
     assigned_to: Atribuído para
-    assignee: Atribuído para
     attachments: Anexos
     author: Author
     base: 'General Error:'
     blocks_ids: Blocks
     category: Categoria
-    comment: Comment
     comments: Comment
     content: Content
     created_at: Created on
@@ -304,23 +296,18 @@ pt:
     display_sums: Exibir somas
     due_date: Prazo
     estimated_hours: Tempo estimado
-    estimated_time: Tempo estimado
     firstname: Primeiro nome
     group: Grupo
     groupname: Nome do grupo
-    id: ID
     is_default: Valor padrão
     is_for_all: Para todos os projetos
     is_public: Público
-    issue: Pacote de trabalho
     lastname: "Último nome"
     login: Login
     mail: E-mail
     name: Nome
     password: Senha
-    priority: Prioridade
     project: Project
-    responsible: Responsável
     role: Role
     start_date: Data de início
     status: Situação
@@ -591,8 +578,7 @@ pt:
   error_scm_command_failed: 'An error occurred when trying to access the repository:
     %{value}'
   error_scm_not_found: The entry or revision was not found in the repository.
-  error_unable_delete_status: Não foi possível excluir o status do pacote de trabalho,
-    porque ele contém pacotes de trabalho.
+  error_unable_delete_status: Unable to delete work package status
   error_unable_delete_default_status: Unable to delete default work package status.
     Please select another default work package status before deleting the current
     one.
@@ -738,7 +724,6 @@ pt:
   label_downloads_abbr: D/L
   label_duplicated_by: duplicated by
   label_duplicates: duplicates
-  label_edit: Edit
   label_enable_multi_select: Toggle multiselect
   label_end_to_end: end to end
   label_end_to_start: end to start
@@ -766,7 +751,6 @@ pt:
   label_generate_key: Generate a key
   label_git_path: Path to .git directory
   label_greater_or_equal: ">="
-  label_group_by: Group by
   label_group_new: New group
   label_group_plural: Groups
   label_help: Help
@@ -804,6 +788,7 @@ pt:
     for
   label_work_package_view_all_watched: View all watched work packages
   label_work_package_watchers: Watchers
+  label_work_packages_by: Work packages by %{value}
   label_journal_diff: Description Comparison
   label_jump_to_a_project: Jump to a project...
   label_language_based: Based on user's language
@@ -1077,8 +1062,6 @@ pt:
   label_keyboard_shortcut_go_news: Go to project news
   label_keyboard_shortcut_go_timelines: Go to timelines
   label_keyboard_shortcut_new_work_package: Create new work package
-  label_keyboard_shortcut_details_package: Mostrar o painel de detalhes dos pacotes
-    de trabalho
   label_keyboard_shortcut_go_edit: Go to edit the current item (on detail pages only)
   label_keyboard_shortcut_open_more_menu: Open more-menu (on detail pages only)
   label_keyboard_shortcut_go_preview: Go to preview the current edit (on edit pages
@@ -1087,7 +1070,6 @@ pt:
     lists only)
   label_keyboard_shortcut_focus_next_item: Focus next list element (on some lists
     only)
-  label_visible_elements: Visible elements
   macro_execution_error: Error executing the macro %{macro_name}
   macro_unavailable: Macro %{macro_name} cannot be displayed.
   mail_body_account_activation_request: 'A new user (%{value}) has registered. The
@@ -1473,10 +1455,6 @@ pt:
       short: "%d %b %H:%M"
       time: "%I:%M %p"
     pm: pm
-  timeframe:
-    show: Show timeframe
-    end: to
-    start: from
   timelines:
     admin_menu:
       color: Cor
@@ -1557,8 +1535,7 @@ pt:
         absolute: Absolute
         none: None
         relative: Relative
-        compare_relative_prefix: Comparar o planejamento atual para
-        compare_relative_suffix: atrás
+        compare_relative: Compare current planning to %{timespan} ago
         compare_absolute: Compare current planning to %{date}
       time_relative:
         days: days
@@ -1586,7 +1563,8 @@ pt:
       status: Show status
       project_time_filter: Projects with a work package of a certain type in a certain
         timeframe
-      project_time_filter_timeframe: Período de tempo
+      project_time_filter_absolute_timeframe: Absolute timeframe
+      project_time_filter_relative_timeframe: Relative timeframe
       project_time_filter_historical_from: from
       project_time_filter_historical_to: to
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1719,40 +1697,3 @@ pt:
     updated_automatically_by_child_changes: _Updated automatically by changing values
       within child work package %{child}_
   nothing_to_preview: Nothing to preview
-  api_v3:
-    attributes:
-      lock_version: Versão de bloqueio
-    errors:
-      code_401: Você precisa estar autenticado para acessar a este recurso.
-      code_403: Você não está autorizado a acessar a este recurso.
-      code_404: O recurso solicitado não pôde ser encontrado.
-      code_409: Não consegui atualizar o recurso devido a modificações conflitantes.
-      invalid_content_type: Espera-se que CONTENT-TYPE saja '%{content_type}' mas
-        tem '%{actual}'.
-      invalid_resource: Para a propriedade '%{property}' um link como '%{expected}'
-        é esperado, mas tem '%{actual}'.
-      invalid_relation: The relation is invalid.
-      invalid_user_status_transition: O status da conta do usuário atual não permite
-        esta operação.
-      missing_content_type: não especificado
-      multiple_errors: Várias restrições de campo foram violadas.
-      parse_error: O corpo da solicitação não era vazia, ou nem contém um único objeto
-        JSON.
-      writing_read_only_attributes: Você não deve escrever um atributo de somente
-        leitura.
-      invalid_format: 'Invalid format for property ''%{property}'': Expected format
-        like ''%{expected_format}'', but got ''%{actual}''.'
-      render:
-        context_not_parsable: The context provided is not a link to a resource.
-        unsupported_context: The resource given is not supported as context.
-        context_object_not_found: Cannot find the resource given as the context.
-      validation:
-        invalid_user_assigned_to_work_package: The chosen user is not allowed to be
-          '%{property}' for this work package.
-        estimated_hours: Estimated hours cannot be set on parent work packages.
-        done_ratio: Done ratio cannot be set on parent work packages, when it is inferred
-          by status or when it is disabled.
-        start_date: Start date cannot be set on parent work packages.
-        due_date: Due date cannot be set on parent work packages.
-    resources:
-      schema: Schema

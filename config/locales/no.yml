@@ -103,6 +103,7 @@
       time_entry:
         activity: Aktivitet
         hours: Timer
+        work_package: Arbeidspakke
         spent_on: Dato
         type: Type
       type:
@@ -184,7 +185,7 @@
         greater_than_or_equal_to: må være større enn eller lik %{count}
         smaller_than_or_equal_to_max_length: må være mindre enn eller lik maksimumslengden
         greater_than_start_date: må være senere enn startdato
-        inclusion: is not set to one of the allowed values
+        inclusion: er ikke inkludert i listen
         invalid: er ugyldig
         less_than: må være mindre enn %{count}
         less_than_or_equal_to: må være mindre enn eller lik %{count}
@@ -222,18 +223,10 @@
               not_a_valid_parent: er ugyldig
               does_not_exist: eksisterer ikke
             status_id:
-              status_transition_invalid: er ugyldig fordi det ikke eksisterer noen
-                gyldige overganger fra gammel til ny status for gjeldende brukers
-                roller
+              status_transition_invalid: ingen gyldige overganger eksisterer fra gammel
+                til ny status for de gjeldende brukerrollene
             priority_id:
               only_active_priorities_allowed: må være aktiv
-            category:
-              only_same_project_categories_allowed: The category of a work package
-                must be within the same project as the work package.
-              does_not_exist: The specified category does not exist.
-            estimated_hours:
-              only_values_greater_or_equal_zeroes_allowed: The estimated hours must
-                be >= 0.
         user:
           attributes:
             password:
@@ -289,13 +282,11 @@
   attributes:
     active: Aktiv
     assigned_to: Deltaker
-    assignee: Deltaker
     attachments: Vedlegg
     author: Forfatter
     base: 'Generell feil:'
     blocks_ids: Blokkeringer
     category: Kategori
-    comment: Kommentar
     comments: Kommentar
     content: Innhold
     created_at: Opprettet
@@ -306,23 +297,18 @@
     display_sums: Vis summer
     due_date: Forfallsdato
     estimated_hours: Tidsestimat
-    estimated_time: Tidsestimat
     firstname: Fornavn
     group: Gruppe
     groupname: Gruppenavn
-    id: ID
     is_default: Standardverdi
     is_for_all: For alle prosjekter
     is_public: Offentlig
-    issue: Arbeidspakke
     lastname: Etternavn
     login: Brukernavn
     mail: E-post
     name: Navn
     password: Passord
-    priority: Prioritet
     project: Prosjekt
-    responsible: Ansvarlig
     role: Rolle
     start_date: Startdato
     status: Status
@@ -595,8 +581,7 @@
   error_scm_command_failed: 'Det oppstod en feil ved forsøk på å åpne pakkebrønnen:
     %{value}'
   error_scm_not_found: Oppføringen eller revisjonen ble ikke funnet i pakkebrønnen.
-  error_unable_delete_status: Unable to delete work package status because it contains
-    work packages.
+  error_unable_delete_status: Kunne ikke slettet arbeidspakkestatus
   error_unable_delete_default_status: Kunne ikke slette standard status for arbeidspakke.
     Vennligst velg en annen standard status før du sletter den gjeldende.
   error_unable_to_connect: Kunne ikke koble til (%{value})
@@ -741,7 +726,6 @@
   label_downloads_abbr: D/L
   label_duplicated_by: duplisert av
   label_duplicates: duplikater
-  label_edit: Rediger
   label_enable_multi_select: Veksle multivalg
   label_end_to_end: ende til ende
   label_end_to_start: ende til start
@@ -769,7 +753,6 @@
   label_generate_key: Genererer en nøkkel
   label_git_path: Sti til .git-mappe
   label_greater_or_equal: ">="
-  label_group_by: Grupper etter
   label_group_new: Ny gruppe
   label_group_plural: Grupper
   label_help: Hjelp
@@ -808,6 +791,7 @@
     for
   label_work_package_view_all_watched: Vis alle overvåkede arbeidspakker
   label_work_package_watchers: Overvåkere
+  label_work_packages_by: Arbeidspakker av %{value}
   label_journal_diff: Sammenligning av beskrivelse
   label_jump_to_a_project: Gå til et prosjekt...
   label_language_based: Basert på brukerens språk
@@ -1082,7 +1066,6 @@
   label_keyboard_shortcut_go_news: Gå til prosjektnyheter
   label_keyboard_shortcut_go_timelines: Gå til tidslinjer
   label_keyboard_shortcut_new_work_package: Opprett ny arbeidspakke
-  label_keyboard_shortcut_details_package: Show work packages details pane
   label_keyboard_shortcut_go_edit: Gå til redigering av gjeldende element (kun på
     detaljsider)
   label_keyboard_shortcut_open_more_menu: "Åpne mer-meny (kun på detaljsider)"
@@ -1092,7 +1075,6 @@
     (gjelder bare noen lister)
   label_keyboard_shortcut_focus_next_item: Sett fokus på neste listeelement (gjelder
     bare noen lister)
-  label_visible_elements: Visible elements
   macro_execution_error: Feil ved kjøring av makroen %{macro_name}
   macro_unavailable: Makroen %{macro_name} kan ikke vises.
   mail_body_account_activation_request: 'En ny bruker (%{value}) har registrert seg.
@@ -1476,10 +1458,6 @@
       short: "%d. %b %H:%M"
       time: "%H:%M"
     pm: pm
-  timeframe:
-    show: Vis tidsramme
-    end: til
-    start: fra
   timelines:
     admin_menu:
       color: Farge
@@ -1559,8 +1537,7 @@
         absolute: Absolutt
         none: Ingen
         relative: Relativ
-        compare_relative_prefix: Compare current planning to
-        compare_relative_suffix: ago
+        compare_relative: Sammenlign gjeldende tidsplan med %{timespan} siden
         compare_absolute: Sammenligne gjeldende tidsplan med %{date}
       time_relative:
         days: dager
@@ -1588,7 +1565,8 @@
       status: Vis status
       project_time_filter: Prosjekter med arbeidspakker av en bestemt type i et bestemt
         tidsrom
-      project_time_filter_timeframe: Timeframe
+      project_time_filter_absolute_timeframe: Absolutt tidsrom
+      project_time_filter_relative_timeframe: Relativt tidsrom
       project_time_filter_historical_from: fra
       project_time_filter_historical_to: til
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1720,39 +1698,3 @@
     updated_automatically_by_child_changes: _Oppdatert automatisk ved å endre verdier
       i underordnet arbeidspakke %{child}_
   nothing_to_preview: Ingenting å forhåndsvise
-  api_v3:
-    attributes:
-      lock_version: Lock Version
-    errors:
-      code_401: Du må være pålogget for å få tilgang til denne ressursen.
-      code_403: Du har ikke tilgang til denne ressursen.
-      code_404: The requested resource could not be found.
-      code_409: Kunne ikke oppdatere ressursen på grunn av konflikt med andre endringer.
-      invalid_content_type: Forventet at INNHOLDSTYPE skulle være '%{content_type}',
-        men mottok i stedet '%{actual}'.
-      invalid_resource: For property '%{property}' a link like '%{expected}' is expected,
-        but got '%{actual}'.
-      invalid_relation: The relation is invalid.
-      invalid_user_status_transition: Kontostatusen til gjeldende brukerkonto tillater
-        ikke denne operasjonen.
-      missing_content_type: not specified
-      multiple_errors: Multiple field constraints have been violated.
-      parse_error: Innholdet i forespørselen var tomt og inneholder heller ikke ett
-        eneste JSON-objekt.
-      writing_read_only_attributes: Du kan ikke skrive til et skrivebeskyttet attributt.
-      invalid_format: 'Invalid format for property ''%{property}'': Expected format
-        like ''%{expected_format}'', but got ''%{actual}''.'
-      render:
-        context_not_parsable: The context provided is not a link to a resource.
-        unsupported_context: The resource given is not supported as context.
-        context_object_not_found: Cannot find the resource given as the context.
-      validation:
-        invalid_user_assigned_to_work_package: Valgt bruker har ikke de nødvendige
-          rettighetene til å være '%{property}' for denne arbeidspakken.
-        estimated_hours: Estimated hours cannot be set on parent work packages.
-        done_ratio: Done ratio cannot be set on parent work packages, when it is inferred
-          by status or when it is disabled.
-        start_date: Start date cannot be set on parent work packages.
-        due_date: Due date cannot be set on parent work packages.
-    resources:
-      schema: Schema

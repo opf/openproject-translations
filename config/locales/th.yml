@@ -6,16 +6,16 @@ th:
     deleted: "ลบบัญชีผู้ใช้เรียบร้อยแล้ว"
     deletion_info:
       data_consequences:
-        other: "ของข้อมูลที่ผู้ใช้สร้าง (เช่น อีเมล, การตั้งค่า, ชุดภารกิจ, รายการวิกิ)
+        other: ของข้อมูลที่ผู้ใช้สร้าง (เช่น อีเมล, การตั้งค่า, ชุดภารกิจ, รายการวิกิ)
           จะถูกลบมากที่สุดเท่าที่ทำได้ อย่างไรก็ตาม ข้อมูลอย่างเช่นชุดภารกิจ และรายการวิกิ
           ไม่สามารถลบหากพบว่าเป็นการขัดขวางการทำงานของผู้ใช้อื่นๆ ต่อแต่นี้ไป ข้อมูลจำนวนมากจะถูกระบุไปยังบัญชีผู้ใช้ที่เรียกว่า
-          \"ผู้ใช้ที่ถูกลบแล้ว\" และข้อมูลของผู้ใช้ที่ถูกลบแล้วทุกๆ บัญชี จะมาปราฎที่นี่
-          และไม่สามารถแยกแยะข้อมูลได้ว่ามีการสร้างจากบัญชีใดบ้างซึ่งลบไปแล้ว"
-        self: "ของข้อมูลที่ผู้ใช้สร้าง (เช่น อีเมล, การตั้งค่า, ชุดภารกิจ, รายการวิกิ)
+          "ผู้ใช้ที่ถูกลบแล้ว" และข้อมูลของผู้ใช้ที่ถูกลบแล้วทุกๆ บัญชี จะมาปราฎที่นี่
+          และไม่สามารถแยกแยะข้อมูลได้ว่ามีการสร้างจากบัญชีใดบ้างซึ่งลบไปแล้ว
+        self: ของข้อมูลที่ผู้ใช้สร้าง (เช่น อีเมล, การตั้งค่า, ชุดภารกิจ, รายการวิกิ)
           จะถูกลบมากที่สุดเท่าที่ทำได้ อย่างไรก็ตาม ข้อมูลอย่างเช่นชุดภารกิจ และรายการวิกิ
           ไม่สามารถลบหากพบว่าเป็นการขัดขวางการทำงานของผู้ใช้อื่นๆ ต่อแต่นี้ไป ข้อมูลจำนวนมากจะถูกระบุไปยังบัญชีผู้ใช้ที่เรียกว่า
-          \"ผู้ใช้ที่ถูกลบแล้ว\" และข้อมูลของผู้ใช้ที่ถูกลบแล้วทุกๆ บัญชี จะมาปราฎที่นี่
-          และไม่สามารถแยกแยะข้อมูลได้ว่ามีการสร้างจากบัญชีใดบ้างซึ่งลบไปแล้ว."
+          "ผู้ใช้ที่ถูกลบแล้ว" และข้อมูลของผู้ใช้ที่ถูกลบแล้วทุกๆ บัญชี จะมาปราฎที่นี่
+          และไม่สามารถแยกแยะข้อมูลได้ว่ามีการสร้างจากบัญชีใดบ้างซึ่งลบไปแล้ว.
       heading: "ลบบัญชี %{name}"
       info:
         other: "การลบบัญชีผู้ใช้ ไม่สามารถกลับมาแก้ไขได้อีก."
@@ -96,6 +96,7 @@ th:
       time_entry:
         activity: "กิจกรรม"
         hours: "ชั่วโมง"
+        work_package: "ชุดภารกิจ"
         spent_on: "วันที่"
         type: "ประเภท"
       type:
@@ -175,7 +176,7 @@ th:
         greater_than_or_equal_to: "ต้องมีค่ามากกว่าหรือเท่ากับ %{count}"
         smaller_than_or_equal_to_max_length: "ต้องไม่เกินความยาวสูงสุด"
         greater_than_start_date: "ต้องเป็นวันที่หลังจากวันเริ่มต้น"
-        inclusion: is not set to one of the allowed values
+        inclusion: "ไม่ได้รวมอยู่ในรายการ"
         invalid: "ไม่ถูกต้อง"
         less_than: "ต้องน้อยกว่า %{count}"
         less_than_or_equal_to: "ต้องน้อยกว่า หรือเท่ากับ %{count}"
@@ -211,17 +212,10 @@ th:
               not_a_valid_parent: "ไม่ถูกต้อง"
               does_not_exist: "ไม่พบ"
             status_id:
-              status_transition_invalid: is invalid because no valid transition exists
-                from old to new status for the current user's roles
+              status_transition_invalid: "ไม่พบการเปลี่ยนสถานะที่ถูกต้อง จากสถานะเดิมไปยังสถานะใหม่
+                สำหรับบทบาทของผู้ใช้ปัจจุบัน"
             priority_id:
               only_active_priorities_allowed: "จำเป็นต้องเปิดใช้งาน"
-            category:
-              only_same_project_categories_allowed: The category of a work package
-                must be within the same project as the work package.
-              does_not_exist: The specified category does not exist.
-            estimated_hours:
-              only_values_greater_or_equal_zeroes_allowed: The estimated hours must
-                be >= 0.
         user:
           attributes:
             password:
@@ -277,13 +271,11 @@ th:
   attributes:
     active: "ใช้งานอยู่"
     assigned_to: "ผู้ได้รับมอบหมาย"
-    assignee: "ผู้ได้รับมอบหมาย"
     attachments: "ไฟล์แนบ"
     author: "ผู้เขียน"
     base: "ข้อผิดพลาดทั่วไป:"
     blocks_ids: "บล็อก"
     category: "ประเภท"
-    comment: "ความคิดเห็น"
     comments: "ความคิดเห็น"
     content: "เนื้อหา"
     created_at: "สร้างเมื่อ"
@@ -294,23 +286,18 @@ th:
     display_sums: "แสดงยอดรวม"
     due_date: "วันครบกำหนด"
     estimated_hours: "ระยะเวลาโดยประมาณ"
-    estimated_time: "ระยะเวลาโดยประมาณ"
     firstname: "ชื่อ"
     group: "กลุ่ม"
     groupname: "ชื่อกลุ่ม"
-    id: ID
     is_default: "ค่าเริ่มต้น"
     is_for_all: "สำหรับทุกโครงการ"
     is_public: "สาธารณะ"
-    issue: "ชุดภารกิจ"
     lastname: "นามสกุล"
     login: "ล็อคอิน"
     mail: "อีเมล"
     name: "ชื่อ"
     password: "รหัสผ่าน"
-    priority: "ระดับความสำคัญ"
     project: "โครงการ"
-    responsible: "รับผิดชอบ"
     role: Role
     start_date: "วันเริ่มต้น"
     status: "สถานะ"
@@ -377,18 +364,18 @@ th:
   button_configure_menu_entry: "ตั้งค่าเมนู"
   button_delete_menu_entry: "ลบเมนู"
   copy_project:
-    started: "เริ่มต้นการคัดลอก \"%{source_project_name}\" ไปยังโครงการ \"%{target_project_name}\".
-      ระบบจะส่งอีเมล์แจ้งให้คุณทราบ หลังจากที่โครงการ \"%{target_project_name}\" พร้อมสำหรับการใช้งาน"
+    started: เริ่มต้นการคัดลอก "%{source_project_name}" ไปยังโครงการ "%{target_project_name}".
+      ระบบจะส่งอีเมล์แจ้งให้คุณทราบ หลังจากที่โครงการ "%{target_project_name}" พร้อมสำหรับการใช้งาน
     failed: "ไม่สามารถดำเนินการคัดลอกโครงการ %{source_project_name} ได้"
     succeeded: "สร้างโครงการ %{target_project_name} แล้ว"
     errors: "ข้อผิดพลาด"
     text:
-      failed: "ไม่สามารถดำเนินการคัดลอก \"%{source_project_name}\" ไปยังโครงการ \"%{target_project_name}\"
-        ได้"
-      succeeded: "ระบบได้คัดลอกโครงการ \"%{source_project_name}\" ไปที่โครงการ \"%{target_project_name}\"
-        แล้ว"
+      failed: ไม่สามารถดำเนินการคัดลอก "%{source_project_name}" ไปยังโครงการ "%{target_project_name}"
+        ได้
+      succeeded: ระบบได้คัดลอกโครงการ "%{source_project_name}" ไปที่โครงการ "%{target_project_name}"
+        แล้ว
   create_child_page: "สร้างหน้าย่อยใหม่"
-  create_child_page_for: "สร้างหน้าย่อยใหม่: \"%{title}\""
+  create_child_page_for: 'สร้างหน้าย่อยใหม่: "%{title}"'
   create_new_page: "สร้างหน้าใหม่"
   date:
     abbr_day_names:
@@ -571,16 +558,15 @@ th:
   error_work_package_done_ratios_not_updated: "ชุดภารกิจที่เสร็จแล้ว ไม่สามารถปรับปรุงอัตราส่วนได้"
   error_work_package_not_found_in_project: "ไม่พบชุดภารกิจ หรือชุดภารกิจไม่ได้เป็นของโครงการนี้"
   error_must_be_project_member: "ต้องเป็นสมาชิกโครงการ"
-  error_no_default_work_package_status: "ไม่ได้กำหนดค่าเริ่มต้นสถานะของชุดภารกิจ โปรดตรวจสอบการตั้งค่าของคุณ
-    (ไปที่ \"การจัดการระบบ -> สถานะชุดภารกิจ\")"
+  error_no_default_work_package_status: ไม่ได้กำหนดค่าเริ่มต้นสถานะของชุดภารกิจ โปรดตรวจสอบการตั้งค่าของคุณ
+    (ไปที่ "การจัดการระบบ -> สถานะชุดภารกิจ")
   error_no_type_in_project: "ไม่พบประเภทที่เกี่ยวข้องกับโครงการนี้ โปรดตรวจสอบการตั้งค่าโครงการ"
   error_omniauth_registration_timed_out: "หมดเวลาของการลงทะเบียนผ่านผู้ให้บริการการรับรองความถูกต้องภายนอก
     กรุณาลองใหม่อีกครั้ง"
   error_scm_annotate: "ไม่พบรายการ จึงไม่สามารถใส่คำอธิบายประกอบได้"
   error_scm_command_failed: "เกิดข้อผิดพลาดเมื่อพยายามเข้าถึงที่เก็บข้อมูล: %{value}"
   error_scm_not_found: "ไม่พบรายการการปรับปรุงในที่เก็บข้อมูล"
-  error_unable_delete_status: Unable to delete work package status because it contains
-    work packages.
+  error_unable_delete_status: "ไม่สามารถลบสถานะของชุดภารกิจได้"
   error_unable_delete_default_status: "ไม่สามารถลบสถานะตั้งต้นของชุดภารกิจได้ โปรดเลือกสถานะตั้งต้นอื่นๆ
     ของชุดภารกิจ ก่อนที่จะลบสถานะนี้"
   error_unable_to_connect: "ไม่สามารถเชื่อมต่อ (%{value}) ได้"
@@ -723,7 +709,6 @@ th:
   label_downloads_abbr: D/L
   label_duplicated_by: "ทำซ้ำโดย"
   label_duplicates: "ซ้ำ"
-  label_edit: "แก้ไข"
   label_enable_multi_select: "สลับไปเลือกหลายค่า"
   label_end_to_end: "ตลอด"
   label_end_to_start: "สิ้นสุดไปยังเริ่มต้น"
@@ -750,7 +735,6 @@ th:
   label_generate_key: "สร้างคีย์"
   label_git_path: "เส้นทางไปยังไดเรคทอรี่ ของไฟล์ .git"
   label_greater_or_equal: ">="
-  label_group_by: Group by
   label_group_new: "กลุ่มใหม่"
   label_group_plural: "กลุ่ม"
   label_help: "วิธีใช้"
@@ -787,6 +771,7 @@ th:
   label_work_package_view_all_responsible_for: "ดูชุดภารกิจทั้งหมดที่ฉันรับผิดชอบ"
   label_work_package_view_all_watched: "ดูชุดภารกิจที่เฝ้าดู"
   label_work_package_watchers: "ผู้เฝ้าดู"
+  label_work_packages_by: "ชุดภารกิจของ %{value}"
   label_journal_diff: "เปรียบเทียบคำอธิบาย"
   label_jump_to_a_project: "ไปยังโครงการ..."
   label_language_based: "ตามภาษาของผู้ใช้"
@@ -1059,13 +1044,11 @@ th:
   label_keyboard_shortcut_go_news: "ไปยังข่าวสารของโครงการ"
   label_keyboard_shortcut_go_timelines: "ไปยังแผนภูมิเวลาของโครงการ"
   label_keyboard_shortcut_new_work_package: "สร้างชุดภารกิจใหม่"
-  label_keyboard_shortcut_details_package: Show work packages details pane
   label_keyboard_shortcut_go_edit: "ไปแก้ไขรายการปัจจุบัน (ในหน้ารายละเอียดเท่านั้น)"
   label_keyboard_shortcut_open_more_menu: "เปิดเมนูเพิ่มเติม (ในหน้ารายละเอียดเท่านั้น)"
   label_keyboard_shortcut_go_preview: "ไปดูตัวอย่างการแก้ไขปัจจุบัน (ในหน้าแก้ไขเท่านั้น)"
   label_keyboard_shortcut_focus_previous_item: "เน้นรายการองค์ประกอบก่อนหน้านี้ (ในบางรายการเท่านั้น)"
   label_keyboard_shortcut_focus_next_item: "เน้นรายการองค์ประกอบถัดไป (ในบางรายการเท่านั้น)"
-  label_visible_elements: Visible elements
   macro_execution_error: "ข้อผิดพลาดในการรันมาโคร %{macro_name}"
   macro_unavailable: Macro %{macro_name} cannot be displayed.
   mail_body_account_activation_request: "มีผู้ใช้ใหม่ (%{value}) ได้ลงทะเบียนเข้ามา
@@ -1317,7 +1300,7 @@ th:
   setting_time_format: "รูปแบบเวลา"
   setting_ui_theme: "ชุดรูปแบบ"
   setting_user_may_override_theme: "ผู้ใช้สามารถเลือกชุดรูปแบบของตนเอง"
-  setting_accessibility_mode_for_anonymous: "เปิดใช้งาน \"โหมดจำกัดการใช้งาน\" สำหรับผู้ใช้ที่ไม่ระบุชื่อ"
+  setting_accessibility_mode_for_anonymous: เปิดใช้งาน "โหมดจำกัดการใช้งาน" สำหรับผู้ใช้ที่ไม่ระบุชื่อ
   setting_user_format: "รูปแบบการแสดงผลของผู้ใช้"
   setting_users_deletable_by_admins: "บัญชีผู้ใช้ที่สามารถลบโดยผู้ดูแลระบบ"
   setting_users_deletable_by_self: "ยินยอมให้ผู้ใช้ลบบัญชีของตนเองได้"
@@ -1425,10 +1408,6 @@ th:
       short: "%d %b %H:%M"
       time: "%I:%M %p"
     pm: "น."
-  timeframe:
-    show: "แสดงกรอบเวลา"
-    end: "ถึง"
-    start: "จาก"
   timelines:
     admin_menu:
       color: "สี"
@@ -1463,7 +1442,7 @@ th:
     edit_timeline: "แก้ไขรายงานแผนภูมิเวลา"
     delete_timeline: "ลบแผนภูมิเวลา"
     empty: "(ว่าง)"
-    enable_type_in_project: "เปิดใช้งานชนิด \"%{type}\""
+    enable_type_in_project: เปิดใช้งานชนิด "%{type}"
     end: "สิ้นสุด"
     errors:
       not_implemented: "ไม่สามารถร่างแผนภูมิเวลา (timeline) ได้เนื่องจากใช้คุณลักษณะที่ยังไม่ได้มีการนำมาใช้ในระบบ"
@@ -1502,8 +1481,7 @@ th:
         absolute: "แน่นอน"
         none: "ไม่มี"
         relative: "ความสัมพันธ์"
-        compare_relative_prefix: Compare current planning to
-        compare_relative_suffix: ago
+        compare_relative: "เปรียบเทียบการวางแผนปัจจุบัน กับ %{timespan} ที่ผ่านมา"
         compare_absolute: "เปรียบเทียบการวางแผนปัจจุบัน กับ %{date}"
       time_relative:
         days: "วัน"
@@ -1513,7 +1491,7 @@ th:
       exclude_reporters: "ซ่อนโครงการอื่น ๆ"
       exclude_empty: "ซ่อนโครงการว่าง"
       grouping: "การจัดกลุ่ม"
-      grouping_hide_group: "ซ่อนกลุ่ม \"%{group}\""
+      grouping_hide_group: ซ่อนกลุ่ม "%{group}"
       grouping_one: "เงื่อนไขในการจัดกลุ่มแรก"
       grouping_one_phrase: "เป็นโครงการย่อยของ"
       grouping_other: "อื่น ๆ"
@@ -1530,7 +1508,8 @@ th:
       types: "แสดงชนิด"
       status: "แสดงสถานะ"
       project_time_filter: "โครงการที่มีชุดภารกิจของประเภทที่แน่นอนในกรอบเวลาที่แน่นอน"
-      project_time_filter_timeframe: Timeframe
+      project_time_filter_absolute_timeframe: "กรอบเวลาที่แน่นอน"
+      project_time_filter_relative_timeframe: "กรอบเวลาที่สัมพันธ์"
       project_time_filter_historical_from: "จาก"
       project_time_filter_historical_to: "ถึง"
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1576,17 +1555,17 @@ th:
     planning_element_update: "แก้ไข: %{title}"
     work_packages_are_displayed_in_aggregations: "ชุดภารกิจแสดงผลในภาพรวม"
     project_association_new: "เพิ่มการอ้างอิงโครงการ"
-    project_association_new_for_with: "ตั้งค่าการอ้างอิงสำหรับ \"%{project_a}\" ด้วย"
-    project_association_with_other: "การเชื่อมโยงระหว่างโครงการ \"%{project_a}\" และโครงการ
-      \"%{project_b}\""
-    project_association_of_type: "การอ้างอิงไปยังโครงการของประเภท \"%{type}\""
+    project_association_new_for_with: ตั้งค่าการอ้างอิงสำหรับ "%{project_a}" ด้วย
+    project_association_with_other: การเชื่อมโยงระหว่างโครงการ "%{project_a}" และโครงการ
+      "%{project_b}"
+    project_association_of_type: การอ้างอิงไปยังโครงการของประเภท "%{type}"
     project_type_could_not_be_saved: "ไม่สามารถบันทึกชนิดของโครงการได้"
     type_could_not_be_saved: "ไม่สามารถบันทึกชนิดได้"
     reporting_could_not_be_saved: "ไม่สามารถบันทึกรายงานได้"
     properties: "คุณสมบัติ"
     really_delete_color: "คุณแน่ใจว่าจะลบสีดังต่อไปนี้หรือไม่? ประเภทที่ใช้สีเหล่านี้จะไม่ถูกลบไปด้วย"
-    really_delete_project_association_between_project_a_and_project_b: "คุณแน่ใจหรือว่าจะลบการเชื่อมโยงระหว่างโครงการ
-      \"%{project_a}\" และโครงการ \"%{project_b}\" ?"
+    really_delete_project_association_between_project_a_and_project_b: คุณแน่ใจหรือว่าจะลบการเชื่อมโยงระหว่างโครงการ
+      "%{project_a}" และโครงการ "%{project_b}" ?
     really_delete_project_type: "คุณแน่ใจหรือว่าจะลบประเภทโครงการนี้? โครงการที่ใช้ประเภทนี้จะไม่ถูกลบไปด้วย"
     really_delete_timeline: "คุณแน่ใจหรือว่าจะลบรายงานแผนภูมิเวลานี้? ชุดภารกิจที่แสดงในแผนภูมิเวลาจะไม่ถูกลบไปด้วย"
     really_delete_reporting: "คุณแน่ใจหรือว่าจะลบรายงานนี้? เนื่องจากสถานะของรายงานก่อนหน้านี้จะถูกลบไปด้วย"
@@ -1644,49 +1623,13 @@ th:
   warning_attachments_not_saved: "มี %{count} ไฟล์ที่ไม่สามารถบันทึกได้"
   menu_item: "เมนู"
   menu_item_setting: "การมองเห็น"
-  wiki_menu_item_for: "เมนูสำหรับหน้าวิกิ \"%{title}\""
+  wiki_menu_item_for: เมนูสำหรับหน้าวิกิ "%{title}"
   wiki_menu_item_setting: "การมองเห็น"
   wiki_menu_item_new_main_item_explanation: "คุณกำลังลบเฉพาะเมนูของวิกิหลัก ตอนนี้คุณต้องเลือกหน้าวิกิที่ไอเทมหลักจะถูกสร้าง
     ในการลบวิกิ ผู้ดูแลโครงการสามารถระงับการใช้งานโมดูลวิกิได้"
   wiki_menu_item_delete_not_permitted: "ไม่สามารถลบแค่เมนูของวิกิในหน้าวิกิเท่านั้น"
-  query_menu_item_for: "เมนูของแบบสอบถาม \"%{title}\""
+  query_menu_item_for: เมนูของแบบสอบถาม "%{title}"
   work_package:
     updated_automatically_by_child_changes: _ถูกอัพเดทโดยอัตโนมัติ โดยการเปลี่ยนค่าในชุดภารกิจย่อย
       %{child}_
   nothing_to_preview: "ไม่มีอะไรให้แสดงเป็นตัวอย่าง"
-  api_v3:
-    attributes:
-      lock_version: Lock Version
-    errors:
-      code_401: You need to be authenticated to access this resource.
-      code_403: You are not authorized to access this resource.
-      code_404: The requested resource could not be found.
-      code_409: Couldn't update the resource because of conflicting modifications.
-      invalid_content_type: Expected CONTENT-TYPE to be '%{content_type}' but got
-        '%{actual}'.
-      invalid_resource: For property '%{property}' a link like '%{expected}' is expected,
-        but got '%{actual}'.
-      invalid_relation: The relation is invalid.
-      invalid_user_status_transition: The current user account status does not allow
-        this operation.
-      missing_content_type: not specified
-      multiple_errors: Multiple field constraints have been violated.
-      parse_error: The request body was neither empty, nor did it contain a single
-        JSON object.
-      writing_read_only_attributes: You must not write a read-only attribute.
-      invalid_format: 'Invalid format for property ''%{property}'': Expected format
-        like ''%{expected_format}'', but got ''%{actual}''.'
-      render:
-        context_not_parsable: The context provided is not a link to a resource.
-        unsupported_context: The resource given is not supported as context.
-        context_object_not_found: Cannot find the resource given as the context.
-      validation:
-        invalid_user_assigned_to_work_package: The chosen user is not allowed to be
-          '%{property}' for this work package.
-        estimated_hours: Estimated hours cannot be set on parent work packages.
-        done_ratio: Done ratio cannot be set on parent work packages, when it is inferred
-          by status or when it is disabled.
-        start_date: Start date cannot be set on parent work packages.
-        due_date: Due date cannot be set on parent work packages.
-    resources:
-      schema: Schema

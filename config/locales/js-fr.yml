@@ -4,7 +4,6 @@ fr:
     ajax:
       hide: Masquer
       loading: Chargement ...
-    close_popup_title: Fermer popup
     button_add_watcher: Ajouter un observateur
     button_cancel: Annuler
     button_check_all: Tout cocher
@@ -68,9 +67,11 @@ fr:
     label_format_csv: CSV
     label_format_pdf: PDF
     label_format_pdf_with_descriptions: PDF avec descriptions
+    label_format_xls: XLS
+    label_format_xls_with_descriptions: XLS avec descriptions
     label_greater_or_equal: ">="
     label_group_by: Grouper par
-    label_hide_attributes: Cacher si vide
+    label_hide_attributes: Cacher les attributs vides
     label_hide_column: Cacher la colonne
     label_in: dans
     label_in_less_than: en moins de
@@ -84,6 +85,8 @@ fr:
     label_menu_collapse: réduire
     label_menu_expand: développer
     label_more_than_ago: il y a plus de quelques jours
+    label_move_column_left: Déplacer la colonne de gauche
+    label_move_column_right: Déplacer le colonne de droite
     label_next: Suivante
     label_no_data: Aucune donnée à afficher
     label_no_due_date: Pas de date de fin
@@ -101,7 +104,7 @@ fr:
     label_select_watcher: Sélectionner un observateur...
     label_selected_filter_list: Filtres sélectionnés
     label_share: Partager
-    label_show_attributes: Tout montrer
+    label_show_attributes: Afficher tous les attributs
     label_show_in_menu: Voir la page dans le menu
     label_sort_by: Trier par
     label_sorted_by: trié par
@@ -121,10 +124,9 @@ fr:
       %{subject}.
     label_unwatch_work_package: Ne plus observer le lot de travaux
     label_uploaded_by: Téléchargé par
-    label_global_queries: Requêtes partagées
-    label_custom_queries: Requêtes privées
+    label_global_queries: Requêtes globales
+    label_custom_queries: Requêtes personnalisées
     label_columns: Colonnes
-    label_click_to_enter_description: Cliquez pour entrer la description...
     text_are_you_sure: "Êtes-vous certain?"
     filter_labels:
       assigned_to: Assignée à
@@ -157,7 +159,7 @@ fr:
     relation_labels:
       parent: Parent
       children: Enfant
-      relates: En relation avec
+      relatedTo: En relation avec
       duplicates: Doublons
       duplicated: Dupliqué par
       blocks: Blocs
@@ -174,18 +176,17 @@ fr:
       add_blocked_by: Ajouter bloqués par
       add_precedes: Ajouter des précédents
       add_follows: Ajouter suivi
-    field_value_enter_prompt: Entrer une valeur pour '%{field}'
     select2:
       input_too_short:
-        one: Veuillez entrer un caractère de plus
-        other: Veuillez entrer encore {{count}} autres caractères
+        one: Please enter one more character
+        other: Please enter {{count}} more characters
         zero: Please enter more characters
       load_more: Chargement de plus de résultats ...
       no_matches: Pas de correspondances trouvées
       searching: Recherche ...
       selection_too_big:
-        one: Vous ne pouvez sélectionner qu'un seul élément
-        other: Vous ne pouvez sélectionner que {{limit}} éléments
+        one: You can only select one item
+        other: You can only select {{limit}} items
         zero: You cannot select any items
     text_work_packages_destroy_confirmation: Voulez-vous vraiment supprimer le(s)
       Lot(s) de Travaux sélectionnés?
@@ -250,9 +251,9 @@ fr:
       zooms: Niveau de zoom
       outlines: Niveau de hiérarchie
     unsupported_browser:
-      title: La version de votre navigateur n'est pas prise en charge
-      message: La version du navigateur que vous utilisez n'est plus supportée par
-        OpenProject. Veuillez mettre à jour votre navigateur.
+      title: Votre navigateur n'est pas pris en charge
+      message: Le navigateur que vous utilisez n'est plus supporté par OpenProject.
+        Veuillez mettre à jour votre navigateur.
       learn_more: En savoir plus
     wiki_formatting:
       strong: Gras
@@ -277,15 +278,9 @@ fr:
       description_options_hide: Masquer les options
       description_options_show: Afficher les options
       error: Une erreur s'est produite.
-      label_enable_multi_select: Activer la sélection multiple
-      label_disable_multi_select: Désactiver la sélection multiple
+      label_enable_multi_select: Basculer multisélection
       label_filter_add: Ajouter le filtre
       label_options: Options
-      label_column_multiselect: 'Champ liste déroulante combinée : sélectionner avec
-        les touches fléchées, confirmer la sélection avec la touche enter, supprimer
-        avec retour arrière'
-      label_column_select: 'Statut - champ liste déroulante combinée : sélection avec
-        la saisie semi-automatique.'
       message_error_during_bulk_delete: Une erreur s'est produite en essayant de supprimer
         les lots de travaux.
       message_successful_bulk_delete: Les lots de travaux ont été correctement effacés.
@@ -293,11 +288,6 @@ fr:
         title: Aucun lot de travail à afficher
         description_html: "<p>Soit aucun n'a été créé ou tous les lots de travail
           sont filtrés.</p>"
-      property_groups:
-        details: Détails
-        people: Participants
-        estimatesAndTime: Estimations et temps
-        other: Autre
       properties:
         assignee: Assignée à
         author: Auteur
@@ -319,7 +309,6 @@ fr:
         type: Type
         updatedAt: Mis à jour le
         versionName: Version
-        version: Version
       query:
         column_names: Colonnes
         group_by: Grouper les résultats par
@@ -355,12 +344,12 @@ fr:
         save_as: Enregistrer sous ...
         export: Exporter ...
         share: Partager ...
-        page_settings: Renommez la requête...
+        page_settings: Page des paramètres ...
         delete: Supprimer
       filter: Filtre
       unselected_title: Lots de Travaux
     modals:
-      label_settings: Renommez la requête
+      label_settings: Paramètres
       label_name: Nom
       label_delete_page: Effacer la page en cours
       button_apply: Appliquer
@@ -374,20 +363,7 @@ fr:
     relations:
       empty: Aucune relation n'existe
       delete: Supprimer la relation
-    inplace:
-      button_edit: "%{attribute} : Modifier"
-      button_save: "%{attribute} : Enregistrer"
-      button_save_and_send: "%{attribute} : Enregistrer et envoyer un courriel"
-      button_cancel: "%{attribute} : Annuler"
-      link_formatting_help: Mise en forme texte
-      btn_preview_enable: Prévisualisation
-      btn_preview_disable: Désactiver l'aperçu
-      null_value_label: Aucune valeur
-      errors:
-        required: "%{field} ne peut pas être vide"
-        number: "%{field} n'est pas un nombre valide"
     error_could_not_resolve_version_name: Ne peut résoudre le nom de version
-    error_could_not_resolve_user_name: Impossible de trouver l'utilisateur
     units:
       hour:
         one: 1 heure

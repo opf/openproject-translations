@@ -107,6 +107,7 @@ nl:
       time_entry:
         activity: Activiteit
         hours: Uren
+        work_package: Werkpakket
         spent_on: Datum
         type: Type
       type:
@@ -189,7 +190,7 @@ nl:
         smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
           length
         greater_than_start_date: moet groter zijn dan begindatum
-        inclusion: is not set to one of the allowed values
+        inclusion: is niet opgenomen in de lijst
         invalid: is ongeldig
         less_than: moet minder dan %{count}
         less_than_or_equal_to: moet kleiner zijn dan of gelijk aan %{count}
@@ -227,18 +228,10 @@ nl:
               not_a_valid_parent: is ongeldig
               does_not_exist: bestaat niet
             status_id:
-              status_transition_invalid: is ongeldig want er bestaat geen geldige
-                transitie van de oude naar de nieuwe status voor rol van de huidige
-                gebruiker
+              status_transition_invalid: er bestaat geen geldige overgang van de oude
+                naar de nieuwe status voor de huidige gebruikersrollen
             priority_id:
               only_active_priorities_allowed: moet actief zijn
-            category:
-              only_same_project_categories_allowed: De categorie van het werkpakket  moet
-                binnen hetzelfde project bestaan als het werkpakket.
-              does_not_exist: De gekozen categorie bestaat niet.
-            estimated_hours:
-              only_values_greater_or_equal_zeroes_allowed: Geschatte uren moeten >=
-                0.
         user:
           attributes:
             password:
@@ -294,13 +287,11 @@ nl:
   attributes:
     active: Actief
     assigned_to: Toegewezene
-    assignee: Toegewezene
     attachments: Bijlagen
     author: Auteur
     base: 'Algemene fout:'
     blocks_ids: Blokken
     category: Categorie
-    comment: Commentaar
     comments: Commentaar
     content: Inhoud
     created_at: Gemaakt op
@@ -311,23 +302,18 @@ nl:
     display_sums: Bedragen weergeven
     due_date: Vervaldatum
     estimated_hours: Geschatte tijd
-    estimated_time: Geschatte tijd
     firstname: Voornaam
     group: Groep
     groupname: Groepsnaam
-    id: ID
     is_default: Standaardwaarde
     is_for_all: Voor alle projecten
     is_public: Publiek
-    issue: Werkpakket
     lastname: Achternaam
     login: Login
     mail: E-mail
     name: Naam
     password: Wachtwoord
-    priority: Prioriteit
     project: Project
-    responsible: Verantwoordelijk
     role: Role
     start_date: Startdatum
     status: Status
@@ -506,34 +492,34 @@ nl:
   default_activity_testing: Testing
   default_activity_Support: Ondersteuning
   default_activity_Other: Overig
-  default_status_new: new
+  default_status_new: Nieuw
   default_status_specified: specified
   default_status_confirmed: confirmed
   default_status_to_be_scheduled: to be scheduled
   default_status_scheduled: scheduled
-  default_status_in_progress: in progress
-  default_status_tested: tested
-  default_status_on_hold: on hold
-  default_status_rejected: rejected
+  default_status_in_progress: bezig
+  default_status_tested: getest
+  default_status_on_hold: in wachtstand
+  default_status_rejected: verworpen
   default_status_closed: gesloten
   default_priority_low: Laag
   default_priority_normal: Normaal
   default_priority_high: Hoog
   default_priority_immediate: Onmiddellijk
-  default_project_type_customer: Customer Project
-  default_project_type_internal: Internal Project
-  default_reported_project_status_green: Green
+  default_project_type_customer: Klantenproject
+  default_project_type_internal: Intern project
+  default_reported_project_status_green: Groen
   default_reported_project_status_amber: Amber
-  default_reported_project_status_red: Red
+  default_reported_project_status_red: Rood
   default_role_anonymous: Anoniem
   default_role_developer: Ontwikkelaar
   default_role_manager: Manager
   default_role_non_member: Derde
-  default_role_reader: Reader
+  default_role_reader: Lezer
   default_role_member: Deelnemer
   default_type: Werkpakket
-  default_type_task: Task
-  default_type_deliverable: Deliverable
+  default_type_task: Taak
+  default_type_deliverable: Leverbaar
   default_type_milestone: Mijlpaal
   default_type_phase: Fase
   default_type_bug: Fout
@@ -601,8 +587,7 @@ nl:
   error_scm_command_failed: 'Er is een fout opgetreden tijdens het proberen om toegang
     te krijgen tot de repository: %{value}'
   error_scm_not_found: De vermelding of de herziening werd niet gevonden in de repository.
-  error_unable_delete_status: Kan deze status niet verwijderen omdat er werkpakketten
-    zijn die deze status gebruiken.
+  error_unable_delete_status: Het is niet mogelijk om de werkpakket status te verwijderen
   error_unable_delete_default_status: Niet in staat de status van het standaard werkpakket
     te verwijderen. Gelieve een andere status van het standaard werkpakket te selecteren
     alvorens de huidige te verwijderen.
@@ -749,7 +734,6 @@ nl:
   label_downloads_abbr: D/L
   label_duplicated_by: gedupliceerd door
   label_duplicates: duplicaten
-  label_edit: Wijzig
   label_enable_multi_select: Omschakelen multiselect
   label_end_to_end: einde tot einde
   label_end_to_start: einde tot start
@@ -777,7 +761,6 @@ nl:
   label_generate_key: Genereren van een sleutel
   label_git_path: Pad naar .git map
   label_greater_or_equal: ">="
-  label_group_by: Group by
   label_group_new: Nieuwe groep
   label_group_plural: Groepen
   label_help: Help
@@ -817,6 +800,7 @@ nl:
     voor ben
   label_work_package_view_all_watched: Bekijk alle gevolgde werkpakketten
   label_work_package_watchers: Volgers
+  label_work_packages_by: Werkpakketten door %{value}
   label_journal_diff: Beschrijving vergelijking
   label_jump_to_a_project: Ga naar een project...
   label_language_based: Op basis van de taal van gebruiker
@@ -1095,7 +1079,6 @@ nl:
   label_keyboard_shortcut_go_news: Ga naar Projectnieuws
   label_keyboard_shortcut_go_timelines: Ga naar tijdlijnen
   label_keyboard_shortcut_new_work_package: Nieuw werkpakket maken
-  label_keyboard_shortcut_details_package: Toon detailvlak van het werkpakket
   label_keyboard_shortcut_go_edit: Ga naar het bewerken van het huidige item (enkel
     op de detailpagina's)
   label_keyboard_shortcut_open_more_menu: Meer-menu openen (enkel op de detailpagina's)
@@ -1105,7 +1088,6 @@ nl:
     sommige lijsten)
   label_keyboard_shortcut_focus_next_item: Focus volgende lijstelement (enkel op sommige
     lijsten)
-  label_visible_elements: Visible elements
   macro_execution_error: Error executing the macro %{macro_name}
   macro_unavailable: Macro %{macro_name} cannot be displayed.
   mail_body_account_activation_request: 'Een nieuwe gebruiker (%{value}) heeft zich
@@ -1494,10 +1476,6 @@ nl:
       short: "%d %b %H:%M"
       time: "%I:%M %p"
     pm: PM
-  timeframe:
-    show: Show timeframe
-    end: to
-    start: from
   timelines:
     admin_menu:
       color: Kleur
@@ -1578,8 +1556,7 @@ nl:
         absolute: Absolute
         none: Geen
         relative: Relative
-        compare_relative_prefix: Vergelijk de huidige planning met
-        compare_relative_suffix: geleden
+        compare_relative: Compare current planning to %{timespan} ago
         compare_absolute: Compare current planning to %{date}
       time_relative:
         days: dagen
@@ -1607,7 +1584,8 @@ nl:
       status: Show status
       project_time_filter: Projects with a work package of a certain type in a certain
         timeframe
-      project_time_filter_timeframe: Periode
+      project_time_filter_absolute_timeframe: Absolute timeframe
+      project_time_filter_relative_timeframe: Relative timeframe
       project_time_filter_historical_from: from
       project_time_filter_historical_to: to
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1740,39 +1718,3 @@ nl:
     updated_automatically_by_child_changes: _Updated automatically by changing values
       within child work package %{child}_
   nothing_to_preview: Nothing to preview
-  api_v3:
-    attributes:
-      lock_version: Vergrendel versie
-    errors:
-      code_401: U moet geauthenticeerd zijn om toegang te hebben tot deze resource.
-      code_403: U bent niet gemachtigd om toegang te hebben tot deze resource.
-      code_404: De gevraagde resource kan niet worden gevonden.
-      code_409: Door conflicterende wijzigingen kan deze resource niet worden bijgewerkt.
-      invalid_content_type: CONTENT-TYPE  '%{content_type}' werd verwacht, maar '%{actual}'
-        werd ingegeven.
-      invalid_resource: Eigenschap '%{property}' verwacht een link zoals '%{expected}',
-        maar kreeg '%{actual}'.
-      invalid_relation: The relation is invalid.
-      invalid_user_status_transition: De accountstatus van de huidige gebruiker laat
-        deze actie niet toe.
-      missing_content_type: niet bepaald
-      multiple_errors: Meerdere veldbeperkingen werden overtreden.
-      parse_error: De aanvraag is niet leeg en bevat ook geen single JSON object.
-      writing_read_only_attributes: U mag geen read-only attribuut schrijven.
-      invalid_format: 'Ongeldig formaat voor eigenschap ''%{property}'': een formaat
-        zoals ''%{expected_format}'' wordt verwacht, maar ''%{actual}'' werd ingegeven.'
-      render:
-        context_not_parsable: The context provided is not a link to a resource.
-        unsupported_context: The resource given is not supported as context.
-        context_object_not_found: Cannot find the resource given as the context.
-      validation:
-        invalid_user_assigned_to_work_package: De gekozen gebruiker kan geen '%{property}'
-          zijn voor dit werkpakket.
-        estimated_hours: Geschatte uren uren kunnen niet op ouderwerkpaketten worden
-          gezet.
-        done_ratio: De vooruitgangsratio kan niet op een ouderwerkpakket worden gezet
-          wanneer die uit de status wordt afgeleid of is uitgeschakeld.
-        start_date: Start date cannot be set on parent work packages.
-        due_date: Due date cannot be set on parent work packages.
-    resources:
-      schema: Schema

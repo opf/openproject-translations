@@ -4,7 +4,6 @@ ru:
     ajax:
       hide: "Скрыть"
       loading: "Загрузка ..."
-    close_popup_title: "Закрыть всплывающее"
     button_add_watcher: "Добавить наблюдателя"
     button_cancel: "Отмена"
     button_check_all: "Выделить все"
@@ -68,9 +67,11 @@ ru:
     label_format_csv: CSV
     label_format_pdf: PDF
     label_format_pdf_with_descriptions: PDF с описанием
+    label_format_xls: XLS
+    label_format_xls_with_descriptions: XLS с описанием
     label_greater_or_equal: ">="
     label_group_by: "Группировать по"
-    label_hide_attributes: "Скрыть пустые"
+    label_hide_attributes: "Скрыть пустые атрибуты"
     label_hide_column: "Скрыть столбец"
     label_in: "в"
     label_in_less_than: "менее чем"
@@ -84,6 +85,8 @@ ru:
     label_menu_collapse: "свернуть"
     label_menu_expand: "развернуть"
     label_more_than_ago: "больше, чем дней назад"
+    label_move_column_left: "Переместить столбец влево"
+    label_move_column_right: "Переместить столбец вправо"
     label_next: "Следующие"
     label_no_data: "Нет данных для отображения"
     label_no_due_date: "без даты окончания"
@@ -101,7 +104,7 @@ ru:
     label_select_watcher: "Выберите наблюдателя..."
     label_selected_filter_list: "Выбранные фильтры"
     label_share: "Предоставить общий доступ"
-    label_show_attributes: "Показывать всё"
+    label_show_attributes: "Показать все атрибуты"
     label_show_in_menu: "Показать страницу в меню"
     label_sort_by: "Сортировать по"
     label_sorted_by: "отсортировано по"
@@ -121,10 +124,9 @@ ru:
       \ %{subject}."
     label_unwatch_work_package: "Прекратить наблюдение за пакетом работ"
     label_uploaded_by: "Загружено"
-    label_global_queries: "Общие запросы"
-    label_custom_queries: "Частные запросы"
+    label_global_queries: "Глобальные запросы"
+    label_custom_queries: "Пользовательские запросы"
     label_columns: "Столбцы"
-    label_click_to_enter_description: "Нажмите, чтобы ввести описание..."
     text_are_you_sure: "Вы уверены?"
     filter_labels:
       assigned_to: "Назначенный"
@@ -157,7 +159,7 @@ ru:
     relation_labels:
       parent: "Родитель"
       children: "Потомок"
-      relates: "Связанно с"
+      relatedTo: "Связанно с"
       duplicates: "Дубликаты"
       duplicated: "Дублируется"
       blocks: "Блоки"
@@ -174,19 +176,18 @@ ru:
       add_blocked_by: "Добавить заблокированно"
       add_precedes: "Добавить предшествует"
       add_follows: "Добавить следует"
-    field_value_enter_prompt: "Введите значение для «%{field}»"
     select2:
       input_too_short:
-        one: "Пожалуйста, введите еще один  символ"
-        other: "Пожалуйста, введите еще {{count}} символов"
+        one: Please enter one more character
+        other: Please enter {{count}} more characters
         zero: Please enter more characters
         few: Please enter {{count}} more characters
       load_more: "Загрузка дополнительных результатов ..."
       no_matches: "Совпадения не найдены"
       searching: "Поиск ..."
       selection_too_big:
-        one: "Вы можете выбрать только один элемент"
-        other: "Вы можете выбрать только {{limit}} элементов"
+        one: You can only select one item
+        other: You can only select {{limit}} items
         zero: You cannot select any items
         few: You can only select {{limit}} items
     text_work_packages_destroy_confirmation: "Вы уверены, что хотите удалить выбранные
@@ -250,8 +251,8 @@ ru:
       zooms: "Степень масштабирования"
       outlines: "Уровень иерархии"
     unsupported_browser:
-      title: "Ваша версия браузера не поддерживается"
-      message: "Используемый вами браузер больше не поддерживается OpenProject. Пожалуйста,
+      title: "Ваш браузер не поддерживается"
+      message: "Вы используете браузер больше не поддерживается OpenProject. Пожалуйста,
         обновите ваш браузер."
       learn_more: "Узнать больше"
     wiki_formatting:
@@ -277,25 +278,15 @@ ru:
       description_options_hide: "Скрыть параметры"
       description_options_show: "Показать параметры"
       error: "Произошла ошибка."
-      label_enable_multi_select: "Разрешить множественный выбор"
-      label_disable_multi_select: "Отключить множественный выбор"
+      label_enable_multi_select: "Разрешен множественный выбор"
       label_filter_add: "Добавить фильтр"
       label_options: "Опции"
-      label_column_multiselect: "Комбинированные ниспадающие поле: выбор  клавишами
-        со стрелками, подтвержднение выбора нажатием клавиши enter, удаление  клавишей
-        backspace"
-      label_column_select: "Статус - комбинированные ниспадающие поле: выбор с авто-завершением."
       message_error_during_bulk_delete: "Произошла ошибка при попытке удаления пакетов
         работ."
       message_successful_bulk_delete: "Пакет работ успешно удален."
       no_results:
         title: "Не пакетов работ для отображения"
         description_html: "<p>Ничего не было создано или все пакеты работ были отфильтрованы.</p>"
-      property_groups:
-        details: "Детали"
-        people: "Участники"
-        estimatesAndTime: "Смета & время"
-        other: "Другие"
       properties:
         assignee: "Назначенный"
         author: "Автор"
@@ -317,7 +308,6 @@ ru:
         type: "Тип"
         updatedAt: "Обновлено"
         versionName: "Этап"
-        version: "Этап"
       query:
         column_names: "Столбцы"
         group_by: "Результаты группы по"
@@ -353,12 +343,12 @@ ru:
         save_as: "Сохранить как ..."
         export: "Экспортировать ..."
         share: "Предоставить общий доступ..."
-        page_settings: "Переименование запроса..."
+        page_settings: "Параметры страницы..."
         delete: "Удалить"
       filter: "Фильтр"
       unselected_title: "Пакеты работ"
     modals:
-      label_settings: "Переименование запроса"
+      label_settings: "Параметры"
       label_name: "Имя"
       label_delete_page: "Удалить текущую страницу"
       button_apply: "Применить"
@@ -372,23 +362,10 @@ ru:
     relations:
       empty: "Не существует отношения"
       delete: "Удалить связь"
-    inplace:
-      button_edit: "%{attribute}: Редактирование"
-      button_save: "%{attribute}: сохранить"
-      button_save_and_send: "%{attribute}: сохранить и отправить по почте"
-      button_cancel: "%{attribute}: отменить"
-      link_formatting_help: "Форматирование текста"
-      btn_preview_enable: "Предварительный просмотр"
-      btn_preview_disable: "Заблокировать предпросмотр"
-      null_value_label: "Значение отсутствует"
-      errors:
-        required: "%{field} не может быть пустым"
-        number: "%{field} не является допустимым числом"
     error_could_not_resolve_version_name: "Не удалось определить имя версии"
-    error_could_not_resolve_user_name: "Не удалось найти такое имя пользователя"
     units:
       hour:
-        one: 1 час
-        other: "%{count} часов"
+        one: 1 hour
+        other: "%{count} hours"
         zero: 0 hours
         few: "%{count} hours"

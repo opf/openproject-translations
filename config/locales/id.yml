@@ -92,6 +92,7 @@ id:
       time_entry:
         activity: Activity
         hours: Jam
+        work_package: Work Package
         spent_on: Tanggal
         type: Tipe
       type:
@@ -174,7 +175,7 @@ id:
         smaller_than_or_equal_to_max_length: harus lebih kecil atau sama dengan panjang
           maksimum
         greater_than_start_date: harus setelah tanggal start
-        inclusion: is not set to one of the allowed values
+        inclusion: tidak termasuk dalam daftar
         invalid: " tidak valid"
         less_than: harus kurang dari %{count}
         less_than_or_equal_to: harus kurang atau sama dengan %{count}
@@ -212,17 +213,10 @@ id:
               not_a_valid_parent: " tidak valid"
               does_not_exist: tidak ada
             status_id:
-              status_transition_invalid: tidak valid karena transisi berlaku tidak
-                ada dari tua untuk status baru untuk peran pengguna saat ini
+              status_transition_invalid: tidak ada transisi valid dari status lama
+                ke yang baru untuk Peran user ini
             priority_id:
               only_active_priorities_allowed: harus aktif
-            category:
-              only_same_project_categories_allowed: The category of a work package
-                must be within the same project as the work package.
-              does_not_exist: The specified category does not exist.
-            estimated_hours:
-              only_values_greater_or_equal_zeroes_allowed: The estimated hours must
-                be >= 0.
         user:
           attributes:
             password:
@@ -278,13 +272,11 @@ id:
   attributes:
     active: Aktif
     assigned_to: Pelimpahan
-    assignee: Pelimpahan
     attachments: Lampiran
     author: Penulis
     base: 'Error :'
     blocks_ids: Blok
     category: Kategori
-    comment: Komentar
     comments: Komentar
     content: Konten
     created_at: Dibuat
@@ -295,23 +287,18 @@ id:
     display_sums: Tampilkan jumlah
     due_date: Tenggat waktu
     estimated_hours: Estimasi Waktu
-    estimated_time: Estimasi Waktu
     firstname: Nama depan
     group: Grup
     groupname: Nama grup
-    id: ID
     is_default: Nilai default
     is_for_all: Untuk semua Project
     is_public: Publik
-    issue: Paket-Penugasan
     lastname: Nama belakang
     login: Login
     mail: Email
     name: Nama
     password: Password
-    priority: Prioritas
     project: Project
-    responsible: Penanggung jawab
     role: Role
     start_date: Tanggal start
     status: Status
@@ -582,8 +569,7 @@ id:
   error_scm_annotate: Entri tidak ditemukan atau tidak dapat di anotasi.
   error_scm_command_failed: 'Error ketika mengakses repositori: %{value}'
   error_scm_not_found: Entri atau revisi tidak ditemukan dalam repositori.
-  error_unable_delete_status: Unable to delete work package status because it contains
-    work packages.
+  error_unable_delete_status: Tidak dapat menghapus status Paket-Penugasan
   error_unable_delete_default_status: Tidak dapat menghapus status default Paket-Penugasan.
     Pilih status Paket-Penugasan lainnya sebelum menghapus yang satu ini.
   error_unable_to_connect: Tidak dapat terhubung (%{value})
@@ -729,7 +715,6 @@ id:
   label_downloads_abbr: D/L
   label_duplicated_by: disalin oleh
   label_duplicates: duplikat
-  label_edit: Edit
   label_enable_multi_select: Beralih ke multiselect
   label_end_to_end: finish untuk mengakhiri
   label_end_to_start: finish ke start
@@ -756,7 +741,6 @@ id:
   label_generate_key: Generate a key
   label_git_path: Path to .git directory
   label_greater_or_equal: ">="
-  label_group_by: Grup oleh
   label_group_new: Grup baru
   label_group_plural: Grup
   label_help: Support
@@ -796,6 +780,7 @@ id:
     tanggung jawab saya
   label_work_package_view_all_watched: Lihat semua Paket-Penugasan yang telah diakses
   label_work_package_watchers: Pemantau
+  label_work_packages_by: Paket-Penugasan dari %{value}
   label_journal_diff: Deskripsi perbandingan
   label_jump_to_a_project: Lompat ke Project...
   label_language_based: Berdasarkan bahasa user
@@ -1070,7 +1055,6 @@ id:
   label_keyboard_shortcut_go_news: Buka Project Berita
   label_keyboard_shortcut_go_timelines: Buka Timeline
   label_keyboard_shortcut_new_work_package: Buat Paket-Penugasan baru
-  label_keyboard_shortcut_details_package: Show work packages details pane
   label_keyboard_shortcut_go_edit: Edit item saat ini (hanya di detail halaman)
   label_keyboard_shortcut_open_more_menu: Buka menu lagi (hanya di halaman detil)
   label_keyboard_shortcut_go_preview: Preview edit saat ini (hanya halaman yang diedit)
@@ -1078,7 +1062,6 @@ id:
     di daftar yang sama)
   label_keyboard_shortcut_focus_next_item: Fokus daftar elemen berikutnya (hanya di
     daftar yang sama)
-  label_visible_elements: Visible elements
   macro_execution_error: ERROR eksekusi makro %{macro_name}
   macro_unavailable: Makro %{macro_name} tidak dapat ditampilkan.
   mail_body_account_activation_request: 'User (%{value}) telah terdaftar. Akun Anda
@@ -1459,10 +1442,6 @@ id:
       short: "%d %b %H:%M"
       time: "%I:%M %p"
     pm: pm
-  timeframe:
-    show: Tampilkan Timeframe
-    end: untuk
-    start: dari
   timelines:
     admin_menu:
       color: Warna
@@ -1543,8 +1522,8 @@ id:
         absolute: Absolut
         none: Kosong
         relative: Relatif
-        compare_relative_prefix: Compare current planning to
-        compare_relative_suffix: ago
+        compare_relative: Bandingkan perencanaan saat ini dengan %{timespan} yang
+          lalu
         compare_absolute: Bandingkan perencanaan saat ini dengan %{date}
       time_relative:
         days: hari
@@ -1572,7 +1551,8 @@ id:
       status: Tunjukkan status
       project_time_filter: Project dengan Paket-Penugasan Tipe tertentu, dalam jangka
         waktu tertentu
-      project_time_filter_timeframe: Timeframe
+      project_time_filter_absolute_timeframe: Absolut Timeframe
+      project_time_filter_relative_timeframe: Relatif Timeframe
       project_time_filter_historical_from: dari
       project_time_filter_historical_to: untuk
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1701,39 +1681,3 @@ id:
     updated_automatically_by_child_changes: _Update otomatis dengan merubah nilai
       dari turunan Paket-Penugasan %{child}_
   nothing_to_preview: Tidak ada pre-view
-  api_v3:
-    attributes:
-      lock_version: Lock Version
-    errors:
-      code_401: Anda perlu dikonfirmasi untuk mengakses sumber ini.
-      code_403: Anda tidak diizinkan untuk mengakses sumber ini.
-      code_404: The requested resource could not be found.
-      code_409: Tidak dapat memperbarui sumber karena bertentangan modifikasi.
-      invalid_content_type: Diharapkan CONTENT-TYPE untuk menjadi '%{content_type}'
-        tetapi mendapat '%{actual}'.
-      invalid_resource: For property '%{property}' a link like '%{expected}' is expected,
-        but got '%{actual}'.
-      invalid_relation: The relation is invalid.
-      invalid_user_status_transition: The current user account status does not allow
-        this operation.
-      missing_content_type: not specified
-      multiple_errors: Multiple field constraints have been violated.
-      parse_error: The request body was neither empty, nor did it contain a single
-        JSON object.
-      writing_read_only_attributes: Anda tidak harus menulis hanya-baca atribut.
-      invalid_format: 'Invalid format for property ''%{property}'': Expected format
-        like ''%{expected_format}'', but got ''%{actual}''.'
-      render:
-        context_not_parsable: The context provided is not a link to a resource.
-        unsupported_context: The resource given is not supported as context.
-        context_object_not_found: Cannot find the resource given as the context.
-      validation:
-        invalid_user_assigned_to_work_package: Pilihan pengguna tidak diperbolehkan
-          untuk menjadi '%{property}' untuk paket pekerjaan ini.
-        estimated_hours: Estimated hours cannot be set on parent work packages.
-        done_ratio: Done ratio cannot be set on parent work packages, when it is inferred
-          by status or when it is disabled.
-        start_date: Start date cannot be set on parent work packages.
-        due_date: Due date cannot be set on parent work packages.
-    resources:
-      schema: Schema

@@ -4,7 +4,6 @@ sk:
     ajax:
       hide: Skryť
       loading: Načítava sa ...
-    close_popup_title: Close popup
     button_add_watcher: Pridať pozorovateľa
     button_cancel: Zrušíť
     button_check_all: Označiť všetko
@@ -68,9 +67,11 @@ sk:
     label_format_csv: CSV
     label_format_pdf: PDF
     label_format_pdf_with_descriptions: PDF s popisom
+    label_format_xls: XLS
+    label_format_xls_with_descriptions: XLS s popisom
     label_greater_or_equal: ">="
     label_group_by: Zoskupiť podľa
-    label_hide_attributes: Skryť prázdne
+    label_hide_attributes: Skryť prázdne atribúty
     label_hide_column: Skryť stĺpec
     label_in: v
     label_in_less_than: in less than
@@ -84,6 +85,8 @@ sk:
     label_menu_collapse: zbaliť
     label_menu_expand: rozbaliť
     label_more_than_ago: pred viac než dňom
+    label_move_column_left: Presunúť stĺpec vľavo
+    label_move_column_right: Premiestniť stĺpec vpravo
     label_next: Next
     label_no_data: "Žiadne dáta na zobrazenie"
     label_no_due_date: bez dátumu ukončenia
@@ -101,7 +104,7 @@ sk:
     label_select_watcher: Vybrať pozorovateľa ...
     label_selected_filter_list: Vybrané filtre
     label_share: Zdieľať
-    label_show_attributes: Show all
+    label_show_attributes: Zobraziť všetky atribúty
     label_show_in_menu: Zobraziť stránku v menu
     label_sort_by: Zoradiť podľa
     label_sorted_by: zoradené podľa
@@ -121,10 +124,9 @@ sk:
       balíčka %{subject} typu %{type}.
     label_unwatch_work_package: Prestaň sledovať pracovný balíček
     label_uploaded_by: Nahral
-    label_global_queries: Zdieľané dopyty
-    label_custom_queries: Súkromné dopyty
+    label_global_queries: Globálne dopyty
+    label_custom_queries: Vlastné dopyty
     label_columns: Stĺpce
-    label_click_to_enter_description: Kliknutím zadajte popis...
     text_are_you_sure: Are you sure?
     filter_labels:
       assigned_to: Priradené
@@ -157,7 +159,7 @@ sk:
     relation_labels:
       parent: Nadradený balíček
       children: Potomkovia
-      relates: Previazaný na
+      relatedTo: Previazaný na
       duplicates: Kópie
       duplicated: Zduplikoval
       blocks: Blocks
@@ -174,7 +176,6 @@ sk:
       add_blocked_by: Pridať "Zablokoval"
       add_precedes: Pridať predchodcov
       add_follows: Pridať nasledovníkov
-    field_value_enter_prompt: Zadajte hodnotu pre "%{field}"
     select2:
       input_too_short:
         one: Please enter one more character
@@ -251,7 +252,7 @@ sk:
       zooms: "Úroveň priblíženia"
       outlines: "Úroveň vnorenia"
     unsupported_browser:
-      title: Prehliadač, ktorú aktuálne používate nie je podporovaný projektom OpenProject
+      title: Váš prehliadač nie je podporovaný
       message: Verzia prehliadača, ktorú aktuálne používate už nie je podporovaná
         projektom OpenProject. Prosím aktualizujte svoj prehliadač.
       learn_more: Learn more
@@ -278,13 +279,9 @@ sk:
       description_options_hide: Skryť možnosti
       description_options_show: Zobraziť možnosti
       error: Vyskytla sa chyba.
-      label_enable_multi_select: Povoliť hromadný výber
-      label_disable_multi_select: Zakázať hromadný výber
+      label_enable_multi_select: Toggle multiselect
       label_filter_add: Pridať filter
       label_options: Options
-      label_column_multiselect: 'Combined dropdown field: Select with arrow keys,
-        confirm selection with enter, delete with backspace'
-      label_column_select: 'Status - Combined dropdown field: Selection with auto-completion.'
       message_error_during_bulk_delete: Chyba pri pokuse o odstránenie pracovných
         balíčkov.
       message_successful_bulk_delete: Pracovné balíčky boli úspešne odstránené.
@@ -292,11 +289,6 @@ sk:
         title: "Žiadne pracovné balíčky na zobrazenie"
         description_html: "<p>Buď zatiaľ nebol vytvorený žiadny pracovný balíček alebo
           boli všetky odfiltrované.</p>"
-      property_groups:
-        details: Podrobnosti
-        people: "Ľudia"
-        estimatesAndTime: Odhady a čas
-        other: Ostatné
       properties:
         assignee: Priradené
         author: Autor
@@ -318,7 +310,6 @@ sk:
         type: Typ
         updatedAt: Aktualizované
         versionName: Verzia
-        version: Verzia
       query:
         column_names: Stĺpce
         group_by: zoskupiť výsledky podľa
@@ -354,12 +345,12 @@ sk:
         save_as: Uložiť ako ...
         export: Exportovať ...
         share: Zdieľať ...
-        page_settings: Premenovať dopyt ...
+        page_settings: Nastavenia stránky ...
         delete: Odstrániť
       filter: Filtrovať
       unselected_title: Pracovné balíčky
     modals:
-      label_settings: Premenovať dopyt
+      label_settings: Nastavenia
       label_name: Názov
       label_delete_page: Odstrániť aktuálnu stránku
       button_apply: Použiť
@@ -373,20 +364,7 @@ sk:
     relations:
       empty: Neexistuje žiadna väzba
       delete: Delete relation
-    inplace:
-      button_edit: "%{attribute}: Upraviť"
-      button_save: "%{attribute}: Uložiť"
-      button_save_and_send: "%{attribute}: Uložiť a odoslať e-mail"
-      button_cancel: "%{attribute}: Zrušiť"
-      link_formatting_help: Formátovanie textu
-      btn_preview_enable: Náhľad
-      btn_preview_disable: Vypnutie náhľadu
-      null_value_label: "Žiadna hodnota"
-      errors:
-        required: "%{field} cannot be empty"
-        number: "%{field} is not a valid number"
     error_could_not_resolve_version_name: Nebolo možné zistiť názov verzie
-    error_could_not_resolve_user_name: Nebolo možné zistiť užívateľské meno
     units:
       hour:
         one: 1 hour
