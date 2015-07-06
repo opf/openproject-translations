@@ -15,7 +15,7 @@ class I18nProvider
     Crowdin::API.new project_id: @project_id, api_key: @api_key
   end
 
-  def upload_english(translation_file, path_to_translation, title)
+  def upload_english(translation_file, path_to_translation, title, export_pattern)
     begin
       # create crowdin directory just in case it doesn't exist.
       add_directory_if_missing
@@ -23,11 +23,13 @@ class I18nProvider
       if file_exists_in_directory?(translation_file)
         update_file(dest: "/#{@crowdin_directory}/#{translation_file}",
                     source: path_to_translation.to_s,
-                    title: title)
+                    title: title,
+                    export_pattern: export_pattern)
       else
         add_file(dest: "/#{@crowdin_directory}/#{translation_file}",
-                    source: path_to_translation.to_s,
-                    title: title)
+                 source: path_to_translation.to_s,
+                 title: title,
+                 export_pattern: export_pattern)
       end
     rescue Crowdin::API::Errors::Error => e
       puts "Error during update of #{@project_de}: #{e.message}"
@@ -49,19 +51,19 @@ class I18nProvider
     directory['files'].find {|f| f['name'] == file}
   end
 
-  def update_file(dest:, source:, title:)
+  def update_file(dest:, source:, title:, export_pattern:)
     @crowdin.update_file [{dest: dest,
                           source: source,
                           title: title,
-                          export_pattern: '%two_letters_code%.yml'}],
+                          export_pattern: export_pattern}],
                           type: 'yaml'
   end
 
-  def add_file(dest:, source:, title:)
+  def add_file(dest:, source:, title:, export_pattern:)
     @crowdin.add_file [{dest: dest,
                           source: source,
                           title: title,
-                          export_pattern: '%two_letters_code%.yml'}],
+                          export_pattern: export_pattern}],
                           type: 'yaml'
   end
 

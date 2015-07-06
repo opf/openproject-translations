@@ -84,10 +84,11 @@ class LocalesUpdater
       ENGLISH_JS_TRANSLATION_FILE => 'OpenProject JavaScript Wording'
     }
     [ENGLISH_TRANSLATION_FILE, ENGLISH_JS_TRANSLATION_FILE].each do |translation_file|
-      path_to_translation = File.join 'config', 'locales', translation_file
+      path_to_translation = Pathname.new('config') + 'locales' + translation_file
       title = titles[translation_file]
+      export_pattern = js_translation?(path_to_translation) ? 'js-%two_letters_code%.yml' : '%two_letters_code%.yml'
       if File.exist?(path_to_translation)
-        @i18n_provider.upload_english(translation_file, path_to_translation, title)
+        @i18n_provider.upload_english(translation_file, path_to_translation, title, export_pattern)
       end
     end
   end
