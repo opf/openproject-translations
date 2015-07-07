@@ -16,10 +16,14 @@ class GitRepository
     within_repo do
       begin
         run_command "git checkout --force '#{ref}' --"
-      rescue
-        # old git versions get distracted by '--' at the end and this shortcut
-        # does not work anymore
-        run_command "git checkout --force -b '#{ref}' --track 'origin/#{ref}'"
+      rescue Exception => e
+        if e.message =~ /fatal: invalid reference/
+          # old git versions get distracted by '--' at the end and this shortcut
+          # does not work anymore
+          run_command "git checkout --force -b '#{ref}' --track 'origin/#{ref}'"
+        else
+          raise e
+        end
       end
     end
   end
