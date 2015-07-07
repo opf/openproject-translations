@@ -14,7 +14,13 @@ class GitRepository
 
   def checkout(ref)
     within_repo do
-      run_command "git checkout --force '#{ref}' --"
+      begin
+        run_command "git checkout --force '#{ref}' --"
+      rescue
+        # old git versions get distracted by '--' at the end and this shortcut
+        # does not work anymore
+        run_command "git checkout --force -b '#{ref}' --track 'origin/#{ref}'"
+      end
     end
   end
 
