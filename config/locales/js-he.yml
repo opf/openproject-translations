@@ -4,6 +4,7 @@ he:
     ajax:
       hide: "הסתר"
       loading: "טוען ..."
+    close_popup_title: Close popup
     button_add_watcher: "הוספת צופה"
     button_cancel: "ביטול"
     button_check_all: "סמן את כולם"
@@ -67,11 +68,9 @@ he:
     label_format_csv: CSV
     label_format_pdf: PDF
     label_format_pdf_with_descriptions: PDF עם תיאור
-    label_format_xls: XLS
-    label_format_xls_with_descriptions: XLS עם תיאור
     label_greater_or_equal: ">="
     label_group_by: "קבץ לפי"
-    label_hide_attributes: "הסתר תכונות ריקות"
+    label_hide_attributes: Hide empty
     label_hide_column: "הסתר עמודה"
     label_in: "ב"
     label_in_less_than: in less than
@@ -85,8 +84,6 @@ he:
     label_menu_collapse: "צמצם"
     label_menu_expand: "הרחב"
     label_more_than_ago: more than days ago
-    label_move_column_left: Move column left
-    label_move_column_right: Move column right
     label_next: "הבא"
     label_no_data: "אין נתונים להצגה"
     label_no_due_date: "אין תאריך סיום"
@@ -104,7 +101,7 @@ he:
     label_select_watcher: Select a watcher...
     label_selected_filter_list: Selected filters
     label_share: "שתף"
-    label_show_attributes: "הצג את כל התכונות"
+    label_show_attributes: Show all
     label_show_in_menu: "הצג עמוד בתפריט"
     label_sort_by: Sort by
     label_sorted_by: "ממוין לפי"
@@ -124,9 +121,10 @@ he:
       %{subject}.
     label_unwatch_work_package: Unwatch work package
     label_uploaded_by: "הועלה על ידי"
-    label_global_queries: "שאילתות גלובלית"
-    label_custom_queries: Custom queries
+    label_global_queries: Shared queries
+    label_custom_queries: Private queries
     label_columns: "עמודות"
+    label_click_to_enter_description: Click to enter description...
     text_are_you_sure: "האם הינך בטוח?"
     filter_labels:
       assigned_to: "משויך אל"
@@ -159,7 +157,7 @@ he:
     relation_labels:
       parent: "אב"
       children: Children
-      relatedTo: Related To
+      relates: Related To
       duplicates: Duplicates
       duplicated: Duplicated by
       blocks: "בלוקים"
@@ -176,6 +174,7 @@ he:
       add_blocked_by: Add blocked by
       add_precedes: Add precedes
       add_follows: Add follows
+    field_value_enter_prompt: Enter a value for '%{field}'
     select2:
       input_too_short:
         one: Please enter one more character
@@ -249,8 +248,9 @@ he:
       zooms: "רמת גודל התצוגה"
       outlines: "רמת היררכיה"
     unsupported_browser:
-      title: "הדפדפן שלך אינו נתמך"
-      message: "הדפדפן שאתה משתמש אינה נתמך על-ידי OpenProject. נא לעדכן את הדפדפן."
+      title: Your browser version is not supported
+      message: The browser version you are using is no longer supported by OpenProject.
+        Please update your browser.
       learn_more: "למידע נוסף"
     wiki_formatting:
       strong: "חזק"
@@ -275,9 +275,13 @@ he:
       description_options_hide: "הסתר אפשרויות"
       description_options_show: "הצג אפשרויות"
       error: "התרחשה שגיאה."
-      label_enable_multi_select: Toggle multiselect
+      label_enable_multi_select: Enable multiselect
+      label_disable_multi_select: Disable multiselect
       label_filter_add: Add filter
       label_options: "אפשריות"
+      label_column_multiselect: 'Combined dropdown field: Select with arrow keys,
+        confirm selection with enter, delete with backspace'
+      label_column_select: 'Status - Combined dropdown field: Selection with auto-completion.'
       message_error_during_bulk_delete: An error occurred while trying to delete work
         packages.
       message_successful_bulk_delete: Successfully deleted work packages.
@@ -285,6 +289,11 @@ he:
         title: "אין חבילות עבודה להצגה"
         description_html: "<p>Either none have been created or all work packages are
           filtered out.</p>"
+      property_groups:
+        details: "פרטים"
+        people: People
+        estimatesAndTime: Estimates & Time
+        other: Other
       properties:
         assignee: "משויך אל"
         author: "מחבר"
@@ -306,6 +315,7 @@ he:
         type: "סוג"
         updatedAt: "עודכן בתאריך"
         versionName: "גירסה"
+        version: "גירסה"
       query:
         column_names: "עמודות"
         group_by: "קיבוץ תוצאות לפי"
@@ -341,12 +351,12 @@ he:
         save_as: "שמור בשם ..."
         export: "ייצוא..."
         share: "שיתוף..."
-        page_settings: "הגדרות דף..."
+        page_settings: Rename query ...
         delete: "מחק"
       filter: "סינון"
       unselected_title: Work packages
     modals:
-      label_settings: "הגדרות"
+      label_settings: Rename query
       label_name: "שם"
       label_delete_page: "מחק את הדף הנוכחי"
       button_apply: "החל"
@@ -360,7 +370,21 @@ he:
     relations:
       empty: "הקשר אינו קיים"
       delete: Delete relation
+    inplace:
+      button_edit: "%{attribute}: Edit"
+      button_save: "%{attribute}: Save"
+      button_save_and_send: "%{attribute}: Save and send email"
+      button_cancel: "%{attribute}: Cancel"
+      link_formatting_help: Text formatting
+      btn_preview_enable: "תצוגה מקדימה"
+      btn_preview_disable: Disable preview
+      null_value_label: No value
+      clear_value_label: "-"
+      errors:
+        required: "%{field} cannot be empty"
+        number: "%{field} is not a valid number"
     error_could_not_resolve_version_name: Couldn't resolve version name
+    error_could_not_resolve_user_name: Couldn't resolve user name
     units:
       hour:
         one: 1 hour

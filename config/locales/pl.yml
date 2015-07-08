@@ -42,6 +42,7 @@ pl:
     attributes:
       attachment:
         downloads: Pliki do pobrania
+        file: Plik
         filename: Plik
         filesize: Rozmiar
       auth_source:
@@ -101,7 +102,6 @@ pl:
       time_entry:
         activity: Działanie
         hours: Godziny
-        work_package: Zadania
         spent_on: Data
         type: Typ
       type:
@@ -179,12 +179,13 @@ pl:
         equal_to: musi być równa %{count}
         even: musi być parzysty
         exclusion: jest zarezerwowany
+        file_too_large: is too large (maximum size is %{count} Bytes)
         greater_than: musi być większa niż %{count}
         greater_than_or_equal_to: musi być większa lub równa %{count}
         smaller_than_or_equal_to_max_length: musi być mniejsze lub równe maksymalnej
           długości
         greater_than_start_date: musi być większe niż data początkowa
-        inclusion: nie znajduje się na liście
+        inclusion: ma wartość spoza dozwolonych
         invalid: jest nieprawidłowy
         less_than: musi być mniejsza niż %{count}
         less_than_or_equal_to: musi być większa niż %{count}
@@ -222,10 +223,17 @@ pl:
               not_a_valid_parent: jest nieprawidłowy
               does_not_exist: nie istnieje
             status_id:
-              status_transition_invalid: istnieje nie ważne przejście od starego do
-                nowego statusu dla obecnych ról użytkownika
+              status_transition_invalid: jest niepoprawny, ponieważ nie istnieje poprawne
+                przejście ze starego do nowego statusu dla aktualnej roli użytkownika
             priority_id:
               only_active_priorities_allowed: musi być aktywny
+            category:
+              only_same_project_categories_allowed: The category of a work package
+                must be within the same project as the work package.
+              does_not_exist: Podana kategoria nie istnieje.
+            estimated_hours:
+              only_values_greater_or_equal_zeroes_allowed: Szacowane godziny muszą
+                być >= 0.
         user:
           attributes:
             password:
@@ -285,11 +293,13 @@ pl:
   attributes:
     active: Aktywne
     assigned_to: Przypisany do
+    assignee: Przypisany do
     attachments: Załączniki
     author: Autor
     base: 'Błąd ogólny:'
     blocks_ids: Bloki
     category: Kategoria
+    comment: Komentarz
     comments: Komentarz
     content: Zawartość
     created_at: Utworzone
@@ -300,18 +310,23 @@ pl:
     display_sums: Wyświetlanie sumy
     due_date: Termin
     estimated_hours: Szacowany czas
+    estimated_time: Szacowany czas
     firstname: Imię
     group: Grupa
     groupname: Nazwa grupy
+    id: ID
     is_default: Wartość domyślna
     is_for_all: Dla wszystkich projektów
     is_public: Publicznego
+    issue: Zadania
     lastname: Nazwisko
     login: Login
     mail: Adres e-mail
     name: Nazwa
     password: Hasło
+    priority: Priorytet
     project: Projekt
+    responsible: Odpowiedzialny
     role: Role
     start_date: Data rozpoczęcia
     status: Stan
@@ -596,7 +611,8 @@ pl:
   error_scm_command_failed: 'Wystąpił błąd podczas próby dostępu do repozytorium:
     %{value}'
   error_scm_not_found: Nie znaleziono wpisu lub zmiany w repozytorium.
-  error_unable_delete_status: Nie można usunąć statusu zadania
+  error_unable_delete_status: Nie można usunąć statusu zadań, ponieważ istnieją zadania
+    przypisane do niego.
   error_unable_delete_default_status: Nie można usunąć domyślnego statusu zadania.
     Proszę wybrać inny status jako domyślny przed usunięcięm obecnego.
   error_unable_to_connect: Nie można połączyć (%{value})
@@ -742,6 +758,7 @@ pl:
   label_downloads_abbr: D/L
   label_duplicated_by: powielone przez
   label_duplicates: duplikaty
+  label_edit: Edycja
   label_enable_multi_select: Włącz wybór wielokrotny
   label_end_to_end: koniec do końca
   label_end_to_start: koniec do początku
@@ -769,6 +786,7 @@ pl:
   label_generate_key: Generuj klucz
   label_git_path: "Ścieżka do katalogu .git"
   label_greater_or_equal: ">="
+  label_group_by: Grupuj według
   label_group_new: Nowa Grupa
   label_group_plural: Grupy
   label_help: Pomoc
@@ -808,7 +826,6 @@ pl:
     jestem odpowiedzialny
   label_work_package_view_all_watched: Pokaż wszystkie obserwowane zadania
   label_work_package_watchers: Obserwatorzy
-  label_work_packages_by: Zadania wg %{value}
   label_journal_diff: Opis porównania
   label_jump_to_a_project: Skok do projektu...
   label_language_based: Na podstawie języka użytkownika
@@ -987,6 +1004,7 @@ pl:
   label_this_week: ten tydzień
   label_this_year: ten rok
   label_time_entry_plural: Czas pracy
+  label_time_sheet_menu: Time sheet
   label_time_tracking: Zarządzanie czasem
   label_today: Dzisiaj
   label_top_menu: Głowne Menu
@@ -1088,6 +1106,7 @@ pl:
   label_keyboard_shortcut_go_news: Przejdź do wiadomości projektu
   label_keyboard_shortcut_go_timelines: Przejdź do osi czasu
   label_keyboard_shortcut_new_work_package: Tworzenie nowego zadania
+  label_keyboard_shortcut_details_package: Pokaż pasek właściwości zadań
   label_keyboard_shortcut_go_edit: Przejdź do edycji bieżącej pozycji (tylko na stronach
     szczegółowych)
   label_keyboard_shortcut_open_more_menu: Open more-menu (on detail pages only)
@@ -1097,6 +1116,7 @@ pl:
     lists only)
   label_keyboard_shortcut_focus_next_item: Focus next list element (on some lists
     only)
+  label_visible_elements: Visible elements
   macro_execution_error: Błąd podczas wykonywania makra %{macro_name}
   macro_unavailable: Makro %{macro_name} nie może zostać wyświetlone.
   mail_body_account_activation_request: 'A new user (%{value}) has registered. The
@@ -1487,6 +1507,10 @@ pl:
       short: "%d %b %H:%M"
       time: "%I:%M %p"
     pm: pm
+  timeframe:
+    show: Pokaż ramy czasowe
+    end: do
+    start: od
   timelines:
     admin_menu:
       color: Kolor
@@ -1564,7 +1588,8 @@ pl:
         absolute: Bezwzględne
         none: Brak
         relative: Względne
-        compare_relative: Porównanie bieżącego planowania do %{timespan} wstecz
+        compare_relative_prefix: Porównaj bieżący plan z
+        compare_relative_suffix: temu
         compare_absolute: Porównanie bieżącego planowania do %{date}
       time_relative:
         days: dni
@@ -1592,8 +1617,7 @@ pl:
       status: Pokaż status
       project_time_filter: Projects with a work package of a certain type in a certain
         timeframe
-      project_time_filter_absolute_timeframe: Bezwzględny zakres
-      project_time_filter_relative_timeframe: Względny zakres
+      project_time_filter_timeframe: Timeframe
       project_time_filter_historical_from: od
       project_time_filter_historical_to: do
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1728,3 +1752,42 @@ pl:
     updated_automatically_by_child_changes: _Zaktualizowane automatycznie przez zmianę
       wartości wewnątrz podrzędnego zadania %{child}_
   nothing_to_preview: Nie ma nic do podglądu
+  api_v3:
+    attributes:
+      lock_version: Wersja zablokowana
+    errors:
+      code_401: Musisz być uwierzytelniony, aby otrzymać dostęp do tego zasobu.
+      code_401_wrong_credentials: You did not provide the correct credentials.
+      code_403: Nie masz uprawnień do tego zasobu.
+      code_404: Nie można odnaleźć żądanego zasobu.
+      code_409: Nie można zaktualizować zasobu ze względu na konfliktujące modyfikacje.
+      invalid_content_type: Oczekiwano CONTENT-TYPE '%{content_type}' a otrzymano
+        '%{actual}'.
+      invalid_format: 'Błędny format dla własności ''%{property}'': Format oczekiwany
+        ''%{expected_format}'', otrzymano ''%{actual}''.'
+      invalid_json: The request could not be parsed as JSON.
+      invalid_relation: The relation is invalid.
+      invalid_resource: Dla właściwości '%{property}' wymagany jest link taki jak
+        '%{expected}', dostarczono '%{actual}'.
+      invalid_user_status_transition: Aktualny stan konta użytkownika nie zezwala
+        na wykonanie tej operacji.
+      missing_content_type: nie określono
+      missing_request_body: There was no request body.
+      multipart_body_error: The request body did not contain the expected multipart
+        parts.
+      multiple_errors: Multiple field constraints have been violated.
+      writing_read_only_attributes: Nie możesz zapisać atrybutu tylko do odczytu.
+      render:
+        context_not_parsable: The context provided is not a link to a resource.
+        unsupported_context: The resource given is not supported as context.
+        context_object_not_found: Cannot find the resource given as the context.
+      validation:
+        done_ratio: Done ratio cannot be set on parent work packages, when it is inferred
+          by status or when it is disabled.
+        due_date: Due date cannot be set on parent work packages.
+        estimated_hours: Nie można ustawić szacunku godzinowego dla zadań nadrzędnych.
+        invalid_user_assigned_to_work_package: Wybrany użytkownik nie może być '%{property}'
+          dla tego pakietu roboczego.
+        start_date: Start date cannot be set on parent work packages.
+    resources:
+      schema: Schemat

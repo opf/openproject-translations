@@ -47,6 +47,7 @@ it:
     attributes:
       attachment:
         downloads: Scaricati
+        file: File
         filename: File
         filesize: Grandezza
       auth_source:
@@ -106,7 +107,6 @@ it:
       time_entry:
         activity: Attività
         hours: Ore
-        work_package: Pacchetto di Lavoro
         spent_on: Data
         type: Tipo
       type:
@@ -184,12 +184,13 @@ it:
         equal_to: deve essere uguale a %{count}
         even: deve essere pari
         exclusion: "è riservato"
+        file_too_large: "è troppo grande (la dimensione massima è %{count} byte)"
         greater_than: deve essere maggiore di %{count}
         greater_than_or_equal_to: deve essere maggiore o uguale di %{count}
         smaller_than_or_equal_to_max_length: deve essere minore o uguale alla lunghezza
           massima
         greater_than_start_date: deve essere maggiore della data di inizio
-        inclusion: non è incluso nella lista
+        inclusion: non è impostata su uno dei valori consentiti
         invalid: non è valido
         less_than: deve essere inferiore di %{count}
         less_than_or_equal_to: deve essere inferiore o uguale di %{count}
@@ -227,10 +228,18 @@ it:
               not_a_valid_parent: non è valido
               does_not_exist: non esiste
             status_id:
-              status_transition_invalid: nessuna transizione valida esiste dal vecchio
-                al nuovo status per i ruoli dell'utente corrente
+              status_transition_invalid: non è valido perché nessuna transizione valida
+                esiste dal vecchio al nuovo status per i ruoli dell'utente corrente
             priority_id:
               only_active_priorities_allowed: deve essere attivo
+            category:
+              only_same_project_categories_allowed: La categoria di un pacchetto di
+                lavoro deve essere contenuta nel medesimo progetto del pacchetto di
+                lavoro.
+              does_not_exist: La categoria specificata non esiste.
+            estimated_hours:
+              only_values_greater_or_equal_zeroes_allowed: Le ore stimate devono essere
+                >= 0.
         user:
           attributes:
             password:
@@ -241,18 +250,18 @@ it:
               numeric: numerico (e.g. '1')
               special: speciale (e.g. '%')
               reused:
-                one: has been used before. Please choose one that is different from
-                  your last one.
-                other: has been used before. Please choose one that is different from
-                  your last %{count}.
+                one: "è stata utilizzata prima. Si prega di sceglierne una che è diversa
+                  dall'ultima."
+                other: "è già stata utilizzata. Si prega di sceglierne una che è diversa
+                  dalle ultime %{count}."
         member:
           principal_blank: Si prega di scegliere almeno un utente o un gruppo.
           role_blank: Si prega di scegliere almeno un ruolo.
       template:
         body: 'Perfavore controlla i seguenti campi:'
         header:
-          one: 1 error prohibited this %{model} from being saved
-          other: "%{count} errors prohibited this %{model} from being saved"
+          one: 1 errore proibisce questo %{model} dall'essere salvato
+          other: "%{count} errori proibiscono questo %{model} dall'essere salvato"
     models:
       attachment: File
       board: Forum
@@ -267,8 +276,8 @@ it:
       project: Progetto
       query: Query personalizzata
       role:
-        one: Role
-        other: Roles
+        one: Ruolo
+        other: Ruoli
       type: Tipo
       planning_element: Elemento di pianificazione
       project_type: Tipo di progetto
@@ -286,11 +295,13 @@ it:
   attributes:
     active: Attivo
     assigned_to: Assegnatario
+    assignee: Assegnatario
     attachments: Allegati
     author: Autore
     base: 'Errore Generale:'
     blocks_ids: Blocchi
     category: Categoria
+    comment: Commento
     comments: Commento
     content: Contenuto
     created_at: Creato nel
@@ -301,18 +312,23 @@ it:
     display_sums: Visualizza somme
     due_date: Data di fine
     estimated_hours: Tempo stimato
+    estimated_time: Tempo stimato
     firstname: Nome
     group: Gruppo
     groupname: Nome gruppo
+    id: ID
     is_default: Valore predefinito
     is_for_all: Per tutti progetti
     is_public: Pubblico
+    issue: Pacchetto di lavoro
     lastname: Cognome
     login: Nome Utente
     mail: Email
     name: Nome
     password: Password
+    priority: Priorità
     project: Progetto
+    responsible: Responsabile
     role: Role
     start_date: Data di inizio
     status: Stato
@@ -446,43 +462,43 @@ it:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: about 1 hour
-        other: about %{count} hours
+        one: circa 1 ora
+        other: circa %{count} ore
       about_x_months:
-        one: about 1 month
-        other: about %{count} months
+        one: circa 1 mese
+        other: circa %{count} mesi
       about_x_years:
-        one: about 1 year
-        other: about %{count} years
+        one: crica 1 anno
+        other: circa %{count} anni
       almost_x_years:
-        one: almost 1 year
-        other: almost %{count} years
+        one: quasi 1 anno
+        other: quasi %{count} anni
       half_a_minute: mezzo minuto
       less_than_x_minutes:
-        one: less than a minute
-        other: less than %{count} minutes
+        one: meno di un minuto
+        other: meno di %{count} minuti
       less_than_x_seconds:
         one: less than 1 second
         other: less than %{count} seconds
       over_x_years:
-        one: over 1 year
-        other: over %{count} years
+        one: oltre 1 anno
+        other: oltre %{count} anni
       x_days:
-        one: 1 day
-        other: "%{count} days"
+        one: 1 giorno
+        other: "%{count} giorni"
       x_minutes:
-        one: 1 minute
-        other: "%{count} minutes"
+        one: 1 minuto
+        other: "%{count} minuti"
       x_months:
-        one: 1 month
-        other: "%{count} months"
+        one: 1 mese
+        other: "%{count} mesi"
       x_seconds:
-        one: 1 second
-        other: "%{count} seconds"
+        one: 1 secondo
+        other: "%{count} secondi"
     units:
       hour:
-        one: hour
-        other: hours
+        one: ora
+        other: ore
   default_activity_management: Gestione
   default_activity_design: Design
   default_activity_development: Sviluppo
@@ -589,7 +605,8 @@ it:
   error_scm_command_failed: 'Si è verificato un errore quando si tenta di accedere
     al repository: %{value}'
   error_scm_not_found: La voce o la revisione non è stata trovata nel repository.
-  error_unable_delete_status: Impossibile eliminare lo stato del pacchetto di lavoro
+  error_unable_delete_status: Impossibile eliminare lo stato del pacchetto lavoro
+    perché contiene pacchetti di lavoro.
   error_unable_delete_default_status: Impossibile eliminare lo stato del pacchetto
     di lavoro predefinito. Si prega di selezionare un altro stato di pacchetto di
     lavoro predefinito prima di cancellare quello attuale.
@@ -736,6 +753,7 @@ it:
   label_downloads_abbr: D/L
   label_duplicated_by: duplicato da
   label_duplicates: duplicati
+  label_edit: Modifica
   label_enable_multi_select: Inverti multiselezione
   label_end_to_end: end to end
   label_end_to_start: da fine a inizio
@@ -763,6 +781,7 @@ it:
   label_generate_key: Genera chiave
   label_git_path: Percorso per la cartella .git
   label_greater_or_equal: ">="
+  label_group_by: Raggruppa secondo
   label_group_new: Nuovo gruppo
   label_group_plural: Gruppi
   label_help: Aiuti
@@ -802,7 +821,6 @@ it:
     che sono responsabili
   label_work_package_view_all_watched: Mostra tutti i pacchetti di lavoro osservati
   label_work_package_watchers: Osservatori
-  label_work_packages_by: Pacchetti di lavoro da %{value}
   label_journal_diff: Descrizione del confronto
   label_jump_to_a_project: Salta nel progetto...
   label_language_based: Basato sulla lingua dell'utente
@@ -981,6 +999,7 @@ it:
   label_this_week: questa settimana
   label_this_year: questo anno
   label_time_entry_plural: Tempo speso
+  label_time_sheet_menu: Time sheet
   label_time_tracking: Tempo di monitoraggio
   label_today: oggi
   label_top_menu: Menu in alto
@@ -1039,24 +1058,24 @@ it:
   label_workflow_plural: Flussi di lavoro
   label_workflow_summary: Sommario
   label_x_closed_work_packages_abbr:
-    one: 1 closed
-    other: "%{count} closed"
+    one: 1 chiuso
+    other: "%{count} chiusi"
     zero: 0 closed
   label_x_comments:
-    one: 1 comment
-    other: "%{count} comments"
+    one: 1 commento
+    other: "%{count} commenti"
     zero: no comments
   label_x_open_work_packages_abbr:
-    one: 1 open
-    other: "%{count} open"
+    one: 1 aperto
+    other: "%{count} aperti"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
-    one: 1 open / %{total}
-    other: "%{count} open / %{total}"
+    one: 1 aperto / %{total}
+    other: "%{count} aperti / %{total}"
     zero: 0 open / %{total}
   label_x_projects:
-    one: 1 project
-    other: "%{count} projects"
+    one: 1 progetto
+    other: "%{count} progetti"
     zero: no projects
   label_year: Anno
   label_yesterday: ieri
@@ -1079,6 +1098,8 @@ it:
   label_keyboard_shortcut_go_news: Vai alle notizie progetto
   label_keyboard_shortcut_go_timelines: Vai alle sequenze temporali
   label_keyboard_shortcut_new_work_package: Crea nuovo pacchetto di lavoro
+  label_keyboard_shortcut_details_package: Visualizza il pannello di dettaglio dei
+    pacchetti di lavoro
   label_keyboard_shortcut_go_edit: Vai a modificare la voce corrente (solo nelle pagine
     di dettaglio)
   label_keyboard_shortcut_open_more_menu: Apri altri-menù (solo nelle pagine di dettaglio)
@@ -1088,6 +1109,7 @@ it:
     (solo su alcune liste)
   label_keyboard_shortcut_focus_next_item: Focus next list element (on some lists
     only)
+  label_visible_elements: Elementi visibili
   macro_execution_error: Errore nell'esecuzione del macro %{macro_name}
   macro_unavailable: Non può essere visualizzata la macro %{macro_name}.
   mail_body_account_activation_request: 'Un nuovo utente (%{value}) si è registrato.
@@ -1190,7 +1212,7 @@ it:
         units:
           byte:
             one: Byte
-            other: Bytes
+            other: Byte
           gb: GB
           kb: kB
           mb: MB
@@ -1484,6 +1506,10 @@ it:
       short: "%d %b % h %M"
       time: "%I: %M %p"
     pm: pm
+  timeframe:
+    show: Visualizza calendario
+    end: a
+    start: da
   timelines:
     admin_menu:
       color: Colore
@@ -1511,8 +1537,8 @@ it:
     delete_thing: Cancella
     duration: Durata
     duration_days:
-      one: 1 day
-      other: "%{count} days"
+      one: 1 giorno
+      other: "%{count} giorni"
     edit_color: Modifica il colore
     edit_project_type: Modifica il tipo del progetto
     edit_thing: Modifica
@@ -1566,7 +1592,8 @@ it:
         absolute: Assoluto
         none: Nessuno
         relative: Relativo
-        compare_relative: Confrontare l'attuale pianificazione al %{timespan} fa
+        compare_relative_prefix: Confrontare l'attuale pianificazione con
+        compare_relative_suffix: fa
         compare_absolute: Confrontare l'attuale pianificazione a %{date}
       time_relative:
         days: giorni
@@ -1594,8 +1621,7 @@ it:
       status: Mostra stati
       project_time_filter: Progetti con un pacchetto di lavoro di un certo tipo in
         un certo lasso di tempo
-      project_time_filter_absolute_timeframe: Sequenza temporale assoluta
-      project_time_filter_relative_timeframe: Relative timeframe
+      project_time_filter_timeframe: Lasso di tempo
       project_time_filter_historical_from: da
       project_time_filter_historical_to: a
       project_time_filter_historical: from %{startdate} to %{enddate}
@@ -1693,8 +1719,8 @@ it:
     assign_random_password: Assegna password casuale (inviata via email all'utente)
     blocked: temporaneamente bloccato
     blocked_num_failed_logins:
-      one: locked temporarily (one failed login attempt)
-      other: locked temporarily (%{count} failed login attempts)
+      one: temporaneamente bloccato (un tentativo di accesso non riuscito)
+      other: temporaneamente bloccato (%{count} tentativi di accesso non riusciti)
     deleted: Utente cancellato
     error_status_change_failed: 'Fallito il cambiamento dello stato dell''utente a
       cusa ei seguenti errori: %{errors}'
@@ -1732,3 +1758,45 @@ it:
     updated_automatically_by_child_changes: _Aggiornato automaticammente cambiando
       i valori all'interno del pacchetto di lavoro figlio %{child}_
   nothing_to_preview: Niente in anteprima
+  api_v3:
+    attributes:
+      lock_version: Blocca Versione
+    errors:
+      code_401: Devi essere autenticato per accedere a questa risorsa.
+      code_401_wrong_credentials: Lei non ha fornito le credenziali corrette.
+      code_403: Non siete autorizzati ad accedere a questa risorsa.
+      code_404: La risorsa richiesta non è stata trovata.
+      code_409: Non ha potuto aggiornare la risorsa a causa delle modifiche in conflitto.
+      invalid_content_type: Il  CONTENT-TYPE avrebbe dovuto essere '%{content_type}',
+        ma si è ottenuto '%{actual}'.
+      invalid_format: 'Formato non valido per la proprietà ''%{property}'': previsto
+        un formato del tipo ''%{expected_format}'', rispetto al tipo attuale ''%{actual}''.'
+      invalid_json: La richiesta non può essere analizzata come JSON.
+      invalid_relation: Il rapporto non è valido.
+      invalid_resource: Per la proprietà '%{property}' il link atteso è '%{expected}',
+        ma si è ottenuto '%{actual}'.
+      invalid_user_status_transition: L'attuale stato dell'account utente non consente
+        questa operazione.
+      missing_content_type: non specificato
+      missing_request_body: There was no request body.
+      multipart_body_error: The request body did not contain the expected multipart
+        parts.
+      multiple_errors: Più vincoli di campo sono stati violati.
+      writing_read_only_attributes: Non devi scrivere un attributo di sola lettura.
+      render:
+        context_not_parsable: Il contesto fornito non è un collegamento a una risorsa.
+        unsupported_context: La risorsa non è supportata come contesto.
+        context_object_not_found: Impossibile trovare la risorsa indicata come contesto.
+      validation:
+        done_ratio: Il rapporto del lavoro svolto non può essere impostata su pacchetti
+          di lavoro del padre, quando esso viene dedotto dallo stato o quando è disabilitato.
+        due_date: La data di scadenza non può essere impostata su pacchetti di lavoro
+          del padre.
+        estimated_hours: Le ore stimate non possono essere impostate su pacchetti
+          di lavoro del padre.
+        invalid_user_assigned_to_work_package: L'utente scelto non è consentito di
+          essere '%{property}' per questo pacchetto di lavoro.
+        start_date: Data di inizio non può essere impostata su pacchetti di lavoro
+          del padre.
+    resources:
+      schema: Schema

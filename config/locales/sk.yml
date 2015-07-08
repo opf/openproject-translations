@@ -43,6 +43,7 @@ sk:
     attributes:
       attachment:
         downloads: Na stiahnutie
+        file: Súbor
         filename: Súbor
         filesize: Veľkosť
       auth_source:
@@ -102,7 +103,6 @@ sk:
       time_entry:
         activity: "Činnosť"
         hours: Hodín
-        work_package: Pracovný balíček
         spent_on: Dátum
         type: Typ
       type:
@@ -179,12 +179,13 @@ sk:
         equal_to: musí byť rovný %{count}
         even: musí byť párne
         exclusion: is reserved
+        file_too_large: is too large (maximum size is %{count} Bytes)
         greater_than: musí byť väčšie ako %{count}
         greater_than_or_equal_to: musí byť väčšie alebo rovné ako %{count}
         smaller_than_or_equal_to_max_length: musí byť menšie alebo rovné ako maximálne
           dĺžka
         greater_than_start_date: musí byť väčšie ako počiatočný dátum
-        inclusion: nie je zahrnutá v zozname
+        inclusion: nie je nastavená na niektorú z povolených hodnôt
         invalid: je neplatný
         less_than: musí byť menšie ako %{count}
         less_than_or_equal_to: musí byť menšie alebo rovné ako %{count}
@@ -222,10 +223,18 @@ sk:
               not_a_valid_parent: je neplatný
               does_not_exist: neexistuje
             status_id:
-              status_transition_invalid: no valid transition exists from old to new
-                status for the current user roles
+              status_transition_invalid: je neplatný, pretože neexistuje žiadny platný
+                prechod zo starého na nový stav v prípade aktuálne pridelených rolí
+                používateľa
             priority_id:
               only_active_priorities_allowed: musí byť aktívna
+            category:
+              only_same_project_categories_allowed: Kategória pracovného balíčka sa
+                musí nachádzať v rámci rovnakého projektu ako pracovný balíček.
+              does_not_exist: "Špecifikovaná kategória neexistuje."
+            estimated_hours:
+              only_values_greater_or_equal_zeroes_allowed: Hodnota odhadovaných hodín
+                musí byť >= 0.
         user:
           attributes:
             password:
@@ -236,21 +245,21 @@ sk:
               numeric: "Čísla (napríklad 1)"
               special: Špeciálne znaky (napríklad "%")
               reused:
-                one: has been used before. Please choose one that is different from
-                  your last one.
-                other: has been used before. Please choose one that is different from
-                  your last %{count}.
-                few: has been used before. Please choose one that is different from
-                  your last %{count}.
+                one: už bol predtým použitý. Prosím, vyberte odlišnú voľbu ako tú,
+                  ktorá bola zvolená naposledy.
+                other: už bol predtým použitý. Prosím, vyberte odlišnú voľbu ako tú,
+                  ktorá bola zvolená posledných %{count} krát.
+                few: už bol predtým použitý. Prosím, vyberte odlišnú voľbu ako tú,
+                  ktorá bola zvolená posledných %{count} krát.
         member:
           principal_blank: Please choose at least one user or group.
           role_blank: Vyberte aspoň jednu rolu.
       template:
         body: 'Skontrolujte nasledujúce polia:'
         header:
-          one: 1 error prohibited this %{model} from being saved
-          other: "%{count} errors prohibited this %{model} from being saved"
-          few: "%{count} errors prohibited this %{model} from being saved"
+          one: 1 chyba zabránila uloženiu tohto %{model}
+          other: "%{count} chýb zabránilo uloženiu tohto %{model}"
+          few: "%{count} chyby zabránili uloženiu tohto %{model}"
     models:
       attachment: Súbor
       board: Fórum
@@ -265,9 +274,9 @@ sk:
       project: Projekt
       query: Vlastný dopyt
       role:
-        one: Role
-        other: Roles
-        few: Roles
+        one: Rola
+        other: Rolí
+        few: Role
       type: Typ
       planning_element: Planning element
       project_type: Typ projektu
@@ -285,11 +294,13 @@ sk:
   attributes:
     active: Aktívny
     assigned_to: Priradené
+    assignee: Priradené
     attachments: Prílohy
     author: Autor
     base: 'Všeobecná chyba:'
     blocks_ids: Blocks
     category: Kategória
+    comment: Komentár
     comments: Komentár
     content: Obsah
     created_at: Vytvorené
@@ -300,18 +311,23 @@ sk:
     display_sums: Zobraziť súčty
     due_date: Do dátumu
     estimated_hours: Predpokladaný čas
+    estimated_time: Predpokladaný čas
     firstname: Krstné meno
     group: Skupina
     groupname: Názov skupiny
+    id: ID
     is_default: Predvolená hodnota
     is_for_all: Pre všetky projekty
     is_public: Verejný
+    issue: Pracovný balíček
     lastname: Priezvisko
     login: Prihlasovacie meno
     mail: E-mail
     name: Názov
     password: Heslo
+    priority: Priorita
     project: Projekt
+    responsible: Zodpovedný
     role: Rola
     start_date: Dátum začiatku
     status: Stav
@@ -447,55 +463,55 @@ sk:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: about 1 hour
-        other: about %{count} hours
-        few: about %{count} hours
+        one: približne 1 hodina
+        other: približne %{count} hodín
+        few: približne %{count} hodiny
       about_x_months:
-        one: about 1 month
-        other: about %{count} months
-        few: about %{count} months
+        one: približne 1 mesiac
+        other: približne %{count} mesiacov
+        few: približne %{count} mesiace
       about_x_years:
-        one: about 1 year
-        other: about %{count} years
-        few: about %{count} years
+        one: približne 1 rok
+        other: približne %{count} rokov
+        few: približne %{count} roky
       almost_x_years:
-        one: almost 1 year
-        other: almost %{count} years
-        few: almost %{count} years
+        one: takmer 1 rok
+        other: takmer %{count} rokov
+        few: takmer %{count} roky
       half_a_minute: pol minúty
       less_than_x_minutes:
-        one: less than a minute
-        other: less than %{count} minutes
-        few: less than %{count} minutes
+        one: menej než minúta
+        other: menej než %{count} minút
+        few: menej než %{count} minúty
       less_than_x_seconds:
-        one: less than 1 second
-        other: less than %{count} seconds
-        few: less than %{count} seconds
+        one: menej než sekunda
+        other: menej než %{count} sekúnd
+        few: menej než %{count} sekundy
       over_x_years:
-        one: over 1 year
-        other: over %{count} years
-        few: over %{count} years
+        one: viac ako 1 rok
+        other: viac ako %{count} rokov
+        few: viac ako %{count} roky
       x_days:
-        one: 1 day
-        other: "%{count} days"
-        few: "%{count} days"
+        one: 1 deň
+        other: "%{count} dní"
+        few: "%{count} dni"
       x_minutes:
-        one: 1 minute
-        other: "%{count} minutes"
-        few: "%{count} minutes"
+        one: 1 minúta
+        other: "%{count} minút"
+        few: "%{count} minúty"
       x_months:
-        one: 1 month
-        other: "%{count} months"
-        few: "%{count} months"
+        one: 1 mesiac
+        other: "%{count} mesiacov"
+        few: "%{count} mesiace"
       x_seconds:
-        one: 1 second
-        other: "%{count} seconds"
-        few: "%{count} seconds"
+        one: 1 sekunda
+        other: "%{count} sekúnd"
+        few: "%{count} sekundy"
     units:
       hour:
-        one: hour
-        other: hours
-        few: hours
+        one: hodina
+        other: hodín
+        few: hodiny
   default_activity_management: Riadenie
   default_activity_design: Návrh
   default_activity_development: Vývoj
@@ -596,7 +612,8 @@ sk:
   error_scm_command_failed: 'An error occurred when trying to access the repository:
     %{value}'
   error_scm_not_found: Položka alebo revízia nebola nájdená v repozitári.
-  error_unable_delete_status: Unable to delete work package status
+  error_unable_delete_status: Nedá sa odstrániť stav pracovného balíčka, pretože sa
+    aktuálne používa jedným alebo viacerými pracovnými balíčkami.
   error_unable_delete_default_status: Unable to delete default work package status.
     Please select another default work package status before deleting the current
     one.
@@ -742,6 +759,7 @@ sk:
   label_downloads_abbr: D/L
   label_duplicated_by: duplicated by
   label_duplicates: duplicates
+  label_edit: Upraviť
   label_enable_multi_select: Toggle multiselect
   label_end_to_end: end to end
   label_end_to_start: end to start
@@ -769,6 +787,7 @@ sk:
   label_generate_key: Vygenerovať kľúč
   label_git_path: Cesta ku .git adresáru
   label_greater_or_equal: ">="
+  label_group_by: Zoskupiť podľa
   label_group_new: Nová skupina
   label_group_plural: Skupiny
   label_help: Nápoveda
@@ -808,7 +827,6 @@ sk:
     ktoré som zodpovedný
   label_work_package_view_all_watched: Zobraziť všetky sledované pracovné balíčky
   label_work_package_watchers: Pozorovatelia
-  label_work_packages_by: Work packages by %{value}
   label_journal_diff: Description Comparison
   label_jump_to_a_project: Jump to a project...
   label_language_based: Based on user's language
@@ -986,6 +1004,7 @@ sk:
   label_this_week: this week
   label_this_year: Tento rok
   label_time_entry_plural: Strávený čas
+  label_time_sheet_menu: Time sheet
   label_time_tracking: Time tracking
   label_today: dnes
   label_top_menu: Top Menu
@@ -1042,30 +1061,30 @@ sk:
   label_workflow_plural: Workflows
   label_workflow_summary: Zhrnutie
   label_x_closed_work_packages_abbr:
-    one: 1 closed
-    other: "%{count} closed"
+    one: 1 uzatvorený
+    other: "%{count} uzatvorených"
     zero: 0 closed
-    few: "%{count} closed"
+    few: "%{count} uzatvorené"
   label_x_comments:
-    one: 1 comment
-    other: "%{count} comments"
+    one: 1 komentár
+    other: "%{count} komentárov"
     zero: no comments
-    few: "%{count} comments"
+    few: "%{count} komentáre"
   label_x_open_work_packages_abbr:
-    one: 1 open
-    other: "%{count} open"
+    one: 1 otvorený
+    other: "%{count} otvorených"
     zero: 0 open
-    few: "%{count} open"
+    few: "%{count} otvorené"
   label_x_open_work_packages_abbr_on_total:
-    one: 1 open / %{total}
-    other: "%{count} open / %{total}"
+    one: otvorený 1 / %{total}
+    other: otvorených %{count} / %{total}
     zero: 0 open / %{total}
-    few: "%{count} open / %{total}"
+    few: otvorené %{count} / %{total}
   label_x_projects:
-    one: 1 project
-    other: "%{count} projects"
+    one: 1 projekt
+    other: "%{count} projektov"
     zero: no projects
-    few: "%{count} projects"
+    few: "%{count} projekty"
   label_year: Rok
   label_yesterday: včera
   label_keyboard_function: Function
@@ -1087,6 +1106,8 @@ sk:
   label_keyboard_shortcut_go_news: Go to project news
   label_keyboard_shortcut_go_timelines: Go to timelines
   label_keyboard_shortcut_new_work_package: Vytvoriť nový pracovný balíček
+  label_keyboard_shortcut_details_package: Zobraziť panel s podrobnosťami o pracovných
+    balíčkoch
   label_keyboard_shortcut_go_edit: Go to edit the current item (on detail pages only)
   label_keyboard_shortcut_open_more_menu: Open more-menu (on detail pages only)
   label_keyboard_shortcut_go_preview: Go to preview the current edit (on edit pages
@@ -1095,6 +1116,7 @@ sk:
     lists only)
   label_keyboard_shortcut_focus_next_item: Focus next list element (on some lists
     only)
+  label_visible_elements: Viditeľné prvky
   macro_execution_error: Error executing the macro %{macro_name}
   macro_unavailable: Macro %{macro_name} cannot be displayed.
   mail_body_account_activation_request: 'A new user (%{value}) has registered. The
@@ -1195,9 +1217,9 @@ sk:
         format: "%n %u"
         units:
           byte:
-            one: Byte
-            other: Bytes
-            few: Bytes
+            one: Bajt
+            other: Bajtov
+            few: Bajty
           gb: GB
           kb: kB
           mb: MB
@@ -1483,6 +1505,10 @@ sk:
       short: "%d %b %H:%M"
       time: "%I:%M %p"
     pm: pm
+  timeframe:
+    show: Show timeframe
+    end: do
+    start: od
   timelines:
     admin_menu:
       color: Farba
@@ -1510,9 +1536,9 @@ sk:
     delete_thing: Odstrániť
     duration: Trvanie
     duration_days:
-      one: 1 day
-      other: "%{count} days"
-      few: "%{count} days"
+      one: 1 deň
+      other: "%{count} dní"
+      few: "%{count} dni"
     edit_color: Upraviť farbu
     edit_project_type: Upraviť typ projektu
     edit_thing: Upraviť
@@ -1564,7 +1590,8 @@ sk:
         absolute: Absolútna
         none: "Žiadny"
         relative: Relatívna
-        compare_relative: Compare current planning to %{timespan} ago
+        compare_relative_prefix: Porovnať aktuálne plánovanie voči
+        compare_relative_suffix: vzad
         compare_absolute: Compare current planning to %{date}
       time_relative:
         days: dní
@@ -1592,8 +1619,7 @@ sk:
       status: Show status
       project_time_filter: Projects with a work package of a certain type in a certain
         timeframe
-      project_time_filter_absolute_timeframe: Absolute timeframe
-      project_time_filter_relative_timeframe: Relative timeframe
+      project_time_filter_timeframe: "Časový rámec"
       project_time_filter_historical_from: od
       project_time_filter_historical_to: do
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1689,9 +1715,9 @@ sk:
     assign_random_password: Assign random password (sent to user via e-mail)
     blocked: locked temporarily
     blocked_num_failed_logins:
-      one: locked temporarily (one failed login attempt)
-      other: locked temporarily (%{count} failed login attempts)
-      few: locked temporarily (%{count} failed login attempts)
+      one: dočasne zamknuté (jeden neúspešný pokus o prihlásenie)
+      other: dočasne zamknuté (%{count} neúspešných pokusov o prihlásenie)
+      few: dočasne zamknuté (%{count} neúspešné pokusy o prihlásenie)
     deleted: Odstránený používateľ
     error_status_change_failed: 'Changing the user status failed due to the following
       errors: %{errors}'
@@ -1727,3 +1753,47 @@ sk:
     updated_automatically_by_child_changes: _Modifikované automaticky z dôvodu zmeny
       hodnôt v rámci podradeného pracovného balíčka %{child}_
   nothing_to_preview: Nič na zobrazenie náhľadu
+  api_v3:
+    attributes:
+      lock_version: Uzamknúť verziu
+    errors:
+      code_401: Pre prístup k tomuto prostriedku musíte byť autentifikovaný.
+      code_401_wrong_credentials: Neposkytli ste správne prihlasovacie údaje.
+      code_403: Nemáte oprávnenie na prístup k tomuto prostriedku.
+      code_404: Požadovaný prostriedok sa nenašiel.
+      code_409: Nepodarilo sa aktualizovať prostriedok kvôli konfliktným modifikáciam.
+      invalid_content_type: Očakávaný typ obsahu je "%{content_type}", dodaný bol
+        však "%{actual}".
+      invalid_format: 'Neplatný formát parametra "%{property}": systémom očakávaný
+        formát je "%{expected_format}", používateľ dodal "%{actual}".'
+      invalid_json: The request could not be parsed as JSON.
+      invalid_relation: Vzťah je neplatný.
+      invalid_resource: Pre vlastnosť "%{property}" je odkaz očakávaný v tvare "%{expected}",  dodaný
+        tvar však bol "%{actual}".
+      invalid_user_status_transition: "Účet aktuálneho používateľa nemá oprávnenie
+        na vykonanie tejto operácie."
+      missing_content_type: nešpecifikovaný
+      missing_request_body: There was no request body.
+      multipart_body_error: The request body did not contain the expected multipart
+        parts.
+      multiple_errors: Boli porušené obmedzenia voči viacerým poliam.
+      writing_read_only_attributes: Nie je možné meniť atribút, ktorý je určený len
+        na čítanie.
+      render:
+        context_not_parsable: Zadaný kontext nie je odkazom na prostriedok.
+        unsupported_context: Zadaný prostriedok nie je podporovaný ako kontext.
+        context_object_not_found: Pre vložené vstupné podmienky neboli nájdené žiadne
+          prostriedky.
+      validation:
+        done_ratio: Done ratio cannot be set on parent work packages, when it is inferred
+          by status or when it is disabled.
+        due_date: Dátum "Do" nie je možné nastaviť na pracovnom balíčku obsahujúcom
+          podriadené pracovné balíčky.
+        estimated_hours: Odhad hodín nie je možné nastaviť na pracovnom balíčku obsahujúcom
+          podriadené pracovné balíčky.
+        invalid_user_assigned_to_work_package: Zvolený používateľ nemôže byť "%{property}"
+          v prípade tohto pracovného balíčka.
+        start_date: Dátum "Od" nie je možné nastaviť na pracovnom balíčku obsahujúcom
+          podriadené pracovné balíčky.
+    resources:
+      schema: Schéma

@@ -37,6 +37,7 @@ th:
     attributes:
       attachment:
         downloads: "ดาวน์โหลด"
+        file: "ไฟล์"
         filename: "ไฟล์"
         filesize: "ขนาด"
       auth_source:
@@ -96,7 +97,6 @@ th:
       time_entry:
         activity: "กิจกรรม"
         hours: "ชั่วโมง"
-        work_package: "ชุดภารกิจ"
         spent_on: "วันที่"
         type: "ประเภท"
       type:
@@ -172,11 +172,12 @@ th:
         equal_to: "ต้องเท่ากับ %{count}"
         even: "ต้องเท่ากัน"
         exclusion: "ถูกจองไว้แล้ว"
+        file_too_large: is too large (maximum size is %{count} Bytes)
         greater_than: "ต้องมีค่ามากกว่า %{count}"
         greater_than_or_equal_to: "ต้องมีค่ามากกว่าหรือเท่ากับ %{count}"
         smaller_than_or_equal_to_max_length: "ต้องไม่เกินความยาวสูงสุด"
         greater_than_start_date: "ต้องเป็นวันที่หลังจากวันเริ่มต้น"
-        inclusion: "ไม่ได้รวมอยู่ในรายการ"
+        inclusion: is not set to one of the allowed values
         invalid: "ไม่ถูกต้อง"
         less_than: "ต้องน้อยกว่า %{count}"
         less_than_or_equal_to: "ต้องน้อยกว่า หรือเท่ากับ %{count}"
@@ -212,10 +213,17 @@ th:
               not_a_valid_parent: "ไม่ถูกต้อง"
               does_not_exist: "ไม่พบ"
             status_id:
-              status_transition_invalid: "ไม่พบการเปลี่ยนสถานะที่ถูกต้อง จากสถานะเดิมไปยังสถานะใหม่
-                สำหรับบทบาทของผู้ใช้ปัจจุบัน"
+              status_transition_invalid: is invalid because no valid transition exists
+                from old to new status for the current user's roles
             priority_id:
               only_active_priorities_allowed: "จำเป็นต้องเปิดใช้งาน"
+            category:
+              only_same_project_categories_allowed: The category of a work package
+                must be within the same project as the work package.
+              does_not_exist: The specified category does not exist.
+            estimated_hours:
+              only_values_greater_or_equal_zeroes_allowed: The estimated hours must
+                be >= 0.
         user:
           attributes:
             password:
@@ -271,11 +279,13 @@ th:
   attributes:
     active: "ใช้งานอยู่"
     assigned_to: "ผู้ได้รับมอบหมาย"
+    assignee: "ผู้ได้รับมอบหมาย"
     attachments: "ไฟล์แนบ"
     author: "ผู้เขียน"
     base: "ข้อผิดพลาดทั่วไป:"
     blocks_ids: "บล็อก"
     category: "ประเภท"
+    comment: "ความคิดเห็น"
     comments: "ความคิดเห็น"
     content: "เนื้อหา"
     created_at: "สร้างเมื่อ"
@@ -286,18 +296,23 @@ th:
     display_sums: "แสดงยอดรวม"
     due_date: "วันครบกำหนด"
     estimated_hours: "ระยะเวลาโดยประมาณ"
+    estimated_time: "ระยะเวลาโดยประมาณ"
     firstname: "ชื่อ"
     group: "กลุ่ม"
     groupname: "ชื่อกลุ่ม"
+    id: ID
     is_default: "ค่าเริ่มต้น"
     is_for_all: "สำหรับทุกโครงการ"
     is_public: "สาธารณะ"
+    issue: "ชุดภารกิจ"
     lastname: "นามสกุล"
     login: "ล็อคอิน"
     mail: "อีเมล"
     name: "ชื่อ"
     password: "รหัสผ่าน"
+    priority: "ระดับความสำคัญ"
     project: "โครงการ"
+    responsible: "รับผิดชอบ"
     role: Role
     start_date: "วันเริ่มต้น"
     status: "สถานะ"
@@ -566,7 +581,8 @@ th:
   error_scm_annotate: "ไม่พบรายการ จึงไม่สามารถใส่คำอธิบายประกอบได้"
   error_scm_command_failed: "เกิดข้อผิดพลาดเมื่อพยายามเข้าถึงที่เก็บข้อมูล: %{value}"
   error_scm_not_found: "ไม่พบรายการการปรับปรุงในที่เก็บข้อมูล"
-  error_unable_delete_status: "ไม่สามารถลบสถานะของชุดภารกิจได้"
+  error_unable_delete_status: Unable to delete work package status because it contains
+    work packages.
   error_unable_delete_default_status: "ไม่สามารถลบสถานะตั้งต้นของชุดภารกิจได้ โปรดเลือกสถานะตั้งต้นอื่นๆ
     ของชุดภารกิจ ก่อนที่จะลบสถานะนี้"
   error_unable_to_connect: "ไม่สามารถเชื่อมต่อ (%{value}) ได้"
@@ -709,6 +725,7 @@ th:
   label_downloads_abbr: D/L
   label_duplicated_by: "ทำซ้ำโดย"
   label_duplicates: "ซ้ำ"
+  label_edit: "แก้ไข"
   label_enable_multi_select: "สลับไปเลือกหลายค่า"
   label_end_to_end: "ตลอด"
   label_end_to_start: "สิ้นสุดไปยังเริ่มต้น"
@@ -735,6 +752,7 @@ th:
   label_generate_key: "สร้างคีย์"
   label_git_path: "เส้นทางไปยังไดเรคทอรี่ ของไฟล์ .git"
   label_greater_or_equal: ">="
+  label_group_by: Group by
   label_group_new: "กลุ่มใหม่"
   label_group_plural: "กลุ่ม"
   label_help: "วิธีใช้"
@@ -771,7 +789,6 @@ th:
   label_work_package_view_all_responsible_for: "ดูชุดภารกิจทั้งหมดที่ฉันรับผิดชอบ"
   label_work_package_view_all_watched: "ดูชุดภารกิจที่เฝ้าดู"
   label_work_package_watchers: "ผู้เฝ้าดู"
-  label_work_packages_by: "ชุดภารกิจของ %{value}"
   label_journal_diff: "เปรียบเทียบคำอธิบาย"
   label_jump_to_a_project: "ไปยังโครงการ..."
   label_language_based: "ตามภาษาของผู้ใช้"
@@ -949,6 +966,7 @@ th:
   label_this_week: "สัปดาห์นี้"
   label_this_year: "ปีนี้"
   label_time_entry_plural: "เวลาที่ใช้"
+  label_time_sheet_menu: Time sheet
   label_time_tracking: "ติดตามเวลาที่ใช้"
   label_today: "วันนี้"
   label_top_menu: "เมนูด้านบน"
@@ -1044,11 +1062,13 @@ th:
   label_keyboard_shortcut_go_news: "ไปยังข่าวสารของโครงการ"
   label_keyboard_shortcut_go_timelines: "ไปยังแผนภูมิเวลาของโครงการ"
   label_keyboard_shortcut_new_work_package: "สร้างชุดภารกิจใหม่"
+  label_keyboard_shortcut_details_package: Show work packages details pane
   label_keyboard_shortcut_go_edit: "ไปแก้ไขรายการปัจจุบัน (ในหน้ารายละเอียดเท่านั้น)"
   label_keyboard_shortcut_open_more_menu: "เปิดเมนูเพิ่มเติม (ในหน้ารายละเอียดเท่านั้น)"
   label_keyboard_shortcut_go_preview: "ไปดูตัวอย่างการแก้ไขปัจจุบัน (ในหน้าแก้ไขเท่านั้น)"
   label_keyboard_shortcut_focus_previous_item: "เน้นรายการองค์ประกอบก่อนหน้านี้ (ในบางรายการเท่านั้น)"
   label_keyboard_shortcut_focus_next_item: "เน้นรายการองค์ประกอบถัดไป (ในบางรายการเท่านั้น)"
+  label_visible_elements: Visible elements
   macro_execution_error: "ข้อผิดพลาดในการรันมาโคร %{macro_name}"
   macro_unavailable: Macro %{macro_name} cannot be displayed.
   mail_body_account_activation_request: "มีผู้ใช้ใหม่ (%{value}) ได้ลงทะเบียนเข้ามา
@@ -1408,6 +1428,10 @@ th:
       short: "%d %b %H:%M"
       time: "%I:%M %p"
     pm: "น."
+  timeframe:
+    show: "แสดงกรอบเวลา"
+    end: "ถึง"
+    start: "จาก"
   timelines:
     admin_menu:
       color: "สี"
@@ -1481,7 +1505,8 @@ th:
         absolute: "แน่นอน"
         none: "ไม่มี"
         relative: "ความสัมพันธ์"
-        compare_relative: "เปรียบเทียบการวางแผนปัจจุบัน กับ %{timespan} ที่ผ่านมา"
+        compare_relative_prefix: Compare current planning to
+        compare_relative_suffix: ago
         compare_absolute: "เปรียบเทียบการวางแผนปัจจุบัน กับ %{date}"
       time_relative:
         days: "วัน"
@@ -1508,8 +1533,7 @@ th:
       types: "แสดงชนิด"
       status: "แสดงสถานะ"
       project_time_filter: "โครงการที่มีชุดภารกิจของประเภทที่แน่นอนในกรอบเวลาที่แน่นอน"
-      project_time_filter_absolute_timeframe: "กรอบเวลาที่แน่นอน"
-      project_time_filter_relative_timeframe: "กรอบเวลาที่สัมพันธ์"
+      project_time_filter_timeframe: Timeframe
       project_time_filter_historical_from: "จาก"
       project_time_filter_historical_to: "ถึง"
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1633,3 +1657,42 @@ th:
     updated_automatically_by_child_changes: _ถูกอัพเดทโดยอัตโนมัติ โดยการเปลี่ยนค่าในชุดภารกิจย่อย
       %{child}_
   nothing_to_preview: "ไม่มีอะไรให้แสดงเป็นตัวอย่าง"
+  api_v3:
+    attributes:
+      lock_version: Lock Version
+    errors:
+      code_401: You need to be authenticated to access this resource.
+      code_401_wrong_credentials: You did not provide the correct credentials.
+      code_403: You are not authorized to access this resource.
+      code_404: The requested resource could not be found.
+      code_409: Couldn't update the resource because of conflicting modifications.
+      invalid_content_type: Expected CONTENT-TYPE to be '%{content_type}' but got
+        '%{actual}'.
+      invalid_format: 'Invalid format for property ''%{property}'': Expected format
+        like ''%{expected_format}'', but got ''%{actual}''.'
+      invalid_json: The request could not be parsed as JSON.
+      invalid_relation: The relation is invalid.
+      invalid_resource: For property '%{property}' a link like '%{expected}' is expected,
+        but got '%{actual}'.
+      invalid_user_status_transition: The current user account status does not allow
+        this operation.
+      missing_content_type: not specified
+      missing_request_body: There was no request body.
+      multipart_body_error: The request body did not contain the expected multipart
+        parts.
+      multiple_errors: Multiple field constraints have been violated.
+      writing_read_only_attributes: You must not write a read-only attribute.
+      render:
+        context_not_parsable: The context provided is not a link to a resource.
+        unsupported_context: The resource given is not supported as context.
+        context_object_not_found: Cannot find the resource given as the context.
+      validation:
+        done_ratio: Done ratio cannot be set on parent work packages, when it is inferred
+          by status or when it is disabled.
+        due_date: Due date cannot be set on parent work packages.
+        estimated_hours: Estimated hours cannot be set on parent work packages.
+        invalid_user_assigned_to_work_package: The chosen user is not allowed to be
+          '%{property}' for this work package.
+        start_date: Start date cannot be set on parent work packages.
+    resources:
+      schema: Schema

@@ -45,6 +45,7 @@ cs:
     attributes:
       attachment:
         downloads: Ke stažení
+        file: Soubor
         filename: Soubor
         filesize: Velikost
       auth_source:
@@ -104,7 +105,6 @@ cs:
       time_entry:
         activity: Aktivita
         hours: Hodiny
-        work_package: Pracovní balíček
         spent_on: Datum
         type: Typ
       type:
@@ -181,12 +181,13 @@ cs:
         equal_to: musí být rovno %{count}
         even: musí být sudé
         exclusion: je vyhrazen
+        file_too_large: is too large (maximum size is %{count} Bytes)
         greater_than: musí být větší než %{count}
         greater_than_or_equal_to: musí být větší než nebo rovna %{count}
         smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
           length
         greater_than_start_date: musí být větší než počáteční datum
-        inclusion: není zahrnuto v seznamu
+        inclusion: is not set to one of the allowed values
         invalid: je neplatné
         less_than: musí být menší než %{count}
         less_than_or_equal_to: musí být menší než nebo rovna %{count}
@@ -223,10 +224,17 @@ cs:
               not_a_valid_parent: je neplatné
               does_not_exist: neexistuje
             status_id:
-              status_transition_invalid: "žádný platný přechod neexistuje ze starého
-                do nového stavu pro aktuální uživatelské role"
+              status_transition_invalid: je neplatná, protože není platný přechod
+                neexistuje ze starého do nového stavu pro aktuální uživatelské role
             priority_id:
               only_active_priorities_allowed: needs to be active
+            category:
+              only_same_project_categories_allowed: Kategorie pracovního balíčku musí
+                být v rámci stejného projektu jako pracovního balíčku.
+              does_not_exist: Zadaná kategorie neexistuje.
+            estimated_hours:
+              only_values_greater_or_equal_zeroes_allowed: The estimated hours must
+                be >= 0.
         user:
           attributes:
             password:
@@ -286,11 +294,13 @@ cs:
   attributes:
     active: Aktivní
     assigned_to: Zodpovědný
+    assignee: Zodpovědný
     attachments: Přílohy
     author: Autor
     base: 'Obecná chyba:'
     blocks_ids: Bloky
     category: Kategorie
+    comment: Komentář
     comments: Komentář
     content: Obsah
     created_at: Vytvořeno
@@ -301,18 +311,23 @@ cs:
     display_sums: Zobrazit součty
     due_date: Due date
     estimated_hours: Odhadovaný čas
+    estimated_time: Odhadovaný čas
     firstname: Křestní jméno
     group: Skupina
     groupname: Název skupiny
+    id: ID
     is_default: Výchozí hodnota
     is_for_all: Pro všechny projekty
     is_public: Veřejné
+    issue: Pracovní balíček
     lastname: Příjmení
     login: Přihlášení
     mail: E-mail
     name: Jméno
     password: Heslo
+    priority: Priorita
     project: Projekt
+    responsible: Zodpovědný
     role: Role
     start_date: Datum zahájení
     status: Stav
@@ -595,7 +610,8 @@ cs:
   error_scm_command_failed: 'An error occurred when trying to access the repository:
     %{value}'
   error_scm_not_found: The entry or revision was not found in the repository.
-  error_unable_delete_status: Nelze odstranit stav pracovního balíčku
+  error_unable_delete_status: Unable to delete work package status because it contains
+    work packages.
   error_unable_delete_default_status: Unable to delete default work package status.
     Please select another default work package status before deleting the current
     one.
@@ -741,6 +757,7 @@ cs:
   label_downloads_abbr: D/L
   label_duplicated_by: duplikováno
   label_duplicates: duplikovaů
+  label_edit: Upravit
   label_enable_multi_select: Přepnout multiselect
   label_end_to_end: end to end
   label_end_to_start: end to start
@@ -768,6 +785,7 @@ cs:
   label_generate_key: Generate a key
   label_git_path: Path to .git directory
   label_greater_or_equal: ">="
+  label_group_by: Group by
   label_group_new: New group
   label_group_plural: Skupiny
   label_help: Nápověda
@@ -807,7 +825,6 @@ cs:
     za které jsem zodpovědný
   label_work_package_view_all_watched: Zobrazit všechny sledované balíčky
   label_work_package_watchers: Sledující
-  label_work_packages_by: Pracovní balíčky podle %{value}
   label_journal_diff: Popis porovnání
   label_jump_to_a_project: Přejít na projekt...
   label_language_based: Na základě jazyka uživatele
@@ -985,6 +1002,7 @@ cs:
   label_this_week: tento týden
   label_this_year: tento rok
   label_time_entry_plural: Strávený čas
+  label_time_sheet_menu: Time sheet
   label_time_tracking: Sledování času
   label_today: dnes
   label_top_menu: Horní menu
@@ -1086,6 +1104,7 @@ cs:
   label_keyboard_shortcut_go_news: Go to project news
   label_keyboard_shortcut_go_timelines: Go to timelines
   label_keyboard_shortcut_new_work_package: Create new work package
+  label_keyboard_shortcut_details_package: Show work packages details pane
   label_keyboard_shortcut_go_edit: Go to edit the current item (on detail pages only)
   label_keyboard_shortcut_open_more_menu: Open more-menu (on detail pages only)
   label_keyboard_shortcut_go_preview: Go to preview the current edit (on edit pages
@@ -1094,6 +1113,7 @@ cs:
     lists only)
   label_keyboard_shortcut_focus_next_item: Focus next list element (on some lists
     only)
+  label_visible_elements: Visible elements
   macro_execution_error: Error executing the macro %{macro_name}
   macro_unavailable: Macro %{macro_name} cannot be displayed.
   mail_body_account_activation_request: 'A new user (%{value}) has registered. The
@@ -1478,6 +1498,10 @@ cs:
       short: "%d %b %H:%M"
       time: "%I:%M %p"
     pm: odp
+  timeframe:
+    show: Zobrazit časový rámec
+    end: do
+    start: od
   timelines:
     admin_menu:
       color: Barva
@@ -1559,7 +1583,8 @@ cs:
         absolute: Absolutní
         none: "Žádný"
         relative: Relative
-        compare_relative: Compare current planning to %{timespan} ago
+        compare_relative_prefix: Compare current planning to
+        compare_relative_suffix: ago
         compare_absolute: Compare current planning to %{date}
       time_relative:
         days: dnů
@@ -1587,8 +1612,7 @@ cs:
       status: Show status
       project_time_filter: Projects with a work package of a certain type in a certain
         timeframe
-      project_time_filter_absolute_timeframe: Absolute timeframe
-      project_time_filter_relative_timeframe: Relative timeframe
+      project_time_filter_timeframe: Timeframe
       project_time_filter_historical_from: od
       project_time_filter_historical_to: do
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1722,3 +1746,42 @@ cs:
     updated_automatically_by_child_changes: _Updated automatically by changing values
       within child work package %{child}_
   nothing_to_preview: Nothing to preview
+  api_v3:
+    attributes:
+      lock_version: Lock Version
+    errors:
+      code_401: You need to be authenticated to access this resource.
+      code_401_wrong_credentials: You did not provide the correct credentials.
+      code_403: You are not authorized to access this resource.
+      code_404: The requested resource could not be found.
+      code_409: Couldn't update the resource because of conflicting modifications.
+      invalid_content_type: Expected CONTENT-TYPE to be '%{content_type}' but got
+        '%{actual}'.
+      invalid_format: 'Invalid format for property ''%{property}'': Expected format
+        like ''%{expected_format}'', but got ''%{actual}''.'
+      invalid_json: The request could not be parsed as JSON.
+      invalid_relation: The relation is invalid.
+      invalid_resource: For property '%{property}' a link like '%{expected}' is expected,
+        but got '%{actual}'.
+      invalid_user_status_transition: The current user account status does not allow
+        this operation.
+      missing_content_type: not specified
+      missing_request_body: There was no request body.
+      multipart_body_error: The request body did not contain the expected multipart
+        parts.
+      multiple_errors: Multiple field constraints have been violated.
+      writing_read_only_attributes: You must not write a read-only attribute.
+      render:
+        context_not_parsable: The context provided is not a link to a resource.
+        unsupported_context: The resource given is not supported as context.
+        context_object_not_found: Cannot find the resource given as the context.
+      validation:
+        done_ratio: Done ratio cannot be set on parent work packages, when it is inferred
+          by status or when it is disabled.
+        due_date: Due date cannot be set on parent work packages.
+        estimated_hours: Estimated hours cannot be set on parent work packages.
+        invalid_user_assigned_to_work_package: The chosen user is not allowed to be
+          '%{property}' for this work package.
+        start_date: Start date cannot be set on parent work packages.
+    resources:
+      schema: Schema

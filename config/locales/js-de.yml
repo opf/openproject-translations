@@ -4,6 +4,7 @@ de:
     ajax:
       hide: Verbergen
       loading: Lädt ...
+    close_popup_title: Dialog schließen
     button_add_watcher: Beobachter hinzufügen
     button_cancel: Abbrechen
     button_check_all: Alles auswählen
@@ -67,8 +68,6 @@ de:
     label_format_csv: CSV
     label_format_pdf: PDF
     label_format_pdf_with_descriptions: PDF mit Beschreibungen
-    label_format_xls: XLS
-    label_format_xls_with_descriptions: XLS mit Beschreibung
     label_greater_or_equal: ">="
     label_group_by: Gruppiere
     label_hide_attributes: Leere ausblenden
@@ -85,8 +84,6 @@ de:
     label_menu_collapse: zusammenklappen
     label_menu_expand: ausklappen
     label_more_than_ago: vor mehr als
-    label_move_column_left: Spalte nach links verschieben
-    label_move_column_right: Spalte nach rechts verschieben
     label_next: Weiter
     label_no_data: Nichts anzuzeigen
     label_no_due_date: kein Abgabedatum
@@ -104,7 +101,7 @@ de:
     label_select_watcher: Wählen Sie einen Beobachter...
     label_selected_filter_list: Ausgewählte Filter
     label_share: Sichtbarkeit
-    label_show_attributes: Alle anzeigen
+    label_show_attributes: Alle Ebenen anzeigen
     label_show_in_menu: Seite in Projektnavigation anzeigen
     label_sort_by: Sortieren nach
     label_sorted_by: sortiert nach
@@ -125,8 +122,9 @@ de:
     label_unwatch_work_package: Arbeitspaket nicht beobachten
     label_uploaded_by: Hochgeladen von
     label_global_queries: Gemeinsame Filter
-    label_custom_queries: Benutzerdefinierte Berichte
+    label_custom_queries: Meine Filter
     label_columns: Spalten
+    label_click_to_enter_description: Klicken um die Beschreibung einzugeben...
     text_are_you_sure: Sind Sie sicher?
     filter_labels:
       assigned_to: Zugewiesen an
@@ -159,7 +157,7 @@ de:
     relation_labels:
       parent: "Übergeordnete Aufgabe"
       children: Untergeordnetes Arbeitspaket
-      relatedTo: Verwandt mit
+      relates: Verwandt mit
       duplicates: Dupliziert
       duplicated: Dupliziert durch
       blocks: Blockiert
@@ -176,6 +174,7 @@ de:
       add_blocked_by: Blockiert durch hinzufügen
       add_precedes: Vorgänger von hinzufügen
       add_follows: Folgt hinzufügen
+    field_value_enter_prompt: Einen Wert für '%{field}' eingeben
     select2:
       input_too_short:
         one: Bitte geben Sie ein weiteres Zeichen ein
@@ -251,9 +250,9 @@ de:
       zooms: Zoomstufe
       outlines: Hierarchie-Stufe
     unsupported_browser:
-      title: Ihr Browser wird nicht unterstützt
-      message: Der von Ihnen verwendete Browser wird nicht mehr von OpenProject unterstützt.
-        Bitte aktualisieren Sie Ihren Browser.
+      title: Ihre Browserversion wird nicht unterstützt
+      message: Die Browser-Version, die Sie verwenden, wird nicht mehr von OpenProject
+        unterstützt. Bitte aktualisieren Sie Ihren Browser.
       learn_more: Weitere Informationen
     wiki_formatting:
       strong: Fett
@@ -278,15 +277,24 @@ de:
       description_options_hide: Optionen ausblenden
       description_options_show: Optionen einblenden
       error: Ein Fehler ist aufgetreten.
-      label_enable_multi_select: Mehrfachauswahl umschalten
+      label_enable_multi_select: Mehrfachauswahl aktivieren
+      label_disable_multi_select: Mehrfachauswahl deaktivieren
       label_filter_add: Filter hinzufügen
       label_options: Optionen
+      label_column_multiselect: 'Kombiniertes Eingabefeld: Auswahl mit Pfeiltasten,
+        Auslösen mit Enter, Löschen mit Backspace'
+      label_column_select: 'Status - Kombiniertes Eingabefeld: Auswahl mit Autovervollständigung'
       message_error_during_bulk_delete: Fehler beim Löschen der Arbeitspakete.
       message_successful_bulk_delete: Arbeitspakete erfolgreich gelöscht.
       no_results:
         title: Keine Arbeitspakete anzuzeigen
         description_html: "<p>Es wurden entweder keine Arbeitspakete erzeugt oder
           alle Arbeitspakete wurden ausgefiltert.</p>"
+      property_groups:
+        details: Details
+        people: Personen
+        estimatesAndTime: Schätzungen & Zeit
+        other: Sonstiges
       properties:
         assignee: Zugewiesen an
         author: Autor
@@ -308,6 +316,7 @@ de:
         type: Typ
         updatedAt: Aktualisiert
         versionName: Version
+        version: Version
       query:
         column_names: Spalten
         group_by: Gruppiere Ergebnisse nach
@@ -348,7 +357,7 @@ de:
       filter: Filter
       unselected_title: Arbeitspakete
     modals:
-      label_settings: Konfiguration
+      label_settings: Filter umbenennen
       label_name: Name
       label_delete_page: Aktuelle Seite löschen
       button_apply: Anwenden
@@ -362,7 +371,21 @@ de:
     relations:
       empty: Keine bestehenden Beziehungen
       delete: Beziehung löschen
+    inplace:
+      button_edit: "%{attribute} bearbeiten"
+      button_save: "%{attribute}: Speichern"
+      button_save_and_send: "%{attribute} Speichern mit E-Mail-Benachrichtigung"
+      button_cancel: "%{attribute} Abbrechen"
+      link_formatting_help: Textformatierung
+      btn_preview_enable: Vorschau
+      btn_preview_disable: Vorschau deaktivieren
+      null_value_label: Kein Wert
+      clear_value_label: "-"
+      errors:
+        required: "%{field} ist ein Pflichtfeld"
+        number: "%{field} ist keine gültige Zahl"
     error_could_not_resolve_version_name: Versionsname konnte nicht aufgelöst werden
+    error_could_not_resolve_user_name: Benutzername konnte nicht aufgelöst werden
     units:
       hour:
         one: 1 Stunde

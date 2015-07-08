@@ -4,6 +4,7 @@ zh:
     ajax:
       hide: "隐藏"
       loading: "加载中..."
+    close_popup_title: Close popup
     button_add_watcher: "添加关注者"
     button_cancel: "取消"
     button_check_all: "全选"
@@ -67,11 +68,9 @@ zh:
     label_format_csv: CSV
     label_format_pdf: PDF
     label_format_pdf_with_descriptions: "带描述的PDF"
-    label_format_xls: XLS
-    label_format_xls_with_descriptions: "带描述的XLS"
     label_greater_or_equal: ">="
     label_group_by: "分组按照"
-    label_hide_attributes: "隐藏空属性"
+    label_hide_attributes: Hide empty
     label_hide_column: "隐藏列"
     label_in: "在"
     label_in_less_than: "在小于"
@@ -85,8 +84,6 @@ zh:
     label_menu_collapse: "折叠"
     label_menu_expand: "展开"
     label_more_than_ago: "更多天前"
-    label_move_column_left: "左移列"
-    label_move_column_right: "右移列"
     label_next: "下一个"
     label_no_data: "没有要显示的数据"
     label_no_due_date: "没有结束日期"
@@ -104,7 +101,7 @@ zh:
     label_select_watcher: "选择一位关注者..."
     label_selected_filter_list: "所选的筛选器"
     label_share: "共享"
-    label_show_attributes: "显示所有属性"
+    label_show_attributes: "全部显示"
     label_show_in_menu: "在菜单中显示页面"
     label_sort_by: "排序按"
     label_sorted_by: "排序按照"
@@ -123,9 +120,10 @@ zh:
     label_work_package_details_you_are_here: "您在 %{type} %{subject} 的 %{tab} 选项卡。"
     label_unwatch_work_package: "取消工作包关注"
     label_uploaded_by: "上传者"
-    label_global_queries: "全局查询"
-    label_custom_queries: "自定义查询"
+    label_global_queries: Shared queries
+    label_custom_queries: Private queries
     label_columns: "列"
+    label_click_to_enter_description: "点击此处输入描述......"
     text_are_you_sure: "是否确定？"
     filter_labels:
       assigned_to: "指定人"
@@ -158,7 +156,7 @@ zh:
     relation_labels:
       parent: "父"
       children: "子类"
-      relatedTo: "关于"
+      relates: "关于"
       duplicates: "重复项"
       duplicated: "复制于"
       blocks: "块"
@@ -175,6 +173,7 @@ zh:
       add_blocked_by: "添加阻止项"
       add_precedes: "添加前置项"
       add_follows: "添加后置项"
+    field_value_enter_prompt: Enter a value for '%{field}'
     select2:
       input_too_short:
         one: Please enter one more character
@@ -242,8 +241,8 @@ zh:
       zooms: "缩放级别"
       outlines: "层次结构级别"
     unsupported_browser:
-      title: "不支持您的浏览器"
-      message: OpenProject 不再支持您所使用的浏览器。请更新您的浏览器。
+      title: "不支持您的浏览器版本"
+      message: OpenProject不再支持您正在使用的浏览器版本。请更新您的浏览器。
       learn_more: "了解更多信息"
     wiki_formatting:
       strong: "加强"
@@ -268,14 +267,23 @@ zh:
       description_options_hide: "隐藏选项"
       description_options_show: "显示选项"
       error: "发生了错误。"
-      label_enable_multi_select: "切换多选"
+      label_enable_multi_select: Enable multiselect
+      label_disable_multi_select: Disable multiselect
       label_filter_add: "添加筛选器"
       label_options: "选项"
+      label_column_multiselect: 'Combined dropdown field: Select with arrow keys,
+        confirm selection with enter, delete with backspace'
+      label_column_select: 'Status - Combined dropdown field: Selection with auto-completion.'
       message_error_during_bulk_delete: "试图删除工作包时出错。"
       message_successful_bulk_delete: "已成功删除工作包。"
       no_results:
         title: "没有要显示的工作包"
         description_html: "<p>没有已创建的工作包或所有工作包都被筛选排除。</p>"
+      property_groups:
+        details: "详细信息"
+        people: "人员"
+        estimatesAndTime: "估计与时间"
+        other: "其他"
       properties:
         assignee: "指定人"
         author: "作者"
@@ -297,6 +305,7 @@ zh:
         type: "类型"
         updatedAt: "更新于"
         versionName: "版本"
+        version: "版本"
       query:
         column_names: "列"
         group_by: "汇总结果根据"
@@ -332,12 +341,12 @@ zh:
         save_as: "另存为..."
         export: "导出..."
         share: "共享..."
-        page_settings: "页面设置..."
+        page_settings: Rename query ...
         delete: "删除"
       filter: "筛选器"
       unselected_title: "工作包"
     modals:
-      label_settings: "设置"
+      label_settings: Rename query
       label_name: "名称"
       label_delete_page: "删除当前页面"
       button_apply: "应用"
@@ -351,7 +360,21 @@ zh:
     relations:
       empty: "不存在关联"
       delete: "删除关系"
+    inplace:
+      button_edit: "%{attribute}: Edit"
+      button_save: "%{attribute}: Save"
+      button_save_and_send: "%{attribute}: Save and send email"
+      button_cancel: "%{attribute}: Cancel"
+      link_formatting_help: "文本格式"
+      btn_preview_enable: "预览"
+      btn_preview_disable: "禁用预览"
+      null_value_label: No value
+      clear_value_label: "-"
+      errors:
+        required: "%{field} cannot be empty"
+        number: "%{field} is not a valid number"
     error_could_not_resolve_version_name: "无法解析版本名称"
+    error_could_not_resolve_user_name: Couldn't resolve user name
     units:
       hour:
         one: 1 hour

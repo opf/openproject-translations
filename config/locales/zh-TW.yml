@@ -24,6 +24,7 @@ zh-TW:
     attributes:
       attachment:
         downloads: "下載"
+        file: "檔案"
         filename: "檔案"
         filesize: "檔案大小"
       auth_source:
@@ -83,7 +84,6 @@ zh-TW:
       time_entry:
         activity: "活動"
         hours: "小時"
-        work_package: "工作項目"
         spent_on: "日期"
         type: "類型"
       type:
@@ -159,11 +159,12 @@ zh-TW:
         equal_to: "必須等於 %{count}"
         even: "必須是偶數"
         exclusion: "已經被預定"
+        file_too_large: is too large (maximum size is %{count} Bytes)
         greater_than: "必須大於 %{count}"
         greater_than_or_equal_to: "必須大於或等於 %{count}"
         smaller_than_or_equal_to_max_length: "必須小於或等於最大長度"
         greater_than_start_date: "必須大於開始日期"
-        inclusion: "不在清單中"
+        inclusion: is not set to one of the allowed values
         invalid: "無效。 "
         less_than: "必須小於 %{count}"
         less_than_or_equal_to: "必須小於或等於 %{count}"
@@ -201,10 +202,18 @@ zh-TW:
               not_a_valid_parent: "無效。 "
               does_not_exist: "不存在"
             status_id:
-              status_transition_invalid: no valid transition exists from old to new
-                status for the current user roles
+              status_transition_invalid: |
+                is invalid because no valid transition exists from old to new status for the current user's roles
+                無效，因為目前的角色並未被定義可以從目前的狀態轉移到新的狀態
             priority_id:
               only_active_priorities_allowed: "必須是啟用的"
+            category:
+              only_same_project_categories_allowed: The category of a work package
+                must be within the same project as the work package.
+              does_not_exist: The specified category does not exist.
+            estimated_hours:
+              only_values_greater_or_equal_zeroes_allowed: The estimated hours must
+                be >= 0.
         user:
           attributes:
             password:
@@ -260,11 +269,13 @@ zh-TW:
   attributes:
     active: "啟用"
     assigned_to: "負責執行者"
+    assignee: "負責執行者"
     attachments: "附加檔"
     author: "作者"
     base: "一般錯誤:"
     blocks_ids: "區塊"
     category: "類別"
+    comment: "評論"
     comments: "評論"
     content: "內容"
     created_at: "建立於"
@@ -275,18 +286,23 @@ zh-TW:
     display_sums: "顯示加總"
     due_date: "截止日期"
     estimated_hours: "預估時間"
+    estimated_time: "預估時間"
     firstname: "名字"
     group: "群組"
     groupname: "團體名稱"
+    id: ID
     is_default: "預設值"
     is_for_all: "對所有的專案"
     is_public: "公開"
+    issue: "工作項目"
     lastname: "姓："
     login: "登入"
     mail: "電子郵件"
     name: "名稱"
     password: "密碼"
+    priority: "優先等級"
     project: "專案"
+    responsible: "責任歸屬者"
     role: Role
     start_date: "起始日期"
     status: "狀態"
@@ -554,7 +570,8 @@ zh-TW:
   error_scm_command_failed: 'An error occurred when trying to access the repository:
     %{value}'
   error_scm_not_found: The entry or revision was not found in the repository.
-  error_unable_delete_status: "無法刪除工作項目狀態"
+  error_unable_delete_status: Unable to delete work package status because it contains
+    work packages.
   error_unable_delete_default_status: Unable to delete default work package status.
     Please select another default work package status before deleting the current
     one.
@@ -699,6 +716,7 @@ zh-TW:
   label_downloads_abbr: D/L
   label_duplicated_by: "標示重複者"
   label_duplicates: "重複"
+  label_edit: "編輯"
   label_enable_multi_select: Toggle multiselect
   label_end_to_end: end to end
   label_end_to_start: end to start
@@ -726,6 +744,7 @@ zh-TW:
   label_generate_key: Generate a key
   label_git_path: Path to .git directory
   label_greater_or_equal: ">="
+  label_group_by: "分組依據"
   label_group_new: "新增群組"
   label_group_plural: "群組"
   label_help: "説明"
@@ -762,7 +781,6 @@ zh-TW:
   label_work_package_view_all_responsible_for: "檢視所有責任歸屬於我的工作項目"
   label_work_package_view_all_watched: "檢視所有監看的工作項目"
   label_work_package_watchers: "監看者"
-  label_work_packages_by: Work packages by %{value}
   label_journal_diff: Description Comparison
   label_jump_to_a_project: Jump to a project...
   label_language_based: Based on user's language
@@ -940,6 +958,7 @@ zh-TW:
   label_this_week: "本週"
   label_this_year: "今年"
   label_time_entry_plural: "耗時"
+  label_time_sheet_menu: Time sheet
   label_time_tracking: Time tracking
   label_today: "今天"
   label_top_menu: "頂層選單"
@@ -1036,6 +1055,7 @@ zh-TW:
   label_keyboard_shortcut_go_news: "前往專案新聞"
   label_keyboard_shortcut_go_timelines: "到時間軸"
   label_keyboard_shortcut_new_work_package: "建立新的工作項目"
+  label_keyboard_shortcut_details_package: Show work packages details pane
   label_keyboard_shortcut_go_edit: Go to edit the current item (on detail pages only)
   label_keyboard_shortcut_open_more_menu: Open more-menu (on detail pages only)
   label_keyboard_shortcut_go_preview: Go to preview the current edit (on edit pages
@@ -1044,6 +1064,7 @@ zh-TW:
     lists only)
   label_keyboard_shortcut_focus_next_item: Focus next list element (on some lists
     only)
+  label_visible_elements: Visible elements
   macro_execution_error: Error executing the macro %{macro_name}
   macro_unavailable: Macro %{macro_name} cannot be displayed.
   mail_body_account_activation_request: "一個新的使用者 (%{value}) 已註冊。該帳號正等您核准："
@@ -1419,6 +1440,10 @@ zh-TW:
       short: "%d %b %H:%M"
       time: "%I:%M %p"
     pm: pm
+  timeframe:
+    show: Show timeframe
+    end: to
+    start: from
   timelines:
     admin_menu:
       color: "顏色"
@@ -1499,7 +1524,8 @@ zh-TW:
         absolute: "絕對"
         none: "無"
         relative: "相對"
-        compare_relative: Compare current planning to %{timespan} ago
+        compare_relative_prefix: Compare current planning to
+        compare_relative_suffix: ago
         compare_absolute: Compare current planning to %{date}
       time_relative:
         days: days
@@ -1527,8 +1553,7 @@ zh-TW:
       status: "顯示狀態"
       project_time_filter: Projects with a work package of a certain type in a certain
         timeframe
-      project_time_filter_absolute_timeframe: Absolute timeframe
-      project_time_filter_relative_timeframe: Relative timeframe
+      project_time_filter_timeframe: Timeframe
       project_time_filter_historical_from: from
       project_time_filter_historical_to: to
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1659,3 +1684,48 @@ zh-TW:
     updated_automatically_by_child_changes: _Updated automatically by changing values
       within child work package %{child}_
   nothing_to_preview: "沒有內容可預覽"
+  api_v3:
+    attributes:
+      lock_version: Lock Version
+    errors:
+      code_401: |
+        You need to be authenticated to access this resource.
+        您必須取得授權才能使用這個資源。
+      code_401_wrong_credentials: You did not provide the correct credentials.
+      code_403: |
+        You are not authorized to access this resource.
+        您未被授權使用這個資源。
+      code_404: The requested resource could not be found.
+      code_409: |
+        Couldn't update the resource because of conflicting modifications.
+        因為修改的衝突，所以無法更新這個資源。
+      invalid_content_type: "預期得到 '%{content_type}' 的內容類型，但得到了 '%{actual}'。"
+      invalid_format: 'Invalid format for property ''%{property}'': Expected format
+        like ''%{expected_format}'', but got ''%{actual}''.'
+      invalid_json: The request could not be parsed as JSON.
+      invalid_relation: The relation is invalid.
+      invalid_resource: For property '%{property}' a link like '%{expected}' is expected,
+        but got '%{actual}'.
+      invalid_user_status_transition: The current user account status does not allow
+        this operation.
+      missing_content_type: not specified
+      missing_request_body: There was no request body.
+      multipart_body_error: The request body did not contain the expected multipart
+        parts.
+      multiple_errors: Multiple field constraints have been violated.
+      writing_read_only_attributes: |
+        You must not write a read-only attribute.
+        您不可寫入唯讀的屬性。
+      render:
+        context_not_parsable: The context provided is not a link to a resource.
+        unsupported_context: The resource given is not supported as context.
+        context_object_not_found: Cannot find the resource given as the context.
+      validation:
+        done_ratio: Done ratio cannot be set on parent work packages, when it is inferred
+          by status or when it is disabled.
+        due_date: Due date cannot be set on parent work packages.
+        estimated_hours: Estimated hours cannot be set on parent work packages.
+        invalid_user_assigned_to_work_package: "所指定的使用者不允許成為工作項目的 '%{property}' 。"
+        start_date: Start date cannot be set on parent work packages.
+    resources:
+      schema: Schema

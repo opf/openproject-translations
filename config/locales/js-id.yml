@@ -4,6 +4,7 @@ id:
     ajax:
       hide: Sembunyikan
       loading: Loading ...
+    close_popup_title: Close popup
     button_add_watcher: Tambah pemantau
     button_cancel: Batal
     button_check_all: Cek semua
@@ -67,11 +68,9 @@ id:
     label_format_csv: CSV
     label_format_pdf: PDF
     label_format_pdf_with_descriptions: PDF disertai deskripsi
-    label_format_xls: XLS
-    label_format_xls_with_descriptions: XLS disertai deskripsi
     label_greater_or_equal: ">="
     label_group_by: Grup oleh
-    label_hide_attributes: Sembunyikan atribut kosong
+    label_hide_attributes: Hide empty
     label_hide_column: Sembunyikan kolom
     label_in: dalam
     label_in_less_than: kurang dari
@@ -85,8 +84,6 @@ id:
     label_menu_collapse: runtuh
     label_menu_expand: expand
     label_more_than_ago: lusa yang lalu
-    label_move_column_left: Pindahkan kolom ke kiri
-    label_move_column_right: Pindahkan kolom ke kanan
     label_next: Lanjut
     label_no_data: Tidak ada data untuk ditampilkan
     label_no_due_date: tidak ada tanggal berakhir
@@ -104,7 +101,7 @@ id:
     label_select_watcher: Pilih pemantau...
     label_selected_filter_list: Filter terpilih
     label_share: Share
-    label_show_attributes: Tampilkan semua atribut
+    label_show_attributes: Tampilkan semua
     label_show_in_menu: Tampilkan halaman di menu
     label_sort_by: Sort by
     label_sorted_by: urut berdasarkan
@@ -123,9 +120,10 @@ id:
     label_work_package_details_you_are_here: Anda di tab %{tab} untuk %{type} %{subject}.
     label_unwatch_work_package: Tidak pantau Paket-Penugasan
     label_uploaded_by: Diupload oleh
-    label_global_queries: Permintaan global
-    label_custom_queries: Kustom queri
+    label_global_queries: Shared queries
+    label_custom_queries: Private queries
     label_columns: Kolom
+    label_click_to_enter_description: Klik untuk masukkan keterangan...
     text_are_you_sure: Anda yakin?
     filter_labels:
       assigned_to: Pelimpahan
@@ -158,7 +156,7 @@ id:
     relation_labels:
       parent: Induk
       children: Sub
-      relatedTo: Berkaitan dengan
+      relates: Berkaitan dengan
       duplicates: Duplikat
       duplicated: Diduplikat oleh
       blocks: Blok
@@ -175,6 +173,7 @@ id:
       add_blocked_by: Tambahkan diblokir oleh
       add_precedes: Tambahkan mendahului
       add_follows: Tambahkan berikut
+    field_value_enter_prompt: Enter a value for '%{field}'
     select2:
       input_too_short:
         one: Please enter one more character
@@ -247,9 +246,9 @@ id:
       zooms: Zoom level
       outlines: Hierarchy level
     unsupported_browser:
-      title: Browser Anda tidak didukung
-      message: Versi browser yang Anda gunakan tidak lagi didukung oleh Sistem. Perbarui
-        browser Anda.
+      title: Versi peramban Anda tidak didukung
+      message: Versi browser yang Anda gunakan tidak lagi didukung oleh OpenProject.
+        Perbarui browser Anda.
       learn_more: Pelajari lebih lanjut
     wiki_formatting:
       strong: Tebal
@@ -274,14 +273,23 @@ id:
       description_options_hide: Sembunyikan opsi
       description_options_show: Tampilkan opsi
       error: Terdapat Kesalahan.
-      label_enable_multi_select: Beralih ke multiselect
+      label_enable_multi_select: Enable multiselect
+      label_disable_multi_select: Disable multiselect
       label_filter_add: Tambah Filter
       label_options: Opsi
+      label_column_multiselect: 'Combined dropdown field: Select with arrow keys,
+        confirm selection with enter, delete with backspace'
+      label_column_select: 'Status - Combined dropdown field: Selection with auto-completion.'
       message_error_during_bulk_delete: 'Error: Menghapus Paket-Penugasan.'
       message_successful_bulk_delete: Paket-Penugasan telah dihapus.
       no_results:
         title: Tidak ada Paket-Penugasan untuk ditampilkan
         description_html: "<p>Walaupun tidak ada Paket-Penugasan, tetap akan di-Filter.</p>"
+      property_groups:
+        details: Detil
+        people: Orang
+        estimatesAndTime: Perkiraan & waktu
+        other: Lainnya
       properties:
         assignee: Pelimpahan
         author: Penulis
@@ -303,6 +311,7 @@ id:
         type: Tipe
         updatedAt: Diperbarui
         versionName: Versi
+        version: Versi
       query:
         column_names: Kolom
         group_by: Group
@@ -338,12 +347,12 @@ id:
         save_as: Simpan sebagai...
         export: Ekspor...
         share: Share ...
-        page_settings: Pengaturan halaman...
+        page_settings: Rename query ...
         delete: Hapus
       filter: Filter
       unselected_title: Paket-Penugasan
     modals:
-      label_settings: Pengaturan
+      label_settings: Rename query
       label_name: Nama
       label_delete_page: Hapus halaman ini
       button_apply: Apply
@@ -357,7 +366,21 @@ id:
     relations:
       empty: Tidak ada yang berkaitan
       delete: Hapus keterkaitan
+    inplace:
+      button_edit: "%{attribute}: Edit"
+      button_save: "%{attribute}: Save"
+      button_save_and_send: "%{attribute}: Save and send email"
+      button_cancel: "%{attribute}: Cancel"
+      link_formatting_help: Text formatting
+      btn_preview_enable: Preview
+      btn_preview_disable: Menonaktifkan Tinjauan
+      null_value_label: No value
+      clear_value_label: "-"
+      errors:
+        required: "%{field} cannot be empty"
+        number: "%{field} is not a valid number"
     error_could_not_resolve_version_name: Tidak bisa menyelesaikan versi nama
+    error_could_not_resolve_user_name: Couldn't resolve user name
     units:
       hour:
         one: 1 hour

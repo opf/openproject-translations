@@ -26,6 +26,7 @@ ja:
     attributes:
       attachment:
         downloads: "ダウンロード数"
+        file: "ファイル"
         filename: "ファイル"
         filesize: "サイズ"
       auth_source:
@@ -85,7 +86,6 @@ ja:
       time_entry:
         activity: "活動"
         hours: "時間"
-        work_package: "作業項目"
         spent_on: "日付"
         type: "種別"
       type:
@@ -161,11 +161,12 @@ ja:
         equal_to: "は%{count}に等しくしてください。"
         even: "は偶数にしてください。"
         exclusion: "は予約されています。"
+        file_too_large: is too large (maximum size is %{count} Bytes)
         greater_than: "は%{count}より大きい値にしてください。"
         greater_than_or_equal_to: "は%{count}以上の値にしてください。"
         smaller_than_or_equal_to_max_length: "は最大長さより以下でなければなりません。"
         greater_than_start_date: "は開始日より後にしてください。"
-        inclusion: "はリストに含まれていません。"
+        inclusion: "は許可されている値ではありません。"
         invalid: "は不正な値です。"
         less_than: "は%{count}より小さい値にしてください。"
         less_than_or_equal_to: "は%{count}以下の値にしてください。"
@@ -201,9 +202,14 @@ ja:
               not_a_valid_parent: "は不正な値です。"
               does_not_exist: "は存在しません。"
             status_id:
-              status_transition_invalid: "ユーザーが持つ役割では旧ステータスから新ステータスへの有効な遷移がありません。"
+              status_transition_invalid: "ユーザーの現在の役割では旧ステータスから新ステータスへの有効な遷移がないため無効"
             priority_id:
               only_active_priorities_allowed: "は有効である必要があります。"
+            category:
+              only_same_project_categories_allowed: "ワークパッケージのカテゴリは、同じプロジェクト内にそのワークパッケージでなければなりません。"
+              does_not_exist: "指定されたカテゴリは存在しません。"
+            estimated_hours:
+              only_values_greater_or_equal_zeroes_allowed: "期待される時間はゼロ以上でなくてはなりません。"
         user:
           attributes:
             password:
@@ -258,11 +264,13 @@ ja:
   attributes:
     active: "有効"
     assigned_to: "担当者"
+    assignee: "担当者"
     attachments: "添付ファイル"
     author: "作成者"
     base: "一般的なエラー:"
     blocks_ids: "ブロック"
     category: "カテゴリ"
+    comment: "コメント"
     comments: "コメント"
     content: "内容"
     created_at: "作成日時"
@@ -273,18 +281,23 @@ ja:
     display_sums: "合計を表示"
     due_date: "期限"
     estimated_hours: "予定工数"
+    estimated_time: "予定工数"
     firstname: "名前"
     group: "グループ"
     groupname: "グループ名"
+    id: ID
     is_default: "デフォルト値"
     is_for_all: "全プロジェクト向け"
     is_public: "公開"
+    issue: "作業項目"
     lastname: "苗字"
     login: "ログイン名"
     mail: "電子メールアドレス"
     name: "名称"
     password: "パスワード"
+    priority: "優先度"
     project: "プロジェクト"
+    responsible: "責任者"
     role: "役割"
     start_date: "開始日"
     status: "ステータス"
@@ -545,7 +558,7 @@ ja:
   error_scm_annotate: "エントリが存在しない、もしくは注釈を付けることができません。"
   error_scm_command_failed: "「%{value}」リポジトリにアクセスしようとしてエラーが発生しました。"
   error_scm_not_found: "リポジトリに、エントリ/リビジョンが存在しません。"
-  error_unable_delete_status: "作業項目のステータスを削除できませんでした。"
+  error_unable_delete_status: "ワークパッケージを含んでいるため、ワークパッケージのステータスを削除できません。"
   error_unable_delete_default_status: "作業項目の既定のステータスを削除できません。削除する前に別の既定値を選択してください。"
   error_unable_to_connect: "接続できません。 （%{value}）"
   error_workflow_copy_source: "コピー元となる型または役割を選択してください。"
@@ -684,6 +697,7 @@ ja:
   label_downloads_abbr: D/L
   label_duplicated_by: "次の項目が重複"
   label_duplicates: "次と重複"
+  label_edit: "編集"
   label_enable_multi_select: "複数選択の切り替え"
   label_end_to_end: "最後～最後"
   label_end_to_start: "最後～最初"
@@ -710,6 +724,7 @@ ja:
   label_generate_key: "キーを生成する"
   label_git_path: ".gitディレクトリへのパス"
   label_greater_or_equal: ">="
+  label_group_by: "グループ"
   label_group_new: "新規グループ"
   label_group_plural: "グループ"
   label_help: "ヘルプ"
@@ -746,7 +761,6 @@ ja:
   label_work_package_view_all_responsible_for: "責任者である全ての作業項目を表示"
   label_work_package_view_all_watched: "ウォッチしている全ての作業項目を表示"
   label_work_package_watchers: "ウォッチャー"
-  label_work_packages_by: "%{value}別の作業項目"
   label_journal_diff: "説明の比較"
   label_jump_to_a_project: "プロジェクトへ移動..."
   label_language_based: "ユーザーの言語設定に基づく"
@@ -924,6 +938,7 @@ ja:
   label_this_week: "今週"
   label_this_year: "今年"
   label_time_entry_plural: "作業時間の記録"
+  label_time_sheet_menu: Time sheet
   label_time_tracking: "作業時間の記録"
   label_today: "今日"
   label_top_menu: "トップメニュー"
@@ -1019,11 +1034,13 @@ ja:
   label_keyboard_shortcut_go_news: "プロジェクトのニュースへ移動"
   label_keyboard_shortcut_go_timelines: "タイムラインへ移動"
   label_keyboard_shortcut_new_work_package: "新しい作業項目を作成"
+  label_keyboard_shortcut_details_package: "ワークパッケージ詳細ペインを表示"
   label_keyboard_shortcut_go_edit: "この項目を編集へ移動（詳細ページのみ）"
   label_keyboard_shortcut_open_more_menu: "他のメニュー項目を開く（詳細ページのみ）"
   label_keyboard_shortcut_go_preview: "現在の編集のプレビューへ移動（編集ページのみ）"
   label_keyboard_shortcut_focus_previous_item: "前のリスト項目へフォーカスする(特定のリストのみ）"
   label_keyboard_shortcut_focus_next_item: "次のリスト項目へフォーカスする(特定のリストのみ）"
+  label_visible_elements: Visible elements
   macro_execution_error: "マクロ%{macro_name}を実行中にエラーが発生しました。"
   macro_unavailable: "マクロ%{macro_name}を表示できません。"
   mail_body_account_activation_request: "新しいユーザー%{value}が登録されました。このアカウントは承認待ちです："
@@ -1364,6 +1381,10 @@ ja:
       short: "%d %b %H:%M"
       time: "%I:%M %p"
     pm: "午後"
+  timeframe:
+    show: "期間を表示"
+    end: "まで"
+    start: "から"
   timelines:
     admin_menu:
       color: "色"
@@ -1436,7 +1457,8 @@ ja:
         absolute: "絶対的"
         none: "なし"
         relative: "相対的"
-        compare_relative: "現在の計画を%{timespan}前と比較する"
+        compare_relative_prefix: "現在の計画をこれに比較します。"
+        compare_relative_suffix: "前"
         compare_absolute: "現在計画を%{date}と比較する"
       time_relative:
         days: " 日"
@@ -1463,8 +1485,7 @@ ja:
       types: "作業項目の型を表示"
       status: "ステータスを表示"
       project_time_filter: "特定の期間に特定の作業項目を持つプロジェクト"
-      project_time_filter_absolute_timeframe: "絶対的な期間"
-      project_time_filter_relative_timeframe: "相対的な期間"
+      project_time_filter_timeframe: "タイムフレーム"
       project_time_filter_historical_from: "から"
       project_time_filter_historical_to: "まで"
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1581,3 +1602,38 @@ ja:
   work_package:
     updated_automatically_by_child_changes: _子作業項目%{child}の変更による自動更新されました_
   nothing_to_preview: "プレビューできるものは何もありません。"
+  api_v3:
+    attributes:
+      lock_version: "ロックバージョン"
+    errors:
+      code_401: "このリソースへのアクセスするには認証を行う必要があります。"
+      code_401_wrong_credentials: You did not provide the correct credentials.
+      code_403: "このリソースにアクセスする権限がありません。"
+      code_404: "要求したリソースが見つかりません。"
+      code_409: "変更が競合しているため、リソースを更新できませんでした。"
+      invalid_content_type: "コンテンツの種類は'%{content_type}'を期待されたが '%{actual}'を得ました。"
+      invalid_format: "不正なフォーマットのプロパティ '%{property}': 期待されるフォーマットは '%{expected_format}',
+        ですが '%{actual}'を受け取りました."
+      invalid_json: The request could not be parsed as JSON.
+      invalid_relation: The relation is invalid.
+      invalid_resource: "プロパティ '%{property}' は '%{expected}'のようなリンクであることが期待されていますが実際は
+        '%{actual}'が指定されています。"
+      invalid_user_status_transition: "現在のユーザのアカウントステータスはこの操作を許可していません。"
+      missing_content_type: "指定されていません。"
+      missing_request_body: There was no request body.
+      multipart_body_error: The request body did not contain the expected multipart
+        parts.
+      multiple_errors: "複数フィールド制限に違反が生じました。"
+      writing_read_only_attributes: "読み取り専用の属性を書き込みできません。"
+      render:
+        context_not_parsable: "このコンテキストはリソースへのリンクではありません。"
+        unsupported_context: "指定されたリソースは、コンテキストとしてはサポートされません。"
+        context_object_not_found: "コンテキストで指定されたリソースが見つかりません。"
+      validation:
+        done_ratio: "完了率はそのステータスにより推定または無効にされている場合、親ワークパッケージにセットすることはできません。"
+        due_date: "締切日は親ワークパッケージに設定することはできません。"
+        estimated_hours: "推定時間は、親ワークパッケージに設定できません。"
+        invalid_user_assigned_to_work_package: "選ばれたユーザーは、この作業項目の'%{property}' にすることはできません。"
+        start_date: "開始日は、親ワークパッケージに設定できません。"
+    resources:
+      schema: "スキーマ"

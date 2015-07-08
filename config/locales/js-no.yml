@@ -4,6 +4,7 @@
     ajax:
       hide: Skjul
       loading: Laster inn ...
+    close_popup_title: Close popup
     button_add_watcher: Legg til overvåker
     button_cancel: Avbryt
     button_check_all: Velg alle
@@ -67,11 +68,9 @@
     label_format_csv: CSV
     label_format_pdf: PDF
     label_format_pdf_with_descriptions: PDF med beskrivelser
-    label_format_xls: XLS
-    label_format_xls_with_descriptions: XLS med beskrivelser
     label_greater_or_equal: ">="
     label_group_by: Grupper etter
-    label_hide_attributes: Skjul tomme attributter
+    label_hide_attributes: Skjul tomme
     label_hide_column: Skjul kolonne
     label_in: i
     label_in_less_than: i mindre enn
@@ -85,8 +84,6 @@
     label_menu_collapse: skjul
     label_menu_expand: utvid
     label_more_than_ago: mer enn dager siden
-    label_move_column_left: Flytt kolonne til venstre
-    label_move_column_right: Flytt kolonne til høyre
     label_next: Neste
     label_no_data: Ingen data å vise
     label_no_due_date: ingen sluttdato
@@ -104,7 +101,7 @@
     label_select_watcher: Velg en overvåker...
     label_selected_filter_list: Valgte filtre
     label_share: Del
-    label_show_attributes: Vis alle attributter
+    label_show_attributes: Vis alle
     label_show_in_menu: Vis side i meny
     label_sort_by: Sorter på
     label_sorted_by: sortert på
@@ -123,9 +120,10 @@
     label_work_package_details_you_are_here: Du er på %{tab}-fanen for %{type} %{subject}.
     label_unwatch_work_package: Stopp overvåking av arbeidspakke
     label_uploaded_by: Opplastet av
-    label_global_queries: Globale spørringer
-    label_custom_queries: Egendefinerte spørringer
+    label_global_queries: Shared queries
+    label_custom_queries: Private queries
     label_columns: Kolonner
+    label_click_to_enter_description: Klikk for å legge inn en beskrivelse...
     text_are_you_sure: Er du sikker?
     filter_labels:
       assigned_to: Deltaker
@@ -158,7 +156,7 @@
     relation_labels:
       parent: Overordnet
       children: Underordnede
-      relatedTo: Relatert til
+      relates: Relatert til
       duplicates: Duplikater
       duplicated: Duplisert av
       blocks: Blokkeringer
@@ -175,6 +173,7 @@
       add_blocked_by: Legg til blokkert av
       add_precedes: Legg til forgjenger
       add_follows: Legg til følger
+    field_value_enter_prompt: Angi en verdi for '%{field}'
     select2:
       input_too_short:
         one: Please enter one more character
@@ -247,7 +246,7 @@
       zooms: Zoom-nivå
       outlines: Nivå
     unsupported_browser:
-      title: Nettleseren din støttes ikke
+      title: Din nettleserversjon er ikke støttet
       message: Nettleserversjonen du bruker støttes ikke lenger av OpenProject. Vennligst
         oppdater nettleseren.
       learn_more: Mer informasjon
@@ -274,15 +273,24 @@
       description_options_hide: Skjul alternativer
       description_options_show: Vis alternativer
       error: Det har oppstått en feil.
-      label_enable_multi_select: Veksle multivalg
+      label_enable_multi_select: Enable multiselect
+      label_disable_multi_select: Disable multiselect
       label_filter_add: Legg til filter
       label_options: Alternativer
+      label_column_multiselect: 'Combined dropdown field: Select with arrow keys,
+        confirm selection with enter, delete with backspace'
+      label_column_select: 'Status - Combined dropdown field: Selection with auto-completion.'
       message_error_during_bulk_delete: Det oppstod en feil undersletting av arbeidspakker.
       message_successful_bulk_delete: Arbeidspakkene ble slettet.
       no_results:
         title: Ingen arbeidspakker å vise
         description_html: "<p>Enten er det ikke opprettet noen arbeidspakker, eller
           de er filtrert vekk.</p>"
+      property_groups:
+        details: Detaljer
+        people: Personer
+        estimatesAndTime: Estimater og tid
+        other: "Øvrig"
       properties:
         assignee: Deltaker
         author: Forfatter
@@ -304,6 +312,7 @@
         type: Type
         updatedAt: Oppdatert
         versionName: Versjon
+        version: Versjon
       query:
         column_names: Kolonner
         group_by: Gruppèr resultater etter
@@ -339,12 +348,12 @@
         save_as: Lagre som ...
         export: Eksportèr ...
         share: Del ...
-        page_settings: Sideinnstillinger ...
+        page_settings: Rename query ...
         delete: Slett
       filter: Filter
       unselected_title: Arbeidspakker
     modals:
-      label_settings: Innstillinger
+      label_settings: Rename query
       label_name: Navn
       label_delete_page: Slett gjeldende side
       button_apply: Bruk
@@ -358,7 +367,21 @@
     relations:
       empty: Det eksisterer ingen relasjoner
       delete: Slett relasjon
+    inplace:
+      button_edit: "%{attribute}: Edit"
+      button_save: "%{attribute}: Save"
+      button_save_and_send: "%{attribute}: Save and send email"
+      button_cancel: "%{attribute}: Cancel"
+      link_formatting_help: Tekstformatering
+      btn_preview_enable: Forhåndsvis
+      btn_preview_disable: Deaktiver forhåndsvisning
+      null_value_label: No value
+      clear_value_label: "-"
+      errors:
+        required: "%{field} cannot be empty"
+        number: "%{field} is not a valid number"
     error_could_not_resolve_version_name: Kunne ikke slå opp versjonsnavnet
+    error_could_not_resolve_user_name: Kunne ikke slå opp brukernavn
     units:
       hour:
         one: 1 hour

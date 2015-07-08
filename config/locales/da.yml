@@ -43,6 +43,7 @@ da:
     attributes:
       attachment:
         downloads: Hentninger
+        file: Fil
         filename: Fil
         filesize: Størrelse
       auth_source:
@@ -102,7 +103,6 @@ da:
       time_entry:
         activity: Aktivitet
         hours: Timer
-        work_package: Arbejdspakke
         spent_on: Dato
         type: Type
       type:
@@ -180,12 +180,13 @@ da:
         equal_to: skal være lig med %{count}
         even: skal være lige
         exclusion: er reserveret
+        file_too_large: is too large (maximum size is %{count} Bytes)
         greater_than: skal være større end %{count}
         greater_than_or_equal_to: skal være større end eller lig med %{count}
         smaller_than_or_equal_to_max_length: skal vær mindre end eller lig den maksimale
           længde
         greater_than_start_date: skal være senere end startdatoen
-        inclusion: er ikke medtaget på listen
+        inclusion: is not set to one of the allowed values
         invalid: er ugyldig
         less_than: skal være mindre end %{count}}
         less_than_or_equal_to: skal være mindre end eller lig med  %{count}
@@ -222,10 +223,17 @@ da:
               not_a_valid_parent: er ugyldig
               does_not_exist: findes ikke
             status_id:
-              status_transition_invalid: der findes ingen gyldig overgang fra gammel
-                til ny status for de aktuelle brugerroller
+              status_transition_invalid: er ugyldig fordi der mangler lovlig overførsel
+                fra gammel til ny status for den aktuelle brugers roller
             priority_id:
               only_active_priorities_allowed: skal være aktiv
+            category:
+              only_same_project_categories_allowed: The category of a work package
+                must be within the same project as the work package.
+              does_not_exist: The specified category does not exist.
+            estimated_hours:
+              only_values_greater_or_equal_zeroes_allowed: The estimated hours must
+                be >= 0.
         user:
           attributes:
             password:
@@ -281,11 +289,13 @@ da:
   attributes:
     active: Aktiv
     assigned_to: Tovholder
+    assignee: Tovholder
     attachments: Vedhæftninger
     author: Forfatter
     base: 'Generel fejl:'
     blocks_ids: Blokke
     category: Kategori
+    comment: Kommentar
     comments: Kommentar
     content: Indhold
     created_at: Oprettet den
@@ -296,18 +306,23 @@ da:
     display_sums: Vis totaler
     due_date: Forfaldsdato
     estimated_hours: Anslået tid
+    estimated_time: Anslået tid
     firstname: Fornavn
     group: Gruppe
     groupname: Gruppenavn
+    id: Id
     is_default: Forhåndsvalgt værdi
     is_for_all: For alle projekter
     is_public: Offentlig
+    issue: Arbejdspakke
     lastname: Efternavn
     login: Login
     mail: E-mail
     name: Navn
     password: Adgangskode
+    priority: Prioritet
     project: Projekt
+    responsible: Ansvarlig
     role: Role
     start_date: Start dato
     status: Status
@@ -580,7 +595,8 @@ da:
   error_scm_annotate: Indholdet findes ikke eller der kan ikke tilføjes nyt.
   error_scm_command_failed: 'Der optod en fejl da du forsøgte at tilgå arkivet: %{value}'
   error_scm_not_found: Indholdet eller ændring findes ikke i arkivet.
-  error_unable_delete_status: Det er ikke muligt at slette status for arbejdspakken
+  error_unable_delete_status: Unable to delete work package status because it contains
+    work packages.
   error_unable_delete_default_status: Det er ikke muligt at slette forhåndsværdien
     for arbejdspakkens status. Vælg venligst en anden status for arbejdspakken før
     den nuværende slettes.
@@ -726,6 +742,7 @@ da:
   label_downloads_abbr: D/L
   label_duplicated_by: duplikeret gennem
   label_duplicates: gentagelser
+  label_edit: Rediger
   label_enable_multi_select: Vælg multivalg
   label_end_to_end: fra slutning til slutning
   label_end_to_start: fra slutning til begyndelse
@@ -753,6 +770,7 @@ da:
   label_generate_key: Skab nøgle
   label_git_path: Sti til .git-mappe
   label_greater_or_equal: ">="
+  label_group_by: Grupper efter
   label_group_new: Ny gruppe
   label_group_plural: Grupper
   label_help: Hjælp
@@ -792,7 +810,6 @@ da:
     for
   label_work_package_view_all_watched: Vis alle arbejdspakker, jeg overvåger
   label_work_package_watchers: Overvågere
-  label_work_packages_by: Arbejdspakker efter %{value}
   label_journal_diff: Sammenligning af beskrivelser
   label_jump_to_a_project: Gå til et projekt...
   label_language_based: Baseret på brugerens sprog
@@ -970,6 +987,7 @@ da:
   label_this_week: denne uge
   label_this_year: dette år
   label_time_entry_plural: Brugt tid
+  label_time_sheet_menu: Time sheet
   label_time_tracking: Tidsregistrering
   label_today: i dag
   label_top_menu: Topmenu
@@ -1067,6 +1085,7 @@ da:
   label_keyboard_shortcut_go_news: Go to project news
   label_keyboard_shortcut_go_timelines: Go to timelines
   label_keyboard_shortcut_new_work_package: Create new work package
+  label_keyboard_shortcut_details_package: Show work packages details pane
   label_keyboard_shortcut_go_edit: Go to edit the current item (on detail pages only)
   label_keyboard_shortcut_open_more_menu: Open more-menu (on detail pages only)
   label_keyboard_shortcut_go_preview: Go to preview the current edit (on edit pages
@@ -1075,6 +1094,7 @@ da:
     lists only)
   label_keyboard_shortcut_focus_next_item: Focus next list element (on some lists
     only)
+  label_visible_elements: Visible elements
   macro_execution_error: Error executing the macro %{macro_name}
   macro_unavailable: Macro %{macro_name} cannot be displayed.
   mail_body_account_activation_request: 'A new user (%{value}) has registered. The
@@ -1461,6 +1481,10 @@ da:
       short: "%d %b %H:%M"
       time: "%I:%M %p"
     pm: pm
+  timeframe:
+    show: Show timeframe
+    end: to
+    start: from
   timelines:
     admin_menu:
       color: Farve
@@ -1541,7 +1565,8 @@ da:
         absolute: Absolute
         none: None
         relative: Relative
-        compare_relative: Compare current planning to %{timespan} ago
+        compare_relative_prefix: Compare current planning to
+        compare_relative_suffix: ago
         compare_absolute: Compare current planning to %{date}
       time_relative:
         days: dage
@@ -1569,8 +1594,7 @@ da:
       status: Show status
       project_time_filter: Projects with a work package of a certain type in a certain
         timeframe
-      project_time_filter_absolute_timeframe: Absolute timeframe
-      project_time_filter_relative_timeframe: Relative timeframe
+      project_time_filter_timeframe: Timeframe
       project_time_filter_historical_from: from
       project_time_filter_historical_to: to
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1706,3 +1730,42 @@ da:
     updated_automatically_by_child_changes: _Updateret automatisk ved at ændre værdier
       i underordnet arbejdspakke %{child} _
   nothing_to_preview: Intet at forhåndsvise
+  api_v3:
+    attributes:
+      lock_version: Lock Version
+    errors:
+      code_401: Du skal være logget ind for at få adgang til denne ressource.
+      code_401_wrong_credentials: You did not provide the correct credentials.
+      code_403: Du har ikke tilladelse til at få adgang til denne ressource.
+      code_404: The requested resource could not be found.
+      code_409: Kunne ikke opdatere ressourcen på grund af modstridende ændringer.
+      invalid_content_type: Forventet CONTENT-TYPE skal være '%{content_type}' men
+        fik '%{actual}'.
+      invalid_format: 'Invalid format for property ''%{property}'': Expected format
+        like ''%{expected_format}'', but got ''%{actual}''.'
+      invalid_json: The request could not be parsed as JSON.
+      invalid_relation: The relation is invalid.
+      invalid_resource: For property '%{property}' a link like '%{expected}' is expected,
+        but got '%{actual}'.
+      invalid_user_status_transition: Den aktuelle bruger konto status tillader ikke
+        denne handling.
+      missing_content_type: not specified
+      missing_request_body: There was no request body.
+      multipart_body_error: The request body did not contain the expected multipart
+        parts.
+      multiple_errors: Multiple field constraints have been violated.
+      writing_read_only_attributes: Du må ikke skrive til en skrivebeskyttet attribut.
+      render:
+        context_not_parsable: The context provided is not a link to a resource.
+        unsupported_context: The resource given is not supported as context.
+        context_object_not_found: Cannot find the resource given as the context.
+      validation:
+        done_ratio: Done ratio cannot be set on parent work packages, when it is inferred
+          by status or when it is disabled.
+        due_date: Due date cannot be set on parent work packages.
+        estimated_hours: Estimated hours cannot be set on parent work packages.
+        invalid_user_assigned_to_work_package: Den valgte bruger er ikke tilladt at
+          være '%{property}' for denne arbejdspakke.
+        start_date: Start date cannot be set on parent work packages.
+    resources:
+      schema: Schema

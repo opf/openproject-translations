@@ -43,6 +43,7 @@ ru:
     attributes:
       attachment:
         downloads: "Загрузки"
+        file: "Файл"
         filename: "Файл"
         filesize: "Размер"
       auth_source:
@@ -102,7 +103,6 @@ ru:
       time_entry:
         activity: "Деятельность"
         hours: "Часы"
-        work_package: "Пакет работ"
         spent_on: "Дата"
         type: "Тип"
       type:
@@ -180,12 +180,13 @@ ru:
         equal_to: "должно быть равно %{count}"
         even: "должно быть четным"
         exclusion: "зарезервировано"
+        file_too_large: is too large (maximum size is %{count} Bytes)
         greater_than: "должно превышать %{count}"
         greater_than_or_equal_to: "должно быть больше или равно %{count}"
         smaller_than_or_equal_to_max_length: "должно быть меньше или равно максимуму
           длины"
         greater_than_start_date: "должно быть позднее, чем дата начала"
-        inclusion: "не входит в список"
+        inclusion: "не задано ни одно из допустимых значений"
         invalid: "неверный"
         less_than: "должно быть меньше, чем %{count}"
         less_than_or_equal_to: "должно быть меньше или равно %{count}"
@@ -222,10 +223,17 @@ ru:
               not_a_valid_parent: "неверный"
               does_not_exist: "не существует"
             status_id:
-              status_transition_invalid: "неверная смена статуса роли пользователя
-                на новый"
+              status_transition_invalid: "является недопустимым, потому что нет правильного
+                перехода от старого этапа к новому для текущих ролей пользователя"
             priority_id:
               only_active_priorities_allowed: "требуется быть активным"
+            category:
+              only_same_project_categories_allowed: "Категория пакета работ должна
+                быть в рамках того же проекта  как и пакет работ."
+              does_not_exist: "Указанная категория не существует."
+            estimated_hours:
+              only_values_greater_or_equal_zeroes_allowed: "Предполагаемое количество
+                часов должен быть >= 0."
         user:
           attributes:
             password:
@@ -236,10 +244,10 @@ ru:
               numeric: цифры (например "1")
               special: спецсимволы (например, "%")
               reused:
-                one: has been used before. Please choose one that is different from
-                  your last one.
-                other: has been used before. Please choose one that is different from
-                  your last %{count}.
+                one: "использовался раньше. Пожалуйста, выберите  такой, который отличается
+                  от вашего последнего."
+                other: "использовался раньше. Пожалуйста, выберите такой, который
+                  отличается от ваших последних %{count}."
                 few: has been used before. Please choose one that is different from
                   your last %{count}.
         member:
@@ -249,8 +257,8 @@ ru:
       template:
         body: "Пожалуйста, проверьте следующие поля:"
         header:
-          one: 1 error prohibited this %{model} from being saved
-          other: "%{count} errors prohibited this %{model} from being saved"
+          one: 1 ошибка препятствует сохранить этоту %{model}
+          other: "%{count} ошибок препятствуют сохранить этоту %{model}"
           few: "%{count} errors prohibited this %{model} from being saved"
     models:
       attachment: "Файл"
@@ -266,8 +274,8 @@ ru:
       project: "Проект"
       query: "Запрос пользователя"
       role:
-        one: Role
-        other: Roles
+        one: "Роль"
+        other: "Роли"
         few: Roles
       type: "Тип"
       planning_element: "Элемент планирования"
@@ -286,11 +294,13 @@ ru:
   attributes:
     active: "Активно"
     assigned_to: "Назначенный"
+    assignee: "Назначенный"
     attachments: "Вложения"
     author: "Автор"
     base: "Общая ошибка:"
     blocks_ids: "Блоки"
     category: "Категория"
+    comment: "Комментарий"
     comments: "Комментарий"
     content: "Содержание"
     created_at: "Создано"
@@ -301,18 +311,23 @@ ru:
     display_sums: "Отображение суммы"
     due_date: "Дата выполнения"
     estimated_hours: "Предполагаемое время"
+    estimated_time: "Предполагаемое время"
     firstname: "Имя"
     group: "Группа"
     groupname: "Имя группы"
+    id: ID
     is_default: "Значение по умолчанию"
     is_for_all: "Для всех проектов"
     is_public: "Общий"
+    issue: "Пакет работ"
     lastname: "Фамилия"
     login: "Входное имя"
     mail: "Электронная почта"
     name: "Имя"
     password: "Пароль"
+    priority: "Приоритет"
     project: "Проект"
+    responsible: "Ответственный"
     role: Role
     start_date: "Дата начала"
     status: "Состояние"
@@ -447,54 +462,54 @@ ru:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: about 1 hour
-        other: about %{count} hours
+        one: "примерно 1 час"
+        other: "примерно %{count} часов"
         few: about %{count} hours
       about_x_months:
-        one: about 1 month
-        other: about %{count} months
+        one: "примерно 1 месяц"
+        other: "примерно %{count} месяцев"
         few: about %{count} months
       about_x_years:
-        one: about 1 year
-        other: about %{count} years
+        one: "примерно 1 год"
+        other: "примерно %{count} лет"
         few: about %{count} years
       almost_x_years:
-        one: almost 1 year
-        other: almost %{count} years
+        one: "почти 1 год"
+        other: "примерно %{count} лет"
         few: almost %{count} years
       half_a_minute: "полминуты"
       less_than_x_minutes:
-        one: less than a minute
-        other: less than %{count} minutes
+        one: "менее минуты"
+        other: "менее %{count} минут"
         few: less than %{count} minutes
       less_than_x_seconds:
-        one: less than 1 second
-        other: less than %{count} seconds
+        one: "меньше секунды"
+        other: "меньше %{count} секунд"
         few: less than %{count} seconds
       over_x_years:
-        one: over 1 year
-        other: over %{count} years
+        one: "более 1 года"
+        other: "более %{count} лет"
         few: over %{count} years
       x_days:
-        one: 1 day
-        other: "%{count} days"
+        one: 1 день
+        other: "%{count} дня"
         few: "%{count} days"
       x_minutes:
-        one: 1 minute
-        other: "%{count} minutes"
+        one: 1 минута
+        other: "%{count} минут"
         few: "%{count} minutes"
       x_months:
-        one: 1 month
-        other: "%{count} months"
+        one: 1 месяц
+        other: "%{count} месяцев"
         few: "%{count} months"
       x_seconds:
-        one: 1 second
-        other: "%{count} seconds"
+        one: 1 секунда
+        other: "%{count} секунд"
         few: "%{count} seconds"
     units:
       hour:
-        one: hour
-        other: hours
+        one: "час"
+        other: "часов"
         few: hours
   default_activity_management: "Управление"
   default_activity_design: "Дизайн"
@@ -598,7 +613,8 @@ ru:
   error_scm_annotate: "Статья не существует или не может быть описана."
   error_scm_command_failed: "Произошла ошибка при попытке доступа к хранилищу: %{value}"
   error_scm_not_found: "Ни статья, ни ее исправленная версия в репозитории не найдены."
-  error_unable_delete_status: "Не удается удалить статус пакета работ"
+  error_unable_delete_status: "Не удается удалить состояние пакета работ, потому что
+    есть пакеты работ с таким состоянием."
   error_unable_delete_default_status: "Не удается удалить статус работы пакета по
     умолчанию. Пожалуйста, выберите другой статус работы пакета по умолчанию перед
     удалением текущего."
@@ -744,6 +760,7 @@ ru:
   label_downloads_abbr: D/L
   label_duplicated_by: "дублируется"
   label_duplicates: "дубликаты"
+  label_edit: "Правка"
   label_enable_multi_select: "Разрешен множественный выбор"
   label_end_to_end: "конец в конец"
   label_end_to_start: "конец начала"
@@ -771,6 +788,7 @@ ru:
   label_generate_key: "Сгенерируйте ключ"
   label_git_path: "Путь к директории .git"
   label_greater_or_equal: ">="
+  label_group_by: "Группировать по"
   label_group_new: "Новая группа"
   label_group_plural: "Группы"
   label_help: "Справка"
@@ -810,7 +828,6 @@ ru:
     я отвечаю"
   label_work_package_view_all_watched: "Посмотреть все наблюдаемые пакеты работ"
   label_work_package_watchers: "Наблюдатель"
-  label_work_packages_by: "Пакетов работ %{value}"
   label_journal_diff: "Описание сравнения"
   label_jump_to_a_project: "Перейти к проекту..."
   label_language_based: "Основанный на языке пользователя"
@@ -990,6 +1007,7 @@ ru:
   label_this_week: "на этой неделе"
   label_this_year: "в этом году"
   label_time_entry_plural: "Затраченное время"
+  label_time_sheet_menu: Time sheet
   label_time_tracking: "Учет времени"
   label_today: "Сегодня"
   label_top_menu: "Верхнее меню"
@@ -1048,30 +1066,30 @@ ru:
   label_workflow_plural: "Рабочие потоки"
   label_workflow_summary: "Резюме"
   label_x_closed_work_packages_abbr:
-    one: 1 closed
-    other: "%{count} closed"
+    one: 1 закрыт
+    other: "%{count} закрыто"
     zero: 0 closed
     few: "%{count} closed"
   label_x_comments:
-    one: 1 comment
-    other: "%{count} comments"
+    one: 1 комментарий
+    other: "%{count} комментариев"
     zero: no comments
     few: "%{count} comments"
   label_x_open_work_packages_abbr:
-    one: 1 open
-    other: "%{count} open"
+    one: 1 открыт
+    other: "%{count} открыто"
     zero: 0 open
     few: "%{count} open"
   label_x_open_work_packages_abbr_on_total:
-    one: 1 open / %{total}
-    other: "%{count} open / %{total}"
+    one: 1 открыт / %{total}
+    other: "%{count} открыто / %{total}"
     zero: 0 open / %{total}
     few: "%{count} open / %{total}"
   label_x_projects:
-    one: 1 project
+    one: 1 проект
     other: "%{count} projects"
     zero: no projects
-    few: "%{count} projects"
+    few: "%{count} проектов"
   label_year: "Год"
   label_yesterday: "вчера"
   label_keyboard_function: "Функция"
@@ -1093,6 +1111,7 @@ ru:
   label_keyboard_shortcut_go_news: "Перейти к новостям проекта"
   label_keyboard_shortcut_go_timelines: "Перейти к срокам"
   label_keyboard_shortcut_new_work_package: "Создать новый пакет работ"
+  label_keyboard_shortcut_details_package: "Показать сведения о пакете работ"
   label_keyboard_shortcut_go_edit: "Перейти к редактированию текущего элемента (только
     на страницах с подробными настройками)"
   label_keyboard_shortcut_open_more_menu: "Открывать подробное меню (только на страницах
@@ -1103,6 +1122,7 @@ ru:
     списка (только на текущих списках)"
   label_keyboard_shortcut_focus_next_item: "Сфокусироваться на  следующем элементе
     списка (только на текущих списках)"
+  label_visible_elements: "Видимые элементы"
   macro_execution_error: "Ошибка при выполнении макроса %{macro_name}"
   macro_unavailable: "Макрос %{macro_name} не может быть отображен."
   mail_body_account_activation_request: "Новый пользователь (%{value}) зарегистрирован.
@@ -1204,7 +1224,7 @@ ru:
         units:
           byte:
             one: Byte
-            other: Bytes
+            other: "Байт"
             few: Bytes
           gb: "ГБ"
           kb: "кБ"
@@ -1502,6 +1522,10 @@ ru:
       short: "%d %b %H:%M"
       time: "%I:%M %p"
     pm: "вечера"
+  timeframe:
+    show: "Показать сроки"
+    end: "до"
+    start: "от"
   timelines:
     admin_menu:
       color: "Цвет"
@@ -1529,8 +1553,8 @@ ru:
     delete_thing: "Удалить"
     duration: "Продолжительность"
     duration_days:
-      one: 1 day
-      other: "%{count} days"
+      one: 1 день
+      other: "%{count} дней"
       few: "%{count} days"
     edit_color: "Изменить цвет"
     edit_project_type: "Редактировать тип проекта"
@@ -1582,8 +1606,8 @@ ru:
         absolute: "Абсолютно"
         none: "Ничего"
         relative: "Относительно"
-        compare_relative: "Сравнить текущее планирование с промежутком времени %{timespan}
-          в прошлом"
+        compare_relative_prefix: "Сравненит текущее планирование с"
+        compare_relative_suffix: "тому назад"
         compare_absolute: "Сравнить текущее планирование с %{date}"
       time_relative:
         days: "дней"
@@ -1611,8 +1635,7 @@ ru:
       status: "Показать состояние"
       project_time_filter: "Проекты пакета работ определенного типа в определенные
         сроки"
-      project_time_filter_absolute_timeframe: "Абсолютный срок"
-      project_time_filter_relative_timeframe: "Относительный срок"
+      project_time_filter_timeframe: "Срок"
       project_time_filter_historical_from: "от"
       project_time_filter_historical_to: "до"
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1710,8 +1733,8 @@ ru:
       электронной почте)"
     blocked: "Временно заблокирован"
     blocked_num_failed_logins:
-      one: locked temporarily (one failed login attempt)
-      other: locked temporarily (%{count} failed login attempts)
+      one: "временно заблокирован (одна неудачная попытка входа)"
+      other: "временно заблокирован (%{count} неудачных попыток входа)"
       few: locked temporarily (%{count} failed login attempts)
     deleted: "Удалённый пользователь"
     error_status_change_failed: "Изменение статуса пользователя не удалось из-за следующей
@@ -1749,3 +1772,45 @@ ru:
     updated_automatically_by_child_changes: _Обновлено автоматически в связи с изменением
       значения в пакете работ потомка %{child}_
   nothing_to_preview: "Нет ничего для предосмотра"
+  api_v3:
+    attributes:
+      lock_version: "Заблокировать версию"
+    errors:
+      code_401: "Вам нужно пройти проверку подлинности для доступа к этому ресурсу."
+      code_401_wrong_credentials: "Вы не ввели правильные учетные данные."
+      code_403: "Вы не авторизованы для доступа к этому ресурсу."
+      code_404: "Не удалось найти запрошенный ресурс."
+      code_409: "Не удалось обновить ресурс из-за конфликтующих изменений."
+      invalid_content_type: "Ожидаемый CONTENT-TYPE должен быть быть «%{content_type}»,
+        но получил «%{actual}»."
+      invalid_format: "Недопустимый формат свойства «%{property}»: ожидаемый формат
+        «%{expected_format}», но получил «%{actual}»."
+      invalid_json: The request could not be parsed as JSON.
+      invalid_relation: "Отношение является недопустимым."
+      invalid_resource: "Для свойства «%{property}» ожидается ссылка как «%{expected}»
+        , но получена «%{actual}»."
+      invalid_user_status_transition: "Состояние учетной записи текущего пользователя
+        не поддерживает эту операцию."
+      missing_content_type: "Не определено"
+      missing_request_body: There was no request body.
+      multipart_body_error: The request body did not contain the expected multipart
+        parts.
+      multiple_errors: "Для нескольких полей были нарушены ограничения."
+      writing_read_only_attributes: "Вы не должны перезаписывать атрибут являющийся
+        только для чтения."
+      render:
+        context_not_parsable: "Предоставленного контекста не является ссылка на ресурс."
+        unsupported_context: "Ресурс не поддерживается как контекст."
+        context_object_not_found: "Не удается найти ресурс заданный как контекст."
+      validation:
+        done_ratio: "Установленное соотношение нельзя задать для родительских пакетов
+          работ, когда оно задается статусом или  отключено."
+        due_date: "Ожидаемую дату окончания нельзя задать для родительских пакетов
+          работ."
+        estimated_hours: "Предполагаемое количество часов не может быть задано для
+          родительских пакетов."
+        invalid_user_assigned_to_work_package: "Выбранный пользователь не может быть
+          «%{property}» для этого пакета работ."
+        start_date: "Дата начала не может быть задана на родительских  пакетах работ."
+    resources:
+      schema: "Схема"

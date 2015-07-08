@@ -24,6 +24,7 @@ zh:
     attributes:
       attachment:
         downloads: "下载"
+        file: "文件"
         filename: "文件"
         filesize: "大小"
       auth_source:
@@ -83,7 +84,6 @@ zh:
       time_entry:
         activity: "活动"
         hours: "小时"
-        work_package: "工作包"
         spent_on: "日期"
         type: "类型"
       type:
@@ -159,11 +159,12 @@ zh:
         equal_to: "必须等于 %{count}"
         even: "必须是偶数"
         exclusion: "是保留"
+        file_too_large: is too large (maximum size is %{count} Bytes)
         greater_than: "必须大于 %{count}"
         greater_than_or_equal_to: "必须大于或等于 %{count}"
         smaller_than_or_equal_to_max_length: "必须小于或等于最大长度"
         greater_than_start_date: "必须大于开始日期"
-        inclusion: "不包括在列表中"
+        inclusion: is not set to one of the allowed values
         invalid: "是无效的"
         less_than: "必须小于 %{count}"
         less_than_or_equal_to: "必须小于或等于 %{count}"
@@ -199,9 +200,16 @@ zh:
               not_a_valid_parent: "是无效的"
               does_not_exist: "不存在"
             status_id:
-              status_transition_invalid: "当前用户角色没有从旧到新状态的有效过度"
+              status_transition_invalid: "是无效的因为当前用户的角色没有有效的从旧到新的状态的过渡"
             priority_id:
               only_active_priorities_allowed: "需要被激活"
+            category:
+              only_same_project_categories_allowed: The category of a work package
+                must be within the same project as the work package.
+              does_not_exist: The specified category does not exist.
+            estimated_hours:
+              only_values_greater_or_equal_zeroes_allowed: The estimated hours must
+                be >= 0.
         user:
           attributes:
             password:
@@ -256,11 +264,13 @@ zh:
   attributes:
     active: "激活"
     assigned_to: "指定人"
+    assignee: "指定人"
     attachments: "附件"
     author: "作者"
     base: "一般错误："
     blocks_ids: "块"
     category: "类别"
+    comment: "评论"
     comments: "评论"
     content: "内容"
     created_at: "创建"
@@ -271,18 +281,23 @@ zh:
     display_sums: "显示汇总"
     due_date: "截止日期"
     estimated_hours: "估计的时间"
+    estimated_time: "估计的时间"
     firstname: "名字"
     group: "组"
     groupname: "组名称"
+    id: ID
     is_default: "默认值"
     is_for_all: "为所有项目"
     is_public: "公开"
+    issue: "工作包"
     lastname: "姓氏"
     login: "登录"
     mail: "电子邮件"
     name: "名称"
     password: "密码"
+    priority: "优先级"
     project: "项目"
+    responsible: "责任人"
     role: Role
     start_date: "开始日期"
     status: "状态"
@@ -543,7 +558,8 @@ zh:
   error_scm_annotate: "该条目不存在，或不能进行批注。"
   error_scm_command_failed: "当试图访问该代码库时出现错误: %{value}"
   error_scm_not_found: "在代码库中未找到的条目或修正版本。"
-  error_unable_delete_status: "无法删除工作包状态"
+  error_unable_delete_status: Unable to delete work package status because it contains
+    work packages.
   error_unable_delete_default_status: "不能删除默认的工作包状态。请在删除当前之前选择另一种默认的工作包状态。"
   error_unable_to_connect: "无法连接 (%{value})"
   error_workflow_copy_source: "请选择源类型或角色"
@@ -682,6 +698,7 @@ zh:
   label_downloads_abbr: D/L
   label_duplicated_by: "复制于"
   label_duplicates: "复制"
+  label_edit: "编辑"
   label_enable_multi_select: "切换多选"
   label_end_to_end: "结束结束"
   label_end_to_start: "结束开始"
@@ -708,6 +725,7 @@ zh:
   label_generate_key: "生成密钥"
   label_git_path: ".git 目录的路径"
   label_greater_or_equal: ">="
+  label_group_by: "分组按照"
   label_group_new: "新的组"
   label_group_plural: "组"
   label_help: "帮助"
@@ -744,7 +762,6 @@ zh:
   label_work_package_view_all_responsible_for: "查看所有我要负责的工作包"
   label_work_package_view_all_watched: "查看所有被关注的工作包"
   label_work_package_watchers: "关注人"
-  label_work_packages_by: "工作包由 %{value}"
   label_journal_diff: "描述的对比"
   label_jump_to_a_project: "跳转到一个项目..."
   label_language_based: "基于用户的语言"
@@ -922,6 +939,7 @@ zh:
   label_this_week: "这一周"
   label_this_year: "这一年"
   label_time_entry_plural: "已耗时间"
+  label_time_sheet_menu: Time sheet
   label_time_tracking: "时间跟踪"
   label_today: "今天"
   label_top_menu: "顶部的菜单"
@@ -1017,11 +1035,13 @@ zh:
   label_keyboard_shortcut_go_news: "转到项目新闻"
   label_keyboard_shortcut_go_timelines: "转到时间线"
   label_keyboard_shortcut_new_work_package: "创建新的工作包"
+  label_keyboard_shortcut_details_package: Show work packages details pane
   label_keyboard_shortcut_go_edit: "转到要编辑当前项 （仅在详细信息页)"
   label_keyboard_shortcut_open_more_menu: "打开更多菜单 （在详细信息页)"
   label_keyboard_shortcut_go_preview: "转到预览当前编辑 （仅在编辑页)"
   label_keyboard_shortcut_focus_previous_item: "聚焦前面的列表元素 （只有某些列表)"
   label_keyboard_shortcut_focus_next_item: "聚焦下一个的列表元素 （只有某些列表)"
+  label_visible_elements: Visible elements
   macro_execution_error: "执行宏 %{macro_name} 出错"
   macro_unavailable: "无法显示宏 %{macro_name} 。"
   mail_body_account_activation_request: "一个新的用户 (%{value}) 注册。该帐户正在等待您的批准："
@@ -1359,6 +1379,10 @@ zh:
       short: "%d %b %H:%M"
       time: "%I:%M %p"
     pm: "下午"
+  timeframe:
+    show: "显示时间段"
+    end: "到"
+    start: "从"
   timelines:
     admin_menu:
       color: "颜色"
@@ -1431,7 +1455,8 @@ zh:
         absolute: "绝对"
         none: "无"
         relative: "相对"
-        compare_relative: "对比当前计划与 %{timespan} 前"
+        compare_relative_prefix: Compare current planning to
+        compare_relative_suffix: ago
         compare_absolute: "对比当前计划和 %{date}"
       time_relative:
         days: "天"
@@ -1458,8 +1483,7 @@ zh:
       types: "显示类型"
       status: "显示状态"
       project_time_filter: "项目具有在一定时间段中的某类型工作包"
-      project_time_filter_absolute_timeframe: "绝对时间段"
-      project_time_filter_relative_timeframe: "相对时间段"
+      project_time_filter_timeframe: Timeframe
       project_time_filter_historical_from: "从"
       project_time_filter_historical_to: "到"
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1577,3 +1601,40 @@ zh:
   work_package:
     updated_automatically_by_child_changes: _自动更新由于改变子工作包 %{child} 内的值_
   nothing_to_preview: "没有什么要预览"
+  api_v3:
+    attributes:
+      lock_version: Lock Version
+    errors:
+      code_401: "你需要被授权访问该资源。"
+      code_401_wrong_credentials: You did not provide the correct credentials.
+      code_403: "您无权访问此资源。"
+      code_404: The requested resource could not be found.
+      code_409: "无法更新资源，因为发生冲突的修改。"
+      invalid_content_type: "预期CONTENT-TYPE为%{content_type}，但是获得了'%{actual}'。"
+      invalid_format: 'Invalid format for property ''%{property}'': Expected format
+        like ''%{expected_format}'', but got ''%{actual}''.'
+      invalid_json: The request could not be parsed as JSON.
+      invalid_relation: The relation is invalid.
+      invalid_resource: For property '%{property}' a link like '%{expected}' is expected,
+        but got '%{actual}'.
+      invalid_user_status_transition: The current user account status does not allow
+        this operation.
+      missing_content_type: not specified
+      missing_request_body: There was no request body.
+      multipart_body_error: The request body did not contain the expected multipart
+        parts.
+      multiple_errors: Multiple field constraints have been violated.
+      writing_read_only_attributes: "你不能写入只读属性。"
+      render:
+        context_not_parsable: The context provided is not a link to a resource.
+        unsupported_context: The resource given is not supported as context.
+        context_object_not_found: Cannot find the resource given as the context.
+      validation:
+        done_ratio: Done ratio cannot be set on parent work packages, when it is inferred
+          by status or when it is disabled.
+        due_date: Due date cannot be set on parent work packages.
+        estimated_hours: Estimated hours cannot be set on parent work packages.
+        invalid_user_assigned_to_work_package: "所选的用户不允许为此工作包的 '%{property}'。"
+        start_date: Start date cannot be set on parent work packages.
+    resources:
+      schema: Schema
