@@ -35,7 +35,7 @@ each plugin individually.
 
 ### Updating Locales
 
-* This plugin provides several rake tasks to update locales. These tasks keep the following up to date: the source files in Crowdin and the translated in the GitHub repos. We execute these tasks once a day.
+* This plugin provides several rake tasks to update locales. These tasks keep the following up to date: the source files in Crowdin and the translated files in the GitHub repos. We execute these tasks once a day.
 
 ## Requirements
 
