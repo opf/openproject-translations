@@ -181,13 +181,13 @@ fa:
         equal_to: must be equal to %{count}
         even: must be even
         exclusion: is reserved
-        file_too_large: is too large (maximum size is %{count} Bytes)
+        file_too_large: "بیش از حد بزرگ است ( حداکثر اندازه %{count} بایت است )"
         greater_than: must be greater than %{count}
         greater_than_or_equal_to: must be greater than or equal to %{count}
         smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
           length
         greater_than_start_date: must be greater than start date
-        inclusion: is not set to one of the allowed values
+        inclusion: is not included in the list
         invalid: is invalid
         less_than: must be less than %{count}
         less_than_or_equal_to: must be less than or equal to %{count}
@@ -225,17 +225,17 @@ fa:
               not_a_valid_parent: is invalid
               does_not_exist: "وجود ندارد"
             status_id:
-              status_transition_invalid: is invalid because no valid transition exists
-                from old to new status for the current user's roles
+              status_transition_invalid: no valid transition exists from old to new
+                status for the current user roles
             priority_id:
               only_active_priorities_allowed: "باید فعال باشد"
             category:
-              only_same_project_categories_allowed: The category of a work package
-                must be within the same project as the work package.
-              does_not_exist: The specified category does not exist.
+              only_same_project_categories_allowed: "دسته یک بسته کاری باید در همان
+                پروژه به عنوان یک بسته کاری وجود داشته باشد."
+              does_not_exist: "دسته انتخاب شده وجود ندارد."
             estimated_hours:
-              only_values_greater_or_equal_zeroes_allowed: The estimated hours must
-                be >= 0.
+              only_values_greater_or_equal_zeroes_allowed: "زمان برآورد شده باید بیشتر
+                یا مساوی 0 باشد."
         user:
           attributes:
             password:
@@ -248,8 +248,8 @@ fa:
               reused:
                 one: has been used before. Please choose one that is different from
                   your last one.
-                other: has been used before. Please choose one that is different from
-                  your last %{count}.
+                other: "قبلا استفاده شده است. لطفا انتخابی متفاوت از %{count} گذشته
+                  انجام دهید."
         member:
           principal_blank: "لطفا حداقل یک کاربر یا گروه را انتخاب کنید."
           role_blank: Please choose at least one role.
@@ -257,7 +257,7 @@ fa:
         body: 'Please check the following fields:'
         header:
           one: 1 error prohibited this %{model} from being saved
-          other: "%{count} errors prohibited this %{model} from being saved"
+          other: "%{count} خطا باعث می شود این %{model} ذخیره نشود."
     models:
       attachment: "فایل"
       board: "تالار گفتگو"
@@ -273,7 +273,7 @@ fa:
       query: Custom query
       role:
         one: Role
-        other: Roles
+        other: "نقش"
       type: "نوع"
       planning_element: Planning element
       project_type: "نوع پروژه"
@@ -312,7 +312,7 @@ fa:
     firstname: First name
     group: Group
     groupname: Group name
-    id: ID
+    id: "شناسه"
     is_default: "مقدار پیش فرض"
     is_for_all: For all projects
     is_public: Public
@@ -459,42 +459,42 @@ fa:
     distance_in_words:
       about_x_hours:
         one: about 1 hour
-        other: about %{count} hours
+        other: "حدود %{count} ساعت "
       about_x_months:
         one: about 1 month
-        other: about %{count} months
+        other: "حدود %{count} ماه"
       about_x_years:
         one: about 1 year
-        other: about %{count} years
+        other: "حدود %{count} سال"
       almost_x_years:
         one: almost 1 year
-        other: almost %{count} years
+        other: "تقریبا %{count} سال"
       half_a_minute: half a minute
       less_than_x_minutes:
         one: less than a minute
-        other: less than %{count} minutes
+        other: "کمتر از %{count} دقیقه"
       less_than_x_seconds:
         one: less than 1 second
-        other: less than %{count} seconds
+        other: "کمتر از %{count} ثانیه"
       over_x_years:
         one: over 1 year
-        other: over %{count} years
+        other: "بیش از %{count} سال"
       x_days:
         one: 1 day
-        other: "%{count} days"
+        other: "%{count} روز"
       x_minutes:
         one: 1 minute
-        other: "%{count} minutes"
+        other: "%{count} دقیقه"
       x_months:
         one: 1 month
-        other: "%{count} months"
+        other: "%{count} ماه"
       x_seconds:
         one: 1 second
-        other: "%{count} seconds"
+        other: "%{count} ثانیه"
     units:
       hour:
         one: hour
-        other: hours
+        other: "ساعت"
   default_activity_management: "مدیریت"
   default_activity_design: Design
   default_activity_development: Development
@@ -595,8 +595,7 @@ fa:
   error_scm_command_failed: 'An error occurred when trying to access the repository:
     %{value}'
   error_scm_not_found: The entry or revision was not found in the repository.
-  error_unable_delete_status: Unable to delete work package status because it contains
-    work packages.
+  error_unable_delete_status: Unable to delete work package status
   error_unable_delete_default_status: Unable to delete default work package status.
     Please select another default work package status before deleting the current
     one.
@@ -985,7 +984,7 @@ fa:
   label_this_week: this week
   label_this_year: this year
   label_time_entry_plural: Spent time
-  label_time_sheet_menu: Time sheet
+  label_time_sheet_menu: "گزارش کارکرد"
   label_time_tracking: Time tracking
   label_today: today
   label_top_menu: Top Menu
@@ -1043,23 +1042,23 @@ fa:
   label_workflow_summary: Summary
   label_x_closed_work_packages_abbr:
     one: 1 closed
-    other: "%{count} closed"
+    other: "%{count} بسته شده"
     zero: 0 closed
   label_x_comments:
     one: 1 comment
-    other: "%{count} comments"
+    other: "نظر %{count}"
     zero: no comments
   label_x_open_work_packages_abbr:
     one: 1 open
-    other: "%{count} open"
+    other: "%{count} باز"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
     one: 1 open / %{total}
-    other: "%{count} open / %{total}"
+    other: "%{count} باز / %{total}"
     zero: 0 open / %{total}
   label_x_projects:
     one: 1 project
-    other: "%{count} projects"
+    other: "%{count} پروژه"
     zero: no projects
   label_year: Year
   label_yesterday: yesterday
@@ -1082,7 +1081,7 @@ fa:
   label_keyboard_shortcut_go_news: Go to project news
   label_keyboard_shortcut_go_timelines: Go to timelines
   label_keyboard_shortcut_new_work_package: Create new work package
-  label_keyboard_shortcut_details_package: Show work packages details pane
+  label_keyboard_shortcut_details_package: "نمایش جزئیات بسته های کاری"
   label_keyboard_shortcut_go_edit: Go to edit the current item (on detail pages only)
   label_keyboard_shortcut_open_more_menu: Open more-menu (on detail pages only)
   label_keyboard_shortcut_go_preview: Go to preview the current edit (on edit pages
@@ -1509,7 +1508,7 @@ fa:
     duration: Duration
     duration_days:
       one: 1 day
-      other: "%{count} days"
+      other: "%{count} روز"
     edit_color: Edit color
     edit_project_type: Edit project type
     edit_thing: Edit
@@ -1561,8 +1560,8 @@ fa:
         absolute: Absolute
         none: None
         relative: Relative
-        compare_relative_prefix: Compare current planning to
-        compare_relative_suffix: ago
+        compare_relative_prefix: "مقایسه برنامه ریزی فعلی با "
+        compare_relative_suffix: "پیش"
         compare_absolute: Compare current planning to %{date}
       time_relative:
         days: days
@@ -1590,7 +1589,7 @@ fa:
       status: Show status
       project_time_filter: Projects with a work package of a certain type in a certain
         timeframe
-      project_time_filter_timeframe: Timeframe
+      project_time_filter_timeframe: "بازه زمانی"
       project_time_filter_historical_from: from
       project_time_filter_historical_to: to
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1687,7 +1686,7 @@ fa:
     blocked: locked temporarily
     blocked_num_failed_logins:
       one: locked temporarily (one failed login attempt)
-      other: locked temporarily (%{count} failed login attempts)
+      other: "موقتا قفل شده  (%{count}تلاش ناموفق برای ورود)"
     deleted: Deleted user
     error_status_change_failed: 'Changing the user status failed due to the following
       errors: %{errors}'
@@ -1725,10 +1724,10 @@ fa:
   nothing_to_preview: Nothing to preview
   api_v3:
     attributes:
-      lock_version: Lock Version
+      lock_version: "قفل نگارش"
     errors:
       code_401: You need to be authenticated to access this resource.
-      code_401_wrong_credentials: You did not provide the correct credentials.
+      code_401_wrong_credentials: "اطلاعات اعتبارسنجی درستی ارایه نکرده اید."
       code_403: You are not authorized to access this resource.
       code_404: The requested resource could not be found.
       code_409: Couldn't update the resource because of conflicting modifications.
@@ -1736,16 +1735,15 @@ fa:
         '%{actual}'.
       invalid_format: 'Invalid format for property ''%{property}'': Expected format
         like ''%{expected_format}'', but got ''%{actual}''.'
-      invalid_json: The request could not be parsed as JSON.
+      invalid_json: "این درخواست را نمی توان به عنوان JSON تجزیه کرد."
       invalid_relation: The relation is invalid.
       invalid_resource: For property '%{property}' a link like '%{expected}' is expected,
         but got '%{actual}'.
       invalid_user_status_transition: The current user account status does not allow
         this operation.
       missing_content_type: not specified
-      missing_request_body: There was no request body.
-      multipart_body_error: The request body did not contain the expected multipart
-        parts.
+      missing_request_body: "متن درخواست وجود ندارد."
+      multipart_body_error: "متن درخواست شامل بخشهای مورد انتظار نمی باشد."
       multiple_errors: Multiple field constraints have been violated.
       writing_read_only_attributes: You must not write a read-only attribute.
       render:
