@@ -248,8 +248,8 @@ fa:
               reused:
                 one: has been used before. Please choose one that is different from
                   your last one.
-                other: "قبلا استفاده شده است. لطفا انتخابی متفاوت از %{count} گذشته
-                  انجام دهید."
+                other: has been used before. Please choose one that is different from
+                  your last %{count}.
         member:
           principal_blank: "لطفا حداقل یک کاربر یا گروه را انتخاب کنید."
           role_blank: Please choose at least one role.
@@ -257,7 +257,7 @@ fa:
         body: 'Please check the following fields:'
         header:
           one: 1 error prohibited this %{model} from being saved
-          other: "%{count} خطا باعث می شود این %{model} ذخیره نشود."
+          other: "%{count} errors prohibited this %{model} from being saved"
     models:
       attachment: "فایل"
       board: "تالار گفتگو"
@@ -273,7 +273,7 @@ fa:
       query: Custom query
       role:
         one: Role
-        other: "نقش"
+        other: Roles
       type: "نوع"
       planning_element: Planning element
       project_type: "نوع پروژه"
@@ -459,42 +459,42 @@ fa:
     distance_in_words:
       about_x_hours:
         one: about 1 hour
-        other: "حدود %{count} ساعت "
+        other: about %{count} hours
       about_x_months:
         one: about 1 month
-        other: "حدود %{count} ماه"
+        other: about %{count} months
       about_x_years:
         one: about 1 year
-        other: "حدود %{count} سال"
+        other: about %{count} years
       almost_x_years:
         one: almost 1 year
-        other: "تقریبا %{count} سال"
+        other: almost %{count} years
       half_a_minute: half a minute
       less_than_x_minutes:
         one: less than a minute
-        other: "کمتر از %{count} دقیقه"
+        other: less than %{count} minutes
       less_than_x_seconds:
         one: less than 1 second
-        other: "کمتر از %{count} ثانیه"
+        other: less than %{count} seconds
       over_x_years:
         one: over 1 year
-        other: "بیش از %{count} سال"
+        other: over %{count} years
       x_days:
         one: 1 day
-        other: "%{count} روز"
+        other: "%{count} days"
       x_minutes:
         one: 1 minute
-        other: "%{count} دقیقه"
+        other: "%{count} minutes"
       x_months:
         one: 1 month
-        other: "%{count} ماه"
+        other: "%{count} months"
       x_seconds:
         one: 1 second
-        other: "%{count} ثانیه"
+        other: "%{count} seconds"
     units:
       hour:
         one: hour
-        other: "ساعت"
+        other: hours
   default_activity_management: "مدیریت"
   default_activity_design: Design
   default_activity_development: Development
@@ -1042,23 +1042,23 @@ fa:
   label_workflow_summary: Summary
   label_x_closed_work_packages_abbr:
     one: 1 closed
-    other: "%{count} بسته شده"
+    other: "%{count} closed"
     zero: 0 closed
   label_x_comments:
     one: 1 comment
-    other: "نظر %{count}"
+    other: "%{count} comments"
     zero: no comments
   label_x_open_work_packages_abbr:
     one: 1 open
-    other: "%{count} باز"
+    other: "%{count} open"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
     one: 1 open / %{total}
-    other: "%{count} باز / %{total}"
+    other: "%{count} open / %{total}"
     zero: 0 open / %{total}
   label_x_projects:
     one: 1 project
-    other: "%{count} پروژه"
+    other: "%{count} projects"
     zero: no projects
   label_year: Year
   label_yesterday: yesterday
@@ -1270,6 +1270,7 @@ fa:
   project_module_news: News
   project_module_repository: Repository
   project_module_time_tracking: Time tracking
+  project_module_timelines: Timelines
   project_module_wiki: Wiki
   query_fields:
     assigned_to_role: Assignee's role
@@ -1508,7 +1509,7 @@ fa:
     duration: Duration
     duration_days:
       one: 1 day
-      other: "%{count} روز"
+      other: "%{count} days"
     edit_color: Edit color
     edit_project_type: Edit project type
     edit_thing: Edit
@@ -1686,7 +1687,7 @@ fa:
     blocked: locked temporarily
     blocked_num_failed_logins:
       one: locked temporarily (one failed login attempt)
-      other: "موقتا قفل شده  (%{count}تلاش ناموفق برای ورود)"
+      other: locked temporarily (%{count} failed login attempts)
     deleted: Deleted user
     error_status_change_failed: 'Changing the user status failed due to the following
       errors: %{errors}'
@@ -1726,7 +1727,7 @@ fa:
     attributes:
       lock_version: "قفل نگارش"
     errors:
-      code_401: You need to be authenticated to access this resource.
+      code_401: "لازم است برای دسترسی به این منبع تأیید اعتبار شوید."
       code_401_wrong_credentials: "اطلاعات اعتبارسنجی درستی ارایه نکرده اید."
       code_403: You are not authorized to access this resource.
       code_404: The requested resource could not be found.
