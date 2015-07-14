@@ -170,7 +170,7 @@ de:
         responsible: Verantwortlicher
         spent_time: Aufgewendete Zeit
         subproject: Unterprojekt von
-        time_entries: Logzeit
+        time_entries: Zeit buchen
         type: Typ
         watcher: Beobachter
     errors:
@@ -370,7 +370,7 @@ de:
   button_expand_all: Alle aufklappen
   button_list: Liste
   button_lock: Sperren
-  button_log_time: Logzeit
+  button_log_time: Zeit buchen
   button_login: Anmelden
   button_move: Verschieben
   button_move_and_follow: Verschieben und Arbeitspaket anzeigen
@@ -854,6 +854,7 @@ de:
   label_message_plural: Forenbeiträge
   label_message_posted: Forenbeitrag hinzugefügt
   label_min_max_length: Länge (Min. - Max.)
+  label_minute_plural: minutes
   label_missing_api_access_key: Der API-Zugriffsschlüssel fehlt.
   label_missing_feeds_access_key: Der RSS-Zugriffsschlüssel fehlt.
   label_modification: "%{count} Änderung"
@@ -1062,24 +1063,24 @@ de:
   label_workflow_plural: Workflows
   label_workflow_summary: Zusammenfassung
   label_x_closed_work_packages_abbr:
-    one: 1 closed
-    other: "%{count} closed"
+    one: 1 geschlossen
+    other: "%{count} geschlossen"
     zero: 0 closed
   label_x_comments:
-    one: 1 comment
-    other: "%{count} comments"
+    one: 1 Kommentar
+    other: "%{count} Kommentare"
     zero: no comments
   label_x_open_work_packages_abbr:
-    one: 1 open
-    other: "%{count} open"
+    one: 1 offen
+    other: "%{count} offen"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
-    one: 1 open / %{total}
-    other: "%{count} open / %{total}"
+    one: 1 offen / %{total}
+    other: "%{count} offen / %{total}"
     zero: 0 open / %{total}
   label_x_projects:
-    one: 1 project
-    other: "%{count} projects"
+    one: 1 Projekt
+    other: "%{count} Projekte"
     zero: no projects
   label_year: Jahr
   label_yesterday: gestern
@@ -1309,9 +1310,9 @@ de:
   setting_autologin: Automatische Anmeldung
   setting_available_languages: Verfügbare Sprachen
   setting_bcc_recipients: E-Mails als Blindkopie (BCC) senden
-  setting_brute_force_block_after_failed_logins: Sperre Benutzer nach dieser Anzahl
-    fehlgeschlagener Loginversuche (deaktivieren mit 0)
-  setting_brute_force_block_minutes: Sperre Benutzer für Dauer (Minuten)
+  setting_brute_force_block_after_failed_logins: Block user after this number of failed
+    login attempts
+  setting_brute_force_block_minutes: Time the user is blocked for
   setting_cache_formatted_text: Formatierten Text im Cache speichern
   setting_column_options: Anpassen der Darstellung der Arbeitspaketlisten
   setting_commit_fix_keywords: Schlüsselwörter (Status)
@@ -1348,6 +1349,7 @@ de:
   setting_work_package_startdate_is_adddate: Neue Arbeitspakete haben "Heute" als
     Anfangsdatum
   setting_work_packages_export_limit: Max. Anzahl Arbeitspakete bei CSV/PDF-Export
+  setting_journal_aggregation_time_minutes: Display journals as aggregated within
   setting_log_requesting_user: Logge Benutzer Login, Name und Mailadresse für alle
     Anfragen
   setting_login_required: Authentifizierung erforderlich
@@ -1361,8 +1363,7 @@ de:
   setting_password_active_rules: Aktive Zeichenklassen
   setting_password_count_former_banned: Anzahl zuletzt benutzter Passwörter, die nicht
     wiederverwendet werden dürfen
-  setting_password_days_valid: Anzahl von Tagen, nach denen ein Passwortwechsel erwzwungen
-    wird (deaktivieren mit 0)
+  setting_password_days_valid: Number of days, after which to enforce a password change
   setting_password_min_length: Minimale Länge
   setting_password_min_adhered_rules: Mindestanzahl zu verwendender Zeichenklassen
   setting_per_page_options: Objekte pro Seite
@@ -1429,6 +1430,7 @@ de:
   text_enumeration_destroy_question: "%{count} Objekt(e) sind diesem Wert zugeordnet."
   text_file_repository_writable: Verzeichnis für Dateien beschreibbar
   text_git_repo_example: ein freigegebenes,lokales Repository (z.B. /gitrepo, c:\gitrepo)
+  text_hint_disable_with_0: 'Note: Disable with 0'
   text_work_package_added: Arbeitspaket %{id} wurde erstellt von %{author}.
   text_work_package_category_destroy_assignments: Kategorie-Zuordnung entfernen
   text_work_package_category_destroy_question: Einige Arbeitspakete (%{count}) sind
@@ -1440,6 +1442,9 @@ de:
   text_work_packages_ref_in_commit_messages: Arbeitspaket-Beziehungen und -Status
     in Commit-Log-Meldungen
   text_journal_added: "%{label} %{value} wurde hinzugefügt"
+  text_journal_aggregation_time_explanation: Combine journals for display if their
+    age difference is less than the specified timespan. This will also delay mail
+    notifications by the same amount of time.
   text_journal_changed: "%{label} wurde von %{old} zu %{new} geändert"
   text_journal_changed_no_detail: "%{label} aktualisiert"
   text_journal_changed_with_diff: "%{label} geändert (%{link})"
@@ -1540,8 +1545,8 @@ de:
     delete_thing: Löschen
     duration: Dauer
     duration_days:
-      one: 1 day
-      other: "%{count} days"
+      one: 1 Tag
+      other: "%{count} Tagen"
     edit_color: Farbe bearbeiten
     edit_project_type: Projekt-Typ bearbeiten
     edit_thing: Bearbeiten
@@ -1595,8 +1600,8 @@ de:
         absolute: Absolut
         none: Kein Planungsvergleich
         relative: Relativ
-        compare_relative_prefix: Vergleiche aktuelle Planung mit vor
-        compare_relative_suffix: vor
+        compare_relative_prefix: Vergleiche aktuelle Planung mit der von vor
+        compare_relative_suffix: " "
         compare_absolute: Vergleiche aktuelle Planung mit %{date}
       time_relative:
         days: Tage
@@ -1723,8 +1728,8 @@ de:
       geschickt)
     blocked: temporär gesperrt
     blocked_num_failed_logins:
-      one: locked temporarily (one failed login attempt)
-      other: locked temporarily (%{count} failed login attempts)
+      one: temporär gesperrt (ein fehlgeschlagener Loginversuch)
+      other: temporär gesperrt (%{count} fehlgeschlagene Loginversuche)
     deleted: Gelöschter Nutzer
     error_status_change_failed: 'Der Nutzerstatus konnte nicht geändert werden aufgrund
       folgender Fehler: %{errors}'

@@ -855,6 +855,7 @@ pl:
   label_message_plural: Wiadomości
   label_message_posted: Wiadomość dodana
   label_min_max_length: Min. - Maks. długość
+  label_minute_plural: minutes
   label_missing_api_access_key: Brak klucza dostępu API
   label_missing_feeds_access_key: Brak klucza dostępu RSS
   label_modification: "%{count} change"
@@ -1311,9 +1312,9 @@ pl:
   setting_autologin: Automatyczne logowanie
   setting_available_languages: Dostępne języki
   setting_bcc_recipients: Adresaci ukrytych kopii (bcc)
-  setting_brute_force_block_after_failed_logins: Blokowanie użytkownika po tej liczby
-    nieudanych logowań (Wyłącz 0)
-  setting_brute_force_block_minutes: Czas, kiedy użytkownik jest zablokowany (minuty)
+  setting_brute_force_block_after_failed_logins: Block user after this number of failed
+    login attempts
+  setting_brute_force_block_minutes: Time the user is blocked for
   setting_cache_formatted_text: Tekst sformatowany w pamięci podręcznej
   setting_column_options: Dostosuj wygląd listy zadań
   setting_commit_fix_keywords: Stałe słowa kluczowe
@@ -1350,6 +1351,7 @@ pl:
   setting_work_package_startdate_is_adddate: Użyj bieżącej daty jako datę początkową
     dla nowych zadań
   setting_work_packages_export_limit: Limit eksportowanych zadań
+  setting_journal_aggregation_time_minutes: Display journals as aggregated within
   setting_log_requesting_user: Rejestrowanie loginu, nazwy i adresu e-mail użytkownika
     dla wszystkich żądań
   setting_login_required: Wymagane uwierzytelnienie
@@ -1362,8 +1364,7 @@ pl:
   setting_password_active_rules: Aktywne klasy znaków
   setting_password_count_former_banned: Liczba ostatnio używanych haseł zakazane do
     ponownego wykorzystania
-  setting_password_days_valid: Liczba dni, po których wymuszona jest zmiana hasła
-    (Wyłącz 0)
+  setting_password_days_valid: Number of days, after which to enforce a password change
   setting_password_min_length: Minimalna długość
   setting_password_min_adhered_rules: Minimalna liczba wymaganych klas
   setting_per_page_options: Obiektów na stronie
@@ -1430,6 +1431,7 @@ pl:
   text_enumeration_destroy_question: "%{count} objects are assigned to this value."
   text_file_repository_writable: Można zapisywać do katalogu z załącznikami
   text_git_repo_example: a bare and local repository (e.g. /gitrepo, c:\gitrepo)
+  text_hint_disable_with_0: 'Note: Disable with 0'
   text_work_package_added: Work package %{id} has been reported by %{author}.
   text_work_package_category_destroy_assignments: Remove category assignments
   text_work_package_category_destroy_question: Some work packages (%{count}) are assigned
@@ -1441,6 +1443,9 @@ pl:
   text_work_packages_ref_in_commit_messages: Referencing and fixing work packages
     in commit messages
   text_journal_added: "%{label} %{value} added"
+  text_journal_aggregation_time_explanation: Combine journals for display if their
+    age difference is less than the specified timespan. This will also delay mail
+    notifications by the same amount of time.
   text_journal_changed: "%{label} zmienione z %{old} na %{new}"
   text_journal_changed_no_detail: "%{label} updated"
   text_journal_changed_with_diff: "%{label} changed (%{link})"

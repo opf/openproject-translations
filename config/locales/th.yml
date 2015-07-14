@@ -818,6 +818,7 @@ th:
   label_message_plural: "ข้อความ"
   label_message_posted: "เพิ่มข้อความแล้ว"
   label_min_max_length: "ความยาวสูงสุด - ต่ำสุด"
+  label_minute_plural: minutes
   label_missing_api_access_key: "ไม่พบคีย์การเข้าถึง API"
   label_missing_feeds_access_key: "ไม่พบคีย์สำหรับเข้าใช้ RSS"
   label_modification: "เปลี่ยนแปลง %{count} รายการ"
@@ -1251,9 +1252,9 @@ th:
   setting_autologin: "การล็อคอินอัตโนมัติ"
   setting_available_languages: "ภาษาที่ใช้ได้"
   setting_bcc_recipients: "ผู้รับสำเนาลับ (bcc)"
-  setting_brute_force_block_after_failed_logins: "บล็อกผู้ใช้หลังจากล้มเหลวในการพยายามเข้าสู่ระบบเป็นจำนวนครั้ง
-    (ไม่ใช้งาน ใส่ 0)"
-  setting_brute_force_block_minutes: "เวลาที่ผู้ใช้ที่ถูกบล็อค (นาที)"
+  setting_brute_force_block_after_failed_logins: Block user after this number of failed
+    login attempts
+  setting_brute_force_block_minutes: Time the user is blocked for
   setting_cache_formatted_text: "ข้อความที่กำหนดรูปแบบที่มีการเก็บแคชไว้"
   setting_column_options: "กำหนดรูปแบบการแสดงผลของรายการชุดภารกิจ"
   setting_commit_fix_keywords: "แก้ไขคำสำคัญ"
@@ -1288,6 +1289,7 @@ th:
   setting_work_package_properties: "คุณสมบัติของชุดภารกิจ"
   setting_work_package_startdate_is_adddate: "ใช้วันปัจจุบันเป็นวันเริ่มต้นสำหรับชุดภารกิจใหม่"
   setting_work_packages_export_limit: "การจำกัดการเอกซ์ปอร์ตชุดภารกิจ"
+  setting_journal_aggregation_time_minutes: Display journals as aggregated within
   setting_log_requesting_user: "เก็บข้อมูลการล็อกอิน ชื่อ และอีเมล์ของผู้ใช้สำหรับทุกคำขอ"
   setting_login_required: "จำเป็นต้องระบุตัวตนผู้ใช้"
   setting_mail_from: "การเผยแพร่ที่อยู่อีเมล"
@@ -1297,8 +1299,7 @@ th:
   setting_new_project_user_role_id: "บทบาทที่ให้กับผู้ใช้ที่สร้างโครงการ ซึ่งไม่ใช่ผู้ดูแลระบบ "
   setting_password_active_rules: "ประเภทของตัวอักษรที่ใช้งานได้"
   setting_password_count_former_banned: "จำนวนรหัสผ่านที่ใช้ล่าสุดที่ห้ามนำมาใช้ซ้ำ "
-  setting_password_days_valid: "จำนวนวันที่บังคับให้ต้องมีการเปลี่ยนรหัสผ่าน (ปิดการใช้งาน
-    พิมพ์ 0)"
+  setting_password_days_valid: Number of days, after which to enforce a password change
   setting_password_min_length: "จำนวนตัวอักษรขั้นต่ำ"
   setting_password_min_adhered_rules: "จำนวน class ขั้นต่ำที่จำเป็น"
   setting_per_page_options: "ตัวเลือกออบเจคต่อหน้าเพจ"
@@ -1359,6 +1360,7 @@ th:
   text_enumeration_destroy_question: "มีการมอบหมาย %{count} ออบเจคต์ ให้กับค่านี้"
   text_file_repository_writable: "สามารถบันทึกในไดเรกทอรี่ของไฟล์แนบได้"
   text_git_repo_example: "แหล่งเก็บข้อมูลทั่วไป (เช่น /gitrepo, c:\\gitrepo)"
+  text_hint_disable_with_0: 'Note: Disable with 0'
   text_work_package_added: "มีการรายงาน ชุดภารกิจ %{id} โดย %{author}"
   text_work_package_category_destroy_assignments: "เอาการกำหนดประเภทออก"
   text_work_package_category_destroy_question: "มีการมอบหมาย (%{count}) ชุดภารกิจ
@@ -1369,6 +1371,9 @@ th:
     ?"
   text_work_packages_ref_in_commit_messages: "อ้างอิงและแก้ไขชุดภารกิจในข้อความยืนยัน"
   text_journal_added: "%{label} %{value} ถูกเพิ่มแล้ว"
+  text_journal_aggregation_time_explanation: Combine journals for display if their
+    age difference is less than the specified timespan. This will also delay mail
+    notifications by the same amount of time.
   text_journal_changed: "มีการเปลี่ยนแปลง %{label} จากเดิม %{old} เป็น %{new}"
   text_journal_changed_no_detail: "มีการแก้ไข %{label} แล้ว"
   text_journal_changed_with_diff: "มีการเปลี่ยนแปลง %{label} (%{link})"
