@@ -169,63 +169,64 @@ et:
         watcher: Jälgija
     errors:
       messages:
-        accepted: tuleb nõustuda
-        blank: ei tohi olla tühi
-        cant_link_a_work_package_with_a_descendant: Teemat ei saa seostada ühe oma
-          alamülesandega
-        circular_dependency: See seos tekitaks ringsõltuvuse
-        confirmation: ei lange kokku kontrollväärtusega
-        empty: ei tohi olla tühi
-        equal_to: peab olema võrdne %{count}-ga
-        even: peab olema paarisarv
-        exclusion: on reserveeritud
-        file_too_large: is too large (maximum size is %{count} Bytes)
-        greater_than: peab olema suurem kui %{count}
-        greater_than_or_equal_to: peab olema suurem või võrdne kui %{count}
+        accepted: must be accepted.
+        blank: can't be blank.
+        cant_link_a_work_package_with_a_descendant: A work package cannot be linked
+          to one of its subtasks.
+        circular_dependency: This relation would create a circular dependency.
+        confirmation: doesn't match confirmation.
+        empty: can't be empty.
+        equal_to: must be equal to %{count}.
+        even: must be even.
+        exclusion: is reserved.
+        file_too_large: is too large (maximum size is %{count} Bytes).
+        greater_than: must be greater than %{count}.
+        greater_than_or_equal_to: must be greater than or equal to %{count}.
         smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
-          length
-        greater_than_start_date: peab olema alguskuupäevast hilisem
-        inclusion: is not set to one of the allowed values
-        invalid: ei sobi
-        less_than: peab olema väiksem kui %{count}
-        less_than_or_equal_to: peab olema väiksem või võrdne kui %{count}
-        not_a_date: pole kuupäev
-        not_a_number: pole arv
-        not_an_integer: pole täisarv
-        not_same_project: ei kuulu samasse projekti
-        odd: peab olema paaritu arv
-        taken: on juba kasutusel
-        too_long: on liiga pikk (maksimum on %{count} märki)
-        too_short: on liiga lühike (miinimum on %{count} märki)
-        wrong_length: on vale pikkus (peab olema %{count} märki)
-        after: peab olema hilisem kui %{date}
-        after_or_equal_to: peab olema hilisem või sama kui %{date}
-        before: peab olema varasem kui %{date}
-        before_or_equal_to: peab olema varasem või sama kui %{date}
-        could_not_be_copied: ei saa (täielikult) kopeerida
+          length.
+        greater_than_start_date: must be greater than start date.
+        inclusion: is not set to one of the allowed values.
+        invalid: is invalid.
+        less_than: must be less than %{count}.
+        less_than_or_equal_to: must be less than or equal to %{count}.
+        not_a_date: is not a date.
+        not_a_number: is not a number.
+        not_an_integer: is not an integer.
+        not_same_project: doesn't belong to the same project.
+        odd: must be odd.
+        taken: has already been taken.
+        too_long: is too long (maximum is %{count} characters).
+        too_short: is too short (minimum is %{count} characters).
+        wrong_length: is the wrong length (should be %{count} characters).
+        after: must be after %{date}.
+        after_or_equal_to: must be after or equal to %{date}.
+        before: must be before %{date}.
+        before_or_equal_to: must be before or equal to %{date}.
+        could_not_be_copied: could not be (fully) copied.
       models:
         project_association:
-          identical_projects: ei saa seostada endaga
-          project_association_not_allowed: ei luba seoseid
+          identical_projects: can not be created from one project to itself.
+          project_association_not_allowed: does not allow associations.
         repository:
-          not_whitelisted: is not allowed by the configuration
-          no_directory: is not a directory
+          not_whitelisted: is not allowed by the configuration.
+          no_directory: is not a directory.
         work_package:
           is_not_a_valid_target_for_time_entries: 'Töötunde ei sobi üle kanda teemale
             #%{id}.'
           attributes:
             due_date:
-              not_start_date: verstapostil on vajalik määrata alguskuupäev
+              not_start_date: is not on start date, although this is required for
+                milestones.
             parent_id:
-              cannot_be_milestone: ei sobi verstapostiks
-              cannot_be_in_another_project: ei saa esineda teises projektis
-              not_a_valid_parent: ei sobi
-              does_not_exist: pole olemas
+              cannot_be_milestone: cannot be a milestone.
+              cannot_be_in_another_project: cannot be in another project.
+              not_a_valid_parent: is invalid.
+              does_not_exist: does not exist.
             status_id:
               status_transition_invalid: is invalid because no valid transition exists
-                from old to new status for the current user's roles
+                from old to new status for the current user's roles.
             priority_id:
-              only_active_priorities_allowed: peab olema aktiivne
+              only_active_priorities_allowed: needs to be active.
             category:
               only_same_project_categories_allowed: The category of a work package
                 must be within the same project as the work package.
@@ -236,8 +237,8 @@ et:
         user:
           attributes:
             password:
-              weak: parool peab sisaldama erinevad märke (vähemalt %{min_count} %{all_count}-st
-                selliseid %{rules})
+              weak: 'must contain characters of the following classes (at least %{min_count}
+                of %{all_count}): %{rules}.'
               lowercase: väiketäht (näiteks "a")
               uppercase: suurtäht (näiteks 'A')
               numeric: arvuline (nt 1, 2, 3)
@@ -595,10 +596,11 @@ et:
     tõrge: %{value}'
   error_scm_not_found: Versioonihalduse süsteemis ei leidunud otsitavat sissekannet
     või versiooni.
-  error_unable_delete_status: Unable to delete work package status because it contains
-    work packages.
-  error_unable_delete_default_status: Pole võimalik kustutada teemade vaikimisi staatust.
-    Palun vali uus vaikimisi väärtus enne kui kustutad praeguse.
+  error_unable_delete_status: The work package status cannot be deleted since it is
+    used by at least one work package.
+  error_unable_delete_default_status: Unable to delete the default work package status.
+    Please select another default work package status before deleting the current
+    one.
   error_unable_to_connect: "Ühenduse loomine ebaõnnestus (%{value})"
   error_workflow_copy_source: Palun vali lähtepunkti liik või roll
   error_workflow_copy_target: Palun vali sihtpunkti tüübid ja rollid
@@ -692,6 +694,7 @@ et:
   label_changes_details: Kõigi muutuste üksikasjad
   label_changeset_plural: Toimikud
   label_checked: märgitud
+  label_child_element: Child element
   label_chronological_order: Kronoloogilises järjekorras
   label_close_versions: Sule lõpetatud versioonid
   label_closed_work_packages: suletud
@@ -836,6 +839,7 @@ et:
   label_message_plural: Sõnumid
   label_message_posted: Sõnum on lisatud
   label_min_max_length: Min - Max pikkus
+  label_minute_plural: minutes
   label_missing_api_access_key: Puudub API kasutamise võti
   label_missing_feeds_access_key: Puudub RSS kasutamise võti
   label_modification: "%{count} muudatust"
@@ -1265,6 +1269,7 @@ et:
   project_module_news: Uudised
   project_module_repository: Hoidla
   project_module_time_tracking: Ajakulu arvestus
+  project_module_timelines: Ajakavad
   project_module_wiki: Viki
   query_fields:
     assigned_to_role: Omistatud rollile
@@ -1279,9 +1284,9 @@ et:
   setting_autologin: Automaatne sisselogimine
   setting_available_languages: Kõik keeled
   setting_bcc_recipients: Salakoopia vastuvõtjad
-  setting_brute_force_block_after_failed_logins: Blokeeri pärast nii mitme ebaõnnestunud
-    sisselogimiskatse (null ei blokeeri kunagi)
-  setting_brute_force_block_minutes: Blokeerimise aeg minutites
+  setting_brute_force_block_after_failed_logins: Block user after this number of failed
+    login attempts
+  setting_brute_force_block_minutes: Time the user is blocked for
   setting_cache_formatted_text: Vormindatud teksti jaoks kasutatakse vahemälu
   setting_column_options: Teemade nimekirja vaikimisi veerud
   setting_commit_fix_keywords: Paranduste võtmesõnad
@@ -1318,6 +1323,7 @@ et:
   setting_work_package_startdate_is_adddate: Uute teemade alguskuupäevaks käesolev
     päev
   setting_work_packages_export_limit: Teemade ekspordi limiit
+  setting_journal_aggregation_time_minutes: Display journals as aggregated within
   setting_log_requesting_user: Logi iga taotluse kasutajanimi, nimi ja epost
   setting_login_required: Autentimine kohustuslik
   setting_mail_from: Saatja e-posti aadress
@@ -1328,8 +1334,7 @@ et:
   setting_password_active_rules: Võimaldatud tähemärgid
   setting_password_count_former_banned: Arv kordi kui eelnevalt kasutatud parooli
     kasutamine on keelatud
-  setting_password_days_valid: Uue parooli kohustuslik määramine antud arvu päevade
-    järel (null on igavik)
+  setting_password_days_valid: Number of days, after which to enforce a password change
   setting_password_min_length: Minimaalne pikkus
   setting_password_min_adhered_rules: Minimaalne nõutav erineva tähemärgiklassi kasutamine
     paroolis
@@ -1400,6 +1405,7 @@ et:
   text_file_repository_writable: Manuste kataloog on kirjutatav
   text_git_repo_example: hoidla peab olema paljas (bare) ja kohalik (nt. /gitrepo,
     c:\gitrepo)
+  text_hint_disable_with_0: 'Note: Disable with 0'
   text_work_package_added: "%{author} lisas uue teema %{id}."
   text_work_package_category_destroy_assignments: Jäta teemadel kategooria määramata
   text_work_package_category_destroy_question: Kustutatavat kategooriat kasutab %{count}
@@ -1411,6 +1417,9 @@ et:
   text_work_packages_ref_in_commit_messages: Teemadele ja parandustele viitamine sissekannete
     märkustes
   text_journal_added: "%{label} %{value} lisatud"
+  text_journal_aggregation_time_explanation: Combine journals for display if their
+    age difference is less than the specified timespan. This will also delay mail
+    notifications by the same amount of time.
   text_journal_changed: "%{label} muudetud %{old} -> %{new}"
   text_journal_changed_no_detail: "%{label} uuendatud"
   text_journal_changed_with_diff: "%{label} uuendatud (%{link})"

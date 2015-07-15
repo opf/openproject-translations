@@ -163,60 +163,63 @@ th:
         watcher: "ผู้ดูข้อมูล"
     errors:
       messages:
-        accepted: "ต้องยอมรับ"
-        blank: "ไม่สามารถเว้นว่าง"
-        cant_link_a_work_package_with_a_descendant: "ไม่สามารถเชื่อมโยงชุดภารกิจกับงานย่อยได้"
-        circular_dependency: "ความสัมพันธ์นี้จะสร้างการอ้างอิงเป็นวัฎจักร"
-        confirmation: "ไม่ตรงกับใบรับรอง"
-        empty: "ไม่สามารถเว้นว่าง"
-        equal_to: "ต้องเท่ากับ %{count}"
-        even: "ต้องเท่ากัน"
-        exclusion: "ถูกจองไว้แล้ว"
-        file_too_large: is too large (maximum size is %{count} Bytes)
-        greater_than: "ต้องมีค่ามากกว่า %{count}"
-        greater_than_or_equal_to: "ต้องมีค่ามากกว่าหรือเท่ากับ %{count}"
-        smaller_than_or_equal_to_max_length: "ต้องไม่เกินความยาวสูงสุด"
-        greater_than_start_date: "ต้องเป็นวันที่หลังจากวันเริ่มต้น"
-        inclusion: is not set to one of the allowed values
-        invalid: "ไม่ถูกต้อง"
-        less_than: "ต้องน้อยกว่า %{count}"
-        less_than_or_equal_to: "ต้องน้อยกว่า หรือเท่ากับ %{count}"
-        not_a_date: "ไม่ใช่วันที่"
-        not_a_number: "ไม่ใช่ตัวเลข"
-        not_an_integer: "ไม่เป็นจำนวนเต็ม"
-        not_same_project: "ไม่อยู่ในโครงการเดียวกัน"
-        odd: "ต้องไม่ซ้ำ"
-        taken: "ได้มาแล้ว"
-        too_long: "ยาวเกินไป (ความยาวสูงสุดไม่เกิน %{count} ตัวอักษร)"
-        too_short: "สั้นเกินไป (ขั้นต่ำ %{count} ตัวอักษร)"
-        wrong_length: "มีความยาวตัวอักษรไม่ถูกต้อง (ที่ถูกควรเป็น %{count} ตัวอักษร)"
-        after: "ต้องอยู่หลังจากวันที่ %{date}"
-        after_or_equal_to: "ต้องเป็นวันหลังจาก หรือตรงกับวันที่ %{date}"
-        before: "ต้องเป็นวันก่อนวันที่ %{date}"
-        before_or_equal_to: "ต้องก่อน หรือเท่ากับวันที่ %{date}"
-        could_not_be_copied: "ไม่ควรถูกทำสำเนาทั้งฉบับ"
+        accepted: must be accepted.
+        blank: can't be blank.
+        cant_link_a_work_package_with_a_descendant: A work package cannot be linked
+          to one of its subtasks.
+        circular_dependency: This relation would create a circular dependency.
+        confirmation: doesn't match confirmation.
+        empty: can't be empty.
+        equal_to: must be equal to %{count}.
+        even: must be even.
+        exclusion: is reserved.
+        file_too_large: is too large (maximum size is %{count} Bytes).
+        greater_than: must be greater than %{count}.
+        greater_than_or_equal_to: must be greater than or equal to %{count}.
+        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
+          length.
+        greater_than_start_date: must be greater than start date.
+        inclusion: is not set to one of the allowed values.
+        invalid: is invalid.
+        less_than: must be less than %{count}.
+        less_than_or_equal_to: must be less than or equal to %{count}.
+        not_a_date: is not a date.
+        not_a_number: is not a number.
+        not_an_integer: is not an integer.
+        not_same_project: doesn't belong to the same project.
+        odd: must be odd.
+        taken: has already been taken.
+        too_long: is too long (maximum is %{count} characters).
+        too_short: is too short (minimum is %{count} characters).
+        wrong_length: is the wrong length (should be %{count} characters).
+        after: must be after %{date}.
+        after_or_equal_to: must be after or equal to %{date}.
+        before: must be before %{date}.
+        before_or_equal_to: must be before or equal to %{date}.
+        could_not_be_copied: could not be (fully) copied.
       models:
         project_association:
-          identical_projects: "ไม่สามารถถูกสร้างจากโปรเจคเดียวกัน"
-          project_association_not_allowed: "ไม่อนุญาตให้มีความเกี่ยวข้อง"
+          identical_projects: can not be created from one project to itself.
+          project_association_not_allowed: does not allow associations.
         repository:
-          not_whitelisted: is not allowed by the configuration
-          no_directory: is not a directory
+          not_whitelisted: is not allowed by the configuration.
+          no_directory: is not a directory.
         work_package:
           is_not_a_valid_target_for_time_entries: "ชุดภารกิจ #%{id} ไม่ใช่เป้าหมายที่ถูกต้องสำหรับการกำหนดรายการเวลา"
           attributes:
             due_date:
-              not_start_date: "ไม่ตรงกับวันเริ่มต้น แม้ว่าจะจำเป็นสำหรับเหตุการณ์สำคัญ"
+              not_start_date: is not on start date, although this is required for
+                milestones.
             parent_id:
-              cannot_be_milestone: "ไม่สามารถเป็น ไมล์สโตนได้"
-              cannot_be_in_another_project: "ไม่สามารถใช้ในโครงการอื่นได้"
-              not_a_valid_parent: "ไม่ถูกต้อง"
-              does_not_exist: "ไม่พบ"
+              cannot_be_milestone: cannot be a milestone.
+              cannot_be_in_another_project: cannot be in another project.
+              not_a_valid_parent: is invalid.
+              does_not_exist: does not exist.
             status_id:
               status_transition_invalid: is invalid because no valid transition exists
-                from old to new status for the current user's roles
+                from old to new status for the current user's roles.
             priority_id:
-              only_active_priorities_allowed: "จำเป็นต้องเปิดใช้งาน"
+              only_active_priorities_allowed: needs to be active.
             category:
               only_same_project_categories_allowed: The category of a work package
                 must be within the same project as the work package.
@@ -227,8 +230,8 @@ th:
         user:
           attributes:
             password:
-              weak: "ต้องประกอบด้วยอักขระของ class ต่อไปนี้ (อย่างน้อย %{min_count}
-                จากทั้งหมด %{all_count}): %{rules}"
+              weak: 'must contain characters of the following classes (at least %{min_count}
+                of %{all_count}): %{rules}.'
               lowercase: "ตัวพิมพ์เล็ก (เช่น 'a')"
               uppercase: "ตัวพิมพ์ใหญ่ (เช่น ' A')"
               numeric: "ตัวเลข (เช่น ' 1')"
@@ -581,10 +584,11 @@ th:
   error_scm_annotate: "ไม่พบรายการ จึงไม่สามารถใส่คำอธิบายประกอบได้"
   error_scm_command_failed: "เกิดข้อผิดพลาดเมื่อพยายามเข้าถึงที่เก็บข้อมูล: %{value}"
   error_scm_not_found: "ไม่พบรายการการปรับปรุงในที่เก็บข้อมูล"
-  error_unable_delete_status: Unable to delete work package status because it contains
-    work packages.
-  error_unable_delete_default_status: "ไม่สามารถลบสถานะตั้งต้นของชุดภารกิจได้ โปรดเลือกสถานะตั้งต้นอื่นๆ
-    ของชุดภารกิจ ก่อนที่จะลบสถานะนี้"
+  error_unable_delete_status: The work package status cannot be deleted since it is
+    used by at least one work package.
+  error_unable_delete_default_status: Unable to delete the default work package status.
+    Please select another default work package status before deleting the current
+    one.
   error_unable_to_connect: "ไม่สามารถเชื่อมต่อ (%{value}) ได้"
   error_workflow_copy_source: "กรุณาเลือกประเภทของแหล่งหรือบทบาท"
   error_workflow_copy_target: "กรุณาเลือกประเภทเป้าหมายและบทบาท"
@@ -676,6 +680,7 @@ th:
   label_changes_details: "รายละเอียดของการเปลี่ยนแปลงทั้งหมด"
   label_changeset_plural: "ชุดการเปลี่ยนแปลง"
   label_checked: "ตรวจสอบแล้ว"
+  label_child_element: Child element
   label_chronological_order: "เรียงตามลำดับเวลา"
   label_close_versions: "ปิดเวอร์ชั่นที่เสร็จแล้ว"
   label_closed_work_packages: "ปิด"
@@ -818,6 +823,7 @@ th:
   label_message_plural: "ข้อความ"
   label_message_posted: "เพิ่มข้อความแล้ว"
   label_min_max_length: "ความยาวสูงสุด - ต่ำสุด"
+  label_minute_plural: minutes
   label_missing_api_access_key: "ไม่พบคีย์การเข้าถึง API"
   label_missing_feeds_access_key: "ไม่พบคีย์สำหรับเข้าใช้ RSS"
   label_modification: "เปลี่ยนแปลง %{count} รายการ"
@@ -1237,6 +1243,7 @@ th:
   project_module_news: "ข่าวสาร"
   project_module_repository: "ที่เก็บ"
   project_module_time_tracking: "ติดตามเวลาที่ใช้"
+  project_module_timelines: "เส้นเวลา"
   project_module_wiki: "วิกิ"
   query_fields:
     assigned_to_role: "บทบาทของผู้รับผิดชอบ"
@@ -1251,9 +1258,9 @@ th:
   setting_autologin: "การล็อคอินอัตโนมัติ"
   setting_available_languages: "ภาษาที่ใช้ได้"
   setting_bcc_recipients: "ผู้รับสำเนาลับ (bcc)"
-  setting_brute_force_block_after_failed_logins: "บล็อกผู้ใช้หลังจากล้มเหลวในการพยายามเข้าสู่ระบบเป็นจำนวนครั้ง
-    (ไม่ใช้งาน ใส่ 0)"
-  setting_brute_force_block_minutes: "เวลาที่ผู้ใช้ที่ถูกบล็อค (นาที)"
+  setting_brute_force_block_after_failed_logins: Block user after this number of failed
+    login attempts
+  setting_brute_force_block_minutes: Time the user is blocked for
   setting_cache_formatted_text: "ข้อความที่กำหนดรูปแบบที่มีการเก็บแคชไว้"
   setting_column_options: "กำหนดรูปแบบการแสดงผลของรายการชุดภารกิจ"
   setting_commit_fix_keywords: "แก้ไขคำสำคัญ"
@@ -1288,6 +1295,7 @@ th:
   setting_work_package_properties: "คุณสมบัติของชุดภารกิจ"
   setting_work_package_startdate_is_adddate: "ใช้วันปัจจุบันเป็นวันเริ่มต้นสำหรับชุดภารกิจใหม่"
   setting_work_packages_export_limit: "การจำกัดการเอกซ์ปอร์ตชุดภารกิจ"
+  setting_journal_aggregation_time_minutes: Display journals as aggregated within
   setting_log_requesting_user: "เก็บข้อมูลการล็อกอิน ชื่อ และอีเมล์ของผู้ใช้สำหรับทุกคำขอ"
   setting_login_required: "จำเป็นต้องระบุตัวตนผู้ใช้"
   setting_mail_from: "การเผยแพร่ที่อยู่อีเมล"
@@ -1297,8 +1305,7 @@ th:
   setting_new_project_user_role_id: "บทบาทที่ให้กับผู้ใช้ที่สร้างโครงการ ซึ่งไม่ใช่ผู้ดูแลระบบ "
   setting_password_active_rules: "ประเภทของตัวอักษรที่ใช้งานได้"
   setting_password_count_former_banned: "จำนวนรหัสผ่านที่ใช้ล่าสุดที่ห้ามนำมาใช้ซ้ำ "
-  setting_password_days_valid: "จำนวนวันที่บังคับให้ต้องมีการเปลี่ยนรหัสผ่าน (ปิดการใช้งาน
-    พิมพ์ 0)"
+  setting_password_days_valid: Number of days, after which to enforce a password change
   setting_password_min_length: "จำนวนตัวอักษรขั้นต่ำ"
   setting_password_min_adhered_rules: "จำนวน class ขั้นต่ำที่จำเป็น"
   setting_per_page_options: "ตัวเลือกออบเจคต่อหน้าเพจ"
@@ -1359,6 +1366,7 @@ th:
   text_enumeration_destroy_question: "มีการมอบหมาย %{count} ออบเจคต์ ให้กับค่านี้"
   text_file_repository_writable: "สามารถบันทึกในไดเรกทอรี่ของไฟล์แนบได้"
   text_git_repo_example: "แหล่งเก็บข้อมูลทั่วไป (เช่น /gitrepo, c:\\gitrepo)"
+  text_hint_disable_with_0: 'Note: Disable with 0'
   text_work_package_added: "มีการรายงาน ชุดภารกิจ %{id} โดย %{author}"
   text_work_package_category_destroy_assignments: "เอาการกำหนดประเภทออก"
   text_work_package_category_destroy_question: "มีการมอบหมาย (%{count}) ชุดภารกิจ
@@ -1369,6 +1377,9 @@ th:
     ?"
   text_work_packages_ref_in_commit_messages: "อ้างอิงและแก้ไขชุดภารกิจในข้อความยืนยัน"
   text_journal_added: "%{label} %{value} ถูกเพิ่มแล้ว"
+  text_journal_aggregation_time_explanation: Combine journals for display if their
+    age difference is less than the specified timespan. This will also delay mail
+    notifications by the same amount of time.
   text_journal_changed: "มีการเปลี่ยนแปลง %{label} จากเดิม %{old} เป็น %{new}"
   text_journal_changed_no_detail: "มีการแก้ไข %{label} แล้ว"
   text_journal_changed_with_diff: "มีการเปลี่ยนแปลง %{label} (%{link})"

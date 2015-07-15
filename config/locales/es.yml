@@ -174,64 +174,64 @@ es:
         watcher: Vigilante
     errors:
       messages:
-        accepted: debe ser aceptado
-        blank: No puede ser vacío
-        cant_link_a_work_package_with_a_descendant: Un paquete de trabajo no puede
-          ser vinculado a una sola de sus subtareas
-        circular_dependency: Esta relación podría crear una dependencia circular
-        confirmation: No coincide con la confirmación
-        empty: No puede estar vacío
-        equal_to: debe ser igual a %{count}
-        even: debe ser incluido
-        exclusion: está reservado
-        file_too_large: es demasiado grande (tamaño máximo de %{count} Bytes)
-        greater_than: debe ser mayor que %{count}
-        greater_than_or_equal_to: debe ser mayor o igual a %{count}
-        smaller_than_or_equal_to_max_length: Debe ser menor o igual que el tamaño
-          maximo
-        greater_than_start_date: debe ser mayor que la fecha de inicio
-        inclusion: no está establecido a uno de los valores permitidos
-        invalid: no es válido
-        less_than: debe ser menos de %{count}
-        less_than_or_equal_to: debe ser menor o igual a %{count}
-        not_a_date: No es una fecha
-        not_a_number: No es un número
-        not_an_integer: No es un entero
-        not_same_project: no pertenecen a un mismo proyecto
-        odd: debe ser impar
-        taken: Ya se ha tomado
-        too_long: es demasiado largo (máximo es %{count} caracteres)
-        too_short: es demasiado corto (mínimo es %{count} caracteres)
-        wrong_length: es la longitud incorrecta (debe ser caracteres %{count})
-        after: debe ser después de %{date}
-        after_or_equal_to: debe ser después de o igual a %{date}
-        before: debe ser antes de %{date}
-        before_or_equal_to: debe ser antes o igual a %{date}
-        could_not_be_copied: No podían ser copiados (totalmente)
+        accepted: must be accepted.
+        blank: can't be blank.
+        cant_link_a_work_package_with_a_descendant: A work package cannot be linked
+          to one of its subtasks.
+        circular_dependency: This relation would create a circular dependency.
+        confirmation: doesn't match confirmation.
+        empty: can't be empty.
+        equal_to: must be equal to %{count}.
+        even: must be even.
+        exclusion: is reserved.
+        file_too_large: is too large (maximum size is %{count} Bytes).
+        greater_than: must be greater than %{count}.
+        greater_than_or_equal_to: must be greater than or equal to %{count}.
+        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
+          length.
+        greater_than_start_date: must be greater than start date.
+        inclusion: is not set to one of the allowed values.
+        invalid: is invalid.
+        less_than: must be less than %{count}.
+        less_than_or_equal_to: must be less than or equal to %{count}.
+        not_a_date: is not a date.
+        not_a_number: is not a number.
+        not_an_integer: is not an integer.
+        not_same_project: doesn't belong to the same project.
+        odd: must be odd.
+        taken: has already been taken.
+        too_long: is too long (maximum is %{count} characters).
+        too_short: is too short (minimum is %{count} characters).
+        wrong_length: is the wrong length (should be %{count} characters).
+        after: must be after %{date}.
+        after_or_equal_to: must be after or equal to %{date}.
+        before: must be before %{date}.
+        before_or_equal_to: must be before or equal to %{date}.
+        could_not_be_copied: could not be (fully) copied.
       models:
         project_association:
-          identical_projects: No pueden crearse de un proyecto a sí mismo
-          project_association_not_allowed: no permite asociaciones
+          identical_projects: can not be created from one project to itself.
+          project_association_not_allowed: does not allow associations.
         repository:
-          not_whitelisted: no está permitido por la configuración
-          no_directory: no es un directorio
+          not_whitelisted: is not allowed by the configuration.
+          no_directory: is not a directory.
         work_package:
           is_not_a_valid_target_for_time_entries: 'Paquete de trabajo #%{id} no es
             un objetivo válido para reasignar las entradas de tiempo.'
           attributes:
             due_date:
-              not_start_date: No es sobre la fecha de inicio, aunque es necesario
-                para los avances
+              not_start_date: is not on start date, although this is required for
+                milestones.
             parent_id:
-              cannot_be_milestone: No puede ser un avance
-              cannot_be_in_another_project: No puede estar en otro proyecto
-              not_a_valid_parent: no es válido
-              does_not_exist: No existe
+              cannot_be_milestone: cannot be a milestone.
+              cannot_be_in_another_project: cannot be in another project.
+              not_a_valid_parent: is invalid.
+              does_not_exist: does not exist.
             status_id:
-              status_transition_invalid: no es válido porque no existe ninguna transición
-                desde el estado antiguo al nuevo para los roles del usuario actual
+              status_transition_invalid: is invalid because no valid transition exists
+                from old to new status for the current user's roles.
             priority_id:
-              only_active_priorities_allowed: debe estar activo
+              only_active_priorities_allowed: needs to be active.
             category:
               only_same_project_categories_allowed: La categoría de un paquete de
                 trabajo debe estar en el mismo proyecto que el paquete de trabajo.
@@ -242,8 +242,8 @@ es:
         user:
           attributes:
             password:
-              weak: 'debe contener caracteres de las siguientes clases (al menos %{min_count}
-                al %{all_count}): %{rules}'
+              weak: 'must contain characters of the following classes (at least %{min_count}
+                of %{all_count}): %{rules}.'
               lowercase: en minúsculas (por ejemplo 'a')
               uppercase: en mayúsculas (por ejemplo ' A')
               numeric: numérico (por ejemplo, ' 1')
@@ -604,11 +604,11 @@ es:
   error_scm_command_failed: 'Se produjo un error al intentar acceder al repositorio:
     %{value}'
   error_scm_not_found: La entrada o la revisión no se encontró en el repositorio.
-  error_unable_delete_status: No se puede eliminar el estado del paquete de trabajo
-    porque contiene paquetes de trabajo.
-  error_unable_delete_default_status: No se puede eliminar el estado del paquete trabajo
-    por defecto. Por favor, seleccione otro estado de trabajo predeterminado antes
-    de eliminar el actual.
+  error_unable_delete_status: The work package status cannot be deleted since it is
+    used by at least one work package.
+  error_unable_delete_default_status: Unable to delete the default work package status.
+    Please select another default work package status before deleting the current
+    one.
   error_unable_to_connect: No se puede conectar (%{value})
   error_workflow_copy_source: Por favor, seleccione un tipo de fuente o rol
   error_workflow_copy_target: Por favor, seleccione tipo(s) de objetivos y role(s)
@@ -702,6 +702,7 @@ es:
   label_changes_details: Detalles de todos los cambios
   label_changeset_plural: Conjuntos de cambios
   label_checked: verificado
+  label_child_element: Child element
   label_chronological_order: En orden cronológico
   label_close_versions: Cerrar versiones completadas
   label_closed_work_packages: cerrado
@@ -848,6 +849,7 @@ es:
   label_message_plural: Mensajes
   label_message_posted: Mensaje añadido
   label_min_max_length: Tamaño mínimo-máximo
+  label_minute_plural: minutes
   label_missing_api_access_key: Falta una llave de acceso API
   label_missing_feeds_access_key: Falta una clave de acceso RSS
   label_modification: cambio de %{count}
@@ -1296,6 +1298,7 @@ es:
   project_module_news: Noticias
   project_module_repository: Repositorio
   project_module_time_tracking: Tiempo de seguimiento
+  project_module_timelines: Líneas de tiempo
   project_module_wiki: Wiki
   query_fields:
     assigned_to_role: Asignación de roles
@@ -1310,9 +1313,9 @@ es:
   setting_autologin: Inicio de sesión automático
   setting_available_languages: Idiomas disponibles
   setting_bcc_recipients: Destinatarios con copia carbon oculta (cco)
-  setting_brute_force_block_after_failed_logins: Bloquear usuario después de este
-    numero de intentos de inicio de sesión fallidos (desactivado con 0)
-  setting_brute_force_block_minutes: Tiempo que el usuario esta bloqueado por (minutos)
+  setting_brute_force_block_after_failed_logins: Block user after this number of failed
+    login attempts
+  setting_brute_force_block_minutes: Time the user is blocked for
   setting_cache_formatted_text: Texto formateado del cache
   setting_column_options: Personalizar la apariencia de las listas de paquete te trabajo
   setting_commit_fix_keywords: Reparando palabras clave
@@ -1351,6 +1354,7 @@ es:
   setting_work_package_startdate_is_adddate: Usar fecha actual como fecha de inicio
     para nuevos paquetes de trabajo
   setting_work_packages_export_limit: Fecha limite para exportar paquete de trabajo
+  setting_journal_aggregation_time_minutes: Display journals as aggregated within
   setting_log_requesting_user: Registrar inicio de sesión de usuario, nombre, y dirección
     de correo para todas las solicitudes
   setting_login_required: Autentificación requerida
@@ -1364,8 +1368,7 @@ es:
   setting_password_active_rules: Activar clases de personajes
   setting_password_count_former_banned: Numero de contraseñas usadas mas recientemente
     bloqueadas para re-uso
-  setting_password_days_valid: Numero de días, después de los que será obligatorio
-    el cambio de contraseña (desactivar con 0)
+  setting_password_days_valid: Number of days, after which to enforce a password change
   setting_password_min_length: Longitud mínima
   setting_password_min_adhered_rules: Numero mínimo de clases requeridas
   setting_per_page_options: Objetos por página de opciones
@@ -1435,6 +1438,7 @@ es:
     valor."
   text_file_repository_writable: Directorio de adjuntos escribible
   text_git_repo_example: un repositorio local y vacío (por ejemplo /gitrepo, c:\gitrepo)
+  text_hint_disable_with_0: 'Note: Disable with 0'
   text_work_package_added: Los paquetes de trabajo %{id} han sido actualizados por
     %{author}.
   text_work_package_category_destroy_assignments: Remover asignaciones de categorias
@@ -1448,6 +1452,9 @@ es:
   text_work_packages_ref_in_commit_messages: Referenciando y reparando paquetes de
     trabajo en mensajes de compromiso
   text_journal_added: "%{label} %{value} añadido"
+  text_journal_aggregation_time_explanation: Combine journals for display if their
+    age difference is less than the specified timespan. This will also delay mail
+    notifications by the same amount of time.
   text_journal_changed: "%{label} cambiada del %{old} al %{new}"
   text_journal_changed_no_detail: "% {label} actualizado"
   text_journal_changed_with_diff: "%{label} modificado (% {link})"

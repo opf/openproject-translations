@@ -150,59 +150,63 @@ zh:
         watcher: "关注者"
     errors:
       messages:
-        accepted: "必须接受"
-        blank: "不能为空"
-        cant_link_a_work_package_with_a_descendant: "工作包不能链接到一个子任务"
-        circular_dependency: "这种关系将会创建一个循环依赖项"
-        confirmation: "不匹配确认"
-        empty: "不能为空"
-        equal_to: "必须等于 %{count}"
-        even: "必须是偶数"
-        exclusion: "是保留"
-        file_too_large: is too large (maximum size is %{count} Bytes)
-        greater_than: "必须大于 %{count}"
-        greater_than_or_equal_to: "必须大于或等于 %{count}"
-        smaller_than_or_equal_to_max_length: "必须小于或等于最大长度"
-        greater_than_start_date: "必须大于开始日期"
-        inclusion: is not set to one of the allowed values
-        invalid: "是无效的"
-        less_than: "必须小于 %{count}"
-        less_than_or_equal_to: "必须小于或等于 %{count}"
-        not_a_date: "不是一个日期"
-        not_a_number: "不是一个数字"
-        not_an_integer: "不是一个整数"
-        not_same_project: "不属于同一个项目"
-        odd: "必须是奇数"
-        taken: "已被使用"
-        too_long: "太长 （最多 %{count} 个字符）"
-        too_short: "太短 (最少 %{count} 个字符)"
-        wrong_length: "长度不正确（应该是 %{count} 个字符）"
-        after: "必须在 %{date} 之后"
-        after_or_equal_to: "必须在晚于或等于 %{date}"
-        before: "必须早于 %{date}"
-        before_or_equal_to: "必须在早于或等于 %{date}"
-        could_not_be_copied: "不能 (完全) 复制"
+        accepted: must be accepted.
+        blank: can't be blank.
+        cant_link_a_work_package_with_a_descendant: A work package cannot be linked
+          to one of its subtasks.
+        circular_dependency: This relation would create a circular dependency.
+        confirmation: doesn't match confirmation.
+        empty: can't be empty.
+        equal_to: must be equal to %{count}.
+        even: must be even.
+        exclusion: is reserved.
+        file_too_large: is too large (maximum size is %{count} Bytes).
+        greater_than: must be greater than %{count}.
+        greater_than_or_equal_to: must be greater than or equal to %{count}.
+        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
+          length.
+        greater_than_start_date: must be greater than start date.
+        inclusion: is not set to one of the allowed values.
+        invalid: is invalid.
+        less_than: must be less than %{count}.
+        less_than_or_equal_to: must be less than or equal to %{count}.
+        not_a_date: is not a date.
+        not_a_number: is not a number.
+        not_an_integer: is not an integer.
+        not_same_project: doesn't belong to the same project.
+        odd: must be odd.
+        taken: has already been taken.
+        too_long: is too long (maximum is %{count} characters).
+        too_short: is too short (minimum is %{count} characters).
+        wrong_length: is the wrong length (should be %{count} characters).
+        after: must be after %{date}.
+        after_or_equal_to: must be after or equal to %{date}.
+        before: must be before %{date}.
+        before_or_equal_to: must be before or equal to %{date}.
+        could_not_be_copied: could not be (fully) copied.
       models:
         project_association:
-          identical_projects: "不能创建关联到项目自身"
-          project_association_not_allowed: "不允许关联"
+          identical_projects: can not be created from one project to itself.
+          project_association_not_allowed: does not allow associations.
         repository:
-          not_whitelisted: is not allowed by the configuration
-          no_directory: is not a directory
+          not_whitelisted: is not allowed by the configuration.
+          no_directory: is not a directory.
         work_package:
           is_not_a_valid_target_for_time_entries: "工作包 #%{id} 不是重新分配时间条目的有效目标。"
           attributes:
             due_date:
-              not_start_date: "不是开始日期，虽然这不是里程碑必须的"
+              not_start_date: is not on start date, although this is required for
+                milestones.
             parent_id:
-              cannot_be_milestone: "不能是一个里程碑"
-              cannot_be_in_another_project: "不能在另一个项目中"
-              not_a_valid_parent: "是无效的"
-              does_not_exist: "不存在"
+              cannot_be_milestone: cannot be a milestone.
+              cannot_be_in_another_project: cannot be in another project.
+              not_a_valid_parent: is invalid.
+              does_not_exist: does not exist.
             status_id:
-              status_transition_invalid: "是无效的因为当前用户的角色没有有效的从旧到新的状态的过渡"
+              status_transition_invalid: is invalid because no valid transition exists
+                from old to new status for the current user's roles.
             priority_id:
-              only_active_priorities_allowed: "需要被激活"
+              only_active_priorities_allowed: needs to be active.
             category:
               only_same_project_categories_allowed: The category of a work package
                 must be within the same project as the work package.
@@ -213,7 +217,8 @@ zh:
         user:
           attributes:
             password:
-              weak: "必须包含以下类字符 （至少 %{min_count} 个 %{all_count}）： %{rules}"
+              weak: 'must contain characters of the following classes (at least %{min_count}
+                of %{all_count}): %{rules}.'
               lowercase: "小写字母 （如 'a')"
               uppercase: "大写字母 (如 ' A')"
               numeric: "数值 （例如 ' 1')"
@@ -558,9 +563,11 @@ zh:
   error_scm_annotate: "该条目不存在，或不能进行批注。"
   error_scm_command_failed: "当试图访问该代码库时出现错误: %{value}"
   error_scm_not_found: "在代码库中未找到的条目或修正版本。"
-  error_unable_delete_status: Unable to delete work package status because it contains
-    work packages.
-  error_unable_delete_default_status: "不能删除默认的工作包状态。请在删除当前之前选择另一种默认的工作包状态。"
+  error_unable_delete_status: The work package status cannot be deleted since it is
+    used by at least one work package.
+  error_unable_delete_default_status: Unable to delete the default work package status.
+    Please select another default work package status before deleting the current
+    one.
   error_unable_to_connect: "无法连接 (%{value})"
   error_workflow_copy_source: "请选择源类型或角色"
   error_workflow_copy_target: "请选择目标类型和角色"
@@ -649,6 +656,7 @@ zh:
   label_changes_details: "所有更改的详细信息"
   label_changeset_plural: "变更集"
   label_checked: "已选"
+  label_child_element: Child element
   label_chronological_order: "按时间顺序"
   label_close_versions: "关闭已完成版本"
   label_closed_work_packages: "关闭"
@@ -791,6 +799,7 @@ zh:
   label_message_plural: "消息"
   label_message_posted: "添加消息"
   label_min_max_length: "最小-最大长度"
+  label_minute_plural: minutes
   label_missing_api_access_key: "缺少 API 访问密钥"
   label_missing_feeds_access_key: "缺少一个 RSS 访问键"
   label_modification: "%{count} 更改"
@@ -1200,6 +1209,7 @@ zh:
   project_module_news: "新闻"
   project_module_repository: "代码库"
   project_module_time_tracking: "时间跟踪"
+  project_module_timelines: "时间线"
   project_module_wiki: "维基"
   query_fields:
     assigned_to_role: "指定人角色"
@@ -1214,8 +1224,9 @@ zh:
   setting_autologin: "自动登录"
   setting_available_languages: "可用语言"
   setting_bcc_recipients: "密件抄送 (bcc) 收件人"
-  setting_brute_force_block_after_failed_logins: "在该登录尝试失败该次数后阻止用户（0表示禁用）"
-  setting_brute_force_block_minutes: "用户被阻止时间（分钟）"
+  setting_brute_force_block_after_failed_logins: Block user after this number of failed
+    login attempts
+  setting_brute_force_block_minutes: Time the user is blocked for
   setting_cache_formatted_text: "缓存带格式的文本"
   setting_column_options: "自定义工作包列表的外观"
   setting_commit_fix_keywords: "固定的关键字"
@@ -1249,6 +1260,7 @@ zh:
   setting_work_package_properties: "工作包属性"
   setting_work_package_startdate_is_adddate: "使用当前日期作为新工作包的开始日期"
   setting_work_packages_export_limit: "工作包导出限制"
+  setting_journal_aggregation_time_minutes: Display journals as aggregated within
   setting_log_requesting_user: "记录所有请求的用户帐户，名称和邮件地址"
   setting_login_required: "需要身份验证"
   setting_mail_from: "发出的电子邮件地址"
@@ -1258,7 +1270,7 @@ zh:
   setting_new_project_user_role_id: "给创建项目的非管理员用户的角色"
   setting_password_active_rules: "激活支付类型"
   setting_password_count_former_banned: "禁止重复使用最近使用密码的数量"
-  setting_password_days_valid: "几天后，强制执行密码更改 （禁用与 0）"
+  setting_password_days_valid: Number of days, after which to enforce a password change
   setting_password_min_length: "最小长度"
   setting_password_min_adhered_rules: "所需类的最小数目"
   setting_per_page_options: "每页对象选项"
@@ -1318,6 +1330,7 @@ zh:
   text_enumeration_destroy_question: "%{count} 个对象被分配到该值。"
   text_file_repository_writable: "附件目录可写"
   text_git_repo_example: "一个纯粹和本地的代码库(e.g. /gitrepo, c:\\gitrepo)"
+  text_hint_disable_with_0: 'Note: Disable with 0'
   text_work_package_added: "工作包 %{id} 已经被 %{author} 报告。"
   text_work_package_category_destroy_assignments: "删除类别分配"
   text_work_package_category_destroy_question: "一些工作包 (%{count}) 被分配到这个类别。你想做什么？"
@@ -1326,6 +1339,9 @@ zh:
   text_work_packages_destroy_confirmation: "确实要删除所选的工作包吗?"
   text_work_packages_ref_in_commit_messages: "引用和修复工作包中提交消息"
   text_journal_added: "%{label} %{value} 已添加"
+  text_journal_aggregation_time_explanation: Combine journals for display if their
+    age difference is less than the specified timespan. This will also delay mail
+    notifications by the same amount of time.
   text_journal_changed: "%{label} 变更从 %{old} 到 %{new}"
   text_journal_changed_no_detail: "%{label} 已更新"
   text_journal_changed_with_diff: "%{label} 已变更 (%{link})"

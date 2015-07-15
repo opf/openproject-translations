@@ -170,64 +170,64 @@ sv-SE:
         watcher: Bevakare
     errors:
       messages:
-        accepted: måste accepteras
-        blank: kan inte vara tomt
-        cant_link_a_work_package_with_a_descendant: Ett arbetspaket kan inte kopplas
-          till någon av dess underaktiviteter
-        circular_dependency: Detta förhållande skulle skapa ett cirkelberoende
-        confirmation: matchar inte bekräftelse
-        empty: kan inte vara tomt
-        equal_to: måste vara lika med %{count}
-        even: måste vara jämn
-        exclusion: "är reserverad"
-        file_too_large: is too large (maximum size is %{count} Bytes)
-        greater_than: måste vara större än %{count}
-        greater_than_or_equal_to: måste vara större än eller lika med %{count}
-        smaller_than_or_equal_to_max_length: måste vara mindre än eller lika med maximal
-          längd
-        greater_than_start_date: måste vara senare än startdatum
-        inclusion: inte är inställd på ett av de tillåtna värdena
-        invalid: "är ogiltig"
-        less_than: måste vara mindre än %{count}
-        less_than_or_equal_to: måste vara mindre än eller lika med %{count}
-        not_a_date: "är inte ett datum"
-        not_a_number: "är inte ett nummer"
-        not_an_integer: "är inte ett heltal"
-        not_same_project: tillhör inte samma projekt
-        odd: måste vara udda
-        taken: har redan tagits
-        too_long: "är för lång (maximalt är %{count} tecken)"
-        too_short: "är för kort (minimum är %{count} tecken)"
-        wrong_length: har fel längd (måste vara %{count} tecken)
-        after: måste vara efter %{date}
-        after_or_equal_to: måste vara efter eller lika med %{date}
-        before: måste vara innan %{date}
-        before_or_equal_to: måste vara före eller lika med %{date}
-        could_not_be_copied: kunde inte kopieras (helt)
+        accepted: must be accepted.
+        blank: can't be blank.
+        cant_link_a_work_package_with_a_descendant: A work package cannot be linked
+          to one of its subtasks.
+        circular_dependency: This relation would create a circular dependency.
+        confirmation: doesn't match confirmation.
+        empty: can't be empty.
+        equal_to: must be equal to %{count}.
+        even: must be even.
+        exclusion: is reserved.
+        file_too_large: is too large (maximum size is %{count} Bytes).
+        greater_than: must be greater than %{count}.
+        greater_than_or_equal_to: must be greater than or equal to %{count}.
+        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
+          length.
+        greater_than_start_date: must be greater than start date.
+        inclusion: is not set to one of the allowed values.
+        invalid: is invalid.
+        less_than: must be less than %{count}.
+        less_than_or_equal_to: must be less than or equal to %{count}.
+        not_a_date: is not a date.
+        not_a_number: is not a number.
+        not_an_integer: is not an integer.
+        not_same_project: doesn't belong to the same project.
+        odd: must be odd.
+        taken: has already been taken.
+        too_long: is too long (maximum is %{count} characters).
+        too_short: is too short (minimum is %{count} characters).
+        wrong_length: is the wrong length (should be %{count} characters).
+        after: must be after %{date}.
+        after_or_equal_to: must be after or equal to %{date}.
+        before: must be before %{date}.
+        before_or_equal_to: must be before or equal to %{date}.
+        could_not_be_copied: could not be (fully) copied.
       models:
         project_association:
-          identical_projects: kan inte skapas från ett projekt till sig själv
-          project_association_not_allowed: tillåter inte förbindelser
+          identical_projects: can not be created from one project to itself.
+          project_association_not_allowed: does not allow associations.
         repository:
-          not_whitelisted: tillåts inte av konfigurationen
-          no_directory: "är inte en katalog"
+          not_whitelisted: is not allowed by the configuration.
+          no_directory: is not a directory.
         work_package:
           is_not_a_valid_target_for_time_entries: 'Arbetspaket #%{id} är inte ett
             giltigt mål för omfördelning av tidrapporterna.'
           attributes:
             due_date:
-              not_start_date: "är inte på startdatum, även om detta behövs för milstolpar"
+              not_start_date: is not on start date, although this is required for
+                milestones.
             parent_id:
-              cannot_be_milestone: kan inte vara en milstolpe
-              cannot_be_in_another_project: kan inte vara i ett annat projekt
-              not_a_valid_parent: "är ogiltig"
-              does_not_exist: finns inte
+              cannot_be_milestone: cannot be a milestone.
+              cannot_be_in_another_project: cannot be in another project.
+              not_a_valid_parent: is invalid.
+              does_not_exist: does not exist.
             status_id:
-              status_transition_invalid: "är ogiltig eftersom det finns någon giltig
-                övergång ifrån den gamla till nya statusen för den aktuella användarens
-                roller"
+              status_transition_invalid: is invalid because no valid transition exists
+                from old to new status for the current user's roles.
             priority_id:
-              only_active_priorities_allowed: måste vara aktiv
+              only_active_priorities_allowed: needs to be active.
             category:
               only_same_project_categories_allowed: Kategorin för ett arbetspaket
                 måste tillhöra samma projekt som arbetspaketet.
@@ -238,8 +238,8 @@ sv-SE:
         user:
           attributes:
             password:
-              weak: 'måste innehålla tecken av följande klasser (minst %{min_count}
-                %{all_count}): %{rules}'
+              weak: 'must contain characters of the following classes (at least %{min_count}
+                of %{all_count}): %{rules}.'
               lowercase: gemener (t.ex. "a")
               uppercase: versal (t.ex. "A")
               numeric: numeriska (t.ex. ' 1')
@@ -596,11 +596,11 @@ sv-SE:
   error_scm_command_failed: 'Ett fel uppstod när du försökte komma åt versionsarkivet:
     %{value}'
   error_scm_not_found: Den posten eller revision finns inte i versionsarkivet.
-  error_unable_delete_status: Kan inte ta bort typen status eftersom den används av
-    arbetspaket.
-  error_unable_delete_default_status: Det går inte att ta bort standardvärde för status
-    för arbetspaket. Välj ett annat standardvärde för status för arbetspaket innan
-    du tar bort det nuvarande.
+  error_unable_delete_status: The work package status cannot be deleted since it is
+    used by at least one work package.
+  error_unable_delete_default_status: Unable to delete the default work package status.
+    Please select another default work package status before deleting the current
+    one.
   error_unable_to_connect: Kan inte ansluta (%{value})
   error_workflow_copy_source: Välj en typ av datakälla eller roll
   error_workflow_copy_target: Välj måltyp(er) och roll(er)
@@ -694,6 +694,7 @@ sv-SE:
   label_changes_details: Uppgifter om alla förändringar
   label_changeset_plural: Uppdateringar
   label_checked: vald
+  label_child_element: Child element
   label_chronological_order: I kronologisk ordning
   label_close_versions: Stäng slutförda versioner
   label_closed_work_packages: stängt
@@ -841,6 +842,7 @@ sv-SE:
   label_message_plural: Meddelanden
   label_message_posted: Meddelande tillaggt
   label_min_max_length: Min - Maxlängd
+  label_minute_plural: minutes
   label_missing_api_access_key: En API åtkomstnyckel saknas
   label_missing_feeds_access_key: En RSS åtkomstnyckel saknas
   label_modification: "%{count} förändring"
@@ -1275,6 +1277,7 @@ sv-SE:
   project_module_news: Nyheter
   project_module_repository: Versionsarkiv
   project_module_time_tracking: Tidredovisning
+  project_module_timelines: Tidslinjer
   project_module_wiki: Wiki
   query_fields:
     assigned_to_role: Tilldelades roll
@@ -1289,9 +1292,9 @@ sv-SE:
   setting_autologin: Autoinloggning
   setting_available_languages: Tillgängliga språk
   setting_bcc_recipients: Mottagare för kopia (bcc)
-  setting_brute_force_block_after_failed_logins: Blockera användare efter detta antal
-    felaktiga inloggningsförsök (inaktivera med 0)
-  setting_brute_force_block_minutes: Tiden användaren är blockerad (minuter)
+  setting_brute_force_block_after_failed_logins: Block user after this number of failed
+    login attempts
+  setting_brute_force_block_minutes: Time the user is blocked for
   setting_cache_formatted_text: Cache-formaterad text
   setting_column_options: Anpassa utseendet på arbetspaketslistan
   setting_commit_fix_keywords: Nyckelord för fixande
@@ -1328,6 +1331,7 @@ sv-SE:
   setting_work_package_startdate_is_adddate: Använda aktuellt datum som startdatum
     för nya arbetspaket
   setting_work_packages_export_limit: Gräns för export av arbetspaket
+  setting_journal_aggregation_time_minutes: Display journals as aggregated within
   setting_log_requesting_user: Logga användarnamn, namn och E-postadress för alla
     anrop
   setting_login_required: Autentisering krävs
@@ -1340,8 +1344,7 @@ sv-SE:
   setting_password_active_rules: Aktiva teckenklasser
   setting_password_count_former_banned: Antal senaste använda lösenord som är förbjudna
     att återanvända
-  setting_password_days_valid: Antal dagar innan användaren tvingas att byta lösenord
-    (inaktivera med 0)
+  setting_password_days_valid: Number of days, after which to enforce a password change
   setting_password_min_length: Minsta längd
   setting_password_min_adhered_rules: Minsta antal teckenklasser som krävs
   setting_per_page_options: Objekt per sida alternativ
@@ -1406,6 +1409,7 @@ sv-SE:
   text_enumeration_destroy_question: "%{count} objekt har tilldelats detta värde."
   text_file_repository_writable: Katalog skrivbar för bifogade filer
   text_git_repo_example: ett tomt och lokalt versionsarkiv (t.ex. /gitrepo, c:\gitrepo)
+  text_hint_disable_with_0: 'Note: Disable with 0'
   text_work_package_added: Arbetspaketet %{id} har rapporterats av %{author}.
   text_work_package_category_destroy_assignments: Ta bort kategoritilldelningar
   text_work_package_category_destroy_question: Vissa arbetspaket (%{count}) har tilldelas
@@ -1417,6 +1421,9 @@ sv-SE:
   text_work_packages_ref_in_commit_messages: Referenser och fixande av arbetspaket
     i incheckningsmeddelanden
   text_journal_added: "%{label} %{value} lades till"
+  text_journal_aggregation_time_explanation: Combine journals for display if their
+    age difference is less than the specified timespan. This will also delay mail
+    notifications by the same amount of time.
   text_journal_changed: "%{label} ändrades från %{old} till %{new}"
   text_journal_changed_no_detail: "%{label} uppdaterades"
   text_journal_changed_with_diff: "%{label} ändrades (%{link})"

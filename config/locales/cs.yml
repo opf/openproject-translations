@@ -171,63 +171,64 @@ cs:
         watcher: Sledující
     errors:
       messages:
-        accepted: musí být odsouhlaseno
-        blank: nesmí být prázdné
-        cant_link_a_work_package_with_a_descendant: Pracovní balíček nelze propojit
-          s jedním z jeho dílčích úkolů
-        circular_dependency: Tento vztah by vytvořil cyklickou závislost
-        confirmation: neodpovídá potvrzení
-        empty: nemůže být prázdné
-        equal_to: musí být rovno %{count}
-        even: musí být sudé
-        exclusion: je vyhrazen
-        file_too_large: is too large (maximum size is %{count} Bytes)
-        greater_than: musí být větší než %{count}
-        greater_than_or_equal_to: musí být větší než nebo rovna %{count}
+        accepted: must be accepted.
+        blank: can't be blank.
+        cant_link_a_work_package_with_a_descendant: A work package cannot be linked
+          to one of its subtasks.
+        circular_dependency: This relation would create a circular dependency.
+        confirmation: doesn't match confirmation.
+        empty: can't be empty.
+        equal_to: must be equal to %{count}.
+        even: must be even.
+        exclusion: is reserved.
+        file_too_large: is too large (maximum size is %{count} Bytes).
+        greater_than: must be greater than %{count}.
+        greater_than_or_equal_to: must be greater than or equal to %{count}.
         smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
-          length
-        greater_than_start_date: musí být větší než počáteční datum
-        inclusion: is not set to one of the allowed values
-        invalid: je neplatné
-        less_than: musí být menší než %{count}
-        less_than_or_equal_to: musí být menší než nebo rovna %{count}
-        not_a_date: není datum
-        not_a_number: není číslo
-        not_an_integer: není celé číslo
-        not_same_project: nepatří stejnému projektu
-        odd: musí být liché
-        taken: je obsazen
-        too_long: je příliš dlouhý (maximum je %{count} znaků)
-        too_short: je příliš krátká (minimum je %{count} znaků)
-        wrong_length: má chybnou délku (měl by být %{count} znaků)
-        after: musí být po %{date}
-        after_or_equal_to: musí být po nebo přesně %{date}
-        before: musí být před %{date}
-        before_or_equal_to: musí být před nebo přesně %{date}
-        could_not_be_copied: nelze (celé) zkopírovat
+          length.
+        greater_than_start_date: must be greater than start date.
+        inclusion: is not set to one of the allowed values.
+        invalid: is invalid.
+        less_than: must be less than %{count}.
+        less_than_or_equal_to: must be less than or equal to %{count}.
+        not_a_date: is not a date.
+        not_a_number: is not a number.
+        not_an_integer: is not an integer.
+        not_same_project: doesn't belong to the same project.
+        odd: must be odd.
+        taken: has already been taken.
+        too_long: is too long (maximum is %{count} characters).
+        too_short: is too short (minimum is %{count} characters).
+        wrong_length: is the wrong length (should be %{count} characters).
+        after: must be after %{date}.
+        after_or_equal_to: must be after or equal to %{date}.
+        before: must be before %{date}.
+        before_or_equal_to: must be before or equal to %{date}.
+        could_not_be_copied: could not be (fully) copied.
       models:
         project_association:
-          identical_projects: Nelze vytvořit z jednoho projektu do sebe
-          project_association_not_allowed: neumožňuje přidružení
+          identical_projects: can not be created from one project to itself.
+          project_association_not_allowed: does not allow associations.
         repository:
-          not_whitelisted: is not allowed by the configuration
-          no_directory: is not a directory
+          not_whitelisted: is not allowed by the configuration.
+          no_directory: is not a directory.
         work_package:
           is_not_a_valid_target_for_time_entries: 'Work package #%{id} is not a valid
             target for reassigning the time entries.'
           attributes:
             due_date:
-              not_start_date: není v den zahájení, ačkoli to je vyžadováno pro milníky
+              not_start_date: is not on start date, although this is required for
+                milestones.
             parent_id:
-              cannot_be_milestone: nemůže být milník
-              cannot_be_in_another_project: nemůže být v jiném projektu
-              not_a_valid_parent: je neplatné
-              does_not_exist: neexistuje
+              cannot_be_milestone: cannot be a milestone.
+              cannot_be_in_another_project: cannot be in another project.
+              not_a_valid_parent: is invalid.
+              does_not_exist: does not exist.
             status_id:
-              status_transition_invalid: je neplatná, protože není platný přechod
-                neexistuje ze starého do nového stavu pro aktuální uživatelské role
+              status_transition_invalid: is invalid because no valid transition exists
+                from old to new status for the current user's roles.
             priority_id:
-              only_active_priorities_allowed: needs to be active
+              only_active_priorities_allowed: needs to be active.
             category:
               only_same_project_categories_allowed: Kategorie pracovního balíčku musí
                 být v rámci stejného projektu jako pracovního balíčku.
@@ -239,7 +240,7 @@ cs:
           attributes:
             password:
               weak: 'must contain characters of the following classes (at least %{min_count}
-                of %{all_count}): %{rules}'
+                of %{all_count}): %{rules}.'
               lowercase: malá písmena (například 'a')
               uppercase: velká písmena (například ' A')
               numeric: "číselné (např. 1)"
@@ -610,9 +611,9 @@ cs:
   error_scm_command_failed: 'An error occurred when trying to access the repository:
     %{value}'
   error_scm_not_found: The entry or revision was not found in the repository.
-  error_unable_delete_status: Unable to delete work package status because it contains
-    work packages.
-  error_unable_delete_default_status: Unable to delete default work package status.
+  error_unable_delete_status: The work package status cannot be deleted since it is
+    used by at least one work package.
+  error_unable_delete_default_status: Unable to delete the default work package status.
     Please select another default work package status before deleting the current
     one.
   error_unable_to_connect: Nelze se připojit (%{value})
@@ -708,6 +709,7 @@ cs:
   label_changes_details: Details of all changes
   label_changeset_plural: Changesets
   label_checked: checked
+  label_child_element: Child element
   label_chronological_order: In chronological order
   label_close_versions: Close completed versions
   label_closed_work_packages: closed
@@ -854,6 +856,7 @@ cs:
   label_message_plural: Zprávy
   label_message_posted: Zpráva přidána
   label_min_max_length: Min - Max délka
+  label_minute_plural: minutes
   label_missing_api_access_key: Chybí API přístupový klíč
   label_missing_feeds_access_key: Chybí RSS přístupový klíč
   label_modification: "%{count} změna"
@@ -1293,6 +1296,7 @@ cs:
   project_module_news: Novinky
   project_module_repository: Repozitář
   project_module_time_tracking: Sledování času
+  project_module_timelines: Timelines
   project_module_wiki: Wiki
   query_fields:
     assigned_to_role: Assignee's role
@@ -1308,8 +1312,8 @@ cs:
   setting_available_languages: Available languages
   setting_bcc_recipients: Blind carbon copy recipients (bcc)
   setting_brute_force_block_after_failed_logins: Block user after this number of failed
-    login attempts (disable with 0)
-  setting_brute_force_block_minutes: Time the user is blocked for (minutes)
+    login attempts
+  setting_brute_force_block_minutes: Time the user is blocked for
   setting_cache_formatted_text: Cache formatted text
   setting_column_options: Customize the appearance of the work package lists
   setting_commit_fix_keywords: Fixing keywords
@@ -1345,6 +1349,7 @@ cs:
   setting_work_package_startdate_is_adddate: Use current date as start date for new
     work packages
   setting_work_packages_export_limit: Work packages export limit
+  setting_journal_aggregation_time_minutes: Display journals as aggregated within
   setting_log_requesting_user: Log user login, name, and mail address for all requests
   setting_login_required: Vyžadována autentizace
   setting_mail_from: Emission email address
@@ -1356,7 +1361,6 @@ cs:
   setting_password_count_former_banned: Number of most recently used passwords banned
     for reuse
   setting_password_days_valid: Number of days, after which to enforce a password change
-    (disable with 0)
   setting_password_min_length: Minimální délka
   setting_password_min_adhered_rules: Minimální počet požadovaných tříd
   setting_per_page_options: Objects per page options
@@ -1421,6 +1425,7 @@ cs:
   text_enumeration_destroy_question: "%{count} objects are assigned to this value."
   text_file_repository_writable: Attachments directory writable
   text_git_repo_example: a bare and local repository (e.g. /gitrepo, c:\gitrepo)
+  text_hint_disable_with_0: 'Note: Disable with 0'
   text_work_package_added: Work package %{id} has been reported by %{author}.
   text_work_package_category_destroy_assignments: Remove category assignments
   text_work_package_category_destroy_question: Some work packages (%{count}) are assigned
@@ -1432,6 +1437,9 @@ cs:
   text_work_packages_ref_in_commit_messages: Referencing and fixing work packages
     in commit messages
   text_journal_added: "%{label} %{value} added"
+  text_journal_aggregation_time_explanation: Combine journals for display if their
+    age difference is less than the specified timespan. This will also delay mail
+    notifications by the same amount of time.
   text_journal_changed: "%{label} changed from %{old} to %{new}"
   text_journal_changed_no_detail: "%{label} aktualizován"
   text_journal_changed_with_diff: "%{label} changed (%{link})"
