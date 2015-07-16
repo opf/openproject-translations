@@ -150,63 +150,64 @@ zh-TW:
         watcher: "監看者"
     errors:
       messages:
-        accepted: "必須接受"
-        blank: "不能空白"
-        cant_link_a_work_package_with_a_descendant: "一項工作項目不能連結到一個子任務"
-        circular_dependency: This relation would create a circular dependency
-        confirmation: "密碼兩次填寫不同"
-        empty: "不能為空"
-        equal_to: "必須等於 %{count}"
-        even: "必須是偶數"
-        exclusion: "已經被預定"
-        file_too_large: is too large (maximum size is %{count} Bytes)
-        greater_than: "必須大於 %{count}"
-        greater_than_or_equal_to: "必須大於或等於 %{count}"
-        smaller_than_or_equal_to_max_length: "必須小於或等於最大長度"
-        greater_than_start_date: "必須大於開始日期"
-        inclusion: is not set to one of the allowed values
-        invalid: "無效。 "
-        less_than: "必須小於 %{count}"
-        less_than_or_equal_to: "必須小於或等於 %{count}"
-        not_a_date: "不是一個日期"
-        not_a_number: "不是一個數值"
-        not_an_integer: "不是一個整數"
-        not_same_project: "不屬於同一個專案"
-        odd: "必須是奇數"
-        taken: "已經被使用"
-        too_long: "太長 （最大值是 %{count} 個字元）"
-        too_short: "太短 (最小值是 %{count} 個字元)"
-        wrong_length: "長度不正確（應該是 %{count} 個字元）"
-        after: "必須在 %{date} 之後 "
-        after_or_equal_to: "必須之後或等於 %{日期}"
-        before: "必須在 %{date} 前 "
-        before_or_equal_to: "必須之前或等於 %{日期}"
-        could_not_be_copied: "不能 (完全) 複製"
+        accepted: must be accepted.
+        blank: can't be blank.
+        cant_link_a_work_package_with_a_descendant: A work package cannot be linked
+          to one of its subtasks.
+        circular_dependency: This relation would create a circular dependency.
+        confirmation: doesn't match confirmation.
+        empty: can't be empty.
+        equal_to: must be equal to %{count}.
+        even: must be even.
+        exclusion: is reserved.
+        file_too_large: is too large (maximum size is %{count} Bytes).
+        greater_than: must be greater than %{count}.
+        greater_than_or_equal_to: must be greater than or equal to %{count}.
+        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
+          length.
+        greater_than_start_date: must be greater than start date.
+        inclusion: is not set to one of the allowed values.
+        invalid: is invalid.
+        less_than: must be less than %{count}.
+        less_than_or_equal_to: must be less than or equal to %{count}.
+        not_a_date: is not a date.
+        not_a_number: is not a number.
+        not_an_integer: is not an integer.
+        not_same_project: doesn't belong to the same project.
+        odd: must be odd.
+        taken: has already been taken.
+        too_long: is too long (maximum is %{count} characters).
+        too_short: is too short (minimum is %{count} characters).
+        wrong_length: is the wrong length (should be %{count} characters).
+        after: must be after %{date}.
+        after_or_equal_to: must be after or equal to %{date}.
+        before: must be before %{date}.
+        before_or_equal_to: must be before or equal to %{date}.
+        could_not_be_copied: could not be (fully) copied.
       models:
         project_association:
-          identical_projects: "不能在專案本身建立"
-          project_association_not_allowed: "不允許建立關聯"
+          identical_projects: can not be created from one project to itself.
+          project_association_not_allowed: does not allow associations.
         repository:
-          not_whitelisted: is not allowed by the configuration
-          no_directory: is not a directory
+          not_whitelisted: is not allowed by the configuration.
+          no_directory: is not a directory.
         work_package:
           is_not_a_valid_target_for_time_entries: 'Work package #%{id} is not a valid
             target for reassigning the time entries.'
           attributes:
             due_date:
               not_start_date: is not on start date, although this is required for
-                milestones
+                milestones.
             parent_id:
-              cannot_be_milestone: "不能成為一個里程碑"
-              cannot_be_in_another_project: "不能在另一個專案中"
-              not_a_valid_parent: "無效。 "
-              does_not_exist: "不存在"
+              cannot_be_milestone: cannot be a milestone.
+              cannot_be_in_another_project: cannot be in another project.
+              not_a_valid_parent: is invalid.
+              does_not_exist: does not exist.
             status_id:
-              status_transition_invalid: |
-                is invalid because no valid transition exists from old to new status for the current user's roles
-                無效，因為目前的角色並未被定義可以從目前的狀態轉移到新的狀態
+              status_transition_invalid: is invalid because no valid transition exists
+                from old to new status for the current user's roles.
             priority_id:
-              only_active_priorities_allowed: "必須是啟用的"
+              only_active_priorities_allowed: needs to be active.
             category:
               only_same_project_categories_allowed: The category of a work package
                 must be within the same project as the work package.
@@ -218,7 +219,7 @@ zh-TW:
           attributes:
             password:
               weak: 'must contain characters of the following classes (at least %{min_count}
-                of %{all_count}): %{rules}'
+                of %{all_count}): %{rules}.'
               lowercase: "小寫（例如：「a」）"
               uppercase: "大寫（例如：「Ａ」）"
               numeric: "數字（例如：「1」）"
@@ -570,9 +571,9 @@ zh-TW:
   error_scm_command_failed: 'An error occurred when trying to access the repository:
     %{value}'
   error_scm_not_found: The entry or revision was not found in the repository.
-  error_unable_delete_status: Unable to delete work package status because it contains
-    work packages.
-  error_unable_delete_default_status: Unable to delete default work package status.
+  error_unable_delete_status: The work package status cannot be deleted since it is
+    used by at least one work package.
+  error_unable_delete_default_status: Unable to delete the default work package status.
     Please select another default work package status before deleting the current
     one.
   error_unable_to_connect: "無法連接 (%{value})"
@@ -1238,7 +1239,7 @@ zh-TW:
   project_module_news: "新知"
   project_module_repository: Repository
   project_module_time_tracking: Time tracking
-  project_module_timelines: Timelines
+  project_module_timelines: "時間軸"
   project_module_wiki: "維基"
   query_fields:
     assigned_to_role: "負責執行者的角色"

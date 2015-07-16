@@ -152,59 +152,63 @@ ja:
         watcher: "ウォッチャー"
     errors:
       messages:
-        accepted: "を受諾してください。"
-        blank: "を入力してください。"
-        cant_link_a_work_package_with_a_descendant: "親子関係にある作業項目間での関連の設定はできません。"
-        circular_dependency: "この関係では、循環依存になります。"
-        confirmation: "が一致しません。"
-        empty: "を入力してください。"
-        equal_to: "は%{count}に等しくしてください。"
-        even: "は偶数にしてください。"
-        exclusion: "は予約されています。"
-        file_too_large: is too large (maximum size is %{count} Bytes)
-        greater_than: "は%{count}より大きい値にしてください。"
-        greater_than_or_equal_to: "は%{count}以上の値にしてください。"
-        smaller_than_or_equal_to_max_length: "は最大長さより以下でなければなりません。"
-        greater_than_start_date: "は開始日より後にしてください。"
-        inclusion: "は許可されている値ではありません。"
-        invalid: "は不正な値です。"
-        less_than: "は%{count}より小さい値にしてください。"
-        less_than_or_equal_to: "は%{count}以下の値にしてください。"
-        not_a_date: "は日付にしてください。"
-        not_a_number: "は数値にしてください。"
-        not_an_integer: "は整数にしてください。"
-        not_same_project: "は同じプロジェクトに属していません。"
-        odd: "は奇数にしてください。"
-        taken: "は既に使用されています。"
-        too_long: "は%{count}文字以内を入力してください。"
-        too_short: "は%{count}文字以上を入力してください。"
-        wrong_length: "は%{count}文字を入力してください。"
-        after: "は%{date}より後にしてください。"
-        after_or_equal_to: "は%{date}以降にしてください。"
-        before: "は%{date}の前にしてください。"
-        before_or_equal_to: "は%{date}より以前にしてください。"
-        could_not_be_copied: "（完全に）コピーできませんでした。"
+        accepted: must be accepted.
+        blank: can't be blank.
+        cant_link_a_work_package_with_a_descendant: A work package cannot be linked
+          to one of its subtasks.
+        circular_dependency: This relation would create a circular dependency.
+        confirmation: doesn't match confirmation.
+        empty: can't be empty.
+        equal_to: must be equal to %{count}.
+        even: must be even.
+        exclusion: is reserved.
+        file_too_large: is too large (maximum size is %{count} Bytes).
+        greater_than: must be greater than %{count}.
+        greater_than_or_equal_to: must be greater than or equal to %{count}.
+        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
+          length.
+        greater_than_start_date: must be greater than start date.
+        inclusion: is not set to one of the allowed values.
+        invalid: is invalid.
+        less_than: must be less than %{count}.
+        less_than_or_equal_to: must be less than or equal to %{count}.
+        not_a_date: is not a date.
+        not_a_number: is not a number.
+        not_an_integer: is not an integer.
+        not_same_project: doesn't belong to the same project.
+        odd: must be odd.
+        taken: has already been taken.
+        too_long: is too long (maximum is %{count} characters).
+        too_short: is too short (minimum is %{count} characters).
+        wrong_length: is the wrong length (should be %{count} characters).
+        after: must be after %{date}.
+        after_or_equal_to: must be after or equal to %{date}.
+        before: must be before %{date}.
+        before_or_equal_to: must be before or equal to %{date}.
+        could_not_be_copied: could not be (fully) copied.
       models:
         project_association:
-          identical_projects: "は同一プロジェクトから作成することができません。"
-          project_association_not_allowed: "関連付けを許可していません。"
+          identical_projects: can not be created from one project to itself.
+          project_association_not_allowed: does not allow associations.
         repository:
-          not_whitelisted: is not allowed by the configuration
-          no_directory: is not a directory
+          not_whitelisted: is not allowed by the configuration.
+          no_directory: is not a directory.
         work_package:
           is_not_a_valid_target_for_time_entries: "作業時間を再割り当てるには、作業項目#%{id}は対象外である。"
           attributes:
             due_date:
-              not_start_date: "は開始日になっていません。マイルストーンでは必要です。"
+              not_start_date: is not on start date, although this is required for
+                milestones.
             parent_id:
-              cannot_be_milestone: "はマイルストーンにすることはできません。"
-              cannot_be_in_another_project: "は別のプロジェクトに属することはできません。"
-              not_a_valid_parent: "は不正な値です。"
-              does_not_exist: "は存在しません。"
+              cannot_be_milestone: cannot be a milestone.
+              cannot_be_in_another_project: cannot be in another project.
+              not_a_valid_parent: is invalid.
+              does_not_exist: does not exist.
             status_id:
-              status_transition_invalid: "ユーザーの現在の役割では旧ステータスから新ステータスへの有効な遷移がないため無効"
+              status_transition_invalid: is invalid because no valid transition exists
+                from old to new status for the current user's roles.
             priority_id:
-              only_active_priorities_allowed: "は有効である必要があります。"
+              only_active_priorities_allowed: needs to be active.
             category:
               only_same_project_categories_allowed: "ワークパッケージのカテゴリは、同じプロジェクト内にそのワークパッケージでなければなりません。"
               does_not_exist: "指定されたカテゴリは存在しません。"
@@ -213,7 +217,8 @@ ja:
         user:
           attributes:
             password:
-              weak: "次の文字種類が含まれているようにしてください。（%{all_count})つのうちに%{min_count}つ以上：%{rules}）"
+              weak: 'must contain characters of the following classes (at least %{min_count}
+                of %{all_count}): %{rules}.'
               lowercase: "アルファベット小文字 (例: 'a')"
               uppercase: "アルファベット大文字 (例: ' A')"
               numeric: "数値 (例: '1')"
@@ -221,8 +226,7 @@ ja:
               reused:
                 one: has been used before. Please choose one that is different from
                   your last one.
-                other: has been used before. Please choose one that is different from
-                  your last %{count}.
+                other: "は以前に使用されています。前回の%{count}つと異なるものを選択してください。"
         member:
           principal_blank: "一つ以上のユーザーまたはグループを選択してください。"
           role_blank: 1つ以上の役割を選択してください。
@@ -230,7 +234,7 @@ ja:
         body: "次のフィールドをチェックしてください："
         header:
           one: 1 error prohibited this %{model} from being saved
-          other: "%{count} errors prohibited this %{model} from being saved"
+          other: "%{count}つのエラーにより%{model}を保存できませんでした。"
     models:
       attachment: "ファイル"
       board: "フォーラム"
@@ -246,7 +250,7 @@ ja:
       query: "ユーザーのクエリ"
       role:
         one: Role
-        other: Roles
+        other: "ロール"
       type: "種別"
       planning_element: "計画の要素"
       project_type: "プロジェクトの種類"
@@ -431,42 +435,42 @@ ja:
     distance_in_words:
       about_x_hours:
         one: about 1 hour
-        other: about %{count} hours
+        other: "約%{count}時間"
       about_x_months:
         one: about 1 month
-        other: about %{count} months
+        other: "約%{count}ヶ月"
       about_x_years:
         one: about 1 year
-        other: about %{count} years
+        other: "約%{count}年間"
       almost_x_years:
         one: almost 1 year
-        other: almost %{count} years
+        other: "ほぼ%{count}年間"
       half_a_minute: 30秒前後
       less_than_x_minutes:
         one: less than a minute
-        other: less than %{count} minutes
+        other: "%{count}分未満"
       less_than_x_seconds:
         one: less than 1 second
-        other: less than %{count} seconds
+        other: "%{count}秒未満"
       over_x_years:
         one: over 1 year
-        other: over %{count} years
+        other: "%{count}年間以上"
       x_days:
         one: 1 day
-        other: "%{count} days"
+        other: "%{count}日"
       x_minutes:
         one: 1 minute
-        other: "%{count} minutes"
+        other: "%{count}分"
       x_months:
         one: 1 month
-        other: "%{count} months"
+        other: "%{count}ヶ月"
       x_seconds:
         one: 1 second
-        other: "%{count} seconds"
+        other: "%{count}秒"
     units:
       hour:
         one: hour
-        other: hours
+        other: "時"
   default_activity_management: "管理"
   default_activity_design: "設計作業"
   default_activity_development: "開発作業"
@@ -558,8 +562,11 @@ ja:
   error_scm_annotate: "エントリが存在しない、もしくは注釈を付けることができません。"
   error_scm_command_failed: "「%{value}」リポジトリにアクセスしようとしてエラーが発生しました。"
   error_scm_not_found: "リポジトリに、エントリ/リビジョンが存在しません。"
-  error_unable_delete_status: "ワークパッケージを含んでいるため、ワークパッケージのステータスを削除できません。"
-  error_unable_delete_default_status: "作業項目の既定のステータスを削除できません。削除する前に別の既定値を選択してください。"
+  error_unable_delete_status: The work package status cannot be deleted since it is
+    used by at least one work package.
+  error_unable_delete_default_status: Unable to delete the default work package status.
+    Please select another default work package status before deleting the current
+    one.
   error_unable_to_connect: "接続できません。 （%{value}）"
   error_workflow_copy_source: "コピー元となる型または役割を選択してください。"
   error_workflow_copy_target: "コピー先となる型と役割を選択してください。"
@@ -791,7 +798,7 @@ ja:
   label_message_plural: "メッセージ"
   label_message_posted: "メッセージが追加されました。"
   label_min_max_length: "最短 ～ 最大長"
-  label_minute_plural: minutes
+  label_minute_plural: "分"
   label_missing_api_access_key: APIアクセスキーが見つかりません。
   label_missing_feeds_access_key: RSSアクセスキーが見つかりません。
   label_modification: "%{count}件の変更"
@@ -997,23 +1004,23 @@ ja:
   label_workflow_summary: "サマリー"
   label_x_closed_work_packages_abbr:
     one: 1 closed
-    other: "%{count} closed"
+    other: "%{count}件完了"
     zero: 0 closed
   label_x_comments:
     one: 1 comment
-    other: "%{count} comments"
+    other: "%{count}件コメント"
     zero: no comments
   label_x_open_work_packages_abbr:
     one: 1 open
-    other: "%{count} open"
+    other: "%{count}件未完了"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
     one: 1 open / %{total}
-    other: "%{count} open / %{total}"
+    other: "%{count}件未完了 / 全%{total}件"
     zero: 0 open / %{total}
   label_x_projects:
     one: 1 project
-    other: "%{count} projects"
+    other: "%{count}件プロジェクト"
     zero: no projects
   label_year: "年"
   label_yesterday: "昨日"
@@ -1121,7 +1128,7 @@ ja:
         units:
           byte:
             one: Byte
-            other: Bytes
+            other: "バイト"
           gb: GB
           kb: kB
           mb: MB
@@ -1199,7 +1206,7 @@ ja:
   project_module_news: "ニュース"
   project_module_repository: "リポジトリ"
   project_module_time_tracking: "作業時間の記録"
-  project_module_timelines: Timelines
+  project_module_timelines: "タイムライン"
   project_module_wiki: Wiki
   query_fields:
     assigned_to_role: "担当者の役割"
@@ -1214,9 +1221,8 @@ ja:
   setting_autologin: "自動ログイン"
   setting_available_languages: "利用できる言語"
   setting_bcc_recipients: "宛先を非表示(bcc)"
-  setting_brute_force_block_after_failed_logins: Block user after this number of failed
-    login attempts
-  setting_brute_force_block_minutes: Time the user is blocked for
+  setting_brute_force_block_after_failed_logins: "ユーザーをブロックさせる失敗したログイン回数"
+  setting_brute_force_block_minutes: "ユーザーがブロックされている期間"
   setting_cache_formatted_text: "書式化されたテキストをキャッシュする"
   setting_column_options: "作業項目一覧の表示をカスタマイズする"
   setting_commit_fix_keywords: "修正用キーワード"
@@ -1250,7 +1256,7 @@ ja:
   setting_work_package_properties: "項目名"
   setting_work_package_startdate_is_adddate: "今日の日付を新しい作業項目の開始日とする"
   setting_work_packages_export_limit: "エクスポートする項目数の上限"
-  setting_journal_aggregation_time_minutes: Display journals as aggregated within
+  setting_journal_aggregation_time_minutes: "期間内の履歴記述を集計して表示する"
   setting_log_requesting_user: "全てのリクエストに対し、ユーザーのログイン名、名前、メールアドレスをログに記録する"
   setting_login_required: "認証が必要"
   setting_mail_from: "送信元のメールアドレス"
@@ -1260,7 +1266,7 @@ ja:
   setting_new_project_user_role_id: "システム管理者以外のプロジェクト作成者に設定する役割"
   setting_password_active_rules: "有効な文字種類"
   setting_password_count_former_banned: "再利用を禁止される最近使用済みパスワードの数"
-  setting_password_days_valid: Number of days, after which to enforce a password change
+  setting_password_days_valid: "パスワードを強制変更させる経過日数"
   setting_password_min_length: "最短長"
   setting_password_min_adhered_rules: "最小限の必要な文字種類"
   setting_per_page_options: "オプションページごとの項目数"
@@ -1321,7 +1327,7 @@ ja:
   text_enumeration_destroy_question: "%{count}件のオブジェクトがこの値に割り当てられています。"
   text_file_repository_writable: "添付ファイルのディレクトリが書き込み可能"
   text_git_repo_example: "ローカルのリポジトリ （/gitrepo、c:\\gitrepo など）"
-  text_hint_disable_with_0: 'Note: Disable with 0'
+  text_hint_disable_with_0: "注：0で無効になる"
   text_work_package_added: "作業項目%{id}が%{author}によって報告されました。"
   text_work_package_category_destroy_assignments: "カテゴリへの割り当てを削除する"
   text_work_package_category_destroy_question: "%{count}件の作業項目がこのカテゴリに割り当てられています。よろしいですか？"
@@ -1330,9 +1336,7 @@ ja:
   text_work_packages_destroy_confirmation: "選択した作業項目を削除してもよろしいですか？"
   text_work_packages_ref_in_commit_messages: "コミットメッセージ内で作業項目の参照/修正"
   text_journal_added: "%{label}で%{value}を追加"
-  text_journal_aggregation_time_explanation: Combine journals for display if their
-    age difference is less than the specified timespan. This will also delay mail
-    notifications by the same amount of time.
+  text_journal_aggregation_time_explanation: "発生時刻の差が指定された期間内であれば、履歴記述を集計して表示する。またメールの通知がこの期間で遅らせます。"
   text_journal_changed: "%{label}を%{old}から%{new}に変更"
   text_journal_changed_no_detail: "%{label}を更新"
   text_journal_changed_with_diff: "%{label}を変更（%{link}）"
@@ -1421,7 +1425,7 @@ ja:
     duration: "期間"
     duration_days:
       one: 1 day
-      other: "%{count} days"
+      other: "%{count}日間"
     edit_color: "色を編集する"
     edit_project_type: "プロジェクトの種類を編集する"
     edit_thing: "編集"
@@ -1581,7 +1585,7 @@ ja:
     blocked: "一時的ロック"
     blocked_num_failed_logins:
       one: locked temporarily (one failed login attempt)
-      other: locked temporarily (%{count} failed login attempts)
+      other: "一時的にロックされている （%{count}回失敗したログイン試行）"
     deleted: "削除されたユーザ"
     error_status_change_failed: "次のエラーによりユーザーのステータスの変更が失敗しました：%{errors}"
     lock: "永続ロックする"

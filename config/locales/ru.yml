@@ -170,63 +170,64 @@ ru:
         watcher: "Наблюдатель"
     errors:
       messages:
-        accepted: "должно быть принято"
-        blank: "не может быть незаполненным"
-        cant_link_a_work_package_with_a_descendant: "Пакет работ не может быть связан
-          ни с одной из подзадач"
-        circular_dependency: "Это отношение создаст циклическую зависимость"
-        confirmation: "не совпадает с подтверждением"
-        empty: "не может быть пустым"
-        equal_to: "должно быть равно %{count}"
-        even: "должно быть четным"
-        exclusion: "зарезервировано"
-        file_too_large: is too large (maximum size is %{count} Bytes)
-        greater_than: "должно превышать %{count}"
-        greater_than_or_equal_to: "должно быть больше или равно %{count}"
-        smaller_than_or_equal_to_max_length: "должно быть меньше или равно максимуму
-          длины"
-        greater_than_start_date: "должно быть позднее, чем дата начала"
-        inclusion: "не задано ни одно из допустимых значений"
-        invalid: "неверный"
-        less_than: "должно быть меньше, чем %{count}"
-        less_than_or_equal_to: "должно быть меньше или равно %{count}"
-        not_a_date: "не является датой"
-        not_a_number: "не является числом"
-        not_an_integer: "не целое число"
-        not_same_project: "не принадлежит тому же проекту"
-        odd: "должно быть нечетным"
-        taken: "уже принято"
-        too_long: "слишком длинное (максимум — %{count} знаков)"
-        too_short: "слишком короткое (минимум — %{count} знаков)"
-        wrong_length: "неправильная длина (должно быть %{count} знаков)"
-        after: "должно быть после %{date}"
-        after_or_equal_to: "должна быть после или равное %{date}"
-        before: "должно быть ранее %{date}"
-        before_or_equal_to: "должны быть %{date} или ранее"
-        could_not_be_copied: "не может быть скопировано (полностью)"
+        accepted: must be accepted.
+        blank: can't be blank.
+        cant_link_a_work_package_with_a_descendant: A work package cannot be linked
+          to one of its subtasks.
+        circular_dependency: This relation would create a circular dependency.
+        confirmation: doesn't match confirmation.
+        empty: can't be empty.
+        equal_to: must be equal to %{count}.
+        even: must be even.
+        exclusion: is reserved.
+        file_too_large: is too large (maximum size is %{count} Bytes).
+        greater_than: must be greater than %{count}.
+        greater_than_or_equal_to: must be greater than or equal to %{count}.
+        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
+          length.
+        greater_than_start_date: must be greater than start date.
+        inclusion: is not set to one of the allowed values.
+        invalid: is invalid.
+        less_than: must be less than %{count}.
+        less_than_or_equal_to: must be less than or equal to %{count}.
+        not_a_date: is not a date.
+        not_a_number: is not a number.
+        not_an_integer: is not an integer.
+        not_same_project: doesn't belong to the same project.
+        odd: must be odd.
+        taken: has already been taken.
+        too_long: is too long (maximum is %{count} characters).
+        too_short: is too short (minimum is %{count} characters).
+        wrong_length: is the wrong length (should be %{count} characters).
+        after: must be after %{date}.
+        after_or_equal_to: must be after or equal to %{date}.
+        before: must be before %{date}.
+        before_or_equal_to: must be before or equal to %{date}.
+        could_not_be_copied: could not be (fully) copied.
       models:
         project_association:
-          identical_projects: "не может быть создана  с самим собой"
-          project_association_not_allowed: "не разрешает ассоциации"
+          identical_projects: can not be created from one project to itself.
+          project_association_not_allowed: does not allow associations.
         repository:
-          not_whitelisted: "не допускается  конфигурацией"
-          no_directory: "не является каталогом"
+          not_whitelisted: is not allowed by the configuration.
+          no_directory: is not a directory.
         work_package:
           is_not_a_valid_target_for_time_entries: "Группа работ #%{id} не является
             допустимым объектом переназначение времени записи."
           attributes:
             due_date:
-              not_start_date: "не дата начала, но нужен в ключевые моменты"
+              not_start_date: is not on start date, although this is required for
+                milestones.
             parent_id:
-              cannot_be_milestone: "не может служить ключевым моментом"
-              cannot_be_in_another_project: "не может быть в другом проекте"
-              not_a_valid_parent: "неверный"
-              does_not_exist: "не существует"
+              cannot_be_milestone: cannot be a milestone.
+              cannot_be_in_another_project: cannot be in another project.
+              not_a_valid_parent: is invalid.
+              does_not_exist: does not exist.
             status_id:
-              status_transition_invalid: "является недопустимым, потому что нет правильного
-                перехода от старого этапа к новому для текущих ролей пользователя"
+              status_transition_invalid: is invalid because no valid transition exists
+                from old to new status for the current user's roles.
             priority_id:
-              only_active_priorities_allowed: "требуется быть активным"
+              only_active_priorities_allowed: needs to be active.
             category:
               only_same_project_categories_allowed: "Категория пакета работ должна
                 быть в рамках того же проекта  как и пакет работ."
@@ -237,8 +238,8 @@ ru:
         user:
           attributes:
             password:
-              weak: "должен содержать символы следующих классов (по крайней мере %{min_count}
-                из %{all_count}): %{rules}"
+              weak: 'must contain characters of the following classes (at least %{min_count}
+                of %{all_count}): %{rules}.'
               lowercase: "нижний регистр (например «а»)"
               uppercase: прописные буквы (например, "A")
               numeric: цифры (например "1")
@@ -613,11 +614,11 @@ ru:
   error_scm_annotate: "Статья не существует или не может быть описана."
   error_scm_command_failed: "Произошла ошибка при попытке доступа к хранилищу: %{value}"
   error_scm_not_found: "Ни статья, ни ее исправленная версия в репозитории не найдены."
-  error_unable_delete_status: "Не удается удалить состояние пакета работ, потому что
-    есть пакеты работ с таким состоянием."
-  error_unable_delete_default_status: "Не удается удалить статус работы пакета по
-    умолчанию. Пожалуйста, выберите другой статус работы пакета по умолчанию перед
-    удалением текущего."
+  error_unable_delete_status: The work package status cannot be deleted since it is
+    used by at least one work package.
+  error_unable_delete_default_status: Unable to delete the default work package status.
+    Please select another default work package status before deleting the current
+    one.
   error_unable_to_connect: "Не удается подключиться (%{value})"
   error_workflow_copy_source: "Пожалуйста, выберите тип источника или роль"
   error_workflow_copy_target: "Пожалуйста, выберите целевые тип и роль"
@@ -1306,7 +1307,7 @@ ru:
   project_module_news: "Новости"
   project_module_repository: "Репозиторий"
   project_module_time_tracking: "Учет времени"
-  project_module_timelines: Timelines
+  project_module_timelines: "Графики"
   project_module_wiki: Wiki
   query_fields:
     assigned_to_role: "Роль назначенного"

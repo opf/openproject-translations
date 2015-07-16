@@ -170,63 +170,64 @@ da:
         watcher: Tilsynsførende
     errors:
       messages:
-        accepted: skal accepteres
-        blank: må ikke være tomt
-        cant_link_a_work_package_with_a_descendant: En arbejdspakke kan ikke knyttes
-          til en af dens underopgaver
-        circular_dependency: Denne relation vil skabe en cirkulær afhængighed
-        confirmation: svarer ikke til bekræftelse
-        empty: må ikke være tomt
-        equal_to: skal være lig med %{count}
-        even: skal være lige
-        exclusion: er reserveret
-        file_too_large: er for stor (størst mulige er %{count} bytes)
-        greater_than: skal være større end %{count}
-        greater_than_or_equal_to: skal være større end eller lig med %{count}
-        smaller_than_or_equal_to_max_length: skal være mindre end eller lig den maksimale
-          længde
-        greater_than_start_date: skal være senere end startdatoen
-        inclusion: er ikke sat til en tilladt værdi
-        invalid: er ugyldig
-        less_than: skal være mindre end %{count}}
-        less_than_or_equal_to: skal være mindre end eller lig med  %{count}
-        not_a_date: er ikke en dato
-        not_a_number: er ikke et tal
-        not_an_integer: er ikke et heltal
-        not_same_project: hører ikke til samme projekt
-        odd: skal være ulige
-        taken: er allerede taget
-        too_long: 'er for lang (højst: %{count} tegn)'
-        too_short: 'er for kort (mindst: %{count} tegn)'
-        wrong_length: har forkert længde (skal være %{count} tegn)
-        after: skal være senere end %{date}
-        after_or_equal_to: skal være tidligst den %{date}
-        before: skal være før %{date}
-        before_or_equal_to: skal være senest den %{date}
-        could_not_be_copied: kunne ikke kopieres (i fuldt omfang)
+        accepted: must be accepted.
+        blank: can't be blank.
+        cant_link_a_work_package_with_a_descendant: A work package cannot be linked
+          to one of its subtasks.
+        circular_dependency: This relation would create a circular dependency.
+        confirmation: doesn't match confirmation.
+        empty: can't be empty.
+        equal_to: must be equal to %{count}.
+        even: must be even.
+        exclusion: is reserved.
+        file_too_large: is too large (maximum size is %{count} Bytes).
+        greater_than: must be greater than %{count}.
+        greater_than_or_equal_to: must be greater than or equal to %{count}.
+        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
+          length.
+        greater_than_start_date: must be greater than start date.
+        inclusion: is not set to one of the allowed values.
+        invalid: is invalid.
+        less_than: must be less than %{count}.
+        less_than_or_equal_to: must be less than or equal to %{count}.
+        not_a_date: is not a date.
+        not_a_number: is not a number.
+        not_an_integer: is not an integer.
+        not_same_project: doesn't belong to the same project.
+        odd: must be odd.
+        taken: has already been taken.
+        too_long: is too long (maximum is %{count} characters).
+        too_short: is too short (minimum is %{count} characters).
+        wrong_length: is the wrong length (should be %{count} characters).
+        after: must be after %{date}.
+        after_or_equal_to: must be after or equal to %{date}.
+        before: must be before %{date}.
+        before_or_equal_to: must be before or equal to %{date}.
+        could_not_be_copied: could not be (fully) copied.
       models:
         project_association:
-          identical_projects: kan ikke oprettes fra et projekt til sig selv
-          project_association_not_allowed: tillader ikke sammensætninger
+          identical_projects: can not be created from one project to itself.
+          project_association_not_allowed: does not allow associations.
         repository:
-          not_whitelisted: tillades ikke af opsætningen
-          no_directory: er ikke et katalog
+          not_whitelisted: is not allowed by the configuration.
+          no_directory: is not a directory.
         work_package:
           is_not_a_valid_target_for_time_entries: 'Arbejdspakke # %{id} er ikke et
             gyldig mål for tildeling af tider.'
           attributes:
             due_date:
-              not_start_date: er ikke på startdato, selvom dette er påkrævet for milepæle
+              not_start_date: is not on start date, although this is required for
+                milestones.
             parent_id:
-              cannot_be_milestone: kan ikke være en milepæl
-              cannot_be_in_another_project: kan ikke være i et andet projekt
-              not_a_valid_parent: er ugyldig
-              does_not_exist: findes ikke
+              cannot_be_milestone: cannot be a milestone.
+              cannot_be_in_another_project: cannot be in another project.
+              not_a_valid_parent: is invalid.
+              does_not_exist: does not exist.
             status_id:
-              status_transition_invalid: er ugyldig fordi der mangler lovlig overførsel
-                fra gammel til ny status for den aktuelle brugers roller
+              status_transition_invalid: is invalid because no valid transition exists
+                from old to new status for the current user's roles.
             priority_id:
-              only_active_priorities_allowed: skal være aktiv
+              only_active_priorities_allowed: needs to be active.
             category:
               only_same_project_categories_allowed: Arbejdspakkens kategori skal være
                 tilstede i samme projekt som pakken.
@@ -237,8 +238,8 @@ da:
         user:
           attributes:
             password:
-              weak: 'skal indeholde tegn fra de følgende typer (mindst %{min_count}
-                af %{all_count}): %{rules}'
+              weak: 'must contain characters of the following classes (at least %{min_count}
+                of %{all_count}): %{rules}.'
               lowercase: små bogstaver (f.eks. "a")
               uppercase: store bogstaver (f.eks. "A")
               numeric: tal (fx "1")
@@ -594,8 +595,8 @@ da:
   error_scm_command_failed: 'Der opstod en fejl da du forsøgte at tilgå projektarkivet:
     %{value}'
   error_scm_not_found: Indholdet eller ændring findes ikke i projektarkivet.
-  error_unable_delete_status: Kan ikke slette status for arbejdspakke da den bruges
-    af mindst én arbejdspakke.
+  error_unable_delete_status: Arbejdspakkens status kan ikke slettes da den bruges
+    af mindst én pakke.
   error_unable_delete_default_status: Det er ikke muligt at slette forhåndsværdien
     for arbejdspakkens status. Vælg venligst en anden status for arbejdspakken før
     den nuværende slettes.
@@ -822,7 +823,7 @@ da:
   label_latest_revision_plural: Seneste revideringer
   label_ldap_authentication: LDAP-godkendelse
   label_less_or_equal: "<="
-  label_less_than_ago: less than days ago
+  label_less_than_ago: mindre end dage siden
   label_list: List
   label_loading: Henter...
   label_logged_as: Logget ind som
@@ -839,7 +840,7 @@ da:
   label_message_plural: Meddelelser
   label_message_posted: Meddelelse tilføjet
   label_min_max_length: Min. - maks. længde
-  label_minute_plural: minutes
+  label_minute_plural: minutter
   label_missing_api_access_key: Der mangler en API adgangsnøgle
   label_missing_feeds_access_key: Der mangler en RSS adgangsnøgle
   label_modification: "%{count} ændring"
@@ -1274,7 +1275,7 @@ da:
   project_module_news: Nyheder
   project_module_repository: Projektarkiv
   project_module_time_tracking: Tidsregistrering
-  project_module_timelines: Timelines
+  project_module_timelines: Tidslinjer
   project_module_wiki: Wiki
   query_fields:
     assigned_to_role: Opdragsgiverens rolle
@@ -1289,9 +1290,9 @@ da:
   setting_autologin: Autologin
   setting_available_languages: Tilgængelige sprog
   setting_bcc_recipients: Anonymiserede modtagere (bcc)
-  setting_brute_force_block_after_failed_logins: Block user after this number of failed
-    login attempts
-  setting_brute_force_block_minutes: Time the user is blocked for
+  setting_brute_force_block_after_failed_logins: Blokér bruger efter dette antal mislykkede
+    forsøg på login
+  setting_brute_force_block_minutes: Periode, brugeren vil være blokeret
   setting_cache_formatted_text: Gem tekstformat i cache
   setting_column_options: Tilpas udseendet af listen over arbejdspakker
   setting_commit_fix_keywords: Tilpasser nøgleord
@@ -1327,7 +1328,7 @@ da:
   setting_work_package_properties: Egenskaber for arbejdspakke
   setting_work_package_startdate_is_adddate: Brug dags dato som start for nye arbejdspakker
   setting_work_packages_export_limit: Begrænsning for eksport af arbejdspakker
-  setting_journal_aggregation_time_minutes: Display journals as aggregated within
+  setting_journal_aggregation_time_minutes: Vis kladder som sammensatte inden for
   setting_log_requesting_user: Log bruger-login, navn og mail-adresse ved hver forespørgsel
   setting_login_required: Godkendelse påkrævet
   setting_mail_from: Mailadresse for udsendelse
@@ -1339,7 +1340,7 @@ da:
   setting_password_active_rules: Aktive typer af tegn
   setting_password_count_former_banned: Antal af senest anvendte adgangskoder, der
     ikke må genbruges
-  setting_password_days_valid: Number of days, after which to enforce a password change
+  setting_password_days_valid: Antal dage, inden tvungen ændring af adgangskode
   setting_password_min_length: Mindste længde
   setting_password_min_adhered_rules: Mindste antal krævede typer
   setting_per_page_options: Mulige objekter per side
@@ -1404,7 +1405,7 @@ da:
   text_enumeration_destroy_question: "%{count} objekter er tilknyttet denne værdi."
   text_file_repository_writable: Arkiv for vedhæftninger er skrivbart
   text_git_repo_example: et lokalt projektarkiv (f.eks. /gitrepo, c:\gitrepo)
-  text_hint_disable_with_0: 'Note: Disable with 0'
+  text_hint_disable_with_0: Deaktivér med 0
   text_work_package_added: Arbejdspakke %{id} er blevet anmeldt af %{author}.
   text_work_package_category_destroy_assignments: Fjern tilknytninger til kategori
   text_work_package_category_destroy_question: Nogle arbejdspakker (%{count}) er tilknyttet
@@ -1416,9 +1417,9 @@ da:
   text_work_packages_ref_in_commit_messages: Arbejdspakker håndteres i tilknyttede
     meddelelser
   text_journal_added: "%{label} %{value} tilføjet"
-  text_journal_aggregation_time_explanation: Combine journals for display if their
-    age difference is less than the specified timespan. This will also delay mail
-    notifications by the same amount of time.
+  text_journal_aggregation_time_explanation: Sammenskriv kladder til visning, hvis
+    der er mindre tid mellem det end det angivne. Dette vil desuden forsinke påmindelser
+    tilsvrende.
   text_journal_changed: "%{label} ændret fra %{old} til %{new}"
   text_journal_changed_no_detail: "%{label} opdateret"
   text_journal_changed_with_diff: "%{label} ændret (%{link})"

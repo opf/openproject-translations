@@ -176,65 +176,64 @@ fr:
         watcher: Abonné
     errors:
       messages:
-        accepted: doit être accepté(e)
-        blank: ne peut pas être vide
-        cant_link_a_work_package_with_a_descendant: Un Lot de Travaux ne peut être
-          lié à l'une de ses tâches subordonnées
-        circular_dependency: Cette relation créerait une dépendance circulaire
-        confirmation: ne correspond pas à la confirmation
-        empty: ne peut pas être vide
-        equal_to: doit être égal à %{count}
-        even: doit être le même
-        exclusion: est réservé
-        file_too_large: est trop volumineux (la taille maximale est de %{count} octets)
-        greater_than: doit être supérieur à %{count}
-        greater_than_or_equal_to: doit être supérieur ou égal à %{count}
-        smaller_than_or_equal_to_max_length: Doit être plus petit ou égal à la longueur
-          maximale
-        greater_than_start_date: doit être supérieure à la date de début
-        inclusion: ne correspond à aucune des valeurs autorisées
-        invalid: est invalide
-        less_than: doit être inférieure à % {count}
-        less_than_or_equal_to: doit être inférieur ou égal à %{count}
-        not_a_date: n'est pas une date
-        not_a_number: n'est pas un nombre
-        not_an_integer: n'est pas un entier
-        not_same_project: n'appartient pas au même projet
-        odd: doit être impair
-        taken: a déjà été pris
-        too_long: est trop long (maximum est de %{count} caractères)
-        too_short: est trop court (minimum %{count} caractères)
-        wrong_length: est de mauvaise longueur (devrait être %{count} caractères)
-        after: doit être après le %{date}
-        after_or_equal_to: Doit être après ou le %{date}
-        before: doit être avant le %{date}
-        before_or_equal_to: Doit être avant ou le %{date}
-        could_not_be_copied: n'a pas pu être copié (entièrement)
+        accepted: must be accepted.
+        blank: can't be blank.
+        cant_link_a_work_package_with_a_descendant: A work package cannot be linked
+          to one of its subtasks.
+        circular_dependency: This relation would create a circular dependency.
+        confirmation: doesn't match confirmation.
+        empty: can't be empty.
+        equal_to: must be equal to %{count}.
+        even: must be even.
+        exclusion: is reserved.
+        file_too_large: is too large (maximum size is %{count} Bytes).
+        greater_than: must be greater than %{count}.
+        greater_than_or_equal_to: must be greater than or equal to %{count}.
+        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
+          length.
+        greater_than_start_date: must be greater than start date.
+        inclusion: is not set to one of the allowed values.
+        invalid: is invalid.
+        less_than: must be less than %{count}.
+        less_than_or_equal_to: must be less than or equal to %{count}.
+        not_a_date: is not a date.
+        not_a_number: is not a number.
+        not_an_integer: is not an integer.
+        not_same_project: doesn't belong to the same project.
+        odd: must be odd.
+        taken: has already been taken.
+        too_long: is too long (maximum is %{count} characters).
+        too_short: is too short (minimum is %{count} characters).
+        wrong_length: is the wrong length (should be %{count} characters).
+        after: must be after %{date}.
+        after_or_equal_to: must be after or equal to %{date}.
+        before: must be before %{date}.
+        before_or_equal_to: must be before or equal to %{date}.
+        could_not_be_copied: could not be (fully) copied.
       models:
         project_association:
-          identical_projects: un projet ne peut pas être créé à partir de lui-même
-          project_association_not_allowed: n'autorise pas les associations
+          identical_projects: can not be created from one project to itself.
+          project_association_not_allowed: does not allow associations.
         repository:
-          not_whitelisted: n'est pas autorisé par la configuration
-          no_directory: n'est pas un répertoire
+          not_whitelisted: is not allowed by the configuration.
+          no_directory: is not a directory.
         work_package:
           is_not_a_valid_target_for_time_entries: 'Le Lot de Travaux #%{id} n''est
             pas une cible valide pour réaffecter les entrées de temps.'
           attributes:
             due_date:
-              not_start_date: n'est pas sur la date de démarrage, bien que cela soit
-                requis pour les étapes
+              not_start_date: is not on start date, although this is required for
+                milestones.
             parent_id:
-              cannot_be_milestone: ne peut pas être un jalon
-              cannot_be_in_another_project: ne peut pas être dans un autre projet
-              not_a_valid_parent: est invalide
-              does_not_exist: n'existe pas
+              cannot_be_milestone: cannot be a milestone.
+              cannot_be_in_another_project: cannot be in another project.
+              not_a_valid_parent: is invalid.
+              does_not_exist: does not exist.
             status_id:
-              status_transition_invalid: n'est pas valide, car aucune transition valide
-                n'existe de l'ancien au nouveau statut pour les rôles de l'utilisateur
-                actuel
+              status_transition_invalid: is invalid because no valid transition exists
+                from old to new status for the current user's roles.
             priority_id:
-              only_active_priorities_allowed: ont besoin d'être actif
+              only_active_priorities_allowed: needs to be active.
             category:
               only_same_project_categories_allowed: La catégorie du module de travail
                 doit faire partie du même projet que le module de travail.
@@ -245,8 +244,8 @@ fr:
         user:
           attributes:
             password:
-              weak: 'doit contenir des caractères des classes suivantes (au moins
-                %{min_count} de %{all_count}): %{rules}'
+              weak: 'must contain characters of the following classes (at least %{min_count}
+                of %{all_count}): %{rules}.'
               lowercase: minuscules (par exemple, « a »)
               uppercase: majuscules (par exemple, « A »)
               numeric: numérique (par exemple, « 1 »)
@@ -607,11 +606,11 @@ fr:
   error_scm_command_failed: 'Une erreur s''est produite en essayant d''accéder au
     dépôt: %{value}'
   error_scm_not_found: L'entrée ou la révision n'a pas été trouvée dans le dépôt.
-  error_unable_delete_status: Impossible de supprimer le statut du module de travail
-    car il contient des modules de travail.
-  error_unable_delete_default_status: Impossible de supprimer le statut de lot de
-    travaux par défaut. Veuillez sélectionner un autre statut de lot de travaux par
-    défaut avant de supprimer l'actuel.
+  error_unable_delete_status: Le statut de lot de travaux ne peut pas être supprimé
+    tant qu'il est utilisé par au moins un lot de travaux.
+  error_unable_delete_default_status: Impossible de supprimer le statut par défaut
+    des lots de travaux. Veuillez sélectionner un autre statut par défaut avant de
+    supprimer l'actuel.
   error_unable_to_connect: Impossible de se connecter (%{value})
   error_workflow_copy_source: Veuillez sélectioner un type de source ou rôle
   error_workflow_copy_target: Veuillez sélectioner une cible type(s) et rôle(s)
@@ -1301,7 +1300,7 @@ fr:
   project_module_news: Actualités
   project_module_repository: Dépôt
   project_module_time_tracking: Suivi du temps
-  project_module_timelines: Timelines
+  project_module_timelines: Chronologie
   project_module_wiki: Wiki
   query_fields:
     assigned_to_role: Rôle du Destinataire
@@ -1316,9 +1315,9 @@ fr:
   setting_autologin: Auto-connexion
   setting_available_languages: Langages disponibles
   setting_bcc_recipients: Déstinataires Copie Carbon Invisible (CCI)
-  setting_brute_force_block_after_failed_logins: Block user after this number of failed
-    login attempts
-  setting_brute_force_block_minutes: Time the user is blocked for
+  setting_brute_force_block_after_failed_logins: Bloquer l'utilisateur après ce nombre
+    de tentatives de connexion échouées
+  setting_brute_force_block_minutes: Durée pour laquelle l'utilisateur est bloqué
   setting_cache_formatted_text: Mettre le text formatté en memoire cache
   setting_column_options: Personnaliser l'apparence des listes de Lot de Travaux
   setting_commit_fix_keywords: Réparer les mots clés
@@ -1358,7 +1357,7 @@ fr:
   setting_work_package_startdate_is_adddate: Utiliser la date actuelle comme date
     de départ pour les nouveaux Lots de Travaux
   setting_work_packages_export_limit: Limite d'export des Lots de Travaux
-  setting_journal_aggregation_time_minutes: Display journals as aggregated within
+  setting_journal_aggregation_time_minutes: Afficher les journaux agrégés par
   setting_log_requesting_user: Enregister le login utilisateur, nom et adresse courriel
     pour toutes les requêtes
   setting_login_required: Authentification requise
@@ -1371,7 +1370,8 @@ fr:
   setting_password_active_rules: Les classes de caractère activées
   setting_password_count_former_banned: Nombre des plus récent mots des passe utilisé
     qui sont interdit de réutilisation.
-  setting_password_days_valid: Number of days, after which to enforce a password change
+  setting_password_days_valid: Nombre de jours après lequel le changement de mot de
+    passe est obligatoire
   setting_password_min_length: Longueur minimale
   setting_password_min_adhered_rules: Nombre minimale des classe de caractère requise
   setting_per_page_options: Options des objets par page
@@ -1439,7 +1439,7 @@ fr:
   text_enumeration_destroy_question: "%{count} objéts sont assignés à cette valeur."
   text_file_repository_writable: Dossier des piéce-jointes est inscriptible
   text_git_repo_example: un dépôt vide et local (e.x., /gitrepo, c:\gitrepo)
-  text_hint_disable_with_0: 'Note: Disable with 0'
+  text_hint_disable_with_0: 'Note : Désactivez avec 0'
   text_work_package_added: Le Lot de Travaux %{id} a été signalé par %{author}.
   text_work_package_category_destroy_assignments: Supprimer les affectations de catégorie
   text_work_package_category_destroy_question: "(%{count}) Lots de Travaux sont assignés
@@ -1452,9 +1452,9 @@ fr:
   text_work_packages_ref_in_commit_messages: Referencer et réparer les Lot(s) de Travaux
     dans les messages « commit »
   text_journal_added: "%{label} %{value} ajouté"
-  text_journal_aggregation_time_explanation: Combine journals for display if their
-    age difference is less than the specified timespan. This will also delay mail
-    notifications by the same amount of time.
+  text_journal_aggregation_time_explanation: Combiner l'affichage des journaux si
+    leur différence d'âge est inférieure à la durée spécifiée. Ceci reportera également
+    de la même durée les notifications par mail.
   text_journal_changed: "%{label} changé de %{old} à %{new}"
   text_journal_changed_no_detail: "%{label} mis à jour"
   text_journal_changed_with_diff: "%{label} changè (%{link})"

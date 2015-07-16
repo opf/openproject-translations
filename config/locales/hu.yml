@@ -169,63 +169,64 @@ hu:
         watcher: Megfigyelő
     errors:
       messages:
-        accepted: El kell fogadni
-        blank: Nem lehet üres
-        cant_link_a_work_package_with_a_descendant: A munkacsomag nem kapcsolódik
-          egyik részfeladathoz sem
-        circular_dependency: Ez a kapcsolat egy körkörös függőséget hoz létre
-        confirmation: Nem egyezik a megerősítés
-        empty: Nem lehet üres
-        equal_to: Egyenlőnek kell lennie %{count}
-        even: Kell még
-        exclusion: Lefoglalt
-        file_too_large: is too large (maximum size is %{count} Bytes)
-        greater_than: Nagyobbnak kell lenni mint %{count}
-        greater_than_or_equal_to: Nagyobbnak  vagy egyenlőnek kell lennie, mint  %{count}
-        smaller_than_or_equal_to_max_length: Kisebbnek kell lennie, mint, vagy egyenlő,
-          maximális hossz
-        greater_than_start_date: Nagyobbnak kell lennie, mint a kezdő dátum
-        inclusion: is not set to one of the allowed values
-        invalid: "Érvénytelen"
-        less_than: Kisebbnek kell lennie, mint %{count}
-        less_than_or_equal_to: Kisebbnek kell lennie, mint, vagy egyenlő, %{count}
-        not_a_date: Nem dátum
-        not_a_number: Nem szám
-        not_an_integer: Nem egész szám
-        not_same_project: Nem tartozik ugyanahhoz a projekthez
-        odd: páratlannak kell lennie
-        taken: Már foglalt
-        too_long: Túl hosszú (maximum is %{count} characters)
-        too_short: Túl rövid (minimum is %{count} characters)
-        wrong_length: Rossz hosszúságú (legyen  %{count}  karakter)
-        after: Későbbinek kell lennie, mint  %{date}
-        after_or_equal_to: Későbbinek  vagy azzal egyenlőnek kell lennie, mint  %{date}
-        before: Korábbinak kell lennie, mint %{date}
-        before_or_equal_to: Korábbinak  vagy azzal egyenlőnek kell lennie, mint  %{date}
-        could_not_be_copied: Nem lehetett teljes mértékben másolni
+        accepted: must be accepted.
+        blank: can't be blank.
+        cant_link_a_work_package_with_a_descendant: A work package cannot be linked
+          to one of its subtasks.
+        circular_dependency: This relation would create a circular dependency.
+        confirmation: doesn't match confirmation.
+        empty: can't be empty.
+        equal_to: must be equal to %{count}.
+        even: must be even.
+        exclusion: is reserved.
+        file_too_large: is too large (maximum size is %{count} Bytes).
+        greater_than: must be greater than %{count}.
+        greater_than_or_equal_to: must be greater than or equal to %{count}.
+        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
+          length.
+        greater_than_start_date: must be greater than start date.
+        inclusion: is not set to one of the allowed values.
+        invalid: is invalid.
+        less_than: must be less than %{count}.
+        less_than_or_equal_to: must be less than or equal to %{count}.
+        not_a_date: is not a date.
+        not_a_number: is not a number.
+        not_an_integer: is not an integer.
+        not_same_project: doesn't belong to the same project.
+        odd: must be odd.
+        taken: has already been taken.
+        too_long: is too long (maximum is %{count} characters).
+        too_short: is too short (minimum is %{count} characters).
+        wrong_length: is the wrong length (should be %{count} characters).
+        after: must be after %{date}.
+        after_or_equal_to: must be after or equal to %{date}.
+        before: must be before %{date}.
+        before_or_equal_to: must be before or equal to %{date}.
+        could_not_be_copied: could not be (fully) copied.
       models:
         project_association:
-          identical_projects: Nem lehet létrehozni egy projektet önmagába
-          project_association_not_allowed: Nem elfogadott a hozzárendelés
+          identical_projects: can not be created from one project to itself.
+          project_association_not_allowed: does not allow associations.
         repository:
-          not_whitelisted: is not allowed by the configuration
-          no_directory: is not a directory
+          not_whitelisted: is not allowed by the configuration.
+          no_directory: is not a directory.
         work_package:
           is_not_a_valid_target_for_time_entries: 'A  #%{id} munkacsomag nem érvényes
             cél az idő bejegyzések ismételt hozzárendeléséhez.'
           attributes:
             due_date:
-              not_start_date: Nincs kezdő dátum, ez szükséges a fordulóponthoz
+              not_start_date: is not on start date, although this is required for
+                milestones.
             parent_id:
-              cannot_be_milestone: Nem lehet fordulópont
-              cannot_be_in_another_project: Nem lehet egy másik projektben
-              not_a_valid_parent: "Érvénytelen"
-              does_not_exist: Nem létezik
+              cannot_be_milestone: cannot be a milestone.
+              cannot_be_in_another_project: cannot be in another project.
+              not_a_valid_parent: is invalid.
+              does_not_exist: does not exist.
             status_id:
               status_transition_invalid: is invalid because no valid transition exists
-                from old to new status for the current user's roles
+                from old to new status for the current user's roles.
             priority_id:
-              only_active_priorities_allowed: Aktívnak kell lenni
+              only_active_priorities_allowed: needs to be active.
             category:
               only_same_project_categories_allowed: The category of a work package
                 must be within the same project as the work package.
@@ -236,8 +237,8 @@ hu:
         user:
           attributes:
             password:
-              weak: 'Az alábbi karaktereket tartalmaznia kell a következők szerint  (legalább
-                %{min_count} of %{all_count}): %{rules}'
+              weak: 'must contain characters of the following classes (at least %{min_count}
+                of %{all_count}): %{rules}.'
               lowercase: Kisbetű (pl. 'a')
               uppercase: Nagybetű (pl. 'A')
               numeric: Szám (pl. '1')
@@ -599,8 +600,8 @@ hu:
   error_scm_command_failed: 'Hiba mikor kipróbáláshoz el akarja érni a repository:
     %{value}'
   error_scm_not_found: A bejegyzés vagy a revízió  a csomagtárolóban  nem található.
-  error_unable_delete_status: Unable to delete work package status because it contains
-    work packages.
+  error_unable_delete_status: The work package status cannot be deleted since it is
+    used by at least one work package.
   error_unable_delete_default_status: Nem tudom törtölni az alapértelmezett munkacsomag
     állapotát. Kérjük, válasszon egy másik alapértelmezett munka csomag állapotot,
     mielött ezt törli.
@@ -1280,7 +1281,7 @@ hu:
   project_module_news: Hírek
   project_module_repository: Csomagtároló
   project_module_time_tracking: Követési idő
-  project_module_timelines: Timelines
+  project_module_timelines: Idővonalak
   project_module_wiki: Wiki
   query_fields:
     assigned_to_role: Hozzárendelt szerepkör

@@ -165,63 +165,64 @@ he:
         watcher: "צופה"
     errors:
       messages:
-        accepted: "חייב להתקבל"
-        blank: "לא יכול להיות ריק"
-        cant_link_a_work_package_with_a_descendant: "חבילת עבודה אינה יכולה להיות
-          מקושרת לתת-משימה שלה"
-        circular_dependency: "יחס זה ייצור תלות מעגלית"
-        confirmation: "אינו תואם לאישור"
-        empty: "אינו יכול להיות ריק"
-        equal_to: "חייב להיות שווה ל- %{count}"
-        even: "חייב להיות זוגי"
-        exclusion: "שמור"
-        file_too_large: is too large (maximum size is %{count} Bytes)
-        greater_than: "חייב להיות גדול מ- %{count}"
-        greater_than_or_equal_to: "חייב להיות גדול או שווה ל- %{count}"
+        accepted: must be accepted.
+        blank: can't be blank.
+        cant_link_a_work_package_with_a_descendant: A work package cannot be linked
+          to one of its subtasks.
+        circular_dependency: This relation would create a circular dependency.
+        confirmation: doesn't match confirmation.
+        empty: can't be empty.
+        equal_to: must be equal to %{count}.
+        even: must be even.
+        exclusion: is reserved.
+        file_too_large: is too large (maximum size is %{count} Bytes).
+        greater_than: must be greater than %{count}.
+        greater_than_or_equal_to: must be greater than or equal to %{count}.
         smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
-          length
-        greater_than_start_date: "צריך להיות גדול יותר מאשר תאריך ההתחלה"
-        inclusion: is not set to one of the allowed values
-        invalid: "אינו חוקי"
-        less_than: "חייב להיות קטן מ- %{count}"
-        less_than_or_equal_to: "חייב להיות קטן או שווה ל- %{count}"
-        not_a_date: "אינו תאריך"
-        not_a_number: "אינו מספר"
-        not_an_integer: "אינו מספר שלם"
-        not_same_project: "אינו שייך לאותו פרויקט"
-        odd: "חייב להיות אי-זוגי"
-        taken: "כבר נתפס"
-        too_long: "ארוך מדי (מקסימום הוא %{count} תווים)"
-        too_short: "קצר מדי (המינימום הוא %{count} תווים)"
-        wrong_length: "באורך הלא נכון (צריך להיות %{count} תווים)"
-        after: "חייב להיות אחרי %{date}"
-        after_or_equal_to: "חייב להיות אחרי או שווה ל- %{date}"
-        before: "חייב להיות לפני %{date}"
-        before_or_equal_to: "חייב להיות לפני או שווה ל- %{date}"
-        could_not_be_copied: "לא ניתן להעתיק (במלואו)"
+          length.
+        greater_than_start_date: must be greater than start date.
+        inclusion: is not set to one of the allowed values.
+        invalid: is invalid.
+        less_than: must be less than %{count}.
+        less_than_or_equal_to: must be less than or equal to %{count}.
+        not_a_date: is not a date.
+        not_a_number: is not a number.
+        not_an_integer: is not an integer.
+        not_same_project: doesn't belong to the same project.
+        odd: must be odd.
+        taken: has already been taken.
+        too_long: is too long (maximum is %{count} characters).
+        too_short: is too short (minimum is %{count} characters).
+        wrong_length: is the wrong length (should be %{count} characters).
+        after: must be after %{date}.
+        after_or_equal_to: must be after or equal to %{date}.
+        before: must be before %{date}.
+        before_or_equal_to: must be before or equal to %{date}.
+        could_not_be_copied: could not be (fully) copied.
       models:
         project_association:
-          identical_projects: "לא ניתן ליצור מפרוייקט אחד אל עצמו"
-          project_association_not_allowed: "אינו מאפשר שיוכים"
+          identical_projects: can not be created from one project to itself.
+          project_association_not_allowed: does not allow associations.
         repository:
-          not_whitelisted: is not allowed by the configuration
-          no_directory: is not a directory
+          not_whitelisted: is not allowed by the configuration.
+          no_directory: is not a directory.
         work_package:
           is_not_a_valid_target_for_time_entries: "חבילת עבודה #%{id} אינה יעד אפשרי
             לשיוך של ערכי הזמן."
           attributes:
             due_date:
-              not_start_date: "אינו בתאריך ההתחלה, למרות שזה נדרש עבור אבני הדרך"
+              not_start_date: is not on start date, although this is required for
+                milestones.
             parent_id:
-              cannot_be_milestone: "לא יכול להיות אבן דרך"
-              cannot_be_in_another_project: "לא יכול להיות בפרוייקט אחר"
-              not_a_valid_parent: "אינו חוקי"
-              does_not_exist: "לא קיים"
+              cannot_be_milestone: cannot be a milestone.
+              cannot_be_in_another_project: cannot be in another project.
+              not_a_valid_parent: is invalid.
+              does_not_exist: does not exist.
             status_id:
-              status_transition_invalid: "אינו חוקי מכיוון שלא קיים תרגום תקף ממצב
-                ישן לחדש עבור התפקידים של המשתמש הנוכחי"
+              status_transition_invalid: is invalid because no valid transition exists
+                from old to new status for the current user's roles.
             priority_id:
-              only_active_priorities_allowed: "צריך להיות פעיל"
+              only_active_priorities_allowed: needs to be active.
             category:
               only_same_project_categories_allowed: "הקטגוריה של חבילת עבודה חייבת
                 להיות בתוך אותו פרוייקט כמו חבילת עבודה."
@@ -232,8 +233,8 @@ he:
         user:
           attributes:
             password:
-              weak: "חייב להכיל תווים של המחלקות הבאות (לפחות %{min_count} מתוך %{all_count}):
-                %{rules}"
+              weak: 'must contain characters of the following classes (at least %{min_count}
+                of %{all_count}): %{rules}.'
               lowercase: "אותיות קטנות (למשל 'a')"
               uppercase: "אותיות רישיות (למשל ' A')"
               numeric: "מספריים (למשל ' 1')"
@@ -585,9 +586,9 @@ he:
   error_scm_annotate: "הערה לא קימת או שלא ניתן להוסף הערות."
   error_scm_command_failed: "אירעה שגיאה בעת ניסיון לגשת למאגר : %{value}"
   error_scm_not_found: The entry or revision was not found in the repository.
-  error_unable_delete_status: "אין אפשרות למחוק מצב חבילת עבודה מאחר והיא מכילה חבילות
-    עבודה."
-  error_unable_delete_default_status: Unable to delete default work package status.
+  error_unable_delete_status: The work package status cannot be deleted since it is
+    used by at least one work package.
+  error_unable_delete_default_status: Unable to delete the default work package status.
     Please select another default work package status before deleting the current
     one.
   error_unable_to_connect: "לא ניתן לחבר (%{value})"
@@ -1263,7 +1264,7 @@ he:
   project_module_news: "חדשות"
   project_module_repository: Repository
   project_module_time_tracking: Time tracking
-  project_module_timelines: Timelines
+  project_module_timelines: "צירי זמן"
   project_module_wiki: "ויקי"
   query_fields:
     assigned_to_role: Assignee's role

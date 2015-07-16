@@ -174,64 +174,64 @@ it:
         watcher: Osservatore
     errors:
       messages:
-        accepted: deve essere accettato
-        blank: non può essere vuoto
-        cant_link_a_work_package_with_a_descendant: Un pacchetto di lavoro non può
-          essere collegato a una delle sue sottoattività
-        circular_dependency: Questa relazione creerebbe una dipendenza circolare
-        confirmation: non corrisponde alla conferma
-        empty: non può essere vuoto
-        equal_to: deve essere uguale a %{count}
-        even: deve essere pari
-        exclusion: "è riservato"
-        file_too_large: "è troppo grande (la dimensione massima è %{count} byte)"
-        greater_than: deve essere maggiore di %{count}
-        greater_than_or_equal_to: deve essere maggiore o uguale di %{count}
-        smaller_than_or_equal_to_max_length: deve essere minore o uguale alla lunghezza
-          massima
-        greater_than_start_date: deve essere maggiore della data di inizio
-        inclusion: non è impostata su uno dei valori consentiti
-        invalid: non è valido
-        less_than: deve essere inferiore di %{count}
-        less_than_or_equal_to: deve essere inferiore o uguale di %{count}
-        not_a_date: non è una data
-        not_a_number: non è un numero
-        not_an_integer: non è un numero intero
-        not_same_project: non appartiene allo stesso progetto
-        odd: deve essere dispari
-        taken: "è già stata presa"
-        too_long: "è troppo lungo (il massimo è %{count} caratteri)"
-        too_short: "è troppo breve (minimo è %{count} caratteri)"
-        wrong_length: "è della lunghezza sbagliata (dovrebbe essere %{count} caratteri)"
-        after: deve essere dopo %{date}
-        after_or_equal_to: deve essere dopo o uguale a %{date}
-        before: deve essere prima %{date}
-        before_or_equal_to: deve essere prima di o uguale a %{date}
-        could_not_be_copied: non poteva essere copiato (completamente)
+        accepted: must be accepted.
+        blank: can't be blank.
+        cant_link_a_work_package_with_a_descendant: A work package cannot be linked
+          to one of its subtasks.
+        circular_dependency: This relation would create a circular dependency.
+        confirmation: doesn't match confirmation.
+        empty: can't be empty.
+        equal_to: must be equal to %{count}.
+        even: must be even.
+        exclusion: is reserved.
+        file_too_large: is too large (maximum size is %{count} Bytes).
+        greater_than: must be greater than %{count}.
+        greater_than_or_equal_to: must be greater than or equal to %{count}.
+        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
+          length.
+        greater_than_start_date: must be greater than start date.
+        inclusion: is not set to one of the allowed values.
+        invalid: is invalid.
+        less_than: must be less than %{count}.
+        less_than_or_equal_to: must be less than or equal to %{count}.
+        not_a_date: is not a date.
+        not_a_number: is not a number.
+        not_an_integer: is not an integer.
+        not_same_project: doesn't belong to the same project.
+        odd: must be odd.
+        taken: has already been taken.
+        too_long: is too long (maximum is %{count} characters).
+        too_short: is too short (minimum is %{count} characters).
+        wrong_length: is the wrong length (should be %{count} characters).
+        after: must be after %{date}.
+        after_or_equal_to: must be after or equal to %{date}.
+        before: must be before %{date}.
+        before_or_equal_to: must be before or equal to %{date}.
+        could_not_be_copied: could not be (fully) copied.
       models:
         project_association:
-          identical_projects: non può essere creato da un progetto a se stesso
-          project_association_not_allowed: non consente le associazioni
+          identical_projects: can not be created from one project to itself.
+          project_association_not_allowed: does not allow associations.
         repository:
-          not_whitelisted: non è consentito dalla configurazione
-          no_directory: non è una directory
+          not_whitelisted: is not allowed by the configuration.
+          no_directory: is not a directory.
         work_package:
           is_not_a_valid_target_for_time_entries: 'Il pacchetto di lavoro #%{id} non
             è una destinazione valida per riassegnare le voci del tempo.'
           attributes:
             due_date:
-              not_start_date: non è sulla data di inizio, nonostante sia obbligatorio
-                per i traguardi
+              not_start_date: is not on start date, although this is required for
+                milestones.
             parent_id:
-              cannot_be_milestone: non può essere un traguardo
-              cannot_be_in_another_project: non può essere in un altro progetto
-              not_a_valid_parent: non è valido
-              does_not_exist: non esiste
+              cannot_be_milestone: cannot be a milestone.
+              cannot_be_in_another_project: cannot be in another project.
+              not_a_valid_parent: is invalid.
+              does_not_exist: does not exist.
             status_id:
-              status_transition_invalid: non è valido perché nessuna transizione valida
-                esiste dal vecchio al nuovo status per i ruoli dell'utente corrente
+              status_transition_invalid: is invalid because no valid transition exists
+                from old to new status for the current user's roles.
             priority_id:
-              only_active_priorities_allowed: deve essere attivo
+              only_active_priorities_allowed: needs to be active.
             category:
               only_same_project_categories_allowed: La categoria di un pacchetto di
                 lavoro deve essere contenuta nel medesimo progetto del pacchetto di
@@ -243,8 +243,8 @@ it:
         user:
           attributes:
             password:
-              weak: 'deve contenere caratteri delle seguenti classi (almeno %{min_count}
-                %{all_count}): %{rules}'
+              weak: 'must contain characters of the following classes (at least %{min_count}
+                of %{all_count}): %{rules}.'
               lowercase: minuscolo (e.g. 'a')
               uppercase: maiuscolo (e.g. 'A')
               numeric: numerico (e.g. '1')
@@ -605,11 +605,11 @@ it:
   error_scm_command_failed: 'Si è verificato un errore quando si tenta di accedere
     al repository: %{value}'
   error_scm_not_found: La voce o la revisione non è stata trovata nel repository.
-  error_unable_delete_status: Impossibile eliminare lo stato del pacchetto lavoro
-    perché contiene pacchetti di lavoro.
-  error_unable_delete_default_status: Impossibile eliminare lo stato del pacchetto
-    di lavoro predefinito. Si prega di selezionare un altro stato di pacchetto di
-    lavoro predefinito prima di cancellare quello attuale.
+  error_unable_delete_status: The work package status cannot be deleted since it is
+    used by at least one work package.
+  error_unable_delete_default_status: Unable to delete the default work package status.
+    Please select another default work package status before deleting the current
+    one.
   error_unable_to_connect: Impossibile connettersi (%{value})
   error_workflow_copy_source: Si prega di selezionare un tipo di origine o ruolo
   error_workflow_copy_target: Perfavore seleziona tipo(i) di destinazione e ruolo(i)
@@ -1293,7 +1293,7 @@ it:
   project_module_news: Notizie
   project_module_repository: Repository
   project_module_time_tracking: Tempo di monitoraggio
-  project_module_timelines: Timelines
+  project_module_timelines: Sequenze temporali
   project_module_wiki: Wiki
   query_fields:
     assigned_to_role: Assignee's role

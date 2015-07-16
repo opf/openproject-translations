@@ -175,65 +175,64 @@ nl:
         watcher: Kijker
     errors:
       messages:
-        accepted: moet geaccepteerd worden
-        blank: mag niet leeg zijn
-        cant_link_a_work_package_with_a_descendant: Een werkpakket kan niet worden
-          gekoppeld aan een van de bijbehorende subtaken
-        circular_dependency: Deze relatie zou een circulaire afhankelijkheid maken
-        confirmation: komt niet overeen met bevestiging
-        empty: mag niet leeg zijn
-        equal_to: moet gelijk zijn aan %{count}
-        even: moet gelijk zijn
-        exclusion: is gereserveerd
-        file_too_large: is too large (maximum size is %{count} Bytes)
-        greater_than: moet groter zijn dan %{count}
-        greater_than_or_equal_to: moet groter dan of gelijk zijn aan %{count}
+        accepted: must be accepted.
+        blank: can't be blank.
+        cant_link_a_work_package_with_a_descendant: A work package cannot be linked
+          to one of its subtasks.
+        circular_dependency: This relation would create a circular dependency.
+        confirmation: doesn't match confirmation.
+        empty: can't be empty.
+        equal_to: must be equal to %{count}.
+        even: must be even.
+        exclusion: is reserved.
+        file_too_large: is too large (maximum size is %{count} Bytes).
+        greater_than: must be greater than %{count}.
+        greater_than_or_equal_to: must be greater than or equal to %{count}.
         smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
-          length
-        greater_than_start_date: moet groter zijn dan begindatum
-        inclusion: is not set to one of the allowed values
-        invalid: is ongeldig
-        less_than: moet minder dan %{count}
-        less_than_or_equal_to: moet kleiner zijn dan of gelijk aan %{count}
-        not_a_date: is niet een datum
-        not_a_number: is niet een getal
-        not_an_integer: is niet een geheel getal
-        not_same_project: hoort niet bij hetzelfde project
-        odd: moet oneven zijn
-        taken: bestaat al
-        too_long: te lang (maximaal %{count} karakters)
-        too_short: is te kort (minimaal %{count} karakters)
-        wrong_length: is de verkeerde lengte (dient %{count} karakters te zijn)
-        after: moet na %{date} zijn
-        after_or_equal_to: moet gelijk aan of na %{date} zijn
-        before: moet voor %{date} zijn
-        before_or_equal_to: moet voor of gelijk zijn aan %{date}
-        could_not_be_copied: kon niet (volledig) worden gekopieerd
+          length.
+        greater_than_start_date: must be greater than start date.
+        inclusion: is not set to one of the allowed values.
+        invalid: is invalid.
+        less_than: must be less than %{count}.
+        less_than_or_equal_to: must be less than or equal to %{count}.
+        not_a_date: is not a date.
+        not_a_number: is not a number.
+        not_an_integer: is not an integer.
+        not_same_project: doesn't belong to the same project.
+        odd: must be odd.
+        taken: has already been taken.
+        too_long: is too long (maximum is %{count} characters).
+        too_short: is too short (minimum is %{count} characters).
+        wrong_length: is the wrong length (should be %{count} characters).
+        after: must be after %{date}.
+        after_or_equal_to: must be after or equal to %{date}.
+        before: must be before %{date}.
+        before_or_equal_to: must be before or equal to %{date}.
+        could_not_be_copied: could not be (fully) copied.
       models:
         project_association:
-          identical_projects: kan niet worden gemaakt van het ene project naar zichzelf
-          project_association_not_allowed: staat geen associaties toe
+          identical_projects: can not be created from one project to itself.
+          project_association_not_allowed: does not allow associations.
         repository:
-          not_whitelisted: is not allowed by the configuration
-          no_directory: is not a directory
+          not_whitelisted: is not allowed by the configuration.
+          no_directory: is not a directory.
         work_package:
           is_not_a_valid_target_for_time_entries: 'Werkpakket #%{id} is niet een geldig
             doel voor het opnieuw toewijzen van de tijden.'
           attributes:
             due_date:
-              not_start_date: is niet op begindatum, hoewel dit voor mijlpalen vereist
-                is
+              not_start_date: is not on start date, although this is required for
+                milestones.
             parent_id:
-              cannot_be_milestone: can geen mijlpaal zijn
-              cannot_be_in_another_project: kan niet in een ander project
-              not_a_valid_parent: is ongeldig
-              does_not_exist: bestaat niet
+              cannot_be_milestone: cannot be a milestone.
+              cannot_be_in_another_project: cannot be in another project.
+              not_a_valid_parent: is invalid.
+              does_not_exist: does not exist.
             status_id:
-              status_transition_invalid: is ongeldig want er bestaat geen geldige
-                transitie van de oude naar de nieuwe status voor rol van de huidige
-                gebruiker
+              status_transition_invalid: is invalid because no valid transition exists
+                from old to new status for the current user's roles.
             priority_id:
-              only_active_priorities_allowed: moet actief zijn
+              only_active_priorities_allowed: needs to be active.
             category:
               only_same_project_categories_allowed: De categorie van het werkpakket  moet
                 binnen hetzelfde project bestaan als het werkpakket.
@@ -244,8 +243,8 @@ nl:
         user:
           attributes:
             password:
-              weak: 'moet karakters van de volgende klasse bevatten (ten minste %{min_count}
-                van %{all_count}): %{rules}'
+              weak: 'must contain characters of the following classes (at least %{min_count}
+                of %{all_count}): %{rules}.'
               lowercase: kleine letters (bijvoorbeeld 'a')
               uppercase: hoofdletters (bijvoorbeeld ' A')
               numeric: numerieke (bijvoorbeeld ' 1')
@@ -603,8 +602,8 @@ nl:
   error_scm_command_failed: 'Er is een fout opgetreden tijdens het proberen om toegang
     te krijgen tot de repository: %{value}'
   error_scm_not_found: De vermelding of de herziening werd niet gevonden in de repository.
-  error_unable_delete_status: Kan deze status niet verwijderen omdat er werkpakketten
-    zijn die deze status gebruiken.
+  error_unable_delete_status: The work package status cannot be deleted since it is
+    used by at least one work package.
   error_unable_delete_default_status: Niet in staat de status van het standaard werkpakket
     te verwijderen. Gelieve een andere status van het standaard werkpakket te selecteren
     alvorens de huidige te verwijderen.
@@ -1290,7 +1289,7 @@ nl:
   project_module_news: Nieuws
   project_module_repository: Repository
   project_module_time_tracking: Tijdregistratie
-  project_module_timelines: Timelines
+  project_module_timelines: Tijdlijnen
   project_module_wiki: Wiki
   query_fields:
     assigned_to_role: Werknemer's rol
