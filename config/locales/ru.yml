@@ -244,10 +244,10 @@ ru:
               numeric: цифры (например "1")
               special: спецсимволы (например, "%")
               reused:
-                one: "использовался раньше. Пожалуйста, выберите такой, который отличается
-                  от вашего последнего."
-                other: "использовался раньше. Пожалуйста, выберите такой, который
-                  отличается от ваших последних %{count}."
+                one: has been used before. Please choose one that is different from
+                  your last one.
+                other: has been used before. Please choose one that is different from
+                  your last %{count}.
                 few: has been used before. Please choose one that is different from
                   your last %{count}.
         member:
@@ -258,7 +258,7 @@ ru:
         body: "Пожалуйста, проверьте следующие поля:"
         header:
           one: 1 error prohibited this %{model} from being saved
-          other: "%{count}  ошибк препятствует сохранить эту %{model}"
+          other: "%{count} errors prohibited this %{model} from being saved"
           few: "%{count} errors prohibited this %{model} from being saved"
     models:
       attachment: "Файл"
@@ -275,7 +275,7 @@ ru:
       query: "Запрос пользователя"
       role:
         one: Role
-        other: "Роли"
+        other: Roles
         few: Roles
       type: "Тип"
       planning_element: "Элемент планирования"
@@ -462,54 +462,54 @@ ru:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: "около часа"
-        other: "около %{count} часов"
+        one: about 1 hour
+        other: about %{count} hours
         few: about %{count} hours
       about_x_months:
         one: about 1 month
-        other: "примерно %{count} месяцев"
+        other: about %{count} months
         few: about %{count} months
       about_x_years:
         one: about 1 year
-        other: "примерно %{count} лет"
+        other: about %{count} years
         few: about %{count} years
       almost_x_years:
         one: almost 1 year
-        other: "почти  %{count} лет"
+        other: almost %{count} years
         few: almost %{count} years
       half_a_minute: "полминуты"
       less_than_x_minutes:
         one: less than a minute
-        other: "менее %{count} минут"
+        other: less than %{count} minutes
         few: less than %{count} minutes
       less_than_x_seconds:
         one: less than 1 second
-        other: "меньше %{count} секунд"
+        other: less than %{count} seconds
         few: less than %{count} seconds
       over_x_years:
         one: over 1 year
-        other: "более %{count} лет"
+        other: over %{count} years
         few: over %{count} years
       x_days:
         one: 1 day
-        other: "%{count} дней"
+        other: "%{count} days"
         few: "%{count} days"
       x_minutes:
         one: 1 minute
-        other: "%{count} минут"
+        other: "%{count} minutes"
         few: "%{count} minutes"
       x_months:
         one: 1 month
-        other: "%{count} месяцев"
+        other: "%{count} months"
         few: "%{count} months"
       x_seconds:
         one: 1 second
-        other: "%{count} секунд"
+        other: "%{count} seconds"
         few: "%{count} seconds"
     units:
       hour:
         one: hour
-        other: "часов"
+        other: hours
         few: hours
   default_activity_management: "Управление"
   default_activity_design: "Дизайн"
@@ -711,6 +711,7 @@ ru:
   label_changes_details: "Подробная информация обо всех изменениях"
   label_changeset_plural: "Изменения"
   label_checked: "проверено"
+  label_child_element: Child element
   label_chronological_order: "В хронологическом порядке"
   label_close_versions: "Закрыть завершённые этапы"
   label_closed_work_packages: "закрыто"
@@ -857,6 +858,7 @@ ru:
   label_message_plural: "Сообщения"
   label_message_posted: "Сообщение добавлено"
   label_min_max_length: "Минимальная - Максимальная длина"
+  label_minute_plural: minutes
   label_missing_api_access_key: "Отсутствует ключ API доступа"
   label_missing_feeds_access_key: "Отсутствует ключ доступа к RSS"
   label_modification: "%{count} изменение"
@@ -1067,27 +1069,27 @@ ru:
   label_workflow_summary: "Резюме"
   label_x_closed_work_packages_abbr:
     one: 1 closed
-    other: "%{count} закрыто"
+    other: "%{count} closed"
     zero: 0 closed
     few: "%{count} closed"
   label_x_comments:
     one: 1 comment
-    other: "%{count} комментариев"
+    other: "%{count} comments"
     zero: no comments
     few: "%{count} comments"
   label_x_open_work_packages_abbr:
     one: 1 open
-    other: "%{count} открыто"
+    other: "%{count} open"
     zero: 0 open
     few: "%{count} open"
   label_x_open_work_packages_abbr_on_total:
     one: 1 open / %{total}
-    other: "%{count} открыто / %{total}"
+    other: "%{count} open / %{total}"
     zero: 0 open / %{total}
     few: "%{count} open / %{total}"
   label_x_projects:
     one: 1 project
-    other: "%{count} проектов"
+    other: "%{count} projects"
     zero: no projects
     few: "%{count} projects"
   label_year: "Год"
@@ -1224,7 +1226,7 @@ ru:
         units:
           byte:
             one: Byte
-            other: "Байт"
+            other: Bytes
             few: Bytes
           gb: "ГБ"
           kb: "кБ"
@@ -1304,6 +1306,7 @@ ru:
   project_module_news: "Новости"
   project_module_repository: "Репозиторий"
   project_module_time_tracking: "Учет времени"
+  project_module_timelines: Timelines
   project_module_wiki: Wiki
   query_fields:
     assigned_to_role: "Роль назначенного"
@@ -1318,10 +1321,9 @@ ru:
   setting_autologin: "Автовход"
   setting_available_languages: "Доступные языки"
   setting_bcc_recipients: "Получатели скрытой копии (bcc)"
-  setting_brute_force_block_after_failed_logins: "Блокировать пользователя после следующего
-    количества попыток входа (0 отключает эту функцию)"
-  setting_brute_force_block_minutes: "Время, на которое будет заблокирован пользователь
-    (минуты)"
+  setting_brute_force_block_after_failed_logins: Block user after this number of failed
+    login attempts
+  setting_brute_force_block_minutes: Time the user is blocked for
   setting_cache_formatted_text: "Кэшировать форматированный текст"
   setting_column_options: "Настройка внешнего вида  списка пакетов работ"
   setting_commit_fix_keywords: "Корректирующие ключевые слова"
@@ -1359,6 +1361,7 @@ ru:
   setting_work_package_startdate_is_adddate: "Использовать текущую дату как дату начала
     для новых пакетов работ"
   setting_work_packages_export_limit: "Лимит экспорта пакета работ"
+  setting_journal_aggregation_time_minutes: Display journals as aggregated within
   setting_log_requesting_user: "Журналировать входное имя, имя и адрес электронной
     почты для всех запросов"
   setting_login_required: "Требуется аутентификация"
@@ -1371,8 +1374,7 @@ ru:
   setting_password_active_rules: "Активные классы символов"
   setting_password_count_former_banned: "Количество паролей, запрещенных для повторного
     использования"
-  setting_password_days_valid: "Число дней, после которого следует сменить пароль
-    (0 – отключить)"
+  setting_password_days_valid: Number of days, after which to enforce a password change
   setting_password_min_length: "Минимальная длина"
   setting_password_min_adhered_rules: "Минимальное количество необходимых классов"
   setting_per_page_options: "Количество объектов на страницу"
@@ -1442,6 +1444,7 @@ ru:
   text_file_repository_writable: "Папка вложений доступна для записи"
   text_git_repo_example: "пустая локальная папка репозитория (например: /gitrepo,
     c:\\gitrepo)"
+  text_hint_disable_with_0: 'Note: Disable with 0'
   text_work_package_added: "Автор %{author} отчитался по пакету работ %{id}."
   text_work_package_category_destroy_assignments: "Удаление категории назначений"
   text_work_package_category_destroy_question: "Некоторые пакеты работ (%{count})
@@ -1453,6 +1456,9 @@ ru:
   text_work_packages_ref_in_commit_messages: "Связанные и  исправляющие пакеты работ
     в сообщении вклада"
   text_journal_added: "%{label} %{value} добавлено"
+  text_journal_aggregation_time_explanation: Combine journals for display if their
+    age difference is less than the specified timespan. This will also delay mail
+    notifications by the same amount of time.
   text_journal_changed: "%{label} изменено с %{old} на %{new}"
   text_journal_changed_no_detail: "%{label} обновлено"
   text_journal_changed_with_diff: "%{label} изменена (%{link})"
@@ -1554,7 +1560,7 @@ ru:
     duration: "Продолжительность"
     duration_days:
       one: 1 day
-      other: "%{count} дней"
+      other: "%{count} days"
       few: "%{count} days"
     edit_color: "Изменить цвет"
     edit_project_type: "Редактировать тип проекта"
@@ -1734,7 +1740,7 @@ ru:
     blocked: "Временно заблокирован"
     blocked_num_failed_logins:
       one: locked temporarily (one failed login attempt)
-      other: "временно заблокирован (%{count} неудачных попыток входа в систему)"
+      other: locked temporarily (%{count} failed login attempts)
       few: locked temporarily (%{count} failed login attempts)
     deleted: "Удалённый пользователь"
     error_status_change_failed: "Изменение статуса пользователя не удалось из-за следующей

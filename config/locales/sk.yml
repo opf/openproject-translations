@@ -179,7 +179,7 @@ sk:
         equal_to: musí byť rovný %{count}
         even: musí byť párne
         exclusion: is reserved
-        file_too_large: is too large (maximum size is %{count} Bytes)
+        file_too_large: je príliš veľká (maximálna veľkosť je %{count} bytov)
         greater_than: musí byť väčšie ako %{count}
         greater_than_or_equal_to: musí byť väčšie alebo rovné ako %{count}
         smaller_than_or_equal_to_max_length: musí byť menšie alebo rovné ako maximálne
@@ -245,21 +245,21 @@ sk:
               numeric: "Čísla (napríklad 1)"
               special: Špeciálne znaky (napríklad "%")
               reused:
-                one: už bol predtým použitý. Prosím, vyberte odlišnú voľbu ako tú,
-                  ktorá bola zvolená naposledy.
-                other: už bol predtým použitý. Prosím, vyberte odlišnú voľbu ako tú,
-                  ktorá bola zvolená posledných %{count} krát.
-                few: už bol predtým použitý. Prosím, vyberte odlišnú voľbu ako tú,
-                  ktorá bola zvolená posledných %{count} krát.
+                one: has been used before. Please choose one that is different from
+                  your last one.
+                other: has been used before. Please choose one that is different from
+                  your last %{count}.
+                few: has been used before. Please choose one that is different from
+                  your last %{count}.
         member:
           principal_blank: Please choose at least one user or group.
           role_blank: Vyberte aspoň jednu rolu.
       template:
         body: 'Skontrolujte nasledujúce polia:'
         header:
-          one: 1 chyba zabránila uloženiu tohto %{model}
-          other: "%{count} chýb zabránilo uloženiu tohto %{model}"
-          few: "%{count} chyby zabránili uloženiu tohto %{model}"
+          one: 1 error prohibited this %{model} from being saved
+          other: "%{count} errors prohibited this %{model} from being saved"
+          few: "%{count} errors prohibited this %{model} from being saved"
     models:
       attachment: Súbor
       board: Fórum
@@ -274,9 +274,9 @@ sk:
       project: Projekt
       query: Vlastný dopyt
       role:
-        one: Rola
-        other: Rolí
-        few: Role
+        one: Role
+        other: Roles
+        few: Roles
       type: Typ
       planning_element: Planning element
       project_type: Typ projektu
@@ -463,55 +463,55 @@ sk:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: približne 1 hodina
-        other: približne %{count} hodín
-        few: približne %{count} hodiny
+        one: about 1 hour
+        other: about %{count} hours
+        few: about %{count} hours
       about_x_months:
-        one: približne 1 mesiac
-        other: približne %{count} mesiacov
-        few: približne %{count} mesiace
+        one: about 1 month
+        other: about %{count} months
+        few: about %{count} months
       about_x_years:
-        one: približne 1 rok
-        other: približne %{count} rokov
-        few: približne %{count} roky
+        one: about 1 year
+        other: about %{count} years
+        few: about %{count} years
       almost_x_years:
-        one: takmer 1 rok
-        other: takmer %{count} rokov
-        few: takmer %{count} roky
+        one: almost 1 year
+        other: almost %{count} years
+        few: almost %{count} years
       half_a_minute: pol minúty
       less_than_x_minutes:
-        one: menej než minúta
-        other: menej než %{count} minút
-        few: menej než %{count} minúty
+        one: less than a minute
+        other: less than %{count} minutes
+        few: less than %{count} minutes
       less_than_x_seconds:
-        one: menej než sekunda
-        other: menej ako %{count} sekúnd
-        few: menej ako %{count} sekundy
+        one: less than 1 second
+        other: less than %{count} seconds
+        few: less than %{count} seconds
       over_x_years:
-        one: viac ako 1 rok
-        other: viac ako %{count} rokov
-        few: viac ako %{count} roky
+        one: over 1 year
+        other: over %{count} years
+        few: over %{count} years
       x_days:
-        one: 1 deň
-        other: "%{count} dní"
-        few: "%{count} dni"
+        one: 1 day
+        other: "%{count} days"
+        few: "%{count} days"
       x_minutes:
-        one: 1 minúta
-        other: "%{count} minút"
-        few: "%{count} minúty"
+        one: 1 minute
+        other: "%{count} minutes"
+        few: "%{count} minutes"
       x_months:
-        one: 1 mesiac
-        other: "%{count} mesiacov"
-        few: "%{count} mesiace"
+        one: 1 month
+        other: "%{count} months"
+        few: "%{count} months"
       x_seconds:
-        one: 1 sekunda
-        other: "%{count} sekúnd"
-        few: "%{count} sekundy"
+        one: 1 second
+        other: "%{count} seconds"
+        few: "%{count} seconds"
     units:
       hour:
-        one: hodina
-        other: hodín
-        few: hodiny
+        one: hour
+        other: hours
+        few: hours
   default_activity_management: Riadenie
   default_activity_design: Návrh
   default_activity_development: Vývoj
@@ -710,6 +710,7 @@ sk:
   label_changes_details: Podrobnosti o všetkých zmenách
   label_changeset_plural: Changesets
   label_checked: skontrolované
+  label_child_element: Child element
   label_chronological_order: V chronologickom poradí
   label_close_versions: Zavrieť ukončené verzie
   label_closed_work_packages: uzatvorené
@@ -856,6 +857,7 @@ sk:
   label_message_plural: Správy
   label_message_posted: Správu pridal
   label_min_max_length: Min - Max length
+  label_minute_plural: minutes
   label_missing_api_access_key: Missing an API access key
   label_missing_feeds_access_key: Chýba prístupový kľúč pre RSS
   label_modification: "%{count} change"
@@ -1004,7 +1006,7 @@ sk:
   label_this_week: this week
   label_this_year: Tento rok
   label_time_entry_plural: Strávený čas
-  label_time_sheet_menu: Time sheet
+  label_time_sheet_menu: "Časový výkaz"
   label_time_tracking: Time tracking
   label_today: dnes
   label_top_menu: Top Menu
@@ -1061,30 +1063,30 @@ sk:
   label_workflow_plural: Workflows
   label_workflow_summary: Zhrnutie
   label_x_closed_work_packages_abbr:
-    one: 1 uzatvorený
-    other: "%{count} uzatvorených"
+    one: 1 closed
+    other: "%{count} closed"
     zero: 0 closed
-    few: "%{count} uzatvorené"
+    few: "%{count} closed"
   label_x_comments:
-    one: 1 komentár
-    other: "%{count} komentárov"
+    one: 1 comment
+    other: "%{count} comments"
     zero: no comments
-    few: "%{count} komentáre"
+    few: "%{count} comments"
   label_x_open_work_packages_abbr:
-    one: 1 otvorený
-    other: "%{count} otvorených"
+    one: 1 open
+    other: "%{count} open"
     zero: 0 open
-    few: "%{count} otvorené"
+    few: "%{count} open"
   label_x_open_work_packages_abbr_on_total:
-    one: otvorený 1 / %{total}
-    other: otvorených %{count} / %{total}
+    one: 1 open / %{total}
+    other: "%{count} open / %{total}"
     zero: 0 open / %{total}
-    few: otvorené %{count} / %{total}
+    few: "%{count} open / %{total}"
   label_x_projects:
-    one: 1 projekt
-    other: "%{count} projektov"
+    one: 1 project
+    other: "%{count} projects"
     zero: no projects
-    few: "%{count} projekty"
+    few: "%{count} projects"
   label_year: Rok
   label_yesterday: včera
   label_keyboard_function: Function
@@ -1217,9 +1219,9 @@ sk:
         format: "%n %u"
         units:
           byte:
-            one: Bajt
-            other: Bajtov
-            few: Bajty
+            one: Byte
+            other: Bytes
+            few: Bytes
           gb: GB
           kb: kB
           mb: MB
@@ -1298,6 +1300,7 @@ sk:
   project_module_news: Novinky
   project_module_repository: Repozitár
   project_module_time_tracking: Time tracking
+  project_module_timelines: Timelines
   project_module_wiki: Wiki
   query_fields:
     assigned_to_role: Priradená rola
@@ -1313,9 +1316,8 @@ sk:
   setting_available_languages: Available languages
   setting_bcc_recipients: Blind carbon copy recipients (bcc)
   setting_brute_force_block_after_failed_logins: Block user after this number of failed
-    login attempts (disable with 0)
-  setting_brute_force_block_minutes: Doba, na ktorú bude používateľ zablokovaný (v
-    minútach)
+    login attempts
+  setting_brute_force_block_minutes: Time the user is blocked for
   setting_cache_formatted_text: Cache formatted text
   setting_column_options: Customize the appearance of the work package lists
   setting_commit_fix_keywords: Fixing keywords
@@ -1351,6 +1353,7 @@ sk:
   setting_work_package_startdate_is_adddate: Use current date as start date for new
     work packages
   setting_work_packages_export_limit: Work packages export limit
+  setting_journal_aggregation_time_minutes: Display journals as aggregated within
   setting_log_requesting_user: Log user login, name, and mail address for all requests
   setting_login_required: Authentication required
   setting_mail_from: Emission email address
@@ -1361,8 +1364,7 @@ sk:
   setting_password_active_rules: Active character classes
   setting_password_count_former_banned: Number of most recently used passwords banned
     for reuse
-  setting_password_days_valid: Počet dní, po ktorých požadovať zmenu hesla (vypnúť
-    s 0)
+  setting_password_days_valid: Number of days, after which to enforce a password change
   setting_password_min_length: Minimálna dĺžka
   setting_password_min_adhered_rules: Minimum number of required classes
   setting_per_page_options: Objects per page options
@@ -1428,6 +1430,7 @@ sk:
   text_enumeration_destroy_question: "%{count} objects are assigned to this value."
   text_file_repository_writable: Attachments directory writable
   text_git_repo_example: a bare and local repository (e.g. /gitrepo, c:\gitrepo)
+  text_hint_disable_with_0: 'Note: Disable with 0'
   text_work_package_added: Work package %{id} has been reported by %{author}.
   text_work_package_category_destroy_assignments: Remove category assignments
   text_work_package_category_destroy_question: Some work packages (%{count}) are assigned
@@ -1439,6 +1442,9 @@ sk:
   text_work_packages_ref_in_commit_messages: Referencing and fixing work packages
     in commit messages
   text_journal_added: "%{label} %{value} added"
+  text_journal_aggregation_time_explanation: Combine journals for display if their
+    age difference is less than the specified timespan. This will also delay mail
+    notifications by the same amount of time.
   text_journal_changed: "%{label} changed from %{old} to %{new}"
   text_journal_changed_no_detail: "%{label} updated"
   text_journal_changed_with_diff: "%{label} changed (%{link})"
@@ -1536,9 +1542,9 @@ sk:
     delete_thing: Odstrániť
     duration: Trvanie
     duration_days:
-      one: 1 deň
-      other: "%{count} dní"
-      few: "%{count} dni"
+      one: 1 day
+      other: "%{count} days"
+      few: "%{count} days"
     edit_color: Upraviť farbu
     edit_project_type: Upraviť typ projektu
     edit_thing: Upraviť
@@ -1715,9 +1721,9 @@ sk:
     assign_random_password: Assign random password (sent to user via e-mail)
     blocked: locked temporarily
     blocked_num_failed_logins:
-      one: dočasne zamknuté (jeden neúspešný pokus o prihlásenie)
-      other: dočasne zamknuté (%{count} neúspešných pokusov o prihlásenie)
-      few: dočasne zamknuté (%{count} neúspešné pokusy o prihlásenie)
+      one: locked temporarily (one failed login attempt)
+      other: locked temporarily (%{count} failed login attempts)
+      few: locked temporarily (%{count} failed login attempts)
     deleted: Odstránený používateľ
     error_status_change_failed: 'Changing the user status failed due to the following
       errors: %{errors}'
@@ -1766,16 +1772,15 @@ sk:
         však "%{actual}".
       invalid_format: 'Neplatný formát parametra "%{property}": systémom očakávaný
         formát je "%{expected_format}", používateľ dodal "%{actual}".'
-      invalid_json: The request could not be parsed as JSON.
+      invalid_json: Požiadavku nie je možné analyzovať ako JSON.
       invalid_relation: Vzťah je neplatný.
       invalid_resource: Pre vlastnosť "%{property}" je odkaz očakávaný v tvare "%{expected}",  dodaný
         tvar však bol "%{actual}".
       invalid_user_status_transition: "Účet aktuálneho používateľa nemá oprávnenie
         na vykonanie tejto operácie."
       missing_content_type: nešpecifikovaný
-      missing_request_body: There was no request body.
-      multipart_body_error: The request body did not contain the expected multipart
-        parts.
+      missing_request_body: Chýba žiadosť tela (request body).
+      multipart_body_error: Telo žiadosti neobsahuje očakávaný viacnásobné časti.
       multiple_errors: Boli porušené obmedzenia voči viacerým poliam.
       writing_read_only_attributes: Nie je možné meniť atribút, ktorý je určený len
         na čítanie.

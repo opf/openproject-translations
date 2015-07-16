@@ -12,7 +12,30 @@ We plan to release this plugin every time an OpenProject core release is done.
 **Beware**:
 
 * when translating `general_lang_name` do not translate the word 'English', but fill in the name of the language you are currently translating
-* This plugin adds translations for the OpenProject core, but not for plugins. But it provides a rake task to update the locales of plugins translated on Crowdin, namely `rake translations_for_plugins:update`. This rake task takes its configuration from a file. See `configuration.yml.example` for an example. 
+
+## Technical Details
+
+We can split this up in three parts: storing locales, loading locales,
+updating locales.
+
+### Storing locales
+
+* Core: The locales (except for english) are stored in
+  OpenProject-Translations
+* Plugins: All locales are stored in the plugins themselves.
+
+### Loading Locales
+
+* Rails locales are loaded automatically. OpenProject-Translations just
+  patches the location Rails looks for locales.
+* Js locales get required by webpack during the rake task
+  `assets:webpack`. Currently, js locales from the core are required by
+OpenProject-Translations and js locales from plugins are required by
+each plugin individually.
+
+### Updating Locales
+
+* This plugin provides several rake tasks to update locales. These tasks keep the following up to date: the source files in Crowdin and the translated files in the GitHub repos. We execute these tasks once a day.
 
 ## Requirements
 
@@ -20,20 +43,7 @@ We plan to release this plugin every time an OpenProject core release is done.
 
 ## Plugin Installation
 
-Edit the `Gemfile.plugins` file in your openproject-installation directory to contain the following lines:
-
-<pre>
-gem "openproject-translations", :git => 'https://github.com/opf/openproject-translations.git', :branch => 'stable'
-</pre>
-
-Then update your bundle with the following commands executed from your openproject directory:
-
-<pre>
-bundle install
-bundle exec rake assets:precompile
-</pre>
-
-and restart the OpenProject server.
+Starting with OpenProject 4.2.0 this plugin belongs to the Gemfile of the core. Thus, you do not need to install it anymore.
 
 ## Contact
 

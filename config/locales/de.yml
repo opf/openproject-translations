@@ -170,7 +170,7 @@ de:
         responsible: Verantwortlicher
         spent_time: Aufgewendete Zeit
         subproject: Unterprojekt von
-        time_entries: Logzeit
+        time_entries: Zeit buchen
         type: Typ
         watcher: Beobachter
     errors:
@@ -251,19 +251,19 @@ de:
               numeric: Ziffern (z.B. '1')
               special: Sonderzeichen (z.B. '%')
               reused:
-                one: wurde bereits verwendet. Bitte wählen Sie eines, das sich vom
-                  letzten unterscheidet.
-                other: wurde bereits verwendet. Bitte wählen Sie eines, das sich von
-                  den letzten %{count} unterscheidet.
+                one: wurde schon benutzt. Bitte wähle eines das sich von deinem letzten
+                  unterscheidet.
+                other: wurde schon benutzt. Bitte wähle eines das sich von deinen
+                  letzten %{count} unterscheidet.
         member:
           principal_blank: Bitte wählen Sie mindestens einen Benutzer oder eine Gruppe.
           role_blank: Bitte wählen Sie mindestens eine Rolle.
       template:
         body: 'Bitte überprüfen Sie die folgenden Felder:'
         header:
-          one: 'Dieses %{model}-Objekt konnte nicht gespeichert werden: %{count} Fehler.'
+          one: 'Dieses %{model}-Objekt konnte nicht gespeichert werden: 1 Fehler'
           other: 'Dieses %{model}-Objekt konnte nicht gespeichert werden: %{count}
-            Fehler.'
+            Fehler'
     models:
       attachment: Datei
       board: Forum
@@ -370,7 +370,7 @@ de:
   button_expand_all: Alle aufklappen
   button_list: Liste
   button_lock: Sperren
-  button_log_time: Logzeit
+  button_log_time: Zeit buchen
   button_login: Anmelden
   button_move: Verschieben
   button_move_and_follow: Verschieben und Arbeitspaket anzeigen
@@ -480,23 +480,23 @@ de:
         other: fast %{count} Jahre
       half_a_minute: eine halbe Minute
       less_than_x_minutes:
-        one: weniger als 1 Minute
+        one: weniger als eine Minute
         other: weniger als %{count} Minuten
       less_than_x_seconds:
-        one: less than 1 second
-        other: less than %{count} seconds
+        one: weniger als eine Sekunde
+        other: weniger als %{count} Sekunden
       over_x_years:
-        one: mehr als 1 Jahr
+        one: mehr als ein Jahr
         other: mehr als %{count} Jahre
       x_days:
         one: 1 Tag
-        other: "%{count} Tagen"
+        other: "%{count} Tage"
       x_minutes:
         one: 1 Minute
         other: "%{count} Minuten"
       x_months:
         one: 1 Monat
-        other: "%{count} Monaten"
+        other: "%{count} Monate"
       x_seconds:
         one: 1 Sekunde
         other: "%{count} Sekunden"
@@ -707,6 +707,7 @@ de:
   label_changes_details: Details aller Änderungen
   label_changeset_plural: Changesets
   label_checked: ausgewählt
+  label_child_element: Child element
   label_chronological_order: in zeitlicher Reihenfolge
   label_close_versions: Vollständige Versionen schließen
   label_closed_work_packages: geschlossen
@@ -854,6 +855,7 @@ de:
   label_message_plural: Forenbeiträge
   label_message_posted: Forenbeitrag hinzugefügt
   label_min_max_length: Länge (Min. - Max.)
+  label_minute_plural: minutes
   label_missing_api_access_key: Der API-Zugriffsschlüssel fehlt.
   label_missing_feeds_access_key: Der RSS-Zugriffsschlüssel fehlt.
   label_modification: "%{count} Änderung"
@@ -1295,6 +1297,7 @@ de:
   project_module_news: Neuigkeiten
   project_module_repository: Projektarchiv
   project_module_time_tracking: Zeiterfassung
+  project_module_timelines: Timelines
   project_module_wiki: Wiki
   query_fields:
     assigned_to_role: Zuständigkeitsrolle
@@ -1309,9 +1312,9 @@ de:
   setting_autologin: Automatische Anmeldung
   setting_available_languages: Verfügbare Sprachen
   setting_bcc_recipients: E-Mails als Blindkopie (BCC) senden
-  setting_brute_force_block_after_failed_logins: Sperre Benutzer nach dieser Anzahl
-    fehlgeschlagener Loginversuche (deaktivieren mit 0)
-  setting_brute_force_block_minutes: Sperre Benutzer für Dauer (Minuten)
+  setting_brute_force_block_after_failed_logins: Block user after this number of failed
+    login attempts
+  setting_brute_force_block_minutes: Time the user is blocked for
   setting_cache_formatted_text: Formatierten Text im Cache speichern
   setting_column_options: Anpassen der Darstellung der Arbeitspaketlisten
   setting_commit_fix_keywords: Schlüsselwörter (Status)
@@ -1348,6 +1351,7 @@ de:
   setting_work_package_startdate_is_adddate: Neue Arbeitspakete haben "Heute" als
     Anfangsdatum
   setting_work_packages_export_limit: Max. Anzahl Arbeitspakete bei CSV/PDF-Export
+  setting_journal_aggregation_time_minutes: Display journals as aggregated within
   setting_log_requesting_user: Logge Benutzer Login, Name und Mailadresse für alle
     Anfragen
   setting_login_required: Authentifizierung erforderlich
@@ -1361,8 +1365,7 @@ de:
   setting_password_active_rules: Aktive Zeichenklassen
   setting_password_count_former_banned: Anzahl zuletzt benutzter Passwörter, die nicht
     wiederverwendet werden dürfen
-  setting_password_days_valid: Anzahl von Tagen, nach denen ein Passwortwechsel erwzwungen
-    wird (deaktivieren mit 0)
+  setting_password_days_valid: Number of days, after which to enforce a password change
   setting_password_min_length: Minimale Länge
   setting_password_min_adhered_rules: Mindestanzahl zu verwendender Zeichenklassen
   setting_per_page_options: Objekte pro Seite
@@ -1429,6 +1432,7 @@ de:
   text_enumeration_destroy_question: "%{count} Objekt(e) sind diesem Wert zugeordnet."
   text_file_repository_writable: Verzeichnis für Dateien beschreibbar
   text_git_repo_example: ein freigegebenes,lokales Repository (z.B. /gitrepo, c:\gitrepo)
+  text_hint_disable_with_0: 'Note: Disable with 0'
   text_work_package_added: Arbeitspaket %{id} wurde erstellt von %{author}.
   text_work_package_category_destroy_assignments: Kategorie-Zuordnung entfernen
   text_work_package_category_destroy_question: Einige Arbeitspakete (%{count}) sind
@@ -1440,6 +1444,9 @@ de:
   text_work_packages_ref_in_commit_messages: Arbeitspaket-Beziehungen und -Status
     in Commit-Log-Meldungen
   text_journal_added: "%{label} %{value} wurde hinzugefügt"
+  text_journal_aggregation_time_explanation: Combine journals for display if their
+    age difference is less than the specified timespan. This will also delay mail
+    notifications by the same amount of time.
   text_journal_changed: "%{label} wurde von %{old} zu %{new} geändert"
   text_journal_changed_no_detail: "%{label} aktualisiert"
   text_journal_changed_with_diff: "%{label} geändert (%{link})"
@@ -1541,7 +1548,7 @@ de:
     duration: Dauer
     duration_days:
       one: 1 Tag
-      other: "%{count} Tage"
+      other: "%{count} Tagen"
     edit_color: Farbe bearbeiten
     edit_project_type: Projekt-Typ bearbeiten
     edit_thing: Bearbeiten
@@ -1595,8 +1602,8 @@ de:
         absolute: Absolut
         none: Kein Planungsvergleich
         relative: Relativ
-        compare_relative_prefix: Vergleiche aktuelle Planung mit vor
-        compare_relative_suffix: vor
+        compare_relative_prefix: Vergleiche aktuelle Planung mit der von vor
+        compare_relative_suffix: " "
         compare_absolute: Vergleiche aktuelle Planung mit %{date}
       time_relative:
         days: Tage
