@@ -176,64 +176,65 @@ fr:
         watcher: Abonné
     errors:
       messages:
-        accepted: must be accepted.
-        blank: can't be blank.
-        cant_link_a_work_package_with_a_descendant: A work package cannot be linked
-          to one of its subtasks.
-        circular_dependency: This relation would create a circular dependency.
-        confirmation: doesn't match confirmation.
-        empty: can't be empty.
-        equal_to: must be equal to %{count}.
-        even: must be even.
-        exclusion: is reserved.
-        file_too_large: is too large (maximum size is %{count} Bytes).
-        greater_than: must be greater than %{count}.
-        greater_than_or_equal_to: must be greater than or equal to %{count}.
-        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
-          length.
-        greater_than_start_date: must be greater than start date.
-        inclusion: is not set to one of the allowed values.
-        invalid: is invalid.
-        less_than: must be less than %{count}.
-        less_than_or_equal_to: must be less than or equal to %{count}.
-        not_a_date: is not a date.
-        not_a_number: is not a number.
-        not_an_integer: is not an integer.
-        not_same_project: doesn't belong to the same project.
-        odd: must be odd.
-        taken: has already been taken.
-        too_long: is too long (maximum is %{count} characters).
-        too_short: is too short (minimum is %{count} characters).
-        wrong_length: is the wrong length (should be %{count} characters).
-        after: must be after %{date}.
-        after_or_equal_to: must be after or equal to %{date}.
-        before: must be before %{date}.
-        before_or_equal_to: must be before or equal to %{date}.
-        could_not_be_copied: could not be (fully) copied.
+        accepted: doi(ven)t être accepté(e)(s).
+        blank: ne peut pas être vide.
+        cant_link_a_work_package_with_a_descendant: Un lot de travaux ne peut pas
+          être lié à l'une de ses sous-tâches.
+        circular_dependency: Cette relation créerait une dépendance circulaire.
+        confirmation: ne correspond pas à la confirmation.
+        empty: ne peut pas être vide.
+        equal_to: doit être égal à %{count}.
+        even: doit être pair.
+        exclusion: est réservé.
+        file_too_large: est trop volumineux (la taille maximale est de %{count} octets).
+        greater_than: doit être supérieur à %{count}.
+        greater_than_or_equal_to: doit être supérieur ou égal à %{count}.
+        smaller_than_or_equal_to_max_length: doit être inférieur ou égal à la longueur
+          maximale.
+        greater_than_start_date: doit être postérieure à la date de début.
+        inclusion: ne correspond à aucune des valeurs autorisées.
+        invalid: est invalide.
+        less_than: doit être inférieur à %{count}.
+        less_than_or_equal_to: doit être inférieur ou égal à %{count}.
+        not_a_date: n'est pas une date.
+        not_a_number: n'est pas un nombre.
+        not_an_integer: n'est pas un entier.
+        not_same_project: n'appartient pas au même projet.
+        odd: doit être impair.
+        taken: a déjà été pris.
+        too_long: est trop long (le maximum est de %{count} caractères).
+        too_short: est trop court (le minimum est de %{count} caractères).
+        wrong_length: est de mauvaise longueur (devrait être %{count} caractères).
+        after: doit être après %{date}.
+        after_or_equal_to: Doit être après ou égal à %{date}.
+        before: doit être avant %{date}.
+        before_or_equal_to: Doit être avant ou égal à %{date}.
+        could_not_be_copied: n'a pas pu être copié (entièrement).
       models:
         project_association:
-          identical_projects: can not be created from one project to itself.
-          project_association_not_allowed: does not allow associations.
+          identical_projects: ne peut être créée d'un projet vers lui-même.
+          project_association_not_allowed: n'autorise pas les associations.
         repository:
-          not_whitelisted: is not allowed by the configuration.
-          no_directory: is not a directory.
+          not_whitelisted: n'est pas autorisé par la configuration.
+          no_directory: n'est pas un répertoire.
         work_package:
           is_not_a_valid_target_for_time_entries: 'Le Lot de Travaux #%{id} n''est
             pas une cible valide pour réaffecter les entrées de temps.'
           attributes:
             due_date:
-              not_start_date: is not on start date, although this is required for
-                milestones.
+              not_start_date: n'est pas identique à la date de début, bien que cela
+                soit requis pour les jalons.
             parent_id:
-              cannot_be_milestone: cannot be a milestone.
-              cannot_be_in_another_project: cannot be in another project.
-              not_a_valid_parent: is invalid.
-              does_not_exist: does not exist.
+              cannot_be_milestone: ne peut pas être un jalon.
+              cannot_be_in_another_project: ne peut pas être dans un autre projet.
+              not_a_valid_parent: est invalide.
+              does_not_exist: n'existe pas.
             status_id:
-              status_transition_invalid: is invalid because no valid transition exists
-                from old to new status for the current user's roles.
+              status_transition_invalid: n'est pas valide, car aucune transition valide
+                n'existe de l'ancien vers le nouveau statut pour les rôles de l'utilisateur
+                actuel.
             priority_id:
-              only_active_priorities_allowed: needs to be active.
+              only_active_priorities_allowed: doit être active.
             category:
               only_same_project_categories_allowed: La catégorie du module de travail
                 doit faire partie du même projet que le module de travail.
@@ -244,8 +245,8 @@ fr:
         user:
           attributes:
             password:
-              weak: 'must contain characters of the following classes (at least %{min_count}
-                of %{all_count}): %{rules}.'
+              weak: 'doit contenir des caractères des classes suivantes (au moins
+                %{min_count} de %{all_count}) : %{rules}.'
               lowercase: minuscules (par exemple, « a »)
               uppercase: majuscules (par exemple, « A »)
               numeric: numérique (par exemple, « 1 »)
@@ -297,7 +298,7 @@ fr:
     active: Actif
     assigned_to: Assignée à
     assignee: Assignée à
-    attachments: Pièces jointes
+    attachments: Fichiers
     author: Auteur
     base: 'Erreur générale:'
     blocks_ids: Blocs
@@ -705,7 +706,7 @@ fr:
   label_changes_details: Détails de tous les changements
   label_changeset_plural: Lots de modification
   label_checked: vérifié
-  label_child_element: Child element
+  label_child_element: "Élément enfant"
   label_chronological_order: Dans l'ordre chronologique
   label_close_versions: Fermer les versions complètes
   label_closed_work_packages: clôturé
@@ -897,7 +898,7 @@ fr:
   label_options: Options
   label_overall_activity: Activité totale
   label_overall_spent_time: Total du temps passé
-  label_overview: Vue d'ensemble
+  label_overview: Vue globale
   label_password_lost: Mot de passe oublié
   label_password_rule_lowercase: Minuscules
   label_password_rule_numeric: Caractères numériques

@@ -169,16 +169,16 @@ sk:
         watcher: Pozorovateľ
     errors:
       messages:
-        accepted: must be accepted.
-        blank: can't be blank.
-        cant_link_a_work_package_with_a_descendant: A work package cannot be linked
-          to one of its subtasks.
-        circular_dependency: This relation would create a circular dependency.
+        accepted: musí byť akceptovaný.
+        blank: nemôže byť prázdne.
+        cant_link_a_work_package_with_a_descendant: Pracovný balíček nemôže byť previazaný
+          na žiadny zo svojich podriadenými balíčkov.
+        circular_dependency: Tento vzťah by vytvoril cyklickú závislosť.
         confirmation: doesn't match confirmation.
-        empty: can't be empty.
-        equal_to: must be equal to %{count}.
-        even: must be even.
-        exclusion: is reserved.
+        empty: nemôže byť prázdny.
+        equal_to: musí byť rovný %{count}.
+        even: musí byť párne.
+        exclusion: patrí medzi vyhradené výrazy.
         file_too_large: is too large (maximum size is %{count} Bytes).
         greater_than: must be greater than %{count}.
         greater_than_or_equal_to: must be greater than or equal to %{count}.
@@ -186,42 +186,44 @@ sk:
           length.
         greater_than_start_date: must be greater than start date.
         inclusion: is not set to one of the allowed values.
-        invalid: is invalid.
-        less_than: must be less than %{count}.
-        less_than_or_equal_to: must be less than or equal to %{count}.
-        not_a_date: is not a date.
-        not_a_number: is not a number.
-        not_an_integer: is not an integer.
-        not_same_project: doesn't belong to the same project.
-        odd: must be odd.
-        taken: has already been taken.
-        too_long: is too long (maximum is %{count} characters).
-        too_short: is too short (minimum is %{count} characters).
-        wrong_length: is the wrong length (should be %{count} characters).
-        after: must be after %{date}.
-        after_or_equal_to: must be after or equal to %{date}.
-        before: must be before %{date}.
-        before_or_equal_to: must be before or equal to %{date}.
-        could_not_be_copied: could not be (fully) copied.
+        invalid: je neplatný.
+        less_than: musí byť menšie ako %{count}.
+        less_than_or_equal_to: musí byť menšie alebo rovné ako %{count}.
+        not_a_date: nie je platný dátum.
+        not_a_number: nie je číslo.
+        not_an_integer: nie je celé číslo.
+        not_same_project: nepodlieha rovnakému projektu.
+        odd: musí byť nepárne.
+        taken: už existuje v systéme.
+        too_long: je príliš dlhý (maximum je %{count} znakov).
+        too_short: je príliš krátky (minimum je %{count} znakov).
+        wrong_length: má chybnú dĺžku (správne má byť %{count} znakov).
+        after: musí byť po termíne %{date}.
+        after_or_equal_to: musí byť po alebo rovné termínu %{date}.
+        before: musí byť pred termínom %{date}.
+        before_or_equal_to: musí byť pred alebo rovné termínu %{date}.
+        could_not_be_copied: Nepodarilo sa (úplne) skopírovať.
       models:
         project_association:
-          identical_projects: can not be created from one project to itself.
-          project_association_not_allowed: does not allow associations.
+          identical_projects: projekt nemôže byť previazaný sám so sebou.
+          project_association_not_allowed: nedovoľuje vytváranie väzieb na iné projekty.
         repository:
-          not_whitelisted: is not allowed by the configuration.
-          no_directory: is not a directory.
+          not_whitelisted: nie je povolené aktuálnou konfiguráciou.
+          no_directory: nie je adresár.
         work_package:
           is_not_a_valid_target_for_time_entries: 'Work package #%{id} is not a valid
             target for reassigning the time entries.'
           attributes:
             due_date:
-              not_start_date: is not on start date, although this is required for
-                milestones.
+              not_start_date: nemá rovnakú hodnotu ako dátum začiatku, aj keď je to
+                požadované pre pracovné balíčky typu "míľnik".
             parent_id:
-              cannot_be_milestone: cannot be a milestone.
-              cannot_be_in_another_project: cannot be in another project.
-              not_a_valid_parent: is invalid.
-              does_not_exist: does not exist.
+              cannot_be_milestone: nemôže byť previazaný na pracovný balíček typu
+                "míľnik".
+              cannot_be_in_another_project: nemôže byť previazaný na pracovný balíček
+                nachádzajúci sa v inom projekte (musí byť povolené správcom systému).
+              not_a_valid_parent: je neplatný.
+              does_not_exist: neexistuje.
             status_id:
               status_transition_invalid: is invalid because no valid transition exists
                 from old to new status for the current user's roles.
@@ -273,9 +275,9 @@ sk:
       project: Projekt
       query: Vlastný dopyt
       role:
-        one: Role
-        other: Roles
-        few: Roles
+        one: Rola
+        other: Rolí
+        few: Roly
       type: Typ
       planning_element: Planning element
       project_type: Typ projektu
@@ -462,50 +464,50 @@ sk:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: about 1 hour
-        other: about %{count} hours
-        few: about %{count} hours
+        one: približne 1 hodina
+        other: približne %{count} hodín
+        few: približne %{count} hodiny
       about_x_months:
-        one: about 1 month
-        other: about %{count} months
-        few: about %{count} months
+        one: približne 1 mesiac
+        other: približne %{count} mesiacov
+        few: približne %{count} mesiace
       about_x_years:
-        one: about 1 year
-        other: about %{count} years
-        few: about %{count} years
+        one: približne 1 rok
+        other: približne %{count} rokov
+        few: približne %{count} roky
       almost_x_years:
-        one: almost 1 year
-        other: almost %{count} years
-        few: almost %{count} years
+        one: takmer 1 rok
+        other: takmer %{count} rokov
+        few: takmer %{count} roky
       half_a_minute: pol minúty
       less_than_x_minutes:
-        one: less than a minute
-        other: less than %{count} minutes
-        few: less than %{count} minutes
+        one: menej než minúta
+        other: menej než %{count} minút
+        few: menej než %{count} minúty
       less_than_x_seconds:
-        one: less than 1 second
-        other: less than %{count} seconds
-        few: less than %{count} seconds
+        one: menej než sekunda
+        other: menej než %{count} sekúnd
+        few: menej než %{count} sekundy
       over_x_years:
-        one: over 1 year
-        other: over %{count} years
-        few: over %{count} years
+        one: viac ako 1 rok
+        other: viac ako %{count} rokov
+        few: viac ako %{count} roky
       x_days:
-        one: 1 day
-        other: "%{count} days"
-        few: "%{count} days"
+        one: 1 deň
+        other: "%{count} dní"
+        few: "%{count} dni"
       x_minutes:
-        one: 1 minute
-        other: "%{count} minutes"
-        few: "%{count} minutes"
+        one: 1 minúta
+        other: "%{count} minút"
+        few: "%{count} minúty"
       x_months:
-        one: 1 month
-        other: "%{count} months"
-        few: "%{count} months"
+        one: 1 mesiac
+        other: "%{count} mesiacov"
+        few: "%{count} mesiace"
       x_seconds:
-        one: 1 second
-        other: "%{count} seconds"
-        few: "%{count} seconds"
+        one: 1 sekunda
+        other: "%{count} sekúnd"
+        few: "%{count} sekundy"
     units:
       hour:
         one: hour
@@ -611,11 +613,10 @@ sk:
   error_scm_command_failed: 'An error occurred when trying to access the repository:
     %{value}'
   error_scm_not_found: Položka alebo revízia nebola nájdená v repozitári.
-  error_unable_delete_status: The work package status cannot be deleted since it is
-    used by at least one work package.
-  error_unable_delete_default_status: Unable to delete the default work package status.
-    Please select another default work package status before deleting the current
-    one.
+  error_unable_delete_status: Stav pracovného balíčka sa nedá odstrániť, pretože ho
+    používa ešte najmenej jeden ďalší pracovný balíček.
+  error_unable_delete_default_status: Nie je možné odstrániť predvolený stav pracovného
+    balíčka. Pred odstránením aktuálneho vyberte iný predvolený stav.
   error_unable_to_connect: Unable to connect (%{value})
   error_workflow_copy_source: Prosím, vyberte zdrojový typ alebo rolu
   error_workflow_copy_target: Prosím, vyberte cieľové typy a role
@@ -1062,30 +1063,30 @@ sk:
   label_workflow_plural: Workflows
   label_workflow_summary: Zhrnutie
   label_x_closed_work_packages_abbr:
-    one: 1 closed
-    other: "%{count} closed"
+    one: 1 uzatvorený
+    other: "%{count} uzatvorených"
     zero: 0 closed
-    few: "%{count} closed"
+    few: "%{count} uzatvorené"
   label_x_comments:
-    one: 1 comment
-    other: "%{count} comments"
+    one: 1 komentár
+    other: "%{count} komentárov"
     zero: no comments
-    few: "%{count} comments"
+    few: "%{count} komentáre"
   label_x_open_work_packages_abbr:
-    one: 1 open
-    other: "%{count} open"
+    one: 1 otvorený
+    other: "%{count} otvorených"
     zero: 0 open
-    few: "%{count} open"
+    few: "%{count} otvorené"
   label_x_open_work_packages_abbr_on_total:
-    one: 1 open / %{total}
-    other: "%{count} open / %{total}"
+    one: otvorený 1 / %{total}
+    other: otvorených %{count} / %{total}
     zero: 0 open / %{total}
-    few: "%{count} open / %{total}"
+    few: otvorené %{count} / %{total}
   label_x_projects:
-    one: 1 project
-    other: "%{count} projects"
+    one: 1 projekt
+    other: "%{count} projektov"
     zero: no projects
-    few: "%{count} projects"
+    few: "%{count} projekty"
   label_year: Rok
   label_yesterday: včera
   label_keyboard_function: Function
@@ -1218,9 +1219,9 @@ sk:
         format: "%n %u"
         units:
           byte:
-            one: Byte
-            other: Bytes
-            few: Bytes
+            one: Bajt
+            other: Bajtov
+            few: Bajty
           gb: GB
           kb: kB
           mb: MB
@@ -1541,9 +1542,9 @@ sk:
     delete_thing: Odstrániť
     duration: Trvanie
     duration_days:
-      one: 1 day
-      other: "%{count} days"
-      few: "%{count} days"
+      one: 1 deň
+      other: "%{count} dní"
+      few: "%{count} dni"
     edit_color: Upraviť farbu
     edit_project_type: Upraviť typ projektu
     edit_thing: Upraviť
@@ -1789,8 +1790,8 @@ sk:
         context_object_not_found: Pre vložené vstupné podmienky neboli nájdené žiadne
           prostriedky.
       validation:
-        done_ratio: Done ratio cannot be set on parent work packages, when it is inferred
-          by status or when it is disabled.
+        done_ratio: Percento ukončenia nemôže by nastavené na rodičovskom pracovnom
+          balíčku, ak sa odvodzuje od stavu bolo deaktivované.
         due_date: Dátum "Do" nie je možné nastaviť na pracovnom balíčku obsahujúcom
           podriadené pracovné balíčky.
         estimated_hours: Odhad hodín nie je možné nastaviť na pracovnom balíčku obsahujúcom
