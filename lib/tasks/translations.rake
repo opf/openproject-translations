@@ -31,6 +31,23 @@ namespace :translations do
     !!(translation_file_path.basename.to_s[0..-5] =~ /\Ajs-.+\z/)
   end
 
+  def previous_version
+    current_version = OpenProject::VERSION.to_semver
+    # ignoring specials like '-alpha'
+    current_version =~ /\A(\d+)\.(\d+)\.(\d+)/
+    major = $1.to_i
+    minor = $2.to_i
+    patch = $3.to_i
+    if patch > 0
+      "#{major}.#{minor}.#{patch - 1}"
+    elsif minor > 0
+      # maybe we should be more exact here
+      "#{major}.#{minor - 1}.0"
+    else
+      "#{major - 1}.#{0}.#{0}"
+    end
+  end
+
   task :check_for_api_key => :environment do
     env_name = 'OPENPROJECT_CROWDIN_KEY'
     raise "ERROR: please specify a crowdin API key via the #{env_name} environment variable" unless ENV[env_name]
@@ -111,6 +128,39 @@ namespace :translations do
       crowdin.update_file [{dest: "/#{crowdin_directory}/js-en.yml", source: path_to_translation.to_s, title: 'OpenProject JavaScript wording', export_pattern: 'js-%two_letters_code%.yml'}], type: 'yaml'
     else
       crowdin.add_file [{dest: "/#{crowdin_directory}/js-en.yml", source: path_to_translation.to_s, title: 'OpenProject JavaScript wording', export_pattern: 'js-%two_letters_code%.yml'}], type: 'yaml'
+    end
+  end
+
+  desc "Upload old translations for new version"
+  task :upload_old_translations => :check_for_api_key do
+    puts 'Uploading old translations for new version'
+    begin
+      languages_files = Tempfile.new('crowdin_translations')
+      languages_files.close
+
+      crowdin = Crowdin::API.new project_id: crowdin_project_name, api_key: crowdin_project_key
+      crowdin.download_translation 'all', output: languages_files.path
+
+      Zip::File.open(languages_files.path) do |zip_file|
+        zip_file.glob("*/#{previous_version}/*.yml").each do |entry|
+          language_name = entry.name.split('/').first # the file is put in a directory containing the language name
+
+          js_prefix = js_translation?(Pathname.new(entry.name)) ? 'js-' : ''
+          dest = "/#{crowdin_directory}/#{js_prefix}en.yml"
+          locale_temp_file = Tempfile.new('old_locale')
+          locale_temp_file.close
+          # not pretty but working
+          File.delete(locale_temp_file.path) if File.file?(locale_temp_file.path)
+          entry.extract locale_temp_file.path
+          files = [ {dest: dest, source: locale_temp_file.path} ]
+          params = {}
+
+          puts "uploading #{dest}"
+          crowdin.upload_translation(files, language_name, params)
+        end
+      end
+    ensure
+      languages_files.unlink
     end
   end
 
