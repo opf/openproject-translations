@@ -10,7 +10,8 @@ describe LocalesUpdater do
           uri: uri,
           api_key: api_key,
           project_id: project_id,
-          version: version
+          version: version,
+          previous_version: previous_version
         }
       }
     }
@@ -19,6 +20,7 @@ describe LocalesUpdater do
   let(:api_key) { 'test-key' }
   let(:project_id) { 'test-id' }
   let(:version) { 'test-version' }
+  let(:previous_version) { 'test-previous-version' }
 
   describe '#update_all_locales_of_all_repos' do
     before do
@@ -29,7 +31,7 @@ describe LocalesUpdater do
     it 'uses the correct credentials' do
       allow(locales_updater).to receive(:within_plugin_repo)
 
-      expect(I18nProvider).to receive(:new).with(project_id, api_key, version)
+      expect(I18nProvider).to receive(:new).with(project_id, api_key, version, previous_version)
       locales_updater.update_all_locales_of_all_repos
     end
 
@@ -39,6 +41,7 @@ describe LocalesUpdater do
       allow(locales_updater).to receive(:request_build)
       allow(locales_updater).to receive(:download_and_replace_locales)
       allow(locales_updater).to receive(:update_i18n_handle)
+      allow(locales_updater).to receive(:upload_old_translations)
       locales_updater.instance_variable_set(:@i18n_provider, i18n_provider)
 
       expect(i18n_provider).to receive(:upload_english).twice
@@ -54,6 +57,7 @@ describe LocalesUpdater do
       allow(locales_updater).to receive(:request_build)
       allow(locales_updater).to receive(:update_i18n_handle)
       allow(locales_updater).to receive(:replace_file)
+      allow(i18n_provider).to receive(:each_previous_locale)
       allow(i18n_provider).to receive(:each_locale).and_yield(entry)
       allow(entry).to receive(:name).and_return(entry_name)
 
@@ -69,6 +73,7 @@ describe LocalesUpdater do
       allow(locales_updater).to receive(:request_build)
       allow(locales_updater).to receive(:update_i18n_handle)
       allow(i18n_provider).to receive(:translation_status_high_enough?).and_return(true)
+      allow(i18n_provider).to receive(:each_previous_locale)
       allow(i18n_provider).to receive(:each_locale).and_yield(entry)
       allow(entry).to receive(:name).and_return(entry_name)
 
