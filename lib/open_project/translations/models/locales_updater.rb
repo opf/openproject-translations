@@ -24,9 +24,12 @@ class LocalesUpdater
           within_plugin_repo(configuration_hash: specifics, path: FileUtils.pwd, debug: debug) do
             puts "Uploading english for #{plugin_name}"
             upload_english(plugin_name)
+            puts "Requesting buld for #{plugin_name}"
             request_build
             puts "Downloading translations for #{plugin_name}"
             download_and_replace_locales
+            puts "Uploading existent Translations for #{plugin_name}"
+            upload_old_translations(plugin_name)
           end
         end
       end
@@ -56,7 +59,8 @@ class LocalesUpdater
       project_id = configuration_hash[:project_id]
       api_key = configuration_hash[:api_key]
       version = configuration_hash[:version]
-      I18nProvider.new(project_id, api_key, version)
+      previous_version = configuration_hash[:previous_version]
+      I18nProvider.new(project_id, api_key, version, previous_version)
     end
   end
 
@@ -123,5 +127,22 @@ class LocalesUpdater
 
   def js_translation?(translation_file_path)
     !!(translation_file_path.basename.to_s[0..-5] =~ /\Ajs-.+\z/)
+  end
+
+  ##
+  # Crowdin has a bug that removes existent translations from new versions
+  # see: https://crowdin.uservoice.com/forums/31787-collaborative-translation-tool/suggestions/8942341-fix-the-recognition-of-duplicated-strings-with-plu
+  def upload_old_translations(plugin_name)
+    @i18n_provider.each_previous_locale do |entry|
+      language_name = entry.name.split('/').first
+      dest = "#{js_translation?(Pathname.new(entry.name)) ? 'js-' : ''}en.yml"
+      source = entry.name
+
+      ##
+      # one edge case persists: a string with plural forms such that
+      # the english string is equal to the translated
+      params = {}
+      @i18n_provider.upload_old_translations(dest, source, language_name, params)
+    end
   end
 end
