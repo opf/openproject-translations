@@ -63,13 +63,11 @@ class LocalesUpdater
   def setup_plugin_repo(configuration_hash, path)
     uri = configuration_hash[:uri]
     branch = configuration_hash[:branch]
-    previous_branch = configuration_hash[:previous_branch]
 
     @plugin_repo = GitRepository.new(uri, path)
     @plugin_repo.clone
 
     @plugin_repo.checkout(branch)
-    @plugin_repo.merge(previous_branch, strategy: :ours) if previous_branch
     @plugin_repo
   end
 
