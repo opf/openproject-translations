@@ -65,13 +65,4 @@ class GitRepository
       run_command 'git rev-parse --abbrev-ref HEAD'
     end
   end
-
-  def merge(their_branch, options = {})
-    command = "git merge origin/#{their_branch}"
-    command += ' ' + '-Xours' if options[:strategy] == :ours
-    command += " -m \"Merge branch '#{their_branch}' into #{branch}'\""
-    within_repo do
-      run_command command
-    end
-  end
 end
