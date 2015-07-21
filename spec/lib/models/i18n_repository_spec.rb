@@ -2,7 +2,12 @@ require 'spec_helper'
 require_relative '../../../lib/open_project/translations/models/i18n_provider'
 
 describe I18nProvider do
-  let(:i18n_provider) { described_class.new(project_id, api_key, crowdin_directory, previous_crowdin_directory) }
+  let(:i18n_provider) {
+    described_class.new(project_id,
+                        api_key,
+                        crowdin_directory,
+                        previous_crowdin_directory)
+  }
   let(:project_id) { 'test-id' }
   let(:api_key) { 'test-api-key' }
   let(:crowdin_directory) { 'test-directory' }

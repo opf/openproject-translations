@@ -132,7 +132,7 @@ class LocalesUpdater
   ##
   # Crowdin has a bug that removes existent translations from new versions
   # see: https://crowdin.uservoice.com/forums/31787-collaborative-translation-tool/suggestions/8942341-fix-the-recognition-of-duplicated-strings-with-plu
-  def upload_old_translations(plugin_name)
+  def upload_old_translations
     @i18n_provider.each_previous_locale do |entry|
       language_name = entry.name.split('/').first
       dest = "#{js_translation?(Pathname.new(entry.name)) ? 'js-' : ''}en.yml"

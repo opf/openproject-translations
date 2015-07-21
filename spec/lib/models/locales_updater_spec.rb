@@ -31,7 +31,10 @@ describe LocalesUpdater do
     it 'uses the correct credentials' do
       allow(locales_updater).to receive(:within_plugin_repo)
 
-      expect(I18nProvider).to receive(:new).with(project_id, api_key, version, previous_version)
+      expect(I18nProvider).to receive(:new).with(project_id,
+                                                 api_key,
+                                                 version,
+                                                 previous_version)
       locales_updater.update_all_locales_of_all_repos
     end
 

@@ -4,7 +4,10 @@ require 'tempfile'
 require 'zip'
 
 class I18nProvider
-  def initialize(project_id, api_key, crowdin_directory, previous_crowdin_directory)
+  def initialize(project_id,
+                 api_key,
+                 crowdin_directory,
+                 previous_crowdin_directory)
     @project_id = project_id
     @api_key = api_key
     @crowdin_directory = crowdin_directory
@@ -86,7 +89,7 @@ class I18nProvider
     end
   end
 
-  def open_locale_zip(force: false)
+  def open_locale_zip
     begin
       # download if not downloaded or downloaded for wrong project
       if defined? @languages_files == nil \
@@ -100,7 +103,7 @@ class I18nProvider
         yield zip_file
       end
     ensure
-      if defined? @languages_files != nil
+      if !(defined? @languages_files).nil?
         close_tmp_file(@languages_files)
       end
     end
@@ -162,7 +165,7 @@ class I18nProvider
         File.delete(locale_temp_file.path) if File.file?(locale_temp_file.path)
         source_entry.extract locale_temp_file.path
       end
-      files = [ { dest: dest, source: locale_temp_file.path } ]
+      files = [{ dest: dest, source: locale_temp_file.path }]
 
       @crowdin.upload_translation(files, language_name, params)
     ensure
