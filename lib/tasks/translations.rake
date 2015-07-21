@@ -184,4 +184,44 @@ namespace :translations do
       File.rename translation_file, OpenProject::Translations::Engine.root.join('config', 'locales', "#{js_translation?(translation_file) ? 'js-' : ''}#{language_key}.yml")
     end
   end
+
+  desc "Update Gemfile.lock to newest Version of OpenProject Translation"
+  task :update_gemfile_lock => :environment do
+    target_path = 'tmp/openproject'
+    branch = ENV['Translation_working_branch']
+
+    system "git clone git@github.com:opf/openproject #{target_path}"
+    Dir.chdir target_path do
+      system "git checkout #{branch}"
+
+      # update Gemfile.lock
+      # Calling 'bundle update openproject-translations' would also try to
+      # update Sprockets and that fails.
+      # So I comment it out, bundle, uncomment it and bundle again.
+      # This way only OpenProject-Translations gets updated.
+      # Maybe we can refactor this when the reference to Sprockets is fixed.
+      system 'cp Gemfile Gemfile.old'
+      system "sed '/openproject-translations/ s/^/#/' Gemfile > Gemfile.copy"
+      system 'mv Gemfile.copy Gemfile'
+      Bundler.with_clean_env do
+        system 'bundle install'
+      end
+      system 'mv Gemfile.old Gemfile'
+      Bundler.with_clean_env do
+        system 'bundle install'
+      end
+
+      system 'git add Gemfile.lock'
+      system 'git commit -m "Update reference to OpenProject-Translations"'
+
+      DEBUG = ENV['DEBUG'] || false
+      unless DEBUG
+        system "git push origin #{branch}"
+      end
+    end
+    unless DEBUG
+      require 'fileutils'
+      FileUtils.rm_rf(target_path)
+    end
+  end
 end
