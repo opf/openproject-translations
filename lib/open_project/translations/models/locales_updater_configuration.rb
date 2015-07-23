@@ -6,8 +6,7 @@ class LocalesUpdaterConfiguration
 
   def self.path_to_configuration_file
     ENV['CONFIGURATION_FILE'] || begin
-      # root of OpenProject-Translation
-      configuration_file = Pathname(__FILE__) + '../../../../../'
+      configuration_file = OpenProject::Translations::Engine.root
       configuration_file + 'configuration.yml'
     end
   end
