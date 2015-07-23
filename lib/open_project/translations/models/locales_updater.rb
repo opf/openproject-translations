@@ -22,8 +22,8 @@ class LocalesUpdater
         within_tmp_directory(path: File.join(FileUtils.pwd, plugin_name), debug: debug) do
           within_plugin_repo(configuration_hash: specifics, path: FileUtils.pwd, debug: debug) do
             puts "Uploading english for #{plugin_name}"
-            upload_english(plugin_name)
-            request_build
+            upload_english(plugin_name, debug)
+            request_build(debug)
             puts "Downloading translations for #{plugin_name}"
             download_and_replace_locales
           end
@@ -78,7 +78,11 @@ class LocalesUpdater
     @plugin_repo.push unless debug
   end
 
-  def upload_english(plugin_name)
+  def upload_english(plugin_name, debug)
+    if debug
+      puts 'Skipping uploading english due to debug mode'
+      return
+    end
     # either add or update the english (js) translation file
     titles = {
       ENGLISH_TRANSLATION_FILE => "#{plugin_name} Wording",
@@ -94,7 +98,11 @@ class LocalesUpdater
     end
   end
 
-  def request_build
+  def request_build(debug)
+    if debug
+      puts 'Skipping requesting build due to debug mode'
+      return
+    end
     @i18n_provider.request_build
   end
 
