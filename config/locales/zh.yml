@@ -150,36 +150,34 @@ zh:
         watcher: "关注者"
     errors:
       messages:
-        accepted: must be accepted.
-        blank: can't be blank.
-        cant_link_a_work_package_with_a_descendant: A work package cannot be linked
-          to one of its subtasks.
-        circular_dependency: This relation would create a circular dependency.
-        confirmation: doesn't match confirmation.
-        empty: can't be empty.
-        equal_to: must be equal to %{count}.
-        even: must be even.
-        exclusion: is reserved.
-        file_too_large: is too large (maximum size is %{count} Bytes).
-        greater_than: must be greater than %{count}.
-        greater_than_or_equal_to: must be greater than or equal to %{count}.
-        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
-          length.
-        greater_than_start_date: must be greater than start date.
-        inclusion: is not set to one of the allowed values.
-        invalid: is invalid.
-        less_than: must be less than %{count}.
-        less_than_or_equal_to: must be less than or equal to %{count}.
-        not_a_date: is not a date.
-        not_a_number: is not a number.
-        not_an_integer: is not an integer.
-        not_same_project: doesn't belong to the same project.
-        odd: must be odd.
-        taken: has already been taken.
-        too_long: is too long (maximum is %{count} characters).
-        too_short: is too short (minimum is %{count} characters).
-        wrong_length: is the wrong length (should be %{count} characters).
-        after: must be after %{date}.
+        accepted: "必须接受。"
+        blank: "不能为空。"
+        cant_link_a_work_package_with_a_descendant: "工作包无法链接到它的子任务之一。"
+        circular_dependency: "这种关系将创建循环依赖项。"
+        confirmation: "不匹配确认。"
+        empty: "不能为空。"
+        equal_to: "必须等于 %{count}。"
+        even: "必须是偶数。"
+        exclusion: "是保留关键字。"
+        file_too_large: "太大 (最大大小为 %{count} 字节)。"
+        greater_than: "必须大于 %{count}。"
+        greater_than_or_equal_to: "必须大于或等于 %{count}。"
+        smaller_than_or_equal_to_max_length: "必须小于或等于最大长度。"
+        greater_than_start_date: "必须大于开始日期。"
+        inclusion: "未设置为允许的值之一。"
+        invalid: "是无效的。"
+        less_than: "必须小于 %{count}。"
+        less_than_or_equal_to: "必须小于或等于 %{count}。"
+        not_a_date: "不是日期。"
+        not_a_number: "不是一个数字。"
+        not_an_integer: "不是一个整数。"
+        not_same_project: "不属于同一个项目。"
+        odd: "必须是奇数。"
+        taken: "已经采取。"
+        too_long: "太长 (最多 %{count} 个字符)。"
+        too_short: "太短 (最低是 %{count} 个字符)。"
+        wrong_length: "长度不正确 (应该是 %{count} 个字符)。"
+        after: "必须在 %{date} 之后。"
         after_or_equal_to: must be after or equal to %{date}.
         before: must be before %{date}.
         before_or_equal_to: must be before or equal to %{date}.
@@ -198,9 +196,9 @@ zh:
               not_start_date: is not on start date, although this is required for
                 milestones.
             parent_id:
-              cannot_be_milestone: cannot be a milestone.
-              cannot_be_in_another_project: cannot be in another project.
-              not_a_valid_parent: is invalid.
+              cannot_be_milestone: "不能是一个里程碑。"
+              cannot_be_in_another_project: "不能在另一个项目中。"
+              not_a_valid_parent: "是无效的。"
               does_not_exist: does not exist.
             status_id:
               status_transition_invalid: is invalid because no valid transition exists
@@ -226,8 +224,7 @@ zh:
               reused:
                 one: has been used before. Please choose one that is different from
                   your last one.
-                other: has been used before. Please choose one that is different from
-                  your last %{count}.
+                other: "已被使用过。请选择一个不同于您最后 %{count}。"
         member:
           principal_blank: "请选择至少一个用户或组。"
           role_blank: "请选择至少一个角色。"
@@ -251,7 +248,7 @@ zh:
       query: "自定义查询"
       role:
         one: Role
-        other: Roles
+        other: "角色"
       type: "类型"
       planning_element: "规划元素"
       project_type: "项目类型"
@@ -563,11 +560,8 @@ zh:
   error_scm_annotate: "该条目不存在，或不能进行批注。"
   error_scm_command_failed: "当试图访问该代码库时出现错误: %{value}"
   error_scm_not_found: "在代码库中未找到的条目或修正版本。"
-  error_unable_delete_status: The work package status cannot be deleted since it is
-    used by at least one work package.
-  error_unable_delete_default_status: Unable to delete the default work package status.
-    Please select another default work package status before deleting the current
-    one.
+  error_unable_delete_status: "不能删除工作包的状态，因为它由至少一个工作包使用。"
+  error_unable_delete_default_status: "无法删除默认工作包的状态。请删除当前之前选择另一个默认工作包状态。"
   error_unable_to_connect: "无法连接 (%{value})"
   error_workflow_copy_source: "请选择源类型或角色"
   error_workflow_copy_target: "请选择目标类型和角色"
@@ -1363,7 +1357,10 @@ zh:
   text_own_membership_delete_confirmation: "您将要删除部分或全部的权限，可能不能够在那之后编辑此项目。 \n您确定要继续吗？"
   text_plugin_assets_writable: "插件资产目录可写"
   text_powered_by: Powered by %{link}
-  text_project_destroy_confirmation: "确实要删除此项目和相关的数据吗?"
+  text_project_destroy_title: Do you really want to delete this project?
+  text_project_destroy_confirmation: If you continue, the project %{identifier} and
+    all related data will be permanently destroyed. Please check the box below if
+    you want to continue.
   text_project_identifier_info: "只有小写字母 (a-z)、 数字、 短划线和下划线被允许，必须以小写字母开头。"
   text_reassign: "重新分配给"
   text_reassign_to: "工作包："
