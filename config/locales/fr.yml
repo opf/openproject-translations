@@ -2,7 +2,7 @@
 fr:
   account:
     delete: Supprimer le compte
-    delete_confirmation: "Êtes-vous sûr de vouloir supprimer le compte?"
+    delete_confirmation: "Êtes-vous sûr de vouloir supprimer le compte ?"
     deleted: Compte supprimé avec succès
     deletion_info:
       data_consequences:
@@ -40,8 +40,8 @@ fr:
       activer votre compte, cliquez sur le lien qui vous a été envoyé par mail.
     error_inactive_manual_activation: Votre compte n'a pas encore été activé. Veuillez
       attendre qu'un administrateur active votre compte.
-    error_self_registration_disabled: L'inscription utilisateur est désactivée sur
-      ce système. Demandez à un administrateur de créer un compte pour vous.
+    error_self_registration_disabled: L'inscription des utilisateurs est désactivée
+      sur ce système. Demandez à un administrateur de créer un compte pour vous.
     login_with_auth_provider: ou connectez-vous avec votre compte existant
   actionview_instancetag_blank_option: Veuillez sélectionner
   activerecord:
@@ -82,7 +82,7 @@ fr:
         from: Lot de Travaux
         to: Lots de Travaux associés
       status:
-        is_closed: Lot de Travaux fermé
+        is_closed: Lot de travaux clôturé
       journal:
         notes: Notes
       member:
@@ -147,6 +147,7 @@ fr:
         hexcode: Code hexadécimal
       project_association:
         description: Cause
+        project_b: Dependent project
       project_type:
         allows_association: Permet l'association
         name: Nom
@@ -212,7 +213,8 @@ fr:
         could_not_be_copied: n'a pas pu être copié (entièrement)
       models:
         project_association:
-          identical_projects: un projet ne peut pas être créé à partir de lui-même
+          identical_projects: Dependency cannot be created between one project and
+            itself.
           project_association_not_allowed: n'autorise pas les associations
         repository:
           not_whitelisted: n'est pas autorisé par la configuration
@@ -252,18 +254,18 @@ fr:
               numeric: numérique (par exemple, « 1 »)
               special: spécial (par exemple, « % »)
               reused:
-                one: a déjà été utilisé auparavant. Veuillez en choisir un différent
-                  de votre choix précédent.
-                other: a déjà été utilisé auparavant. Veuillez en choisir un différent
-                  de vos derniers %{count}.
+                one: has been used before. Please choose one that is different from
+                  your last one.
+                other: has been used before. Please choose one that is different from
+                  your last %{count}.
         member:
           principal_blank: Choisissez au moins un utilisateur ou un groupe.
           role_blank: Choisissez au moins un rôle.
       template:
         body: 'Veuillez vérifier les champs suivants:'
         header:
-          one: une erreur empêche ce %{model} d'être sauvegardé
-          other: "%{count} erreurs empêchent ce %{model} d'être sauvegardé"
+          one: 1 error prohibited this %{model} from being saved
+          other: "%{count} errors prohibited this %{model} from being saved"
     models:
       attachment: Fichier
       board: Forum
@@ -278,8 +280,8 @@ fr:
       project: Projet
       query: Requête personnalisée
       role:
-        one: Rôle
-        other: Rôles
+        one: Role
+        other: Roles
       type: Type
       planning_element: "Élément de planification"
       project_type: Type de projet
@@ -298,7 +300,7 @@ fr:
     active: Actif
     assigned_to: Assignée à
     assignee: Assignée à
-    attachments: Pièces jointes
+    attachments: Fichiers
     author: Auteur
     base: 'Erreur générale:'
     blocks_ids: Blocs
@@ -331,7 +333,7 @@ fr:
     priority: Priorité
     project: Projet
     responsible: Responsable
-    role: Rôle
+    role: Role
     start_date: Date de début
     status: Statut
     subject: Objet
@@ -344,7 +346,7 @@ fr:
     version: Version
     work_package: Lot de Travaux
   button_add: Ajouter
-  button_add_watcher: Ajouter un abonné
+  button_add_watcher: Ajouter un observateur
   button_annotate: Annoter
   button_apply: Appliquer
   button_archive: Archive
@@ -370,7 +372,7 @@ fr:
   button_expand_all: Tout déplier
   button_list: Liste
   button_lock: Verrouiller
-  button_log_time: Consigner temps
+  button_log_time: Enregister temps
   button_login: Connexion
   button_move: Déplacer
   button_move_and_follow: Déplacer et suivre
@@ -397,8 +399,9 @@ fr:
   button_configure_menu_entry: Gérer l'élément de menu
   button_delete_menu_entry: Supprimer l'élément de menu
   copy_project:
-    started: Début de la copie du projet "%{source_project_name}" vers "%{target_project_name}".
-      Vous serez informé par mail dès que "%{target_project_name}" sera disponible.
+    started: La copie du projet "%{source_project_name}" vers "%{target_project_name}"
+      a débuté. Vous serez informé par mail dès que "%{target_project_name}" sera
+      disponible.
     failed: Impossible de copier le projet %{source_project_name}
     succeeded: Projet %{target_project_name} créé
     errors: Erreur
@@ -465,43 +468,43 @@ fr:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: environ 1 heure
-        other: environ %{count} heures
+        one: about 1 hour
+        other: about %{count} hours
       about_x_months:
-        one: environ 1 mois
-        other: environ %{count} mois
+        one: about 1 month
+        other: about %{count} months
       about_x_years:
-        one: environ 1 an
-        other: environ %{count} an
+        one: about 1 year
+        other: about %{count} years
       almost_x_years:
-        one: presque 1 an
-        other: presque %{count} ans
+        one: almost 1 year
+        other: almost %{count} years
       half_a_minute: une demi-minute
       less_than_x_minutes:
-        one: moins d'une minute
-        other: moins de %{count} minutes
+        one: less than a minute
+        other: less than %{count} minutes
       less_than_x_seconds:
-        one: moins de 1 seconde
-        other: moins de %{count} secondes
+        one: less than 1 second
+        other: less than %{count} seconds
       over_x_years:
-        one: plus d'un an
-        other: plus de %{count} années
+        one: over 1 year
+        other: over %{count} years
       x_days:
-        one: 1 jour
-        other: "%{count} jours"
+        one: 1 day
+        other: "%{count} days"
       x_minutes:
         one: 1 minute
         other: "%{count} minutes"
       x_months:
-        one: 1 mois
-        other: "%{count} mois"
+        one: 1 month
+        other: "%{count} months"
       x_seconds:
-        one: 1 seconde
-        other: "%{count} secondes"
+        one: 1 second
+        other: "%{count} seconds"
     units:
       hour:
-        one: heure
-        other: heures
+        one: hour
+        other: hours
   default_activity_management: Gestion
   default_activity_design: Dessin
   default_activity_development: Développement
@@ -517,7 +520,7 @@ fr:
   default_status_tested: testé
   default_status_on_hold: en attente
   default_status_rejected: rejeté
-  default_status_closed: fermé
+  default_status_closed: clôturé
   default_priority_low: Faible
   default_priority_normal: Normal
   default_priority_high: Haut
@@ -536,7 +539,7 @@ fr:
   default_type: Lot de Travaux
   default_type_task: Tâche
   default_type_deliverable: Livrable
-  default_type_milestone: Jalon
+  default_type_milestone: "Étape"
   default_type_phase: Phase
   default_type_bug: Bug
   default_type_feature: Fonctionnalité
@@ -548,8 +551,8 @@ fr:
     Tab ou Entrée. Sinon, vous pouvez entrer le numéro de Lots de Travaux directement.
   description_available_columns: Colonnes disponibles
   description_choose_project: Projets
-  description_compare_from: Comparaison de version
-  description_compare_to: Comparer à la version
+  description_compare_from: Comparer depuis la version
+  description_compare_to: Comparer vers la version
   description_current_position: 'Vous êtes ici:'
   description_date_from: Entrer la date de début
   description_date_range_interval: Choisir la pèriode en sélectionnant la date de
@@ -586,8 +589,8 @@ fr:
     supprimé.
   error_can_not_delete_standard_type: Les types standards ne peuvent pas être supprimés.
   error_can_not_remove_role: Ce rôle est utilisé et ne peut être supprimé.
-  error_can_not_reopen_work_package_on_closed_version: Un Lot de Travaux assigné à
-    une version fermée ne peut être réouvert
+  error_can_not_reopen_work_package_on_closed_version: Un lot de travaux assigné à
+    une version fermée ne peut être ré-ouvert
   error_can_t_load_default_data: 'La configuration par défaut n''a pu être chargée:
     %{value}'
   error_check_user_and_role: Veuillez choisir un utilisateur et un rôle.
@@ -627,7 +630,7 @@ fr:
     reply: Y a-t-il eu une réponse
     time_entry: Journal horaire édité
     wiki_page: Page Wiki éditée
-    work_package_closed: Lot de Travaux fermé
+    work_package_closed: Lot de travaux clôturé
     work_package_edit: Lot de Travaux édité
     work_package_note: Note de Lot de Travaux ajoutée
   general_csv_decimal_separator: ","
@@ -708,7 +711,7 @@ fr:
   label_checked: vérifié
   label_chronological_order: Dans l'ordre chronologique
   label_close_versions: Fermer les versions complètes
-  label_closed_work_packages: fermé
+  label_closed_work_packages: clôturé
   label_collapse: Regrouper
   label_configuration: configuration
   label_comment_add: Ajouter un commentaire
@@ -777,7 +780,7 @@ fr:
   label_filter_add: Ajouter le filtre
   label_filter_plural: Filtres
   label_float: Flottant
-  label_follows: suit
+  label_follows: suivi
   label_force_user_language_to_default: Pour cet utilisateur, revenir au langage par
     defaut
   label_general: Général
@@ -813,7 +816,7 @@ fr:
   label_work_package_priority_updated: Priorité du Lot de Travaux mise à jour
   label_work_package_status_new: Nouveau statut
   label_work_package_status_plural: Statuts du Lot de Travaux
-  label_work_package_tracking: Suivi des lots de travaux
+  label_work_package_tracking: Suivi du Lot de Travaux
   label_work_package_updated: Lot de Travaux mis à jour
   label_work_package_view_all: Voir tous les Lots de Travaux
   label_work_package_view_all_assigned_to_me: Voir tous les Lots de Travaux qui me
@@ -822,8 +825,8 @@ fr:
     par moi
   label_work_package_view_all_responsible_for: Voir tous les Lots de Travaux dont
     je suis responsable
-  label_work_package_view_all_watched: Voir tous les Lots de Travaux abonnés
-  label_work_package_watchers: Abonnés
+  label_work_package_view_all_watched: Voir tous les Lots de Travaux Observés
+  label_work_package_watchers: Observateurs
   label_journal_diff: Comparaison de description
   label_jump_to_a_project: Aller à un projet...
   label_language_based: Basé sur le langage de l'utilisateur
@@ -890,13 +893,13 @@ fr:
   label_not_equals: n'est pas
   label_notify_member_plural: Alertes mail
   label_open_menu: Ouvrir le menu
-  label_open_work_packages: ouvert
+  label_open_work_packages: ouvrir
   label_open_work_packages_plural: ouvrir
   label_optional_description: Description
   label_options: Options
   label_overall_activity: Activité totale
   label_overall_spent_time: Total du temps passé
-  label_overview: Vue d'ensemble
+  label_overview: Vue globale
   label_password_lost: Mot de passe oublié
   label_password_rule_lowercase: Minuscules
   label_password_rule_numeric: Caractères numériques
@@ -945,7 +948,7 @@ fr:
   label_remove_columns: Enlever les colonnes sélectionnées
   label_renamed: renommé
   label_reply_plural: Réponses
-  label_report: Rapport
+  label_report: Signalement
   label_report_plural: Signalements
   label_reported_work_packages: Lots de Travaux signalés
   label_reporting: Rapport
@@ -960,7 +963,7 @@ fr:
   label_revision_plural: Révisions
   label_roadmap: Feuille de route
   label_roadmap_edit: Modifier la feuille de route %{name}
-  label_roadmap_due_in: Date limite dans %{value}
+  label_roadmap_due_in: Date limite %{value}
   label_roadmap_no_work_packages: Aucun Lot de Travaux pour cette version
   label_roadmap_overdue: "%{value} de retard"
   label_role_and_permissions: Rôles et Permissions
@@ -1063,24 +1066,24 @@ fr:
   label_workflow_plural: Flux de travail
   label_workflow_summary: Résumé
   label_x_closed_work_packages_abbr:
-    one: 1 fermé
-    other: "%{count} fermé(s)"
+    one: 1 closed
+    other: "%{count} closed"
     zero: 0 closed
   label_x_comments:
-    one: un commentaire
-    other: "%{count} commentaires"
+    one: 1 comment
+    other: "%{count} comments"
     zero: no comments
   label_x_open_work_packages_abbr:
-    one: 1 ouvert
-    other: "%{count} ouvert(s)"
+    one: 1 open
+    other: "%{count} open"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
-    one: 1 ouvert / %{total}
-    other: "%{count} ouvert(s) / %{total}"
+    one: 1 open / %{total}
+    other: "%{count} open / %{total}"
     zero: 0 open / %{total}
   label_x_projects:
-    one: un projet
-    other: "%{count} projets"
+    one: 1 project
+    other: "%{count} projects"
     zero: no projects
   label_year: Année
   label_yesterday: hier
@@ -1101,7 +1104,7 @@ fr:
   label_keyboard_shortcut_go_activity: Aller aux activités du projet
   label_keyboard_shortcut_go_calendar: Aller au calendrier du projet
   label_keyboard_shortcut_go_news: Aller aux actualités du projet
-  label_keyboard_shortcut_go_timelines: Aller aux calendrier lié
+  label_keyboard_shortcut_go_timelines: Aller à la vue Chronologique
   label_keyboard_shortcut_new_work_package: Créer un nouveau Lot de Travaux
   label_keyboard_shortcut_details_package: Afficher le volet de détails des Lots de
     Travaux
@@ -1219,8 +1222,8 @@ fr:
         format: "%n %u"
         units:
           byte:
-            one: Octet
-            other: Octets
+            one: Byte
+            other: Bytes
           gb: GO
           kb: kO
           mb: MO
@@ -1236,13 +1239,13 @@ fr:
   permission_comment_news: Commenter actualité
   permission_commit_access: Commit Access
   permission_copy_projects: Copier les projets
-  permission_delete_work_package_watchers: Supprimer des abonnés
+  permission_delete_work_package_watchers: Supprimer des observateurs
   permission_delete_work_packages: Supprimer des Lots de Travaux
   permission_delete_messages: Supprimer les messages
   permission_delete_own_messages: Supprimer mes propre messages
   permission_delete_project_associations: Supprimer les dépendances du projet
   permission_delete_reportings: Supprimer les rapports
-  permission_delete_timelines: Supprimer les calendriers liés
+  permission_delete_timelines: Supprimer les vues chronologique liés
   permission_delete_wiki_pages: Supprimer les pages wiki
   permission_delete_wiki_pages_attachments: Supprimer piéces-jointes
   permission_edit_work_package_notes: Editer des notes
@@ -1255,7 +1258,7 @@ fr:
   permission_edit_project_associations: Editer le dépendance du project
   permission_edit_reportings: Editer les rapports
   permission_edit_time_entries: Editer « time logs »
-  permission_edit_timelines: Editer les calendriers liés
+  permission_edit_timelines: "Éditer les vues Chronologiques liés"
   permission_edit_wiki_pages: Editer les pages wiki
   permission_export_work_packages: Exporter les Lots de Travaux
   permission_export_wiki_pages: Exporter les pages wiki
@@ -1283,23 +1286,23 @@ fr:
   permission_view_changesets: Afficher le lot de modifications
   permission_view_commit_author_statistics: Voir les statistiques des auteurs des
     « commits »
-  permission_view_work_package_watchers: Voir la liste des abonnés
+  permission_view_work_package_watchers: Voir la liste des observateurs
   permission_view_work_packages: Voir les Lots de Travaux
   permission_view_messages: Voir messages
   permission_view_project_associations: Voir dépendances du projet
   permission_view_reportings: Voir les rapports
   permission_view_time_entries: Voir temps passé
-  permission_view_timelines: Voir les calendriers liés
+  permission_view_timelines: Voir les vues Chronologiques liés
   permission_view_wiki_edits: Voir historique du wiki
   permission_view_wiki_pages: Voir le wiki
   project_module_activity: Activité
   project_module_boards: Forums
   project_module_calendar: Calendrier
-  project_module_work_package_tracking: Suivi des lots de travaux
+  project_module_work_package_tracking: Suivi du Lot de Travaux
   project_module_news: Actualités
   project_module_repository: Dépôt
   project_module_time_tracking: Suivi du temps
-  project_module_timelines: Calendriers liés
+  project_module_timelines: Chronologie
   project_module_wiki: Wiki
   query_fields:
     assigned_to_role: Rôle du Destinataire
@@ -1309,7 +1312,7 @@ fr:
   setting_activity_days_default: Nombre des jours prévus sur l'activité du projet
   setting_app_subtitle: Sous-titre de l'Application
   setting_app_title: Titre de l'Application
-  setting_attachment_max_size: Taille maximale de la piéce-jointe
+  setting_attachment_max_size: Taille maximale de la pièce-jointe
   setting_autofetch_changesets: Rapport automatique des « commits »
   setting_autologin: Auto-connexion
   setting_available_languages: Langages disponibles
@@ -1345,8 +1348,8 @@ fr:
   setting_gravatar_default: Image Gravatar par défaut
   setting_gravatar_enabled: Utiliser les icônes Gravatar
   setting_host_name: Nom d'hôte
-  setting_work_package_done_ratio: Calculer le Taux d'avancement du lot de travail
-    avec...
+  setting_work_package_done_ratio: Calculer le Taux d'avancement du lot de travaux
+    avec
   setting_work_package_done_ratio_field: Utiliser le champ Lot de Travaux
   setting_work_package_done_ratio_status: Utiliser le statut des Lots de Travaux
   setting_work_package_done_ratio_disabled: Désactiver (cacher l'avancement)
@@ -1536,8 +1539,8 @@ fr:
       planning_elements: Eléments de planning
       project_associations: Dépendances
       reportings: Rapports des statuts
-      reports: Rapports des calendriers
-      timelines: Calendriers liés
+      reports: Rapport Chronologique
+      timelines: Chronologie
     add_project_association: Ajouter une dépendance
     associations: Dépendances
     board_could_not_be_saved: Le tableau n'a pas pu être enregistré
@@ -1553,8 +1556,8 @@ fr:
     delete_thing: Supprimer
     duration: Durée
     duration_days:
-      one: 1 jour
-      other: "%{count} jours"
+      one: 1 day
+      other: "%{count} days"
     edit_color: Editer la couleur
     edit_project_type: Editer le type de projet
     edit_thing: "Éditer"
@@ -1564,14 +1567,15 @@ fr:
     enable_type_in_project: Autorise le type « %{type} »
     end: Fin
     errors:
-      not_implemented: Le calendrier ne peut être affiché parce qu’il utilise une
+      not_implemented: La Chronologie ne peut être affiché parce qu’il utilise une
         fonctionnalité qui n'est pas encore implémentée.
-      report_comparison: Le calendrier ne peut afficher les comparaisons configurées.
+      report_comparison: La vue Chronologique ne peut afficher les comparaisons configurées.
         Veuillez consulter la section appropriée dans la configuration, réinitialiser
         peut aider à résoudre ce problème.
-      report_epicfail: Le calendrier ne peut pas être chargé à cause d'une erreur
-        inattendue.
-      report_timeout: Le calendrier ne peut être chargé dans un laps de temps raisonnable.
+      report_epicfail: La vue Chronologique ne peut pas être chargé à cause d'une
+        erreur inattendue.
+      report_timeout: La vue Chronologique ne peut être chargé dans un laps de temps
+        raisonnable.
     filter:
       errors:
         timeframe_start: Début de l'échéancier
@@ -1625,8 +1629,8 @@ fr:
       grouping_two: Critère de groupe second
       grouping_two_phrase: A une dépendance à ce type de projet
       hide_chart: Masquer graphique
-      noneElement: "(aucun)"
-      noneSelection: "(aucun)"
+      noneElement: "(none)"
+      noneSelection: "(none)"
       outline: Expansion de ligne par défaut
       parent: Afficher sous-projets de
       work_package_filters: Filtrer les Lots de Travaux
@@ -1670,9 +1674,9 @@ fr:
       aggregation: Ne montrer que les agrégations
       level1: Etendre niveau 1
       level2: Etendre niveau 2
-      level3: Etendre niveau 3
-      level4: Etendre niveau 4
-      level5: Etendre niveau 5
+      level3: Déplier 3 niveaux
+      level4: Déplier 4 niveaux
+      level5: Déplier 5 niveaux
       all: Tout montrer
     reporting_for_project:
       show: 'Statut signalé au projet: %{title}'
@@ -1701,14 +1705,15 @@ fr:
       ?
     really_delete_project_type: Voulez-vous vraiment supprimer le projet type suivant?
       Les projets utilisant ce type ne seront pas supprimés.
-    really_delete_timeline: Voulez-vous vraiment supprimer le calendrier lié suivant
-      ? Les Lots de Travaux présentés dans ce calendrier lié ne seront pas supprimés.
+    really_delete_timeline: Voulez-vous vraiment supprimer le rapport Chronologique
+      suivant ? Les Lots de Travaux présentés dans ce rapport Chronologique ne seront
+      pas supprimés.
     really_delete_reporting: Voulez-vous vraiment supprimer le rapport suivant? Les
       statuts de rapport précédents seront eux aussi supprimés.
     start: Début
-    timeline: Calendrier lié
-    timelines: Rapports des calendriers
-    settings: Calendriers liés
+    timeline: Rapport Chronologique
+    timelines: Rapport Chronologique
+    settings: Chronologie
     vertical_work_package: Lots de Travaux verticaux
     without_project_type: Sans le projet type
     you_are_viewing_the_selected_timeline: Vous visualisez le calendrier lié selectionné
@@ -1736,8 +1741,8 @@ fr:
       par courrier électronique)
     blocked: verrouillé temporairement
     blocked_num_failed_logins:
-      one: verrouillé temporairement (une tentative de connexion a échoué)
-      other: verrouillé temporairement (%{count} tentatives de connexion echouées)
+      one: locked temporarily (one failed login attempt)
+      other: locked temporarily (%{count} failed login attempts)
     deleted: Utilisateur supprimé
     error_status_change_failed: 'Le changement du statut de l''utilisateur a échoué
       dû aux erreurs suivantes: %{errors}'
@@ -1752,7 +1757,7 @@ fr:
       désactivé, il ne peut s'authentifier.
     password_change_unsupported: Le changement de mot de passe n'est pas supporté.
     authorization_rejected: Vous n'êtes pas autorisé à vous authentifier.
-  version_status_closed: fermé
+  version_status_closed: clôturé
   version_status_locked: verrouillé
   version_status_open: ouvrir
   note: Note

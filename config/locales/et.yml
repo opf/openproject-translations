@@ -51,7 +51,7 @@ et:
         attr_firstname: Eesnimi
         attr_lastname: Perekonnanimi
         attr_login: Kasutajanimi
-        attr_mail: E-posti aadress
+        attr_mail: E-post
         base_dn: Põhiline domeeninimi
         host: Host
         onthefly: Kasutaja loomine käigu pealt
@@ -104,7 +104,7 @@ et:
         activity: Tegevus
         hours: Tunnid
         spent_on: Kuupäev
-        type: Tüüp
+        type: Liik
       type:
         is_in_roadmap: Kuva teemasid tegevusplaani graafikus
         in_aggregation: Kuva teemasid koondvaates
@@ -140,6 +140,7 @@ et:
         hexcode: Hex kood
       project_association:
         description: Põhjus
+        project_b: Dependent project
       project_type:
         allows_association: Võimaldab seoste loomist
         name: Nimi
@@ -165,7 +166,7 @@ et:
         spent_time: Kulutatud aeg
         subproject: Alamprojekt
         time_entries: Logi aeg
-        type: Tüüp
+        type: Liik
         watcher: Jälgija
     errors:
       messages:
@@ -205,7 +206,8 @@ et:
         could_not_be_copied: ei saa (täielikult) kopeerida
       models:
         project_association:
-          identical_projects: ei saa seostada endaga
+          identical_projects: Dependency cannot be created between one project and
+            itself.
           project_association_not_allowed: ei luba seoseid
         repository:
           not_whitelisted: is not allowed by the configuration
@@ -243,17 +245,18 @@ et:
               numeric: arvuline (nt 1, 2, 3)
               special: erimärk (nt %, &)
               reused:
-                one: Vali uus parool, mis erineb eelmisest paroolist.
-                other: Vali uus parool, mis erineb eelmiselt kasutatud %{count}-st
-                  paroolist.
+                one: has been used before. Please choose one that is different from
+                  your last one.
+                other: has been used before. Please choose one that is different from
+                  your last %{count}.
         member:
           principal_blank: Vali vähemalt üks kasutaja või grupp.
           role_blank: Vali vähemalt üks roll.
       template:
         body: 'Kontrolli järgnevad väljad:'
         header:
-          one: 1 viga ei võimaldanud selle %{model} salvestamist
-          other: "%{count} viga ei võimaldanud selle %{model} salvestamist"
+          one: 1 error prohibited this %{model} from being saved
+          other: "%{count} errors prohibited this %{model} from being saved"
     models:
       attachment: Fail
       board: Foorum
@@ -268,9 +271,9 @@ et:
       project: Projekt
       query: Kohandatud päring
       role:
-        one: Roll
-        other: Rollid
-      type: Tüüp
+        one: Role
+        other: Roles
+      type: Liik
       planning_element: Planeerimise osa
       project_type: Projekti tüüp
       user: Kasutaja
@@ -321,13 +324,13 @@ et:
     priority: Prioriteet
     project: Projekt
     responsible: Vastutaja
-    role: Roll
+    role: Role
     start_date: Alguskuupäev
     status: Olek
     subject: Teema
     summary: Kokkuvõte
     title: Pealkiri
-    type: Tüüp
+    type: Liik
     updated_at: Uuendatud
     updated_on: Uuendatud
     user: Kasutaja
@@ -456,39 +459,39 @@ et:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: umbes 1 tund
-        other: umbes %{count} tundi
+        one: about 1 hour
+        other: about %{count} hours
       about_x_months:
-        one: umbes 1 kuu
-        other: umbes %{count} kuud
+        one: about 1 month
+        other: about %{count} months
       about_x_years:
-        one: umbes 1 aasta
-        other: umbes %{count} aastat
+        one: about 1 year
+        other: about %{count} years
       almost_x_years:
-        one: peaaegu 1 aasta
-        other: peaaegu %{count} aastat
+        one: almost 1 year
+        other: almost %{count} years
       half_a_minute: pool minutit
       less_than_x_minutes:
-        one: vähem kui minut
-        other: vähem kui %{count} minutit
+        one: less than a minute
+        other: less than %{count} minutes
       less_than_x_seconds:
-        one: vähem kui sekund
-        other: vähem kui %{count} sekundit
+        one: less than 1 second
+        other: less than %{count} seconds
       over_x_years:
-        one: rohkem kui aasta
-        other: rohkem kui %{count} aastat
+        one: over 1 year
+        other: over %{count} years
       x_days:
-        one: 1 päev
-        other: "%{count} päeva"
+        one: 1 day
+        other: "%{count} days"
       x_minutes:
-        one: 1 minut
-        other: "%{count} minutit"
+        one: 1 minute
+        other: "%{count} minutes"
       x_months:
-        one: 1 kuu
-        other: "%{count} kuud"
+        one: 1 month
+        other: "%{count} months"
       x_seconds:
-        one: 1 sekund
-        other: "%{count} sekundit"
+        one: 1 second
+        other: "%{count} seconds"
     units:
       hour:
         one: hour
@@ -985,7 +988,7 @@ et:
   label_this_year: sel aastal
   label_time_entry_plural: Kulutatud aeg
   label_time_sheet_menu: Time sheet
-  label_time_tracking: Ajakulu jälgimine
+  label_time_tracking: Ajakulu arvestus
   label_today: täna
   label_top_menu: "Ülemine menüü"
   label_topic_plural: Teemad
@@ -1042,24 +1045,24 @@ et:
   label_workflow_plural: Töövood
   label_workflow_summary: Kokkuvõte
   label_x_closed_work_packages_abbr:
-    one: 1 suletud
-    other: "%{count} suletud"
+    one: 1 closed
+    other: "%{count} closed"
     zero: 0 closed
   label_x_comments:
-    one: 1 kommentaar
-    other: "%{count} kommentaari"
+    one: 1 comment
+    other: "%{count} comments"
     zero: no comments
   label_x_open_work_packages_abbr:
-    one: 1 avatud
-    other: "%{count} avatud"
+    one: 1 open
+    other: "%{count} open"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
-    one: 1 avatud %{total}-st
-    other: "%{count} avatud %{total}-st"
+    one: 1 open / %{total}
+    other: "%{count} open / %{total}"
     zero: 0 open / %{total}
   label_x_projects:
-    one: 1 projekt
-    other: "%{count} projekti"
+    one: 1 project
+    other: "%{count} projects"
     zero: no projects
   label_year: Aasta
   label_yesterday: eile
@@ -1114,7 +1117,7 @@ et:
   more_actions: Rohkem tegevusi
   noscript_description: OpenProject vajab JavaScripti sisselülitamist su veebilehitsejas!
   noscript_heading: JavaScript ei ole sisselülitatud
-  noscript_learn_more: Lisateave
+  noscript_learn_more: Loe rohkem
   notice_account_activated: Su konto on aktiveeritud. Saad nüüd sisse logida.
   notice_account_invalid_credentials: Vale kasutajanimi või parool
   notice_account_invalid_credentials_or_blocked: Sisestatud kasutajanimi ja parool
@@ -1153,8 +1156,8 @@ et:
   notice_work_package_done_ratios_updated: Teema edenemise astmed on uuendatud.
   notice_locking_conflict: Teine kasutaja uuendas vahepeal neid andmeid.
   notice_locking_conflict_additional_information: Uuendused on tehtud %{users} poolt.
-  notice_locking_conflict_reload_page: Palun laadi lehekülg uuesti, kontrolli tehtud
-    muudatusi ja püüa neid uuesti salvestada.
+  notice_locking_conflict_reload_page: Palun vii oma muudatused sisse uue, toimetatud
+    leheküljele  -- laadi lehekülg uuesti ja sisesta oma muudatused uuesti.
   notice_no_principals_found: "Ühtki kasutajat ega gruppi ei leitud."
   notice_bad_request: Vigane päring.
   notice_not_authorized: Sul ei ole sellele lehele ligipääsuks õigusi.
@@ -1185,8 +1188,8 @@ et:
         format: "%n %u"
         units:
           byte:
-            one: Bait
-            other: Baiti
+            one: Byte
+            other: Bytes
           gb: GB
           kb: KB
           mb: MB
@@ -1264,7 +1267,7 @@ et:
   project_module_work_package_tracking: Teema jälgimine
   project_module_news: Uudised
   project_module_repository: Hoidla
-  project_module_time_tracking: Ajakulu jälgimine
+  project_module_time_tracking: Ajakulu arvestus
   project_module_timelines: Ajakavad
   project_module_wiki: Viki
   query_fields:
@@ -1511,8 +1514,8 @@ et:
     delete_thing: Kustuta
     duration: kestus
     duration_days:
-      one: 1 päev
-      other: "%{count} päeva"
+      one: 1 day
+      other: "%{count} days"
     edit_color: Muuda värvi
     edit_project_type: Muuda projekti tüüpi
     edit_thing: Muuda
@@ -1548,7 +1551,7 @@ et:
         default: vaikimisi
       column:
         assigned_to: Määratud tegija
-        type: Tüüp
+        type: Liik
         due_date: Lõppkuupäev
         name: Nimi
         status: Olek
@@ -1578,8 +1581,8 @@ et:
       grouping_two: Teine grupeerimise kriteerium
       grouping_two_phrase: On seotud projekti tüübiga
       hide_chart: Peida diagramm
-      noneElement: "(ei midagi)"
-      noneSelection: "(ei midagi)"
+      noneElement: "(pole)"
+      noneSelection: "(pole)"
       outline: Esmase kontuuri laiendamine
       parent: Näita alamprojekte
       work_package_filters: Filtreeri teemasid
@@ -1684,8 +1687,8 @@ et:
       teel)
     blocked: ajutiselt blokeeritud
     blocked_num_failed_logins:
-      one: ajutiselt blokeeritud (üks ebaõnnestunud sisselogimise katse)
-      other: ajutiselt blokeeritud (%{count} ebaõnnestunud sisselogimise katset)
+      one: locked temporarily (one failed login attempt)
+      other: locked temporarily (%{count} failed login attempts)
     deleted: Kustutatud kasutaja
     error_status_change_failed: 'Kasutaja oleku muutmine nurjus järgmiste tõrgete
       tõttu: %{errors}'
