@@ -14,14 +14,14 @@ it:
           Visto che i dati di ogni account eliminato vengono anch'essi riassegnati
           a questo account, non sarà possibile distinguere i dati creati dall'utente
           dai dati di un altro account eliminato.
-        self: I dati creati dalle tue attività (ad esempio posta elettronica, preferenze,
-          pacchetti di lavoro, voci wiki) verranno se possibile eliminati completamente.
-          Si noti, tuttavia, che i dati come ad esempio i pacchetti di lavoro e le
-          voci wiki non possono essere eliminati senza ostacolare il lavoro di altri
-          utenti. La proprietà di tali dati sarà pertanto trasferita ad un account
-          generico chiamato "Deleted user". Visto che i dati di tutti gli account
-          eliminati vengono riassegnati a questo account, non sarà più possibile distinguere
-          i tuoi dati dai dati di un altro account eliminato.
+        self: I dati creati dalla tua attività (per esempio posta elettronica, le
+          preferenze, pacchetti di lavoro, le voci wiki) verranno eliminati quando
+          più possibile. Si noti, tuttavia, che i dati come pacchetti di lavoro e
+          le voci wiki non possono essere eliminati senza ostacolare il lavoro degli
+          altri utenti. Tali dati vengono quindi riassegnati ad un account chiamato
+          "Utente Cancellato". Visto che i dati di ogni account eliminato vengono
+          anch'essi riassegnati a questo account, non sarà possibile distinguere i
+          tuoi dati dai dati di un altro account eliminato.
       heading: Cancella account %{name}
       info:
         other: Cancellare l'account utente è un azione irreversibile.
@@ -252,18 +252,18 @@ it:
               numeric: numerico (e.g. '1')
               special: speciale (e.g. '%')
               reused:
-                one: has been used before. Please choose one that is different from
-                  your last one.
-                other: has been used before. Please choose one that is different from
-                  your last %{count}.
+                one: "è stata utilizzata prima. Si prega di sceglierne una che è diversa
+                  dall'ultima."
+                other: "è già stata utilizzata. Si prega di sceglierne una che è diversa
+                  dalle ultime %{count}."
         member:
           principal_blank: Si prega di scegliere almeno un utente o un gruppo.
           role_blank: Si prega di scegliere almeno un ruolo.
       template:
         body: 'Perfavore controlla i seguenti campi:'
         header:
-          one: 1 error prohibited this %{model} from being saved
-          other: "%{count} errors prohibited this %{model} from being saved"
+          one: 1 errore proibisce questo %{model} dall'essere salvato
+          other: "%{count} errori proibiscono questo %{model} dall'essere salvato"
     models:
       attachment: File
       board: Forum
@@ -278,8 +278,8 @@ it:
       project: Progetto
       query: Query personalizzata
       role:
-        one: Role
-        other: Roles
+        one: Ruolo
+        other: Ruoli
       type: Tipo
       planning_element: Elemento di pianificazione
       project_type: Tipo di progetto
@@ -331,7 +331,7 @@ it:
     priority: Priorità
     project: Progetto
     responsible: Responsabile
-    role: Role
+    role: Ruolo
     start_date: Data di inizio
     status: Stato
     subject: Soggetto
@@ -464,43 +464,49 @@ it:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: about 1 hour
-        other: about %{count} hours
+        one: circa 1 ora
+        other: circa %{count} ore
       about_x_months:
-        one: about 1 month
-        other: about %{count} months
+        one: circa 1 mese
+        other: circa %{count} mesi
       about_x_years:
-        one: about 1 year
-        other: about %{count} years
+        one: crica 1 anno
+        other: circa %{count} anni
       almost_x_years:
-        one: almost 1 year
-        other: almost %{count} years
+        one: |
+          quasi 1 anno
+
+          quasi %{count} anni
+        other: |
+          quasi 1 anno
+
+          quasi %{count} anni
       half_a_minute: mezzo minuto
       less_than_x_minutes:
-        one: less than a minute
-        other: less than %{count} minutes
+        one: meno di un minuto
+        other: meno di %{count} minuti
       less_than_x_seconds:
-        one: less than 1 second
-        other: less than %{count} seconds
+        one: meno di 1 secondo
+        other: meno di %{count} secondi
       over_x_years:
-        one: over 1 year
-        other: over %{count} years
+        one: oltre 1 anno
+        other: oltre %{count} anni
       x_days:
-        one: 1 day
-        other: "%{count} days"
+        one: 1 giorno
+        other: "%{count} giorni"
       x_minutes:
-        one: 1 minute
-        other: "%{count} minutes"
+        one: 1 minuto
+        other: "%{count} minuti"
       x_months:
-        one: 1 month
-        other: "%{count} months"
+        one: 1 mese
+        other: "%{count} mesi"
       x_seconds:
-        one: 1 second
-        other: "%{count} seconds"
+        one: 1 secondo
+        other: "%{count} secondi"
     units:
       hour:
-        one: hour
-        other: hours
+        one: ora
+        other: ore
   default_activity_development: Sviluppo
   default_activity_management: Gestione
   default_activity_other: Altro
@@ -802,10 +808,10 @@ it:
   label_generate_key: Genera chiave
   label_git_path: Percorso per la cartella .git
   label_greater_or_equal: ">="
-  label_group_by: Raggruppa secondo
+  label_group_by: Raggruppa per
   label_group_new: Nuovo gruppo
   label_group_plural: Gruppi
-  label_help: Aiuti
+  label_help: Aiuto
   label_here: qui
   label_hide: Nascondi
   label_history: Storia
@@ -909,7 +915,7 @@ it:
   label_notify_member_plural: Aggiornamenti email
   label_open_menu: Apri menu
   label_open_work_packages: aperto
-  label_open_work_packages_plural: aperto
+  label_open_work_packages_plural: apri
   label_optional_description: Descrizione
   label_options: Opzioni
   label_overall_activity: Attività complessiva
@@ -963,7 +969,7 @@ it:
   label_remove_columns: Rimuovi le colonne selezionate
   label_renamed: rinomina
   label_reply_plural: Risposte
-  label_report: Resoconto
+  label_report: Report
   label_report_plural: Resoconti
   label_reported_work_packages: Pacchetti di lavoro segnalati
   label_reporting: Segnalazione
@@ -1079,24 +1085,24 @@ it:
   label_workflow_plural: Flussi di lavoro
   label_workflow_summary: Sommario
   label_x_closed_work_packages_abbr:
-    one: 1 closed
-    other: "%{count} closed"
+    one: 1 chiuso
+    other: "%{count} chiusi"
     zero: 0 closed
   label_x_comments:
-    one: 1 comment
-    other: "%{count} comments"
+    one: 1 commento
+    other: "%{count} commenti"
     zero: no comments
   label_x_open_work_packages_abbr:
-    one: 1 open
-    other: "%{count} open"
+    one: 1 aperto
+    other: "%{count} aperti"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
-    one: 1 open / %{total}
-    other: "%{count} open / %{total}"
+    one: 1 aperto / %{total}
+    other: "%{count} aperti / %{total}"
     zero: 0 open / %{total}
   label_x_projects:
-    one: 1 project
-    other: "%{count} projects"
+    one: 1 progetto
+    other: "%{count} progetti"
     zero: no projects
   label_year: Anno
   label_yesterday: ieri
@@ -1232,7 +1238,7 @@ it:
         units:
           byte:
             one: Byte
-            other: Bytes
+            other: Byte
           gb: GB
           kb: kB
           mb: MB
@@ -1567,8 +1573,8 @@ it:
     delete_thing: Cancella
     duration: Durata
     duration_days:
-      one: 1 day
-      other: "%{count} days"
+      one: 1 giorno
+      other: "%{count} giorni"
     edit_color: Modifica il colore
     edit_project_type: Modifica il tipo del progetto
     edit_thing: Modifica
@@ -1749,8 +1755,8 @@ it:
     assign_random_password: Assegna password casuale (inviata via email all'utente)
     blocked: temporaneamente bloccato
     blocked_num_failed_logins:
-      one: locked temporarily (one failed login attempt)
-      other: locked temporarily (%{count} failed login attempts)
+      one: temporaneamente bloccato (un tentativo di accesso non riuscito)
+      other: temporaneamente bloccato (%{count} tentativi di accesso non riusciti)
     deleted: Utente cancellato
     error_status_change_failed: 'Fallito il cambiamento dello stato dell''utente a
       cusa ei seguenti errori: %{errors}'
@@ -1767,7 +1773,7 @@ it:
     authorization_rejected: Non ti è consentito accedere.
   version_status_closed: chiuso
   version_status_locked: bloccato
-  version_status_open: aperto
+  version_status_open: apri
   note: Nota
   note_password_login_disabled: La password d'accesso è stata disabilitata tramite
     %{configuration}.
