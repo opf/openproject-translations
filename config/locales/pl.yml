@@ -2,7 +2,7 @@
 pl:
   account:
     delete: Usuń konto
-    delete_confirmation: Czy na pewno chcesz usunąć konto?
+    delete_confirmation: Czy na pewno chcesz usunąć to konto?
     deleted: Konto usunięte pomyślnie
     deletion_info:
       data_consequences:
@@ -31,7 +31,7 @@ pl:
           już mógł zalogować się przy użyciu bieżących poświadczeń. Będziesz natomiast
           mógł stać się użytkownikiem tej aplikacji ponownie.
     error_inactive_activation_by_mail: Twoje konto nie zostało jeszcze aktywowane.
-      Aby aktywować swoje konto, kliknij na link, który został do Ciebie wysłany.
+      Aby aktywować swoje konto, kliknij na link, który został do Ciebie wysłany mailem.
     error_inactive_manual_activation: Twoje konto nie zostało jeszcze aktywowane.
       Poczekaj, aż administrator aktywuje twoje konto.
     error_self_registration_disabled: W tym systemie zablokowano rejestrację użytkownika.
@@ -47,8 +47,8 @@ pl:
         filesize: Rozmiar
       auth_source:
         account: Konto
-        attr_firstname: Atrybut imienia
-        attr_lastname: Atrybut nazwiska
+        attr_firstname: Atrybut imię
+        attr_lastname: Atrybuty nazwiska
         attr_login: Atrybut Identyfikator logowania
         attr_mail: Atrybut adresu e-mail
         base_dn: Bazowa nazwa wyróżniająca
@@ -246,21 +246,21 @@ pl:
               numeric: liczbowe (np. 1)
               special: specjalne (np. '%')
               reused:
-                one: zastosowano przed. Proszę wybrać taki, który różni się od swojego
-                  poprzedniego.
-                other: zastosowano przed. Proszę wybrać taki, który różni się od Twojej
-                  ostatniej %{count}.
-                few: zastosowano przed. Proszę wybrać taki, który różni się od Twojej
-                  ostatniej %{count}.
+                one: has been used before. Please choose one that is different from
+                  your last one.
+                other: has been used before. Please choose one that is different from
+                  your last %{count}.
+                few: has been used before. Please choose one that is different from
+                  your last %{count}.
         member:
           principal_blank: Wybierz co najmniej jeden użytkownik lub Grupa.
           role_blank: Proszę wybrać przynajmniej jedną rolę.
       template:
         body: 'Sprawdź następujące pola:'
         header:
-          one: 1 błąd zabrania zapisywany ten %{model}
-          other: "%{count} błędów spowodowało niezapisanie bieżącego %{model}"
-          few: "%{count} błędów spowodowało niezapisanie bieżącego %{model}"
+          one: 1 error prohibited this %{model} from being saved
+          other: "%{count} errors prohibited this %{model} from being saved"
+          few: "%{count} errors prohibited this %{model} from being saved"
     models:
       attachment: Plik
       board: Forum
@@ -275,9 +275,9 @@ pl:
       project: Projekt
       query: Kwerenda użytkownika
       role:
-        one: Rola
-        other: Role
-        few: Role
+        one: Role
+        other: Roles
+        few: Roles
       type: Typ
       planning_element: Elementem planowania
       project_type: Typ projektu
@@ -329,7 +329,7 @@ pl:
     priority: Priorytet
     project: Projekt
     responsible: Odpowiedzialny
-    role: Rola
+    role: Role
     start_date: Data rozpoczęcia
     status: Stan
     subject: Temat
@@ -369,7 +369,7 @@ pl:
   button_list: Lista
   button_lock: Blokada
   button_log_time: Rejestruj czas pracy
-  button_login: Logowanie
+  button_login: Login
   button_move: Przenieś
   button_move_and_follow: Przenieś i kontynuuj
   button_quote: Cytat
@@ -463,55 +463,55 @@ pl:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: około 1 godziny
-        other: około %{count} godzin
-        few: około %{count} godzin
+        one: about 1 hour
+        other: about %{count} hours
+        few: about %{count} hours
       about_x_months:
-        one: około 1 miesiąca
-        other: około %{count} miesięcy
-        few: około %{count} miesięcy
+        one: about 1 month
+        other: about %{count} months
+        few: about %{count} months
       about_x_years:
-        one: około 1 roku
-        other: około %{count} lat
-        few: około %{count} lat
+        one: about 1 year
+        other: about %{count} years
+        few: about %{count} years
       almost_x_years:
-        one: prawie 1 rok
-        other: prawie %{count} lat
-        few: prawie %{count} lat
+        one: almost 1 year
+        other: almost %{count} years
+        few: almost %{count} years
       half_a_minute: pół minuty
       less_than_x_minutes:
-        one: mniej niż minuta
-        other: mniej niż %{count} minut
-        few: mniej niż %{count} minut
+        one: less than a minute
+        other: less than %{count} minutes
+        few: less than %{count} minutes
       less_than_x_seconds:
-        one: mniej niż 1 sekunda
-        other: mniej niż %{count} sekund
-        few: mniej niż %{count} sekund
+        one: less than 1 second
+        other: less than %{count} seconds
+        few: less than %{count} seconds
       over_x_years:
-        one: ponad 1 rok
-        other: ponad %{count} lat
-        few: ponad %{count} lat
+        one: over 1 year
+        other: over %{count} years
+        few: over %{count} years
       x_days:
-        one: 1 dzień
-        other: "%{count} dni"
-        few: "%{count} dni"
+        one: 1 day
+        other: "%{count} days"
+        few: "%{count} days"
       x_minutes:
-        one: 1 minuta
-        other: "%{count} minut"
-        few: "%{count} minut"
+        one: 1 minute
+        other: "%{count} minutes"
+        few: "%{count} minutes"
       x_months:
-        one: 1 miesiąc
-        other: "%{count} miesięcy"
-        few: "%{count} miesięcy"
+        one: 1 month
+        other: "%{count} months"
+        few: "%{count} months"
       x_seconds:
-        one: 1 sekunda
-        other: "%{count} sekund"
-        few: "%{count} sekund"
+        one: 1 second
+        other: "%{count} seconds"
+        few: "%{count} seconds"
     units:
       hour:
-        one: godzina
-        other: godziny
-        few: godziny
+        one: hour
+        other: hours
+        few: hours
   default_activity_development: Development
   default_activity_management: Zarządzanie
   default_activity_other: Inne
@@ -696,7 +696,7 @@ pl:
   label_and_its_subprojects: "%{value} oraz jego projekty podrzędne"
   label_api_access_key: Klucz dostępu API
   label_api_access_key_created_on: Klucz API utworzony %{value} temu
-  label_applied_status: Applied status
+  label_applied_status: Nadaj status
   label_ascending: Rosnąco
   label_assigned_to_me_work_packages: Zadania przypisane do mnie
   label_associated_revisions: Powiązane rewizje
@@ -751,7 +751,7 @@ pl:
   label_copy_target: Cel
   label_copy_workflow_from: Kopiowanie pracy z
   label_copy_project: Kopiuj projekt
-  label_core_version: Core version
+  label_core_version: Wersja bazowa
   label_current_status: Aktualny stan
   label_current_version: Aktualna wersja
   label_custom_field_new: Nowe pole niestandardowe
@@ -865,7 +865,7 @@ pl:
   label_list: Lista
   label_loading: "Ładowanie..."
   label_logged_as: Zalogowany jako
-  label_login: Logowanie
+  label_login: Login
   label_logout: Wyloguj
   label_main_menu: Menu boczne
   label_max_size: Maksymalny rozmiar
@@ -1084,30 +1084,30 @@ pl:
   label_workflow_plural: Przepływy pracy
   label_workflow_summary: Streszczenie
   label_x_closed_work_packages_abbr:
-    one: 1 zamknięte
-    other: "%{count} zamkniętych"
+    one: 1 closed
+    other: "%{count} closed"
     zero: 0 closed
-    few: "%{count} zamkniętych"
+    few: "%{count} closed"
   label_x_comments:
-    one: 1 komentarz
-    other: "%{count} komentarzy"
+    one: 1 comment
+    other: "%{count} comments"
     zero: no comments
-    few: "%{count} komentarzy"
+    few: "%{count} comments"
   label_x_open_work_packages_abbr:
-    one: 1 otwarte
-    other: "%{count} otwartych"
+    one: 1 open
+    other: "%{count} open"
     zero: 0 open
-    few: "%{count} otwartych"
+    few: "%{count} open"
   label_x_open_work_packages_abbr_on_total:
-    one: 1 otwarte / %{total}
-    other: "%{count} otwartych / %{total}"
+    one: 1 open / %{total}
+    other: "%{count} open / %{total}"
     zero: 0 open / %{total}
-    few: "%{count} otwartych / %{total}"
+    few: "%{count} open / %{total}"
   label_x_projects:
-    one: 1 projekt
-    other: "%{count} projektów"
+    one: 1 project
+    other: "%{count} projects"
     zero: no projects
-    few: "%{count} projektów"
+    few: "%{count} projects"
   label_year: Rok
   label_yesterday: wczoraj
   label_keyboard_function: Funkcja
@@ -1139,7 +1139,7 @@ pl:
     lists only)
   label_keyboard_shortcut_focus_next_item: Focus next list element (on some lists
     only)
-  label_visible_elements: Elementy widoczne
+  label_visible_elements: Visible elements
   macro_execution_error: Błąd podczas wykonywania makra %{macro_name}
   macro_unavailable: Makro %{macro_name} nie może zostać wyświetlone.
   mail_body_account_activation_request: 'A new user (%{value}) has registered. The
@@ -1239,9 +1239,9 @@ pl:
         format: "%n %u"
         units:
           byte:
-            one: Bajt
-            other: Bajtów
-            few: Bajtów
+            one: Byte
+            other: Bytes
+            few: Bytes
           gb: GB
           kb: kB
           mb: MB
@@ -1330,7 +1330,7 @@ pl:
   setting_app_subtitle: Podtytuł
   setting_app_title: Tytuł
   setting_attachment_max_size: Maks. rozmiar załącznika
-  setting_autofetch_changesets: Autofetch commits
+  setting_autofetch_changesets: Automatyczne pobieranie commitów
   setting_autologin: Automatyczne logowanie
   setting_available_languages: Dostępne języki
   setting_bcc_recipients: Adresaci ukrytych kopii (bcc)
@@ -1341,8 +1341,8 @@ pl:
   setting_column_options: Dostosuj wygląd listy zadań
   setting_commit_fix_keywords: Stałe słowa kluczowe
   setting_commit_logs_encoding: Commit messages encoding
-  setting_commit_logtime_activity_id: Activity for logged time
-  setting_commit_logtime_enabled: Enable time logging
+  setting_commit_logtime_activity_id: Aktywność dla logowania czasu pracy
+  setting_commit_logtime_enabled: Włącz logowanie czasu pracy
   setting_commit_ref_keywords: Referencing keywords
   setting_cross_project_work_package_relations: Allow cross-project work package relations
   setting_date_format: Format daty
@@ -1406,28 +1406,27 @@ pl:
     projektów
   setting_session_ttl: Czas wygaśnięcia sesji po bezczynności
   setting_session_ttl_hint: Value below 5 works like disabled
-  setting_session_ttl_enabled: Session expires
-  setting_start_of_week: Start calendars on
+  setting_session_ttl_enabled: Sesja wygasła
+  setting_start_of_week: Początek tygodnia od
   setting_sys_api_enabled: Enable repository management web service
   setting_sys_api_description: The repository management web service provides integration
     and user authorization for accessing repositories.
   setting_text_formatting: Formatowanie tekstu
   setting_time_format: Format czasu
   setting_ui_theme: Motyw
-  setting_user_may_override_theme: Users may choose their own themes
-  setting_accessibility_mode_for_anonymous: Enable accessibility mode for anonymous
-    users
-  setting_user_format: Users display format
-  setting_users_deletable_by_admins: User accounts deletable by admins
-  setting_users_deletable_by_self: Users allowed to delete their accounts
+  setting_user_may_override_theme: Użytkownicy mogą wybrać swój motyw
+  setting_accessibility_mode_for_anonymous: Włącz tryb dostępu dla użytkowników anonimowych
+  setting_user_format: Format wyświetlania nazwy użytkownika
+  setting_users_deletable_by_admins: Konta użytkowników mogą być usuwane przez administratorów
+  setting_users_deletable_by_self: Użytkownicy mogą usuwać swoje konta
   setting_welcome_text: Tekst powitalny
-  setting_wiki_compression: Wiki history compression
+  setting_wiki_compression: Kompresja historii wiki
   setting_work_package_group_assignment: Allow assignment to groups
   settings:
     general: Ogólne
     other: Inne
     passwords: Hasła
-    session: Session
+    session: Sesja
     brute_force_prevention: Automatyczne blokowanie użytkowników
   show_hide_project_menu: Ukryj/Pokaż menu projektu
   status_active: aktywne
@@ -1441,7 +1440,7 @@ pl:
   text_assign_to_project: Przypisz do projektu
   text_caracters_maximum: "%{count} characters maximum."
   text_caracters_minimum: Co najmniej %{count} znaków długości.
-  text_comma_separated: Multiple values allowed (comma separated).
+  text_comma_separated: Dozwolone kilka wartości (rozdzielone przecinkami).
   text_custom_field_possible_values_info: Jeden wiersz dla każdej wartości
   text_default_administrator_account_changed: Domyślne konto administratora zostało
     zmienione
@@ -1457,7 +1456,7 @@ pl:
     Configure your SMTP server in config/configuration.yml and restart the application to enable them.
   text_enumeration_category_reassign_to: 'Reassign them to this value:'
   text_enumeration_destroy_question: "%{count} objects are assigned to this value."
-  text_file_repository_writable: Attachments directory writable
+  text_file_repository_writable: Można zapisywać do katalogu z załącznikami
   text_git_repo_example: a bare and local repository (e.g. /gitrepo, c:\gitrepo)
   text_work_package_added: Work package %{id} has been reported by %{author}.
   text_work_package_category_destroy_assignments: Remove category assignments
@@ -1478,7 +1477,7 @@ pl:
   text_journal_set_to: "%{label} set to %{value}"
   text_journal_set_with_diff: "%{label} set (%{link})"
   text_length_between: Length between %{min} and %{max} characters.
-  text_line_separated: Multiple values allowed (one line for each value).
+  text_line_separated: Wiele wartości dopuszczalne (jeden wiersz dla każdej wartości).
   text_load_default_configuration: Załaduj domyślną konfigurację
   text_min_max_length_info: 0 means no restriction
   text_no_configuration_data: |
@@ -1490,7 +1489,7 @@ pl:
     Chcesz usunąć niektóre lub wszystkie swoje uprawnienia, przez które możesz nie być w stanie edytować tego projektu.
     Czy na pewno chcesz kontynuować?
   text_plugin_assets_writable: Plugin assets directory writable
-  text_powered_by: Powered by %{link}
+  text_powered_by: Napędzany przez %{link}
   text_project_destroy_confirmation: Czy na pewno chcesz usunąć ten projekt i związane
     z nim dane?
   text_project_identifier_info: Tylko małe litery (a-z), cyfry, myślniki i podkreślenia
@@ -1567,9 +1566,9 @@ pl:
     delete_thing: Usuń
     duration: Czas trwania
     duration_days:
-      one: 1 dzień
-      other: "%{count} dni"
-      few: "%{count} dni"
+      one: 1 day
+      other: "%{count} days"
+      few: "%{count} days"
     edit_color: Edycja koloru
     edit_project_type: Edycja typu projektu
     edit_thing: Edycja
@@ -1742,9 +1741,9 @@ pl:
       pośrednictwem poczty e-mail)
     blocked: zablokowany tymczsowo
     blocked_num_failed_logins:
-      one: tymczasowo zablokowane (jedna nieudana próba zalogowania)
-      other: tymczasowo zablokowane (%{count} nieudanych prób zalogowania)
-      few: tymczasowo zablokowane (%{count} nieudanych prób zalogowania)
+      one: locked temporarily (one failed login attempt)
+      other: locked temporarily (%{count} failed login attempts)
+      few: locked temporarily (%{count} failed login attempts)
     deleted: Usunięty uźytkownik
     error_status_change_failed: 'Zmiana statusu użytkownika nie powiodło się z powodu
       następujących błędów: %{errors}'
