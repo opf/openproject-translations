@@ -147,7 +147,7 @@ it:
         hexcode: Codice esadecimale
       project_association:
         description: Causa
-        project_b: Dependent project
+        project_b: Progetto subordinato
       project_type:
         allows_association: Consenti associazioni
         name: Nome
@@ -178,7 +178,7 @@ it:
     errors:
       messages:
         accepted: deve essere accettato.
-        blank: non può essere vuoto.
+        blank: non può essere lasciato vuoto.
         cant_link_a_work_package_with_a_descendant: Un pacchetto di lavoro non può
           essere collegato a una delle sue sottoattività.
         circular_dependency: Questa relazione creerebbe una dipendenza circolare.
@@ -187,7 +187,7 @@ it:
         equal_to: deve essere uguale a %{count}.
         even: deve essere pari.
         exclusion: "è riservato."
-        file_too_large: "è troppo grande (la dimensione massima è %{count} byte)."
+        file_too_large: "è troppo grande (la dimensione massima è %{count} Byte)."
         greater_than: deve essere maggiore di %{count}.
         greater_than_or_equal_to: deve essere maggiore o uguale di %{count}.
         smaller_than_or_equal_to_max_length: deve essere minore o uguale alla lunghezza
@@ -213,8 +213,8 @@ it:
         could_not_be_copied: non possono essere copiati (integralmente).
       models:
         project_association:
-          identical_projects: Dependency cannot be created between one project and
-            itself.
+          identical_projects: Non può essere creata una dipendenza di un progetto
+            con se stesso.
           project_association_not_allowed: non consente le associazioni.
         repository:
           not_whitelisted: non è consentito dalla configurazione.
@@ -264,8 +264,8 @@ it:
       template:
         body: 'Perfavore controlla i seguenti campi:'
         header:
-          one: 1 errore proibisce questo %{model} dall'essere salvato
-          other: "%{count} errori proibiscono questo %{model} dall'essere salvato"
+          one: 1 errore impedisce di salvare questo %{model}
+          other: "%{count} errori impediscono di salvare questo %{model}"
     models:
       attachment: File
       board: Forum
@@ -472,7 +472,7 @@ it:
         one: circa 1 mese
         other: circa %{count} mesi
       about_x_years:
-        one: crica 1 anno
+        one: circa 1 anno
         other: circa %{count} anni
       almost_x_years:
         one: quasi 1 anno
@@ -502,22 +502,22 @@ it:
     units:
       hour:
         one: ora
-        other: ora
+        other: ore
   default_activity_management: Gestione
   default_activity_design: Design
   default_activity_development: Sviluppo
-  default_activity_testing: Fase di prova
+  default_activity_testing: Test
   default_activity_Support: Supporto
   default_activity_Other: Altro
   default_status_new: Nuovo
   default_status_specified: specificato
   default_status_confirmed: confermato
-  default_status_to_be_scheduled: sta per essere programmato
+  default_status_to_be_scheduled: da programmare
   default_status_scheduled: programmato
-  default_status_in_progress: In Corso
+  default_status_in_progress: in corso
   default_status_tested: testato
   default_status_on_hold: in attesa
-  default_status_rejected: Rifiutato
+  default_status_rejected: rifiutato
   default_status_closed: chiuso
   default_priority_low: Bassa
   default_priority_normal: Normale
@@ -1304,75 +1304,75 @@ it:
     member_of_group: Gruppo del responsabile incaricato
     subproject_id: Sottoprogetto
   repositories:
-    checkout_instructions: Checkout instructions
-    create_managed_delay: 'Please note: The repository is managed, it is created asynchronously
-      on the disk and will be available shortly.'
-    create_successful: The repository has been registered.
-    delete_sucessful: The repository has been deleted.
+    checkout_instructions: Istruzioni di check-out
+    create_managed_delay: 'Attenzione: L''archivio è in gestito automaticamente, verrà
+      creato in modo asincrono sul disco e sarà disponibile a breve.'
+    create_successful: L'archivio è stato memorizzato.
+    delete_sucessful: L'archivio è stato eliminato.
     destroy:
-      title: Are you absolutely sure?
-      managed_text: If you continue, this will permanently delete the managed repository
-        of %{project_name}. This action cannot be reverted.
-      managed_path_note: 'The following directory will be erased: %{path}'
-      linked_text: |
-        You're about to remove the linked repository %{url} from the project %{project_name}.
-        Note: This will NOT delete the contents of this repository, as it is not managed by OpenProject.
+      title: Sei assolutamente sicuro?
+      managed_text: Se si continua, questo eliminerà definitivamente l'archivio gestito
+        di %{project_name}. Questa azione non può essere annullata.
+      managed_path_note: 'La seguente cartella sarà eliminata: %{path}'
+      linked_text: 'Stai per rimuovere il collegamento all''archivio %{url} dal progetto
+        %{project_name}. Attenzione: Questo NON eliminerà il contenuto dell''archivio,
+        poichè non è gestito direttamente da OpenProject.'
     errors:
-      build_failed: Unable to create the repository with the selected configuration.
+      build_failed: Impossibile creare il repository con la configurazione richiesta.
         %{reason}
-      empty_repository: The repository exists, but is empty. It does not contain any
-        revisions yet.
-      exists_on_filesystem: The repository directory exists already on filesystem.
-      filesystem_access_failed: 'An error occurred while creating the repository on
-        filesystem: %{message}.'
-      not_manageable: This repository vendor cannot be managed by OpenProject.
-      path_permission_failed: 'An error occurred trying to create the following path:
-        %{path}. Please ensure that OpenProject may write to that folder.'
-      unauthorized: You're not authorized to access the repository or the credentials
-        are invalid.
-      unavailable: The repository is unavailable.
-      unlink_failed_unmanageable: The repository was deleted, but its directory could
-        not be removed, because it is no longer manageable by OpenProject.
-      exception_title: 'Cannot access the repository: %{message}'
-      disabled_or_unknown_vendor: The SCM vendor %{vendor} is disabled or no longer
-        available.
+      empty_repository: L'archivio esiste, ma è vuoto. Non contiene ancora alcuna
+        revisione.
+      exists_on_filesystem: La cartella dell'archivio è già esistente nel file system.
+      filesystem_access_failed: 'Si è verificato un errore durante la creazione dell''archivio
+        nel file system: %{message}.'
+      not_manageable: Questo tipo di archivo non può essere gestito da OpenProject.
+      path_permission_failed: 'Si è verificato un errore cercando di creare il seguente
+        percorso: %{path}. Si prega di verificare che OpenProject possa scrivere in
+        tale cartella.'
+      unauthorized: Non sei autorizzato ad accedere all'archivio o le credenziali
+        utilizzate non sono valide.
+      unavailable: L'archivio non è disponibile.
+      exception_title: 'Non è possibile accedere all''archivio: %{message}'
+      disabled_or_unknown_type: The selected type %{type} is disabled or no longer
+        available for the SCM vendor %{vendor}.
+      disabled_or_unknown_vendor: Il tipo di SCM %{vendor} è disabilitato o non più
+        disponibile.
     git:
       instructions:
-        managed_url: This is the URL of the managed (local) Git repository.
-        path: Specify the path to your local Git repository ( e.g., %{example_path}
-          ).
-      local_title: Link existing local Git repository
-      local_introduction: If you have an existing local Git repository, you can link
-        it with OpenProject to access it from within the application.
-      managed_path: Managed Git path (preview)
-      managed_introduction: Let OpenProject create and integrate a local Git repository
-        automatically.
-      managed_title: Git repository integrated into OpenProject
-      path: Path to Git repository
-    go_to_revision: Go to revision
-    scm_vendor: Source control management system
-    scm_type: Repository type
+        managed_url: Questo è l'URL dell'archivio Git (locale) gestito direttamente.
+        path: Specificare il percorso dell'archivio Git locale (ad esempio, %{example_path}).
+      local_title: Specifica il collegamento all'archivio Git locale
+      local_introduction: Se si dispone di un archivio Git locale preesistente, è
+        possibile collegarlo con OpenProject per accedervi dall'interno dell'applicazione.
+      managed_path: Percorso al Git gestito (anteprima)
+      managed_introduction: Lascia che OpenProject crei ed integri un archivio Git
+        locale automaticamente.
+      managed_title: Archivio Git integrato in OpenProject
+      path: Percorso all'archivio Git
+    go_to_revision: Vai alla revisione
+    scm_vendor: Sistema di gestione sorgenti
+    scm_type: Tipo di archivio
     scm_types:
-      local: Link existing local repository
-      existing: Link existing repository
-      managed: Create new repository in OpenProject
-    update_settings_successful: The settings have been sucessfully saved.
-    url: URL to repository
+      local: Collega un archivio locale preesistente
+      existing: Collega un archivio preesistente
+      managed: Crea un nuovo archivio in OpenProject
+    update_settings_successful: Le impostazioni sono state salvate con successo.
+    url: URL all'archivio
     subversion:
-      existing_title: Existing Subversion repository
-      existing_introduction: If you have an existing Subversion repository, you can
-        link it with OpenProject to access it from within the application.
+      existing_title: Archivio Subversion preesistente
+      existing_introduction: Se si dispone di un archivio Git locale preesistente,
+        è possibile collegarlo con OpenProject per accedervi dall'interno dell'applicazione.
       instructions:
-        managed_url: This is the URL of the managed (local) Subversion repository.
+        managed_url: Questo è l'URL dell'archivio Subversion (locale) gestito direttamente.
         url: |
-          Enter the repository URL. This may either target a local repository (starting with %{local_proto} ), or a remote repository.
-          The following URL schemes are supported:
-      managed_title: Subversion repository integrated into OpenProject
-      managed_introduction: Let OpenProject create and integrate a local Subversion
-        repository automatically.
-      managed_url: Managed URL
-      password: Repository Password
-      username: Repository username
+          Immettere l'URL dell'archivio. Può riferirsi ad un archivio locale (iniziando con %{local_proto}), o ad un archivio remoto.
+          Sono supportati i seguenti schemi URL:
+      managed_title: L'archivio Subversion è stato integrato in OpenProject
+      managed_introduction: Lascia che OpenProject crei ed integri un archivio Subversion
+        locale automaticamente.
+      managed_url: URL gestito
+      password: Password di accesso all'archivio
+      username: Nome utente di accesso all'archivio
   search_input_placeholder: cerca ...
   setting_activity_days_default: Intervallo di giorni visualizzati sulle attività
     del progetto

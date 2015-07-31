@@ -149,7 +149,7 @@ fr:
         hexcode: Code hexadécimal
       project_association:
         description: Cause
-        project_b: Dependent project
+        project_b: Projet dépendant
       project_type:
         allows_association: Permet l'association
         name: Nom
@@ -215,8 +215,8 @@ fr:
         could_not_be_copied: n'a pas pu être copié (entièrement).
       models:
         project_association:
-          identical_projects: Dependency cannot be created between one project and
-            itself.
+          identical_projects: Une dépendance ne peut pas être créée entre un projet
+            et lui-même.
           project_association_not_allowed: n'autorise pas les associations.
         repository:
           not_whitelisted: n'est pas autorisé par la configuration.
@@ -305,7 +305,7 @@ fr:
     attachments: Fichiers
     author: Auteur
     base: 'Erreur générale:'
-    blocks_ids: IDs of blocked work packages
+    blocks_ids: IDs des lots de travaux bloqués
     category: Catégorie
     comment: Commentaire
     comments: Commentaire
@@ -896,8 +896,8 @@ fr:
   label_not_equals: n'est pas
   label_notify_member_plural: Alertes mail
   label_open_menu: Ouvrir le menu
-  label_open_work_packages: ouvrir
-  label_open_work_packages_plural: ouvrir
+  label_open_work_packages: ouvert
+  label_open_work_packages_plural: ouvert
   label_optional_description: Description
   label_options: Options
   label_overall_activity: Activité totale
@@ -1316,62 +1316,62 @@ fr:
     create_managed_delay: 'Please note: The repository is managed, it is created asynchronously
       on the disk and will be available shortly.'
     create_successful: The repository has been registered.
-    delete_sucessful: The repository has been deleted.
+    delete_sucessful: Le dépôt à été supprimé.
     destroy:
-      title: Are you absolutely sure?
-      managed_text: If you continue, this will permanently delete the managed repository
-        of %{project_name}. This action cannot be reverted.
-      managed_path_note: 'The following directory will be erased: %{path}'
-      linked_text: |
-        You're about to remove the linked repository %{url} from the project %{project_name}.
-        Note: This will NOT delete the contents of this repository, as it is not managed by OpenProject.
+      title: En êtes vous vraiment sûr?
+      managed_text: Si vous continuez, cela supprimera définitivement le dépôt géré
+        de %{project_name}. Cette action est irréversible.
+      managed_path_note: 'Le répertoire suivant sera effacé: %{path}'
+      linked_text: 'Vous êtes sur le point de supprimer le dépôt lié %{url} du projet
+        %{project_name}. Remarque: Ceci ne supprimera PAS le contenu de ce dépôt car
+        celui-ci n''est pas géré par OpenProject.'
     errors:
-      build_failed: Unable to create the repository with the selected configuration.
+      build_failed: Impossible de créer le dépôt avec la configuration sélectionnée.
         %{reason}
-      empty_repository: The repository exists, but is empty. It does not contain any
-        revisions yet.
-      exists_on_filesystem: The repository directory exists already on filesystem.
-      filesystem_access_failed: 'An error occurred while creating the repository on
-        filesystem: %{message}.'
-      not_manageable: This repository vendor cannot be managed by OpenProject.
-      path_permission_failed: 'An error occurred trying to create the following path:
-        %{path}. Please ensure that OpenProject may write to that folder.'
-      unauthorized: You're not authorized to access the repository or the credentials
-        are invalid.
-      unavailable: The repository is unavailable.
-      unlink_failed_unmanageable: The repository was deleted, but its directory could
-        not be removed, because it is no longer manageable by OpenProject.
-      exception_title: 'Cannot access the repository: %{message}'
+      empty_repository: Le dépôt existe mais il est vide. Il ne contient aucune révision
+        pour le moment.
+      exists_on_filesystem: Le répertoire du dépôt existe déjà sur le système de fichiers.
+      filesystem_access_failed: 'Une erreur s''est produite lors de la création du
+        dépôt sur le système de fichiers: %{message}.'
+      not_manageable: Ce fournisseur de dépôt ne peut pas être géré par OpenProject.
+      path_permission_failed: 'Une erreur s''est produite en essayant de créer le
+        chemin d''accès suivant: %{path}. Veuillez vous assurer que OpenProject peut
+        écrire dans ce dossier.'
+      unauthorized: Vous n'êtes pas autorisé à accéder au dépôt ou les informations
+        d'identification ne sont pas valides.
+      unavailable: Le dépôt n'est èas disponible.
+      exception_title: 'Ne peut pas accéder au dépôt: %{message}'
+      disabled_or_unknown_type: The selected type %{type} is disabled or no longer
+        available for the SCM vendor %{vendor}.
       disabled_or_unknown_vendor: The SCM vendor %{vendor} is disabled or no longer
         available.
     git:
       instructions:
         managed_url: This is the URL of the managed (local) Git repository.
-        path: Specify the path to your local Git repository ( e.g., %{example_path}
-          ).
+        path: Spécifier le chemin vers votre dépôt Git local (par exemple, %{example_path}).
       local_title: Link existing local Git repository
       local_introduction: If you have an existing local Git repository, you can link
         it with OpenProject to access it from within the application.
       managed_path: Managed Git path (preview)
-      managed_introduction: Let OpenProject create and integrate a local Git repository
-        automatically.
-      managed_title: Git repository integrated into OpenProject
-      path: Path to Git repository
-    go_to_revision: Go to revision
+      managed_introduction: Laissez OpenProject créer et intégrer un dépôt Git local
+        automatiquement.
+      managed_title: Dépôt Git intégré à OpenProject
+      path: Chemin d'accès au dépôt Git
+    go_to_revision: Aller à la révision
     scm_vendor: Source control management system
-    scm_type: Repository type
+    scm_type: Type de dépôt
     scm_types:
       local: Link existing local repository
       existing: Link existing repository
-      managed: Create new repository in OpenProject
-    update_settings_successful: The settings have been sucessfully saved.
-    url: URL to repository
+      managed: Créer un nouveau dépôt dans OpenProject
+    update_settings_successful: Les paramètres ont bien été enregistrés.
+    url: URL du dépôt
     subversion:
-      existing_title: Existing Subversion repository
-      existing_introduction: If you have an existing Subversion repository, you can
-        link it with OpenProject to access it from within the application.
+      existing_title: Dépôt Subversion existant
+      existing_introduction: Si vous avez un dépôt Subversion existant, vous pouvez
+        le lier avec OpenProject pour y accéder depuis l'application.
       instructions:
-        managed_url: This is the URL of the managed (local) Subversion repository.
+        managed_url: Ceci est l'URL du dépôt Subversion géré localement.
         url: |
           Enter the repository URL. This may either target a local repository (starting with %{local_proto} ), or a remote repository.
           The following URL schemes are supported:
@@ -1379,8 +1379,8 @@ fr:
       managed_introduction: Let OpenProject create and integrate a local Subversion
         repository automatically.
       managed_url: Managed URL
-      password: Repository Password
-      username: Repository username
+      password: Mot de passe du dépôt
+      username: Nom d'utilisateur du dépôt
   search_input_placeholder: recherche...
   setting_activity_days_default: Nombre des jours prévus sur l'activité du projet
   setting_app_subtitle: Sous-titre de l'Application
@@ -1556,10 +1556,10 @@ fr:
     Êtes vous sûr de vouloir continuer?
   text_plugin_assets_writable: Dossier de « Plugin assets » est incriptible
   text_powered_by: Propulsé par %{link}
-  text_project_destroy_title: Do you really want to delete this project?
-  text_project_destroy_confirmation: If you continue, the project %{identifier} and
-    all related data will be permanently destroyed. Please check the box below if
-    you want to continue.
+  text_project_destroy_title: Voulez-vous vraiment supprimer ce projet?
+  text_project_destroy_confirmation: Si vous continuez, le projet %{identifier} et
+    toutes les données relatives seront définitivement détruites. Veuillez cocher
+    la case ci-dessous si vous souhaitez continuer.
   text_project_identifier_info: Seulement les lettres en minuscule (a-z), les nombres,
     les tirets et les underscores sont autorisés, il est obligatoire de commencer
     avec une lettre en minuscule.
@@ -1839,7 +1839,7 @@ fr:
     authorization_rejected: Vous n'êtes pas autorisé à vous authentifier.
   version_status_closed: clôturé
   version_status_locked: verrouillé
-  version_status_open: ouvrir
+  version_status_open: ouvert
   note: Note
   note_password_login_disabled: L'authentification via mot de passe a été désactivé
     par %{configuration}.
