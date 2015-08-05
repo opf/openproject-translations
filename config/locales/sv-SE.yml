@@ -599,11 +599,10 @@ sv-SE:
   error_scm_command_failed: 'Ett fel uppstod när du försökte komma åt versionsarkivet:
     %{value}'
   error_scm_not_found: Den posten eller revision finns inte i versionsarkivet.
-  error_unable_delete_status: The work package status cannot be deleted since it is
-    used by at least one work package.
-  error_unable_delete_default_status: Unable to delete the default work package status.
-    Please select another default work package status before deleting the current
-    one.
+  error_unable_delete_status: Arbetspaketsstatusen kan inte raderas eftersom det används
+    av minst ett arbetspaket.
+  error_unable_delete_default_status: Det går inte att radera standardvalet för arbetspaketsstatus.
+    Var god väl en annan arbetspaketsstatus som standardval innan du raderar den befintliga.
   error_unable_to_connect: Kan inte ansluta (%{value})
   error_workflow_copy_source: Välj en typ av datakälla eller roll
   error_workflow_copy_target: Välj måltyp(er) och roll(er)
@@ -993,7 +992,7 @@ sv-SE:
   label_this_week: denna vecka
   label_this_year: i år
   label_time_entry_plural: Förbrukad tid
-  label_time_sheet_menu: Time sheet
+  label_time_sheet_menu: Tidrapport
   label_time_tracking: Tidredovisning
   label_today: idag
   label_top_menu: Huvudmeny
@@ -1286,52 +1285,52 @@ sv-SE:
     member_of_group: Den tilldelades grupp
     subproject_id: Delprojekt
   repositories:
-    checkout_instructions: Checkout instructions
-    create_managed_delay: 'Please note: The repository is managed, it is created asynchronously
-      on the disk and will be available shortly.'
-    create_successful: The repository has been registered.
-    delete_sucessful: The repository has been deleted.
+    checkout_instructions: Instruktioner för utcheckning
+    create_managed_delay: 'Observera: Versionsarkivet hanteras, det skapas asynkront
+      på disken och kommer vara tillgänglig inom kort.'
+    create_successful: Versionsarkivet har registrerats.
+    delete_sucessful: Versionsarkivet har tagits bort.
     destroy:
       title: "Är du helt säker?"
-      managed_text: If you continue, this will permanently delete the managed repository
-        of %{project_name}. This action cannot be reverted.
-      managed_path_note: 'The following directory will be erased: %{path}'
-      linked_text: |
-        You're about to remove the linked repository %{url} from the project %{project_name}.
-        Note: This will NOT delete the contents of this repository, as it is not managed by OpenProject.
+      managed_text: Om du fortsätter kommer versionsarkivet tillhörande %{project_name}
+        permanent tas bort. Denna åtgärd kan inte ångras.
+      managed_path_note: 'Följande katalog kommer raderas: %{path}'
+      linked_text: 'Du håller på att ta bort det länkade versionsarkivet %{url} från
+        projektet %{project_name}. Observera: Detta raderar inte innehållet i detta
+        versionsarkiv, eftersom detta inte hanteras av OpenProject.'
     errors:
-      build_failed: Unable to create the repository with the selected configuration.
+      build_failed: Det gick inte att skapa versionsarkivet med den valda konfigurationen.
         %{reason}
-      empty_repository: The repository exists, but is empty. It does not contain any
-        revisions yet.
-      exists_on_filesystem: The repository directory exists already on filesystem.
-      filesystem_access_failed: 'An error occurred while creating the repository on
-        filesystem: %{message}.'
-      not_manageable: This repository vendor cannot be managed by OpenProject.
-      path_permission_failed: 'An error occurred trying to create the following path:
-        %{path}. Please ensure that OpenProject may write to that folder.'
-      unauthorized: You're not authorized to access the repository or the credentials
-        are invalid.
-      unavailable: The repository is unavailable.
-      exception_title: 'Cannot access the repository: %{message}'
-      disabled_or_unknown_type: The selected type %{type} is disabled or no longer
-        available for the SCM vendor %{vendor}.
-      disabled_or_unknown_vendor: The SCM vendor %{vendor} is disabled or no longer
-        available.
+      empty_repository: Verionsarkivet finns, men är tomt. Det innehåller inte några
+        revisioner ännu.
+      exists_on_filesystem: Katalogen för versionsarkivet finns redan i filsystemet.
+      filesystem_access_failed: 'Ett fel uppstod när versionsarkivet skapades på filsystemet:
+        %{message}.'
+      not_manageable: Denna leverantör av versionsarkiv kan inte hanteras av OpenProject.
+      path_permission_failed: 'Ett fel uppstod vid försök att skapa följande sökväg:
+        %{path}. Se till att OpenProject kan skriva till mappen.'
+      unauthorized: Du är inte behörig att komma åt versionsarkivet eller autentiseringsuppgifterna
+        är ogiltiga.
+      unavailable: Versionsarkivet är inte tillgängligt.
+      exception_title: 'Kan inte komma åt versionsarkivet: %{message}'
+      disabled_or_unknown_type: Den valda typen %{type} är inaktiverad eller inte
+        längre tillgänglig för versionsarkivsleverantören %{vendor}.
+      disabled_or_unknown_vendor: Versionsarkivsleverantören %{vendor} är inaktiverad
+        eller inte längre tillgänglig.
     git:
       instructions:
-        managed_url: This is the URL of the managed (local) Git repository.
-        path: Specify the path to your local Git repository ( e.g., %{example_path}
+        managed_url: Detta är sökvägen till det (lokala) Git -versionsarkivet.
+        path: Ange sökvägen till ditt lokala Git-versionsarkiv ( t.ex. %{example_path}
           ).
-      local_title: Link existing local Git repository
-      local_introduction: If you have an existing local Git repository, you can link
-        it with OpenProject to access it from within the application.
-      managed_path: Managed Git path (preview)
-      managed_introduction: Let OpenProject create and integrate a local Git repository
-        automatically.
-      managed_title: Git repository integrated into OpenProject
-      path: Path to Git repository
-    go_to_revision: Go to revision
+      local_title: Länka befintligt lokalt Git-versionsarkiv
+      local_introduction: Om du har ett existerande lokalt Git-versionsarkiv, så kan
+        du länka till det ifrån OpenProject för att nå det inifrån applikationen.
+      managed_path: Hanterad sökväg till Git (förhandsgranska)
+      managed_introduction: Låt OpenProject automatiskt skapa och integrera ett lokalt
+        Git-versionsarkiv.
+      managed_title: Git-versionsarkivet integreras i OpenProject
+      path: Sökväg till Git-versionsarkiv
+    go_to_revision: Gå till revision
     scm_vendor: Källkodshanteringssystem
     scm_type: Arkivtyp
     scm_types:
@@ -1426,7 +1425,7 @@ sv-SE:
   setting_protocol: Protokoll
   setting_repositories_encodings: Teckenkodningar i versionsarkiv
   setting_repository_authentication_caching_enabled: Aktivera cachelagring för autentiseringsbegäran
-    av versionskontrollsystemet
+    av versionsarkivsystemet
   setting_repository_log_display_limit: Maximalt antal revisioner som visas i loggfilen
   setting_rest_api_enabled: Aktivera REST webb tjänst
   setting_self_registration: Självregistrering
