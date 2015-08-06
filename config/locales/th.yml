@@ -25,8 +25,8 @@ th:
           จะยังสามารถเป็นผู้ใช้ในแอปพลิเคชั่นนี้ได้อีกครั้งโดยการอนุญาตให้ใช้งาน"
         self: "บัญชีผู้ใช้ของคุณจะถูกลบออกจากระบบ เพราะฉะนั้น คุณจะไม่สามารถล็อกอินได้อีกต่อไป
           หากคุณต้องการกลับมาเป็นผู้ใช้แอปพลิเคชั่นนี้ใหม่อีกครั้ง คุณสามารถทำได้โดยวิธีการอนุญาตให้ใช้งานแอปพลิเคชั่น"
-    error_inactive_activation_by_mail: "บัญชีของคุณได้ไม่ได้เปิดการใช้งาน กรุณาคลิกที่ลิงค์ที่ถูกส่งไปยังอีเมลของคุณ
-      เพื่อเปิดการใช้งาน"
+    error_inactive_activation_by_mail: "บัญชีของคุณได้ไม่ยังถูกเปิดการใช้งาน กรุณาคลิกที่ลิงค์ที่ถูกส่งไปยังอีเมลของคุณ
+      เพื่อเปิดการใช้งานบัญชี"
     error_inactive_manual_activation: "บัญชีผู้ใช้ของคุณยังไม่ได้เปิดใช้งาน กรุณารอเพื่อให้ผู้ดูแลระบบ
       เปิดใช้งานบัญชีผู้ใช้ของคุณเสียก่อน"
     error_self_registration_disabled: "ระบบไม่ได้เปิดให้ผู้ใช้ลงทะเบียนใช้งานด้วยตัวเอง
@@ -83,7 +83,7 @@ th:
         parent: "โครงการย่อยของ"
         versions: "รุ่น"
         project_type: "ประเภทของโครงการ"
-        responsible: "รับผิดชอบ"
+        responsible: "ผู้รับผิดชอบ"
         types: "ประเภท"
         queries: "การสอบถาม"
       query:
@@ -156,7 +156,7 @@ th:
         parent_work_package: "ค่าหลัก"
         priority: "ระดับความสำคัญ"
         progress: "% ที่แล้วเสร็จ"
-        responsible: "รับผิดชอบ"
+        responsible: "ผู้รับผิดชอบ"
         spent_time: "เวลาที่ใช้"
         subproject: "โครงการย่อย"
         time_entries: "เวลาที่ถูกบันทึก"
@@ -238,8 +238,8 @@ th:
               reused:
                 one: has been used before. Please choose one that is different from
                   your last one.
-                other: has been used before. Please choose one that is different from
-                  your last %{count}.
+                other: "รหัสผ่านนี้ถูกใช้ไปแล้ว โปรดเลือกรหัสผ่านใหม่ที่แตกต่างจากรหัสเมื่อ
+                  %{count} ครั้งที่ผ่านมา"
         member:
           principal_blank: "โปรดเลือกอย่างน้อยหนึ่งผู้ใช้หรือหนึ่งกลุ่ม"
           role_blank: "โปรดเลือกอย่างน้อยหนึ่งบทบาท"
@@ -247,7 +247,7 @@ th:
         body: "กรุณาตรวจสอบฟิลด์ต่อไปนี้:"
         header:
           one: 1 error prohibited this %{model} from being saved
-          other: "%{count} errors prohibited this %{model} from being saved"
+          other: "พบ %{count} ข้อผิดพลาด ไม่สามารถบันทึก %{model} นี้ได้"
     models:
       attachment: "ไฟล์"
       board: "ฟอรั่ม"
@@ -263,7 +263,7 @@ th:
       query: "การสอบถามที่กำหนดเอง"
       role:
         one: Role
-        other: Roles
+        other: "บทบาท"
       type: "ประเภท"
       planning_element: "องค์ประกอบของการวางแผน"
       project_type: "ประเภทของโครงการ"
@@ -314,8 +314,8 @@ th:
     password: "รหัสผ่าน"
     priority: "ระดับความสำคัญ"
     project: "โครงการ"
-    responsible: "รับผิดชอบ"
-    role: Role
+    responsible: "ผู้รับผิดชอบ"
+    role: "บทบาท"
     start_date: "วันเริ่มต้น"
     status: "สถานะ"
     subject: "หัวข้อ"
@@ -355,7 +355,7 @@ th:
   button_list: "รายการ"
   button_lock: "ล็อค"
   button_log_time: "เวลาที่ถูกบันทึก"
-  button_login: "ล็อคอิน"
+  button_login: "ลงชื่อเข้าใช้"
   button_move: "ย้าย"
   button_move_and_follow: "ย้าย และทำตาม"
   button_quote: "อ้างถึง"
@@ -370,7 +370,7 @@ th:
   button_submit: "ส่งข้อมูล"
   button_test: "ทดสอบ"
   button_unarchive: "เอาออกจากอาร์ไคฟ์"
-  button_uncheck_all: "ไม่เลือกเลย"
+  button_uncheck_all: "เอาเครื่องหมายออกทั้งหมด"
   button_unlock: "ปลดล็อก"
   button_unwatch: "ไม่เข้าชม"
   button_update: "ปรับปรุง"
@@ -451,42 +451,42 @@ th:
     distance_in_words:
       about_x_hours:
         one: about 1 hour
-        other: about %{count} hours
+        other: "ประมาณ %{count} ชั่วโมง"
       about_x_months:
         one: about 1 month
-        other: about %{count} months
+        other: "ประมาณ %{count} เดือน"
       about_x_years:
         one: about 1 year
-        other: about %{count} years
+        other: "ประมาณ %{count} ปี"
       almost_x_years:
         one: almost 1 year
-        other: almost %{count} years
+        other: "เกือบ %{count} ปี"
       half_a_minute: "ครึ่งนาที"
       less_than_x_minutes:
         one: less than a minute
-        other: less than %{count} minutes
+        other: "น้อยกว่า %{count} นาที"
       less_than_x_seconds:
         one: less than 1 second
-        other: less than %{count} seconds
+        other: "น้อยกว่า %{count} วินาที"
       over_x_years:
         one: over 1 year
-        other: over %{count} years
+        other: "เกิน %{count} ปี"
       x_days:
         one: 1 day
-        other: "%{count} days"
+        other: "%{count} วัน"
       x_minutes:
         one: 1 minute
-        other: "%{count} minutes"
+        other: "%{count} นาที"
       x_months:
         one: 1 month
-        other: "%{count} months"
+        other: "%{count} เดือน"
       x_seconds:
         one: 1 second
-        other: "%{count} seconds"
+        other: "%{count} วินาที"
     units:
       hour:
         one: hour
-        other: hours
+        other: "ชั่วโมง"
   default_activity_development: "การพัฒนา"
   default_activity_management: Management
   default_activity_other: "อื่น ๆ"
@@ -630,7 +630,7 @@ th:
   general_csv_encoding: UTF-8
   general_csv_separator: ","
   general_first_day_of_week: '7'
-  general_lang_name: "ไทย"
+  general_lang_name: "อังกฤษ"
   general_pdf_encoding: ISO-8859-1
   general_text_no: "ไม่ใช่"
   general_text_yes: "ใช่"
@@ -828,7 +828,7 @@ th:
   label_list: "รายการ"
   label_loading: "กำลังโหลด..."
   label_logged_as: "เข้าสู่ระบบในนาม"
-  label_login: "ล็อคอิน"
+  label_login: "ลงชื่อเข้าใช้"
   label_logout: "ออกจากระบบ"
   label_main_menu: "เมนูด้านข้าง"
   label_max_size: "ความยาวสูงสุด"
@@ -1046,23 +1046,23 @@ th:
   label_workflow_summary: "สรุป"
   label_x_closed_work_packages_abbr:
     one: 1 closed
-    other: "%{count} closed"
+    other: "ปิดแล้ว %{count}"
     zero: 0 closed
   label_x_comments:
     one: 1 comment
-    other: "%{count} comments"
+    other: "มี %{count} ความคิดเห็น"
     zero: no comments
   label_x_open_work_packages_abbr:
     one: 1 open
-    other: "%{count} open"
+    other: "มี %{count} เปิดอยู่"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
     one: 1 open / %{total}
-    other: "%{count} open / %{total}"
+    other: "มี %{count} เปิดอยู่ / จากทั้งหมด %{total}"
     zero: 0 open / %{total}
   label_x_projects:
     one: 1 project
-    other: "%{count} projects"
+    other: "%{count} โครงการ"
     zero: no projects
   label_year: "ปี"
   label_yesterday: "เมื่อวานนี้"
@@ -1181,7 +1181,7 @@ th:
         units:
           byte:
             one: Byte
-            other: Bytes
+            other: "ไบต์"
           gb: "กิกะไบต์"
           kb: "กิโลไบต์"
           mb: "เมกะไบต์"
@@ -1427,9 +1427,9 @@ th:
     username เข้า OpenProject หรือที่เก็บข้อมูล หรืออีเมล์ที่ตรงกัน"
   text_select_mail_notifications: "เลือกการดำเนินการสำหรับอีเมล์ที่ควรส่งการแจ้งเตือน"
   text_select_project_modules: "เลือกโมดูลเพื่อเปิดใช้งานสำหรับโครงการ:"
-  text_status_changed_by_changeset: "ใช้งานในชุดการเปลี่ยนแปลง %{value}"
+  text_status_changed_by_changeset: "มีการนำไปใช้ในชุดการเปลี่ยนแปลง %{value}"
   text_subprojects_destroy_warning: "โครงการย่อยของ: %{value} จะถูกลบไปด้วย"
-  text_time_logged_by_changeset: "ใช้งานในชุดการเปลี่ยนแปลง %{value}"
+  text_time_logged_by_changeset: "มีการนำไปใช้ในชุดการเปลี่ยนแปลง %{value}"
   text_tip_work_package_begin_day: "ชุดภารกิจเริ่มวันนี้"
   text_tip_work_package_begin_end_day: "ชุดภารกิจเริ่มต้นและสิ้นสุดวันนี้"
   text_tip_work_package_end_day: "ชุดภารกิจสิ้นสุดวันนี้"
@@ -1487,7 +1487,7 @@ th:
     duration: "ระยะเวลา"
     duration_days:
       one: 1 day
-      other: "%{count} days"
+      other: "%{count} วัน"
     edit_color: "แก้ไขสี"
     edit_project_type: "แก้ไขชนิดของโครงการ"
     edit_thing: "แก้ไข"
@@ -1525,7 +1525,7 @@ th:
         due_date: "วันสิ้นสุด"
         name: "ชื่อ"
         status: "สถานะ"
-        responsible: "รับผิดชอบ"
+        responsible: "ผู้รับผิดชอบ"
         start_date: "วันเริ่มต้น"
       columns: "คอลัมน์"
       comparisons: "เปรียบเทียบ"
@@ -1651,7 +1651,7 @@ th:
     blocked: "ล็อคชั่วคราว"
     blocked_num_failed_logins:
       one: locked temporarily (one failed login attempt)
-      other: locked temporarily (%{count} failed login attempts)
+      other: "ถูกล็อคชั่วคราว (เนื่องจากผิดพลาด %{count} ครั้งในการพยายามล็อคอิน)"
     deleted: "ผู้ใช้ที่ถูกลบ"
     error_status_change_failed: "ล้มเหลวในการเปลี่ยนสถานะของผู้ใช้เนื่องจากข้อผิดพลาดต่อไปนี้:
       %{errors}"
