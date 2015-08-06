@@ -51,7 +51,7 @@ et:
         attr_firstname: Eesnimi
         attr_lastname: Perekonnanimi
         attr_login: Kasutajanimi
-        attr_mail: E-posti aadress
+        attr_mail: E-post
         base_dn: Põhiline domeeninimi
         host: Host
         onthefly: Kasutaja loomine käigu pealt
@@ -65,7 +65,7 @@ et:
         is_filter: Kasutatakse filtrina
         is_required: Nõutav
         max_length: Maksimaalne pikkus
-        min_length: Lühima lubatud parooli pikkus
+        min_length: Minimaalne pikkus
         possible_values: Võimalikud väärtused
         regexp: Regulaaravaldis
         searchable: Otsitav
@@ -81,7 +81,7 @@ et:
       journal:
         notes: Märkmed
       member:
-        roles: Rolli
+        roles: Rollid
       project:
         homepage: Koduleht
         identifier: Identifikaator
@@ -165,7 +165,7 @@ et:
         responsible: Vastutaja
         spent_time: Kulutatud aeg
         subproject: Alamprojekt
-        time_entries: Ajakulu
+        time_entries: Logi aeg
         type: Liik
         watcher: Jälgija
     errors:
@@ -245,17 +245,18 @@ et:
               numeric: arvuline (nt 1, 2, 3)
               special: erimärk (nt %, &)
               reused:
-                one: Vali uus parool, mis erineb eelmisest paroolist.
-                other: Vali uus parool, mis erineb eelmiselt kasutatud %{count}-st
-                  paroolist.
+                one: has been used before. Please choose one that is different from
+                  your last one.
+                other: has been used before. Please choose one that is different from
+                  your last %{count}.
         member:
           principal_blank: Vali vähemalt üks kasutaja või grupp.
           role_blank: Vali vähemalt üks roll.
       template:
         body: 'Kontrolli järgnevad väljad:'
         header:
-          one: 1 viga ei võimaldanud selle %{model} salvestamist
-          other: "%{count} viga ei võimaldanud selle %{model} salvestamist"
+          one: 1 error prohibited this %{model} from being saved
+          other: "%{count} errors prohibited this %{model} from being saved"
     models:
       attachment: Fail
       board: Foorum
@@ -270,8 +271,8 @@ et:
       project: Projekt
       query: Kohandatud päring
       role:
-        one: Roll
-        other: Rolli
+        one: Role
+        other: Roles
       type: Liik
       planning_element: Planeerimise osa
       project_type: Projekti tüüp
@@ -323,7 +324,7 @@ et:
     priority: Prioriteet
     project: Projekt
     responsible: Vastutaja
-    role: Roll
+    role: Role
     start_date: Alguskuupäev
     status: Olek
     subject: Teema
@@ -359,10 +360,10 @@ et:
   button_duplicate: Duplitseeri
   button_edit: Muuda
   button_edit_associated_wikipage: Muuda seotud vikilehte "%{page_title}"
-  button_expand_all: Laienda kõik
+  button_expand_all: Voldi kõik lahti
   button_list: Listi
   button_lock: Lukusta
-  button_log_time: Ajakulu
+  button_log_time: Logi aeg
   button_login: Logi sisse
   button_move: Tõsta
   button_move_and_follow: Tõsta ja järgne
@@ -379,7 +380,7 @@ et:
   button_test: Testi
   button_unarchive: Paki arhiiv lahti
   button_uncheck_all: Nulli valik
-  button_unlock: Aktiveeri
+  button_unlock: Ava lukust
   button_unwatch: "Ära jälgi"
   button_update: Uuenda
   button_view: Kuva
@@ -458,39 +459,39 @@ et:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: umbes 1 tund
-        other: umbes %{count} tundi
+        one: about 1 hour
+        other: about %{count} hours
       about_x_months:
-        one: umbes 1 kuu
-        other: umbes %{count} kuud
+        one: about 1 month
+        other: about %{count} months
       about_x_years:
-        one: umbes 1 aasta
-        other: umbes %{count} aastat
+        one: about 1 year
+        other: about %{count} years
       almost_x_years:
-        one: peaaegu 1 aasta
-        other: peaaegu %{count} aastat
+        one: almost 1 year
+        other: almost %{count} years
       half_a_minute: pool minutit
       less_than_x_minutes:
-        one: vähem kui minut
-        other: vähem kui %{count} minutit
+        one: less than a minute
+        other: less than %{count} minutes
       less_than_x_seconds:
-        one: vähem kui sekund
-        other: vähem kui %{count} sekundit
+        one: less than 1 second
+        other: less than %{count} seconds
       over_x_years:
-        one: rohkem kui aasta
-        other: rohkem kui %{count} aastat
+        one: over 1 year
+        other: over %{count} years
       x_days:
-        one: 1 päev
-        other: "%{count} päeva"
+        one: 1 day
+        other: "%{count} days"
       x_minutes:
-        one: 1 minut
-        other: "%{count} minutit"
+        one: 1 minute
+        other: "%{count} minutes"
       x_months:
-        one: 1 kuu
-        other: "%{count} kuud"
+        one: 1 month
+        other: "%{count} months"
       x_seconds:
-        one: 1 sekund
-        other: "%{count} sekundit"
+        one: 1 second
+        other: "%{count} seconds"
     units:
       hour:
         one: hour
@@ -969,7 +970,7 @@ et:
   label_roadmap_overdue: "%{value} hiljaks jäänud"
   label_role_and_permissions: Rollid ja õigused
   label_role_new: Uus roll
-  label_role_plural: Rolli
+  label_role_plural: Rollid
   label_role_search: Otsi rolle
   label_scm: Lähtekoodi haldusvahendid
   label_search: Otsi
@@ -1064,24 +1065,24 @@ et:
   label_workflow_plural: Töövood
   label_workflow_summary: Kokkuvõte
   label_x_closed_work_packages_abbr:
-    one: 1 suletud
-    other: "%{count} suletud"
+    one: 1 closed
+    other: "%{count} closed"
     zero: 0 closed
   label_x_comments:
-    one: 1 kommentaar
-    other: "%{count} kommentaari"
+    one: 1 comment
+    other: "%{count} comments"
     zero: no comments
   label_x_open_work_packages_abbr:
-    one: 1 avatud
-    other: "%{count} avatud"
+    one: 1 open
+    other: "%{count} open"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
-    one: 1 avatud %{total}-st
-    other: "%{count} avatud %{total}-st"
+    one: 1 open / %{total}
+    other: "%{count} open / %{total}"
     zero: 0 open / %{total}
   label_x_projects:
-    one: 1 projekt
-    other: "%{count} projekti"
+    one: 1 project
+    other: "%{count} projects"
     zero: no projects
   label_year: Aasta
   label_yesterday: eile
@@ -1136,7 +1137,7 @@ et:
   more_actions: Rohkem tegevusi
   noscript_description: OpenProject vajab JavaScripti sisselülitamist su veebilehitsejas!
   noscript_heading: JavaScript ei ole sisselülitatud
-  noscript_learn_more: Lisateave
+  noscript_learn_more: Loe rohkem
   notice_account_activated: Su konto on aktiveeritud. Saad nüüd sisse logida.
   notice_account_invalid_credentials: Vale kasutajanimi või parool
   notice_account_invalid_credentials_or_blocked: Sisestatud kasutajanimi ja parool
@@ -1174,8 +1175,8 @@ et:
   notice_work_package_done_ratios_updated: Teema edenemise astmed on uuendatud.
   notice_locking_conflict: Teine kasutaja uuendas vahepeal neid andmeid.
   notice_locking_conflict_additional_information: Uuendused on tehtud %{users} poolt.
-  notice_locking_conflict_reload_page: Palun laadi lehekülg uuesti, kontrolli tehtud
-    muudatusi ja püüa neid uuesti salvestada.
+  notice_locking_conflict_reload_page: Palun vii oma muudatused sisse uue, toimetatud
+    leheküljele  -- laadi lehekülg uuesti ja sisesta oma muudatused uuesti.
   notice_no_principals_found: "Ühtki kasutajat ega gruppi ei leitud."
   notice_bad_request: Vigane päring.
   notice_not_authorized: Sul ei ole sellele lehele ligipääsuks õigusi.
@@ -1206,8 +1207,8 @@ et:
         format: "%n %u"
         units:
           byte:
-            one: Bait
-            other: Baiti
+            one: Byte
+            other: Bytes
           gb: GB
           kb: KB
           mb: MB
@@ -1355,7 +1356,7 @@ et:
     kasutamine on keelatud
   setting_password_days_valid: Uue parooli kohustuslik määramine antud arvu päevade
     järel (null on igavik)
-  setting_password_min_length: Lühima lubatud parooli pikkus
+  setting_password_min_length: Minimaalne pikkus
   setting_password_min_adhered_rules: Minimaalne nõutav erineva tähemärgiklassi kasutamine
     paroolis
   setting_per_page_options: Kuvatud tulemuste arv lehe kohta
@@ -1532,8 +1533,8 @@ et:
     delete_thing: Kustuta
     duration: kestus
     duration_days:
-      one: 1 päev
-      other: "%{count} päeva"
+      one: 1 day
+      other: "%{count} days"
     edit_color: Muuda värvi
     edit_project_type: Muuda projekti tüüpi
     edit_thing: Muuda
@@ -1599,8 +1600,8 @@ et:
       grouping_two: Teine grupeerimise kriteerium
       grouping_two_phrase: On seotud projekti tüübiga
       hide_chart: Peida diagramm
-      noneElement: "(ei midagi)"
-      noneSelection: "(ei midagi)"
+      noneElement: "(pole)"
+      noneSelection: "(pole)"
       outline: Esmase kontuuri laiendamine
       parent: Näita alamprojekte
       work_package_filters: Filtreeri teemasid
@@ -1705,8 +1706,8 @@ et:
       teel)
     blocked: ajutiselt blokeeritud
     blocked_num_failed_logins:
-      one: ajutiselt blokeeritud (üks ebaõnnestunud sisselogimise katse)
-      other: ajutiselt blokeeritud (%{count} ebaõnnestunud sisselogimise katset)
+      one: locked temporarily (one failed login attempt)
+      other: locked temporarily (%{count} failed login attempts)
     deleted: Kustutatud kasutaja
     error_status_change_failed: 'Kasutaja oleku muutmine nurjus järgmiste tõrgete
       tõttu: %{errors}'
@@ -1715,7 +1716,7 @@ et:
     registered: registreeritud
     reset_failed_logins: Lähtesta ebaõnnestunud sisselogimised
     status_user_and_brute_force: "%{user} ja %{brute_force}"
-    unlock: Aktiveeri
+    unlock: Ava lukust
     unlock_and_reset_failed_logins: Aktiveeri ja lähtesta ebaõnnestunud sisselogimised
     no_login: This user authenticates through login by password. Since it is disabled,
       they cannot log in.

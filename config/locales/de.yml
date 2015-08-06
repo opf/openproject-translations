@@ -3,7 +3,7 @@ de:
   account:
     delete: Konto löschen
     delete_confirmation: Sind Sie sicher, dass Sie das Konto löschen wollen?
-    deleted: Account erfolgreich gelöscht
+    deleted: Konto erfolgreich gelöscht
     deletion_info:
       data_consequences:
         other: Von den vom Nutzer im Zuge der Nutzung der Anwendung erstellen Daten
@@ -35,7 +35,7 @@ de:
           in der Lage sein, sich mit Ihrem derzeitigen Nutzernamen und Passwort anzumelden.
           Sofern Sie es wünschen, können Sie sich über die von der Anwendung zur Verfügung
           gestellten Mechanismen einen neuen Account zulegen.
-    error_inactive_activation_by_mail: Ihr Konto ist nicht aktiviert. Zur Aktivierung
+    error_inactive_activation_by_mail: Ihr Konto wurde noch nicht aktiviert. Zur Aktivierung
       folgen Sie bitte dem Link, der Ihnen bei der Registrierung per E-Mail zugeschickt
       wurde.
     error_inactive_manual_activation: Ihr Konto wurde noch nicht aktiviert. Bitte
@@ -64,13 +64,13 @@ de:
       comment:
         commented: Kommentiert
       custom_field:
-        default_value: Standardeinstellung
+        default_value: Standardwert
         editable: Bearbeitbar
         field_format: Format
         is_filter: Als Filter benutzen
         is_required: Erforderlich
         max_length: Maximale Länge
-        min_length: Mindestlänge
+        min_length: Minimale Länge
         possible_values: Mögliche Werte
         regexp: Regulärer Ausdruck
         searchable: Durchsuchbar
@@ -93,7 +93,7 @@ de:
         work_packages: Arbeitspakete
         parent: Unterprojekt von
         versions: Versionen
-        project_type: Projekt-Typ
+        project_type: Projekttyp
         responsible: Verantwortlicher
         types: Typen
         queries: Abfragen
@@ -170,9 +170,9 @@ de:
         progress: "% erledigt"
         responsible: Verantwortlicher
         spent_time: Aufgewendete Zeit
-        subproject: Teilprojekt
-        time_entries: Aufwand buchen
-        type: Art
+        subproject: Unterprojekt von
+        time_entries: Zeit buchen
+        type: Typ
         watcher: Beobachter
     errors:
       messages:
@@ -220,7 +220,7 @@ de:
           no_directory: ist kein Verzeichnis
         work_package:
           is_not_a_valid_target_for_time_entries: 'Arbeitspaket #%{id} ist kein gültiges
-            Ziel für die Zuordnug der Zeiterfassungseinträge.'
+            Ziel für die Zuordnung der Zeiterfassungseinträge.'
           attributes:
             due_date:
               not_start_date: ist nicht am Startdatum, obwohl dies bei Meilensteinen
@@ -228,7 +228,7 @@ de:
             parent_id:
               cannot_be_milestone: darf kein Meilenstein sein
               cannot_be_in_another_project: darf nicht in einem anderen Projekt sein
-              not_a_valid_parent: ist nicht gültig
+              not_a_valid_parent: ist ungültig
               does_not_exist: existiert nicht
             status_id:
               status_transition_invalid: ist ungültig da kein valider Übergang vom
@@ -252,19 +252,18 @@ de:
               numeric: Ziffern (z.B. '1')
               special: Sonderzeichen (z.B. '%')
               reused:
-                one: wurde schon benutzt. Bitte wählen Sie ein Passwort, das sich
-                  von dem letzten unterscheidet.
-                other: wurde schon benutzt. Bitte wählen Sie ein Passwort, das sich
-                  von den letzten %{count} unterscheidet.
+                one: has been used before. Please choose one that is different from
+                  your last one.
+                other: has been used before. Please choose one that is different from
+                  your last %{count}.
         member:
           principal_blank: Bitte wählen Sie mindestens einen Benutzer oder eine Gruppe.
           role_blank: Bitte wählen Sie mindestens eine Rolle.
       template:
         body: 'Bitte überprüfen Sie die folgenden Felder:'
         header:
-          one: 'Dieses %{model}-Objekt konnte nicht gespeichert werden: 1 Fehler'
-          other: 'Dieses %{model}-Objekt konnte nicht gespeichert werden: %{count}
-            Fehler'
+          one: 1 error prohibited this %{model} from being saved
+          other: "%{count} errors prohibited this %{model} from being saved"
     models:
       attachment: Datei
       board: Forum
@@ -279,16 +278,16 @@ de:
       project: Projekt
       query: Benutzerdefinierte Abfrage
       role:
-        one: Rolle
-        other: Rollen
-      type: Art
+        one: Role
+        other: Roles
+      type: Typ
       planning_element: Planungselement
-      project_type: Projekt-Typ
+      project_type: Projekttyp
       user: Benutzer
       version: Version
       wiki: Wiki
       wiki_page: Wiki-Seite
-      workflow: Arbeitsablauf
+      workflow: Workflow
       work_package: Arbeitspaket
   errors:
     header_invalid_fields: 'Bei den folgenden Feldern traten Fehler auf:'
@@ -308,7 +307,7 @@ de:
     comments: Kommentar
     content: Inhalt
     created_at: Angelegt
-    created_on: Erstellt
+    created_on: Angelegt
     custom_values: Benutzerdefinierte Felder
     default_columns: Standard-Spalten
     description: Beschreibung
@@ -320,12 +319,12 @@ de:
     group: Gruppe
     groupname: Gruppenname
     id: ID
-    is_default: Standardeinstellung
+    is_default: Standardwert
     is_for_all: Für alle Projekte
     is_public: "Öffentlich"
     issue: Arbeitspaket
     lastname: Nachname
-    login: Anmelden
+    login: Mitgliedsname
     mail: E-Mail
     name: Name
     password: Kennwort
@@ -338,7 +337,7 @@ de:
     subject: Thema
     summary: Zusammenfassung
     title: Titel
-    type: Art
+    type: Typ
     updated_at: Aktualisiert
     updated_on: Aktualisiert
     user: Benutzer
@@ -393,9 +392,9 @@ de:
   button_update: Bearbeiten
   button_view: Anzeigen
   button_watch: Beobachten
-  button_manage_menu_entry: Menüpunkt konfigurieren
+  button_manage_menu_entry: Menüpunkt verwalten
   button_add_menu_entry: Menüpunkt hinzufügen
-  button_configure_menu_entry: Menüpunkt konfigurieren
+  button_configure_menu_entry: Menüpunkt verwalten
   button_delete_menu_entry: Menüpunkt entfernen
   copy_project:
     started: Das Kopieren des Projekts "%{source_project_name}" nach "%{target_project_name}"
@@ -405,7 +404,7 @@ de:
     succeeded: Das Projekt %{target_project_name} wurde erstellt
     errors: Fehler
     text:
-      failed: Das Projekt "%{source_project_name}" konnte nicht ins Projekt "%{target_project_name}"
+      failed: Das Projekt "%{source_project_name}" konnte nicht nach "%{target_project_name}"
         kopiert werden.
       succeeded: Das Projekt "%{source_project_name}" wurde nach "%{target_project_name}"
         kopiert.
@@ -463,51 +462,51 @@ de:
     - Dezember
     order:
     - :day
-    - ": Monat"
+    - :month
     - :year
   datetime:
     distance_in_words:
       about_x_hours:
-        one: etwa 1 Stunde
-        other: etwa %{count} Stunden
+        one: about 1 hour
+        other: about %{count} hours
       about_x_months:
-        one: etwa 1 Monat
-        other: etwa %{count} Monate
+        one: about 1 month
+        other: about %{count} months
       about_x_years:
-        one: etwa 1 Jahr
-        other: etwa %{count} Jahre
+        one: about 1 year
+        other: about %{count} years
       almost_x_years:
-        one: fast 1 Jahr
-        other: fast %{count} Jahre
+        one: almost 1 year
+        other: almost %{count} years
       half_a_minute: eine halbe Minute
       less_than_x_minutes:
-        one: weniger als eine Minute
-        other: weniger als %{count} Minuten
+        one: less than a minute
+        other: less than %{count} minutes
       less_than_x_seconds:
-        one: weniger als 1 Sekunde
-        other: weniger als %{count} Sekunden
+        one: less than 1 second
+        other: less than %{count} seconds
       over_x_years:
-        one: mehr als 1 Jahr
-        other: mehr als %{count} Jahre
+        one: over 1 year
+        other: over %{count} years
       x_days:
-        one: 1 Tag
-        other: "%{count} Tagen"
+        one: 1 day
+        other: "%{count} days"
       x_minutes:
-        one: 1 Minute
-        other: "%{count} Minuten"
+        one: 1 minute
+        other: "%{count} minutes"
       x_months:
-        one: 1 Monat
-        other: "%{count} Monaten"
+        one: 1 month
+        other: "%{count} months"
       x_seconds:
-        one: 1 Sekunde
-        other: "%{count} Sekunden"
+        one: 1 second
+        other: "%{count} seconds"
     units:
       hour:
-        one: Stunde
-        other: Stunden
+        one: hour
+        other: hours
   default_activity_development: Entwicklung
   default_activity_management: Management
-  default_activity_other: Andere
+  default_activity_other: Sonstiges
   default_activity_specification: Spezifikation
   default_activity_support: Unterstützung
   default_activity_testing: Testen
@@ -549,7 +548,7 @@ de:
   default_reported_project_status_green: Grün
   default_reported_project_status_amber: Gelb
   default_reported_project_status_red: rot
-  default_role_anonymous: Anonym
+  default_role_anonymous: Anonymus
   default_role_developer: Entwickler
   default_role_project_admin: Projekt-Admin
   default_role_non_member: Nichtmitglied
@@ -599,7 +598,7 @@ de:
   description_toc_toggle: Inhaltsverzeichnis aus/einblenden
   description_user_mail_notification: Mailbenachrichtigungseinstellung
   description_wiki_subpages_reassign: Neue Elternseite wählen
-  direction: Ltr
+  direction: ltr
   enumeration_activities: Aktivitäten (Zeiterfassung)
   enumeration_work_package_priorities: Arbeitspaket-Prioritäten
   enumeration_system_activity: System-Aktivität
@@ -608,7 +607,7 @@ de:
   error_can_not_delete_custom_field: Kann das benutzerdefinierte Feld nicht löschen.
   error_can_not_delete_type: Dieser Typ enthält Arbeitspakete und kann nicht gelöscht
     werden.
-  error_can_not_delete_standard_type: Standard-Typen können nicht gelöscht werden.
+  error_can_not_delete_standard_type: Standardtypen können nicht gelöscht werden.
   error_can_not_remove_role: Diese Rolle wird verwendet und kann nicht gelöscht werden.
   error_can_not_reopen_work_package_on_closed_version: Das Arbeitspaket ist einer
     abgeschlossenen Version zugeordnet und kann daher nicht wieder geöffnet werden.
@@ -729,7 +728,7 @@ de:
   label_checked: ausgewählt
   label_chronological_order: in zeitlicher Reihenfolge
   label_close_versions: Vollständige Versionen schließen
-  label_closed_work_packages: abgeschlossen
+  label_closed_work_packages: geschlossen
   label_collapse: Zuklappen
   label_configuration: Konfiguration
   label_comment_add: Kommentar hinzufügen
@@ -773,7 +772,7 @@ de:
   label_display_used_statuses_only: Zeige nur Status an, die von diesem Typ verwendet
     werden
   label_download: "%{count} Download"
-  label_download_plural: "%{count} Download"
+  label_download_plural: "%{count} Downloads"
   label_downloads_abbr: D/L
   label_duplicated_by: Dupliziert durch
   label_duplicates: Duplikat von
@@ -805,7 +804,7 @@ de:
   label_generate_key: Generieren
   label_git_path: Pfad zum .git-Verzeichnis
   label_greater_or_equal: ">="
-  label_group_by: Gruppiere Ergebnisse
+  label_group_by: Gruppiere
   label_group_new: Neue Gruppe
   label_group_plural: Gruppen
   label_help: Hilfe
@@ -834,7 +833,7 @@ de:
   label_work_package_priority_updated: Arbeitspaketpriorität aktualisiert
   label_work_package_status_new: Neuer Status
   label_work_package_status_plural: Arbeitspaket-Status
-  label_work_package_tracking: Arbeitspakete-Verfolgung
+  label_work_package_tracking: Arbeitspakete
   label_work_package_updated: Arbeitspaket aktualisiert
   label_work_package_view_all: Alle Arbeitspakete anzeigen
   label_work_package_view_all_assigned_to_me: Alle mir zugewiesenen Arbeitspakete
@@ -863,7 +862,7 @@ de:
   label_logged_as: Angemeldet als
   label_login: Anmelden
   label_logout: Abmelden
-  label_main_menu: Hauptmenü
+  label_main_menu: Nebenmenü
   label_max_size: Maximale Größe
   label_me: ich
   label_member_new: Neues Mitglied
@@ -912,7 +911,7 @@ de:
   label_notify_member_plural: Aktualisierungen per E-Mail verschicken
   label_open_menu: Menü öffnen
   label_open_work_packages: offen
-  label_open_work_packages_plural: Offen
+  label_open_work_packages_plural: offen
   label_optional_description: Beschreibung
   label_options: Optionen
   label_overall_activity: Aktivität aller Projekte anzeigen
@@ -931,7 +930,7 @@ de:
   label_personalize_page: Diese Seite anpassen
   label_planning: Terminplanung
   label_please_login: Anmelden
-  label_plugins: Erweiterungen
+  label_plugins: Plugins
   label_precedes: Vorgänger von
   label_preferences: Präferenzen
   label_preview: Vorschau
@@ -966,7 +965,7 @@ de:
   label_remove_columns: Ausgewählte Spalten entfernen
   label_renamed: umbenannt
   label_reply_plural: Antworten
-  label_report: Report
+  label_report: Bericht
   label_report_plural: Berichte
   label_reported_work_packages: Gemeldete Arbeitspakete
   label_reporting: Statusbericht
@@ -1038,7 +1037,7 @@ de:
   label_updated_time_by: Von %{author} vor %{age} aktualisiert
   label_used_by: Benutzt von
   label_user_activity: Aktivität von %{value}
-  label_user_anonymous: Anonym
+  label_user_anonymous: Anonymus
   label_user_mail_no_self_notified: Ich möchte nicht über Änderungen benachrichtigt
     werden, die ich selbst durchführe.
   label_user_mail_option_all: Für alle Ereignisse in all meinen Projekten
@@ -1078,28 +1077,28 @@ de:
     anzeigen"
   label_wiki_show_submenu_item: 'als Untermenüpunkt anzeigen von '
   label_work_package: Arbeitspaket
-  label_workflow: Arbeitsablauf
-  label_workflow_plural: Arbeitsabläufe
+  label_workflow: Workflow
+  label_workflow_plural: Workflows
   label_workflow_summary: Zusammenfassung
   label_x_closed_work_packages_abbr:
-    one: 1 geschlossen
-    other: "%{count} geschlossen"
+    one: 1 closed
+    other: "%{count} closed"
     zero: 0 closed
   label_x_comments:
-    one: 1 Kommentar
-    other: "%{count} Kommentare"
+    one: 1 comment
+    other: "%{count} comments"
     zero: no comments
   label_x_open_work_packages_abbr:
-    one: 1 offen
-    other: "%{count} offen"
+    one: 1 open
+    other: "%{count} open"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
-    one: 1 offen / %{total}
-    other: "%{count} offen / %{total}"
+    one: 1 open / %{total}
+    other: "%{count} open / %{total}"
     zero: 0 open / %{total}
   label_x_projects:
-    one: 1 Projekt
-    other: "%{count} Projekte"
+    one: 1 project
+    other: "%{count} projects"
     zero: no projects
   label_year: Jahr
   label_yesterday: gestern
@@ -1156,7 +1155,7 @@ de:
   noscript_description: Sie müssen JavaScript aktiveren, um OpenProject nutzen zu
     können!
   noscript_heading: JavaScript deaktiviert
-  noscript_learn_more: Mehr erfahren
+  noscript_learn_more: Weitere Informationen
   notice_account_activated: Ihr Konto ist aktiviert. Sie können sich jetzt anmelden.
   notice_account_invalid_credentials: Benutzer oder Kennwort ist ungültig.
   notice_account_invalid_credentials_or_blocked: Benutzer oder Kennwort ist ungültig
@@ -1188,7 +1187,8 @@ de:
     konnte(n) nicht gespeichert werden: %{ids}."
   notice_failed_to_save_members: 'Benutzer konnte nicht gespeichert werden: %{errors}.'
   notice_feeds_access_key_reseted: Ihr Atom-Zugriffsschlüssel wurde zurückgesetzt.
-  notice_file_not_found: Anhang existiert nicht oder ist gelöscht worden.
+  notice_file_not_found: Die von Ihnen aufgerufene Seite existiert nicht oder ist
+    verschoben worden.
   notice_forced_logout: Nach %{ttl_time} Minuten Inaktivität wurden Sie automatisch
     ausgeloggt.
   notice_internal_server_error: Auf der von Ihnen aufgerufenen Seite ist ein Fehler
@@ -1309,16 +1309,16 @@ de:
   project_module_activity: Aktivität
   project_module_boards: Foren
   project_module_calendar: Kalender
-  project_module_work_package_tracking: Arbeitspakete-Verfolgung
+  project_module_work_package_tracking: Arbeitspakete
   project_module_news: Neuigkeiten
   project_module_repository: Projektarchiv
   project_module_time_tracking: Zeiterfassung
-  project_module_timelines: Zeitlinie
+  project_module_timelines: Zeitpläne
   project_module_wiki: Wiki
   query_fields:
     assigned_to_role: Zuständigkeitsrolle
     member_of_group: Zuständigkeitsgruppe
-    subproject_id: Teilprojekt
+    subproject_id: Unterprojekt von
   search_input_placeholder: Suche ...
   setting_activity_days_default: Anzahl Tage pro Seite der Projekt-Aktivität
   setting_app_subtitle: Applikations-Untertitel
@@ -1385,7 +1385,7 @@ de:
     wiederverwendet werden dürfen
   setting_password_days_valid: Anzahl von Tagen, nach denen ein Passwortwechsel erwzwungen
     wird (deaktivieren mit 0)
-  setting_password_min_length: Mindestlänge
+  setting_password_min_length: Minimale Länge
   setting_password_min_adhered_rules: Mindestanzahl zu verwendender Zeichenklassen
   setting_per_page_options: Objekte pro Seite
   setting_plain_text_mail: Nur reinen Text (kein HTML) senden
@@ -1419,7 +1419,7 @@ de:
   setting_work_package_group_assignment: Zuweisung zu Gruppen erlauben
   settings:
     general: Allgemein
-    other: Andere
+    other: Sonstiges
     passwords: Passwörter
     session: Sitzung
     brute_force_prevention: Automatisches Sperren von Benutzern
@@ -1428,7 +1428,7 @@ de:
   support:
     array:
       sentence_connector: und
-      skip_last_comma: 'false'
+      skip_last_comma: 'true'
   text_analyze: 'Weiter analysieren: %{subject}'
   text_are_you_sure: Sind Sie sicher?
   text_are_you_sure_with_children: Lösche Aufgabe und alle Unteraufgaben?
@@ -1439,7 +1439,7 @@ de:
   text_custom_field_possible_values_info: Eine Zeile pro Wert
   text_default_administrator_account_changed: Administrator-Kennwort geändert
   text_default_encoding: 'Default: UTF-8'
-  text_destroy: Lösche
+  text_destroy: Löschen
   text_destroy_with_associated: 'Es sind weitere Datenobjekte mit den bzw. dem zu
     löschenden Arbeitpaket(en) verbunden. Es handelt sich dabei um Objekte der folgenden
     Typen:'
@@ -1485,7 +1485,7 @@ de:
     Sie sind dabei, einige oder alle Ihre Berechtigungen zu entfernen. Es ist möglich, dass Sie danach das Projekt nicht mehr ansehen oder bearbeiten dürfen.
     Sind Sie sicher, dass Sie dies tun möchten?
   text_plugin_assets_writable: Verzeichnis für Plugin-Assets beschreibbar
-  text_powered_by: Angetrieben durch %{link}
+  text_powered_by: Powered by %{link}
   text_project_destroy_confirmation: Sind Sie sicher, dass sie das Projekt löschen
     wollen?
   text_project_identifier_info: Kleinbuchstaben (a-z), Ziffern, Binde- und Unterstriche
@@ -1500,10 +1500,10 @@ de:
     Mailbenachrichtigung gesendet werden soll.
   text_select_project_modules: 'Bitte wählen Sie die Module aus, die in diesem Projekt
     aktiviert sein sollen:'
-  text_status_changed_by_changeset: Angewendet in Changeset %{value}.
+  text_status_changed_by_changeset: Status geändert durch Changeset %{value}.
   text_subprojects_destroy_warning: Dessen Unterprojekte (%{value}) werden ebenfalls
     gelöscht.
-  text_time_logged_by_changeset: Angewendet in Changeset %{value}.
+  text_time_logged_by_changeset: Status geändert durch Changeset %{value}.
   text_tip_work_package_begin_day: Arbeitspaket, das an diesem Tag beginnt
   text_tip_work_package_begin_end_day: Arbeitspaket, das an diesem Tag beginnt und
     endet
@@ -1512,7 +1512,7 @@ de:
   text_unallowed_characters: Nicht erlaubte Zeichen
   text_user_mail_option: Für nicht ausgewählte Projekte werden Sie nur Benachrichtigungen
     für Dinge erhalten, die Sie beobachten oder an denen Sie beteiligt sind (z. B.
-    Tickets, deren Autor Sie sind oder die Ihnen zugewiesen sind).
+    Arbeitspakete, deren Autor Sie sind oder die Ihnen zugewiesen sind).
   text_user_wrote: "%{value} schrieb:"
   text_warn_on_leaving_unsaved: Der eingegebene Text wird nicht gespeichert, wenn
     Sie die Seite jetzt verlassen.
@@ -1542,14 +1542,14 @@ de:
     admin_menu:
       color: Farbe
       colors: Farben
-      project_type: Projekt-Typ
+      project_type: Projekttyp
       project_types: Projekt-Typen
     project_menu:
       planning_elements: Planungselemente
       project_associations: Abhängigkeiten
       reportings: Statusberichte
       reports: Zeitplan-Reporte
-      timelines: Zeitlinie
+      timelines: Zeitpläne
     add_project_association: Projekt-Abhängigkeit erstellen
     associations: Abhängigkeiten
     board_could_not_be_saved: Forum konnte nicht gespeichert werden
@@ -1562,11 +1562,11 @@ de:
     dates_are_calculated_based_on_sub_elements: Daten wurden auf Basis der Kind-Elemente
       berechnet.
     delete_all: Alle löschen
-    delete_thing: Lösche
+    delete_thing: Löschen
     duration: Dauer
     duration_days:
-      one: 1 Tag
-      other: "%{count} Tagen"
+      one: 1 day
+      other: "%{count} days"
     edit_color: Farbe bearbeiten
     edit_project_type: Projekt-Typ bearbeiten
     edit_thing: Bearbeiten
@@ -1608,7 +1608,7 @@ de:
         default: Default
       column:
         assigned_to: Zugewiesen an
-        type: Art
+        type: Typ
         due_date: Abschlussdatum
         name: Name
         status: Status
@@ -1634,12 +1634,12 @@ de:
       grouping_hide_group: Gruppe "%{group}" verstecken
       grouping_one: Erstes Gruppierungskriterium
       grouping_one_phrase: Ist ein Unterprojekt von
-      grouping_other: Andere
+      grouping_other: Sonstiges
       grouping_two: Zweites Gruppierungskriterium
       grouping_two_phrase: Hat eine Abhängigkeit zu Projekttyp
       hide_chart: Diagramm ausblenden
-      noneElement: "(keine)"
-      noneSelection: "(keine)"
+      noneElement: "(keines)"
+      noneSelection: "(keines)"
       outline: Zu Beginn angezeigte Hierarchie
       parent: Zeige Unterprojekte von
       work_package_filters: Arbeitspakete filtern
@@ -1720,7 +1720,7 @@ de:
     start: Beginn
     timeline: Zeitplan-Report
     timelines: Zeitplan-Reporte
-    settings: Zeitlinie
+    settings: Zeitpläne
     vertical_work_package: Vertikale Arbeitspakete
     without_project_type: Ohne Projekt-Typ
     you_are_viewing_the_selected_timeline: Sie sehen den ausgewählten Zeitplan-Report
@@ -1740,16 +1740,16 @@ de:
     active: aktiv
     activate: Aktivieren
     activate_and_reset_failed_logins: Aktivieren und fehlgeschlagene Logins zurücksetzen
-    authentication_provider: Authentifizierungsdienst
-    authentication_settings_disabled_due_to_external_authentication: Dieser Benutzer
-      authentifiziert sich über einen externen Authentifizierungsdienst. Deshalb kann
-      in OpenProject das Passwort nicht geändert werden.
+    authentication_provider: Authentifizierungsprovider
+    authentication_settings_disabled_due_to_external_authentication: Dieser Nutzer
+      authentifiziert sich über einen externen Authentifizierungsprovider, so dass
+      das Passwort über OpenProject nicht geändert werden kann.
     assign_random_password: Zufälliges Passwort zuweisen (wird dem Nutzer per E-Mail
       geschickt)
     blocked: temporär gesperrt
     blocked_num_failed_logins:
-      one: temporär gesperrt (ein fehlgeschlagener Loginversuch)
-      other: temporär gesperrt (%{count} fehlgeschlagene Loginversuche)
+      one: locked temporarily (one failed login attempt)
+      other: locked temporarily (%{count} failed login attempts)
     deleted: Gelöschter Nutzer
     error_status_change_failed: 'Der Nutzerstatus konnte nicht geändert werden aufgrund
       folgender Fehler: %{errors}'
@@ -1764,9 +1764,9 @@ de:
       nicht einloggen, da Login per Passwort deaktiviert ist.
     password_change_unsupported: Passwortänderung wird nicht unterstützt
     authorization_rejected: Sie dürfen sich nicht einloggen.
-  version_status_closed: Geschlossen
+  version_status_closed: geschlossen
   version_status_locked: gesperrt
-  version_status_open: Offen
+  version_status_open: offen
   note: Hinweis
   note_password_login_disabled: Der Passwort-Login wurde per %{configuration} deaktiviert.
   warning: Warnung

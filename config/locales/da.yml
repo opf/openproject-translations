@@ -79,13 +79,13 @@ da:
       status:
         is_closed: Lukket arbejdspakke
       journal:
-        notes: Kommentarer
+        notes: Noter
       member:
         roles: Roller
       project:
         homepage: Hjemmeside
         identifier: ID
-        work_packages: Arbejdspakke
+        work_packages: Arbejdspakker
         parent: Delprojekt af
         versions: Versioner
         project_type: Projekttype
@@ -97,14 +97,14 @@ da:
         group_by: Grupper resultater efter
         filters: Filtre
       repository:
-        url: URL-adresse
+        url: Webadresse
       role:
         assignable: Arbejdspakker kan tilknyttes denne rolle
       time_entry:
         activity: Aktivitet
         hours: Timer
         spent_on: Dato
-        type: Art
+        type: Type
       type:
         is_in_roadmap: Arbejdspakker vist i køreplanen
         in_aggregation: Arbejdspakker vist i helhed
@@ -166,9 +166,9 @@ da:
         responsible: Ansvarlig
         spent_time: Anvendt tid
         subproject: Underprojekt
-        time_entries: Log tidspunkt
-        type: Art
-        watcher: Overvåger
+        time_entries: Tidsregistrering
+        type: Type
+        watcher: Tilsynsførende
     errors:
       messages:
         accepted: skal accepteres
@@ -215,7 +215,7 @@ da:
           no_directory: er ikke et katalog
         work_package:
           is_not_a_valid_target_for_time_entries: 'Arbejdspakke # %{id} er ikke et
-            gyldig mål for genfordeling af tider.'
+            gyldig mål for tildeling af tider.'
           attributes:
             due_date:
               not_start_date: er ikke på startdato, selvom dette er påkrævet for milepæle
@@ -244,19 +244,20 @@ da:
               lowercase: små bogstaver (f.eks. "a")
               uppercase: store bogstaver (f.eks. "A")
               numeric: tal (fx "1")
-              special: Special (fx "%")
+              special: Speciel (fx "%")
               reused:
-                one: er blevet brugt før. Vælg en, der er forskellig fra din seneste.
-                other: er blevet brugt før. Vælg et, der er forskelligt fra dine seneste
-                  %{count}.
+                one: has been used before. Please choose one that is different from
+                  your last one.
+                other: has been used before. Please choose one that is different from
+                  your last %{count}.
         member:
           principal_blank: Vælg venligst mindst én bruger eller gruppe.
           role_blank: Vælg venligst mindst én rolle.
       template:
         body: 'Kontroller venligst følgende felter:'
         header:
-          one: 1 fejl forhindrede at denne %{model} blev gemt
-          other: "%{count} fejl forhindrede at denne %{model} blev gemt"
+          one: 1 error prohibited this %{model} from being saved
+          other: "%{count} errors prohibited this %{model} from being saved"
     models:
       attachment: Fil
       board: Forum
@@ -268,12 +269,12 @@ da:
       status: Status for arbejdspakke
       member: Medlem
       news: Nyheder
-      project: Prjoekt
+      project: Projekt
       query: Selvvalgt forespørgsel
       role:
-        one: Rolle
-        other: Roller
-      type: Art
+        one: Role
+        other: Roles
+      type: Type
       planning_element: Planlægningselement
       project_type: Projekttype
       user: Bruger
@@ -296,8 +297,8 @@ da:
     base: 'Generel fejl:'
     blocks_ids: IDs of blocked work packages
     category: Kategori
-    comment: Kommentér
-    comments: Kommentér
+    comment: Kommentar
+    comments: Kommentar
     content: Indhold
     created_at: Oprettet den
     created_on: Oprettet den
@@ -322,7 +323,7 @@ da:
     name: Navn
     password: Adgangskode
     priority: Prioritet
-    project: Prjoekt
+    project: Projekt
     responsible: Ansvarlig
     role: Rolle
     start_date: Start dato
@@ -330,14 +331,14 @@ da:
     subject: Emne
     summary: Opsummering
     title: Titel
-    type: Art
+    type: Type
     updated_at: Opdateret den
     updated_on: Opdateret den
     user: Bruger
     version: Version
     work_package: Arbejdspakke
   button_add: Tilføj
-  button_add_watcher: Tilføj overvåger
+  button_add_watcher: Tilføj tilsynsførende
   button_annotate: Anmærke
   button_apply: Benyt
   button_archive: Arkiv
@@ -355,7 +356,7 @@ da:
   button_create: Opret
   button_create_and_continue: Opret og fortsæt
   button_delete: Slet
-  button_delete_watcher: Slet overvåger %{name}
+  button_delete_watcher: Slet tilsynsførende %{name}
   button_download: Hent
   button_duplicate: Lav dublet
   button_edit: Rediger
@@ -363,7 +364,7 @@ da:
   button_expand_all: Fold alle ud
   button_list: List
   button_lock: Lås
-  button_log_time: Log tidspunkt
+  button_log_time: Tidsregistrering
   button_login: Log ind
   button_move: Flyt
   button_move_and_follow: Flyt og følg
@@ -381,7 +382,7 @@ da:
   button_unarchive: Udpak
   button_uncheck_all: Fjern alle markeringer
   button_unlock: Lås op
-  button_unwatch: Stands overvågning
+  button_unwatch: Stands tilsyn
   button_update: Opdater
   button_view: Se
   button_watch: Før tilsyn
@@ -458,43 +459,43 @@ da:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: omkring 1 time
-        other: omkring  %{count} timer
+        one: about 1 hour
+        other: about %{count} hours
       about_x_months:
-        one: omkring 1 måned
-        other: omkring  %{count} måneder
+        one: about 1 month
+        other: about %{count} months
       about_x_years:
-        one: knapt 1 år
-        other: omkring  %{count} år
+        one: about 1 year
+        other: about %{count} years
       almost_x_years:
-        one: knapt %{count} år
-        other: knapt %{count} år
+        one: almost 1 year
+        other: almost %{count} years
       half_a_minute: et halvt minut
       less_than_x_minutes:
-        one: mindre end 1 minut
-        other: mindre end %{count} minutter
+        one: less than a minute
+        other: less than %{count} minutes
       less_than_x_seconds:
-        one: mindre end 1 sekund
-        other: mindre end %{count} sekunder
+        one: less than 1 second
+        other: less than %{count} seconds
       over_x_years:
-        one: mere end 1 år
-        other: mere end %{count} år
+        one: over 1 year
+        other: over %{count} years
       x_days:
-        one: 1 dag
-        other: "%{count} dage"
+        one: 1 day
+        other: "%{count} days"
       x_minutes:
-        one: 1 minut
-        other: "%{count} minutte"
+        one: 1 minute
+        other: "%{count} minutes"
       x_months:
-        one: 1 måned
-        other: "%{count} måneder"
+        one: 1 month
+        other: "%{count} months"
       x_seconds:
-        one: 1 sekund
-        other: "%{count} sekunder"
+        one: 1 second
+        other: "%{count} seconds"
     units:
       hour:
-        one: time
-        other: timer
+        one: hour
+        other: hours
   default_activity_development: Udvikling
   default_activity_management: Håndtering
   default_activity_other: Andet
@@ -576,7 +577,7 @@ da:
   description_category_reassign: Vælg kategori
   description_message_content: Meddelelsens indhold
   description_my_project: Du er medlem
-  description_notes: Kommentarer
+  description_notes: Noter
   description_parent_work_package: Overordnet arbejdspakke for denne
   description_project_scope: Bredde af søgning
   description_query_sort_criteria_attribute: Sorteringsegenskab
@@ -601,8 +602,7 @@ da:
   error_can_not_reopen_work_package_on_closed_version: En arbejdspakke der er knyttet
     til en lukket version kan ikke åbnes igen
   error_check_user_and_role: Vælg venligst en bruger og en rolle.
-  error_work_package_done_ratios_not_updated: Andelen af udført for arbejdspakken
-    er ikke opdateret.
+  error_work_package_done_ratios_not_updated: Fremgang for arbejdspakken er ikke opdateret.
   error_work_package_not_found_in_project: Arbejdspakken er ikke fundet, eller den
     hører ikke til dette projekt
   error_must_be_project_member: skal være et medlem af projektet
@@ -616,7 +616,7 @@ da:
   error_scm_annotate: Indholdet findes ikke eller der kan ikke tilføjes nyt.
   error_scm_command_failed: 'Der opstod en fejl da du forsøgte at tilgå projektarkivet:
     %{value}'
-  error_scm_not_found: Indholdet eller ændring findes ikke i arkivet.
+  error_scm_not_found: Indholdet eller ændring findes ikke i projektarkivet.
   error_unable_delete_status: Arbejdspakkens status kan ikke slettes da den bruges
     af mindst én pakke.
   error_unable_delete_default_status: Det er ikke muligt at slette forhåndsværdien
@@ -635,7 +635,7 @@ da:
     message: Meddelelse er redigeret
     news: Nyheder
     reply: Besvaret
-    time_entry: Tidsrapport redigeret
+    time_entry: Tidsregistreringer ændret
     wiki_page: Wiki-side redigeret
     work_package_closed: Arbejdspakke lukket
     work_package_edit: Arbejdspakke redigeret
@@ -645,7 +645,7 @@ da:
   general_csv_separator: ","
   general_first_day_of_week: '1'
   general_lang_name: Dansk
-  general_pdf_encoding: ISO-8859-1
+  general_pdf_encoding: ISO-8859-15
   general_text_no: nej
   general_text_yes: ja
   general_text_No: Nej
@@ -668,7 +668,7 @@ da:
   label_added: tilføjet
   label_added_time_by: Tilføjet af %{author} for %{age} siden
   label_additional_workflow_transitions_for_assignee: Yderligere overgange tilladt
-    når brugeren er den tilknyttede
+    når brugeren er opdragsgiveren
   label_additional_workflow_transitions_for_author: Yderligere overgange tilladt når
     brugeren er forfatteren
   label_administration: Administration
@@ -713,7 +713,7 @@ da:
   label_change_status: Skift status
   label_change_view_all: Se alle ændringer
   label_changes_details: Detaljer for alle ændringer
-  label_changeset_plural: Alle ændringer
+  label_changeset_plural: Pakker af ændringer
   label_checked: valgt
   label_chronological_order: I kronologisk orden
   label_close_versions: Luk afsluttede versioner
@@ -760,7 +760,7 @@ da:
   label_display_per_page: Per side %{value}
   label_display_used_statuses_only: Vis kun statuser, der bruges af denne type
   label_download: "%{count} hentning"
-  label_download_plural: "%{count} Downloads"
+  label_download_plural: "%{count} hentninger"
   label_downloads_abbr: D/L
   label_duplicated_by: duplikeret gennem
   label_duplicates: dubletter
@@ -831,7 +831,7 @@ da:
   label_work_package_view_all_responsible_for: Vis alle arbejdspakker, jeg er ansvarlig
     for
   label_work_package_view_all_watched: Vis alle arbejdspakker, jeg fører tilsyn med
-  label_work_package_watchers: Overvågere
+  label_work_package_watchers: Tilsynsførende
   label_journal_diff: Sammenligning af beskrivelser
   label_jump_to_a_project: Gå til et projekt...
   label_language_based: Baseret på brugerens sprog
@@ -898,8 +898,8 @@ da:
   label_not_equals: er ikke
   label_notify_member_plural: Opdateringer af e-mail
   label_open_menu: "Åbn menuen"
-  label_open_work_packages: "åben"
-  label_open_work_packages_plural: "åben"
+  label_open_work_packages: "åbn"
+  label_open_work_packages_plural: "åbn"
   label_optional_description: Beskrivelse
   label_options: Muligheder
   label_overall_activity: Samlet aktivitet
@@ -1067,24 +1067,24 @@ da:
   label_workflow_plural: Arbejdsprocesser
   label_workflow_summary: Opsummering
   label_x_closed_work_packages_abbr:
-    one: 1 afsluttet
-    other: "%{count} afsluttede"
+    one: 1 closed
+    other: "%{count} closed"
     zero: 0 closed
   label_x_comments:
-    one: 1 kommentar
-    other: "%{count} kommentarer"
+    one: 1 comment
+    other: "%{count} comments"
     zero: no comments
   label_x_open_work_packages_abbr:
-    one: 1 åben
-    other: "%{count} åbne"
+    one: 1 open
+    other: "%{count} open"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
-    one: 1 / %{total} åben
-    other: "%{count} / %{total} åbne"
+    one: 1 open / %{total}
+    other: "%{count} open / %{total}"
     zero: 0 open / %{total}
   label_x_projects:
-    one: "%{count} projekter"
-    other: "%{count} projekter"
+    one: 1 project
+    other: "%{count} projects"
     zero: no projects
   label_year: "År"
   label_yesterday: I går
@@ -1162,7 +1162,7 @@ da:
   notice_account_wrong_password: Forkert adgangskode
   notice_account_registered_and_logged_in: Velkommen, din konto er aktiveret. Du er
     nu logget ind.
-  notice_api_access_key_reseted: Din adgangsnøgle til API blev nulstillet.
+  notice_api_access_key_reseted: Din API-adgangsnøgle blev nulstillet.
   notice_can_t_change_password: Denne konto benytter en ekstern kilde til godkendelse.
     Det er ikke muligt at ændre adgangskoden her.
   notice_email_error: Der opstod en fejl ved afsendelse af mail (%{value})
@@ -1170,7 +1170,7 @@ da:
   notice_failed_to_save_work_packages: 'Det lykkedes ikke at gemme %{count} arbejdspakke(r)
     i %{total} valgte: %{ids}.'
   notice_failed_to_save_members: 'Det lykkedes ikke at gemme medlem(mer): %{errors}.'
-  notice_feeds_access_key_reseted: Din adgangsnøgle til RSS blev nulstillet.
+  notice_feeds_access_key_reseted: Din RSS-adgangsnøgle blev nulstillet.
   notice_file_not_found: Den side du prøvede at gå til eksisterer ikke eller er blevet
     flyttet.
   notice_forced_logout: Du er blevet automatisk logget ud efter %{ttl_time} minutters
@@ -1417,7 +1417,7 @@ da:
   text_default_administrator_account_changed: Forhåndsvalgt administratorkonto ændret
   text_default_encoding: 'Forhåndsvalgt: UTF-8'
   text_destroy: Slet
-  text_destroy_with_associated: 'Der er yderligere objekter tilknyttet arbejdspakken(-kerne)
+  text_destroy_with_associated: 'Der er yderligere objekter tilknyttet arbejdspakken/-kerne
     som skal slettes. Disse er af følgende art:'
   text_destroy_what_to_do: Hvad vil du lave?
   text_diff_truncated: "... Denne afvigelse blev undertrykt da den overstiger den
@@ -1537,8 +1537,8 @@ da:
     delete_thing: Slet
     duration: Varighed
     duration_days:
-      one: 1 dag
-      other: "%{count} dage"
+      one: 1 day
+      other: "%{count} days"
     edit_color: Rediger farve
     edit_project_type: Rediger projekttype
     edit_thing: Rediger
@@ -1578,7 +1578,7 @@ da:
         default: Forhåndsvalgt
       column:
         assigned_to: Opdragsgiver
-        type: Art
+        type: Type
         due_date: Slutdato
         name: Navn
         status: Status
@@ -1715,8 +1715,8 @@ da:
     assign_random_password: Tildel tilfældig adgangskode (sendt til bruger med e-mail)
     blocked: Midlertid spærret
     blocked_num_failed_logins:
-      one: låst midlertidigt (ét mislykket forsøg på login)
-      other: låst midlertidigt (%{count} mislykkede forsøg på login)
+      one: locked temporarily (one failed login attempt)
+      other: locked temporarily (%{count} failed login attempts)
     deleted: Slettet bruger
     error_status_change_failed: 'Det lykkedes ikke at ændre brugerens status på grund
       af denne fejl: %{errors}'
@@ -1734,7 +1734,7 @@ da:
     authorization_rejected: Du har ikke adgang til at logge ind.
   version_status_closed: lukket
   version_status_locked: Spærret
-  version_status_open: "åben"
+  version_status_open: "åbn"
   note: Note
   note_password_login_disabled: Login med adgangskode er deaktiveret ved %{configuration}.
   warning: Advarsel
