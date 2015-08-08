@@ -6,22 +6,22 @@ fr:
     deleted: Compte supprimé avec succès
     deletion_info:
       data_consequences:
-        other: Les données de l'utilisateur créé (par exemple e-mail, préférences,
-          Lots de Travaux, wiki entrées) seront supprimées autant que possible. Notez
-          toutefois, que les données comme les Lots de Travaux et les entrées de wiki
-          ne peuvent pas être supprimées sans impacter le travail des autres utilisateurs.
-          Ces données sont donc réaffectées à un compte appelé « Deleted user ». Comme
-          les données de chaque compte supprimé sont réaffectées à ce compte, qu'il
-          ne sera pas possible de distinguer les données de l'utilisateur créé à partir
-          des données d'un autre compte supprimé.
-        self: Les données créées (par exemple e-mail, préférences, lots de travail,
-          wiki entrées) seront supprimées autant que possible. Notez toutefois, que
-          les données comme les Lots de Travaux et les entrées de wiki ne peuvent
-          pas être supprimées sans impact sur le travail d'autres utilisateurs. Ces
-          données sont donc réaffectées à un compte appelé « Deleted User ». Comme
-          les données de chaque compte supprimé sont réaffectées à ce compte, il ne
-          sera plus possible de distinguer les données créées par cet utilisateur
-          des données supprimées d'autres comptes.
+        other: Les données créées par l'utilisateur (e.g. e-mail, préférences, lots
+          de travaux, entrées wiki) seront supprimées autant que possible. Notez toutefois
+          que les données comme les lots de travaux et les entrées wiki ne peuvent
+          pas être supprimées sans impacter le travail des autres utilisateurs. Ces
+          données sont donc réaffectées à un compte appelé «Utilisateur supprimé».
+          Etant donné que les données de chaque compte supprimé sont réaffectées à
+          ce compte, il ne sera plus possible de distinguer les données créées par
+          cet utilisateur de celles d'un autre compte supprimé.
+        self: Les données que vous avez créées (e.g. e-mail, préférences, lots de
+          travaux, entrées wiki) seront supprimées autant que possible. Notez toutefois
+          que les données comme les lots de travaux et les entrées wiki ne peuvent
+          pas être supprimées sans impacter le travail des autres utilisateurs. Ces
+          données sont donc réaffectées à un compte appelé «Utilisateur supprimé».
+          Etant donné que les données de chaque compte supprimé sont réaffectées à
+          ce compte, il ne sera plus possible de distinguer les données que vous avez
+          créées de celles d'un autre compte supprimé.
       heading: Supprimer le compte %{name}
       info:
         other: Supprimer le compte d'utilisateur est une action irréversible.
@@ -80,7 +80,7 @@ fr:
       relation:
         delay: Délai
         from: Lot de Travaux
-        to: Lots de Travaux associés
+        to: Lot de travaux associé
       status:
         is_closed: Lot de travaux clôturé
       journal:
@@ -130,10 +130,10 @@ fr:
         hide_mail: Cacher mon adresse courriel
         impaired: Mode d'accessibilité
         time_zone: Fuseau horaire
-        warn_on_leaving_unsaved: M'avertir lorsque vous quittez une page avec du texte
-          non enregistré
+        warn_on_leaving_unsaved: M'avertir lorsque je quitte une page contenant du
+          texte non enregistré
       version:
-        effective_date: Date d'échéance
+        effective_date: "Échéance"
         sharing: Partage
       wiki:
         start_page: Page d'accueil
@@ -141,7 +141,7 @@ fr:
         text: Texte
       wiki_page:
         parent_title: Page parente
-        redirect_existing_links: Rediriger les liens existant
+        redirect_existing_links: Rediriger les liens existants
       planning_element_type_color:
         name: Nom
         hexcode: Code hexadécimal
@@ -224,8 +224,8 @@ fr:
             pas une cible valide pour réaffecter les entrées de temps.'
           attributes:
             due_date:
-              not_start_date: n'est pas sur la date de démarrage, bien que cela soit
-                requis pour les étapes
+              not_start_date: n'est pas identique à la date de début, bien que cela
+                soit requis pour les jalons
             parent_id:
               cannot_be_milestone: ne peut pas être un jalon
               cannot_be_in_another_project: ne peut pas être dans un autre projet
@@ -254,18 +254,18 @@ fr:
               numeric: numérique (par exemple, « 1 »)
               special: spécial (par exemple, « % »)
               reused:
-                one: has been used before. Please choose one that is different from
-                  your last one.
-                other: has been used before. Please choose one that is different from
-                  your last %{count}.
+                one: a déjà été utilisé auparavant. Veuillez faire un choix qui diffère
+                  de votre choix précédent.
+                other: ont déjà été utilisés auparavant. Veuillez faire un choix qui
+                  diffère de vos %{count} choix précédents.
         member:
           principal_blank: Choisissez au moins un utilisateur ou un groupe.
           role_blank: Choisissez au moins un rôle.
       template:
         body: 'Veuillez vérifier les champs suivants:'
         header:
-          one: 1 error prohibited this %{model} from being saved
-          other: "%{count} errors prohibited this %{model} from being saved"
+          one: 1 erreur empêche ce %{model} d'être sauvegardé
+          other: "%{count} erreurs empêchent ce %{model} d'être sauvegardé"
     models:
       attachment: Fichier
       board: Forum
@@ -280,8 +280,8 @@ fr:
       project: Projet
       query: Requête personnalisée
       role:
-        one: Role
-        other: Roles
+        one: Rôle
+        other: Rôles
       type: Type
       planning_element: "Élément de planification"
       project_type: Type de projet
@@ -290,7 +290,7 @@ fr:
       wiki: Wiki
       wiki_page: Page wiki
       workflow: Flux de travail
-      work_package: Lot de Travaux
+      work_package: Lot de travaux
   errors:
     header_invalid_fields: 'Il y a eu un problème avec les champs suivants:'
   activity:
@@ -314,7 +314,7 @@ fr:
     default_columns: Colonnes par défaut
     description: Description
     display_sums: Affichage des sommes
-    due_date: Date d'échéance
+    due_date: "Échéance"
     estimated_hours: Durée estimée
     estimated_time: Durée estimée
     firstname: Prénom
@@ -324,7 +324,7 @@ fr:
     is_default: Valeur par défaut
     is_for_all: Pour tous les projets
     is_public: Public
-    issue: Lot de Travaux
+    issue: Lot de travaux
     lastname: Nom de famille
     login: Connexion
     mail: Messagerie
@@ -344,7 +344,7 @@ fr:
     updated_on: Mis à jour le
     user: Utilisateur
     version: Version
-    work_package: Lot de Travaux
+    work_package: Lot de travaux
   button_add: Ajouter
   button_add_watcher: Ajouter un observateur
   button_annotate: Annoter
@@ -423,7 +423,7 @@ fr:
     - Sam
     abbr_month_names:
     - 
-    - janv
+    - Jan
     - Fév
     - Mar
     - Avr
@@ -468,43 +468,43 @@ fr:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: about 1 hour
-        other: about %{count} hours
+        one: environ 1 heure
+        other: environ %{count} heures
       about_x_months:
-        one: about 1 month
-        other: about %{count} months
+        one: environ 1 mois
+        other: environ %{count} mois
       about_x_years:
-        one: about 1 year
-        other: about %{count} years
+        one: environ 1 an
+        other: environ %{count} années
       almost_x_years:
-        one: almost 1 year
-        other: almost %{count} years
+        one: presque 1 an
+        other: presque %{count} années
       half_a_minute: une demi-minute
       less_than_x_minutes:
-        one: less than a minute
-        other: less than %{count} minutes
+        one: moins d'une minute
+        other: moins de %{count} minutes
       less_than_x_seconds:
-        one: less than 1 second
-        other: less than %{count} seconds
+        one: moins de 1 seconde
+        other: moins de %{count} secondes
       over_x_years:
-        one: over 1 year
-        other: over %{count} years
+        one: plus de 1 an
+        other: plus de %{count} années
       x_days:
-        one: 1 day
-        other: "%{count} days"
+        one: 1 jour
+        other: "%{count} jours"
       x_minutes:
         one: 1 minute
         other: "%{count} minutes"
       x_months:
-        one: 1 month
-        other: "%{count} months"
+        one: 1 mois
+        other: "%{count} mois"
       x_seconds:
-        one: 1 second
-        other: "%{count} seconds"
+        one: 1 seconde
+        other: "%{count} secondes"
     units:
       hour:
-        one: hour
-        other: hours
+        one: heure
+        other: heures
   default_activity_development: Développement
   default_activity_management: Gestion
   default_activity_other: Autre
@@ -525,7 +525,7 @@ fr:
   default_color_red: Rouge
   default_color_white: Blanc
   default_color_yellow: Jaune
-  default_status_closed: Fermé
+  default_status_closed: Clôturé
   default_status_confirmed: Confirmé
   default_status_developed: Développé
   default_status_in_development: En développement
@@ -583,7 +583,7 @@ fr:
   description_enter_number: Enter nombre
   description_enter_text: Entrez texte
   description_filter: Filtre
-  description_filter_toggle: Afficher/masquer le filtre
+  description_filter_toggle: Afficher/Masquer le filtre
   description_category_reassign: Choisir une catégorie
   description_message_content: Contenu du message
   description_my_project: Vous êtes membre
@@ -596,7 +596,7 @@ fr:
   description_select_work_package: Sélectionner un Lot de Travaux
   description_selected_columns: Colonnes Sélectionnées
   description_sub_work_package: Sous-Lot de Travaux de l'actuel
-  description_toc_toggle: Afficher/Masquer table de matières
+  description_toc_toggle: Afficher/Masquer la table de matières
   description_user_mail_notification: Paramètres de notification par e-mail
   description_wiki_subpages_reassign: Assigner une nouvelle page parente
   direction: de gauche à droite
@@ -666,8 +666,7 @@ fr:
   gui_validation_error_plural: "%{count} erreurs"
   instructions_after_registration: Vous pouvez vous authentifier tant que votre compte
     a été activé en cliquant sur %{signin}.
-  instructions_after_logout: Vous pouvez vous authentifier une seconde fois en cliquant
-    sur %{signin}.
+  instructions_after_logout: Vous pouvez vous ré-authentifier en cliquant sur %{signin}.
   instructions_after_error: Vous pouvez encore essayer de vous authentifier en cliquant
     sur %{signin}. Si l'erreur persiste, demandez de l'aide à votre administrateur.
   label_account: Compte
@@ -686,7 +685,7 @@ fr:
     lorsque l'utilisateur est l'auteur
   label_administration: Administration
   label_age: "Âge"
-  label_ago: il y a %{value} jours
+  label_ago: il y a quelques jours
   label_all: tous
   label_all_time: tout le temps
   label_all_words: Tous les mots
@@ -765,7 +764,7 @@ fr:
   label_deleted_custom_field: "(champs personnalisés supprimés)"
   label_descending: Décroissant
   label_details: Détails
-  label_diff: différence
+  label_diff: diff
   label_diff_inline: en ligne
   label_diff_side_by_side: côte à côte
   label_disabled: désactivé
@@ -847,7 +846,7 @@ fr:
   label_work_package_view_all_watched: Voir tous les Lots de Travaux Observés
   label_work_package_watchers: Observateurs
   label_journal_diff: Comparaison de description
-  label_jump_to_a_project: Aller à un projet...
+  label_jump_to_a_project: Aller à un projet…
   label_language_based: Basé sur le langage de l'utilisateur
   label_last_changes: les %{count} derniers changements
   label_last_login: Dernière connexion
@@ -858,9 +857,9 @@ fr:
   label_latest_revision_plural: Les toute dernières révisions
   label_ldap_authentication: LDAP authentification
   label_less_or_equal: "<="
-  label_less_than_ago: Il y a moins de quelques jours
+  label_less_than_ago: il y a moins de quelques jours
   label_list: Liste
-  label_loading: Chargement...
+  label_loading: Chargement…
   label_logged_as: Connecté en tant que
   label_login: Connexion
   label_logout: Déconnexion
@@ -953,7 +952,7 @@ fr:
   label_query_new: Nouvelle requête
   label_query_plural: Requêtes personnalisées
   label_query_menu_item: Menu des requêtes
-  label_read: Lire...
+  label_read: Lire…
   label_register: Enregistrer
   label_register_with_developer: S'inscrire en tant que développeur
   label_registered_on: Enregistré sur
@@ -1049,7 +1048,7 @@ fr:
     suis abonné ou participe
   label_user_mail_option_only_owner: Seulement pour les tâches dont je suis le possesseur
   label_user_mail_option_selected: Pour tous les événements sur le projet selectionné
-    seulement...
+    seulement…
   label_user_new: Nouvel utilisateur
   label_user_plural: Utilisateurs
   label_user_search: Recherche d'Utilisateurs
@@ -1080,29 +1079,29 @@ fr:
     du projet
   label_wiki_show_new_page_link: Montrer le sous-menu 'Créer une nouvelle page enfant'
   label_wiki_show_submenu_item: 'Montrer comme sous-menu de '
-  label_work_package: Lot de Travaux
+  label_work_package: Lot de travaux
   label_workflow: Flux de travail
   label_workflow_plural: Flux de travail
   label_workflow_summary: Résumé
   label_x_closed_work_packages_abbr:
-    one: 1 closed
-    other: "%{count} closed"
+    one: 1 clôturé
+    other: "%{count} clôturé(s)"
     zero: 0 closed
   label_x_comments:
-    one: 1 comment
-    other: "%{count} comments"
+    one: 1 commentaire
+    other: "%{count} commentaires"
     zero: no comments
   label_x_open_work_packages_abbr:
-    one: 1 open
-    other: "%{count} open"
+    one: 1 ouvert
+    other: "%{count} ouverts"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
-    one: 1 open / %{total}
-    other: "%{count} open / %{total}"
+    one: 1 ouvert / %{total}
+    other: "%{count} ouverts / %{total}"
     zero: 0 open / %{total}
   label_x_projects:
-    one: 1 project
-    other: "%{count} projects"
+    one: 1 projet
+    other: "%{count} projets"
     zero: no projects
   label_year: Année
   label_yesterday: hier
@@ -1139,9 +1138,10 @@ fr:
     listes seulement)
   label_visible_elements: "Éléments visibles"
   auth_source:
-    using_abstract_auth_source: Can't use an abstract authentication source.
-    ldap_error: 'LDAP-Error: %{error_message}'
-    ldap_auth_failed: Could not authenticate at the LDAP-Server.
+    using_abstract_auth_source: Impossible d'utiliser une source d'authentification
+      abstraite.
+    ldap_error: 'Erreur LDAP : %{error_message}'
+    ldap_auth_failed: Ne peut s'authentifier sur le serveur LDAP.
   macro_execution_error: Erreur lors de l'exécution de la macro %{macro_name}
   macro_unavailable: La macro %{macro_name} ne peut être affichée.
   mail_body_account_activation_request: 'Un nouvel utilisateur (%{value}) s''est enregistré.
@@ -1151,15 +1151,15 @@ fr:
     pour vous connecter.
   mail_body_lost_password: 'Pour changer votre mot de passe, cliquez sur le lien suivant:'
   mail_body_register: 'Pour activer votre compte, cliquez sur le lien suivant:'
-  mail_body_reminder: "%{count} Lot(s) de Travaux vous sont assignés dans les %{days}
-    prochains jours:"
+  mail_body_reminder: "%{count} lot(s) de travaux qui vous sont assignés arrivent
+    à échéance dans les %{days} prochains jours:"
   mail_body_wiki_content_added: La page wiki '%{id}' a été ajouté par %{author}.
   mail_body_wiki_content_updated: La page wiki '%{id}' a été mise à jour par %{author}.
   mail_subject_account_activation_request: Réquete pour l'activation du compte %{value}
   mail_subject_lost_password: Votre mot de passe %{value}
   mail_subject_register: Votre activation du compte %{value}
-  mail_subject_reminder: "%{count} Lot(s) de Travaux arriveront à échéance dans les
-    prochaîns %{days} jours"
+  mail_subject_reminder: "%{count} lot(s) de travaux à échéance dans les %{days} prochains
+    jours"
   mail_subject_wiki_content_added: Page wiki '%{id}' a été ajouté
   mail_subject_wiki_content_updated: Page wiki '%{id}' a été mise à jour
   more_actions: Plus de fonctions
@@ -1176,7 +1176,7 @@ fr:
     de passe vient de vous être envoyé.
   notice_account_new_password_forced: Un nouveau mot de passe est requis.
   notice_account_password_expired: Votre mot de passe a expiré au bout de %{days}
-    jours. Veuillez en créer un nouveau.
+    jours. Veuillez en spécifier un nouveau.
   notice_account_password_updated: Mot de passe mis à jour avec succès.
   notice_account_pending: Votre compte vient d'être créé et attend maintenant l'approbation
     de l'administrateur.
@@ -1244,12 +1244,12 @@ fr:
         format: "%n %u"
         units:
           byte:
-            one: Byte
-            other: Bytes
-          gb: GO
-          kb: kO
-          mb: MO
-          tb: TO
+            one: Octet
+            other: Octets
+          gb: Go
+          kb: ko
+          mb: Mo
+          tb: To
   permission_add_work_package_notes: Ajouter des notes
   permission_add_work_packages: Ajouter des Lots de Travaux
   permission_add_messages: Poster messages
@@ -1330,8 +1330,8 @@ fr:
     assigned_to_role: Rôle du Destinataire
     member_of_group: Groupe du Destinataire
     subproject_id: Sous-projet
-  search_input_placeholder: recherche...
-  setting_activity_days_default: Nombre des jours prévus sur l'activité du projet
+  search_input_placeholder: recherche…
+  setting_activity_days_default: Nombre des jours affichés dans l'activité du projet
   setting_app_subtitle: Sous-titre de l'Application
   setting_app_title: Titre de l'Application
   setting_attachment_max_size: Taille maximale de la pièce-jointe
@@ -1356,8 +1356,7 @@ fr:
   setting_default_notification_option: Option de notifications par défaut
   setting_default_projects_modules: Modules activé pour nouveaux projets par défaut
   setting_default_projects_public: Nouveaux projets sont publique par défaut
-  setting_diff_max_lines_displayed: Affichage de nombre de lignes Maximale de « diff
-    »
+  setting_diff_max_lines_displayed: Nombre maximal de lignes de «diff» affichées
   setting_display_subprojects_work_packages: Afficher les sous-projets des Lots de
     Travaux des principaux projets par défaut
   setting_emails_footer: Pied de page courriel
@@ -1386,9 +1385,9 @@ fr:
   setting_login_required: Authentification requise
   setting_mail_from: Envoie de l'addresse expediteur
   setting_mail_handler_api_enabled: Activer le service web de courrier entrant
-  setting_mail_handler_api_description: The email web handler enables OpenProject
-    to receive emails containing specific commands as an instrumentation mechanism
-    (e.g., to create and update work packages).
+  setting_mail_handler_api_description: Le gestionnaire de courriel web permet à OpenProject
+    de recevoir des courriels contenant des commandes spécifiques comme mécanisme
+    d'implémentation (par exemple, pour créer et mettre à jour les lots de travail).
   setting_mail_handler_api_key: Clé API
   setting_mail_handler_body_delimiters: Tronquer mails après l'une de ces lignes
   setting_new_project_user_role_id: Rôle donné à un utilisateur non administrateur
@@ -1396,8 +1395,8 @@ fr:
   setting_password_active_rules: Les classes de caractère activées
   setting_password_count_former_banned: Nombre des plus récent mots des passe utilisé
     qui sont interdit de réutilisation.
-  setting_password_days_valid: Nombre de jours restant avant changement du mot de
-    passe (0 pour désactiver)
+  setting_password_days_valid: Nombre de jours après lequel le changement de mot de
+    passe est obligatoire (0 pour désactiver)
   setting_password_min_length: Longueur minimale
   setting_password_min_adhered_rules: Nombre minimale des classe de caractère requise
   setting_per_page_options: Options des objets par page
@@ -1415,9 +1414,9 @@ fr:
   setting_session_ttl_hint: Une valeur inférieur à 5 désactive cette fonction
   setting_session_ttl_enabled: Session expirée
   setting_start_of_week: Démarrer le calendrier le...
-  setting_sys_api_enabled: Enable repository management web service
-  setting_sys_api_description: The repository management web service provides integration
-    and user authorization for accessing repositories.
+  setting_sys_api_enabled: Activez le service web de gestion de versions
+  setting_sys_api_description: Le service web de gestion de dépôt fournit l'intégration
+    et l'autorisation d'accès aux dépôts.
   setting_text_formatting: Mise en forme texte
   setting_time_format: Format d'heure
   setting_ui_theme: Thème
@@ -1443,7 +1442,7 @@ fr:
       sentence_connector: et
       skip_last_comma: faux
   text_analyze: 'Analyse suivante: %{subject}'
-  text_are_you_sure: "Êtes-vous certain?"
+  text_are_you_sure: "Êtes-vous sûr ?"
   text_are_you_sure_with_children: Supprimer le Lot de Travail et tous ses Lots de
     Travaux enfants?
   text_assign_to_project: Assigner le projet
@@ -1517,9 +1516,9 @@ fr:
   text_status_changed_by_changeset: Enregistré dans « changeset » %{value}.
   text_subprojects_destroy_warning: 'Son sous-projet(s): %{value} sera aussi supprimé.'
   text_time_logged_by_changeset: Enregistré dans « changeset » %{value}.
-  text_tip_work_package_begin_day: Lots de Travaux commençant aujourd'hui
-  text_tip_work_package_begin_end_day: Lots de Travaux commençant et finissant aujourd'hui
-  text_tip_work_package_end_day: Lots de Travaux finissant aujourd'hui
+  text_tip_work_package_begin_day: lots de travaux débutant aujourd'hui
+  text_tip_work_package_begin_end_day: lots de travaux débutant et se terminant aujourd'hui
+  text_tip_work_package_end_day: lots de travaux se terminant aujourd'hui
   text_type_no_workflow: Aucun flux de travail défini pour ce type...
   text_unallowed_characters: Caractères non autorisés
   text_user_mail_option: Pour des projets non sélectionnés, vous recevrez uniquement
@@ -1578,8 +1577,8 @@ fr:
     delete_thing: Supprimer
     duration: Durée
     duration_days:
-      one: 1 day
-      other: "%{count} days"
+      one: 1 jour
+      other: "%{count} jours"
     edit_color: Editer la couleur
     edit_project_type: Editer le type de projet
     edit_thing: "Éditer"
@@ -1640,17 +1639,17 @@ fr:
         days: jours
         weeks: semaines
         months: mois
-      exclude_own_work_packages: Cacher les Lots de Travaux de ce projet
-      exclude_reporters: Cacher autres projets
-      exclude_empty: Cacher projets vides
+      exclude_own_work_packages: Masquer les lots de travaux de ce projet
+      exclude_reporters: Masquer les autres projets
+      exclude_empty: Masquer les projets vides
       grouping: Regroupement
-      grouping_hide_group: Cacher groupe « %{group} »
+      grouping_hide_group: Masquer le groupe «%{group}»
       grouping_one: Premier critère de groupement
       grouping_one_phrase: Est un sous-projet de
       grouping_other: Autre
-      grouping_two: Critère de groupe second
+      grouping_two: Second critère de groupement
       grouping_two_phrase: A une dépendance à ce type de projet
-      hide_chart: Masquer graphique
+      hide_chart: Masquer le graphique
       noneElement: "(none)"
       noneSelection: "(none)"
       outline: Expansion de ligne par défaut
@@ -1720,8 +1719,8 @@ fr:
     type_could_not_be_saved: Le type n'a pas pu être sauvgardé
     reporting_could_not_be_saved: Le rapport n'a pas pu être sauvegardé
     properties: Propriétés
-    really_delete_color: Voulez-vous vraiment supprimer la couleur suivante? Les types
-      utilisant cette couleur ne seront pas supprimés.
+    really_delete_color: "Êtes-vous sûr de vouloir supprimer la couleur suivante ?
+      Les types utilisant cette couleur ne seront pas supprimés."
     really_delete_project_association_between_project_a_and_project_b: Voulez-vous
       vraiment supprimer la dépendance entre « %{project_a} » et « %{project_b} »
       ?
@@ -1763,8 +1762,8 @@ fr:
       par courrier électronique)
     blocked: verrouillé temporairement
     blocked_num_failed_logins:
-      one: locked temporarily (one failed login attempt)
-      other: locked temporarily (%{count} failed login attempts)
+      one: verrouillé temporairement (1 tentative de connexion échouée)
+      other: verrouillé temporairement (%{count} tentatives de connexion échouées)
     deleted: Utilisateur supprimé
     error_status_change_failed: 'Le changement du statut de l''utilisateur a échoué
       dû aux erreurs suivantes: %{errors}'
@@ -1841,8 +1840,8 @@ fr:
           parents lorsqu'il est déduit en fonction du statut, ou lorsqu'il est désactivé.
         due_date: La date d'échéance ne peut pas être définie dans les lots de travaux
           parents.
-        estimated_hours: Le nombre d'heures estimé ne peut être défini sur les modules
-          de travail parents.
+        estimated_hours: Les heures estimées ne peuvent être définies sur les lots
+          de travaux parents.
         invalid_user_assigned_to_work_package: L'utilisateur choisi ne doit pas être
           '%{property} ' pour ce paquet de travail.
         start_date: La date de début ne peut pas être définie dans les lots de travaux
