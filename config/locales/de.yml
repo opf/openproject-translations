@@ -61,6 +61,8 @@ de:
         host: Host
         onthefly: On-the-fly-Benutzererstellung
         port: Port
+      changeset:
+        repository: Projektarchiv
       comment:
         commented: Kommentiert
       custom_field:
@@ -146,6 +148,7 @@ de:
         hexcode: Fabcode (Hex)
       project_association:
         description: Begründung
+        project_b: Abhängiges Projekt
       project_type:
         allows_association: Erlaubt Projekt-Abhängigkeiten
         name: Name
@@ -175,65 +178,65 @@ de:
         watcher: Beobachter
     errors:
       messages:
-        accepted: muss akzeptiert werden
-        blank: muss ausgefüllt werden
+        accepted: muss akzeptiert werden.
+        blank: muss ausgefüllt werden.
         cant_link_a_work_package_with_a_descendant: Ein Arbeitspaket kann nicht mit
-          einer seiner Unteraufgaben verlinkt werden
-        circular_dependency: Diese Beziehung würde eine zyklische Abhängigkeit erzeugen
-        confirmation: stimmt nicht mit der Bestätigung überein
-        empty: muss ausgefüllt werden
-        equal_to: muss genau %{count} sein
-        even: muss gerade sein
-        exclusion: ist nicht verfügbar
-        file_too_large: ist zu groß (nicht mehr als %{count} Bytes erlaubt)
-        greater_than: muss größer als %{count} sein
-        greater_than_or_equal_to: muss größer oder gleich %{count} sein
+          eines seiner Unteraufgaben verlinkt werden.
+        circular_dependency: Diese Beziehung würde eine zyklische Abhängigkeit erzeugen.
+        confirmation: stimmt nicht mit der Bestätigung überein.
+        empty: muss ausgefüllt werden.
+        equal_to: muss genau %{count} sein.
+        even: muss gerade sein.
+        exclusion: ist nicht verfügbar.
+        file_too_large: ist zu groß (nicht mehr als %{count} Bytes erlaubt).
+        greater_than: muss größer als %{count} sein.
+        greater_than_or_equal_to: muss größer oder gleich %{count} sein.
         smaller_than_or_equal_to_max_length: muss kleiner als oder gleich der maximalen
-          Länge sein
-        greater_than_start_date: muss größer als Anfangsdatum sein
-        inclusion: ist nicht auf einen erlaubten Wert gesetzt
-        invalid: ist nicht gültig
-        less_than: muss kleiner als %{count} sein
-        less_than_or_equal_to: muss kleiner oder gleich %{count} sein
-        not_a_date: ist kein Datum
-        not_a_number: ist keine Zahl
-        not_an_integer: ist keine ganzzahlige Zahl
-        not_same_project: gehört nicht zum selben Projekt
-        odd: muss ungerade sein
-        taken: ist bereits vergeben
-        too_long: ist zu lang (nicht mehr als %{count} Zeichen)
-        too_short: ist zu kurz (nicht weniger als %{count} Zeichen)
-        wrong_length: hat die falsche Länge (muss genau %{count} Zeichen haben)
-        after: muss nach %{date} sein
-        after_or_equal_to: muss nach oder gleich %{date} sein
-        before: muss vor %{date} sein
-        before_or_equal_to: muss vor oder gleich %{date} sein
-        could_not_be_copied: konnten nicht (vollständig) kopiert werden
+          Länge sein.
+        greater_than_start_date: muss größer als Anfangsdatum sein.
+        inclusion: ist nicht auf einen erlaubten Wert gesetzt.
+        invalid: ist ungültig.
+        less_than: muss kleiner als %{count} sein.
+        less_than_or_equal_to: muss kleiner oder gleich %{count} sein.
+        not_a_date: ist kein Datum.
+        not_a_number: ist keine Zahl.
+        not_an_integer: ist keine ganzzahlige Zahl.
+        not_same_project: gehört nicht zum selben Projekt.
+        odd: muss ungerade sein.
+        taken: ist bereits vergeben.
+        too_long: ist zu lang (nicht mehr als %{count} Zeichen).
+        too_short: ist zu kurz (nicht weniger als %{count} Zeichen).
+        wrong_length: hat die falsche Länge (muss genau %{count} Zeichen haben).
+        after: muss nach %{date} sein.
+        after_or_equal_to: muss nach oder gleich %{date} sein.
+        before: muss vor %{date} sein.
+        before_or_equal_to: muss vor oder gleich %{date} sein.
+        could_not_be_copied: konnten nicht (vollständig) kopiert werden.
       models:
         project_association:
-          identical_projects: kann nicht von einem Projekt auf sich selbst erstellt
-            werden
-          project_association_not_allowed: erlaubt keine Projekt-Abhängigkeiten
+          identical_projects: Abhängigkeit kann nicht zwischen dem Projekt und sich
+            selbst erstellt werden.
+          project_association_not_allowed: erlaubt keine Projekt-Abhängigkeiten.
         repository:
-          not_whitelisted: wird durch die Konfiguration nicht erlaubt
-          no_directory: ist kein Verzeichnis
+          not_whitelisted: wird durch die Konfiguration nicht erlaubt.
+          no_directory: ist kein Verzeichnis.
         work_package:
           is_not_a_valid_target_for_time_entries: 'Arbeitspaket #%{id} ist kein gültiges
             Ziel für die Zuordnung der Zeiterfassungseinträge.'
           attributes:
             due_date:
-              not_start_date: ist nicht am Startdatum, obwohl dies bei Meilensteinen
-                Pflicht ist
+              not_start_date: ist nicht identisch mit dem Startdatum, obwohl dies
+                bei Meilensteinen Pflicht ist.
             parent_id:
-              cannot_be_milestone: darf kein Meilenstein sein
-              cannot_be_in_another_project: darf nicht in einem anderen Projekt sein
-              not_a_valid_parent: ist nicht gültig
-              does_not_exist: existiert nicht
+              cannot_be_milestone: darf kein Meilenstein sein.
+              cannot_be_in_another_project: darf nicht in einem anderen Projekt sein.
+              not_a_valid_parent: ist ungültig.
+              does_not_exist: existiert nicht.
             status_id:
               status_transition_invalid: ist ungültig da kein valider Übergang vom
-                alten zum neuen Status für die aktuellen Rollen des Nutzers existiert
+                alten zum neuen Status für die aktuellen Rollen des Nutzers existiert.
             priority_id:
-              only_active_priorities_allowed: muss aktiv sein
+              only_active_priorities_allowed: muss aktiv sein.
             category:
               only_same_project_categories_allowed: Ein Arbeitpaket und seine Kategorie
                 müssen im selben Projekt sein.
@@ -245,16 +248,16 @@ de:
           attributes:
             password:
               weak: 'muss Zeichen aus folgenden Klassen beinhalten (mindestens %{min_count}
-                von %{all_count}): %{rules}'
+                von %{all_count}): %{rules}.'
               lowercase: Kleinbuchstaben (z.B. 'a')
               uppercase: Großbuchstaben (z.B. 'A')
               numeric: Ziffern (z.B. '1')
               special: Sonderzeichen (z.B. '%')
               reused:
-                one: wurde schon benutzt. Bitte wähle eines das sich von deinem letzten
-                  unterscheidet.
-                other: wurde schon benutzt. Bitte wähle eines das sich von deinen
-                  letzten %{count} unterscheidet.
+                one: wurde schon benutzt. Bitte wählen Sie ein Passwort, das sich
+                  von dem letzten unterscheidet.
+                other: wurde schon benutzt. Bitte wählen Sie ein Passwort, das sich
+                  von den letzten %{count} unterscheidet.
         member:
           principal_blank: Bitte wählen Sie mindestens einen Benutzer oder eine Gruppe.
           role_blank: Bitte wählen Sie mindestens eine Rolle.
@@ -301,7 +304,7 @@ de:
     attachments: Anhänge
     author: Autor
     base: 'Allgemeiner Fehler:'
-    blocks_ids: Blockiert
+    blocks_ids: IDs der blockierten Arbeitspakete
     category: Kategorie
     comment: Kommentar
     comments: Kommentar
@@ -480,7 +483,7 @@ de:
         other: fast %{count} Jahre
       half_a_minute: eine halbe Minute
       less_than_x_minutes:
-        one: weniger als eine Minute
+        one: weniger als 1 Minute
         other: weniger als %{count} Minuten
       less_than_x_seconds:
         one: weniger als eine Sekunde
@@ -608,11 +611,11 @@ de:
   error_scm_command_failed: 'Beim Zugriff auf das Projektarchiv ist ein Fehler aufgetreten:
     %{value}'
   error_scm_not_found: Eintrag und/oder Revision existiert nicht im Projektarchiv.
-  error_unable_delete_status: Der Arbeitspaket-Status konnte nicht gelöscht werden,
-    da er Arbeitspakete enthält.
-  error_unable_delete_default_status: Der Arbeitspaket-Status konnte nicht gelöscht
-    werden, da dieser als Standard-Status markiert ist. Wählen Sie bitte zunächst
-    einen anderen Arbeitspaket-Status als Standard-Status.
+  error_unable_delete_status: Der Arbeitspaket-Status kann nicht gelöscht werden,
+    da er von mindestens einem Arbeitspaket genutzt wird.
+  error_unable_delete_default_status: Der Standardstatus für neue Arbeitspakete kann
+    nicht gelöscht werden. Bitte wählen Sie einen anderen Standardstatus, bevor Sie
+    diesen Status löschen.
   error_unable_to_connect: Fehler beim Verbinden (%{value})
   error_workflow_copy_source: Bitte wählen Sie einen Quell-Typ und eine Quell-Rolle.
   error_workflow_copy_target: Bitte wählen Sie die Ziel-Typ und -Rollen.
@@ -707,7 +710,7 @@ de:
   label_changes_details: Details aller Änderungen
   label_changeset_plural: Changesets
   label_checked: ausgewählt
-  label_child_element: Child element
+  label_child_element: Kind-Element
   label_chronological_order: in zeitlicher Reihenfolge
   label_close_versions: Vollständige Versionen schließen
   label_closed_work_packages: geschlossen
@@ -775,7 +778,6 @@ de:
   label_feeds_access_key_created_on: Atom-Zugriffsschlüssel vor %{value} erstellt
   label_file_added: Datei hinzugefügt
   label_file_plural: Dateien
-  label_filesystem_path: Wurzelverzeichnis
   label_filter_add: Filter hinzufügen
   label_filter_plural: Filter
   label_float: Gleitkommazahl
@@ -855,7 +857,7 @@ de:
   label_message_plural: Forenbeiträge
   label_message_posted: Forenbeitrag hinzugefügt
   label_min_max_length: Länge (Min. - Max.)
-  label_minute_plural: minutes
+  label_minute_plural: Minuten
   label_missing_api_access_key: Der API-Zugriffsschlüssel fehlt.
   label_missing_feeds_access_key: Der RSS-Zugriffsschlüssel fehlt.
   label_modification: "%{count} Änderung"
@@ -989,7 +991,7 @@ de:
   label_start_to_start: Anfang bis Anfang
   label_statistics: Statistiken
   label_status: Status
-  label_status_updated: Arbeitspaketstatus aktualisiert
+  label_status_updated: Arbeitspaket-Status aktualisiert
   label_stay_logged_in: Angemeldet bleiben
   label_string: Text
   label_subproject_new: Neues Unterprojekt
@@ -1297,12 +1299,86 @@ de:
   project_module_news: Neuigkeiten
   project_module_repository: Projektarchiv
   project_module_time_tracking: Zeiterfassung
-  project_module_timelines: Timelines
+  project_module_timelines: Zeitpläne
   project_module_wiki: Wiki
   query_fields:
     assigned_to_role: Zuständigkeitsrolle
     member_of_group: Zuständigkeitsgruppe
     subproject_id: Unterprojekt von
+  repositories:
+    checkout_instructions: Checkout Anweisungen
+    create_managed_delay: 'Bitte beachten Sie: Das Projektarchiv wird in OpenProject
+      verwaltet. Es wird asynchron auf dem Datenträger erstellt und wird in Kürze
+      verfügbar sein.'
+    create_successful: Das Projektarchiv wurde registriert.
+    delete_sucessful: Das Projektarchiv wurde gelöscht.
+    destroy:
+      title: Sind Sie absolut sicher?
+      managed_text: Wenn Sie fortfahren, wird dies das verwaltete Projektarchiv des
+        Projekts %{project_name} endgültig löschen. Diese Aktion kann nicht rückgängig
+        gemacht werden.
+      managed_path_note: 'Das folgende Verzeichnis wird gelöscht werden: %{path}'
+      linked_text: 'Sie sind dabei, das verknüpfte Projektarchiv %{url} des Projekts
+        %{project_name} zu entfernen. Hinweis: Dies löscht NICHT den Inhalt dieses
+        Projektarchivs, da es nicht von OpenProject verwaltet wird.'
+    errors:
+      build_failed: Projektarchiv mit der gewählten Konfiguration konnte nicht erstellt
+        werden. %{reason}
+      empty_repository: Das Projektarchiv existiert, aber es ist leer. Es enthält
+        noch keine Änderungen.
+      exists_on_filesystem: Das Projektarchiv existiert bereits auf dem Dateisystem.
+      filesystem_access_failed: 'Fehler beim Erstellen des Projektarchivs auf Dateisystem:
+        %{message}.'
+      not_manageable: Dieser Projektarchiv-Anbieter kann nicht von OpenProject verwaltet
+        werden.
+      path_permission_failed: 'Ein Fehler ist aufgetreten beim Erstellen des folgenden
+        Pfads: %{path}. Bitte stellen Sie sicher, dass OpenProject in diesen Ordner
+        schreiben darf.'
+      unauthorized: Sie sind nicht berechtigt auf das Projektarchiv zuzugreifen oder
+        die Anmeldeinformationen sind ungültig.
+      unavailable: Das Projektarchiv ist nicht verfügbar.
+      exception_title: 'Kann nicht auf das Projektarchiv zugreifen: %{message}'
+      disabled_or_unknown_type: Der gewählte Typ %{type} ist deaktiviert und nicht
+        mehr verfügbar für den Versionskontroll-Anbieter %{vendor}.
+      disabled_or_unknown_vendor: Der Versionskontrollsystem-Anbieter %{vendor} ist
+        deaktiviert oder nicht mehr verfügbar.
+    git:
+      instructions:
+        managed_url: Dies ist die URL des verwalteten (lokalen) Git Verzeichnis.
+        path: Geben Sie den Pfad zu Ihrem lokalen Git Verzeichnis an (z. B. %{example_path}).
+      local_title: Verknüpfen von vorhandenem lokalen Git Verzeichnis
+      local_introduction: Wenn Sie ein lokales Git Verzeichnis haben, können Sie es
+        mit OpenProject verknüpfen um von innerhalb der Anwendung auf dieses zuzugreifen.
+      managed_path: Verwalteter Git Pfad (Vorschau)
+      managed_introduction: Lassen Sie OpenProject automatisch ein lokales Git Verzeichnis
+        erstellen und integrieren.
+      managed_title: Git Verzeichnis in OpenProject integriert
+      path: Pfad zum Git Verzeichnis
+    go_to_revision: Gehe zu Revision
+    scm_vendor: Quellcode-Verwaltungssystem
+    scm_type: Projektarchiv Typ
+    scm_types:
+      local: Verknüpfen von vorhandenen lokalen Projektarchiven
+      existing: Verknüpfung existierender Projekarchive
+      managed: Neues Projektarchiv in OpenProject erstellen
+    update_settings_successful: Die Einstellungen wurden erfolgreich gespeichert.
+    url: URL zum Projektarchiv
+    subversion:
+      existing_title: Vorhandenes Subversion Projektarchiv
+      existing_introduction: Wenn Sie ein lokales Subversion Verzeichnis haben, können
+        Sie es mit OpenProject verknüpfen um von innerhalb der Anwendung auf dieses
+        zuzugreifen.
+      instructions:
+        managed_url: Dies ist die URL des verwalteten (lokalen) Subversion Projektarchivs.
+        url: 'Geben Sie die URL des Projektarchivs ein. Dies kann entweder ein lokales
+          Projektarchiv (beginnend mit %{local_proto}) oder ein externes Projektarchiv
+          sein. Die folgenden URL-Schemata werden unterstützt:'
+      managed_title: Subversion Projektarchiv in OpenProject integriert
+      managed_introduction: Lassen Sie OpenProject automatisch ein lokales Subversion
+        Projektarchiv erstellen und integrieren.
+      managed_url: Verwaltete URL
+      password: Projektarchiv-Passwort
+      username: Projektarchiv-Nutzername
   search_input_placeholder: Suche ...
   setting_activity_days_default: Anzahl Tage pro Seite der Projekt-Aktivität
   setting_app_subtitle: Applikations-Untertitel
@@ -1312,9 +1388,9 @@ de:
   setting_autologin: Automatische Anmeldung
   setting_available_languages: Verfügbare Sprachen
   setting_bcc_recipients: E-Mails als Blindkopie (BCC) senden
-  setting_brute_force_block_after_failed_logins: Block user after this number of failed
-    login attempts
-  setting_brute_force_block_minutes: Time the user is blocked for
+  setting_brute_force_block_after_failed_logins: Sperre Benutzer nach dieser Anzahl
+    fehlgeschlagener Loginversuche
+  setting_brute_force_block_minutes: Sperre Benutzer für Dauer von
   setting_cache_formatted_text: Formatierten Text im Cache speichern
   setting_column_options: Anpassen der Darstellung der Arbeitspaketlisten
   setting_commit_fix_keywords: Schlüsselwörter (Status)
@@ -1351,12 +1427,15 @@ de:
   setting_work_package_startdate_is_adddate: Neue Arbeitspakete haben "Heute" als
     Anfangsdatum
   setting_work_packages_export_limit: Max. Anzahl Arbeitspakete bei CSV/PDF-Export
-  setting_journal_aggregation_time_minutes: Display journals as aggregated within
+  setting_journal_aggregation_time_minutes: Zeit um Änderungen zusammenzufassen
   setting_log_requesting_user: Logge Benutzer Login, Name und Mailadresse für alle
     Anfragen
   setting_login_required: Authentifizierung erforderlich
   setting_mail_from: E-Mail-Absender
-  setting_mail_handler_api_enabled: Abruf eingehender E-Mails aktivieren
+  setting_mail_handler_api_enabled: Web-Service für eingehende E-Mails aktivieren
+  setting_mail_handler_api_description: Der E-Mail Web-Service erlaubt es OpenProject,
+    E-Mails mit speziellen Anweisungen zu erhalten und darauf zu reagieren (z.B. zum
+    Anlegen und Aktualisieren von Arbeitspaketen).
   setting_mail_handler_api_key: API-Schlüssel
   setting_mail_handler_body_delimiters: Schneide E-Mails nach einer dieser Zeilen
     ab
@@ -1365,7 +1444,8 @@ de:
   setting_password_active_rules: Aktive Zeichenklassen
   setting_password_count_former_banned: Anzahl zuletzt benutzter Passwörter, die nicht
     wiederverwendet werden dürfen
-  setting_password_days_valid: Number of days, after which to enforce a password change
+  setting_password_days_valid: Anzahl von Tagen, nach denen ein Passwortwechsel erzwungen
+    wird
   setting_password_min_length: Minimale Länge
   setting_password_min_adhered_rules: Mindestanzahl zu verwendender Zeichenklassen
   setting_per_page_options: Objekte pro Seite
@@ -1383,7 +1463,9 @@ de:
   setting_session_ttl_hint: Wert kleiner 5 wirkt wie ausgeschaltet
   setting_session_ttl_enabled: Session läuft ab
   setting_start_of_week: Wochenanfang
-  setting_sys_api_enabled: Webservice zur Verwaltung der Projektarchive benutzen
+  setting_sys_api_enabled: Den Web-Service zur Projektarchiv-Verwaltung aktivieren
+  setting_sys_api_description: Der Web-Service für Projektarchiv-Verwaltung erlaubt
+    Integration und Nutzer-Autorisierung für den Zugriff auf Projektarchive.
   setting_text_formatting: Textformatierung
   setting_time_format: Zeitformat
   setting_ui_theme: Stil
@@ -1431,8 +1513,9 @@ de:
   text_enumeration_category_reassign_to: 'Die Objekte statt dessen diesem Wert zuordnen:'
   text_enumeration_destroy_question: "%{count} Objekt(e) sind diesem Wert zugeordnet."
   text_file_repository_writable: Verzeichnis für Dateien beschreibbar
-  text_git_repo_example: ein freigegebenes,lokales Repository (z.B. /gitrepo, c:\gitrepo)
-  text_hint_disable_with_0: 'Note: Disable with 0'
+  text_git_repo_example: ein freigegebenes, lokales Projektarchiv (z.B. /gitrepo,
+    c:\gitrepo)
+  text_hint_disable_with_0: 'Hinweis: Deaktivieren mit 0'
   text_work_package_added: Arbeitspaket %{id} wurde erstellt von %{author}.
   text_work_package_category_destroy_assignments: Kategorie-Zuordnung entfernen
   text_work_package_category_destroy_question: Einige Arbeitspakete (%{count}) sind
@@ -1444,9 +1527,9 @@ de:
   text_work_packages_ref_in_commit_messages: Arbeitspaket-Beziehungen und -Status
     in Commit-Log-Meldungen
   text_journal_added: "%{label} %{value} wurde hinzugefügt"
-  text_journal_aggregation_time_explanation: Combine journals for display if their
-    age difference is less than the specified timespan. This will also delay mail
-    notifications by the same amount of time.
+  text_journal_aggregation_time_explanation: Fasst Änderungen bei der Anzeige zusammen,
+    falls ihr Zeitunterschied weniger als die angegebene Zeitspanne beträgt. Der Versand
+    von Benachrichtigungen wird um die gleiche Zeit verzögert.
   text_journal_changed: "%{label} wurde von %{old} zu %{new} geändert"
   text_journal_changed_no_detail: "%{label} aktualisiert"
   text_journal_changed_with_diff: "%{label} geändert (%{link})"
@@ -1468,8 +1551,10 @@ de:
     Sind Sie sicher, dass Sie dies tun möchten?
   text_plugin_assets_writable: Verzeichnis für Plugin-Assets beschreibbar
   text_powered_by: Powered by %{link}
-  text_project_destroy_confirmation: Sind Sie sicher, dass sie das Projekt löschen
-    wollen?
+  text_project_destroy_title: Wollen Sie dieses Produkt wirklich löschen?
+  text_project_destroy_confirmation: Wenn Sie fortfahren, werden das Projekt %{identifier}
+    und alle damit zusammenhängenden Daten dauerhaft gelöscht werden. Bestätigen Sie
+    die Eingabe, wenn Sie fortfahren möchten.
   text_project_identifier_info: Kleinbuchstaben (a-z), Ziffern, Binde- und Unterstriche
     erlaubt, muss mit einem Kleinbuchstaben beginnen.
   text_reassign: Neu zuweisen an
@@ -1666,7 +1751,7 @@ de:
       level3: Bis zur dritten Ebene
       level4: Bis zur vierten Ebene
       level5: Bis zur fünften Ebene
-      all: Alle Ebenen anzeigen
+      all: Alle anzeigen
     reporting_for_project:
       show: 'Statusbericht zu Projekt: %{title}'
       edit_delete: 'des Statusberichts zu Projekt: %{title}'

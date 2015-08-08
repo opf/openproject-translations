@@ -55,6 +55,8 @@ hu:
         host: Host
         onthefly: A felhasználó azonnali létrehozása
         port: Port szám
+      changeset:
+        repository: Csomagtároló
       comment:
         commented: Hozzászólás
       custom_field:
@@ -140,6 +142,7 @@ hu:
         hexcode: Hexa kód
       project_association:
         description: Rendben
+        project_b: Dependent project
       project_type:
         allows_association: Elfogadja a hozzárendelést
         name: Név
@@ -169,63 +172,65 @@ hu:
         watcher: Megfigyelő
     errors:
       messages:
-        accepted: El kell fogadni
-        blank: Nem lehet üres
-        cant_link_a_work_package_with_a_descendant: A munkacsomag nem kapcsolódik
-          egyik részfeladathoz sem
-        circular_dependency: Ez a kapcsolat egy körkörös függőséget hoz létre
-        confirmation: Nem egyezik a megerősítés
-        empty: Nem lehet üres
-        equal_to: Egyenlőnek kell lennie %{count}
-        even: Kell még
-        exclusion: Lefoglalt
-        file_too_large: is too large (maximum size is %{count} Bytes)
-        greater_than: Nagyobbnak kell lenni mint %{count}
-        greater_than_or_equal_to: Nagyobbnak  vagy egyenlőnek kell lennie, mint  %{count}
-        smaller_than_or_equal_to_max_length: Kisebbnek kell lennie, mint, vagy egyenlő,
-          maximális hossz
-        greater_than_start_date: Nagyobbnak kell lennie, mint a kezdő dátum
-        inclusion: is not set to one of the allowed values
-        invalid: "Érvénytelen"
-        less_than: Kisebbnek kell lennie, mint %{count}
-        less_than_or_equal_to: Kisebbnek kell lennie, mint, vagy egyenlő, %{count}
-        not_a_date: Nem dátum
-        not_a_number: Nem szám
-        not_an_integer: Nem egész szám
-        not_same_project: Nem tartozik ugyanahhoz a projekthez
-        odd: páratlannak kell lennie
-        taken: Már foglalt
-        too_long: Túl hosszú (maximum is %{count} characters)
-        too_short: Túl rövid (minimum is %{count} characters)
-        wrong_length: Rossz hosszúságú (legyen  %{count}  karakter)
-        after: Későbbinek kell lennie, mint  %{date}
-        after_or_equal_to: Későbbinek  vagy azzal egyenlőnek kell lennie, mint  %{date}
-        before: Korábbinak kell lennie, mint %{date}
-        before_or_equal_to: Korábbinak  vagy azzal egyenlőnek kell lennie, mint  %{date}
-        could_not_be_copied: Nem lehetett teljes mértékben másolni
+        accepted: must be accepted.
+        blank: can't be blank.
+        cant_link_a_work_package_with_a_descendant: A work package cannot be linked
+          to one of its subtasks.
+        circular_dependency: This relation would create a circular dependency.
+        confirmation: doesn't match confirmation.
+        empty: can't be empty.
+        equal_to: must be equal to %{count}.
+        even: must be even.
+        exclusion: is reserved.
+        file_too_large: is too large (maximum size is %{count} Bytes).
+        greater_than: must be greater than %{count}.
+        greater_than_or_equal_to: must be greater than or equal to %{count}.
+        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
+          length.
+        greater_than_start_date: must be greater than start date.
+        inclusion: is not set to one of the allowed values.
+        invalid: is invalid.
+        less_than: must be less than %{count}.
+        less_than_or_equal_to: must be less than or equal to %{count}.
+        not_a_date: is not a date.
+        not_a_number: is not a number.
+        not_an_integer: is not an integer.
+        not_same_project: doesn't belong to the same project.
+        odd: must be odd.
+        taken: has already been taken.
+        too_long: is too long (maximum is %{count} characters).
+        too_short: is too short (minimum is %{count} characters).
+        wrong_length: is the wrong length (should be %{count} characters).
+        after: must be after %{date}.
+        after_or_equal_to: must be after or equal to %{date}.
+        before: must be before %{date}.
+        before_or_equal_to: must be before or equal to %{date}.
+        could_not_be_copied: could not be (fully) copied.
       models:
         project_association:
-          identical_projects: Nem lehet létrehozni egy projektet önmagába
-          project_association_not_allowed: Nem elfogadott a hozzárendelés
+          identical_projects: Dependency cannot be created between one project and
+            itself.
+          project_association_not_allowed: does not allow associations.
         repository:
-          not_whitelisted: is not allowed by the configuration
-          no_directory: is not a directory
+          not_whitelisted: is not allowed by the configuration.
+          no_directory: is not a directory.
         work_package:
           is_not_a_valid_target_for_time_entries: 'A  #%{id} munkacsomag nem érvényes
             cél az idő bejegyzések ismételt hozzárendeléséhez.'
           attributes:
             due_date:
-              not_start_date: Nincs kezdő dátum, ez szükséges a fordulóponthoz
+              not_start_date: is not on start date, although this is required for
+                milestones.
             parent_id:
-              cannot_be_milestone: Nem lehet fordulópont
-              cannot_be_in_another_project: Nem lehet egy másik projektben
-              not_a_valid_parent: "Érvénytelen"
-              does_not_exist: Nem létezik
+              cannot_be_milestone: cannot be a milestone.
+              cannot_be_in_another_project: cannot be in another project.
+              not_a_valid_parent: is invalid.
+              does_not_exist: does not exist.
             status_id:
               status_transition_invalid: is invalid because no valid transition exists
-                from old to new status for the current user's roles
+                from old to new status for the current user's roles.
             priority_id:
-              only_active_priorities_allowed: Aktívnak kell lenni
+              only_active_priorities_allowed: needs to be active.
             category:
               only_same_project_categories_allowed: The category of a work package
                 must be within the same project as the work package.
@@ -236,8 +241,8 @@ hu:
         user:
           attributes:
             password:
-              weak: 'Az alábbi karaktereket tartalmaznia kell a következők szerint  (legalább
-                %{min_count} of %{all_count}): %{rules}'
+              weak: 'must contain characters of the following classes (at least %{min_count}
+                of %{all_count}): %{rules}.'
               lowercase: Kisbetű (pl. 'a')
               uppercase: Nagybetű (pl. 'A')
               numeric: Szám (pl. '1')
@@ -292,7 +297,7 @@ hu:
     attachments: Csatolmány
     author: Szerző
     base: "Általános hiba:"
-    blocks_ids: Blokkok
+    blocks_ids: IDs of blocked work packages
     category: Kategória
     comment: Vélemény
     comments: Vélemény
@@ -599,8 +604,8 @@ hu:
   error_scm_command_failed: 'Hiba mikor kipróbáláshoz el akarja érni a repository:
     %{value}'
   error_scm_not_found: A bejegyzés vagy a revízió  a csomagtárolóban  nem található.
-  error_unable_delete_status: Unable to delete work package status because it contains
-    work packages.
+  error_unable_delete_status: The work package status cannot be deleted since it is
+    used by at least one work package.
   error_unable_delete_default_status: Nem tudom törtölni az alapértelmezett munkacsomag
     állapotát. Kérjük, válasszon egy másik alapértelmezett munka csomag állapotot,
     mielött ezt törli.
@@ -765,7 +770,6 @@ hu:
   label_feeds_access_key_created_on: 'RSS-hozzáférési kulcs készítette: %{value} ezelőtt '
   label_file_added: Fájl hozzáadva
   label_file_plural: Fájlok
-  label_filesystem_path: Gyökérkönyvtár
   label_filter_add: Szűrő hozzáadása
   label_filter_plural: Szürő
   label_float: Mozgó
@@ -807,7 +811,7 @@ hu:
   label_work_package_status_plural: A munkacsomag állapotai
   label_work_package_tracking: A munkacsomag nyomon követése
   label_work_package_updated: Frissült a munkacsomag
-  label_work_package_view_all: Minden munkacsomag megtekintése
+  label_work_package_view_all: Minden munkacsomagot megtekintése
   label_work_package_view_all_assigned_to_me: A hozzám rendelt valamennyi munkacsomag
     megtekintése
   label_work_package_view_all_reported_by_me: Az összes munkacsomag megtekintése az
@@ -889,7 +893,7 @@ hu:
   label_options: Beállítások
   label_overall_activity: "Általános tevékenység"
   label_overall_spent_time: Teljes eltöltött idő
-  label_overview: "Áttekintés"
+  label_overview: "Áttekintő"
   label_password_lost: Elfelejtetted a jelszavad?
   label_password_rule_lowercase: Kisbetűk
   label_password_rule_numeric: Numerikus karakterek
@@ -1280,12 +1284,82 @@ hu:
   project_module_news: Hírek
   project_module_repository: Csomagtároló
   project_module_time_tracking: Követési idő
-  project_module_timelines: Timelines
+  project_module_timelines: Idővonalak
   project_module_wiki: Wiki
   query_fields:
     assigned_to_role: Hozzárendelt szerepkör
     member_of_group: Hozzárendelt csoport
     subproject_id: Alprojekt
+  repositories:
+    checkout_instructions: Checkout instructions
+    create_managed_delay: 'Please note: The repository is managed, it is created asynchronously
+      on the disk and will be available shortly.'
+    create_successful: The repository has been registered.
+    delete_sucessful: The repository has been deleted.
+    destroy:
+      title: Are you absolutely sure?
+      managed_text: If you continue, this will permanently delete the managed repository
+        of %{project_name}. This action cannot be reverted.
+      managed_path_note: 'The following directory will be erased: %{path}'
+      linked_text: |
+        You're about to remove the linked repository %{url} from the project %{project_name}.
+        Note: This will NOT delete the contents of this repository, as it is not managed by OpenProject.
+    errors:
+      build_failed: Unable to create the repository with the selected configuration.
+        %{reason}
+      empty_repository: The repository exists, but is empty. It does not contain any
+        revisions yet.
+      exists_on_filesystem: The repository directory exists already on filesystem.
+      filesystem_access_failed: 'An error occurred while creating the repository on
+        filesystem: %{message}.'
+      not_manageable: This repository vendor cannot be managed by OpenProject.
+      path_permission_failed: 'An error occurred trying to create the following path:
+        %{path}. Please ensure that OpenProject may write to that folder.'
+      unauthorized: You're not authorized to access the repository or the credentials
+        are invalid.
+      unavailable: The repository is unavailable.
+      exception_title: 'Cannot access the repository: %{message}'
+      disabled_or_unknown_type: The selected type %{type} is disabled or no longer
+        available for the SCM vendor %{vendor}.
+      disabled_or_unknown_vendor: The SCM vendor %{vendor} is disabled or no longer
+        available.
+    git:
+      instructions:
+        managed_url: This is the URL of the managed (local) Git repository.
+        path: Specify the path to your local Git repository ( e.g., %{example_path}
+          ).
+      local_title: Link existing local Git repository
+      local_introduction: If you have an existing local Git repository, you can link
+        it with OpenProject to access it from within the application.
+      managed_path: Managed Git path (preview)
+      managed_introduction: Let OpenProject create and integrate a local Git repository
+        automatically.
+      managed_title: Git repository integrated into OpenProject
+      path: Path to Git repository
+    go_to_revision: Go to revision
+    scm_vendor: Source control management system
+    scm_type: Repository type
+    scm_types:
+      local: Link existing local repository
+      existing: Link existing repository
+      managed: Create new repository in OpenProject
+    update_settings_successful: The settings have been sucessfully saved.
+    url: URL to repository
+    subversion:
+      existing_title: Existing Subversion repository
+      existing_introduction: If you have an existing Subversion repository, you can
+        link it with OpenProject to access it from within the application.
+      instructions:
+        managed_url: This is the URL of the managed (local) Subversion repository.
+        url: |
+          Enter the repository URL. This may either target a local repository (starting with %{local_proto} ), or a remote repository.
+          The following URL schemes are supported:
+      managed_title: Subversion repository integrated into OpenProject
+      managed_introduction: Let OpenProject create and integrate a local Subversion
+        repository automatically.
+      managed_url: Managed URL
+      password: Repository Password
+      username: Repository username
   search_input_placeholder: keresés ...
   setting_activity_days_default: A napok megjelenitése a projekttevékenységben
   setting_app_subtitle: Alkalmazás felirat
@@ -1340,7 +1414,10 @@ hu:
     minden lekéréshez
   setting_login_required: Hitelesítés szükséges
   setting_mail_from: Kibocsátási e-mail cím
-  setting_mail_handler_api_enabled: WS engedélyezése a bejövő e-maileknek
+  setting_mail_handler_api_enabled: Enable incoming email web service
+  setting_mail_handler_api_description: The email web handler enables OpenProject
+    to receive emails containing specific commands as an instrumentation mechanism
+    (e.g., to create and update work packages).
   setting_mail_handler_api_key: API-kulcs
   setting_mail_handler_body_delimiters: E-mailek csonkolása e sorok után
   setting_new_project_user_role_id: Szerepkör a  nem admin felhasználónak, aki létrehoz
@@ -1366,7 +1443,9 @@ hu:
   setting_session_ttl_hint: "Érték alatt 5 működik, mint a letiltott"
   setting_session_ttl_enabled: A munkamenet lejárt
   setting_start_of_week: Ezzel a nappal kezdődjön a naptár
-  setting_sys_api_enabled: WS engedélyezése a tároló kezelésben
+  setting_sys_api_enabled: Enable repository management web service
+  setting_sys_api_description: The repository management web service provides integration
+    and user authorization for accessing repositories.
   setting_text_formatting: Szövegformázás
   setting_time_format: Időformátum
   setting_ui_theme: Téma
@@ -1454,8 +1533,10 @@ hu:
     projektet. Biztosan folytatni kívánja?"
   text_plugin_assets_writable: Plugin eszközök könyvtára írható
   text_powered_by: Készítette %{link}
-  text_project_destroy_confirmation: Biztosan törli ezt a projektet és a hozzá kapcsolódó
-    adatokat?
+  text_project_destroy_title: Do you really want to delete this project?
+  text_project_destroy_confirmation: If you continue, the project %{identifier} and
+    all related data will be permanently destroyed. Please check the box below if
+    you want to continue.
   text_project_identifier_info: Csak kisbetű (a-z), számok, kötőjelek és aláhúzásjelek
     van engedélyezve, és kisbetűvel kell kezdődnie.
   text_reassign: Ismételt hozzárendelése

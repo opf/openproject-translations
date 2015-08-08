@@ -50,6 +50,8 @@ th:
         host: "โฮสต์"
         onthefly: "การสร้างผู้ใช้อย่างรวดเร็ว"
         port: "พอร์ต"
+      changeset:
+        repository: "ที่เก็บ"
       comment:
         commented: "แสดงความเห็น"
       custom_field:
@@ -134,6 +136,7 @@ th:
         hexcode: Hex code
       project_association:
         description: "สาเหตุ"
+        project_b: Dependent project
       project_type:
         allows_association: "อนุญาตให้เกี่ยวข้อง"
         name: "ชื่อ"
@@ -163,60 +166,64 @@ th:
         watcher: "ผู้ดูข้อมูล"
     errors:
       messages:
-        accepted: "ต้องยอมรับ"
-        blank: "ไม่สามารถเว้นว่าง"
-        cant_link_a_work_package_with_a_descendant: "ไม่สามารถเชื่อมโยงชุดภารกิจกับงานย่อยได้"
-        circular_dependency: "ความสัมพันธ์นี้จะสร้างการอ้างอิงเป็นวัฎจักร"
-        confirmation: "ไม่ตรงกับใบรับรอง"
-        empty: "ไม่สามารถเว้นว่าง"
-        equal_to: "ต้องเท่ากับ %{count}"
-        even: "ต้องเท่ากัน"
-        exclusion: "ถูกจองไว้แล้ว"
-        file_too_large: is too large (maximum size is %{count} Bytes)
-        greater_than: "ต้องมีค่ามากกว่า %{count}"
-        greater_than_or_equal_to: "ต้องมีค่ามากกว่าหรือเท่ากับ %{count}"
-        smaller_than_or_equal_to_max_length: "ต้องไม่เกินความยาวสูงสุด"
-        greater_than_start_date: "ต้องเป็นวันที่หลังจากวันเริ่มต้น"
-        inclusion: is not set to one of the allowed values
-        invalid: "ไม่ถูกต้อง"
-        less_than: "ต้องน้อยกว่า %{count}"
-        less_than_or_equal_to: "ต้องน้อยกว่า หรือเท่ากับ %{count}"
-        not_a_date: "ไม่ใช่วันที่"
-        not_a_number: "ไม่ใช่ตัวเลข"
-        not_an_integer: "ไม่เป็นจำนวนเต็ม"
-        not_same_project: "ไม่อยู่ในโครงการเดียวกัน"
-        odd: "ต้องไม่ซ้ำ"
-        taken: "ได้มาแล้ว"
-        too_long: "ยาวเกินไป (ความยาวสูงสุดไม่เกิน %{count} ตัวอักษร)"
-        too_short: "สั้นเกินไป (ขั้นต่ำ %{count} ตัวอักษร)"
-        wrong_length: "มีความยาวตัวอักษรไม่ถูกต้อง (ที่ถูกควรเป็น %{count} ตัวอักษร)"
-        after: "ต้องอยู่หลังจากวันที่ %{date}"
-        after_or_equal_to: "ต้องเป็นวันหลังจาก หรือตรงกับวันที่ %{date}"
-        before: "ต้องเป็นวันก่อนวันที่ %{date}"
-        before_or_equal_to: "ต้องก่อน หรือเท่ากับวันที่ %{date}"
-        could_not_be_copied: "ไม่ควรถูกทำสำเนาทั้งฉบับ"
+        accepted: must be accepted.
+        blank: can't be blank.
+        cant_link_a_work_package_with_a_descendant: A work package cannot be linked
+          to one of its subtasks.
+        circular_dependency: This relation would create a circular dependency.
+        confirmation: doesn't match confirmation.
+        empty: can't be empty.
+        equal_to: must be equal to %{count}.
+        even: must be even.
+        exclusion: is reserved.
+        file_too_large: is too large (maximum size is %{count} Bytes).
+        greater_than: must be greater than %{count}.
+        greater_than_or_equal_to: must be greater than or equal to %{count}.
+        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
+          length.
+        greater_than_start_date: must be greater than start date.
+        inclusion: is not set to one of the allowed values.
+        invalid: is invalid.
+        less_than: must be less than %{count}.
+        less_than_or_equal_to: must be less than or equal to %{count}.
+        not_a_date: is not a date.
+        not_a_number: is not a number.
+        not_an_integer: is not an integer.
+        not_same_project: doesn't belong to the same project.
+        odd: must be odd.
+        taken: has already been taken.
+        too_long: is too long (maximum is %{count} characters).
+        too_short: is too short (minimum is %{count} characters).
+        wrong_length: is the wrong length (should be %{count} characters).
+        after: must be after %{date}.
+        after_or_equal_to: must be after or equal to %{date}.
+        before: must be before %{date}.
+        before_or_equal_to: must be before or equal to %{date}.
+        could_not_be_copied: could not be (fully) copied.
       models:
         project_association:
-          identical_projects: "ไม่สามารถถูกสร้างจากโปรเจคเดียวกัน"
-          project_association_not_allowed: "ไม่อนุญาตให้มีความเกี่ยวข้อง"
+          identical_projects: Dependency cannot be created between one project and
+            itself.
+          project_association_not_allowed: does not allow associations.
         repository:
-          not_whitelisted: is not allowed by the configuration
-          no_directory: is not a directory
+          not_whitelisted: is not allowed by the configuration.
+          no_directory: is not a directory.
         work_package:
           is_not_a_valid_target_for_time_entries: "ชุดภารกิจ #%{id} ไม่ใช่เป้าหมายที่ถูกต้องสำหรับการกำหนดรายการเวลา"
           attributes:
             due_date:
-              not_start_date: "ไม่ตรงกับวันเริ่มต้น แม้ว่าจะจำเป็นสำหรับเหตุการณ์สำคัญ"
+              not_start_date: is not on start date, although this is required for
+                milestones.
             parent_id:
-              cannot_be_milestone: "ไม่สามารถเป็น ไมล์สโตนได้"
-              cannot_be_in_another_project: "ไม่สามารถใช้ในโครงการอื่นได้"
-              not_a_valid_parent: "ไม่ถูกต้อง"
-              does_not_exist: "ไม่พบ"
+              cannot_be_milestone: cannot be a milestone.
+              cannot_be_in_another_project: cannot be in another project.
+              not_a_valid_parent: is invalid.
+              does_not_exist: does not exist.
             status_id:
               status_transition_invalid: is invalid because no valid transition exists
-                from old to new status for the current user's roles
+                from old to new status for the current user's roles.
             priority_id:
-              only_active_priorities_allowed: "จำเป็นต้องเปิดใช้งาน"
+              only_active_priorities_allowed: needs to be active.
             category:
               only_same_project_categories_allowed: The category of a work package
                 must be within the same project as the work package.
@@ -227,8 +234,8 @@ th:
         user:
           attributes:
             password:
-              weak: "ต้องประกอบด้วยอักขระของ class ต่อไปนี้ (อย่างน้อย %{min_count}
-                จากทั้งหมด %{all_count}): %{rules}"
+              weak: 'must contain characters of the following classes (at least %{min_count}
+                of %{all_count}): %{rules}.'
               lowercase: "ตัวพิมพ์เล็ก (เช่น 'a')"
               uppercase: "ตัวพิมพ์ใหญ่ (เช่น ' A')"
               numeric: "ตัวเลข (เช่น ' 1')"
@@ -283,7 +290,7 @@ th:
     attachments: "ไฟล์แนบ"
     author: "ผู้เขียน"
     base: "ข้อผิดพลาดทั่วไป:"
-    blocks_ids: "บล็อก"
+    blocks_ids: IDs of blocked work packages
     category: "ประเภท"
     comment: "ความคิดเห็น"
     comments: "ความคิดเห็น"
@@ -581,10 +588,11 @@ th:
   error_scm_annotate: "ไม่พบรายการ จึงไม่สามารถใส่คำอธิบายประกอบได้"
   error_scm_command_failed: "เกิดข้อผิดพลาดเมื่อพยายามเข้าถึงที่เก็บข้อมูล: %{value}"
   error_scm_not_found: "ไม่พบรายการการปรับปรุงในที่เก็บข้อมูล"
-  error_unable_delete_status: Unable to delete work package status because it contains
-    work packages.
-  error_unable_delete_default_status: "ไม่สามารถลบสถานะตั้งต้นของชุดภารกิจได้ โปรดเลือกสถานะตั้งต้นอื่นๆ
-    ของชุดภารกิจ ก่อนที่จะลบสถานะนี้"
+  error_unable_delete_status: The work package status cannot be deleted since it is
+    used by at least one work package.
+  error_unable_delete_default_status: Unable to delete the default work package status.
+    Please select another default work package status before deleting the current
+    one.
   error_unable_to_connect: "ไม่สามารถเชื่อมต่อ (%{value}) ได้"
   error_workflow_copy_source: "กรุณาเลือกประเภทของแหล่งหรือบทบาท"
   error_workflow_copy_target: "กรุณาเลือกประเภทเป้าหมายและบทบาท"
@@ -743,7 +751,6 @@ th:
   label_feeds_access_key_created_on: "คีย์การเข้าถึง API ซึ่งสร้างเมื่อ %{value} ที่ผ่านมา"
   label_file_added: "ไฟล์ที่เพิ่ม"
   label_file_plural: "ไฟล์"
-  label_filesystem_path: "สารบบเริ่มต้น"
   label_filter_add: "เพิ่มตัวกรอง"
   label_filter_plural: "ตัวกรอง"
   label_float: "ลอย"
@@ -1239,12 +1246,82 @@ th:
   project_module_news: "ข่าวสาร"
   project_module_repository: "ที่เก็บ"
   project_module_time_tracking: "ติดตามเวลาที่ใช้"
-  project_module_timelines: Timelines
+  project_module_timelines: "เส้นเวลา"
   project_module_wiki: "วิกิ"
   query_fields:
     assigned_to_role: "บทบาทของผู้รับผิดชอบ"
     member_of_group: "กลุ่มของผู้รับผิดชอบ"
     subproject_id: "โครงการย่อย"
+  repositories:
+    checkout_instructions: Checkout instructions
+    create_managed_delay: 'Please note: The repository is managed, it is created asynchronously
+      on the disk and will be available shortly.'
+    create_successful: The repository has been registered.
+    delete_sucessful: The repository has been deleted.
+    destroy:
+      title: Are you absolutely sure?
+      managed_text: If you continue, this will permanently delete the managed repository
+        of %{project_name}. This action cannot be reverted.
+      managed_path_note: 'The following directory will be erased: %{path}'
+      linked_text: |
+        You're about to remove the linked repository %{url} from the project %{project_name}.
+        Note: This will NOT delete the contents of this repository, as it is not managed by OpenProject.
+    errors:
+      build_failed: Unable to create the repository with the selected configuration.
+        %{reason}
+      empty_repository: The repository exists, but is empty. It does not contain any
+        revisions yet.
+      exists_on_filesystem: The repository directory exists already on filesystem.
+      filesystem_access_failed: 'An error occurred while creating the repository on
+        filesystem: %{message}.'
+      not_manageable: This repository vendor cannot be managed by OpenProject.
+      path_permission_failed: 'An error occurred trying to create the following path:
+        %{path}. Please ensure that OpenProject may write to that folder.'
+      unauthorized: You're not authorized to access the repository or the credentials
+        are invalid.
+      unavailable: The repository is unavailable.
+      exception_title: 'Cannot access the repository: %{message}'
+      disabled_or_unknown_type: The selected type %{type} is disabled or no longer
+        available for the SCM vendor %{vendor}.
+      disabled_or_unknown_vendor: The SCM vendor %{vendor} is disabled or no longer
+        available.
+    git:
+      instructions:
+        managed_url: This is the URL of the managed (local) Git repository.
+        path: Specify the path to your local Git repository ( e.g., %{example_path}
+          ).
+      local_title: Link existing local Git repository
+      local_introduction: If you have an existing local Git repository, you can link
+        it with OpenProject to access it from within the application.
+      managed_path: Managed Git path (preview)
+      managed_introduction: Let OpenProject create and integrate a local Git repository
+        automatically.
+      managed_title: Git repository integrated into OpenProject
+      path: Path to Git repository
+    go_to_revision: Go to revision
+    scm_vendor: Source control management system
+    scm_type: Repository type
+    scm_types:
+      local: Link existing local repository
+      existing: Link existing repository
+      managed: Create new repository in OpenProject
+    update_settings_successful: The settings have been sucessfully saved.
+    url: URL to repository
+    subversion:
+      existing_title: Existing Subversion repository
+      existing_introduction: If you have an existing Subversion repository, you can
+        link it with OpenProject to access it from within the application.
+      instructions:
+        managed_url: This is the URL of the managed (local) Subversion repository.
+        url: |
+          Enter the repository URL. This may either target a local repository (starting with %{local_proto} ), or a remote repository.
+          The following URL schemes are supported:
+      managed_title: Subversion repository integrated into OpenProject
+      managed_introduction: Let OpenProject create and integrate a local Subversion
+        repository automatically.
+      managed_url: Managed URL
+      password: Repository Password
+      username: Repository username
   search_input_placeholder: "ค้นหา..."
   setting_activity_days_default: "จำนวนวันที่แสดงในกิจกรรมของโครงการ"
   setting_app_subtitle: "หัวข้อย่อยของแอบพลิเคชั่น"
@@ -1295,7 +1372,10 @@ th:
   setting_log_requesting_user: "เก็บข้อมูลการล็อกอิน ชื่อ และอีเมล์ของผู้ใช้สำหรับทุกคำขอ"
   setting_login_required: "จำเป็นต้องระบุตัวตนผู้ใช้"
   setting_mail_from: "การเผยแพร่ที่อยู่อีเมล"
-  setting_mail_handler_api_enabled: "เปิดใช้งาน WS สำหรับอีเมลขาเข้า"
+  setting_mail_handler_api_enabled: Enable incoming email web service
+  setting_mail_handler_api_description: The email web handler enables OpenProject
+    to receive emails containing specific commands as an instrumentation mechanism
+    (e.g., to create and update work packages).
   setting_mail_handler_api_key: "คีย์ API"
   setting_mail_handler_body_delimiters: "ตัดข้อความอีเมลหลังจากเส้นนี้"
   setting_new_project_user_role_id: "บทบาทที่ให้กับผู้ใช้ที่สร้างโครงการ ซึ่งไม่ใช่ผู้ดูแลระบบ "
@@ -1318,7 +1398,9 @@ th:
   setting_session_ttl_hint: "ค่าต่ำกว่า 5 จะทำงานเหมือนกับ การปิดการใช้งาน"
   setting_session_ttl_enabled: "เซสชันหมดอายุ"
   setting_start_of_week: "เริ่มต้นปฏิทินเมื่อ"
-  setting_sys_api_enabled: "เปิดใช้งาน WS สำหรับจัดการเก็บข้อมูล"
+  setting_sys_api_enabled: Enable repository management web service
+  setting_sys_api_description: The repository management web service provides integration
+    and user authorization for accessing repositories.
   setting_text_formatting: "การจัดรูปแบบข้อความ"
   setting_time_format: "รูปแบบเวลา"
   setting_ui_theme: "ชุดรูปแบบ"
@@ -1395,7 +1477,10 @@ th:
     และไม่สามารถแก้ไขโครงการได้หลังจากนั้น \n คุณแน่ใจว่าจะดำเนินการต่อหรือไม่?"
   text_plugin_assets_writable: "สามารถบันทึก ไดเรคทอรี่ของ Plugin asset ได้"
   text_powered_by: "ดำเนินการโดย %{link}"
-  text_project_destroy_confirmation: "คุณแน่ใจหรือไม่ที่จะลบโครงการและข้อมูลที่เกี่ยวข้อง?"
+  text_project_destroy_title: Do you really want to delete this project?
+  text_project_destroy_confirmation: If you continue, the project %{identifier} and
+    all related data will be permanently destroyed. Please check the box below if
+    you want to continue.
   text_project_identifier_info: "ใช้ได้เฉพาะตัวพิมพ์เล็ก (a-z), ตัวเลข เส้นประ และขีดใต้
     โดย ต้องเริ่มต้น ด้วยตัวอักษรพิมพ์เล็กเท่านั้น"
   text_reassign: "มอบหมายใหม่ไปที่"

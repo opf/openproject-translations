@@ -55,6 +55,8 @@ pl:
         host: Host
         onthefly: Tworzenie użytkownika w locie
         port: Port
+      changeset:
+        repository: Repozytorium
       comment:
         commented: Skomentował
       custom_field:
@@ -140,6 +142,7 @@ pl:
         hexcode: Kod szesnastkowy
       project_association:
         description: Przyczyna
+        project_b: Dependent project
       project_type:
         allows_association: Umożliwiaj skojarzenia
         name: Nazwa
@@ -169,64 +172,65 @@ pl:
         watcher: Obserwator
     errors:
       messages:
-        accepted: musi być zaakceptowane
-        blank: nie może być puste
-        cant_link_a_work_package_with_a_descendant: Zadanie nie może być powiązany
-          z jego podzadaniami
-        circular_dependency: Ta relacja może wytworzyć zależność cykliczną
-        confirmation: nie pasuje do potwierdzenia
-        empty: nie może być pusta
-        equal_to: musi być równa %{count}
-        even: musi być parzysty
-        exclusion: jest zarezerwowany
-        file_too_large: is too large (maximum size is %{count} Bytes)
-        greater_than: musi być większa niż %{count}
-        greater_than_or_equal_to: musi być większa lub równa %{count}
-        smaller_than_or_equal_to_max_length: musi być mniejsze lub równe maksymalnej
-          długości
-        greater_than_start_date: musi być większe niż data początkowa
-        inclusion: ma wartość spoza dozwolonych
-        invalid: jest nieprawidłowy
-        less_than: musi być mniejsza niż %{count}
-        less_than_or_equal_to: musi być większa niż %{count}
-        not_a_date: to nie jest data
-        not_a_number: to nie liczba
-        not_an_integer: nie jest liczbą całkowitą
-        not_same_project: nie należą do tego samego projektu
-        odd: musi być nieparzyste
-        taken: zostały już podjęte
-        too_long: jest zbyt długi (maksymalnie %{count} znaków)
-        too_short: jest zbyt krótki (minimum %{count} znaków)
-        wrong_length: ma złą długość (powinno być %{count} znaków)
-        after: musi być po %{date}
-        after_or_equal_to: musi być po lub równe %{date}
-        before: musi być przed %{date}
-        before_or_equal_to: musi być przed lub równe %{date}
-        could_not_be_copied: nie można skopiować (w pełni)
+        accepted: must be accepted.
+        blank: can't be blank.
+        cant_link_a_work_package_with_a_descendant: A work package cannot be linked
+          to one of its subtasks.
+        circular_dependency: This relation would create a circular dependency.
+        confirmation: doesn't match confirmation.
+        empty: can't be empty.
+        equal_to: must be equal to %{count}.
+        even: must be even.
+        exclusion: is reserved.
+        file_too_large: is too large (maximum size is %{count} Bytes).
+        greater_than: must be greater than %{count}.
+        greater_than_or_equal_to: must be greater than or equal to %{count}.
+        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
+          length.
+        greater_than_start_date: must be greater than start date.
+        inclusion: is not set to one of the allowed values.
+        invalid: is invalid.
+        less_than: must be less than %{count}.
+        less_than_or_equal_to: must be less than or equal to %{count}.
+        not_a_date: is not a date.
+        not_a_number: is not a number.
+        not_an_integer: is not an integer.
+        not_same_project: doesn't belong to the same project.
+        odd: must be odd.
+        taken: has already been taken.
+        too_long: is too long (maximum is %{count} characters).
+        too_short: is too short (minimum is %{count} characters).
+        wrong_length: is the wrong length (should be %{count} characters).
+        after: must be after %{date}.
+        after_or_equal_to: must be after or equal to %{date}.
+        before: must be before %{date}.
+        before_or_equal_to: must be before or equal to %{date}.
+        could_not_be_copied: could not be (fully) copied.
       models:
         project_association:
-          identical_projects: nie mogą być tworzone z jednego projektu do siebie
-          project_association_not_allowed: niedozwolone asocjacje
+          identical_projects: Dependency cannot be created between one project and
+            itself.
+          project_association_not_allowed: does not allow associations.
         repository:
-          not_whitelisted: nie jest dozwolone w tej konfiguracji
-          no_directory: nie jest katalogiem
+          not_whitelisted: is not allowed by the configuration.
+          no_directory: is not a directory.
         work_package:
           is_not_a_valid_target_for_time_entries: 'Zadanie #%{id} jest niepoprawnym
             celem do ponownego rozpisania czasu.'
           attributes:
             due_date:
-              not_start_date: nie jest w dniu rozpoczęcia, chociaż jest to wymagane
-                dla kamieni milowych
+              not_start_date: is not on start date, although this is required for
+                milestones.
             parent_id:
-              cannot_be_milestone: nie może być kamieniem milowym
-              cannot_be_in_another_project: nie może być w innym projekcie
-              not_a_valid_parent: jest nieprawidłowy
-              does_not_exist: nie istnieje
+              cannot_be_milestone: cannot be a milestone.
+              cannot_be_in_another_project: cannot be in another project.
+              not_a_valid_parent: is invalid.
+              does_not_exist: does not exist.
             status_id:
-              status_transition_invalid: jest niepoprawny, ponieważ nie istnieje poprawne
-                przejście ze starego do nowego statusu dla aktualnej roli użytkownika
+              status_transition_invalid: is invalid because no valid transition exists
+                from old to new status for the current user's roles.
             priority_id:
-              only_active_priorities_allowed: musi być aktywny
+              only_active_priorities_allowed: needs to be active.
             category:
               only_same_project_categories_allowed: Kategoria zadania musi być taka
                 sama w ramach tego samego projektu.
@@ -237,8 +241,8 @@ pl:
         user:
           attributes:
             password:
-              weak: 'musi zawierać znaków następujących klas (co najmniej %{min_count}
-                z %{all_count}): %{rules}'
+              weak: 'must contain characters of the following classes (at least %{min_count}
+                of %{all_count}): %{rules}.'
               lowercase: małe litery (np. 'a')
               uppercase: wielkie litery (np. 'A')
               numeric: liczbowe (np. 1)
@@ -297,7 +301,7 @@ pl:
     attachments: Załączniki
     author: Autor
     base: 'Błąd ogólny:'
-    blocks_ids: Bloki
+    blocks_ids: IDs of blocked work packages
     category: Kategoria
     comment: Komentarz
     comments: Komentarz
@@ -611,10 +615,11 @@ pl:
   error_scm_command_failed: 'Wystąpił błąd podczas próby dostępu do repozytorium:
     %{value}'
   error_scm_not_found: Nie znaleziono wpisu lub zmiany w repozytorium.
-  error_unable_delete_status: Nie można usunąć statusu zadań, ponieważ istnieją zadania
-    przypisane do niego.
-  error_unable_delete_default_status: Nie można usunąć domyślnego statusu zadania.
-    Proszę wybrać inny status jako domyślny przed usunięcięm obecnego.
+  error_unable_delete_status: The work package status cannot be deleted since it is
+    used by at least one work package.
+  error_unable_delete_default_status: Unable to delete the default work package status.
+    Please select another default work package status before deleting the current
+    one.
   error_unable_to_connect: Nie można połączyć (%{value})
   error_workflow_copy_source: Wybierz typ źródła lub rolę
   error_workflow_copy_target: Wybierz docelowy typ oraz rolę
@@ -776,7 +781,6 @@ pl:
   label_feeds_access_key_created_on: Klucz dostępu RSS utworzony %{value} temu
   label_file_added: Plik dodany
   label_file_plural: Pliki
-  label_filesystem_path: Katalog główny
   label_filter_add: Dodaj filtr
   label_filter_plural: Filtry
   label_float: Liczba rzeczywista
@@ -1299,12 +1303,82 @@ pl:
   project_module_news: Aktualności
   project_module_repository: Repozytorium
   project_module_time_tracking: Zarządzanie czasem
-  project_module_timelines: Timelines
+  project_module_timelines: Terminarz
   project_module_wiki: Wiki
   query_fields:
     assigned_to_role: Przypisany do roli
     member_of_group: Przypisany do grupy
     subproject_id: Podprojekt
+  repositories:
+    checkout_instructions: Checkout instructions
+    create_managed_delay: 'Please note: The repository is managed, it is created asynchronously
+      on the disk and will be available shortly.'
+    create_successful: The repository has been registered.
+    delete_sucessful: The repository has been deleted.
+    destroy:
+      title: Are you absolutely sure?
+      managed_text: If you continue, this will permanently delete the managed repository
+        of %{project_name}. This action cannot be reverted.
+      managed_path_note: 'The following directory will be erased: %{path}'
+      linked_text: |
+        You're about to remove the linked repository %{url} from the project %{project_name}.
+        Note: This will NOT delete the contents of this repository, as it is not managed by OpenProject.
+    errors:
+      build_failed: Unable to create the repository with the selected configuration.
+        %{reason}
+      empty_repository: The repository exists, but is empty. It does not contain any
+        revisions yet.
+      exists_on_filesystem: The repository directory exists already on filesystem.
+      filesystem_access_failed: 'An error occurred while creating the repository on
+        filesystem: %{message}.'
+      not_manageable: This repository vendor cannot be managed by OpenProject.
+      path_permission_failed: 'An error occurred trying to create the following path:
+        %{path}. Please ensure that OpenProject may write to that folder.'
+      unauthorized: You're not authorized to access the repository or the credentials
+        are invalid.
+      unavailable: The repository is unavailable.
+      exception_title: 'Cannot access the repository: %{message}'
+      disabled_or_unknown_type: The selected type %{type} is disabled or no longer
+        available for the SCM vendor %{vendor}.
+      disabled_or_unknown_vendor: The SCM vendor %{vendor} is disabled or no longer
+        available.
+    git:
+      instructions:
+        managed_url: This is the URL of the managed (local) Git repository.
+        path: Specify the path to your local Git repository ( e.g., %{example_path}
+          ).
+      local_title: Link existing local Git repository
+      local_introduction: If you have an existing local Git repository, you can link
+        it with OpenProject to access it from within the application.
+      managed_path: Managed Git path (preview)
+      managed_introduction: Let OpenProject create and integrate a local Git repository
+        automatically.
+      managed_title: Git repository integrated into OpenProject
+      path: Path to Git repository
+    go_to_revision: Go to revision
+    scm_vendor: Source control management system
+    scm_type: Repository type
+    scm_types:
+      local: Link existing local repository
+      existing: Link existing repository
+      managed: Create new repository in OpenProject
+    update_settings_successful: The settings have been sucessfully saved.
+    url: URL to repository
+    subversion:
+      existing_title: Existing Subversion repository
+      existing_introduction: If you have an existing Subversion repository, you can
+        link it with OpenProject to access it from within the application.
+      instructions:
+        managed_url: This is the URL of the managed (local) Subversion repository.
+        url: |
+          Enter the repository URL. This may either target a local repository (starting with %{local_proto} ), or a remote repository.
+          The following URL schemes are supported:
+      managed_title: Subversion repository integrated into OpenProject
+      managed_introduction: Let OpenProject create and integrate a local Subversion
+        repository automatically.
+      managed_url: Managed URL
+      password: Repository Password
+      username: Repository username
   search_input_placeholder: szukaj...
   setting_activity_days_default: Dni wyświetlane w aktywności projektu
   setting_app_subtitle: Podtytuł
@@ -1358,7 +1432,10 @@ pl:
     dla wszystkich żądań
   setting_login_required: Wymagane uwierzytelnienie
   setting_mail_from: Adres emisji
-  setting_mail_handler_api_enabled: Włącz WS dla przychodzących wiadomości e-mail
+  setting_mail_handler_api_enabled: Enable incoming email web service
+  setting_mail_handler_api_description: The email web handler enables OpenProject
+    to receive emails containing specific commands as an instrumentation mechanism
+    (e.g., to create and update work packages).
   setting_mail_handler_api_key: Klucz API
   setting_mail_handler_body_delimiters: Obcinanie e-mail po jednej z tych linii
   setting_new_project_user_role_id: Rola dla użytkownika bez uprawnień administratora,
@@ -1385,7 +1462,9 @@ pl:
   setting_session_ttl_hint: Value below 5 works like disabled
   setting_session_ttl_enabled: Sesja wygasła
   setting_start_of_week: Początek tygodnia od
-  setting_sys_api_enabled: Enable WS for repository management
+  setting_sys_api_enabled: Enable repository management web service
+  setting_sys_api_description: The repository management web service provides integration
+    and user authorization for accessing repositories.
   setting_text_formatting: Formatowanie tekstu
   setting_time_format: Format czasu
   setting_ui_theme: Motyw
@@ -1469,8 +1548,10 @@ pl:
     Czy na pewno chcesz kontynuować?
   text_plugin_assets_writable: Plugin assets directory writable
   text_powered_by: Napędzany przez %{link}
-  text_project_destroy_confirmation: Czy na pewno chcesz usunąć ten projekt i związane
-    z nim dane?
+  text_project_destroy_title: Do you really want to delete this project?
+  text_project_destroy_confirmation: If you continue, the project %{identifier} and
+    all related data will be permanently destroyed. Please check the box below if
+    you want to continue.
   text_project_identifier_info: Tylko małe litery (a-z), cyfry, myślniki i podkreślenia
     są dozwolone, oraz musi zaczynać się małą literą.
   text_reassign: Przypisz do
