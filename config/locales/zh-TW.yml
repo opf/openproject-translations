@@ -37,6 +37,8 @@ zh-TW:
         host: "主機"
         onthefly: "快速建立使用者"
         port: "埠"
+      changeset:
+        repository: Repository
       comment:
         commented: "已評論"
       custom_field:
@@ -121,6 +123,7 @@ zh-TW:
         hexcode: "十六進位碼"
       project_association:
         description: "原因"
+        project_b: Dependent project
       project_type:
         allows_association: "允許建立關聯"
         name: "名稱"
@@ -150,63 +153,65 @@ zh-TW:
         watcher: "監看者"
     errors:
       messages:
-        accepted: "必須接受"
-        blank: "不能空白"
-        cant_link_a_work_package_with_a_descendant: "一項工作項目不能連結到一個子任務"
-        circular_dependency: This relation would create a circular dependency
-        confirmation: "密碼兩次填寫不同"
-        empty: "不能為空"
-        equal_to: "必須等於 %{count}"
-        even: "必須是偶數"
-        exclusion: "已經被預定"
-        file_too_large: is too large (maximum size is %{count} Bytes)
-        greater_than: "必須大於 %{count}"
-        greater_than_or_equal_to: "必須大於或等於 %{count}"
-        smaller_than_or_equal_to_max_length: "必須小於或等於最大長度"
-        greater_than_start_date: "必須大於開始日期"
-        inclusion: is not set to one of the allowed values
-        invalid: "無效。 "
-        less_than: "必須小於 %{count}"
-        less_than_or_equal_to: "必須小於或等於 %{count}"
-        not_a_date: "不是一個日期"
-        not_a_number: "不是一個數值"
-        not_an_integer: "不是一個整數"
-        not_same_project: "不屬於同一個專案"
-        odd: "必須是奇數"
-        taken: "已經被使用"
-        too_long: "太長 （最大值是 %{count} 個字元）"
-        too_short: "太短 (最小值是 %{count} 個字元)"
-        wrong_length: "長度不正確（應該是 %{count} 個字元）"
-        after: "必須在 %{date} 之後 "
-        after_or_equal_to: "必須之後或等於 %{日期}"
-        before: "必須在 %{date} 前 "
-        before_or_equal_to: "必須之前或等於 %{日期}"
-        could_not_be_copied: "不能 (完全) 複製"
+        accepted: must be accepted.
+        blank: can't be blank.
+        cant_link_a_work_package_with_a_descendant: A work package cannot be linked
+          to one of its subtasks.
+        circular_dependency: This relation would create a circular dependency.
+        confirmation: doesn't match confirmation.
+        empty: can't be empty.
+        equal_to: must be equal to %{count}.
+        even: must be even.
+        exclusion: is reserved.
+        file_too_large: is too large (maximum size is %{count} Bytes).
+        greater_than: must be greater than %{count}.
+        greater_than_or_equal_to: must be greater than or equal to %{count}.
+        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
+          length.
+        greater_than_start_date: must be greater than start date.
+        inclusion: is not set to one of the allowed values.
+        invalid: is invalid.
+        less_than: must be less than %{count}.
+        less_than_or_equal_to: must be less than or equal to %{count}.
+        not_a_date: is not a date.
+        not_a_number: is not a number.
+        not_an_integer: is not an integer.
+        not_same_project: doesn't belong to the same project.
+        odd: must be odd.
+        taken: has already been taken.
+        too_long: is too long (maximum is %{count} characters).
+        too_short: is too short (minimum is %{count} characters).
+        wrong_length: is the wrong length (should be %{count} characters).
+        after: must be after %{date}.
+        after_or_equal_to: must be after or equal to %{date}.
+        before: must be before %{date}.
+        before_or_equal_to: must be before or equal to %{date}.
+        could_not_be_copied: could not be (fully) copied.
       models:
         project_association:
-          identical_projects: "不能在專案本身建立"
-          project_association_not_allowed: "不允許建立關聯"
+          identical_projects: Dependency cannot be created between one project and
+            itself.
+          project_association_not_allowed: does not allow associations.
         repository:
-          not_whitelisted: is not allowed by the configuration
-          no_directory: is not a directory
+          not_whitelisted: is not allowed by the configuration.
+          no_directory: is not a directory.
         work_package:
           is_not_a_valid_target_for_time_entries: 'Work package #%{id} is not a valid
             target for reassigning the time entries.'
           attributes:
             due_date:
               not_start_date: is not on start date, although this is required for
-                milestones
+                milestones.
             parent_id:
-              cannot_be_milestone: "不能成為一個里程碑"
-              cannot_be_in_another_project: "不能在另一個專案中"
-              not_a_valid_parent: "無效。 "
-              does_not_exist: "不存在"
+              cannot_be_milestone: cannot be a milestone.
+              cannot_be_in_another_project: cannot be in another project.
+              not_a_valid_parent: is invalid.
+              does_not_exist: does not exist.
             status_id:
-              status_transition_invalid: |
-                is invalid because no valid transition exists from old to new status for the current user's roles
-                無效，因為目前的角色並未被定義可以從目前的狀態轉移到新的狀態
+              status_transition_invalid: is invalid because no valid transition exists
+                from old to new status for the current user's roles.
             priority_id:
-              only_active_priorities_allowed: "必須是啟用的"
+              only_active_priorities_allowed: needs to be active.
             category:
               only_same_project_categories_allowed: The category of a work package
                 must be within the same project as the work package.
@@ -218,7 +223,7 @@ zh-TW:
           attributes:
             password:
               weak: 'must contain characters of the following classes (at least %{min_count}
-                of %{all_count}): %{rules}'
+                of %{all_count}): %{rules}.'
               lowercase: "小寫（例如：「a」）"
               uppercase: "大寫（例如：「Ａ」）"
               numeric: "數字（例如：「1」）"
@@ -273,7 +278,7 @@ zh-TW:
     attachments: "附加檔"
     author: "作者"
     base: "一般錯誤:"
-    blocks_ids: "區塊"
+    blocks_ids: IDs of blocked work packages
     category: "類別"
     comment: "評論"
     comments: "評論"
@@ -570,9 +575,9 @@ zh-TW:
   error_scm_command_failed: 'An error occurred when trying to access the repository:
     %{value}'
   error_scm_not_found: The entry or revision was not found in the repository.
-  error_unable_delete_status: Unable to delete work package status because it contains
-    work packages.
-  error_unable_delete_default_status: Unable to delete default work package status.
+  error_unable_delete_status: The work package status cannot be deleted since it is
+    used by at least one work package.
+  error_unable_delete_default_status: Unable to delete the default work package status.
     Please select another default work package status before deleting the current
     one.
   error_unable_to_connect: "無法連接 (%{value})"
@@ -734,7 +739,6 @@ zh-TW:
   label_feeds_access_key_created_on: RSS access key created %{value} ago
   label_file_added: "檔案已新增"
   label_file_plural: "檔案"
-  label_filesystem_path: "根目錄"
   label_filter_add: "新增篩選器"
   label_filter_plural: "篩選器"
   label_float: "浮點數"
@@ -1212,7 +1216,7 @@ zh-TW:
   permission_manage_subtasks: Manage subtasks
   permission_manage_versions: "管理版本"
   permission_manage_wiki: "管理維基"
-  permission_manage_wiki_menu: "管理維基選單"
+  permission_manage_wiki_menu: "管理維基"
   permission_move_work_packages: "移動工作項目"
   permission_protect_wiki_pages: "專案維基頁面"
   permission_rename_wiki_pages: "重新命名維基頁面"
@@ -1238,12 +1242,82 @@ zh-TW:
   project_module_news: "新知"
   project_module_repository: Repository
   project_module_time_tracking: Time tracking
-  project_module_timelines: Timelines
+  project_module_timelines: "時間軸"
   project_module_wiki: "維基"
   query_fields:
     assigned_to_role: "負責執行者的角色"
     member_of_group: "負責執行者的群組"
     subproject_id: "子專案"
+  repositories:
+    checkout_instructions: Checkout instructions
+    create_managed_delay: 'Please note: The repository is managed, it is created asynchronously
+      on the disk and will be available shortly.'
+    create_successful: The repository has been registered.
+    delete_sucessful: The repository has been deleted.
+    destroy:
+      title: Are you absolutely sure?
+      managed_text: If you continue, this will permanently delete the managed repository
+        of %{project_name}. This action cannot be reverted.
+      managed_path_note: 'The following directory will be erased: %{path}'
+      linked_text: |
+        You're about to remove the linked repository %{url} from the project %{project_name}.
+        Note: This will NOT delete the contents of this repository, as it is not managed by OpenProject.
+    errors:
+      build_failed: Unable to create the repository with the selected configuration.
+        %{reason}
+      empty_repository: The repository exists, but is empty. It does not contain any
+        revisions yet.
+      exists_on_filesystem: The repository directory exists already on filesystem.
+      filesystem_access_failed: 'An error occurred while creating the repository on
+        filesystem: %{message}.'
+      not_manageable: This repository vendor cannot be managed by OpenProject.
+      path_permission_failed: 'An error occurred trying to create the following path:
+        %{path}. Please ensure that OpenProject may write to that folder.'
+      unauthorized: You're not authorized to access the repository or the credentials
+        are invalid.
+      unavailable: The repository is unavailable.
+      exception_title: 'Cannot access the repository: %{message}'
+      disabled_or_unknown_type: The selected type %{type} is disabled or no longer
+        available for the SCM vendor %{vendor}.
+      disabled_or_unknown_vendor: The SCM vendor %{vendor} is disabled or no longer
+        available.
+    git:
+      instructions:
+        managed_url: This is the URL of the managed (local) Git repository.
+        path: Specify the path to your local Git repository ( e.g., %{example_path}
+          ).
+      local_title: Link existing local Git repository
+      local_introduction: If you have an existing local Git repository, you can link
+        it with OpenProject to access it from within the application.
+      managed_path: Managed Git path (preview)
+      managed_introduction: Let OpenProject create and integrate a local Git repository
+        automatically.
+      managed_title: Git repository integrated into OpenProject
+      path: Path to Git repository
+    go_to_revision: Go to revision
+    scm_vendor: Source control management system
+    scm_type: Repository type
+    scm_types:
+      local: Link existing local repository
+      existing: Link existing repository
+      managed: Create new repository in OpenProject
+    update_settings_successful: The settings have been sucessfully saved.
+    url: URL to repository
+    subversion:
+      existing_title: Existing Subversion repository
+      existing_introduction: If you have an existing Subversion repository, you can
+        link it with OpenProject to access it from within the application.
+      instructions:
+        managed_url: This is the URL of the managed (local) Subversion repository.
+        url: |
+          Enter the repository URL. This may either target a local repository (starting with %{local_proto} ), or a remote repository.
+          The following URL schemes are supported:
+      managed_title: Subversion repository integrated into OpenProject
+      managed_introduction: Let OpenProject create and integrate a local Subversion
+        repository automatically.
+      managed_url: Managed URL
+      password: Repository Password
+      username: Repository username
   search_input_placeholder: search ...
   setting_activity_days_default: Days displayed on project activity
   setting_app_subtitle: Application subtitle
@@ -1294,7 +1368,10 @@ zh-TW:
   setting_log_requesting_user: Log user login, name, and mail address for all requests
   setting_login_required: "需要身份驗證"
   setting_mail_from: Emission email address
-  setting_mail_handler_api_enabled: Enable WS for incoming emails
+  setting_mail_handler_api_enabled: Enable incoming email web service
+  setting_mail_handler_api_description: The email web handler enables OpenProject
+    to receive emails containing specific commands as an instrumentation mechanism
+    (e.g., to create and update work packages).
   setting_mail_handler_api_key: API key
   setting_mail_handler_body_delimiters: Truncate emails after one of these lines
   setting_new_project_user_role_id: Role given to a non-admin user who creates a project
@@ -1319,7 +1396,9 @@ zh-TW:
   setting_session_ttl_hint: Value below 5 works like disabled
   setting_session_ttl_enabled: "連線逾時"
   setting_start_of_week: "行事曆始於"
-  setting_sys_api_enabled: Enable WS for repository management
+  setting_sys_api_enabled: Enable repository management web service
+  setting_sys_api_description: The repository management web service provides integration
+    and user authorization for accessing repositories.
   setting_text_formatting: Text formatting
   setting_time_format: "時間格式"
   setting_ui_theme: "佈景主題"
@@ -1402,8 +1481,10 @@ zh-TW:
     Are you sure you want to continue?
   text_plugin_assets_writable: Plugin assets directory writable
   text_powered_by: Powered by %{link}
-  text_project_destroy_confirmation: Are you sure you want to delete this project
-    and related data?
+  text_project_destroy_title: Do you really want to delete this project?
+  text_project_destroy_confirmation: If you continue, the project %{identifier} and
+    all related data will be permanently destroyed. Please check the box below if
+    you want to continue.
   text_project_identifier_info: Only lower case letters (a-z), numbers, dashes and
     underscores are allowed, must start with a lower case letter.
   text_reassign: "重新分配給"
@@ -1706,7 +1787,8 @@ zh-TW:
       code_409: |
         Couldn't update the resource because of conflicting modifications.
         因為修改的衝突，所以無法更新這個資源。
-      invalid_content_type: "預期得到 '%{content_type}' 的內容類型，但得到了 '%{actual}'。"
+      invalid_content_type: Expected CONTENT-TYPE to be '%{content_type}' but got
+        '%{actual}'.
       invalid_format: 'Invalid format for property ''%{property}'': Expected format
         like ''%{expected_format}'', but got ''%{actual}''.'
       invalid_json: The request could not be parsed as JSON.
