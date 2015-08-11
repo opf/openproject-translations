@@ -194,21 +194,8 @@ namespace :translations do
     Dir.chdir target_path do
       system "git checkout #{branch}"
 
-      # update Gemfile.lock
-      # Calling 'bundle update openproject-translations' would also try to
-      # update Sprockets and that fails.
-      # So I comment it out, bundle, uncomment it and bundle again.
-      # This way only OpenProject-Translations gets updated.
-      # Maybe we can refactor this when the reference to Sprockets is fixed.
-      system 'cp Gemfile Gemfile.old'
-      system "sed '/openproject-translations/ s/^/#/' Gemfile > Gemfile.copy"
-      system 'mv Gemfile.copy Gemfile'
       Bundler.with_clean_env do
-        system 'bundle install'
-      end
-      system 'mv Gemfile.old Gemfile'
-      Bundler.with_clean_env do
-        system 'bundle install'
+        system 'bundle update --source openproject-translations'
       end
 
       system 'git add Gemfile.lock'
