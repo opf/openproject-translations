@@ -14,14 +14,14 @@ it:
           Visto che i dati di ogni account eliminato vengono anch'essi riassegnati
           a questo account, non sarà possibile distinguere i dati creati dall'utente
           dai dati di un altro account eliminato.
-        self: I dati creati dalla tua attività (per esempio posta elettronica, le
-          preferenze, pacchetti di lavoro, le voci wiki) verranno eliminati quando
-          più possibile. Si noti, tuttavia, che i dati come pacchetti di lavoro e
-          le voci wiki non possono essere eliminati senza ostacolare il lavoro degli
-          altri utenti. Tali dati vengono quindi riassegnati ad un account chiamato
-          "Utente Cancellato". Visto che i dati di ogni account eliminato vengono
-          anch'essi riassegnati a questo account, non sarà possibile distinguere i
-          tuoi dati dai dati di un altro account eliminato.
+        self: I dati creati dalle tue attività (ad esempio posta elettronica, preferenze,
+          pacchetti di lavoro, voci wiki) verranno se possibile eliminati completamente.
+          Si noti, tuttavia, che i dati come ad esempio i pacchetti di lavoro e le
+          voci wiki non possono essere eliminati senza ostacolare il lavoro di altri
+          utenti. La proprietà di tali dati sarà pertanto trasferita ad un account
+          generico chiamato "Deleted user". Visto che i dati di tutti gli account
+          eliminati vengono riassegnati a questo account, non sarà più possibile distinguere
+          i tuoi dati dai dati di un altro account eliminato.
       heading: Cancella account %{name}
       info:
         other: Cancellare l'account utente è un azione irreversibile.
@@ -60,6 +60,8 @@ it:
         host: Host
         onthefly: Creazione dell'utente al volo
         port: Porta
+      changeset:
+        repository: Repository
       comment:
         commented: Commentato
       custom_field:
@@ -145,6 +147,7 @@ it:
         hexcode: Codice esadecimale
       project_association:
         description: Causa
+        project_b: Progetto subordinato
       project_type:
         allows_association: Consenti associazioni
         name: Nome
@@ -175,16 +178,16 @@ it:
     errors:
       messages:
         accepted: deve essere accettato.
-        blank: non può essere vuoto.
+        blank: non può essere lasciato vuoto.
         cant_link_a_work_package_with_a_descendant: Un pacchetto di lavoro non può
           essere collegato a una delle sue sottoattività.
-        circular_dependency: This relation would create a circular dependency.
+        circular_dependency: Questa relazione creerebbe una dipendenza circolare.
         confirmation: non corrisponde alla conferma.
         empty: non può essere vuoto.
         equal_to: deve essere uguale a %{count}.
         even: deve essere pari.
         exclusion: "è riservato."
-        file_too_large: "è troppo grande (la dimensione massima è %{count} byte)."
+        file_too_large: "è troppo grande (la dimensione massima è %{count} Byte)."
         greater_than: deve essere maggiore di %{count}.
         greater_than_or_equal_to: deve essere maggiore o uguale di %{count}.
         smaller_than_or_equal_to_max_length: deve essere minore o uguale alla lunghezza
@@ -207,10 +210,11 @@ it:
         after_or_equal_to: deve essere dopo o uguale a %{date}.
         before: deve essere prima %{date}.
         before_or_equal_to: deve essere prima di o uguale a %{date}.
-        could_not_be_copied: could not be (fully) copied.
+        could_not_be_copied: non possono essere copiati (integralmente).
       models:
         project_association:
-          identical_projects: non può essere creato da un progetto a se stesso.
+          identical_projects: Non può essere creata una dipendenza di un progetto
+            con se stesso.
           project_association_not_allowed: non consente le associazioni.
         repository:
           not_whitelisted: non è consentito dalla configurazione.
@@ -260,15 +264,14 @@ it:
       template:
         body: 'Perfavore controlla i seguenti campi:'
         header:
-          one: 1 errore proibisce questo %{model} dall'essere salvato
-          other: "%{count} errori proibiscono questo %{model} dall'essere salvato"
+          one: 1 errore impedisce di salvare questo %{model}
+          other: "%{count} errori impediscono di salvare questo %{model}"
     models:
       attachment: File
       board: Forum
       comment: Commento
       custom_field: Campo personalizzato
       group: Gruppo
-      issue: Problema
       category: Categoria
       status: Stato pacchetto di lavoro
       member: Membro
@@ -279,7 +282,6 @@ it:
         one: Ruolo
         other: Ruoli
       type: Tipo
-      planning_element: Elemento di pianificazione
       project_type: Tipo di progetto
       user: Utente
       version: Versione
@@ -299,7 +301,7 @@ it:
     attachments: Allegati
     author: Autore
     base: 'Errore Generale:'
-    blocks_ids: Blocchi
+    blocks_ids: ID dei work packages bloccati
     category: Categoria
     comment: Commento
     comments: Commento
@@ -468,7 +470,7 @@ it:
         one: circa 1 mese
         other: circa %{count} mesi
       about_x_years:
-        one: crica 1 anno
+        one: circa 1 anno
         other: circa %{count} anni
       almost_x_years:
         one: quasi 1 anno
@@ -499,44 +501,65 @@ it:
       hour:
         one: ora
         other: ore
-  default_activity_management: Gestione
-  default_activity_design: Design
   default_activity_development: Sviluppo
-  default_activity_testing: Fase di prova
-  default_activity_Support: Supporto
-  default_activity_Other: Altro
+  default_activity_management: Gestione
+  default_activity_other: Altro
+  default_activity_specification: Specifiche
+  default_activity_support: Supporto
+  default_activity_testing: Test
+  default_color_black: Nero
+  default_color_blue: Blu
+  default_color_blue_dark: Blu (scuro)
+  default_color_blue_light: Blu (chiaro)
+  default_color_green_dark: Verde (scuro)
+  default_color_green_light: Verde (chiaro)
+  default_color_grey_dark: Grigio (scuro)
+  default_color_grey_light: Grigio (chiaro)
+  default_color_grey: Grigio
+  default_color_magenta: Magenta
+  default_color_orange: Arancione
+  default_color_red: Rosso
+  default_color_white: Bianco
+  default_color_yellow: Giallo
+  default_status_closed: Chiuso
+  default_status_confirmed: Confermato
+  default_status_developed: Sviluppato
+  default_status_in_development: In fase di sviluppo
+  default_status_in_progress: In corso
+  default_status_in_specification: In fase di specifica
+  default_status_in_testing: In fase di test
   default_status_new: Nuovo
-  default_status_specified: specificato
-  default_status_confirmed: confermato
-  default_status_to_be_scheduled: sta per essere programmato
-  default_status_scheduled: programmato
-  default_status_in_progress: In Corso
-  default_status_tested: testato
-  default_status_on_hold: in attesa
-  default_status_rejected: Rifiutato
-  default_status_closed: chiuso
+  default_status_on_hold: In attesa
+  default_status_rejected: Respinto
+  default_status_scheduled: Programmato
+  default_status_specified: Specificato
+  default_status_tested: Testato
+  default_status_test_failed: Test non riuscito
+  default_status_to_be_scheduled: Da programmare
   default_priority_low: Bassa
   default_priority_normal: Normale
   default_priority_high: Alta
   default_priority_immediate: Immediata
-  default_project_type_customer: Progetto cliente
-  default_project_type_internal: Progetto interno
+  default_project_type_scrum: Scrum Team
+  default_project_type_standard: Progetto standard
   default_reported_project_status_green: Verde
   default_reported_project_status_amber: Ambra
   default_reported_project_status_red: Rosso
   default_role_anonymous: Anonimo
   default_role_developer: Sviluppatore
-  default_role_manager: Manager
+  default_role_project_admin: Amministratore di progetto
   default_role_non_member: Non membro
   default_role_reader: Lettore
   default_role_member: Membro
   default_type: Pacchetto di Lavoro
-  default_type_task: Attività
+  default_type_bug: Bug
   default_type_deliverable: Consegnabile
+  default_type_epic: Epico
+  default_type_feature: Caratteristica
   default_type_milestone: Traguardo
   default_type_phase: Fase
-  default_type_bug: Bug
-  default_type_feature: Caratteristica
+  default_type_task: Attività
+  default_type_user_story: Traccia utente
   description_active: Attivo?
   description_attachment_toggle: Mostra/Nascondi allegati
   description_autocomplete: Questo campo utilizza completamento automatico. Mentre
@@ -586,8 +609,6 @@ it:
   error_can_not_remove_role: Questo ruolo è in uso e non può essere eliminato.
   error_can_not_reopen_work_package_on_closed_version: Un pacchetto di lavoro assegnato
     a una versione chiusa non può essere riaperto
-  error_can_t_load_default_data: 'LA configurazione predefinita non può essere caricato:
-    %{value}'
   error_check_user_and_role: Per favore scegli un utente e un ruolo.
   error_work_package_done_ratios_not_updated: Percentuale di completamento del pacchetto
     di lavoro non aggiornato.
@@ -605,11 +626,11 @@ it:
   error_scm_command_failed: 'Si è verificato un errore quando si tenta di accedere
     al repository: %{value}'
   error_scm_not_found: La voce o la revisione non è stata trovata nel repository.
-  error_unable_delete_status: The work package status cannot be deleted since it is
-    used by at least one work package.
-  error_unable_delete_default_status: Unable to delete the default work package status.
-    Please select another default work package status before deleting the current
-    one.
+  error_unable_delete_status: Lo stato del work package non può essere eliminato poiché
+    è utilizzato da almeno un work package.
+  error_unable_delete_default_status: Impossibile eliminare lo stato predefinito del
+    work package. Si prega di selezionare un altro stato predefinito del work package
+    prima di eliminare quello corrente.
   error_unable_to_connect: Impossibile connettersi (%{value})
   error_workflow_copy_source: Si prega di selezionare un tipo di origine o ruolo
   error_workflow_copy_target: Perfavore seleziona tipo(i) di destinazione e ruolo(i)
@@ -650,7 +671,6 @@ it:
   label_add_another_file: Aggiungi un altro file
   label_add_columns: Aggiungi colonne selezionate
   label_add_note: Aggiungi nota
-  label_add_related_issues: Aggiungi problema correlato
   label_add_related_work_packages: Aggiungi pacchetti di lavoro correlati
   label_add_subtask: Aggiungi sotto-attività
   label_added: aggiunto
@@ -697,6 +717,7 @@ it:
   label_category: Categoria
   label_wiki_menu_item: Voce di menu wiki
   label_select_main_menu_item: Seleziona una nuova voce del menu principale
+  label_required_disk_storage: Required disk storage
   label_change_plural: Modifiche
   label_change_properties: Cambia proprietà
   label_change_status: Cambia stato
@@ -771,7 +792,6 @@ it:
   label_feeds_access_key_created_on: Chiave di accesso RSS creato %{value} fa
   label_file_added: File aggiunto
   label_file_plural: File
-  label_filesystem_path: Cartella della radice
   label_filter_add: Aggiungi filtro
   label_filter_plural: Filtri
   label_float: Virgola mobile
@@ -918,6 +938,7 @@ it:
   label_principal_search: RIcerca per Utenti o Gruppi
   label_profile: Profilo
   label_project_all: Tutti i Progetti
+  label_project_count: Total number of projects
   label_project_copy_notifications: Invia le email di notifica durante la copia el
     progetto
   label_project_latest: Ultimi progetti
@@ -1109,9 +1130,14 @@ it:
     nella pagina di modifica)
   label_keyboard_shortcut_focus_previous_item: Focalizza la lista dell'elemento precedente
     (solo su alcune liste)
-  label_keyboard_shortcut_focus_next_item: Focus next list element (on some lists
-    only)
+  label_keyboard_shortcut_focus_next_item: Evidenzia l'elemento successivo della lista
+    (solo in alcune liste)
   label_visible_elements: Elementi visibili
+  auth_source:
+    using_abstract_auth_source: Non è possibile utilizzare una fonte di autenticazione
+      astratta.
+    ldap_error: 'Errore LDAP: %{error_message}'
+    ldap_auth_failed: Non è possibile autenticare attraverso il Server LDAP.
   macro_execution_error: Errore nell'esecuzione del macro %{macro_name}
   macro_unavailable: Non può essere visualizzata la macro %{macro_name}.
   mail_body_account_activation_request: 'Un nuovo utente (%{value}) si è registrato.
@@ -1160,7 +1186,6 @@ it:
   notice_api_access_key_reseted: La chiave di accesso API è stata reimpostata.
   notice_can_t_change_password: Questo account utilizza una fonte di autenticazione
     esterna. Impossibile cambiare la password.
-  notice_default_data_loaded: Configurazione predefinita caricata con successo.
   notice_email_error: Errore durante l'invio della posta (%{value})
   notice_email_sent: Un'email è stata inviata a %{value}
   notice_failed_to_save_work_packages: 'Impossibile salvare %{count} pacchetto(i)
@@ -1228,7 +1253,7 @@ it:
   permission_browse_repository: Sfoglia il repository
   permission_change_wiki_parent_page: Cambia la pagina padre del wiki
   permission_comment_news: Commenti delle novità
-  permission_commit_access: Commit access
+  permission_commit_access: Conferma l'accesso
   permission_copy_projects: Copia progetti
   permission_delete_work_package_watchers: Eliminare gli osservatori
   permission_delete_work_packages: Cancella pacchetti di lavoro
@@ -1275,12 +1300,13 @@ it:
   permission_select_project_modules: Seleziona moduli del progetto
   permission_manage_types: Seleziona i tipi
   permission_view_calendar: Vedi calendario
-  permission_view_changesets: View changesets
-  permission_view_commit_author_statistics: View commit author statistics
+  permission_view_changesets: Visualizza le modifiche
+  permission_view_commit_author_statistics: Visualizza le statistiche del responsabile
+    delle conferme
   permission_view_work_package_watchers: Vedi la lista degli osservatori
   permission_view_work_packages: Visualizza i pacchetti di lavoro
   permission_view_messages: Visualizza i messaggi
-  permission_view_project_associations: View project dependencies
+  permission_view_project_associations: Visualizzare le dipendenze del progetto
   permission_view_reportings: Vedi rapporti
   permission_view_time_entries: Mostra il tempo trascorso
   permission_view_timelines: Vedi le sequenze temporali
@@ -1296,33 +1322,109 @@ it:
   project_module_timelines: Sequenze temporali
   project_module_wiki: Wiki
   query_fields:
-    assigned_to_role: Assignee's role
-    member_of_group: Assignee's group
+    assigned_to_role: Ruolo del responsabile incaricato
+    member_of_group: Gruppo del responsabile incaricato
     subproject_id: Sottoprogetto
+  repositories:
+    checkout_instructions: Istruzioni di check-out
+    create_managed_delay: 'Attenzione: L''archivio è in gestito automaticamente, verrà
+      creato in modo asincrono sul disco e sarà disponibile a breve.'
+    create_successful: L'archivio è stato memorizzato.
+    delete_sucessful: L'archivio è stato eliminato.
+    destroy:
+      title: Sei assolutamente sicuro?
+      managed_text: Se si continua, questo eliminerà definitivamente l'archivio gestito
+        di %{project_name}. Questa azione non può essere annullata.
+      managed_path_note: 'La seguente cartella sarà eliminata: %{path}'
+      linked_text: 'Stai per rimuovere il collegamento all''archivio %{url} dal progetto
+        %{project_name}. Attenzione: Questo NON eliminerà il contenuto dell''archivio,
+        poichè non è gestito direttamente da OpenProject.'
+    errors:
+      build_failed: Impossibile creare il repository con la configurazione richiesta.
+        %{reason}
+      empty_repository: L'archivio esiste, ma è vuoto. Non contiene ancora alcuna
+        revisione.
+      exists_on_filesystem: La cartella dell'archivio è già esistente nel file system.
+      filesystem_access_failed: 'Si è verificato un errore durante la creazione dell''archivio
+        nel file system: %{message}.'
+      not_manageable: Questo tipo di archivo non può essere gestito da OpenProject.
+      path_permission_failed: 'Si è verificato un errore cercando di creare il seguente
+        percorso: %{path}. Si prega di verificare che OpenProject possa scrivere in
+        tale cartella.'
+      unauthorized: Non sei autorizzato ad accedere all'archivio o le credenziali
+        utilizzate non sono valide.
+      unavailable: L'archivio non è disponibile.
+      exception_title: 'Non è possibile accedere all''archivio: %{message}'
+      disabled_or_unknown_type: Il tipo %{type} selezionato è disattivato o non è
+        più disponibile per la piattaforma %{vendor} SCM.
+      disabled_or_unknown_vendor: Il tipo di SCM %{vendor} è disabilitato o non più
+        disponibile.
+    git:
+      instructions:
+        managed_url: Questo è l'URL dell'archivio Git (locale) gestito direttamente.
+        path: Specificare il percorso dell'archivio Git locale (ad esempio, %{example_path}).
+        path_encoding: 'Override Git path encoding (Default: UTF-8)'
+      local_title: Specifica il collegamento all'archivio Git locale
+      local_introduction: Se si dispone di un archivio Git locale preesistente, è
+        possibile collegarlo con OpenProject per accedervi dall'interno dell'applicazione.
+      managed_path: Percorso al Git gestito (anteprima)
+      managed_introduction: Lascia che OpenProject crei ed integri un archivio Git
+        locale automaticamente.
+      managed_title: Archivio Git integrato in OpenProject
+      path: Percorso all'archivio Git
+      path_encoding: Codifica del percorso
+    go_to_revision: Vai alla revisione
+    scm_vendor: Sistema di gestione sorgenti
+    scm_type: Tipo di archivio
+    scm_types:
+      local: Collega un archivio locale preesistente
+      existing: Collega un archivio preesistente
+      managed: Crea un nuovo archivio in OpenProject
+    storage:
+      not_available: Disk storage consumption is not available for this repository.
+    subversion:
+      existing_title: Archivio Subversion preesistente
+      existing_introduction: Se si dispone di un archivio Git locale preesistente,
+        è possibile collegarlo con OpenProject per accedervi dall'interno dell'applicazione.
+      instructions:
+        managed_url: Questo è l'URL dell'archivio Subversion (locale) gestito direttamente.
+        url: |
+          Immettere l'URL dell'archivio. Può riferirsi ad un archivio locale (iniziando con %{local_proto}), o ad un archivio remoto.
+          Sono supportati i seguenti schemi URL:
+      managed_title: L'archivio Subversion è stato integrato in OpenProject
+      managed_introduction: Lascia che OpenProject crei ed integri un archivio Subversion
+        locale automaticamente.
+      managed_url: URL gestito
+      password: Password di accesso all'archivio
+      username: Nome utente di accesso all'archivio
+    update_settings_successful: Le impostazioni sono state salvate con successo.
+    url: URL all'archivio
   search_input_placeholder: cerca ...
-  setting_activity_days_default: Days displayed on project activity
+  setting_activity_days_default: Intervallo di giorni visualizzati sulle attività
+    del progetto
   setting_app_subtitle: Sottotitolo applicazione
   setting_app_title: Titolo applicazione
   setting_attachment_max_size: Dimensione max. dell'allegato
-  setting_autofetch_changesets: Autofetch commits
+  setting_autofetch_changesets: Approva automaticamente le modifiche
   setting_autologin: Accesso automatico
   setting_available_languages: Linguaggi disponibili
   setting_bcc_recipients: Destinatari in copia nascosta (BCC)
   setting_brute_force_block_after_failed_logins: Blocca utente dopo questo numero
     di tentativi di login
-  setting_brute_force_block_minutes: Time the user is blocked for
+  setting_brute_force_block_minutes: Durata del blocco utente
   setting_cache_formatted_text: Cache del testo formattato
   setting_column_options: Personalizza l'aspetto degli elenchi del pacchetto di lavoro
-  setting_commit_fix_keywords: Fixing keywords
+  setting_commit_fix_keywords: Parole chiave di ripristino
   setting_commit_logs_encoding: Codifica il messaggio
   setting_commit_logtime_activity_id: Attività per il tempo d'accesso
   setting_commit_logtime_enabled: Abilitare la registrazione del tempo
   setting_commit_ref_keywords: Riferimento a Parole chiavi
-  setting_cross_project_work_package_relations: Allow cross-project work package relations
+  setting_cross_project_work_package_relations: Consenti di correlare i work package
+    con più progetti
   setting_date_format: Formato data
   setting_default_language: Linguaggio predefinito
   setting_default_notification_option: Opzione di notifica predefinita
-  setting_default_projects_modules: Default enabled modules for new projects
+  setting_default_projects_modules: Moduli abilitati in automatico su nuovi progetti
   setting_default_projects_public: I nuovi progetti sono pubblici come predefinito
   setting_diff_max_lines_displayed: Numero massimo di linee diff visualizzate
   setting_display_subprojects_work_packages: Visualizza pacchetti di lavoro di progetti
@@ -1331,7 +1433,7 @@ it:
   setting_emails_header: Intestazione e-mail
   setting_enabled_scm: SCM Abilitato
   setting_feeds_enabled: Abilita Feed
-  setting_feeds_limit: Feed content limit
+  setting_feeds_limit: Limite al contenuto del contributo
   setting_file_max_size_displayed: Dimensione massima di file di testo visualizzati
     inline
   setting_gravatar_default: Immagine Gravatar predefinità
@@ -1348,17 +1450,21 @@ it:
   setting_work_package_startdate_is_adddate: Usa la data corrente come data di inizio
     per il nuovo pacchetto di lavoro
   setting_work_packages_export_limit: Limite di esportazione dei pacchetti di lavoro
-  setting_journal_aggregation_time_minutes: Display journals as aggregated within
+  setting_journal_aggregation_time_minutes: Mostra i rapporti aggregando per
   setting_log_requesting_user: Registro d'accesso utente, nome, e indirizzo mail per
     tutte le richieste
   setting_login_required: Autenticazione richiesta
   setting_mail_from: Indirizzo e-mail di emissione
-  setting_mail_handler_api_enabled: Abilitare WS per le email in arrivo
+  setting_mail_handler_api_enabled: Abilitare il servizio web di posta elettronica
+    in arrivo
+  setting_mail_handler_api_description: Il gestore di posta elettronica web consente
+    ad OpenProject di ricevere e-mail contenenti comandi specifici come strumento
+    di automazione (ad esempio, per creare e aggiornare pacchetti di lavoro).
   setting_mail_handler_api_key: Chiave API
   setting_mail_handler_body_delimiters: Troncare email dopo una di queste linee
   setting_new_project_user_role_id: Ruolo assegnato ad un utente non amministratore
     che crea un progetto
-  setting_password_active_rules: Active character classes
+  setting_password_active_rules: Insiemi di caratteri attivi
   setting_password_count_former_banned: Numero delle più recenti password usate bannate
     per il riutilizzo
   setting_password_days_valid: Numero di giorni, dopo il quale deve applicare una
@@ -1380,7 +1486,9 @@ it:
   setting_session_ttl_hint: Valori inferiori a 5 lavorano come disabilitati
   setting_session_ttl_enabled: Sessione scaduta
   setting_start_of_week: Avvia calendario su
-  setting_sys_api_enabled: Abilita i WS per la gestione dell'archivio
+  setting_sys_api_enabled: Abilita la gestione di archivi via web service
+  setting_sys_api_description: Il web service di gestione archivio fornisce servizi
+    per integrare ed autorizzare gli utenti nell'accesso agli archivi.
   setting_text_formatting: Formattazione testo
   setting_time_format: Formato del Tempo
   setting_ui_theme: Tema
@@ -1429,7 +1537,7 @@ it:
   text_enumeration_category_reassign_to: 'Riassegnali a questo valore:'
   text_enumeration_destroy_question: "%{count} oggetti sono assegnati a questo valore."
   text_file_repository_writable: Cartella allegati scrivibile
-  text_git_repo_example: a bare and local repository (e.g. /gitrepo, c:\gitrepo)
+  text_git_repo_example: un archivio fisico e locale (ad esempio /gitrepo, c:\gitrepo)
   text_hint_disable_with_0: 'Nota: Disattivare con 0'
   text_work_package_added: Il pacchetto di lavoro %{id} è stato segnalato da %{author}.
   text_work_package_category_destroy_assignments: Rimuovere le assegnazioni di categoria
@@ -1440,19 +1548,19 @@ it:
   text_work_package_updated: Il pacchetto di lavoro %{id} è stato aggiornato da %{author}.
   text_work_packages_destroy_confirmation: Sei sicuro di che voler eliminare i pacchetti(o)
     di lavoro selezionati?
-  text_work_packages_ref_in_commit_messages: Referencing and fixing work packages
-    in commit messages
+  text_work_packages_ref_in_commit_messages: Work packages che sono correlati e/o
+    modificati nei messaggi di conferma
   text_journal_added: "%{label} %{value} aggiunto"
-  text_journal_aggregation_time_explanation: Combine journals for display if their
-    age difference is less than the specified timespan. This will also delay mail
-    notifications by the same amount of time.
+  text_journal_aggregation_time_explanation: Aggrega i rapporti se la loro distanza
+    temporale è inferiore all'intervallo di tempo specificato. Questo ritarderà della
+    stessa quantità di tempo anche le notifiche via posta elettronica.
   text_journal_changed: "%{label} cambiato da %{old} a %{new}"
   text_journal_changed_no_detail: "%{label} aggiornata"
   text_journal_changed_with_diff: "%{label} cambiato (%{link})"
   text_journal_deleted: "%{label} cancellato (%{old})"
   text_journal_deleted_with_diff: "%{label} cancellato (%{link})"
   text_journal_set_to: "%{label} impostato su %{value}"
-  text_journal_set_with_diff: "%{label} set (%{link})"
+  text_journal_set_with_diff: insieme di %{label} (%{link})
   text_length_between: Lunghezza compresa tra %{min} e %{max} caratteri.
   text_line_separated: Valori multipli consentiti (una linea per ogni valore).
   text_load_default_configuration: Carica la configurazione predefinita
@@ -1467,8 +1575,10 @@ it:
     sicuro di voler continuare? \n"
   text_plugin_assets_writable: Cartella del plugin attivo scrivibile
   text_powered_by: Offerto da %{link}
-  text_project_destroy_confirmation: Sei sicuro di voler cancellare questo progetto
-    e i relativi dati?
+  text_project_destroy_title: Vuoi davvero eliminare questo progetto?
+  text_project_destroy_confirmation: Se continui, il progetto %{identifier} e tutti
+    i relativi dati verranno eliminati definitivamente. Per favore, spunta la casella
+    qui sotto se vuoi procedere.
   text_project_identifier_info: Solo le lettere minuscole (a-z), numeri, trattini
     e trattini bassi sono consentiti, devi iniziare con una lettera maiuscola.
   text_reassign: Riassegna a
@@ -1480,10 +1590,10 @@ it:
   text_select_mail_notifications: Seleziona le azioni per cui l'e-mail deve essere
     inviata.
   text_select_project_modules: 'Seleziona i moduli per abilitare per questo progetto:'
-  text_status_changed_by_changeset: Applied in changeset %{value}.
+  text_status_changed_by_changeset: Stato variato dalla modifica %{value}.
   text_subprojects_destroy_warning: 'i progetto(i) secondari: %{value} verranno anche
     eliminati.'
-  text_time_logged_by_changeset: Applied in changeset %{value}.
+  text_time_logged_by_changeset: Stato variato dalla modifica %{value}.
   text_tip_work_package_begin_day: il pacchetto di lavoro inizia questo giorno
   text_tip_work_package_begin_end_day: il pacchetto di lavoro inizia e finisce questo
     giorno
@@ -1507,7 +1617,7 @@ it:
   text_zoom_in: Ingrandisci
   text_zoom_out: Rimpicciolisci
   time:
-    am: am
+    am: AM
     formats:
       default: "%m/%d/%Y %I: %M %p"
       long: "%B %d % %y h: %M"
@@ -1525,14 +1635,13 @@ it:
       project_type: Tipo di progetto
       project_types: Tipi di progetto
     project_menu:
-      planning_elements: Elementi di pianificazione
       project_associations: Dipendenze
       reportings: Rapporti di stato
       reports: Rapporti sequenza temporale
       timelines: Sequenze temporali
     add_project_association: Aggiungi dipendenza
     associations: Dipendenze
-    board_could_not_be_saved: Board could not be saved
+    board_could_not_be_saved: Il quadro non può essere salvato
     button_delete_all: Cancella tutti
     change: Cambiare nella pianificazione
     children: Elementi figlio
@@ -1620,7 +1729,7 @@ it:
       hide_chart: Nascondere il grafico
       noneElement: "(nessuno)"
       noneSelection: "(nessuno)"
-      outline: Initial outline expansion
+      outline: Impostazione del dettaglio iniziale
       parent: Mostra i sotto-progetti di
       work_package_filters: Filtro di pacchetti di lavoro
       work_package_responsible: Mostra i pacchetti di lavoro con il responsabile

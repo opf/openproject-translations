@@ -37,6 +37,8 @@ zh-TW:
         host: "主機"
         onthefly: "快速建立使用者"
         port: "埠"
+      changeset:
+        repository: Repository
       comment:
         commented: "已評論"
       custom_field:
@@ -121,6 +123,7 @@ zh-TW:
         hexcode: "十六進位碼"
       project_association:
         description: "原因"
+        project_b: Dependent project
       project_type:
         allows_association: "允許建立關聯"
         name: "名稱"
@@ -186,7 +189,8 @@ zh-TW:
         could_not_be_copied: could not be (fully) copied.
       models:
         project_association:
-          identical_projects: can not be created from one project to itself.
+          identical_projects: Dependency cannot be created between one project and
+            itself.
           project_association_not_allowed: does not allow associations.
         repository:
           not_whitelisted: is not allowed by the configuration.
@@ -243,7 +247,6 @@ zh-TW:
       comment: "評論"
       custom_field: "自訂欄位"
       group: "群組"
-      issue: "問題"
       category: "類別"
       status: "工作項目狀態"
       member: "成員"
@@ -254,7 +257,6 @@ zh-TW:
         one: Role
         other: Roles
       type: "類型"
-      planning_element: Planning element
       project_type: "專案類型"
       user: "使用者"
       version: "版本"
@@ -274,7 +276,7 @@ zh-TW:
     attachments: "附加檔"
     author: "作者"
     base: "一般錯誤:"
-    blocks_ids: "區塊"
+    blocks_ids: IDs of blocked work packages
     category: "類別"
     comment: "評論"
     comments: "評論"
@@ -474,44 +476,65 @@ zh-TW:
       hour:
         one: hour
         other: hours
-  default_activity_management: "管理"
-  default_activity_design: "設計"
   default_activity_development: "開發"
+  default_activity_management: "管理"
+  default_activity_other: "其他"
+  default_activity_specification: Specification
+  default_activity_support: "支援"
   default_activity_testing: "測試"
-  default_activity_Support: "支援"
-  default_activity_Other: "其他"
-  default_status_new: "新增"
-  default_status_specified: specified
-  default_status_confirmed: "已確認"
-  default_status_to_be_scheduled: "待排程"
-  default_status_scheduled: "已排程"
-  default_status_in_progress: "進行中"
-  default_status_tested: "已測試"
-  default_status_on_hold: "擱置"
-  default_status_rejected: "拒絕"
-  default_status_closed: "已關閉"
+  default_color_black: Black
+  default_color_blue: Blue
+  default_color_blue_dark: Blue (dark)
+  default_color_blue_light: Blue (light)
+  default_color_green_dark: Green (dark)
+  default_color_green_light: Green (light)
+  default_color_grey_dark: Grey (dark)
+  default_color_grey_light: Grey (light)
+  default_color_grey: Grey
+  default_color_magenta: Magenta
+  default_color_orange: Orange
+  default_color_red: "紅色"
+  default_color_white: White
+  default_color_yellow: Yellow
+  default_status_closed: Closed
+  default_status_confirmed: Confirmed
+  default_status_developed: Developed
+  default_status_in_development: In development
+  default_status_in_progress: In progress
+  default_status_in_specification: In specification
+  default_status_in_testing: In testing
+  default_status_new: New
+  default_status_on_hold: On hold
+  default_status_rejected: Rejected
+  default_status_scheduled: Scheduled
+  default_status_specified: Specified
+  default_status_tested: Tested
+  default_status_test_failed: Test failed
+  default_status_to_be_scheduled: To be scheduled
   default_priority_low: "低"
   default_priority_normal: "一般"
   default_priority_high: "高"
   default_priority_immediate: "立刻"
-  default_project_type_customer: Customer Project
-  default_project_type_internal: Internal Project
+  default_project_type_scrum: Scrum team
+  default_project_type_standard: Standard project
   default_reported_project_status_green: "綠色"
   default_reported_project_status_amber: Amber
   default_reported_project_status_red: "紅色"
   default_role_anonymous: "匿名者"
   default_role_developer: "開發者"
-  default_role_manager: "管理者"
+  default_role_project_admin: Project admin
   default_role_non_member: "非成員"
   default_role_reader: Reader
   default_role_member: "成員"
   default_type: "工作項目"
-  default_type_task: "任務"
+  default_type_bug: Bug
   default_type_deliverable: "交付標的"
+  default_type_epic: Epic
+  default_type_feature: "功能"
   default_type_milestone: "里程碑"
   default_type_phase: "階段"
-  default_type_bug: Bug
-  default_type_feature: "功能"
+  default_type_task: "任務"
+  default_type_user_story: User story
   description_active: Active?
   description_attachment_toggle: Show/Hide attachments
   description_autocomplete: This field uses autocomplete. While typing the title of
@@ -557,7 +580,6 @@ zh-TW:
   error_can_not_delete_standard_type: "標準類型無法刪除"
   error_can_not_remove_role: "這個角色正在使用中，無法刪除。"
   error_can_not_reopen_work_package_on_closed_version: "被指定到已關閉版本的工作項目將無法重新開啟"
-  error_can_t_load_default_data: "無法載入預設組態: %{value}"
   error_check_user_and_role: "請選擇一個使用者與一個角色。"
   error_work_package_done_ratios_not_updated: "工作項目完成比例未更新"
   error_work_package_not_found_in_project: "工作項目找不到或是不屬於這個專案"
@@ -615,7 +637,6 @@ zh-TW:
   label_add_another_file: "新增另一個檔案"
   label_add_columns: "新增所選欄"
   label_add_note: "新增註記"
-  label_add_related_issues: "新增相關的問題"
   label_add_related_work_packages: "新增相關的工作項目"
   label_add_subtask: "新增子任務"
   label_added: "已新增"
@@ -661,6 +682,7 @@ zh-TW:
   label_category: "類別"
   label_wiki_menu_item: "維基選單項目"
   label_select_main_menu_item: "選擇新的主選單項目"
+  label_required_disk_storage: Required disk storage
   label_change_plural: Changes
   label_change_properties: "更改屬性"
   label_change_status: "更改狀態"
@@ -735,7 +757,6 @@ zh-TW:
   label_feeds_access_key_created_on: RSS access key created %{value} ago
   label_file_added: "檔案已新增"
   label_file_plural: "檔案"
-  label_filesystem_path: "根目錄"
   label_filter_add: "新增篩選器"
   label_filter_plural: "篩選器"
   label_float: "浮點數"
@@ -879,6 +900,7 @@ zh-TW:
   label_principal_search: "搜尋使用者或群組"
   label_profile: Profile
   label_project_all: "所有專案"
+  label_project_count: Total number of projects
   label_project_copy_notifications: "在專案複製期間發送電子郵件通知"
   label_project_latest: "最新的專案"
   label_project_default_type: "允許空類型"
@@ -1068,6 +1090,10 @@ zh-TW:
   label_keyboard_shortcut_focus_next_item: Focus next list element (on some lists
     only)
   label_visible_elements: Visible elements
+  auth_source:
+    using_abstract_auth_source: Can't use an abstract authentication source.
+    ldap_error: 'LDAP-Error: %{error_message}'
+    ldap_auth_failed: Could not authenticate at the LDAP-Server.
   macro_execution_error: Error executing the macro %{macro_name}
   macro_unavailable: Macro %{macro_name} cannot be displayed.
   mail_body_account_activation_request: "一個新的使用者 (%{value}) 已註冊。該帳號正等您核准："
@@ -1112,7 +1138,6 @@ zh-TW:
   notice_api_access_key_reseted: Your API access key was reset.
   notice_can_t_change_password: This account uses an external authentication source.
     Impossible to change the password.
-  notice_default_data_loaded: "成功載入預設組態"
   notice_email_error: An error occurred while sending mail (%{value})
   notice_email_sent: An email was sent to %{value}
   notice_failed_to_save_work_packages: 'Failed to save %{count} work package(s) on
@@ -1213,7 +1238,7 @@ zh-TW:
   permission_manage_subtasks: Manage subtasks
   permission_manage_versions: "管理版本"
   permission_manage_wiki: "管理維基"
-  permission_manage_wiki_menu: "管理維基選單"
+  permission_manage_wiki_menu: "管理維基"
   permission_move_work_packages: "移動工作項目"
   permission_protect_wiki_pages: "專案維基頁面"
   permission_rename_wiki_pages: "重新命名維基頁面"
@@ -1245,6 +1270,80 @@ zh-TW:
     assigned_to_role: "負責執行者的角色"
     member_of_group: "負責執行者的群組"
     subproject_id: "子專案"
+  repositories:
+    checkout_instructions: Checkout instructions
+    create_managed_delay: 'Please note: The repository is managed, it is created asynchronously
+      on the disk and will be available shortly.'
+    create_successful: The repository has been registered.
+    delete_sucessful: The repository has been deleted.
+    destroy:
+      title: Are you absolutely sure?
+      managed_text: If you continue, this will permanently delete the managed repository
+        of %{project_name}. This action cannot be reverted.
+      managed_path_note: 'The following directory will be erased: %{path}'
+      linked_text: |
+        You're about to remove the linked repository %{url} from the project %{project_name}.
+        Note: This will NOT delete the contents of this repository, as it is not managed by OpenProject.
+    errors:
+      build_failed: Unable to create the repository with the selected configuration.
+        %{reason}
+      empty_repository: The repository exists, but is empty. It does not contain any
+        revisions yet.
+      exists_on_filesystem: The repository directory exists already on filesystem.
+      filesystem_access_failed: 'An error occurred while creating the repository on
+        filesystem: %{message}.'
+      not_manageable: This repository vendor cannot be managed by OpenProject.
+      path_permission_failed: 'An error occurred trying to create the following path:
+        %{path}. Please ensure that OpenProject may write to that folder.'
+      unauthorized: You're not authorized to access the repository or the credentials
+        are invalid.
+      unavailable: The repository is unavailable.
+      exception_title: 'Cannot access the repository: %{message}'
+      disabled_or_unknown_type: The selected type %{type} is disabled or no longer
+        available for the SCM vendor %{vendor}.
+      disabled_or_unknown_vendor: The SCM vendor %{vendor} is disabled or no longer
+        available.
+    git:
+      instructions:
+        managed_url: This is the URL of the managed (local) Git repository.
+        path: Specify the path to your local Git repository ( e.g., %{example_path}
+          ).
+        path_encoding: 'Override Git path encoding (Default: UTF-8)'
+      local_title: Link existing local Git repository
+      local_introduction: If you have an existing local Git repository, you can link
+        it with OpenProject to access it from within the application.
+      managed_path: Managed Git path (preview)
+      managed_introduction: Let OpenProject create and integrate a local Git repository
+        automatically.
+      managed_title: Git repository integrated into OpenProject
+      path: Path to Git repository
+      path_encoding: Path encoding
+    go_to_revision: Go to revision
+    scm_vendor: Source control management system
+    scm_type: Repository type
+    scm_types:
+      local: Link existing local repository
+      existing: Link existing repository
+      managed: Create new repository in OpenProject
+    storage:
+      not_available: Disk storage consumption is not available for this repository.
+    subversion:
+      existing_title: Existing Subversion repository
+      existing_introduction: If you have an existing Subversion repository, you can
+        link it with OpenProject to access it from within the application.
+      instructions:
+        managed_url: This is the URL of the managed (local) Subversion repository.
+        url: |
+          Enter the repository URL. This may either target a local repository (starting with %{local_proto} ), or a remote repository.
+          The following URL schemes are supported:
+      managed_title: Subversion repository integrated into OpenProject
+      managed_introduction: Let OpenProject create and integrate a local Subversion
+        repository automatically.
+      managed_url: Managed URL
+      password: Repository Password
+      username: Repository username
+    update_settings_successful: The settings have been sucessfully saved.
+    url: URL to repository
   search_input_placeholder: search ...
   setting_activity_days_default: Days displayed on project activity
   setting_app_subtitle: Application subtitle
@@ -1295,7 +1394,10 @@ zh-TW:
   setting_log_requesting_user: Log user login, name, and mail address for all requests
   setting_login_required: "需要身份驗證"
   setting_mail_from: Emission email address
-  setting_mail_handler_api_enabled: Enable WS for incoming emails
+  setting_mail_handler_api_enabled: Enable incoming email web service
+  setting_mail_handler_api_description: The email web handler enables OpenProject
+    to receive emails containing specific commands as an instrumentation mechanism
+    (e.g., to create and update work packages).
   setting_mail_handler_api_key: API key
   setting_mail_handler_body_delimiters: Truncate emails after one of these lines
   setting_new_project_user_role_id: Role given to a non-admin user who creates a project
@@ -1320,7 +1422,9 @@ zh-TW:
   setting_session_ttl_hint: Value below 5 works like disabled
   setting_session_ttl_enabled: "連線逾時"
   setting_start_of_week: "行事曆始於"
-  setting_sys_api_enabled: Enable WS for repository management
+  setting_sys_api_enabled: Enable repository management web service
+  setting_sys_api_description: The repository management web service provides integration
+    and user authorization for accessing repositories.
   setting_text_formatting: Text formatting
   setting_time_format: "時間格式"
   setting_ui_theme: "佈景主題"
@@ -1403,8 +1507,10 @@ zh-TW:
     Are you sure you want to continue?
   text_plugin_assets_writable: Plugin assets directory writable
   text_powered_by: Powered by %{link}
-  text_project_destroy_confirmation: Are you sure you want to delete this project
-    and related data?
+  text_project_destroy_title: Do you really want to delete this project?
+  text_project_destroy_confirmation: If you continue, the project %{identifier} and
+    all related data will be permanently destroyed. Please check the box below if
+    you want to continue.
   text_project_identifier_info: Only lower case letters (a-z), numbers, dashes and
     underscores are allowed, must start with a lower case letter.
   text_reassign: "重新分配給"
@@ -1459,7 +1565,6 @@ zh-TW:
       project_type: "專案類型"
       project_types: "專案類型"
     project_menu:
-      planning_elements: Planning elements
       project_associations: Dependencies
       reportings: Status reportings
       reports: "時間軸報表"
@@ -1707,7 +1812,8 @@ zh-TW:
       code_409: |
         Couldn't update the resource because of conflicting modifications.
         因為修改的衝突，所以無法更新這個資源。
-      invalid_content_type: "預期得到 '%{content_type}' 的內容類型，但得到了 '%{actual}'。"
+      invalid_content_type: Expected CONTENT-TYPE to be '%{content_type}' but got
+        '%{actual}'.
       invalid_format: 'Invalid format for property ''%{property}'': Expected format
         like ''%{expected_format}'', but got ''%{actual}''.'
       invalid_json: The request could not be parsed as JSON.

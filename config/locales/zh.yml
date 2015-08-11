@@ -37,6 +37,8 @@ zh:
         host: "主机"
         onthefly: "运行中用户创建"
         port: "端口"
+      changeset:
+        repository: "代码库"
       comment:
         commented: "评论"
       custom_field:
@@ -121,6 +123,7 @@ zh:
         hexcode: "十六进制代码"
       project_association:
         description: "原因"
+        project_b: "依赖的项目"
       project_type:
         allows_association: "允许关联"
         name: "名称"
@@ -150,75 +153,68 @@ zh:
         watcher: "关注者"
     errors:
       messages:
-        accepted: must be accepted.
-        blank: can't be blank.
-        cant_link_a_work_package_with_a_descendant: A work package cannot be linked
-          to one of its subtasks.
-        circular_dependency: This relation would create a circular dependency.
-        confirmation: doesn't match confirmation.
-        empty: can't be empty.
-        equal_to: must be equal to %{count}.
-        even: must be even.
-        exclusion: is reserved.
-        file_too_large: is too large (maximum size is %{count} Bytes).
-        greater_than: must be greater than %{count}.
-        greater_than_or_equal_to: must be greater than or equal to %{count}.
-        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
-          length.
-        greater_than_start_date: must be greater than start date.
-        inclusion: is not set to one of the allowed values.
-        invalid: is invalid.
-        less_than: must be less than %{count}.
-        less_than_or_equal_to: must be less than or equal to %{count}.
-        not_a_date: is not a date.
-        not_a_number: is not a number.
-        not_an_integer: is not an integer.
-        not_same_project: doesn't belong to the same project.
-        odd: must be odd.
-        taken: has already been taken.
-        too_long: is too long (maximum is %{count} characters).
-        too_short: is too short (minimum is %{count} characters).
-        wrong_length: is the wrong length (should be %{count} characters).
-        after: must be after %{date}.
-        after_or_equal_to: must be after or equal to %{date}.
-        before: must be before %{date}.
-        before_or_equal_to: must be before or equal to %{date}.
-        could_not_be_copied: could not be (fully) copied.
+        accepted: "必须接受。"
+        blank: "不能为空。"
+        cant_link_a_work_package_with_a_descendant: "工作包无法链接到它的子任务之一。"
+        circular_dependency: "这种关系将创建循环依赖项。"
+        confirmation: "不匹配确认。"
+        empty: "不能为空。"
+        equal_to: "必须等于 %{count}。"
+        even: "必须是偶数。"
+        exclusion: "是保留关键字。"
+        file_too_large: "太大 (最大大小为 %{count} 字节)。"
+        greater_than: "必须大于 %{count}。"
+        greater_than_or_equal_to: "必须大于或等于 %{count}。"
+        smaller_than_or_equal_to_max_length: "必须小于或等于最大长度。"
+        greater_than_start_date: "必须大于开始日期。"
+        inclusion: "未设置为允许的值之一。"
+        invalid: "是无效的。"
+        less_than: "必须小于 %{count}。"
+        less_than_or_equal_to: "必须小于或等于 %{count}。"
+        not_a_date: "不是日期。"
+        not_a_number: "不是一个数字。"
+        not_an_integer: "不是一个整数。"
+        not_same_project: "不属于同一个项目。"
+        odd: "必须是奇数。"
+        taken: "已经采取。"
+        too_long: "太长 (最多 %{count} 个字符)。"
+        too_short: "太短 (最低是 %{count} 个字符)。"
+        wrong_length: "长度不正确 (应该是 %{count} 个字符)。"
+        after: "必须在 %{date} 之后。"
+        after_or_equal_to: "必须后或等于 %{date}。"
+        before: "必须在 %{date} 之前。"
+        before_or_equal_to: "必须在早于或等于 %{date}"
+        could_not_be_copied: "不能 (完全) 复制。"
       models:
         project_association:
-          identical_projects: can not be created from one project to itself.
-          project_association_not_allowed: does not allow associations.
+          identical_projects: "项目无法与自身创建依赖关系。"
+          project_association_not_allowed: "不允许关联。"
         repository:
-          not_whitelisted: is not allowed by the configuration.
-          no_directory: is not a directory.
+          not_whitelisted: "配置所不允许的。"
+          no_directory: "不是一个目录。"
         work_package:
           is_not_a_valid_target_for_time_entries: "工作包 #%{id} 不是重新分配时间条目的有效目标。"
           attributes:
             due_date:
-              not_start_date: is not on start date, although this is required for
-                milestones.
+              not_start_date: "不是在开始日期开始，尽管这是必需的里程碑。"
             parent_id:
-              cannot_be_milestone: cannot be a milestone.
-              cannot_be_in_another_project: cannot be in another project.
-              not_a_valid_parent: is invalid.
-              does_not_exist: does not exist.
+              cannot_be_milestone: "不能是一个里程碑。"
+              cannot_be_in_another_project: "不能在另一个项目中。"
+              not_a_valid_parent: "是无效的。"
+              does_not_exist: "不存在。"
             status_id:
-              status_transition_invalid: is invalid because no valid transition exists
-                from old to new status for the current user's roles.
+              status_transition_invalid: "是无效的，因为在当前用户的角色下，没有从旧到新的状态有效的过渡存在。"
             priority_id:
-              only_active_priorities_allowed: needs to be active.
+              only_active_priorities_allowed: "需要被激活。"
             category:
-              only_same_project_categories_allowed: The category of a work package
-                must be within the same project as the work package.
-              does_not_exist: The specified category does not exist.
+              only_same_project_categories_allowed: "工作列表的类别必须包含在相同的项目工作列表中。"
+              does_not_exist: "指定的类别不存在。"
             estimated_hours:
-              only_values_greater_or_equal_zeroes_allowed: The estimated hours must
-                be >= 0.
+              only_values_greater_or_equal_zeroes_allowed: "预计的小时必须 > = 0。"
         user:
           attributes:
             password:
-              weak: 'must contain characters of the following classes (at least %{min_count}
-                of %{all_count}): %{rules}.'
+              weak: "必须包含以下类字符 （至少 %{min_count} 个 %{all_count}）： %{rules}"
               lowercase: "小写字母 （如 'a')"
               uppercase: "大写字母 (如 ' A')"
               numeric: "数值 （例如 ' 1')"
@@ -226,8 +222,7 @@ zh:
               reused:
                 one: has been used before. Please choose one that is different from
                   your last one.
-                other: has been used before. Please choose one that is different from
-                  your last %{count}.
+                other: "已被使用过。请选择一个不同于您最后 %{count}。"
         member:
           principal_blank: "请选择至少一个用户或组。"
           role_blank: "请选择至少一个角色。"
@@ -235,14 +230,13 @@ zh:
         body: "请检查以下字段："
         header:
           one: 1 error prohibited this %{model} from being saved
-          other: "%{count} errors prohibited this %{model} from being saved"
+          other: "这个%{model} 在保存时被%{count} 个错误阻止"
     models:
       attachment: "文件"
       board: "论坛"
       comment: "评论"
       custom_field: "自定义字段"
       group: "组"
-      issue: "问题"
       category: "类别"
       status: "工作包状态"
       member: "成员"
@@ -251,9 +245,8 @@ zh:
       query: "自定义查询"
       role:
         one: Role
-        other: Roles
+        other: "角色"
       type: "类型"
-      planning_element: "规划元素"
       project_type: "项目类型"
       user: "用户"
       version: "版本"
@@ -273,7 +266,7 @@ zh:
     attachments: "附件"
     author: "作者"
     base: "一般错误："
-    blocks_ids: "块"
+    blocks_ids: "被工作列表屏蔽的IDs"
     category: "类别"
     comment: "评论"
     comments: "评论"
@@ -436,80 +429,101 @@ zh:
     distance_in_words:
       about_x_hours:
         one: about 1 hour
-        other: about %{count} hours
+        other: "大约 %{count} 小时"
       about_x_months:
         one: about 1 month
-        other: about %{count} months
+        other: "大约 %{count} 个月"
       about_x_years:
         one: about 1 year
-        other: about %{count} years
+        other: "大约 %{count} 年"
       almost_x_years:
         one: almost 1 year
-        other: almost %{count} years
+        other: "接近 %{count} 年"
       half_a_minute: "半分钟"
       less_than_x_minutes:
         one: less than a minute
-        other: less than %{count} minutes
+        other: "不到 %{count} 分钟"
       less_than_x_seconds:
         one: less than 1 second
-        other: less than %{count} seconds
+        other: "不到 %{count} 秒"
       over_x_years:
         one: over 1 year
-        other: over %{count} years
+        other: "超过 %{count} 年"
       x_days:
         one: 1 day
-        other: "%{count} days"
+        other: "%{count} 天"
       x_minutes:
         one: 1 minute
-        other: "%{count} minutes"
+        other: "%{count} 分钟"
       x_months:
         one: 1 month
-        other: "%{count} months"
+        other: "%{count} 个月"
       x_seconds:
         one: 1 second
-        other: "%{count} seconds"
+        other: "%{count} 秒"
     units:
       hour:
         one: hour
-        other: hours
-  default_activity_management: "管理"
-  default_activity_design: "设计"
+        other: "小时"
   default_activity_development: "开发"
+  default_activity_management: "管理"
+  default_activity_other: "其他"
+  default_activity_specification: Specification
+  default_activity_support: "支持"
   default_activity_testing: "测试"
-  default_activity_Support: "支持"
-  default_activity_Other: "其他"
-  default_status_new: "新建"
-  default_status_specified: "指定"
-  default_status_confirmed: "确认"
-  default_status_to_be_scheduled: "待计划"
-  default_status_scheduled: "已计划"
-  default_status_in_progress: "进行中"
-  default_status_tested: "已测试"
-  default_status_on_hold: "搁置"
+  default_color_black: Black
+  default_color_blue: Blue
+  default_color_blue_dark: Blue (dark)
+  default_color_blue_light: Blue (light)
+  default_color_green_dark: Green (dark)
+  default_color_green_light: Green (light)
+  default_color_grey_dark: Grey (dark)
+  default_color_grey_light: Grey (light)
+  default_color_grey: Grey
+  default_color_magenta: Magenta
+  default_color_orange: Orange
+  default_color_red: "红色"
+  default_color_white: White
+  default_color_yellow: Yellow
+  default_status_closed: "已关闭"
+  default_status_confirmed: Confirmed
+  default_status_developed: Developed
+  default_status_in_development: In development
+  default_status_in_progress: In progress
+  default_status_in_specification: In specification
+  default_status_in_testing: In testing
+  default_status_new: "新增"
+  default_status_on_hold: On hold
   default_status_rejected: "已拒绝"
-  default_status_closed: "关闭"
+  default_status_scheduled: Scheduled
+  default_status_specified: Specified
+  default_status_tested: Tested
+  default_status_test_failed: Test failed
+  default_status_to_be_scheduled: To be scheduled
   default_priority_low: "低"
   default_priority_normal: "普通"
   default_priority_high: "高"
   default_priority_immediate: "立即"
-  default_project_type_customer: "客户项目"
-  default_project_type_internal: "内部项目"
+  default_project_type_scrum: Scrum team
+  default_project_type_standard: Standard project
   default_reported_project_status_green: "绿色"
   default_reported_project_status_amber: "琥珀色"
   default_reported_project_status_red: "红色"
   default_role_anonymous: "匿名"
   default_role_developer: "开发者"
-  default_role_manager: "经理"
+  default_role_project_admin: Project admin
   default_role_non_member: "非成员"
   default_role_reader: "只读"
   default_role_member: "成员"
   default_type: "工作包"
-  default_type_task: "任务"
+  default_type_bug: Bug
   default_type_deliverable: "可交付结果"
+  default_type_epic: Epic
+  default_type_feature: "功能"
   default_type_milestone: "里程碑"
   default_type_phase: "阶段"
-  default_type_bug: Bug
-  default_type_feature: "功能"
+  default_type_task: "任务"
+  default_type_user_story: User story
   description_active: "激活？"
   description_attachment_toggle: "显示/隐藏附件"
   description_autocomplete: "此字段使用自动完成。在输入工作包标题时您将收到一份可能的候选名单。使用向上向下键选择它并且用tab或回车选择。或者你可以直接输入工作包编号。"
@@ -552,7 +566,6 @@ zh:
   error_can_not_delete_standard_type: "标准类型不能被删除。"
   error_can_not_remove_role: "该角色正在使用，无法删除。"
   error_can_not_reopen_work_package_on_closed_version: "不能重新打开一个已经分配给已关闭版本的工作包"
-  error_can_t_load_default_data: "不能加载默认配置： %{value}"
   error_check_user_and_role: "请选择用户和角色。"
   error_work_package_done_ratios_not_updated: "工作包完成比率不更新。"
   error_work_package_not_found_in_project: "工作包找不到或不属于此项目"
@@ -563,11 +576,8 @@ zh:
   error_scm_annotate: "该条目不存在，或不能进行批注。"
   error_scm_command_failed: "当试图访问该代码库时出现错误: %{value}"
   error_scm_not_found: "在代码库中未找到的条目或修正版本。"
-  error_unable_delete_status: The work package status cannot be deleted since it is
-    used by at least one work package.
-  error_unable_delete_default_status: Unable to delete the default work package status.
-    Please select another default work package status before deleting the current
-    one.
+  error_unable_delete_status: "不能删除工作包的状态，因为它由至少一个工作包使用。"
+  error_unable_delete_default_status: "无法删除默认工作包的状态。请删除当前之前选择另一个默认工作包状态。"
   error_unable_to_connect: "无法连接 (%{value})"
   error_workflow_copy_source: "请选择源类型或角色"
   error_workflow_copy_target: "请选择目标类型和角色"
@@ -605,7 +615,6 @@ zh:
   label_add_another_file: "添加另一个文件"
   label_add_columns: "添加所选的列"
   label_add_note: "添加注释"
-  label_add_related_issues: "添加相关的问题"
   label_add_related_work_packages: "添加相关的工作包"
   label_add_subtask: "添加子任务"
   label_added: "已添加"
@@ -649,6 +658,7 @@ zh:
   label_category: "类别"
   label_wiki_menu_item: Wiki 的菜单项
   label_select_main_menu_item: "选择新的主菜单项"
+  label_required_disk_storage: Required disk storage
   label_change_plural: "更改"
   label_change_properties: "更改属性"
   label_change_status: "更改状态"
@@ -656,7 +666,7 @@ zh:
   label_changes_details: "所有更改的详细信息"
   label_changeset_plural: "变更集"
   label_checked: "已选"
-  label_child_element: Child element
+  label_child_element: "子元素"
   label_chronological_order: "按时间顺序"
   label_close_versions: "关闭已完成版本"
   label_closed_work_packages: "关闭"
@@ -723,7 +733,6 @@ zh:
   label_feeds_access_key_created_on: RSS 访问密钥创建于 %{value} 前
   label_file_added: "添加文件"
   label_file_plural: "文件"
-  label_filesystem_path: "根目录"
   label_filter_add: "添加筛选器"
   label_filter_plural: "筛选器"
   label_float: "浮动"
@@ -799,7 +808,7 @@ zh:
   label_message_plural: "消息"
   label_message_posted: "添加消息"
   label_min_max_length: "最小-最大长度"
-  label_minute_plural: minutes
+  label_minute_plural: "分钟"
   label_missing_api_access_key: "缺少 API 访问密钥"
   label_missing_feeds_access_key: "缺少一个 RSS 访问键"
   label_modification: "%{count} 更改"
@@ -866,6 +875,7 @@ zh:
   label_principal_search: "查找用户或组"
   label_profile: "配置文件"
   label_project_all: "所有项目"
+  label_project_count: Total number of projects
   label_project_copy_notifications: "在项目复制期间发送电子邮件通知"
   label_project_latest: "最新的项目"
   label_project_default_type: "允许为空类型"
@@ -948,7 +958,7 @@ zh:
   label_this_week: "这一周"
   label_this_year: "这一年"
   label_time_entry_plural: "已耗时间"
-  label_time_sheet_menu: Time sheet
+  label_time_sheet_menu: "时间表"
   label_time_tracking: "时间跟踪"
   label_today: "今天"
   label_top_menu: "顶部的菜单"
@@ -1005,23 +1015,23 @@ zh:
   label_workflow_summary: "摘要"
   label_x_closed_work_packages_abbr:
     one: 1 closed
-    other: "%{count} closed"
+    other: "%{count} 关闭的"
     zero: 0 closed
   label_x_comments:
     one: 1 comment
-    other: "%{count} comments"
+    other: "%{count} 个评论"
     zero: no comments
   label_x_open_work_packages_abbr:
     one: 1 open
-    other: "%{count} open"
+    other: "%{count} 个待处理的"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
     one: 1 open / %{total}
-    other: "%{count} open / %{total}"
+    other: "%{total} 中 %{count} 个待处理的"
     zero: 0 open / %{total}
   label_x_projects:
     one: 1 project
-    other: "%{count} projects"
+    other: "%{count} 项目"
     zero: no projects
   label_year: "年"
   label_yesterday: "昨天"
@@ -1044,13 +1054,17 @@ zh:
   label_keyboard_shortcut_go_news: "转到项目新闻"
   label_keyboard_shortcut_go_timelines: "转到时间线"
   label_keyboard_shortcut_new_work_package: "创建新的工作包"
-  label_keyboard_shortcut_details_package: Show work packages details pane
+  label_keyboard_shortcut_details_package: "显示工作列表的详细信息窗口"
   label_keyboard_shortcut_go_edit: "转到要编辑当前项 （仅在详细信息页)"
   label_keyboard_shortcut_open_more_menu: "打开更多菜单 （在详细信息页)"
   label_keyboard_shortcut_go_preview: "转到预览当前编辑 （仅在编辑页)"
   label_keyboard_shortcut_focus_previous_item: "聚焦前面的列表元素 （只有某些列表)"
   label_keyboard_shortcut_focus_next_item: "聚焦下一个的列表元素 （只有某些列表)"
-  label_visible_elements: Visible elements
+  label_visible_elements: "可见的元素"
+  auth_source:
+    using_abstract_auth_source: Can't use an abstract authentication source.
+    ldap_error: 'LDAP-Error: %{error_message}'
+    ldap_auth_failed: Could not authenticate at the LDAP-Server.
   macro_execution_error: "执行宏 %{macro_name} 出错"
   macro_unavailable: "无法显示宏 %{macro_name} 。"
   mail_body_account_activation_request: "一个新的用户 (%{value}) 注册。该帐户正在等待您的批准："
@@ -1087,7 +1101,6 @@ zh:
   notice_account_registered_and_logged_in: "欢迎，您的帐户已激活。您现在已登录。"
   notice_api_access_key_reseted: "您的 API 访问密钥被重置。"
   notice_can_t_change_password: "此帐户使用外部身份验证源。无法更改密码。"
-  notice_default_data_loaded: "成功加载默认配置。"
   notice_email_error: "发送邮件 (%{value}) 时出错"
   notice_email_sent: "电子邮件被发送到 %{value}"
   notice_failed_to_save_work_packages: "%{total} 个选定工作包中的 %{count} 保存失败： %{ids} 。"
@@ -1131,7 +1144,7 @@ zh:
         units:
           byte:
             one: Byte
-            other: Bytes
+            other: "字节"
           gb: GB
           kb: kB
           mb: MB
@@ -1215,6 +1228,63 @@ zh:
     assigned_to_role: "指定人角色"
     member_of_group: "指定人用户组"
     subproject_id: "子项目"
+  repositories:
+    checkout_instructions: "签出说明"
+    create_managed_delay: "请注意: 版本库已在管控中，它以异步方式在磁盘上创建并不久将处于可用状态。"
+    create_successful: "版本库已被注册。"
+    delete_sucessful: "版本库已被删除。"
+    destroy:
+      title: "你绝对确定?"
+      managed_text: "如果你继续下去，这将永久删除 %{project_name} 管理的版本库。此操作不能被还原。"
+      managed_path_note: "以下目录将被删除: %{path}"
+      linked_text: "你将要从 %{project_name} 项目中移除已链接的版本库 %{url}。注意: 这不会删除该版本库的内容，它不由
+        OpenProject 所管理。"
+    errors:
+      build_failed: "在所选的配置下无法创建版本库。%{reason}"
+      empty_repository: "版本库已存在，不过该库是空的。它还不包括任何版本。"
+      exists_on_filesystem: "版本库目录已经存在于文件系统上。"
+      filesystem_access_failed: "在文件系统上创建版本库时出错: %{message}。"
+      not_manageable: "此版本库提供商不能被 OpenProject 管理。"
+      path_permission_failed: "在创建目录： %{path} 时发生错误。请确定 OpenProject 对该目录有可写权限。"
+      unauthorized: "您无权访问版本库或凭据无效。"
+      unavailable: "该版本库不可用。"
+      exception_title: "不能访问 %{message} 版本库"
+      disabled_or_unknown_type: "所选的类型 %{type} 是禁用状态或不再为SCM供应商 %{vendor} 可用。"
+      disabled_or_unknown_vendor: SCM供应商 %{vendor} 是被禁用状态或不再可用。
+    git:
+      instructions:
+        managed_url: "这是管理 (本地) 的 Git 版本库的 URL。"
+        path: "指定到你本地 Git 版本库的路径 (例如，%{example_path})。"
+        path_encoding: 'Override Git path encoding (Default: UTF-8)'
+      local_title: "链接现有的本地 Git 版本库"
+      local_introduction: "如果您已有本地 Git 版本库，可以将其链接到 OpenProject 来访问。"
+      managed_path: "被管理的 Git 路径 (预览)"
+      managed_introduction: "让 OpenProject 创建并自动集成一个本地 Git 版本库。"
+      managed_title: Git 版本库集成入 OpenProject
+      path: Git 版本库路径
+      path_encoding: "路径编码"
+    go_to_revision: "切换到版本"
+    scm_vendor: "源代码、文件版本控制系统"
+    scm_type: "版本库类型"
+    scm_types:
+      local: "链接现有的本地版本库"
+      existing: "链接现有的版本库"
+      managed: "在 OpenProject 中创建新的版本库"
+    storage:
+      not_available: Disk storage consumption is not available for this repository.
+    subversion:
+      existing_title: "现有的 Subversion 版本库"
+      existing_introduction: "如果您已有本地 Git 版本库，可以将其链接到 OpenProject 来访问。"
+      instructions:
+        managed_url: "这是管理的 (本地) Subversion 版本库的 URL。"
+        url: "输入版本库 URL。这可能既指向本地版本库 (以 %{local_proto} 开头) ，或者是一个远程版本库。下面的 URL 方案是被支持的:"
+      managed_title: Subversion 版本库集成到 OpenProject
+      managed_introduction: "让 OpenProject 创建和自动集成一个Subversion本地存储库。"
+      managed_url: "被管理的 URL"
+      password: "版本库密码"
+      username: "版本库用户名"
+    update_settings_successful: "设置已成功保存。"
+    url: "版本的 URL"
   search_input_placeholder: "搜索..."
   setting_activity_days_default: "显示在项目活动上的天"
   setting_app_subtitle: "应用副标题"
@@ -1224,9 +1294,8 @@ zh:
   setting_autologin: "自动登录"
   setting_available_languages: "可用语言"
   setting_bcc_recipients: "密件抄送 (bcc) 收件人"
-  setting_brute_force_block_after_failed_logins: Block user after this number of failed
-    login attempts
-  setting_brute_force_block_minutes: Time the user is blocked for
+  setting_brute_force_block_after_failed_logins: "登录失败的尝试次数多于该数字将用户阻止"
+  setting_brute_force_block_minutes: "用户被阻止的时长"
   setting_cache_formatted_text: "缓存带格式的文本"
   setting_column_options: "自定义工作包列表的外观"
   setting_commit_fix_keywords: "固定的关键字"
@@ -1260,17 +1329,19 @@ zh:
   setting_work_package_properties: "工作包属性"
   setting_work_package_startdate_is_adddate: "使用当前日期作为新工作包的开始日期"
   setting_work_packages_export_limit: "工作包导出限制"
-  setting_journal_aggregation_time_minutes: Display journals as aggregated within
+  setting_journal_aggregation_time_minutes: "将日志作为总数显示于"
   setting_log_requesting_user: "记录所有请求的用户帐户，名称和邮件地址"
   setting_login_required: "需要身份验证"
   setting_mail_from: "发出的电子邮件地址"
-  setting_mail_handler_api_enabled: "对于传入的电子邮件启用 WS"
+  setting_mail_handler_api_enabled: "启用接收电子邮件 web 服务"
+  setting_mail_handler_api_description: "电子邮件 web 处理程序启用 OpenProject来接收包含特定命令的电子邮件作为一种工作机制
+    (例如，可以创建和更新工作列表)。"
   setting_mail_handler_api_key: API 密钥
   setting_mail_handler_body_delimiters: "在这些行之后截断电子邮件"
   setting_new_project_user_role_id: "给创建项目的非管理员用户的角色"
   setting_password_active_rules: "激活支付类型"
   setting_password_count_former_banned: "禁止重复使用最近使用密码的数量"
-  setting_password_days_valid: Number of days, after which to enforce a password change
+  setting_password_days_valid: "数天之后，用以强制更改密码"
   setting_password_min_length: "最小长度"
   setting_password_min_adhered_rules: "所需类的最小数目"
   setting_per_page_options: "每页对象选项"
@@ -1286,7 +1357,8 @@ zh:
   setting_session_ttl_hint: "值低于5的类似禁用"
   setting_session_ttl_enabled: "会话过期"
   setting_start_of_week: "日历开始于"
-  setting_sys_api_enabled: "为代码库管理启用 WS"
+  setting_sys_api_enabled: "启用版本库管理 web 服务"
+  setting_sys_api_description: "版本库管理 web 服务提供了一体化的，以及用户授权来访问版本库。"
   setting_text_formatting: "文本格式"
   setting_time_format: "时间格式"
   setting_ui_theme: "主题"
@@ -1330,7 +1402,7 @@ zh:
   text_enumeration_destroy_question: "%{count} 个对象被分配到该值。"
   text_file_repository_writable: "附件目录可写"
   text_git_repo_example: "一个纯粹和本地的代码库(e.g. /gitrepo, c:\\gitrepo)"
-  text_hint_disable_with_0: 'Note: Disable with 0'
+  text_hint_disable_with_0: "注意: 0被禁用"
   text_work_package_added: "工作包 %{id} 已经被 %{author} 报告。"
   text_work_package_category_destroy_assignments: "删除类别分配"
   text_work_package_category_destroy_question: "一些工作包 (%{count}) 被分配到这个类别。你想做什么？"
@@ -1339,9 +1411,7 @@ zh:
   text_work_packages_destroy_confirmation: "确实要删除所选的工作包吗?"
   text_work_packages_ref_in_commit_messages: "引用和修复工作包中提交消息"
   text_journal_added: "%{label} %{value} 已添加"
-  text_journal_aggregation_time_explanation: Combine journals for display if their
-    age difference is less than the specified timespan. This will also delay mail
-    notifications by the same amount of time.
+  text_journal_aggregation_time_explanation: "如果两篇日志的时间差小于指定的时间区间，将它们组合显示。这也将邮件通知延迟同样的时间。"
   text_journal_changed: "%{label} 变更从 %{old} 到 %{new}"
   text_journal_changed_no_detail: "%{label} 已更新"
   text_journal_changed_with_diff: "%{label} 已变更 (%{link})"
@@ -1358,7 +1428,8 @@ zh:
   text_own_membership_delete_confirmation: "您将要删除部分或全部的权限，可能不能够在那之后编辑此项目。 \n您确定要继续吗？"
   text_plugin_assets_writable: "插件资产目录可写"
   text_powered_by: Powered by %{link}
-  text_project_destroy_confirmation: "确实要删除此项目和相关的数据吗?"
+  text_project_destroy_title: "你真的想要删除此项目吗?"
+  text_project_destroy_confirmation: "如果您继续，%{identifier} 项目以及其所有相关的数据将被永久销毁。请如果你想要继续，请勾选下面的框。"
   text_project_identifier_info: "只有小写字母 (a-z)、 数字、 短划线和下划线被允许，必须以小写字母开头。"
   text_reassign: "重新分配给"
   text_reassign_to: "工作包："
@@ -1406,7 +1477,6 @@ zh:
       project_type: "项目类型"
       project_types: "项目类型"
     project_menu:
-      planning_elements: "规划元素"
       project_associations: "依赖项"
       reportings: "状态报告"
       reports: "时间线报表"
@@ -1426,7 +1496,7 @@ zh:
     duration: "持续时间"
     duration_days:
       one: 1 day
-      other: "%{count} days"
+      other: "%{count} 天"
     edit_color: "编辑颜色"
     edit_project_type: "编辑项目类型"
     edit_thing: "编辑"
@@ -1471,8 +1541,8 @@ zh:
         absolute: "绝对"
         none: "无"
         relative: "相对"
-        compare_relative_prefix: Compare current planning to
-        compare_relative_suffix: ago
+        compare_relative_prefix: "当前计划对比与"
+        compare_relative_suffix: "之前"
         compare_absolute: "对比当前计划和 %{date}"
       time_relative:
         days: "天"
@@ -1499,7 +1569,7 @@ zh:
       types: "显示类型"
       status: "显示状态"
       project_time_filter: "项目具有在一定时间段中的某类型工作包"
-      project_time_filter_timeframe: Timeframe
+      project_time_filter_timeframe: "时间范围"
       project_time_filter_historical_from: "从"
       project_time_filter_historical_to: "到"
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -1587,7 +1657,7 @@ zh:
     blocked: "暂时锁定"
     blocked_num_failed_logins:
       one: locked temporarily (one failed login attempt)
-      other: locked temporarily (%{count} failed login attempts)
+      other: "暂时锁定 （%{count} 次登录尝试失败）"
     deleted: "已删除的用户"
     error_status_change_failed: "用户状态更改失败，因为以下错误: %{errors}"
     lock: "永久锁定"
@@ -1619,38 +1689,33 @@ zh:
   nothing_to_preview: "没有什么要预览"
   api_v3:
     attributes:
-      lock_version: Lock Version
+      lock_version: "锁版"
     errors:
       code_401: "你需要被授权访问该资源。"
-      code_401_wrong_credentials: You did not provide the correct credentials.
+      code_401_wrong_credentials: "你没有提供正确的凭据。"
       code_403: "您无权访问此资源。"
-      code_404: The requested resource could not be found.
+      code_404: "找不到所请求的资源。"
       code_409: "无法更新资源，因为发生冲突的修改。"
       invalid_content_type: "预期CONTENT-TYPE为%{content_type}，但是获得了'%{actual}'。"
-      invalid_format: 'Invalid format for property ''%{property}'': Expected format
-        like ''%{expected_format}'', but got ''%{actual}''.'
-      invalid_json: The request could not be parsed as JSON.
-      invalid_relation: The relation is invalid.
-      invalid_resource: For property '%{property}' a link like '%{expected}' is expected,
-        but got '%{actual}'.
-      invalid_user_status_transition: The current user account status does not allow
-        this operation.
-      missing_content_type: not specified
-      missing_request_body: There was no request body.
-      multipart_body_error: The request body did not contain the expected multipart
-        parts.
-      multiple_errors: Multiple field constraints have been violated.
+      invalid_format: "'%{property}' 属性的格式无效: 需要的格式是 '%{expected_format}'，但得到的是 '%{actual}'。"
+      invalid_json: "请求无法被解析成JSON格式。"
+      invalid_relation: "无效的关系。"
+      invalid_resource: "'%{property}' 属性需要的链接如 '%{expected}' ，但得到的是 '%{actual}'。"
+      invalid_user_status_transition: "当前的用户帐户状态不允许此操作。"
+      missing_content_type: "未指定"
+      missing_request_body: "请求中未包含正文。"
+      multipart_body_error: "请求正文中不包含所需要的多段部分。"
+      multiple_errors: "违反了多个字段的约束。"
       writing_read_only_attributes: "你不能写入只读属性。"
       render:
-        context_not_parsable: The context provided is not a link to a resource.
-        unsupported_context: The resource given is not supported as context.
-        context_object_not_found: Cannot find the resource given as the context.
+        context_not_parsable: "所提供的上下文环境并不是指向资源的链接。"
+        unsupported_context: "所提供的资源不被上下文环境所支持。"
+        context_object_not_found: "找不到可作为上下文环境的资源。"
       validation:
-        done_ratio: Done ratio cannot be set on parent work packages, when it is inferred
-          by status or when it is disabled.
-        due_date: Due date cannot be set on parent work packages.
-        estimated_hours: Estimated hours cannot be set on parent work packages.
+        done_ratio: "当完成比例牵扯“状态”时，或被禁用时，不能在父工作列表中对其进行设置。"
+        due_date: "不能在父工作列表中设置纳期。"
+        estimated_hours: "不能在父工作列表中设置预估的小时数。"
         invalid_user_assigned_to_work_package: "所选的用户不允许为此工作包的 '%{property}'。"
-        start_date: Start date cannot be set on parent work packages.
+        start_date: "不能在父工作列表中设置开始日期。"
     resources:
-      schema: Schema
+      schema: "方案"

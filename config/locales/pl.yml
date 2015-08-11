@@ -55,6 +55,8 @@ pl:
         host: Host
         onthefly: Tworzenie użytkownika w locie
         port: Port
+      changeset:
+        repository: Repozytorium
       comment:
         commented: Skomentował
       custom_field:
@@ -140,6 +142,7 @@ pl:
         hexcode: Kod szesnastkowy
       project_association:
         description: Przyczyna
+        project_b: Dependent project
       project_type:
         allows_association: Umożliwiaj skojarzenia
         name: Nazwa
@@ -205,7 +208,8 @@ pl:
         could_not_be_copied: could not be (fully) copied.
       models:
         project_association:
-          identical_projects: can not be created from one project to itself.
+          identical_projects: Dependency cannot be created between one project and
+            itself.
           project_association_not_allowed: does not allow associations.
         repository:
           not_whitelisted: is not allowed by the configuration.
@@ -265,7 +269,6 @@ pl:
       comment: Komentarz
       custom_field: Pola niestandardowe
       group: Grupa
-      issue: Problem
       category: Kategoria
       status: Stan zadania
       member: Członek
@@ -277,7 +280,6 @@ pl:
         other: Roles
         few: Roles
       type: Typ
-      planning_element: Elementem planowania
       project_type: Typ projektu
       user: Użytkownik
       version: Wersja
@@ -297,7 +299,7 @@ pl:
     attachments: Załączniki
     author: Autor
     base: 'Błąd ogólny:'
-    blocks_ids: Bloki
+    blocks_ids: IDs of blocked work packages
     category: Kategoria
     comment: Komentarz
     comments: Komentarz
@@ -510,44 +512,65 @@ pl:
         one: hour
         other: hours
         few: hours
-  default_activity_management: Zarządzanie
-  default_activity_design: Kompozycja
   default_activity_development: Development
+  default_activity_management: Zarządzanie
+  default_activity_other: Inne
+  default_activity_specification: Specification
+  default_activity_support: Wsparcie
   default_activity_testing: Testowanie
-  default_activity_Support: Wsparcie
-  default_activity_Other: Inne
-  default_status_new: nowy
-  default_status_specified: wybrany
-  default_status_confirmed: potwierdzony
-  default_status_to_be_scheduled: do zaplanowania
-  default_status_scheduled: zaplanowane
-  default_status_in_progress: w toku
-  default_status_tested: testowane
-  default_status_on_hold: zawieszone
-  default_status_rejected: odrzucone
+  default_color_black: Black
+  default_color_blue: Blue
+  default_color_blue_dark: Blue (dark)
+  default_color_blue_light: Blue (light)
+  default_color_green_dark: Green (dark)
+  default_color_green_light: Green (light)
+  default_color_grey_dark: Grey (dark)
+  default_color_grey_light: Grey (light)
+  default_color_grey: Grey
+  default_color_magenta: Magenta
+  default_color_orange: Orange
+  default_color_red: Czerwony
+  default_color_white: White
+  default_color_yellow: Yellow
   default_status_closed: Zamknięte
+  default_status_confirmed: Confirmed
+  default_status_developed: Developed
+  default_status_in_development: In development
+  default_status_in_progress: In progress
+  default_status_in_specification: In specification
+  default_status_in_testing: In testing
+  default_status_new: Nowy
+  default_status_on_hold: On hold
+  default_status_rejected: Odrzucone
+  default_status_scheduled: Scheduled
+  default_status_specified: Specified
+  default_status_tested: Tested
+  default_status_test_failed: Test failed
+  default_status_to_be_scheduled: To be scheduled
   default_priority_low: Niski
   default_priority_normal: Normalne
   default_priority_high: Wysokie
   default_priority_immediate: Natychmiastowe
-  default_project_type_customer: Projekt klienta
-  default_project_type_internal: Projekt wewnętrzny
+  default_project_type_scrum: Scrum team
+  default_project_type_standard: Standard project
   default_reported_project_status_green: Zielony
   default_reported_project_status_amber: Bursztynowy
   default_reported_project_status_red: Czerwony
   default_role_anonymous: Anonimowy
   default_role_developer: Deweloper
-  default_role_manager: Menedżer
+  default_role_project_admin: Project admin
   default_role_non_member: nie jest członkiem
   default_role_reader: Czytnik
   default_role_member: Członek
   default_type: Zadania
-  default_type_task: Zadanie
+  default_type_bug: Błąd
   default_type_deliverable: Dostarczalny
+  default_type_epic: Epic
+  default_type_feature: Cecha/Funckja
   default_type_milestone: Kamień milowy
   default_type_phase: Etap
-  default_type_bug: Błąd
-  default_type_feature: Cecha/Funckja
+  default_type_task: Zadanie
+  default_type_user_story: User story
   description_active: Aktywne?
   description_attachment_toggle: Pokaż/Ukryj załączniki
   description_autocomplete: To pole używa funkcji autouzupełniania. Podczas pisania
@@ -594,7 +617,6 @@ pl:
   error_can_not_remove_role: Ta Rola jest używana i nie można jej usunąć.
   error_can_not_reopen_work_package_on_closed_version: Nie można otworzyć zadania
     przypisanego do zamkniętej wersji
-  error_can_t_load_default_data: 'Domyślna konfiguracja nie może być załadowana: %{value}'
   error_check_user_and_role: Wybierz użytkownika i rolę.
   error_work_package_done_ratios_not_updated: Nie zaktualizowane wskaźniki wykonania
     zadania.
@@ -656,7 +678,6 @@ pl:
   label_add_another_file: Dodaj plik
   label_add_columns: Dodaj wybrane kolumny
   label_add_note: Dodaj notatkę
-  label_add_related_issues: Dodaj powiązany problem
   label_add_related_work_packages: Dodaj powiązane zadanie
   label_add_subtask: Dodać zadanie podrzędne
   label_added: dodane
@@ -702,6 +723,7 @@ pl:
   label_category: Kategoria
   label_wiki_menu_item: Element menu Wiki
   label_select_main_menu_item: Wybierz nową pozycję menu głównego
+  label_required_disk_storage: Required disk storage
   label_change_plural: Zmiany
   label_change_properties: Zmiana właściwości
   label_change_status: Zmiana stanu
@@ -777,7 +799,6 @@ pl:
   label_feeds_access_key_created_on: Klucz dostępu RSS utworzony %{value} temu
   label_file_added: Plik dodany
   label_file_plural: Pliki
-  label_filesystem_path: Katalog główny
   label_filter_add: Dodaj filtr
   label_filter_plural: Filtry
   label_float: Liczba rzeczywista
@@ -924,6 +945,7 @@ pl:
   label_principal_search: Szukaj użytkowników lub grup
   label_profile: Profil
   label_project_all: Wszystkie projekty
+  label_project_count: Total number of projects
   label_project_copy_notifications: Wyślij powiadomienia e-mail podczas kopiowania
     projektów
   label_project_latest: Najnowsze projekty
@@ -1120,6 +1142,10 @@ pl:
   label_keyboard_shortcut_focus_next_item: Focus next list element (on some lists
     only)
   label_visible_elements: Visible elements
+  auth_source:
+    using_abstract_auth_source: Can't use an abstract authentication source.
+    ldap_error: 'LDAP-Error: %{error_message}'
+    ldap_auth_failed: Could not authenticate at the LDAP-Server.
   macro_execution_error: Błąd podczas wykonywania makra %{macro_name}
   macro_unavailable: Makro %{macro_name} nie może zostać wyświetlone.
   mail_body_account_activation_request: 'A new user (%{value}) has registered. The
@@ -1168,7 +1194,6 @@ pl:
   notice_api_access_key_reseted: Twój klucz dostępu API został zresetowany.
   notice_can_t_change_password: This account uses an external authentication source.
     Impossible to change the password.
-  notice_default_data_loaded: Default configuration successfully loaded.
   notice_email_error: An error occurred while sending mail (%{value})
   notice_email_sent: E-mail został wysłany do %{value}
   notice_failed_to_save_work_packages: 'Nieudany zapis %{count} na %{total} wybranych
@@ -1306,6 +1331,80 @@ pl:
     assigned_to_role: Przypisany do roli
     member_of_group: Przypisany do grupy
     subproject_id: Podprojekt
+  repositories:
+    checkout_instructions: Checkout instructions
+    create_managed_delay: 'Please note: The repository is managed, it is created asynchronously
+      on the disk and will be available shortly.'
+    create_successful: The repository has been registered.
+    delete_sucessful: The repository has been deleted.
+    destroy:
+      title: Are you absolutely sure?
+      managed_text: If you continue, this will permanently delete the managed repository
+        of %{project_name}. This action cannot be reverted.
+      managed_path_note: 'The following directory will be erased: %{path}'
+      linked_text: |
+        You're about to remove the linked repository %{url} from the project %{project_name}.
+        Note: This will NOT delete the contents of this repository, as it is not managed by OpenProject.
+    errors:
+      build_failed: Unable to create the repository with the selected configuration.
+        %{reason}
+      empty_repository: The repository exists, but is empty. It does not contain any
+        revisions yet.
+      exists_on_filesystem: The repository directory exists already on filesystem.
+      filesystem_access_failed: 'An error occurred while creating the repository on
+        filesystem: %{message}.'
+      not_manageable: This repository vendor cannot be managed by OpenProject.
+      path_permission_failed: 'An error occurred trying to create the following path:
+        %{path}. Please ensure that OpenProject may write to that folder.'
+      unauthorized: You're not authorized to access the repository or the credentials
+        are invalid.
+      unavailable: The repository is unavailable.
+      exception_title: 'Cannot access the repository: %{message}'
+      disabled_or_unknown_type: The selected type %{type} is disabled or no longer
+        available for the SCM vendor %{vendor}.
+      disabled_or_unknown_vendor: The SCM vendor %{vendor} is disabled or no longer
+        available.
+    git:
+      instructions:
+        managed_url: This is the URL of the managed (local) Git repository.
+        path: Specify the path to your local Git repository ( e.g., %{example_path}
+          ).
+        path_encoding: 'Override Git path encoding (Default: UTF-8)'
+      local_title: Link existing local Git repository
+      local_introduction: If you have an existing local Git repository, you can link
+        it with OpenProject to access it from within the application.
+      managed_path: Managed Git path (preview)
+      managed_introduction: Let OpenProject create and integrate a local Git repository
+        automatically.
+      managed_title: Git repository integrated into OpenProject
+      path: Path to Git repository
+      path_encoding: Path encoding
+    go_to_revision: Go to revision
+    scm_vendor: Source control management system
+    scm_type: Repository type
+    scm_types:
+      local: Link existing local repository
+      existing: Link existing repository
+      managed: Create new repository in OpenProject
+    storage:
+      not_available: Disk storage consumption is not available for this repository.
+    subversion:
+      existing_title: Existing Subversion repository
+      existing_introduction: If you have an existing Subversion repository, you can
+        link it with OpenProject to access it from within the application.
+      instructions:
+        managed_url: This is the URL of the managed (local) Subversion repository.
+        url: |
+          Enter the repository URL. This may either target a local repository (starting with %{local_proto} ), or a remote repository.
+          The following URL schemes are supported:
+      managed_title: Subversion repository integrated into OpenProject
+      managed_introduction: Let OpenProject create and integrate a local Subversion
+        repository automatically.
+      managed_url: Managed URL
+      password: Repository Password
+      username: Repository username
+    update_settings_successful: The settings have been sucessfully saved.
+    url: URL to repository
   search_input_placeholder: szukaj...
   setting_activity_days_default: Dni wyświetlane w aktywności projektu
   setting_app_subtitle: Podtytuł
@@ -1359,7 +1458,10 @@ pl:
     dla wszystkich żądań
   setting_login_required: Wymagane uwierzytelnienie
   setting_mail_from: Adres emisji
-  setting_mail_handler_api_enabled: Włącz WS dla przychodzących wiadomości e-mail
+  setting_mail_handler_api_enabled: Enable incoming email web service
+  setting_mail_handler_api_description: The email web handler enables OpenProject
+    to receive emails containing specific commands as an instrumentation mechanism
+    (e.g., to create and update work packages).
   setting_mail_handler_api_key: Klucz API
   setting_mail_handler_body_delimiters: Obcinanie e-mail po jednej z tych linii
   setting_new_project_user_role_id: Rola dla użytkownika bez uprawnień administratora,
@@ -1386,7 +1488,9 @@ pl:
   setting_session_ttl_hint: Value below 5 works like disabled
   setting_session_ttl_enabled: Sesja wygasła
   setting_start_of_week: Początek tygodnia od
-  setting_sys_api_enabled: Enable WS for repository management
+  setting_sys_api_enabled: Enable repository management web service
+  setting_sys_api_description: The repository management web service provides integration
+    and user authorization for accessing repositories.
   setting_text_formatting: Formatowanie tekstu
   setting_time_format: Format czasu
   setting_ui_theme: Motyw
@@ -1470,8 +1574,10 @@ pl:
     Czy na pewno chcesz kontynuować?
   text_plugin_assets_writable: Plugin assets directory writable
   text_powered_by: Napędzany przez %{link}
-  text_project_destroy_confirmation: Czy na pewno chcesz usunąć ten projekt i związane
-    z nim dane?
+  text_project_destroy_title: Do you really want to delete this project?
+  text_project_destroy_confirmation: If you continue, the project %{identifier} and
+    all related data will be permanently destroyed. Please check the box below if
+    you want to continue.
   text_project_identifier_info: Tylko małe litery (a-z), cyfry, myślniki i podkreślenia
     są dozwolone, oraz musi zaczynać się małą literą.
   text_reassign: Przypisz do
@@ -1526,7 +1632,6 @@ pl:
       project_type: Typ projektu
       project_types: Typy projektów
     project_menu:
-      planning_elements: Elementy planowania
       project_associations: Zależności
       reportings: Raporty statusów
       reports: Sprawozdania terminów

@@ -56,6 +56,8 @@ sk:
         host: Host
         onthefly: Vytvorenie používateľa "za behu"
         port: Port
+      changeset:
+        repository: Repozitár
       comment:
         commented: Komentované
       custom_field:
@@ -140,6 +142,7 @@ sk:
         hexcode: Hex kód
       project_association:
         description: Príčina
+        project_b: Dependent project
       project_type:
         allows_association: Povoliť asociácie
         name: Názov
@@ -205,7 +208,8 @@ sk:
         could_not_be_copied: Nepodarilo sa (úplne) skopírovať.
       models:
         project_association:
-          identical_projects: projekt nemôže byť previazaný sám so sebou.
+          identical_projects: Dependency cannot be created between one project and
+            itself.
           project_association_not_allowed: nedovoľuje vytváranie väzieb na iné projekty.
         repository:
           not_whitelisted: nie je povolené aktuálnou konfiguráciou.
@@ -267,7 +271,6 @@ sk:
       comment: Komentár
       custom_field: Vlastné pole
       group: Skupina
-      issue: Problém
       category: Kategória
       status: Stav pracovného balíčka
       member: "Člen"
@@ -275,11 +278,10 @@ sk:
       project: Projekt
       query: Vlastný dopyt
       role:
-        one: Role
-        other: Roles
-        few: Roles
+        one: Rola
+        other: Rolí
+        few: Roly
       type: Typ
-      planning_element: Planning element
       project_type: Typ projektu
       user: Užívateľ(ka)
       version: Verzia
@@ -299,7 +301,7 @@ sk:
     attachments: Prílohy
     author: Autor
     base: 'Všeobecná chyba:'
-    blocks_ids: Blocks
+    blocks_ids: IDs of blocked work packages
     category: Kategória
     comment: Komentár
     comments: Komentár
@@ -464,93 +466,114 @@ sk:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: about 1 hour
-        other: about %{count} hours
-        few: about %{count} hours
+        one: približne 1 hodina
+        other: približne %{count} hodín
+        few: približne %{count} hodiny
       about_x_months:
-        one: about 1 month
-        other: about %{count} months
-        few: about %{count} months
+        one: približne 1 mesiac
+        other: približne %{count} mesiacov
+        few: približne %{count} mesiace
       about_x_years:
-        one: about 1 year
-        other: about %{count} years
-        few: about %{count} years
+        one: približne 1 rok
+        other: približne %{count} rokov
+        few: približne %{count} roky
       almost_x_years:
-        one: almost 1 year
-        other: almost %{count} years
-        few: almost %{count} years
+        one: takmer 1 rok
+        other: takmer %{count} rokov
+        few: takmer %{count} roky
       half_a_minute: pol minúty
       less_than_x_minutes:
-        one: less than a minute
-        other: less than %{count} minutes
-        few: less than %{count} minutes
+        one: menej než minúta
+        other: menej než %{count} minút
+        few: menej než %{count} minúty
       less_than_x_seconds:
-        one: less than 1 second
-        other: less than %{count} seconds
-        few: less than %{count} seconds
+        one: menej než sekunda
+        other: menej než %{count} sekúnd
+        few: menej než %{count} sekundy
       over_x_years:
-        one: over 1 year
-        other: over %{count} years
-        few: over %{count} years
+        one: viac ako 1 rok
+        other: viac ako %{count} rokov
+        few: viac ako %{count} roky
       x_days:
-        one: 1 day
-        other: "%{count} days"
-        few: "%{count} days"
+        one: 1 deň
+        other: "%{count} dní"
+        few: "%{count} dni"
       x_minutes:
-        one: 1 minute
-        other: "%{count} minutes"
-        few: "%{count} minutes"
+        one: 1 minúta
+        other: "%{count} minút"
+        few: "%{count} minúty"
       x_months:
-        one: 1 month
-        other: "%{count} months"
-        few: "%{count} months"
+        one: 1 mesiac
+        other: "%{count} mesiacov"
+        few: "%{count} mesiace"
       x_seconds:
-        one: 1 second
-        other: "%{count} seconds"
-        few: "%{count} seconds"
+        one: 1 sekunda
+        other: "%{count} sekúnd"
+        few: "%{count} sekundy"
     units:
       hour:
         one: hour
         other: hours
         few: hours
-  default_activity_management: Riadenie
-  default_activity_design: Návrh
   default_activity_development: Vývoj
+  default_activity_management: Riadenie
+  default_activity_other: Ostatné
+  default_activity_specification: Specification
+  default_activity_support: Podpora
   default_activity_testing: Testovanie
-  default_activity_Support: Podpora
-  default_activity_Other: Ostatné
-  default_status_new: nové
-  default_status_specified: uvedené
-  default_status_confirmed: potvrdené
-  default_status_to_be_scheduled: má byť naplánované
-  default_status_scheduled: naplánované
-  default_status_in_progress: prebieha
-  default_status_tested: otestované
-  default_status_on_hold: pozastavené
-  default_status_rejected: zamietnuté
-  default_status_closed: uzatvorené
+  default_color_black: Black
+  default_color_blue: Blue
+  default_color_blue_dark: Blue (dark)
+  default_color_blue_light: Blue (light)
+  default_color_green_dark: Green (dark)
+  default_color_green_light: Green (light)
+  default_color_grey_dark: Grey (dark)
+  default_color_grey_light: Grey (light)
+  default_color_grey: Grey
+  default_color_magenta: Magenta
+  default_color_orange: Orange
+  default_color_red: "Červená"
+  default_color_white: White
+  default_color_yellow: Yellow
+  default_status_closed: Closed
+  default_status_confirmed: Confirmed
+  default_status_developed: Developed
+  default_status_in_development: In development
+  default_status_in_progress: In progress
+  default_status_in_specification: In specification
+  default_status_in_testing: In testing
+  default_status_new: Nový
+  default_status_on_hold: On hold
+  default_status_rejected: Rejected
+  default_status_scheduled: Scheduled
+  default_status_specified: Specified
+  default_status_tested: Tested
+  default_status_test_failed: Test failed
+  default_status_to_be_scheduled: To be scheduled
   default_priority_low: Nízka
   default_priority_normal: Normálna
   default_priority_high: Vysoká
   default_priority_immediate: Okamžité
-  default_project_type_customer: Zákaznícky projekt
-  default_project_type_internal: Interný projekt
+  default_project_type_scrum: Scrum team
+  default_project_type_standard: Standard project
   default_reported_project_status_green: Zelená
   default_reported_project_status_amber: Jantárová
   default_reported_project_status_red: "Červená"
   default_role_anonymous: Anonymný
   default_role_developer: Vývojár
-  default_role_manager: Manažér
+  default_role_project_admin: Project admin
   default_role_non_member: Nie člen
   default_role_reader: "Čitateľ"
   default_role_member: "Člen"
   default_type: Pracovný balíček
-  default_type_task: "Úloha"
+  default_type_bug: Chyba
   default_type_deliverable: Výstup
+  default_type_epic: Epic
+  default_type_feature: Nová funkcia
   default_type_milestone: Míľnik
   default_type_phase: Fáza
-  default_type_bug: Chyba
-  default_type_feature: Nová funkcia
+  default_type_task: "Úloha"
+  default_type_user_story: User story
   description_active: Aktívny?
   description_attachment_toggle: Zobraziť / skryť prílohy
   description_autocomplete: This field uses autocomplete. While typing the title of
@@ -597,7 +620,6 @@ sk:
   error_can_not_remove_role: This role is in use and cannot be deleted.
   error_can_not_reopen_work_package_on_closed_version: Pracovný balíček, ktorý je
     priradený na uzatvorenú verziu sa nedá znovu-otvoriť
-  error_can_t_load_default_data: 'Default configuration could not be loaded: %{value}'
   error_check_user_and_role: Please choose a user and a role.
   error_work_package_done_ratios_not_updated: Work package done ratios not updated.
   error_work_package_not_found_in_project: The work package was not found or does
@@ -657,7 +679,6 @@ sk:
   label_add_another_file: Pridať ďalší súbor
   label_add_columns: Pridať vybraté stĺpce
   label_add_note: Pridať poznámku
-  label_add_related_issues: Pridať naviazaný problém
   label_add_related_work_packages: Pridať naviazaný pracovný balíček
   label_add_subtask: Pridať podúlohu
   label_added: pridané
@@ -703,6 +724,7 @@ sk:
   label_category: Kategória
   label_wiki_menu_item: Wiki menu item
   label_select_main_menu_item: Vyberte novú položku hlavného menu
+  label_required_disk_storage: Required disk storage
   label_change_plural: Zmeny
   label_change_properties: Zmeniť vlastnosti
   label_change_status: Zmeniť stav
@@ -777,7 +799,6 @@ sk:
   label_feeds_access_key_created_on: Prístupový kľúč pre RSS vytvorený %{value} vzad
   label_file_added: Súbor pridaný
   label_file_plural: Súbory
-  label_filesystem_path: Hlavný adresár
   label_filter_add: Pridať filter
   label_filter_plural: Filtre
   label_float: Float
@@ -924,6 +945,7 @@ sk:
   label_principal_search: Search for users or groups
   label_profile: Profile
   label_project_all: All Projects
+  label_project_count: Total number of projects
   label_project_copy_notifications: Odoslať e-mail notifikácie počas kopírovania projektu
   label_project_latest: Najnovšie projekty
   label_project_default_type: Allow empty type
@@ -1063,30 +1085,30 @@ sk:
   label_workflow_plural: Workflows
   label_workflow_summary: Zhrnutie
   label_x_closed_work_packages_abbr:
-    one: 1 closed
-    other: "%{count} closed"
+    one: 1 uzatvorený
+    other: "%{count} uzatvorených"
     zero: 0 closed
-    few: "%{count} closed"
+    few: "%{count} uzatvorené"
   label_x_comments:
-    one: 1 comment
-    other: "%{count} comments"
+    one: 1 komentár
+    other: "%{count} komentárov"
     zero: no comments
-    few: "%{count} comments"
+    few: "%{count} komentáre"
   label_x_open_work_packages_abbr:
-    one: 1 open
-    other: "%{count} open"
+    one: 1 otvorený
+    other: "%{count} otvorených"
     zero: 0 open
-    few: "%{count} open"
+    few: "%{count} otvorené"
   label_x_open_work_packages_abbr_on_total:
-    one: 1 open / %{total}
-    other: "%{count} open / %{total}"
+    one: otvorený 1 / %{total}
+    other: otvorených %{count} / %{total}
     zero: 0 open / %{total}
-    few: "%{count} open / %{total}"
+    few: otvorené %{count} / %{total}
   label_x_projects:
-    one: 1 project
-    other: "%{count} projects"
+    one: 1 projekt
+    other: "%{count} projektov"
     zero: no projects
-    few: "%{count} projects"
+    few: "%{count} projekty"
   label_year: Rok
   label_yesterday: včera
   label_keyboard_function: Function
@@ -1119,6 +1141,10 @@ sk:
   label_keyboard_shortcut_focus_next_item: Focus next list element (on some lists
     only)
   label_visible_elements: Viditeľné prvky
+  auth_source:
+    using_abstract_auth_source: Can't use an abstract authentication source.
+    ldap_error: 'LDAP-Error: %{error_message}'
+    ldap_auth_failed: Could not authenticate at the LDAP-Server.
   macro_execution_error: Error executing the macro %{macro_name}
   macro_unavailable: Macro %{macro_name} cannot be displayed.
   mail_body_account_activation_request: 'A new user (%{value}) has registered. The
@@ -1168,7 +1194,6 @@ sk:
   notice_api_access_key_reseted: Your API access key was reset.
   notice_can_t_change_password: This account uses an external authentication source.
     Impossible to change the password.
-  notice_default_data_loaded: Default configuration successfully loaded.
   notice_email_error: An error occurred while sending mail (%{value})
   notice_email_sent: An email was sent to %{value}
   notice_failed_to_save_work_packages: 'Failed to save %{count} work package(s) on
@@ -1219,9 +1244,9 @@ sk:
         format: "%n %u"
         units:
           byte:
-            one: Byte
-            other: Bytes
-            few: Bytes
+            one: Bajt
+            other: Bajtov
+            few: Bajty
           gb: GB
           kb: kB
           mb: MB
@@ -1306,6 +1331,80 @@ sk:
     assigned_to_role: Priradená rola
     member_of_group: Assignee's group
     subproject_id: Podprojekt
+  repositories:
+    checkout_instructions: Checkout instructions
+    create_managed_delay: 'Please note: The repository is managed, it is created asynchronously
+      on the disk and will be available shortly.'
+    create_successful: The repository has been registered.
+    delete_sucessful: The repository has been deleted.
+    destroy:
+      title: Are you absolutely sure?
+      managed_text: If you continue, this will permanently delete the managed repository
+        of %{project_name}. This action cannot be reverted.
+      managed_path_note: 'The following directory will be erased: %{path}'
+      linked_text: |
+        You're about to remove the linked repository %{url} from the project %{project_name}.
+        Note: This will NOT delete the contents of this repository, as it is not managed by OpenProject.
+    errors:
+      build_failed: Unable to create the repository with the selected configuration.
+        %{reason}
+      empty_repository: The repository exists, but is empty. It does not contain any
+        revisions yet.
+      exists_on_filesystem: The repository directory exists already on filesystem.
+      filesystem_access_failed: 'An error occurred while creating the repository on
+        filesystem: %{message}.'
+      not_manageable: This repository vendor cannot be managed by OpenProject.
+      path_permission_failed: 'An error occurred trying to create the following path:
+        %{path}. Please ensure that OpenProject may write to that folder.'
+      unauthorized: You're not authorized to access the repository or the credentials
+        are invalid.
+      unavailable: The repository is unavailable.
+      exception_title: 'Cannot access the repository: %{message}'
+      disabled_or_unknown_type: The selected type %{type} is disabled or no longer
+        available for the SCM vendor %{vendor}.
+      disabled_or_unknown_vendor: The SCM vendor %{vendor} is disabled or no longer
+        available.
+    git:
+      instructions:
+        managed_url: This is the URL of the managed (local) Git repository.
+        path: Specify the path to your local Git repository ( e.g., %{example_path}
+          ).
+        path_encoding: 'Override Git path encoding (Default: UTF-8)'
+      local_title: Link existing local Git repository
+      local_introduction: If you have an existing local Git repository, you can link
+        it with OpenProject to access it from within the application.
+      managed_path: Managed Git path (preview)
+      managed_introduction: Let OpenProject create and integrate a local Git repository
+        automatically.
+      managed_title: Git repository integrated into OpenProject
+      path: Path to Git repository
+      path_encoding: Path encoding
+    go_to_revision: Go to revision
+    scm_vendor: Source control management system
+    scm_type: Repository type
+    scm_types:
+      local: Link existing local repository
+      existing: Link existing repository
+      managed: Create new repository in OpenProject
+    storage:
+      not_available: Disk storage consumption is not available for this repository.
+    subversion:
+      existing_title: Existing Subversion repository
+      existing_introduction: If you have an existing Subversion repository, you can
+        link it with OpenProject to access it from within the application.
+      instructions:
+        managed_url: This is the URL of the managed (local) Subversion repository.
+        url: |
+          Enter the repository URL. This may either target a local repository (starting with %{local_proto} ), or a remote repository.
+          The following URL schemes are supported:
+      managed_title: Subversion repository integrated into OpenProject
+      managed_introduction: Let OpenProject create and integrate a local Subversion
+        repository automatically.
+      managed_url: Managed URL
+      password: Repository Password
+      username: Repository username
+    update_settings_successful: The settings have been sucessfully saved.
+    url: URL to repository
   search_input_placeholder: search ...
   setting_activity_days_default: Počet zobrazovaných dní v rámci projektovej aktivity
   setting_app_subtitle: Application subtitle
@@ -1357,7 +1456,10 @@ sk:
   setting_log_requesting_user: Log user login, name, and mail address for all requests
   setting_login_required: Authentication required
   setting_mail_from: Emission email address
-  setting_mail_handler_api_enabled: Enable WS for incoming emails
+  setting_mail_handler_api_enabled: Enable incoming email web service
+  setting_mail_handler_api_description: The email web handler enables OpenProject
+    to receive emails containing specific commands as an instrumentation mechanism
+    (e.g., to create and update work packages).
   setting_mail_handler_api_key: API key
   setting_mail_handler_body_delimiters: Truncate emails after one of these lines
   setting_new_project_user_role_id: Role given to a non-admin user who creates a project
@@ -1382,7 +1484,9 @@ sk:
   setting_session_ttl_hint: Value below 5 works like disabled
   setting_session_ttl_enabled: Session expires
   setting_start_of_week: Start calendars on
-  setting_sys_api_enabled: Povoliť služby typu WS pre správu repozitára
+  setting_sys_api_enabled: Enable repository management web service
+  setting_sys_api_description: The repository management web service provides integration
+    and user authorization for accessing repositories.
   setting_text_formatting: Formátovanie textu
   setting_time_format: Time format
   setting_ui_theme: Theme
@@ -1466,8 +1570,10 @@ sk:
     upravovať nastavenia projektu. Naozaj chcete pokračovať?
   text_plugin_assets_writable: Plugin assets directory writable
   text_powered_by: Powered by %{link}
-  text_project_destroy_confirmation: Are you sure you want to delete this project
-    and related data?
+  text_project_destroy_title: Do you really want to delete this project?
+  text_project_destroy_confirmation: If you continue, the project %{identifier} and
+    all related data will be permanently destroyed. Please check the box below if
+    you want to continue.
   text_project_identifier_info: Sú povolené len malé písmená (a-z), čísla, pomlčky
     a podčiarkovníky, hodnota musí začínať malým písmenom.
   text_reassign: Reassign to
@@ -1522,7 +1628,6 @@ sk:
       project_type: Typ projektu
       project_types: Typy projektov
     project_menu:
-      planning_elements: Planning elements
       project_associations: Závislosti
       reportings: Status reportings
       reports: Timeline reports
@@ -1542,9 +1647,9 @@ sk:
     delete_thing: Odstrániť
     duration: Trvanie
     duration_days:
-      one: 1 day
-      other: "%{count} days"
-      few: "%{count} days"
+      one: 1 deň
+      other: "%{count} dní"
+      few: "%{count} dni"
     edit_color: Upraviť farbu
     edit_project_type: Upraviť typ projektu
     edit_thing: Upraviť

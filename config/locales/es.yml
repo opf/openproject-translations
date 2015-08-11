@@ -60,6 +60,8 @@ es:
         host: Host
         onthefly: Creación de usuario sobre la marcha
         port: Puerto
+      changeset:
+        repository: Repositorio
       comment:
         commented: Comentado
       custom_field:
@@ -145,6 +147,7 @@ es:
         hexcode: Código hexadecimal
       project_association:
         description: Causa
+        project_b: Dependent project
       project_type:
         allows_association: Permite asociar
         name: Nombre
@@ -174,64 +177,65 @@ es:
         watcher: Vigilante
     errors:
       messages:
-        accepted: must be accepted.
-        blank: can't be blank.
-        cant_link_a_work_package_with_a_descendant: A work package cannot be linked
-          to one of its subtasks.
-        circular_dependency: This relation would create a circular dependency.
-        confirmation: doesn't match confirmation.
-        empty: can't be empty.
-        equal_to: must be equal to %{count}.
-        even: must be even.
-        exclusion: is reserved.
-        file_too_large: is too large (maximum size is %{count} Bytes).
-        greater_than: must be greater than %{count}.
-        greater_than_or_equal_to: must be greater than or equal to %{count}.
-        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
-          length.
-        greater_than_start_date: must be greater than start date.
-        inclusion: is not set to one of the allowed values.
-        invalid: is invalid.
-        less_than: must be less than %{count}.
-        less_than_or_equal_to: must be less than or equal to %{count}.
-        not_a_date: is not a date.
-        not_a_number: is not a number.
-        not_an_integer: is not an integer.
-        not_same_project: doesn't belong to the same project.
-        odd: must be odd.
-        taken: has already been taken.
-        too_long: is too long (maximum is %{count} characters).
-        too_short: is too short (minimum is %{count} characters).
-        wrong_length: is the wrong length (should be %{count} characters).
-        after: must be after %{date}.
-        after_or_equal_to: must be after or equal to %{date}.
-        before: must be before %{date}.
-        before_or_equal_to: must be before or equal to %{date}.
-        could_not_be_copied: could not be (fully) copied.
+        accepted: debe ser aceptado.
+        blank: no puede estar en blanco.
+        cant_link_a_work_package_with_a_descendant: Un paquete de trabajo no puede
+          ser vinculado a una de sus subtareas.
+        circular_dependency: Esta relación podría crear una dependencia circular.
+        confirmation: No coincide con la confirmación.
+        empty: No puede estar vacío.
+        equal_to: debe ser igual a %{count}.
+        even: debe ser incluido.
+        exclusion: está reservado.
+        file_too_large: es demasiado grande (el tamaño máximo es de %{count} Bytes).
+        greater_than: debe ser mayor que %{count}.
+        greater_than_or_equal_to: debe ser mayor o igual a %{count}.
+        smaller_than_or_equal_to_max_length: Debe ser menor o igual que el tamaño
+          maximo.
+        greater_than_start_date: debe ser mayor que la fecha de inicio.
+        inclusion: no está establecido a uno de los valores permitidos.
+        invalid: no es válido.
+        less_than: debe ser menos de %{count}.
+        less_than_or_equal_to: debe ser menor o igual a %{count}.
+        not_a_date: No es una fecha.
+        not_a_number: No es un número.
+        not_an_integer: No es un entero.
+        not_same_project: no pertenecen a un mismo proyecto.
+        odd: debe ser impar.
+        taken: Ya se ha tomado.
+        too_long: es demasiado largo (el máximo de caracteres es %{count}).
+        too_short: es demasiado corto (el mínimo de caracteres es %{count}).
+        wrong_length: la longitud es incorrecta (debe ser %{count} caracteres).
+        after: debe ser después de %{date}.
+        after_or_equal_to: debe ser después de o igual a %{date}.
+        before: debe ser antes de %{date}.
+        before_or_equal_to: debe ser antes o igual a %{date}.
+        could_not_be_copied: No pueden ser copiados (totalmente).
       models:
         project_association:
-          identical_projects: can not be created from one project to itself.
-          project_association_not_allowed: does not allow associations.
+          identical_projects: Dependency cannot be created between one project and
+            itself.
+          project_association_not_allowed: no permite asociaciones.
         repository:
-          not_whitelisted: is not allowed by the configuration.
-          no_directory: is not a directory.
+          not_whitelisted: no está permitido por la configuración.
+          no_directory: no es un directorio.
         work_package:
           is_not_a_valid_target_for_time_entries: 'Paquete de trabajo #%{id} no es
             un objetivo válido para reasignar las entradas de tiempo.'
           attributes:
             due_date:
-              not_start_date: is not on start date, although this is required for
-                milestones.
+              not_start_date: no es en fecha de inicio, aunque esto es necesario para
+                hitos.
             parent_id:
-              cannot_be_milestone: cannot be a milestone.
-              cannot_be_in_another_project: cannot be in another project.
-              not_a_valid_parent: is invalid.
-              does_not_exist: does not exist.
+              cannot_be_milestone: no puede ser un hito.
+              cannot_be_in_another_project: No puede estar en otro proyecto.
+              not_a_valid_parent: no es válido.
+              does_not_exist: no existe.
             status_id:
-              status_transition_invalid: is invalid because no valid transition exists
-                from old to new status for the current user's roles.
+              status_transition_invalid: no es válido porque no existe ninguna transición
+                desde el estado antiguo al nuevo para los roles del usuario actual.
             priority_id:
-              only_active_priorities_allowed: needs to be active.
+              only_active_priorities_allowed: debe estar activo.
             category:
               only_same_project_categories_allowed: La categoría de un paquete de
                 trabajo debe estar en el mismo proyecto que el paquete de trabajo.
@@ -242,32 +246,31 @@ es:
         user:
           attributes:
             password:
-              weak: 'must contain characters of the following classes (at least %{min_count}
-                of %{all_count}): %{rules}.'
+              weak: 'debe contener caracteres de las siguientes clases (al menos %{min_count}
+                al %{all_count}): %{rules}.'
               lowercase: en minúsculas (por ejemplo 'a')
               uppercase: en mayúsculas (por ejemplo ' A')
               numeric: numérico (por ejemplo, ' 1')
               special: especial (por ejemplo, ' %')
               reused:
-                one: has been used before. Please choose one that is different from
-                  your last one.
-                other: has been used before. Please choose one that is different from
-                  your last %{count}.
+                one: ya ha sido utilizado antes. Por favor elige uno diferente al
+                  anterior.
+                other: ya ha sido utilizado antes. Por favor elige uno diferente a
+                  los %{count} anteriores.
         member:
           principal_blank: Por favor seleccione al menos un usuario o grupo.
           role_blank: Elija al menos un rol.
       template:
         body: 'Por favor revise los siguientes campos:'
         header:
-          one: 1 error prohibited this %{model} from being saved
-          other: "%{count} errors prohibited this %{model} from being saved"
+          one: 1 error no permite guardar este %{model}
+          other: "%{count} errores no permiten que %{model} sea guardado"
     models:
       attachment: Archivo
       board: Foro
       comment: Comentario
       custom_field: Campo personalizado
       group: Grupo
-      issue: Caso
       category: Categoría
       status: Estado del paquete de trabajo
       member: Miembro
@@ -275,10 +278,9 @@ es:
       project: Proyecto
       query: Consulta personalizada
       role:
-        one: Role
+        one: Rol
         other: Roles
       type: Tipo
-      planning_element: Elemento de planificación
       project_type: Tipo de proyecto
       user: Usuario
       version: Versión
@@ -298,7 +300,7 @@ es:
     attachments: Archivos adjuntos
     author: Autor
     base: 'Error general:'
-    blocks_ids: Bloques
+    blocks_ids: IDs of blocked work packages
     category: Categoría
     comment: Comentario
     comments: Comentario
@@ -461,81 +463,102 @@ es:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: about 1 hour
-        other: about %{count} hours
+        one: aproximadamente 1 hora
+        other: aproximadamente %{count} horas
       about_x_months:
-        one: about 1 month
-        other: about %{count} months
+        one: aproximadamente 1 mes
+        other: aproximadamente %{count} meses
       about_x_years:
-        one: about 1 year
-        other: about %{count} years
+        one: aproximadamente 1 año
+        other: aproximadamente %{count} años
       almost_x_years:
-        one: almost 1 year
-        other: almost %{count} years
+        one: casi 1 año
+        other: casi %{count} años
       half_a_minute: medio minuto
       less_than_x_minutes:
-        one: less than a minute
-        other: less than %{count} minutes
+        one: menos de un minuto
+        other: menos de %{count} minutos
       less_than_x_seconds:
-        one: less than 1 second
-        other: less than %{count} seconds
+        one: menos de 1 segundo
+        other: menos de %{count} segundos
       over_x_years:
-        one: over 1 year
-        other: over %{count} years
+        one: más de 1 año
+        other: más de %{count} años
       x_days:
-        one: 1 day
-        other: "%{count} days"
+        one: 1 día
+        other: "%{count} días"
       x_minutes:
-        one: 1 minute
-        other: "%{count} minutes"
+        one: 1 minuto
+        other: "%{count} minutos"
       x_months:
-        one: 1 month
-        other: "%{count} months"
+        one: 1 mes
+        other: "%{count} meses"
       x_seconds:
-        one: 1 second
-        other: "%{count} seconds"
+        one: 1 segundo
+        other: "%{count} segundos"
     units:
       hour:
-        one: hour
-        other: hours
-  default_activity_management: Administración
-  default_activity_design: Diseño
+        one: hora
+        other: horas
   default_activity_development: Desarrollo
+  default_activity_management: Administración
+  default_activity_other: Otros
+  default_activity_specification: Specification
+  default_activity_support: Soporte
   default_activity_testing: Probando
-  default_activity_Support: Soporte
-  default_activity_Other: Otros
-  default_status_new: nuevo
-  default_status_specified: especificado
-  default_status_confirmed: confirmado
-  default_status_to_be_scheduled: por ser programado
-  default_status_scheduled: agendado
-  default_status_in_progress: en progreso
-  default_status_tested: probado
-  default_status_on_hold: en espera
-  default_status_rejected: rechazado
-  default_status_closed: cerrado
+  default_color_black: Black
+  default_color_blue: Blue
+  default_color_blue_dark: Blue (dark)
+  default_color_blue_light: Blue (light)
+  default_color_green_dark: Green (dark)
+  default_color_green_light: Green (light)
+  default_color_grey_dark: Grey (dark)
+  default_color_grey_light: Grey (light)
+  default_color_grey: Grey
+  default_color_magenta: Magenta
+  default_color_orange: Orange
+  default_color_red: Rojo
+  default_color_white: White
+  default_color_yellow: Yellow
+  default_status_closed: Cerrado
+  default_status_confirmed: Confirmed
+  default_status_developed: Developed
+  default_status_in_development: In development
+  default_status_in_progress: In progress
+  default_status_in_specification: In specification
+  default_status_in_testing: In testing
+  default_status_new: Nuevo
+  default_status_on_hold: On hold
+  default_status_rejected: Rechazado
+  default_status_scheduled: Scheduled
+  default_status_specified: Specified
+  default_status_tested: Tested
+  default_status_test_failed: Test failed
+  default_status_to_be_scheduled: To be scheduled
   default_priority_low: Baja
   default_priority_normal: Normal
   default_priority_high: Alta
   default_priority_immediate: Inmediata
-  default_project_type_customer: Proyecto del cliente
-  default_project_type_internal: Proyecto Interno
+  default_project_type_scrum: Scrum team
+  default_project_type_standard: Standard project
   default_reported_project_status_green: Verde
   default_reported_project_status_amber: Ambar
   default_reported_project_status_red: Rojo
   default_role_anonymous: Anónimo
   default_role_developer: Desarrollador
-  default_role_manager: Administrador
+  default_role_project_admin: Project admin
   default_role_non_member: No miembro
   default_role_reader: Lector
   default_role_member: Miembro
   default_type: Paquete de trabajo
-  default_type_task: Tarea
+  default_type_bug: Error
   default_type_deliverable: Entregable
+  default_type_epic: Epic
+  default_type_feature: Característica
   default_type_milestone: Avance
   default_type_phase: Fase
-  default_type_bug: Error
-  default_type_feature: Característica
+  default_type_task: Tarea
+  default_type_user_story: User story
   description_active: Activo?
   description_attachment_toggle: Mostrar/ocultar archivos adjuntos
   description_autocomplete: Este campo utiliza Autocompletar. Mientras se escribe
@@ -585,8 +608,6 @@ es:
   error_can_not_remove_role: Este rol esta en uso y no puede ser eliminado
   error_can_not_reopen_work_package_on_closed_version: No se puede volver a abrir
     un paquete de trabajo asignado a una versión cerrada
-  error_can_t_load_default_data: 'No se pudo cargar configuración predeterminada:
-    %{value}'
   error_check_user_and_role: Por favor elige un usuario y un rol.
   error_work_package_done_ratios_not_updated: Ejecución de paquete de trabajos no
     actualizado.
@@ -604,11 +625,11 @@ es:
   error_scm_command_failed: 'Se produjo un error al intentar acceder al repositorio:
     %{value}'
   error_scm_not_found: La entrada o la revisión no se encontró en el repositorio.
-  error_unable_delete_status: The work package status cannot be deleted since it is
-    used by at least one work package.
-  error_unable_delete_default_status: Unable to delete the default work package status.
-    Please select another default work package status before deleting the current
-    one.
+  error_unable_delete_status: El estado del paquete de trabajo no se puede eliminar
+    ya que esta siendo utilizado por al menos un paquete de trabajo.
+  error_unable_delete_default_status: No se puede eliminar el estado del paquete trabajo
+    por defecto. Por favor, seleccione otro estado de trabajo predeterminado antes
+    de eliminar el actual.
   error_unable_to_connect: No se puede conectar (%{value})
   error_workflow_copy_source: Por favor, seleccione un tipo de fuente o rol
   error_workflow_copy_target: Por favor, seleccione tipo(s) de objetivos y role(s)
@@ -649,7 +670,6 @@ es:
   label_add_another_file: Agregar otro archivo
   label_add_columns: Agregar columnas seleccionadas
   label_add_note: Añadir una nota
-  label_add_related_issues: Agregar tema relacionado
   label_add_related_work_packages: Añadir paquetes de trabajo relacionados
   label_add_subtask: Agregar subtarea
   label_added: agregado
@@ -695,6 +715,7 @@ es:
   label_category: Categoría
   label_wiki_menu_item: Elemento de menú wiki
   label_select_main_menu_item: Seleccione nuevo elemento de menú principal
+  label_required_disk_storage: Required disk storage
   label_change_plural: Cambios
   label_change_properties: Cambiar propiedades
   label_change_status: Cambiar estado
@@ -702,7 +723,7 @@ es:
   label_changes_details: Detalles de todos los cambios
   label_changeset_plural: Conjuntos de cambios
   label_checked: verificado
-  label_child_element: Child element
+  label_child_element: Elementos secundarios
   label_chronological_order: En orden cronológico
   label_close_versions: Cerrar versiones completadas
   label_closed_work_packages: cerrado
@@ -769,7 +790,6 @@ es:
   label_feeds_access_key_created_on: Código de acceso RSS creado hace %{value}
   label_file_added: Archivo agregado
   label_file_plural: Archivos
-  label_filesystem_path: Directorio raíz
   label_filter_add: Añadir filtro
   label_filter_plural: Filtros
   label_float: Desprender
@@ -849,7 +869,7 @@ es:
   label_message_plural: Mensajes
   label_message_posted: Mensaje añadido
   label_min_max_length: Tamaño mínimo-máximo
-  label_minute_plural: minutes
+  label_minute_plural: minutos
   label_missing_api_access_key: Falta una llave de acceso API
   label_missing_feeds_access_key: Falta una clave de acceso RSS
   label_modification: cambio de %{count}
@@ -916,6 +936,7 @@ es:
   label_principal_search: Buscar usuarios o grupos
   label_profile: Perfil
   label_project_all: Todos los proyectos
+  label_project_count: Total number of projects
   label_project_copy_notifications: Enviar notificaciones por correo electrónico durante
     la copia del proyecto
   label_project_latest: "Últimos proyectos"
@@ -1060,24 +1081,24 @@ es:
   label_workflow_plural: Flujos de trabajo
   label_workflow_summary: Resumen
   label_x_closed_work_packages_abbr:
-    one: 1 closed
-    other: "%{count} closed"
+    one: 1 cerrado
+    other: "%{count} cerrados"
     zero: 0 closed
   label_x_comments:
-    one: 1 comment
-    other: "%{count} comments"
+    one: 1 comentario
+    other: "%{count} comentarios"
     zero: no comments
   label_x_open_work_packages_abbr:
-    one: 1 open
-    other: "%{count} open"
+    one: 1 abierto
+    other: "%{count} abiertos"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
-    one: 1 open / %{total}
-    other: "%{count} open / %{total}"
+    one: 1 abierto / %{total}
+    other: "%{count} abiertos / %{total}"
     zero: 0 open / %{total}
   label_x_projects:
-    one: 1 project
-    other: "%{count} projects"
+    one: 1 proyecto
+    other: "%{count} proyectos"
     zero: no projects
   label_year: Año
   label_yesterday: ayer
@@ -1113,6 +1134,10 @@ es:
   label_keyboard_shortcut_focus_next_item: Activar siguiente elemento de lista (sólo
     en algunas listas)
   label_visible_elements: Elementos visibles
+  auth_source:
+    using_abstract_auth_source: Can't use an abstract authentication source.
+    ldap_error: 'LDAP-Error: %{error_message}'
+    ldap_auth_failed: Could not authenticate at the LDAP-Server.
   macro_execution_error: Error ejecutando el macro %{macro_name}
   macro_unavailable: Macro  %{macro_name} no puede ser mostrado.
   mail_body_account_activation_request: 'Ha registrado un nuevo usuario (%{value}).
@@ -1163,7 +1188,6 @@ es:
   notice_api_access_key_reseted: Su API de acceso ha sido re-iniciada.
   notice_can_t_change_password: Esta cuenta utiliza una fuente de autenticación externa.
     Es imposible cambiar la contraseña.
-  notice_default_data_loaded: Configuración por defecto carga correctamente.
   notice_email_error: Un error ha ocurrido mientras se enviaba el correo (%{value})
   notice_email_sent: Se envió un correo electrónico a % {value}
   notice_failed_to_save_work_packages: 'Fallo al salvar %{count} paquete(s) de trabajo
@@ -1304,6 +1328,80 @@ es:
     assigned_to_role: Asignación de roles
     member_of_group: Asignación de grupo
     subproject_id: Subproyecto
+  repositories:
+    checkout_instructions: Checkout instructions
+    create_managed_delay: 'Please note: The repository is managed, it is created asynchronously
+      on the disk and will be available shortly.'
+    create_successful: The repository has been registered.
+    delete_sucessful: The repository has been deleted.
+    destroy:
+      title: Are you absolutely sure?
+      managed_text: If you continue, this will permanently delete the managed repository
+        of %{project_name}. This action cannot be reverted.
+      managed_path_note: 'The following directory will be erased: %{path}'
+      linked_text: |
+        You're about to remove the linked repository %{url} from the project %{project_name}.
+        Note: This will NOT delete the contents of this repository, as it is not managed by OpenProject.
+    errors:
+      build_failed: Unable to create the repository with the selected configuration.
+        %{reason}
+      empty_repository: The repository exists, but is empty. It does not contain any
+        revisions yet.
+      exists_on_filesystem: The repository directory exists already on filesystem.
+      filesystem_access_failed: 'An error occurred while creating the repository on
+        filesystem: %{message}.'
+      not_manageable: This repository vendor cannot be managed by OpenProject.
+      path_permission_failed: 'An error occurred trying to create the following path:
+        %{path}. Please ensure that OpenProject may write to that folder.'
+      unauthorized: You're not authorized to access the repository or the credentials
+        are invalid.
+      unavailable: The repository is unavailable.
+      exception_title: 'Cannot access the repository: %{message}'
+      disabled_or_unknown_type: The selected type %{type} is disabled or no longer
+        available for the SCM vendor %{vendor}.
+      disabled_or_unknown_vendor: The SCM vendor %{vendor} is disabled or no longer
+        available.
+    git:
+      instructions:
+        managed_url: This is the URL of the managed (local) Git repository.
+        path: Specify the path to your local Git repository ( e.g., %{example_path}
+          ).
+        path_encoding: 'Override Git path encoding (Default: UTF-8)'
+      local_title: Link existing local Git repository
+      local_introduction: If you have an existing local Git repository, you can link
+        it with OpenProject to access it from within the application.
+      managed_path: Managed Git path (preview)
+      managed_introduction: Let OpenProject create and integrate a local Git repository
+        automatically.
+      managed_title: Git repository integrated into OpenProject
+      path: Path to Git repository
+      path_encoding: Ruta de codificación
+    go_to_revision: Go to revision
+    scm_vendor: Source control management system
+    scm_type: Repository type
+    scm_types:
+      local: Link existing local repository
+      existing: Link existing repository
+      managed: Create new repository in OpenProject
+    storage:
+      not_available: Disk storage consumption is not available for this repository.
+    subversion:
+      existing_title: Existing Subversion repository
+      existing_introduction: If you have an existing Subversion repository, you can
+        link it with OpenProject to access it from within the application.
+      instructions:
+        managed_url: This is the URL of the managed (local) Subversion repository.
+        url: |
+          Enter the repository URL. This may either target a local repository (starting with %{local_proto} ), or a remote repository.
+          The following URL schemes are supported:
+      managed_title: Subversion repository integrated into OpenProject
+      managed_introduction: Let OpenProject create and integrate a local Subversion
+        repository automatically.
+      managed_url: Managed URL
+      password: Repository Password
+      username: Repository username
+    update_settings_successful: The settings have been sucessfully saved.
+    url: URL to repository
   search_input_placeholder: buscar ...
   setting_activity_days_default: Días mostrados en actividad de proyecto
   setting_app_subtitle: Subtítulo de aplicación
@@ -1313,9 +1411,9 @@ es:
   setting_autologin: Inicio de sesión automático
   setting_available_languages: Idiomas disponibles
   setting_bcc_recipients: Destinatarios con copia carbon oculta (cco)
-  setting_brute_force_block_after_failed_logins: Block user after this number of failed
-    login attempts
-  setting_brute_force_block_minutes: Time the user is blocked for
+  setting_brute_force_block_after_failed_logins: Bloquear al usuario después de este
+    número de intentos de login fallidos
+  setting_brute_force_block_minutes: Tiempo que el usuario estará bloqueado
   setting_cache_formatted_text: Texto formateado del cache
   setting_column_options: Personalizar la apariencia de las listas de paquete te trabajo
   setting_commit_fix_keywords: Reparando palabras clave
@@ -1354,12 +1452,15 @@ es:
   setting_work_package_startdate_is_adddate: Usar fecha actual como fecha de inicio
     para nuevos paquetes de trabajo
   setting_work_packages_export_limit: Fecha limite para exportar paquete de trabajo
-  setting_journal_aggregation_time_minutes: Display journals as aggregated within
+  setting_journal_aggregation_time_minutes: Revistas se muestran como agregados en
   setting_log_requesting_user: Registrar inicio de sesión de usuario, nombre, y dirección
     de correo para todas las solicitudes
   setting_login_required: Autentificación requerida
   setting_mail_from: Dirección de correo electrónico de emision
-  setting_mail_handler_api_enabled: Activar WS para correos entrantes
+  setting_mail_handler_api_enabled: Enable incoming email web service
+  setting_mail_handler_api_description: The email web handler enables OpenProject
+    to receive emails containing specific commands as an instrumentation mechanism
+    (e.g., to create and update work packages).
   setting_mail_handler_api_key: Clave API
   setting_mail_handler_body_delimiters: Truncar los correos electrónicos después de
     una de estas líneas
@@ -1368,7 +1469,8 @@ es:
   setting_password_active_rules: Activar clases de personajes
   setting_password_count_former_banned: Numero de contraseñas usadas mas recientemente
     bloqueadas para re-uso
-  setting_password_days_valid: Number of days, after which to enforce a password change
+  setting_password_days_valid: Número de días, después de que sea necesario imponer
+    un cambio de contraseña
   setting_password_min_length: Longitud mínima
   setting_password_min_adhered_rules: Numero mínimo de clases requeridas
   setting_per_page_options: Objetos por página de opciones
@@ -1387,7 +1489,9 @@ es:
   setting_session_ttl_hint: Valor por debajo de 5 peticiones como desactivadas
   setting_session_ttl_enabled: La sesión expira
   setting_start_of_week: Comienzo del calendario
-  setting_sys_api_enabled: Habilitar WS para administración del repositorio
+  setting_sys_api_enabled: Enable repository management web service
+  setting_sys_api_description: The repository management web service provides integration
+    and user authorization for accessing repositories.
   setting_text_formatting: Formato de texto
   setting_time_format: Formato de hora
   setting_ui_theme: Tema
@@ -1438,7 +1542,7 @@ es:
     valor."
   text_file_repository_writable: Directorio de adjuntos escribible
   text_git_repo_example: un repositorio local y vacío (por ejemplo /gitrepo, c:\gitrepo)
-  text_hint_disable_with_0: 'Note: Disable with 0'
+  text_hint_disable_with_0: 'Nota: Desactivar con 0'
   text_work_package_added: Los paquetes de trabajo %{id} han sido actualizados por
     %{author}.
   text_work_package_category_destroy_assignments: Remover asignaciones de categorias
@@ -1452,9 +1556,9 @@ es:
   text_work_packages_ref_in_commit_messages: Referenciando y reparando paquetes de
     trabajo en mensajes de compromiso
   text_journal_added: "%{label} %{value} añadido"
-  text_journal_aggregation_time_explanation: Combine journals for display if their
-    age difference is less than the specified timespan. This will also delay mail
-    notifications by the same amount of time.
+  text_journal_aggregation_time_explanation: Combinar revistas para mostrar sí su
+    diferencia de edad es menor que el intervalo de tiempo especificado. Esto también
+    retrasará las notificaciones por correo la misma cantidad de tiempo.
   text_journal_changed: "%{label} cambiada del %{old} al %{new}"
   text_journal_changed_no_detail: "% {label} actualizado"
   text_journal_changed_with_diff: "%{label} modificado (% {link})"
@@ -1476,8 +1580,10 @@ es:
     seguro que desea continuar?"
   text_plugin_assets_writable: Directorio de Plugins activos escribible
   text_powered_by: Con tecnología de %{link}
-  text_project_destroy_confirmation: "¿Está seguro que desea eliminar este proyecto
-    y los datos relacionados?"
+  text_project_destroy_title: Do you really want to delete this project?
+  text_project_destroy_confirmation: If you continue, the project %{identifier} and
+    all related data will be permanently destroyed. Please check the box below if
+    you want to continue.
   text_project_identifier_info: Se permiten sólo letras minúsculas (a-z), números,
     guiones y guiones bajos, debe comenzar con una letra minúscula.
   text_reassign: Reasignar a
@@ -1533,7 +1639,6 @@ es:
       project_type: Tipo de proyecto
       project_types: Tipos de proyecto
     project_menu:
-      planning_elements: Elementos de planificación
       project_associations: Dependencias
       reportings: Informes de estado
       reports: Informes de cronograma
@@ -1553,8 +1658,8 @@ es:
     delete_thing: Borrar
     duration: Duración
     duration_days:
-      one: 1 day
-      other: "%{count} days"
+      one: 1 día
+      other: "%{count} días"
     edit_color: Editar colores
     edit_project_type: Editar tipo de proyecto
     edit_thing: Editar
@@ -1737,8 +1842,8 @@ es:
       correo electrónico)
     blocked: bloqueado temporalmente
     blocked_num_failed_logins:
-      one: locked temporarily (one failed login attempt)
-      other: locked temporarily (%{count} failed login attempts)
+      one: bloqueado temporalmente (un intento de inicio de sesión fallido)
+      other: bloqueado temporalmente (%{count} intentos de inicio de sesión fallidos)
     deleted: Usuario eliminado
     error_status_change_failed: 'Cambiar la condición de usuario falló debido a los
       errores siguientes: %{errors}'
