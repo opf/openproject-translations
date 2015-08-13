@@ -230,8 +230,8 @@ id:
         user:
           attributes:
             password:
-              weak: 'harus mengandung karakter berikut (setidaknya %{min_count} %{all_count}):
-                %{rules}'
+              weak: 'Must contain characters of the following classes (at least %{min_count}
+                of %{all_count}): %{rules}'
               lowercase: huruf kecil (spt. 'a')
               uppercase: huruf besar (spt. 'A')
               numeric: numerik (spt. ' 1')
@@ -241,6 +241,10 @@ id:
                   your last one.
                 other: has been used before. Please choose one that is different from
                   your last %{count}.
+              match:
+                confirm: Confirm new password.
+                description: "'Password confirmation' should match the input in the
+                  'New password' field."
         member:
           principal_blank: Silakan pilih setidaknya satu user atau grup.
           role_blank: Silakan pilih setidaknya satu Role.
@@ -1240,7 +1244,7 @@ id:
   permission_edit_time_entries: Edit Time log
   permission_edit_timelines: Edit Timeline
   permission_edit_wiki_pages: Edit halaman Wiki
-  permission_export_work_packages: Export Paket-Penugasan
+  permission_export_work_packages: Export work packages
   permission_export_wiki_pages: Ekspor halaman Wiki
   permission_list_attachments: Daftar lampiran
   permission_log_time: Catat durasi

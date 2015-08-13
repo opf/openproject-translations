@@ -176,39 +176,38 @@ es:
     errors:
       messages:
         accepted: debe ser aceptado
-        blank: No puede ser vacío
+        blank: no puede estar vacío
         cant_link_a_work_package_with_a_descendant: Un paquete de trabajo no puede
-          ser vinculado a una sola de sus subtareas
+          ser vinculado a una de sus subtareas
         circular_dependency: Esta relación podría crear una dependencia circular
         confirmation: No coincide con la confirmación
         empty: No puede estar vacío
         equal_to: debe ser igual a %{count}
-        even: debe ser incluido
+        even: debe ser igual
         exclusion: está reservado
         file_too_large: es demasiado grande (tamaño máximo de %{count} Bytes)
         greater_than: debe ser mayor que %{count}
         greater_than_or_equal_to: debe ser mayor o igual a %{count}
-        smaller_than_or_equal_to_max_length: Debe ser menor o igual que el tamaño
-          maximo
+        smaller_than_or_equal_to_max_length: debe ser menor o igual al tamaño maximo
         greater_than_start_date: debe ser mayor que la fecha de inicio
-        inclusion: no está establecido a uno de los valores permitidos
+        inclusion: no corresponde a uno de los valores permitidos
         invalid: no es válido
         less_than: debe ser menos de %{count}
         less_than_or_equal_to: debe ser menor o igual a %{count}
-        not_a_date: No es una fecha
-        not_a_number: No es un número
-        not_an_integer: No es un entero
-        not_same_project: no pertenecen a un mismo proyecto
+        not_a_date: no es una fecha
+        not_a_number: no es un número
+        not_an_integer: no es un entero
+        not_same_project: no pertenece al mismo proyecto
         odd: debe ser impar
-        taken: Ya se ha tomado
-        too_long: es demasiado largo (máximo es %{count} caracteres)
-        too_short: es demasiado corto (mínimo es %{count} caracteres)
-        wrong_length: es la longitud incorrecta (debe ser caracteres %{count})
+        taken: ya se ha tomado
+        too_long: es demasiado largo (máximo %{count} caracteres)
+        too_short: es demasiado corto (mínimo %{count} caracteres)
+        wrong_length: es la longitud incorrecta (debe ser de %{count} caracteres)
         after: debe ser después de %{date}
         after_or_equal_to: debe ser después de o igual a %{date}
         before: debe ser antes de %{date}
         before_or_equal_to: debe ser antes o igual a %{date}
-        could_not_be_copied: No podían ser copiados (totalmente)
+        could_not_be_copied: no pudo ser copiado (totalmente)
       models:
         project_association:
           identical_projects: Una dependencia no se puede crear entre un proyecto
@@ -222,13 +221,13 @@ es:
             un objetivo válido para reasignar las entradas de tiempo.'
           attributes:
             due_date:
-              not_start_date: No es sobre la fecha de inicio, aunque es necesario
-                para los avances
+              not_start_date: no está en la fecha de inicio, aunque es necesario para
+                los hitos
             parent_id:
-              cannot_be_milestone: No puede ser un avance
-              cannot_be_in_another_project: No puede estar en otro proyecto
+              cannot_be_milestone: no puede ser un hito
+              cannot_be_in_another_project: no puede estar en otro proyecto
               not_a_valid_parent: no es válido
-              does_not_exist: No existe
+              does_not_exist: no existe
             status_id:
               status_transition_invalid: no es válido porque no existe ninguna transición
                 desde el estado antiguo al nuevo para los roles del usuario actual
@@ -244,8 +243,8 @@ es:
         user:
           attributes:
             password:
-              weak: 'debe contener caracteres de las siguientes clases (al menos %{min_count}
-                al %{all_count}): %{rules}'
+              weak: 'Must contain characters of the following classes (at least %{min_count}
+                of %{all_count}): %{rules}'
               lowercase: en minúsculas (por ejemplo 'a')
               uppercase: en mayúsculas (por ejemplo ' A')
               numeric: numérico (por ejemplo, ' 1')
@@ -255,14 +254,18 @@ es:
                   de la última.
                 other: ha sido usada anteriormente. Por favor elija una que sea diferente
                   de las últimas %{count}.
+              match:
+                confirm: Confirm new password.
+                description: "'Password confirmation' should match the input in the
+                  'New password' field."
         member:
           principal_blank: Por favor seleccione al menos un usuario o grupo.
           role_blank: Elija al menos un rol.
       template:
         body: 'Por favor revise los siguientes campos:'
         header:
-          one: 1 error ha impedido a %{model} ser guardada
-          other: "%{count} errores han impedido a %{model} ser guardada"
+          one: 1 error ha impedido a %{model} de ser guardado
+          other: "%{count} errores han impedido a %{model} de ser guardado"
     models:
       attachment: Archivo
       board: Foro
@@ -463,11 +466,11 @@ es:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: aprox. 1 hora
-        other: aprox. %{count} horas
+        one: hace 1 hora
+        other: hace %{count} horas
       about_x_months:
-        one: aprox. 1 mes
-        other: aproximadamente %{count} meses
+        one: hace 1 mes
+        other: hace %{count} meses
       about_x_years:
         one: aprox. 1 año
         other: aprox. %{count} años
@@ -499,7 +502,7 @@ es:
     units:
       hour:
         one: hora
-        other: hora
+        other: horas
   default_activity_development: Desarrollo
   default_activity_management: Administración
   default_activity_other: Otros
@@ -1133,7 +1136,7 @@ es:
     en algunas listas)
   label_visible_elements: Elementos visibles
   auth_source:
-    using_abstract_auth_source: No puede utilizar una fuente de autenticación abstractos.
+    using_abstract_auth_source: No puede utilizar una fuente de autenticación abstracta.
     ldap_error: 'Error de LDAP: %{error_message}'
     ldap_auth_failed: No puede autenticarse en el servidor LDAP.
   macro_execution_error: Error ejecutando el macro %{macro_name}
@@ -1278,7 +1281,7 @@ es:
   permission_edit_time_entries: Editar registros de tiempo
   permission_edit_timelines: Editar líneas de tiempo
   permission_edit_wiki_pages: Editar wiki página
-  permission_export_work_packages: Exportar Paquetes de Trabajo
+  permission_export_work_packages: Export work packages
   permission_export_wiki_pages: Exportar wiki página
   permission_list_attachments: Lista archivos adjuntos
   permission_log_time: Registro de tiempo empleado
@@ -1336,8 +1339,8 @@ es:
   setting_available_languages: Idiomas disponibles
   setting_bcc_recipients: Destinatarios con copia carbon oculta (cco)
   setting_brute_force_block_after_failed_logins: Bloquear usuario después de este
-    numero de intentos de inicio de sesión fallidos (desactivado con 0)
-  setting_brute_force_block_minutes: Tiempo que el usuario esta bloqueado por (minutos)
+    numero de intentos de inicio de sesión fallidos (desactivar con 0)
+  setting_brute_force_block_minutes: Tiempo en que el usuario queda bloqueado (minutos)
   setting_cache_formatted_text: Texto formateado del cache
   setting_column_options: Personalizar la apariencia de las listas de paquete te trabajo
   setting_commit_fix_keywords: Reparando palabras clave

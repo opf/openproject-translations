@@ -245,8 +245,8 @@ it:
         user:
           attributes:
             password:
-              weak: 'deve contenere caratteri delle seguenti classi (almeno %{min_count}
-                %{all_count}): %{rules}'
+              weak: 'Must contain characters of the following classes (at least %{min_count}
+                of %{all_count}): %{rules}'
               lowercase: minuscolo (e.g. 'a')
               uppercase: maiuscolo (e.g. 'A')
               numeric: numerico (e.g. '1')
@@ -256,6 +256,10 @@ it:
                   è diversa dall'ultima."
                 other: "è già stata utilizzata. Si prega di sceglierne una diversa
                   dalle ultime %{count}."
+              match:
+                confirm: Confirm new password.
+                description: "'Password confirmation' should match the input in the
+                  'New password' field."
         member:
           principal_blank: Si prega di scegliere almeno un utente o un gruppo.
           role_blank: Si prega di scegliere almeno un ruolo.
@@ -1274,7 +1278,7 @@ it:
   permission_edit_time_entries: Modifica registro temporale
   permission_edit_timelines: Modifica le sequenze temporali
   permission_edit_wiki_pages: Modifica le pagine wiki
-  permission_export_work_packages: Esporta i pacchetti di lavoro
+  permission_export_work_packages: Export work packages
   permission_export_wiki_pages: Esporta le pagine wiki
   permission_list_attachments: Elenco allegati
   permission_log_time: Log tempo speso

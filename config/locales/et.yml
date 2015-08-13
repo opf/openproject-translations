@@ -238,8 +238,8 @@ et:
         user:
           attributes:
             password:
-              weak: parool peab sisaldama erinevad märke (vähemalt %{min_count} %{all_count}-st
-                selliseid %{rules})
+              weak: 'Must contain characters of the following classes (at least %{min_count}
+                of %{all_count}): %{rules}'
               lowercase: väiketäht (näiteks "a")
               uppercase: suurtäht (näiteks 'A')
               numeric: arvuline (nt 1, 2, 3)
@@ -249,6 +249,10 @@ et:
                   your last one.
                 other: has been used before. Please choose one that is different from
                   your last %{count}.
+              match:
+                confirm: Confirm new password.
+                description: "'Password confirmation' should match the input in the
+                  'New password' field."
         member:
           principal_blank: Vali vähemalt üks kasutaja või grupp.
           role_blank: Vali vähemalt üks roll.
@@ -1249,7 +1253,7 @@ et:
   permission_edit_time_entries: Muuta ajalogisid
   permission_edit_timelines: Muuta ajakavasid
   permission_edit_wiki_pages: Muuta vikilehti
-  permission_export_work_packages: Teemasid eksportida
+  permission_export_work_packages: Export work packages
   permission_export_wiki_pages: Eksportida vikilehti
   permission_list_attachments: Kuvada manuseid
   permission_log_time: Logida ajakulu
