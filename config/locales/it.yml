@@ -14,14 +14,14 @@ it:
           Visto che i dati di ogni account eliminato vengono anch'essi riassegnati
           a questo account, non sarà possibile distinguere i dati creati dall'utente
           dai dati di un altro account eliminato.
-        self: I dati creati dalle tue attività (ad esempio posta elettronica, preferenze,
-          pacchetti di lavoro, voci wiki) verranno se possibile eliminati completamente.
-          Si noti, tuttavia, che i dati come ad esempio i pacchetti di lavoro e le
-          voci wiki non possono essere eliminati senza ostacolare il lavoro di altri
-          utenti. La proprietà di tali dati sarà pertanto trasferita ad un account
-          generico chiamato "Deleted user". Visto che i dati di tutti gli account
-          eliminati vengono riassegnati a questo account, non sarà più possibile distinguere
-          i tuoi dati dai dati di un altro account eliminato.
+        self: I dati creati dalla tua attività (per esempio posta elettronica, le
+          preferenze, pacchetti di lavoro, le voci wiki) verranno eliminati quando
+          più possibile. Si noti, tuttavia, che i dati come pacchetti di lavoro e
+          le voci wiki non possono essere eliminati senza ostacolare il lavoro degli
+          altri utenti. Tali dati vengono quindi riassegnati ad un account chiamato
+          "Utente Cancellato". Visto che i dati di ogni account eliminato vengono
+          anch'essi riassegnati a questo account, non sarà possibile distinguere i
+          tuoi dati dai dati di un altro account eliminato.
       heading: Cancella account %{name}
       info:
         other: Cancellare l'account utente è un azione irreversibile.
@@ -254,7 +254,7 @@ it:
               reused:
                 one: "è già stata utilizzata prima. Si prega di sceglierne una che
                   è diversa dall'ultima."
-                other: "è già stata utilizzata. Si prega di sceglierne una diversa
+                other: "è già stata utilizzata. Si prega di sceglierne una  diversa
                   dalle ultime %{count}."
               match:
                 confirm: Confirm new password.
@@ -266,8 +266,8 @@ it:
       template:
         body: 'Perfavore controlla i seguenti campi:'
         header:
-          one: 1 errore impedisce il salvataggio di questo %{model}
-          other: "%{count} errori impediscono il salvataggio di questo %{model}"
+          one: 1 errore impedisce a questo %{model} di essere salvato
+          other: "%{count} errori impediscono a questo %{model} di essere salvato"
     models:
       attachment: File
       board: Forum
@@ -335,7 +335,7 @@ it:
     priority: Priorità
     project: Progetto
     responsible: Responsabile
-    role: Role
+    role: Ruolo
     start_date: Data di inizio
     status: Stato
     subject: Soggetto
@@ -477,8 +477,8 @@ it:
         one: circa 1 anno
         other: circa %{count} anni
       almost_x_years:
-        one: quasi 1 anno
-        other: quasi %{count} anni
+        one: circa 1 anno
+        other: circa %{count} anni
       half_a_minute: mezzo minuto
       less_than_x_minutes:
         one: meno di un minuto
@@ -504,13 +504,13 @@ it:
     units:
       hour:
         one: ora
-        other: ore
+        other: ora
   default_activity_development: Sviluppo
   default_activity_management: Gestione
   default_activity_other: Altro
   default_activity_specification: Specifiche
   default_activity_support: Supporto
-  default_activity_testing: Test
+  default_activity_testing: Fase di prova
   default_color_black: Nero
   default_color_blue: Blu
   default_color_blue_dark: Blu (scuro)
@@ -806,10 +806,10 @@ it:
   label_generate_key: Genera chiave
   label_git_path: Percorso per la cartella .git
   label_greater_or_equal: ">="
-  label_group_by: Raggruppa secondo
+  label_group_by: Raggruppa per
   label_group_new: Nuovo gruppo
   label_group_plural: Gruppi
-  label_help: Aiuti
+  label_help: Aiuto
   label_here: qui
   label_hide: Nascondi
   label_history: Storia
@@ -907,13 +907,13 @@ it:
   label_no_change_option: "(Nessuna modifica)"
   label_no_data: Nessun dato da visualizzare
   label_nobody: nessuno
-  label_none: nessuno
+  label_none: Nessuno
   label_not_contains: non contiene
   label_not_equals: non è
   label_notify_member_plural: Aggiornamenti email
   label_open_menu: Apri menu
   label_open_work_packages: aperto
-  label_open_work_packages_plural: aperto
+  label_open_work_packages_plural: apri
   label_optional_description: Descrizione
   label_options: Opzioni
   label_overall_activity: Attività complessiva
@@ -967,7 +967,7 @@ it:
   label_remove_columns: Rimuovi le colonne selezionate
   label_renamed: rinomina
   label_reply_plural: Risposte
-  label_report: Resoconto
+  label_report: Report
   label_report_plural: Resoconti
   label_reported_work_packages: Pacchetti di lavoro segnalati
   label_reporting: Segnalazione
@@ -1255,7 +1255,7 @@ it:
   permission_browse_repository: Sfoglia il repository
   permission_change_wiki_parent_page: Cambia la pagina padre del wiki
   permission_comment_news: Commenti delle novità
-  permission_commit_access: Conferma l'accesso
+  permission_commit_access: Submit commits
   permission_copy_projects: Copia progetti
   permission_delete_work_package_watchers: Eliminare gli osservatori
   permission_delete_work_packages: Cancella pacchetti di lavoro
@@ -1434,7 +1434,7 @@ it:
     passwords: Password
     session: Sessione
     brute_force_prevention: Bloccaggio automatico agli utenti
-  show_hide_project_menu: Mostra/Nascondi menu del progetto
+  show_hide_project_menu: Show/Hide project menu
   status_active: attivo
   support:
     array:
@@ -1758,8 +1758,8 @@ it:
     assign_random_password: Assegna password casuale (inviata via email all'utente)
     blocked: temporaneamente bloccato
     blocked_num_failed_logins:
-      one: bloccato temporaneamente (un tentativo di accesso non riuscito)
-      other: bloccato temporaneamente (%{count} tentativi di accesso falliti)
+      one: bloccato temporaneamente (un accesso fallito)
+      other: bloccato temporaneamente (%{count} accessi falliti)
     deleted: Utente cancellato
     error_status_change_failed: 'Fallito il cambiamento dello stato dell''utente a
       cusa ei seguenti errori: %{errors}'
@@ -1776,7 +1776,7 @@ it:
     authorization_rejected: Non ti è consentito accedere.
   version_status_closed: chiuso
   version_status_locked: bloccato
-  version_status_open: aperto
+  version_status_open: apri
   note: Nota
   note_password_login_disabled: La password d'accesso è stata disabilitata tramite
     %{configuration}.
