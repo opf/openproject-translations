@@ -221,7 +221,8 @@ zh:
               reused:
                 one: has been used before. Please choose one that is different from
                   your last one.
-                other: "已被使用过。请选择一个不同于您最后 %{count}。"
+                other: has been used before. Please choose one that is different from
+                  your last %{count}.
               match:
                 confirm: Confirm new password.
                 description: "'Password confirmation' should match the input in the
@@ -233,7 +234,7 @@ zh:
         body: "请检查以下字段："
         header:
           one: 1 error prohibited this %{model} from being saved
-          other: "%{count} 个错误阻止保存 %{model}"
+          other: "%{count} errors prohibited this %{model} from being saved"
     models:
       attachment: "文件"
       board: "论坛"
@@ -249,13 +250,13 @@ zh:
       query: "自定义查询"
       role:
         one: Role
-        other: "角色"
+        other: Roles
       type: "类型"
       planning_element: "规划元素"
       project_type: "项目类型"
       user: "用户"
       version: "版本"
-      wiki: Wiki
+      wiki: "维基"
       wiki_page: "维基页面"
       workflow: "工作流"
       work_package: "工作包"
@@ -301,7 +302,7 @@ zh:
     priority: "优先级"
     project: "项目"
     responsible: "责任人"
-    role: "角色"
+    role: Role
     start_date: "开始日期"
     status: "状态"
     subject: "主题"
@@ -434,42 +435,42 @@ zh:
     distance_in_words:
       about_x_hours:
         one: about 1 hour
-        other: "大约 %{count} 小时"
+        other: about %{count} hours
       about_x_months:
         one: about 1 month
-        other: "大约 %{count} 个月"
+        other: about %{count} months
       about_x_years:
         one: about 1 year
-        other: "大约 %{count} 年"
+        other: about %{count} years
       almost_x_years:
         one: almost 1 year
-        other: "几乎 %{count} 年"
+        other: almost %{count} years
       half_a_minute: "半分钟"
       less_than_x_minutes:
         one: less than a minute
-        other: "不到 %{count} 分钟"
+        other: less than %{count} minutes
       less_than_x_seconds:
         one: less than 1 second
-        other: "不到 %{count} 秒"
+        other: less than %{count} seconds
       over_x_years:
         one: over 1 year
-        other: "超过 %{count} 年"
+        other: over %{count} years
       x_days:
         one: 1 day
-        other: "%{count} 天"
+        other: "%{count} days"
       x_minutes:
         one: 1 minute
-        other: "%{count} 分钟"
+        other: "%{count} minutes"
       x_months:
         one: 1 month
-        other: "%{count} 个月"
+        other: "%{count} months"
       x_seconds:
         one: 1 second
-        other: "%{count} 秒"
+        other: "%{count} seconds"
     units:
       hour:
         one: hour
-        other: "小时"
+        other: hours
   default_activity_development: "开发"
   default_activity_management: "管理"
   default_activity_other: "其他"
@@ -1018,23 +1019,23 @@ zh:
   label_workflow_summary: "摘要"
   label_x_closed_work_packages_abbr:
     one: 1 closed
-    other: "%{count} 关闭"
+    other: "%{count} closed"
     zero: 0 closed
   label_x_comments:
     one: 1 comment
-    other: "%{count} 个评论"
+    other: "%{count} comments"
     zero: no comments
   label_x_open_work_packages_abbr:
     one: 1 open
-    other: "%{count} 个待处理的"
+    other: "%{count} open"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
     one: 1 open / %{total}
-    other: "%{count} 打开 / %{total}"
+    other: "%{count} open / %{total}"
     zero: 0 open / %{total}
   label_x_projects:
     one: 1 project
-    other: "%{count} 项目"
+    other: "%{count} projects"
     zero: no projects
   label_year: "年"
   label_yesterday: "昨天"
@@ -1147,7 +1148,7 @@ zh:
         units:
           byte:
             one: Byte
-            other: "字节"
+            other: Bytes
           gb: GB
           kb: kB
           mb: MB
@@ -1226,7 +1227,7 @@ zh:
   project_module_repository: "代码库"
   project_module_time_tracking: "时间跟踪"
   project_module_timelines: "时间线"
-  project_module_wiki: Wiki
+  project_module_wiki: "维基"
   query_fields:
     assigned_to_role: "指定人角色"
     member_of_group: "指定人用户组"
@@ -1439,7 +1440,7 @@ zh:
     duration: "持续时间"
     duration_days:
       one: 1 day
-      other: "%{count} 天"
+      other: "%{count} days"
     edit_color: "编辑颜色"
     edit_project_type: "编辑项目类型"
     edit_thing: "编辑"
@@ -1459,7 +1460,7 @@ zh:
         timeframe_end: "时间段结束"
         compare_to_relative: "相对比较的值 "
         compare_to_absolute: "绝对比较的值 "
-        planning_element_time_relative_one: "在一定时间段内的工作包开始  "
+        planning_element_time_relative_one: "在一定时间段内的工作包结尾  "
         planning_element_time_relative_two: "在一定时间段内的工作包结尾  "
         planning_element_time_absolute_one: "在一定时间段内的工作包开始  "
         planning_element_time_absolute_two: "在一定时间段内的工作包结尾  "
@@ -1600,7 +1601,7 @@ zh:
     blocked: "暂时锁定"
     blocked_num_failed_logins:
       one: locked temporarily (one failed login attempt)
-      other: "暂时锁定 （%{count} 次登录尝试失败）"
+      other: locked temporarily (%{count} failed login attempts)
     deleted: "已删除的用户"
     error_status_change_failed: "用户状态更改失败，因为以下错误: %{errors}"
     lock: "永久锁定"
