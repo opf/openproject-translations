@@ -192,7 +192,7 @@ fr:
         greater_than_or_equal_to: doit être supérieur ou égal à %{count}
         smaller_than_or_equal_to_max_length: Doit être plus petit ou égal à la longueur
           maximale
-        greater_than_start_date: doit être supérieure à la date de début
+        greater_than_start_date: doit être postérieure à la date de début
         inclusion: ne correspond à aucune des valeurs autorisées
         invalid: est invalide
         less_than: doit être inférieure à % {count}
@@ -208,8 +208,8 @@ fr:
         wrong_length: est de mauvaise longueur (devrait être %{count} caractères)
         after: doit être après %{date}
         after_or_equal_to: Doit être après ou égal à %{date}
-        before: doit être avant %{date}
-        before_or_equal_to: Doit être avant ou égal à %{date}
+        before: doit être antérieur(e) à %{date}
+        before_or_equal_to: doit être antérieur(e) ou égal(e) à %{date}
         could_not_be_copied: n'a pas pu être copié (entièrement)
       models:
         project_association:
@@ -247,29 +247,29 @@ fr:
         user:
           attributes:
             password:
-              weak: 'Must contain characters of the following classes (at least %{min_count}
-                of %{all_count}): %{rules}'
+              weak: 'Doit contenir des caractères des classes suivantes (au moins
+                %{min_count} de %{all_count}) : %{rules}'
               lowercase: minuscules (par exemple, « a »)
               uppercase: majuscules (par exemple, « A »)
               numeric: numérique (par exemple, « 1 »)
               special: spécial (par exemple, « % »)
               reused:
-                one: has been used before. Please choose one that is different from
-                  your last one.
-                other: has been used before. Please choose one that is different from
-                  your last %{count}.
+                one: a déjà été utilisé auparavant. Veuillez en choisir qui diffère
+                  de votre choix précédent.
+                other: a déjà été utilisé auparavant. Veuillez en choisir qui diffère
+                  de vos %{count} choix précédents.
               match:
-                confirm: Confirm new password.
-                description: "'Password confirmation' should match the input in the
-                  'New password' field."
+                confirm: Confirmez le nouveau mot de passe.
+                description: La confirmation du mot de passe doit correspondre à celui
+                  saisi dans le champ “Nouveau mot de passe”.
         member:
           principal_blank: Choisissez au moins un utilisateur ou un groupe.
           role_blank: Choisissez au moins un rôle.
       template:
         body: 'Veuillez vérifier les champs suivants:'
         header:
-          one: 1 error prohibited this %{model} from being saved
-          other: "%{count} errors prohibited this %{model} from being saved"
+          one: 1 erreur empêche ce %{model} d'être sauvegardé
+          other: "%{count} erreurs empêchent ce %{model} d'être sauvegardé"
     models:
       attachment: Fichier
       board: Forum
@@ -278,14 +278,14 @@ fr:
       group: Groupe
       issue: Ticket
       category: Catégorie
-      status: Statut du Lot de Travaux
-      member: Membres
+      status: Statut du lot de travaux
+      member: Membre
       news: Actualités
       project: Projet
       query: Requête personnalisée
       role:
-        one: Role
-        other: Roles
+        one: Rôle
+        other: Rôles
       type: Type
       planning_element: "Élément de planification"
       project_type: Type de projet
@@ -353,7 +353,7 @@ fr:
   button_add_watcher: Ajouter observateur
   button_annotate: Annoter
   button_apply: Appliquer
-  button_archive: Archive
+  button_archive: Archiver
   button_back: Précédent
   button_cancel: Annuler
   button_change: Changer
@@ -387,7 +387,7 @@ fr:
   button_reset: Réinitialiser
   button_rollback: Revenir à cette version
   button_save: Enregistrer
-  button_show: Montrer
+  button_show: Afficher
   button_sort: Trier
   button_submit: Envoyer
   button_test: Tester
@@ -395,12 +395,12 @@ fr:
   button_uncheck_all: Tout désélectionner
   button_unlock: Déverrouiller
   button_unwatch: Ne plus suivre
-  button_update: Mise à jour
+  button_update: Mettre à jour
   button_view: Afficher
   button_watch: Suivre
-  button_manage_menu_entry: Gérer l'élément de menu
-  button_add_menu_entry: Ajoutez un élément de menu
-  button_configure_menu_entry: Gérer l'élément de menu
+  button_manage_menu_entry: Configurer l'élément de menu
+  button_add_menu_entry: Ajouter un élément de menu
+  button_configure_menu_entry: Configurer l'élément de menu
   button_delete_menu_entry: Supprimer l'élément de menu
   copy_project:
     started: La copie du projet "%{source_project_name}" vers "%{target_project_name}"
@@ -472,43 +472,43 @@ fr:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: about 1 hour
-        other: about %{count} hours
+        one: environ 1 heure
+        other: environ %{count} heures
       about_x_months:
-        one: about 1 month
-        other: about %{count} months
+        one: environ 1 mois
+        other: environ %{count} mois
       about_x_years:
-        one: about 1 year
-        other: about %{count} years
+        one: environ 1 an
+        other: environ %{count} ans
       almost_x_years:
-        one: almost 1 year
-        other: almost %{count} years
+        one: presque 1 an
+        other: presque %{count} ans
       half_a_minute: une demi-minute
       less_than_x_minutes:
-        one: less than a minute
-        other: less than %{count} minutes
+        one: moins d'une minute
+        other: moins de %{count} minutes
       less_than_x_seconds:
-        one: less than 1 second
-        other: less than %{count} seconds
+        one: moins de 1 seconde
+        other: moins de %{count} secondes
       over_x_years:
-        one: over 1 year
-        other: over %{count} years
+        one: plus de 1 an
+        other: plus de %{count} ans
       x_days:
-        one: 1 day
-        other: "%{count} days"
+        one: 1 jour
+        other: "%{count} jours"
       x_minutes:
         one: 1 minute
         other: "%{count} minutes"
       x_months:
-        one: 1 month
-        other: "%{count} months"
+        one: 1 mois
+        other: "%{count} mois"
       x_seconds:
-        one: 1 second
-        other: "%{count} seconds"
+        one: 1 seconde
+        other: "%{count} secondes"
     units:
       hour:
-        one: hour
-        other: hours
+        one: heure
+        other: heures
   default_activity_development: Développement
   default_activity_management: Gestion
   default_activity_other: Autre
@@ -558,7 +558,7 @@ fr:
   default_role_project_admin: Administrateur du projet
   default_role_non_member: Non membre
   default_role_reader: Lecteur
-  default_role_member: Membres
+  default_role_member: Membre
   default_type: Lot de Travaux
   default_type_bug: Bug
   default_type_deliverable: Livrable
@@ -790,7 +790,7 @@ fr:
   label_environment: Environement
   label_equals: est
   label_example: Exemple
-  label_export_to: 'Aussi valable en:'
+  label_export_to: 'Aussi disponible en :'
   label_f_hour: "%{value} heure"
   label_f_hour_plural: "%{value} heures"
   label_feed_plural: Fluxs
@@ -1087,24 +1087,24 @@ fr:
   label_workflow_plural: Flux de travail
   label_workflow_summary: Résumé
   label_x_closed_work_packages_abbr:
-    one: 1 closed
-    other: "%{count} closed"
+    one: 1 clôturé
+    other: "%{count} clôturés"
     zero: 0 closed
   label_x_comments:
-    one: 1 comment
-    other: "%{count} comments"
+    one: 1 commentaire
+    other: "%{count} commentaires"
     zero: no comments
   label_x_open_work_packages_abbr:
-    one: 1 open
-    other: "%{count} open"
+    one: 1 ouvert
+    other: "%{count} ouverts"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
-    one: 1 open / %{total}
-    other: "%{count} open / %{total}"
+    one: 1 ouvert / %{total}
+    other: "%{count} ouverts / %{total}"
     zero: 0 open / %{total}
   label_x_projects:
-    one: 1 project
-    other: "%{count} projects"
+    one: 1 projet
+    other: "%{count} projets"
     zero: no projects
   label_year: Année
   label_yesterday: hier
@@ -1247,8 +1247,8 @@ fr:
         format: "%n %u"
         units:
           byte:
-            one: Byte
-            other: Bytes
+            one: Octet
+            other: Octets
           gb: Go
           kb: ko
           mb: Mo
@@ -1262,7 +1262,7 @@ fr:
   permission_browse_repository: Parcourir un dépôt
   permission_change_wiki_parent_page: Changer la page wiki parent
   permission_comment_news: Commenter les actualités
-  permission_commit_access: Submit commits
+  permission_commit_access: Effectuer des « commit »
   permission_copy_projects: Copier des projets
   permission_delete_work_package_watchers: Supprimer des observateurs
   permission_delete_work_packages: Supprimer des lots de travaux
@@ -1285,7 +1285,7 @@ fr:
   permission_edit_time_entries: "Éditer les enregistrements de temps"
   permission_edit_timelines: "Éditer les lignes du temps"
   permission_edit_wiki_pages: "Éditer les pages wiki"
-  permission_export_work_packages: Export work packages
+  permission_export_work_packages: Exporter les lots de travaux
   permission_export_wiki_pages: Exporter les pages wiki
   permission_list_attachments: Lister les pièces jointes
   permission_log_time: Indiquer la durée des tâches (Log spent time)
@@ -1424,8 +1424,8 @@ fr:
   setting_time_format: Format d'heure
   setting_ui_theme: Thème
   setting_user_may_override_theme: Utilisateurs peuvent choisir leur propre thème
-  setting_accessibility_mode_for_anonymous: Autorise mode accessible pour utilisateurs
-    anonymes
+  setting_accessibility_mode_for_anonymous: Activer le mode d'accessibilité pour les
+    utilisateurs anonymes
   setting_user_format: Utilisateur affiche format
   setting_users_deletable_by_admins: Comptes utilisateurs effaçables par admins
   setting_users_deletable_by_self: Utilisateurs autorisés à supprimer leur compte
@@ -1438,7 +1438,7 @@ fr:
     passwords: Mots de passe
     session: Session
     brute_force_prevention: Bloquage d'utilisateur automatique (pour èviter les pirates)
-  show_hide_project_menu: Show/Hide project menu
+  show_hide_project_menu: Afficher/Masquer le menu du projet
   status_active: actif
   support:
     array:
@@ -1580,8 +1580,8 @@ fr:
     delete_thing: Supprimer
     duration: Durée
     duration_days:
-      one: 1 day
-      other: "%{count} days"
+      one: 1 jour
+      other: "%{count} jours"
     edit_color: "Éditer la couleur"
     edit_project_type: Editer le type de projet
     edit_thing: "Éditer"
@@ -1765,8 +1765,8 @@ fr:
       par courrier électronique)
     blocked: verrouillé temporairement
     blocked_num_failed_logins:
-      one: locked temporarily (one failed login attempt)
-      other: locked temporarily (%{count} failed login attempts)
+      one: verrouillé temporairement (1 tentative de connexion échouée)
+      other: verrouillé temporairement (%{count} tentatives de connexion échouées)
     deleted: Utilisateur supprimé
     error_status_change_failed: 'Le changement du statut de l''utilisateur a échoué
       dû aux erreurs suivantes: %{errors}'
