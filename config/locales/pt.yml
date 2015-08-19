@@ -177,7 +177,7 @@ pt:
         cant_link_a_work_package_with_a_descendant: A work package cannot be linked
           to one of its subtasks.
         circular_dependency: This relation would create a circular dependency.
-        confirmation: não corresponde à confirmação.
+        confirmation: doesn't match %{attribute}.
         empty: não pode ser vazio.
         equal_to: deve ser igual a %{count}.
         even: deve ser par.
@@ -853,6 +853,7 @@ pt:
   label_login: Iniciar sessão
   label_logout: Terminar Sessão
   label_main_menu: Menu lateral
+  label_managed_repositories_vendor: Managed %{vendor} repositories
   label_max_size: Tamanho máximo
   label_me: eu
   label_member_new: Novo Membro
@@ -999,12 +1000,17 @@ pt:
   label_status: Situação
   label_status_updated: Work package status updated
   label_stay_logged_in: Permanecer autenticado
+  label_storage_free_space: Remaining disk space
+  label_storage_used_space: Used disk space
+  label_storage_group: Storage filesystem %{identifier}
+  label_storage_for: Encompasses storage for
   label_string: Conteúdo
   label_subproject_new: Novo subprojeto
   label_subproject_plural: Subprojetos
   label_subtask_plural: Subtarefas
   label_summary: Resumo
   label_system: Sistema
+  label_system_storage: Storage information
   label_table_of_contents: Tabela de conteúdos
   label_tag: Tag
   label_text: Texto longo
@@ -1309,6 +1315,9 @@ pt:
     member_of_group: Assignee's group
     subproject_id: Sub-projecto
   repositories:
+    autofetch_information: |
+      Check this if you want repositories to be updated automatically when accessing the repository module page.
+      This encompasses the retrieval of commits from the repository and refreshing the required disk storage.
     checkout_instructions: Checkout instructions
     create_managed_delay: 'Please note: The repository is managed, it is created asynchronously
       on the disk and will be available shortly.'
@@ -1358,6 +1367,11 @@ pt:
       path: Caminho para o repositório Git
       path_encoding: Path encoding
     go_to_revision: Ir para revisão
+    settings:
+      automatic_managed_repos_disabled: Disable automatic creation
+      automatic_managed_repos: Automatic creation of managed repositories
+      automatic_managed_repos_text: By setting a vendor here, newly created projects
+        will automatically receive a managed repository of this vendor.
     scm_vendor: Sistema de gestão de controlo de versões
     scm_type: Tipo de repositório
     scm_types:
@@ -1366,6 +1380,9 @@ pt:
       managed: Criar novo repositório no OpenProject
     storage:
       not_available: Disk storage consumption is not available for this repository.
+      update_timeout: |
+        Keep the last required disk space information for a repository for N minutes.
+        As counting the required disk space of a repository may be costly, increase this value to reduce performance impact.
     subversion:
       existing_title: Existing Subversion repository
       existing_introduction: If you have an existing Subversion repository, you can
@@ -1388,7 +1405,7 @@ pt:
   setting_app_subtitle: Subtítulo da aplicação
   setting_app_title: Título da aplicação
   setting_attachment_max_size: Tamanho máx. do anexo
-  setting_autofetch_changesets: Autofetch commits
+  setting_autofetch_changesets: Autofetch repository changes
   setting_autologin: Autologin
   setting_available_languages: Idiomas disponíveis
   setting_bcc_recipients: Destinatários de (bcc)
@@ -1450,9 +1467,11 @@ pt:
   setting_per_page_options: Objects per page options
   setting_plain_text_mail: Mensagens de texto simples (sem HTML)
   setting_protocol: Protocolo
+  setting_repositories_automatic_managed_vendor: Automatic repository vendor type
   setting_repositories_encodings: Repositories encodings
   setting_repository_authentication_caching_enabled: Enable caching for authentication
     request of version control software
+  setting_repository_storage_cache_minutes: Repository disk size cache
   setting_repository_log_display_limit: Número máximo de revisões exibidas no arquivo
     de log
   setting_rest_api_enabled: Ativar webservices REST

@@ -157,7 +157,7 @@ zh:
         blank: "不能为空。"
         cant_link_a_work_package_with_a_descendant: "工作包无法链接到它的子任务之一。"
         circular_dependency: "这种关系将创建循环依赖项。"
-        confirmation: "不匹配确认。"
+        confirmation: doesn't match %{attribute}.
         empty: "不能为空。"
         equal_to: "必须等于 %{count}。"
         even: "必须是偶数。"
@@ -802,6 +802,7 @@ zh:
   label_login: "登录"
   label_logout: "注销"
   label_main_menu: "侧边菜单"
+  label_managed_repositories_vendor: Managed %{vendor} repositories
   label_max_size: "最大"
   label_me: "我"
   label_member_new: "新成员"
@@ -948,12 +949,17 @@ zh:
   label_status: "状态"
   label_status_updated: "工作包状态更新"
   label_stay_logged_in: "保持登录状态"
+  label_storage_free_space: Remaining disk space
+  label_storage_used_space: Used disk space
+  label_storage_group: Storage filesystem %{identifier}
+  label_storage_for: Encompasses storage for
   label_string: "文本"
   label_subproject_new: "新的子项目"
   label_subproject_plural: "子项目"
   label_subtask_plural: "子任务"
   label_summary: "摘要"
   label_system: "系统"
+  label_system_storage: Storage information
   label_table_of_contents: "目录"
   label_tag: "标记"
   label_text: "长文本"
@@ -1233,6 +1239,9 @@ zh:
     member_of_group: "指定人用户组"
     subproject_id: "子项目"
   repositories:
+    autofetch_information: |
+      Check this if you want repositories to be updated automatically when accessing the repository module page.
+      This encompasses the retrieval of commits from the repository and refreshing the required disk storage.
     checkout_instructions: "签出说明"
     create_managed_delay: "请注意: 版本库已在管控中，它以异步方式在磁盘上创建并不久将处于可用状态。"
     create_successful: "版本库已被注册。"
@@ -1268,6 +1277,11 @@ zh:
       path: Git 版本库路径
       path_encoding: "路径编码"
     go_to_revision: "切换到版本"
+    settings:
+      automatic_managed_repos_disabled: Disable automatic creation
+      automatic_managed_repos: Automatic creation of managed repositories
+      automatic_managed_repos_text: By setting a vendor here, newly created projects
+        will automatically receive a managed repository of this vendor.
     scm_vendor: "源代码、文件版本控制系统"
     scm_type: "版本库类型"
     scm_types:
@@ -1276,6 +1290,9 @@ zh:
       managed: "在 OpenProject 中创建新的版本库"
     storage:
       not_available: Disk storage consumption is not available for this repository.
+      update_timeout: |
+        Keep the last required disk space information for a repository for N minutes.
+        As counting the required disk space of a repository may be costly, increase this value to reduce performance impact.
     subversion:
       existing_title: "现有的 Subversion 版本库"
       existing_introduction: "如果您已有本地 Git 版本库，可以将其链接到 OpenProject 来访问。"
@@ -1294,7 +1311,7 @@ zh:
   setting_app_subtitle: "应用副标题"
   setting_app_title: "应用程序标题"
   setting_attachment_max_size: "最大的附件大小"
-  setting_autofetch_changesets: "自动提取提交"
+  setting_autofetch_changesets: Autofetch repository changes
   setting_autologin: "自动登录"
   setting_available_languages: "可用语言"
   setting_bcc_recipients: "密件抄送 (bcc) 收件人"
@@ -1351,8 +1368,10 @@ zh:
   setting_per_page_options: "每页对象选项"
   setting_plain_text_mail: "纯文本邮件 (没有 HTML)"
   setting_protocol: "协议"
+  setting_repositories_automatic_managed_vendor: Automatic repository vendor type
   setting_repositories_encodings: "代码库的编码"
   setting_repository_authentication_caching_enabled: "启用版本控制软件的身份验证请求缓存"
+  setting_repository_storage_cache_minutes: Repository disk size cache
   setting_repository_log_display_limit: "在文件日志中显示的修订版本最大数目"
   setting_rest_api_enabled: "启用REST web service"
   setting_self_registration: "自助注册"

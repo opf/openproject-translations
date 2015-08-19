@@ -158,7 +158,7 @@ zh-TW:
         cant_link_a_work_package_with_a_descendant: A work package cannot be linked
           to one of its subtasks.
         circular_dependency: This relation would create a circular dependency.
-        confirmation: doesn't match confirmation.
+        confirmation: doesn't match %{attribute}.
         empty: can't be empty.
         equal_to: must be equal to %{count}.
         even: must be even.
@@ -827,6 +827,7 @@ zh-TW:
   label_login: "登入"
   label_logout: "登出"
   label_main_menu: "側邊選單"
+  label_managed_repositories_vendor: Managed %{vendor} repositories
   label_max_size: Maximum size
   label_me: "我"
   label_member_new: "新成員"
@@ -973,12 +974,17 @@ zh-TW:
   label_status: "狀態"
   label_status_updated: "工作項目狀態已更新"
   label_stay_logged_in: "保持登入"
+  label_storage_free_space: Remaining disk space
+  label_storage_used_space: Used disk space
+  label_storage_group: Storage filesystem %{identifier}
+  label_storage_for: Encompasses storage for
   label_string: "文字"
   label_subproject_new: "新增子專案"
   label_subproject_plural: "子專案"
   label_subtask_plural: "子任務"
   label_summary: "大綱"
   label_system: "系统"
+  label_system_storage: Storage information
   label_table_of_contents: "目錄"
   label_tag: Tag
   label_text: Long text
@@ -1275,6 +1281,9 @@ zh-TW:
     member_of_group: "負責執行者的群組"
     subproject_id: "子專案"
   repositories:
+    autofetch_information: |
+      Check this if you want repositories to be updated automatically when accessing the repository module page.
+      This encompasses the retrieval of commits from the repository and refreshing the required disk storage.
     checkout_instructions: Checkout instructions
     create_managed_delay: 'Please note: The repository is managed, it is created asynchronously
       on the disk and will be available shortly.'
@@ -1323,6 +1332,11 @@ zh-TW:
       path: Path to Git repository
       path_encoding: Path encoding
     go_to_revision: Go to revision
+    settings:
+      automatic_managed_repos_disabled: Disable automatic creation
+      automatic_managed_repos: Automatic creation of managed repositories
+      automatic_managed_repos_text: By setting a vendor here, newly created projects
+        will automatically receive a managed repository of this vendor.
     scm_vendor: Source control management system
     scm_type: Repository type
     scm_types:
@@ -1331,6 +1345,9 @@ zh-TW:
       managed: Create new repository in OpenProject
     storage:
       not_available: Disk storage consumption is not available for this repository.
+      update_timeout: |
+        Keep the last required disk space information for a repository for N minutes.
+        As counting the required disk space of a repository may be costly, increase this value to reduce performance impact.
     subversion:
       existing_title: Existing Subversion repository
       existing_introduction: If you have an existing Subversion repository, you can
@@ -1353,7 +1370,7 @@ zh-TW:
   setting_app_subtitle: Application subtitle
   setting_app_title: Application title
   setting_attachment_max_size: Attachment max. size
-  setting_autofetch_changesets: Autofetch commits
+  setting_autofetch_changesets: Autofetch repository changes
   setting_autologin: "自動登入"
   setting_available_languages: Available languages
   setting_bcc_recipients: "密件副本 (bcc) 收件者"
@@ -1414,9 +1431,11 @@ zh-TW:
   setting_per_page_options: Objects per page options
   setting_plain_text_mail: Plain text mail (no HTML)
   setting_protocol: Protocol
+  setting_repositories_automatic_managed_vendor: Automatic repository vendor type
   setting_repositories_encodings: Repositories encodings
   setting_repository_authentication_caching_enabled: Enable caching for authentication
     request of version control software
+  setting_repository_storage_cache_minutes: Repository disk size cache
   setting_repository_log_display_limit: Maximum number of revisions displayed on file
     log
   setting_rest_api_enabled: Enable REST web service

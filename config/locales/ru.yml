@@ -178,7 +178,7 @@ ru:
         cant_link_a_work_package_with_a_descendant: "Пакет работ не может быть связан
           с одной из своих подзадач."
         circular_dependency: "Это отношение создаст циклическую зависимость."
-        confirmation: "не совпадает с подтверждением."
+        confirmation: doesn't match %{attribute}.
         empty: "не может быть пустым."
         equal_to: "должен быть равен %{count}."
         even: "должно быть четным."
@@ -874,6 +874,7 @@ ru:
   label_login: "Войти"
   label_logout: "Выход"
   label_main_menu: "Боковое меню"
+  label_managed_repositories_vendor: Managed %{vendor} repositories
   label_max_size: "Максимальный размер"
   label_me: "мне"
   label_member_new: "Новый участник"
@@ -1022,12 +1023,17 @@ ru:
   label_status: "Состояние"
   label_status_updated: "Состояние  пакета работ обновлено"
   label_stay_logged_in: "Запомнить"
+  label_storage_free_space: Remaining disk space
+  label_storage_used_space: Used disk space
+  label_storage_group: Storage filesystem %{identifier}
+  label_storage_for: Encompasses storage for
   label_string: "Текст"
   label_subproject_new: "Новый подпроект"
   label_subproject_plural: "Подпроекты"
   label_subtask_plural: "Подзадачи"
   label_summary: "Резюме"
   label_system: "Система"
+  label_system_storage: Storage information
   label_table_of_contents: "Содержание"
   label_tag: "Метка"
   label_text: "Длинный текст"
@@ -1343,6 +1349,9 @@ ru:
     member_of_group: "Группа назначенного"
     subproject_id: "Подпроект"
   repositories:
+    autofetch_information: |
+      Check this if you want repositories to be updated automatically when accessing the repository module page.
+      This encompasses the retrieval of commits from the repository and refreshing the required disk storage.
     checkout_instructions: Checkout instructions
     create_managed_delay: 'Please note: The repository is managed, it is created asynchronously
       on the disk and will be available shortly.'
@@ -1391,6 +1400,11 @@ ru:
       path: Path to Git repository
       path_encoding: "Кодирование пути"
     go_to_revision: Go to revision
+    settings:
+      automatic_managed_repos_disabled: Disable automatic creation
+      automatic_managed_repos: Automatic creation of managed repositories
+      automatic_managed_repos_text: By setting a vendor here, newly created projects
+        will automatically receive a managed repository of this vendor.
     scm_vendor: Source control management system
     scm_type: Repository type
     scm_types:
@@ -1399,6 +1413,9 @@ ru:
       managed: Create new repository in OpenProject
     storage:
       not_available: Disk storage consumption is not available for this repository.
+      update_timeout: |
+        Keep the last required disk space information for a repository for N minutes.
+        As counting the required disk space of a repository may be costly, increase this value to reduce performance impact.
     subversion:
       existing_title: Existing Subversion repository
       existing_introduction: If you have an existing Subversion repository, you can
@@ -1421,7 +1438,7 @@ ru:
   setting_app_subtitle: "Второе название приложения"
   setting_app_title: "Название приложения"
   setting_attachment_max_size: "Максимальный размер вложения"
-  setting_autofetch_changesets: "Автоматическое информирование о вкладах других"
+  setting_autofetch_changesets: Autofetch repository changes
   setting_autologin: "Автовход"
   setting_available_languages: "Доступные языки"
   setting_bcc_recipients: "Получатели скрытой копии (bcc)"
@@ -1486,9 +1503,11 @@ ru:
   setting_per_page_options: "Количество объектов на страницу"
   setting_plain_text_mail: "Обычный текст электронной почты (не HTML)"
   setting_protocol: "Протокол"
+  setting_repositories_automatic_managed_vendor: Automatic repository vendor type
   setting_repositories_encodings: "Кодировка репозиториев"
   setting_repository_authentication_caching_enabled: "Включение кэширования для запроса
     проверки подлинности  управления версиями программного обеспечения"
+  setting_repository_storage_cache_minutes: Repository disk size cache
   setting_repository_log_display_limit: "Максимальное количество отображаемых ревизий
     в файле журнала изменений"
   setting_rest_api_enabled: "Включите веб-службы REST"

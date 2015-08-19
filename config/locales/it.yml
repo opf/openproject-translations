@@ -182,7 +182,7 @@ it:
         cant_link_a_work_package_with_a_descendant: Un pacchetto di lavoro non può
           essere collegato a una delle sue sottoattività.
         circular_dependency: Questa relazione creerebbe una dipendenza circolare.
-        confirmation: non corrisponde alla conferma.
+        confirmation: doesn't match %{attribute}.
         empty: non può essere vuoto.
         equal_to: deve essere uguale a %{count}.
         even: deve essere pari.
@@ -865,6 +865,7 @@ it:
   label_login: Login
   label_logout: Disconnetti
   label_main_menu: Menu laterale
+  label_managed_repositories_vendor: Managed %{vendor} repositories
   label_max_size: Dimensione massima
   label_me: io
   label_member_new: Nuovo membro
@@ -1012,12 +1013,17 @@ it:
   label_status: Stato
   label_status_updated: Stato del pacchetto di lavoro aggiornato
   label_stay_logged_in: Resta connesso
+  label_storage_free_space: Remaining disk space
+  label_storage_used_space: Used disk space
+  label_storage_group: Storage filesystem %{identifier}
+  label_storage_for: Encompasses storage for
   label_string: Testo
   label_subproject_new: Nuovo sotto-progetto
   label_subproject_plural: Sotto-progetti
   label_subtask_plural: Attività secondarie
   label_summary: Sommario
   label_system: Sistema
+  label_system_storage: Storage information
   label_table_of_contents: Tabella dei contenuti
   label_tag: Tag
   label_text: Testo lungo
@@ -1330,6 +1336,9 @@ it:
     member_of_group: Gruppo del responsabile incaricato
     subproject_id: Sottoprogetto
   repositories:
+    autofetch_information: |
+      Check this if you want repositories to be updated automatically when accessing the repository module page.
+      This encompasses the retrieval of commits from the repository and refreshing the required disk storage.
     checkout_instructions: Istruzioni di check-out
     create_managed_delay: 'Attenzione: L''archivio è in gestito automaticamente, verrà
       creato in modo asincrono sul disco e sarà disponibile a breve.'
@@ -1378,6 +1387,11 @@ it:
       path: Percorso all'archivio Git
       path_encoding: Codifica del percorso
     go_to_revision: Vai alla revisione
+    settings:
+      automatic_managed_repos_disabled: Disable automatic creation
+      automatic_managed_repos: Automatic creation of managed repositories
+      automatic_managed_repos_text: By setting a vendor here, newly created projects
+        will automatically receive a managed repository of this vendor.
     scm_vendor: Sistema di gestione sorgenti
     scm_type: Tipo di archivio
     scm_types:
@@ -1386,6 +1400,9 @@ it:
       managed: Crea un nuovo archivio in OpenProject
     storage:
       not_available: Consumo di spazio su disco non è disponibile per questo repository.
+      update_timeout: |
+        Keep the last required disk space information for a repository for N minutes.
+        As counting the required disk space of a repository may be costly, increase this value to reduce performance impact.
     subversion:
       existing_title: Archivio Subversion preesistente
       existing_introduction: Se si dispone di un archivio Git locale preesistente,
@@ -1409,7 +1426,7 @@ it:
   setting_app_subtitle: Sottotitolo applicazione
   setting_app_title: Titolo applicazione
   setting_attachment_max_size: Dimensione max. dell'allegato
-  setting_autofetch_changesets: Approva automaticamente le modifiche
+  setting_autofetch_changesets: Autofetch repository changes
   setting_autologin: Accesso automatico
   setting_available_languages: Linguaggi disponibili
   setting_bcc_recipients: Destinatari in copia nascosta (BCC)
@@ -1478,9 +1495,11 @@ it:
   setting_per_page_options: Oggetti per opzioni pagina
   setting_plain_text_mail: Posta di testo semplice (no HTML)
   setting_protocol: Protocollo
+  setting_repositories_automatic_managed_vendor: Automatic repository vendor type
   setting_repositories_encodings: Codifiche dei repository
   setting_repository_authentication_caching_enabled: Abilitare la cache per la richiesta
     di autenticazione del software di controllo versione
+  setting_repository_storage_cache_minutes: Repository disk size cache
   setting_repository_log_display_limit: Numero massimo di revisioni visualizzate sul
     file di log
   setting_rest_api_enabled: Abilitare il servizio web REST

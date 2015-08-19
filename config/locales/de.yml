@@ -183,7 +183,7 @@ de:
         cant_link_a_work_package_with_a_descendant: Ein Arbeitspaket kann nicht mit
           einer seiner Unteraufgaben verlinkt werden.
         circular_dependency: Diese Beziehung würde eine zyklische Abhängigkeit erzeugen.
-        confirmation: stimmt nicht mit der Bestätigung überein.
+        confirmation: doesn't match %{attribute}.
         empty: muss ausgefüllt werden.
         equal_to: muss genau %{count} sein.
         even: muss gerade sein.
@@ -868,6 +868,7 @@ de:
   label_login: Anmelden
   label_logout: Abmelden
   label_main_menu: Nebenmenü
+  label_managed_repositories_vendor: Managed %{vendor} repositories
   label_max_size: Maximale Größe
   label_me: ich
   label_member_new: Neues Mitglied
@@ -1015,12 +1016,17 @@ de:
   label_status: Status
   label_status_updated: Arbeitspaket-Status aktualisiert
   label_stay_logged_in: Angemeldet bleiben
+  label_storage_free_space: Remaining disk space
+  label_storage_used_space: Used disk space
+  label_storage_group: Storage filesystem %{identifier}
+  label_storage_for: Encompasses storage for
   label_string: Text
   label_subproject_new: Neues Unterprojekt
   label_subproject_plural: Unterprojekte
   label_subtask_plural: Unteraufgaben
   label_summary: Zusammenfassung
   label_system: System
+  label_system_storage: Storage information
   label_table_of_contents: Inhaltsverzeichnis
   label_tag: Markierung
   label_text: Langer Text
@@ -1332,6 +1338,9 @@ de:
     member_of_group: Gruppe der zugewiesenen Person
     subproject_id: Unterprojekt von
   repositories:
+    autofetch_information: |
+      Check this if you want repositories to be updated automatically when accessing the repository module page.
+      This encompasses the retrieval of commits from the repository and refreshing the required disk storage.
     checkout_instructions: Checkout Anweisungen
     create_managed_delay: 'Bitte beachten Sie: Das Projektarchiv wird in OpenProject
       verwaltet. Es wird asynchron auf dem Datenträger erstellt und wird in Kürze
@@ -1383,6 +1392,11 @@ de:
       path: Pfad zum Git Verzeichnis
       path_encoding: Pfad-Codierung
     go_to_revision: Gehe zu Revision
+    settings:
+      automatic_managed_repos_disabled: Disable automatic creation
+      automatic_managed_repos: Automatic creation of managed repositories
+      automatic_managed_repos_text: By setting a vendor here, newly created projects
+        will automatically receive a managed repository of this vendor.
     scm_vendor: Quellcode-Verwaltungssystem
     scm_type: Projektarchiv-Typ
     scm_types:
@@ -1392,6 +1406,9 @@ de:
     storage:
       not_available: Genutzter Festplattenspeicher ist nicht für dieses Projektarchiv
         verfügbar.
+      update_timeout: |
+        Keep the last required disk space information for a repository for N minutes.
+        As counting the required disk space of a repository may be costly, increase this value to reduce performance impact.
     subversion:
       existing_title: Vorhandenes Subversion Projektarchiv
       existing_introduction: Wenn Sie ein lokales Subversion Verzeichnis haben, können
@@ -1415,7 +1432,7 @@ de:
   setting_app_subtitle: Applikations-Untertitel
   setting_app_title: Applikations-Titel
   setting_attachment_max_size: Max. Dateigröße
-  setting_autofetch_changesets: Changesets automatisch abrufen
+  setting_autofetch_changesets: Autofetch repository changes
   setting_autologin: Automatische Anmeldung
   setting_available_languages: Verfügbare Sprachen
   setting_bcc_recipients: E-Mails als Blindkopie (BCC) senden
@@ -1482,9 +1499,11 @@ de:
   setting_per_page_options: Objekte pro Seite
   setting_plain_text_mail: Nur reinen Text (kein HTML) senden
   setting_protocol: Protokoll
+  setting_repositories_automatic_managed_vendor: Automatic repository vendor type
   setting_repositories_encodings: Codierungen der Projektarchive
   setting_repository_authentication_caching_enabled: Aktiviere Cache für Authentifizierungsversuche
     von Versionskontrollsoftware
+  setting_repository_storage_cache_minutes: Repository disk size cache
   setting_repository_log_display_limit: Maximale Anzahl anzuzeigender Revisionen in
     der Historie einer Datei
   setting_rest_api_enabled: REST-Schnittstelle aktivieren

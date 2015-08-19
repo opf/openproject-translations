@@ -182,7 +182,7 @@ es:
         cant_link_a_work_package_with_a_descendant: Un paquete de trabajo no puede
           ser vinculado a una de sus subtareas.
         circular_dependency: Esta relación podría crear una dependencia circular.
-        confirmation: No coincide con la confirmación.
+        confirmation: doesn't match %{attribute}.
         empty: No puede estar vacío.
         equal_to: debe ser igual a %{count}.
         even: debe ser incluido.
@@ -258,9 +258,9 @@ es:
                 other: ya ha sido utilizado antes. Por favor elige uno diferente a
                   los %{count} anteriores.
               match:
-                confirm: Confirm new password.
-                description: "'Password confirmation' should match the input in the
-                  'New password' field."
+                confirm: Confirmar Nueva Contraseña.
+                description: "'La confirmación de la contraseña' debe coincidir con
+                  la ingresada en el campo 'Nueva contraseña'."
         member:
           principal_blank: Por favor seleccione al menos un usuario o grupo.
           role_blank: Elija al menos un rol.
@@ -511,7 +511,7 @@ es:
   default_activity_support: Soporte
   default_activity_testing: Probando
   default_color_black: Negro
-  default_color_blue: Azúl
+  default_color_blue: Azul
   default_color_blue_dark: Azul (oscuro)
   default_color_blue_light: Azul (claro)
   default_color_green_dark: Verde (oscuro)
@@ -863,6 +863,7 @@ es:
   label_login: Ingresar
   label_logout: Cerrar sesión
   label_main_menu: Menú lateral
+  label_managed_repositories_vendor: Managed %{vendor} repositories
   label_max_size: Tamaño máximo
   label_me: mi
   label_member_new: Nuevo miembro
@@ -1010,12 +1011,17 @@ es:
   label_status: Estado
   label_status_updated: Estado del paquete de trabajo actualizado
   label_stay_logged_in: Mantener sesión activa
+  label_storage_free_space: Remaining disk space
+  label_storage_used_space: Used disk space
+  label_storage_group: Storage filesystem %{identifier}
+  label_storage_for: Encompasses storage for
   label_string: Texto
   label_subproject_new: Subproyecto nuevo
   label_subproject_plural: Subproyectos
   label_subtask_plural: Subtareas
   label_summary: Resumen
   label_system: Sistema
+  label_system_storage: Storage information
   label_table_of_contents: Contenidos
   label_tag: Etiqueta
   label_text: Texto largo
@@ -1284,7 +1290,7 @@ es:
   permission_edit_time_entries: Editar registros de tiempo
   permission_edit_timelines: Editar líneas de tiempo
   permission_edit_wiki_pages: Editar wiki página
-  permission_export_work_packages: Export work packages
+  permission_export_work_packages: Exportar Paquetes de Trabajo
   permission_export_wiki_pages: Exportar wiki página
   permission_list_attachments: Lista archivos adjuntos
   permission_log_time: Registro de tiempo empleado
@@ -1333,6 +1339,9 @@ es:
     member_of_group: Asignación de grupo
     subproject_id: Subproyecto
   repositories:
+    autofetch_information: |
+      Check this if you want repositories to be updated automatically when accessing the repository module page.
+      This encompasses the retrieval of commits from the repository and refreshing the required disk storage.
     checkout_instructions: Instrucciones de pago
     create_managed_delay: 'Nota: el repositorio es administrado, se crea asincrónicamente
       en el disco y estará disponible en breve.'
@@ -1381,6 +1390,11 @@ es:
       path: Ruta de acceso al repositorio Git
       path_encoding: Ruta de codificación
     go_to_revision: Ir a la revisión
+    settings:
+      automatic_managed_repos_disabled: Disable automatic creation
+      automatic_managed_repos: Automatic creation of managed repositories
+      automatic_managed_repos_text: By setting a vendor here, newly created projects
+        will automatically receive a managed repository of this vendor.
     scm_vendor: Sistema de gestión de control de fuente
     scm_type: Tipo de repositorio
     scm_types:
@@ -1390,6 +1404,9 @@ es:
     storage:
       not_available: Consumo de almacenamiento de disco no está disponible para este
         repositorio.
+      update_timeout: |
+        Keep the last required disk space information for a repository for N minutes.
+        As counting the required disk space of a repository may be costly, increase this value to reduce performance impact.
     subversion:
       existing_title: Subversion existentes de repositorio
       existing_introduction: Si tienes una Subversion de repositorio existente, puede
@@ -1413,7 +1430,7 @@ es:
   setting_app_subtitle: Subtítulo de aplicación
   setting_app_title: Título de aplicación
   setting_attachment_max_size: Tamaño máximo de adjunto
-  setting_autofetch_changesets: Captura automática de compromisos
+  setting_autofetch_changesets: Autofetch repository changes
   setting_autologin: Inicio de sesión automático
   setting_available_languages: Idiomas disponibles
   setting_bcc_recipients: Destinatarios con copia carbon oculta (cco)
@@ -1484,9 +1501,11 @@ es:
   setting_per_page_options: Objetos por página de opciones
   setting_plain_text_mail: Correo en texto plano (sin HTML)
   setting_protocol: Protocolo
+  setting_repositories_automatic_managed_vendor: Automatic repository vendor type
   setting_repositories_encodings: Codificación de Repositorios
   setting_repository_authentication_caching_enabled: Habilitar el almacenamiento en
     cache para las solicitudes de autenticacion del software de control de version
+  setting_repository_storage_cache_minutes: Repository disk size cache
   setting_repository_log_display_limit: Numero máximo de revisiones mostradas en el
     archivo de registro
   setting_rest_api_enabled: Activar servicio web REST
@@ -1518,7 +1537,7 @@ es:
     passwords: Contraseñas
     session: Sesión
     brute_force_prevention: Bloqueo automático de usuarios
-  show_hide_project_menu: Show/Hide project menu
+  show_hide_project_menu: Mostrar/ocultar menú de proyecto
   status_active: activo
   support:
     array:

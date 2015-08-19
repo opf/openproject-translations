@@ -178,7 +178,7 @@ sv-SE:
         cant_link_a_work_package_with_a_descendant: Ett arbetspaket kan inte kopplas
           till någon av dess underaktiviteter.
         circular_dependency: Detta förhållande skulle skapa ett cirkelberoende.
-        confirmation: matchar inte bekräftelse.
+        confirmation: doesn't match %{attribute}.
         empty: kan inte vara tomt.
         equal_to: måste vara lika med %{count}.
         even: måste vara jämn.
@@ -855,6 +855,7 @@ sv-SE:
   label_login: Logga in
   label_logout: Logga ut
   label_main_menu: Sidomenyn
+  label_managed_repositories_vendor: Managed %{vendor} repositories
   label_max_size: Maximal storlek
   label_me: mig
   label_member_new: Ny medlem
@@ -1001,12 +1002,17 @@ sv-SE:
   label_status: Status
   label_status_updated: Status för arbetspaket uppdaterad
   label_stay_logged_in: Fortsätt vara inloggad
+  label_storage_free_space: Remaining disk space
+  label_storage_used_space: Used disk space
+  label_storage_group: Storage filesystem %{identifier}
+  label_storage_for: Encompasses storage for
   label_string: Text
   label_subproject_new: Nytt delprojekt
   label_subproject_plural: Delprojekt
   label_subtask_plural: Underaktiviteter
   label_summary: Sammanfattning
   label_system: System
+  label_system_storage: Storage information
   label_table_of_contents: Innehållsförteckning
   label_tag: Etikett
   label_text: Lång text
@@ -1311,6 +1317,9 @@ sv-SE:
     member_of_group: Den tilldelades grupp
     subproject_id: Delprojekt
   repositories:
+    autofetch_information: |
+      Check this if you want repositories to be updated automatically when accessing the repository module page.
+      This encompasses the retrieval of commits from the repository and refreshing the required disk storage.
     checkout_instructions: Instruktioner för utcheckning
     create_managed_delay: 'Observera: Versionsarkivet hanteras, det skapas asynkront
       på disken och kommer vara tillgänglig inom kort.'
@@ -1359,6 +1368,11 @@ sv-SE:
       path: Sökväg till Git-versionsarkiv
       path_encoding: Sökvägskodning
     go_to_revision: Gå till revision
+    settings:
+      automatic_managed_repos_disabled: Disable automatic creation
+      automatic_managed_repos: Automatic creation of managed repositories
+      automatic_managed_repos_text: By setting a vendor here, newly created projects
+        will automatically receive a managed repository of this vendor.
     scm_vendor: Källkodshanteringssystem
     scm_type: Arkivtyp
     scm_types:
@@ -1367,6 +1381,9 @@ sv-SE:
       managed: Skapa nytt arkiv i OpenProject
     storage:
       not_available: Disk storage consumption is not available for this repository.
+      update_timeout: |
+        Keep the last required disk space information for a repository for N minutes.
+        As counting the required disk space of a repository may be costly, increase this value to reduce performance impact.
     subversion:
       existing_title: Befintligt Subversion-arkiv
       existing_introduction: Om du har ett befintlig Subversion-arkiv, kan du länka
@@ -1388,7 +1405,7 @@ sv-SE:
   setting_app_subtitle: Undertitel för applikation
   setting_app_title: Programnamn
   setting_attachment_max_size: Bilaga max. storlek
-  setting_autofetch_changesets: Hämta incheckningar automatiskt
+  setting_autofetch_changesets: Autofetch repository changes
   setting_autologin: Autoinloggning
   setting_available_languages: Tillgängliga språk
   setting_bcc_recipients: Mottagare för kopia (bcc)
@@ -1453,9 +1470,11 @@ sv-SE:
   setting_per_page_options: Objekt per sida alternativ
   setting_plain_text_mail: Oformaterad text i e-post (ingen HTML)
   setting_protocol: Protokoll
+  setting_repositories_automatic_managed_vendor: Automatic repository vendor type
   setting_repositories_encodings: Teckenkodningar i versionsarkiv
   setting_repository_authentication_caching_enabled: Aktivera cachelagring för autentiseringsbegäran
     av versionsarkivsystemet
+  setting_repository_storage_cache_minutes: Repository disk size cache
   setting_repository_log_display_limit: Maximalt antal revisioner som visas i loggfilen
   setting_rest_api_enabled: Aktivera REST webb tjänst
   setting_self_registration: Självregistrering

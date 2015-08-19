@@ -177,7 +177,7 @@ pt-BR:
         cant_link_a_work_package_with_a_descendant: Um pacote de trabalho não pode
           ser ligado a uma das suas subtarefas.
         circular_dependency: Esta relação vai criar uma dependência circular.
-        confirmation: não corresponde à confirmação.
+        confirmation: doesn't match %{attribute}.
         empty: não pode ser vazio.
         equal_to: deve ser igual a %{count}.
         even: deve ser par.
@@ -856,6 +856,7 @@ pt-BR:
   label_login: Login
   label_logout: Desconectar
   label_main_menu: Menu lateral
+  label_managed_repositories_vendor: Managed %{vendor} repositories
   label_max_size: Tamanho máximo
   label_me: eu
   label_member_new: Novo membro
@@ -1003,12 +1004,17 @@ pt-BR:
   label_status: Situação
   label_status_updated: Situação de pacote de trabalho atualizada
   label_stay_logged_in: Permanecer conectado
+  label_storage_free_space: Remaining disk space
+  label_storage_used_space: Used disk space
+  label_storage_group: Storage filesystem %{identifier}
+  label_storage_for: Encompasses storage for
   label_string: Texto
   label_subproject_new: Novo subprojeto
   label_subproject_plural: Subprojetos
   label_subtask_plural: Subtarefas
   label_summary: Resumo
   label_system: Sistema
+  label_system_storage: Storage information
   label_table_of_contents: Tabela de conteúdos
   label_tag: Marca
   label_text: Texto longo
@@ -1317,6 +1323,9 @@ pt-BR:
     member_of_group: Atribuído ao grupo
     subproject_id: Subprojeto
   repositories:
+    autofetch_information: |
+      Check this if you want repositories to be updated automatically when accessing the repository module page.
+      This encompasses the retrieval of commits from the repository and refreshing the required disk storage.
     checkout_instructions: Instruções de check-out
     create_managed_delay: 'Atenção: O repositório é gerenciado, ele será criado de
       forma assíncrona no disco e estará disponível em breve.'
@@ -1365,6 +1374,11 @@ pt-BR:
       path: Caminho para o repositório Git
       path_encoding: Caminho da codificação
     go_to_revision: Ir para revisão
+    settings:
+      automatic_managed_repos_disabled: Disable automatic creation
+      automatic_managed_repos: Automatic creation of managed repositories
+      automatic_managed_repos_text: By setting a vendor here, newly created projects
+        will automatically receive a managed repository of this vendor.
     scm_vendor: Sistema de gerenciamento de controle de fontes
     scm_type: Tipo de repositório
     scm_types:
@@ -1374,6 +1388,9 @@ pt-BR:
     storage:
       not_available: Consumo de armazenamento em disco não está disponível para este
         repositório.
+      update_timeout: |
+        Keep the last required disk space information for a repository for N minutes.
+        As counting the required disk space of a repository may be costly, increase this value to reduce performance impact.
     subversion:
       existing_title: Repositório Subversion existente
       existing_introduction: Se você tem um repositório Subversion, você pode vinculá-lo
@@ -1396,7 +1413,7 @@ pt-BR:
   setting_app_subtitle: Subtítulo do aplicativo
   setting_app_title: Título da aplicação
   setting_attachment_max_size: Tamanho máximo do anexo
-  setting_autofetch_changesets: Busca automática de commits
+  setting_autofetch_changesets: Autofetch repository changes
   setting_autologin: Entrar automaticamente
   setting_available_languages: Idiomas disponíveis
   setting_bcc_recipients: Destinatários de cópia oculta (Cco)
@@ -1463,9 +1480,11 @@ pt-BR:
   setting_per_page_options: Opções de objetos por página
   setting_plain_text_mail: Mensagens de texto simples (sem HTML)
   setting_protocol: Protocolo
+  setting_repositories_automatic_managed_vendor: Automatic repository vendor type
   setting_repositories_encodings: Codificações dos repositórios
   setting_repository_authentication_caching_enabled: Ativar armazenamento em cache
     para solicitação de autenticação do software de controle de versão
+  setting_repository_storage_cache_minutes: Repository disk size cache
   setting_repository_log_display_limit: Número máximo de revisões exibido no arquivo
     de log
   setting_rest_api_enabled: Habilitar serviço REST

@@ -160,7 +160,7 @@ ja:
         cant_link_a_work_package_with_a_descendant: A work package cannot be linked
           to one of its subtasks.
         circular_dependency: This relation would create a circular dependency.
-        confirmation: doesn't match confirmation.
+        confirmation: doesn't match %{attribute}.
         empty: can't be empty.
         equal_to: must be equal to %{count}.
         even: must be even.
@@ -813,6 +813,7 @@ ja:
   label_login: "ログイン"
   label_logout: "ログアウト"
   label_main_menu: "サイドメニュー"
+  label_managed_repositories_vendor: Managed %{vendor} repositories
   label_max_size: "最大サイズ"
   label_me: "自分"
   label_member_new: "新規メンバー"
@@ -959,12 +960,17 @@ ja:
   label_status: "ステータス"
   label_status_updated: "ステータスの更新"
   label_stay_logged_in: "ログインを維持"
+  label_storage_free_space: Remaining disk space
+  label_storage_used_space: Used disk space
+  label_storage_group: Storage filesystem %{identifier}
+  label_storage_for: Encompasses storage for
   label_string: "テキスト（本文）"
   label_subproject_new: "新しい子プロジェクト"
   label_subproject_plural: "子プロジェクト"
   label_subtask_plural: "子タスク"
   label_summary: "サマリー"
   label_system: "システム"
+  label_system_storage: Storage information
   label_table_of_contents: "目次"
   label_tag: "タグ"
   label_text: "長文"
@@ -1242,6 +1248,9 @@ ja:
     member_of_group: "担当者のグループ"
     subproject_id: "子プロジェクト"
   repositories:
+    autofetch_information: |
+      Check this if you want repositories to be updated automatically when accessing the repository module page.
+      This encompasses the retrieval of commits from the repository and refreshing the required disk storage.
     checkout_instructions: Checkout instructions
     create_managed_delay: 'Please note: The repository is managed, it is created asynchronously
       on the disk and will be available shortly.'
@@ -1290,6 +1299,11 @@ ja:
       path: Path to Git repository
       path_encoding: "パスのエンコード"
     go_to_revision: Go to revision
+    settings:
+      automatic_managed_repos_disabled: Disable automatic creation
+      automatic_managed_repos: Automatic creation of managed repositories
+      automatic_managed_repos_text: By setting a vendor here, newly created projects
+        will automatically receive a managed repository of this vendor.
     scm_vendor: Source control management system
     scm_type: Repository type
     scm_types:
@@ -1298,6 +1312,9 @@ ja:
       managed: Create new repository in OpenProject
     storage:
       not_available: Disk storage consumption is not available for this repository.
+      update_timeout: |
+        Keep the last required disk space information for a repository for N minutes.
+        As counting the required disk space of a repository may be costly, increase this value to reduce performance impact.
     subversion:
       existing_title: Existing Subversion repository
       existing_introduction: If you have an existing Subversion repository, you can
@@ -1320,7 +1337,7 @@ ja:
   setting_app_subtitle: "アプリケーションのサブタイトル"
   setting_app_title: "アプリケーションのタイトル"
   setting_attachment_max_size: "添付ファイルの最大サイズ"
-  setting_autofetch_changesets: "コミットを自動的に取得する"
+  setting_autofetch_changesets: Autofetch repository changes
   setting_autologin: "自動ログイン"
   setting_available_languages: "利用できる言語"
   setting_bcc_recipients: "宛先を非表示(bcc)"
@@ -1378,8 +1395,10 @@ ja:
   setting_per_page_options: "オプションページごとの項目数"
   setting_plain_text_mail: "テキストメール（HTMLなし）"
   setting_protocol: "プロトコル"
+  setting_repositories_automatic_managed_vendor: Automatic repository vendor type
   setting_repositories_encodings: "リポジトリのエンコーディング"
   setting_repository_authentication_caching_enabled: "バージョン管理ソフトウェアの認証要求に対してキャッシュを有効"
+  setting_repository_storage_cache_minutes: Repository disk size cache
   setting_repository_log_display_limit: "ログファイルに出力されるリビジョンの最大数"
   setting_rest_api_enabled: RESTによるWebサービスを有効にする
   setting_self_registration: "ユーザーによるアカウント登録"

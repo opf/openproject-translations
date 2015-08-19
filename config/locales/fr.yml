@@ -184,7 +184,7 @@ fr:
         cant_link_a_work_package_with_a_descendant: Un lot de travaux ne peut pas
           être lié à l'une de ses sous-tâches.
         circular_dependency: Cette relation créerait une dépendance circulaire.
-        confirmation: ne correspond pas à la confirmation.
+        confirmation: doesn't match %{attribute}.
         empty: ne peut pas être vide.
         equal_to: doit être égal à %{count}.
         even: doit être pair.
@@ -868,6 +868,7 @@ fr:
   label_login: Connexion
   label_logout: Déconnexion
   label_main_menu: Menu principal
+  label_managed_repositories_vendor: Managed %{vendor} repositories
   label_max_size: Taille maximale
   label_me: moi
   label_member_new: Nouveau membre
@@ -1014,12 +1015,17 @@ fr:
   label_status: Statut
   label_status_updated: Statut de Lot de Travaux mis à jour
   label_stay_logged_in: Rester connecté
+  label_storage_free_space: Remaining disk space
+  label_storage_used_space: Used disk space
+  label_storage_group: Storage filesystem %{identifier}
+  label_storage_for: Encompasses storage for
   label_string: Texte
   label_subproject_new: Nouveau sous-projet
   label_subproject_plural: Sous-projets
   label_subtask_plural: Sous-tâche
   label_summary: Résumé
   label_system: Système
+  label_system_storage: Storage information
   label_table_of_contents: Table des Matières
   label_tag: Etiquette
   label_text: Long texte
@@ -1335,6 +1341,9 @@ fr:
     member_of_group: Groupe du Destinataire
     subproject_id: Sous-projet
   repositories:
+    autofetch_information: |
+      Check this if you want repositories to be updated automatically when accessing the repository module page.
+      This encompasses the retrieval of commits from the repository and refreshing the required disk storage.
     checkout_instructions: Instructions pour le checkout
     create_managed_delay: 'N.B. : le dépôt est géré; il est créé de façon asynchrone
       sur le disque et sera disponible sous peu.'
@@ -1384,6 +1393,11 @@ fr:
       path: Chemin d'accès au dépôt Git
       path_encoding: Encodage du chemin d'accès
     go_to_revision: Aller à la révision
+    settings:
+      automatic_managed_repos_disabled: Disable automatic creation
+      automatic_managed_repos: Automatic creation of managed repositories
+      automatic_managed_repos_text: By setting a vendor here, newly created projects
+        will automatically receive a managed repository of this vendor.
     scm_vendor: Système de gestion de contrôle de sources
     scm_type: Type de dépôt
     scm_types:
@@ -1393,6 +1407,9 @@ fr:
     storage:
       not_available: La consommation d'espace disque n'est pas disponible pour ce
         dépôt.
+      update_timeout: |
+        Keep the last required disk space information for a repository for N minutes.
+        As counting the required disk space of a repository may be costly, increase this value to reduce performance impact.
     subversion:
       existing_title: Dépôt Subversion existant
       existing_introduction: Si vous avez un dépôt Subversion existant, vous pouvez
@@ -1415,7 +1432,7 @@ fr:
   setting_app_subtitle: Sous-titre de l'Application
   setting_app_title: Titre de l'Application
   setting_attachment_max_size: Taille maximale de la pièce-jointe
-  setting_autofetch_changesets: Rapport automatique des « commits »
+  setting_autofetch_changesets: Autofetch repository changes
   setting_autologin: Auto-connexion
   setting_available_languages: Langages disponibles
   setting_bcc_recipients: Déstinataires Copie Carbon Invisible (CCI)
@@ -1484,9 +1501,11 @@ fr:
   setting_per_page_options: Options des objets par page
   setting_plain_text_mail: Courriel en plein texte (pas HTML)
   setting_protocol: Protocole
+  setting_repositories_automatic_managed_vendor: Automatic repository vendor type
   setting_repositories_encodings: Encodages de référentiels
   setting_repository_authentication_caching_enabled: Activer la mise en cache pour
     la requête d'authentification du logiciel de contrôle de version
+  setting_repository_storage_cache_minutes: Repository disk size cache
   setting_repository_log_display_limit: Nombre maximal des révisions affichées sur
     « file log »
   setting_rest_api_enabled: Autoriser service web REST

@@ -179,7 +179,7 @@
         cant_link_a_work_package_with_a_descendant: A work package cannot be linked
           to one of its subtasks.
         circular_dependency: This relation would create a circular dependency.
-        confirmation: doesn't match confirmation.
+        confirmation: doesn't match %{attribute}.
         empty: can't be empty.
         equal_to: must be equal to %{count}.
         even: must be even.
@@ -856,6 +856,7 @@
   label_login: Logg inn
   label_logout: Logg av
   label_main_menu: Sidemeny
+  label_managed_repositories_vendor: Managed %{vendor} repositories
   label_max_size: Maks størrelse
   label_me: meg
   label_member_new: Nytt medlem
@@ -1002,12 +1003,17 @@
   label_status: Status
   label_status_updated: Status for arbeidspakke er oppdatert
   label_stay_logged_in: Forbli innlogget
+  label_storage_free_space: Remaining disk space
+  label_storage_used_space: Used disk space
+  label_storage_group: Storage filesystem %{identifier}
+  label_storage_for: Encompasses storage for
   label_string: Tekst
   label_subproject_new: Nytt underprosjekt
   label_subproject_plural: Underprosjekter
   label_subtask_plural: Underoppgaver
   label_summary: Sammendrag
   label_system: System
+  label_system_storage: Storage information
   label_table_of_contents: Innholdsfortegnelse
   label_tag: Etikett
   label_text: Lang tekst
@@ -1310,6 +1316,9 @@
     member_of_group: Deltakers gruppe
     subproject_id: Underprosjekt
   repositories:
+    autofetch_information: |
+      Check this if you want repositories to be updated automatically when accessing the repository module page.
+      This encompasses the retrieval of commits from the repository and refreshing the required disk storage.
     checkout_instructions: Checkout instructions
     create_managed_delay: 'Please note: The repository is managed, it is created asynchronously
       on the disk and will be available shortly.'
@@ -1358,6 +1367,11 @@
       path: Path to Git repository
       path_encoding: Koding av sti
     go_to_revision: Go to revision
+    settings:
+      automatic_managed_repos_disabled: Disable automatic creation
+      automatic_managed_repos: Automatic creation of managed repositories
+      automatic_managed_repos_text: By setting a vendor here, newly created projects
+        will automatically receive a managed repository of this vendor.
     scm_vendor: Source control management system
     scm_type: Repository type
     scm_types:
@@ -1366,6 +1380,9 @@
       managed: Create new repository in OpenProject
     storage:
       not_available: Disk storage consumption is not available for this repository.
+      update_timeout: |
+        Keep the last required disk space information for a repository for N minutes.
+        As counting the required disk space of a repository may be costly, increase this value to reduce performance impact.
     subversion:
       existing_title: Existing Subversion repository
       existing_introduction: If you have an existing Subversion repository, you can
@@ -1388,7 +1405,7 @@
   setting_app_subtitle: Undertittel for applikasjon
   setting_app_title: Applikasjonsnavn
   setting_attachment_max_size: Maksstørrelse for vedlegg
-  setting_autofetch_changesets: Hent bidrag automatisk
+  setting_autofetch_changesets: Autofetch repository changes
   setting_autologin: Autoinnlogging
   setting_available_languages: Tilgjengelige språk
   setting_bcc_recipients: Blindkopi-mottakere (bcc)
@@ -1452,9 +1469,11 @@
   setting_per_page_options: Alternativer for oppføringer pr. side
   setting_plain_text_mail: Ren tekst (ingen HTML)
   setting_protocol: Protokoll
+  setting_repositories_automatic_managed_vendor: Automatic repository vendor type
   setting_repositories_encodings: Koding av pakkebrønner
   setting_repository_authentication_caching_enabled: Aktiver mellomlagring for autentiseringsforspørsler
     fra programmer for versjonskontroll
+  setting_repository_storage_cache_minutes: Repository disk size cache
   setting_repository_log_display_limit: Maks antall revisjoner som vises i filloggen
   setting_rest_api_enabled: Aktiver REST webservice
   setting_self_registration: Selv-registrering
