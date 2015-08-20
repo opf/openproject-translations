@@ -48,7 +48,7 @@ pl:
       auth_source:
         account: Konto
         attr_firstname: Atrybut imię
-        attr_lastname: Atrybuty nazwiska
+        attr_lastname: Atrybut nazwiska
         attr_login: Atrybut Identyfikator logowania
         attr_mail: Atrybut adresu e-mail
         base_dn: Bazowa nazwa wyróżniająca
@@ -246,12 +246,9 @@ pl:
               numeric: liczbowe (np. 1)
               special: specjalne (np. '%')
               reused:
-                one: has been used before. Please choose one that is different from
-                  your last one.
-                other: has been used before. Please choose one that is different from
-                  your last %{count}.
-                few: has been used before. Please choose one that is different from
-                  your last %{count}.
+                one: było użyte wcześniej. Proszę wybrać inne niż ostatnio.
+                other: było użyte wcześniej. Proszę wybrać inne niż %{count} ostatnich.
+                few: było użyte wcześniej. Proszę wybrać inne niż %{count} ostatnich.
               match:
                 confirm: Confirm new password.
                 description: "'Password confirmation' should match the input in the
@@ -262,9 +259,9 @@ pl:
       template:
         body: 'Sprawdź następujące pola:'
         header:
-          one: 1 error prohibited this %{model} from being saved
-          other: "%{count} errors prohibited this %{model} from being saved"
-          few: "%{count} errors prohibited this %{model} from being saved"
+          one: 1 błąd zabrania uniemożliwia zapisanie %{model}
+          other: "%{count} błędów uniemożliwia zapisanie %{model}"
+          few: "%{count} błędów uniemożliwia zapisanie %{model}"
     models:
       attachment: Plik
       board: Forum
@@ -279,18 +276,18 @@ pl:
       project: Projekt
       query: Kwerenda użytkownika
       role:
-        one: Role
-        other: Roles
-        few: Roles
+        one: Rola
+        other: Role
+        few: Role
       type: Typ
       planning_element: Elementem planowania
       project_type: Typ projektu
       user: Użytkownik
       version: Wersja
       wiki: Wiki
-      wiki_page: Strony wiki
+      wiki_page: Strona wiki
       workflow: Przepływ pracy
-      work_package: Zadania
+      work_package: Zadanie
   errors:
     header_invalid_fields: 'Wystąpił problem z następującymi polami:'
   activity:
@@ -313,7 +310,7 @@ pl:
     custom_values: Pola niestandardowe
     default_columns: Domyślne kolumny
     description: Opis
-    display_sums: Wyświetlanie sumy
+    display_sums: Wyświetl sumy
     due_date: Termin
     estimated_hours: Szacowany czas
     estimated_time: Szacowany czas
@@ -324,7 +321,7 @@ pl:
     is_default: Wartość domyślna
     is_for_all: Dla wszystkich projektów
     is_public: Publicznego
-    issue: Zadania
+    issue: Zadanie
     lastname: Nazwisko
     login: Login
     mail: Adres e-mail
@@ -333,18 +330,18 @@ pl:
     priority: Priorytet
     project: Projekt
     responsible: Odpowiedzialny
-    role: Role
+    role: Rola
     start_date: Data rozpoczęcia
-    status: Stan
+    status: Status
     subject: Temat
-    summary: Streszczenie
+    summary: Podsumowanie
     title: Tytuł
     type: Typ
     updated_at: Aktualizacja
     updated_on: Aktualizacja
     user: Użytkownik
     version: Wersja
-    work_package: Zadania
+    work_package: Zadanie
   button_add: Dodaj
   button_add_watcher: Dodaj obserwatora
   button_annotate: Adnotacja
@@ -373,7 +370,7 @@ pl:
   button_list: Lista
   button_lock: Blokada
   button_log_time: Rejestruj czas pracy
-  button_login: Login
+  button_login: Logowanie
   button_move: Przenieś
   button_move_and_follow: Przenieś i kontynuuj
   button_quote: Cytat
@@ -467,55 +464,55 @@ pl:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: about 1 hour
-        other: about %{count} hours
-        few: about %{count} hours
+        one: około 1 godziny
+        other: około %{count} godzin
+        few: około %{count} godzin
       about_x_months:
-        one: about 1 month
-        other: about %{count} months
-        few: about %{count} months
+        one: około 1 miesiąca
+        other: około %{count} miesięcy
+        few: około %{count} miesięcy
       about_x_years:
-        one: about 1 year
-        other: about %{count} years
-        few: about %{count} years
+        one: około 1 roku
+        other: około %{count} lat
+        few: około %{count} lat
       almost_x_years:
-        one: almost 1 year
-        other: almost %{count} years
-        few: almost %{count} years
+        one: prawie 1 rok
+        other: prawie %{count} lat
+        few: prawie %{count} lat
       half_a_minute: pół minuty
       less_than_x_minutes:
-        one: less than a minute
-        other: less than %{count} minutes
-        few: less than %{count} minutes
+        one: mniej niż minuta
+        other: mniej niż %{count} minut
+        few: mniej niż %{count} minut
       less_than_x_seconds:
-        one: less than 1 second
-        other: less than %{count} seconds
-        few: less than %{count} seconds
+        one: mniej niż 1 sekunda
+        other: mniej niż %{count} sekund
+        few: mniej niż %{count} sekund
       over_x_years:
-        one: over 1 year
-        other: over %{count} years
-        few: over %{count} years
+        one: ponad 1 rok
+        other: ponad %{count} lat
+        few: ponad %{count} lat
       x_days:
-        one: 1 day
-        other: "%{count} days"
-        few: "%{count} days"
+        one: 1 dzień
+        other: "%{count} dni"
+        few: "%{count} dni"
       x_minutes:
-        one: 1 minute
-        other: "%{count} minutes"
-        few: "%{count} minutes"
+        one: 1 minuta
+        other: "%{count} minut"
+        few: "%{count} minut"
       x_months:
-        one: 1 month
-        other: "%{count} months"
-        few: "%{count} months"
+        one: 1 miesiąc
+        other: "%{count} miesięcy"
+        few: "%{count} miesięcy"
       x_seconds:
-        one: 1 second
-        other: "%{count} seconds"
-        few: "%{count} seconds"
+        one: 1 sekunda
+        other: "%{count} sekund"
+        few: "%{count} sekund"
     units:
       hour:
-        one: hour
-        other: hours
-        few: hours
+        one: godzina
+        other: godziny
+        few: godziny
   default_activity_development: Development
   default_activity_management: Zarządzanie
   default_activity_other: Inne
@@ -664,7 +661,7 @@ pl:
   general_csv_encoding: UTF-8
   general_csv_separator: ","
   general_first_day_of_week: '7'
-  general_lang_name: Polish
+  general_lang_name: Angielski
   general_pdf_encoding: ISO-8859-2
   general_text_no: nie
   general_text_yes: tak
@@ -713,7 +710,7 @@ pl:
   label_auth_source_new: Nowy tryb uwierzytelniania
   label_auth_source_plural: Tryb uwierzytelniania
   label_authentication: Uwierzytelnianie
-  label_blocked_by: zablokowany przez
+  label_blocked_by: Zablokowane przez
   label_blocks: Bloki
   label_board_locked: Zablokowany
   label_board_new: Nowe forum
@@ -768,7 +765,7 @@ pl:
   label_date_to: Do
   label_day_plural: dni
   label_default: Domyślnie
-  label_deleted: usunięte
+  label_deleted: Usunięty
   label_deleted_custom_field: "(usunięte pole niestandardowe)"
   label_descending: Malejąco
   label_details: Szczegóły
@@ -783,8 +780,8 @@ pl:
   label_download: "%{count} Download"
   label_download_plural: "%{count} Downloads"
   label_downloads_abbr: D/L
-  label_duplicated_by: powielone przez
-  label_duplicates: duplikaty
+  label_duplicated_by: Powielone przez
+  label_duplicates: Duplikaty
   label_edit: Edycja
   label_enable_multi_select: Włącz wybór wielokrotny
   label_end_to_end: koniec do końca
@@ -806,7 +803,7 @@ pl:
   label_filter_add: Dodaj filtr
   label_filter_plural: Filtry
   label_float: Liczba rzeczywista
-  label_follows: follows
+  label_follows: Następujący
   label_force_user_language_to_default: Ustaw język domyślny dla użytkowników o innych
     ustawieniach językowych niż dozwolone
   label_general: Ogólne
@@ -869,7 +866,7 @@ pl:
   label_list: Lista
   label_loading: "Ładowanie..."
   label_logged_as: Zalogowany jako
-  label_login: Login
+  label_login: Logowanie
   label_logout: Wyloguj
   label_main_menu: Menu boczne
   label_max_size: Maksymalny rozmiar
@@ -932,7 +929,7 @@ pl:
   label_password_rule_special: Znaki specjalne
   label_password_rule_uppercase: Wielkie litery
   label_path_encoding: Path encoding
-  label_pdf_with_descriptions: PDF z opisem
+  label_pdf_with_descriptions: PDF z opisami
   label_per_page: Na stronie
   label_permissions: Uprawnienia
   label_permissions_report: Raport uprawnień
@@ -940,7 +937,7 @@ pl:
   label_planning: Planowanie
   label_please_login: Proszę się zalogować
   label_plugins: Wtyczki
-  label_precedes: poprzedza
+  label_precedes: Poprzedza
   label_preferences: Preferencje
   label_preview: Podgląd
   label_previous: Poprzedni
@@ -968,7 +965,7 @@ pl:
   label_registration_automatic_activation: automatyczna aktywacja konta
   label_registration_manual_activation: ręczna aktywacja konta
   label_related_work_packages: Powiązanie zadania
-  label_relates_to: powiązane z
+  label_relates_to: Powiązane z
   label_relation_delete: Usuń powiązanie
   label_relation_new: Nowe powiązanie
   label_remove_columns: Usuń zaznaczone kolumny
@@ -1014,14 +1011,14 @@ pl:
   label_start_to_end: od początku do końca
   label_start_to_start: rozpoczęcie-rozpoczęcie
   label_statistics: Statystyki
-  label_status: Stan
+  label_status: Status
   label_status_updated: Status zadania został zaktualizowany
   label_stay_logged_in: Pozostań zalogowany
   label_string: Tekst
   label_subproject_new: Nowy podprojekt
   label_subproject_plural: Podprojekty
   label_subtask_plural: Zadania podrzędne
-  label_summary: Streszczenie
+  label_summary: Podsumowanie
   label_system: System
   label_table_of_contents: Spis treści
   label_tag: Znacznik
@@ -1077,41 +1074,41 @@ pl:
   label_wiki_edit: Edycja wiki
   label_wiki_edit_plural: Edycja wiki
   label_wiki_navigation: Nawigacja Wiki
-  label_wiki_page: Strony wiki
+  label_wiki_page: Strona wiki
   label_wiki_page_plural: Strony wiki
   label_wiki_show_index_page_link: Pokaż element podmenu "Spis treści"
   label_wiki_show_menu_item: Pokaż jako element menu w nawigacji projektu
   label_wiki_show_new_page_link: Pokaż element podmenu "Utwórz nową stronę podrzędną"
   label_wiki_show_submenu_item: 'Pokaż jako pozycję podmenu '
-  label_work_package: Zadania
+  label_work_package: Zadanie
   label_workflow: Przepływ pracy
   label_workflow_plural: Przepływy pracy
-  label_workflow_summary: Streszczenie
+  label_workflow_summary: Podsumowanie
   label_x_closed_work_packages_abbr:
-    one: 1 closed
-    other: "%{count} closed"
+    one: 1 zamknięte
+    other: "%{count} zamkniętych"
     zero: 0 closed
-    few: "%{count} closed"
+    few: "%{count} zamkniętych"
   label_x_comments:
-    one: 1 comment
-    other: "%{count} comments"
+    one: 1 komentarz
+    other: "%{count} komentarzy"
     zero: no comments
-    few: "%{count} comments"
+    few: "%{count} komentarzy"
   label_x_open_work_packages_abbr:
-    one: 1 open
-    other: "%{count} open"
+    one: 1 otwarte
+    other: "%{count} otwartych"
     zero: 0 open
-    few: "%{count} open"
+    few: "%{count} otwartych"
   label_x_open_work_packages_abbr_on_total:
-    one: 1 open / %{total}
-    other: "%{count} open / %{total}"
+    one: 1 otwarte / %{total}
+    other: "%{count} otwartych / %{total}"
     zero: 0 open / %{total}
-    few: "%{count} open / %{total}"
+    few: "%{count} otwartych / %{total}"
   label_x_projects:
-    one: 1 project
-    other: "%{count} projects"
+    one: 1 projekt
+    other: "%{count} projektów"
     zero: no projects
-    few: "%{count} projects"
+    few: "%{count} projektów"
   label_year: Rok
   label_yesterday: wczoraj
   label_keyboard_function: Funkcja
@@ -1143,7 +1140,7 @@ pl:
     lists only)
   label_keyboard_shortcut_focus_next_item: Focus next list element (on some lists
     only)
-  label_visible_elements: Visible elements
+  label_visible_elements: Elementy widoczne
   auth_source:
     using_abstract_auth_source: Can't use an abstract authentication source.
     ldap_error: 'LDAP-Error: %{error_message}'
@@ -1247,9 +1244,9 @@ pl:
         format: "%n %u"
         units:
           byte:
-            one: Byte
-            other: Bytes
-            few: Bytes
+            one: Bajt
+            other: Bajty
+            few: Bajty
           gb: GB
           kb: kB
           mb: MB
@@ -1327,7 +1324,7 @@ pl:
   project_module_news: Aktualności
   project_module_repository: Repozytorium
   project_module_time_tracking: Zarządzanie czasem
-  project_module_timelines: Terminarz
+  project_module_timelines: Oś czasu
   project_module_wiki: Wiki
   query_fields:
     assigned_to_role: Przypisany do roli
@@ -1338,7 +1335,7 @@ pl:
   setting_app_subtitle: Podtytuł
   setting_app_title: Tytuł
   setting_attachment_max_size: Maks. rozmiar załącznika
-  setting_autofetch_changesets: Autofetch commits
+  setting_autofetch_changesets: Automatyczne pobieranie commitów
   setting_autologin: Automatyczne logowanie
   setting_available_languages: Dostępne języki
   setting_bcc_recipients: Adresaci ukrytych kopii (bcc)
@@ -1557,8 +1554,8 @@ pl:
       planning_elements: Elementy planowania
       project_associations: Zależności
       reportings: Raporty statusów
-      reports: Sprawozdania terminów
-      timelines: Terminarz
+      reports: Raporty osi czasu
+      timelines: Oś czasu
     add_project_association: Dodawanie zależności
     associations: Zależności
     board_could_not_be_saved: Pulpit nie może być zapisany
@@ -1574,9 +1571,9 @@ pl:
     delete_thing: Usuń
     duration: Czas trwania
     duration_days:
-      one: 1 day
-      other: "%{count} days"
-      few: "%{count} days"
+      one: 1 dzień
+      other: "%{count} dni"
+      few: "%{count} dni"
     edit_color: Edycja koloru
     edit_project_type: Edycja typu projektu
     edit_thing: Edycja
@@ -1599,8 +1596,8 @@ pl:
         timeframe_end: 'The timeframe end '
         compare_to_relative: 'Wartość względnego porównania '
         compare_to_absolute: 'Wartość bezwzględna porównania '
-        planning_element_time_relative_one: 'Początek zadania w określonym czasie '
-        planning_element_time_relative_two: 'Koniec zadania w określonym czasie '
+        planning_element_time_relative_one: 'Początek zadania w określonym czasie  '
+        planning_element_time_relative_two: 'Koniec zadania w określonym czasie  '
         planning_element_time_absolute_one: 'Początek zadania w określonym czasie  '
         planning_element_time_absolute_two: 'Koniec zadania w określonym czasie  '
       sort:
@@ -1615,7 +1612,7 @@ pl:
         type: Typ
         due_date: Data zakończenia
         name: Nazwa
-        status: Stan
+        status: Status
         responsible: Odpowiedzialny
         start_date: Data rozpoczęcia
       columns: Kolumny
@@ -1720,8 +1717,8 @@ pl:
       zgłoszenia statusów będą również usunięte.
     start: Start
     timeline: Raport osi czasu
-    timelines: Sprawozdania terminów
-    settings: Terminarz
+    timelines: Raporty osi czasu
+    settings: Oś czasu
     vertical_work_package: Pionowe zadania
     without_project_type: Bez typu projektu
     you_are_viewing_the_selected_timeline: Oglądasz raport zaznaczonej osi czasu
@@ -1749,9 +1746,9 @@ pl:
       pośrednictwem poczty e-mail)
     blocked: zablokowany tymczsowo
     blocked_num_failed_logins:
-      one: locked temporarily (one failed login attempt)
-      other: locked temporarily (%{count} failed login attempts)
-      few: locked temporarily (%{count} failed login attempts)
+      one: tymczasowo zablokowane (jedna nieudana próba zalogowania)
+      other: tymczasowo zablokowane (%{count} nieudanych prób zalogowania)
+      few: tymczasowo zablokowane (%{count} nieudanych prób zalogowania)
     deleted: Usunięty uźytkownik
     error_status_change_failed: 'Zmiana statusu użytkownika nie powiodło się z powodu
       następujących błędów: %{errors}'

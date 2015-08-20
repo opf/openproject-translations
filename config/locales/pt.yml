@@ -81,14 +81,14 @@ pt:
       journal:
         notes: Notas
       member:
-        roles: Funções
+        roles: Papel
       project:
         homepage: Página pessoal
         identifier: Identificador
         work_packages: Tarefas
         parent: Subprojeto de
         versions: Versões
-        project_type: Tipo do projeto
+        project_type: Tipo de Projeto
         responsible: Responsável
         types: Tipos
         queries: Consultas
@@ -157,9 +157,9 @@ pt:
       work_package:
         done_ratio: "% completo"
         fixed_version: Versão
-        parent: Pai
-        parent_issue: Pai
-        parent_work_package: Pai
+        parent: Mãe
+        parent_issue: Mãe
+        parent_work_package: Mãe
         priority: Prioridade
         progress: "% completo"
         responsible: Responsável
@@ -187,7 +187,7 @@ pt:
           length
         greater_than_start_date: deve ser maior que a data de início
         inclusion: is not set to one of the allowed values
-        invalid: "é inválido"
+        invalid: "é invalido"
         less_than: deve ser menor que % {count}
         less_than_or_equal_to: deve ser menor ou igual a %{count}
         not_a_date: Não é uma data
@@ -222,7 +222,7 @@ pt:
             parent_id:
               cannot_be_milestone: cannot be a milestone
               cannot_be_in_another_project: cannot be in another project
-              not_a_valid_parent: "é inválido"
+              not_a_valid_parent: "é invalido"
               does_not_exist: não existe
             status_id:
               status_transition_invalid: "é inválido porque nenhuma transição válida
@@ -246,10 +246,10 @@ pt:
               numeric: algarismo (e.g. '1')
               special: carater especial (e.g. %)
               reused:
-                one: has been used before. Please choose one that is different from
-                  your last one.
-                other: has been used before. Please choose one that is different from
-                  your last %{count}.
+                one: já foi utilizada antes. Por favor, escolha um que seja diferente
+                  do anterior.
+                other: já foi utilizada antes. Por favor, escolha uma que seja diferente
+                  das anteriores %{count}.
               match:
                 confirm: Confirm new password.
                 description: "'Password confirmation' should match the input in the
@@ -260,8 +260,8 @@ pt:
       template:
         body: 'Please check the following fields:'
         header:
-          one: 1 error prohibited this %{model} from being saved
-          other: "%{count} errors prohibited this %{model} from being saved"
+          one: 1 erro impediu este %{model} de ser salvo
+          other: "%{count} errors proibiram este %{model} de serem salvos"
     models:
       attachment: Arquivo
       board: Fórum
@@ -276,11 +276,16 @@ pt:
       project: Projecto
       query: Consulta personalizada
       role:
-        one: Role
-        other: Roles
+        one: |
+          [one]
+          Papel
+
+          [other]
+          Papeis
+        other: Papel
       type: Tipo
       planning_element: Elemento de planeamento
-      project_type: Tipo do projeto
+      project_type: Tipo de Projeto
       user: Usuário
       version: Versão
       wiki: Wiki
@@ -329,7 +334,12 @@ pt:
     priority: Prioridade
     project: Projecto
     responsible: Responsável
-    role: Role
+    role: |
+      [one]
+      Papel
+
+      [other]
+      Papeis
     start_date: Data de início
     status: Situação
     subject: Assunto
@@ -463,43 +473,43 @@ pt:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: about 1 hour
-        other: about %{count} hours
+        one: cerca de 1 hora
+        other: cerca de %{count} horas
       about_x_months:
-        one: about 1 month
-        other: about %{count} months
+        one: cerca de 1 mês
+        other: cerca de %{count} meses
       about_x_years:
-        one: about 1 year
-        other: about %{count} years
+        one: cerca de 1 ano
+        other: cerca de %{count} anos
       almost_x_years:
-        one: almost 1 year
-        other: almost %{count} years
+        one: quase 1 ano
+        other: quase %{count} anos
       half_a_minute: meio minuto
       less_than_x_minutes:
-        one: less than a minute
-        other: less than %{count} minutes
+        one: menos de 1 minuto
+        other: menos de %{count} minutos
       less_than_x_seconds:
-        one: less than 1 second
-        other: less than %{count} seconds
+        one: menos de 1 segundo
+        other: menos de %{count} segundos
       over_x_years:
-        one: over 1 year
-        other: over %{count} years
+        one: mais de 1 ano
+        other: mais de %{count} anos
       x_days:
-        one: 1 day
-        other: "%{count} days"
+        one: 1 dia
+        other: "%{count} dias"
       x_minutes:
-        one: 1 minute
-        other: "%{count} minutes"
+        one: 1 minuto
+        other: "%{count} minutos"
       x_months:
-        one: 1 month
-        other: "%{count} months"
+        one: 1 mês
+        other: "%{count} meses"
       x_seconds:
-        one: 1 second
-        other: "%{count} seconds"
+        one: 1 segundo
+        other: "%{count} segundos"
     units:
       hour:
-        one: hour
-        other: hours
+        one: hora
+        other: horas
   default_activity_development: Desenvolvimento
   default_activity_management: Gestão
   default_activity_other: Outro
@@ -974,7 +984,7 @@ pt:
   label_roadmap_overdue: "%{value} late"
   label_role_and_permissions: Roles and permissions
   label_role_new: New role
-  label_role_plural: Funções
+  label_role_plural: Papel
   label_role_search: Search for roles
   label_scm: SCM
   label_search: Pesquisar
@@ -1068,24 +1078,24 @@ pt:
   label_workflow_plural: Fluxos de Trabalho
   label_workflow_summary: Resumo
   label_x_closed_work_packages_abbr:
-    one: 1 closed
-    other: "%{count} closed"
+    one: 1 fechado
+    other: "%{count} fechados"
     zero: 0 closed
   label_x_comments:
-    one: 1 comment
-    other: "%{count} comments"
+    one: 1 comentário
+    other: "%{count} comentários"
     zero: no comments
   label_x_open_work_packages_abbr:
-    one: 1 open
-    other: "%{count} open"
+    one: 1 aberto
+    other: "%{count} abertos"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
-    one: 1 open / %{total}
-    other: "%{count} open / %{total}"
+    one: 1 aberto / %{total}
+    other: "%{count} aberto / %{total}"
     zero: 0 open / %{total}
   label_x_projects:
-    one: 1 project
-    other: "%{count} projects"
+    one: 1 projeto
+    other: "%{count} projetos"
     zero: no projects
   label_year: Ano
   label_yesterday: ontem
@@ -1521,7 +1531,7 @@ pt:
     admin_menu:
       color: Cor
       colors: Cores
-      project_type: Tipo do projeto
+      project_type: Tipo de Projeto
       project_types: Tipos de projeto
     project_menu:
       planning_elements: Planning elements
@@ -1544,8 +1554,8 @@ pt:
     delete_thing: Eliminar
     duration: Duração
     duration_days:
-      one: 1 day
-      other: "%{count} days"
+      one: 1 dia
+      other: "%{count} dias"
     edit_color: Editar cor
     edit_project_type: Editar o tipo de projeto
     edit_thing: Editar
@@ -1722,8 +1732,8 @@ pt:
     assign_random_password: Assign random password (sent to user via e-mail)
     blocked: locked temporarily
     blocked_num_failed_logins:
-      one: locked temporarily (one failed login attempt)
-      other: locked temporarily (%{count} failed login attempts)
+      one: fechado temporariamente (uma tentativa falha de login)
+      other: fechado temporariamente (%{count} tentativas falhas de login)
     deleted: Eliminar Utilizador
     error_status_change_failed: 'Changing the user status failed due to the following
       errors: %{errors}'
