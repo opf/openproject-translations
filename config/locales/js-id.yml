@@ -4,7 +4,7 @@ id:
     ajax:
       hide: Sembunyikan
       loading: Loading ...
-    close_popup_title: Close popup
+    close_popup_title: Tutup
     button_add_watcher: Tambah pemantau
     button_cancel: Batal
     button_check_all: Cek semua
@@ -45,7 +45,6 @@ id:
     label_all: semua
     label_all_work_packages: Semua paket kerja
     label_ascending: Askending
-    label_at: at
     label_board_locked: Locked
     label_board_sticky: Sticky
     label_date: Tanggal
@@ -56,10 +55,10 @@ id:
     label_collapse: Tampilkan
     label_collapsed: runtuh
     label_collapse_all: Tutup semua
-    label_committed_at: "%{committed_revision_link} at %{date}"
-    label_committed_link: committed revision %{revision_identifier}
+    label_committed_at: "%{committed_revision_link} pada %{date}"
+    label_committed_link: disimpan pada revisi %{revision_identifier}
     label_contains: berisi
-    label_created_on: created on
+    label_created_on: dibuat pada
     label_equals: adalah
     label_expand: Expand
     label_expanded: diperluas
@@ -73,7 +72,7 @@ id:
     label_format_pdf_with_descriptions: PDF disertai deskripsi
     label_greater_or_equal: ">="
     label_group_by: Grup oleh
-    label_hide_attributes: Hide empty
+    label_hide_attributes: Kosong tidak ditampilkan
     label_hide_column: Sembunyikan kolom
     label_in: dalam
     label_in_less_than: kurang dari
@@ -117,7 +116,7 @@ id:
     label_today: hari ini
     label_total_progress: "%{percent}% total progres"
     label_visible_for_others: Halaman dapat diakses oleh member lain
-    label_updated_on: updated on
+    label_updated_on: diupdate pada
     label_work_package: Paket-Penugasan
     label_watch_work_package: Pantau Paket-Penugasan
     label_watcher_added_successfully: Pemantau telah ditambahkan!
@@ -125,26 +124,26 @@ id:
     label_work_package_details_you_are_here: Anda di tab %{tab} untuk %{type} %{subject}.
     label_unwatch_work_package: Tidak pantau Paket-Penugasan
     label_uploaded_by: Diupload oleh
-    label_global_queries: Shared queries
-    label_custom_queries: Private queries
+    label_global_queries: Query bersama
+    label_custom_queries: Query pribadi
     label_columns: Kolom
     label_click_to_enter_description: Klik untuk masukkan keterangan...
     label_attachments: File
-    label_drop_files: Drop files here
-    label_drop_files_hint: or click to add files
+    label_drop_files: Drop file di sini
+    label_drop_files_hint: atau klik untuk menambahkan
     label_remove_file: Hapus
-    label_remove_all_files: Delete all files
-    label_add_description: Add a description for %{file}
-    label_upload_notification: 'Uploading files for Work package #%{id}: %{subject}'
-    label_files_to_upload: 'These files will be uploaded:'
-    label_rejected_files: 'These files cannot be uploaded:'
-    label_rejected_files_reason: These files cannot be uploaded as their size is greater
-      than %{maximumFilesize}
-    label_wait: Please wait for configuration...
-    label_upload_counter: "%{done} of %{count} files finished"
-    label_successful_update: Successful update
-    label_validation_error: 'The work package could not be saved due to the following
-      errors:'
+    label_remove_all_files: Hapus semua file
+    label_add_description: Tambahkan deskripsi untuk %{file}
+    label_upload_notification: 'Upload file untuk Work package #%{id}: %{subject}'
+    label_files_to_upload: 'Upload file berikut:'
+    label_rejected_files: 'File ini tidak bisa di-upload:'
+    label_rejected_files_reason: File berikut melebihi ketentuan ukuran yang diperbolehkan
+      yaitu < %{maximumFilesize}
+    label_wait: Mohon menunggu...
+    label_upload_counter: "%{done} dari %{count} file selesai"
+    label_successful_update: Update berhasil
+    label_validation_error: 'Proses penyimpanan work package gagal. Kesalahan yang
+      terjadi:'
     text_are_you_sure: Anda yakin?
     filter_labels:
       assigned_to: Pelimpahan
@@ -194,18 +193,22 @@ id:
       add_blocked_by: Tambahkan diblokir oleh
       add_precedes: Tambahkan mendahului
       add_follows: Tambahkan berikut
-    field_value_enter_prompt: Enter a value for '%{field}'
+    field_value_enter_prompt: Masukkan nilai untuk '%{field}'
     select2:
       input_too_short:
         one: Please enter one more character
-        other: Masukkan {{count}} karakter lain
+        other: |
+          Tambahkan satu karakter lagi
+          Tambahkan {{count}} karakter lagi
         zero: Please enter more characters
       load_more: Memuat hasil lebih banyak...
       no_matches: Tak ditemukan yang cocok
       searching: Mencari ...
       selection_too_big:
         one: You can only select one item
-        other: Anda hanya dapat memilih item {{limit}}
+        other: |
+          Hanya bisa memilih satu item
+          Hanya bisa memilih {{limit}} item
         zero: You cannot select any items
     text_work_packages_destroy_confirmation: Yakin akan menghapus?
     text_query_destroy_confirmation: Apakah Anda yakin Anda ingin menghapus query
@@ -304,7 +307,7 @@ id:
       message_error_during_bulk_delete: 'Error: Menghapus Paket-Penugasan.'
       message_successful_bulk_delete: Paket-Penugasan telah dihapus.
       create:
-        header: New Work Package
+        header: Tambah Work Package
       no_results:
         title: Tidak ada Paket-Penugasan untuk ditampilkan
         description_html: "<p>Walaupun tidak ada Paket-Penugasan, tetap akan di-Filter.</p>"
@@ -370,12 +373,12 @@ id:
         save_as: Simpan sebagai...
         export: Ekspor...
         share: Share ...
-        page_settings: Rename query ...
+        page_settings: Ubah nama query ...
         delete: Hapus
       filter: Filter
       unselected_title: Paket-Penugasan
     modals:
-      label_settings: Rename query
+      label_settings: Ubah nama
       label_name: Nama
       label_delete_page: Hapus halaman ini
       button_apply: Apply
@@ -391,24 +394,26 @@ id:
       delete: Hapus keterkaitan
     inplace:
       button_edit: "%{attribute}: Edit"
-      button_save: "%{attribute}: Save"
-      button_save_and_send: "%{attribute}: Save and send email"
+      button_save: "%{attribute}: Simpan"
+      button_save_and_send: "%{attribute}: Simpan dan kirim email"
       button_cancel: "%{attribute}: Cancel"
       button_save_all: Simpan
-      button_save_and_send_all: Save and send email
+      button_save_and_send_all: Simpan dan kirim email
       button_cancel_all: Batal
       link_formatting_help: Text formatting
       btn_preview_enable: Preview
       btn_preview_disable: Menonaktifkan Tinjauan
-      null_value_label: No value
-      clear_value_label: "-"
+      null_value_label: Kosongkan
+      clear_value_label: Hapus nilai
       errors:
-        required: "%{field} cannot be empty"
-        number: "%{field} is not a valid number"
+        required: "%{field} tidak boleh kosong"
+        number: "%{field} harus berupa angka"
     error_could_not_resolve_version_name: Tidak bisa menyelesaikan versi nama
-    error_could_not_resolve_user_name: Couldn't resolve user name
+    error_could_not_resolve_user_name: User name tidak ditemukan
     units:
       hour:
         one: 1 hour
-        other: "%{count} jam"
+        other: |
+          1 jam
+          %{count} jam
         zero: 0 hours

@@ -73,7 +73,7 @@ id:
       journal:
         notes: Note
       member:
-        roles: Role
+        roles: Peran
       project:
         homepage: Homepage
         identifier: Pengenal
@@ -133,7 +133,7 @@ id:
         hexcode: Kode Hexa
       project_association:
         description: Penyebab
-        project_b: Dependent project
+        project_b: Proyek yang dependent
       project_type:
         allows_association: Mungkinkan asosiasi
         name: Nama
@@ -163,78 +163,76 @@ id:
         watcher: Pemantau
     errors:
       messages:
-        accepted: must be accepted.
-        blank: can't be blank.
-        cant_link_a_work_package_with_a_descendant: A work package cannot be linked
-          to one of its subtasks.
-        circular_dependency: This relation would create a circular dependency.
-        confirmation: doesn't match %{attribute}.
-        empty: can't be empty.
-        equal_to: must be equal to %{count}.
-        even: must be even.
-        exclusion: is reserved.
-        file_too_large: is too large (maximum size is %{count} Bytes).
-        greater_than: must be greater than %{count}.
-        greater_than_or_equal_to: must be greater than or equal to %{count}.
-        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
-          length.
-        greater_than_start_date: must be greater than start date.
-        inclusion: is not set to one of the allowed values.
-        invalid: is invalid.
-        less_than: must be less than %{count}.
-        less_than_or_equal_to: must be less than or equal to %{count}.
-        not_a_date: is not a date.
-        not_a_number: is not a number.
-        not_an_integer: is not an integer.
-        not_same_project: doesn't belong to the same project.
-        odd: must be odd.
-        taken: has already been taken.
-        too_long: is too long (maximum is %{count} characters).
-        too_short: is too short (minimum is %{count} characters).
-        wrong_length: is the wrong length (should be %{count} characters).
-        after: must be after %{date}.
-        after_or_equal_to: must be after or equal to %{date}.
-        before: must be before %{date}.
-        before_or_equal_to: must be before or equal to %{date}.
-        could_not_be_copied: could not be (fully) copied.
+        accepted: harus disetujui.
+        blank: harus di isi.
+        cant_link_a_work_package_with_a_descendant: Work package tidak dapat dihubungkan
+          dengan subtask-nya.
+        circular_dependency: Relasi ini menyebabkan dependensi circular.
+        confirmation: tidak sesuai dengan %{attribute}.
+        empty: harus di isi.
+        equal_to: harus sama dengan %{count}.
+        even: harus imbang.
+        exclusion: telah dipesan.
+        file_too_large: ukuran maksimum yang diperbolehkan %{count} Bytes.
+        greater_than: harus lebih besar dari %{count}.
+        greater_than_or_equal_to: harus lebih besar atau sama dengan %{count}.
+        smaller_than_or_equal_to_max_length: harus lebih kecil atau sama dengan panjang
+          maksimum.
+        greater_than_start_date: harus lebih besar dari tanggal mulai.
+        inclusion: belum di set dengan nilai yang diperbolehkan.
+        invalid: tidak valid.
+        less_than: harus kurang dari %{count}.
+        less_than_or_equal_to: harus kurang dari atau sama dengan %{count}.
+        not_a_date: harus diisi tanggal.
+        not_a_number: harus diisi angka.
+        not_an_integer: harus bilangan bulat.
+        not_same_project: harus berasal dari proyek yang sama.
+        odd: harus ganjil.
+        taken: sudah dipakai.
+        too_long: panjang karakter maksimal %{count}.
+        too_short: minimal %{count} karakter.
+        wrong_length: panjang tidak sesuai (harus %{count} karakter).
+        after: harus setelah %{date}.
+        after_or_equal_to: harus setelah atau sama dengan %{date}.
+        before: harus sebelum %{date}.
+        before_or_equal_to: harus sebelum atau maksimal %{date}.
+        could_not_be_copied: sebagian tidak dapat dicopy.
       models:
         project_association:
-          identical_projects: Dependency cannot be created between one project and
-            itself.
-          project_association_not_allowed: does not allow associations.
+          identical_projects: Dependensi tidak dapat dilakukan terhadap proyek yang
+            identik.
+          project_association_not_allowed: asosiasi tidak dimungkinkan.
         repository:
-          not_available: SCM vendor is not available
-          not_whitelisted: is not allowed by the configuration.
+          not_available: Vendor SCM tidak tersedia
+          not_whitelisted: konfigurasi tidak mengijinkan.
           no_directory: is not a directory.
         work_package:
           is_not_a_valid_target_for_time_entries: 'Paket-Penugasan #%{id} tidak valid
             untuk reassigning di Time entri.'
           attributes:
             due_date:
-              not_start_date: is not on start date, although this is required for
-                milestones.
+              not_start_date: tanggal mulai dan berakhir pada milestone harus sama.
             parent_id:
-              cannot_be_milestone: cannot be a milestone.
-              cannot_be_in_another_project: cannot be in another project.
-              not_a_valid_parent: is invalid.
-              does_not_exist: does not exist.
+              cannot_be_milestone: parent dari work package tidak bisa berupa milestone.
+              cannot_be_in_another_project: tidak boleh dari proyek lain.
+              not_a_valid_parent: tidak valid.
+              does_not_exist: tidak ditemukan.
             status_id:
-              status_transition_invalid: is invalid because no valid transition exists
-                from old to new status for the current user's roles.
+              status_transition_invalid: gagal melakukan transisi dari status lama
+                ke status baru untuk role ini.
             priority_id:
-              only_active_priorities_allowed: needs to be active.
+              only_active_priorities_allowed: prioritas harus aktif.
             category:
-              only_same_project_categories_allowed: The category of a work package
-                must be within the same project as the work package.
-              does_not_exist: The specified category does not exist.
+              only_same_project_categories_allowed: Kategori yang dipilih harus diambil
+                dari kategori yang berlaku pada proyek.
+              does_not_exist: Kategori yang dipilih tidak ada.
             estimated_hours:
-              only_values_greater_or_equal_zeroes_allowed: The estimated hours must
-                be >= 0.
+              only_values_greater_or_equal_zeroes_allowed: Estimasi jam harus >= 0.
         user:
           attributes:
             password:
-              weak: 'must contain characters of the following classes (at least %{min_count}
-                of %{all_count}): %{rules}.'
+              weak: 'harus mengandung karakter berikut (%{min_count} dari %{all_count}):
+                %{rules}.'
               lowercase: huruf kecil (spt. 'a')
               uppercase: huruf besar (spt. 'A')
               numeric: numerik (spt. ' 1')
@@ -242,12 +240,11 @@ id:
               reused:
                 one: has been used before. Please choose one that is different from
                   your last one.
-                other: has been used before. Please choose one that is different from
-                  your last %{count}.
+                other: password pernah dipakai. Password harus berbeda dari %{count}
+                  password yang lalu.
               match:
-                confirm: Confirm new password.
-                description: "'Password confirmation' should match the input in the
-                  'New password' field."
+                confirm: Konfirmasi password baru.
+                description: Isian konfirmasi password tidak sama dengan masukan password.
         member:
           principal_blank: Silakan pilih setidaknya satu user atau grup.
           role_blank: Silakan pilih setidaknya satu Role.
@@ -255,7 +252,7 @@ id:
         body: 'Silakan periksa isian berikut :'
         header:
           one: 1 error prohibited this %{model} from being saved
-          other: "%{count} errors prohibited this %{model} from being saved"
+          other: "%{count} error menyebabkan %{model} gagal untuk disimpan"
     models:
       attachment: File
       board: Forum
@@ -291,7 +288,7 @@ id:
     attachments: Lampiran
     author: Penulis
     base: 'Error :'
-    blocks_ids: IDs of blocked work packages
+    blocks_ids: List ID dari work package yang diblokir
     category: Kategori
     comment: Komentar
     comments: Komentar
@@ -491,32 +488,32 @@ id:
     units:
       hour:
         one: hour
-        other: hours
+        other: jam
   default_activity_development: Pengembangan
   default_activity_management: Manajemen
   default_activity_other: Lainnya
-  default_activity_specification: Specification
+  default_activity_specification: Spesifikasi
   default_activity_support: Support
   default_activity_testing: Pengujian
-  default_color_black: Black
-  default_color_blue: Blue
-  default_color_blue_dark: Blue (dark)
-  default_color_blue_light: Blue (light)
-  default_color_green_dark: Green (dark)
-  default_color_green_light: Green (light)
-  default_color_grey_dark: Grey (dark)
-  default_color_grey_light: Grey (light)
-  default_color_grey: Grey
+  default_color_black: Hitam
+  default_color_blue: Biru
+  default_color_blue_dark: Biru (gelap)
+  default_color_blue_light: Biru (terang)
+  default_color_green_dark: Hijau (gelap)
+  default_color_green_light: Hijau (terang)
+  default_color_grey_dark: Abu-abu (gelap)
+  default_color_grey_light: Abu-abu (terang)
+  default_color_grey: Abu-abu
   default_color_magenta: Magenta
-  default_color_orange: Orange
+  default_color_orange: Oranye
   default_color_red: Merah
-  default_color_white: White
-  default_color_yellow: Yellow
+  default_color_white: Putih
+  default_color_yellow: Kuning
   default_status_closed: Closed
   default_status_confirmed: Confirmed
   default_status_developed: Developed
   default_status_in_development: In development
-  default_status_in_progress: In progress
+  default_status_in_progress: In Progress
   default_status_in_specification: In specification
   default_status_in_testing: In testing
   default_status_new: Baru
@@ -532,7 +529,7 @@ id:
   default_priority_high: High
   default_priority_immediate: Segera
   default_project_type_scrum: Scrum team
-  default_project_type_standard: Standard project
+  default_project_type_standard: Standart project
   default_reported_project_status_green: Hijau
   default_reported_project_status_amber: Amber
   default_reported_project_status_red: Merah
@@ -611,11 +608,10 @@ id:
   error_scm_annotate: Entri tidak ditemukan atau tidak dapat di anotasi.
   error_scm_command_failed: 'Error ketika mengakses repositori: %{value}'
   error_scm_not_found: Entri atau revisi tidak ditemukan dalam repositori.
-  error_unable_delete_status: The work package status cannot be deleted since it is
-    used by at least one work package.
-  error_unable_delete_default_status: Unable to delete the default work package status.
-    Please select another default work package status before deleting the current
-    one.
+  error_unable_delete_status: Work package tidak dapat dihapus karena dipakai oleh
+    work package lain.
+  error_unable_delete_default_status: Status default tidak dapat dihapus. Tentukan
+    nilai default lain sebelum menghapus status yang anda ingin hapus.
   error_unable_to_connect: Tidak dapat terhubung (%{value})
   error_workflow_copy_source: Silakan pilih sumber Tipe atau Role
   error_workflow_copy_target: Silakan pilih target Tipe dan Role
@@ -701,7 +697,7 @@ id:
   label_category: Kategori
   label_wiki_menu_item: Wiki menu item
   label_select_main_menu_item: Pilih item main menu baru
-  label_required_disk_storage: Required disk storage
+  label_required_disk_storage: Storage yang dibutuhkan
   label_change_plural: Perubahan
   label_change_properties: Ubah properti
   label_change_status: Ubah status
@@ -709,7 +705,7 @@ id:
   label_changes_details: Rincian semua perubahan
   label_changeset_plural: Set perubahan
   label_checked: terpilih
-  label_child_element: Child element
+  label_child_element: Sub-elemen
   label_chronological_order: Urutan kronologis
   label_close_versions: Tutup versi yang sudah komplit
   label_closed_work_packages: berakhir
@@ -829,7 +825,7 @@ id:
   label_journal_diff: Deskripsi perbandingan
   label_jump_to_a_project: Lompat ke Project...
   label_language_based: Berdasarkan bahasa user
-  label_last_activity: Last activity
+  label_last_activity: Aktivitas terakhir
   label_last_changes: "%{count} perubahan terakhir"
   label_last_login: Login terakhir
   label_last_month: bulan lalu
@@ -846,7 +842,7 @@ id:
   label_login: Login
   label_logout: Logout
   label_main_menu: Sidemenu
-  label_managed_repositories_vendor: Managed %{vendor} repositories
+  label_managed_repositories_vendor: "%{vendor} repository yang dikelola"
   label_max_size: Ukuran maks.
   label_me: saya
   label_member_new: Member baru
@@ -857,7 +853,7 @@ id:
   label_message_plural: Pesan
   label_message_posted: Pesan ditambahkan
   label_min_max_length: Panjang Min - Maks
-  label_minute_plural: minutes
+  label_minute_plural: menit
   label_missing_api_access_key: Missing API access key
   label_missing_feeds_access_key: Missing RSS access key
   label_modification: "%{count} perubahan"
@@ -889,6 +885,7 @@ id:
   label_next_week: Minggu depan
   label_no_change_option: "(tdk berubah)"
   label_no_data: Tidak ada data untuk ditampilkan
+  label_nothing_display: Nothing to display
   label_nobody: tidak ada
   label_none: kosong
   label_not_contains: tidak berisi
@@ -924,15 +921,16 @@ id:
   label_principal_search: Cari user atau grup
   label_profile: Profil
   label_project_all: Semua Project
-  label_project_count: Total number of projects
+  label_project_count: Jumlah proyek
   label_project_copy_notifications: Kirim email notifikasi selama meng-copy Project
   label_project_latest: Project terbaru
   label_project_default_type: Biarkan kosong pada Tipe
-  label_project_hierarchy: Project hierarchy
+  label_project_hierarchy: Hirarki proyek
   label_project_new: Project baru
   label_project_plural: Project
   label_project_settings: Projek setting
-  label_projects_storage_information: "%{count} projects using %{storage} disk storage"
+  label_projects_storage_information: "%{count} proyek menggunakan %{storage} dari
+    storage"
   label_project_view_all: Lihat semua Project
   label_public_projects: Project untuk publik
   label_query_new: Queri baru
@@ -972,7 +970,7 @@ id:
   label_roadmap_overdue: terlambat %{value}
   label_role_and_permissions: Role dan Izin
   label_role_new: Role baru
-  label_role_plural: Role
+  label_role_plural: Peran
   label_role_search: Cari Role
   label_scm: SCM
   label_search: Cari
@@ -995,17 +993,17 @@ id:
   label_status: Status
   label_status_updated: Status Paket-Penugasan telah diupdate
   label_stay_logged_in: Tetap login
-  label_storage_free_space: Remaining disk space
-  label_storage_used_space: Used disk space
+  label_storage_free_space: Sisa space di disk
+  label_storage_used_space: Space disk terpakai
   label_storage_group: Storage filesystem %{identifier}
-  label_storage_for: Encompasses storage for
+  label_storage_for: Storage juga termasuk untuk
   label_string: Teks
   label_subproject_new: Sub Project baru
   label_subproject_plural: Sub Project
   label_subtask_plural: Sub-Tugas
   label_summary: Ringkasan
   label_system: Sistem
-  label_system_storage: Storage information
+  label_system_storage: Informasi storage
   label_table_of_contents: Daftar isi
   label_tag: Tag
   label_text: Teks panjang
@@ -1073,7 +1071,7 @@ id:
   label_workflow_summary: Ringkasan
   label_x_closed_work_packages_abbr:
     one: 1 closed
-    other: "%{count} yang berakhir"
+    other: "%{count} closed"
     zero: 0 closed
   label_x_comments:
     one: 1 comment
@@ -1081,7 +1079,7 @@ id:
     zero: no comments
   label_x_open_work_packages_abbr:
     one: 1 open
-    other: "%{count} yang open"
+    other: "%{count} open"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
     one: 1 open / %{total}
@@ -1089,7 +1087,7 @@ id:
     zero: 0 open / %{total}
   label_x_projects:
     one: 1 project
-    other: "%{count} Project"
+    other: "%{count} proyek"
     zero: no projects
   label_year: Tahun
   label_yesterday: kemarin
@@ -1112,7 +1110,7 @@ id:
   label_keyboard_shortcut_go_news: Buka Project Berita
   label_keyboard_shortcut_go_timelines: Buka Timeline
   label_keyboard_shortcut_new_work_package: Buat Paket-Penugasan baru
-  label_keyboard_shortcut_details_package: Show work packages details pane
+  label_keyboard_shortcut_details_package: Tampilkan panel rician
   label_keyboard_shortcut_go_edit: Edit item saat ini (hanya di detail halaman)
   label_keyboard_shortcut_open_more_menu: Buka menu lagi (hanya di halaman detil)
   label_keyboard_shortcut_go_preview: Preview edit saat ini (hanya halaman yang diedit)
@@ -1120,11 +1118,11 @@ id:
     di daftar yang sama)
   label_keyboard_shortcut_focus_next_item: Fokus daftar elemen berikutnya (hanya di
     daftar yang sama)
-  label_visible_elements: Visible elements
+  label_visible_elements: Element tampak
   auth_source:
     using_abstract_auth_source: Can't use an abstract authentication source.
     ldap_error: 'LDAP-Error: %{error_message}'
-    ldap_auth_failed: Could not authenticate at the LDAP-Server.
+    ldap_auth_failed: Authentikasi pada LDAP-Server gagal.
   macro_execution_error: ERROR eksekusi makro %{macro_name}
   macro_unavailable: Makro %{macro_name} tidak dapat ditampilkan.
   mail_body_account_activation_request: 'User (%{value}) telah terdaftar. Akun Anda
@@ -1233,7 +1231,7 @@ id:
   permission_browse_repository: Browse repositori
   permission_change_wiki_parent_page: Ubah halaman induk Wiki
   permission_comment_news: Komentar berita
-  permission_commit_access: Submit commits
+  permission_commit_access: Melakukan commit
   permission_copy_projects: Copy Project
   permission_delete_work_package_watchers: Hapus pemantau
   permission_delete_work_packages: Hapus Paket-Penugasan
@@ -1256,7 +1254,7 @@ id:
   permission_edit_time_entries: Edit Time log
   permission_edit_timelines: Edit Timeline
   permission_edit_wiki_pages: Edit halaman Wiki
-  permission_export_work_packages: Export work packages
+  permission_export_work_packages: Ekspor work packages
   permission_export_wiki_pages: Ekspor halaman Wiki
   permission_list_attachments: Daftar lampiran
   permission_log_time: Catat durasi
@@ -1304,70 +1302,65 @@ id:
     member_of_group: Ditugaskan untuk Grup
     subproject_id: Sub-Project
   repositories:
-    autofetch_information: |
-      Check this if you want repositories to be updated automatically when accessing the repository module page.
-      This encompasses the retrieval of commits from the repository and refreshing the required disk storage.
-    checkout_instructions: Checkout instructions
-    create_managed_delay: 'Please note: The repository is managed, it is created asynchronously
-      on the disk and will be available shortly.'
-    create_successful: The repository has been registered.
-    delete_sucessful: The repository has been deleted.
+    autofetch_information: Beri centang untuk update otomatis dari repository ketika
+      laman modul repository dibuka. Termasuk juga me-refresh kebutuhan storage disk.
+    checkout_instructions: Petunjuk checkout
+    create_managed_delay: 'Catatan: repository dikelola secara asinkron sehingga mungkin
+      belum tampak ketika di-load.'
+    create_successful: Registrasi repository berhasil.
+    delete_sucessful: Repository dihapus.
     destroy:
-      title: Are you absolutely sure?
-      managed_text: If you continue, this will permanently delete the managed repository
-        of %{project_name}. This action cannot be reverted.
-      managed_path_note: 'The following directory will be erased: %{path}'
-      linked_text: |
-        You're about to remove the linked repository %{url} from the project %{project_name}.
-        Note: This will NOT delete the contents of this repository, as it is not managed by OpenProject.
+      title: Apakah Anda benar-benar yakin?
+      managed_text: Jika dilanjutkan, repository akan dihapus permanen dari %{project_name}.
+        Keputusan ini tidak bisa dibatalkan.
+      managed_path_note: 'Berikut direktory yang akan dihapus: %{path}'
+      linked_text: Repository %{url} akan dihapus dari %{project_name} namun isi dari
+        repository tidak diubah oleh proses ini.
     errors:
-      build_failed: Unable to create the repository with the selected configuration.
-        %{reason}
-      empty_repository: The repository exists, but is empty. It does not contain any
-        revisions yet.
+      build_failed: Pembuatan repository gagal. %{reason}
+      empty_repository: Pada repository yang ditemukan belum terdapat revisi sama
+        sekali.
       exists_on_filesystem: The repository directory exists already on filesystem.
-      filesystem_access_failed: 'An error occurred while creating the repository on
-        filesystem: %{message}.'
-      not_manageable: This repository vendor cannot be managed by OpenProject.
-      path_permission_failed: 'An error occurred trying to create the following path:
-        %{path}. Please ensure that OpenProject may write to that folder.'
-      unauthorized: You're not authorized to access the repository or the credentials
-        are invalid.
-      unavailable: The repository is unavailable.
-      exception_title: 'Cannot access the repository: %{message}'
-      disabled_or_unknown_type: The selected type %{type} is disabled or no longer
-        available for the SCM vendor %{vendor}.
-      disabled_or_unknown_vendor: The SCM vendor %{vendor} is disabled or no longer
-        available.
+      filesystem_access_failed: 'Terjadi error ketika mempersiapkan repository: %{message}.'
+      not_manageable: Repository dari vendor yang anda pilih belum bisa dikelola oleh
+        OpenProject.
+      path_permission_failed: Terjadi error saat membuat %{path}. Pastikan OpenProject
+        memiliki hak akses di folder.
+      unauthorized: Anda tidak memiliki izin untuk mengakses repository, atau terjadi
+        kesalahan data login.
+      unavailable: Repository tidak ditemukan.
+      exception_title: 'Repository tidak dapat diakses: %{message}'
+      disabled_or_unknown_type: Tipe yang anda pilih %{type}, telah di disable atau
+        tidak lagi terdapat pada %{vendor}.
+      disabled_or_unknown_vendor: 'SCM Vendor ini tidak ditemukan: %{vendor}'
     git:
       instructions:
-        managed_url: This is the URL of the managed (local) Git repository.
-        path: Specify the path to your local Git repository ( e.g., %{example_path}
-          ).
-        path_encoding: 'Override Git path encoding (Default: UTF-8)'
-      local_title: Link existing local Git repository
-      local_introduction: If you have an existing local Git repository, you can link
-        it with OpenProject to access it from within the application.
-      managed_path: Managed Git path (preview)
-      managed_introduction: Let OpenProject create and integrate a local Git repository
-        automatically.
-      managed_title: Git repository integrated into OpenProject
-      path: Path to Git repository
+        managed_url: URL ini dikelola dengan Git lokal.
+        path: Masukkan path untuk reposity Git (contoh, %{example_path}).
+        path_encoding: 'Encoding git (Default: UTF-8)'
+      local_title: Ambil dari Git lokal
+      local_introduction: Repository Git lokal yang anda miliki dapat dihubungkan
+        dengan OpenProject untuk dikelola dari dalam.
+      managed_path: Git yang dikelola (preview)
+      managed_introduction: Perbolehkan Repository Git lokal untuk dikelola secara
+        otomatis oleh OpenProject.
+      managed_title: Repository Git telah terintegrasi
+      path: Path Git
       path_encoding: Path encoding
     go_to_revision: Go to revision
     settings:
-      automatic_managed_repos_disabled: Disable automatic creation
-      automatic_managed_repos: Automatic creation of managed repositories
+      automatic_managed_repos_disabled: Nonaktifkan pembuatan otomatis
+      automatic_managed_repos: Pembuatan otomatis di repository
       automatic_managed_repos_text: By setting a vendor here, newly created projects
         will automatically receive a managed repository of this vendor.
     scm_vendor: Source control management system
-    scm_type: Repository type
+    scm_type: Tipe repositori
     scm_types:
-      local: Link existing local repository
-      existing: Link existing repository
-      managed: Create new repository in OpenProject
+      local: Kaitkan dengan repository lokal
+      existing: Kaitkan dengan repository
+      managed: Buat repository baru dalam OpenProject
     storage:
-      not_available: Disk storage consumption is not available for this repository.
+      not_available: Storage tidak tersedia untuk repository ini.
       update_timeout: |
         Keep the last required disk space information for a repository for N minutes.
         As counting the required disk space of a repository may be costly, increase this value to reduce performance impact.
@@ -1634,7 +1627,7 @@ id:
     duration: Durasi
     duration_days:
       one: 1 day
-      other: "%{count} hari"
+      other: "%{count} days"
     edit_color: Edit warna
     edit_project_type: Edit Tipe Project
     edit_thing: Edit
@@ -1686,8 +1679,8 @@ id:
         absolute: Absolut
         none: Kosong
         relative: Relatif
-        compare_relative_prefix: Compare current planning to
-        compare_relative_suffix: ago
+        compare_relative_prefix: Bandingkan dengan
+        compare_relative_suffix: yang lalu
         compare_absolute: Bandingkan perencanaan saat ini dengan %{date}
       time_relative:
         days: hari
@@ -1809,7 +1802,7 @@ id:
     blocked: dilock sementara
     blocked_num_failed_logins:
       one: locked temporarily (one failed login attempt)
-      other: dilock sementara (%{count} karena gagal login)
+      other: locked temporarily (%{count} failed login attempts)
     deleted: User telah dihapus
     error_status_change_failed: 'Mengubah status user gagal karena : %{errors}'
     lock: Lock permanen
