@@ -98,31 +98,4 @@ describe GitRepository do
       expect(subject.branch).to eql(branch)
     end
   end
-
-  describe '#merge' do
-    let(:our_branch) { 'test-our-branch' }
-    let(:their_branch) { 'test-their-branch' }
-
-    before do
-      allow(subject).to receive(:within_repo).and_yield
-      allow(subject).to receive(:branch).and_return(our_branch)
-    end
-
-    it 'calls run_command with correct parameters' do
-      expected_command = "git merge origin/#{their_branch}"
-      expected_command += " -m \"Merge branch '#{their_branch}' into #{our_branch}'\""
-      expect(subject).to receive(:run_command).with(expected_command)
-      subject.merge(their_branch)
-    end
-
-    context 'strategy ours' do
-      it 'calls run_command with correct parameters' do
-        expected_command = "git merge origin/#{their_branch}"
-        expected_command += ' -Xours'
-        expected_command += " -m \"Merge branch '#{their_branch}' into #{our_branch}'\""
-        expect(subject).to receive(:run_command).with(expected_command)
-        subject.merge(their_branch, strategy: :ours)
-      end
-    end
-  end
 end
