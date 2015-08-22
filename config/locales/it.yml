@@ -6,14 +6,14 @@ it:
     deleted: Account cancellato con successo
     deletion_info:
       data_consequences:
-        other: I dati creati dall'utente (per esempio posta elettronica, le preferenze,
-          pacchetti di lavoro, le voci wiki) verranno eliminati quando più possibile.
-          Si noti, tuttavia, che i dati come pacchetti di lavoro e le voci wiki non
-          possono essere eliminati senza ostacolare il lavoro degli altri utenti.
-          Tali dati vengono quindi riassegnati ad un account chiamato "Utente Cancellato".
-          Visto che i dati di ogni account eliminato vengono anch'essi riassegnati
-          a questo account, non sarà possibile distinguere i dati creati dall'utente
-          dai dati di un altro account eliminato.
+        other: I dati creati dall'utente (ad esempio posta elettronica, preferenze,
+          pacchetti di lavoro, voci wiki) verranno se possibile eliminati completamente.
+          Si noti, tuttavia, che i dati come ad esempio i pacchetti di lavoro e le
+          voci wiki non possono essere eliminati senza ostacolare il lavoro di altri
+          utenti. La proprietà di tali dati sarà pertanto trasferita ad un account
+          generico chiamato "Deleted user". Visto che i dati di tutti gli account
+          eliminati vengono riassegnati a questo account, non sarà più possibile distinguere
+          i dati creati dall'utente dai dati di un altro account eliminato.
         self: I dati creati dalle tue attività (ad esempio posta elettronica, preferenze,
           pacchetti di lavoro, voci wiki) verranno se possibile eliminati completamente.
           Si noti, tuttavia, che i dati come ad esempio i pacchetti di lavoro e le
@@ -21,15 +21,16 @@ it:
           utenti. La proprietà di tali dati sarà pertanto trasferita ad un account
           generico chiamato "Deleted user". Visto che i dati di tutti gli account
           eliminati vengono riassegnati a questo account, non sarà più possibile distinguere
-          i tuoi dati dai dati di un altro account eliminato.
-      heading: Cancella account %{name}
+          i dati da te creati dai dati di un altro account eliminato.
+      heading: Cancella l'account %{name}
       info:
         other: Cancellare l'account utente è un azione irreversibile.
         self: Cancellare il tuo account utente è un azione irreversibile.
       login_consequences:
         other: L'account verrà cancellato dal sistema. Pertanto l'utente non sarà
           più in grado di accedere con le sue credenziali correnti. L'utente potrà
-          in futuro scegliere di diventare nuovamente utente di quest'applicazione.
+          in futuro scegliere di diventare nuovamente utente di quest'applicazione
+          ripercorrendo le normali procedure.
         self: Il tuo account verrà eliminato dal sistema. Pertanto non sarai più in
           grado di accedere con le tue credenziali correnti. Se in futuro sceglierai
           di diventare nuovamente utente di quest'applicazione, potrai farlo utilizzando
@@ -58,7 +59,7 @@ it:
         attr_mail: Attributo email
         base_dn: Base DN
         host: Host
-        onthefly: Creazione dell'utente al volo
+        onthefly: Creazione dell'utente istantanea
         port: Porta
       comment:
         commented: Commentato
@@ -176,7 +177,7 @@ it:
     errors:
       messages:
         accepted: deve essere accettato
-        blank: non può essere vuoto
+        blank: non può essere lasciato vuoto
         cant_link_a_work_package_with_a_descendant: Un pacchetto di lavoro non può
           essere collegato a una delle sue sottoattività
         circular_dependency: Questa relazione creerebbe una dipendenza circolare
@@ -190,30 +191,30 @@ it:
         greater_than_or_equal_to: deve essere maggiore o uguale di %{count}
         smaller_than_or_equal_to_max_length: deve essere minore o uguale alla lunghezza
           massima
-        greater_than_start_date: deve essere maggiore della data di inizio
+        greater_than_start_date: deve essere successivo alla data di inizio
         inclusion: non è impostata su uno dei valori consentiti
         invalid: non è valido
-        less_than: deve essere inferiore di %{count}
-        less_than_or_equal_to: deve essere inferiore o uguale di %{count}
+        less_than: deve essere inferiore a %{count}
+        less_than_or_equal_to: deve essere inferiore o uguale a %{count}
         not_a_date: non è una data
         not_a_number: non è un numero
         not_an_integer: non è un numero intero
         not_same_project: non appartiene allo stesso progetto
         odd: deve essere dispari
-        taken: "è già stata presa"
+        taken: "è già stato usato"
         too_long: "è troppo lungo (il massimo è %{count} caratteri)"
         too_short: "è troppo breve (minimo è %{count} caratteri)"
         wrong_length: "è della lunghezza sbagliata (dovrebbe essere %{count} caratteri)"
-        after: deve essere dopo %{date}
-        after_or_equal_to: deve essere dopo o uguale a %{date}
-        before: deve essere prima %{date}
-        before_or_equal_to: deve essere prima di o uguale a %{date}
-        could_not_be_copied: non poteva essere copiato (completamente)
+        after: deve essere successivo al %{date}
+        after_or_equal_to: deve essere successivo o uguale al %{date}
+        before: deve essere precedente al %{date}
+        before_or_equal_to: deve essere precedente o uguale al %{date}
+        could_not_be_copied: non possono essere copiati (integralmente)
       models:
         project_association:
           identical_projects: Non può essere creata una dipendenza di un progetto
             con se stesso.
-          project_association_not_allowed: non consente le associazioni
+          project_association_not_allowed: non consente associazioni
         repository:
           not_whitelisted: non è consentito dalla configurazione
           no_directory: non è una directory
@@ -252,10 +253,10 @@ it:
               numeric: numerico (e.g. '1')
               special: speciale (e.g. '%')
               reused:
-                one: "è stata utilizzata prima. Si prega di scegliere una diversa
-                  dalla precedente."
-                other: "è già stata utilizzata. Si prega di sceglierne una diversa
-                  dalle ultime %{count}."
+                one: "è stata già utilizzata prima. Si prega di sceglierne una che
+                  è diversa dall'ultima."
+                other: "è già stata utilizzata in precedenza. Si prega di sceglierne
+                  una che è diversa dalle ultime %{count}."
               match:
                 confirm: Conferma nuova password.
                 description: "'Conferma password' dovrebbe corrispondere al campo
@@ -266,15 +267,15 @@ it:
       template:
         body: 'Perfavore controlla i seguenti campi:'
         header:
-          one: 1 errore impedisce il salvataggio di questo %{model}
-          other: "%{count} errori impediscono il salvataggio di questo %{model}"
+          one: 1 errore impedisce a questo %{model} di essere salvato
+          other: "%{count} errori impediscono a questo %{model} di essere salvato"
     models:
       attachment: File
       board: Forum
       comment: Commento
       custom_field: Campo personalizzato
       group: Gruppo
-      issue: Problema
+      issue: Questione
       category: Categoria
       status: Stato pacchetto di lavoro
       member: Membro
@@ -468,7 +469,7 @@ it:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: 1 ora circa
+        one: circa 1 ora
         other: circa %{count} ore
       about_x_months:
         one: circa 1 mese
@@ -504,7 +505,7 @@ it:
     units:
       hour:
         one: ora
-        other: ora
+        other: ore
   default_activity_development: Sviluppo
   default_activity_management: Gestione
   default_activity_other: Altro
@@ -795,7 +796,7 @@ it:
   label_feeds_access_key_created_on: Chiave di accesso RSS creato %{value} fa
   label_file_added: File aggiunto
   label_file_plural: File
-  label_filesystem_path: Cartella della radice
+  label_filesystem_path: Directory principale
   label_filter_add: Aggiungi filtro
   label_filter_plural: Filtri
   label_float: Virgola mobile
@@ -1241,7 +1242,7 @@ it:
         units:
           byte:
             one: Byte
-            other: Bytes
+            other: Byte
           gb: GB
           kb: kB
           mb: MB
@@ -1333,7 +1334,7 @@ it:
   setting_app_subtitle: Sottotitolo applicazione
   setting_app_title: Titolo applicazione
   setting_attachment_max_size: Dimensione max. dell'allegato
-  setting_autofetch_changesets: Approva automaticamente le modifiche
+  setting_autofetch_changesets: Richiama automaticamente le modifiche approvate
   setting_autologin: Accesso automatico
   setting_available_languages: Linguaggi disponibili
   setting_bcc_recipients: Destinatari in copia nascosta (BCC)
@@ -1758,7 +1759,7 @@ it:
     assign_random_password: Assegna password casuale (inviata via email all'utente)
     blocked: temporaneamente bloccato
     blocked_num_failed_logins:
-      one: bloccato temporaneamente (un tentativo di accesso non riuscito)
+      one: bloccato temporaneamente (un tentativo di accesso fallito)
       other: bloccato temporaneamente (%{count} tentativi di accesso falliti)
     deleted: Utente cancellato
     error_status_change_failed: 'Fallito il cambiamento dello stato dell''utente a

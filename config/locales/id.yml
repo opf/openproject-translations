@@ -131,7 +131,7 @@ id:
         hexcode: Kode Hexa
       project_association:
         description: Penyebab
-        project_b: Dependent project
+        project_b: Proyek yang dependent
       project_type:
         allows_association: Mungkinkan asosiasi
         name: Nama
@@ -171,13 +171,13 @@ id:
         equal_to: harus sama dengan %{count}
         even: harus genap
         exclusion: disediakan
-        file_too_large: is too large (maximum size is %{count} Bytes)
+        file_too_large: terlalu besar (maksimal %{count} Bytes)
         greater_than: harus lebih besar dari %{count}
         greater_than_or_equal_to: harus lebih besar atau sama dengan %{count}
         smaller_than_or_equal_to_max_length: harus lebih kecil atau sama dengan panjang
           maksimum
         greater_than_start_date: harus setelah tanggal start
-        inclusion: is not set to one of the allowed values
+        inclusion: pilihan nilai tidak ada dalam pilihan
         invalid: " tidak valid"
         less_than: harus kurang dari %{count}
         less_than_or_equal_to: harus kurang atau sama dengan %{count}
@@ -197,11 +197,11 @@ id:
         could_not_be_copied: tidak dapat (seluruhnya) disalin
       models:
         project_association:
-          identical_projects: Dependency cannot be created between one project and
-            itself.
+          identical_projects: Dependensi tidak dapat dilakukan terhadap proyek yang
+            identik.
           project_association_not_allowed: tidak memungkinkan Asosiasi
         repository:
-          not_whitelisted: is not allowed by the configuration
+          not_whitelisted: konfigurasi tidak mengijinkan
           no_directory: is not a directory
         work_package:
           is_not_a_valid_target_for_time_entries: 'Paket-Penugasan #%{id} tidak valid
@@ -221,17 +221,16 @@ id:
             priority_id:
               only_active_priorities_allowed: harus aktif
             category:
-              only_same_project_categories_allowed: The category of a work package
-                must be within the same project as the work package.
-              does_not_exist: The specified category does not exist.
+              only_same_project_categories_allowed: Kategori yang dipilih harus diambil
+                dari kategori yang berlaku pada proyek.
+              does_not_exist: Kategori yang dipilih tidak ada.
             estimated_hours:
-              only_values_greater_or_equal_zeroes_allowed: The estimated hours must
-                be >= 0.
+              only_values_greater_or_equal_zeroes_allowed: Estimasi jam harus >= 0.
         user:
           attributes:
             password:
-              weak: 'Must contain characters of the following classes (at least %{min_count}
-                of %{all_count}): %{rules}'
+              weak: 'Harus mengandung karakter berikut (setidaknya %{min_count} %{all_count}):
+                %{rules}'
               lowercase: huruf kecil (spt. 'a')
               uppercase: huruf besar (spt. 'A')
               numeric: numerik (spt. ' 1')
@@ -242,9 +241,8 @@ id:
                 other: telah digunakan. Silakan pilih yang berbeda dari yang %{count}
                   terakhir.
               match:
-                confirm: Confirm new password.
-                description: "'Password confirmation' should match the input in the
-                  'New password' field."
+                confirm: Konfirmasi password baru.
+                description: Isian konfirmasi password tidak sama dengan masukan password.
         member:
           principal_blank: Silakan pilih setidaknya satu user atau grup.
           role_blank: Silakan pilih setidaknya satu Role.
@@ -290,7 +288,7 @@ id:
     attachments: Lampiran
     author: Penulis
     base: 'Error :'
-    blocks_ids: IDs of blocked work packages
+    blocks_ids: List ID dari work package yang diblokir
     category: Kategori
     comment: Komentar
     comments: Komentar
@@ -494,28 +492,28 @@ id:
   default_activity_development: Pengembangan
   default_activity_management: Manajemen
   default_activity_other: Lainnya
-  default_activity_specification: Specification
+  default_activity_specification: Spesifikasi
   default_activity_support: Support
   default_activity_testing: Pengujian
-  default_color_black: Black
-  default_color_blue: Blue
-  default_color_blue_dark: Blue (dark)
-  default_color_blue_light: Blue (light)
-  default_color_green_dark: Green (dark)
-  default_color_green_light: Green (light)
-  default_color_grey_dark: Grey (dark)
-  default_color_grey_light: Grey (light)
-  default_color_grey: Grey
+  default_color_black: Hitam
+  default_color_blue: Biru
+  default_color_blue_dark: Biru (gelap)
+  default_color_blue_light: Biru (terang)
+  default_color_green_dark: Hijau (gelap)
+  default_color_green_light: Hijau (terang)
+  default_color_grey_dark: Abu-abu (gelap)
+  default_color_grey_light: Abu-abu (terang)
+  default_color_grey: Abu-abu
   default_color_magenta: Magenta
-  default_color_orange: Orange
+  default_color_orange: Oranye
   default_color_red: Merah
-  default_color_white: White
-  default_color_yellow: Yellow
+  default_color_white: Putih
+  default_color_yellow: Kuning
   default_status_closed: Closed
   default_status_confirmed: Confirmed
   default_status_developed: Developed
   default_status_in_development: In development
-  default_status_in_progress: In progress
+  default_status_in_progress: In Progress
   default_status_in_specification: In specification
   default_status_in_testing: In testing
   default_status_new: Baru
@@ -531,7 +529,7 @@ id:
   default_priority_high: High
   default_priority_immediate: Segera
   default_project_type_scrum: Scrum team
-  default_project_type_standard: Standard project
+  default_project_type_standard: Standart project
   default_reported_project_status_green: Hijau
   default_reported_project_status_amber: Amber
   default_reported_project_status_red: Merah
@@ -610,11 +608,10 @@ id:
   error_scm_annotate: Entri tidak ditemukan atau tidak dapat di anotasi.
   error_scm_command_failed: 'Error ketika mengakses repositori: %{value}'
   error_scm_not_found: Entri atau revisi tidak ditemukan dalam repositori.
-  error_unable_delete_status: The work package status cannot be deleted since it is
-    used by at least one work package.
-  error_unable_delete_default_status: Unable to delete the default work package status.
-    Please select another default work package status before deleting the current
-    one.
+  error_unable_delete_status: Work package tidak dapat dihapus karena dipakai oleh
+    work package lain.
+  error_unable_delete_default_status: Status default tidak dapat dihapus. Tentukan
+    nilai default lain sebelum menghapus status yang anda ingin hapus.
   error_unable_to_connect: Tidak dapat terhubung (%{value})
   error_workflow_copy_source: Silakan pilih sumber Tipe atau Role
   error_workflow_copy_target: Silakan pilih target Tipe dan Role
@@ -1100,7 +1097,7 @@ id:
   label_keyboard_shortcut_go_news: Buka Project Berita
   label_keyboard_shortcut_go_timelines: Buka Timeline
   label_keyboard_shortcut_new_work_package: Buat Paket-Penugasan baru
-  label_keyboard_shortcut_details_package: Show work packages details pane
+  label_keyboard_shortcut_details_package: Tampilkan panel rician
   label_keyboard_shortcut_go_edit: Edit item saat ini (hanya di detail halaman)
   label_keyboard_shortcut_open_more_menu: Buka menu lagi (hanya di halaman detil)
   label_keyboard_shortcut_go_preview: Preview edit saat ini (hanya halaman yang diedit)
@@ -1108,11 +1105,11 @@ id:
     di daftar yang sama)
   label_keyboard_shortcut_focus_next_item: Fokus daftar elemen berikutnya (hanya di
     daftar yang sama)
-  label_visible_elements: Visible elements
+  label_visible_elements: Element tampak
   auth_source:
     using_abstract_auth_source: Can't use an abstract authentication source.
     ldap_error: 'LDAP-Error: %{error_message}'
-    ldap_auth_failed: Could not authenticate at the LDAP-Server.
+    ldap_auth_failed: Authentikasi pada LDAP-Server gagal.
   macro_execution_error: ERROR eksekusi makro %{macro_name}
   macro_unavailable: Makro %{macro_name} tidak dapat ditampilkan.
   mail_body_account_activation_request: 'User (%{value}) telah terdaftar. Akun Anda
@@ -1221,7 +1218,7 @@ id:
   permission_browse_repository: Browse repositori
   permission_change_wiki_parent_page: Ubah halaman induk Wiki
   permission_comment_news: Komentar berita
-  permission_commit_access: Submit commits
+  permission_commit_access: Melakukan commit
   permission_copy_projects: Copy Project
   permission_delete_work_package_watchers: Hapus pemantau
   permission_delete_work_packages: Hapus Paket-Penugasan
@@ -1244,7 +1241,7 @@ id:
   permission_edit_time_entries: Edit Time log
   permission_edit_timelines: Edit Timeline
   permission_edit_wiki_pages: Edit halaman Wiki
-  permission_export_work_packages: Export work packages
+  permission_export_work_packages: Ekspor work packages
   permission_export_wiki_pages: Ekspor halaman Wiki
   permission_list_attachments: Daftar lampiran
   permission_log_time: Catat durasi
@@ -1582,8 +1579,8 @@ id:
         absolute: Absolut
         none: Kosong
         relative: Relatif
-        compare_relative_prefix: Compare current planning to
-        compare_relative_suffix: ago
+        compare_relative_prefix: Bandingkan dengan
+        compare_relative_suffix: yang lalu
         compare_absolute: Bandingkan perencanaan saat ini dengan %{date}
       time_relative:
         days: hari
