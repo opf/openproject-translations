@@ -23,18 +23,19 @@ it:
           ad un account generico chiamato "Deleted user". Visto che i dati di tutti
           gli account eliminati vengono riassegnati a questo stesso account, non sarà
           più possibile distinguere i tuoi dati dai dati di un altro account eliminato.
-      heading: Cancella account %{name}
+      heading: Cancella l'account %{name}
       info:
         other: Cancellare l'account utente è un azione irreversibile.
         self: Cancellare il tuo account utente è un azione irreversibile.
       login_consequences:
         other: L'account verrà cancellato dal sistema. Pertanto l'utente non sarà
           più in grado di accedere con le sue credenziali correnti. L'utente potrà
-          in futuro scegliere di diventare nuovamente utente di quest'applicazione.
+          in futuro scegliere di diventare nuovamente utente di quest'applicazione
+          ripercorrendo le normali procedure.
         self: Il tuo account verrà eliminato dal sistema. Pertanto non sarai più in
           grado di accedere con le tue credenziali correnti. Se in futuro sceglierai
-          di diventare nuovamente utente di quest'applicazione, potrai farlo utilizzando
-          i mezzi che questa applicazione concede.
+          di diventare nuovamente utente di quest'applicazione, potrai farlo ripercorrendo
+          le normali procedure.
     error_inactive_activation_by_mail: Il tuo account non è stato ancora attivato.
       Per attivare il tuo account, clicca sul link che ti è stato inviato via email.
     error_inactive_manual_activation: Il tuo account non è stato ancora attivato.
@@ -43,23 +44,23 @@ it:
       nuovi utenti. Per cortesia, contatta l'amministratore e chiedigli di creare
       un account per te.
     login_with_auth_provider: o accedi con il tuo account esistente
-  actionview_instancetag_blank_option: Perfavore seleziona
+  actionview_instancetag_blank_option: Si prega di selezionare
   activerecord:
     attributes:
       attachment:
         downloads: Scaricati
         file: File
         filename: File
-        filesize: Grandezza
+        filesize: Dimensione
       auth_source:
         account: Account
         attr_firstname: Attributo nome
         attr_lastname: Attributo cognome
-        attr_login: Attributo accesso
+        attr_login: Attributo nome utente di login
         attr_mail: Attributo email
-        base_dn: Base DN
+        base_dn: Nome Dominio (DN) base
         host: Host
-        onthefly: Creazione dell'utente al volo
+        onthefly: Creazione dell'utente istantanea
         port: Porta
       changeset:
         repository: Repository
@@ -75,16 +76,16 @@ it:
         min_length: Lunghezza minima
         possible_values: Valori possibili
         regexp: Espressione regolare
-        searchable: Cercabile
+        searchable: Ricercabile
         visible: Visibile
       custom_value:
         value: Valore
       relation:
         delay: Ritardo
-        from: Pacchetto di Lavoro
-        to: Pacchetto di lavoro correlato
+        from: Macro-attività
+        to: Macro-attività correlata
       status:
-        is_closed: Pacchetto di lavoro chiuso
+        is_closed: Macro-attività chiusa
       journal:
         notes: Note
       member:
@@ -92,7 +93,7 @@ it:
       project:
         homepage: Pagina iniziale
         identifier: Identificatore
-        work_packages: Pacchetti di Lavoro
+        work_packages: Macro-attività
         parent: Sotto-progetto di
         versions: Versioni
         project_type: Tipo di progetto
@@ -101,40 +102,40 @@ it:
         queries: Interrogazioni
       query:
         column_names: Colonne
-        group_by: Raggruppa risultati per
+        group_by: Raggruppa i risultati per
         filters: Filtri
       repository:
         url: URL
       role:
-        assignable: Il Pacchetto di Lavoro può essere assegnato a questo ruolo
+        assignable: La macro-attvità può essere assegnata a questo ruolo
       time_entry:
         activity: Attività
         hours: Ore
         spent_on: Data
         type: Tipo
       type:
-        is_in_roadmap: 'Pacchetto di lavoro mostrato nella Roadmap '
-        in_aggregation: Pacchetti di lavoro visualizzati nell'aggregazione
-        is_milestone: Pacchetti di lavoro visualizzati come traguardo
+        is_in_roadmap: Macro-attività mostrate nella Roadmap
+        in_aggregation: Macro-attività mostrate nell'aggregazione
+        is_milestone: Macro-attività mostrate come traguardo
         color: Colore
       user:
         admin: Amministratore
         auth_source: Modalità di autenticazione
         language: Linguaggio
         last_login_on: Ultimo accesso
-        mail_notification: Notificazioni email
+        mail_notification: Notifiche email
         new_password: Nuova password
         password_confirmation: Conferma
-        force_password_change: Applica la modifica della password al prossimo login
+        force_password_change: Richiedi la modifica della password al prossimo login
       user_preference:
         comments_sorting: Mostra commenti
         hide_mail: Nascondi il mio indirizzo email
         impaired: Modalità di accesso facilitato
         time_zone: Fuso orario
-        warn_on_leaving_unsaved: Avvisami quando sto lasciando un pagina di testo
-          non salvata
+        warn_on_leaving_unsaved: Avvisami quando sto lasciando un pagina con testo
+          non salvato
       version:
-        effective_date: Data di fine
+        effective_date: Data di consegna
         sharing: Condivisione
       wiki:
         start_page: Pagina iniziale
@@ -142,7 +143,7 @@ it:
         text: Testo
       wiki_page:
         parent_title: Pagina padre
-        redirect_existing_links: Reindirizzare i collegamenti esistenti
+        redirect_existing_links: Reindirizza i collegamenti esistenti
       planning_element_type_color:
         name: Nome
         hexcode: Codice esadecimale
@@ -158,30 +159,30 @@ it:
         name: Nome
         options: ''
       reporting:
-        reported_project_status_comment: Stato del commento
-        reporting_to_project: Segnalazioni al progetto
+        reported_project_status_comment: Commento sullo stato
+        reporting_to_project: Segnala al progetto
         reported_project_status: Stato del progetto
         created_at: Creato
       work_package:
         done_ratio: "% finito"
         fixed_version: Versione
-        parent: Genitore
-        parent_issue: Genitore
-        parent_work_package: Genitore
+        parent: Superiore
+        parent_issue: Superiore
+        parent_work_package: Superiore
         priority: Priorità
         progress: "% finito"
         responsible: Responsabile
         spent_time: Tempo speso
         subproject: Sottoprogetto
-        time_entries: Registro temporale
+        time_entries: Cronologia
         type: Tipo
         watcher: Osservatore
     errors:
       messages:
         accepted: deve essere accettato.
         blank: non può essere lasciato vuoto.
-        cant_link_a_work_package_with_a_descendant: Un pacchetto di lavoro non può
-          essere collegato a una delle sue sottoattività.
+        cant_link_a_work_package_with_a_descendant: Una macro-attività non può essere
+          collegato a una delle sue sottoattività.
         circular_dependency: Questa relazione creerebbe una dipendenza circolare.
         confirmation: non coincide con %{attribute}.
         empty: non può essere vuoto.
@@ -193,37 +194,37 @@ it:
         greater_than_or_equal_to: deve essere maggiore o uguale di %{count}.
         smaller_than_or_equal_to_max_length: deve essere minore o uguale alla lunghezza
           massima.
-        greater_than_start_date: deve essere maggiore della data di inizio.
+        greater_than_start_date: deve essere successivo alla data di inizio.
         inclusion: non è impostata su uno dei valori consentiti.
         invalid: non è valido.
-        less_than: deve essere inferiore di %{count}.
-        less_than_or_equal_to: deve essere inferiore o uguale di %{count}.
+        less_than: deve essere inferiore a %{count}.
+        less_than_or_equal_to: deve essere inferiore o uguale a %{count}.
         not_a_date: non è una data.
         not_a_number: non è un numero.
         not_an_integer: non è un numero intero.
         not_same_project: non appartiene allo stesso progetto.
         odd: deve essere dispari.
-        taken: "è già stata presa."
+        taken: "è già stato usato."
         too_long: "è troppo lungo (il massimo è %{count} caratteri)."
         too_short: "è troppo breve (il minimo è %{count} caratteri)."
         wrong_length: "è della lunghezza sbagliata (dovrebbe essere %{count} caratteri)."
-        after: deve essere dopo %{date}.
-        after_or_equal_to: deve essere dopo o uguale a %{date}.
-        before: deve essere prima %{date}.
-        before_or_equal_to: deve essere prima di o uguale a %{date}.
+        after: deve essere successivo al %{date}.
+        after_or_equal_to: deve essere successivo o uguale al %{date}.
+        before: deve essere precedente al %{date}.
+        before_or_equal_to: deve essere precedente o uguale al %{date}.
         could_not_be_copied: non possono essere copiati (integralmente).
       models:
         project_association:
           identical_projects: Non può essere creata una dipendenza di un progetto
             con se stesso.
-          project_association_not_allowed: non consente le associazioni.
+          project_association_not_allowed: non consente associazioni.
         repository:
           not_available: Il gestore SCM non è disponibile
           not_whitelisted: non è consentito dalla configurazione.
           no_directory: non è una directory.
         work_package:
-          is_not_a_valid_target_for_time_entries: 'Il pacchetto di lavoro #%{id} non
-            è una destinazione valida per riassegnare le voci del tempo.'
+          is_not_a_valid_target_for_time_entries: 'La macro-attività #%{id} non può
+            essere utilizzata per riassegnare la cronologia.'
           attributes:
             due_date:
               not_start_date: non è sulla data di inizio, nonostante sia obbligatorio
@@ -234,14 +235,14 @@ it:
               not_a_valid_parent: non è valido.
               does_not_exist: non esiste.
             status_id:
-              status_transition_invalid: non è valido perché nessuna transizione valida
-                esiste dal vecchio al nuovo status per i ruoli dell'utente corrente.
+              status_transition_invalid: non è valido perché non esiste alcuna transizione
+                valida dal vecchio al nuovo status sulla base del ruolo dell'utente
+                attuale.
             priority_id:
               only_active_priorities_allowed: deve essere attivo.
             category:
-              only_same_project_categories_allowed: La categoria di un pacchetto di
-                lavoro deve essere contenuta nel medesimo progetto del pacchetto di
-                lavoro.
+              only_same_project_categories_allowed: La categoria di una macro-attività
+                deve essere contenuta nel medesimo progetto della macro-attività.
               does_not_exist: La categoria specificata non esiste.
             estimated_hours:
               only_values_greater_or_equal_zeroes_allowed: Le ore stimate devono essere
@@ -251,19 +252,19 @@ it:
             password:
               weak: 'deve contenere caratteri delle seguenti classi (almeno %{min_count}
                 di %{all_count}): %{rules}.'
-              lowercase: minuscolo (e.g. 'a')
-              uppercase: maiuscolo (e.g. 'A')
-              numeric: numerico (e.g. '1')
-              special: speciale (e.g. '%')
+              lowercase: minuscolo (es. 'a')
+              uppercase: maiuscolo (es. 'A')
+              numeric: numerico (es. '1')
+              special: speciale (es. '%')
               reused:
-                one: "è stata utilizzata prima. Si prega di sceglierne una che è diversa
+                one: "è già stata utilizzata. Si prega di sceglierne una che è diversa
                   dall'ultima."
                 other: "è già stata utilizzata. Si prega di sceglierne una che è diversa
                   dalle ultime %{count}."
               match:
-                confirm: Conferma nuova password.
-                description: "'Conferma password' dovrebbe corrispondere al campo
-                  'Nuova password'."
+                confirm: Conferma la nuova password.
+                description: "'Conferma password' deve coincidere con il testo del
+                  campo 'Nuova password'."
         member:
           principal_blank: Si prega di scegliere almeno un utente o un gruppo.
           role_blank: Si prega di scegliere almeno un ruolo.
@@ -279,7 +280,7 @@ it:
       custom_field: Campo personalizzato
       group: Gruppo
       category: Categoria
-      status: Stato pacchetto di lavoro
+      status: Stato della macro-attività
       member: Membro
       news: Notizie
       project: Progetto
@@ -294,7 +295,7 @@ it:
       wiki: Wiki
       wiki_page: Pagina wiki
       workflow: Flusso di lavoro
-      work_package: Pacchetto di lavoro
+      work_package: Macro-attività
   errors:
     header_invalid_fields: 'Ci sono stati dei problemi con i seguenti campi:'
   activity:
@@ -312,13 +313,13 @@ it:
     comment: Commento
     comments: Commento
     content: Contenuto
-    created_at: Creato nel
-    created_on: Creato nel
+    created_at: Creato il
+    created_on: Creato il
     custom_values: Campo personalizzato
     default_columns: Colonne predefinite
     description: Descrizione
     display_sums: Visualizza somme
-    due_date: Data di fine
+    due_date: Data di consegna
     estimated_hours: Tempo stimato
     estimated_time: Tempo stimato
     firstname: Nome
@@ -328,7 +329,7 @@ it:
     is_default: Valore predefinito
     is_for_all: Per tutti progetti
     is_public: Pubblico
-    issue: Pacchetto di lavoro
+    issue: Macro-attività
     lastname: Cognome
     login: Nome Utente
     mail: Email
@@ -348,7 +349,7 @@ it:
     updated_on: Aggiornato nel
     user: Utente
     version: Versione
-    work_package: Pacchetto di lavoro
+    work_package: Macro-attività
   button_add: Aggiungi
   button_add_watcher: Aggiungi osservatore
   button_annotate: Annotato
@@ -376,7 +377,7 @@ it:
   button_expand_all: Esapndi tutto
   button_list: Lista
   button_lock: Blocca
-  button_log_time: Registro temporale
+  button_log_time: Cronologia
   button_login: Login
   button_move: Sposta
   button_move_and_follow: Sposta e segui
@@ -557,7 +558,7 @@ it:
   default_role_non_member: Non membro
   default_role_reader: Lettore
   default_role_member: Membro
-  default_type: Pacchetto di Lavoro
+  default_type: Macro-attività
   default_type_bug: Bug
   default_type_deliverable: Consegnabile
   default_type_epic: Epic
@@ -1093,7 +1094,7 @@ it:
   label_wiki_show_menu_item: Mostra come voce del menù nella navigazione del progetto
   label_wiki_show_new_page_link: Mostra voce del sotto-menù 'Crea nuova pagina figlio'
   label_wiki_show_submenu_item: 'Mostra come voce di sottomenù di '
-  label_work_package: Pacchetto di lavoro
+  label_work_package: Macro-attività
   label_workflow: Flusso di lavoro
   label_workflow_plural: Flussi di lavoro
   label_workflow_summary: Sommario
@@ -1346,7 +1347,29 @@ it:
     autofetch_information: |
       Spunta qui se desideri che l'archivio venga aggiornato automaticamente quando si accede alla sezione del modulo di archiviazione.
       Questo comprende il recupero dei commit effettuati sull'archivio e l'aggiornamento dello spazio di archiviazione su disco richiesto.
-    checkout_instructions: Istruzioni di check-out
+    checkout:
+      access:
+        readwrite: Read + Write
+        read: Read-only
+        none: No checkout access, you may only view the repository through this application.
+      access_permission: 'Your permissions on this repository:'
+      url: Checkout URL
+      base_url_text: |
+        The base URL to use for generating checkout URLs (e.g., https://myserver.example.org/repos/).
+        Note: The base URL is only used for rewriting checkout URLs in managed repositories. Other repositories are not altered.
+      default_instructions:
+        git: |
+          The data contained in this repository can be downloaded to your computer with Git using the checkout information below.
+          Please consult the documentation of Git if you need more information on the checkout procedure and available clients.
+        subversion: |
+          The data contained in this repository can be downloaded to your computer with Subversion using the checkout information below.
+          Please consult the documentation of Subversion if you need more information on the checkout procedure and available clients.
+      enable_instructions_text: Displays checkout instructions defined below on all
+        repository-related pages.
+      instructions: Checkout instructions
+      text_instructions: This text is displayed alongside the checkout URL for guidance
+        on how to check out the repository.
+      not_available: Checkout instructions are not available for this repository
     create_managed_delay: 'Attenzione: L''archivio è in gestito automaticamente, verrà
       creato in modo asincrono sul disco e sarà disponibile a breve.'
     create_successful: L'archivio è stato registrato.
@@ -1365,8 +1388,8 @@ it:
       empty_repository: L'archivio esiste, ma è vuoto. Non contiene ancora alcuna
         revisione.
       exists_on_filesystem: La cartella dell'archivio è già esistente nel file system.
-      filesystem_access_failed: 'Si è verificato un errore durante la creazione dell''archivio
-        nel file system: %{message}.'
+      filesystem_access_failed: 'An error occurred while accessing the repository
+        on filesystem: %{message}.'
       not_manageable: Questo tipo di archivo non può essere gestito da OpenProject.
       path_permission_failed: 'Si è verificato un errore cercando di creare il seguente
         percorso: %{path}. Si prega di verificare che OpenProject possa scrivere in
@@ -1511,6 +1534,9 @@ it:
     di autenticazione del software di controllo versione
   setting_repository_storage_cache_minutes: Dimensione della cache dello spazio di
     archiviazione su disco
+  setting_repository_checkout_display: Show checkout instructions
+  setting_repository_checkout_base_url: Checkout base URL
+  setting_repository_checkout_text: Checkout instruction text
   setting_repository_log_display_limit: Numero massimo di revisioni visualizzate sul
     file di log
   setting_rest_api_enabled: Abilitare il servizio web REST
@@ -1581,6 +1607,8 @@ it:
   text_work_package_category_reassign_to: Riassegna il pacchetto di lavoro a questa
     categoria
   text_work_package_updated: Il pacchetto di lavoro %{id} è stato aggiornato da %{author}.
+  text_work_package_watcher_added: You have been added as a watcher to Work package
+    %{id} by %{watcher_setter}.
   text_work_packages_destroy_confirmation: Sei sicuro di che voler eliminare i pacchetti(o)
     di lavoro selezionati?
   text_work_packages_ref_in_commit_messages: Work packages che sono correlati e/o
@@ -1596,6 +1624,7 @@ it:
   text_journal_deleted_with_diff: "%{label} cancellato (%{link})"
   text_journal_set_to: "%{label} impostato su %{value}"
   text_journal_set_with_diff: insieme di %{label} (%{link})
+  text_latest_note: 'The latest comment is: %{note}'
   text_length_between: Lunghezza compresa tra %{min} e %{max} caratteri.
   text_line_separated: Valori multipli consentiti (una linea per ogni valore).
   text_load_default_configuration: Carica la configurazione predefinita
@@ -1603,6 +1632,7 @@ it:
   text_no_configuration_data: Ruoli, tipi, status del pacchetto di lavoro e flusso
     di lavoro non sono stati ancora configurati. Si consiglia di caricare la configurazione
     predefinita. Sarete in grado di modificarla una volta caricato.
+  text_no_notes: There are no comments available for this work package.
   text_notice_too_many_values_are_inperformant: 'Nota: La visualizzazione di più di
     100 elementi per pagina può aumentare il tempo di caricamento della pagina.'
   text_own_membership_delete_confirmation: "Stai per rimuovere qualcuno o tutti i

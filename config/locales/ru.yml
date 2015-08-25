@@ -1357,7 +1357,29 @@ ru:
     autofetch_information: |
       Check this if you want repositories to be updated automatically when accessing the repository module page.
       This encompasses the retrieval of commits from the repository and refreshing the required disk storage.
-    checkout_instructions: Checkout instructions
+    checkout:
+      access:
+        readwrite: Read + Write
+        read: Read-only
+        none: No checkout access, you may only view the repository through this application.
+      access_permission: 'Your permissions on this repository:'
+      url: Checkout URL
+      base_url_text: |
+        The base URL to use for generating checkout URLs (e.g., https://myserver.example.org/repos/).
+        Note: The base URL is only used for rewriting checkout URLs in managed repositories. Other repositories are not altered.
+      default_instructions:
+        git: |
+          The data contained in this repository can be downloaded to your computer with Git using the checkout information below.
+          Please consult the documentation of Git if you need more information on the checkout procedure and available clients.
+        subversion: |
+          The data contained in this repository can be downloaded to your computer with Subversion using the checkout information below.
+          Please consult the documentation of Subversion if you need more information on the checkout procedure and available clients.
+      enable_instructions_text: Displays checkout instructions defined below on all
+        repository-related pages.
+      instructions: Checkout instructions
+      text_instructions: This text is displayed alongside the checkout URL for guidance
+        on how to check out the repository.
+      not_available: Checkout instructions are not available for this repository
     create_managed_delay: 'Please note: The repository is managed, it is created asynchronously
       on the disk and will be available shortly.'
     create_successful: The repository has been registered.
@@ -1376,8 +1398,8 @@ ru:
       empty_repository: The repository exists, but is empty. It does not contain any
         revisions yet.
       exists_on_filesystem: The repository directory exists already on filesystem.
-      filesystem_access_failed: 'An error occurred while creating the repository on
-        filesystem: %{message}.'
+      filesystem_access_failed: 'An error occurred while accessing the repository
+        on filesystem: %{message}.'
       not_manageable: This repository vendor cannot be managed by OpenProject.
       path_permission_failed: 'An error occurred trying to create the following path:
         %{path}. Please ensure that OpenProject may write to that folder.'
@@ -1513,6 +1535,9 @@ ru:
   setting_repository_authentication_caching_enabled: "Включение кэширования для запроса
     проверки подлинности  управления версиями программного обеспечения"
   setting_repository_storage_cache_minutes: Repository disk size cache
+  setting_repository_checkout_display: Show checkout instructions
+  setting_repository_checkout_base_url: Checkout base URL
+  setting_repository_checkout_text: Checkout instruction text
   setting_repository_log_display_limit: "Максимальное количество отображаемых ревизий
     в файле журнала изменений"
   setting_rest_api_enabled: "Включите веб-службы REST"
@@ -1583,6 +1608,8 @@ ru:
     принадлежат для этой категории. Что вы хотите сделать?"
   text_work_package_category_reassign_to: "Переназначить пакеты работ этой категории"
   text_work_package_updated: "%{author} обновил пакет работ %{id}."
+  text_work_package_watcher_added: You have been added as a watcher to Work package
+    %{id} by %{watcher_setter}.
   text_work_packages_destroy_confirmation: "Вы уверены, что хотите удалить выбранные
     пакет(-ы) работ?"
   text_work_packages_ref_in_commit_messages: "Связанные и  исправляющие пакеты работ
@@ -1598,6 +1625,7 @@ ru:
   text_journal_deleted_with_diff: "%{label} удалена (%{link})"
   text_journal_set_to: "%{label} присвоено значение %{value}"
   text_journal_set_with_diff: "%{label} установлена (%{link})"
+  text_latest_note: 'The latest comment is: %{note}'
   text_length_between: "Количество символов между %{min} и %{max} ."
   text_line_separated: "Допускается  несколько значений (одна строка для каждого значения)."
   text_load_default_configuration: "Загрузить конфигурацию по умолчанию"
@@ -1605,6 +1633,7 @@ ru:
   text_no_configuration_data: "Роли, типы,  статусы пакетов работ и рабочие потоки
     еще не сконфигурированы. Настоятельно рекомендуем для правки загрузить конфигурацию
     по умолчанию."
+  text_no_notes: There are no comments available for this work package.
   text_notice_too_many_values_are_inperformant: "Примечание: Отображение более чем
     100 элементов на странице может увеличить время загрузки."
   text_own_membership_delete_confirmation: "Вы собираетесь удалить все или некоторые

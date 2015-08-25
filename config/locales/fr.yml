@@ -1349,7 +1349,29 @@ fr:
     autofetch_information: |
       Check this if you want repositories to be updated automatically when accessing the repository module page.
       This encompasses the retrieval of commits from the repository and refreshing the required disk storage.
-    checkout_instructions: Instructions pour le checkout
+    checkout:
+      access:
+        readwrite: Read + Write
+        read: Read-only
+        none: No checkout access, you may only view the repository through this application.
+      access_permission: 'Your permissions on this repository:'
+      url: Checkout URL
+      base_url_text: |
+        The base URL to use for generating checkout URLs (e.g., https://myserver.example.org/repos/).
+        Note: The base URL is only used for rewriting checkout URLs in managed repositories. Other repositories are not altered.
+      default_instructions:
+        git: |
+          The data contained in this repository can be downloaded to your computer with Git using the checkout information below.
+          Please consult the documentation of Git if you need more information on the checkout procedure and available clients.
+        subversion: |
+          The data contained in this repository can be downloaded to your computer with Subversion using the checkout information below.
+          Please consult the documentation of Subversion if you need more information on the checkout procedure and available clients.
+      enable_instructions_text: Displays checkout instructions defined below on all
+        repository-related pages.
+      instructions: Checkout instructions
+      text_instructions: This text is displayed alongside the checkout URL for guidance
+        on how to check out the repository.
+      not_available: Checkout instructions are not available for this repository
     create_managed_delay: 'N.B. : le dépôt est géré; il est créé de façon asynchrone
       sur le disque et sera disponible sous peu.'
     create_successful: Le dépôt a été enregistré.
@@ -1368,8 +1390,8 @@ fr:
       empty_repository: Le dépôt existe mais il est vide. Il ne contient aucune révision
         pour le moment.
       exists_on_filesystem: Le répertoire du dépôt existe déjà sur le système de fichiers.
-      filesystem_access_failed: 'Une erreur s''est produite lors de la création du
-        dépôt sur le système de fichiers: %{message}.'
+      filesystem_access_failed: 'An error occurred while accessing the repository
+        on filesystem: %{message}.'
       not_manageable: Ce fournisseur de dépôt ne peut pas être géré par OpenProject.
       path_permission_failed: 'Une erreur s''est produite en essayant de créer le
         chemin d''accès suivant: %{path}. Veuillez vous assurer que OpenProject peut
@@ -1511,6 +1533,9 @@ fr:
   setting_repository_authentication_caching_enabled: Activer la mise en cache pour
     la requête d'authentification du logiciel de contrôle de version
   setting_repository_storage_cache_minutes: Repository disk size cache
+  setting_repository_checkout_display: Show checkout instructions
+  setting_repository_checkout_base_url: Checkout base URL
+  setting_repository_checkout_text: Checkout instruction text
   setting_repository_log_display_limit: Nombre maximal des révisions affichées sur
     « file log »
   setting_rest_api_enabled: Autoriser service web REST
@@ -1580,6 +1605,8 @@ fr:
   text_work_package_category_reassign_to: Réassigner les Lots de Travaux de cette
     catégorie
   text_work_package_updated: Le Lot de Travaux %{id} a été mis à jour par %{author}.
+  text_work_package_watcher_added: You have been added as a watcher to Work package
+    %{id} by %{watcher_setter}.
   text_work_packages_destroy_confirmation: Voulez-vous vraiment supprimer le(s) Lot(s)
     de Travaux sélectionnés?
   text_work_packages_ref_in_commit_messages: Referencer et réparer les Lot(s) de Travaux
@@ -1595,6 +1622,7 @@ fr:
   text_journal_deleted_with_diff: "%{label} supprimé (%{link})"
   text_journal_set_to: "%{label} mis à %{value}"
   text_journal_set_with_diff: "%{label} mis (%{link})"
+  text_latest_note: 'The latest comment is: %{note}'
   text_length_between: Longueur entre %{min} et %{max} caractères.
   text_line_separated: Valeurs multiples autorisées (une ligne par valeur).
   text_load_default_configuration: Charger la configuration par défaut
@@ -1602,6 +1630,7 @@ fr:
   text_no_configuration_data: |
     Les rôles, types, status de Lots de Travaux et workflows ne sont pas encore configurés pour l'instant.
     Il est hautement recommander de charger la configuration par défaut. Vous pourrez la modifier une fois chargée.
+  text_no_notes: There are no comments available for this work package.
   text_notice_too_many_values_are_inperformant: 'Remarque : L''affichage de plus de
     100 articles par page peut augmenter le temps de chargement de la page.'
   text_own_membership_delete_confirmation: |

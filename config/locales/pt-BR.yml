@@ -1332,7 +1332,29 @@ pt-BR:
     autofetch_information: Marque isto se quiser que os repositórios sejam atualizados
       automaticamente ao acessar a página do módulo de repositório. Isto engloba a
       recuperação de commits do repositório e a atualização do espaço em disco necessário.
-    checkout_instructions: Instruções de check-out
+    checkout:
+      access:
+        readwrite: Read + Write
+        read: Read-only
+        none: No checkout access, you may only view the repository through this application.
+      access_permission: 'Your permissions on this repository:'
+      url: Checkout URL
+      base_url_text: |
+        The base URL to use for generating checkout URLs (e.g., https://myserver.example.org/repos/).
+        Note: The base URL is only used for rewriting checkout URLs in managed repositories. Other repositories are not altered.
+      default_instructions:
+        git: |
+          The data contained in this repository can be downloaded to your computer with Git using the checkout information below.
+          Please consult the documentation of Git if you need more information on the checkout procedure and available clients.
+        subversion: |
+          The data contained in this repository can be downloaded to your computer with Subversion using the checkout information below.
+          Please consult the documentation of Subversion if you need more information on the checkout procedure and available clients.
+      enable_instructions_text: Displays checkout instructions defined below on all
+        repository-related pages.
+      instructions: Checkout instructions
+      text_instructions: This text is displayed alongside the checkout URL for guidance
+        on how to check out the repository.
+      not_available: Checkout instructions are not available for this repository
     create_managed_delay: 'Atenção: O repositório é gerenciado, ele será criado de
       forma assíncrona no disco e estará disponível em breve.'
     create_successful: O repositório foi registrado.
@@ -1351,8 +1373,8 @@ pt-BR:
       empty_repository: O repositório existe, mas está vazio. Ele ainda não contém
         quaisquer revisões.
       exists_on_filesystem: O diretório do repositório já existe no sistema de arquivos.
-      filesystem_access_failed: 'Ocorreu um erro ao criar o repositório no sistema
-        de arquivos: %{message}.'
+      filesystem_access_failed: 'An error occurred while accessing the repository
+        on filesystem: %{message}.'
       not_manageable: Este tipo de repositório não pode ser gerenciado pelo OpenProject.
       path_permission_failed: 'Ocorreu um erro ao tentar criar o seguinte caminho:
         %{path}. Por favor, certifique-se de que o OpenProject pode escrever nesta
@@ -1493,6 +1515,9 @@ pt-BR:
   setting_repository_authentication_caching_enabled: Ativar armazenamento em cache
     para solicitação de autenticação do software de controle de versão
   setting_repository_storage_cache_minutes: Tamanho do cache em disco para o repositório
+  setting_repository_checkout_display: Show checkout instructions
+  setting_repository_checkout_base_url: Checkout base URL
+  setting_repository_checkout_text: Checkout instruction text
   setting_repository_log_display_limit: Número máximo de revisões exibido no arquivo
     de log
   setting_rest_api_enabled: Habilitar serviço REST
@@ -1561,6 +1586,8 @@ pt-BR:
   text_work_package_category_reassign_to: Reatribuir pacotes de trabalho para esta
     categoria
   text_work_package_updated: Pacote de trabalho %{id} foi atualizado por %{author}.
+  text_work_package_watcher_added: You have been added as a watcher to Work package
+    %{id} by %{watcher_setter}.
   text_work_packages_destroy_confirmation: Tem certeza que deseja excluir o(s) pacote(s)
     de trabalho selecionado(s)?
   text_work_packages_ref_in_commit_messages: Referenciando e corrigindo pacotes de
@@ -1576,6 +1603,7 @@ pt-BR:
   text_journal_deleted_with_diff: "%{label} excluído (%{link})"
   text_journal_set_to: "%{label} definido como %{value}"
   text_journal_set_with_diff: "%{label} definido (%{link})"
+  text_latest_note: 'The latest comment is: %{note}'
   text_length_between: Tamanho entre %{min} e %{max} caracteres.
   text_line_separated: Vários valores permitidos (uma linha para cada valor).
   text_load_default_configuration: Carregar a configuração padrão
@@ -1583,6 +1611,7 @@ pt-BR:
   text_no_configuration_data: Papéis, tipos, situações dos pacotes de trabalho e fluxo
     de trabalho não foram configurados ainda. É altamente recomendável carregar a
     configuração padrão. Uma vez carregada, você será capaz de modificá-la.
+  text_no_notes: There are no comments available for this work package.
   text_notice_too_many_values_are_inperformant: 'Nota: Exibição de mais de 100 itens
     por página pode aumentar o tempo de carregamento da página.'
   text_own_membership_delete_confirmation: Você está prestes a remover algumas ou

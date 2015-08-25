@@ -1325,7 +1325,29 @@ sv-SE:
     autofetch_information: |
       Check this if you want repositories to be updated automatically when accessing the repository module page.
       This encompasses the retrieval of commits from the repository and refreshing the required disk storage.
-    checkout_instructions: Instruktioner för utcheckning
+    checkout:
+      access:
+        readwrite: Read + Write
+        read: Read-only
+        none: No checkout access, you may only view the repository through this application.
+      access_permission: 'Your permissions on this repository:'
+      url: Checkout URL
+      base_url_text: |
+        The base URL to use for generating checkout URLs (e.g., https://myserver.example.org/repos/).
+        Note: The base URL is only used for rewriting checkout URLs in managed repositories. Other repositories are not altered.
+      default_instructions:
+        git: |
+          The data contained in this repository can be downloaded to your computer with Git using the checkout information below.
+          Please consult the documentation of Git if you need more information on the checkout procedure and available clients.
+        subversion: |
+          The data contained in this repository can be downloaded to your computer with Subversion using the checkout information below.
+          Please consult the documentation of Subversion if you need more information on the checkout procedure and available clients.
+      enable_instructions_text: Displays checkout instructions defined below on all
+        repository-related pages.
+      instructions: Checkout instructions
+      text_instructions: This text is displayed alongside the checkout URL for guidance
+        on how to check out the repository.
+      not_available: Checkout instructions are not available for this repository
     create_managed_delay: 'Observera: Versionsarkivet hanteras, det skapas asynkront
       på disken och kommer vara tillgänglig inom kort.'
     create_successful: Versionsarkivet har registrerats.
@@ -1344,8 +1366,8 @@ sv-SE:
       empty_repository: Verionsarkivet finns, men är tomt. Det innehåller inte några
         revisioner ännu.
       exists_on_filesystem: Katalogen för versionsarkivet finns redan i filsystemet.
-      filesystem_access_failed: 'Ett fel uppstod när versionsarkivet skapades på filsystemet:
-        %{message}.'
+      filesystem_access_failed: 'An error occurred while accessing the repository
+        on filesystem: %{message}.'
       not_manageable: Denna leverantör av versionsarkiv kan inte hanteras av OpenProject.
       path_permission_failed: 'Ett fel uppstod vid försök att skapa följande sökväg:
         %{path}. Se till att OpenProject kan skriva till mappen.'
@@ -1480,6 +1502,9 @@ sv-SE:
   setting_repository_authentication_caching_enabled: Aktivera cachelagring för autentiseringsbegäran
     av versionsarkivsystemet
   setting_repository_storage_cache_minutes: Repository disk size cache
+  setting_repository_checkout_display: Show checkout instructions
+  setting_repository_checkout_base_url: Checkout base URL
+  setting_repository_checkout_text: Checkout instruction text
   setting_repository_log_display_limit: Maximalt antal revisioner som visas i loggfilen
   setting_rest_api_enabled: Aktivera REST webb tjänst
   setting_self_registration: Självregistrering
@@ -1545,6 +1570,8 @@ sv-SE:
     till denna kategori. Vad vill du göra?
   text_work_package_category_reassign_to: Tilldela arbetspaket till denna kategori
   text_work_package_updated: Arbetspaketet %{id} har uppdaterats av %{author}.
+  text_work_package_watcher_added: You have been added as a watcher to Work package
+    %{id} by %{watcher_setter}.
   text_work_packages_destroy_confirmation: "Är du säker du vill ta bort det valda
     arbetspaket(paketen)?"
   text_work_packages_ref_in_commit_messages: Referenser och fixande av arbetspaket
@@ -1560,6 +1587,7 @@ sv-SE:
   text_journal_deleted_with_diff: "%{label} raderad (%{link})"
   text_journal_set_to: "%{label} ange till %{value}"
   text_journal_set_with_diff: "%{label} anger (%{link})"
+  text_latest_note: 'The latest comment is: %{note}'
   text_length_between: Längd mellan %{min} och %{max} tecken.
   text_line_separated: Flera värden tillåtna (en rad för varje värde).
   text_load_default_configuration: Ladda standardkonfigurationen
@@ -1567,6 +1595,7 @@ sv-SE:
   text_no_configuration_data: Roller, typer, status för arbetspaket och arbetsflöden
     har inte konfigurerats ännu. Det rekommenderas starkt att läsa in standardkonfigurationen.
     Du kommer att kunna ändra dem när de är initialiserade.
+  text_no_notes: There are no comments available for this work package.
   text_notice_too_many_values_are_inperformant: 'Observera: Att visa mer än 100 poster
     per sida kan öka sidans laddningstid.'
   text_own_membership_delete_confirmation: Du håller på att ta bort några eller alla

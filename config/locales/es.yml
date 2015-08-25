@@ -1349,7 +1349,29 @@ es:
       actualizados automáticamente al acceder a la página del módulo del repositorio.
       \nEsto abarca la recuperación de entregas del repositorio y actualizar el almacenamiento
       en disco necesario.\n"
-    checkout_instructions: Instrucciones de pago
+    checkout:
+      access:
+        readwrite: Read + Write
+        read: Read-only
+        none: No checkout access, you may only view the repository through this application.
+      access_permission: 'Your permissions on this repository:'
+      url: Checkout URL
+      base_url_text: |
+        The base URL to use for generating checkout URLs (e.g., https://myserver.example.org/repos/).
+        Note: The base URL is only used for rewriting checkout URLs in managed repositories. Other repositories are not altered.
+      default_instructions:
+        git: |
+          The data contained in this repository can be downloaded to your computer with Git using the checkout information below.
+          Please consult the documentation of Git if you need more information on the checkout procedure and available clients.
+        subversion: |
+          The data contained in this repository can be downloaded to your computer with Subversion using the checkout information below.
+          Please consult the documentation of Subversion if you need more information on the checkout procedure and available clients.
+      enable_instructions_text: Displays checkout instructions defined below on all
+        repository-related pages.
+      instructions: Checkout instructions
+      text_instructions: This text is displayed alongside the checkout URL for guidance
+        on how to check out the repository.
+      not_available: Checkout instructions are not available for this repository
     create_managed_delay: 'Nota: el repositorio es administrado, se crea asincrónicamente
       en el disco y estará disponible en breve.'
     create_successful: El repositorio ha sido registrado.
@@ -1369,8 +1391,8 @@ es:
         aún.
       exists_on_filesystem: El directorio del repositorio ya existe en el sistema
         de archivos.
-      filesystem_access_failed: 'Error al crear el repositorio en el sistema de archivos:
-        %{message}.'
+      filesystem_access_failed: 'An error occurred while accessing the repository
+        on filesystem: %{message}.'
       not_manageable: Este proveedor de repositorios no puede ser gestionado por OpenProject.
       path_permission_failed: 'Error al intentar crear la siguiente ruta: %{path}.
         Por favor asegúrese de que OpenProject puede escribir en esa carpeta.'
@@ -1516,6 +1538,9 @@ es:
   setting_repository_authentication_caching_enabled: Habilitar el almacenamiento en
     cache para las solicitudes de autenticacion del software de control de version
   setting_repository_storage_cache_minutes: Tamaño de caché de disco del repositorio
+  setting_repository_checkout_display: Show checkout instructions
+  setting_repository_checkout_base_url: Checkout base URL
+  setting_repository_checkout_text: Checkout instruction text
   setting_repository_log_display_limit: Numero máximo de revisiones mostradas en el
     archivo de registro
   setting_rest_api_enabled: Activar servicio web REST
@@ -1588,6 +1613,8 @@ es:
   text_work_package_category_reassign_to: Resignando paquetes de trabajo a esta categoria
   text_work_package_updated: Los paquetes de trabajo %{id} han sido actualizados por
     %{author}.
+  text_work_package_watcher_added: You have been added as a watcher to Work package
+    %{id} by %{watcher_setter}.
   text_work_packages_destroy_confirmation: "¿Esta usted seguro que desea eliminar
     paquete(s) de trabajo seleccionado(s)?"
   text_work_packages_ref_in_commit_messages: Referenciando y reparando paquetes de
@@ -1603,6 +1630,7 @@ es:
   text_journal_deleted_with_diff: "%{label} eliminado (% {link})"
   text_journal_set_to: "%{label} establecido al %{value}"
   text_journal_set_with_diff: "%{label} fijado (%{link})"
+  text_latest_note: 'The latest comment is: %{note}'
   text_length_between: Longitud entre %{min} y %{max} caracteres.
   text_line_separated: Múltiples valores permitidos (una línea para cada valor).
   text_load_default_configuration: Cargar la configuración predeterminada
@@ -1610,6 +1638,7 @@ es:
   text_no_configuration_data: Roles, tipos, estado de petición y flujo de trabajo
     no han sido configurados. Se recomienda cargar la configuración por defecto. Podrá
     modificarla cuando haya sido cargada.
+  text_no_notes: There are no comments available for this work package.
   text_notice_too_many_values_are_inperformant: 'Nota: Si se muestran más de 100 elementos
     por página puede incrementar el tiempo de carga de la página.'
   text_own_membership_delete_confirmation: "Usted está a punto de eliminar algunos
