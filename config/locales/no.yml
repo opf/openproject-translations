@@ -82,7 +82,7 @@
       journal:
         notes: Notater
       member:
-        roles: Rolle
+        roles: Roller
       project:
         homepage: Hjemmeside
         identifier: Identifikator
@@ -248,10 +248,10 @@
               numeric: numerisk (f.eks. "1")
               special: spesialtegn (f.eks. "%")
               reused:
-                one: har blitt brukt tidligere. Vennligst velg et som er forskjellig
-                  fra det forrige.
-                other: har blitt brukt tidligere. Vennligst velg et som er forskjellig
-                  fra dine siste %{count}.
+                one: has been used before. Please choose one that is different from
+                  your last one.
+                other: has been used before. Please choose one that is different from
+                  your last %{count}.
               match:
                 confirm: Confirm new password.
                 description: "'Password confirmation' should match the input in the
@@ -262,8 +262,8 @@
       template:
         body: 'Kontroller følgende felter:'
         header:
-          one: 1 feil forhindret lagring av denne %{model}
-          other: "%{count} feil forhindret lagring av denne %{model}"
+          one: 1 error prohibited this %{model} from being saved
+          other: "%{count} errors prohibited this %{model} from being saved"
     models:
       attachment: Fil
       board: Forum
@@ -278,8 +278,8 @@
       project: Prosjekt
       query: Egendefinert spørring
       role:
-        one: Rolle
-        other: Rolle
+        one: Role
+        other: Roles
       type: Type
       planning_element: Planleggingselement
       project_type: Prosjekttype
@@ -465,43 +465,43 @@
   datetime:
     distance_in_words:
       about_x_hours:
-        one: cirka 1 time
-        other: cirka %{count} timer
+        one: about 1 hour
+        other: about %{count} hours
       about_x_months:
-        one: cirka 1 måned
-        other: cirka %{count} måneder
+        one: about 1 month
+        other: about %{count} months
       about_x_years:
-        one: cirka 1 år
-        other: cirka %{count} år
+        one: about 1 year
+        other: about %{count} years
       almost_x_years:
-        one: nesten 1 år
-        other: nesten %{count} år
+        one: almost 1 year
+        other: almost %{count} years
       half_a_minute: et halvt minutt
       less_than_x_minutes:
-        one: mindre enn ett minutt
-        other: mindre enn %{count} minutter
+        one: less than a minute
+        other: less than %{count} minutes
       less_than_x_seconds:
-        one: mindre enn 1 sekund
-        other: mindre enn %{count} sekunder
+        one: less than 1 second
+        other: less than %{count} seconds
       over_x_years:
-        one: mer enn 1 år
-        other: mer enn %{count} år
+        one: over 1 year
+        other: over %{count} years
       x_days:
-        one: 1 dag
-        other: "%{count} dager"
+        one: 1 day
+        other: "%{count} days"
       x_minutes:
-        one: 1 minutt
-        other: "%{count} minutter"
+        one: 1 minute
+        other: "%{count} minutes"
       x_months:
-        one: 1 måned
-        other: "%{count} måneder"
+        one: 1 month
+        other: "%{count} months"
       x_seconds:
-        one: 1 sekund
-        other: "%{count} sekunder"
+        one: 1 second
+        other: "%{count} seconds"
     units:
       hour:
-        one: time
-        other: " timer"
+        one: hour
+        other: hours
   default_activity_development: Utvikling
   default_activity_management: Administrasjon
   default_activity_other: "Øvrig"
@@ -977,7 +977,7 @@
   label_roadmap_overdue: "%{value} over tiden"
   label_role_and_permissions: Roller og tilganger
   label_role_new: Ny rolle
-  label_role_plural: Rolle
+  label_role_plural: Roller
   label_role_search: Søk etter roller
   label_scm: SCM
   label_search: Søk
@@ -1072,24 +1072,24 @@
   label_workflow_plural: Arbeidsflyt
   label_workflow_summary: Sammendrag
   label_x_closed_work_packages_abbr:
-    one: 1 lukket
-    other: "%{count} lukkede"
+    one: 1 closed
+    other: "%{count} closed"
     zero: 0 closed
   label_x_comments:
-    one: 1 kommentar
-    other: "%{count} kommentarer"
+    one: 1 comment
+    other: "%{count} comments"
     zero: no comments
   label_x_open_work_packages_abbr:
-    one: 1 åpen
-    other: "%{count} åpne"
+    one: 1 open
+    other: "%{count} open"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
-    one: 1 åpen / %{total}
-    other: "%{count} åpne / %{total}"
+    one: 1 open / %{total}
+    other: "%{count} open / %{total}"
     zero: 0 open / %{total}
   label_x_projects:
-    one: 1 prosjekt
-    other: "%{count} prosjekter"
+    one: 1 project
+    other: "%{count} projects"
     zero: no projects
   label_year: "År"
   label_yesterday: i går
@@ -1545,8 +1545,8 @@
     delete_thing: Slett
     duration: Varighet
     duration_days:
-      one: 1 dag
-      other: "%{count} dager"
+      one: 1 day
+      other: "%{count} days"
     edit_color: Endre farge
     edit_project_type: Endre prosjekttype
     edit_thing: Rediger
@@ -1722,8 +1722,8 @@
     assign_random_password: Tildel vilkårlig passord (sendt til brukeren på e-post)
     blocked: midlertidig låst
     blocked_num_failed_logins:
-      one: midlertidig låst (ett mislykket innloggingsforsøk)
-      other: midlertidig låst (%{count} mislykkede innloggingsforsøk)
+      one: locked temporarily (one failed login attempt)
+      other: locked temporarily (%{count} failed login attempts)
     deleted: Slettet bruker
     error_status_change_failed: 'Endring av brukerstatus mislyktes på grunn av følgende
       feil: %{errors}'

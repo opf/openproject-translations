@@ -53,10 +53,10 @@ fr:
         filesize: Taille
       auth_source:
         account: Compte
-        attr_firstname: Attribut Prénom (Firstname)
-        attr_lastname: Attribut Nom de famille (Lastname)
-        attr_login: Attribut Identifiant (Login)
-        attr_mail: Attribut Courriel (Email)
+        attr_firstname: Attribut Prénom
+        attr_lastname: Attribut Nom de famille
+        attr_login: Attribut de connexion
+        attr_mail: Attribut courriel
         base_dn: DN de base
         host: Hôte
         onthefly: Création de l'utilisateur à la volée
@@ -108,7 +108,7 @@ fr:
       time_entry:
         activity: Activité
         hours: Heures
-        spent_on: date
+        spent_on: Date
         type: Type
       type:
         is_in_roadmap: Lots de Travaux affichés sur la feuille de route
@@ -172,7 +172,7 @@ fr:
         responsible: Responsable
         spent_time: Temps passé
         subproject: Sous-projet
-        time_entries: Consigner temps
+        time_entries: Enregister temps
         type: Type
         watcher: Observateur
     errors:
@@ -192,7 +192,7 @@ fr:
         greater_than_or_equal_to: doit être supérieur ou égal à %{count}
         smaller_than_or_equal_to_max_length: Doit être plus petit ou égal à la longueur
           maximale
-        greater_than_start_date: doit être supérieure à la date de début
+        greater_than_start_date: doit être postérieure à la date de début
         inclusion: ne correspond à aucune des valeurs autorisées
         invalid: est invalide
         less_than: doit être inférieure à % {count}
@@ -206,10 +206,10 @@ fr:
         too_long: est trop long (maximum est de %{count} caractères)
         too_short: est trop court (minimum %{count} caractères)
         wrong_length: est de mauvaise longueur (devrait être %{count} caractères)
-        after: doit être après le %{date}
-        after_or_equal_to: Doit être après ou le %{date}
-        before: doit être antérieur à %{date}
-        before_or_equal_to: Doit être avant ou le %{date}
+        after: doit être après %{date}
+        after_or_equal_to: Doit être après ou égal à %{date}
+        before: doit être antérieur(e) à %{date}
+        before_or_equal_to: doit être antérieur(e) ou égal(e) à %{date}
         could_not_be_copied: n'a pas pu être copié (entièrement)
       models:
         project_association:
@@ -254,10 +254,10 @@ fr:
               numeric: numérique (par exemple, « 1 »)
               special: spécial (par exemple, « % »)
               reused:
-                one: a déjà été utilisé auparavant. Veuillez faire un choix qui diffère
+                one: a déjà été utilisé auparavant. Veuillez en choisir qui diffère
                   de votre choix précédent.
-                other: ont déjà été utilisés auparavant. Veuillez faire un choix qui
-                  diffère de vos %{count} choix précédents.
+                other: a déjà été utilisé auparavant. Veuillez en choisir qui diffère
+                  de vos %{count} choix précédents.
               match:
                 confirm: Confirmez le nouveau mot de passe.
                 description: La confirmation du mot de passe doit correspondre à celui
@@ -269,7 +269,7 @@ fr:
         body: 'Veuillez vérifier les champs suivants:'
         header:
           one: 1 erreur empêche ce %{model} d'être sauvegardé
-          other: "%{count} erreurs interdisant ce %{model} d'être sauvegardé"
+          other: "%{count} erreurs empêchent ce %{model} d'être sauvegardé"
     models:
       attachment: Fichier
       board: Forum
@@ -294,7 +294,7 @@ fr:
       wiki: Wiki
       wiki_page: Page wiki
       workflow: Flux de travail
-      work_package: Lot de Travaux
+      work_package: Lot de travaux
   errors:
     header_invalid_fields: 'Il y a eu un problème avec les champs suivants:'
   activity:
@@ -328,7 +328,7 @@ fr:
     is_default: Valeur par défaut
     is_for_all: Pour tous les projets
     is_public: Public
-    issue: Lot de Travaux
+    issue: Lot de travaux
     lastname: Nom de famille
     login: Connexion
     mail: Courriel
@@ -337,10 +337,10 @@ fr:
     priority: Priorité
     project: Projet
     responsible: Responsable
-    role: Rôle
+    role: Role
     start_date: Date de début
     status: Statut
-    subject: Sujet
+    subject: Objet
     summary: Résumé
     title: Titre
     type: Type
@@ -376,7 +376,7 @@ fr:
   button_expand_all: Tout déplier
   button_list: Liste
   button_lock: Verrouiller
-  button_log_time: Consigner temps
+  button_log_time: Enregister temps
   button_login: Connexion
   button_move: Déplacer
   button_move_and_follow: Déplacer et suivre
@@ -398,20 +398,21 @@ fr:
   button_update: Mettre à jour
   button_view: Afficher
   button_watch: Suivre
-  button_manage_menu_entry: Gérer l'élément de menu
+  button_manage_menu_entry: Configurer l'élément de menu
   button_add_menu_entry: Ajouter un élément de menu
-  button_configure_menu_entry: Gérer l'élément de menu
+  button_configure_menu_entry: Configurer l'élément de menu
   button_delete_menu_entry: Supprimer l'élément de menu
   copy_project:
     started: La copie du projet "%{source_project_name}" vers "%{target_project_name}"
       a débuté. Vous serez informé par mail dès que "%{target_project_name}" sera
       disponible.
     failed: Impossible de copier le projet %{source_project_name}
-    succeeded: Le projet %{target_project_name} a été créé
+    succeeded: Projet %{target_project_name} créé
     errors: Erreur
     text:
-      failed: Impossible de copier le projet "%{source_project_name}" vers "%{target_project_name}".
-      succeeded: Le projet "%{source_project_name}" a été copié vers "%{target_project_name}".
+      failed: Impossible de copier le projet "%{source_project_name}" vers le projet
+        "%{target_project_name}".
+      succeeded: Projet "%{source_project_name}" copié vers "%{target_project_name}".
   create_child_page: Créer nouvelle page enfant
   create_child_page_for: 'Créer la nouvelle page de l''enfant: "%{title}"'
   create_new_page: Créer nouvelle page
@@ -471,29 +472,29 @@ fr:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: environ une heure
+        one: environ 1 heure
         other: environ %{count} heures
       about_x_months:
-        one: environ un mois
+        one: environ 1 mois
         other: environ %{count} mois
       about_x_years:
-        one: environ un an
-        other: environ %{count} années
+        one: environ 1 an
+        other: environ %{count} ans
       almost_x_years:
-        one: presqu'un an
-        other: presque %{count} années
+        one: presque 1 an
+        other: presque %{count} ans
       half_a_minute: une demi-minute
       less_than_x_minutes:
-        one: moins d'1 minute
+        one: moins d'une minute
         other: moins de %{count} minutes
       less_than_x_seconds:
-        one: moins d'une seconde
+        one: moins de 1 seconde
         other: moins de %{count} secondes
       over_x_years:
         one: plus de 1 an
         other: plus de %{count} ans
       x_days:
-        one: 1 jour
+        one: 1 jour
         other: "%{count} jours"
       x_minutes:
         one: 1 minute
@@ -535,9 +536,9 @@ fr:
   default_status_in_progress: En cours
   default_status_in_specification: En cous de spécification
   default_status_in_testing: En test
-  default_status_new: nouveau
+  default_status_new: Nouveau
   default_status_on_hold: En attente
-  default_status_rejected: rejeté
+  default_status_rejected: Rejeté
   default_status_scheduled: Planifié
   default_status_specified: Spécifié
   default_status_tested: Testé
@@ -585,7 +586,7 @@ fr:
   description_date_to: Entrer date de fin
   description_enter_number: Enter nombre
   description_enter_text: Entrez texte
-  description_filter: Filtrer
+  description_filter: Filtre
   description_filter_toggle: Afficher/Masquer le filtre
   description_category_reassign: Choisir une catégorie
   description_message_content: Contenu du message
@@ -762,7 +763,7 @@ fr:
   label_date_range: Plage de dates
   label_date_to: "À"
   label_day_plural: jours
-  label_default: défaut
+  label_default: Défaut
   label_deleted: supprimé
   label_deleted_custom_field: "(champs personnalisés supprimés)"
   label_descending: Décroissant
@@ -778,8 +779,8 @@ fr:
   label_download: "%{count} Téléchargement"
   label_download_plural: "%{count} Téléchargements"
   label_downloads_abbr: Téléchargement
-  label_duplicated_by: Dupliqué par
-  label_duplicates: Doublons
+  label_duplicated_by: dupliqué par
+  label_duplicates: doublons
   label_edit: "Éditer"
   label_enable_multi_select: Basculer multisélection
   label_end_to_end: bout à bout
@@ -837,7 +838,7 @@ fr:
   label_work_package_priority_updated: Priorité du Lot de Travaux mise à jour
   label_work_package_status_new: Nouveau statut
   label_work_package_status_plural: Statuts du Lot de Travaux
-  label_work_package_tracking: Suivi des lots de travaux
+  label_work_package_tracking: Suivi du Lot de Travaux
   label_work_package_updated: Lot de Travaux mis à jour
   label_work_package_view_all: Afficher tous les lots de travaux
   label_work_package_view_all_assigned_to_me: Afficher tous les lots de travaux qui
@@ -895,7 +896,7 @@ fr:
   label_my_page_block: Ma page bloc
   label_my_projects: Mes projets
   label_my_queries: Mes requêtes personnalisées
-  label_new: nouveau
+  label_new: Nouveau
   label_new_statuses_allowed: Nouveaux statuts autorisés
   label_news_added: Actualités ajoutées
   label_news_comment_added: Commentaire ajouté à une actualité
@@ -909,13 +910,13 @@ fr:
   label_no_change_option: "(Aucun changement)"
   label_no_data: Aucune donnée à afficher
   label_nobody: personne
-  label_none: aucune
+  label_none: aucun(e)
   label_not_contains: ne contient pas
   label_not_equals: n'est pas
   label_notify_member_plural: Notifications courriel
   label_open_menu: Ouvrir le menu
-  label_open_work_packages: ouverts
-  label_open_work_packages_plural: ouvrir
+  label_open_work_packages: ouvert
+  label_open_work_packages_plural: ouvert
   label_optional_description: Description
   label_options: Options
   label_overall_activity: Activité totale
@@ -962,18 +963,18 @@ fr:
   label_registration_automatic_activation: activation automatique du compte
   label_registration_manual_activation: activation manuelle du compte
   label_related_work_packages: Lots de Travaux associés
-  label_relates_to: En relation avec
+  label_relates_to: Lié à
   label_relation_delete: Supprimer la relation
   label_relation_new: Nouvelle relation
   label_remove_columns: Enlever les colonnes sélectionnées
   label_renamed: renommé
   label_reply_plural: Réponses
-  label_report: Rapport
+  label_report: Signalement
   label_report_plural: Signalements
   label_reported_work_packages: Lots de Travaux signalés
   label_reporting: Rapport
   label_reporting_plural: Rapports
-  label_repository: Référentiel
+  label_repository: Dépôt
   label_repository_plural: Dépôts
   label_responsible_for_work_packages: Lots de Travaux dont je suis responsable
   label_result_plural: Résultats
@@ -1043,12 +1044,12 @@ fr:
   label_user_activity: Activité de %{value}
   label_user_anonymous: Anonyme
   label_user_mail_no_self_notified: Je ne veux pas être notifié de mes propres changements
-  label_user_mail_option_all: Tout évènement dans tous mes projets
+  label_user_mail_option_all: Pour tout évènement sur tous mes projets
   label_user_mail_option_none: Aucun évènement
-  label_user_mail_option_only_assigned: Les éléments qui me sont assignés
+  label_user_mail_option_only_assigned: Seulement pour les tâches qui me sont assignées
   label_user_mail_option_only_my_events: Uniquement pour les éléments que je suis
     ou auxquels je participe
-  label_user_mail_option_only_owner: Les éléments dont je suis le propriétaire
+  label_user_mail_option_only_owner: Seulement pour les tâches dont je suis le possesseur
   label_user_mail_option_selected: Pour tous les événements sur le projet selectionné
     seulement…
   label_user_new: Nouvel utilisateur
@@ -1069,37 +1070,37 @@ fr:
   label_wiki_content_added: Page wiki ajoutée
   label_wiki_content_updated: Page wiki mise à jour
   label_wiki_toc: Table des Matières
-  label_wiki_dont_show_menu_item: Ne pas afficher cette page wiki dans le menu de
-    navigation du projet
+  label_wiki_dont_show_menu_item: Ne pas montrer cette page wiki dans la navigation
+    du projet
   label_wiki_edit: Modification wiki
   label_wiki_edit_plural: Modifications wiki
   label_wiki_navigation: Navigation wiki
   label_wiki_page: Page wiki
   label_wiki_page_plural: Pages wiki
   label_wiki_show_index_page_link: Montrer le sous-menu 'Table des Matiéres'
-  label_wiki_show_menu_item: Afficher en tant qu'élément dans le menu de navigation
+  label_wiki_show_menu_item: Montrer en tant qu'élément de menu dans la navigation
     du projet
   label_wiki_show_new_page_link: Montrer le sous-menu 'Créer une nouvelle page enfant'
   label_wiki_show_submenu_item: 'Montrer comme sous-menu de '
-  label_work_package: Lot de Travaux
+  label_work_package: Lot de travaux
   label_workflow: Flux de travail
   label_workflow_plural: Flux de travail
   label_workflow_summary: Résumé
   label_x_closed_work_packages_abbr:
     one: 1 clôturé
-    other: "%{count} clôturé(s)"
+    other: "%{count} clôturés"
     zero: 0 closed
   label_x_comments:
     one: 1 commentaire
     other: "%{count} commentaires"
     zero: no comments
   label_x_open_work_packages_abbr:
-    one: un ouvert
+    one: 1 ouvert
     other: "%{count} ouverts"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
-    one: 1 / %{total} ouvert
-    other: "%{count} / %{total} ouverts"
+    one: 1 ouvert / %{total}
+    other: "%{count} ouverts / %{total}"
     zero: 0 open / %{total}
   label_x_projects:
     one: 1 projet
@@ -1132,7 +1133,8 @@ fr:
     détails seulement)
   label_keyboard_shortcut_open_more_menu: Ouvrir menu supplementaire (page des détails
     seulement)
-  label_keyboard_shortcut_go_preview: Afficher l'aperçu (pages d'édition seulement)
+  label_keyboard_shortcut_go_preview: Aller à l'affichage de l'edition actuelle (page
+    d'edition seulement)
   label_keyboard_shortcut_focus_previous_item: Focus sur l'élément précedent (sur
     quelques listes seulement)
   label_keyboard_shortcut_focus_next_item: Focus sur l'élément suivant (sur quelques
@@ -1320,9 +1322,9 @@ fr:
   project_module_activity: Activité
   project_module_boards: Forums
   project_module_calendar: Calendrier
-  project_module_work_package_tracking: Suivi des lots de travaux
+  project_module_work_package_tracking: Suivi du Lot de Travaux
   project_module_news: Actualités
-  project_module_repository: Référentiel
+  project_module_repository: Dépôt
   project_module_time_tracking: Suivi du temps
   project_module_timelines: Chronologie
   project_module_wiki: Wiki
@@ -1515,9 +1517,9 @@ fr:
   text_select_mail_notifications: Sélectionnez les actions pour lesquelles une notification
     par courriel sera envoyée.
   text_select_project_modules: 'Sélectionnez les modules à activer pour ce projet:'
-  text_status_changed_by_changeset: Appliqué dans « changeset » %{value}.
+  text_status_changed_by_changeset: Enregistré dans « changeset » %{value}.
   text_subprojects_destroy_warning: 'Son sous-projet(s): %{value} sera aussi supprimé.'
-  text_time_logged_by_changeset: Appliqué dans « changeset » %{value}.
+  text_time_logged_by_changeset: Enregistré dans « changeset » %{value}.
   text_tip_work_package_begin_day: lots de travaux débutant aujourd'hui
   text_tip_work_package_begin_end_day: lots de travaux débutant et se terminant aujourd'hui
   text_tip_work_package_end_day: lots de travaux se terminant aujourd'hui
@@ -1549,7 +1551,7 @@ fr:
     pm: après-midi
   timeframe:
     show: Afficher période
-    end: pour
+    end: "à"
     start: de
   timelines:
     admin_menu:
@@ -1578,7 +1580,7 @@ fr:
     delete_thing: Supprimer
     duration: Durée
     duration_days:
-      one: 1 jour
+      one: 1 jour
       other: "%{count} jours"
     edit_color: "Éditer la couleur"
     edit_project_type: Editer le type de projet
@@ -1605,9 +1607,9 @@ fr:
         compare_to_relative: 'La valeur de la comparaison relative '
         compare_to_absolute: 'La valeur de la comparaison absolue '
         planning_element_time_relative_one: 'Le démarrage des Lots de Travaux dans
-          un certain délai  '
+          un certain délai '
         planning_element_time_relative_two: 'La fin des Lots de Travaux dans un certain
-          délai  '
+          délai '
         planning_element_time_absolute_one: 'Le démarrage des Lots de Travaux dans
           un certain délai  '
         planning_element_time_absolute_two: 'La fin des Lots de Travaux dans un certain
@@ -1644,7 +1646,7 @@ fr:
       exclude_reporters: Masquer les autres projets
       exclude_empty: Masquer les projets vides
       grouping: Regroupement
-      grouping_hide_group: Masquer le groupe « %{group} »
+      grouping_hide_group: Masquer le groupe «%{group}»
       grouping_one: Premier critère de groupement
       grouping_one_phrase: Est un sous-projet de
       grouping_other: Autre
@@ -1664,7 +1666,7 @@ fr:
         certain laps de temps
       project_time_filter_timeframe: Période
       project_time_filter_historical_from: de
-      project_time_filter_historical_to: pour
+      project_time_filter_historical_to: "à"
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
       project_time_filter_relative: "%{start_label} %{startspan}%{startspanunit} ago,
         %{end_label} %{endspan}%{endspanunit} from now"
@@ -1673,7 +1675,7 @@ fr:
       project_status: Afficher statut du projet
       project_types: Afficher types du projet
       timeframe: Afficher période
-      timeframe_end: pour
+      timeframe_end: "à"
       timeframe_start: de
       timeline: Rapport de l'échéancier
       zoom: Facteur de zoom
@@ -1691,15 +1693,15 @@ fr:
     no_timeline_for_id: Il n'y a pas de calendrier lié avec l'ID %{id}.
     notice_successful_deleted_all_elements: Tous les éléments ont été supprimés avec
       succès
-    outline: Réinitialiser l'aperçu
+    outline: Réinitialiser le contour
     outlines:
       aggregation: Ne montrer que les agrégations
-      level1: Déplier 1 niveau
-      level2: Déplier 2 niveaux
+      level1: Etendre niveau 1
+      level2: Etendre niveau 2
       level3: Déplier 3 niveaux
       level4: Déplier 4 niveaux
       level5: Déplier 5 niveaux
-      all: Afficher tout
+      all: Tout montrer
     reporting_for_project:
       show: 'Statut signalé au projet: %{title}'
       edit_delete: 'Rapport de statut pour le projet: %{title}'
@@ -1763,7 +1765,7 @@ fr:
       par courrier électronique)
     blocked: verrouillé temporairement
     blocked_num_failed_logins:
-      one: verrouillé temporairement (une tentative de connexion échouée)
+      one: verrouillé temporairement (1 tentative de connexion échouée)
       other: verrouillé temporairement (%{count} tentatives de connexion échouées)
     deleted: Utilisateur supprimé
     error_status_change_failed: 'Le changement du statut de l''utilisateur a échoué
@@ -1779,9 +1781,9 @@ fr:
       désactivé, il ne peut s'authentifier.
     password_change_unsupported: Le changement de mot de passe n'est pas supporté.
     authorization_rejected: Vous n'êtes pas autorisé à vous authentifier.
-  version_status_closed: fermé
+  version_status_closed: clôturé
   version_status_locked: verrouillé
-  version_status_open: ouvrir
+  version_status_open: ouvert
   note: Note
   note_password_login_disabled: L'authentification via mot de passe a été désactivé
     par %{configuration}.
