@@ -1349,27 +1349,28 @@ de:
       Dies umfasst das Abrufen von Commits aus dem Projektarchiv und die Aktualisierung des erforderliche Festplattenspeichers.
     checkout:
       access:
-        readwrite: Read + Write
-        read: Read-only
-        none: No checkout access, you may only view the repository through this application.
-      access_permission: 'Your permissions on this repository:'
-      url: Checkout URL
+        readwrite: Lese- und Schreibzugriff
+        read: Nur Lesezugriff
+        none: Keine Checkout-Berechtigung, Sie können das Projektarchiv nur über diese
+          Applikation betrachten.
+      access_permission: 'Ihre Berechtigungen für dieses Projektarchiv:'
+      url: Checkout-URL
       base_url_text: |
-        The base URL to use for generating checkout URLs (e.g., https://myserver.example.org/repos/).
-        Note: The base URL is only used for rewriting checkout URLs in managed repositories. Other repositories are not altered.
+        Der URL-Präfix, der für die Generierung von Checkout-URLs verwendet wird (z.B. https://myserver.example.org/repos).
+        Hinweis: Dieser URL-Präfix wird nur zum Umschreiben von verwalteten Projektarchiven verwendet. Die URLs anderer Projektarchive werden nicht verändert.
       default_instructions:
         git: |
-          The data contained in this repository can be downloaded to your computer with Git using the checkout information below.
-          Please consult the documentation of Git if you need more information on the checkout procedure and available clients.
+          Die Dateien in diesem Projektarchiv können mittels Git und den nachstehenden Checkout-Anweisungen auf Ihren Computer übertragen werden.
+          Bitte konsultieren Sie die Dokumentation von Git, wenn Sie mehr Informationen über den Checkout von Projektarchiven und kompatible Client-Anwendungen erfahren möchten.
         subversion: |
-          The data contained in this repository can be downloaded to your computer with Subversion using the checkout information below.
-          Please consult the documentation of Subversion if you need more information on the checkout procedure and available clients.
-      enable_instructions_text: Displays checkout instructions defined below on all
-        repository-related pages.
-      instructions: Checkout instructions
-      text_instructions: This text is displayed alongside the checkout URL for guidance
-        on how to check out the repository.
-      not_available: Checkout instructions are not available for this repository
+          Die Dateien in diesem Projektarchiv können mittels Subversion und den nachstehenden Checkout-Anweisungen auf Ihren Computer übertragen werden.
+          Bitte konsultieren Sie die Dokumentation von Subversion, wenn Sie mehr Informationen über den Checkout von Projektarchiven und kompatible Client-Anwendungen erfahren möchten.
+      enable_instructions_text: Zeige die nachstehenden Checkout-Anweisungen auf allen
+        Seiten im Projektarchiv-Modul an.
+      instructions: Checkout-Anweisungen
+      text_instructions: Dieser Text wird dem Nutzer zusammen mit der Checkout-URL
+        als zusätzliche Hilfestellung für den Checkout von Projektarchiven angezeigt.
+      not_available: Checkout-Anweisungen sind für dieses Projektarchiv nicht verfügbar
     create_managed_delay: 'Bitte beachten Sie: Das Projektarchiv wird in OpenProject
       verwaltet. Es wird asynchron auf dem Datenträger erstellt und wird in Kürze
       verfügbar sein.'
@@ -1390,8 +1391,8 @@ de:
       empty_repository: Das Projektarchiv existiert, ist aber leer. Es enthält noch
         keine Änderungen.
       exists_on_filesystem: Das Projektarchiv existiert bereits auf dem Dateisystem.
-      filesystem_access_failed: 'An error occurred while accessing the repository
-        on filesystem: %{message}.'
+      filesystem_access_failed: 'Fehler beim Zugriff des Projektarchivs auf dem Dateisystem:
+        %{message}.'
       not_manageable: Dieser Projektarchiv-Anbieter kann nicht von OpenProject verwaltet
         werden.
       path_permission_failed: 'Ein Fehler ist aufgetreten beim Erstellen des folgenden
@@ -1532,9 +1533,9 @@ de:
   setting_repository_authentication_caching_enabled: Aktiviere Cache für Authentifizierungsversuche
     von Versionskontrollsoftware
   setting_repository_storage_cache_minutes: Projektarchiv Festplattengröße-Zwischenspeicher
-  setting_repository_checkout_display: Show checkout instructions
-  setting_repository_checkout_base_url: Checkout base URL
-  setting_repository_checkout_text: Checkout instruction text
+  setting_repository_checkout_display: Zeige Checkout-Anweisungen
+  setting_repository_checkout_base_url: Checkout URL-Präfix
+  setting_repository_checkout_text: Hilfetext für Checkout-Anweisung
   setting_repository_log_display_limit: Maximale Anzahl anzuzeigender Revisionen in
     der Historie einer Datei
   setting_rest_api_enabled: REST-Schnittstelle aktivieren
