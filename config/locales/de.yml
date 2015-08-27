@@ -159,7 +159,7 @@ de:
         reported_project_status_comment: Status-Kommentar
         reporting_to_project: Beziehung zu Projekt
         reported_project_status: Projekt-Status
-        created_at: Angelegt
+        created_at: Angelegt am
       work_package:
         done_ratio: "% erledigt"
         fixed_version: Version
@@ -170,71 +170,71 @@ de:
         progress: "% erledigt"
         responsible: Verantwortlicher
         spent_time: Aufgewendete Zeit
-        subproject: Unterprojekt von
+        subproject: Unterprojekt
         time_entries: Zeit buchen
-        type: Typ
+        type: Art
         watcher: Beobachter
     errors:
       messages:
-        accepted: muss akzeptiert werden
-        blank: muss ausgefüllt werden
+        accepted: muss akzeptiert werden.
+        blank: muss ausgefüllt werden.
         cant_link_a_work_package_with_a_descendant: Ein Arbeitspaket kann nicht mit
-          einer seiner Unteraufgaben verlinkt werden
-        circular_dependency: Diese Beziehung würde eine zyklische Abhängigkeit erzeugen
-        confirmation: stimmt nicht mit der Bestätigung überein
-        empty: muss ausgefüllt werden
-        equal_to: muss genau %{count} sein
-        even: muss gerade sein
-        exclusion: ist nicht verfügbar
-        file_too_large: ist zu groß (nicht mehr als %{count} Bytes erlaubt)
-        greater_than: muss größer als %{count} sein
-        greater_than_or_equal_to: muss größer oder gleich %{count} sein
+          einer seiner Unteraufgaben verlinkt werden.
+        circular_dependency: Diese Beziehung würde eine zyklische Abhängigkeit erzeugen.
+        confirmation: stimmt nicht mit %{attribute} überein.
+        empty: muss ausgefüllt werden.
+        equal_to: muss genau %{count} sein.
+        even: muss gerade sein.
+        exclusion: ist nicht verfügbar.
+        file_too_large: ist zu groß (nicht mehr als %{count} Bytes erlaubt).
+        greater_than: muss größer als %{count} sein.
+        greater_than_or_equal_to: muss größer oder gleich %{count} sein.
         smaller_than_or_equal_to_max_length: muss kleiner als oder gleich der maximalen
-          Länge sein
-        greater_than_start_date: muss größer als Anfangsdatum sein
-        inclusion: ist nicht auf einen der erlaubten Werte gesetzt
-        invalid: ist ungültig
-        less_than: muss kleiner als %{count} sein
-        less_than_or_equal_to: muss kleiner oder gleich %{count} sein
-        not_a_date: ist kein Datum
-        not_a_number: ist keine Zahl
-        not_an_integer: ist keine ganzzahlige Zahl
-        not_same_project: gehört nicht zum selben Projekt
-        odd: muss ungerade sein
-        taken: ist bereits vergeben
-        too_long: ist zu lang (nicht mehr als %{count} Zeichen)
-        too_short: ist zu kurz (nicht weniger als %{count} Zeichen)
-        wrong_length: hat die falsche Länge (muss genau %{count} Zeichen haben)
-        after: muss nach %{date} sein
-        after_or_equal_to: muss nach oder gleich %{date} sein
-        before: muss vor %{date} sein
-        before_or_equal_to: muss vor oder am %{date} sein
-        could_not_be_copied: konnten nicht (vollständig) kopiert werden
+          Länge sein.
+        greater_than_start_date: muss größer als Anfangsdatum sein.
+        inclusion: ist nicht auf einen erlaubten Wert gesetzt.
+        invalid: ist ungültig.
+        less_than: muss kleiner als %{count} sein.
+        less_than_or_equal_to: muss kleiner oder gleich %{count} sein.
+        not_a_date: ist kein Datum.
+        not_a_number: ist keine Zahl.
+        not_an_integer: ist keine ganzzahlige Zahl.
+        not_same_project: gehört nicht zum selben Projekt.
+        odd: muss ungerade sein.
+        taken: ist bereits vergeben.
+        too_long: ist zu lang (nicht mehr als %{count} Zeichen).
+        too_short: ist zu kurz (nicht weniger als %{count} Zeichen).
+        wrong_length: hat die falsche Länge (muss genau %{count} Zeichen haben).
+        after: muss nach %{date} sein.
+        after_or_equal_to: muss nach oder gleich %{date} sein.
+        before: muss vor %{date} sein.
+        before_or_equal_to: muss vor oder gleich %{date} sein.
+        could_not_be_copied: konnten nicht (vollständig) kopiert werden.
       models:
         project_association:
           identical_projects: Abhängigkeit kann nicht zwischen dem Projekt und sich
             selbst erstellt werden.
-          project_association_not_allowed: erlaubt keine Projekt-Abhängigkeiten
+          project_association_not_allowed: erlaubt keine Projekt-Abhängigkeiten.
         repository:
-          not_whitelisted: wird nicht durch die Konfiguration erlaubt
-          no_directory: ist kein Verzeichnis
+          not_whitelisted: wird durch die Konfiguration nicht erlaubt.
+          no_directory: ist kein Verzeichnis.
         work_package:
           is_not_a_valid_target_for_time_entries: 'Arbeitspaket #%{id} ist kein gültiges
             Ziel für die Zuordnung der Zeiterfassungseinträge.'
           attributes:
             due_date:
-              not_start_date: ist nicht am Startdatum, obwohl dies bei Meilensteinen
-                Pflicht ist
+              not_start_date: ist nicht identisch mit dem Startdatum, obwohl dies
+                bei Meilensteinen Pflicht ist.
             parent_id:
-              cannot_be_milestone: darf kein Meilenstein sein
-              cannot_be_in_another_project: darf nicht in einem anderen Projekt sein
+              cannot_be_milestone: darf kein Meilenstein sein.
+              cannot_be_in_another_project: darf nicht in einem anderen Projekt sein.
               not_a_valid_parent: ist ungültig
-              does_not_exist: existiert nicht
+              does_not_exist: existiert nicht.
             status_id:
               status_transition_invalid: ist ungültig da kein valider Übergang vom
-                alten zum neuen Status für die aktuelle Rolle des Nutzers existiert
+                alten zum neuen Status für die aktuelle Rolle des Nutzers existiert.
             priority_id:
-              only_active_priorities_allowed: muss aktiv sein
+              only_active_priorities_allowed: muss aktiv sein.
             category:
               only_same_project_categories_allowed: Ein Arbeitpaket und seine Kategorie
                 müssen im selben Projekt sein.
@@ -245,8 +245,8 @@ de:
         user:
           attributes:
             password:
-              weak: 'Muss Zeichen aus folgenden Klassen beinhalten (mindestens %{min_count}
-                von %{all_count}): %{rules}'
+              weak: 'muss Zeichen aus folgenden Klassen beinhalten (mindestens %{min_count}
+                von %{all_count}): %{rules}.'
               lowercase: Kleinbuchstaben (z.B. 'a')
               uppercase: Großbuchstaben (z.B. 'A')
               numeric: Ziffern (z.B. '1')
@@ -312,7 +312,7 @@ de:
     comments: Kommentar
     content: Inhalt
     created_at: Angelegt am
-    created_on: Angelegt am
+    created_on: Erstellt
     custom_values: Benutzerdefinierte Felder
     default_columns: Standard-Spalten
     description: Beschreibung
@@ -397,9 +397,9 @@ de:
   button_update: Bearbeiten
   button_view: Anzeigen
   button_watch: Beobachten
-  button_manage_menu_entry: Menüpunkt verwalten
+  button_manage_menu_entry: Menüpunkt konfigurieren
   button_add_menu_entry: Menüpunkt hinzufügen
-  button_configure_menu_entry: Menüpunkt verwalten
+  button_configure_menu_entry: Menüpunkt konfigurieren
   button_delete_menu_entry: Menüpunkt entfernen
   copy_project:
     started: Das Kopieren des Projekts "%{source_project_name}" nach "%{target_project_name}"
@@ -659,7 +659,7 @@ de:
   general_csv_encoding: UTF-8
   general_csv_separator: ";"
   general_first_day_of_week: '1'
-  general_lang_name: Deutsch
+  general_lang_name: Deutsch (community translated)
   general_pdf_encoding: ISO-8859-1
   general_text_no: nein
   general_text_yes: ja
@@ -683,10 +683,10 @@ de:
   label_add_subtask: Unteraufgabe hinzufügen
   label_added: hinzugefügt
   label_added_time_by: Von %{author} vor %{age} hinzugefügt
-  label_additional_workflow_transitions_for_assignee: Zusätzliche Übergänge, falls
-    das Arbeitspaket dem Nutzer zugewiesen wurde
-  label_additional_workflow_transitions_for_author: Weitere Arbeitsablauf-Übergänge
-    sind zulässig, wenn der Benutzer der Autor ist
+  label_additional_workflow_transitions_for_assignee: Additional transitions allowed
+    when the user is the assignee
+  label_additional_workflow_transitions_for_author: Additional transitions allowed
+    when the user is the author
   label_administration: Administration
   label_age: Geändert vor
   label_ago: vor (Tage)
@@ -733,7 +733,7 @@ de:
   label_checked: ausgewählt
   label_chronological_order: in zeitlicher Reihenfolge
   label_close_versions: Abgeschlossene Versionen schließen
-  label_closed_work_packages: geschlossen
+  label_closed_work_packages: Geschlossen
   label_collapse: Zuklappen
   label_configuration: Konfiguration
   label_comment_add: Kommentar hinzufügen
@@ -762,13 +762,13 @@ de:
   label_date_from_to: von %{start} bis %{end}
   label_date_range: Zeitraum
   label_date_to: Bis
-  label_day_plural: Tage
+  label_day_plural: Tagen
   label_default: Standard
   label_deleted: gelöscht
   label_deleted_custom_field: "(gelöschtes benutzerdefiniertes Feld)"
   label_descending: Absteigend
   label_details: Details
-  label_diff: Differenz
+  label_diff: diff
   label_diff_inline: einspaltig
   label_diff_side_by_side: nebeneinander
   label_disabled: deaktiviert
@@ -809,7 +809,7 @@ de:
   label_generate_key: Schlüssel generieren
   label_git_path: Pfad zum .git-Verzeichnis
   label_greater_or_equal: ">="
-  label_group_by: Gruppieren nach
+  label_group_by: Gruppiere Ergebnisse
   label_group_new: Neue Gruppe
   label_group_plural: Gruppen
   label_help: Hilfe
@@ -823,8 +823,8 @@ de:
   label_incoming_emails: Eingehende E-Mails
   label_index_by_date: Seiten nach Datum
   label_index_by_title: Seiten nach Titel
-  label_information: Informationen
-  label_information_plural: Informationen
+  label_information: Information
+  label_information_plural: Information
   label_integer: Zahl
   label_internal: Intern
   label_work_package_added: Arbeitspaket hinzugefügt
@@ -838,7 +838,7 @@ de:
   label_work_package_priority_updated: Arbeitspaketpriorität aktualisiert
   label_work_package_status_new: Neuer Status
   label_work_package_status_plural: Arbeitspaket-Status
-  label_work_package_tracking: Arbeitspakete
+  label_work_package_tracking: Arbeitspakete-Verfolgung
   label_work_package_updated: Arbeitspaket aktualisiert
   label_work_package_view_all: Alle Arbeitspakete anzeigen
   label_work_package_view_all_assigned_to_me: Alle mir zugewiesenen Arbeitspakete
@@ -900,7 +900,7 @@ de:
   label_new_statuses_allowed: Neue Berechtigungen
   label_news_added: News hinzugefügt
   label_news_comment_added: Kommentar einer News hinzugefügt
-  label_news_latest: Letzte News
+  label_news_latest: Aktuelle Nachrichten
   label_news_new: News hinzufügen
   label_news_edit: News bearbeiten
   label_news_plural: Neuigkeiten
@@ -910,13 +910,13 @@ de:
   label_no_change_option: "(Keine Änderung)"
   label_no_data: Nichts anzuzeigen
   label_nobody: Niemand
-  label_none: kein
+  label_none: keine
   label_not_contains: enthält nicht
   label_not_equals: ist nicht
   label_notify_member_plural: Aktualisierungen per E-Mail verschicken
   label_open_menu: Menü öffnen
-  label_open_work_packages: offen
-  label_open_work_packages_plural: offen
+  label_open_work_packages: Offen
+  label_open_work_packages_plural: Offen
   label_optional_description: Beschreibung
   label_options: Optionen
   label_overall_activity: Aktivität aller Projekte anzeigen
@@ -927,7 +927,7 @@ de:
   label_password_rule_numeric: Ziffern
   label_password_rule_special: Sonderzeichen
   label_password_rule_uppercase: Großbuchstaben
-  label_path_encoding: Pfad-Codierung
+  label_path_encoding: Path encoding
   label_pdf_with_descriptions: PDF mit Beschreibungen
   label_per_page: Pro Seite
   label_permissions: Berechtigungen
@@ -958,7 +958,7 @@ de:
   label_query_menu_item: Filter-Menüpunkt
   label_read: Lesen ...
   label_register: Neues Konto erstellen
-  label_register_with_developer: Als Entwickler registrieren
+  label_register_with_developer: Als Entwickler anmelden
   label_registered_on: Angemeldet am
   label_registration_activation_by_email: Kontoaktivierung per E-Mail
   label_registration_automatic_activation: Automatische Kontoaktivierung
@@ -970,7 +970,7 @@ de:
   label_remove_columns: Ausgewählte Spalten entfernen
   label_renamed: umbenannt
   label_reply_plural: Antworten
-  label_report: Bericht
+  label_report: Report
   label_report_plural: Berichte
   label_reported_work_packages: Gemeldete Arbeitspakete
   label_reporting: Statusbericht
@@ -999,7 +999,7 @@ de:
   label_send_test_email: Test-E-Mail senden
   label_settings: Konfiguration
   label_show_completed_versions: Abgeschlossene Versionen anzeigen
-  label_sort: Sortieren
+  label_sort: Sortierung
   label_sort_by: Sortiere nach %{value}
   label_sorted_by: sortiert nach %{value}
   label_sort_higher: Eins höher
@@ -1042,7 +1042,7 @@ de:
   label_updated_time_by: Von %{author} vor %{age} aktualisiert
   label_used_by: Benutzt von
   label_user_activity: Aktivität von %{value}
-  label_user_anonymous: Anonymus
+  label_user_anonymous: Anonym
   label_user_mail_no_self_notified: Ich möchte nicht über Änderungen benachrichtigt
     werden, die ich selbst durchführe
   label_user_mail_option_all: Für alle Ereignisse in all meinen Projekten
@@ -1319,28 +1319,28 @@ de:
   project_module_activity: Aktivität
   project_module_boards: Foren
   project_module_calendar: Kalender
-  project_module_work_package_tracking: Arbeitspakete
+  project_module_work_package_tracking: Arbeitspakete-Verfolgung
   project_module_news: Neuigkeiten
   project_module_repository: Projektarchiv
   project_module_time_tracking: Zeiterfassung
-  project_module_timelines: Zeitpläne
+  project_module_timelines: Zeitlinie
   project_module_wiki: Wiki
   query_fields:
     assigned_to_role: Rolle der zugewiesenen Person
     member_of_group: Gruppe der zugewiesenen Person
-    subproject_id: Unterprojekt von
+    subproject_id: Unterprojekt
   search_input_placeholder: Suche ...
   setting_activity_days_default: Anzahl Tage pro Seite der Projekt-Aktivität
   setting_app_subtitle: Applikations-Untertitel
   setting_app_title: Applikations-Titel
   setting_attachment_max_size: Max. Dateigröße
-  setting_autofetch_changesets: Changesets automatisch abrufen
+  setting_autofetch_changesets: Automatisches Abrufen von Projektarchiv-Änderungen
   setting_autologin: Automatische Anmeldung
   setting_available_languages: Verfügbare Sprachen
   setting_bcc_recipients: E-Mails als Blindkopie (BCC) senden
   setting_brute_force_block_after_failed_logins: Sperre Benutzer nach dieser Anzahl
-    fehlgeschlagener Loginversuche (deaktivieren mit 0)
-  setting_brute_force_block_minutes: Sperre Benutzer für Dauer (Minuten)
+    fehlgeschlagener Loginversuche
+  setting_brute_force_block_minutes: Sperre Benutzer für Dauer von
   setting_cache_formatted_text: Formatierten Text im Cache speichern
   setting_column_options: Anpassen der Darstellung der Arbeitspaketlisten
   setting_commit_fix_keywords: Schlüsselwörter (Status)
@@ -1394,7 +1394,7 @@ de:
   setting_password_count_former_banned: Anzahl zuletzt benutzter Passwörter, die nicht
     wiederverwendet werden dürfen
   setting_password_days_valid: Anzahl von Tagen, nach denen ein Passwortwechsel erzwungen
-    wird (deaktivieren mit 0)
+    wird
   setting_password_min_length: Minimale Länge
   setting_password_min_adhered_rules: Mindestanzahl zu verwendender Zeichenklassen
   setting_per_page_options: Objekte pro Seite
@@ -1429,7 +1429,7 @@ de:
   setting_work_package_group_assignment: Zuweisung zu Gruppen erlauben
   settings:
     general: Allgemein
-    other: Sonstiges
+    other: Andere
     passwords: Passwörter
     session: Sitzung
     brute_force_prevention: Automatisches Sperren von Benutzern
@@ -1438,7 +1438,7 @@ de:
   support:
     array:
       sentence_connector: und
-      skip_last_comma: 'false'
+      skip_last_comma: 'true'
   text_analyze: 'Weiter analysieren: %{subject}'
   text_are_you_sure: Sind Sie sicher?
   text_are_you_sure_with_children: Lösche Aufgabe und alle Unteraufgaben?
@@ -1448,8 +1448,8 @@ de:
   text_comma_separated: Mehrere Werte erlaubt (durch Komma getrennt).
   text_custom_field_possible_values_info: Eine Zeile pro Wert
   text_default_administrator_account_changed: Administrator-Kennwort geändert
-  text_default_encoding: 'Standard: UTF-8'
-  text_destroy: Löschen
+  text_default_encoding: 'Default: UTF-8'
+  text_destroy: Lösche
   text_destroy_with_associated: 'Es sind weitere Datenobjekte mit den bzw. dem zu
     löschenden Arbeitpaket(en) verbunden. Es handelt sich dabei um Objekte der folgenden
     Typen:'
@@ -1496,8 +1496,9 @@ de:
     Sind Sie sicher, dass Sie dies tun möchten?
   text_plugin_assets_writable: Verzeichnis für Plugin-Assets beschreibbar
   text_powered_by: Powered by %{link}
-  text_project_destroy_confirmation: Sind Sie sicher, dass Sie das Projekt und die
-    darin enthaltenen Daten löschen wollen?
+  text_project_destroy_confirmation: Wenn Sie fortfahren, werden das Projekt %{identifier}
+    und alle damit zusammenhängenden Daten dauerhaft gelöscht werden. Bestätigen Sie
+    die Eingabe, wenn Sie fortfahren möchten.
   text_project_identifier_info: Kleinbuchstaben (a-z), Ziffern, Binde- und Unterstriche
     erlaubt. Muss mit einem Kleinbuchstaben beginnen.
   text_reassign: Neu zuweisen an
@@ -1510,10 +1511,10 @@ de:
     Mailbenachrichtigung gesendet werden soll.
   text_select_project_modules: 'Bitte wählen Sie die Module aus, die in diesem Projekt
     aktiviert sein sollen:'
-  text_status_changed_by_changeset: Status geändert durch Changeset %{value}.
+  text_status_changed_by_changeset: Angewendet in Changeset %{value}.
   text_subprojects_destroy_warning: Dessen Unterprojekte (%{value}) werden ebenfalls
     gelöscht.
-  text_time_logged_by_changeset: Status geändert durch Changeset %{value}.
+  text_time_logged_by_changeset: Angewendet in Changeset %{value}.
   text_tip_work_package_begin_day: Arbeitspaket, das an diesem Tag beginnt
   text_tip_work_package_begin_end_day: Arbeitspaket, das an diesem Tag beginnt und
     endet
@@ -1573,7 +1574,7 @@ de:
     dates_are_calculated_based_on_sub_elements: Daten wurden auf Basis der Kind-Elemente
       berechnet.
     delete_all: Alle löschen
-    delete_thing: Löschen
+    delete_thing: Lösche
     duration: Dauer
     duration_days:
       one: 1 Tag
@@ -1619,7 +1620,7 @@ de:
         default: Standard
       column:
         assigned_to: Zugewiesen an
-        type: Typ
+        type: Art
         due_date: Abschlussdatum
         name: Name
         status: Status
@@ -1645,7 +1646,7 @@ de:
       grouping_hide_group: Gruppe "%{group}" verstecken
       grouping_one: Erstes Gruppierungskriterium
       grouping_one_phrase: Ist ein Unterprojekt von
-      grouping_other: Sonstiges
+      grouping_other: Andere
       grouping_two: Zweites Gruppierungskriterium
       grouping_two_phrase: Hat eine Abhängigkeit zu Projekttyp
       hide_chart: Diagramm ausblenden
@@ -1737,8 +1738,8 @@ de:
     without_project_type: Ohne Projekt-Typ
     you_are_viewing_the_selected_timeline: Sie sehen den ausgewählten Zeitplan-Report
     zoom:
-      in: heranzoomen
-      out: herauszoomen
+      in: Mehr Details
+      out: Weniger Details
       days: Tage
       weeks: Wochen
       months: Monate

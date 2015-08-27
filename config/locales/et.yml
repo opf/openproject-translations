@@ -43,15 +43,15 @@ et:
     attributes:
       attachment:
         downloads: Allalaaditud failid
-        file: Fail
-        filename: Fail
+        file: Manus
+        filename: Manus
         filesize: Suurus
       auth_source:
         account: Konto
         attr_firstname: Eesnimi
         attr_lastname: Perekonnanimi
         attr_login: Kasutajanimi
-        attr_mail: E-post
+        attr_mail: E-posti aadress
         base_dn: Põhiline domeeninimi
         host: Host
         onthefly: Kasutaja loomine käigu pealt
@@ -65,7 +65,7 @@ et:
         is_filter: Kasutatakse filtrina
         is_required: Nõutav
         max_length: Maksimaalne pikkus
-        min_length: Minimaalne pikkus
+        min_length: Lühima lubatud parooli pikkus
         possible_values: Võimalikud väärtused
         regexp: Regulaaravaldis
         searchable: Otsitav
@@ -104,7 +104,7 @@ et:
         activity: Tegevus
         hours: Tunnid
         spent_on: Kuupäev
-        type: Liik
+        type: Tüüp
       type:
         is_in_roadmap: Kuva teemasid tegevusplaani graafikus
         in_aggregation: Kuva teemasid koondvaates
@@ -117,7 +117,7 @@ et:
         last_login_on: Last login
         mail_notification: Eposti märguandmed
         new_password: Uus parool
-        password_confirmation: Kinnitamine
+        password_confirmation: Kinnitus
         force_password_change: Sunni parooli vahetada järgmisel sisselogimisel
       user_preference:
         comments_sorting: Kuva kommentaare
@@ -165,8 +165,8 @@ et:
         responsible: Vastutaja
         spent_time: Kulutatud aeg
         subproject: Alamprojekt
-        time_entries: Logi aeg
-        type: Liik
+        time_entries: Ajakulu
+        type: Tüüp
         watcher: Jälgija
     errors:
       messages:
@@ -245,10 +245,9 @@ et:
               numeric: arvuline (nt 1, 2, 3)
               special: erimärk (nt %, &)
               reused:
-                one: has been used before. Please choose one that is different from
-                  your last one.
-                other: has been used before. Please choose one that is different from
-                  your last %{count}.
+                one: Vali uus parool, mis erineb eelmisest paroolist.
+                other: Vali uus parool, mis erineb eelmiselt kasutatud %{count}-st
+                  paroolist.
               match:
                 confirm: Confirm new password.
                 description: "'Password confirmation' should match the input in the
@@ -259,10 +258,10 @@ et:
       template:
         body: 'Kontrolli järgnevad väljad:'
         header:
-          one: 1 error prohibited this %{model} from being saved
-          other: "%{count} errors prohibited this %{model} from being saved"
+          one: 1 viga ei võimaldanud selle %{model} salvestamist
+          other: "%{count} viga ei võimaldanud selle %{model} salvestamist"
     models:
-      attachment: Fail
+      attachment: Manus
       board: Foorum
       comment: Kommentaar
       custom_field: Lisaväli
@@ -275,9 +274,9 @@ et:
       project: Projekt
       query: Kohandatud päring
       role:
-        one: Role
-        other: Roles
-      type: Liik
+        one: Roll
+        other: Rollid
+      type: Tüüp
       planning_element: Planeerimise osa
       project_type: Projekti tüüp
       user: Kasutaja
@@ -307,7 +306,7 @@ et:
     created_on: Loodud
     custom_values: Lisaväljad
     default_columns: Vaikimisi veerud
-    description: Kirjeldus
+    description: Teave
     display_sums: Kuva summasid
     due_date: Tähtaeg
     estimated_hours: Eeldatav ajakulu
@@ -328,13 +327,13 @@ et:
     priority: Prioriteet
     project: Projekt
     responsible: Vastutaja
-    role: Role
+    role: Roll
     start_date: Alguskuupäev
     status: Olek
     subject: Teema
     summary: Kokkuvõte
     title: Pealkiri
-    type: Liik
+    type: Tüüp
     updated_at: Uuendatud
     updated_on: Uuendatud
     user: Kasutaja
@@ -352,7 +351,7 @@ et:
   button_change_password: Muuda parool
   button_check_all: Märgi kõik
   button_clear: Tühjenda
-  button_collapse_all: Ahenda kõik
+  button_collapse_all: Koonda kõik
   button_configure: Seadista
   button_copy: Kopeeri
   button_copy_and_follow: Kopeeri ja järgne
@@ -364,10 +363,10 @@ et:
   button_duplicate: Duplitseeri
   button_edit: Muuda
   button_edit_associated_wikipage: Muuda seotud vikilehte "%{page_title}"
-  button_expand_all: Voldi kõik lahti
-  button_list: Listi
+  button_expand_all: Laienda kõik
+  button_list: Nimistu
   button_lock: Lukusta
-  button_log_time: Logi aeg
+  button_log_time: Ajakulu
   button_login: Logi sisse
   button_move: Tõsta
   button_move_and_follow: Tõsta ja järgne
@@ -379,12 +378,12 @@ et:
   button_rollback: Pöördu tagasi sellesse versiooni
   button_save: Salvesta
   button_show: Kuva
-  button_sort: Järjesta
+  button_sort: Sorteeri
   button_submit: Sisesta
   button_test: Testi
   button_unarchive: Paki arhiiv lahti
-  button_uncheck_all: Nulli valik
-  button_unlock: Ava lukust
+  button_uncheck_all: Tühjenda valik
+  button_unlock: Aktiveeri
   button_unwatch: "Ära jälgi"
   button_update: Uuenda
   button_view: Kuva
@@ -463,39 +462,39 @@ et:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: about 1 hour
-        other: about %{count} hours
+        one: umbes 1 tund
+        other: umbes %{count} tundi
       about_x_months:
-        one: about 1 month
-        other: about %{count} months
+        one: umbes 1 kuu
+        other: umbes %{count} kuud
       about_x_years:
-        one: about 1 year
-        other: about %{count} years
+        one: umbes 1 aasta
+        other: umbes %{count} aastat
       almost_x_years:
-        one: almost 1 year
-        other: almost %{count} years
+        one: peaaegu 1 aasta
+        other: peaaegu %{count} aastat
       half_a_minute: pool minutit
       less_than_x_minutes:
-        one: less than a minute
-        other: less than %{count} minutes
+        one: vähem kui minut
+        other: vähem kui %{count} minutit
       less_than_x_seconds:
-        one: less than 1 second
-        other: less than %{count} seconds
+        one: vähem kui sekund
+        other: vähem kui %{count} sekundit
       over_x_years:
-        one: over 1 year
-        other: over %{count} years
+        one: rohkem kui aasta
+        other: rohkem kui %{count} aastat
       x_days:
-        one: 1 day
-        other: "%{count} days"
+        one: 1 päev
+        other: "%{count} päeva"
       x_minutes:
-        one: 1 minute
-        other: "%{count} minutes"
+        one: 1 minut
+        other: "%{count} minutit"
       x_months:
-        one: 1 month
-        other: "%{count} months"
+        one: 1 kuu
+        other: "%{count} kuud"
       x_seconds:
-        one: 1 second
-        other: "%{count} seconds"
+        one: 1 sekund
+        other: "%{count} sekundit"
     units:
       hour:
         one: hour
@@ -730,7 +729,7 @@ et:
   label_comment_plural: Kommentaarid
   label_commits_per_author: Sissekandeid autori kohta
   label_commits_per_month: Sissekandeid kuu kohta
-  label_confirmation: Kinnitamine
+  label_confirmation: Kinnitus
   label_contains: sisaldab
   label_content: Sisu
   label_copied: kopeeritud
@@ -826,7 +825,7 @@ et:
   label_work_package_priority_updated: Teema prioriteet uuendatud
   label_work_package_status_new: Uus olek
   label_work_package_status_plural: Teemade olekud
-  label_work_package_tracking: Teema jälgimine
+  label_work_package_tracking: Teemasid jälgida
   label_work_package_updated: Teema uuendatud
   label_work_package_view_all: Kuva kõiki teemasid
   label_work_package_view_all_assigned_to_me: Kuva kõik minule kuuluvad teemad
@@ -847,7 +846,7 @@ et:
   label_ldap_authentication: LDAP autentimine
   label_less_or_equal: "<="
   label_less_than_ago: vähem kui päev tagasi
-  label_list: Listi
+  label_list: Nimistu
   label_loading: Laadimine...
   label_logged_as: Logitud sisse kui
   label_login: Logi sisse
@@ -902,7 +901,7 @@ et:
   label_open_menu: Ava menüü
   label_open_work_packages: avatud
   label_open_work_packages_plural: avatud
-  label_optional_description: Kirjeldus
+  label_optional_description: Teave
   label_options: Valikud
   label_overall_activity: "Üldine tegevuste ajalugu"
   label_overall_spent_time: Kokku kulutatud aeg
@@ -983,7 +982,7 @@ et:
   label_send_test_email: Saada kontrollkiri
   label_settings: Seaded
   label_show_completed_versions: Näita lõpetatud versioone
-  label_sort: Järjesta
+  label_sort: Sorteeri
   label_sort_by: Sorteeri %{value} järgi
   label_sorted_by: Sorteeritud %{value} järgi
   label_sort_higher: Nihuta üles
@@ -1006,7 +1005,7 @@ et:
   label_table_of_contents: Sisukord
   label_tag: Silt
   label_text: Pikk tekst
-  label_theme: Teema
+  label_theme: Visuaalne teema
   label_this_month: sel kuul
   label_this_week: sel nädalal
   label_this_year: sel aastal
@@ -1069,24 +1068,24 @@ et:
   label_workflow_plural: Töövood
   label_workflow_summary: Kokkuvõte
   label_x_closed_work_packages_abbr:
-    one: 1 closed
-    other: "%{count} closed"
+    one: 1 suletud
+    other: "%{count} suletud"
     zero: 0 closed
   label_x_comments:
-    one: 1 comment
-    other: "%{count} comments"
+    one: 1 kommentaar
+    other: "%{count} kommentaari"
     zero: no comments
   label_x_open_work_packages_abbr:
-    one: 1 open
-    other: "%{count} open"
+    one: 1 avatud
+    other: "%{count} avatud"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
-    one: 1 open / %{total}
-    other: "%{count} open / %{total}"
+    one: 1 avatud %{total}-st
+    other: "%{count} avatud %{total}-st"
     zero: 0 open / %{total}
   label_x_projects:
-    one: 1 project
-    other: "%{count} projects"
+    one: 1 projekt
+    other: "%{count} projekti"
     zero: no projects
   label_year: Aasta
   label_yesterday: eile
@@ -1183,8 +1182,8 @@ et:
   notice_work_package_done_ratios_updated: Teema edenemise astmed on uuendatud.
   notice_locking_conflict: Teine kasutaja uuendas vahepeal neid andmeid.
   notice_locking_conflict_additional_information: Uuendused on tehtud %{users} poolt.
-  notice_locking_conflict_reload_page: Palun vii oma muudatused sisse uue, toimetatud
-    leheküljele  -- laadi lehekülg uuesti ja sisesta oma muudatused uuesti.
+  notice_locking_conflict_reload_page: Palun laadi lehekülg uuesti, kontrolli tehtud
+    muudatusi ja püüa neid uuesti salvestada.
   notice_no_principals_found: "Ühtki kasutajat ega gruppi ei leitud."
   notice_bad_request: Vigane päring.
   notice_not_authorized: Sul ei ole sellele lehele ligipääsuks õigusi.
@@ -1215,8 +1214,8 @@ et:
         format: "%n %u"
         units:
           byte:
-            one: Byte
-            other: Bytes
+            one: Bait
+            other: Baiti
           gb: GB
           kb: KB
           mb: MB
@@ -1291,11 +1290,11 @@ et:
   project_module_activity: Tegevus
   project_module_boards: Foorumid
   project_module_calendar: Kalender
-  project_module_work_package_tracking: Teema jälgimine
+  project_module_work_package_tracking: Teemasid jälgida
   project_module_news: Uudised
   project_module_repository: Hoidla
   project_module_time_tracking: Ajakulu arvestus
-  project_module_timelines: Ajakavad
+  project_module_timelines: Perioodid
   project_module_wiki: Viki
   query_fields:
     assigned_to_role: Omistatud rollile
@@ -1364,7 +1363,7 @@ et:
     kasutamine on keelatud
   setting_password_days_valid: Uue parooli kohustuslik määramine antud arvu päevade
     järel (null on igavik)
-  setting_password_min_length: Minimaalne pikkus
+  setting_password_min_length: Lühima lubatud parooli pikkus
   setting_password_min_adhered_rules: Minimaalne nõutav erineva tähemärgiklassi kasutamine
     paroolis
   setting_per_page_options: Kuvatud tulemuste arv lehe kohta
@@ -1386,7 +1385,7 @@ et:
     and user authorization for accessing repositories.
   setting_text_formatting: Tekstivormindamise abi
   setting_time_format: Aja esitusviis
-  setting_ui_theme: Teema
+  setting_ui_theme: Visuaalne teema
   setting_user_may_override_theme: Kasutajad võivad valida endale meeldiva visuaalse
     teema
   setting_accessibility_mode_for_anonymous: Võimalda külalistel kasutada hõlbustus-
@@ -1522,12 +1521,12 @@ et:
       project_types: Projekti tüübid
     project_menu:
       planning_elements: Planeerimise osa
-      project_associations: Projekti sõltuvused
+      project_associations: Sõltuvused
       reportings: Olekute aruandlused
-      reports: Ajakavade aruandlused
-      timelines: Ajakavad
+      reports: Perioodi aruanded
+      timelines: Perioodid
     add_project_association: Lisa sõltuvussuhe
-    associations: Projekti sõltuvused
+    associations: Sõltuvused
     board_could_not_be_saved: "(?) ei saa salvestada"
     button_delete_all: Kustuta kõik
     change: Muudatus planeerimises
@@ -1541,8 +1540,8 @@ et:
     delete_thing: Kustuta
     duration: kestus
     duration_days:
-      one: 1 day
-      other: "%{count} days"
+      one: 1 päev
+      other: "%{count} päeva"
     edit_color: Muuda värvi
     edit_project_type: Muuda projekti tüüpi
     edit_thing: Muuda
@@ -1565,8 +1564,8 @@ et:
         timeframe_end: 'Perioodi lõpp '
         compare_to_relative: 'Suhtelise võrdluse väärtus '
         compare_to_absolute: 'Absoluutse võrdluse väärtus '
-        planning_element_time_relative_one: 'Teatud perioodis olevate teemade algus '
-        planning_element_time_relative_two: 'Teatud perioodis olevate teemade lõpp '
+        planning_element_time_relative_one: 'Teatud perioodis olevate teemade algus  '
+        planning_element_time_relative_two: 'Teatud perioodis olevate teemade lõpp  '
         planning_element_time_absolute_one: 'Teatud perioodis olevate teemade algus  '
         planning_element_time_absolute_two: 'Teatud perioodis olevate teemade lõpp  '
       sort:
@@ -1578,7 +1577,7 @@ et:
         default: vaikimisi
       column:
         assigned_to: Määratud tegija
-        type: Liik
+        type: Tüüp
         due_date: Lõppkuupäev
         name: Nimi
         status: Olek
@@ -1685,8 +1684,8 @@ et:
       Eelmised aruande olekud kustutatakse ka ära.
     start: Algus
     timeline: Perioodi aruanne
-    timelines: Ajakavade aruandlused
-    settings: Ajakavad
+    timelines: Perioodi aruanded
+    settings: Perioodid
     vertical_work_package: Vertikaalsed teemad
     without_project_type: Ilma projektitüübita
     you_are_viewing_the_selected_timeline: Sa näed valitud perioodi aruannet
@@ -1714,8 +1713,8 @@ et:
       teel)
     blocked: ajutiselt blokeeritud
     blocked_num_failed_logins:
-      one: locked temporarily (one failed login attempt)
-      other: locked temporarily (%{count} failed login attempts)
+      one: ajutiselt blokeeritud (üks ebaõnnestunud sisselogimise katse)
+      other: ajutiselt blokeeritud (%{count} ebaõnnestunud sisselogimise katset)
     deleted: Kustutatud kasutaja
     error_status_change_failed: 'Kasutaja oleku muutmine nurjus järgmiste tõrgete
       tõttu: %{errors}'
@@ -1724,7 +1723,7 @@ et:
     registered: registreeritud
     reset_failed_logins: Lähtesta ebaõnnestunud sisselogimised
     status_user_and_brute_force: "%{user} ja %{brute_force}"
-    unlock: Ava lukust
+    unlock: Aktiveeri
     unlock_and_reset_failed_logins: Aktiveeri ja lähtesta ebaõnnestunud sisselogimised
     no_login: This user authenticates through login by password. Since it is disabled,
       they cannot log in.
