@@ -84,7 +84,6 @@ hu:
       member:
         roles: Szerepkörök
       project:
-        homepage: Weboldal
         identifier: Azonosító
         work_packages: Munka csomagok
         parent: Alprojekt
@@ -1330,7 +1329,29 @@ hu:
     autofetch_information: |
       Check this if you want repositories to be updated automatically when accessing the repository module page.
       This encompasses the retrieval of commits from the repository and refreshing the required disk storage.
-    checkout_instructions: Checkout instructions
+    checkout:
+      access:
+        readwrite: Read + Write
+        read: Read-only
+        none: No checkout access, you may only view the repository through this application.
+      access_permission: 'Your permissions on this repository:'
+      url: Checkout URL
+      base_url_text: |
+        The base URL to use for generating checkout URLs (e.g., https://myserver.example.org/repos/).
+        Note: The base URL is only used for rewriting checkout URLs in managed repositories. Other repositories are not altered.
+      default_instructions:
+        git: |
+          The data contained in this repository can be downloaded to your computer with Git using the checkout information below.
+          Please consult the documentation of Git if you need more information on the checkout procedure and available clients.
+        subversion: |
+          The data contained in this repository can be downloaded to your computer with Subversion using the checkout information below.
+          Please consult the documentation of Subversion if you need more information on the checkout procedure and available clients.
+      enable_instructions_text: Displays checkout instructions defined below on all
+        repository-related pages.
+      instructions: Checkout instructions
+      text_instructions: This text is displayed alongside the checkout URL for guidance
+        on how to check out the repository.
+      not_available: Checkout instructions are not available for this repository
     create_managed_delay: 'Please note: The repository is managed, it is created asynchronously
       on the disk and will be available shortly.'
     create_successful: The repository has been registered.
@@ -1349,8 +1370,8 @@ hu:
       empty_repository: The repository exists, but is empty. It does not contain any
         revisions yet.
       exists_on_filesystem: The repository directory exists already on filesystem.
-      filesystem_access_failed: 'An error occurred while creating the repository on
-        filesystem: %{message}.'
+      filesystem_access_failed: 'An error occurred while accessing the repository
+        on filesystem: %{message}.'
       not_manageable: This repository vendor cannot be managed by OpenProject.
       path_permission_failed: 'An error occurred trying to create the following path:
         %{path}. Please ensure that OpenProject may write to that folder.'
@@ -1487,6 +1508,9 @@ hu:
   setting_repository_authentication_caching_enabled: A hitelesítési kérelem gyorsítótárazásának
     engedélyezése a vezérlő szoftver verzióban
   setting_repository_storage_cache_minutes: Repository disk size cache
+  setting_repository_checkout_display: Show checkout instructions
+  setting_repository_checkout_base_url: Checkout base URL
+  setting_repository_checkout_text: Checkout instruction text
   setting_repository_log_display_limit: A felülvizsgálatok maximális száma  megjelenitve
     a naplófájlban
   setting_rest_api_enabled: Engedélyezi a REST-alapú webszolgáltatást
@@ -1558,6 +1582,8 @@ hu:
   text_work_package_category_reassign_to: A munkacsomag ismételt hozzárendelése ehhez
     a kategóriához
   text_work_package_updated: Munkacsomag %{id} jelentés %{author} által készitve.
+  text_work_package_watcher_added: You have been added as a watcher to Work package
+    %{id} by %{watcher_setter}.
   text_work_packages_destroy_confirmation: Biztosan törli a kijelölt munkacsomagot?
   text_work_packages_ref_in_commit_messages: Viszonyítandó és elintézendő munkacsomagok
     a véglegesítési üzenetekben
@@ -1572,6 +1598,7 @@ hu:
   text_journal_deleted_with_diff: "%{label} törölt (%{link})"
   text_journal_set_to: "%{label} beállított %{value}"
   text_journal_set_with_diff: "%{label} beállított (%{link})"
+  text_latest_note: 'The latest comment is: %{note}'
   text_length_between: "%{min} és %{max} karakter közötti hosszúságú."
   text_line_separated: A többszörös érték adás megengedett (minden érték külön sorban).
   text_load_default_configuration: Az alapértelmezett konfiguráció betöltése
@@ -1579,6 +1606,7 @@ hu:
   text_no_configuration_data: Szerepkörök, típusok, a munkacsomag állapotok és a munkafolyamatok
     nincsenek beállítva. Erősen ajánlott, az alapértelmezett konfiguráció betöltése.
     Akkor képes lesz arra, hogy módosítsa.
+  text_no_notes: There are no comments available for this work package.
   text_notice_too_many_values_are_inperformant: 'Megjegyzés: Az oldalanként több mint
     100 elem megjelenítésekor az oldal betöltési ideje  növekedhet.'
   text_own_membership_delete_confirmation: "Értesítem arról, hogy eltávolít néhány
@@ -1892,6 +1920,7 @@ hu:
       code_403: You are not authorized to access this resource.
       code_404: The requested resource could not be found.
       code_409: Couldn't update the resource because of conflicting modifications.
+      code_500: An internal error has occured.
       invalid_content_type: Expected CONTENT-TYPE to be '%{content_type}' but got
         '%{actual}'.
       invalid_format: 'Invalid format for property ''%{property}'': Expected format

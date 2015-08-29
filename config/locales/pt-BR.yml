@@ -85,7 +85,6 @@ pt-BR:
       member:
         roles: Papéis
       project:
-        homepage: Página Inicial
         identifier: Identificador
         work_packages: Pacotes de Trabalho
         parent: Subprojeto de
@@ -1332,7 +1331,33 @@ pt-BR:
     autofetch_information: Marque isto se quiser que os repositórios sejam atualizados
       automaticamente ao acessar a página do módulo de repositório. Isto engloba a
       recuperação de commits do repositório e a atualização do espaço em disco necessário.
-    checkout_instructions: Instruções de check-out
+    checkout:
+      access:
+        readwrite: Leitura e gravação
+        read: Somente leitura
+        none: Sem acesso de check-out, você só pode exibir o repositório através desta
+          aplicação.
+      access_permission: 'Suas permissões neste repositório:'
+      url: URL de check-out
+      base_url_text: "A raiz da URL a ser usada para gerar URLs de check-out (ex.:
+        https://myserver.example.org/repos/). \nNota: A raiz da URL é usada somente
+        para reescrever URLs de check-out em repositórios gerenciados. Outros repositórios
+        não são alterados.\n"
+      default_instructions:
+        git: "Os dados contidos neste repositório podem ser baixados para seu computador
+          com Git usando as informações de check-out abaixo. \nSe precisar de mais
+          informações sobre o procedimento de check-out e os clientes disponíveis,
+          consulte a documentação do Git.\n"
+        subversion: "Os dados contidos neste repositório podem ser baixados para seu
+          computador com Subversion usando as informações de check-out abaixo. \nSe
+          precisar de mais informações sobre o procedimento de check-out e os clientes
+          disponíveis, consulte a documentação do Subversion.\n"
+      enable_instructions_text: Exibe instruções de check-out definidas abaixo em
+        todas as páginas relacionadas ao repositório.
+      instructions: Instruções de check-out
+      text_instructions: Este texto é exibido junto com a URL de check-out para orientações
+        sobre como efetuar o check-out do repositório.
+      not_available: Instruções de check-out não estão disponíveis para este repositório
     create_managed_delay: 'Atenção: O repositório é gerenciado, ele será criado de
       forma assíncrona no disco e estará disponível em breve.'
     create_successful: O repositório foi registrado.
@@ -1351,7 +1376,7 @@ pt-BR:
       empty_repository: O repositório existe, mas está vazio. Ele ainda não contém
         quaisquer revisões.
       exists_on_filesystem: O diretório do repositório já existe no sistema de arquivos.
-      filesystem_access_failed: 'Ocorreu um erro ao criar o repositório no sistema
+      filesystem_access_failed: 'Ocorreu um erro ao acessar o repositório no sistema
         de arquivos: %{message}.'
       not_manageable: Este tipo de repositório não pode ser gerenciado pelo OpenProject.
       path_permission_failed: 'Ocorreu um erro ao tentar criar o seguinte caminho:
@@ -1493,6 +1518,9 @@ pt-BR:
   setting_repository_authentication_caching_enabled: Ativar armazenamento em cache
     para solicitação de autenticação do software de controle de versão
   setting_repository_storage_cache_minutes: Tamanho do cache em disco para o repositório
+  setting_repository_checkout_display: Mostrar instruções de check-out
+  setting_repository_checkout_base_url: URL raiz de check-out
+  setting_repository_checkout_text: Texto de instrução de check-out
   setting_repository_log_display_limit: Número máximo de revisões exibido no arquivo
     de log
   setting_rest_api_enabled: Habilitar serviço REST
@@ -1561,6 +1589,8 @@ pt-BR:
   text_work_package_category_reassign_to: Reatribuir pacotes de trabalho para esta
     categoria
   text_work_package_updated: Pacote de trabalho %{id} foi atualizado por %{author}.
+  text_work_package_watcher_added: Você foi adicionado como um observador do pacote
+    de trabalho %{id} por %{watcher_setter}.
   text_work_packages_destroy_confirmation: Tem certeza que deseja excluir o(s) pacote(s)
     de trabalho selecionado(s)?
   text_work_packages_ref_in_commit_messages: Referenciando e corrigindo pacotes de
@@ -1576,6 +1606,7 @@ pt-BR:
   text_journal_deleted_with_diff: "%{label} excluído (%{link})"
   text_journal_set_to: "%{label} definido como %{value}"
   text_journal_set_with_diff: "%{label} definido (%{link})"
+  text_latest_note: 'O comentário mais recente é: %{note}'
   text_length_between: Tamanho entre %{min} e %{max} caracteres.
   text_line_separated: Vários valores permitidos (uma linha para cada valor).
   text_load_default_configuration: Carregar a configuração padrão
@@ -1583,6 +1614,7 @@ pt-BR:
   text_no_configuration_data: Papéis, tipos, situações dos pacotes de trabalho e fluxo
     de trabalho não foram configurados ainda. É altamente recomendável carregar a
     configuração padrão. Uma vez carregada, você será capaz de modificá-la.
+  text_no_notes: Não há comentários disponíveis para este pacote de trabalho.
   text_notice_too_many_values_are_inperformant: 'Nota: Exibição de mais de 100 itens
     por página pode aumentar o tempo de carregamento da página.'
   text_own_membership_delete_confirmation: Você está prestes a remover algumas ou
@@ -1898,6 +1930,7 @@ pt-BR:
       code_403: Você não está autorizado a acessar este recurso.
       code_404: O recurso solicitado não pôde ser encontrado.
       code_409: Não foi possível atualizar o recurso devido a modificações conflitantes.
+      code_500: An internal error has occured.
       invalid_content_type: CONTENT-TYPE esperado '%{content_type}' mas '%{actual}'
         encontrado.
       invalid_format: 'Formato inválido para a propriedade ''%{property}'': Formato
