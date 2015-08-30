@@ -85,7 +85,6 @@ ru:
       member:
         roles: "Роли"
       project:
-        homepage: "Главная страница"
         identifier: "Идентификатор"
         work_packages: "Задачи"
         parent: "Подпроект"
@@ -178,7 +177,7 @@ ru:
         cant_link_a_work_package_with_a_descendant: "Пакет работ не может быть связан
           с одной из своих подзадач."
         circular_dependency: "Это отношение создаст циклическую зависимость."
-        confirmation: doesn't match %{attribute}.
+        confirmation: "не совпадает со значением поля %{attribute}."
         empty: "не может быть пустым."
         equal_to: "должен быть равен %{count}."
         even: "должно быть четным."
@@ -189,51 +188,49 @@ ru:
         greater_than_or_equal_to: "должен быть больше или равно %{count}."
         smaller_than_or_equal_to_max_length: "должно быть меньше или равно максимальной
           длине."
-        greater_than_start_date: must be greater than start date.
-        inclusion: is not set to one of the allowed values.
-        invalid: is invalid.
-        less_than: must be less than %{count}.
-        less_than_or_equal_to: must be less than or equal to %{count}.
-        not_a_date: is not a date.
-        not_a_number: is not a number.
-        not_an_integer: is not an integer.
-        not_same_project: doesn't belong to the same project.
-        odd: must be odd.
-        taken: has already been taken.
-        too_long: is too long (maximum is %{count} characters).
-        too_short: is too short (minimum is %{count} characters).
-        wrong_length: is the wrong length (should be %{count} characters).
-        after: must be after %{date}.
-        after_or_equal_to: must be after or equal to %{date}.
-        before: must be before %{date}.
-        before_or_equal_to: must be before or equal to %{date}.
-        could_not_be_copied: could not be (fully) copied.
+        greater_than_start_date: "должно быть позднее, чем дата начала."
+        inclusion: "не задано ни одно из допустимых значений."
+        invalid: "неверно."
+        less_than: "должно быть меньше, чем %{count}."
+        less_than_or_equal_to: "должно быть меньше или равно %{count}."
+        not_a_date: "не является датой."
+        not_a_number: "не является числом."
+        not_an_integer: "не является целым числом."
+        not_same_project: "не принадлежит тому же проекту."
+        odd: "должно быть нечетным."
+        taken: "уже принято."
+        too_long: "слишком длинно (максимум — %{count} знаков)."
+        too_short: "слишком коротко (минимум — %{count} знаков)."
+        wrong_length: "неправильная длина (должно быть %{count} знаков)."
+        after: "должно быть после %{date}."
+        after_or_equal_to: "должна быть после или ровно %{date}."
+        before: "должны быть до %{date}."
+        before_or_equal_to: "должны быть до или ровно %{date}."
+        could_not_be_copied: "не может быть скопировано (полностью)."
       models:
         project_association:
-          identical_projects: Dependency cannot be created between one project and
-            itself.
-          project_association_not_allowed: does not allow associations.
+          identical_projects: "У проекта не можеть быть зависимости с самим собой."
+          project_association_not_allowed: "не разрешает ассоциаций."
         repository:
-          not_available: SCM vendor is not available
-          not_whitelisted: is not allowed by the configuration.
-          no_directory: is not a directory.
+          not_available: SCM поставщик не доступен
+          not_whitelisted: "не допускается конфигурацией."
+          no_directory: "не является каталогом."
         work_package:
           is_not_a_valid_target_for_time_entries: "Группа работ #%{id} не является
             допустимым объектом переназначение времени записи."
           attributes:
             due_date:
-              not_start_date: is not on start date, although this is required for
-                milestones.
+              not_start_date: "не дата начала, но нужна в ключевые моменты."
             parent_id:
-              cannot_be_milestone: cannot be a milestone.
-              cannot_be_in_another_project: cannot be in another project.
-              not_a_valid_parent: is invalid.
-              does_not_exist: does not exist.
+              cannot_be_milestone: "не может служить ключевым моментом."
+              cannot_be_in_another_project: "не может быть в другом проекте."
+              not_a_valid_parent: "неверно."
+              does_not_exist: "не существует."
             status_id:
-              status_transition_invalid: is invalid because no valid transition exists
-                from old to new status for the current user's roles.
+              status_transition_invalid: "является недопустимым, потому что нет правильного
+                перехода от старого этапа к новому для текущих ролей пользователя."
             priority_id:
-              only_active_priorities_allowed: needs to be active.
+              only_active_priorities_allowed: "требуется быть активным."
             category:
               only_same_project_categories_allowed: "Категория пакета работ должна
                 быть в рамках того же проекта  как и пакет работ."
@@ -244,23 +241,23 @@ ru:
         user:
           attributes:
             password:
-              weak: 'must contain characters of the following classes (at least %{min_count}
-                of %{all_count}): %{rules}.'
+              weak: "должен содержать символы следующих классов (по крайней мере %{min_count}
+                из %{all_count}): %{rules}."
               lowercase: "нижний регистр (например «а»)"
               uppercase: прописные буквы (например, "A")
               numeric: цифры (например "1")
               special: спецсимволы (например, "%")
               reused:
-                one: has been used before. Please choose one that is different from
-                  your last one.
-                other: has been used before. Please choose one that is different from
-                  your last %{count}.
-                few: has been used before. Please choose one that is different from
-                  your last %{count}.
+                one: "использовался ранее. Пожалуйста, выберите отличный от вашего
+                  последнего."
+                other: "использовался ранее. Пожалуйста, выберите отличный от ваших
+                  последних %{count}."
+                few: "использовался ранее. Пожалуйста, выберите отличный от ваших
+                  последних %{count}."
               match:
                 confirm: "Подтвердите новый пароль."
-                description: "'Password confirmation' should match the input in the
-                  'New password' field."
+                description: "«Подтвержденный пароль» должен совпадать с введенным
+                  «новым паролем»."
         member:
           principal_blank: "Пожалуйста, выберите по крайней мере одного пользователя
             или группу."
@@ -268,9 +265,9 @@ ru:
       template:
         body: "Пожалуйста, проверьте следующие поля:"
         header:
-          one: 1 error prohibited this %{model} from being saved
-          other: "%{count} errors prohibited this %{model} from being saved"
-          few: "%{count} errors prohibited this %{model} from being saved"
+          one: 1 ошибка препятствует сохранению %{model}
+          other: "%{count} ошибок препятствует сохранению %{model}"
+          few: "%{count} ошибок препятствует сохранению %{model}"
     models:
       attachment: "Файл"
       board: "Форум"
@@ -284,9 +281,9 @@ ru:
       project: "Проект"
       query: "Запрос пользователя"
       role:
-        one: Role
-        other: Roles
-        few: Roles
+        one: "Роль"
+        other: "Роли"
+        few: "Роли"
       type: "Тип"
       project_type: "Тип проекта"
       user: "Пользователь"
@@ -307,7 +304,7 @@ ru:
     attachments: "Вложения"
     author: "Автор"
     base: "Общая ошибка:"
-    blocks_ids: IDs of blocked work packages
+    blocks_ids: "Идентификаторы заблокированных рабочих пакетов"
     category: "Категория"
     comment: "Комментарий"
     comments: "Комментарий"
@@ -471,55 +468,55 @@ ru:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: about 1 hour
-        other: about %{count} hours
-        few: about %{count} hours
+        one: "около часа"
+        other: "около %{count} часов"
+        few: "около %{count} часов"
       about_x_months:
-        one: about 1 month
-        other: about %{count} months
-        few: about %{count} months
+        one: "около месяца"
+        other: "около %{count} месяцев"
+        few: "около %{count} месяцев"
       about_x_years:
-        one: about 1 year
-        other: about %{count} years
-        few: about %{count} years
+        one: "около года"
+        other: "примерно %{count} лет"
+        few: "примерно %{count} года"
       almost_x_years:
-        one: almost 1 year
-        other: almost %{count} years
-        few: almost %{count} years
+        one: "почти год"
+        other: "почти %{count} лет"
+        few: "почти %{count} года"
       half_a_minute: "полминуты"
       less_than_x_minutes:
-        one: less than a minute
-        other: less than %{count} minutes
-        few: less than %{count} minutes
+        one: "менее минуты"
+        other: "менее %{count} минут"
+        few: "менее %{count} минуты"
       less_than_x_seconds:
-        one: less than 1 second
-        other: less than %{count} seconds
-        few: less than %{count} seconds
+        one: "меньше секунды"
+        other: "меньше чем за %{count} секунд"
+        few: "меньше чем за %{count} секунды"
       over_x_years:
-        one: over 1 year
-        other: over %{count} years
-        few: over %{count} years
+        one: "более года"
+        other: "более %{count} лет"
+        few: "более %{count} лет"
       x_days:
-        one: 1 day
-        other: "%{count} days"
-        few: "%{count} days"
+        one: 1 день
+        other: "%{count} дней"
+        few: "%{count} дня"
       x_minutes:
-        one: 1 minute
-        other: "%{count} minutes"
-        few: "%{count} minutes"
+        one: 1 минута
+        other: "%{count} минут"
+        few: "%{count} минуты"
       x_months:
-        one: 1 month
-        other: "%{count} months"
-        few: "%{count} months"
+        one: 1 месяц
+        other: "%{count} месяцев"
+        few: "%{count} месяца"
       x_seconds:
-        one: 1 second
-        other: "%{count} seconds"
-        few: "%{count} seconds"
+        one: 1 секунда
+        other: "%{count} секунд"
+        few: "%{count} секунды"
     units:
       hour:
-        one: hour
-        other: hours
-        few: hours
+        one: "час"
+        other: "часов"
+        few: "часа"
   default_activity_development: "Разработка"
   default_activity_management: "Управление"
   default_activity_other: "Другие"
@@ -641,11 +638,11 @@ ru:
   error_scm_annotate: "Статья не существует или не может быть описана."
   error_scm_command_failed: "Произошла ошибка при попытке доступа к хранилищу: %{value}"
   error_scm_not_found: "Ни статья, ни ее исправленная версия в репозитории не найдены."
-  error_unable_delete_status: The work package status cannot be deleted since it is
-    used by at least one work package.
-  error_unable_delete_default_status: Unable to delete the default work package status.
-    Please select another default work package status before deleting the current
-    one.
+  error_unable_delete_status: "Состояние работы пакета удалить нельзя, так как оно
+    используется по крайней мере одним рабочим пакетом."
+  error_unable_delete_default_status: "Не удается удалить статус работы пакета по
+    умолчанию. Пожалуйста, выберите другой статус работы пакета по умолчанию перед
+    удалением текущего."
   error_unable_to_connect: "Не удается подключиться (%{value})"
   error_workflow_copy_source: "Пожалуйста, выберите тип источника или роль"
   error_workflow_copy_target: "Пожалуйста, выберите целевые тип и роль"
@@ -731,7 +728,7 @@ ru:
   label_category: "Категория"
   label_wiki_menu_item: "Пункт меню wiki"
   label_select_main_menu_item: "Выберите новый пункт главного меню"
-  label_required_disk_storage: Required disk storage
+  label_required_disk_storage: "Требуется место на диске"
   label_change_plural: "Изменения"
   label_change_properties: "Изменить свойства"
   label_change_status: "Изменить статус"
@@ -739,7 +736,7 @@ ru:
   label_changes_details: "Подробная информация обо всех изменениях"
   label_changeset_plural: "Изменения"
   label_checked: "проверено"
-  label_child_element: Child element
+  label_child_element: "Дочерний элемент"
   label_chronological_order: "В хронологическом порядке"
   label_close_versions: "Закрыть завершённые этапы"
   label_closed_work_packages: "закрыто"
@@ -859,7 +856,7 @@ ru:
   label_journal_diff: "Описание сравнения"
   label_jump_to_a_project: "Перейти к проекту..."
   label_language_based: "Основанный на языке пользователя"
-  label_last_activity: Last activity
+  label_last_activity: "Последняя активность"
   label_last_changes: "последние %{count} изменений"
   label_last_login: "Последний вход в систему"
   label_last_month: "Последний месяц"
@@ -876,7 +873,7 @@ ru:
   label_login: "Войти"
   label_logout: "Выход"
   label_main_menu: "Боковое меню"
-  label_managed_repositories_vendor: Managed %{vendor} repositories
+  label_managed_repositories_vendor: "Управляемые %{vendor} репозиториев"
   label_max_size: "Максимальный размер"
   label_me: "мне"
   label_member_new: "Новый участник"
@@ -887,7 +884,7 @@ ru:
   label_message_plural: "Сообщения"
   label_message_posted: "Сообщение добавлено"
   label_min_max_length: "Минимальная - Максимальная длина"
-  label_minute_plural: minutes
+  label_minute_plural: "минуты"
   label_missing_api_access_key: "Отсутствует ключ API доступа"
   label_missing_feeds_access_key: "Отсутствует ключ доступа к RSS"
   label_modification: "%{count} изменение"
@@ -919,7 +916,7 @@ ru:
   label_next_week: "На следующей неделе"
   label_no_change_option: "(Без изменений)"
   label_no_data: "Нет данных для отображения"
-  label_nothing_display: Nothing to display
+  label_nothing_display: "Нет данных для отображения"
   label_nobody: "никто"
   label_none: "нет"
   label_not_contains: "не содержит"
@@ -955,16 +952,17 @@ ru:
   label_principal_search: "Искать пользователей или группы"
   label_profile: "Профиль"
   label_project_all: "Все проекты"
-  label_project_count: Total number of projects
+  label_project_count: "Общее количество проектов"
   label_project_copy_notifications: "Уведомлять по электронной почте по ходу копирования
     проекта"
   label_project_latest: "Последние проекты"
   label_project_default_type: "Разрешить пустой тип"
-  label_project_hierarchy: Project hierarchy
+  label_project_hierarchy: "Иерархия проектов"
   label_project_new: "Новый проект"
   label_project_plural: "Проекты"
   label_project_settings: "Настройки проекта"
-  label_projects_storage_information: "%{count} projects using %{storage} disk storage"
+  label_projects_storage_information: "%{count} проектов используют %{storage} дискового
+    пространства"
   label_project_view_all: "Просмотреть все проекты"
   label_public_projects: "Проекты, доступные всем"
   label_query_new: "Новый запрос"
@@ -1028,17 +1026,17 @@ ru:
   label_status: "Состояние"
   label_status_updated: "Состояние  пакета работ обновлено"
   label_stay_logged_in: "Запомнить"
-  label_storage_free_space: Remaining disk space
-  label_storage_used_space: Used disk space
-  label_storage_group: Storage filesystem %{identifier}
-  label_storage_for: Encompasses storage for
+  label_storage_free_space: "Свободное дисковое пространство"
+  label_storage_used_space: "Используемое дисковое пространство"
+  label_storage_group: "Файловая система %{identifier}"
+  label_storage_for: "Охватывает хранение для"
   label_string: "Текст"
   label_subproject_new: "Новый подпроект"
   label_subproject_plural: "Подпроекты"
   label_subtask_plural: "Подзадачи"
   label_summary: "Резюме"
   label_system: "Система"
-  label_system_storage: Storage information
+  label_system_storage: "Информация хранилища"
   label_table_of_contents: "Содержание"
   label_tag: "Метка"
   label_text: "Длинный текст"
@@ -1047,7 +1045,7 @@ ru:
   label_this_week: "на этой неделе"
   label_this_year: "в этом году"
   label_time_entry_plural: "Затраченное время"
-  label_time_sheet_menu: Time sheet
+  label_time_sheet_menu: "Табель"
   label_time_tracking: "Учет времени"
   label_today: "Сегодня"
   label_top_menu: "Верхнее меню"
@@ -1106,30 +1104,30 @@ ru:
   label_workflow_plural: "Рабочие потоки"
   label_workflow_summary: "Резюме"
   label_x_closed_work_packages_abbr:
-    one: 1 closed
-    other: "%{count} closed"
+    one: 1 закрыто
+    other: "%{count} закрыто"
     zero: 0 closed
-    few: "%{count} closed"
+    few: "%{count} закрыто"
   label_x_comments:
-    one: 1 comment
-    other: "%{count} comments"
+    one: 1 комментарий
+    other: "%{count} комментариев"
     zero: no comments
-    few: "%{count} comments"
+    few: "%{count} комментария"
   label_x_open_work_packages_abbr:
-    one: 1 open
-    other: "%{count} open"
+    one: 1 открыт
+    other: "%{count} открыто"
     zero: 0 open
-    few: "%{count} open"
+    few: "%{count} открыто"
   label_x_open_work_packages_abbr_on_total:
-    one: 1 open / %{total}
-    other: "%{count} open / %{total}"
+    one: 1 открыт / %{total}
+    other: "%{count} открыто / %{total}"
     zero: 0 open / %{total}
-    few: "%{count} open / %{total}"
+    few: "%{count} открыто / %{total}"
   label_x_projects:
-    one: 1 project
-    other: "%{count} projects"
+    one: 1 проект
+    other: "%{count} проектов"
     zero: no projects
-    few: "%{count} projects"
+    few: "%{count} проекта"
   label_year: "Год"
   label_yesterday: "вчера"
   label_keyboard_function: "Функция"
@@ -1266,9 +1264,9 @@ ru:
         format: "%n %u"
         units:
           byte:
-            one: Byte
-            other: Bytes
-            few: Bytes
+            one: "Байт"
+            other: "Байтов"
+            few: "Байта"
           gb: "ГБ"
           kb: "кБ"
           mb: "МБ"
@@ -1282,7 +1280,7 @@ ru:
   permission_browse_repository: "Обзор репозитория"
   permission_change_wiki_parent_page: "Смена родительской wiki-страницы"
   permission_comment_news: "Комментировать новость"
-  permission_commit_access: Submit commits
+  permission_commit_access: "Отправить фиксацию"
   permission_copy_projects: "Копировать проект"
   permission_delete_work_package_watchers: "Удалить наблюдателей"
   permission_delete_work_packages: "Удалить пакеты работ"
@@ -1354,102 +1352,123 @@ ru:
     member_of_group: "Группа назначенного"
     subproject_id: "Подпроект"
   repositories:
-    autofetch_information: |
-      Check this if you want repositories to be updated automatically when accessing the repository module page.
-      This encompasses the retrieval of commits from the repository and refreshing the required disk storage.
-    checkout_instructions: Checkout instructions
-    create_managed_delay: 'Please note: The repository is managed, it is created asynchronously
-      on the disk and will be available shortly.'
-    create_successful: The repository has been registered.
-    delete_sucessful: The repository has been deleted.
+    autofetch_information: "Проверьте это, если хотите, чтобы репозитории обновлялись
+      автоматически при обращении к странице модуля репозитория. Это включает в себя
+      извлечение коммитов из репозитория и обновление необходимого дискового пространства."
+    checkout:
+      access:
+        readwrite: "Чтение и запись"
+        read: "Только для чтения"
+        none: "Без проверки доступа, вы можете лишь просматривать репозиторий, используя
+          это приложение."
+      access_permission: "Ваши права на этот репозиторий:"
+      url: "Проверить URL"
+      base_url_text: "Базовый URL-адрес используется для генерирования проверки URL-адреса
+        (например, https://myserver.example.org/repos/). Примечание: Базовый URL-адрес
+        используется только для переопределения проверки URL-адреса в управляемых
+        репозиториях. Другие репозитории не изменяются."
+      default_instructions:
+        git: |
+          Данные, хранящиеся в этом репозитории, можно загрузить на свой компьютер с помощью Git, используя проверенную ниже информацию.
+          Обратитесь к документации Git, если вам нужна дополнительная информация о процедуре проверки и доступных клиентах.
+        subversion: |
+          Данные, хранящиеся в этом репозитории, можно загрузить на свой компьютер с помощью Subversion, используя проверенную ниже информацию.
+          Обратитесь к документации Subversion, если вам нужна дополнительная информация о процедуре проверки и доступных клиентах.
+      enable_instructions_text: "Показывает проверена ли инструкция внизу, на всех
+        относящихся к репозиторию страницах."
+      instructions: "Проверить инструкцию"
+      text_instructions: "Этот текст отображается рядом с проверяемым URL для указания
+        о том, как проверить репозиторий."
+      not_available: "Инструкции по проверке не доступны для этого репозитория"
+    create_managed_delay: "Пожалуйста, обратите внимание: репозиторий является управляемым,
+      он формируется асинхронно на диске и будет доступен в ближайшее время."
+    create_successful: "Репозиторий был зарегистрирован."
+    delete_sucessful: "Репозиторий был удален."
     destroy:
-      title: Are you absolutely sure?
-      managed_text: If you continue, this will permanently delete the managed repository
-        of %{project_name}. This action cannot be reverted.
-      managed_path_note: 'The following directory will be erased: %{path}'
-      linked_text: |
-        You're about to remove the linked repository %{url} from the project %{project_name}.
-        Note: This will NOT delete the contents of this repository, as it is not managed by OpenProject.
+      title: "Вы абсолютно уверены?"
+      managed_text: "Если вы продолжите, управляемый репозиторий %{project_name} будет
+        немедленно и безвозвратно удален."
+      managed_path_note: "Следующий каталог будет удален: %{path}"
+      linked_text: "Вы собираетесь удалить связанный репозиторий %{url} из проекта
+        %{project_name}. \nПримечание: Этим вы не удалите содержимое этого репозитория,
+        так как оно не управляется OpenProject.\n"
     errors:
-      build_failed: Unable to create the repository with the selected configuration.
-        %{reason}
-      empty_repository: The repository exists, but is empty. It does not contain any
-        revisions yet.
-      exists_on_filesystem: The repository directory exists already on filesystem.
-      filesystem_access_failed: 'An error occurred while creating the repository on
-        filesystem: %{message}.'
-      not_manageable: This repository vendor cannot be managed by OpenProject.
-      path_permission_failed: 'An error occurred trying to create the following path:
-        %{path}. Please ensure that OpenProject may write to that folder.'
-      unauthorized: You're not authorized to access the repository or the credentials
-        are invalid.
-      unavailable: The repository is unavailable.
-      exception_title: 'Cannot access the repository: %{message}'
-      disabled_or_unknown_type: The selected type %{type} is disabled or no longer
-        available for the SCM vendor %{vendor}.
-      disabled_or_unknown_vendor: The SCM vendor %{vendor} is disabled or no longer
-        available.
+      build_failed: "Не удается создать репозиторий с выбранной конфигурацией. %{reason}"
+      empty_repository: "Репозиторий существует, но является пустым и пока не содержит
+        каких-либо изменений."
+      exists_on_filesystem: "Каталог с репозиториями в файловой системе уже существует."
+      filesystem_access_failed: "При доступе к репозиторию в файловой системе произошла
+        ошибка: %{message}."
+      not_manageable: "Этот поставщик репозитория не может управляться OpenProject."
+      path_permission_failed: "Ошибка при попытке создания следующего пути: %{path}.
+        Пожалуйста, убедитесь, что OpenProject может писать в эту папку."
+      unauthorized: "Вам не разрешен доступ к репозиторию или учетные данные неверны."
+      unavailable: "Репозиторий недоступен."
+      exception_title: "Не удается получить доступ к репозиторию: %{message}"
+      disabled_or_unknown_type: "Выбранный тип %{type} запрещен или более не доступен
+        для SCM-поставщика %{vendor}."
+      disabled_or_unknown_vendor: SCM-поставщик %{vendor} запрещен или недоступен.
     git:
       instructions:
-        managed_url: This is the URL of the managed (local) Git repository.
-        path: Specify the path to your local Git repository ( e.g., %{example_path}
-          ).
-        path_encoding: 'Override Git path encoding (Default: UTF-8)'
-      local_title: Link existing local Git repository
-      local_introduction: If you have an existing local Git repository, you can link
-        it with OpenProject to access it from within the application.
-      managed_path: Managed Git path (preview)
-      managed_introduction: Let OpenProject create and integrate a local Git repository
-        automatically.
-      managed_title: Git repository integrated into OpenProject
-      path: Path to Git repository
+        managed_url: "Это URL-адрес управляемого (локального) Git-репозитория."
+        path: "Укажите путь к вашему локальному Git-репозиторию (например, %{example_path})."
+        path_encoding: "Переопределить кодировку Git-пути (по умолчанию: UTF-8)"
+      local_title: "Связать существующий локальный Git-репозиторий"
+      local_introduction: "Если у вас есть существующий локальный Git-репозиторий,
+        вы можете связать его с OpenProject для доступа к нему из приложения."
+      managed_path: "Управляемый Git-путь (предварительный просмотр)"
+      managed_introduction: "Пусть OpenProject создает и интегрирует локальный Git-репозиторий
+        автоматически."
+      managed_title: Git-репозиторий, интегрированный в OpenProject
+      path: "Путь к Git-репозиторию"
       path_encoding: "Кодирование пути"
-    go_to_revision: Go to revision
+    go_to_revision: "Перейти к ревизии"
     settings:
-      automatic_managed_repos_disabled: Disable automatic creation
-      automatic_managed_repos: Automatic creation of managed repositories
-      automatic_managed_repos_text: By setting a vendor here, newly created projects
-        will automatically receive a managed repository of this vendor.
-    scm_vendor: Source control management system
-    scm_type: Repository type
+      automatic_managed_repos_disabled: "Запретить автоматическое создание"
+      automatic_managed_repos: "Автоматическое создание управляемых репозиториев"
+      automatic_managed_repos_text: "Определяя поставщика здесь, вновь создаваемые
+        проекты будут автоматически получать управляемое хранилища этого поставщика."
+    scm_vendor: "Система управления версиями"
+    scm_type: "Тип репозитория"
     scm_types:
-      local: Link existing local repository
-      existing: Link existing repository
-      managed: Create new repository in OpenProject
+      local: "Связать существующий локально репозиторий"
+      existing: "Связать существующий репозиторий"
+      managed: "Создать новый репозиторий в OpenProject"
     storage:
-      not_available: Disk storage consumption is not available for this repository.
-      update_timeout: |
-        Keep the last required disk space information for a repository for N minutes.
-        As counting the required disk space of a repository may be costly, increase this value to reduce performance impact.
+      not_available: "Дисковое пространство не доступно для этого репозитория."
+      update_timeout: "Хранить последнюю информацию о дисковом пространстве, необходимом
+        для репозитория, N минут. Так как подсчет необходимого для репозитория дискового
+        пространства могут быть дорогостоящим, увеличить это значение для снижения
+        его влияния на производительность."
     subversion:
-      existing_title: Existing Subversion repository
-      existing_introduction: If you have an existing Subversion repository, you can
-        link it with OpenProject to access it from within the application.
+      existing_title: "Существующий репозиторий Subversion"
+      existing_introduction: "Если у вас есть существующий репозиторий Subversion,
+        вы можете связать его с OpenProject для доступа к нему из приложения."
       instructions:
-        managed_url: This is the URL of the managed (local) Subversion repository.
+        managed_url: "Это URL-адрес управляемого (локального) хранилища Subversion."
         url: |
-          Enter the repository URL. This may either target a local repository (starting with %{local_proto} ), or a remote repository.
-          The following URL schemes are supported:
-      managed_title: Subversion repository integrated into OpenProject
-      managed_introduction: Let OpenProject create and integrate a local Subversion
-        repository automatically.
-      managed_url: Managed URL
-      password: Repository Password
-      username: Repository username
-    update_settings_successful: The settings have been sucessfully saved.
-    url: URL to repository
+          Введите URL-адрес репозитория. Это может быть либо указываемый локальный репозиторий (начиная с %{local_proto}), либо удаленный репозиторий.
+          Поддерживаются следующие схемы URL:
+      managed_title: "Репозиторий Subversion, интегрированный в OpenProject"
+      managed_introduction: "Пусть OpenProject создает и интегрирует локальный репозиторий
+        Subversion автоматически."
+      managed_url: "Управляемый URL"
+      password: "Пароль репозитория"
+      username: "Имя пользователя репозитория"
+    update_settings_successful: "Настройки успешно сохранены."
+    url: URL репозитория
   search_input_placeholder: "поиск ..."
   setting_activity_days_default: "Дни отображенные на проектной деятельности"
   setting_app_subtitle: "Второе название приложения"
   setting_app_title: "Название приложения"
   setting_attachment_max_size: "Максимальный размер вложения"
-  setting_autofetch_changesets: Autofetch repository changes
+  setting_autofetch_changesets: "Автоматическое получение изменений репозитория"
   setting_autologin: "Автовход"
   setting_available_languages: "Доступные языки"
   setting_bcc_recipients: "Получатели скрытой копии (bcc)"
-  setting_brute_force_block_after_failed_logins: Block user after this number of failed
-    login attempts
-  setting_brute_force_block_minutes: Time the user is blocked for
+  setting_brute_force_block_after_failed_logins: "Блокировать пользователя после следующего
+    количества неудачных попыток входа"
+  setting_brute_force_block_minutes: "Время блокирования пользователя за"
   setting_cache_formatted_text: "Кэшировать форматированный текст"
   setting_column_options: "Настройка внешнего вида  списка пакетов работ"
   setting_commit_fix_keywords: "Корректирующие ключевые слова"
@@ -1487,32 +1506,36 @@ ru:
   setting_work_package_startdate_is_adddate: "Использовать текущую дату как дату начала
     для новых пакетов работ"
   setting_work_packages_export_limit: "Лимит экспорта пакета работ"
-  setting_journal_aggregation_time_minutes: Display journals as aggregated within
+  setting_journal_aggregation_time_minutes: "Отображение журналов в виде агрегированных
+    в"
   setting_log_requesting_user: "Журналировать входное имя, имя и адрес электронной
     почты для всех запросов"
   setting_login_required: "Требуется аутентификация"
   setting_mail_from: "Адрес электронной почты выпуска"
-  setting_mail_handler_api_enabled: Enable incoming email web service
-  setting_mail_handler_api_description: The email web handler enables OpenProject
-    to receive emails containing specific commands as an instrumentation mechanism
-    (e.g., to create and update work packages).
+  setting_mail_handler_api_enabled: "Разрешить входящую почту веб-сервисов"
+  setting_mail_handler_api_description: "Веб-обработчик электронной почты позволяет
+    OpenProject получать письма с командами (например, для создания и обновления пакетов
+    работы)."
   setting_mail_handler_api_key: API-ключ
   setting_mail_handler_body_delimiters: "Усечение сообщений после одной из этих линий"
   setting_new_project_user_role_id: "Роль, назначаемая пользователю-создателю проекта"
   setting_password_active_rules: "Активные классы символов"
   setting_password_count_former_banned: "Количество паролей, запрещенных для повторного
     использования"
-  setting_password_days_valid: Number of days, after which to enforce a password change
+  setting_password_days_valid: "Количество дней, после которого требуется смена пароля"
   setting_password_min_length: "Минимальная длина"
   setting_password_min_adhered_rules: "Минимальное количество необходимых классов"
   setting_per_page_options: "Количество объектов на страницу"
   setting_plain_text_mail: "Обычный текст электронной почты (не HTML)"
   setting_protocol: "Протокол"
-  setting_repositories_automatic_managed_vendor: Automatic repository vendor type
+  setting_repositories_automatic_managed_vendor: "Автоматический тип поставщика репозитория"
   setting_repositories_encodings: "Кодировка репозиториев"
   setting_repository_authentication_caching_enabled: "Включение кэширования для запроса
     проверки подлинности  управления версиями программного обеспечения"
-  setting_repository_storage_cache_minutes: Repository disk size cache
+  setting_repository_storage_cache_minutes: "Размер кеша на диске репозитория"
+  setting_repository_checkout_display: "Показать инструкции проверки"
+  setting_repository_checkout_base_url: "Проверить основной URL"
+  setting_repository_checkout_text: "Текст инструкции проверки"
   setting_repository_log_display_limit: "Максимальное количество отображаемых ревизий
     в файле журнала изменений"
   setting_rest_api_enabled: "Включите веб-службы REST"
@@ -1523,9 +1546,9 @@ ru:
   setting_session_ttl_hint: "При значении ниже 5-ти отключено"
   setting_session_ttl_enabled: "Сессия истекает"
   setting_start_of_week: "Первый день недели"
-  setting_sys_api_enabled: Enable repository management web service
-  setting_sys_api_description: The repository management web service provides integration
-    and user authorization for accessing repositories.
+  setting_sys_api_enabled: "Разрешить веб-сервис управления репоторием"
+  setting_sys_api_description: "Веб-сервис управления репозиторием обеспечивает интеграцию
+    и авторизацию пользователя для доступа к репозиторию."
   setting_text_formatting: "Форматирование текста"
   setting_time_format: "Формат времени"
   setting_ui_theme: "Тема"
@@ -1576,21 +1599,23 @@ ru:
   text_file_repository_writable: "Папка вложений доступна для записи"
   text_git_repo_example: "пустая локальная папка репозитория (например: /gitrepo,
     c:\\gitrepo)"
-  text_hint_disable_with_0: 'Note: Disable with 0'
+  text_hint_disable_with_0: "Примечание: Отключить с 0"
   text_work_package_added: "Автор %{author} отчитался по пакету работ %{id}."
   text_work_package_category_destroy_assignments: "Удаление категории назначений"
   text_work_package_category_destroy_question: "Некоторые пакеты работ (%{count})
     принадлежат для этой категории. Что вы хотите сделать?"
   text_work_package_category_reassign_to: "Переназначить пакеты работ этой категории"
   text_work_package_updated: "%{author} обновил пакет работ %{id}."
+  text_work_package_watcher_added: "Вы были добавлены как наблюдатель к пакету работ
+    %{id}, %{watcher_setter}."
   text_work_packages_destroy_confirmation: "Вы уверены, что хотите удалить выбранные
     пакет(-ы) работ?"
   text_work_packages_ref_in_commit_messages: "Связанные и  исправляющие пакеты работ
     в сообщении вклада"
   text_journal_added: "%{label} %{value} добавлено"
-  text_journal_aggregation_time_explanation: Combine journals for display if their
-    age difference is less than the specified timespan. This will also delay mail
-    notifications by the same amount of time.
+  text_journal_aggregation_time_explanation: "Объединить журналы для отображения,
+    если разница в их возрасте меньше заданного значения. Это приведет к задержке
+    почтовых уведомлений на указанное время."
   text_journal_changed: "%{label} изменено с %{old} на %{new}"
   text_journal_changed_no_detail: "%{label} обновлено"
   text_journal_changed_with_diff: "%{label} изменена (%{link})"
@@ -1598,6 +1623,7 @@ ru:
   text_journal_deleted_with_diff: "%{label} удалена (%{link})"
   text_journal_set_to: "%{label} присвоено значение %{value}"
   text_journal_set_with_diff: "%{label} установлена (%{link})"
+  text_latest_note: "Последний комментарий: %{note}"
   text_length_between: "Количество символов между %{min} и %{max} ."
   text_line_separated: "Допускается  несколько значений (одна строка для каждого значения)."
   text_load_default_configuration: "Загрузить конфигурацию по умолчанию"
@@ -1605,6 +1631,7 @@ ru:
   text_no_configuration_data: "Роли, типы,  статусы пакетов работ и рабочие потоки
     еще не сконфигурированы. Настоятельно рекомендуем для правки загрузить конфигурацию
     по умолчанию."
+  text_no_notes: "Комментарии для этого пакета работ отсутствуют."
   text_notice_too_many_values_are_inperformant: "Примечание: Отображение более чем
     100 элементов на странице может увеличить время загрузки."
   text_own_membership_delete_confirmation: "Вы собираетесь удалить все или некоторые
@@ -1612,10 +1639,10 @@ ru:
     Вы уверены?"
   text_plugin_assets_writable: "Папка активов дополнения(plugin) доступна для записи"
   text_powered_by: "С использованием %{link}"
-  text_project_destroy_title: Do you really want to delete this project?
-  text_project_destroy_confirmation: If you continue, the project %{identifier} and
-    all related data will be permanently destroyed. Please check the box below if
-    you want to continue.
+  text_project_destroy_title: "Вы действительно хотите удалить этот проект?"
+  text_project_destroy_confirmation: |
+    Если вы продолжите, проект %{identifier} и все связанные с ним данные будут немедленно уничтожены.
+    Пожалуйста, установите флажок ниже, если вы хотите продолжить.
   text_project_identifier_info: "Разрешены только строчные буквы (a-z), цифры, тире
     и знаки подчеркивания, начинать с буквы нижнего регистра."
   text_reassign: "Переназначить на"
@@ -1692,9 +1719,9 @@ ru:
     delete_thing: "Удалить"
     duration: "Продолжительность"
     duration_days:
-      one: 1 day
-      other: "%{count} days"
-      few: "%{count} days"
+      one: 1 день
+      other: "%{count} дней"
+      few: "%{count} дня"
     edit_color: "Изменить цвет"
     edit_project_type: "Редактировать тип проекта"
     edit_thing: "Правка"
@@ -1872,9 +1899,9 @@ ru:
       электронной почте)"
     blocked: "Временно заблокирован"
     blocked_num_failed_logins:
-      one: locked temporarily (one failed login attempt)
-      other: locked temporarily (%{count} failed login attempts)
-      few: locked temporarily (%{count} failed login attempts)
+      one: "временно заблокирован (одна неудачная попытка входа)"
+      other: "временно заблокирован (%{count} неудачных попыток входа в систему)"
+      few: "временно заблокирован (%{count} неудачные попытки входа в систему)"
     deleted: "Удалённый пользователь"
     error_status_change_failed: "Изменение статуса пользователя не удалось из-за следующей
       ошибки: %{errors}"
@@ -1920,20 +1947,20 @@ ru:
       code_403: "Вы не авторизованы для доступа к этому ресурсу."
       code_404: "Не удалось найти запрошенный ресурс."
       code_409: "Не удалось обновить ресурс из-за конфликтующих изменений."
+      code_500: An internal error has occured.
       invalid_content_type: "Ожидаемый CONTENT-TYPE должен быть быть «%{content_type}»,
         но получил «%{actual}»."
       invalid_format: "Недопустимый формат свойства «%{property}»: ожидаемый формат
         «%{expected_format}», но получил «%{actual}»."
-      invalid_json: The request could not be parsed as JSON.
+      invalid_json: "Запрос не может быть обработан как JSON."
       invalid_relation: "Отношение является недопустимым."
       invalid_resource: "Для свойства «%{property}» ожидается ссылка как «%{expected}»
         , но получена «%{actual}»."
       invalid_user_status_transition: "Состояние учетной записи текущего пользователя
         не поддерживает эту операцию."
       missing_content_type: "Не определено"
-      missing_request_body: There was no request body.
-      multipart_body_error: The request body did not contain the expected multipart
-        parts.
+      missing_request_body: "Нет тела запроса."
+      multipart_body_error: "Тело запроса не содержит ожидаемых частей."
       multiple_errors: "Для нескольких полей были нарушены ограничения."
       writing_read_only_attributes: "Вы не должны перезаписывать атрибут являющийся
         только для чтения."

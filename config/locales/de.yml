@@ -90,7 +90,6 @@ de:
       member:
         roles: Rollen
       project:
-        homepage: Projekt-Homepage
         identifier: Kennung
         work_packages: Arbeitspakete
         parent: Unterprojekt von
@@ -913,7 +912,7 @@ de:
   label_next_week: Woche vor
   label_no_change_option: "(Keine Änderung)"
   label_no_data: Nichts anzuzeigen
-  label_nothing_display: Nothing to display
+  label_nothing_display: Nichts anzuzeigen
   label_nobody: Niemand
   label_none: kein
   label_not_contains: enthält nicht
@@ -1347,7 +1346,30 @@ de:
     autofetch_information: |
       Wählen Sie diese Option, um das Projektarchiv beim Zugriff auf die Projektarchiv-Modul Seite automatisch zu aktualisieren.
       Dies umfasst das Abrufen von Commits aus dem Projektarchiv und die Aktualisierung des erforderliche Festplattenspeichers.
-    checkout_instructions: Checkout Anweisungen
+    checkout:
+      access:
+        readwrite: Lese- und Schreibzugriff
+        read: Nur Lesezugriff
+        none: Keine Checkout-Berechtigung, Sie können das Projektarchiv nur über diese
+          Applikation betrachten.
+      access_permission: 'Ihre Berechtigungen für dieses Projektarchiv:'
+      url: Checkout-URL
+      base_url_text: |
+        Der URL-Präfix, der für die Generierung von Checkout-URLs verwendet wird (z.B. https://myserver.example.org/repos).
+        Hinweis: Dieser URL-Präfix wird nur zum Umschreiben von verwalteten Projektarchiven verwendet. Die URLs anderer Projektarchive werden nicht verändert.
+      default_instructions:
+        git: |
+          Die Dateien in diesem Projektarchiv können mittels Git und den nachstehenden Checkout-Anweisungen auf Ihren Computer übertragen werden.
+          Bitte konsultieren Sie die Dokumentation von Git, wenn Sie mehr Informationen über den Checkout von Projektarchiven und kompatible Client-Anwendungen erfahren möchten.
+        subversion: |
+          Die Dateien in diesem Projektarchiv können mittels Subversion und den nachstehenden Checkout-Anweisungen auf Ihren Computer übertragen werden.
+          Bitte konsultieren Sie die Dokumentation von Subversion, wenn Sie mehr Informationen über den Checkout von Projektarchiven und kompatible Client-Anwendungen erfahren möchten.
+      enable_instructions_text: Zeige die nachstehenden Checkout-Anweisungen auf allen
+        Seiten im Projektarchiv-Modul an.
+      instructions: Checkout-Anweisungen
+      text_instructions: Dieser Text wird dem Nutzer zusammen mit der Checkout-URL
+        als zusätzliche Hilfestellung für den Checkout von Projektarchiven angezeigt.
+      not_available: Checkout-Anweisungen sind für dieses Projektarchiv nicht verfügbar
     create_managed_delay: 'Bitte beachten Sie: Das Projektarchiv wird in OpenProject
       verwaltet. Es wird asynchron auf dem Datenträger erstellt und wird in Kürze
       verfügbar sein.'
@@ -1368,7 +1390,7 @@ de:
       empty_repository: Das Projektarchiv existiert, ist aber leer. Es enthält noch
         keine Änderungen.
       exists_on_filesystem: Das Projektarchiv existiert bereits auf dem Dateisystem.
-      filesystem_access_failed: 'Fehler beim Erstellen des Projektarchivs auf Dateisystem:
+      filesystem_access_failed: 'Fehler beim Zugriff des Projektarchivs auf dem Dateisystem:
         %{message}.'
       not_manageable: Dieser Projektarchiv-Anbieter kann nicht von OpenProject verwaltet
         werden.
@@ -1510,6 +1532,9 @@ de:
   setting_repository_authentication_caching_enabled: Aktiviere Cache für Authentifizierungsversuche
     von Versionskontrollsoftware
   setting_repository_storage_cache_minutes: Projektarchiv Festplattengröße-Zwischenspeicher
+  setting_repository_checkout_display: Zeige Checkout-Anweisungen
+  setting_repository_checkout_base_url: Checkout URL-Präfix
+  setting_repository_checkout_text: Hilfetext für Checkout-Anweisung
   setting_repository_log_display_limit: Maximale Anzahl anzuzeigender Revisionen in
     der Historie einer Datei
   setting_rest_api_enabled: REST-Schnittstelle aktivieren
@@ -1578,6 +1603,8 @@ de:
     dieser Kategorie zugeordnet. Was möchten Sie tun?
   text_work_package_category_reassign_to: Arbeitspakete dieser Kategorie zuordnen
   text_work_package_updated: Arbeitspaket %{id} wurde aktualisiert von %{author}.
+  text_work_package_watcher_added: Sie wurden von %{watcher_setter} als Beobachter
+    für das Arbeitspaket %{id} eingetragen.
   text_work_packages_destroy_confirmation: Sind Sie sicher, dass Sie die ausgewählten
     Arbeitspakete löschen möchten?
   text_work_packages_ref_in_commit_messages: Arbeitspaket-Beziehungen und -Status
@@ -1593,6 +1620,7 @@ de:
   text_journal_deleted_with_diff: "%{label} wurde gelöscht (%{link})"
   text_journal_set_to: "%{label} wurde auf %{value} gesetzt"
   text_journal_set_with_diff: "%{label} gesetzt (%{link})"
+  text_latest_note: 'Der letzte Kommentar ist: %{note}'
   text_length_between: Länge zwischen %{min} und %{max} Zeichen.
   text_line_separated: Mehrere Werte sind erlaubt (eine Zeile pro Wert).
   text_load_default_configuration: Standard-Konfiguration laden
@@ -1600,6 +1628,7 @@ de:
   text_no_configuration_data: Rollen, Typen, Arbeitspaket-Status und Workflows wurden
     noch nicht konfiguriert. Es wird empfohlen die Standard-Konfiguration zu laden.
     Sobald die Konfiguration geladen ist, kann diese geändert werden.
+  text_no_notes: Es sind keine Kommentare für dieses Arbeitspaket vorhanden.
   text_notice_too_many_values_are_inperformant: 'Achtung: Das Anzeigen von mehr als
     100 Objekten pro Seite kann die Seitenladezeiten erhöhen.'
   text_own_membership_delete_confirmation: |
@@ -1922,6 +1951,7 @@ de:
       code_404: Die angeforderte Ressource konnte nicht gefunden werden.
       code_409: Die Ressource konnte wegen parallelen Zugriffs nicht aktualisiert
         werden.
+      code_500: An internal error has occured.
       invalid_content_type: Es wird der CONTENT-TYPE '%{content_type}' erwartet, es
         wurde aber der CONTENT-TYP '%{actual}' gesandt.
       invalid_format: 'Ungültiges Format für Eigenschaft ''%{property}'': Ein Format
