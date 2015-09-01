@@ -709,10 +709,10 @@ fr:
   label_auth_source_new: Nouveau mode d'authentification
   label_auth_source_plural: Modes d'authentification
   label_authentication: Authentification
-  label_available_project_work_package_categories: Available work package categories
-  label_available_project_boards: Available boards
-  label_available_project_versions: Available versions
-  label_available_project_repositories: Available repositories
+  label_available_project_work_package_categories: Catégories de lots de travaux disponibles
+  label_available_project_boards: Tableaux disponibles
+  label_available_project_versions: Versions disponibles
+  label_available_project_repositories: Dépôts disponibles
   label_blocked_by: bloqué par
   label_blocks: blocs
   label_board_locked: Verrouillé
@@ -789,10 +789,10 @@ fr:
   label_duplicates: doublons
   label_edit: "Éditer"
   label_enable_multi_select: Basculer multisélection
-  label_enabled_project_custom_fields: Enabled custom fields
-  label_enabled_project_types: Enabled types
-  label_enabled_project_modules: Enabled modules
-  label_enabled_project_activities: Enabled time tracking activities
+  label_enabled_project_custom_fields: Champs personnalisés activés
+  label_enabled_project_types: Types activés
+  label_enabled_project_modules: Modules activés
+  label_enabled_project_activities: Activités de suivi du temps activées
   label_end_to_end: bout à bout
   label_end_to_start: fin à début
   label_enumeration_new: Nouvelle valeur d'énumération
@@ -1256,8 +1256,8 @@ fr:
   notice_logged_out: Vous avez été déconnecté.
   error_types_in_use_by_work_packages: 'Les types suivants sont toujours référencés
     par des Lots de Travaux: %{types}'
-  notice_project_cannot_update_custom_fields: You cannot update the project's available
-    custom fields.
+  notice_project_cannot_update_custom_fields: Vous ne pouvez pas mettre à jour les
+    champs personnalisés du projet.
   number:
     format:
       delimiter: ''
@@ -1369,21 +1369,22 @@ fr:
       access_permission: 'Vos permissions sur ce dépôt :'
       url: URL de « checkout »
       base_url_text: |
-        The base URL to use for generating checkout URLs (e.g., https://myserver.example.org/repos/).
-        Note: The base URL is only used for rewriting checkout URLs in managed repositories. Other repositories are not altered.
+        L'URL de base utilisée pour générer les URL de « checkout » (e.g. https://myserver.example.org/repos/).
+        N.B. : L'URL de base n'est utilisée que pour la réécriture des URL de « checkout » dans les dépôts gérés. Les autres dépôts ne sont pas affectés.
       default_instructions:
         git: |
-          The data contained in this repository can be downloaded to your computer with Git using the checkout information below.
-          Please consult the documentation of Git if you need more information on the checkout procedure and available clients.
+          Les données contenues dans ce dépôt peuvent être téléchargées sur votre ordinateur avec Git en utilisant les informations de « checkout » ci-dessous.
+          Si vous désirez plus d'informations sur la procédure de « checkout » et les clients disponibles, consultez la documentation de Git.
         subversion: |
-          The data contained in this repository can be downloaded to your computer with Subversion using the checkout information below.
-          Please consult the documentation of Subversion if you need more information on the checkout procedure and available clients.
-      enable_instructions_text: Displays checkout instructions defined below on all
-        repository-related pages.
-      instructions: Checkout instructions
-      text_instructions: This text is displayed alongside the checkout URL for guidance
-        on how to check out the repository.
-      not_available: Checkout instructions are not available for this repository
+          Les données contenues dans ce dépôt peuvent être téléchargées sur votre ordinateur avec Subversion en utilisant les informations de « checkout » ci-dessous.
+          Si vous désirez plus d'informations sur la procédure de « checkout » et les clients disponibles, consultez la documentation de Subversion.
+      enable_instructions_text: Affiche les instructions de « checkout » définies
+        ci-dessous sur toutes les pages relatives au dépôt.
+      instructions: Instructions de « checkout »
+      text_instructions: Ce texte s'affiche à côté de l'URL de « checkout » comme
+        aide sur la manière de réaliser le « checkout » du dépôt.
+      not_available: Les instructions de « checkout » ne sont pas disponibles pour
+        ce dépôt
     create_managed_delay: 'N.B. : le dépôt est géré; il est créé de façon asynchrone
       sur le disque et sera disponible sous peu.'
     create_successful: Le dépôt a été enregistré.
@@ -1402,8 +1403,8 @@ fr:
       empty_repository: Le dépôt existe mais il est vide. Il ne contient aucune révision
         pour le moment.
       exists_on_filesystem: Le répertoire du dépôt existe déjà sur le système de fichiers.
-      filesystem_access_failed: 'An error occurred while accessing the repository
-        on filesystem: %{message}.'
+      filesystem_access_failed: 'Une erreur s''est produite lors de l''accès au dépôt
+        sur le système de fichiers : %{message}.'
       not_manageable: Ce fournisseur de dépôt ne peut pas être géré par OpenProject.
       path_permission_failed: 'Une erreur s''est produite en essayant de créer le
         chemin d''accès suivant: %{path}. Veuillez vous assurer que OpenProject peut
@@ -1433,10 +1434,10 @@ fr:
       path_encoding: Encodage du chemin d'accès
     go_to_revision: Aller à la révision
     settings:
-      automatic_managed_repos_disabled: Disable automatic creation
-      automatic_managed_repos: Automatic creation of managed repositories
-      automatic_managed_repos_text: By setting a vendor here, newly created projects
-        will automatically receive a managed repository of this vendor.
+      automatic_managed_repos_disabled: Désactiver la création automatique
+      automatic_managed_repos: Création automatique des dépôts gérés
+      automatic_managed_repos_text: En définissant un fournisseur ici, les projets
+        nouvellement créés recevront automatiquement un dépôt géré de ce fournisseur.
     scm_vendor: Système de gestion de contrôle de sources
     scm_type: Type de dépôt
     scm_types:
@@ -1447,8 +1448,8 @@ fr:
       not_available: La consommation d'espace disque n'est pas disponible pour ce
         dépôt.
       update_timeout: |
-        Keep the last required disk space information for a repository for N minutes.
-        As counting the required disk space of a repository may be costly, increase this value to reduce performance impact.
+        Garder les dernières informations de l'espace disque requis pour un dépôt pendant N minutes.
+        Etant donné que l'opération de comptabilisation de l'espace disque requis pour un dépôt peut être coûteuse, augmentez cette valeur pour réduire l'impact sur les performances.
     subversion:
       existing_title: Dépôt Subversion existant
       existing_introduction: Si vous avez un dépôt Subversion existant, vous pouvez
@@ -1471,7 +1472,7 @@ fr:
   setting_app_subtitle: Sous-titre de l'Application
   setting_app_title: Titre de l'Application
   setting_attachment_max_size: Taille maximale de la pièce-jointe
-  setting_autofetch_changesets: Autofetch repository changes
+  setting_autofetch_changesets: Rapatrier automatiquement les changements du dépôt
   setting_autologin: Auto-connexion
   setting_available_languages: Langages disponibles
   setting_bcc_recipients: Déstinataires Copie Carbon Invisible (CCI)
@@ -1540,14 +1541,14 @@ fr:
   setting_per_page_options: Options des objets par page
   setting_plain_text_mail: Courriel en plein texte (pas HTML)
   setting_protocol: Protocole
-  setting_repositories_automatic_managed_vendor: Automatic repository vendor type
+  setting_repositories_automatic_managed_vendor: Type de fournisseur de dépôt automatique
   setting_repositories_encodings: Encodages de référentiels
   setting_repository_authentication_caching_enabled: Activer la mise en cache pour
     la requête d'authentification du logiciel de contrôle de version
-  setting_repository_storage_cache_minutes: Repository disk size cache
-  setting_repository_checkout_display: Show checkout instructions
-  setting_repository_checkout_base_url: Checkout base URL
-  setting_repository_checkout_text: Checkout instruction text
+  setting_repository_storage_cache_minutes: Cache de l'espace disque du dépôt
+  setting_repository_checkout_display: Afficher les instructions de « checkout »
+  setting_repository_checkout_base_url: URL de base de « checkout »
+  setting_repository_checkout_text: Texte d'instruction de « checkout »
   setting_repository_log_display_limit: Nombre maximal des révisions affichées sur
     « file log »
   setting_rest_api_enabled: Autoriser service web REST
@@ -1617,8 +1618,8 @@ fr:
   text_work_package_category_reassign_to: Réassigner les Lots de Travaux de cette
     catégorie
   text_work_package_updated: Le Lot de Travaux %{id} a été mis à jour par %{author}.
-  text_work_package_watcher_added: You have been added as a watcher to Work package
-    %{id} by %{watcher_setter}.
+  text_work_package_watcher_added: Vous avez été ajouté comme observateur au lot de
+    travaux %{id} par %{watcher_setter}.
   text_work_packages_destroy_confirmation: Voulez-vous vraiment supprimer le(s) Lot(s)
     de Travaux sélectionnés?
   text_work_packages_ref_in_commit_messages: Referencer et réparer les Lot(s) de Travaux
@@ -1634,7 +1635,7 @@ fr:
   text_journal_deleted_with_diff: "%{label} supprimé (%{link})"
   text_journal_set_to: "%{label} mis à %{value}"
   text_journal_set_with_diff: "%{label} mis (%{link})"
-  text_latest_note: 'The latest comment is: %{note}'
+  text_latest_note: 'Le dernier commentaire est : %{note}'
   text_length_between: Longueur entre %{min} et %{max} caractères.
   text_line_separated: Valeurs multiples autorisées (une ligne par valeur).
   text_load_default_configuration: Charger la configuration par défaut
@@ -1642,7 +1643,7 @@ fr:
   text_no_configuration_data: |
     Les rôles, types, status de Lots de Travaux et workflows ne sont pas encore configurés pour l'instant.
     Il est hautement recommander de charger la configuration par défaut. Vous pourrez la modifier une fois chargée.
-  text_no_notes: There are no comments available for this work package.
+  text_no_notes: Il n'existe aucun commentaire pour ce paquet de travail.
   text_notice_too_many_values_are_inperformant: 'Remarque : L''affichage de plus de
     100 articles par page peut augmenter le temps de chargement de la page.'
   text_own_membership_delete_confirmation: |
@@ -1963,7 +1964,7 @@ fr:
       code_404: La ressource demandée est introuvable.
       code_409: Ne pouvait pas mettre à jour la ressource en raison de modifications
         conflictuelles.
-      code_500: An internal error has occured.
+      code_500: Une erreur interne s'est produite.
       invalid_content_type: CONTENT-TYPE attendu «%{content_type} » , mais est à «%{actual}
         ».
       invalid_format: 'Format invalide pour la propriété "%{property}" : un format
