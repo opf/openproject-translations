@@ -173,7 +173,7 @@ it:
         responsible: Responsabile
         spent_time: Tempo speso
         subproject: Sottoprogetto
-        time_entries: Cronologia
+        time_entries: Registra l'orario effettuato
         type: Tipo
         watcher: Osservatore
     errors:
@@ -376,7 +376,7 @@ it:
   button_expand_all: Espandi tutto
   button_list: Elenca
   button_lock: Blocca
-  button_log_time: Cronologia
+  button_log_time: Registra l'orario effettuato
   button_login: Accedi
   button_move: Sposta
   button_move_and_follow: Sposta e segui
@@ -652,7 +652,7 @@ it:
     message: Messaggio modificato
     news: Notizie
     reply: Risposto
-    time_entry: Registro eventi modificato
+    time_entry: Registro dell'orario effettuato modificato
     wiki_page: Pagina wiki modificata
     work_package_closed: Macro-attività (work package) chiuso
     work_package_edit: Macro-attività (work package) modificato
@@ -1184,7 +1184,7 @@ it:
     nei prossimi %{days} giorni:"
   mail_body_wiki_content_added: La pagina wiki '%{id}' è stata aggiunta da %{author}.
   mail_body_wiki_content_updated: La pagina wiki '%{id}' è stata aggiornata da %{author}.
-  mail_subject_account_activation_request: "%{value} richiesta attivazione account"
+  mail_subject_account_activation_request: "%{value} richiesta di attivazione account"
   mail_subject_lost_password: La tua %{value} password
   mail_subject_register: La tua %{value} attivazione dell'account
   mail_subject_reminder: "%{count} pacchetto(i) di lavoro in scadenza nei prossimi
@@ -1195,51 +1195,50 @@ it:
   noscript_description: "È necessario attivare JavaScript per poter usare OpenProject!"
   noscript_heading: JavaScript disabilitato
   noscript_learn_more: Scopri di più
-  notice_account_activated: IL tuo account è stato attivato. Ora puoi accedere.
-  notice_account_invalid_credentials: Utente o Password non validi
+  notice_account_activated: Il tuo account è stato attivato. Ora puoi accedere.
+  notice_account_invalid_credentials: Utente o password non validi
   notice_account_invalid_credentials_or_blocked: Utente o password non validi oppure
     l'account è bloccato a causa di molteplici tentativi di accesso non riusciti.
-    Se così è, sarà sbloccato automaticamente per breve tempo.
+    Se così è, sarà sbloccato a breve automaticamente.
   notice_account_lost_email_sent: Un'email con le istruzioni per scegliere una nuova
     password ti è stata inviata.
   notice_account_new_password_forced: Viene richiesta una nuova password.
-  notice_account_password_expired: La tua password è scaduta da %{days} giorni. Perfavore
-    impostane una nuova.
+  notice_account_password_expired: La tua password è scaduta dopo %{days} giorni.
+    Per favore impostane una nuova.
   notice_account_password_updated: Password aggiornata con successo.
   notice_account_pending: Il tuo account è stato creato e ora è in attesa di approvazione
     dall'amministratore.
-  notice_account_register_done: Account creato con successo. To activate your account,
-    click on the link that was emailed to you.
+  notice_account_register_done: L'account è stato creato correttamente. Per attivare
+    il tuo account, clicca sul link che ti è stato inviato per email.
   notice_account_unknown_email: Utente sconosciuto.
   notice_account_update_failed: L'impostazione dell'account potrebbe non essere sicura.
-    Perfavore dai un'occhiata alla pagina del tuo account.
+    Per favore controlla la pagina di informazioni del tuo account.
   notice_account_updated: Account aggiornato con successo.
   notice_account_wrong_password: Password sbagliata
   notice_account_registered_and_logged_in: Benvenuto, il tuo account è stato attivato.
     Sei già connesso.
   notice_api_access_key_reseted: La chiave di accesso API è stata reimpostata.
-  notice_can_t_change_password: Questo account utilizza una fonte di autenticazione
-    esterna. Impossibile cambiare la password.
+  notice_can_t_change_password: Questo account utilizza un servizio di autenticazione
+    esterno. Impossibile cambiare la password.
   notice_email_error: Errore durante l'invio della posta (%{value})
   notice_email_sent: Un'email è stata inviata a %{value}
-  notice_failed_to_save_work_packages: 'Impossibile salvare %{count} pacchetto(i)
-    di lavoro su %{total} selezionati: %{ids}.'
-  notice_failed_to_save_members: 'Impossibile salvare membro(i): %{errors}.'
+  notice_failed_to_save_work_packages: 'Impossibile salvare %{count} macro-attività
+    (work-package) su %{total} selezionati: %{ids}.'
+  notice_failed_to_save_members: 'Impossibile salvare il membro(i): %{errors}.'
   notice_feeds_access_key_reseted: La chiave di accesso RSS è stata reimpostata.
-  notice_file_not_found: La pagina in cui stavi tentando di accedere non esiste o
-    è stata rimassa.
-  notice_forced_logout: Sei stato automaticamente uscito dopo %{ttl_time} minuti di
-    inattività.
-  notice_internal_server_error: Errore nella pagina che stati tentando di entrare.
-    se si continua ad avere problemi perfavore per avere assistenza contatta il tuo
-    amministratore di %{app_title}.
-  notice_work_package_done_ratios_updated: Percentuale di completamento del pacchetto
-    di lavoro aggiornato.
+  notice_file_not_found: La pagina alla quale stavi tentando di accedere non esiste
+    o è stata rimossa.
+  notice_forced_logout: Sei stato disconnesso automaticamente dopo %{ttl_time} minuti
+    di inattività.
+  notice_internal_server_error: Si è verificato un errore sulla pagina alla quale
+    hai richiesto di accedere. Se continui ad avere problemi per favore contatta il
+    tuo amministratore %{app_title} per ricevere assistenza.
+  notice_work_package_done_ratios_updated: Percentuale di completamento della macro-attività
+    (work package) aggiornata.
   notice_locking_conflict: L'informazione è stata aggiornata da almeno un altro utente
-    nel stesso tempo.
-  notice_locking_conflict_additional_information: L'aggiornamento(i) provengono da
-    %{users}.
-  notice_locking_conflict_reload_page: Si prega di ricaricare la pagina per rivedere
+    nel frattempo.
+  notice_locking_conflict_additional_information: L'aggiornamento(i) proviene da %{users}.
+  notice_locking_conflict_reload_page: Si prega di ricaricare la pagina, rivedere
     le modifiche e riapplicare gli aggiornamenti.
   notice_no_principals_found: Nessun risultato trovato.
   notice_bad_request: Richiesta non valida.
@@ -1251,14 +1250,16 @@ it:
   notice_successful_create: Creato con successo.
   notice_successful_delete: Cancellato con successo.
   notice_successful_update: Aggiornato con successo.
-  notice_to_many_principals_to_display: Ci sono troppi risultati. Affina la ricerca
-    digitando il nome del nuovo membro (o gruppo).
-  notice_unable_delete_time_entry: Impossibile eliminare la voce del registro temporale.
+  notice_to_many_principals_to_display: |
+    Ci sono troppi risultati.
+    Affina la ricerca digitando il nome del nuovo membro (o gruppo).
+  notice_unable_delete_time_entry: Impossibile eliminare la registrazione di orario
+    effettuato.
   notice_unable_delete_version: Impossibile eliminare la versione.
   notice_automatic_set_of_standard_type: Impostare automaticamente il tipo predefinito.
   notice_logged_out: Ti sei appena disconnesso.
-  error_types_in_use_by_work_packages: 'I seguenti pacchetti tipi fanno ancora riferimento
-    ai pacchetti di lavoro: %{types}'
+  error_types_in_use_by_work_packages: 'Alcune macro-attività (work package) fanno
+    ancora riferimento ai seguenti tipi: %{types}'
   notice_project_cannot_update_custom_fields: Non è possibile aggiornare i campi personalizzati
     disponibili nel progetto.
   number:
@@ -1281,58 +1282,58 @@ it:
           mb: MB
           tb: TB
   permission_add_work_package_notes: Aggiungi nota
-  permission_add_work_packages: Aggiungi pacchetto di lavoro
+  permission_add_work_packages: Aggiungere macro-attività (work package)
   permission_add_messages: Postare messaggi
-  permission_add_project: Crea progetto
-  permission_add_subprojects: Crea sotto-progetti
-  permission_add_work_package_watchers: Aggiungi osservatori
-  permission_browse_repository: Sfoglia il repository
-  permission_change_wiki_parent_page: Cambia la pagina padre del wiki
-  permission_comment_news: Commenti delle novità
-  permission_commit_access: Invia commit
-  permission_copy_projects: Copia progetti
-  permission_delete_work_package_watchers: Eliminare gli osservatori
-  permission_delete_work_packages: Cancella pacchetti di lavoro
-  permission_delete_messages: Cancella messaggi
-  permission_delete_own_messages: Cancella i propri messaggi
+  permission_add_project: Creare un progetto
+  permission_add_subprojects: Creare sotto-progetti
+  permission_add_work_package_watchers: Aggiungere osservatori
+  permission_browse_repository: Esplorare il repository
+  permission_change_wiki_parent_page: Cambiare la pagina padre del wiki
+  permission_comment_news: Commentare le novità
+  permission_commit_access: Approvare modifiche (commit)
+  permission_copy_projects: Copiare progetti
+  permission_delete_work_package_watchers: Eliminare osservatori
+  permission_delete_work_packages: Cancellare macro-attività (work package)
+  permission_delete_messages: Cancellare messaggi
+  permission_delete_own_messages: Cancellare i propri messaggi
   permission_delete_project_associations: Eliminare le dipendenze del progetto
   permission_delete_reportings: Eliminare segnalazioni
-  permission_delete_timelines: Elimina le sequenze temporali
-  permission_delete_wiki_pages: Elimina le pagine wiki
+  permission_delete_timelines: Elimina cronologie
+  permission_delete_wiki_pages: Eliminare pagine wiki
   permission_delete_wiki_pages_attachments: Elimina allegati
-  permission_edit_work_package_notes: Modifica note
-  permission_edit_work_packages: Modificare i pacchetti di lavoro
-  permission_edit_messages: Modifica messaggi
+  permission_edit_work_package_notes: Modificare note
+  permission_edit_work_packages: Modificare macro-attività (work package)
+  permission_edit_messages: Modificare messaggi
   permission_edit_own_work_package_notes: Modificare le proprie note
   permission_edit_own_messages: Modificare i propri messaggi
-  permission_edit_own_time_entries: Modifica i propri registri temporali
-  permission_edit_project: Modifica progetto
-  permission_edit_project_associations: Modifica le dipendenze del progetto
-  permission_edit_reportings: Modifica segnalazioni
-  permission_edit_time_entries: Modifica registro temporale
-  permission_edit_timelines: Modifica le sequenze temporali
-  permission_edit_wiki_pages: Modifica le pagine wiki
-  permission_export_work_packages: Esporta i pacchetti di lavoro
-  permission_export_wiki_pages: Esporta le pagine wiki
-  permission_list_attachments: Elenco allegati
-  permission_log_time: Log tempo speso
-  permission_manage_boards: Gestisci forum
-  permission_manage_categories: Gestisci le categorie dei pacchetto di lavoro
-  permission_manage_work_package_relations: Gestisci le correlazioni del pacchetto
-    di lavoro
-  permission_manage_members: Gestisci i membri
+  permission_edit_own_time_entries: Modificare i propri registri di orario effettuato
+  permission_edit_project: Modificare un progetto
+  permission_edit_project_associations: Modificare le dipendenze di un progetto
+  permission_edit_reportings: Modificare segnalazioni
+  permission_edit_time_entries: Modificare le registrazioni dell'orario effettuato
+  permission_edit_timelines: Modificare cronologie
+  permission_edit_wiki_pages: Modificare pagine wiki
+  permission_export_work_packages: Esportare macro-attività (work package)
+  permission_export_wiki_pages: Esportare pagine wiki
+  permission_list_attachments: Elencare allegati
+  permission_log_time: Registrazioni dell'orario effettuato
+  permission_manage_boards: Gestire forum
+  permission_manage_categories: Gestire le categorie delle macro-attività (work package)
+  permission_manage_work_package_relations: Gestisci le correlazioni tra macro-attività
+    (work package)
+  permission_manage_members: Gestire i membri dei team
   permission_manage_news: Gestire le notizie
   permission_manage_project_activities: Gestire le attività del progetto
-  permission_manage_public_queries: Gestisci le query pubbliche
-  permission_manage_repository: Gestisci i repository
-  permission_manage_subtasks: Gestisci le sotto-attività
-  permission_manage_versions: Gestisci versioni
-  permission_manage_wiki: Gestisci wiki
-  permission_manage_wiki_menu: Gestire menu wiki
-  permission_move_work_packages: Sposta i pacchetti di lavoro
-  permission_protect_wiki_pages: Pagine wiki protette
-  permission_rename_wiki_pages: Rinomina pagine wiki
-  permission_save_queries: Salva query
+  permission_manage_public_queries: Gestire le query pubbliche
+  permission_manage_repository: Gestire gli archivi
+  permission_manage_subtasks: Gestire sotto-attività
+  permission_manage_versions: Gestire le versioni
+  permission_manage_wiki: Gestire le pagine wiki
+  permission_manage_wiki_menu: Gestire i menu wiki
+  permission_move_work_packages: Spostare le macro-attività (work package)
+  permission_protect_wiki_pages: Proteggere l'accesso a pagine wiki
+  permission_rename_wiki_pages: Rinominare pagine wiki
+  permission_save_queries: Salvare query
   permission_select_project_modules: Seleziona moduli del progetto
   permission_manage_types: Seleziona i tipi
   permission_view_calendar: Vedi calendario
@@ -1408,10 +1409,11 @@ it:
       empty_repository: L'archivio esiste, ma è vuoto. Non contiene ancora alcuna
         revisione.
       exists_on_filesystem: La cartella dell'archivio è già esistente nel file system.
-      filesystem_access_failed: 'An error occurred while accessing the repository
-        on filesystem: %{message}'
-      deletion_failed: The repository could not be deleted from disk due to lacking
-        permissions. Please contact your administrator to resolve this issue.
+      filesystem_access_failed: 'Si è verificato un errore durante l''accesso dell''archivio
+        nel file system: %{message}'
+      deletion_failed: Il repository non può essere eliminato dal disco a causa della
+        mancanza di autorizzazioni. Si prega di contattare l'amministratore per risolvere
+        il problema.
       not_manageable: Questo tipo di archivo non può essere gestito da OpenProject.
       path_permission_failed: 'Si è verificato un errore cercando di creare il seguente
         percorso: %{path}. Si prega di verificare che OpenProject possa scrivere in
@@ -1491,8 +1493,8 @@ it:
   setting_column_options: Personalizza l'aspetto degli elenchi del pacchetto di lavoro
   setting_commit_fix_keywords: Parole chiave di ripristino
   setting_commit_logs_encoding: Codifica il messaggio
-  setting_commit_logtime_activity_id: Attività per il tempo d'accesso
-  setting_commit_logtime_enabled: Abilitare la registrazione del tempo
+  setting_commit_logtime_activity_id: Attività svolta durante l'orario registrato
+  setting_commit_logtime_enabled: Abilita la registrazione dell'orario effettuato
   setting_commit_ref_keywords: Riferimento a Parole chiavi
   setting_cross_project_work_package_relations: Consenti di correlare i work package
     con più progetti
