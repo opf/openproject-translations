@@ -740,6 +740,7 @@ pt-BR:
   label_contains: contém
   label_content: Conteúdo
   label_copied: copiado
+  label_copy_to_clipboard: Copy to clipboard
   label_copy_same_as_target: Igual ao destino
   label_copy_source: Fonte
   label_copy_target: Destino
@@ -981,6 +982,7 @@ pt-BR:
   label_reporting: Relatório
   label_reporting_plural: Relatórios
   label_repository: Repositório
+  label_repository_root: Repository root
   label_repository_plural: Repositórios
   label_responsible_for_work_packages: Pacotes de trabalho sob minha responsabilidade
   label_result_plural: Resultados
@@ -1339,6 +1341,8 @@ pt-BR:
     member_of_group: Atribuído ao grupo
     subproject_id: Subprojeto
   repositories:
+    at_identifier: at %{identifier}
+    atom_revision_feed: Atom revision feed
     autofetch_information: Marque isto se quiser que os repositórios sejam atualizados
       automaticamente ao acessar a página do módulo de repositório. Isto engloba a
       recuperação de commits do repositório e a atualização do espaço em disco necessário.
@@ -1348,24 +1352,23 @@ pt-BR:
         read: Somente leitura
         none: Sem acesso de check-out, você só pode exibir o repositório através desta
           aplicação.
-      access_permission: 'Suas permissões neste repositório:'
+      access_permission: Your permissions on this repository
       url: URL de check-out
       base_url_text: "A raiz da URL a ser usada para gerar URLs de check-out (ex.:
         https://myserver.example.org/repos/). \nNota: A raiz da URL é usada somente
         para reescrever URLs de check-out em repositórios gerenciados. Outros repositórios
         não são alterados.\n"
       default_instructions:
-        git: "Os dados contidos neste repositório podem ser baixados para seu computador
-          com Git usando as informações de check-out abaixo. \nSe precisar de mais
-          informações sobre o procedimento de check-out e os clientes disponíveis,
-          consulte a documentação do Git.\n"
-        subversion: "Os dados contidos neste repositório podem ser baixados para seu
-          computador com Subversion usando as informações de check-out abaixo. \nSe
-          precisar de mais informações sobre o procedimento de check-out e os clientes
-          disponíveis, consulte a documentação do Subversion.\n"
+        git: |
+          The data contained in this repository can be downloaded to your computer with Git.
+          Please consult the documentation of Git if you need more information on the checkout procedure and available clients.
+        subversion: |
+          The data contained in this repository can be downloaded to your computer with Subversion.
+          Please consult the documentation of Subversion if you need more information on the checkout procedure and available clients.
       enable_instructions_text: Exibe instruções de check-out definidas abaixo em
         todas as páginas relacionadas ao repositório.
       instructions: Instruções de check-out
+      show_instructions: Display checkout instructions
       text_instructions: Este texto é exibido junto com a URL de check-out para orientações
         sobre como efetuar o check-out do repositório.
       not_available: Instruções de check-out não estão disponíveis para este repositório
@@ -1451,6 +1454,7 @@ pt-BR:
       managed_url: URL gerenciada
       password: Senha do repositório
       username: Nome de usuário do repositório
+    named_repository: "%{vendor_name} repository"
     update_settings_successful: Configurações atualizadas com sucesso.
     url: URL para repositório
   search_input_placeholder: busca...
