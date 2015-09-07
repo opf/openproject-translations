@@ -754,7 +754,7 @@ it:
   label_contains: contiene
   label_content: Contenuto
   label_copied: copiato
-  label_copy_to_clipboard: Copy to clipboard
+  label_copy_to_clipboard: Copia negli appunti
   label_copy_same_as_target: Lo stesso della destinazione
   label_copy_source: Sorgente
   label_copy_target: Destinazione
@@ -997,7 +997,7 @@ it:
   label_reporting: Segnalazione
   label_reporting_plural: Segnalazioni
   label_repository: Archivio
-  label_repository_root: Repository root
+  label_repository_root: Cartella radice dell'archivio
   label_repository_plural: Archivi
   label_responsible_for_work_packages: Pacchetti di lavoro di cui sono responsabile
   label_result_plural: Risultati
@@ -1343,14 +1343,14 @@ it:
   permission_view_commit_author_statistics: Visualizza le statistiche dell'autore
     delle modifiche confermate
   permission_view_work_package_watchers: Vedi la lista degli osservatori
-  permission_view_work_packages: Visualizza i pacchetti di lavoro
+  permission_view_work_packages: Visualizza le macro-attività (work package)
   permission_view_messages: Visualizza i messaggi
   permission_view_project_associations: Visualizzare le dipendenze del progetto
-  permission_view_reportings: Vedi rapporti
-  permission_view_time_entries: Mostra il tempo trascorso
-  permission_view_timelines: Vedi le sequenze temporali
-  permission_view_wiki_edits: Visualizza cronologia wiki
-  permission_view_wiki_pages: Vedi wiki
+  permission_view_reportings: Visualizza i rapporti
+  permission_view_time_entries: Visualizza il tempo impiegato
+  permission_view_timelines: Visualizza le cronologie
+  permission_view_wiki_edits: Visualizza la cronologia wiki
+  permission_view_wiki_pages: Visualizza la wiki
   project_module_activity: Attività
   project_module_boards: Forum
   project_module_calendar: Calendario
@@ -1358,15 +1358,15 @@ it:
   project_module_news: Notizie
   project_module_repository: Archivio
   project_module_time_tracking: Monitoraggio tempi
-  project_module_timelines: Sequenze temporali
+  project_module_timelines: Tempistiche
   project_module_wiki: Wiki
   query_fields:
     assigned_to_role: Ruolo dell'incaricato
     member_of_group: Gruppo dell'incaricato
     subproject_id: Sottoprogetto
   repositories:
-    at_identifier: at %{identifier}
-    atom_revision_feed: Atom revision feed
+    at_identifier: presso %{identifier}
+    atom_revision_feed: Revisione di Atom feed
     autofetch_information: |
       Spunta qui se desideri che l'archivio venga aggiornato automaticamente quando si accede alla sezione del modulo di archiviazione.
       Questo comprende il recupero dei commit effettuati sull'archivio e l'aggiornamento dello spazio di archiviazione su disco richiesto.
@@ -1376,7 +1376,7 @@ it:
         read: Sola lettura
         none: Nessun privilegio di check-out, attraverso questa applicazione è possibile
           soltanto la visualizzazione del repository.
-      access_permission: Your permissions on this repository
+      access_permission: I tuoi permessi per questo archivo
       url: URL di checkout
       base_url_text: 'L''URL di base è necessario generare URL di checkout (ad esempio,
         https://myserver.example.org/repos/). Nota: L''URL di base è utilizzato solo
@@ -1384,15 +1384,15 @@ it:
         Altri archivi non sono alterati.'
       default_instructions:
         git: |
-          The data contained in this repository can be downloaded to your computer with Git.
-          Please consult the documentation of Git if you need more information on the checkout procedure and available clients.
+          I dati contenuti in questo archivio di progetto possono essere scaricati sul tuo computer con Git.
+          Se hai bisogno di ulteriori informazioni sulla procedura di scaricamento (checkout) e sui programmi client disponibili, si prega di consultare la documentazione di Git.
         subversion: |
-          The data contained in this repository can be downloaded to your computer with Subversion.
-          Please consult the documentation of Subversion if you need more information on the checkout procedure and available clients.
+          I dati contenuti in questo archivio di progetto possono essere scaricati sul tuo computer con Subversion.
+          Se hai bisogno di ulteriori informazioni sulla procedura di scaricamento (checkout) e sui programmi client disponibili, si prega di consultare la documentazione di Subversion.
       enable_instructions_text: Visualizza le istruzioni per effettuare un checkout
         definite più avanti in tutte le pagine correlate con l'archivio.
       instructions: Istruzioni di checkout
-      show_instructions: Display checkout instructions
+      show_instructions: Mostra le istruzioni della procedura di scaricamento (checkout)
       text_instructions: Questo testo viene visualizzato insieme all'URL di checkout
         per fornire indicazioni su come effettuare un checkout sull'archivio.
       not_available: Le istruzioni di check-out non sono disponibili per questo archivio
@@ -1435,7 +1435,7 @@ it:
       instructions:
         managed_url: Questo è l'URL dell'archivio Git (locale) gestito direttamente.
         path: Specificare il percorso dell'archivio Git locale (ad esempio, %{example_path}).
-        path_encoding: 'Eseguire sovrascrittura codifica Git (Default: UTF-8)'
+        path_encoding: 'Rimpiazza la codifica Git per il percorso (Default: UTF-8)'
       local_title: Collega un archivio Git locale
       local_introduction: Se si dispone di un archivio Git locale preesistente, è
         possibile collegarlo con OpenProject per accedervi dall'interno dell'applicazione.
@@ -1478,7 +1478,7 @@ it:
       managed_url: URL gestito
       password: Password di accesso all'archivio
       username: Nome utente di accesso all'archivio
-    named_repository: "%{vendor_name} repository"
+    named_repository: archivio di progetto %{vendor_name}
     update_settings_successful: Le impostazioni sono state salvate con successo.
     url: URL all'archivio
   search_input_placeholder: cerca ...
@@ -1496,46 +1496,50 @@ it:
     di tentativi di login
   setting_brute_force_block_minutes: Durata del blocco utente
   setting_cache_formatted_text: Cache del testo formattato
-  setting_column_options: Personalizza l'aspetto degli elenchi del pacchetto di lavoro
+  setting_column_options: Personalizza l'aspetto degli elenchi di macro-attività (work
+    package)
   setting_commit_fix_keywords: Parole chiave di ripristino
-  setting_commit_logs_encoding: Codifica il messaggio
+  setting_commit_logs_encoding: Codifica dei messaggi di accettazione modifiche (commit)
   setting_commit_logtime_activity_id: Attività svolta durante l'orario registrato
   setting_commit_logtime_enabled: Abilita la registrazione dell'orario effettuato
-  setting_commit_ref_keywords: Riferimento a Parole chiavi
+  setting_commit_ref_keywords: Parole chiave di riferimento
   setting_cross_project_work_package_relations: Consenti di correlare i work package
     con più progetti
   setting_date_format: Formato data
   setting_default_language: Linguaggio predefinito
   setting_default_notification_option: Opzione di notifica predefinita
   setting_default_projects_modules: Moduli abilitati in automatico su nuovi progetti
-  setting_default_projects_public: I nuovi progetti sono pubblici come predefinito
+  setting_default_projects_public: I nuovi progetti sono pubblici come impostazione
+    predefinita
   setting_diff_max_lines_displayed: Numero massimo di linee diff visualizzate
-  setting_display_subprojects_work_packages: Visualizza pacchetti di lavoro di progetti
-    secondari nei progetti principali come predefinito
+  setting_display_subprojects_work_packages: Visualizza le macro-attività (work package)
+    dei sotto-progetti nei progetti principali come impostazione predefinita
   setting_emails_footer: Piè di pagina delle  e-mail
   setting_emails_header: Intestazione e-mail
   setting_enabled_scm: SCM Abilitato
   setting_feeds_enabled: Abilita Feed
   setting_feeds_limit: Limite al contenuto del contributo
-  setting_file_max_size_displayed: Dimensione massima di file di testo visualizzati
+  setting_file_max_size_displayed: Dimensione massima dei file di testo visualizzati
     inline
-  setting_gravatar_default: Immagine Gravatar predefinità
+  setting_gravatar_default: Immagine Gravatar predefinita
   setting_gravatar_enabled: Usa le icone Gravatar per gli utenti
   setting_host_name: Nome dell'Host
-  setting_work_package_done_ratio: Calcola la percentuale di completamento del pacchetto
-    di lavoro con
-  setting_work_package_done_ratio_field: Usa il campo del pacchetto di lavoro
-  setting_work_package_done_ratio_status: Usa lo stato del pacchetto di lavoro
-  setting_work_package_done_ratio_disabled: Disabilita (nascondi il progresso)
-  setting_work_package_list_default_columns: Visualizza per impostazione predefinita
+  setting_work_package_done_ratio: Calcola la percentuale di completamento della macro-attività
+    (work package) con
+  setting_work_package_done_ratio_field: Usa il campo della macro-attività (work package)
+  setting_work_package_done_ratio_status: Usa lo stato della macro-attività (work
+    package)
+  setting_work_package_done_ratio_disabled: Disabilita (nascondi l'avanzamento)
+  setting_work_package_list_default_columns: Visualizza come impostazione predefinita
   setting_work_package_list_summable_columns: Sommabile
-  setting_work_package_properties: Proprietà pacchetto di lavoro
+  setting_work_package_properties: Proprietà della macro-attività (work package)
   setting_work_package_startdate_is_adddate: Usa la data corrente come data di inizio
-    per il nuovo pacchetto di lavoro
-  setting_work_packages_export_limit: Limite di esportazione dei pacchetti di lavoro
+    per la nuova macro-attività (work package)
+  setting_work_packages_export_limit: Limite di esportazione delle macro-attività
+    (work package)
   setting_journal_aggregation_time_minutes: Mostra i rapporti aggregando per
-  setting_log_requesting_user: Registro d'accesso utente, nome, e indirizzo mail per
-    tutte le richieste
+  setting_log_requesting_user: Registra il nome d'accesso, il nome utente, e l'indirizzo
+    mail per tutte le richieste
   setting_login_required: Autenticazione richiesta
   setting_mail_from: Indirizzo e-mail di emissione
   setting_mail_handler_api_enabled: Abilitare il servizio web di posta elettronica
@@ -1544,22 +1548,22 @@ it:
     ad OpenProject di ricevere e-mail contenenti comandi specifici come strumento
     di automazione (ad esempio, per creare e aggiornare pacchetti di lavoro).
   setting_mail_handler_api_key: Chiave API
-  setting_mail_handler_body_delimiters: Troncare email dopo una di queste linee
+  setting_mail_handler_body_delimiters: Troncare le email dopo una di queste linee
   setting_new_project_user_role_id: Ruolo assegnato ad un utente non amministratore
     che crea un progetto
   setting_password_active_rules: Insiemi di caratteri attivi
-  setting_password_count_former_banned: Numero delle più recenti password usate bannate
-    per il riutilizzo
-  setting_password_days_valid: Numero di giorni, dopo il quale deve applicare una
-    modifica della password
+  setting_password_count_former_banned: Numero delle password usate più di recente
+    delle quali è vietato il riutilizzo
+  setting_password_days_valid: Numero di giorni, dopo il quale forzare la richiesta
+    di modifica della password
   setting_password_min_length: Lunghezza minima
   setting_password_min_adhered_rules: Numero minimo di classi richieste
-  setting_per_page_options: Oggetti per opzioni pagina
-  setting_plain_text_mail: Posta di testo semplice (no HTML)
+  setting_per_page_options: Opzioni degli oggetti per pagina
+  setting_plain_text_mail: Posta in formato testo semplice (no HTML)
   setting_protocol: Protocollo
   setting_repositories_automatic_managed_vendor: Tipo automatico di gestore dell'archivio
     di progetto
-  setting_repositories_encodings: Codifiche dei repository
+  setting_repositories_encodings: Codifiche degli archivi di progetto (repository)
   setting_repository_authentication_caching_enabled: Abilitare la cache per la richiesta
     di autenticazione del software di controllo versione
   setting_repository_storage_cache_minutes: Dimensione della cache dello spazio di
@@ -1571,32 +1575,33 @@ it:
     file di log
   setting_rest_api_enabled: Abilitare il servizio web REST
   setting_self_registration: Registrazione automatica
-  setting_sequential_project_identifiers: Generare identificatori di progetto sequenziale
-  setting_session_ttl: Scadenza della sessione dopo inattività
-  setting_session_ttl_hint: Valori inferiori a 5 lavorano come disabilitati
-  setting_session_ttl_enabled: Sessione scaduta
-  setting_start_of_week: Avvia calendario su
+  setting_sequential_project_identifiers: Generare identificatori di progetto sequenziali
+  setting_session_ttl: Intervallo di tempo al termine del quale scade la sessione
+    per inattività
+  setting_session_ttl_hint: Per valori inferiori a 5 è pari a disabilitato
+  setting_session_ttl_enabled: La sessione scade
+  setting_start_of_week: Avvia il calendario il
   setting_sys_api_enabled: Abilita la gestione di archivi via web service
   setting_sys_api_description: Il web service di gestione archivio fornisce servizi
     per integrare ed autorizzare gli utenti nell'accesso agli archivi.
   setting_text_formatting: Formattazione testo
-  setting_time_format: Formato del Tempo
+  setting_time_format: Formato del tempo
   setting_ui_theme: Tema
   setting_user_may_override_theme: Gli utenti possono scegliersi i loro temi
   setting_accessibility_mode_for_anonymous: Abilita la modalità di accesso facilitato
     per utenti anonimi
   setting_user_format: Formato di visualizzazione utenti
   setting_users_deletable_by_admins: Account degli utenti eliminabili dagli amministratori
-  setting_users_deletable_by_self: Gli utenti possono eliminare i propri account
+  setting_users_deletable_by_self: Gli utenti possono eliminare il proprio account
   setting_welcome_text: Testo di benvenuto
-  setting_wiki_compression: Compressione storia wiki
+  setting_wiki_compression: Compressione cronologia wiki
   setting_work_package_group_assignment: Consentire l'assegnazione ai gruppi
   settings:
     general: Generale
     other: Altro
     passwords: Password
     session: Sessione
-    brute_force_prevention: Bloccaggio automatico agli utenti
+    brute_force_prevention: Blocco automatico degli utenti
   show_hide_project_menu: Mostra/Nascondi menu progetto
   status_active: attivo
   support:
@@ -1605,42 +1610,43 @@ it:
       skip_last_comma: falso
   text_analyze: 'Analizzare ulteriormente: %{subject}'
   text_are_you_sure: Sei sicuro?
-  text_are_you_sure_with_children: Eliminare il pacchetto di lavoro e tutti i suoi
-    figli?
+  text_are_you_sure_with_children: Eliminare la macro-attività (work package) e tutte
+    le sue sotto-attività?
   text_assign_to_project: Assegna al progetto
-  text_caracters_maximum: "%{count} caratteri massimi."
-  text_caracters_minimum: Deve essere almeno %{count} caratteri di lunghezza.
-  text_comma_separated: Valori multipli permessi (separati da virgola).
+  text_caracters_maximum: "%{count} caratteri massimo."
+  text_caracters_minimum: Deve essere lungo almeno %{count} caratteri.
+  text_comma_separated: Sono ammessi valori multipli (separati da virgola).
   text_custom_field_possible_values_info: Una riga per ogni valore
-  text_default_administrator_account_changed: Account di amministratore predefinito
-    cambiato
+  text_default_administrator_account_changed: Account amministratore predefinito cambiato
   text_default_encoding: 'Predefinito: UTF-8'
   text_destroy: Cancella
-  text_destroy_with_associated: 'Ci sono ulteriori oggetti associati con i pacchetto(i)
-    di lavoro che devono essere eliminati. Tali oggetti sono dei seguenti tipi:'
+  text_destroy_with_associated: 'Ci sono ulteriori oggetti associati con la/le macro-attività
+    (work package) che devono essere eliminati. Tali oggetti sono dei seguenti tipi:'
   text_destroy_what_to_do: Cosa vuoi fare?
   text_diff_truncated: "... Questo diff è stato troncato perché supera la dimensione
     massima che può essere visualizzata."
-  text_email_delivery_not_configured: L'invio di email non è configurato e le notifiche
-    sono disabilitate. Configura il tuo server SMTP nel file config/configuration.yml
-    e riavvia l'applicazione per abilitare le nuove impostazioni.
+  text_email_delivery_not_configured: |
+    L'invio di email non è configurato e le notifiche sono disabilitate.
+    Configura il tuo server SMTP nel file config/configuration.yml e riavvia l'applicazione per abilitare le nuove impostazioni.
   text_enumeration_category_reassign_to: 'Riassegnali a questo valore:'
   text_enumeration_destroy_question: "%{count} oggetti sono assegnati a questo valore."
   text_file_repository_writable: Cartella allegati scrivibile
   text_git_repo_example: un semplice archivio fisico locale (ad esempio /gitrepo,
     c:\gitrepo)
   text_hint_disable_with_0: 'Nota: Disattivare con 0'
-  text_work_package_added: Il pacchetto di lavoro %{id} è stato segnalato da %{author}.
+  text_work_package_added: La macro-attività (work package) %{id} è stata segnalata
+    da %{author}.
   text_work_package_category_destroy_assignments: Rimuovere le assegnazioni di categoria
-  text_work_package_category_destroy_question: Alcuni pacchetti di lavoro (%{count})
-    sono assegnati a questa categoria. Cosa vuoi fare?
-  text_work_package_category_reassign_to: Riassegna il pacchetto di lavoro a questa
-    categoria
-  text_work_package_updated: Il pacchetto di lavoro %{id} è stato aggiornato da %{author}.
+  text_work_package_category_destroy_question: Alcune macro-attività (work package)
+    (%{count}) sono assegnate a questa categoria. Cosa vuoi fare?
+  text_work_package_category_reassign_to: Riassegna le macro-attività (work package)
+    a questa categoria
+  text_work_package_updated: La macro-attività (work package) %{id} è stata aggiornata
+    da %{author}.
   text_work_package_watcher_added: Sei stato aggiunto come osservatore della macro-attività
     %{id} da %{watcher_setter}.
-  text_work_packages_destroy_confirmation: Sei sicuro di che voler eliminare i pacchetti(o)
-    di lavoro selezionati?
+  text_work_packages_destroy_confirmation: Sei sicuro di che voler eliminare le/le
+    macro-attività (work package) selezionata/e?
   text_work_packages_ref_in_commit_messages: Work packages che sono correlati e/o
     modificati nei messaggi di conferma
   text_journal_added: "%{label} %{value} aggiunto"
@@ -1659,16 +1665,17 @@ it:
   text_line_separated: Valori multipli consentiti (una linea per ogni valore).
   text_load_default_configuration: Carica la configurazione predefinita
   text_min_max_length_info: 0 significa nessuna restrizione
-  text_no_configuration_data: Ruoli, tipi, status del pacchetto di lavoro e flusso
-    di lavoro non sono stati ancora configurati. Si consiglia di caricare la configurazione
-    predefinita. Sarete in grado di modificarla una volta caricato.
-  text_no_notes: Non ci sono commenti disponibili per questo pacchetto di lavoro.
+  text_no_configuration_data: Ruoli, tipi, stati delle macro-attività (work package)
+    e flusso di lavoro non sono stati ancora configurati. Si consiglia di caricare
+    la configurazione predefinita. Sarà possibile modificarla in seguito.
+  text_no_notes: Non ci sono commenti disponibili per questa macro-attività (work
+    package).
   text_notice_too_many_values_are_inperformant: 'Nota: La visualizzazione di più di
     100 elementi per pagina può aumentare il tempo di caricamento della pagina.'
-  text_own_membership_delete_confirmation: "Stai per rimuovere qualcuno o tutti i
-    tuoi permessi e non sarai più capace di modificare questo progetto dopo questo.\nSei
-    sicuro di voler continuare? \n"
-  text_plugin_assets_writable: Cartella del plugin attivo scrivibile
+  text_own_membership_delete_confirmation: |
+    Stai per rimuovere qualcuno o tutti i tuoi permessi e potresti non essere più in grado di modificare questo progetto dopo questo passo.
+    Sei sicuro di voler continuare?
+  text_plugin_assets_writable: Cartella del pool di plugin installati scrivibile
   text_powered_by: Offerto da %{link}
   text_project_destroy_title: Vuoi davvero eliminare questo progetto?
   text_project_destroy_confirmation: Se continui, il progetto %{identifier} e tutti
@@ -1677,46 +1684,48 @@ it:
   text_project_identifier_info: Solo le lettere minuscole (a-z), numeri, trattini
     e trattini bassi sono consentiti, devi iniziare con una lettera maiuscola.
   text_reassign: Riassegna a
-  text_reassign_to: 'pacchetto di lavoro:'
+  text_reassign_to: 'macro-attività (work package):'
   text_regexp_info: es. ^[A-Z0-9]+$
   text_repository_usernames_mapping: Seleziona o aggiorna l'utente OpenProject mappato
     per ogni nome utente trovato nel registro dell'archivio. Gli utenti con lo stesso
-    nome utente  e repository OpenProject o e-mail vengono mappati automaticamente.
+    nome utente e repository OpenProject o e-mail vengono mappati automaticamente.
   text_select_mail_notifications: Seleziona le azioni per cui l'e-mail deve essere
     inviata.
   text_status_changed_by_changeset: Stato variato a partire dalla modifica %{value}.
-  text_subprojects_destroy_warning: 'i progetto(i) secondari: %{value} verranno anche
-    eliminati.'
+  text_subprojects_destroy_warning: 'Il suo(i) sotto-progetto(i): %{value} verranno
+    eliminati di conseguenza.'
   text_time_logged_by_changeset: Stato variato a partire dalla modifica %{value}.
-  text_tip_work_package_begin_day: il pacchetto di lavoro inizia questo giorno
-  text_tip_work_package_begin_end_day: il pacchetto di lavoro inizia e finisce questo
+  text_tip_work_package_begin_day: macro-attività (work package) che iniziano questo
     giorno
-  text_tip_work_package_end_day: il pacchetto di lavoro finisce questo giorno
+  text_tip_work_package_begin_end_day: macro-attività (work package) che iniziano
+    e terminano questo giorno
+  text_tip_work_package_end_day: macro-attività (work package) che terminano questo
+    giorno
   text_type_no_workflow: Nessun flusso di lavoro definito per questo tipo
   text_unallowed_characters: Caratteri non consentiti
   text_user_mail_option: Per i progetti non selezionati, si riceveranno solo le notifiche
-    sulle cose da guardare o dove sei coinvolto (es. pacchetti di lavoro dove sei
-    l'autore o a cui sei assegnato).
+    sulle cose da guardare o dove sei coinvolto (es. macro-attività (work package)
+    dove sei l'autore o che ti sono state assegnate).
   text_user_wrote: "%{value} ha scritto:"
-  text_warn_on_leaving_unsaved: La pagina corrente contiene testo non salvato andrà
-    perso se si lascia questa pagina.
+  text_warn_on_leaving_unsaved: La pagina corrente contiene testo non salvato che
+    andrà perso se abbandoni questa pagina.
   text_wiki_destroy_confirmation: Sei sicuro di che voler cancellare questo wiki e
     tutti i suoi contenuti?
-  text_wiki_page_destroy_children: Cancella pagine figlio e i suoi discendenti
-  text_wiki_page_destroy_question: Questa pagina ha %{descendants} pagina(e) figlio.
-    Cosa vuoi fare?
-  text_wiki_page_nullify_children: Manienti le pagine figlio come pagine di radice
-  text_wiki_page_reassign_children: Riassegna le pagine figlio a quetsa pagina padre
+  text_wiki_page_destroy_children: Cancella le sotto-pagine e le loro pagine discendenti
+  text_wiki_page_destroy_question: Questa pagina ha %{descendants} sotto-pagina(e)
+    e pagina(e) discendenti. Cosa vuoi fare?
+  text_wiki_page_nullify_children: Mantieni le pagine derivate come pagine radice
+  text_wiki_page_reassign_children: Riassegna le pagine derivate a questa pagina padre
   text_workflow_edit: Seleziona un ruolo e un tipo per modificare il flusso di lavoro
-  text_zoom_in: Ingrandisci
-  text_zoom_out: Rimpicciolisci
+  text_zoom_in: Zoom avanti
+  text_zoom_out: Zoom indietro
   time:
     am: AM
     formats:
       default: "%m/%d/%Y %I: %M %p"
-      long: "%B %d % %y h: %M"
-      short: "%d %b % h %M"
-      time: "%I: %M %p"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+      time: "%I:%M %p"
     pm: pm
   timeframe:
     show: Visualizza calendario
@@ -1731,14 +1740,14 @@ it:
     project_menu:
       project_associations: Dipendenze
       reportings: Rapporti di stato
-      reports: Rapporti sequenza temporale
-      timelines: Sequenze temporali
+      reports: Rapporti tempistiche
+      timelines: Tempistiche
     add_project_association: Aggiungi dipendenza
     associations: Dipendenze
     board_could_not_be_saved: Il quadro non può essere salvato
     button_delete_all: Cancella tutti
     change: Cambiare nella pianificazione
-    children: Elementi figlio
+    children: Elementi discendenti
     color_could_not_be_saved: Il colore non può essere salvato
     current_planning: Pianificazione corrente
     dates: Date
@@ -1753,35 +1762,35 @@ it:
     edit_color: Modifica il colore
     edit_project_type: Modifica il tipo del progetto
     edit_thing: Modifica
-    edit_timeline: Modifica la segnalazione della sequenza temporale %{timeline}
-    delete_timeline: Elimina la segnalazione della sequenza temporale %{timeline}
+    edit_timeline: Modifica la segnalazione della cronologia %{timeline}
+    delete_timeline: Elimina la segnalazione della cronologia %{timeline}
     empty: "(vuoto)"
     enable_type_in_project: Abilita il tipo %{type}
     end: Fine
     errors:
-      not_implemented: La sequenza temporale non potrebbe essere renderizzata perché
-        utilizza una funzionalità che non è stata ancora implementata.
-      report_comparison: La sequenza temporale non potrebbe renderizzare i confronti
-        configurati. Perfavore controlla nella configurazione la sezione appropriata,
-        reimpostarlo può aiutare a risolvere questo problema.
-      report_epicfail: La sequenza temporale non potrebbe essere caricata a causa
-        di un errore inaspettato.
-      report_timeout: La sequenza temporale potrebbe non essere caricata in un lasso
-        ti tempo ragionevole.
+      not_implemented: Non è stato possibile renderizzare la cronologia perché utilizza
+        una funzionalità che non è stata ancora implementata.
+      report_comparison: La cronologia non può renderizzare i confronti configurati.
+        Per favore controlla la sezione appropriata nella configurazione, un reset
+        può aiutare a risolvere questo problema.
+      report_epicfail: Non è stato possibile caricare la cronologia a causa di un
+        errore inaspettato.
+      report_timeout: Non è stato possibile caricare la cronologia in un lasso ti
+        tempo ragionevole.
     filter:
       errors:
-        timeframe_start: 'L''inizio del calendario '
-        timeframe_end: 'La fine del calendario '
+        timeframe_start: 'L''inizio della cronologia '
+        timeframe_end: 'Il termine della cronologia '
         compare_to_relative: 'Il valore del confronto relativo '
         compare_to_absolute: 'Il valore del confronto assoluto '
-        planning_element_time_relative_one: 'L''inizio per i pacchetti di lavoro in
-          un certo lasso di tempo '
-        planning_element_time_relative_two: 'La fine per i pacchetti di lavoro in
-          un certo lasso di tempo '
-        planning_element_time_absolute_one: 'L''inizio per i pacchetti di lavoro in
-          un certo lasso di tempo  '
-        planning_element_time_absolute_two: 'La fine per i pacchetti di lavoro in
-          un certo lasso di tempo  '
+        planning_element_time_relative_one: 'L''inizio per le macro-attività (work
+          package) in un certo lasso di tempo '
+        planning_element_time_relative_two: 'Il termine per le macro-attività (work
+          package) in un certo lasso di tempo '
+        planning_element_time_absolute_one: 'L''inizio per le macro-attività (work
+          package) in un certo lasso di tempo  '
+        planning_element_time_absolute_two: 'Il termine per le macro-attività (work
+          package) in un certo lasso di tempo  '
       sort:
         sortation: Ordina per
         alphabet: alfabeto
@@ -1792,7 +1801,7 @@ it:
       column:
         assigned_to: Assegnatario
         type: Tipo
-        due_date: Fine data
+        due_date: Data di scadenza
         name: Nome
         status: Stato
         responsible: Responsabile
@@ -1901,15 +1910,15 @@ it:
       Anche gli stati della segnalazione precedente verranno eliminati.
     start: Inizio
     timeline: Segnalazioni sequenza temporale
-    timelines: Rapporti sequenza temporale
-    settings: Sequenze temporali
+    timelines: Rapporti tempistiche
+    settings: Tempistiche
     vertical_work_package: Pacchetti di lavoro verticali
     without_project_type: Senza il tipo del progetto
     you_are_viewing_the_selected_timeline: Stai vedendo la segnalazione della sequenza
       temporale selezionata
     zoom:
-      in: Ingrandisci
-      out: Rimpicciolisci
+      in: Zoom avanti
+      out: Zoom indietro
       days: Giornni
       weeks: Settimane
       months: Mesi
