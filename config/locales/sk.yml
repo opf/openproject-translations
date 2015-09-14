@@ -1,19 +1,20 @@
 ---
 sk:
+  label_invitation: Invitation
   account:
     delete: Odstrániť konto
     delete_confirmation: Naozaj chcete odstrániť toto konto?
     deleted: "Účet bol úspešne vymazaný"
     deletion_info:
       data_consequences:
-        other: Of the data the user created (e.g. e-mail, preferences, work packages,
+        other: Of the data the user created (e.g. email, preferences, work packages,
           wiki entries) as much as possible will be deleted. Note however, that data
           like work packages and wiki entries can not be deleted without impeding
           the work of the other users. Such data is hence reassigned to an account
           called "Deleted user". As the data of every deleted account is reassigned
           to this account it will not be possible to distinguish the data the user
           created from the data of another deleted account.
-        self: Of the data you created (e.g. e-mail, preferences, work packages, wiki
+        self: Of the data you created (e.g. email, preferences, work packages, wiki
           entries) as much as possible will be deleted. Note however, that data like
           work packages and wiki entries can not be deleted without impeding the work
           of the other users. Such data is hence reassigned to an account called "Deleted
@@ -38,6 +39,10 @@ sk:
     error_self_registration_disabled: Registrácia užívateľa je v tomto systéme zakázaná.
       Požiadajte prosím správcu, aby pre Vás účet vytvoril.
     login_with_auth_provider: alebo sa prihláste so svojím existujúcim účtom
+    signup_with_auth_provider: or sign up using
+    signup_with_password: using user name and password.
+    auth_source_login: Please login as <em>%{login}</em> to activate your account.
+    omniauth_login: Please login to activate your account.
   actionview_instancetag_blank_option: Prosím, vyberte
   activerecord:
     attributes:
@@ -348,6 +353,7 @@ sk:
     version: Verzia
     work_package: Pracovný balíček
   button_add: Pridať
+  button_add_member: Add member
   button_add_watcher: Pridať pozorovateľa
   button_annotate: Komentovať
   button_apply: Použiť
@@ -379,6 +385,7 @@ sk:
   button_move: Presunúť
   button_move_and_follow: Presunúť a nasledovať
   button_quote: Citovať
+  button_remove: Remove
   button_remove_widget: Odstrániť widget
   button_rename: Premenovať
   button_reply: Odpoveď
@@ -706,7 +713,6 @@ sk:
   label_additional_workflow_transitions_for_author: Additional transitions allowed
     when the user is the author
   label_administration: Administrácia
-  label_advanced_settings: Advanced settings
   label_age: Vek
   label_ago: dní späť
   label_all: Všetky
@@ -981,7 +987,8 @@ sk:
   label_preview: Náhľad
   label_previous: Previous
   label_previous_week: Previous week
-  label_principal_search: Search for users or groups
+  label_principal_invite_via_email: " or invite new users via email"
+  label_principal_search: Add existing users or groups
   label_professional_support: Professional support
   label_profile: Profile
   label_project_all: All Projects
@@ -1037,7 +1044,7 @@ sk:
   label_role_and_permissions: "Úlohy a oprávnenia"
   label_role_new: Nová rola
   label_role_plural: Role
-  label_role_search: Vyhľadať roly
+  label_role_search: Assign roles to new members
   label_scm: SCM
   label_search: Vyhľadávanie
   label_search_titles_only: Vyhľadať iba tituly
@@ -1224,6 +1231,8 @@ sk:
   noscript_heading: JavaScript disabled
   noscript_learn_more: Learn more
   notice_account_activated: Your account has been activated. You can now log in.
+  notice_account_already_activated: The account has already been activated.
+  notice_account_invalid_token: Invalid activation token
   notice_account_invalid_credentials: Invalid user or password
   notice_account_invalid_credentials_or_blocked: Invalid user or password or the account
     is blocked due to multiple failed login attempts. If so, it will be unblocked
@@ -1245,6 +1254,7 @@ sk:
   notice_account_wrong_password: Wrong password
   notice_account_registered_and_logged_in: Welcome, your account has been activated.
     You are logged in now.
+  notice_activation_failed: The account could not be activated.
   notice_api_access_key_reseted: Your API access key was reset.
   notice_can_t_change_password: This account uses an external authentication source.
     Impossible to change the password.
@@ -1266,6 +1276,10 @@ sk:
   notice_locking_conflict_additional_information: The update(s) came from %{users}.
   notice_locking_conflict_reload_page: Please reload the page, review the changes
     and reapply your updates.
+  notice_member_added: Added %{name} to the project.
+  notice_members_added: Added %{number} users to the the project.
+  notice_member_removed: Removed %{user} from project.
+  notice_member_deleted: "%{user} has been removed from the project and deleted."
   notice_no_principals_found: No results found.
   notice_bad_request: Bad Request.
   notice_not_authorized: You are not authorized to access this page.
@@ -1281,8 +1295,12 @@ sk:
     Narrow down the search by typing in the name of the new member (or group).
   notice_unable_delete_time_entry: Unable to delete time log entry.
   notice_unable_delete_version: Unable to delete version.
+  notice_user_missing_authentication_method: User has yet to chose a password or another
+    way the sign in.
   notice_automatic_set_of_standard_type: Set standard type automatically.
   notice_logged_out: You have been logged out.
+  notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
+    as there are still users using it.
   error_types_in_use_by_work_packages: 'The following types are still referenced by
     work packages: %{types}'
   notice_project_cannot_update_custom_fields: You cannot update the project's available
@@ -1612,6 +1630,8 @@ sk:
     brute_force_prevention: Automatizované blokovanie používateľa
   show_hide_project_menu: Show/Hide project menu
   status_active: active
+  status_invited: invited
+  status_registered: registrovaný
   support:
     array:
       sentence_connector: and
@@ -1668,6 +1688,7 @@ sk:
   text_line_separated: Multiple values allowed (one line for each value).
   text_load_default_configuration: Load the default configuration
   text_min_max_length_info: 0 means no restriction
+  text_no_roles_defined: There are no roles defined.
   text_no_configuration_data: Roly, typy, pracovný balík stavy a pracovný postup zatiaľ
     neboli nakonfigurované. Doporučujeme načítať predvolenú konfiguráciu. Po je jnačítaní
     ju budete mať možnosť zmeniť podľa Vašich potrieb.
@@ -1701,6 +1722,7 @@ sk:
   text_tip_work_package_end_day: pracovný balíček finišuje dnes
   text_type_no_workflow: No workflow defined for this type
   text_unallowed_characters: Unallowed characters
+  text_user_invited: The user has been invited and is pending registration.
   text_user_mail_option: For unselected projects, you will only receive notifications
     about things you watch or you're involved in (eg. work packages you're the author
     or assignee).
@@ -1919,6 +1941,8 @@ sk:
       months: Mesiace
       quarters: Kvartály
       years: Roky
+  title_remove_and_delete_user: Remove the invited user from the project and delete
+    them.
   queries:
     apply_filter: Aplikovať predkonfigurovaný filter
   total_progress: Celkový priebeh
@@ -1931,7 +1955,7 @@ sk:
     authentication_settings_disabled_due_to_external_authentication: Tento používateľ
       sa overuje za pomoci externého poskytovateľa autentifikácie, takže jeho heslo
       nie je možné zmeniť pomocou OpenProject .
-    assign_random_password: Assign random password (sent to user via e-mail)
+    assign_random_password: Assign random password (sent to user via email)
     blocked: locked temporarily
     blocked_num_failed_logins:
       one: locked temporarily (one failed login attempt)
@@ -1943,6 +1967,7 @@ sk:
     lock: Lock permanently
     locked: locked permanently
     registered: registrovaný
+    invited: invited
     reset_failed_logins: Reset failed logins
     status_user_and_brute_force: "%{user} and %{brute_force}"
     unlock: Odomknúť
@@ -1951,6 +1976,7 @@ sk:
       they cannot log in.
     password_change_unsupported: Change of password is not supported.
     authorization_rejected: Nemôžete sa prihlásiť.
+    invite: Invite user via email
   version_status_closed: uzatvorené
   version_status_locked: zamknuté
   version_status_open: otvorené

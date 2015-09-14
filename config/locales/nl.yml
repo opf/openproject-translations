@@ -1,29 +1,26 @@
 ---
 nl:
+  label_invitation: Invitation
   account:
     delete: Account Verwijderen
     delete_confirmation: Weet je zeker dat je dit account wilt verwijderen?
     deleted: Account met succes verwijderd
     deletion_info:
       data_consequences:
-        other: Van de gegevens die de gebruiker heeft gemaakt (bijvoorbeeld e-mail,
-          voorkeuren, werkpakketten, wiki inzendingen) zoveel mogelijk zal worden
-          verwijderd. Merk echter op dat gegevens zoals werkpakketten en wiki items
-          kunnen niet worden verwijderd zonder het belemmeren van het werk van de
-          andere gebruikers. Dergelijke gegevens is dus opnieuw toegewezen aan een
-          account "Verwijderde gebruiker" genoemd. Als de gegevens van elke verwijderde
-          account opnieuw is toegewezen aan verwijderd deze account dat het zal niet
-          mogelijk zijn om te onderscheiden van de gegevens die de gebruiker heeft
-          gemaakt op basis van de gegevens van een ander account.
-        self: Van de gegevens die de gebruiker heeft gemaakt (bijvoorbeeld e-mail,
-          voorkeuren, werkpakketten, wiki inzendingen) zoveel mogelijk zal worden
-          verwijderd. Merk echter op dat gegevens zoals werkpakketten en wiki items
-          kunnen niet worden verwijderd zonder het belemmeren van het werk van de
-          andere gebruikers. Dergelijke gegevens is dus opnieuw toegewezen aan een
-          account "Verwijderde gebruiker" genoemd. Als de gegevens van elke verwijderde
-          account opnieuw is toegewezen aan verwijderd deze account dat het zal niet
-          mogelijk zijn om te onderscheiden van de gegevens die de gebruiker heeft
-          gemaakt op basis van de gegevens van een ander account.
+        other: Of the data the user created (e.g. email, preferences, work packages,
+          wiki entries) as much as possible will be deleted. Note however, that data
+          like work packages and wiki entries can not be deleted without impeding
+          the work of the other users. Such data is hence reassigned to an account
+          called "Deleted user". As the data of every deleted account is reassigned
+          to this account it will not be possible to distinguish the data the user
+          created from the data of another deleted account.
+        self: Of the data you created (e.g. email, preferences, work packages, wiki
+          entries) as much as possible will be deleted. Note however, that data like
+          work packages and wiki entries can not be deleted without impeding the work
+          of the other users. Such data is hence reassigned to an account called "Deleted
+          user". As the data of every deleted account is reassigned to this account
+          it will not be possible to distinguish the data you created from the data
+          of another deleted account.
       heading: Verwijder account %{name}
       info:
         other: Het verwijderen van de gebruikersaccount is een onomkeerbare actie.
@@ -43,6 +40,10 @@ nl:
     error_self_registration_disabled: Gebruikersregistratie is uitgeschakeld op dit
       systeem. Vraag een beheerder om een account voor u aan te maken.
     login_with_auth_provider: of log in met een bestaand account
+    signup_with_auth_provider: or sign up using
+    signup_with_password: using user name and password.
+    auth_source_login: Please login as <em>%{login}</em> to activate your account.
+    omniauth_login: Please login to activate your account.
   actionview_instancetag_blank_option: Gelieve te selecteren
   activerecord:
     attributes:
@@ -348,6 +349,7 @@ nl:
     version: Versie
     work_package: Werkpakket
   button_add: Toevoegen
+  button_add_member: Add member
   button_add_watcher: Watcher toevoegen
   button_annotate: Aantekeningen
   button_apply: Toepassen
@@ -379,6 +381,7 @@ nl:
   button_move: Verplaatsen
   button_move_and_follow: Verplaatsen en volgen
   button_quote: Citeer
+  button_remove: Remove
   button_remove_widget: Widget verwijderen
   button_rename: Naam wijzigen
   button_reply: Beantwoorden
@@ -694,7 +697,6 @@ nl:
   label_additional_workflow_transitions_for_author: Extra overgangen zijn toegestaan
     als de gebruiker de auteur is
   label_administration: Administratie
-  label_advanced_settings: Advanced settings
   label_age: Leeftijd
   label_ago: dagen geleden
   label_all: alle
@@ -970,7 +972,8 @@ nl:
   label_preview: Voorbeeld
   label_previous: Vorige
   label_previous_week: Vorige week
-  label_principal_search: Zoeken naar gebruikers of groepen
+  label_principal_invite_via_email: " or invite new users via email"
+  label_principal_search: Add existing users or groups
   label_professional_support: Professional support
   label_profile: Profiel
   label_project_all: Alle projecten
@@ -1028,7 +1031,7 @@ nl:
   label_role_and_permissions: Rollen en machtigingen
   label_role_new: Nieuwe rol
   label_role_plural: Rollen
-  label_role_search: Rollen zoeken
+  label_role_search: Assign roles to new members
   label_scm: SCM
   label_search: Zoeken
   label_search_titles_only: Alleen zoeken in titels
@@ -1214,6 +1217,8 @@ nl:
   noscript_heading: JavaScript uitgeschakeld
   noscript_learn_more: Leer meer
   notice_account_activated: Uw account is geactiveerd. U kunt nu inloggen.
+  notice_account_already_activated: The account has already been activated.
+  notice_account_invalid_token: Invalid activation token
   notice_account_invalid_credentials: Ongeldige gebruikersnaam of wachtwoord
   notice_account_invalid_credentials_or_blocked: Ongeldige gebruiker of wachtwoord
     of de account is geblokkeerd vanwege meerdere mislukte inlogpogingen. Als dat
@@ -1235,6 +1240,7 @@ nl:
   notice_account_wrong_password: Verkeerde wachtwoord
   notice_account_registered_and_logged_in: Welkom, uw acount is geactiveerd. U bent
     nu ingelogd.
+  notice_activation_failed: The account could not be activated.
   notice_api_access_key_reseted: Uw API-toegangssleutel is opnieuw ingesteld.
   notice_can_t_change_password: Dit account gebruikt een externe verificatie bron.
     Het is onmogelijk om het wachtwoord te wijzigen.
@@ -1255,6 +1261,10 @@ nl:
   notice_locking_conflict_additional_information: De update kwam van %{users}.
   notice_locking_conflict_reload_page: Pagina opnieuw laden, bekijk de wijzigingen
     en uw wijzigingen opnieuw toepassen.
+  notice_member_added: Added %{name} to the project.
+  notice_members_added: Added %{number} users to the the project.
+  notice_member_removed: Removed %{user} from project.
+  notice_member_deleted: "%{user} has been removed from the project and deleted."
   notice_no_principals_found: Geen resultaten gevonden.
   notice_bad_request: Foute ingave.
   notice_not_authorized: U bent niet gemachtigd om deze pagina te openen.
@@ -1269,8 +1279,12 @@ nl:
     door een naam in te geven van een nieuw lid of groep.
   notice_unable_delete_time_entry: Niet in staat om tijdlog te verwijderen.
   notice_unable_delete_version: Niet in staat om versie te verwijderen.
+  notice_user_missing_authentication_method: User has yet to chose a password or another
+    way the sign in.
   notice_automatic_set_of_standard_type: Standaardtype automatisch ingesteld.
   notice_logged_out: You have been logged out.
+  notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
+    as there are still users using it.
   error_types_in_use_by_work_packages: 'Naar de volgende typen wordt nog verwezen
     door werkpakketten: %{types}'
   notice_project_cannot_update_custom_fields: You cannot update the project's available
@@ -1600,6 +1614,8 @@ nl:
     brute_force_prevention: Automatische gebruiker blokkering
   show_hide_project_menu: Show/Hide project menu
   status_active: actief
+  status_invited: invited
+  status_registered: registered
   support:
     array:
       sentence_connector: en
@@ -1656,6 +1672,7 @@ nl:
   text_line_separated: Meerdere waarden toegestaan (één regel voor elke waarde).
   text_load_default_configuration: De standaardconfiguratie laden
   text_min_max_length_info: 0 betekent geen beperking
+  text_no_roles_defined: There are no roles defined.
   text_no_configuration_data: "Rollen, typen, werk pakket statussen en workflow zijn
     niet geconfigureerd nog. \ndit is sterk aanbevolen voor het laden van de standaardconfiguratie.
     U kunt deze wijzigen als het eenmaal geladen is."
@@ -1689,6 +1706,7 @@ nl:
   text_tip_work_package_end_day: work package ending this day
   text_type_no_workflow: No workflow defined for this type
   text_unallowed_characters: Unallowed characters
+  text_user_invited: The user has been invited and is pending registration.
   text_user_mail_option: For unselected projects, you will only receive notifications
     about things you watch or you're involved in (eg. work packages you're the author
     or assignee).
@@ -1906,6 +1924,8 @@ nl:
       months: Months
       quarters: Quarters
       years: Years
+  title_remove_and_delete_user: Remove the invited user from the project and delete
+    them.
   queries:
     apply_filter: Apply preconfigured filter
   total_progress: Total progress
@@ -1918,7 +1938,7 @@ nl:
     authentication_settings_disabled_due_to_external_authentication: This user authenticates
       via an external authentication provider, so there is no password in OpenProject
       to be changed.
-    assign_random_password: Assign random password (sent to user via e-mail)
+    assign_random_password: Assign random password (sent to user via email)
     blocked: locked temporarily
     blocked_num_failed_logins:
       one: locked temporarily (one failed login attempt)
@@ -1929,6 +1949,7 @@ nl:
     lock: Lock permanently
     locked: locked permanently
     registered: registered
+    invited: invited
     reset_failed_logins: Reset failed logins
     status_user_and_brute_force: "%{user} and %{brute_force}"
     unlock: Ontgrendelen
@@ -1937,6 +1958,7 @@ nl:
       they cannot log in.
     password_change_unsupported: Change of password is not supported.
     authorization_rejected: You are not allowed to sign in.
+    invite: Invite user via email
   version_status_closed: gesloten
   version_status_locked: locked
   version_status_open: Open

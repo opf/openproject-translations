@@ -1,21 +1,26 @@
 ---
 th:
+  label_invitation: Invitation
   account:
     delete: "ลบบัญชีผู้ใช้"
     delete_confirmation: "คุณแน่ใจหรือไม่ว่าจะลบบัญชีผู้ใช้ ?"
     deleted: "ลบบัญชีผู้ใช้เรียบร้อยแล้ว"
     deletion_info:
       data_consequences:
-        other: ของข้อมูลที่ผู้ใช้สร้าง (เช่น อีเมล, การตั้งค่า, ชุดภารกิจ, รายการวิกิ)
-          จะถูกลบมากที่สุดเท่าที่ทำได้ อย่างไรก็ตาม ข้อมูลอย่างเช่นชุดภารกิจ และรายการวิกิ
-          ไม่สามารถลบหากพบว่าเป็นการขัดขวางการทำงานของผู้ใช้อื่นๆ ต่อแต่นี้ไป ข้อมูลจำนวนมากจะถูกระบุไปยังบัญชีผู้ใช้ที่เรียกว่า
-          "ผู้ใช้ที่ถูกลบแล้ว" และข้อมูลของผู้ใช้ที่ถูกลบแล้วทุกๆ บัญชี จะมาปราฎที่นี่
-          และไม่สามารถแยกแยะข้อมูลได้ว่ามีการสร้างจากบัญชีใดบ้างซึ่งลบไปแล้ว
-        self: ของข้อมูลที่ผู้ใช้สร้าง (เช่น อีเมล, การตั้งค่า, ชุดภารกิจ, รายการวิกิ)
-          จะถูกลบมากที่สุดเท่าที่ทำได้ อย่างไรก็ตาม ข้อมูลอย่างเช่นชุดภารกิจ และรายการวิกิ
-          ไม่สามารถลบหากพบว่าเป็นการขัดขวางการทำงานของผู้ใช้อื่นๆ ต่อแต่นี้ไป ข้อมูลจำนวนมากจะถูกระบุไปยังบัญชีผู้ใช้ที่เรียกว่า
-          "ผู้ใช้ที่ถูกลบแล้ว" และข้อมูลของผู้ใช้ที่ถูกลบแล้วทุกๆ บัญชี จะมาปราฎที่นี่
-          และไม่สามารถแยกแยะข้อมูลได้ว่ามีการสร้างจากบัญชีใดบ้างซึ่งลบไปแล้ว.
+        other: Of the data the user created (e.g. email, preferences, work packages,
+          wiki entries) as much as possible will be deleted. Note however, that data
+          like work packages and wiki entries can not be deleted without impeding
+          the work of the other users. Such data is hence reassigned to an account
+          called "Deleted user". As the data of every deleted account is reassigned
+          to this account it will not be possible to distinguish the data the user
+          created from the data of another deleted account.
+        self: Of the data you created (e.g. email, preferences, work packages, wiki
+          entries) as much as possible will be deleted. Note however, that data like
+          work packages and wiki entries can not be deleted without impeding the work
+          of the other users. Such data is hence reassigned to an account called "Deleted
+          user". As the data of every deleted account is reassigned to this account
+          it will not be possible to distinguish the data you created from the data
+          of another deleted account.
       heading: "ลบบัญชี %{name}"
       info:
         other: "การลบบัญชีผู้ใช้ ไม่สามารถกลับมาแก้ไขได้อีก."
@@ -32,6 +37,10 @@ th:
     error_self_registration_disabled: "ระบบไม่ได้เปิดให้ผู้ใช้ลงทะเบียนใช้งานด้วยตัวเอง
       โปรดสอบถามผู้ดูแลระบบให้สร้างบัญชีผู้ใช้ให้กับคุณ"
     login_with_auth_provider: "หรือเข้าสู่ระบบ ด้วยบัญชีผู้ใช้ที่คุณมีอยู่แล้ว"
+    signup_with_auth_provider: or sign up using
+    signup_with_password: using user name and password.
+    auth_source_login: Please login as <em>%{login}</em> to activate your account.
+    omniauth_login: Please login to activate your account.
   actionview_instancetag_blank_option: "โปรดเลือก"
   activerecord:
     attributes:
@@ -335,6 +344,7 @@ th:
     version: "เวอร์ชัน"
     work_package: "ชุดภารกิจ"
   button_add: "เพิ่ม"
+  button_add_member: Add member
   button_add_watcher: "เพิ่มผู้ดูข้อมูล"
   button_annotate: "ใส่คำอธิบายประกอบ"
   button_apply: "นำไปใช้"
@@ -366,6 +376,7 @@ th:
   button_move: "ย้าย"
   button_move_and_follow: "ย้าย และทำตาม"
   button_quote: "อ้างถึง"
+  button_remove: Remove
   button_remove_widget: "เอาเครื่องมือออก"
   button_rename: "เปลี่ยนชื่อ"
   button_reply: "ตอบกลับ"
@@ -674,7 +685,6 @@ th:
   label_additional_workflow_transitions_for_assignee: "ยินยอมให้มีการเปลี่ยนแปลงได้เพิ่มขึ้นเมื่อผู้ใช้เป็นผู้ได้รับมอบหมายความรับผิดชอบ"
   label_additional_workflow_transitions_for_author: "ยินยอมให้มีการเปลี่ยนแปลงได้เพิ่มขึ้นเมื่อผู้ใช้เป็นผู้สร้าง"
   label_administration: "การจัดการระบบ"
-  label_advanced_settings: Advanced settings
   label_age: "ระยะเวลา"
   label_ago: "วันที่ผ่านมา"
   label_all: "ทั้งหมด"
@@ -945,7 +955,8 @@ th:
   label_preview: "แสดงตัวอย่าง"
   label_previous: "ก่อนหน้านี้"
   label_previous_week: "สัปดาห์ก่อนหน้านี้"
-  label_principal_search: "ค้นหาผู้ใช้หรือกลุ่มของผู้ใช้"
+  label_principal_invite_via_email: " or invite new users via email"
+  label_principal_search: Add existing users or groups
   label_professional_support: Professional support
   label_profile: "ข้อมูลส่วนตัว"
   label_project_all: "โครงการทั้งหมด"
@@ -1001,7 +1012,7 @@ th:
   label_role_and_permissions: "บทบาทและสิทธิ"
   label_role_new: "บทบาทใหม่"
   label_role_plural: "บทบาท"
-  label_role_search: "ค้นหาบทบาท"
+  label_role_search: Assign roles to new members
   label_scm: SCM
   label_search: "ค้นหา"
   label_search_titles_only: "ค้นหาเฉพาะชื่อ"
@@ -1175,6 +1186,8 @@ th:
   noscript_heading: "ไม่ได้เปิดใช้ JavaScript"
   noscript_learn_more: "เรียนรู้เพิ่มเติม"
   notice_account_activated: "มีการเปิดใช้บัญชีของคุณแล้ว ตอนนี้คุณสามารถเข้าสู่ระบบได้แล้ว"
+  notice_account_already_activated: The account has already been activated.
+  notice_account_invalid_token: Invalid activation token
   notice_account_invalid_credentials: "บัญชีผู้ใช้หรือรหัสผ่านไม่ถูกต้อง"
   notice_account_invalid_credentials_or_blocked: "บัญชีผู้ใช้หรือรหัสผ่านไม่ถูกต้อง
     หรือบัญชีผู้ใช้ถูกบล็อกไว้เนื่องจากความพยายามเข้าสู่ระบบล้มเหลว ซึ่งหากเป็นเช่นนั้น
@@ -1192,6 +1205,7 @@ th:
   notice_account_wrong_password: "รหัสผ่านไม่ถูกต้อง"
   notice_account_registered_and_logged_in: "ยินดีต้อนรับ, ได้มีการเปิดใช้บัญชีของคุณแล้ว
     คุณสามารถล็อกอินได้ทันที"
+  notice_activation_failed: The account could not be activated.
   notice_api_access_key_reseted: "มีการรีเซตคีย์การเข้าถึง API ของคุณ"
   notice_can_t_change_password: "ไม่สามารถเปลี่ยนรหัสผ่านได้ เนื่องจากบัญชีผู้ใช้นี้
     ใช้การระบุตัวตนจากแหล่งภายนอก"
@@ -1210,6 +1224,10 @@ th:
   notice_locking_conflict: "มีการปรับปรุงข้อมูลจากผู้ใช้อย่างน้อยหนึ่งคนในเวลาเดียวกัน"
   notice_locking_conflict_additional_information: "การปรับปรุงข้อมูลมาจากผู้ใช้ %{users}"
   notice_locking_conflict_reload_page: "กรุณาโหลดหน้าเพจใหม่ เพื่อตรวจสอบว่ามีการเปลี่ยนแปลงและปรับปรุงแล้ว"
+  notice_member_added: Added %{name} to the project.
+  notice_members_added: Added %{number} users to the the project.
+  notice_member_removed: Removed %{user} from project.
+  notice_member_deleted: "%{user} has been removed from the project and deleted."
   notice_no_principals_found: "ไม่พบผลลัพธ์"
   notice_bad_request: "คำขอไม่ถูกต้อง"
   notice_not_authorized: "คุณไม่ได้รับอนุญาตให้เข้าถึงเพจนี้"
@@ -1223,8 +1241,12 @@ th:
     (หรือกลุ่มใหม่) ลงไป"
   notice_unable_delete_time_entry: "ไม่สามารถลบรายการบันทึกเวลา"
   notice_unable_delete_version: "ไม่สามารถลบเวอร์ชั่น"
+  notice_user_missing_authentication_method: User has yet to chose a password or another
+    way the sign in.
   notice_automatic_set_of_standard_type: "ตั้งค่าชนิดมาตรฐานโดยอัตโนมัติ"
   notice_logged_out: "คุณได้ออกจากระบบแล้ว"
+  notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
+    as there are still users using it.
   error_types_in_use_by_work_packages: "ประเภทต่อไปนี้ยังคงถูกอ้างอิงโดยชุดภารกิจ:
     %{types}"
   notice_project_cannot_update_custom_fields: You cannot update the project's available
@@ -1548,6 +1570,8 @@ th:
     brute_force_prevention: "การบล็อกผู้ใช้อัตโนมัติ"
   show_hide_project_menu: Show/Hide project menu
   status_active: "ใช้งานอยู่"
+  status_invited: invited
+  status_registered: "ลงทะเบียน"
   support:
     array:
       sentence_connector: "และ"
@@ -1600,6 +1624,7 @@ th:
   text_line_separated: "อนุญาตให้มีหลายค่าได้ (หนึ่งค่าต่อหนึ่งบรรทัด)"
   text_load_default_configuration: "โหลดการกำหนดค่าเริ่มต้น"
   text_min_max_length_info: 0 หมายถึง ไม่มีข้อจำกัด
+  text_no_roles_defined: There are no roles defined.
   text_no_configuration_data: "ยังไม่ได้มีการกำหนดค่า บาทบาท, ประเภท, สถานะของชุดภารกิจ
     \n ขอแนะนำให้โหลดค่าเริ่มต้นของการตั้งค่ามาใช้ ซึ่งคุณสามารถปรับเปลี่ยนได้หลังจากที่โหลดแล้ว"
   text_no_notes: There are no comments available for this work package.
@@ -1630,6 +1655,7 @@ th:
   text_tip_work_package_end_day: "ชุดภารกิจสิ้นสุดวันนี้"
   text_type_no_workflow: "ไม่มีการกำหนดกระบวนการทำงานสำหรับประเภทนี้"
   text_unallowed_characters: "ตัวอักษรที่ไม่อนุญาตให้ใช้"
+  text_user_invited: The user has been invited and is pending registration.
   text_user_mail_option: "สำหรับโครงการที่ไม่ได้เลือก, คุณจะได้รับการแจ้งเตือนเฉพาะสิ่งที่คุณเฝ้าดูหรือมีความเกี่ยวข้องเท่านั้น
     (เช่นชุดภารกิจที่คุณเป็นผู้สร้าง หรือได้รับมอบหมาย)"
   text_user_wrote: "%{value} เขียนว่า:"
@@ -1830,6 +1856,8 @@ th:
       months: "เดือน"
       quarters: "ไตรมาส"
       years: "ปี"
+  title_remove_and_delete_user: Remove the invited user from the project and delete
+    them.
   queries:
     apply_filter: "ใช้ตัวกรองที่กำหนดไว้ล่วงหน้า"
   total_progress: "ความคืบหน้าทั้งหมด"
@@ -1841,7 +1869,7 @@ th:
     authentication_provider: "ผู้ให้บริการการรับรองความถูกต้องของการระบุตัวตน"
     authentication_settings_disabled_due_to_external_authentication: "ผู้ใช้นี้ได้รับการรับรองความถูกต้องจากภายนอก
       ดังนั้นจึงไม่มีรหัสผ่านใน OpenProject ที่สามารถเปลี่ยนแปลงได้"
-    assign_random_password: "กำหนดรหัสผ่านแบบสุ่ม (ส่งไปยังผู้ใช้ผ่านทางอีเมล์)"
+    assign_random_password: Assign random password (sent to user via email)
     blocked: "ล็อคชั่วคราว"
     blocked_num_failed_logins:
       one: locked temporarily (one failed login attempt)
@@ -1852,6 +1880,7 @@ th:
     lock: "ล็อคอย่างถาวร"
     locked: "ถูกล็อคอย่างถาวร"
     registered: "ลงทะเบียน"
+    invited: invited
     reset_failed_logins: "รีเซ็ตล็อกอินที่ล้มเหลว"
     status_user_and_brute_force: "%{user} และ %{brute_force}"
     unlock: "ปลดล็อก"
@@ -1860,6 +1889,7 @@ th:
       they cannot log in.
     password_change_unsupported: Change of password is not supported.
     authorization_rejected: You are not allowed to sign in.
+    invite: Invite user via email
   version_status_closed: "ปิด"
   version_status_locked: "ล็อก"
   version_status_open: "เปิด"

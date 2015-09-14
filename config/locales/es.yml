@@ -1,27 +1,26 @@
 ---
 es:
+  label_invitation: Invitation
   account:
     delete: Borrar cuenta
     delete_confirmation: "¿Está seguro que desea eliminar la cuenta?"
     deleted: Cuenta eliminada con éxito
     deletion_info:
       data_consequences:
-        other: De los datos el usuario creado (por ejemplo correo electrónico, preferencias,
-          paquetes de trabajo, wiki entradas) tanto como sea posible se eliminará.
-          Sin embargo, tenga en cuenta que no se pueden eliminar datos como entradas
-          wiki y paquetes de trabajo sin obstaculizar el trabajo de los demás usuarios.
-          Dichos datos por lo tanto es reasignados a una cuenta denominada "user Deleted".
-          Como los datos de cada cuenta eliminada es reasignados a elimine esta cuenta
-          no será posible distinguir los datos del usuario creado a partir de los
-          datos de otra cuenta.
-        self: De los datos ha creado (por ejemplo e-mail, preferencias, paquetes de
-          trabajo, wiki entradas) tanto como sea posible se eliminará. Sin embargo,
-          tenga en cuenta que no se pueden eliminar datos como  entradas wiki y paquetes
-          de trabajo sin obstaculizar el trabajo de los demás usuarios. Dichos datos
-          por lo tanto es reasignados a una cuenta denominada "user Deleted". Como
-          los datos de cada cuenta eliminada es reasignados a esta cuenta no será
-          posible distinguir los datos que creado a partir de los datos de otra cuenta
-          eliminada.
+        other: Of the data the user created (e.g. email, preferences, work packages,
+          wiki entries) as much as possible will be deleted. Note however, that data
+          like work packages and wiki entries can not be deleted without impeding
+          the work of the other users. Such data is hence reassigned to an account
+          called "Deleted user". As the data of every deleted account is reassigned
+          to this account it will not be possible to distinguish the data the user
+          created from the data of another deleted account.
+        self: Of the data you created (e.g. email, preferences, work packages, wiki
+          entries) as much as possible will be deleted. Note however, that data like
+          work packages and wiki entries can not be deleted without impeding the work
+          of the other users. Such data is hence reassigned to an account called "Deleted
+          user". As the data of every deleted account is reassigned to this account
+          it will not be possible to distinguish the data you created from the data
+          of another deleted account.
       heading: Borrar cuenta de %{name}
       info:
         other: Borrar la cuenta de usuario es una acción irreversible.
@@ -42,6 +41,10 @@ es:
     error_self_registration_disabled: El registro de usuarios está deshabilitado en
       este sistema. Por favor pida a un administrador que cree una cuenta para usted.
     login_with_auth_provider: o inicie sesión con su cuenta existente
+    signup_with_auth_provider: or sign up using
+    signup_with_password: using user name and password.
+    auth_source_login: Please login as <em>%{login}</em> to activate your account.
+    omniauth_login: Please login to activate your account.
   actionview_instancetag_blank_option: Por favor, elija
   activerecord:
     attributes:
@@ -347,6 +350,7 @@ es:
     version: Versión
     work_package: Paquete de trabajo
   button_add: Añadir
+  button_add_member: Add member
   button_add_watcher: Añadir observador
   button_annotate: Anotar
   button_apply: Aplicar
@@ -378,6 +382,7 @@ es:
   button_move: Mover
   button_move_and_follow: Mover y seguir
   button_quote: Comentario
+  button_remove: Remove
   button_remove_widget: Quitar componente
   button_rename: Cambiar el nombre
   button_reply: Respuesta
@@ -695,7 +700,6 @@ es:
   label_additional_workflow_transitions_for_author: Transiciones adicionales permitidas
     cuando el usuario es el autor
   label_administration: Administración
-  label_advanced_settings: Advanced settings
   label_age: Edad
   label_ago: días antes
   label_all: todos
@@ -970,7 +974,8 @@ es:
   label_preview: Vista preliminar
   label_previous: Anterior
   label_previous_week: Semana anterior
-  label_principal_search: Buscar usuarios o grupos
+  label_principal_invite_via_email: " or invite new users via email"
+  label_principal_search: Add existing users or groups
   label_professional_support: Professional support
   label_profile: Perfil
   label_project_all: Todos los proyectos
@@ -1028,7 +1033,7 @@ es:
   label_role_and_permissions: Roles y permisos
   label_role_new: Nuevo rol
   label_role_plural: Roles
-  label_role_search: Búsqueda de roles
+  label_role_search: Assign roles to new members
   label_scm: SCM
   label_search: Buscar
   label_search_titles_only: Buscar solamente títulos
@@ -1216,6 +1221,8 @@ es:
   noscript_heading: JavaScript desactivado
   noscript_learn_more: Saber más
   notice_account_activated: Su cuenta ha sido activada. Ahora puede iniciar sesión.
+  notice_account_already_activated: The account has already been activated.
+  notice_account_invalid_token: Invalid activation token
   notice_account_invalid_credentials: Usuario no válido o la contraseña
   notice_account_invalid_credentials_or_blocked: Usuario no válido o la contraseña
     o la cuenta está bloqueada debido a múltiples intentos de inicio de sesión fallidos.
@@ -1237,6 +1244,7 @@ es:
   notice_account_wrong_password: Contraseña incorrecta
   notice_account_registered_and_logged_in: Bienvenido, tu cuenta ha sido activada.
     Ahora estás logueado.
+  notice_activation_failed: The account could not be activated.
   notice_api_access_key_reseted: Su API de acceso ha sido re-iniciada.
   notice_can_t_change_password: Esta cuenta utiliza una fuente de autenticación externa.
     Es imposible cambiar la contraseña.
@@ -1261,6 +1269,10 @@ es:
     por %{users}.
   notice_locking_conflict_reload_page: Por favor recargue la página, revise los cambios
     y re-aplique las actualizaciones.
+  notice_member_added: Added %{name} to the project.
+  notice_members_added: Added %{number} users to the the project.
+  notice_member_removed: Removed %{user} from project.
+  notice_member_deleted: "%{user} has been removed from the project and deleted."
   notice_no_principals_found: No se encontraron resultados.
   notice_bad_request: Petición incorrecta.
   notice_not_authorized: No está autorizado a acceder a esta página.
@@ -1277,8 +1289,12 @@ es:
   notice_unable_delete_time_entry: No es posible eliminar la entrada de registro de
     hora.
   notice_unable_delete_version: No se puede eliminar la versión.
+  notice_user_missing_authentication_method: User has yet to chose a password or another
+    way the sign in.
   notice_automatic_set_of_standard_type: Establecer tipo estándar automáticamente.
   notice_logged_out: Has cerrado la sesion.
+  notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
+    as there are still users using it.
   error_types_in_use_by_work_packages: 'Los siguientes tipos siguen referenciados
     por paquetes de trabajo: %{types}'
   notice_project_cannot_update_custom_fields: You cannot update the project's available
@@ -1623,6 +1639,8 @@ es:
     brute_force_prevention: Bloqueo automático de usuarios
   show_hide_project_menu: Mostrar/ocultar menú de proyecto
   status_active: activo
+  status_invited: invited
+  status_registered: Registrado
   support:
     array:
       sentence_connector: y
@@ -1684,6 +1702,7 @@ es:
   text_line_separated: Múltiples valores permitidos (una línea para cada valor).
   text_load_default_configuration: Cargar la configuración predeterminada
   text_min_max_length_info: 0 significa sin restricción
+  text_no_roles_defined: There are no roles defined.
   text_no_configuration_data: Roles, tipos, estado de petición y flujo de trabajo
     no han sido configurados. Se recomienda cargar la configuración por defecto. Podrá
     modificarla cuando haya sido cargada.
@@ -1718,6 +1737,7 @@ es:
   text_tip_work_package_end_day: paquete de trabajo finalizado este día
   text_type_no_workflow: No hay flujo de trabajo definido para este tipo
   text_unallowed_characters: Caracteres no permitidos
+  text_user_invited: The user has been invited and is pending registration.
   text_user_mail_option: Para los proyectos no seleccionados, sólo recibirá notificaciones
     sobre asuntos en seguimiento o participados (ej. paquetes de trabajo en el que  eres
     autor o cesionario).
@@ -1939,6 +1959,8 @@ es:
       months: Meses
       quarters: Cuatrimestres
       years: Años
+  title_remove_and_delete_user: Remove the invited user from the project and delete
+    them.
   queries:
     apply_filter: Aplicar filtro preconfigurado
   total_progress: Progreso total
@@ -1952,8 +1974,7 @@ es:
     authentication_settings_disabled_due_to_external_authentication: Este usuario
       se autentica mediante un proveedor de autenticación externa, así que no hay
       ninguna contraseña en OpenProject para ser cambiada.
-    assign_random_password: Asignar contraseñas aleatorias (enviado al usuario por
-      correo electrónico)
+    assign_random_password: Assign random password (sent to user via email)
     blocked: bloqueado temporalmente
     blocked_num_failed_logins:
       one: bloqueado temporalmente (un intento de inicio de sesión fallido)
@@ -1964,6 +1985,7 @@ es:
     lock: Bloquear permanentemente
     locked: bloqueado permanentemente
     registered: Registrado
+    invited: invited
     reset_failed_logins: Resetear los inicios de sesión fallidos
     status_user_and_brute_force: "%{user} y %{brute_force}"
     unlock: Desbloquear
@@ -1972,6 +1994,7 @@ es:
       que está deshabilitado, no puede entrar.
     password_change_unsupported: No se admite el cambio de contraseña.
     authorization_rejected: No tienes permitido iniciar sesion.
+    invite: Invite user via email
   version_status_closed: cerrado
   version_status_locked: bloqueado
   version_status_open: abrir

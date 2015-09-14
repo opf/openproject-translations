@@ -1,25 +1,26 @@
 ---
 et:
+  label_invitation: Invitation
   account:
     delete: Kustuta konto
     delete_confirmation: Oled kindel, et tahad seda kontot kustutada?
     deleted: Konto on kustutatud
     deletion_info:
       data_consequences:
-        other: Võimalikult palju kasutaja poolt loodud andmetest (nt eelistused, tööpaketid,
-          viki sissekanded) kuuluvad kustutamisele. Samas tuleb tähele panna, et andmeid
-          nagu teemad ja viki sissekanded ei saa kustutada ilma, et need takistaks
-          teiste kasutajate tööd. Sellepärast seotakse need andmed kasutajakontoga
-          "Kustutatud kasutaja". Kuna kõik kustutatud kontode andmed seotakse selle
-          kasutajakontoga, siis ei ole edaspidi võimalik eristada, kes konkreetsed
-          andmed on tekitanud.
-        self: Võimalikult palju sinu poolt loodud andmetest (nt eelistused, teemad,
-          viki sissekanded) kuuluvad kustutamisele. Samas tuleb tähele panna, et andmeid
-          nagu teemad ja viki sissekanded ei saa kustutada ilma, et need takistaks
-          teiste kasutajate tööd. Sellepärast seotakse need andmed kasutajakontoga
-          "Kustutatud kasutaja". Kuna kõik kustutatud kontode andmed seotakse selle
-          kasutajakontoga, siis ei ole edaspidi võimalik eristada, kes konkreetsed
-          andmed on tekitanud.
+        other: Of the data the user created (e.g. email, preferences, work packages,
+          wiki entries) as much as possible will be deleted. Note however, that data
+          like work packages and wiki entries can not be deleted without impeding
+          the work of the other users. Such data is hence reassigned to an account
+          called "Deleted user". As the data of every deleted account is reassigned
+          to this account it will not be possible to distinguish the data the user
+          created from the data of another deleted account.
+        self: Of the data you created (e.g. email, preferences, work packages, wiki
+          entries) as much as possible will be deleted. Note however, that data like
+          work packages and wiki entries can not be deleted without impeding the work
+          of the other users. Such data is hence reassigned to an account called "Deleted
+          user". As the data of every deleted account is reassigned to this account
+          it will not be possible to distinguish the data you created from the data
+          of another deleted account.
       heading: Kustuta konto %{name}
       info:
         other: Kasutajakonto kustutamine on pöördumatu tegevus.
@@ -38,6 +39,10 @@ et:
     error_self_registration_disabled: Konto loomine on hetkel keelatud. Palun küsi
       administraatoril tekitada konto sulle.
     login_with_auth_provider: või logi sisse oma olemasoleva kontoga
+    signup_with_auth_provider: or sign up using
+    signup_with_password: using user name and password.
+    auth_source_login: Please login as <em>%{login}</em> to activate your account.
+    omniauth_login: Please login to activate your account.
   actionview_instancetag_blank_option: Palun vali
   activerecord:
     attributes:
@@ -342,6 +347,7 @@ et:
     version: Versioon
     work_package: Teema
   button_add: Lisamine
+  button_add_member: Add member
   button_add_watcher: Lisa jälgija
   button_annotate: Annoteeri
   button_apply: Rakenda
@@ -373,6 +379,7 @@ et:
   button_move: Tõsta
   button_move_and_follow: Tõsta ja järgne
   button_quote: Tsiteeri
+  button_remove: Remove
   button_remove_widget: Eemalda vidin
   button_rename: Nimeta ümber
   button_reply: Vasta
@@ -688,7 +695,6 @@ et:
   label_additional_workflow_transitions_for_author: Täiendavad üleminekud on lubatud
     juhul kui kasutaja on tööpaketi autor
   label_administration: Haldamine
-  label_advanced_settings: Advanced settings
   label_age: Vanus
   label_ago: päeva tagasi
   label_all: kõik
@@ -961,7 +967,8 @@ et:
   label_preview: Eelvaade
   label_previous: Eelmine
   label_previous_week: Eelmine nädal
-  label_principal_search: Otsi kasutajaid või rühmi
+  label_principal_invite_via_email: " or invite new users via email"
+  label_principal_search: Add existing users or groups
   label_professional_support: Professional support
   label_profile: Profiil
   label_project_all: Kõik projektid
@@ -1017,7 +1024,7 @@ et:
   label_role_and_permissions: Rollid ja õigused
   label_role_new: Uus roll
   label_role_plural: Rollid
-  label_role_search: Otsi rolle
+  label_role_search: Assign roles to new members
   label_scm: Lähtekoodi haldusvahendid
   label_search: Otsi
   label_search_titles_only: Ainult pealkirjadest
@@ -1197,6 +1204,8 @@ et:
   noscript_heading: JavaScript ei ole sisselülitatud
   noscript_learn_more: Loe rohkem
   notice_account_activated: Su konto on aktiveeritud. Saad nüüd sisse logida.
+  notice_account_already_activated: The account has already been activated.
+  notice_account_invalid_token: Invalid activation token
   notice_account_invalid_credentials: Vale kasutajanimi või parool
   notice_account_invalid_credentials_or_blocked: Sisestatud kasutajanimi ja parool
     ei ole õiged või on kasutajakonto blokeeritud mitmekordse nurjunud sisselogimiskatse
@@ -1216,6 +1225,7 @@ et:
   notice_account_wrong_password: Vale parool
   notice_account_registered_and_logged_in: Tere, teie konto on aktiveeritud. Teid
     logitakse nüüd sisse.
+  notice_activation_failed: The account could not be activated.
   notice_api_access_key_reseted: Sinu API juurdepääsuvõti nulliti.
   notice_can_t_change_password: See konto kasutab välist autentimisallikat. Siin ei
     saa selle konto parooli vahetada.
@@ -1235,6 +1245,10 @@ et:
   notice_locking_conflict_additional_information: Uuendused on tehtud %{users} poolt.
   notice_locking_conflict_reload_page: Palun vii oma muudatused sisse uue, toimetatud
     leheküljele  -- laadi lehekülg uuesti ja sisesta oma muudatused uuesti.
+  notice_member_added: Added %{name} to the project.
+  notice_members_added: Added %{number} users to the the project.
+  notice_member_removed: Removed %{user} from project.
+  notice_member_deleted: "%{user} has been removed from the project and deleted."
   notice_no_principals_found: "Ühtki kasutajat ega gruppi ei leitud."
   notice_bad_request: Vigane päring.
   notice_not_authorized: Sul ei ole sellele lehele ligipääsuks õigusi.
@@ -1248,8 +1262,12 @@ et:
     sisestades uue kasutaja või grupi nime.
   notice_unable_delete_time_entry: Ajakulu sissekande kustutamine ei õnnestunud.
   notice_unable_delete_version: Versiooni kustutamine ei õnnestunud.
+  notice_user_missing_authentication_method: User has yet to chose a password or another
+    way the sign in.
   notice_automatic_set_of_standard_type: Vaikimisi tüüp valitakse automaatselt.
   notice_logged_out: You have been logged out.
+  notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
+    as there are still users using it.
   error_types_in_use_by_work_packages: 'Mõned teemad viitavad järgmistele tüüpidele:
     %{types}'
   notice_project_cannot_update_custom_fields: You cannot update the project's available
@@ -1581,6 +1599,8 @@ et:
     brute_force_prevention: Automatiseeritud kasutajate blokeerimine
   show_hide_project_menu: Show/Hide project menu
   status_active: aktiivne
+  status_invited: invited
+  status_registered: registreeritud
   support:
     array:
       sentence_connector: ja
@@ -1640,6 +1660,7 @@ et:
   text_line_separated: Lubatud erinevad väärtused (igaüks eraldi real).
   text_load_default_configuration: Laadi vaikeasetused
   text_min_max_length_info: 0 tähendab, et piiranguid ei ole
+  text_no_roles_defined: There are no roles defined.
   text_no_configuration_data: |-
     Rollid, valdkonnad, olekud ja töövood ei ole veel seadistatud.
     Väga soovitav on laadida vaikeasetused. Peale laadimist saad neid ise muuta.
@@ -1671,6 +1692,7 @@ et:
   text_tip_work_package_end_day: teema sulgemise päev on täna
   text_type_no_workflow: Selle tüübi jaoks ei ole töövooge defineeritud
   text_unallowed_characters: Lubamatud märgid
+  text_user_invited: The user has been invited and is pending registration.
   text_user_mail_option: Valimata projektidest saad teavitusi ainult jälgitavate või
     Sinuga seotud asjade kohta (nt. Sinu loodud või teha olevad teemad).
   text_user_wrote: "%{value} kirjutas:"
@@ -1881,6 +1903,8 @@ et:
       months: Kuud
       quarters: Kvartalid
       years: Aastad
+  title_remove_and_delete_user: Remove the invited user from the project and delete
+    them.
   queries:
     apply_filter: Eelseadistatud filtri rakendamine
   total_progress: Täielik edenemine
@@ -1893,8 +1917,7 @@ et:
     authentication_settings_disabled_due_to_external_authentication: See kasutaja
       autendib end välise autentimisteenuse pakkuja abil, seega ei saa parooli OpenProject'is
       muuta.
-    assign_random_password: Määratakse juhuslik parool (saadetakse kasutajale e-posti
-      teel)
+    assign_random_password: Assign random password (sent to user via email)
     blocked: ajutiselt blokeeritud
     blocked_num_failed_logins:
       one: locked temporarily (one failed login attempt)
@@ -1905,6 +1928,7 @@ et:
     lock: Lukustada jäädavalt
     locked: lukustatud jäädavalt
     registered: registreeritud
+    invited: invited
     reset_failed_logins: Lähtesta ebaõnnestunud sisselogimised
     status_user_and_brute_force: "%{user} ja %{brute_force}"
     unlock: Ava lukust
@@ -1913,6 +1937,7 @@ et:
       they cannot log in.
     password_change_unsupported: Change of password is not supported.
     authorization_rejected: You are not allowed to sign in.
+    invite: Invite user via email
   version_status_closed: suletud
   version_status_locked: lukustatud
   version_status_open: avatud

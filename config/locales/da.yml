@@ -1,25 +1,26 @@
 ---
 da:
+  label_invitation: Invitation
   account:
     delete: Slet konto
     delete_confirmation: Er du sikker på, du vil slette denne konto?
     deleted: Kontoen er nu slettet
     deletion_info:
       data_consequences:
-        other: Så meget som muligt af brugerens data vil blive slettet (fx e-mail,
-          præferencer, arbejdspakker og bidrag til wiki). Bemærk dog at data som arbejdspakker
-          og bidrag til wiki ikke kan slettes uden at påvirke andre brugeres arbejde.
-          Sådanne data bliver hensat til en særlig konto med navnet "Slettet bruger".
-          Da data fra alle slettede brugere bliver flyttet til denne konto vil det
-          ikke være muligt at skelne mellem data skabt af den ene eller den anden
-          slettede bruger.
-        self: Så meget som muligt af dine data vil blive slettet (fx e-mail, præferencer,
-          arbejdspakker og bidrag til wiki). Bemærk dog at data som arbejdspakker
-          og bidrag til wiki ikke kan slettes uden at påvirke andre brugeres arbejde.
-          Sådanne data bliver hensat til en særlig konto med navnet "Slettet bruger".
-          Da data fra alle slettede brugere bliver flyttet til denne konto vil det
-          ikke være muligt at skelne mellem data skabt af dig eller en anden slettede
-          bruger.
+        other: Of the data the user created (e.g. email, preferences, work packages,
+          wiki entries) as much as possible will be deleted. Note however, that data
+          like work packages and wiki entries can not be deleted without impeding
+          the work of the other users. Such data is hence reassigned to an account
+          called "Deleted user". As the data of every deleted account is reassigned
+          to this account it will not be possible to distinguish the data the user
+          created from the data of another deleted account.
+        self: Of the data you created (e.g. email, preferences, work packages, wiki
+          entries) as much as possible will be deleted. Note however, that data like
+          work packages and wiki entries can not be deleted without impeding the work
+          of the other users. Such data is hence reassigned to an account called "Deleted
+          user". As the data of every deleted account is reassigned to this account
+          it will not be possible to distinguish the data you created from the data
+          of another deleted account.
       heading: Slet konto %{name}
       info:
         other: Sletning af kontoen er en uigenkaldelig handling.
@@ -38,6 +39,10 @@ da:
     error_self_registration_disabled: Brugerregistrering er deaktiveret på dette system.
       Vær venlig at bede en administrator oprette en konto til dig.
     login_with_auth_provider: eller log på med din eksisterende konto
+    signup_with_auth_provider: or sign up using
+    signup_with_password: using user name and password.
+    auth_source_login: Please login as <em>%{login}</em> to activate your account.
+    omniauth_login: Please login to activate your account.
   actionview_instancetag_blank_option: Vælg venligst
   activerecord:
     attributes:
@@ -342,6 +347,7 @@ da:
     version: Version
     work_package: Arbejdspakke
   button_add: Tilføj
+  button_add_member: Add member
   button_add_watcher: Tilføj tilsynsførende
   button_annotate: Anmærke
   button_apply: Benyt
@@ -373,6 +379,7 @@ da:
   button_move: Flyt
   button_move_and_follow: Flyt og følg
   button_quote: Citer
+  button_remove: Remove
   button_remove_widget: Fjern widget
   button_rename: Omdøb
   button_reply: Svar
@@ -687,7 +694,6 @@ da:
   label_additional_workflow_transitions_for_author: Yderligere overgange tilladt når
     brugeren er forfatteren
   label_administration: Administration
-  label_advanced_settings: Advanced settings
   label_age: Alder
   label_ago: dage siden
   label_all: alle
@@ -962,7 +968,8 @@ da:
   label_preview: Forhåndsvisning
   label_previous: Foregående
   label_previous_week: Foregående uge
-  label_principal_search: Søg efter brugere eller grupper
+  label_principal_invite_via_email: " or invite new users via email"
+  label_principal_search: Add existing users or groups
   label_professional_support: Professional support
   label_profile: Profil
   label_project_all: Alle projekter
@@ -1018,7 +1025,7 @@ da:
   label_role_and_permissions: Roller og tilladelser
   label_role_new: Ny rolle
   label_role_plural: Roller
-  label_role_search: Søg efter roller
+  label_role_search: Assign roles to new members
   label_scm: Versionskontrolsystem
   label_search: Søg
   label_search_titles_only: Søg kun i titler
@@ -1198,6 +1205,8 @@ da:
   noscript_heading: JavaScript deaktiveret
   noscript_learn_more: Få mere at vide
   notice_account_activated: Din konto er blevet aktiveret. Du kan nu logge ind.
+  notice_account_already_activated: The account has already been activated.
+  notice_account_invalid_token: Invalid activation token
   notice_account_invalid_credentials: Ugyldig bruger eller adgangskode
   notice_account_invalid_credentials_or_blocked: Ugyldig bruger eller adgangskode,
     eller kontoen er blokeret på grund af flere mislykkede forsøg på at logge ind.
@@ -1219,6 +1228,7 @@ da:
   notice_account_wrong_password: Forkert adgangskode
   notice_account_registered_and_logged_in: Velkommen, din konto er aktiveret. Du er
     nu logget ind.
+  notice_activation_failed: The account could not be activated.
   notice_api_access_key_reseted: Din API-adgangsnøgle blev nulstillet.
   notice_can_t_change_password: Denne konto benytter en ekstern kilde til godkendelse.
     Det er ikke muligt at ændre adgangskoden her.
@@ -1240,6 +1250,10 @@ da:
   notice_locking_conflict_additional_information: Opdatering(en) stammer fra %{users}.
   notice_locking_conflict_reload_page: Vær venlig at genindlæse siden, gennemgå ændringer
     og genindsend dine opdateringer.
+  notice_member_added: Added %{name} to the project.
+  notice_members_added: Added %{number} users to the the project.
+  notice_member_removed: Removed %{user} from project.
+  notice_member_deleted: "%{user} has been removed from the project and deleted."
   notice_no_principals_found: Ingen resultater fundet.
   notice_bad_request: Uanvendelig anmodning.
   notice_not_authorized: Du har ikke tilladelser til at gå til denne side.
@@ -1255,8 +1269,12 @@ da:
     Indsnævr søgningen ved at indtste navnet på det nye medlem (eller gruppe).
   notice_unable_delete_time_entry: Ude af stand til at slette tidsregistrering.
   notice_unable_delete_version: Ude af stand til at slette versionen.
+  notice_user_missing_authentication_method: User has yet to chose a password or another
+    way the sign in.
   notice_automatic_set_of_standard_type: Fastsæt typen automatisk.
   notice_logged_out: Du er blevet logget ud.
+  notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
+    as there are still users using it.
   error_types_in_use_by_work_packages: 'Disse typer refererer stadig til arbejdspakker:
     %{types}'
   notice_project_cannot_update_custom_fields: You cannot update the project's available
@@ -1584,6 +1602,8 @@ da:
     brute_force_prevention: Automatiseret brugerblokering
   show_hide_project_menu: Show/Hide project menu
   status_active: aktiv
+  status_invited: invited
+  status_registered: registreret
   support:
     array:
       sentence_connector: og
@@ -1640,6 +1660,7 @@ da:
   text_line_separated: Flere værdier tilladt (én linje for hver værdi).
   text_load_default_configuration: Hent forhåndsvalgt opsætning
   text_min_max_length_info: 0 betyder ingen begrænsning
+  text_no_roles_defined: There are no roles defined.
   text_no_configuration_data: Roller, typer, statusser for arbejdspakker og arbejdsgange
     er endnu ikke sat op. Det anbefales stærkt at hente forhåndsopsætningen. Du vil
     kunne ændre den når den er indlæst.
@@ -1674,6 +1695,7 @@ da:
   text_tip_work_package_end_day: arbejdspakker, der slutter denne dag
   text_type_no_workflow: Ingen arbejdsgang er defineret for denne type
   text_unallowed_characters: Ikke-tilladte tegn
+  text_user_invited: The user has been invited and is pending registration.
   text_user_mail_option: For projekter, der ikke er valgt, vil du kun modtage beskeder
     om det du tilser eller er involveret i (f.eks. arbejdspakker du er forfatter eller
     opdragsgiver til).
@@ -1889,6 +1911,8 @@ da:
       months: Måneder
       quarters: Kvartaler
       years: "År"
+  title_remove_and_delete_user: Remove the invited user from the project and delete
+    them.
   queries:
     apply_filter: Tildel filter som specificeret på forhånd
   total_progress: Samlet fremgang
@@ -1902,7 +1926,7 @@ da:
     authentication_settings_disabled_due_to_external_authentication: Denne bruger
       logger på gennem en ekstern godkendelsestjeneste, så der er ikke en OpenProject-adgangskode,
       der kan ændres.
-    assign_random_password: Tildel tilfældig adgangskode (sendt til bruger med e-mail)
+    assign_random_password: Assign random password (sent to user via email)
     blocked: Midlertid spærret
     blocked_num_failed_logins:
       one: midlertidigt spærret (1 mislykket forsøg på at logge ind)
@@ -1913,6 +1937,7 @@ da:
     lock: Spær permanent
     locked: spærret permanent
     registered: registreret
+    invited: invited
     reset_failed_logins: Nulstil mislykkede forsøg på at logge ind
     status_user_and_brute_force: "%{user} og %{brute_force}"
     unlock: Lås op
@@ -1922,6 +1947,7 @@ da:
       er brugeren p.t. udelukket.
     password_change_unsupported: "Ændring af adgangskode er ikke understøttet."
     authorization_rejected: Du har ikke adgang til at logge ind.
+    invite: Invite user via email
   version_status_closed: lukket
   version_status_locked: Spærret
   version_status_open: "åbn"

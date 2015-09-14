@@ -1,27 +1,26 @@
 ---
 fr:
+  label_invitation: Invitation
   account:
     delete: Supprimer le compte
     delete_confirmation: "Êtes-vous sûr de vouloir supprimer le compte ?"
     deleted: Compte supprimé avec succès
     deletion_info:
       data_consequences:
-        other: Les données créées par l'utilisateur (e.g. e-mail, préférences, lots
-          de travaux, entrées wiki) seront supprimées autant que possible. Notez toutefois
-          que les données comme les lots de travaux et les entrées wiki ne peuvent
-          pas être supprimées sans impacter le travail des autres utilisateurs. Ces
-          données sont donc réaffectées à un compte appelé «Utilisateur supprimé».
-          Etant donné que les données de chaque compte supprimé sont réaffectées à
-          ce compte, il ne sera plus possible de distinguer les données créées par
-          cet utilisateur de celles d'un autre compte supprimé.
-        self: Les données que vous avez créées (e.g. e-mail, préférences, lots de
-          travaux, entrées wiki) seront supprimées autant que possible. Notez toutefois
-          que les données comme les lots de travaux et les entrées wiki ne peuvent
-          pas être supprimées sans impacter le travail des autres utilisateurs. Ces
-          données sont donc réaffectées à un compte appelé «Utilisateur supprimé».
-          Etant donné que les données de chaque compte supprimé sont réaffectées à
-          ce compte, il ne sera plus possible de distinguer les données que vous avez
-          créées de celles d'un autre compte supprimé.
+        other: Of the data the user created (e.g. email, preferences, work packages,
+          wiki entries) as much as possible will be deleted. Note however, that data
+          like work packages and wiki entries can not be deleted without impeding
+          the work of the other users. Such data is hence reassigned to an account
+          called "Deleted user". As the data of every deleted account is reassigned
+          to this account it will not be possible to distinguish the data the user
+          created from the data of another deleted account.
+        self: Of the data you created (e.g. email, preferences, work packages, wiki
+          entries) as much as possible will be deleted. Note however, that data like
+          work packages and wiki entries can not be deleted without impeding the work
+          of the other users. Such data is hence reassigned to an account called "Deleted
+          user". As the data of every deleted account is reassigned to this account
+          it will not be possible to distinguish the data you created from the data
+          of another deleted account.
       heading: Supprimer le compte %{name}
       info:
         other: Supprimer le compte d'utilisateur est une action irréversible.
@@ -43,6 +42,10 @@ fr:
     error_self_registration_disabled: L'inscription des utilisateurs est désactivée
       sur ce système. Demandez à un administrateur de créer un compte pour vous.
     login_with_auth_provider: ou connectez-vous avec votre compte existant
+    signup_with_auth_provider: or sign up using
+    signup_with_password: using user name and password.
+    auth_source_login: Please login as <em>%{login}</em> to activate your account.
+    omniauth_login: Please login to activate your account.
   actionview_instancetag_blank_option: Veuillez sélectionner
   activerecord:
     attributes:
@@ -351,6 +354,7 @@ fr:
     version: Version
     work_package: Lot de travaux
   button_add: Ajouter
+  button_add_member: Add member
   button_add_watcher: Ajouter observateur
   button_annotate: Annoter
   button_apply: Appliquer
@@ -382,6 +386,7 @@ fr:
   button_move: Déplacer
   button_move_and_follow: Déplacer et suivre
   button_quote: Citation
+  button_remove: Remove
   button_remove_widget: Supprimer widget
   button_rename: Renommer
   button_reply: Répondre
@@ -700,7 +705,6 @@ fr:
   label_additional_workflow_transitions_for_author: Transitions supplémentaires autorisées
     lorsque l'utilisateur est l'auteur
   label_administration: Administration
-  label_advanced_settings: Advanced settings
   label_age: "Âge"
   label_ago: il y a quelques jours
   label_all: tous
@@ -976,7 +980,8 @@ fr:
   label_preview: Aperçu
   label_previous: Précédent
   label_previous_week: Semaine précédente
-  label_principal_search: Rechercher des utilisateurs ou des groupes
+  label_principal_invite_via_email: " or invite new users via email"
+  label_principal_search: Add existing users or groups
   label_professional_support: Professional support
   label_profile: Profil
   label_project_all: Tous les projets
@@ -1033,7 +1038,7 @@ fr:
   label_role_and_permissions: Rôles et Permissions
   label_role_new: Nouveau rôle
   label_role_plural: Rôles
-  label_role_search: Recherche de Rôles
+  label_role_search: Assign roles to new members
   label_scm: SCM
   label_search: Recherche
   label_search_titles_only: Recherche uniquement de Titres
@@ -1222,6 +1227,8 @@ fr:
   noscript_learn_more: En savoir plus
   notice_account_activated: Votre compte a bien été activé. Vous pouvez maintenant
     vous connecter.
+  notice_account_already_activated: The account has already been activated.
+  notice_account_invalid_token: Invalid activation token
   notice_account_invalid_credentials: Nom d'utilisateur ou mot de passe incorrect
   notice_account_invalid_credentials_or_blocked: Nom d'utilisateur ou mot de passe
     incorrect ou le compte est bloqué dû aux nombreuses tentatives de connexion échouées.
@@ -1243,6 +1250,7 @@ fr:
   notice_account_wrong_password: Mot de passe incorrect
   notice_account_registered_and_logged_in: Bienvenue, votre compte a été activé. Vous
     êtes maintenant connecté.
+  notice_activation_failed: The account could not be activated.
   notice_api_access_key_reseted: Votre clé d'accès API a été réinitialisée.
   notice_can_t_change_password: Ce compte utilise une source d'authentification externe.
     Impossible de changer le mot de passe.
@@ -1266,6 +1274,10 @@ fr:
     faite par %{users}.
   notice_locking_conflict_reload_page: Veuillez rafraîchir la page, vérifier les changements
     et rélancer la mise à jour.
+  notice_member_added: Added %{name} to the project.
+  notice_members_added: Added %{number} users to the the project.
+  notice_member_removed: Removed %{user} from project.
+  notice_member_deleted: "%{user} has been removed from the project and deleted."
   notice_no_principals_found: Aucun résultat trouvé.
   notice_bad_request: Mauvaise requête.
   notice_not_authorized: Vous n'êtes pas autorisé à accéder à cette page.
@@ -1281,8 +1293,12 @@ fr:
     Reduisez la recherche en écrivant le nom du noveau membre (ou groupe).
   notice_unable_delete_time_entry: Impossible de supprimer « Time Log Entry »
   notice_unable_delete_version: Impossible de supprimer la version.
+  notice_user_missing_authentication_method: User has yet to chose a password or another
+    way the sign in.
   notice_automatic_set_of_standard_type: Fixer le type standard automatiquement.
   notice_logged_out: Vous avez été déconnecté.
+  notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
+    as there are still users using it.
   error_types_in_use_by_work_packages: 'Les types suivants sont toujours référencés
     par des Lots de Travaux: %{types}'
   notice_project_cannot_update_custom_fields: Vous ne pouvez pas mettre à jour les
@@ -1621,6 +1637,8 @@ fr:
     brute_force_prevention: Bloquage d'utilisateur automatique (pour èviter les pirates)
   show_hide_project_menu: Afficher/Masquer le menu du projet
   status_active: actif
+  status_invited: invited
+  status_registered: enregistré
   support:
     array:
       sentence_connector: et
@@ -1680,6 +1698,7 @@ fr:
   text_line_separated: Valeurs multiples autorisées (une ligne par valeur).
   text_load_default_configuration: Charger la configuration par défaut
   text_min_max_length_info: 0 signifie aucune restriction
+  text_no_roles_defined: There are no roles defined.
   text_no_configuration_data: |
     Les rôles, types, status de Lots de Travaux et workflows ne sont pas encore configurés pour l'instant.
     Il est hautement recommander de charger la configuration par défaut. Vous pourrez la modifier une fois chargée.
@@ -1715,6 +1734,7 @@ fr:
   text_tip_work_package_end_day: lots de travaux se terminant aujourd'hui
   text_type_no_workflow: Aucun flux de travail défini pour ce type...
   text_unallowed_characters: Caractères non autorisés
+  text_user_invited: The user has been invited and is pending registration.
   text_user_mail_option: Pour les projets non sélectionnés, vous recevrez uniquement
     des notifications sur les éléments que vous suivez ou auxquels vous participez
     (e.g. les lots de travaux dont vous êtes l'auteur ou qui vous sont assignés).
@@ -1938,6 +1958,8 @@ fr:
       months: Mois
       quarters: Trimestres
       years: Années
+  title_remove_and_delete_user: Remove the invited user from the project and delete
+    them.
   queries:
     apply_filter: Appliquer le filtre pré-configuré
   total_progress: Progression totale
@@ -1950,8 +1972,7 @@ fr:
     authentication_settings_disabled_due_to_external_authentication: Cet utilisateur
       s'authentifie via un fournisseur d'authentification externe, il n'y a aucun
       mot de passe dans OpenProject à changer.
-    assign_random_password: Assigner un mot de passe aléatoire (envoyé à l'utilisateur
-      par courrier électronique)
+    assign_random_password: Assign random password (sent to user via email)
     blocked: verrouillé temporairement
     blocked_num_failed_logins:
       one: verrouillé temporairement (une tentative de connexion échouée)
@@ -1962,6 +1983,7 @@ fr:
     lock: Verrouillage permanent
     locked: verrouillé en permanence
     registered: enregistré
+    invited: invited
     reset_failed_logins: Réinitialiser les connexions echouées
     status_user_and_brute_force: "%{user} et %{brute_force}"
     unlock: Déverrouiller
@@ -1970,6 +1992,7 @@ fr:
       désactivé, il ne peut s'authentifier.
     password_change_unsupported: Le changement de mot de passe n'est pas supporté.
     authorization_rejected: Vous n'êtes pas autorisé à vous authentifier.
+    invite: Invite user via email
   version_status_closed: clôturé
   version_status_locked: verrouillé
   version_status_open: ouvert
