@@ -83,7 +83,7 @@ da:
       member:
         roles: Roller
       project:
-        homepage: Hjemmeside
+        homepage: Webside
         identifier: ID
         work_packages: Arbejdspakker
         parent: Delprojekt af
@@ -176,40 +176,39 @@ da:
         cant_link_a_work_package_with_a_descendant: En arbejdspakke kan ikke knyttes
           til en af dens underopgaver
         circular_dependency: Denne relation vil skabe en cirkulær afhængighed
-        confirmation: svarer ikke til bekræftelse
+        confirmation: matcher ikke bekræftelse
         empty: må ikke være tomt
         equal_to: skal være lig med %{count}
         even: skal være lige
         exclusion: er reserveret
-        file_too_large: er for stor (størst mulige er %{count} bytes)
+        file_too_large: er for stor (maksimal størrelse %{count} Bytes)
         greater_than: skal være større end %{count}
         greater_than_or_equal_to: skal være større end eller lig med %{count}
-        smaller_than_or_equal_to_max_length: skal være mindre end eller lig den maksimale
-          længde
-        greater_than_start_date: skal være senere end startdatoen
-        inclusion: er ikke sat til en tilladt værdi
+        smaller_than_or_equal_to_max_length: skal være mindre end eller lig den maksimallængde
+        greater_than_start_date: skal være senere end startdato
+        inclusion: er ikke sat til en af de tilladte værdier
         invalid: er ugyldig
         less_than: skal være mindre end %{count}}
         less_than_or_equal_to: skal være mindre end eller lig med  %{count}
         not_a_date: er ikke en dato
         not_a_number: er ikke et tal
         not_an_integer: er ikke et heltal
-        not_same_project: hører ikke til samme projekt
+        not_same_project: tilhører ikke samme projekt
         odd: skal være ulige
-        taken: er allerede taget
-        too_long: 'er for lang (højst: %{count} tegn)'
-        too_short: 'er for kort (mindst: %{count} tegn)'
+        taken: er allerede benyttet
+        too_long: er for lang (maks. %{count} tegn)
+        too_short: er for kort (min. %{count} tegn)
         wrong_length: har forkert længde (skal være %{count} tegn)
         after: skal være senere end %{date}
         after_or_equal_to: skal være tidligst den %{date}
         before: skal være før %{date}
         before_or_equal_to: skal være senest den %{date}
-        could_not_be_copied: kunne ikke kopieres (i fuldt omfang)
+        could_not_be_copied: kunne ikke (fuldt) kopieres
       models:
         project_association:
           identical_projects: Dependency cannot be created between one project and
             itself.
-          project_association_not_allowed: tillader ikke sammensætninger
+          project_association_not_allowed: tillader ikke associeringer
         repository:
           not_whitelisted: tillades ikke af opsætningen
           no_directory: er ikke et katalog
@@ -239,17 +238,17 @@ da:
         user:
           attributes:
             password:
-              weak: 'Must contain characters of the following classes (at least %{min_count}
-                of %{all_count}): %{rules}'
+              weak: 'Skal indeholde tegn fra følgende klasser (minimum %{min_count}
+                af %{all_count}): %{rules}'
               lowercase: små bogstaver (f.eks. "a")
               uppercase: store bogstaver (f.eks. "A")
               numeric: tal (fx "1")
               special: Speciel (fx "%")
               reused:
-                one: er blevet brugt før. Vælg venligst et, der er forskelligt fra
+                one: er blevet brugt før. Vælg venligst ét, der er forskelligt fra
                   dit seneste.
-                other: har været brugt tidligere. Vælg venligst et, der er anderledes
-                  end dine forgående %{count}.
+                other: er blevet brugt før. Vælg venligst ét, der er forskelligt fra
+                  dine seneste %{count}.
               match:
                 confirm: Confirm new password.
                 description: "'Password confirmation' should match the input in the
@@ -469,18 +468,18 @@ da:
         one: omkring 1 måned
         other: omkring  %{count} måneder
       about_x_years:
-        one: knapt 1 år
+        one: omkring 1 år
         other: omkring  %{count} år
       almost_x_years:
         one: knapt %{count} år
-        other: næsten  %{count} år
+        other: knapt %{count} år
       half_a_minute: et halvt minut
       less_than_x_minutes:
         one: mindre end 1 minut
-        other: mindre end %{count} minutter
+        other: færre end %{count} minutter
       less_than_x_seconds:
         one: mindre end 1 sekund
-        other: mindre end %{count} sekunder
+        other: færre end %{count} sekunder
       over_x_years:
         one: over 1 år
         other: over %{count} år
@@ -617,7 +616,7 @@ da:
     venligst projektindstillingerne.
   error_omniauth_registration_timed_out: Registrering via en ekstern godkendelsestjeneste
     er udløbet. Prøv venligst igen.
-  error_scm_annotate: Indholdet findes ikke eller der kan ikke tilføjes nyt.
+  error_scm_annotate: Angivelsen findes ikke, eller kan ikke tilføjes.
   error_scm_command_failed: 'Der opstod en fejl da du forsøgte at tilgå projektarkivet:
     %{value}'
   error_scm_not_found: Indholdet eller ændring findes ikke i projektarkivet.
@@ -666,7 +665,7 @@ da:
   label_add_another_file: Tilføj en anden fil
   label_add_columns: Tilføj valgte kolonner
   label_add_note: Tilføj en note
-  label_add_related_issues: Tilføj et relateret emne
+  label_add_related_issues: Tilføj relateret emne
   label_add_related_work_packages: Tilføj relaterede arbejdspakker
   label_add_subtask: Tilføj underopgave
   label_added: tilføjet
