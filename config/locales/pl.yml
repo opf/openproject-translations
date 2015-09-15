@@ -1,24 +1,26 @@
 ---
 pl:
+  label_invitation: Invitation
   account:
     delete: Usuń konto
     delete_confirmation: Czy na pewno chcesz usunąć to konto?
     deleted: Konto usunięte pomyślnie
     deletion_info:
       data_consequences:
-        other: Dane użytkownika (np. e-mail, preferencje, pakiety pracy, wpisy wiki)
-          będą usunięte w miarę możliwości. Jednakże, należy zauważyć, że dane jak
-          zadania i wpisy wiki nie mogą zostać usunięte bez utrudnienia pracy innym
-          użytkownikom. Te dane zostaną przypisane do konta "Usunięty użytkownik".
-          Każde dane, z usuwanego konta, zostają przypisane do w/w. Uniemożliwia to
-          późniejszą ich identyfikację.
-        self: Dane użytkownika utworzone (np. e-mail, preferencje, pakiety pracy,
-          wpisy wiki) jak to możliwe będą usuwane. Jednakże, należy zauważyć, że dane
-          jak pakiety pracy i wpisy wiki nie mogą zostać usunięte bez utrudnienia
-          pracy innych użytkowników. Takich danych jest stąd przypisane do konta o
-          nazwie "Usunięte użytkownika". Jak dane o każdym usunięte konto jest przypisane
-          do tego konta, że nie będzie możliwe do odróżnienia danych użytkownika,
-          utworzone na podstawie danych innego usunięte konto.
+        other: Of the data the user created (e.g. email, preferences, work packages,
+          wiki entries) as much as possible will be deleted. Note however, that data
+          like work packages and wiki entries can not be deleted without impeding
+          the work of the other users. Such data is hence reassigned to an account
+          called "Deleted user". As the data of every deleted account is reassigned
+          to this account it will not be possible to distinguish the data the user
+          created from the data of another deleted account.
+        self: Of the data you created (e.g. email, preferences, work packages, wiki
+          entries) as much as possible will be deleted. Note however, that data like
+          work packages and wiki entries can not be deleted without impeding the work
+          of the other users. Such data is hence reassigned to an account called "Deleted
+          user". As the data of every deleted account is reassigned to this account
+          it will not be possible to distinguish the data you created from the data
+          of another deleted account.
       heading: Usuń konto %{name}
       info:
         other: Usunięcie konta użytkownika jest czynnością nieodwracalną.
@@ -37,6 +39,10 @@ pl:
     error_self_registration_disabled: W tym systemie zablokowano rejestrację użytkownika.
       Zapytaj, proszę, administratora o możliwość utworzenia konta dla Ciebie.
     login_with_auth_provider: lub zaloguj się za pomocą istniejącego konta
+    signup_with_auth_provider: or sign up using
+    signup_with_password: using user name and password.
+    auth_source_login: Please login as <em>%{login}</em> to activate your account.
+    omniauth_login: Please login to activate your account.
   actionview_instancetag_blank_option: Proszę wybrać
   activerecord:
     attributes:
@@ -346,6 +352,7 @@ pl:
     version: Wersja
     work_package: Zadania
   button_add: Dodaj
+  button_add_member: Add member
   button_add_watcher: Dodaj obserwatora
   button_annotate: Adnotacja
   button_apply: Zastosuj
@@ -377,6 +384,7 @@ pl:
   button_move: Przenieś
   button_move_and_follow: Przenieś i kontynuuj
   button_quote: Cytat
+  button_remove: Remove
   button_remove_widget: Usuń widżet
   button_rename: Zmień nazwę
   button_reply: Odpowiedz
@@ -703,7 +711,6 @@ pl:
   label_additional_workflow_transitions_for_author: Dodatkowe przejścia dozwolone,
     gdy użytkownik jest autorem
   label_administration: Administracja
-  label_advanced_settings: Advanced settings
   label_age: Wiek
   label_ago: dni temu
   label_all: wszystkie
@@ -979,7 +986,8 @@ pl:
   label_preview: Podgląd
   label_previous: Poprzedni
   label_previous_week: Poprzedni tygodzień
-  label_principal_search: Szukaj użytkowników lub grup
+  label_principal_invite_via_email: " or invite new users via email"
+  label_principal_search: Add existing users or groups
   label_professional_support: Professional support
   label_profile: Profil
   label_project_all: Wszystkie projekty
@@ -1036,7 +1044,7 @@ pl:
   label_role_and_permissions: Role i uprawnienia
   label_role_new: Nowa rola
   label_role_plural: Role
-  label_role_search: Szukaj roli
+  label_role_search: Assign roles to new members
   label_scm: SCM
   label_search: Szukaj
   label_search_titles_only: Szukaj tylko w tytułach
@@ -1221,6 +1229,8 @@ pl:
   noscript_heading: Wyłączona obsługa JavaScript
   noscript_learn_more: Dowiedz się więcej
   notice_account_activated: Twoje konto zostało aktywowane. Możesz się teraz zalogować.
+  notice_account_already_activated: The account has already been activated.
+  notice_account_invalid_token: Invalid activation token
   notice_account_invalid_credentials: Nieprawidłowy użytkownik lub hasło
   notice_account_invalid_credentials_or_blocked: Nieprawidłowy użytkownik lub hasło
     lub konto jest zablokowane z powodu wielu nieudanych logowań. Jeśli tak, to będzie
@@ -1242,6 +1252,7 @@ pl:
   notice_account_wrong_password: Nieprawidłowe hasło
   notice_account_registered_and_logged_in: Witaj Twoje konto zostało aktywowane. Zostałeś
     zalogowany.
+  notice_activation_failed: The account could not be activated.
   notice_api_access_key_reseted: Twój klucz dostępu API został zresetowany.
   notice_can_t_change_password: This account uses an external authentication source.
     Impossible to change the password.
@@ -1264,6 +1275,10 @@ pl:
   notice_locking_conflict_additional_information: The update(s) came from %{users}.
   notice_locking_conflict_reload_page: Please reload the page, review the changes
     and reapply your updates.
+  notice_member_added: Added %{name} to the project.
+  notice_members_added: Added %{number} users to the the project.
+  notice_member_removed: Removed %{user} from project.
+  notice_member_deleted: "%{user} has been removed from the project and deleted."
   notice_no_principals_found: No results found.
   notice_bad_request: Nieprawidłowe żądanie.
   notice_not_authorized: Brak uprawnień dostępu do tej strony.
@@ -1279,8 +1294,12 @@ pl:
     Należy zawęzić wyszukiwanie przez wpisanie w nazwy użytkownika (lub grupy).
   notice_unable_delete_time_entry: Nie można usunąć wpisu dziennika.
   notice_unable_delete_version: Nie można usunąć wersji.
+  notice_user_missing_authentication_method: User has yet to chose a password or another
+    way the sign in.
   notice_automatic_set_of_standard_type: Set standard type automatically.
   notice_logged_out: Zostałeś wylogowany.
+  notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
+    as there are still users using it.
   error_types_in_use_by_work_packages: 'Następujące typy są używane przez zadania:
     %{types}'
   notice_project_cannot_update_custom_fields: You cannot update the project's available
@@ -1612,6 +1631,8 @@ pl:
     brute_force_prevention: Automatyczne blokowanie użytkowników
   show_hide_project_menu: Show/Hide project menu
   status_active: aktywne
+  status_invited: invited
+  status_registered: zarejestrowany
   support:
     array:
       sentence_connector: i
@@ -1669,6 +1690,7 @@ pl:
   text_line_separated: Wiele wartości dopuszczalne (jeden wiersz dla każdej wartości).
   text_load_default_configuration: Załaduj domyślną konfigurację
   text_min_max_length_info: 0 means no restriction
+  text_no_roles_defined: There are no roles defined.
   text_no_configuration_data: |
     Roles, types, work package statuses and workflow have not been configured yet.
     It is highly recommended to load the default configuration. You will be able to modify it once loaded.
@@ -1703,6 +1725,7 @@ pl:
   text_tip_work_package_end_day: zadanie kończy się tego dnia
   text_type_no_workflow: No workflow defined for this type
   text_unallowed_characters: Niedpuszczalne znaki
+  text_user_invited: The user has been invited and is pending registration.
   text_user_mail_option: W przypadku niezaznaczonych projektów, będziesz otrzymywał
     powiadomienia dotyczące tylko zadań obserwowanych lub w które jesteś zaangażowany
     w (np. zadania dla których jesteś autorem lub jesteś do nich przypisany).
@@ -1915,6 +1938,8 @@ pl:
       months: Miesiące
       quarters: Kwartały
       years: Lata
+  title_remove_and_delete_user: Remove the invited user from the project and delete
+    them.
   queries:
     apply_filter: Zastosuj wstępny filtr
   total_progress: Całkowity postęp
@@ -1927,8 +1952,7 @@ pl:
     authentication_settings_disabled_due_to_external_authentication: Ten użytkownik
       uwierzytelnia się przez zewnętrznego dostawcę uwierzytelnień, zatem hasło w
       OpenProject nie zostanie zmienione.
-    assign_random_password: Przypisanie losowego hasła (wysłane do użytkownika za
-      pośrednictwem poczty e-mail)
+    assign_random_password: Assign random password (sent to user via email)
     blocked: zablokowany tymczsowo
     blocked_num_failed_logins:
       one: locked temporarily (one failed login attempt)
@@ -1940,6 +1964,7 @@ pl:
     lock: Blokuj trwale
     locked: zablokowany trwale
     registered: zarejestrowany
+    invited: invited
     reset_failed_logins: Resetuj nieudane logowania
     status_user_and_brute_force: "%{user} i %{brute_force}"
     unlock: Odblokuj
@@ -1948,6 +1973,7 @@ pl:
       unieważnione.
     password_change_unsupported: Zmiana hasła nie jest obsługiwana.
     authorization_rejected: Nie możesz się zalogować.
+    invite: Invite user via email
   version_status_closed: Zamknięte
   version_status_locked: zablokowane
   version_status_open: Otwarte

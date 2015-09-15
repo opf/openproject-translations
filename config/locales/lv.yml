@@ -1,25 +1,26 @@
 ---
 lv:
+  label_invitation: Invitation
   account:
     delete: Dzēst kontu
     delete_confirmation: Vai tiešām vēlies dzēst kontu?
     deleted: Konts veiksmīgi dzēsts
     deletion_info:
       data_consequences:
-        other: Datus, ko izveidojis šis lietotājs (piemēram, e-pasts, iestatījumi,
-          pieteikuma tipi, wiki ieraksti) cik vien iespējams tiks dzēsti. Ņemiet vērā,
-          ka dati, piemēram, pieteikuma tipi un wiki ieraksti nevar tikt izdzēsti,
-          jo var traucēt darbu citiem lietotājiem. Līdz ar to šie dati tiks pārcelti
-          uz kontu, ko sauc par "Dzēsts lietotājs". Tā kā uz šo kontu tiek pārcelti
-          visi dzēstie lietotāji, tad nebūs iespējams noteikt atšķirību starp datiem,
-          ko izveidojis šis lietotājs vai cits dzēstais lietotājs.
-        self: Datus, ko esat izveidojis (piemēram, e-pasts, iestatījumi, pieteikuma
-          tipi, wiki ieraksti) cik vien iespējams tiks dzēsti. Ņemiet vērā, ka dati,
-          piemēram, pieteikuma tipi un wiki ieraksti nevar tikt izdzēsti, jo var traucēt
-          darbu citiem lietotājiem. Līdz ar to šie dati tiks pārcelti uz kontu, ko
-          sauc par "Dzēsts lietotājs". Tā kā uz šo kontu tiek pārcelti visi dzēstie
-          lietotāji, tad nebūs iespējams noteikt atšķirību starp datiem, ko esat izveidojis
-          Jūs vai cits dzēstais lietotājs.
+        other: Of the data the user created (e.g. email, preferences, work packages,
+          wiki entries) as much as possible will be deleted. Note however, that data
+          like work packages and wiki entries can not be deleted without impeding
+          the work of the other users. Such data is hence reassigned to an account
+          called "Deleted user". As the data of every deleted account is reassigned
+          to this account it will not be possible to distinguish the data the user
+          created from the data of another deleted account.
+        self: Of the data you created (e.g. email, preferences, work packages, wiki
+          entries) as much as possible will be deleted. Note however, that data like
+          work packages and wiki entries can not be deleted without impeding the work
+          of the other users. Such data is hence reassigned to an account called "Deleted
+          user". As the data of every deleted account is reassigned to this account
+          it will not be possible to distinguish the data you created from the data
+          of another deleted account.
       heading: Dzēst kontu %{name}
       info:
         other: Lietotāja konta dzēšana ir neatgriezeniska darbība.
@@ -35,6 +36,10 @@ lv:
     error_self_registration_disabled: Lietotāja reģistrācija ir atspējota šajā sistēmā.
       Lūdzu, jautājiet administratoram, lai Jums izveido kontu.
     login_with_auth_provider: vai pierakstieties, izmantojot savu esošo kontu
+    signup_with_auth_provider: or sign up using
+    signup_with_password: using user name and password.
+    auth_source_login: Please login as <em>%{login}</em> to activate your account.
+    omniauth_login: Please login to activate your account.
   actionview_instancetag_blank_option: Lūdzu, atlasiet
   activerecord:
     attributes:
@@ -343,6 +348,7 @@ lv:
     version: Version
     work_package: Work package
   button_add: Add
+  button_add_member: Add member
   button_add_watcher: Add watcher
   button_annotate: Annotate
   button_apply: Apply
@@ -374,6 +380,7 @@ lv:
   button_move: Move
   button_move_and_follow: Move and follow
   button_quote: Quote
+  button_remove: Remove
   button_remove_widget: Remove widget
   button_rename: Rename
   button_reply: Reply
@@ -698,7 +705,6 @@ lv:
   label_additional_workflow_transitions_for_author: Additional transitions allowed
     when the user is the author
   label_administration: Administration
-  label_advanced_settings: Advanced settings
   label_age: Age
   label_ago: days ago
   label_all: all
@@ -971,7 +977,8 @@ lv:
   label_preview: Preview
   label_previous: Previous
   label_previous_week: Previous week
-  label_principal_search: Search for users or groups
+  label_principal_invite_via_email: " or invite new users via email"
+  label_principal_search: Add existing users or groups
   label_professional_support: Professional support
   label_profile: Profile
   label_project_all: All Projects
@@ -1027,7 +1034,7 @@ lv:
   label_role_and_permissions: Roles and permissions
   label_role_new: New role
   label_role_plural: Lomas
-  label_role_search: Search for roles
+  label_role_search: Assign roles to new members
   label_scm: SCM
   label_search: Search
   label_search_titles_only: Search titles only
@@ -1206,6 +1213,8 @@ lv:
   noscript_heading: JavaScript disabled
   noscript_learn_more: Learn more
   notice_account_activated: Your account has been activated. You can now log in.
+  notice_account_already_activated: The account has already been activated.
+  notice_account_invalid_token: Invalid activation token
   notice_account_invalid_credentials: Invalid user or password
   notice_account_invalid_credentials_or_blocked: Invalid user or password or the account
     is blocked due to multiple failed login attempts. If so, it will be unblocked
@@ -1227,6 +1236,7 @@ lv:
   notice_account_wrong_password: Wrong password
   notice_account_registered_and_logged_in: Welcome, your account has been activated.
     You are logged in now.
+  notice_activation_failed: The account could not be activated.
   notice_api_access_key_reseted: Your API access key was reset.
   notice_can_t_change_password: This account uses an external authentication source.
     Impossible to change the password.
@@ -1249,6 +1259,10 @@ lv:
   notice_locking_conflict_additional_information: The update(s) came from %{users}.
   notice_locking_conflict_reload_page: Please reload the page, review the changes
     and reapply your updates.
+  notice_member_added: Added %{name} to the project.
+  notice_members_added: Added %{number} users to the the project.
+  notice_member_removed: Removed %{user} from project.
+  notice_member_deleted: "%{user} has been removed from the project and deleted."
   notice_no_principals_found: No results found.
   notice_bad_request: Bad Request.
   notice_not_authorized: You are not authorized to access this page.
@@ -1264,8 +1278,12 @@ lv:
     Narrow down the search by typing in the name of the new member (or group).
   notice_unable_delete_time_entry: Unable to delete time log entry.
   notice_unable_delete_version: Unable to delete version.
+  notice_user_missing_authentication_method: User has yet to chose a password or another
+    way the sign in.
   notice_automatic_set_of_standard_type: Set standard type automatically.
   notice_logged_out: You have been logged out.
+  notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
+    as there are still users using it.
   error_types_in_use_by_work_packages: 'The following types are still referenced by
     work packages: %{types}'
   notice_project_cannot_update_custom_fields: You cannot update the project's available
@@ -1594,6 +1612,8 @@ lv:
     brute_force_prevention: Automated user blocking
   show_hide_project_menu: Show/Hide project menu
   status_active: active
+  status_invited: invited
+  status_registered: registered
   support:
     array:
       sentence_connector: and
@@ -1650,6 +1670,7 @@ lv:
   text_line_separated: Multiple values allowed (one line for each value).
   text_load_default_configuration: Load the default configuration
   text_min_max_length_info: 0 means no restriction
+  text_no_roles_defined: There are no roles defined.
   text_no_configuration_data: |
     Roles, types, work package statuses and workflow have not been configured yet.
     It is highly recommended to load the default configuration. You will be able to modify it once loaded.
@@ -1683,6 +1704,7 @@ lv:
   text_tip_work_package_end_day: work package ending this day
   text_type_no_workflow: No workflow defined for this type
   text_unallowed_characters: Unallowed characters
+  text_user_invited: The user has been invited and is pending registration.
   text_user_mail_option: For unselected projects, you will only receive notifications
     about things you watch or you're involved in (eg. work packages you're the author
     or assignee).
@@ -1901,6 +1923,8 @@ lv:
       months: Months
       quarters: Quarters
       years: Years
+  title_remove_and_delete_user: Remove the invited user from the project and delete
+    them.
   queries:
     apply_filter: Apply preconfigured filter
   total_progress: Total progress
@@ -1913,7 +1937,7 @@ lv:
     authentication_settings_disabled_due_to_external_authentication: This user authenticates
       via an external authentication provider, so there is no password in OpenProject
       to be changed.
-    assign_random_password: Assign random password (sent to user via e-mail)
+    assign_random_password: Assign random password (sent to user via email)
     blocked: locked temporarily
     blocked_num_failed_logins:
       one: locked temporarily (one failed login attempt)
@@ -1925,6 +1949,7 @@ lv:
     lock: Lock permanently
     locked: locked permanently
     registered: registered
+    invited: invited
     reset_failed_logins: Reset failed logins
     status_user_and_brute_force: "%{user} and %{brute_force}"
     unlock: Unlock
@@ -1933,6 +1958,7 @@ lv:
       they cannot log in.
     password_change_unsupported: Change of password is not supported.
     authorization_rejected: You are not allowed to sign in.
+    invite: Invite user via email
   version_status_closed: closed
   version_status_locked: locked
   version_status_open: open

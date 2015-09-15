@@ -1,15 +1,26 @@
 ---
 ja:
+  label_invitation: Invitation
   account:
     delete: "アカウントを削除"
     delete_confirmation: "アカウントを削除してもよろしいですか？"
     deleted: "アカウントが正常に削除されました。"
     deletion_info:
       data_consequences:
-        other: "ユーザーが作成した殆どのデータ (例えば電子メール、設定、作業項目 、wiki記載 )が削除されます。ただし、他のユーザーの作業を妨害することがなく作業項目やwiki
-          記載のようなデータは削除できません。それ故に、このようなデータは「削除されたユーザ」と呼ばれるアカウントに再割り当てます。削除された全てのアカウントのデータがこのアカウントに再割り当ているので、削除された別のユーザーのデータと区別できなくなります。"
-        self: "ユーザーが作成した殆どのデータ (例えば電子メール、設定、作業項目 、wiki記載 )が削除されます。ただし、他のユーザーの作業を妨害することがなく作業項目やwiki
-          記載のようなデータは削除できません。それ故に、このようなデータは「削除されたユーザ」と呼ばれるアカウントに再割り当てます。削除された全てのアカウントのデータがこのアカウントに再割り当ているので、削除された別のユーザーのデータと区別できなくなります。"
+        other: Of the data the user created (e.g. email, preferences, work packages,
+          wiki entries) as much as possible will be deleted. Note however, that data
+          like work packages and wiki entries can not be deleted without impeding
+          the work of the other users. Such data is hence reassigned to an account
+          called "Deleted user". As the data of every deleted account is reassigned
+          to this account it will not be possible to distinguish the data the user
+          created from the data of another deleted account.
+        self: Of the data you created (e.g. email, preferences, work packages, wiki
+          entries) as much as possible will be deleted. Note however, that data like
+          work packages and wiki entries can not be deleted without impeding the work
+          of the other users. Such data is hence reassigned to an account called "Deleted
+          user". As the data of every deleted account is reassigned to this account
+          it will not be possible to distinguish the data you created from the data
+          of another deleted account.
       heading: "アカウント名「 %{name} 」を削除します。"
       info:
         other: "ユーザーアカウントの削除は復元できない操作です。"
@@ -21,6 +32,10 @@ ja:
     error_inactive_manual_activation: "あなたのアカウントは未だ有効化されていません。管理者がアカウントを有効化するまでにお待ちください。"
     error_self_registration_disabled: "このシステムでは、ユーザー登録が無効化されています。アカウントを作成するには管理者にお問い合わせください。"
     login_with_auth_provider: "または、既存のアカウントでログインしてください。"
+    signup_with_auth_provider: or sign up using
+    signup_with_password: using user name and password.
+    auth_source_login: Please login as <em>%{login}</em> to activate your account.
+    omniauth_login: Please login to activate your account.
   actionview_instancetag_blank_option: "選択してください"
   activerecord:
     attributes:
@@ -321,6 +336,7 @@ ja:
     version: "バージョン"
     work_package: "作業項目"
   button_add: "追加"
+  button_add_member: Add member
   button_add_watcher: "ウォッチャーを追加"
   button_annotate: "注釈を付ける"
   button_apply: "適用"
@@ -352,6 +368,7 @@ ja:
   button_move: "移動"
   button_move_and_follow: "移動後表示"
   button_quote: "引用"
+  button_remove: Remove
   button_remove_widget: "ウィジェットを削除"
   button_rename: "名称変更"
   button_reply: "返信"
@@ -649,7 +666,6 @@ ja:
   label_additional_workflow_transitions_for_assignee: "ユーザーが担当者であれば、追加で許可する遷移"
   label_additional_workflow_transitions_for_author: "ユーザーが作成者であれば、追加で許可する遷移"
   label_administration: "管理"
-  label_advanced_settings: Advanced settings
   label_age: "経過"
   label_ago: "○日前"
   label_all: "全て"
@@ -920,7 +936,8 @@ ja:
   label_preview: "プレビュー"
   label_previous: "前へ"
   label_previous_week: "先週"
-  label_principal_search: "ユーザまたはグループの検索"
+  label_principal_invite_via_email: " or invite new users via email"
+  label_principal_search: Add existing users or groups
   label_professional_support: Professional support
   label_profile: "プロファイル"
   label_project_all: "全プロジェクト"
@@ -976,7 +993,7 @@ ja:
   label_role_and_permissions: "役割と権限"
   label_role_new: "新しい役割"
   label_role_plural: "役割"
-  label_role_search: "役割を検索"
+  label_role_search: Assign roles to new members
   label_scm: "バージョン管理システム"
   label_search: "検索"
   label_search_titles_only: "題名のみを検索"
@@ -1148,6 +1165,8 @@ ja:
   noscript_heading: JavaScriptは無効されています。
   noscript_learn_more: "もっと詳しく"
   notice_account_activated: "アカウントが有効になりました。ログインできます。"
+  notice_account_already_activated: The account has already been activated.
+  notice_account_invalid_token: Invalid activation token
   notice_account_invalid_credentials: "ユーザー名もしくはパスワードが無効です。"
   notice_account_invalid_credentials_or_blocked: "ユーザー名もしくはパスワードが無効です。それともログイン試行の失敗回数によりロックされているアカウントです。もしそうなら、しばらくの時間で自動的にブロック解除されます。"
   notice_account_lost_email_sent: "新しいパスワードの設定方法が記載されたメールを送信しました。"
@@ -1161,6 +1180,7 @@ ja:
   notice_account_updated: "アカウントが正常に更新されました。"
   notice_account_wrong_password: "パスワードが正しくありません。"
   notice_account_registered_and_logged_in: "ようこそ、アカウントが有効になりました。只今ログイン中ます。"
+  notice_activation_failed: The account could not be activated.
   notice_api_access_key_reseted: APIアクセスキーを初期化しました。
   notice_can_t_change_password: "このアカウントでは外部認証を使っています。パスワードは変更できません。"
   notice_email_error: "メール送信中にエラーが発生しました（%{value}）。"
@@ -1175,6 +1195,10 @@ ja:
   notice_locking_conflict: "別のユーザーがデータを同時に更新しています。"
   notice_locking_conflict_additional_information: "ユーザー%{users}により更新されました。"
   notice_locking_conflict_reload_page: "ページをリロードして、変更を確認してから再適用してください。"
+  notice_member_added: Added %{name} to the project.
+  notice_members_added: Added %{number} users to the the project.
+  notice_member_removed: Removed %{user} from project.
+  notice_member_deleted: "%{user} has been removed from the project and deleted."
   notice_no_principals_found: "結果がありません。"
   notice_bad_request: "不正な要求です。"
   notice_not_authorized: "このページにアクセスする権限がありません。"
@@ -1187,8 +1211,12 @@ ja:
   notice_to_many_principals_to_display: "検索結果が多すぎです。新たにメンバー名（またはグループ名）を入力して検索を絞り込んでください。"
   notice_unable_delete_time_entry: "作業時間記録を削除できません。"
   notice_unable_delete_version: "バージョンを削除できません。"
+  notice_user_missing_authentication_method: User has yet to chose a password or another
+    way the sign in.
   notice_automatic_set_of_standard_type: "自動的に標準型を設定します。"
   notice_logged_out: "ログアウトしました。"
+  notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
+    as there are still users using it.
   error_types_in_use_by_work_packages: "次の型が作業項目による未だ参照されています: %{types}"
   notice_project_cannot_update_custom_fields: You cannot update the project's available
     custom fields.
@@ -1508,6 +1536,8 @@ ja:
     brute_force_prevention: "自動的にユーザーをロック"
   show_hide_project_menu: Show/Hide project menu
   status_active: "有効"
+  status_invited: invited
+  status_registered: "登録済み"
   support:
     array:
       sentence_connector: "及び"
@@ -1557,6 +1587,7 @@ ja:
   text_line_separated: "(1行ごとに書くことで)複数の値を設定できます。"
   text_load_default_configuration: "デフォルト設定をロード"
   text_min_max_length_info: 0だと無制限になります。
+  text_no_roles_defined: There are no roles defined.
   text_no_configuration_data: |
     役割種類、作業項目のステータスと型、ワークフローがまだ設定されていません。
     デフォルト設定のロードを強くお勧めします。ロードした後、それを修正することができます。
@@ -1587,6 +1618,7 @@ ja:
   text_tip_work_package_end_day: "この日に終了する作業"
   text_type_no_workflow: "この作業項目の型に対してワークフローが定義されていません。"
   text_unallowed_characters: "次の文字は使用できません。"
+  text_user_invited: The user has been invited and is pending registration.
   text_user_mail_option: "未選択プロジェクトでは、ウォッチ又は関与している事柄（例： 自分が作成者又は担当者）のみメールが送信されます。"
   text_user_wrote: "%{value}が書き込みました："
   text_warn_on_leaving_unsaved: "このページから移動すると、保存されてないページ上のテキストが失われます。"
@@ -1782,6 +1814,8 @@ ja:
       months: "月"
       quarters: "四半期ごと"
       years: " 年"
+  title_remove_and_delete_user: Remove the invited user from the project and delete
+    them.
   queries:
     apply_filter: "構成済みのフィルターを適用する"
   total_progress: "全体の進行状況"
@@ -1792,7 +1826,7 @@ ja:
     activate_and_reset_failed_logins: "有効にして、ログリン失敗回数をリセットする"
     authentication_provider: "認証プロバイダー"
     authentication_settings_disabled_due_to_external_authentication: "外部認証プロバイダー経由でこのユーザーを認証しますので、OpenProjectではパスワードの変更ができません。"
-    assign_random_password: "ランダムパスワードを設定 (電子メールを通じてユーザーに送信されます)"
+    assign_random_password: Assign random password (sent to user via email)
     blocked: "一時的ロック"
     blocked_num_failed_logins:
       one: locked temporarily (one failed login attempt)
@@ -1802,6 +1836,7 @@ ja:
     lock: "永続ロックする"
     locked: "永続ロック"
     registered: "登録済み"
+    invited: invited
     reset_failed_logins: "失敗したログイン数をリセットする"
     status_user_and_brute_force: "%{user}かつ%{brute_force}"
     unlock: "ロックを解除"
@@ -1809,6 +1844,7 @@ ja:
     no_login: "このユーザーは、パスワードを使用してログイン認証します。パスワードによってのログインは無効なので、ユーザーがログインできません。"
     password_change_unsupported: "パスワードの変更はサポートされていません。"
     authorization_rejected: "ログインすることはできません。"
+    invite: Invite user via email
   version_status_closed: "完了"
   version_status_locked: "ロック済み"
   version_status_open: "未完了"

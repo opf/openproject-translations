@@ -1,25 +1,26 @@
 ---
 pt-BR:
+  label_invitation: Invitation
   account:
     delete: Excluir conta
     delete_confirmation: Tem certeza que deseja excluir essa conta?
     deleted: Conta excluída com sucesso
     deletion_info:
       data_consequences:
-        other: 'Os dados que o usuário criou (ex.: e-mail, preferências, pacotes de
-          trabalho, páginas wiki) serão excluídos na medida do possível. Note, porém,
-          que dados como pacotes de trabalho e páginas wiki não podem ser excluídos
-          sem impactar o trabalho dos demais usuários. Estes dados serão reatribuídos
-          a uma conta chamada "Usuário excluído". Como os dados de todas as contas
-          excluídas serão reatribuídos a esta conta, não será possível distinguir
-          os dados que o usuário criou dos dados de outra conta excluída.'
-        self: 'Os dados que você criou (ex.: e-mail, preferências, pacotes de trabalho,
-          páginas wiki) serão excluídos na medida do possível. Note, porém, que dados
-          como pacotes de trabalho e página wiki não podem ser excluídos sem impactar
-          o trabalho dos demais usuários. Estes dados serão reatribuidos a uma conta
-          chamada "Usuário excluído". Como os dados de todas as contas excluídas serão
-          reatribuidos a esta conta, não será possível distinguir os dados que você
-          criou dos dados de outra conta excluída.'
+        other: Of the data the user created (e.g. email, preferences, work packages,
+          wiki entries) as much as possible will be deleted. Note however, that data
+          like work packages and wiki entries can not be deleted without impeding
+          the work of the other users. Such data is hence reassigned to an account
+          called "Deleted user". As the data of every deleted account is reassigned
+          to this account it will not be possible to distinguish the data the user
+          created from the data of another deleted account.
+        self: Of the data you created (e.g. email, preferences, work packages, wiki
+          entries) as much as possible will be deleted. Note however, that data like
+          work packages and wiki entries can not be deleted without impeding the work
+          of the other users. Such data is hence reassigned to an account called "Deleted
+          user". As the data of every deleted account is reassigned to this account
+          it will not be possible to distinguish the data you created from the data
+          of another deleted account.
       heading: Excluir a conta %{name}
       info:
         other: Excluir a conta do usuário é uma ação irreversível.
@@ -38,6 +39,10 @@ pt-BR:
     error_self_registration_disabled: O registro do usuário está desativado no sistema.
       Por favor peça a um administrador para criar uma conta para você.
     login_with_auth_provider: ou entre com a sua conta existente
+    signup_with_auth_provider: or sign up using
+    signup_with_password: using user name and password.
+    auth_source_login: Please login as <em>%{login}</em> to activate your account.
+    omniauth_login: Please login to activate your account.
   actionview_instancetag_blank_option: Por favor selecione
   activerecord:
     attributes:
@@ -340,6 +345,7 @@ pt-BR:
     version: Versão
     work_package: Pacote de trabalho
   button_add: Adicionar
+  button_add_member: Add member
   button_add_watcher: Adicionar observador
   button_annotate: Anotar
   button_apply: Aplicar
@@ -371,6 +377,7 @@ pt-BR:
   button_move: Mover
   button_move_and_follow: Mover e seguir
   button_quote: Citar
+  button_remove: Remove
   button_remove_widget: Remover widget
   button_rename: Renomear
   button_reply: Responder
@@ -657,15 +664,15 @@ pt-BR:
   gui_validation_error_plural: "%{count} erros"
   homescreen:
     additional:
-      projects: Newest visible projects in this instance.
-      users: Newest registered users in this instance.
+      projects: Projetos mais recentes visíveis nesta instância.
+      users: Usuários mais recentes registrados nesta instância.
     blocks:
-      community: OpenProject Community
+      community: Comunidade do OpenProject
     links:
-      user_guides: User guides
-      faq: FAQ
-      glossary: Glossary
-      shortcuts: Shortcuts
+      user_guides: Guias do usuário
+      faq: Perguntas Freqüentes
+      glossary: Glossário
+      shortcuts: Atalhos
       forums: Fóruns
   instructions_after_registration: Você pode entrar assim que sua conta for ativada
     clicando %{signin}.
@@ -687,7 +694,6 @@ pt-BR:
   label_additional_workflow_transitions_for_author: Transições adicionais permitidas
     quando o usuário é o autor
   label_administration: Administração
-  label_advanced_settings: Configurações avançadas
   label_age: Idade
   label_ago: dias atrás
   label_all: todos
@@ -714,7 +720,7 @@ pt-BR:
   label_available_project_boards: Painéis disponíveis
   label_available_project_versions: Versões disponíveis
   label_available_project_repositories: Repositórios disponíveis
-  label_api_documentation: API documentation
+  label_api_documentation: Documentação da API
   label_blocked_by: bloqueado por
   label_blocks: bloqueios
   label_blog: Blog
@@ -780,7 +786,7 @@ pt-BR:
   label_deleted_custom_field: "(campo personalizado excluído)"
   label_descending: Descendente
   label_details: Detalhes
-  label_development_roadmap: Development roadmap
+  label_development_roadmap: Planejamento do desenvolvimento
   label_diff: diff
   label_diff_inline: em linha
   label_diff_side_by_side: Lado a lado
@@ -843,7 +849,7 @@ pt-BR:
   label_information_plural: Informação
   label_integer: Número inteiro
   label_internal: Interno
-  label_invite_user: Invite user
+  label_invite_user: Convidar usuário
   label_work_package_added: Pacote de trabalho adicionado
   label_work_package_category_new: Nova categoria
   label_work_package_category_plural: Categorias de pacote de trabalho
@@ -886,13 +892,13 @@ pt-BR:
   label_login: Login
   label_logout: Desconectar
   label_main_menu: Menu lateral
-  label_manage_groups: Manage groups
+  label_manage_groups: Gerenciar grupos
   label_managed_repositories_vendor: Repositórios gerenciados %{vendor}
   label_max_size: Tamanho máximo
   label_me: eu
   label_member_new: Novo membro
   label_member_plural: Membros
-  label_memder_view_all: View all members
+  label_memder_view_all: Visualizar todos os membros
   label_menu_item_name: Nome do item de menu
   label_message_last: "Última mensagem"
   label_message_new: Nova mensagem
@@ -964,8 +970,9 @@ pt-BR:
   label_preview: Pré-visualizar
   label_previous: Anterior
   label_previous_week: Semana anterior
-  label_principal_search: Pesquisar por usuários ou grupos
-  label_professional_support: Professional support
+  label_principal_invite_via_email: " or invite new users via email"
+  label_principal_search: Add existing users or groups
+  label_professional_support: Suporte profissional
   label_profile: Perfil
   label_project_all: Todos os projetos
   label_project_count: Número total de projetos
@@ -995,12 +1002,12 @@ pt-BR:
   label_relates_to: relacionado a
   label_relation_delete: Excluir relação
   label_relation_new: Nova relação
-  label_release_notes: Release notes
+  label_release_notes: Notas da versão
   label_remove_columns: Remover colunas selecionadas
   label_renamed: renomeado
   label_reply_plural: Respostas
   label_report: Relatório
-  label_report_bug: Report a bug
+  label_report_bug: Relatar um bug
   label_report_plural: Relatórios
   label_reported_work_packages: Pacotes de trabalho criados
   label_reporting: Relatório
@@ -1022,7 +1029,7 @@ pt-BR:
   label_role_and_permissions: Papéis e permissões
   label_role_new: Novo papel
   label_role_plural: Papéis
-  label_role_search: Pesquisar por papéis
+  label_role_search: Assign roles to new members
   label_scm: SCM
   label_search: Pesquisar
   label_search_titles_only: Pesquisar somente títulos
@@ -1099,7 +1106,7 @@ pt-BR:
   label_version_sharing_system: Com todos os projetos
   label_version_sharing_tree: Com a árvore de projetos
   label_view_all_revisions: Ver todas as revisões
-  label_view_all_users: View all users
+  label_view_all_users: Visualizar todos os usuários
   label_view_diff: Ver diferenças
   label_view_revisions: Ver revisões
   label_watched_work_packages: Pacotes de trabalho observados
@@ -1119,7 +1126,7 @@ pt-BR:
   label_wiki_show_submenu_item: 'Mostrar como item do submenu de '
   label_work_package: Pacote de trabalho
   label_work_package_status: Situação do pacote de trabalho
-  label_work_package_types: Work package types
+  label_work_package_types: Tipos de pacote de trabalho
   label_workflow: Fluxo de trabalho
   label_workflow_plural: Fluxos de trabalho
   label_workflow_summary: Resumo
@@ -1154,7 +1161,7 @@ pt-BR:
   label_keyboard_shortcut_some_pages_only: 'Atalhos especiais:'
   label_keyboard_shortcut_search_global: Pesquisa global
   label_keyboard_shortcut_search_project: Localizar um projeto
-  label_keyboard_shortcut_go_my_page: Go to my page
+  label_keyboard_shortcut_go_my_page: Ir para minha página
   label_keyboard_shortcut_show_help: Mostrar esta mensagem de ajuda
   label_keyboard_shortcut_go_overview: Ir para visão geral do projeto
   label_keyboard_shortcut_go_work_package: Visualizar pacotes de trabalho do projeto
@@ -1205,6 +1212,8 @@ pt-BR:
   noscript_heading: JavaScript desativado
   noscript_learn_more: Saiba mais
   notice_account_activated: Sua conta foi ativada. Agora você pode se conectar.
+  notice_account_already_activated: The account has already been activated.
+  notice_account_invalid_token: Invalid activation token
   notice_account_invalid_credentials: Usuário ou senha inválidos
   notice_account_invalid_credentials_or_blocked: Usuário ou senha inválido ou a conta
     está bloqueada devido a várias tentativas de login. Se assim for, será desbloqueado
@@ -1226,6 +1235,7 @@ pt-BR:
   notice_account_wrong_password: Senha incorreta
   notice_account_registered_and_logged_in: Bem-vindo, sua conta foi ativada. Agora
     você está conectado.
+  notice_activation_failed: The account could not be activated.
   notice_api_access_key_reseted: Sua chave de acesso API foi zerada.
   notice_can_t_change_password: Esta conta usa autenticação externa. Impossível alterar
     a senha neste modo.
@@ -1249,6 +1259,10 @@ pt-BR:
     %{users}.
   notice_locking_conflict_reload_page: Por favor, recarregue a página, reveja as alterações
     e aplique novamente suas atualizações.
+  notice_member_added: Added %{name} to the project.
+  notice_members_added: Added %{number} users to the the project.
+  notice_member_removed: Removed %{user} from project.
+  notice_member_deleted: "%{user} has been removed from the project and deleted."
   notice_no_principals_found: Nenhum resultado encontrado.
   notice_bad_request: Requisição Inválida.
   notice_not_authorized: Você não está autorizado a acessar esta página.
@@ -1263,8 +1277,12 @@ pt-BR:
     digitando o nome do novo membro (ou grupo).
   notice_unable_delete_time_entry: Não é possível excluir o registro de tempo.
   notice_unable_delete_version: Não é possível excluir a versão.
+  notice_user_missing_authentication_method: User has yet to chose a password or another
+    way the sign in.
   notice_automatic_set_of_standard_type: Defina o tipo padrão automaticamente.
   notice_logged_out: Você foi desconectado.
+  notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
+    as there are still users using it.
   error_types_in_use_by_work_packages: 'Os seguintes tipos ainda são referenciados
     por pacotes de trabalho: %{types}'
   notice_project_cannot_update_custom_fields: Você não pode atualizar os campos personalizados
@@ -1588,10 +1606,11 @@ pt-BR:
   setting_user_format: Formato de exibição de usuários
   setting_users_deletable_by_admins: Contas de usuário podem ser excluídas pelos administradores
   setting_users_deletable_by_self: Usuários podem excluir suas contas
-  setting_welcome_text: Welcome block text
-  setting_welcome_title: Welcome block title
-  setting_welcome_on_homescreen: Display welcome block on homescreen
-  setting_welcome_on_projects_page: Display welcome block on project overview
+  setting_welcome_text: Texto do bloco de boas-vindas
+  setting_welcome_title: Título do bloco de boas-vindas
+  setting_welcome_on_homescreen: Exibir bloco de boas-vindas na tela inicial
+  setting_welcome_on_projects_page: Exibir bloco de boas-vindas na visão geral do
+    projeto
   setting_wiki_compression: Compactação de histórico do wiki
   setting_work_package_group_assignment: Permitir a atribuição de grupos
   settings:
@@ -1602,6 +1621,8 @@ pt-BR:
     brute_force_prevention: Bloqueio de usuário automatizado
   show_hide_project_menu: Exibir/Ocultar menu de projeto
   status_active: ativo
+  status_invited: invited
+  status_registered: registrado
   support:
     array:
       sentence_connector: e
@@ -1660,6 +1681,7 @@ pt-BR:
   text_line_separated: Vários valores permitidos (uma linha para cada valor).
   text_load_default_configuration: Carregar a configuração padrão
   text_min_max_length_info: 0 significa nenhuma restrição
+  text_no_roles_defined: There are no roles defined.
   text_no_configuration_data: Papéis, tipos, situações dos pacotes de trabalho e fluxo
     de trabalho não foram configurados ainda. É altamente recomendável carregar a
     configuração padrão. Uma vez carregada, você será capaz de modificá-la.
@@ -1695,6 +1717,7 @@ pt-BR:
   text_tip_work_package_end_day: pacote de trabalho termina neste dia
   text_type_no_workflow: Nenhum workflow definido para este tipo
   text_unallowed_characters: Caracteres não permitidos
+  text_user_invited: The user has been invited and is pending registration.
   text_user_mail_option: 'Para projetos não selecionados, você só irá receber notificações
     sobre as coisas que você estiver observando, ou estiver envolvido em (ex.: pacotes
     de trabalho que você é o autor ou responsável).'
@@ -1916,6 +1939,8 @@ pt-BR:
       months: Meses
       quarters: Trimestres
       years: Anos
+  title_remove_and_delete_user: Remove the invited user from the project and delete
+    them.
   queries:
     apply_filter: Aplicar filtro pré-configurado
   total_progress: Progresso total
@@ -1928,7 +1953,7 @@ pt-BR:
     authentication_settings_disabled_due_to_external_authentication: Este usuário
       se autentica através de um provedor de autenticação externa, então não há nenhuma
       senha no OpenProject para ser alterada.
-    assign_random_password: Atribuir senha aleatória (envia ao usuário por e-mail)
+    assign_random_password: Assign random password (sent to user via email)
     blocked: bloqueado temporariamente
     blocked_num_failed_logins:
       one: bloqueado temporariamente (uma tentativa inválida de acesso)
@@ -1939,6 +1964,7 @@ pt-BR:
     lock: Bloquear permanentemente
     locked: bloqueado permanentemente
     registered: registrado
+    invited: invited
     reset_failed_logins: Redefinição de logins que falharam
     status_user_and_brute_force: "%{user} e %{brute_force}"
     unlock: Desbloquear
@@ -1947,6 +1973,7 @@ pt-BR:
       ele não pode efetuar login.
     password_change_unsupported: Mudança de senha não é suportada.
     authorization_rejected: Você não tem permissão para acessar.
+    invite: Invite user via email
   version_status_closed: fechado
   version_status_locked: bloqueado
   version_status_open: aberto

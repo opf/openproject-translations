@@ -1,23 +1,26 @@
 ---
 hu:
+  label_invitation: Invitation
   account:
     delete: Felhasználói hozzáférés törölése
     delete_confirmation: Biztosan törölni akarja ezt a felhasználói hozzáférést?
     deleted: A felhasználóiiók sikeresen törölve
     deletion_info:
       data_consequences:
-        other: A felhasználó által létrehozott adatok (pl. e-mail, beállítások, munkacsomag,
-          wiki bejegyzés) törlődik. Azonban a máshol használt adatokat, mint pl. a
-          munkacsomag, wiki bejegyzést nem lehet törölni a többi felhasználó munkájának
-          akadályozása nélkül. Az ilyen adatokat ezért áthelyezzük egy "törölt felhasználó"  nevű
-          fiókba. Mivel minden törölt hozzáférésnél ezt a fiók tartalmazza az adatokat
-          , nem lehet megkülönböztetni az adatokat egymástól.
-        self: A létrehozott adatok (pl. e-mail, beállítások, munkacsomag, wiki bejegyzés)
-          törlődik. Azonban a máshol használt adatok, mint pl. a munkacsomag, wiki
-          bejegyzést nem lehet törölni a többi felhasználó munkájának akadályozása
-          nélkül. Az ilyen adatokat ezért áthelyezzük egy "törölt felhasználó"  nevű
-          fiókba. Mivel minden törölt hozzáférésnél ezt a fiók tartalmazza az adatokat
-          , nem lehet megkülönböztetni az adatokat egymástól.
+        other: Of the data the user created (e.g. email, preferences, work packages,
+          wiki entries) as much as possible will be deleted. Note however, that data
+          like work packages and wiki entries can not be deleted without impeding
+          the work of the other users. Such data is hence reassigned to an account
+          called "Deleted user". As the data of every deleted account is reassigned
+          to this account it will not be possible to distinguish the data the user
+          created from the data of another deleted account.
+        self: Of the data you created (e.g. email, preferences, work packages, wiki
+          entries) as much as possible will be deleted. Note however, that data like
+          work packages and wiki entries can not be deleted without impeding the work
+          of the other users. Such data is hence reassigned to an account called "Deleted
+          user". As the data of every deleted account is reassigned to this account
+          it will not be possible to distinguish the data you created from the data
+          of another deleted account.
       heading: Felhasználói hozzáférés törlése %{name}
       info:
         other: A felhasználói hozzáférés törlése visszafordíthatatlan művelet.
@@ -37,6 +40,10 @@ hu:
       rendszerben. Kérje meg a rendszergazdát, hogy hozzon létre egy felhasználói
       hozzáférést.
     login_with_auth_provider: vagy jelentkezzen be a meglévő hozzáférésével.
+    signup_with_auth_provider: or sign up using
+    signup_with_password: using user name and password.
+    auth_source_login: Please login as <em>%{login}</em> to activate your account.
+    omniauth_login: Please login to activate your account.
   actionview_instancetag_blank_option: Kérem válasszon
   activerecord:
     attributes:
@@ -342,6 +349,7 @@ hu:
     version: Verzió
     work_package: Munkacsomag
   button_add: Hozzáadás
+  button_add_member: Add member
   button_add_watcher: Megfigyelő hozzáadása
   button_annotate: Jegyzetekkel ellát
   button_apply: Alkalmaz
@@ -373,6 +381,7 @@ hu:
   button_move: Mozgatás
   button_move_and_follow: Mozgatés és a következő
   button_quote: Quota
+  button_remove: Remove
   button_remove_widget: Widget eltávolítása
   button_rename: "Átnevezés"
   button_reply: Válasz
@@ -691,7 +700,6 @@ hu:
   label_additional_workflow_transitions_for_author: A további áttűnések engedélyezett,
     ha a felhasználó a szerző
   label_administration: Adminisztráció
-  label_advanced_settings: Advanced settings
   label_age: "Életkor"
   label_ago: nappal ezelőtt
   label_all: mind
@@ -967,7 +975,8 @@ hu:
   label_preview: Előnézet
   label_previous: Korábbi
   label_previous_week: Előző héten
-  label_principal_search: A felhasználók vagy csoportok keresése
+  label_principal_invite_via_email: " or invite new users via email"
+  label_principal_search: Add existing users or groups
   label_professional_support: Professional support
   label_profile: Profil
   label_project_all: Minden projekt
@@ -1023,7 +1032,7 @@ hu:
   label_role_and_permissions: Szerepkörök és engedélyek
   label_role_new: "Új szerepkör"
   label_role_plural: Szerepkörök
-  label_role_search: Szerepkörök keresése
+  label_role_search: Assign roles to new members
   label_scm: SCM
   label_search: Keresés
   label_search_titles_only: Keresés csak a címekben
@@ -1207,6 +1216,8 @@ hu:
   noscript_heading: JavaScript le van tiltva
   noscript_learn_more: További információ
   notice_account_activated: A fiók aktiválva van. Most már bejelentkezhet.
+  notice_account_already_activated: The account has already been activated.
+  notice_account_invalid_token: Invalid activation token
   notice_account_invalid_credentials: "Érvénytelen felhasználónév vagy jelszó"
   notice_account_invalid_credentials_or_blocked: "Érvénytelen felhasználó vagy jelszó
     vagy a fiók le van tiltva, több sikertelen bejelentkezési kísérlet miatt. Rövid
@@ -1227,6 +1238,7 @@ hu:
   notice_account_wrong_password: Hibás jelszó
   notice_account_registered_and_logged_in: "Üdvözöljük a fiókja aktiválva van. Most
     bejelentkezhet."
+  notice_activation_failed: The account could not be activated.
   notice_api_access_key_reseted: Az API-hozzáférés kulcs alaphelyzetbe állt.
   notice_can_t_change_password: Ez a fiók egy külső hitelesítési forrást használ.
     Lehetetlen a jelszó csere.
@@ -1247,6 +1259,10 @@ hu:
   notice_locking_conflict_additional_information: A frissítést %{users} végezte el.
   notice_locking_conflict_reload_page: Töltse újra az oldalt, tekintse át a módosításokat,
     és a frissítse újra.
+  notice_member_added: Added %{name} to the project.
+  notice_members_added: Added %{number} users to the the project.
+  notice_member_removed: Removed %{user} from project.
+  notice_member_deleted: "%{user} has been removed from the project and deleted."
   notice_no_principals_found: Nincs találat.
   notice_bad_request: Rossz kérés.
   notice_not_authorized: "Ön nem jogosult a lap eléréséhez."
@@ -1260,8 +1276,12 @@ hu:
     új tagok (vagy csoport) nevének beírásával.
   notice_unable_delete_time_entry: Nem tudom törtölni az idő naplóbejegyzést.
   notice_unable_delete_version: Nem lehet törölni a verziót.
+  notice_user_missing_authentication_method: User has yet to chose a password or another
+    way the sign in.
   notice_automatic_set_of_standard_type: Automatikusan beállítja alap típust .
   notice_logged_out: Kijelentkeztél.
+  notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
+    as there are still users using it.
   error_types_in_use_by_work_packages: 'A következő típusok még mindig hivatkoznak
     ezekre a típusú munkacsomagokra: %{types}'
   notice_project_cannot_update_custom_fields: You cannot update the project's available
@@ -1595,6 +1615,8 @@ hu:
     brute_force_prevention: Felhasználó automatikus blokkolása
   show_hide_project_menu: Show/Hide project menu
   status_active: aktív
+  status_invited: invited
+  status_registered: regisztrált
   support:
     array:
       sentence_connector: "és"
@@ -1653,6 +1675,7 @@ hu:
   text_line_separated: A többszörös érték adás megengedett (minden érték külön sorban).
   text_load_default_configuration: Az alapértelmezett konfiguráció betöltése
   text_min_max_length_info: 0 azt jelenti, hogy nincs korlátozás
+  text_no_roles_defined: There are no roles defined.
   text_no_configuration_data: Szerepkörök, típusok, a munkacsomag állapotok és a munkafolyamatok
     nincsenek beállítva. Erősen ajánlott, az alapértelmezett konfiguráció betöltése.
     Akkor képes lesz arra, hogy módosítsa.
@@ -1687,6 +1710,7 @@ hu:
   text_tip_work_package_end_day: ezen a napon zárul a munkacsomag
   text_type_no_workflow: Nincs munkafolyamat meghatározva ehhez a típushoz
   text_unallowed_characters: Nem engedélyezett karakterek
+  text_user_invited: The user has been invited and is pending registration.
   text_user_mail_option: A ki nem jelölt projektek esetében csak akkor kapsz értesítést
     ha megfigyelő státuszban szerepelsz, vagy éppen részt veszel a projektben(pl.
     te vagy a projekt tulajdonosa vagy a projekthez vagy rendelve).
@@ -1905,6 +1929,8 @@ hu:
       months: Hónapok
       quarters: Negyedek
       years: "Évek"
+  title_remove_and_delete_user: Remove the invited user from the project and delete
+    them.
   queries:
     apply_filter: Előre beállított szűrő alkalmazása
   total_progress: Teljes folyamat
@@ -1918,8 +1944,7 @@ hu:
     authentication_settings_disabled_due_to_external_authentication: Ez a felhasználó
       egy külső hitelesítés szolgáltató keresztül hitelesít, így nincs megváltoztatható
       jelszó az alkalmazásban.
-    assign_random_password: Véletlenszerű jelszó hozzárendelése ( e-mailben elküldve
-      a felhasználónak)
+    assign_random_password: Assign random password (sent to user via email)
     blocked: ideiglenesen zárolva
     blocked_num_failed_logins:
       one: locked temporarily (one failed login attempt)
@@ -1930,6 +1955,7 @@ hu:
     lock: Zárolva
     locked: zárolva
     registered: regisztrált
+    invited: invited
     reset_failed_logins: A sikertelen bejelentkezés alaphelyzetbe állitása
     status_user_and_brute_force: "%{user} és %{brute_force}"
     unlock: A zárolás feloldása
@@ -1939,6 +1965,7 @@ hu:
       le van tiltva,  nem tud bejelentkezni.
     password_change_unsupported: A jelszó módosítása nem támogatott.
     authorization_rejected: Nem megengedett bejelentkezés.
+    invite: Invite user via email
   version_status_closed: Lezárva
   version_status_locked: Zárolt
   version_status_open: kinyit

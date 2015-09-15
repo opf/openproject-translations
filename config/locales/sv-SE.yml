@@ -1,26 +1,26 @@
 ---
 sv-SE:
+  label_invitation: Invitation
   account:
     delete: Ta bort konto
     delete_confirmation: "Är du säker du vill ta bort kontot?"
     deleted: Kontot har tagits bort
     deletion_info:
       data_consequences:
-        other: Av uppgifterna som användaren skapat (t.ex. E-post, inställningar,
-          arbetspaket, wiki poster) kommer så mycket som möjligt tas bort. Observera
-          dock att data som arbetspaket och wiki poster inte kan tas bort utan att
-          störa andra användare. Sådana uppgifter kommer därför omplaceras till ett
-          konto som heter "Raderad användare". Eftersom data ifrån alla raderade konton
-          överförs till detta konto kommer det inte längre vara möjligt att skilja
-          data som denna användare skapa från data som överförts ifrån andra raderade
-          konton.
-        self: Av uppgifterna som du skapat (t.ex. E-post, inställningar, arbetspaket,
-          wiki poster) kommer så mycket som möjligt tas bort. Observera dock att data
-          som arbetspaket och wiki poster inte kan tas bort utan att störa andra användare.
-          Sådana uppgifter kommer därför omplaceras till ett konto som heter "Raderad
-          användare". Eftersom data ifrån alla raderade konton överförs till detta
-          konto kommer det inte längre vara möjligt att skilja data som du skapat
-          från data som överförts ifrån andra raderade konton.
+        other: Of the data the user created (e.g. email, preferences, work packages,
+          wiki entries) as much as possible will be deleted. Note however, that data
+          like work packages and wiki entries can not be deleted without impeding
+          the work of the other users. Such data is hence reassigned to an account
+          called "Deleted user". As the data of every deleted account is reassigned
+          to this account it will not be possible to distinguish the data the user
+          created from the data of another deleted account.
+        self: Of the data you created (e.g. email, preferences, work packages, wiki
+          entries) as much as possible will be deleted. Note however, that data like
+          work packages and wiki entries can not be deleted without impeding the work
+          of the other users. Such data is hence reassigned to an account called "Deleted
+          user". As the data of every deleted account is reassigned to this account
+          it will not be possible to distinguish the data you created from the data
+          of another deleted account.
       heading: Ta bort konto %{name}
       info:
         other: Att ta bort användarkontot är en oåterkallelig åtgärd.
@@ -39,6 +39,10 @@ sv-SE:
     error_self_registration_disabled: Användarregistrering är inaktiverat på det här
       systemet. Be en administratör att skapa ett konto för dig.
     login_with_auth_provider: eller logga in med ditt befintliga konto
+    signup_with_auth_provider: or sign up using
+    signup_with_password: using user name and password.
+    auth_source_login: Please login as <em>%{login}</em> to activate your account.
+    omniauth_login: Please login to activate your account.
   actionview_instancetag_blank_option: Välj
   activerecord:
     attributes:
@@ -342,6 +346,7 @@ sv-SE:
     version: Version
     work_package: Arbetspaket
   button_add: Lägg till
+  button_add_member: Add member
   button_add_watcher: Lägg till bevakare
   button_annotate: Kommentera
   button_apply: Använd
@@ -373,6 +378,7 @@ sv-SE:
   button_move: Flytta
   button_move_and_follow: Flytta och följ
   button_quote: Citat
+  button_remove: Remove
   button_remove_widget: Ta bort widget
   button_rename: "Ändra namn"
   button_reply: Svara
@@ -686,7 +692,6 @@ sv-SE:
   label_additional_workflow_transitions_for_author: Ytterligare övergångar tillåtna
     när användaren är författaren
   label_administration: Administration
-  label_advanced_settings: Advanced settings
   label_age: "Ålder"
   label_ago: dagar sedan
   label_all: alla
@@ -962,7 +967,8 @@ sv-SE:
   label_preview: Förhandsgranska
   label_previous: Föregående
   label_previous_week: Föregående vecka
-  label_principal_search: Sök efter användare eller grupper
+  label_principal_invite_via_email: " or invite new users via email"
+  label_principal_search: Add existing users or groups
   label_professional_support: Professional support
   label_profile: Profil
   label_project_all: Alla projekt
@@ -1018,7 +1024,7 @@ sv-SE:
   label_role_and_permissions: Roller och behörigheter
   label_role_new: Ny roll
   label_role_plural: Roller
-  label_role_search: Sök efter roller
+  label_role_search: Assign roles to new members
   label_scm: SCM
   label_search: Sök
   label_search_titles_only: Sök endast i titlar
@@ -1199,6 +1205,8 @@ sv-SE:
   noscript_heading: JavaScript inaktiverat
   noscript_learn_more: Lär dig mer
   notice_account_activated: Ditt konto har aktiverats. Nu kan du logga in.
+  notice_account_already_activated: The account has already been activated.
+  notice_account_invalid_token: Invalid activation token
   notice_account_invalid_credentials: Ogiltig användare eller lösenord
   notice_account_invalid_credentials_or_blocked: Ogiltig användare eller lösenord
     eller konto är låst på grund av flera misslyckade inloggningsförsök. Om kontot
@@ -1219,6 +1227,7 @@ sv-SE:
   notice_account_wrong_password: Felaktigt lösenord
   notice_account_registered_and_logged_in: Välkommen, ditt konto har aktiverats. Du
     är nu inloggad.
+  notice_activation_failed: The account could not be activated.
   notice_api_access_key_reseted: Din API åtkomstnyckel återställdes.
   notice_can_t_change_password: Detta konto använder en extern autentiseringskälla.
     Omöjligt att ändra lösenordet.
@@ -1241,6 +1250,10 @@ sv-SE:
   notice_locking_conflict_additional_information: Uppdatering(ar) kom från %{users}.
   notice_locking_conflict_reload_page: Vänligen ladda om sidan, granska ändringarna
     och tilldela dina uppdateringar igen.
+  notice_member_added: Added %{name} to the project.
+  notice_members_added: Added %{number} users to the the project.
+  notice_member_removed: Removed %{user} from project.
+  notice_member_deleted: "%{user} has been removed from the project and deleted."
   notice_no_principals_found: Inga resultat hittades.
   notice_bad_request: Felaktig förfrågan.
   notice_not_authorized: Du har inte behörighet att komma åt denna sida.
@@ -1254,8 +1267,12 @@ sv-SE:
     sökningen genom att skriva namnet på den nya medlemmen (eller gruppen).\n"
   notice_unable_delete_time_entry: Det gick inte att ta bort tidrapport.
   notice_unable_delete_version: Det gick inte att ta bort version.
+  notice_user_missing_authentication_method: User has yet to chose a password or another
+    way the sign in.
   notice_automatic_set_of_standard_type: Ange standard typ automatiskt.
   notice_logged_out: Du har loggats ut.
+  notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
+    as there are still users using it.
   error_types_in_use_by_work_packages: 'Följande typer refereras fortfarande av arbetspaket:
     %{types}'
   notice_project_cannot_update_custom_fields: You cannot update the project's available
@@ -1585,6 +1602,8 @@ sv-SE:
     brute_force_prevention: Automatiserad användarblockering
   show_hide_project_menu: Show/Hide project menu
   status_active: aktiv
+  status_invited: invited
+  status_registered: Registrerad
   support:
     array:
       sentence_connector: och
@@ -1641,6 +1660,7 @@ sv-SE:
   text_line_separated: Flera värden tillåtna (en rad för varje värde).
   text_load_default_configuration: Ladda standardkonfigurationen
   text_min_max_length_info: 0 innebär ingen begränsning
+  text_no_roles_defined: There are no roles defined.
   text_no_configuration_data: Roller, typer, status för arbetspaket och arbetsflöden
     har inte konfigurerats ännu. Det rekommenderas starkt att läsa in standardkonfigurationen.
     Du kommer att kunna ändra dem när de är initialiserade.
@@ -1672,6 +1692,7 @@ sv-SE:
   text_tip_work_package_end_day: arbetspaket som slutar denna dag
   text_type_no_workflow: Inget arbetsflöde har definierats för denna typ
   text_unallowed_characters: Otillåtet tecken
+  text_user_invited: The user has been invited and is pending registration.
   text_user_mail_option: För omarkerade projekt, kommer du bara få aviseringar om
     saker du bevakar eller du är involverad i (t.ex. arbetspaket som du skapat eller
     tilldelats).
@@ -1888,6 +1909,8 @@ sv-SE:
       months: Månader
       quarters: Kvartal
       years: "År"
+  title_remove_and_delete_user: Remove the invited user from the project and delete
+    them.
   queries:
     apply_filter: Använd förkonfigurerade filter
   total_progress: Totalt klart
@@ -1900,8 +1923,7 @@ sv-SE:
     authentication_settings_disabled_due_to_external_authentication: Användaren autentiseras
       via en extern autentiseringstjänst, så det finns inget lösenord i OpenProject
       som kan ändras.
-    assign_random_password: Tilldela slumpmässigt lösenord (skickas till användare
-      via E-post)
+    assign_random_password: Assign random password (sent to user via email)
     blocked: tillfälligt låst
     blocked_num_failed_logins:
       one: tillfälligt låst (ett misslyckat inloggningsförsök)
@@ -1912,6 +1934,7 @@ sv-SE:
     lock: Lås permanent
     locked: låst permanent
     registered: Registrerad
+    invited: invited
     reset_failed_logins: Nollställ misslyckade inloggningsförsök
     status_user_and_brute_force: "%{user} och %{brute_force}"
     unlock: Lås upp
@@ -1920,6 +1943,7 @@ sv-SE:
       inaktiverat, kan inte de logga in.
     password_change_unsupported: "Ändring av lösenord stöds inte."
     authorization_rejected: Du är inte tillåten att logga in.
+    invite: Invite user via email
   version_status_closed: stängt
   version_status_locked: låst
   version_status_open: "öppna"

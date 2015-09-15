@@ -1,13 +1,26 @@
 ---
 zh:
+  label_invitation: Invitation
   account:
     delete: "删除帐户"
     delete_confirmation: "您确认想要删除您的账户？"
     deleted: "帐户已成功删除"
     deletion_info:
       data_consequences:
-        other: "用户创建的数据（例如email，首选项，工作包，wiki条目）将会尽可能地删除。然而注意，数据如工作包和wiki条目不会删除而不阻碍其他用户的工作。因此这种数据被重新分配到一个称为“已删除用户”的帐户。因为每个已删除帐户的数据都重新分配到该帐户，所以不可能区分不同用户创建的数据。"
-        self: "您创建的数据（例如email，首选项，工作包，wiki条目）将会尽可能地删除。然而注意，数据如工作包和wiki条目不会删除而不阻碍其他用户的工作。因此这种数据被重新分配到一个称为“已删除用户”的帐户。因为每个已删除帐户的数据都重新分配到该帐户，所以不可能区分您创建的数据与其他已删除帐户创建的数据。"
+        other: Of the data the user created (e.g. email, preferences, work packages,
+          wiki entries) as much as possible will be deleted. Note however, that data
+          like work packages and wiki entries can not be deleted without impeding
+          the work of the other users. Such data is hence reassigned to an account
+          called "Deleted user". As the data of every deleted account is reassigned
+          to this account it will not be possible to distinguish the data the user
+          created from the data of another deleted account.
+        self: Of the data you created (e.g. email, preferences, work packages, wiki
+          entries) as much as possible will be deleted. Note however, that data like
+          work packages and wiki entries can not be deleted without impeding the work
+          of the other users. Such data is hence reassigned to an account called "Deleted
+          user". As the data of every deleted account is reassigned to this account
+          it will not be possible to distinguish the data you created from the data
+          of another deleted account.
       heading: "删除帐户 %{name}"
       info:
         other: "删除用户帐户是不可逆的动作。"
@@ -19,6 +32,10 @@ zh:
     error_inactive_manual_activation: "您的帐户尚未激活。请等待管理员激活您的帐户。"
     error_self_registration_disabled: "此系统上禁用了用户注册。请让管理员为您创建帐户。"
     login_with_auth_provider: "或使用您的现有帐户登录"
+    signup_with_auth_provider: or sign up using
+    signup_with_password: using user name and password.
+    auth_source_login: Please login as <em>%{login}</em> to activate your account.
+    omniauth_login: Please login to activate your account.
   actionview_instancetag_blank_option: "请选择"
   activerecord:
     attributes:
@@ -313,6 +330,7 @@ zh:
     version: "版本"
     work_package: "工作包"
   button_add: "添加"
+  button_add_member: Add member
   button_add_watcher: "添加关注者"
   button_annotate: "批注"
   button_apply: "应用"
@@ -344,6 +362,7 @@ zh:
   button_move: "移动"
   button_move_and_follow: "移动和跟踪"
   button_quote: "引用"
+  button_remove: Remove
   button_remove_widget: "删除部件"
   button_rename: "重命名"
   button_reply: "答复"
@@ -638,7 +657,6 @@ zh:
   label_additional_workflow_transitions_for_assignee: "当用户是指定人时允许额外的转移"
   label_additional_workflow_transitions_for_author: "当用户是作者时允许额外转移"
   label_administration: "管理"
-  label_advanced_settings: Advanced settings
   label_age: "年龄"
   label_ago: "天前"
   label_all: "所有"
@@ -909,7 +927,8 @@ zh:
   label_preview: "预览"
   label_previous: "上一个"
   label_previous_week: "前一周"
-  label_principal_search: "查找用户或组"
+  label_principal_invite_via_email: " or invite new users via email"
+  label_principal_search: Add existing users or groups
   label_professional_support: Professional support
   label_profile: "配置文件"
   label_project_all: "所有项目"
@@ -965,7 +984,7 @@ zh:
   label_role_and_permissions: "角色和权限"
   label_role_new: "新的角色"
   label_role_plural: "角色"
-  label_role_search: "搜索角色"
+  label_role_search: Assign roles to new members
   label_scm: SCM
   label_search: "搜索"
   label_search_titles_only: "仅搜索标题"
@@ -1137,6 +1156,8 @@ zh:
   noscript_heading: JavaScript 被禁用
   noscript_learn_more: "了解更多信息"
   notice_account_activated: "您的帐户已激活。您现在可以登录。"
+  notice_account_already_activated: The account has already been activated.
+  notice_account_invalid_token: Invalid activation token
   notice_account_invalid_credentials: "无效的用户名或密码"
   notice_account_invalid_credentials_or_blocked: "无效的用户或密码或帐户由于多个失败的登录尝试被阻止。如果是这样，它将自动在短时间内解除。"
   notice_account_lost_email_sent: "一个说明选择新密码的电子邮件已经发送给你。"
@@ -1150,6 +1171,7 @@ zh:
   notice_account_updated: "帐户已成功更新。"
   notice_account_wrong_password: "密码错误"
   notice_account_registered_and_logged_in: "欢迎，您的帐户已激活。您现在已登录。"
+  notice_activation_failed: The account could not be activated.
   notice_api_access_key_reseted: "您的 API 访问密钥被重置。"
   notice_can_t_change_password: "此帐户使用外部身份验证源。无法更改密码。"
   notice_email_error: "发送邮件 (%{value}) 时出错"
@@ -1164,6 +1186,10 @@ zh:
   notice_locking_conflict: "信息已由至少一个其他用户同时更新。"
   notice_locking_conflict_additional_information: "更新来自 %{users}。"
   notice_locking_conflict_reload_page: "请重新加载该页面，查看所做的更改并重新应用您的更新。"
+  notice_member_added: Added %{name} to the project.
+  notice_members_added: Added %{number} users to the the project.
+  notice_member_removed: Removed %{user} from project.
+  notice_member_deleted: "%{user} has been removed from the project and deleted."
   notice_no_principals_found: "没有找到结果。"
   notice_bad_request: "错误的请求。"
   notice_not_authorized: "您无权访问此页。"
@@ -1178,8 +1204,12 @@ zh:
     键入新成员（或组）缩小搜索。
   notice_unable_delete_time_entry: "不能删除时间记录条目。"
   notice_unable_delete_version: "不能删除版本。"
+  notice_user_missing_authentication_method: User has yet to chose a password or another
+    way the sign in.
   notice_automatic_set_of_standard_type: "自动设置标准类型。"
   notice_logged_out: "您已被注销。"
+  notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
+    as there are still users using it.
   error_types_in_use_by_work_packages: "以下类型仍被工作包引用： %{types}"
   notice_project_cannot_update_custom_fields: You cannot update the project's available
     custom fields.
@@ -1481,6 +1511,8 @@ zh:
     brute_force_prevention: "自动化的用户阻止"
   show_hide_project_menu: Show/Hide project menu
   status_active: "激活"
+  status_invited: invited
+  status_registered: "已注册"
   support:
     array:
       sentence_connector: "和"
@@ -1529,6 +1561,7 @@ zh:
   text_line_separated: "允许有多个值 （每行一个值）。"
   text_load_default_configuration: "加载默认配置"
   text_min_max_length_info: 0 表示没有限制
+  text_no_roles_defined: There are no roles defined.
   text_no_configuration_data: "角色、 类型、 工作包状态和工作流有尚未配置。 \n强烈建议加载默认配置。加载完成后你将能够修改它。"
   text_no_notes: There are no comments available for this work package.
   text_notice_too_many_values_are_inperformant: "注意： 每个页面显示超过 100 个项目会增加页面加载时间。"
@@ -1553,6 +1586,7 @@ zh:
   text_tip_work_package_end_day: "这一天结束的工作包"
   text_type_no_workflow: "没有为此类型定义的工作流"
   text_unallowed_characters: "不允许的字符"
+  text_user_invited: The user has been invited and is pending registration.
   text_user_mail_option: "对于未选中的项目，您将只能收到你关注或你参与的事情的通知 (eg.你是作者或指定人的工作包）。"
   text_user_wrote: "%{value} 写道："
   text_warn_on_leaving_unsaved: "当前页包含未保存的文本，如果您离开此页面将会丢失。"
@@ -1748,6 +1782,8 @@ zh:
       months: "月"
       quarters: "季度"
       years: "年"
+  title_remove_and_delete_user: Remove the invited user from the project and delete
+    them.
   queries:
     apply_filter: "应用预配置筛选器"
   total_progress: "总进度"
@@ -1759,7 +1795,7 @@ zh:
     authentication_provider: "身份验证提供程序"
     authentication_settings_disabled_due_to_external_authentication: "此用户验证通过外部身份验证提供程序，所以在
       OpenProject 中没有密码将被改变。"
-    assign_random_password: "分配随机密码 （用户通过电子邮件发送）"
+    assign_random_password: Assign random password (sent to user via email)
     blocked: "暂时锁定"
     blocked_num_failed_logins:
       one: locked temporarily (one failed login attempt)
@@ -1769,6 +1805,7 @@ zh:
     lock: "永久锁定"
     locked: "永久锁定"
     registered: "已注册"
+    invited: invited
     reset_failed_logins: "重置失败的帐户"
     status_user_and_brute_force: "%{user} 和 %{brute_force}"
     unlock: "解锁​​​​"
@@ -1776,6 +1813,7 @@ zh:
     no_login: "此用户对通过登录密码进行身份验证。因为被禁用，所以他们不能登录。"
     password_change_unsupported: "不支持更改密码。"
     authorization_rejected: "你不允许登录。"
+    invite: Invite user via email
   version_status_closed: "关闭"
   version_status_locked: "锁定"
   version_status_open: "打开"

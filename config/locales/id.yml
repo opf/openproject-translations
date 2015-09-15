@@ -1,19 +1,26 @@
 ---
 id:
+  label_invitation: Invitation
   account:
     delete: Hapus akun
     delete_confirmation: Yakin Anda ingin menghapus akun?
     deleted: Akun telah dihapus
     deletion_info:
       data_consequences:
-        other: Data yang dibuat user (spt. email, Preferensi, Work Package, entri
-          Wiki) akan dihapus. Namun, data seperti Work Package dan entri Wiki yang
-          terhubung dengan user lain tidak akan dihapus. Data tersebut akan dipindahkan
-          ke akun yang disebut "User terhapus".
-        self: Data yang Anda buat (spt. email, preferensi, paket kerja, entri wiki)
-          akan dihapus. Tapi, data seperti work package dan entri wiki yang terhubung
-          dengan user lain tidak akan dihapus. Data tersebut akan dipindahkan ke akun
-          yang disebut "User terhapus".
+        other: Of the data the user created (e.g. email, preferences, work packages,
+          wiki entries) as much as possible will be deleted. Note however, that data
+          like work packages and wiki entries can not be deleted without impeding
+          the work of the other users. Such data is hence reassigned to an account
+          called "Deleted user". As the data of every deleted account is reassigned
+          to this account it will not be possible to distinguish the data the user
+          created from the data of another deleted account.
+        self: Of the data you created (e.g. email, preferences, work packages, wiki
+          entries) as much as possible will be deleted. Note however, that data like
+          work packages and wiki entries can not be deleted without impeding the work
+          of the other users. Such data is hence reassigned to an account called "Deleted
+          user". As the data of every deleted account is reassigned to this account
+          it will not be possible to distinguish the data you created from the data
+          of another deleted account.
       heading: Hapus akun %{name}
       info:
         other: User yang akan dihapus akan terputus dari alur proses dalam sistem.
@@ -28,6 +35,10 @@ id:
     error_self_registration_disabled: Pendaftaran user dinonaktifkan untuk saat ini.
       Silakan minta Administrator untuk membuatkan akun Anda.
     login_with_auth_provider: atau Login dengan akun yang ada
+    signup_with_auth_provider: or sign up using
+    signup_with_password: using user name and password.
+    auth_source_login: Please login as <em>%{login}</em> to activate your account.
+    omniauth_login: Please login to activate your account.
   actionview_instancetag_blank_option: Silakan pilih
   activerecord:
     attributes:
@@ -330,6 +341,7 @@ id:
     version: Versi
     work_package: Paket-Penugasan
   button_add: Tambah
+  button_add_member: Add member
   button_add_watcher: Tambah pemantau
   button_annotate: Anotasi
   button_apply: Apply
@@ -361,6 +373,7 @@ id:
   button_move: Pindahkan
   button_move_and_follow: Pindahkan dan amati
   button_quote: Kutipan
+  button_remove: Remove
   button_remove_widget: Hapus widget
   button_rename: Ubah nama
   button_reply: Balas
@@ -672,7 +685,6 @@ id:
   label_additional_workflow_transitions_for_author: Tambahan transisi diperbolehkan
     ketika user adalah Penulis
   label_administration: Administrasi
-  label_advanced_settings: Advanced settings
   label_age: Usia
   label_ago: hari yang lalu
   label_all: semua
@@ -947,7 +959,8 @@ id:
   label_preview: Preview
   label_previous: Sebelumnya
   label_previous_week: Minggu sebelumnya
-  label_principal_search: Cari user atau grup
+  label_principal_invite_via_email: " or invite new users via email"
+  label_principal_search: Add existing users or groups
   label_professional_support: Professional support
   label_profile: Profil
   label_project_all: Semua Project
@@ -1004,7 +1017,7 @@ id:
   label_role_and_permissions: Role dan Izin
   label_role_new: Role baru
   label_role_plural: Peran
-  label_role_search: Cari Role
+  label_role_search: Assign roles to new members
   label_scm: SCM
   label_search: Cari
   label_search_titles_only: Cari judul
@@ -1183,6 +1196,8 @@ id:
   noscript_heading: JavaScript dinonaktifkan
   noscript_learn_more: Pelajari lebih lanjut
   notice_account_activated: Akun Anda telah diaktifkan. Sekarang Anda bisa Login.
+  notice_account_already_activated: The account has already been activated.
+  notice_account_invalid_token: Invalid activation token
   notice_account_invalid_credentials: User atau Password tidak valid
   notice_account_invalid_credentials_or_blocked: User atau password tidak valid. Atau
     akun sedang diblokir karena beberapa kali gagal login. Jika itu yang terjadi,
@@ -1203,6 +1218,7 @@ id:
   notice_account_wrong_password: Password salah
   notice_account_registered_and_logged_in: Selamat datang, akun Anda telah diaktifkan.
     Anda sudah login sekarang.
+  notice_activation_failed: The account could not be activated.
   notice_api_access_key_reseted: API access key Anda telah direset.
   notice_can_t_change_password: Akun ini menggunakan otentikasi eksternal. Ubah password
     tidak bisa dilakukan.
@@ -1222,6 +1238,10 @@ id:
   notice_locking_conflict_additional_information: Diupdate oleh %{users}.
   notice_locking_conflict_reload_page: Silahkan reload halaman, tinjau perubahan dan
     reapply.
+  notice_member_added: Added %{name} to the project.
+  notice_members_added: Added %{number} users to the the project.
+  notice_member_removed: Removed %{user} from project.
+  notice_member_deleted: "%{user} has been removed from the project and deleted."
   notice_no_principals_found: Tidak ada hasil yang ditemukan.
   notice_bad_request: Bad Request.
   notice_not_authorized: Anda tidak diizinkan untuk mengakses halaman ini.
@@ -1235,8 +1255,12 @@ id:
     dengan mengetik nama member baru (atau grup).
   notice_unable_delete_time_entry: Entri time log tidak bisa dihapus.
   notice_unable_delete_version: Gagal menghapus versi.
+  notice_user_missing_authentication_method: User has yet to chose a password or another
+    way the sign in.
   notice_automatic_set_of_standard_type: Set Tipe standar secara otomatis.
   notice_logged_out: Anda telah logout.
+  notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
+    as there are still users using it.
   error_types_in_use_by_work_packages: 'Tipe tersebut masih direferensikan oleh Paket-Penugasan
     : %{types}'
   notice_project_cannot_update_custom_fields: You cannot update the project's available
@@ -1559,6 +1583,8 @@ id:
     brute_force_prevention: Pemblokiran otomatis user
   show_hide_project_menu: Tunjukkan/Sembunyikan menu proyek
   status_active: aktif
+  status_invited: invited
+  status_registered: telah terdaftar
   support:
     array:
       sentence_connector: dan
@@ -1615,6 +1641,7 @@ id:
   text_line_separated: Jika ada beberapa nilai, satu baris untuk tiap nilai.
   text_load_default_configuration: Pakai konfigurasi default
   text_min_max_length_info: 0 berarti tidak ada pembatasan
+  text_no_roles_defined: There are no roles defined.
   text_no_configuration_data: Role, Tipe, status Paket-Penugasan dan Alur-Tugas belum
     dikonfigurasi. Disarankan untuk menggunakan konfigurasi default. Anda bisa mengubahnya
     setelah konfigurasi dibuat.
@@ -1647,6 +1674,7 @@ id:
   text_tip_work_package_end_day: Paket-Penugasan diakhiri hari ini
   text_type_no_workflow: Tidak ada alur kerja untuk Tipe ini
   text_unallowed_characters: Unallowed characters
+  text_user_invited: The user has been invited and is pending registration.
   text_user_mail_option: Untuk Project yang tidak dipilih, Anda hanya akan menerima
     notifikasi tentang hal-hal yang Anda pantau atau yang Anda terlibat didalamnya
     (spt. Paket-Penugasan yang Anda sebagai penulisnya atau sebagai penerima tugasnya).
@@ -1862,6 +1890,8 @@ id:
       months: Bulan
       quarters: Kuartal
       years: Tahun
+  title_remove_and_delete_user: Remove the invited user from the project and delete
+    them.
   queries:
     apply_filter: Terapkan Filter yang telah dikonfigurasikan
   total_progress: Total progress
@@ -1873,7 +1903,7 @@ id:
     authentication_provider: Otentikasi provider
     authentication_settings_disabled_due_to_external_authentication: User ini mengotentikasi
       secara eksternal, sehingga tidak ada penggantian password dalam sistem ini.
-    assign_random_password: Berikan password acak (dikirim ke e-mail user)
+    assign_random_password: Assign random password (sent to user via email)
     blocked: dilock sementara
     blocked_num_failed_logins:
       one: locked temporarily (one failed login attempt)
@@ -1883,6 +1913,7 @@ id:
     lock: Lock permanen
     locked: telah dilock secara permanen
     registered: telah terdaftar
+    invited: invited
     reset_failed_logins: Reset gagal login
     status_user_and_brute_force: "%{user} dan %{brute_force}"
     unlock: Unlock
@@ -1891,6 +1922,7 @@ id:
       maka tidak bisa login.
     password_change_unsupported: Perubahan password tidak didukung.
     authorization_rejected: Anda tidak diijinkan untuk login.
+    invite: Invite user via email
   version_status_closed: berakhir
   version_status_locked: terkunci
   version_status_open: buka

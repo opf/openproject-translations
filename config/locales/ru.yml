@@ -1,23 +1,26 @@
 ---
 ru:
+  label_invitation: Invitation
   account:
     delete: "Удалить учётную запись"
     delete_confirmation: "Вы уверены, что хотите удалить учетную запись?"
     deleted: "Учетная запись успешно удалена"
     deletion_info:
       data_consequences:
-        other: "Данные, созданные пользователем (адрес электронной почты, предпочтения,
-          пакеты работ, wiki-записи) полностью не удаляются. Рабочие пакеты, wiki-записи
-          и пр. могут влиять на работы других пользователей, поэтому такие данные
-          не удаляются, а закрепляются за другой, специальной учетной записью, именуемой
-          «Удаленный пользователь». После такого переназначения определить кому принадлежали
-          эти данные ранее становиться невозможно."
-        self: "Данные, созданные Вами (адрес электронной почты, предпочтения, пакеты
-          работ, wiki-записи) полностью не удаляются. Рабочие пакеты, wiki-записи
-          и пр. могут влиять на работы других пользователей, поэтому такие данные
-          не удаляются, а закрепляются за другой, специальной учетной записью, именуемой
-          «Удаленный пользователь». После такого переназначения определить кому принадлежали
-          эти данные ранее становиться невозможно."
+        other: Of the data the user created (e.g. email, preferences, work packages,
+          wiki entries) as much as possible will be deleted. Note however, that data
+          like work packages and wiki entries can not be deleted without impeding
+          the work of the other users. Such data is hence reassigned to an account
+          called "Deleted user". As the data of every deleted account is reassigned
+          to this account it will not be possible to distinguish the data the user
+          created from the data of another deleted account.
+        self: Of the data you created (e.g. email, preferences, work packages, wiki
+          entries) as much as possible will be deleted. Note however, that data like
+          work packages and wiki entries can not be deleted without impeding the work
+          of the other users. Such data is hence reassigned to an account called "Deleted
+          user". As the data of every deleted account is reassigned to this account
+          it will not be possible to distinguish the data you created from the data
+          of another deleted account.
       heading: "Удаление учетной записи %{name}"
       info:
         other: "Удаление учетной записи пользователя является необратимым действием."
@@ -38,6 +41,10 @@ ru:
     error_self_registration_disabled: "Регистрация пользователя в этой системе отключена.
       Попросите администратора создать учетную запись для Вас."
     login_with_auth_provider: "или войдите своей учетной записью"
+    signup_with_auth_provider: or sign up using
+    signup_with_password: using user name and password.
+    auth_source_login: Please login as <em>%{login}</em> to activate your account.
+    omniauth_login: Please login to activate your account.
   actionview_instancetag_blank_option: "Пожалуйста, выберите"
   activerecord:
     attributes:
@@ -347,6 +354,7 @@ ru:
     version: "Этап"
     work_package: "Пакет работ"
   button_add: "Добавить"
+  button_add_member: Add member
   button_add_watcher: "Добавить наблюдателя"
   button_annotate: "Комментировать"
   button_apply: "Применить"
@@ -378,6 +386,7 @@ ru:
   button_move: "Переместить"
   button_move_and_follow: "Переместить и следовать"
   button_quote: "Цитата"
+  button_remove: Remove
   button_remove_widget: "Удалить виджет"
   button_rename: "Переименовать"
   button_reply: "Ответить"
@@ -704,7 +713,6 @@ ru:
   label_additional_workflow_transitions_for_author: "Дополнительные переходы допускаются,
     если пользователь является автором"
   label_administration: "Администрирование"
-  label_advanced_settings: Advanced settings
   label_age: "Возраст"
   label_ago: "дней назад"
   label_all: "все"
@@ -979,7 +987,8 @@ ru:
   label_preview: "Предварительный просмотр"
   label_previous: "Предыдущие"
   label_previous_week: "Предыдущая неделя"
-  label_principal_search: "Искать пользователей или группы"
+  label_principal_invite_via_email: " or invite new users via email"
+  label_principal_search: Add existing users or groups
   label_professional_support: Professional support
   label_profile: "Профиль"
   label_project_all: "Все проекты"
@@ -1038,7 +1047,7 @@ ru:
   label_role_and_permissions: "Роли и разрешения"
   label_role_new: "Новая роль"
   label_role_plural: "Роли"
-  label_role_search: "Поиск для ролей"
+  label_role_search: Assign roles to new members
   label_scm: SCM
   label_search: "Поиск"
   label_search_titles_only: "Искать только в названиях"
@@ -1228,6 +1237,8 @@ ru:
   noscript_learn_more: "Узнать больше"
   notice_account_activated: "Ваша учетная запись успешно активирована. Теперь Вы можете
     войти в систему."
+  notice_account_already_activated: The account has already been activated.
+  notice_account_invalid_token: Invalid activation token
   notice_account_invalid_credentials: "Неправильное имя пользователя или пароль"
   notice_account_invalid_credentials_or_blocked: "Неправильное имя пользователя/пароль
     или учетная запись была заблокирована из-за многочисленных неуспешных попыток
@@ -1248,6 +1259,7 @@ ru:
   notice_account_wrong_password: "Неправильный пароль"
   notice_account_registered_and_logged_in: "Добро пожаловать. Ваш аккаунт активирован.
     Вы вошли в систему."
+  notice_activation_failed: The account could not be activated.
   notice_api_access_key_reseted: "Ваш API-ключ доступа был сброшен."
   notice_can_t_change_password: "Эта учетная запись использует механизм внешней аутентификации.
     Невозможно изменить пароль."
@@ -1270,6 +1282,10 @@ ru:
   notice_locking_conflict_additional_information: "Обновление(-ия) пришли от %{users}."
   notice_locking_conflict_reload_page: "Пожалуйста перезагрузите страницу, пересмотрите
     изменения и повторно примените Ваши обновления."
+  notice_member_added: Added %{name} to the project.
+  notice_members_added: Added %{number} users to the the project.
+  notice_member_removed: Removed %{user} from project.
+  notice_member_deleted: "%{user} has been removed from the project and deleted."
   notice_no_principals_found: "Ничего не найдено."
   notice_bad_request: "Неправильный запрос."
   notice_not_authorized: "Вы не авторизованы для доступа к этой странице."
@@ -1284,8 +1300,12 @@ ru:
     введя имя нового участника (или группы)."
   notice_unable_delete_time_entry: "Не удается удалить учетную запись о времени."
   notice_unable_delete_version: "Не удается удалить версию."
+  notice_user_missing_authentication_method: User has yet to chose a password or another
+    way the sign in.
   notice_automatic_set_of_standard_type: "Установить стандартный тип автоматически."
   notice_logged_out: "Вы вышли из системы."
+  notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
+    as there are still users using it.
   error_types_in_use_by_work_packages: "На следующие типы: %{types}, по прежнему ссылаются
     пакеты работ"
   notice_project_cannot_update_custom_fields: You cannot update the project's available
@@ -1620,6 +1640,8 @@ ru:
     brute_force_prevention: "Автоматическое блокирование пользователя"
   show_hide_project_menu: "Показать/скрыть меню «Проекты»"
   status_active: "Активно"
+  status_invited: invited
+  status_registered: "Зарегистрирован"
   support:
     array:
       sentence_connector: "и"
@@ -1678,6 +1700,7 @@ ru:
   text_line_separated: "Допускается  несколько значений (одна строка для каждого значения)."
   text_load_default_configuration: "Загрузить конфигурацию по умолчанию"
   text_min_max_length_info: 0 означает отсутствие ограничений
+  text_no_roles_defined: There are no roles defined.
   text_no_configuration_data: "Роли, типы,  статусы пакетов работ и рабочие потоки
     еще не сконфигурированы. Настоятельно рекомендуем для правки загрузить конфигурацию
     по умолчанию."
@@ -1713,6 +1736,7 @@ ru:
   text_tip_work_package_end_day: "Пакеты работ завершающиеся на этот день"
   text_type_no_workflow: "Для этого типа рабочий поток не определен"
   text_unallowed_characters: "Запрещенные символы"
+  text_user_invited: The user has been invited and is pending registration.
   text_user_mail_option: "От невыбранных проектов Вы будете получать только уведомления
     о том, за чем Вы наблюдаете или в чем участвуете (например, пакеты работ, где
     Вы автор или критик)."
@@ -1931,6 +1955,8 @@ ru:
       months: "Месяцы"
       quarters: "Кварталы"
       years: "Годы"
+  title_remove_and_delete_user: Remove the invited user from the project and delete
+    them.
   queries:
     apply_filter: "Применить преднастроенный фильтр"
   total_progress: "Общий прогресс"
@@ -1944,8 +1970,7 @@ ru:
     authentication_settings_disabled_due_to_external_authentication: "Пользователь
       аутентифицируется провайдером, поэтому пароль в OpenProject изменен быть не
       может."
-    assign_random_password: "Назначить случайный пароль (отправить пользователю по
-      электронной почте)"
+    assign_random_password: Assign random password (sent to user via email)
     blocked: "Временно заблокирован"
     blocked_num_failed_logins:
       one: "временно заблокирован (одна неудачная попытка входа)"
@@ -1957,6 +1982,7 @@ ru:
     lock: "Заблокировать"
     locked: "Заблокирован"
     registered: "Зарегистрирован"
+    invited: invited
     reset_failed_logins: "Сброс неудачных попыток входа"
     status_user_and_brute_force: "%{user} и %{brute_force}"
     unlock: "Разблокировать"
@@ -1965,6 +1991,7 @@ ru:
       по паролю отключена, войти он не может."
     password_change_unsupported: "Смена пароля не поддерживается."
     authorization_rejected: "У вас нет разрешения на вход."
+    invite: Invite user via email
   version_status_closed: "закрыто"
   version_status_locked: "заблокировано"
   version_status_open: "открыть"
