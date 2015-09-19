@@ -159,7 +159,7 @@ de:
         reported_project_status_comment: Status-Kommentar
         reporting_to_project: Beziehung zu Projekt
         reported_project_status: Projekt-Status
-        created_at: Angelegt am
+        created_at: Angelegt
       work_package:
         done_ratio: "% erledigt"
         fixed_version: Version
@@ -170,7 +170,7 @@ de:
         progress: "% erledigt"
         responsible: Verantwortlicher
         spent_time: Aufgewendete Zeit
-        subproject: Unterprojekt
+        subproject: Unterprojekt von
         time_entries: Zeit buchen
         type: Typ
         watcher: Beobachter
@@ -252,23 +252,21 @@ de:
               numeric: Ziffern (z.B. '1')
               special: Sonderzeichen (z.B. '%')
               reused:
-                one: wurde bereits verwendet. Bitte wählen Sie eines, das sich vom
-                  letzten unterscheidet.
-                other: wurde bereits verwendet. Bitte wählen Sie eines, das sich von
-                  den letzten %{count} unterscheidet.
+                one: has been used before. Please choose one that is different from
+                  your last one.
+                other: has been used before. Please choose one that is different from
+                  your last %{count}.
               match:
                 confirm: Neues Kennwort bestätigen.
-                description: '"Kennwortbestätigung" sollte mit ''Neues Kennwort''
-                  übereinstimmen.'
+                description: '"Kennwortbestätigung" sollte mit "Neues Kennwort" übereinstimmen.'
         member:
           principal_blank: Bitte wählen Sie mindestens einen Benutzer oder eine Gruppe.
           role_blank: Bitte wählen Sie mindestens eine Rolle.
       template:
         body: 'Bitte überprüfen Sie die folgenden Felder:'
         header:
-          one: 'Dieses %{model}-Objekt konnte nicht gespeichert werden: 1 Fehler'
-          other: 'Dieses %{model}-Objekt konnte nicht gespeichert werden: %{count}
-            Fehler'
+          one: 1 error prohibited this %{model} from being saved
+          other: "%{count} errors prohibited this %{model} from being saved"
     models:
       attachment: Datei
       board: Forum
@@ -279,12 +277,12 @@ de:
       category: Kategorie
       status: Arbeitspaket-Status
       member: Mitglied
-      news: Nachrichten
+      news: Neuigkeiten
       project: Projekt
       query: Benutzerdefinierte Abfrage
       role:
-        one: Rolle
-        other: Rollen
+        one: Role
+        other: Roles
       type: Typ
       planning_element: Arbeitspaket
       project_type: Projekttyp
@@ -312,7 +310,7 @@ de:
     comments: Kommentar
     content: Inhalt
     created_at: Angelegt am
-    created_on: Erstellt
+    created_on: Angelegt am
     custom_values: Benutzerdefinierte Felder
     default_columns: Standard-Spalten
     description: Beschreibung
@@ -397,9 +395,9 @@ de:
   button_update: Bearbeiten
   button_view: Anzeigen
   button_watch: Beobachten
-  button_manage_menu_entry: Menüpunkt konfigurieren
+  button_manage_menu_entry: Menüpunkt verwalten
   button_add_menu_entry: Menüpunkt hinzufügen
-  button_configure_menu_entry: Menüpunkt konfigurieren
+  button_configure_menu_entry: Menüpunkt verwalten
   button_delete_menu_entry: Menüpunkt entfernen
   copy_project:
     started: Das Kopieren des Projekts "%{source_project_name}" nach "%{target_project_name}"
@@ -472,43 +470,43 @@ de:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: etwa 1 Stunde
-        other: etwa %{count} Stunden
+        one: about 1 hour
+        other: about %{count} hours
       about_x_months:
-        one: etwa 1 Monat
-        other: etwa %{count} Monate
+        one: about 1 month
+        other: about %{count} months
       about_x_years:
-        one: etwa 1 Jahr
-        other: etwa %{count} Jahre
+        one: about 1 year
+        other: about %{count} years
       almost_x_years:
-        one: fast 1 Jahr
-        other: fast %{count} Jahre
+        one: almost 1 year
+        other: almost %{count} years
       half_a_minute: eine halbe Minute
       less_than_x_minutes:
-        one: weniger als 1 Minute
-        other: weniger als %{count} Minuten
+        one: less than a minute
+        other: less than %{count} minutes
       less_than_x_seconds:
-        one: weniger als 1 Sekunde
-        other: weniger als %{count} Sekunden
+        one: less than 1 second
+        other: less than %{count} seconds
       over_x_years:
-        one: mehr als 1 Jahr
-        other: mehr als %{count} Jahre
+        one: over 1 year
+        other: over %{count} years
       x_days:
-        one: 1 Tag
-        other: "%{count} Tage"
+        one: 1 day
+        other: "%{count} days"
       x_minutes:
-        one: 1 Minute
-        other: "%{count} Minuten"
+        one: 1 minute
+        other: "%{count} minutes"
       x_months:
-        one: 1 Monat
-        other: "%{count} Monate"
+        one: 1 month
+        other: "%{count} months"
       x_seconds:
-        one: 1 Sekunde
-        other: "%{count} Sekunden"
+        one: 1 second
+        other: "%{count} seconds"
     units:
       hour:
-        one: Stunde
-        other: Stunden
+        one: hour
+        other: hours
   default_activity_development: Entwicklung
   default_activity_management: Management
   default_activity_other: Sonstiges
@@ -648,7 +646,7 @@ de:
     project: Projekt bearbeitet
     changeset: Changeset bearbeitet
     message: Nachricht bearbeitet
-    news: Nachrichten
+    news: Neuigkeiten
     reply: Antwort erstellt
     time_entry: Zeiterfassungseintrag bearbeitet
     wiki_page: Wiki-Seite bearbeitet
@@ -683,10 +681,10 @@ de:
   label_add_subtask: Unteraufgabe hinzufügen
   label_added: hinzugefügt
   label_added_time_by: Von %{author} vor %{age} hinzugefügt
-  label_additional_workflow_transitions_for_assignee: Zusätzliche Workflow-Übergänge
-    für den Nutzer, dem ein Arbeitspaket zugewiesen ist
-  label_additional_workflow_transitions_for_author: Zusätzliche Workflow-Übergänge
-    wenn der Nutzer der Autor des Arbeitspakets ist
+  label_additional_workflow_transitions_for_assignee: Zusätzliche Übergänge, falls
+    das Arbeitspaket dem Nutzer zugewiesen wurde
+  label_additional_workflow_transitions_for_author: Weitere Arbeitsablauf-Übergänge
+    sind zulässig, wenn der Benutzer der Autor ist
   label_administration: Administration
   label_age: Geändert vor
   label_ago: vor (Tage)
@@ -733,7 +731,7 @@ de:
   label_checked: ausgewählt
   label_chronological_order: in zeitlicher Reihenfolge
   label_close_versions: Abgeschlossene Versionen schließen
-  label_closed_work_packages: Geschlossen
+  label_closed_work_packages: geschlossen
   label_collapse: Zuklappen
   label_configuration: Konfiguration
   label_comment_add: Kommentar hinzufügen
@@ -762,13 +760,13 @@ de:
   label_date_from_to: von %{start} bis %{end}
   label_date_range: Zeitraum
   label_date_to: Bis
-  label_day_plural: Tagen
+  label_day_plural: Tage
   label_default: Standard
   label_deleted: gelöscht
   label_deleted_custom_field: "(gelöschtes benutzerdefiniertes Feld)"
   label_descending: Absteigend
   label_details: Details
-  label_diff: diff
+  label_diff: Differenz
   label_diff_inline: einspaltig
   label_diff_side_by_side: nebeneinander
   label_disabled: deaktiviert
@@ -809,7 +807,7 @@ de:
   label_generate_key: Schlüssel generieren
   label_git_path: Pfad zum .git-Verzeichnis
   label_greater_or_equal: ">="
-  label_group_by: Gruppiere Ergebnisse
+  label_group_by: Gruppieren nach
   label_group_new: Neue Gruppe
   label_group_plural: Gruppen
   label_help: Hilfe
@@ -823,8 +821,8 @@ de:
   label_incoming_emails: Eingehende E-Mails
   label_index_by_date: Seiten nach Datum
   label_index_by_title: Seiten nach Titel
-  label_information: Information
-  label_information_plural: Information
+  label_information: Informationen
+  label_information_plural: Informationen
   label_integer: Zahl
   label_internal: Intern
   label_work_package_added: Arbeitspaket hinzugefügt
@@ -838,7 +836,7 @@ de:
   label_work_package_priority_updated: Arbeitspaketpriorität aktualisiert
   label_work_package_status_new: Neuer Status
   label_work_package_status_plural: Arbeitspaket-Status
-  label_work_package_tracking: Arbeitspaket-Verfolgung
+  label_work_package_tracking: Arbeitspakete
   label_work_package_updated: Arbeitspaket aktualisiert
   label_work_package_view_all: Alle Arbeitspakete anzeigen
   label_work_package_view_all_assigned_to_me: Alle mir zugewiesenen Arbeitspakete
@@ -898,25 +896,25 @@ de:
   label_my_queries: Meine Berichte
   label_new: Neu
   label_new_statuses_allowed: Neuer Status
-  label_news_added: Nachricht hinzugefügt
-  label_news_comment_added: Kommentar zu Nachricht hinzugefügt
-  label_news_latest: Aktuelle Nachrichten
-  label_news_new: Nachrichten hinzufügen
-  label_news_edit: Nachrichten bearbeiten
-  label_news_plural: Nachrichten
-  label_news_view_all: Alle Nachrichten anzeigen
+  label_news_added: News hinzugefügt
+  label_news_comment_added: Kommentar einer News hinzugefügt
+  label_news_latest: Letzte News
+  label_news_new: News hinzufügen
+  label_news_edit: News bearbeiten
+  label_news_plural: Neuigkeiten
+  label_news_view_all: Alle News anzeigen
   label_next: Weiter
   label_next_week: Woche vor
   label_no_change_option: "(Keine Änderung)"
   label_no_data: Nichts anzuzeigen
   label_nobody: Niemand
-  label_none: keine
+  label_none: kein
   label_not_contains: enthält nicht
   label_not_equals: ist nicht
   label_notify_member_plural: Aktualisierungen per E-Mail verschicken
   label_open_menu: Menü öffnen
-  label_open_work_packages: Offen
-  label_open_work_packages_plural: Offen
+  label_open_work_packages: offen
+  label_open_work_packages_plural: offen
   label_optional_description: Beschreibung
   label_options: Optionen
   label_overall_activity: Aktivität aller Projekte anzeigen
@@ -927,7 +925,7 @@ de:
   label_password_rule_numeric: Ziffern
   label_password_rule_special: Sonderzeichen
   label_password_rule_uppercase: Großbuchstaben
-  label_path_encoding: Path encoding
+  label_path_encoding: Pfad-Codierung
   label_pdf_with_descriptions: PDF mit Beschreibungen
   label_per_page: Pro Seite
   label_permissions: Berechtigungen
@@ -958,7 +956,7 @@ de:
   label_query_menu_item: Filter-Menüpunkt
   label_read: Lesen ...
   label_register: Neues Konto erstellen
-  label_register_with_developer: Als Entwickler anmelden
+  label_register_with_developer: Als Entwickler registrieren
   label_registered_on: Angemeldet am
   label_registration_activation_by_email: Kontoaktivierung per E-Mail
   label_registration_automatic_activation: Automatische Kontoaktivierung
@@ -970,7 +968,7 @@ de:
   label_remove_columns: Ausgewählte Spalten entfernen
   label_renamed: umbenannt
   label_reply_plural: Antworten
-  label_report: Report
+  label_report: Bericht
   label_report_plural: Berichte
   label_reported_work_packages: Gemeldete Arbeitspakete
   label_reporting: Statusbericht
@@ -999,7 +997,7 @@ de:
   label_send_test_email: Test-E-Mail senden
   label_settings: Konfiguration
   label_show_completed_versions: Abgeschlossene Versionen anzeigen
-  label_sort: Sortierung
+  label_sort: Sortieren
   label_sort_by: Sortiere nach %{value}
   label_sorted_by: sortiert nach %{value}
   label_sort_higher: Eins höher
@@ -1042,7 +1040,7 @@ de:
   label_updated_time_by: Von %{author} vor %{age} aktualisiert
   label_used_by: Benutzt von
   label_user_activity: Aktivität von %{value}
-  label_user_anonymous: Anonym
+  label_user_anonymous: Anonymus
   label_user_mail_no_self_notified: Ich möchte nicht über Änderungen benachrichtigt
     werden, die ich selbst durchführe
   label_user_mail_option_all: Für alle Ereignisse in all meinen Projekten
@@ -1086,24 +1084,24 @@ de:
   label_workflow_plural: Workflows
   label_workflow_summary: Zusammenfassung
   label_x_closed_work_packages_abbr:
-    one: 1 geschlossen
-    other: "%{count} geschlossen"
+    one: 1 closed
+    other: "%{count} closed"
     zero: 0 closed
   label_x_comments:
-    one: 1 Kommentar
-    other: "%{count} Kommentare"
+    one: 1 comment
+    other: "%{count} comments"
     zero: no comments
   label_x_open_work_packages_abbr:
-    one: 1 offen
-    other: "%{count} offen"
+    one: 1 open
+    other: "%{count} open"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
-    one: 1 offen / %{total}
-    other: "%{count} offen / %{total}"
+    one: 1 open / %{total}
+    other: "%{count} open / %{total}"
     zero: 0 open / %{total}
   label_x_projects:
-    one: 1 Projekt
-    other: "%{count} Projekte"
+    one: 1 project
+    other: "%{count} projects"
     zero: no projects
   label_year: Jahr
   label_yesterday: gestern
@@ -1123,7 +1121,7 @@ de:
   label_keyboard_shortcut_go_wiki: Gehe zum Projekt-Wiki
   label_keyboard_shortcut_go_activity: Gehe zur Projekt-Aktivität
   label_keyboard_shortcut_go_calendar: Gehe zum Projekt-Kalender
-  label_keyboard_shortcut_go_news: Gehe zu den Projekt-Nachrichten
+  label_keyboard_shortcut_go_news: Gehe zu den Projekt-News
   label_keyboard_shortcut_go_timelines: Gehe zur Zeitpläne-Seite
   label_keyboard_shortcut_new_work_package: Erstelle neues Arbeitspaket
   label_keyboard_shortcut_details_package: Arbeitspaketdetails anzeigen
@@ -1245,7 +1243,7 @@ de:
         units:
           byte:
             one: Byte
-            other: Byte
+            other: Bytes
           gb: GB
           kb: kB
           mb: MB
@@ -1258,7 +1256,7 @@ de:
   permission_add_work_package_watchers: Beobachter hinzufügen
   permission_browse_repository: Projektarchiv ansehen
   permission_change_wiki_parent_page: "Übergeordnete Wiki-Seite ändern"
-  permission_comment_news: Nachrichten kommentieren
+  permission_comment_news: News kommentieren
   permission_commit_access: Commit-Zugriff (über WebDAV)
   permission_copy_projects: Projekte kopieren
   permission_delete_work_package_watchers: Beobachter löschen
@@ -1319,8 +1317,8 @@ de:
   project_module_activity: Aktivität
   project_module_boards: Foren
   project_module_calendar: Kalender
-  project_module_work_package_tracking: Arbeitspaket-Verfolgung
-  project_module_news: Nachrichten
+  project_module_work_package_tracking: Arbeitspakete
+  project_module_news: Neuigkeiten
   project_module_repository: Projektarchiv
   project_module_time_tracking: Zeiterfassung
   project_module_timelines: Zeitpläne
@@ -1328,7 +1326,7 @@ de:
   query_fields:
     assigned_to_role: Rolle der zugewiesenen Person
     member_of_group: Gruppe der zugewiesenen Person
-    subproject_id: Unterprojekt
+    subproject_id: Unterprojekt von
   search_input_placeholder: Suche ...
   setting_activity_days_default: Anzahl Tage pro Seite der Projekt-Aktivität
   setting_app_subtitle: Applikations-Untertitel
@@ -1429,7 +1427,7 @@ de:
   setting_work_package_group_assignment: Zuweisung zu Gruppen erlauben
   settings:
     general: Allgemein
-    other: Andere
+    other: Sonstiges
     passwords: Passwörter
     session: Sitzung
     brute_force_prevention: Automatisches Sperren von Benutzern
@@ -1438,7 +1436,7 @@ de:
   support:
     array:
       sentence_connector: und
-      skip_last_comma: 'true'
+      skip_last_comma: 'false'
   text_analyze: 'Weiter analysieren: %{subject}'
   text_are_you_sure: Sind Sie sicher?
   text_are_you_sure_with_children: Lösche Aufgabe und alle Unteraufgaben?
@@ -1448,8 +1446,8 @@ de:
   text_comma_separated: Mehrere Werte erlaubt (durch Komma getrennt).
   text_custom_field_possible_values_info: Eine Zeile pro Wert
   text_default_administrator_account_changed: Administrator-Kennwort geändert
-  text_default_encoding: 'Default: UTF-8'
-  text_destroy: Lösche
+  text_default_encoding: 'Standard: UTF-8'
+  text_destroy: Löschen
   text_destroy_with_associated: 'Es sind weitere Datenobjekte mit den bzw. dem zu
     löschenden Arbeitpaket(en) verbunden. Es handelt sich dabei um Objekte der folgenden
     Typen:'
@@ -1510,10 +1508,10 @@ de:
     Mailbenachrichtigung gesendet werden soll.
   text_select_project_modules: 'Bitte wählen Sie die Module aus, die in diesem Projekt
     aktiviert sein sollen:'
-  text_status_changed_by_changeset: Angewendet in Changeset %{value}.
+  text_status_changed_by_changeset: Status geändert durch Changeset %{value}.
   text_subprojects_destroy_warning: Dessen Unterprojekte (%{value}) werden ebenfalls
     gelöscht.
-  text_time_logged_by_changeset: Angewendet in Changeset %{value}.
+  text_time_logged_by_changeset: Status geändert durch Changeset %{value}.
   text_tip_work_package_begin_day: Arbeitspaket, das an diesem Tag beginnt
   text_tip_work_package_begin_end_day: Arbeitspaket, das an diesem Tag beginnt und
     endet
@@ -1573,11 +1571,11 @@ de:
     dates_are_calculated_based_on_sub_elements: Daten wurden auf Basis der Kind-Elemente
       berechnet.
     delete_all: Alle löschen
-    delete_thing: Lösche
+    delete_thing: Löschen
     duration: Dauer
     duration_days:
-      one: 1 Tag
-      other: "%{count} Tage"
+      one: 1 day
+      other: "%{count} days"
     edit_color: Farbe bearbeiten
     edit_project_type: Projekt-Typ bearbeiten
     edit_thing: Bearbeiten
@@ -1645,7 +1643,7 @@ de:
       grouping_hide_group: Gruppe "%{group}" verstecken
       grouping_one: Erstes Gruppierungskriterium
       grouping_one_phrase: Ist ein Unterprojekt von
-      grouping_other: Andere
+      grouping_other: Sonstiges
       grouping_two: Zweites Gruppierungskriterium
       grouping_two_phrase: Hat eine Abhängigkeit zu Projekttyp
       hide_chart: Diagramm ausblenden
@@ -1737,8 +1735,8 @@ de:
     without_project_type: Ohne Projekt-Typ
     you_are_viewing_the_selected_timeline: Sie sehen den ausgewählten Zeitplan-Report
     zoom:
-      in: Mehr Details
-      out: Weniger Details
+      in: heranzoomen
+      out: herauszoomen
       days: Tage
       weeks: Wochen
       months: Monate
@@ -1760,8 +1758,8 @@ de:
       geschickt)
     blocked: temporär gesperrt
     blocked_num_failed_logins:
-      one: temporär gesperrt (ein fehlgeschlagener Loginversuch)
-      other: temporär gesperrt (%{count} fehlgeschlagene Loginversuche)
+      one: locked temporarily (one failed login attempt)
+      other: locked temporarily (%{count} failed login attempts)
     deleted: Gelöschter Nutzer
     error_status_change_failed: 'Der Nutzerstatus konnte nicht geändert werden aufgrund
       folgender Fehler: %{errors}'

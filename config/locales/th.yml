@@ -81,7 +81,7 @@ th:
         identifier: "รหัส"
         work_packages: "ชุดภารกิจ"
         parent: "โครงการย่อยของ"
-        versions: "เวอร์ชั่น"
+        versions: "รุ่น"
         project_type: "ประเภทของโครงการ"
         responsible: "รับผิดชอบ"
         types: "ประเภท"
@@ -151,9 +151,9 @@ th:
       work_package:
         done_ratio: "% ที่แล้วเสร็จ"
         fixed_version: "เวอร์ชัน"
-        parent: "หัวข้อหลัก"
-        parent_issue: "หัวข้อหลัก"
-        parent_work_package: "หัวข้อหลัก"
+        parent: "ค่าหลัก"
+        parent_issue: "ค่าหลัก"
+        parent_work_package: "ค่าหลัก"
         priority: "ระดับความสำคัญ"
         progress: "% ที่แล้วเสร็จ"
         responsible: "รับผิดชอบ"
@@ -238,8 +238,8 @@ th:
               reused:
                 one: has been used before. Please choose one that is different from
                   your last one.
-                other: "รหัสผ่านนี้ถูกใช้ไปแล้ว โปรดเลือกรหัสผ่านใหม่ที่แตกต่างจากรหัสเมื่อ
-                  %{count} ครั้งที่ผ่านมา"
+                other: has been used before. Please choose one that is different from
+                  your last %{count}.
               match:
                 confirm: Confirm new password.
                 description: "'Password confirmation' should match the input in the
@@ -251,7 +251,7 @@ th:
         body: "กรุณาตรวจสอบฟิลด์ต่อไปนี้:"
         header:
           one: 1 error prohibited this %{model} from being saved
-          other: "พบ %{count} ข้อผิดพลาด ไม่สามารถบันทึก %{model} นี้ได้"
+          other: "%{count} errors prohibited this %{model} from being saved"
     models:
       attachment: "ไฟล์"
       board: "ฟอรั่ม"
@@ -267,7 +267,7 @@ th:
       query: "การสอบถามที่กำหนดเอง"
       role:
         one: Role
-        other: "บทบาท"
+        other: Roles
       type: "ประเภท"
       planning_element: "องค์ประกอบของการวางแผน"
       project_type: "ประเภทของโครงการ"
@@ -319,7 +319,7 @@ th:
     priority: "ระดับความสำคัญ"
     project: "โครงการ"
     responsible: "รับผิดชอบ"
-    role: "บทบาท"
+    role: Role
     start_date: "วันเริ่มต้น"
     status: "สถานะ"
     subject: "หัวข้อ"
@@ -341,7 +341,7 @@ th:
   button_change: "เปลี่ยนแปลง"
   button_change_parent_page: "เปลี่ยนหน้าหลัก"
   button_change_password: "เปลี่ยนรหัสผ่าน"
-  button_check_all: "ทำเครื่องหมายทั้งหมด"
+  button_check_all: "ตรวจสอบทั้งหมด"
   button_clear: "ล้างข้อมูล"
   button_collapse_all: "ยุบทั้งหมด"
   button_configure: "กำหนดค่า"
@@ -359,7 +359,7 @@ th:
   button_list: "รายการ"
   button_lock: "ล็อค"
   button_log_time: "เวลาที่ถูกบันทึก"
-  button_login: "ลงชื่อเข้าใช้"
+  button_login: "ล็อคอิน"
   button_move: "ย้าย"
   button_move_and_follow: "ย้าย และทำตาม"
   button_quote: "อ้างถึง"
@@ -374,7 +374,7 @@ th:
   button_submit: "ส่งข้อมูล"
   button_test: "ทดสอบ"
   button_unarchive: "เอาออกจากอาร์ไคฟ์"
-  button_uncheck_all: "เอาเครื่องหมายออกทั้งหมด"
+  button_uncheck_all: "ไม่เลือกเลย"
   button_unlock: "ปลดล็อก"
   button_unwatch: "ไม่เข้าชม"
   button_update: "ปรับปรุง"
@@ -455,42 +455,42 @@ th:
     distance_in_words:
       about_x_hours:
         one: about 1 hour
-        other: "ประมาณ %{count} ชั่วโมง"
+        other: about %{count} hours
       about_x_months:
         one: about 1 month
-        other: "ประมาณ %{count} เดือน"
+        other: about %{count} months
       about_x_years:
         one: about 1 year
-        other: "ประมาณ %{count} ปี"
+        other: about %{count} years
       almost_x_years:
         one: almost 1 year
-        other: "เกือบ %{count} ปี"
+        other: almost %{count} years
       half_a_minute: "ครึ่งนาที"
       less_than_x_minutes:
         one: less than a minute
-        other: "น้อยกว่า %{count} นาที"
+        other: less than %{count} minutes
       less_than_x_seconds:
         one: less than 1 second
-        other: "น้อยกว่า %{count} วินาที"
+        other: less than %{count} seconds
       over_x_years:
         one: over 1 year
-        other: "เกิน %{count} ปี"
+        other: over %{count} years
       x_days:
         one: 1 day
-        other: "%{count} วัน"
+        other: "%{count} days"
       x_minutes:
         one: 1 minute
-        other: "%{count} นาที"
+        other: "%{count} minutes"
       x_months:
         one: 1 month
-        other: "%{count} เดือน"
+        other: "%{count} months"
       x_seconds:
         one: 1 second
-        other: "%{count} วินาที"
+        other: "%{count} seconds"
     units:
       hour:
         one: hour
-        other: "ชั่วโมง"
+        other: hours
   default_activity_development: "การพัฒนา"
   default_activity_management: Management
   default_activity_other: "อื่น ๆ"
@@ -832,7 +832,7 @@ th:
   label_list: "รายการ"
   label_loading: "กำลังโหลด..."
   label_logged_as: "เข้าสู่ระบบในนาม"
-  label_login: "ลงชื่อเข้าใช้"
+  label_login: "ล็อคอิน"
   label_logout: "ออกจากระบบ"
   label_main_menu: "เมนูด้านข้าง"
   label_max_size: "ความยาวสูงสุด"
@@ -941,7 +941,7 @@ th:
   label_reported_work_packages: "ชุดภารกิจที่รายงานแล้ว"
   label_reporting: "รายงาน"
   label_reporting_plural: Reportings
-  label_repository: "ที่เก็บข้อมูล"
+  label_repository: "ที่เก็บ"
   label_repository_plural: "ที่เก็บ"
   label_responsible_for_work_packages: "ชุดภารกิจที่ฉันรับผิดชอบ"
   label_result_plural: "ผลลัพธ์"
@@ -1020,7 +1020,7 @@ th:
   label_user_plural: "ผู้ใช้"
   label_user_search: "ค้นหาผู้ใช้"
   label_version_new: "เวอร์ชั่นใหม่"
-  label_version_plural: "เวอร์ชั่น"
+  label_version_plural: "รุ่น"
   label_version_sharing_descendants: "พร้อมด้วยโครงการย่อย"
   label_version_sharing_hierarchy: "พร้อมด้วยลำดับชั้นของโครงการ"
   label_version_sharing_none: "ไม่ได้แบ่งปัน"
@@ -1050,23 +1050,23 @@ th:
   label_workflow_summary: "สรุป"
   label_x_closed_work_packages_abbr:
     one: 1 closed
-    other: "ปิดแล้ว %{count}"
+    other: "%{count} closed"
     zero: 0 closed
   label_x_comments:
     one: 1 comment
-    other: "มี %{count} ความคิดเห็น"
+    other: "%{count} comments"
     zero: no comments
   label_x_open_work_packages_abbr:
     one: 1 open
-    other: "มี %{count} เปิดอยู่"
+    other: "%{count} open"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
     one: 1 open / %{total}
-    other: "มี %{count} เปิดอยู่ / จากทั้งหมด %{total}"
+    other: "%{count} open / %{total}"
     zero: 0 open / %{total}
   label_x_projects:
     one: 1 project
-    other: "%{count} โครงการ"
+    other: "%{count} projects"
     zero: no projects
   label_year: "ปี"
   label_yesterday: "เมื่อวานนี้"
@@ -1189,7 +1189,7 @@ th:
         units:
           byte:
             one: Byte
-            other: "ไบต์"
+            other: Bytes
           gb: "กิกะไบต์"
           kb: "กิโลไบต์"
           mb: "เมกะไบต์"
@@ -1265,7 +1265,7 @@ th:
   project_module_calendar: "ปฏิทิน"
   project_module_work_package_tracking: "ติดตามผลชุดภารกิจ"
   project_module_news: "ข่าวสาร"
-  project_module_repository: "ที่เก็บข้อมูล"
+  project_module_repository: "ที่เก็บ"
   project_module_time_tracking: "ติดตามเวลาที่ใช้"
   project_module_timelines: "เส้นเวลา"
   project_module_wiki: "วิกิ"
@@ -1435,9 +1435,9 @@ th:
     username เข้า OpenProject หรือที่เก็บข้อมูล หรืออีเมล์ที่ตรงกัน"
   text_select_mail_notifications: "เลือกการดำเนินการสำหรับอีเมล์ที่ควรส่งการแจ้งเตือน"
   text_select_project_modules: "เลือกโมดูลเพื่อเปิดใช้งานสำหรับโครงการ:"
-  text_status_changed_by_changeset: "มีการนำไปใช้ในชุดการเปลี่ยนแปลง %{value}"
+  text_status_changed_by_changeset: "ใช้งานในชุดการเปลี่ยนแปลง %{value}"
   text_subprojects_destroy_warning: "โครงการย่อยของ: %{value} จะถูกลบไปด้วย"
-  text_time_logged_by_changeset: "มีการนำไปใช้ในชุดการเปลี่ยนแปลง %{value}"
+  text_time_logged_by_changeset: "ใช้งานในชุดการเปลี่ยนแปลง %{value}"
   text_tip_work_package_begin_day: "ชุดภารกิจเริ่มวันนี้"
   text_tip_work_package_begin_end_day: "ชุดภารกิจเริ่มต้นและสิ้นสุดวันนี้"
   text_tip_work_package_end_day: "ชุดภารกิจสิ้นสุดวันนี้"
@@ -1495,7 +1495,7 @@ th:
     duration: "ระยะเวลา"
     duration_days:
       one: 1 day
-      other: "%{count} วัน"
+      other: "%{count} days"
     edit_color: "แก้ไขสี"
     edit_project_type: "แก้ไขชนิดของโครงการ"
     edit_thing: "แก้ไข"
@@ -1516,8 +1516,8 @@ th:
         timeframe_end: "สิ้นสุดกรอบเวลา"
         compare_to_relative: "ค่าของการเปรียบเทียบสัมพันธ์ "
         compare_to_absolute: "ค่าของการเปรียบเทียบสัมบูรณ์ "
-        planning_element_time_relative_one: "การเริ่มต้นของชุดภารกิจในกรอบเวลาที่แน่นอน  "
-        planning_element_time_relative_two: "การสิ้นสุดของชุดภารกิจในกรอบเวลาที่แน่นอน  "
+        planning_element_time_relative_one: "การเริ่มต้นของชุดภารกิจในกรอบเวลาที่แน่นอน"
+        planning_element_time_relative_two: "การสิ้นสุดของชุดภารกิจในกรอบเวลาที่แน่นอน"
         planning_element_time_absolute_one: "การเริ่มต้นของชุดภารกิจในกรอบเวลาที่แน่นอน  "
         planning_element_time_absolute_two: "การสิ้นสุดของชุดภารกิจในกรอบเวลาที่แน่นอน  "
       sort:
@@ -1659,7 +1659,7 @@ th:
     blocked: "ล็อคชั่วคราว"
     blocked_num_failed_logins:
       one: locked temporarily (one failed login attempt)
-      other: "ถูกล็อคชั่วคราว (เนื่องจากผิดพลาด %{count} ครั้งในการพยายามล็อคอิน)"
+      other: locked temporarily (%{count} failed login attempts)
     deleted: "ผู้ใช้ที่ถูกลบ"
     error_status_change_failed: "ล้มเหลวในการเปลี่ยนสถานะของผู้ใช้เนื่องจากข้อผิดพลาดต่อไปนี้:
       %{errors}"

@@ -81,7 +81,7 @@ ru:
       journal:
         notes: "Примечания"
       member:
-        roles: "Роль"
+        roles: "Роли"
       project:
         homepage: "Главная страница"
         identifier: "Идентификатор"
@@ -157,7 +157,7 @@ ru:
         created_at: "Создан"
       work_package:
         done_ratio: "% выполнено"
-        fixed_version: "Версия"
+        fixed_version: "Этап"
         parent: "Родитель"
         parent_issue: "Родитель"
         parent_work_package: "Родитель"
@@ -166,7 +166,7 @@ ru:
         responsible: "Ответственный"
         spent_time: "Затраченное время"
         subproject: "Подпроект"
-        time_entries: "Журналировать время"
+        time_entries: "Учет времени"
         type: "Тип"
         watcher: "Наблюдатель"
     errors:
@@ -246,12 +246,12 @@ ru:
               numeric: цифры (например "1")
               special: спецсимволы (например, "%")
               reused:
-                one: "использовался ранее. Пожалуйста, выберите такой, который отличается
-                  от вашего последнего."
-                other: "использовался ранее. Пожалуйста, выберите такой, который отличается
-                  от ваших последних %{count}."
-                few: "использовался ранее. Пожалуйста, выберите такой, который отличается
-                  от ваших последних %{count}."
+                one: has been used before. Please choose one that is different from
+                  your last one.
+                other: has been used before. Please choose one that is different from
+                  your last %{count}.
+                few: has been used before. Please choose one that is different from
+                  your last %{count}.
               match:
                 confirm: "Подтвердите новый пароль."
                 description: "«Подтвержденный пароль» должен совпадать с введенным
@@ -263,9 +263,9 @@ ru:
       template:
         body: "Пожалуйста, проверьте следующие поля:"
         header:
-          one: 1 ошибка  препятствует сохранить этоту %{model}
-          other: "%{count} ошибок препятствуют сохранению %{model}"
-          few: "%{count} ошибок препятствуют сохранению %{model}"
+          one: 1 error prohibited this %{model} from being saved
+          other: "%{count} errors prohibited this %{model} from being saved"
+          few: "%{count} errors prohibited this %{model} from being saved"
     models:
       attachment: "Файл"
       board: "Форум"
@@ -280,9 +280,9 @@ ru:
       project: "Проект"
       query: "Запрос пользователя"
       role:
-        one: "Роль"
-        other: "Роль"
-        few: "Роль"
+        one: Role
+        other: Roles
+        few: Roles
       type: "Тип"
       planning_element: "Элемент планирования"
       project_type: "Тип проекта"
@@ -334,7 +334,7 @@ ru:
     priority: "Приоритет"
     project: "Проект"
     responsible: "Ответственный"
-    role: "Роль"
+    role: Role
     start_date: "Дата начала"
     status: "Состояние"
     subject: "Тема"
@@ -344,7 +344,7 @@ ru:
     updated_at: "Обновлено"
     updated_on: "Обновлено"
     user: "Пользователь"
-    version: "Версия"
+    version: "Этап"
     work_package: "Пакет работ"
   button_add: "Добавить"
   button_add_watcher: "Добавить наблюдателя"
@@ -373,7 +373,7 @@ ru:
   button_expand_all: "Развернуть все"
   button_list: "Список"
   button_lock: "Заблокировать"
-  button_log_time: "Журналировать время"
+  button_log_time: "Учет времени"
   button_login: "Войти"
   button_move: "Переместить"
   button_move_and_follow: "Переместить и следовать"
@@ -427,7 +427,7 @@ ru:
     - "Фев"
     - "Март"
     - "Апр"
-    - "Мая"
+    - "Май"
     - "Июнь"
     - "Июль"
     - "Авг"
@@ -453,7 +453,7 @@ ru:
     - "Февраль"
     - "Март"
     - "Апрель"
-    - "Мая"
+    - "Май"
     - "Июнь"
     - "Июль"
     - "Август"
@@ -468,55 +468,55 @@ ru:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: "около часа"
-        other: "около %{count} часов"
-        few: "около %{count} часов"
+        one: about 1 hour
+        other: about %{count} hours
+        few: about %{count} hours
       about_x_months:
-        one: "около месяца"
-        other: "около %{count} месяцев"
-        few: "около %{count} месяцев"
+        one: about 1 month
+        other: about %{count} months
+        few: about %{count} months
       about_x_years:
-        one: "около года"
-        other: "примерно %{count} лет"
-        few: "примерно %{count} года"
+        one: about 1 year
+        other: about %{count} years
+        few: about %{count} years
       almost_x_years:
-        one: "около %{count} года"
-        other: "почти  %{count} лет"
-        few: "почти  %{count} лет"
+        one: almost 1 year
+        other: almost %{count} years
+        few: almost %{count} years
       half_a_minute: "полминуты"
       less_than_x_minutes:
-        one: "менее минуты"
-        other: "менее %{count} минут"
-        few: "менее %{count} минут"
+        one: less than a minute
+        other: less than %{count} minutes
+        few: less than %{count} minutes
       less_than_x_seconds:
-        one: "меньше секунды"
-        other: "меньше чем за %{count} секунд"
-        few: "меньше чем за %{count} секунд"
+        one: less than 1 second
+        other: less than %{count} seconds
+        few: less than %{count} seconds
       over_x_years:
-        one: "более 1 года"
-        other: "более %{count} лет"
-        few: "более %{count} лет"
+        one: over 1 year
+        other: over %{count} years
+        few: over %{count} years
       x_days:
-        one: "День"
-        other: "%{count} дней"
-        few: "%{count} дней"
+        one: 1 day
+        other: "%{count} days"
+        few: "%{count} days"
       x_minutes:
-        one: 1 минута
-        other: "%{count} минут"
-        few: "%{count} минут"
+        one: 1 minute
+        other: "%{count} minutes"
+        few: "%{count} minutes"
       x_months:
-        one: 1 месяц
-        other: "%{count} месяца"
-        few: "%{count} месяца"
+        one: 1 month
+        other: "%{count} months"
+        few: "%{count} months"
       x_seconds:
-        one: 1 секунда
-        other: "%{count} секунд"
-        few: "%{count} секунд"
+        one: 1 second
+        other: "%{count} seconds"
+        few: "%{count} seconds"
     units:
       hour:
-        one: "час"
-        other: "часов"
-        few: "часов"
+        one: hour
+        other: hours
+        few: hours
   default_activity_development: "Разработка"
   default_activity_management: "Управление"
   default_activity_other: "Другие"
@@ -537,7 +537,7 @@ ru:
   default_color_red: "Красный"
   default_color_white: "Белый"
   default_color_yellow: "Жёлтый"
-  default_status_closed: "закрыто"
+  default_status_closed: "Закрыто"
   default_status_confirmed: "Подтвержден"
   default_status_developed: "Разработан"
   default_status_in_development: "В разработке"
@@ -546,7 +546,7 @@ ru:
   default_status_in_testing: "В тестировании"
   default_status_new: "Новое"
   default_status_on_hold: "В ожидании"
-  default_status_rejected: "отклонено"
+  default_status_rejected: "Отклонено"
   default_status_scheduled: "Запланировано"
   default_status_specified: "Указанный"
   default_status_tested: "Протестирован"
@@ -658,9 +658,9 @@ ru:
     reply: "Отвечено"
     time_entry: "Время подключения отредактировано"
     wiki_page: Wiki-страница отредактирована
-    work_package_closed: "Комплекс работ закрыт"
+    work_package_closed: "Пакет работ закрыт"
     work_package_edit: "Пакет работ отредактирован"
-    work_package_note: "Добавлено примечание к пакету работ"
+    work_package_note: "Примечание к пакету работ добавлено"
   general_csv_decimal_separator: "."
   general_csv_encoding: UTF-8
   general_csv_separator: ","
@@ -668,9 +668,9 @@ ru:
   general_lang_name: Pyccĸий
   general_pdf_encoding: ISO-8859-1
   general_text_no: "нет"
-  general_text_yes: "Да"
+  general_text_yes: "да"
   general_text_No: "Нет"
-  general_text_Yes: "да"
+  general_text_Yes: "Да"
   gui_validation_error: 1 ошибка
   gui_validation_error_plural: "%{count} ошибок"
   instructions_after_registration: "Вы сможете войти как только ваша учетная запись
@@ -716,7 +716,7 @@ ru:
   label_authentication: "Аутентификация"
   label_blocked_by: "заблокировано"
   label_blocks: "блоки"
-  label_board_locked: "заблокировано"
+  label_board_locked: "Заблокировано"
   label_board_new: "Новый форум"
   label_board_plural: "Форумы"
   label_board_sticky: "Закрепленные"
@@ -738,8 +738,8 @@ ru:
   label_checked: "проверено"
   label_chronological_order: "В хронологическом порядке"
   label_close_versions: "Закрыть завершённые этапы"
-  label_closed_work_packages: "закрыт"
-  label_collapse: "свернуть"
+  label_closed_work_packages: "закрыто"
+  label_collapse: "Свернуть"
   label_configuration: "Настройки"
   label_comment_add: "Добавить комментарий"
   label_comment_added: "Комментарий добавлен"
@@ -768,8 +768,8 @@ ru:
   label_date_range: "Диапазон дат"
   label_date_to: "Кому"
   label_day_plural: "дней"
-  label_default: "по умолчанию"
-  label_deleted: "\uFEFFУдалено"
+  label_default: "По умолчанию"
+  label_deleted: "удалено"
   label_deleted_custom_field: "(удалено настраиваемое поле)"
   label_descending: "По убыванию"
   label_details: "Детали"
@@ -783,8 +783,8 @@ ru:
   label_download: "%{count} скачать"
   label_download_plural: "%{count} скачиваний"
   label_downloads_abbr: D/L
-  label_duplicated_by: "Дублируется"
-  label_duplicates: "Дубликаты"
+  label_duplicated_by: "дублируется"
+  label_duplicates: "дубликаты"
   label_edit: "Правка"
   label_enable_multi_select: "Разрешен множественный выбор"
   label_end_to_end: "конец в конец"
@@ -806,7 +806,7 @@ ru:
   label_filter_add: "Добавить фильтр"
   label_filter_plural: "Фильтры"
   label_float: "Плавающий"
-  label_follows: "Следует"
+  label_follows: "следует"
   label_force_user_language_to_default: "Язык, который пользователям нельзя установить
     как действующий по-умолчанию"
   label_general: "Общие"
@@ -836,9 +836,9 @@ ru:
   label_work_package_category_plural: "Категории пакета работ"
   label_work_package_hierarchy: "Иерархия пакета работ"
   label_work_package_new: "Новый пакет работ"
-  label_work_package_note_added: "Добавлено примечание к комплексу работ"
+  label_work_package_note_added: "Добавлено примечание к пакету работ"
   label_work_package_edit: "Редактирование пакета работ %{name}"
-  label_work_package_plural: "Комплекс работ"
+  label_work_package_plural: "Пакеты работ"
   label_work_package_priority_updated: "Приоритет пакета работ обновлен"
   label_work_package_status_new: "Новый статус"
   label_work_package_status_plural: "Статусы пакета работ"
@@ -914,7 +914,7 @@ ru:
   label_no_change_option: "(Без изменений)"
   label_no_data: "Нет данных для отображения"
   label_nobody: "никто"
-  label_none: "Ничего"
+  label_none: "нет"
   label_not_contains: "не содержит"
   label_not_equals: "не"
   label_notify_member_plural: "Уведомление электронной почтой"
@@ -922,7 +922,7 @@ ru:
   label_open_work_packages: "открыть"
   label_open_work_packages_plural: "открыть"
   label_optional_description: "Описание"
-  label_options: "Параметры"
+  label_options: "Опции"
   label_overall_activity: "Общая деятельность"
   label_overall_spent_time: "Суммарное потраченное время"
   label_overview: "Обзор"
@@ -932,7 +932,7 @@ ru:
   label_password_rule_special: "Специальные символы"
   label_password_rule_uppercase: "Верхний регистр"
   label_path_encoding: "Кодирование пути"
-  label_pdf_with_descriptions: PDF с описанием
+  label_pdf_with_descriptions: PDF с описаниями
   label_per_page: "Постранично"
   label_permissions: "Разрешения"
   label_permissions_report: "Отчёт о разрешениях"
@@ -940,7 +940,7 @@ ru:
   label_planning: "Планирование"
   label_please_login: "Пожалуйста, войдите в систему"
   label_plugins: "Плагины"
-  label_precedes: "Предшествует"
+  label_precedes: "предшествует"
   label_preferences: "Предпочтения"
   label_preview: "Предварительный просмотр"
   label_previous: "Предыдущие"
@@ -995,7 +995,7 @@ ru:
   label_roadmap_overdue: "%{value} позднее"
   label_role_and_permissions: "Роли и разрешения"
   label_role_new: "Новая роль"
-  label_role_plural: "Роль"
+  label_role_plural: "Роли"
   label_role_search: "Поиск для ролей"
   label_scm: SCM
   label_search: "Поиск"
@@ -1025,7 +1025,7 @@ ru:
   label_summary: "Резюме"
   label_system: "Система"
   label_table_of_contents: "Содержание"
-  label_tag: "Тег"
+  label_tag: "Метка"
   label_text: "Длинный текст"
   label_theme: "Тема"
   label_this_month: "в этом месяце"
@@ -1091,30 +1091,30 @@ ru:
   label_workflow_plural: "Рабочие потоки"
   label_workflow_summary: "Резюме"
   label_x_closed_work_packages_abbr:
-    one: 1 закрыто
-    other: "%{count} закрыто"
+    one: 1 closed
+    other: "%{count} closed"
     zero: 0 closed
-    few: "%{count} закрыто"
+    few: "%{count} closed"
   label_x_comments:
-    one: 1 комментарий
-    other: "%{count} комментариев"
+    one: 1 comment
+    other: "%{count} comments"
     zero: no comments
-    few: "%{count} комментариев"
+    few: "%{count} comments"
   label_x_open_work_packages_abbr:
-    one: 1 открыт
-    other: "%{count} открыто"
+    one: 1 open
+    other: "%{count} open"
     zero: 0 open
-    few: "%{count} открыто"
+    few: "%{count} open"
   label_x_open_work_packages_abbr_on_total:
-    one: 1 открыт / %{total}
-    other: "%{count} открыто / %{total}"
+    one: 1 open / %{total}
+    other: "%{count} open / %{total}"
     zero: 0 open / %{total}
-    few: "%{count} открыто / %{total}"
+    few: "%{count} open / %{total}"
   label_x_projects:
-    one: 1 проект
-    other: "%{count} проектов"
+    one: 1 project
+    other: "%{count} projects"
     zero: no projects
-    few: "%{count} проектов"
+    few: "%{count} projects"
   label_year: "Год"
   label_yesterday: "вчера"
   label_keyboard_function: "Функция"
@@ -1251,9 +1251,9 @@ ru:
         format: "%n %u"
         units:
           byte:
-            one: "Байт"
-            other: "Байт"
-            few: "Байт"
+            one: Byte
+            other: Bytes
+            few: Bytes
           gb: "ГБ"
           kb: "кБ"
           mb: "МБ"
@@ -1586,9 +1586,9 @@ ru:
     delete_thing: "Удалить"
     duration: "Продолжительность"
     duration_days:
-      one: "День"
-      other: "%{count} дней"
-      few: "%{count} дней"
+      one: 1 day
+      other: "%{count} days"
+      few: "%{count} days"
     edit_color: "Изменить цвет"
     edit_project_type: "Редактировать тип проекта"
     edit_thing: "Правка"
@@ -1611,10 +1611,9 @@ ru:
         timeframe_end: "Сроки окончания "
         compare_to_relative: "Значение относительного сравнения "
         compare_to_absolute: "Значение абсолютного сопоставления "
-        planning_element_time_relative_one: "Запуск пакетов работ в определенные сроки
-          \ "
-        planning_element_time_relative_two: "Окончание пакетов работ в определенные
-          сроки  "
+        planning_element_time_relative_one: "Пуск пакета работ в определенные сроки "
+        planning_element_time_relative_two: "Окончание пакета работ в определенные
+          сроки "
         planning_element_time_absolute_one: "Запуск пакетов работ в определенные сроки
           \ "
         planning_element_time_absolute_two: "Окончание пакетов работ в определенные
@@ -1751,7 +1750,7 @@ ru:
       quarters: "Кварталы"
       years: "Годы"
   queries:
-    apply_filter: "Применить ранее настроенный фильтр"
+    apply_filter: "Применить преднастроенный фильтр"
   total_progress: "Общий прогресс"
   user:
     all: "все"
@@ -1767,9 +1766,9 @@ ru:
       электронной почте)"
     blocked: "Временно заблокирован"
     blocked_num_failed_logins:
-      one: "временно заблокирован (одна неудачная попытка входа)"
-      other: "временно заблокирован (%{count} неудачных попыток входа в систему)"
-      few: "временно заблокирован (%{count} неудачных попыток входа в систему)"
+      one: locked temporarily (one failed login attempt)
+      other: locked temporarily (%{count} failed login attempts)
+      few: locked temporarily (%{count} failed login attempts)
     deleted: "Удалённый пользователь"
     error_status_change_failed: "Изменение статуса пользователя не удалось из-за следующей
       ошибки: %{errors}"
@@ -1784,7 +1783,7 @@ ru:
       по паролю отключена, войти он не может."
     password_change_unsupported: "Смена пароля не поддерживается."
     authorization_rejected: "У вас нет разрешения на вход."
-  version_status_closed: "закрыт"
+  version_status_closed: "закрыто"
   version_status_locked: "заблокировано"
   version_status_open: "открыть"
   note: "Заметка"

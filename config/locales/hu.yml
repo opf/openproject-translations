@@ -76,7 +76,7 @@ hu:
         from: Munkacsomag
         to: Kapcsolódó munkacsomag
       status:
-        is_closed: A munkacsomag lezárva
+        is_closed: Lezárt munkacsomag
       journal:
         notes: Jegyzet
       member:
@@ -84,7 +84,7 @@ hu:
       project:
         homepage: Weboldal
         identifier: Azonosító
-        work_packages: Munkacsomagok
+        work_packages: Munka csomagok
         parent: Alprojekt
         versions: Verzió
         project_type: Projekt típus
@@ -101,8 +101,8 @@ hu:
         assignable: Ehhez a szerepkörhöz nem lehet hozzárendelni a munkacsomagot
       time_entry:
         activity: Tevékenység
-        hours: "órák"
-        spent_on: dátum
+        hours: "Óra"
+        spent_on: Dátum
         type: Típus
       type:
         is_in_roadmap: A munkacsomag megjelenik az ütemtervben
@@ -245,10 +245,10 @@ hu:
               numeric: Szám (pl. '1')
               special: Különleges karakter (pl. '%')
               reused:
-                one: Korábban már használta. kérjük, válasszon egyet, amely eltér
-                  az utolsónak használttól.
-                other: Korábban már használta. kérjük, válasszon egyet, amely eltér
-                  az utolsó  %{count}-tól.
+                one: has been used before. Please choose one that is different from
+                  your last one.
+                other: has been used before. Please choose one that is different from
+                  your last %{count}.
               match:
                 confirm: Confirm new password.
                 description: "'Password confirmation' should match the input in the
@@ -259,8 +259,8 @@ hu:
       template:
         body: 'Kérjük, ellenőrizze az alábbi mezőket:'
         header:
-          one: 1. hiba tiltja ennek a  %{model} mentését
-          other: "%{count} hiba miatt tiltott a  %{model} mentése"
+          one: 1 error prohibited this %{model} from being saved
+          other: "%{count} errors prohibited this %{model} from being saved"
     models:
       attachment: File
       board: Fórum
@@ -275,8 +275,8 @@ hu:
       project: Projekt
       query: Egyéni lekérdezés
       role:
-        one: Szerepkör
-        other: Szerepkörök
+        one: Role
+        other: Roles
       type: Típus
       planning_element: Tervezési elem
       project_type: Projekt típus
@@ -292,7 +292,7 @@ hu:
     created: 'Létrehozva: %{title}'
     updated: 'Frissítve: %{title}'
   attributes:
-    active: aktív
+    active: Aktív
     assigned_to: Megbízott
     assignee: Megbízott
     attachments: Csatolmány
@@ -328,7 +328,7 @@ hu:
     priority: Fontosság
     project: Projekt
     responsible: Felelős
-    role: Szerepkör
+    role: Role
     start_date: Indulási dátum
     status: "Állapot"
     subject: Tárgy
@@ -464,42 +464,42 @@ hu:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: Körülbelül 1 óra
-        other: Körülbelül  %{count} óra
+        one: about 1 hour
+        other: about %{count} hours
       about_x_months:
-        one: Körülbelül 1 hónap
-        other: Körülbelül %{count} hónap
+        one: about 1 month
+        other: about %{count} months
       about_x_years:
-        one: Körülbelül 1 év
-        other: Körülbelül %{count} év
+        one: about 1 year
+        other: about %{count} years
       almost_x_years:
-        one: Majdnem 1 év
-        other: majdnem %{count} év
+        one: almost 1 year
+        other: almost %{count} years
       half_a_minute: Fél perc
       less_than_x_minutes:
-        one: Kevesebb, mint egy perc alatt
-        other: Kevesebb, mint %{count} perc alatt
+        one: less than a minute
+        other: less than %{count} minutes
       less_than_x_seconds:
-        one: kevesebb, mint egy másodperc alatt
-        other: kevesebb, mint %{count} másodperc alatt
+        one: less than 1 second
+        other: less than %{count} seconds
       over_x_years:
-        one: Több mint 1 év
-        other: Több mint %{count} év
+        one: over 1 year
+        other: over %{count} years
       x_days:
-        one: Egy nap
-        other: "%{count} nap"
+        one: 1 day
+        other: "%{count} days"
       x_minutes:
-        one: Egy perc
-        other: "%{count} perc"
+        one: 1 minute
+        other: "%{count} minutes"
       x_months:
-        one: 1 hónap
-        other: "%{count} hónap"
+        one: 1 month
+        other: "%{count} months"
       x_seconds:
-        one: 1 másodperc
-        other: "%{count} másodperc"
+        one: 1 second
+        other: "%{count} seconds"
     units:
       hour:
-        one: "óra"
+        one: hour
         other: hours
   default_activity_development: Fejlesztés
   default_activity_management: Management
@@ -646,7 +646,7 @@ hu:
     wiki_page: A Wiki oldal szerkesztve
     work_package_closed: A munkacsomag lezárva
     work_package_edit: A munkacsomag szerkesztve
-    work_package_note: Munkacsomag megjegyzés hozzáadva
+    work_package_note: A munkacsomag jegyzet hozzáadva
   general_csv_decimal_separator: "."
   general_csv_encoding: UTF-8
   general_csv_separator: ","
@@ -700,9 +700,9 @@ hu:
   label_auth_source_new: "Új hitelesítési mód"
   label_auth_source_plural: Hitelesítési mód
   label_authentication: Hitelesítés
-  label_blocked_by: Blokkolta
+  label_blocked_by: blokkolta
   label_blocks: blokkol
-  label_board_locked: Zárolt
+  label_board_locked: Zárolva
   label_board_new: "Új fórum"
   label_board_plural: fórumok
   label_board_sticky: Kiemelt
@@ -748,14 +748,14 @@ hu:
   label_custom_field_new: "Új választható mező"
   label_custom_field_plural: Választható mezők
   label_custom_field_default_type: "Üres típus"
-  label_date: dátum
-  label_date_from: tól
+  label_date: Dátum
+  label_date_from: "-ból, -ből"
   label_date_from_to: "%{start}-tól %{end}-ig"
   label_date_range: Dátum intervallum
-  label_date_to: címzett
-  label_day_plural: Napok
-  label_default: alapértelmezett
-  label_deleted: Törölve
+  label_date_to: Címzettek
+  label_day_plural: napok
+  label_default: Alapértelmezett
+  label_deleted: törölve
   label_deleted_custom_field: "(egyéni mező törölve)"
   label_descending: Csökkenő
   label_details: Részletek
@@ -770,7 +770,7 @@ hu:
   label_download: "%{count} Letöltés"
   label_download_plural: "%{count} Letöltés"
   label_downloads_abbr: D/L
-  label_duplicated_by: Ismétlődések szerint
+  label_duplicated_by: duplázott
   label_duplicates: Ismétlődések
   label_edit: Szerkesztés
   label_enable_multi_select: Multiselect ki-/ bekapcsolása
@@ -793,7 +793,7 @@ hu:
   label_filter_add: Szűrő hozzáadása
   label_filter_plural: Szürő
   label_float: Mozgó
-  label_follows: Következik
+  label_follows: következik
   label_force_user_language_to_default: Nyelv beállitása a felhasználóknak, amelyeknél
     nem az alapértelmezett nyelv az elfogadott
   label_general: "Általános"
@@ -831,7 +831,7 @@ hu:
   label_work_package_status_plural: A munkacsomag állapotai
   label_work_package_tracking: A munkacsomag nyomon követése
   label_work_package_updated: Frissült a munkacsomag
-  label_work_package_view_all: Minden munkacsomag megtekintése
+  label_work_package_view_all: Minden munkacsomagot megtekintése
   label_work_package_view_all_assigned_to_me: A hozzám rendelt valamennyi munkacsomag
     megtekintése
   label_work_package_view_all_reported_by_me: Az összes munkacsomag megtekintése az
@@ -901,7 +901,7 @@ hu:
   label_no_change_option: "(Nincs változás)"
   label_no_data: Nincs megjelenítendő adat
   label_nobody: senki sem
-  label_none: Egyik sem
+  label_none: Nincs
   label_not_contains: nem tartalmaz
   label_not_equals: nem
   label_notify_member_plural: E-mail frissítések
@@ -912,14 +912,14 @@ hu:
   label_options: Beállítások
   label_overall_activity: "Általános tevékenység"
   label_overall_spent_time: Teljes eltöltött idő
-  label_overview: "Áttekintés"
+  label_overview: "Áttekintő"
   label_password_lost: Elfelejtetted a jelszavad?
   label_password_rule_lowercase: Kisbetűk
   label_password_rule_numeric: Numerikus karakterek
   label_password_rule_special: Különleges karakterek
   label_password_rule_uppercase: Nagybetű
   label_path_encoding: Elérési út kódolás
-  label_pdf_with_descriptions: PDF leírásokkal
+  label_pdf_with_descriptions: PDF-leírások
   label_per_page: Oldalanként
   label_permissions: Jogosultságok
   label_permissions_report: Jogosultságok riportálása
@@ -927,7 +927,7 @@ hu:
   label_planning: Tervezés
   label_please_login: Kérjük, jelentkezzen be
   label_plugins: Modulok
-  label_precedes: Megelőzi
+  label_precedes: megelőzi
   label_preferences: Tulajdonságok
   label_preview: Előnézet
   label_previous: Korábbi
@@ -954,7 +954,7 @@ hu:
   label_registration_automatic_activation: automatikus fiók aktiválás
   label_registration_manual_activation: fiók kézi aktiválása
   label_related_work_packages: Kapcsolódó munkacsomagok
-  label_relates_to: Kapcsolódó
+  label_relates_to: kapcsolódó
   label_relation_delete: Kapcsolat törlése
   label_relation_new: "Új kapcsolat"
   label_remove_columns: Eltávolítja a kijelölt oszlopokat
@@ -1077,24 +1077,24 @@ hu:
   label_workflow_plural: A munkafolyamatok
   label_workflow_summary: "Összegzés"
   label_x_closed_work_packages_abbr:
-    one: 1 lezárt
-    other: "%{count}  lezárt"
+    one: 1 closed
+    other: "%{count} closed"
     zero: 0 closed
   label_x_comments:
-    one: "%{count} hozzászólás"
-    other: "%{count} hozzászólás"
+    one: 1 comment
+    other: "%{count} comments"
     zero: no comments
   label_x_open_work_packages_abbr:
-    one: 1 nyitott
-    other: "%{count} nyitott"
+    one: 1 open
+    other: "%{count} open"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
-    one: 1 nyitott  / %{total}
-    other: "%{count} nyitott / %{total}"
+    one: 1 open / %{total}
+    other: "%{count} open / %{total}"
     zero: 0 open / %{total}
   label_x_projects:
-    one: 1 projekt
-    other: "%{count} projekt"
+    one: 1 project
+    other: "%{count} projects"
     zero: no projects
   label_year: "Év"
   label_yesterday: tegnap
@@ -1228,7 +1228,7 @@ hu:
         units:
           byte:
             one: Byte
-            other: Bájt
+            other: Bytes
           gb: GB
           kb: kB
           mb: MB
@@ -1558,8 +1558,8 @@ hu:
     delete_thing: Töröl
     duration: Időtartam
     duration_days:
-      one: Egy nap
-      other: "%{count} nap"
+      one: 1 day
+      other: "%{count} days"
     edit_color: Színek szerkesztése
     edit_project_type: Projekt típus módosítása
     edit_thing: Szerkesztés
@@ -1615,9 +1615,9 @@ hu:
         compare_relative_suffix: ago
         compare_absolute: Hasonlítsa össze a jelenlegi tervezési  %{date} időpont
       time_relative:
-        days: Napok
-        weeks: Hetek
-        months: Hónapok
+        days: napok
+        weeks: hetek
+        months: hónapok
       exclude_own_work_packages: Ettől a projekttől a munkacsomagok elrejtése
       exclude_reporters: Más projektek elrejtése
       exclude_empty: "Üres projektek elrejtése"
@@ -1739,8 +1739,8 @@ hu:
       a felhasználónak)
     blocked: ideiglenesen zárolva
     blocked_num_failed_logins:
-      one: ideiglenesen zárolva (egy sikertelen bejelentkezési kísérlet)
-      other: ideiglenesen zárolva (%{count} sikertelen bejelentkezési kísérlet)
+      one: locked temporarily (one failed login attempt)
+      other: locked temporarily (%{count} failed login attempts)
     deleted: Törölt felhasználó
     error_status_change_failed: 'A felhasználó állapotának a módosítása nem sikerült
       a következő hiba miatt: %{errors}'
