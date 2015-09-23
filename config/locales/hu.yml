@@ -1109,7 +1109,6 @@ hu:
   label_version_sharing_system: Az összes projekt
   label_version_sharing_tree: A projekt fában
   label_view_all_revisions: Az összes módosítás megtekintése
-  label_view_all_users: View all users
   label_view_diff: A különbségek megtekintése
   label_view_revisions: A változtatások megtekintése
   label_watched_work_packages: Megfigyelt munkacsomagok
@@ -1370,6 +1369,14 @@ hu:
   permission_view_timelines: Az idővonalak megtekintése
   permission_view_wiki_edits: Wiki-előzmények megtekintése
   permission_view_wiki_pages: Wiki megtekintése
+  project:
+    destroy:
+      confirmation: If you continue, the project %{identifier} and all related data
+        will be permanently destroyed.
+      info: Deleting the project is an irreversible action.
+      project_verification: Enter the project's name %{name} to verify the deletion.
+      subprojects_confirmation: 'Its subproject(s): %{value} will also be deleted.'
+      title: Do you really want to delete the project %{name}?
   project_module_activity: Tevékenység
   project_module_boards: fórumok
   project_module_calendar: Naptár
@@ -1418,13 +1425,14 @@ hu:
     create_successful: The repository has been registered.
     delete_sucessful: The repository has been deleted.
     destroy:
-      title: Are you absolutely sure?
-      managed_text: If you continue, this will permanently delete the managed repository
-        of %{project_name}. This action cannot be reverted.
-      managed_path_note: 'The following directory will be erased: %{path}'
+      confirmation: If you continue, this will permanently delete the managed repository
+        of %{project_name}.
+      info: Deleting the repository is an irreversible action.
       linked_text: |
         You're about to remove the linked repository %{url} from the project %{project_name}.
         Note: This will NOT delete the contents of this repository, as it is not managed by OpenProject.
+      managed_path_note: 'The following directory will be erased: %{path}'
+      title: Do you really want to delete the repository %{name}?
     errors:
       build_failed: Unable to create the repository with the selected configuration.
         %{reason}
@@ -1686,13 +1694,9 @@ hu:
     projektet. Biztosan folytatni kívánja?"
   text_plugin_assets_writable: Plugin eszközök könyvtára írható
   text_powered_by: Készítette %{link}
-  text_project_destroy_title: Do you really want to delete this project?
-  text_project_destroy_confirmation: If you continue, the project %{identifier} and
-    all related data will be permanently destroyed. Please check the box below if
-    you want to continue.
   text_project_identifier_info: Csak kisbetű (a-z), számok, kötőjelek és aláhúzásjelek
     van engedélyezve, és kisbetűvel kell kezdődnie.
-  text_reassign: Ismételt hozzárendelése
+  text_reassign: 'Reassign to work package:'
   text_reassign_to: 'munkacsomag:'
   text_regexp_info: pl. ^[A-Z0-9]+$
   text_repository_usernames_mapping: Jelölje be, vagy frissítse az alkalmazás felhasználóit,
@@ -1702,7 +1706,6 @@ hu:
   text_select_mail_notifications: Válassza ki a tevékenységeket, amelyekről e-mail
     értesítést kell küldeni.
   text_status_changed_by_changeset: "%{value} változások alkalmazása."
-  text_subprojects_destroy_warning: 'Az alprojekt: %{value} is törlődni fog.'
   text_time_logged_by_changeset: "%{value} változások alkalmazása."
   text_tip_work_package_begin_day: ezen a napon kezdődik a munkacsomag
   text_tip_work_package_begin_end_day: Ezen a napon kezdődik és zárodik a munkacsomag
@@ -1985,6 +1988,9 @@ hu:
   work_package:
     updated_automatically_by_child_changes: Automatikusan frissíti a változó értékeken
       belöl a gyermek munkacsomag %{child} alapján
+    destroy:
+      info: Deleting the work package is an irreversible action.
+      title: Do you really want to delete the work package?
   nothing_to_preview: Nincs előnézet
   api_v3:
     attributes:

@@ -1102,7 +1102,6 @@
   label_version_sharing_system: Med alle prosjekter
   label_version_sharing_tree: Med prosjekttre
   label_view_all_revisions: Vis alle revisjoner
-  label_view_all_users: View all users
   label_view_diff: Vis forskjeller
   label_view_revisions: Vis revisjoner
   label_watched_work_packages: Overvåkede arbeidspakker
@@ -1362,6 +1361,14 @@
   permission_view_timelines: Vis tidslinjer
   permission_view_wiki_edits: Vis wiki-historikk
   permission_view_wiki_pages: Vis wiki
+  project:
+    destroy:
+      confirmation: If you continue, the project %{identifier} and all related data
+        will be permanently destroyed.
+      info: Deleting the project is an irreversible action.
+      project_verification: Enter the project's name %{name} to verify the deletion.
+      subprojects_confirmation: 'Its subproject(s): %{value} will also be deleted.'
+      title: Do you really want to delete the project %{name}?
   project_module_activity: Aktivitet
   project_module_boards: Forum
   project_module_calendar: Kalender
@@ -1410,13 +1417,14 @@
     create_successful: The repository has been registered.
     delete_sucessful: The repository has been deleted.
     destroy:
-      title: Are you absolutely sure?
-      managed_text: If you continue, this will permanently delete the managed repository
-        of %{project_name}. This action cannot be reverted.
-      managed_path_note: 'The following directory will be erased: %{path}'
+      confirmation: If you continue, this will permanently delete the managed repository
+        of %{project_name}.
+      info: Deleting the repository is an irreversible action.
       linked_text: |
         You're about to remove the linked repository %{url} from the project %{project_name}.
         Note: This will NOT delete the contents of this repository, as it is not managed by OpenProject.
+      managed_path_note: 'The following directory will be erased: %{path}'
+      title: Do you really want to delete the repository %{name}?
     errors:
       build_failed: Unable to create the repository with the selected configuration.
         %{reason}
@@ -1671,13 +1679,9 @@
     Er du sikker på at du vil fortsette?
   text_plugin_assets_writable: Mappen for programtillegg er skrivbar
   text_powered_by: Driftes med %{link}
-  text_project_destroy_title: Do you really want to delete this project?
-  text_project_destroy_confirmation: If you continue, the project %{identifier} and
-    all related data will be permanently destroyed. Please check the box below if
-    you want to continue.
   text_project_identifier_info: Kun små bokstaver (a-z), tall, bindestrek og understrek
     er tillatt. Første tegn må være liten bokstav.
-  text_reassign: Endre tildeling til
+  text_reassign: 'Reassign to work package:'
   text_reassign_to: 'arbeidspakke:'
   text_regexp_info: f.eks. ^[A-Z0-9]+$
   text_repository_usernames_mapping: |
@@ -1686,7 +1690,6 @@
   text_select_mail_notifications: Velg hendelser for hvilke e-postvarsler som skal
     sendes.
   text_status_changed_by_changeset: Benyttet i changeset %{value}.
-  text_subprojects_destroy_warning: 'Underprosjektene: %{value} vil også bli slettet.'
   text_time_logged_by_changeset: Benyttet i changeset %{value}.
   text_tip_work_package_begin_day: arbeidspakker som påbegynnes denne dagen
   text_tip_work_package_begin_end_day: arbeidspakker som begynner eller slutter denne
@@ -1965,6 +1968,9 @@
   work_package:
     updated_automatically_by_child_changes: _Oppdatert automatisk ved å endre verdier
       i underordnet arbeidspakke %{child}_
+    destroy:
+      info: Deleting the work package is an irreversible action.
+      title: Do you really want to delete the work package?
   nothing_to_preview: Ingenting å forhåndsvise
   api_v3:
     attributes:

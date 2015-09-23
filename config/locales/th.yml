@@ -1086,7 +1086,6 @@ th:
   label_version_sharing_system: "พร้อมด้วยทุกโครงการ"
   label_version_sharing_tree: "พร้อมด้วยแผนผังโครงการ"
   label_view_all_revisions: "ดูการปรับปรุงทั้งหมด"
-  label_view_all_users: View all users
   label_view_diff: "ดูผลต่าง"
   label_view_revisions: "ดูการปรับปรุง"
   label_watched_work_packages: "เฝ้าดูชุดภารกิจ"
@@ -1335,6 +1334,14 @@ th:
   permission_view_timelines: "ดูแผนภูมิเวลา"
   permission_view_wiki_edits: "ดูประวัติวิกิ"
   permission_view_wiki_pages: "ดูวิกิ"
+  project:
+    destroy:
+      confirmation: If you continue, the project %{identifier} and all related data
+        will be permanently destroyed.
+      info: Deleting the project is an irreversible action.
+      project_verification: Enter the project's name %{name} to verify the deletion.
+      subprojects_confirmation: 'Its subproject(s): %{value} will also be deleted.'
+      title: Do you really want to delete the project %{name}?
   project_module_activity: "กิจกรรม"
   project_module_boards: "กระทู้"
   project_module_calendar: "ปฏิทิน"
@@ -1383,13 +1390,14 @@ th:
     create_successful: The repository has been registered.
     delete_sucessful: The repository has been deleted.
     destroy:
-      title: Are you absolutely sure?
-      managed_text: If you continue, this will permanently delete the managed repository
-        of %{project_name}. This action cannot be reverted.
-      managed_path_note: 'The following directory will be erased: %{path}'
+      confirmation: If you continue, this will permanently delete the managed repository
+        of %{project_name}.
+      info: Deleting the repository is an irreversible action.
       linked_text: |
         You're about to remove the linked repository %{url} from the project %{project_name}.
         Note: This will NOT delete the contents of this repository, as it is not managed by OpenProject.
+      managed_path_note: 'The following directory will be erased: %{path}'
+      title: Do you really want to delete the repository %{name}?
     errors:
       build_failed: Unable to create the repository with the selected configuration.
         %{reason}
@@ -1633,13 +1641,9 @@ th:
     และไม่สามารถแก้ไขโครงการได้หลังจากนั้น \n คุณแน่ใจว่าจะดำเนินการต่อหรือไม่?"
   text_plugin_assets_writable: "สามารถบันทึก ไดเรคทอรี่ของ Plugin asset ได้"
   text_powered_by: "ดำเนินการโดย %{link}"
-  text_project_destroy_title: Do you really want to delete this project?
-  text_project_destroy_confirmation: If you continue, the project %{identifier} and
-    all related data will be permanently destroyed. Please check the box below if
-    you want to continue.
   text_project_identifier_info: "ใช้ได้เฉพาะตัวพิมพ์เล็ก (a-z), ตัวเลข เส้นประ และขีดใต้
     โดย ต้องเริ่มต้น ด้วยตัวอักษรพิมพ์เล็กเท่านั้น"
-  text_reassign: "มอบหมายใหม่ไปที่"
+  text_reassign: 'Reassign to work package:'
   text_reassign_to: "ชุดภารกิจ:"
   text_regexp_info: "ต.ย. เช่น ^[A-Z0-9]+$"
   text_repository_usernames_mapping: "เลือกหรือปรับปรุงผู้ใช้ของ OpenProject มีการจับคู่แต่ละ
@@ -1647,7 +1651,6 @@ th:
     username เข้า OpenProject หรือที่เก็บข้อมูล หรืออีเมล์ที่ตรงกัน"
   text_select_mail_notifications: "เลือกการดำเนินการสำหรับอีเมล์ที่ควรส่งการแจ้งเตือน"
   text_status_changed_by_changeset: "ใช้งานในชุดการเปลี่ยนแปลง %{value}"
-  text_subprojects_destroy_warning: "โครงการย่อยของ: %{value} จะถูกลบไปด้วย"
   text_time_logged_by_changeset: "ใช้งานในชุดการเปลี่ยนแปลง %{value}"
   text_tip_work_package_begin_day: "ชุดภารกิจเริ่มวันนี้"
   text_tip_work_package_begin_end_day: "ชุดภารกิจเริ่มต้นและสิ้นสุดวันนี้"
@@ -1907,6 +1910,9 @@ th:
   work_package:
     updated_automatically_by_child_changes: _ถูกอัพเดทโดยอัตโนมัติ โดยการเปลี่ยนค่าในชุดภารกิจย่อย
       %{child}_
+    destroy:
+      info: Deleting the work package is an irreversible action.
+      title: Do you really want to delete the work package?
   nothing_to_preview: "ไม่มีอะไรให้แสดงเป็นตัวอย่าง"
   api_v3:
     attributes:

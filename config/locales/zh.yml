@@ -1058,7 +1058,6 @@ zh:
   label_version_sharing_system: "与所有项目"
   label_version_sharing_tree: "与项目树"
   label_view_all_revisions: "查看所有修订版本"
-  label_view_all_users: View all users
   label_view_diff: "查看差异"
   label_view_revisions: "查看修订版本"
   label_watched_work_packages: "受关注的工作包"
@@ -1297,6 +1296,14 @@ zh:
   permission_view_timelines: "查看时间线"
   permission_view_wiki_edits: "查看 wiki 历史记录"
   permission_view_wiki_pages: "查看 wiki"
+  project:
+    destroy:
+      confirmation: If you continue, the project %{identifier} and all related data
+        will be permanently destroyed.
+      info: Deleting the project is an irreversible action.
+      project_verification: Enter the project's name %{name} to verify the deletion.
+      subprojects_confirmation: 'Its subproject(s): %{value} will also be deleted.'
+      title: Do you really want to delete the project %{name}?
   project_module_activity: "活动"
   project_module_boards: "论坛"
   project_module_calendar: "日历"
@@ -1344,11 +1351,13 @@ zh:
     create_successful: "版本库已被注册。"
     delete_sucessful: "版本库已被删除。"
     destroy:
-      title: "你绝对确定?"
-      managed_text: "如果你继续下去，这将永久删除 %{project_name} 管理的版本库。此操作不能被还原。"
-      managed_path_note: "以下目录将被删除: %{path}"
+      confirmation: If you continue, this will permanently delete the managed repository
+        of %{project_name}.
+      info: Deleting the repository is an irreversible action.
       linked_text: "你将要从 %{project_name} 项目中移除已链接的版本库 %{url}。注意: 这不会删除该版本库的内容，它不由
         OpenProject 所管理。"
+      managed_path_note: "以下目录将被删除: %{path}"
+      title: Do you really want to delete the repository %{name}?
     errors:
       build_failed: "在所选的配置下无法创建版本库。%{reason}"
       empty_repository: "版本库已存在，不过该库是空的。它还不包括任何版本。"
@@ -1567,10 +1576,8 @@ zh:
   text_own_membership_delete_confirmation: "您将要删除部分或全部的权限，可能不能够在那之后编辑此项目。 \n您确定要继续吗？"
   text_plugin_assets_writable: "插件资产目录可写"
   text_powered_by: Powered by %{link}
-  text_project_destroy_title: "你真的想要删除此项目吗?"
-  text_project_destroy_confirmation: "如果您继续，%{identifier} 项目以及其所有相关的数据将被永久销毁。请如果你想要继续，请勾选下面的框。"
   text_project_identifier_info: "只有小写字母 (a-z)、 数字、 短划线和下划线被允许，必须以小写字母开头。"
-  text_reassign: "重新分配给"
+  text_reassign: 'Reassign to work package:'
   text_reassign_to: "工作包："
   text_regexp_info: "例如 ^ [A-Z0-9]+$"
   text_repository_usernames_mapping: |-
@@ -1578,7 +1585,6 @@ zh:
     与OpenProject和代码库用户名或电子邮件相同的用户已被自动更新。
   text_select_mail_notifications: "选择邮件通知应该被发送的动作。"
   text_status_changed_by_changeset: "被实施在变更集 %{value} 中。"
-  text_subprojects_destroy_warning: "其子项目：%{value} 也将被删除。"
   text_time_logged_by_changeset: "被实施在变更集 %{value} 中。"
   text_tip_work_package_begin_day: "这一天开始的工作包"
   text_tip_work_package_begin_end_day: "这一天开始和结束的工作包"
@@ -1829,6 +1835,9 @@ zh:
   query_menu_item_for: 查询"%{title}"的菜单项
   work_package:
     updated_automatically_by_child_changes: _自动更新由于改变子工作包 %{child} 内的值_
+    destroy:
+      info: Deleting the work package is an irreversible action.
+      title: Do you really want to delete the work package?
   nothing_to_preview: "没有什么要预览"
   api_v3:
     attributes:

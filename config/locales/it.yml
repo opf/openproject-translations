@@ -1119,7 +1119,6 @@ it:
   label_version_sharing_system: Con tutti i progetti
   label_version_sharing_tree: Con albero di progetto
   label_view_all_revisions: Mostra tutte le revisioni
-  label_view_all_users: Mostra tutti gli utenti
   label_view_diff: Mostra le differenze
   label_view_revisions: Vedi revisioni
   label_watched_work_packages: Macro-attività (work package) osservate
@@ -1392,6 +1391,14 @@ it:
   permission_view_timelines: Visualizza le cronologie
   permission_view_wiki_edits: Visualizza il registro della wiki
   permission_view_wiki_pages: Visualizza la wiki
+  project:
+    destroy:
+      confirmation: If you continue, the project %{identifier} and all related data
+        will be permanently destroyed.
+      info: Deleting the project is an irreversible action.
+      project_verification: Enter the project's name %{name} to verify the deletion.
+      subprojects_confirmation: 'Its subproject(s): %{value} will also be deleted.'
+      title: Do you really want to delete the project %{name}?
   project_module_activity: Attività
   project_module_boards: Forum
   project_module_calendar: Calendario
@@ -1442,13 +1449,14 @@ it:
     create_successful: L'archivio è stato registrato.
     delete_sucessful: L'archivio è stato eliminato.
     destroy:
-      title: Sei assolutamente sicuro?
-      managed_text: Se si continua, questo eliminerà definitivamente l'archivio gestito
-        di %{project_name}. Questa azione non può essere annullata.
-      managed_path_note: 'La seguente cartella sarà eliminata: %{path}'
+      confirmation: If you continue, this will permanently delete the managed repository
+        of %{project_name}.
+      info: Deleting the repository is an irreversible action.
       linked_text: 'Stai per rimuovere il collegamento all''archivio %{url} dal progetto
         %{project_name}. Attenzione: Questo NON eliminerà il contenuto dell''archivio,
         poichè questo non è gestito direttamente da OpenProject.'
+      managed_path_note: 'La seguente cartella sarà eliminata: %{path}'
+      title: Do you really want to delete the repository %{name}?
     errors:
       build_failed: Impossibile creare il repository con la configurazione richiesta.
         %{reason}
@@ -1728,13 +1736,9 @@ it:
     Sei sicuro di voler continuare?
   text_plugin_assets_writable: Cartella del pool di plugin installati scrivibile
   text_powered_by: Offerto da %{link}
-  text_project_destroy_title: Vuoi davvero eliminare questo progetto?
-  text_project_destroy_confirmation: Se continui, il progetto %{identifier} e tutti
-    i relativi dati verranno eliminati definitivamente. Per favore, spunta la casella
-    qui sotto se vuoi procedere.
   text_project_identifier_info: Solo le lettere minuscole (a-z), numeri, trattini
     e trattini bassi sono consentiti, devi iniziare con una lettera maiuscola.
-  text_reassign: Riassegna a
+  text_reassign: 'Reassign to work package:'
   text_reassign_to: 'macro-attività (work package):'
   text_regexp_info: es. ^[A-Z0-9]+$
   text_repository_usernames_mapping: Seleziona o aggiorna l'utente OpenProject mappato
@@ -1743,8 +1747,6 @@ it:
   text_select_mail_notifications: Seleziona le azioni per cui l'e-mail deve essere
     inviata.
   text_status_changed_by_changeset: Stato variato a partire dalla modifica %{value}.
-  text_subprojects_destroy_warning: 'Il suo(i) sotto-progetto(i): %{value} verranno
-    eliminati di conseguenza.'
   text_time_logged_by_changeset: Stato variato a partire dalla modifica %{value}.
   text_tip_work_package_begin_day: macro-attività (work package) che iniziano questo
     giorno
@@ -2036,6 +2038,9 @@ it:
   work_package:
     updated_automatically_by_child_changes: _Aggiornata automaticamente cambiando
       i valori all'interno della macro-attività (work package) figlia %{child}_
+    destroy:
+      info: Deleting the work package is an irreversible action.
+      title: Do you really want to delete the work package?
   nothing_to_preview: Niente in anteprima
   api_v3:
     attributes:

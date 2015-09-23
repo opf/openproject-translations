@@ -1118,7 +1118,6 @@ fr:
   label_version_sharing_system: Avec tous les projets
   label_version_sharing_tree: Avec l'arbre du projet
   label_view_all_revisions: Afficher toutes les révisions
-  label_view_all_users: View all users
   label_view_diff: Afficher les différences
   label_view_revisions: Afficher les révisions
   label_watched_work_packages: Lots de travaux suivis
@@ -1390,6 +1389,14 @@ fr:
   permission_view_timelines: Voir les lignes du temps
   permission_view_wiki_edits: Voir l'historique du wiki
   permission_view_wiki_pages: Voir le wiki
+  project:
+    destroy:
+      confirmation: If you continue, the project %{identifier} and all related data
+        will be permanently destroyed.
+      info: Deleting the project is an irreversible action.
+      project_verification: Enter the project's name %{name} to verify the deletion.
+      subprojects_confirmation: 'Its subproject(s): %{value} will also be deleted.'
+      title: Do you really want to delete the project %{name}?
   project_module_activity: Activité
   project_module_boards: Forums
   project_module_calendar: Calendrier
@@ -1440,13 +1447,14 @@ fr:
     create_successful: Le dépôt a été enregistré.
     delete_sucessful: Le dépôt à été supprimé.
     destroy:
-      title: En êtes vous vraiment sûr?
-      managed_text: Si vous continuez, cela supprimera définitivement le dépôt géré
-        de %{project_name}. Cette action est irréversible.
-      managed_path_note: 'Le répertoire suivant sera effacé : %{path}'
+      confirmation: If you continue, this will permanently delete the managed repository
+        of %{project_name}.
+      info: Deleting the repository is an irreversible action.
       linked_text: 'Vous êtes sur le point de supprimer le dépôt lié %{url} du projet
         %{project_name}. Remarque: Ceci ne supprimera PAS le contenu de ce dépôt car
         celui-ci n''est pas géré par OpenProject.'
+      managed_path_note: 'Le répertoire suivant sera effacé : %{path}'
+      title: Do you really want to delete the repository %{name}?
     errors:
       build_failed: Impossible de créer le dépôt avec la configuration sélectionnée.
         %{reason}
@@ -1713,14 +1721,10 @@ fr:
   text_plugin_assets_writable: Répertoire des « plugin assets » est accessible en
     écriture
   text_powered_by: Propulsé par %{link}
-  text_project_destroy_title: Voulez-vous vraiment supprimer ce projet?
-  text_project_destroy_confirmation: Si vous continuez, le projet %{identifier} et
-    toutes les données relatives seront définitivement détruites. Veuillez cocher
-    la case ci-dessous si vous souhaitez continuer.
   text_project_identifier_info: Seulement les lettres en minuscule (a-z), les nombres,
     les tirets et les underscores sont autorisés, il est obligatoire de commencer
     avec une lettre en minuscule.
-  text_reassign: Réassigner à
+  text_reassign: 'Reassign to work package:'
   text_reassign_to: 'Lot de Travaux:'
   text_regexp_info: ex. ^[A-Z0-9]+$
   text_repository_usernames_mapping: |
@@ -1729,7 +1733,6 @@ fr:
   text_select_mail_notifications: Sélectionnez les actions pour lesquelles une notification
     par courriel sera envoyée.
   text_status_changed_by_changeset: Enregistré dans « changeset » %{value}.
-  text_subprojects_destroy_warning: 'Son sous-projet(s): %{value} sera aussi supprimé.'
   text_time_logged_by_changeset: Enregistré dans « changeset » %{value}.
   text_tip_work_package_begin_day: lots de travaux débutant aujourd'hui
   text_tip_work_package_begin_end_day: lots de travaux débutant et se terminant aujourd'hui
@@ -2017,6 +2020,9 @@ fr:
   work_package:
     updated_automatically_by_child_changes: _Mis à jour automatiquement en changeant
       les valeurs dans le lot de travail enfant %{child}_
+    destroy:
+      info: Deleting the work package is an irreversible action.
+      title: Do you really want to delete the work package?
   nothing_to_preview: Rien à afficher en apperçu
   api_v3:
     attributes:

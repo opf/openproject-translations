@@ -455,8 +455,8 @@ de:
     - Samstag
     formats:
       default: "%d.%m.%Y"
-      long: "%d. %B %Y"
-      short: "%d. %b"
+      long: "%e. %B %Y"
+      short: "%e. %b"
     month_names:
     - 
     - Januar
@@ -946,7 +946,7 @@ de:
   label_next: Weiter
   label_next_week: Woche vor
   label_no_change_option: "(Keine Änderung)"
-  label_no_data: Nichts anzuzeigen
+  label_no_data: Es sind keine Daten vorhanden
   label_nothing_display: Nichts anzuzeigen
   label_nobody: Niemand
   label_none: kein
@@ -981,7 +981,7 @@ de:
   label_previous: Zurück
   label_previous_week: Woche zurück
   label_principal_invite_via_email: " oder Nutzer per E-Mail einladen"
-  label_principal_search: Vorhandene Benutzer oder Gruppen hinzufügen
+  label_principal_search: Vorhandene Benutzer / Gruppen hinzufügen
   label_professional_support: Professionelle Unterstützung
   label_profile: Profil
   label_project_all: Alle Projekte
@@ -1039,7 +1039,7 @@ de:
   label_role_and_permissions: Rollen und Rechte
   label_role_new: Neue Rolle
   label_role_plural: Rollen
-  label_role_search: Zuweisen von Rollen für neue Mitglieder
+  label_role_search: Rolle für neue Mitglieder zuweisen
   label_scm: Versionskontrollsystem
   label_search: Suche
   label_search_titles_only: Nur Titel durchsuchen
@@ -1116,7 +1116,6 @@ de:
   label_version_sharing_system: Mit allen Projekten
   label_version_sharing_tree: Mit Projektbaum
   label_view_all_revisions: Alle Revisionen anzeigen
-  label_view_all_users: Alle Benutzer anzeigen
   label_view_diff: Unterschiede anzeigen
   label_view_revisions: Revisionen anzeigen
   label_watched_work_packages: Beobachtete Arbeitspakete
@@ -1172,7 +1171,7 @@ de:
   label_keyboard_shortcut_some_pages_only: 'Tastaturkürzel auf speziellen Seiten:'
   label_keyboard_shortcut_search_global: OpenProject weite Suche
   label_keyboard_shortcut_search_project: Projektsuche
-  label_keyboard_shortcut_go_my_page: Auf meine Seite gehen
+  label_keyboard_shortcut_go_my_page: Zu "Meine Seite" gehen
   label_keyboard_shortcut_show_help: Zeige diese Liste der Tastaturkürzel
   label_keyboard_shortcut_go_overview: Gehe zu Projektübersicht
   label_keyboard_shortcut_go_work_package: Gehe zur Arbeitspaket-Seite
@@ -1272,7 +1271,7 @@ de:
     Anpassungen und geben Sie Ihre Änderungen noch einmal ein.
   notice_member_added: "%{name} zum Projekt hinzugefügt."
   notice_members_added: "%{number} Benutzer zum Projekt hinzugefügt."
-  notice_member_removed: "%{user} Benutzer aus dem Projekt entfernt."
+  notice_member_removed: "%{user} aus dem Projekt entfernt."
   notice_member_deleted: "%{user} wurde aus dem Projekt entfernt und gelöscht."
   notice_no_principals_found: Keine Treffer gefunden.
   notice_bad_request: Fehlerhafte Anfrage.
@@ -1294,7 +1293,7 @@ de:
     eine andere Authentifizierungsmethode wählen.
   notice_automatic_set_of_standard_type: Der Standard-Typ wurde automatisch gesetzt.
   notice_logged_out: Sie wurden ausgeloggt.
-  notice_wont_delete_auth_source: Der Authentifizierungsmodus kann nicht gelöscht
+  notice_wont_delete_auth_source: Die Authentifizierungsmethode kann nicht gelöscht
     werden, solange es noch Benutzer gibt, die diese verwenden.
   error_types_in_use_by_work_packages: 'Die folgenden Typen werden von Arbeitspaketen
     referenziert: %{types}'
@@ -1385,6 +1384,14 @@ de:
   permission_view_timelines: Zeitplan-Reporte anzeigen
   permission_view_wiki_edits: Wiki-Versionsgeschichte ansehen
   permission_view_wiki_pages: Wiki ansehen
+  project:
+    destroy:
+      confirmation: If you continue, the project %{identifier} and all related data
+        will be permanently destroyed.
+      info: Deleting the project is an irreversible action.
+      project_verification: Enter the project's name %{name} to verify the deletion.
+      subprojects_confirmation: 'Its subproject(s): %{value} will also be deleted.'
+      title: Do you really want to delete the project %{name}?
   project_module_activity: Aktivität
   project_module_boards: Foren
   project_module_calendar: Kalender
@@ -1402,13 +1409,13 @@ de:
     at_identifier: auf %{identifier}
     atom_revision_feed: Revisionen als Atom Feed
     autofetch_information: |
-      Wählen Sie diese Option, um das Projektarchiv beim Zugriff auf die Projektarchiv-Modul Seite automatisch zu aktualisieren.
+      Wählen Sie diese Option um das Projektarchiv beim Zugriff auf die Projektarchiv-Modul-Seite automatisch zu aktualisieren.
       Dies umfasst das Abrufen von Commits aus dem Projektarchiv und die Aktualisierung des erforderliche Festplattenspeichers.
     checkout:
       access:
         readwrite: Lese- und Schreibzugriff
         read: Nur Lesezugriff
-        none: Keine Checkout-Berechtigung, Sie können das Projektarchiv nur über diese
+        none: Keine Checkout-Berechtigung. Sie können das Projektarchiv nur über diese
           Applikation betrachten.
       access_permission: Ihre Berechtigungen für dieses Projektarchiv
       url: Checkout-URL
@@ -1435,14 +1442,14 @@ de:
     create_successful: Das Projektarchiv wurde registriert.
     delete_sucessful: Das Projektarchiv wurde gelöscht.
     destroy:
-      title: Sind Sie absolut sicher?
-      managed_text: Wenn Sie fortfahren, wird dies das verwaltete Projektarchiv des
-        Projekts %{project_name} endgültig löschen. Diese Aktion kann nicht rückgängig
-        gemacht werden.
-      managed_path_note: 'Das folgende Verzeichnis wird gelöscht werden: %{path}'
+      confirmation: If you continue, this will permanently delete the managed repository
+        of %{project_name}.
+      info: Deleting the repository is an irreversible action.
       linked_text: 'Sie sind dabei, das verknüpfte Projektarchiv %{url} des Projekts
         %{project_name} zu entfernen. Hinweis: Dies löscht NICHT den Inhalt dieses
         Projektarchivs, da es nicht von OpenProject verwaltet wird.'
+      managed_path_note: 'Das folgende Verzeichnis wird gelöscht werden: %{path}'
+      title: Do you really want to delete the repository %{name}?
     errors:
       build_failed: Projektarchiv mit der gewählten Konfiguration konnte nicht erstellt
         werden. %{reason}
@@ -1483,7 +1490,7 @@ de:
       path_encoding: Pfad-Codierung
     go_to_revision: Gehe zu Revision
     settings:
-      automatic_managed_repos_disabled: Deaktiviere automatische Erstellung
+      automatic_managed_repos_disabled: Automatische Erstellung deaktivieren
       automatic_managed_repos: Automatische Erstellung verwalteter Projektarchive
       automatic_managed_repos_text: Durch Festlegung eines Anbieters erhalten neu
         erstellte Projekte automatisch ein verwaltetes Projektarchiv dieses Anbieters.
@@ -1592,11 +1599,12 @@ de:
   setting_per_page_options: Objekte pro Seite
   setting_plain_text_mail: Nur reinen Text (kein HTML) senden
   setting_protocol: Protokoll
-  setting_repositories_automatic_managed_vendor: Automatischer Projektarchiv Anbieter-Typ
+  setting_repositories_automatic_managed_vendor: Automatisch genutzter Projektarchiv
+    Anbieter-Typ
   setting_repositories_encodings: Codierungen der Projektarchive
   setting_repository_authentication_caching_enabled: Aktiviere Cache für Authentifizierungsversuche
     von Versionskontrollsoftware
-  setting_repository_storage_cache_minutes: Projektarchiv Festplattengröße-Zwischenspeicher
+  setting_repository_storage_cache_minutes: Speicher-Dauer der abgerufenen Festplattengröße
   setting_repository_checkout_display: Zeige Checkout-Anweisungen
   setting_repository_checkout_base_url: Checkout URL-Präfix
   setting_repository_checkout_text: Hilfetext für Checkout-Anweisung
@@ -1624,7 +1632,7 @@ de:
   setting_welcome_text: Text für Willkommens-Block
   setting_welcome_title: Titel des Willkommens-Block
   setting_welcome_on_homescreen: Willkommens-Block auf Startseite anzeigen
-  setting_welcome_on_projects_page: Willkommen-Block der Projektübersicht anzeigen
+  setting_welcome_on_projects_page: Willkommen-Block auf der Projektübersicht anzeigen
   setting_wiki_compression: Wiki-Historie komprimieren
   setting_work_package_group_assignment: Zuweisung zu Gruppen erlauben
   settings:
@@ -1707,13 +1715,9 @@ de:
     Sind Sie sicher, dass Sie dies tun möchten?
   text_plugin_assets_writable: Verzeichnis für Plugin-Assets beschreibbar
   text_powered_by: Powered by %{link}
-  text_project_destroy_title: Wollen Sie dieses Projekt wirklich löschen?
-  text_project_destroy_confirmation: Wenn Sie fortfahren, werden das Projekt %{identifier}
-    und alle damit zusammenhängenden Daten dauerhaft gelöscht werden. Bestätigen Sie
-    die Eingabe, wenn Sie fortfahren möchten.
   text_project_identifier_info: Kleinbuchstaben (a-z), Ziffern, Binde- und Unterstriche
     erlaubt. Muss mit einem Kleinbuchstaben beginnen.
-  text_reassign: Neu zuweisen an
+  text_reassign: 'Reassign to work package:'
   text_reassign_to: 'Arbeitspaket:'
   text_regexp_info: z. B. ^[A-Z0-9]+$
   text_repository_usernames_mapping: |
@@ -1722,8 +1726,6 @@ de:
   text_select_mail_notifications: Bitte wählen Sie die Aktionen aus, für die eine
     Mailbenachrichtigung gesendet werden soll.
   text_status_changed_by_changeset: Status geändert durch Changeset %{value}.
-  text_subprojects_destroy_warning: Dessen Unterprojekte (%{value}) werden ebenfalls
-    gelöscht.
   text_time_logged_by_changeset: Status geändert durch Changeset %{value}.
   text_tip_work_package_begin_day: Arbeitspaket, das an diesem Tag beginnt
   text_tip_work_package_begin_end_day: Arbeitspaket, das an diesem Tag beginnt und
@@ -2012,10 +2014,13 @@ de:
   work_package:
     updated_automatically_by_child_changes: _Automatisch durch die Änderungen in Unteraufgabe
       %{child} aktualisiert_
+    destroy:
+      info: Deleting the work package is an irreversible action.
+      title: Do you really want to delete the work package?
   nothing_to_preview: Keine Vorschau verfügbar
   api_v3:
     attributes:
-      lock_version: Sperrversion
+      lock_version: Version sperren
     errors:
       code_401: Sie müssen sich authentifizieren, um auf die Ressource zugreifen zu
         können.

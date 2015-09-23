@@ -1102,7 +1102,6 @@ pt:
   label_version_sharing_system: Com todos os projetos
   label_version_sharing_tree: Com a árvore de projeto
   label_view_all_revisions: Ver os todas as revisões
-  label_view_all_users: View all users
   label_view_diff: Ver diferenças
   label_view_revisions: Ver revisões
   label_watched_work_packages: Pacotes de trabalho observados
@@ -1367,6 +1366,14 @@ pt:
   permission_view_timelines: View timelines
   permission_view_wiki_edits: View wiki history
   permission_view_wiki_pages: Ver wiki
+  project:
+    destroy:
+      confirmation: If you continue, the project %{identifier} and all related data
+        will be permanently destroyed.
+      info: Deleting the project is an irreversible action.
+      project_verification: Enter the project's name %{name} to verify the deletion.
+      subprojects_confirmation: 'Its subproject(s): %{value} will also be deleted.'
+      title: Do you really want to delete the project %{name}?
   project_module_activity: Atividade
   project_module_boards: Fórums
   project_module_calendar: Calendário
@@ -1415,13 +1422,14 @@ pt:
     create_successful: O repositório foi registado.
     delete_sucessful: O repositório foi eliminado.
     destroy:
-      title: Tem a certeza?
-      managed_text: If you continue, this will permanently delete the managed repository
-        of %{project_name}. This action cannot be reverted.
-      managed_path_note: 'The following directory will be erased: %{path}'
+      confirmation: If you continue, this will permanently delete the managed repository
+        of %{project_name}.
+      info: Deleting the repository is an irreversible action.
       linked_text: |
         You're about to remove the linked repository %{url} from the project %{project_name}.
         Note: This will NOT delete the contents of this repository, as it is not managed by OpenProject.
+      managed_path_note: 'The following directory will be erased: %{path}'
+      title: Do you really want to delete the repository %{name}?
     errors:
       build_failed: Unable to create the repository with the selected configuration.
         %{reason}
@@ -1677,13 +1685,9 @@ pt:
     Are you sure you want to continue?
   text_plugin_assets_writable: Plugin assets directory writable
   text_powered_by: Desenvolvido por %{link}
-  text_project_destroy_title: Quer mesmo eliminar este projeto?
-  text_project_destroy_confirmation: If you continue, the project %{identifier} and
-    all related data will be permanently destroyed. Please check the box below if
-    you want to continue.
   text_project_identifier_info: Only lower case letters (a-z), numbers, dashes and
     underscores are allowed, must start with a lower case letter.
-  text_reassign: Reatribuir a
+  text_reassign: 'Reassign to work package:'
   text_reassign_to: 'tarefas:'
   text_regexp_info: eg. ^[A-Z0-9]+$
   text_repository_usernames_mapping: |
@@ -1692,7 +1696,6 @@ pt:
   text_select_mail_notifications: Select actions for which email notifications should
     be sent.
   text_status_changed_by_changeset: Applied in changeset %{value}.
-  text_subprojects_destroy_warning: 'Its subproject(s): %{value} will be also deleted.'
   text_time_logged_by_changeset: Applied in changeset %{value}.
   text_tip_work_package_begin_day: work package beginning this day
   text_tip_work_package_begin_end_day: work package beginning and ending this day
@@ -1972,6 +1975,9 @@ pt:
   work_package:
     updated_automatically_by_child_changes: _Atualizado automaticamente através da
       alteração de valor na tarefa %{child}_
+    destroy:
+      info: Deleting the work package is an irreversible action.
+      title: Do you really want to delete the work package?
   nothing_to_preview: Nada para Visualizar
   api_v3:
     attributes:

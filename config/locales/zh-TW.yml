@@ -1084,7 +1084,6 @@ zh-TW:
   label_version_sharing_system: "有所有的版本"
   label_version_sharing_tree: "有專案樹"
   label_view_all_revisions: "檢視所有修訂"
-  label_view_all_users: View all users
   label_view_diff: "檢視差異"
   label_view_revisions: "檢視修訂"
   label_watched_work_packages: "監看的工作項目"
@@ -1339,6 +1338,14 @@ zh-TW:
   permission_view_timelines: "檢視時間軸"
   permission_view_wiki_edits: "檢視維基歷史"
   permission_view_wiki_pages: "檢視維基"
+  project:
+    destroy:
+      confirmation: If you continue, the project %{identifier} and all related data
+        will be permanently destroyed.
+      info: Deleting the project is an irreversible action.
+      project_verification: Enter the project's name %{name} to verify the deletion.
+      subprojects_confirmation: 'Its subproject(s): %{value} will also be deleted.'
+      title: Do you really want to delete the project %{name}?
   project_module_activity: "活動"
   project_module_boards: "論壇"
   project_module_calendar: "行事曆"
@@ -1387,13 +1394,14 @@ zh-TW:
     create_successful: The repository has been registered.
     delete_sucessful: The repository has been deleted.
     destroy:
-      title: Are you absolutely sure?
-      managed_text: If you continue, this will permanently delete the managed repository
-        of %{project_name}. This action cannot be reverted.
-      managed_path_note: 'The following directory will be erased: %{path}'
+      confirmation: If you continue, this will permanently delete the managed repository
+        of %{project_name}.
+      info: Deleting the repository is an irreversible action.
       linked_text: |
         You're about to remove the linked repository %{url} from the project %{project_name}.
         Note: This will NOT delete the contents of this repository, as it is not managed by OpenProject.
+      managed_path_note: 'The following directory will be erased: %{path}'
+      title: Do you really want to delete the repository %{name}?
     errors:
       build_failed: Unable to create the repository with the selected configuration.
         %{reason}
@@ -1645,13 +1653,9 @@ zh-TW:
     Are you sure you want to continue?
   text_plugin_assets_writable: Plugin assets directory writable
   text_powered_by: Powered by %{link}
-  text_project_destroy_title: Do you really want to delete this project?
-  text_project_destroy_confirmation: If you continue, the project %{identifier} and
-    all related data will be permanently destroyed. Please check the box below if
-    you want to continue.
   text_project_identifier_info: Only lower case letters (a-z), numbers, dashes and
     underscores are allowed, must start with a lower case letter.
-  text_reassign: "重新分配給"
+  text_reassign: 'Reassign to work package:'
   text_reassign_to: "工作項目:"
   text_regexp_info: "例如: ^[A-Z0-9]+$"
   text_repository_usernames_mapping: |
@@ -1660,7 +1664,6 @@ zh-TW:
   text_select_mail_notifications: Select actions for which email notifications should
     be sent.
   text_status_changed_by_changeset: Applied in changeset %{value}.
-  text_subprojects_destroy_warning: "子專案: %{value} 將會被刪除"
   text_time_logged_by_changeset: Applied in changeset %{value}.
   text_tip_work_package_begin_day: "這一天開始的工作項目"
   text_tip_work_package_begin_end_day: "這一天開始並結束的工作項目"
@@ -1938,6 +1941,9 @@ zh-TW:
   work_package:
     updated_automatically_by_child_changes: _Updated automatically by changing values
       within child work package %{child}_
+    destroy:
+      info: Deleting the work package is an irreversible action.
+      title: Do you really want to delete the work package?
   nothing_to_preview: "沒有內容可預覽"
   api_v3:
     attributes:

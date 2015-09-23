@@ -1105,7 +1105,6 @@ pt-BR:
   label_version_sharing_system: Com todos os projetos
   label_version_sharing_tree: Com a árvore de projetos
   label_view_all_revisions: Ver todas as revisões
-  label_view_all_users: Visualizar todos os usuários
   label_view_diff: Ver diferenças
   label_view_revisions: Ver revisões
   label_watched_work_packages: Pacotes de trabalho observados
@@ -1371,6 +1370,14 @@ pt-BR:
   permission_view_timelines: Ver cronogramas
   permission_view_wiki_edits: Ver histórico do wiki
   permission_view_wiki_pages: Ver wiki
+  project:
+    destroy:
+      confirmation: If you continue, the project %{identifier} and all related data
+        will be permanently destroyed.
+      info: Deleting the project is an irreversible action.
+      project_verification: Enter the project's name %{name} to verify the deletion.
+      subprojects_confirmation: 'Its subproject(s): %{value} will also be deleted.'
+      title: Do you really want to delete the project %{name}?
   project_module_activity: Atividade
   project_module_boards: Fóruns
   project_module_calendar: Calendário
@@ -1421,13 +1428,14 @@ pt-BR:
     create_successful: O repositório foi registrado.
     delete_sucessful: O repositório foi excluído.
     destroy:
-      title: Você tem certeza absoluta?
-      managed_text: Se você continuar, isto irá apagar permanentemente o repositório
-        gerenciado de %{project_name}. Esta ação não poderá ser revertida.
-      managed_path_note: 'Será apagado o seguinte diretório: %{path}'
+      confirmation: If you continue, this will permanently delete the managed repository
+        of %{project_name}.
+      info: Deleting the repository is an irreversible action.
       linked_text: 'Você está prestes a remover o repositório vinculado %{url} do
         projeto %{project_name}. Nota: Como o repositório não é gerenciaido pelo OpenProject,
         isto não excluirá o conteúdo deste repositório.'
+      managed_path_note: 'Será apagado o seguinte diretório: %{path}'
+      title: Do you really want to delete the repository %{name}?
     errors:
       build_failed: Não é possível criar o repositório com a configuração selecionada.
         %{reason}
@@ -1692,13 +1700,9 @@ pt-BR:
     Tem certeza que deseja continuar?
   text_plugin_assets_writable: Diretório de plugins ativos é gravável
   text_powered_by: Desenvolvido por %{link}
-  text_project_destroy_title: Você quer mesmo excluir este projeto?
-  text_project_destroy_confirmation: Se você continuar, o projeto %{identifier} e
-    todos os dados relacionadas serão permanentemente destruídos. Por favor, marque
-    a caixa abaixo se você deseja continuar.
   text_project_identifier_info: Apenas letras minúsculas (a-z), números, hífens e
     sublinhados são permitidos, deve-se começar com uma letra minúscula.
-  text_reassign: Reatribuir a
+  text_reassign: 'Reassign to work package:'
   text_reassign_to: 'pacote de trabalho:'
   text_regexp_info: ex. ^[A-Z0-9]+$
   text_repository_usernames_mapping: Selecionar ou atualizar o usuário do OpenProject
@@ -1708,8 +1712,6 @@ pt-BR:
   text_select_mail_notifications: Selecione as ações para as quais uma notificação
     por e-mail deve ser enviada.
   text_status_changed_by_changeset: Aplicado no conjunto de alterações %{value}.
-  text_subprojects_destroy_warning: 'Seu(s) subprojeto(s): %{value} também será(ão)
-    excluído(s).'
   text_time_logged_by_changeset: Aplicado no conjunto de alterações %{value}.
   text_tip_work_package_begin_day: pacote de trabalho iniciando neste dia
   text_tip_work_package_begin_end_day: pacote de trabalho inicia e termina neste dia
@@ -1993,6 +1995,9 @@ pt-BR:
   work_package:
     updated_automatically_by_child_changes: _Atualizado automaticamente por alterações
       de valores dentro do pacote de trabalho filho %{child}_
+    destroy:
+      info: Deleting the work package is an irreversible action.
+      title: Do you really want to delete the work package?
   nothing_to_preview: Nada para Visualizar
   api_v3:
     attributes:

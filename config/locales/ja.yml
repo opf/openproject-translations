@@ -1067,7 +1067,6 @@ ja:
   label_version_sharing_system: "全プロジェクト"
   label_version_sharing_tree: "プロジェクトツリー単位"
   label_view_all_revisions: "全てのリビジョンを表示"
-  label_view_all_users: View all users
   label_view_diff: "差分を表示"
   label_view_revisions: "リビジョンを表示"
   label_watched_work_packages: "ウォッチしている作業項目"
@@ -1304,6 +1303,14 @@ ja:
   permission_view_timelines: "タイムラインの閲覧"
   permission_view_wiki_edits: Wiki履歴の閲覧
   permission_view_wiki_pages: Wikiの閲覧
+  project:
+    destroy:
+      confirmation: If you continue, the project %{identifier} and all related data
+        will be permanently destroyed.
+      info: Deleting the project is an irreversible action.
+      project_verification: Enter the project's name %{name} to verify the deletion.
+      subprojects_confirmation: 'Its subproject(s): %{value} will also be deleted.'
+      title: Do you really want to delete the project %{name}?
   project_module_activity: "活動"
   project_module_boards: "フォーラム"
   project_module_calendar: "カレンダー"
@@ -1352,13 +1359,14 @@ ja:
     create_successful: The repository has been registered.
     delete_sucessful: The repository has been deleted.
     destroy:
-      title: Are you absolutely sure?
-      managed_text: If you continue, this will permanently delete the managed repository
-        of %{project_name}. This action cannot be reverted.
-      managed_path_note: 'The following directory will be erased: %{path}'
+      confirmation: If you continue, this will permanently delete the managed repository
+        of %{project_name}.
+      info: Deleting the repository is an irreversible action.
       linked_text: |
         You're about to remove the linked repository %{url} from the project %{project_name}.
         Note: This will NOT delete the contents of this repository, as it is not managed by OpenProject.
+      managed_path_note: 'The following directory will be erased: %{path}'
+      title: Do you really want to delete the repository %{name}?
     errors:
       build_failed: Unable to create the repository with the selected configuration.
         %{reason}
@@ -1597,12 +1605,8 @@ ja:
     本当に続けますか？
   text_plugin_assets_writable: "プラグインの「assets」ディレクトリが書き込み可能"
   text_powered_by: Powered by %{link}
-  text_project_destroy_title: Do you really want to delete this project?
-  text_project_destroy_confirmation: If you continue, the project %{identifier} and
-    all related data will be permanently destroyed. Please check the box below if
-    you want to continue.
   text_project_identifier_info: "アルファベット小文字(a-z)・数字・ハイフン・アンダースコアが使えます。アルファベット小文字で始まる必要があります。"
-  text_reassign: "記録された作業時間をこの作業項目に再割り当てする："
+  text_reassign: 'Reassign to work package:'
   text_reassign_to: "作業項目："
   text_regexp_info: "例) ^[A-Z0-9]+$"
   text_repository_usernames_mapping: |
@@ -1610,7 +1614,6 @@ ja:
     ログ上のユーザー名またはメールアドレスがOpenProjectのユーザーと一致する場合は自動的に関連づけられます。
   text_select_mail_notifications: "電子メール通知の送信対象とする操作を選択してください。"
   text_status_changed_by_changeset: "変更履歴%{value}で適用されました。"
-  text_subprojects_destroy_warning: "子プロジェクト: %{value}も削除されます。"
   text_time_logged_by_changeset: "変更履歴%{value}で適用されました。"
   text_tip_work_package_begin_day: "この日に開始する作業"
   text_tip_work_package_begin_end_day: "この日に開始・終了する作業"
@@ -1860,6 +1863,9 @@ ja:
   query_menu_item_for: クエリ"%{title}"のメニュー項目
   work_package:
     updated_automatically_by_child_changes: _子作業項目%{child}の変更による自動更新されました_
+    destroy:
+      info: Deleting the work package is an irreversible action.
+      title: Do you really want to delete the work package?
   nothing_to_preview: "プレビューできるものは何もありません。"
   api_v3:
     attributes:

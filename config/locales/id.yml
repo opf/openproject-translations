@@ -1093,7 +1093,6 @@ id:
   label_version_sharing_system: Dengan semua Project
   label_version_sharing_tree: Dengan Project tree
   label_view_all_revisions: Tampilkan semua revisi
-  label_view_all_users: View all users
   label_view_diff: Lihat perbedaan
   label_view_revisions: Lihat revisi
   label_watched_work_packages: Paket-Penugasan yang telah diakses
@@ -1349,6 +1348,14 @@ id:
   permission_view_timelines: Lihat Timeline
   permission_view_wiki_edits: Lihat Wiki histori
   permission_view_wiki_pages: Lihat Wiki
+  project:
+    destroy:
+      confirmation: If you continue, the project %{identifier} and all related data
+        will be permanently destroyed.
+      info: Deleting the project is an irreversible action.
+      project_verification: Enter the project's name %{name} to verify the deletion.
+      subprojects_confirmation: 'Its subproject(s): %{value} will also be deleted.'
+      title: Do you really want to delete the project %{name}?
   project_module_activity: Activity
   project_module_boards: Forum
   project_module_calendar: Kalender
@@ -1396,12 +1403,13 @@ id:
     create_successful: Registrasi repository berhasil.
     delete_sucessful: Repository dihapus.
     destroy:
-      title: Apakah Anda benar-benar yakin?
-      managed_text: Jika dilanjutkan, repository akan dihapus permanen dari %{project_name}.
-        Keputusan ini tidak bisa dibatalkan.
-      managed_path_note: 'Berikut direktory yang akan dihapus: %{path}'
+      confirmation: If you continue, this will permanently delete the managed repository
+        of %{project_name}.
+      info: Deleting the repository is an irreversible action.
       linked_text: Repository %{url} akan dihapus dari %{project_name} namun isi dari
         repository tidak diubah oleh proses ini.
+      managed_path_note: 'Berikut direktory yang akan dihapus: %{path}'
+      title: Do you really want to delete the repository %{name}?
     errors:
       build_failed: Pembuatan repository gagal. %{reason}
       empty_repository: Pada repository yang ditemukan belum terdapat revisi sama
@@ -1652,12 +1660,9 @@ id:
     melanjutkan?
   text_plugin_assets_writable: Plugin aset direktori, bisa ditulisi
   text_powered_by: Didukung oleh %{link}
-  text_project_destroy_title: Yakin menghapus proyek ini?
-  text_project_destroy_confirmation: Bila dilanjutkan, proyek %{identifier} dan semua
-    data yang berelasi secara permanen akan dihapus. Beri tanda centang untuk melanjutkan.
   text_project_identifier_info: Hanya huruf kecil (a-z), angka, garis dan garis bawah
     yang diperbolehkan, harus diawali dengan huruf kecil.
-  text_reassign: Reassign ke
+  text_reassign: 'Reassign to work package:'
   text_reassign_to: 'Paket-Penugasan :'
   text_regexp_info: spt. ^[A-Z0-9]+$
   text_repository_usernames_mapping: Pilih atau update user untuk dipetakan ke setiap
@@ -1666,7 +1671,6 @@ id:
   text_select_mail_notifications: Select actions for which email notifications should
     be sent.
   text_status_changed_by_changeset: Applied in changeset %{value}.
-  text_subprojects_destroy_warning: 'Sub-Project: %{value} juga akan terhapus.'
   text_time_logged_by_changeset: Applied in changeset %{value}.
   text_tip_work_package_begin_day: Paket-Penugasan dimulai hari ini
   text_tip_work_package_begin_end_day: Paket-Penugasan dimulai dan diakhiri hari ini
@@ -1942,6 +1946,9 @@ id:
   work_package:
     updated_automatically_by_child_changes: _Update otomatis dengan merubah nilai
       dari turunan Paket-Penugasan %{child}_
+    destroy:
+      info: Deleting the work package is an irreversible action.
+      title: Do you really want to delete the work package?
   nothing_to_preview: Tidak ada pre-view
   api_v3:
     attributes:

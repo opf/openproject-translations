@@ -1123,7 +1123,6 @@ ru:
   label_version_sharing_system: "Со всеми проектами"
   label_version_sharing_tree: "С деревом проектов"
   label_view_all_revisions: "Посмотреть все версии"
-  label_view_all_users: "Просмотреть всех пользователей"
   label_view_diff: "Посмотреть различия"
   label_view_revisions: "Просмотр версий"
   label_watched_work_packages: "Наблюдаемые пакеты работ"
@@ -1396,6 +1395,14 @@ ru:
   permission_view_timelines: "Просмотр графиков"
   permission_view_wiki_edits: "Просмотр истории wiki"
   permission_view_wiki_pages: "Просмотр wiki"
+  project:
+    destroy:
+      confirmation: If you continue, the project %{identifier} and all related data
+        will be permanently destroyed.
+      info: Deleting the project is an irreversible action.
+      project_verification: Enter the project's name %{name} to verify the deletion.
+      subprojects_confirmation: 'Its subproject(s): %{value} will also be deleted.'
+      title: Do you really want to delete the project %{name}?
   project_module_activity: "Деятельность"
   project_module_boards: "Форумы"
   project_module_calendar: "Календарь"
@@ -1411,7 +1418,7 @@ ru:
     subproject_id: "Подпроект"
   repositories:
     at_identifier: "в %{identifier}"
-    atom_revision_feed: Atom revision feed
+    atom_revision_feed: Atom-канал
     autofetch_information: "Проверьте это, если хотите, чтобы репозитории обновлялись
       автоматически при обращении к странице модуля репозитория. Это включает в себя
       извлечение коммитов из репозитория и обновление необходимого дискового пространства."
@@ -1446,13 +1453,14 @@ ru:
     create_successful: "Репозиторий был зарегистрирован."
     delete_sucessful: "Репозиторий был удален."
     destroy:
-      title: "Вы абсолютно уверены?"
-      managed_text: "Если вы продолжите, управляемый репозиторий %{project_name} будет
-        немедленно и безвозвратно удален."
-      managed_path_note: "Следующий каталог будет удален: %{path}"
+      confirmation: If you continue, this will permanently delete the managed repository
+        of %{project_name}.
+      info: Deleting the repository is an irreversible action.
       linked_text: "Вы собираетесь удалить связанный репозиторий %{url} из проекта
         %{project_name}. \nПримечание: Этим вы не удалите содержимое этого репозитория,
         так как оно не управляется OpenProject.\n"
+      managed_path_note: "Следующий каталог будет удален: %{path}"
+      title: Do you really want to delete the repository %{name}?
     errors:
       build_failed: "Не удается создать репозиторий с выбранной конфигурацией. %{reason}"
       empty_repository: "Репозиторий существует, но является пустым и пока не содержит
@@ -1711,13 +1719,9 @@ ru:
     Вы уверены?"
   text_plugin_assets_writable: "Папка активов дополнения(plugin) доступна для записи"
   text_powered_by: "С использованием %{link}"
-  text_project_destroy_title: "Вы действительно хотите удалить этот проект?"
-  text_project_destroy_confirmation: |
-    Если вы продолжите, проект %{identifier} и все связанные с ним данные будут немедленно уничтожены.
-    Пожалуйста, установите флажок ниже, если вы хотите продолжить.
   text_project_identifier_info: "Разрешены только строчные буквы (a-z), цифры, тире
     и знаки подчеркивания, начинать с буквы нижнего регистра."
-  text_reassign: "Переназначить на"
+  text_reassign: 'Reassign to work package:'
   text_reassign_to: "Пакет работ:"
   text_regexp_info: "например:  ^[A-Z0-9]+$"
   text_repository_usernames_mapping: "Выберете или обновите пользователя OpenProject
@@ -1727,7 +1731,6 @@ ru:
   text_select_mail_notifications: "Выберите действия, для которых следует направлять
     уведомления по электронной почте."
   text_status_changed_by_changeset: "Применены в наборе изменений %{value}."
-  text_subprojects_destroy_warning: "Его подпроекты: %{value} также будут удалены."
   text_time_logged_by_changeset: "Применены в наборе изменений %{value}."
   text_tip_work_package_begin_day: "пакет работ начинающийся в этот день"
   text_tip_work_package_begin_end_day: "пакет работ начинающийся и заканчивающийся
@@ -2013,6 +2016,9 @@ ru:
   work_package:
     updated_automatically_by_child_changes: _Обновлено автоматически в связи с изменением
       значения в пакете работ потомка %{child}_
+    destroy:
+      info: Deleting the work package is an irreversible action.
+      title: Do you really want to delete the work package?
   nothing_to_preview: "Нет ничего для предосмотра"
   api_v3:
     attributes:

@@ -1100,7 +1100,6 @@ sv-SE:
   label_version_sharing_system: Med alla projekt
   label_version_sharing_tree: Med projektträd
   label_view_all_revisions: Visa alla revisioner
-  label_view_all_users: View all users
   label_view_diff: Visa skillnader
   label_view_revisions: Visa revisioner
   label_watched_work_packages: Bevakade arbetspaket
@@ -1362,6 +1361,14 @@ sv-SE:
   permission_view_timelines: Visa tidslinjer
   permission_view_wiki_edits: Visa historik över wiki
   permission_view_wiki_pages: Visa wiki
+  project:
+    destroy:
+      confirmation: If you continue, the project %{identifier} and all related data
+        will be permanently destroyed.
+      info: Deleting the project is an irreversible action.
+      project_verification: Enter the project's name %{name} to verify the deletion.
+      subprojects_confirmation: 'Its subproject(s): %{value} will also be deleted.'
+      title: Do you really want to delete the project %{name}?
   project_module_activity: Aktivitet
   project_module_boards: Forum
   project_module_calendar: Kalender
@@ -1410,13 +1417,14 @@ sv-SE:
     create_successful: Versionsarkivet har registrerats.
     delete_sucessful: Versionsarkivet har tagits bort.
     destroy:
-      title: "Är du helt säker?"
-      managed_text: Om du fortsätter kommer versionsarkivet tillhörande %{project_name}
-        permanent tas bort. Denna åtgärd kan inte ångras.
-      managed_path_note: 'Följande katalog kommer raderas: %{path}'
+      confirmation: If you continue, this will permanently delete the managed repository
+        of %{project_name}.
+      info: Deleting the repository is an irreversible action.
       linked_text: 'Du håller på att ta bort det länkade versionsarkivet %{url} från
         projektet %{project_name}. Observera: Detta raderar inte innehållet i detta
         versionsarkiv, eftersom detta inte hanteras av OpenProject.'
+      managed_path_note: 'Följande katalog kommer raderas: %{path}'
+      title: Do you really want to delete the repository %{name}?
     errors:
       build_failed: Det gick inte att skapa versionsarkivet med den valda konfigurationen.
         %{reason}
@@ -1671,12 +1679,9 @@ sv-SE:
     projekt. Är du säker på att du vill fortsätta?
   text_plugin_assets_writable: Katalogen "Plugin assets" skrivbar
   text_powered_by: Drivs av %{link}
-  text_project_destroy_title: Vill du verkligen ta bort detta projekt?
-  text_project_destroy_confirmation: Om du fortsätter förstörs projektet %{identifier}
-    och alla relaterade data permanent. Markera rutan nedan om du vill fortsätta.
   text_project_identifier_info: Bara gemena bokstäver (a-z), siffror, bindestreck
     och understreck tillåts och måste dessutom börja med en gemen bokstav.
-  text_reassign: Tilldela till
+  text_reassign: 'Reassign to work package:'
   text_reassign_to: 'arbetspaket:'
   text_regexp_info: t.ex. ^[A-Z0-9]+$
   text_repository_usernames_mapping: Välj eller uppdatera OpenProject användaren koppling
@@ -1684,7 +1689,6 @@ sv-SE:
     eller E-post i OpenProject och versionsarkivet kopplas automatiskt.
   text_select_mail_notifications: Välj åtgärder för vilka E-postaviseringar ska skickas.
   text_status_changed_by_changeset: Tillämpad i uppdatering %{value}.
-  text_subprojects_destroy_warning: 'Dess delprojekt: %{value} tas också bort.'
   text_time_logged_by_changeset: Tillämpad i uppdatering %{value}.
   text_tip_work_package_begin_day: arbetspaket som börjar denna dag
   text_tip_work_package_begin_end_day: arbetspaket som börjar och slutar denna dag
@@ -1963,6 +1967,9 @@ sv-SE:
   work_package:
     updated_automatically_by_child_changes: _Uppdateras automatiskt genom att ändra
       värdena för underarbetspaket %{child} _
+    destroy:
+      info: Deleting the work package is an irreversible action.
+      title: Do you really want to delete the work package?
   nothing_to_preview: Ingenting att förhandsgranska
   api_v3:
     attributes:

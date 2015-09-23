@@ -1100,7 +1100,6 @@ et:
   label_version_sharing_system: Kõigi projektidega
   label_version_sharing_tree: Projekti puuga
   label_view_all_revisions: Kogu ajalugu
-  label_view_all_users: View all users
   label_view_diff: Vaata erinevusi
   label_view_revisions: Haru ajalugu
   label_watched_work_packages: Jälgitavad teemad
@@ -1357,6 +1356,14 @@ et:
   permission_view_timelines: Kuvada ajakavu
   permission_view_wiki_edits: Kuva viki toimetuste ajalugu
   permission_view_wiki_pages: Kuva vikit
+  project:
+    destroy:
+      confirmation: If you continue, the project %{identifier} and all related data
+        will be permanently destroyed.
+      info: Deleting the project is an irreversible action.
+      project_verification: Enter the project's name %{name} to verify the deletion.
+      subprojects_confirmation: 'Its subproject(s): %{value} will also be deleted.'
+      title: Do you really want to delete the project %{name}?
   project_module_activity: Tegevus
   project_module_boards: Foorumid
   project_module_calendar: Kalender
@@ -1405,13 +1412,14 @@ et:
     create_successful: The repository has been registered.
     delete_sucessful: The repository has been deleted.
     destroy:
-      title: Are you absolutely sure?
-      managed_text: If you continue, this will permanently delete the managed repository
-        of %{project_name}. This action cannot be reverted.
-      managed_path_note: 'The following directory will be erased: %{path}'
+      confirmation: If you continue, this will permanently delete the managed repository
+        of %{project_name}.
+      info: Deleting the repository is an irreversible action.
       linked_text: |
         You're about to remove the linked repository %{url} from the project %{project_name}.
         Note: This will NOT delete the contents of this repository, as it is not managed by OpenProject.
+      managed_path_note: 'The following directory will be erased: %{path}'
+      title: Do you really want to delete the repository %{name}?
     errors:
       build_failed: Unable to create the repository with the selected configuration.
         %{reason}
@@ -1671,20 +1679,15 @@ et:
     Oled sa jätkamises kindel?
   text_plugin_assets_writable: Lisamoodulite abifailide kataloog on kirjutatav
   text_powered_by: Jooksutab %{link}
-  text_project_destroy_title: Do you really want to delete this project?
-  text_project_destroy_confirmation: If you continue, the project %{identifier} and
-    all related data will be permanently destroyed. Please check the box below if
-    you want to continue.
   text_project_identifier_info: Lubatud on ainult väikesed tähed (a-z), numbrid ja
     kriipsud. Peab algama väikse tähega.
-  text_reassign: Määra töö ümber
+  text_reassign: 'Reassign to work package:'
   text_reassign_to: 'teema:'
   text_regexp_info: ehk teisisõnu ^[A-Z0-9]+$
   text_repository_usernames_mapping: Seosta OpenProject kasutaja hoidlasse sissekannete
     tegijaga. Sama nime või e-postiga kasutajad seostatakse automaatselt.
   text_select_mail_notifications: Tegevused, millest peaks e-kirjaga teavitama.
   text_status_changed_by_changeset: Kehtestati toimikus %{value}.
-  text_subprojects_destroy_warning: Alamprojekt(id) — %{value} — kustutatakse samuti.
   text_time_logged_by_changeset: Kehtestati toimikus %{value}.
   text_tip_work_package_begin_day: teema avamise päev
   text_tip_work_package_begin_end_day: teema avati ja sulgeti samal päeval
@@ -1957,6 +1960,9 @@ et:
   work_package:
     updated_automatically_by_child_changes: _Uuendati automaatselt, kuna muudeti alamteemat
       %{child}_
+    destroy:
+      info: Deleting the work package is an irreversible action.
+      title: Do you really want to delete the work package?
   nothing_to_preview: Eelvaateks pole midagi näidata
   api_v3:
     attributes:
