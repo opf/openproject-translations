@@ -7,20 +7,20 @@ da:
     deleted: Kontoen er nu slettet
     deletion_info:
       data_consequences:
-        other: Of the data the user created (e.g. email, preferences, work packages,
-          wiki entries) as much as possible will be deleted. Note however, that data
-          like work packages and wiki entries can not be deleted without impeding
-          the work of the other users. Such data is hence reassigned to an account
-          called "Deleted user". As the data of every deleted account is reassigned
-          to this account it will not be possible to distinguish the data the user
-          created from the data of another deleted account.
-        self: Of the data you created (e.g. email, preferences, work packages, wiki
-          entries) as much as possible will be deleted. Note however, that data like
-          work packages and wiki entries can not be deleted without impeding the work
-          of the other users. Such data is hence reassigned to an account called "Deleted
-          user". As the data of every deleted account is reassigned to this account
-          it will not be possible to distinguish the data you created from the data
-          of another deleted account.
+        other: I videst muligt omfang bliver brugergenereret data (f.eks e-mails,
+          præferencer, arbejdspakker, wiki-bidrag m.m.) slettet. Bemærk dog, at data,
+          såsom arbejdspakker og bidrag til wiki, ikke kan slettes uden at påvirke
+          andre brugeres arbejde. Sådanne data bliver som følge heraf hensat på en
+          særlig konto kaldet "Slettet bruger". Da data fra alle slettede brugerkonti
+          overflyttes til denne konto, vil det ikke være muligt at skelne mellem data
+          oprettet af den ene eller den anden, slettede bruger(-konto).
+        self: I videst muligt omfang bliver de af dig genererede data (f.eks e-mails,
+          præferencer, arbejdspakker, wiki-bidrag m.m.) slettet. Bemærk dog, at data,
+          såsom arbejdspakker og bidrag til wiki, ikke kan slettes uden at påvirke
+          andre brugeres arbejde. Sådanne data bliver som følge heraf hensat på en
+          særlig konto kaldet "Slettet bruger". Da data fra alle slettede brugerkonti
+          overflyttes til denne konto, vil det ikke være muligt at skelne mellem data
+          oprettet af dig eller en anden, slettede bruger(-konto.
       heading: Slet konto %{name}
       info:
         other: Sletning af kontoen er en uigenkaldelig handling.
@@ -39,9 +39,10 @@ da:
     error_self_registration_disabled: Brugerregistrering er deaktiveret på dette system.
       Vær venlig at bede en administrator oprette en konto til dig.
     login_with_auth_provider: eller log på med din eksisterende konto
-    signup_with_auth_provider: or sign up using
-    auth_source_login: Please login as <em>%{login}</em> to activate your account.
-    omniauth_login: Please login to activate your account.
+    signup_with_auth_provider: eller tilmeld dig med
+    auth_source_login: Log venligst ind som <em>%{login}</em> for at aktivere din
+      konto.
+    omniauth_login: Log venligst ind for at aktivere din konto.
   actionview_instancetag_blank_option: Vælg venligst
   activerecord:
     attributes:
@@ -146,7 +147,7 @@ da:
         hexcode: Hex kode
       project_association:
         description: "Årsag"
-        project_b: Dependent project
+        project_b: Afhængigt projekt
       project_type:
         allows_association: Tillader sammenknytning
         name: Navn
@@ -176,66 +177,63 @@ da:
         watcher: Tilsynsførende
     errors:
       messages:
-        accepted: must be accepted.
-        blank: can't be blank.
-        cant_link_a_work_package_with_a_descendant: A work package cannot be linked
-          to one of its subtasks.
-        circular_dependency: This relation would create a circular dependency.
-        confirmation: doesn't match %{attribute}.
-        empty: can't be empty.
-        equal_to: must be equal to %{count}.
-        even: must be even.
-        exclusion: is reserved.
-        file_too_large: is too large (maximum size is %{count} Bytes).
-        greater_than: must be greater than %{count}.
-        greater_than_or_equal_to: must be greater than or equal to %{count}.
-        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
-          length.
-        greater_than_start_date: must be greater than start date.
-        inclusion: is not set to one of the allowed values.
-        invalid: is invalid.
-        less_than: must be less than %{count}.
-        less_than_or_equal_to: must be less than or equal to %{count}.
-        not_a_date: is not a date.
-        not_a_number: is not a number.
-        not_an_integer: is not an integer.
-        not_same_project: doesn't belong to the same project.
-        odd: must be odd.
-        taken: has already been taken.
-        too_long: is too long (maximum is %{count} characters).
-        too_short: is too short (minimum is %{count} characters).
-        wrong_length: is the wrong length (should be %{count} characters).
-        after: must be after %{date}.
-        after_or_equal_to: must be after or equal to %{date}.
-        before: must be before %{date}.
-        before_or_equal_to: must be before or equal to %{date}.
-        could_not_be_copied: could not be (fully) copied.
+        accepted: skal accepteres.
+        blank: må ikke være tomt.
+        cant_link_a_work_package_with_a_descendant: En arbejdspakke kan ikke knyttes
+          til en af dens underopgaver.
+        circular_dependency: Denne relation vil skabe en cirkulær afhængighed.
+        confirmation: matcher ikke %{attribute}.
+        empty: må ikke være tomt.
+        even: skal være lige.
+        exclusion: er reserveret.
+        file_too_large: er for stor (maks. størrelse er %{count} Bytes).
+        greater_than: skal være større end %{count}.
+        greater_than_or_equal_to: skal være større end eller lig med %{count}.
+        smaller_than_or_equal_to_max_length: skal være mindre end eller lig den maksimale
+          længde.
+        greater_than_start_date: skal være senere end startdatoen.
+        inclusion: er ikke sat til en tilladt værdi.
+        invalid: er ugyldig.
+        less_than_or_equal_to: skal være mindre end eller lig med %{count}.
+        not_a_date: er ikke en dato.
+        not_a_number: er ikke et tal.
+        not_an_integer: er ikke et heltal.
+        not_same_project: hører ikke til samme projekt.
+        odd: skal være ulige.
+        taken: er allerede taget.
+        too_long: 'er for lang (maks.: %{count} tegn).'
+        too_short: 'er for kort (min.: %{count} tegn).'
+        wrong_length: har forkert længde (burde være %{count} tegn).
+        after: skal være senere end %{date}.
+        after_or_equal_to: skal være tidligst %{date}.
+        before: skal være før %{date}.
+        before_or_equal_to: skal være senest %{date}.
+        could_not_be_copied: kunne ikke (fuldt ud) kopieres.
       models:
         project_association:
-          identical_projects: Dependency cannot be created between one project and
-            itself.
-          project_association_not_allowed: does not allow associations.
+          identical_projects: Afhængighed kan ikke oprettes mellem ét projekt og sig
+            selv.
+          project_association_not_allowed: tillader ikke forbindelser.
         repository:
-          not_available: SCM vendor is not available
-          not_whitelisted: is not allowed by the configuration.
-          no_directory: is not a directory.
+          not_available: SCM-leverandør utilgængelig
+          not_whitelisted: tillades ikke af opsætningen.
+          no_directory: er ikke et katalog.
         work_package:
           is_not_a_valid_target_for_time_entries: 'Arbejdspakke # %{id} er ikke et
             gyldig mål for tildeling af tider.'
           attributes:
             due_date:
-              not_start_date: is not on start date, although this is required for
-                milestones.
+              not_start_date: er ikke på startdato, selvom dette er påkrævet for milepæle.
             parent_id:
-              cannot_be_milestone: cannot be a milestone.
-              cannot_be_in_another_project: cannot be in another project.
-              not_a_valid_parent: is invalid.
-              does_not_exist: does not exist.
+              cannot_be_milestone: kan ikke være en milepæl.
+              cannot_be_in_another_project: kan ikke være i et andet projekt.
+              not_a_valid_parent: er ugyldig.
+              does_not_exist: findes ikke.
             status_id:
-              status_transition_invalid: is invalid because no valid transition exists
-                from old to new status for the current user's roles.
+              status_transition_invalid: er ugyldig, da der mangler gyldig overførsel
+                fra gammel til ny status for den aktuelle brugers roller.
             priority_id:
-              only_active_priorities_allowed: needs to be active.
+              only_active_priorities_allowed: skal være aktiv.
             category:
               only_same_project_categories_allowed: Arbejdspakkens kategori skal være
                 tilstede i samme projekt som pakken.
@@ -735,7 +733,7 @@ da:
   label_category: Kategori
   label_wiki_menu_item: Wiki-menupunkt
   label_select_main_menu_item: Vælg nyt punkt i hovedmenu
-  label_required_disk_storage: Required disk storage
+  label_required_disk_storage: Påkrævet disklagerplads
   label_change_plural: "Ændringer"
   label_change_properties: Skift egenskaber
   label_change_status: Skift status
@@ -743,9 +741,9 @@ da:
   label_changes_details: Detaljer for alle ændringer
   label_changeset_plural: Pakker af ændringer
   label_checked: valgt
-  label_check_uncheck_all_in_column: Check/Uncheck all in column
-  label_check_uncheck_all_in_row: Check/Uncheck all in row
-  label_child_element: Child element
+  label_check_uncheck_all_in_column: Markér/Afmarkér alle i kolonnen
+  label_check_uncheck_all_in_row: Markér/Afmarkér alle i rækken
+  label_child_element: Underelement
   label_chronological_order: I kronologisk orden
   label_close_versions: Luk afsluttede versioner
   label_closed_work_packages: lukket
@@ -761,7 +759,7 @@ da:
   label_contains: indeholder
   label_content: Indhold
   label_copied: kopieret
-  label_copy_to_clipboard: Copy to clipboard
+  label_copy_to_clipboard: Kopiér til Udklipsholder
   label_copy_same_as_target: Samme som mål
   label_copy_source: Kilde
   label_copy_target: Mål
@@ -784,7 +782,7 @@ da:
   label_deleted_custom_field: "(slettet selvvalgt felt)"
   label_descending: Faldende
   label_details: Detaljer
-  label_development_roadmap: Development roadmap
+  label_development_roadmap: Udviklingskøreplan
   label_diff: difference
   label_diff_inline: på linje
   label_diff_side_by_side: side ved side
@@ -799,10 +797,10 @@ da:
   label_duplicates: dubletter
   label_edit: Rediger
   label_enable_multi_select: Vælg multivalg
-  label_enabled_project_custom_fields: Enabled custom fields
-  label_enabled_project_types: Enabled types
-  label_enabled_project_modules: Enabled modules
-  label_enabled_project_activities: Enabled time tracking activities
+  label_enabled_project_custom_fields: Aktiverede brugerdefinerede felter
+  label_enabled_project_types: Aktiverede typer
+  label_enabled_project_modules: Aktiverede moduler
+  label_enabled_project_activities: Aktiverede aktivitetstidsregistrering
   label_end_to_end: fra slutning til slutning
   label_end_to_start: fra slutning til begyndelse
   label_enumeration_new: Ny værdi til opremsning
@@ -846,7 +844,7 @@ da:
   label_information_plural: Information
   label_integer: Heltal
   label_internal: Intern
-  label_invite_user: Invite user
+  label_invite_user: Invitér bruger
   label_work_package_added: Arbejdspakke tilføjet
   label_work_package_category_new: Ny kategori
   label_work_package_category_plural: Kategorier for arbejdspakker
@@ -872,7 +870,7 @@ da:
   label_journal_diff: Sammenligning af beskrivelser
   label_jump_to_a_project: Gå til et projekt...
   label_language_based: Baseret på brugerens sprog
-  label_last_activity: Last activity
+  label_last_activity: Seneste aktivitet
   label_last_changes: seneste %{count} ændringer
   label_last_login: Seneste login
   label_last_month: seneste måned
@@ -889,13 +887,13 @@ da:
   label_login: Log ind
   label_logout: Log ud
   label_main_menu: Sidemenu
-  label_manage_groups: Manage groups
-  label_managed_repositories_vendor: Managed %{vendor} repositories
+  label_manage_groups: Administrér grupper
+  label_managed_repositories_vendor: Administrerede %{vendor} repositorier
   label_max_size: Maksimal størrelse
   label_me: mig
   label_member_new: Nyt medlem
   label_member_plural: Medlemmer
-  label_memder_view_all: View all members
+  label_memder_view_all: Vis alle medlemmer
   label_menu_item_name: Navn på menupunkt
   label_message_last: Seneste meddelelse
   label_message_new: Ny meddelelse
@@ -934,7 +932,7 @@ da:
   label_next_week: Næste uge
   label_no_change_option: "(Ingen ændringer)"
   label_no_data: Ingen data at vise
-  label_nothing_display: Nothing to display
+  label_nothing_display: Intet at vise
   label_nobody: ingen
   label_none: ingen
   label_not_contains: indeholder ikke
@@ -967,20 +965,20 @@ da:
   label_preview: Forhåndsvisning
   label_previous: Foregående
   label_previous_week: Foregående uge
-  label_principal_invite_via_email: " or invite new users via email"
-  label_principal_search: Add existing users or groups
-  label_professional_support: Professional support
+  label_principal_invite_via_email: " eller invitér nye brugere via e-mail"
+  label_principal_search: Tilføj eksisterende brugere eller grupper
+  label_professional_support: Professionel support
   label_profile: Profil
   label_project_all: Alle projekter
-  label_project_count: Total number of projects
+  label_project_count: Samlet antal projekter
   label_project_copy_notifications: Adviser via e-mail under kopiering af projekt
   label_project_latest: Seneste projekter
   label_project_default_type: Tillad tom typebetegnelse
-  label_project_hierarchy: Project hierarchy
+  label_project_hierarchy: Projekthierarki
   label_project_new: Nyt projekt
   label_project_plural: Projekter
   label_project_settings: Projektindstillinger
-  label_projects_storage_information: "%{count} projects using %{storage} disk storage"
+  label_projects_storage_information: "%{count} projekter forbruger %{storage} disklagerplads"
   label_project_view_all: Se alle projekter
   label_public_projects: Offentlige projekter
   label_query_new: Ny forespørgsel
@@ -997,18 +995,18 @@ da:
   label_relates_to: Forbundet til
   label_relation_delete: Slet forbindelse
   label_relation_new: Ny forbindelse
-  label_release_notes: Release notes
+  label_release_notes: Udgivelsesnoter
   label_remove_columns: Fjern valgte kolonner
   label_renamed: omdøbt
   label_reply_plural: Svar
   label_report: Rapport
-  label_report_bug: Report a bug
+  label_report_bug: Rapportér en fejl
   label_report_plural: Rapporter
   label_reported_work_packages: Rapporterede arbejdspakker
   label_reporting: Rapporterer
   label_reporting_plural: Rapporter
   label_repository: Projektarkiv
-  label_repository_root: Repository root
+  label_repository_root: Repositorie topniveau
   label_repository_plural: Projektarkiver
   label_responsible_for_work_packages: Arbejdspakker jeg er ansvarlig for
   label_result_plural: Resultater
@@ -1024,7 +1022,7 @@ da:
   label_role_and_permissions: Roller og tilladelser
   label_role_new: Ny rolle
   label_role_plural: Roller
-  label_role_search: Assign roles to new members
+  label_role_search: Tildel roller til nye medlemmer
   label_scm: Versionskontrolsystem
   label_search: Søg
   label_search_titles_only: Søg kun i titler
@@ -1046,17 +1044,17 @@ da:
   label_status: Status
   label_status_updated: Status for arbejdspakke er opdateret
   label_stay_logged_in: Forbliv logget ind
-  label_storage_free_space: Remaining disk space
-  label_storage_used_space: Used disk space
-  label_storage_group: Storage filesystem %{identifier}
-  label_storage_for: Encompasses storage for
+  label_storage_free_space: Resterende disklagerplads
+  label_storage_used_space: Forbrugt disklagerplads
+  label_storage_group: Lagringsfilsystem %{identifier}
+  label_storage_for: Omfatter lagring af
   label_string: Tekst
   label_subproject_new: Nyt underprojekt
   label_subproject_plural: Underprojekter
   label_subtask_plural: Underopgaver
   label_summary: Opsummering
   label_system: System
-  label_system_storage: Storage information
+  label_system_storage: Lagringsoplysninger
   label_table_of_contents: Indholdsfortegnelse
   label_tag: Etiket
   label_text: Lang tekst
@@ -1120,7 +1118,7 @@ da:
   label_wiki_show_submenu_item: 'Vis som punkt i undermenu til '
   label_work_package: Arbejdspakke
   label_work_package_status: Status for arbejdspakke
-  label_work_package_types: Work package types
+  label_work_package_types: Arbejdspakketyper
   label_workflow: Arbejdsgang
   label_workflow_plural: Arbejdsprocesser
   label_workflow_summary: Opsummering
@@ -1155,7 +1153,7 @@ da:
   label_keyboard_shortcut_some_pages_only: 'Særlige genveje:'
   label_keyboard_shortcut_search_global: Global søgning
   label_keyboard_shortcut_search_project: Find et projekt
-  label_keyboard_shortcut_go_my_page: Go to my page
+  label_keyboard_shortcut_go_my_page: Gå til min side
   label_keyboard_shortcut_show_help: Vis hjælpetekst
   label_keyboard_shortcut_go_overview: Gå til projektoverblik
   label_keyboard_shortcut_go_work_package: Gå til projekt-arbejdspakker
@@ -1175,9 +1173,9 @@ da:
     lister)
   label_visible_elements: Synlige elementer
   auth_source:
-    using_abstract_auth_source: Can't use an abstract authentication source.
-    ldap_error: 'LDAP-Error: %{error_message}'
-    ldap_auth_failed: Could not authenticate at the LDAP-Server.
+    using_abstract_auth_source: Kan ikke anvende en abstrakt godkendelseskilde.
+    ldap_error: 'LDAP-fejl: %{error_message}'
+    ldap_auth_failed: Kunne ikke godkendes på LDAP-serveren.
   macro_execution_error: Fejl ved udførelse af makroen %{macro_name}
   macro_unavailable: Makro %{macro_name} kan ikke vises.
   mail_body_account_activation_request: 'En ny bruger ( %{value}) har registreret
@@ -1203,8 +1201,8 @@ da:
   noscript_heading: JavaScript deaktiveret
   noscript_learn_more: Få mere at vide
   notice_account_activated: Din konto er blevet aktiveret. Du kan nu logge ind.
-  notice_account_already_activated: The account has already been activated.
-  notice_account_invalid_token: Invalid activation token
+  notice_account_already_activated: Denne konto er allerede blevet aktiveret.
+  notice_account_invalid_token: Ugyldig aktiveringstegn
   notice_account_invalid_credentials: Ugyldig bruger eller adgangskode
   notice_account_invalid_credentials_or_blocked: Ugyldig bruger eller adgangskode,
     eller kontoen er blokeret på grund af flere mislykkede forsøg på at logge ind.
@@ -1226,7 +1224,7 @@ da:
   notice_account_wrong_password: Forkert adgangskode
   notice_account_registered_and_logged_in: Velkommen, din konto er aktiveret. Du er
     nu logget ind.
-  notice_activation_failed: The account could not be activated.
+  notice_activation_failed: Kontoen kunne ikke aktiveres.
   notice_api_access_key_reseted: Din API-adgangsnøgle blev nulstillet.
   notice_can_t_change_password: Denne konto benytter en ekstern kilde til godkendelse.
     Det er ikke muligt at ændre adgangskoden her.
@@ -1248,10 +1246,10 @@ da:
   notice_locking_conflict_additional_information: Opdatering(en) stammer fra %{users}.
   notice_locking_conflict_reload_page: Vær venlig at genindlæse siden, gennemgå ændringer
     og genindsend dine opdateringer.
-  notice_member_added: Added %{name} to the project.
-  notice_members_added: Added %{number} users to the the project.
-  notice_member_removed: Removed %{user} from project.
-  notice_member_deleted: "%{user} has been removed from the project and deleted."
+  notice_member_added: Tilføjede %{name} til projektet.
+  notice_members_added: Tilføjede %{number} brugere til projektet.
+  notice_member_removed: Fjernede %{user} fra projektet.
+  notice_member_deleted: "%{user} er blevet fjernet fra projektet og slettet."
   notice_no_principals_found: Ingen resultater fundet.
   notice_bad_request: Uanvendelig anmodning.
   notice_not_authorized: Du har ikke tilladelser til at gå til denne side.
@@ -1267,16 +1265,16 @@ da:
     Indsnævr søgningen ved at indtste navnet på det nye medlem (eller gruppe).
   notice_unable_delete_time_entry: Ude af stand til at slette tidsregistrering.
   notice_unable_delete_version: Ude af stand til at slette versionen.
-  notice_user_missing_authentication_method: User has yet to chose a password or another
-    way the sign in.
+  notice_user_missing_authentication_method: Brugeren mangler at vælge adgangskode,
+    eller anden log ind-metode.
   notice_automatic_set_of_standard_type: Fastsæt typen automatisk.
   notice_logged_out: Du er blevet logget ud.
-  notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
-    as there are still users using it.
+  notice_wont_delete_auth_source: Godkendelsestilstanden kan ikke slettes, så længe
+    den er stadig benyttes af brugere.
   error_types_in_use_by_work_packages: 'Disse typer refererer stadig til arbejdspakker:
     %{types}'
-  notice_project_cannot_update_custom_fields: You cannot update the project's available
-    custom fields.
+  notice_project_cannot_update_custom_fields: Du kan ikke opdatere projektets tilgængelige
+    tilpassede felter.
   number:
     format:
       delimiter: ''
@@ -1305,7 +1303,7 @@ da:
   permission_browse_repository: Gennemse projektarkivet
   permission_change_wiki_parent_page: Skift overordnet wiki-side
   permission_comment_news: Kommenter nyheder
-  permission_commit_access: Submit commits
+  permission_commit_access: Indsend bekræftelser
   permission_copy_projects: Kopiér projekter
   permission_delete_work_package_watchers: Slet tilsynsførende
   permission_delete_work_packages: Slet arbejdspakker
@@ -1328,7 +1326,7 @@ da:
   permission_edit_time_entries: Rediger tidsregistringer
   permission_edit_timelines: Rediger tidslinjer
   permission_edit_wiki_pages: Rediger wiki-sider
-  permission_export_work_packages: Export work packages
+  permission_export_work_packages: Eksportér arbejdspakker
   permission_export_wiki_pages: Eksporter wiki-sider
   permission_list_attachments: Oplist vedhæftninger
   permission_log_time: Registrer brugt tid
@@ -1364,8 +1362,8 @@ da:
   permission_view_wiki_pages: Vis wiki
   project:
     destroy:
-      confirmation: If you continue, the project %{identifier} and all related data
-        will be permanently destroyed.
+      confirmation: Hvis du fortsætter, vil projektet %{identifier} og alle relaterede
+        data blive permanent ødelagt.
       info: Deleting the project is an irreversible action.
       project_verification: Enter the project's name %{name} to verify the deletion.
       subprojects_confirmation: 'Its subproject(s): %{value} will also be deleted.'
@@ -1464,47 +1462,47 @@ da:
       path_encoding: Indkod sti for arkivering
     go_to_revision: Go to revision
     settings:
-      automatic_managed_repos_disabled: Disable automatic creation
-      automatic_managed_repos: Automatic creation of managed repositories
-      automatic_managed_repos_text: By setting a vendor here, newly created projects
-        will automatically receive a managed repository of this vendor.
-    scm_vendor: Source control management system
-    scm_type: Repository type
+      automatic_managed_repos_disabled: Deaktivér automatisk oprettelse
+      automatic_managed_repos: Automatisk oprettelse af administrerede repositorier
+      automatic_managed_repos_text: Ved at angive en leverandør her, vil nyoprettede
+        projekter automatisk få oprettet et administreret repositorie til denne leverandør.
+    scm_vendor: Kildekontrolsadministrationssystem
+    scm_type: Repositorietype
     scm_types:
-      local: Link existing local repository
-      existing: Link existing repository
-      managed: Create new repository in OpenProject
+      local: Sammenkæd eksisterende lokalrepositorie
+      existing: Sammenkæd eksisterende repositorie
+      managed: Opret nyt repositorie i OpenProject
     storage:
-      not_available: Disk storage consumption is not available for this repository.
+      not_available: Disklagerpladsforbrug er ikke tilgængelig for dette repositorie.
       update_timeout: |
-        Keep the last required disk space information for a repository for N minutes.
-        As counting the required disk space of a repository may be costly, increase this value to reduce performance impact.
+        Behold de seneste, nødvendige disklagerpladsoplysninger for et repositorie i N minutter.
+        Da opgørelsen af påkrævet disklagerplads for et repositorie kan være bekosteligt, forøg denne værdi for at reducere følgevirkninger på ydeevnen.
     subversion:
-      existing_title: Existing Subversion repository
-      existing_introduction: If you have an existing Subversion repository, you can
-        link it with OpenProject to access it from within the application.
+      existing_title: Eksisterende underversions-repositorie
+      existing_introduction: Hvis du har et eksisterende underversions-repositorie,
+        kan du sammenkæde dette med OpenProject for at få adgang til det indefra applikationen.
       instructions:
-        managed_url: This is the URL of the managed (local) Subversion repository.
+        managed_url: Dette er URL'en på det administrerede (lokale) underversions-repositorie.
         url: |
-          Enter the repository URL. This may either target a local repository (starting with %{local_proto} ), or a remote repository.
-          The following URL schemes are supported:
-      managed_title: Subversion repository integrated into OpenProject
-      managed_introduction: Let OpenProject create and integrate a local Subversion
-        repository automatically.
-      managed_url: Managed URL
-      password: Repository Password
-      username: Repository username
-    named_repository: "%{vendor_name} repository"
-    update_settings_successful: The settings have been sucessfully saved.
-    url: URL to repository
+          Angiv repositorie-URL'en. Dette kan enten målrette et lokalt repositorie (startende med %{local_proto}) eller et eksternt repositorie.
+          De følgende URL-skemaer understøttes:
+      managed_title: Underversions-repositorie integreret i OpenProject
+      managed_introduction: Lad OpenProject oprette og integrere et lokalt underversions-repositorie
+        automatisk.
+      managed_url: Administreret URL
+      password: Repositorie-adgangskode
+      username: Repositorie-brugernavn
+    named_repository: "%{vendor_name}-repositorie"
+    update_settings_successful: Indstillingerne er blevet gemt.
+    url: URL til repositorie
     warnings:
-      cannot_annotate: This file cannot be annotated.
+      cannot_annotate: Denne fil kan ikke kommenteres.
   search_input_placeholder: søg...
   setting_activity_days_default: Dage, der vises under projektaktivitet
   setting_app_subtitle: Appens undertitel
   setting_app_title: Appens titel
   setting_attachment_max_size: Maksimal størrelse for vedhæftning
-  setting_autofetch_changesets: Autofetch repository changes
+  setting_autofetch_changesets: Autohent repositorie-ændringer
   setting_autologin: Autologin
   setting_available_languages: Tilgængelige sprog
   setting_bcc_recipients: Anonymiserede modtagere (bcc)
@@ -1550,10 +1548,10 @@ da:
   setting_log_requesting_user: Log bruger-login, navn og mail-adresse ved hver forespørgsel
   setting_login_required: Godkendelse påkrævet
   setting_mail_from: Mailadresse for udsendelse
-  setting_mail_handler_api_enabled: Enable incoming email web service
-  setting_mail_handler_api_description: The email web handler enables OpenProject
-    to receive emails containing specific commands as an instrumentation mechanism
-    (e.g., to create and update work packages).
+  setting_mail_handler_api_enabled: Aktivér indgående e-mailwebtjeneste
+  setting_mail_handler_api_description: E-mail webhåndteringen muliggør, at OpenProject
+    kan modtage e-mails indeholdende specifikke kommandoer, som en mekanisme til instrumentering
+    (f.eks., at oprette og opdatere arbejdspakker).
   setting_mail_handler_api_key: API-nøgle
   setting_mail_handler_body_delimiters: Afkort mails efter en af disse linier
   setting_new_project_user_role_id: Rolle givet til bruger der opretter projekt uden
@@ -1567,12 +1565,12 @@ da:
   setting_per_page_options: Mulige objekter per side
   setting_plain_text_mail: Simpel tekst mails (ingen HTML)
   setting_protocol: Protokol
-  setting_repositories_automatic_managed_vendor: Automatic repository vendor type
+  setting_repositories_automatic_managed_vendor: Automatisk repositorie-leverandørtype
   setting_repositories_encodings: Kodning af projektarkiv
   setting_repository_authentication_caching_enabled: Aktivér cache-lagring ved forespørgsel
     om godkendelse af software til kontrol af version
-  setting_repository_storage_cache_minutes: Repository disk size cache
-  setting_repository_checkout_display: Show checkout instructions
+  setting_repository_storage_cache_minutes: Repositorie diskstørrelsescache
+  setting_repository_checkout_display: Vis kasseinstruktioner
   setting_repository_checkout_base_url: Checkout base URL
   setting_repository_checkout_text: Checkout instruction text
   setting_repository_log_display_limit: Højeste antal ændringer vist i fil-log
