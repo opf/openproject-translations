@@ -172,10 +172,10 @@ lv:
         cant_link_a_work_package_with_a_descendant: Pieteikma tipu nevar sasaistīt
           vienu no tās apakšuzdevumiem
         circular_dependency: "Šīs sasaiste izveidotu izveidotu riņķveida atkarību"
-        confirmation: doesn't match confirmation
+        confirmation: neatbilst apstiprinājumam
         empty: nevar būt tukšs
         equal_to: jābūt vienādam ar %{count}
-        even: must be even
+        even: jābūt vienādām
         exclusion: ir rezervēts
         file_too_large: ir pārāk liels (maksimālais izmērs ir %{count} Bytes)
         greater_than: jābūt lielākam par %{count}
@@ -217,15 +217,15 @@ lv:
               not_start_date: nav sākuma datums, lai gan tas ir nepieciešams atskaites
                 punktiem
             parent_id:
-              cannot_be_milestone: cannot be a milestone
+              cannot_be_milestone: nevar būt atskaites punkts
               cannot_be_in_another_project: nevar būt citā projektā
               not_a_valid_parent: ir nederīgs
               does_not_exist: nepastāv
             status_id:
-              status_transition_invalid: is invalid because no valid transition exists
-                from old to new status for the current user's roles
+              status_transition_invalid: nav iespējams, jo ar pašreizēja lietotāja
+                lomu nevar veikt šo darbību
             priority_id:
-              only_active_priorities_allowed: needs to be active
+              only_active_priorities_allowed: jābūt atvērtam
             category:
               only_same_project_categories_allowed: The category of a work package
                 must be within the same project as the work package.
@@ -236,19 +236,19 @@ lv:
         user:
           attributes:
             password:
-              weak: 'Must contain characters of the following classes (at least %{min_count}
-                of %{all_count}): %{rules}'
+              weak: 'Jāatbilst šādiem nosacījumiem (vismaz %{min_count} no %{all_count}):
+                %{rules}'
               lowercase: mazaie burti (piemēram 'a')
               uppercase: lielaie burti (piemēram, ' A')
               numeric: cipari (piemēram, "1")
               special: speciālie simboli (piemēram, ' %')
               reused:
-                one: has been used before. Please choose one that is different from
-                  your last one.
-                other: has been used before. Please choose one that is different from
-                  your last %{count}.
-                zero: has been used before. Please choose one that is different from
-                  your last %{count}.
+                one: iepriekš jau lietota. Lūdzu, izvēlieties vienu, kas atšķiras
+                  no Jūsu pēdējās.
+                other: iepriekš jau lietots. Lūdzu, izvēlieties vienu, kas atšķiras
+                  no jūsu pēdējām %{count}.
+                zero: iepriekš jau lietots. Lūdzu, izvēlieties vienu, kas atšķiras
+                  no jūsu pēdējām %{count}.
               match:
                 confirm: Apstipriniet jauno paroli.
                 description: Lauka vērtībai "Paroles apstiprinājums" jāsakrīt ar lauku
@@ -259,9 +259,9 @@ lv:
       template:
         body: 'Please check the following fields:'
         header:
-          one: 1 error prohibited this %{model} from being saved
-          other: "%{count} errors prohibited this %{model} from being saved"
-          zero: "%{count} errors prohibited this %{model} from being saved"
+          one: Modelī %{model} ir kļūda kas neļauj to saglabāt
+          other: Modelī %{model} ir %{count} kļūdas, kas neļauj to saglabāt
+          zero: Modelī %{model} ir %{count} kļūdas, kas neļauj to saglabāt
     models:
       attachment: Fails
       board: Forum
@@ -276,11 +276,11 @@ lv:
       project: Project
       query: Custom query
       role:
-        one: Role
-        other: Roles
-        zero: Roles
+        one: Loma
+        other: Lomas
+        zero: Lomas
       type: Veids
-      planning_element: Planning element
+      planning_element: Plānojot elementus
       project_type: Projekta tips
       user: User
       version: Versija
@@ -463,55 +463,55 @@ lv:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: about 1 hour
-        other: about %{count} hours
-        zero: about %{count} hours
+        one: aptuveni %{count} stundas
+        other: aptuveni %{count} stundām
+        zero: aptuveni %{count} stundām
       about_x_months:
-        one: about 1 month
-        other: about %{count} months
-        zero: about %{count} months
+        one: aptuveni %{count} mēneša
+        other: aptuveni %{count} mēnešiem
+        zero: aptuveni %{count} mēnešiem
       about_x_years:
-        one: about 1 year
-        other: about %{count} years
-        zero: about %{count} years
+        one: "%{count} gada"
+        other: "%{count} gadiem"
+        zero: "%{count} gadiem"
       almost_x_years:
-        one: almost 1 year
-        other: almost %{count} years
-        zero: almost %{count} years
+        one: gandrīz 1 gadu
+        other: gandrīz %{count} gadi
+        zero: gandrīz %{count} gadi
       half_a_minute: half a minute
       less_than_x_minutes:
-        one: less than a minute
-        other: less than %{count} minutes
-        zero: less than %{count} minutes
+        one: mazāk nekā %{count} minūtes
+        other: mazāk nekā %{count} minūtēm
+        zero: mazāk nekā %{count} minūtēm
       less_than_x_seconds:
-        one: less than 1 second
-        other: less than %{count} seconds
-        zero: less than %{count} seconds
+        one: mazāk nekā %{count} sekundes
+        other: mazāk nekā %{count} sekundēm
+        zero: mazāk nekā %{count} sekundēm
       over_x_years:
-        one: over 1 year
-        other: over %{count} years
-        zero: over %{count} years
+        one: senāk kā %{count} gada
+        other: senāk kā %{count} gadiem
+        zero: senāk kā %{count} gadiem
       x_days:
-        one: 1 day
-        other: "%{count} days"
-        zero: "%{count} days"
+        one: "%{count} dienas"
+        other: "%{count} dienām"
+        zero: "%{count} dienām"
       x_minutes:
-        one: 1 minute
-        other: "%{count} minutes"
-        zero: "%{count} minutes"
+        one: 1 minūte
+        other: "%{count} minūtēm"
+        zero: "%{count} minūtēm"
       x_months:
-        one: 1 month
-        other: "%{count} months"
-        zero: "%{count} months"
+        one: "%{count} mēneša"
+        other: "%{count} mēnešiem"
+        zero: "%{count} mēnešiem"
       x_seconds:
-        one: 1 second
-        other: "%{count} seconds"
-        zero: "%{count} seconds"
+        one: 1 sekunde
+        other: "%{count} sekundes"
+        zero: "%{count} sekundes"
     units:
       hour:
-        one: hour
-        other: hours
-        zero: hours
+        one: stunda
+        other: stundas
+        zero: stundas
   default_activity_development: Development
   default_activity_management: Management
   default_activity_other: Other
@@ -567,7 +567,7 @@ lv:
   default_type_deliverable: Deliverable
   default_type_epic: Epic
   default_type_feature: Feature
-  default_type_milestone: Milestone
+  default_type_milestone: Atskaites punkts
   default_type_phase: Phase
   default_type_task: Task
   default_type_user_story: User story
@@ -628,7 +628,7 @@ lv:
     Project settings.
   error_omniauth_registration_timed_out: The registration via an external authentication
     provider timed out. Please try again.
-  error_scm_annotate: The entry does not exist or cannot be annotated.
+  error_scm_annotate: Ieraksts nepastāv vai uz to nevar atsaukties.
   error_scm_command_failed: 'An error occurred when trying to access the repository:
     %{value}'
   error_scm_not_found: The entry or revision was not found in the repository.
@@ -677,7 +677,7 @@ lv:
   label_add_another_file: Pievienot citu failu
   label_add_columns: Add selected columns
   label_add_note: Add a note
-  label_add_related_issues: Add related issue
+  label_add_related_issues: Pievienot saistīto jautājumu
   label_add_related_work_packages: Add related work packages
   label_add_subtask: Add subtask
   label_added: added
@@ -796,7 +796,7 @@ lv:
   label_feeds_access_key_created_on: API piekļuves atslēga izveidota pirms %{value}
   label_file_added: File added
   label_file_plural: Faili
-  label_filesystem_path: Root directory
+  label_filesystem_path: Saknes direktorija
   label_filter_add: Add filter
   label_filter_plural: Filtri
   label_float: Float
@@ -1082,25 +1082,25 @@ lv:
   label_workflow_plural: Workflows
   label_workflow_summary: Summary
   label_x_closed_work_packages_abbr:
-    one: 1 closed
-    other: "%{count} closed"
-    zero: "%{count} closed"
+    one: "%{count} slēgts"
+    other: "%{count} slēgti"
+    zero: "%{count} slēgti"
   label_x_comments:
-    one: 1 comment
-    other: "%{count} comments"
-    zero: "%{count} comments"
+    one: "%{count} komentārs"
+    other: "%{count} komentāri"
+    zero: "%{count} komentāri"
   label_x_open_work_packages_abbr:
-    one: 1 open
-    other: "%{count} open"
-    zero: "%{count} open"
+    one: "%{count} atvērts"
+    other: "%{count} atvērti"
+    zero: "%{count} atvērti"
   label_x_open_work_packages_abbr_on_total:
-    one: 1 open / %{total}
-    other: "%{count} open / %{total}"
-    zero: "%{count} open / %{total}"
+    one: atvērts 1 / %{total}
+    other: atvērti %{count} / %{total}
+    zero: atvērti %{count} / %{total}
   label_x_projects:
-    one: 1 project
-    other: "%{count} projects"
-    zero: "%{count} projects"
+    one: "%{count} projekts"
+    other: "%{count} projekti"
+    zero: "%{count} projekti"
   label_year: Year
   label_yesterday: yesterday
   label_keyboard_function: Function
@@ -1112,7 +1112,7 @@ lv:
   label_keyboard_shortcut_some_pages_only: 'Special shortcuts:'
   label_keyboard_shortcut_search_global: Global search
   label_keyboard_shortcut_search_project: Find a project
-  label_keyboard_shortcut_go_my_page: Go to My Page
+  label_keyboard_shortcut_go_my_page: Doties uz manu lapu
   label_keyboard_shortcut_show_help: Show this help message
   label_keyboard_shortcut_go_overview: Go to project overview
   label_keyboard_shortcut_go_work_package: Go to project work packages
@@ -1234,9 +1234,9 @@ lv:
         format: "%n %u"
         units:
           byte:
-            one: Byte
-            other: Bytes
-            zero: Bytes
+            one: Baits
+            other: Baiti
+            zero: Baiti
           gb: GB
           kb: kB
           mb: MB
@@ -1325,13 +1325,13 @@ lv:
   setting_app_subtitle: Application subtitle
   setting_app_title: Application title
   setting_attachment_max_size: Attachment max. size
-  setting_autofetch_changesets: Autofetch commits
+  setting_autofetch_changesets: Automātiski atjaunot komitus
   setting_autologin: Autologin
   setting_available_languages: Available languages
   setting_bcc_recipients: Blind carbon copy recipients (bcc)
-  setting_brute_force_block_after_failed_logins: Block user after this number of failed
-    login attempts (disable with 0)
-  setting_brute_force_block_minutes: Time the user is blocked for (minutes)
+  setting_brute_force_block_after_failed_logins: Bloķēt lietotāju pēc šāda neizdevušās
+    pieteikšanās mēģinājumu skaita (0=atslēgts)
+  setting_brute_force_block_minutes: Laiks, uz kādu lietotājs ir bloķēts (minūtes)
   setting_cache_formatted_text: Cache formatted text
   setting_column_options: Customize the appearance of the work package lists
   setting_commit_fix_keywords: Fixing keywords
@@ -1380,8 +1380,7 @@ lv:
   setting_password_active_rules: Active character classes
   setting_password_count_former_banned: Number of most recently used passwords banned
     for reuse
-  setting_password_days_valid: Number of days, after which to enforce a password change
-    (disable with 0)
+  setting_password_days_valid: Dienu skaitu, pēc kura jāveic paroles maiņa (0=atslēgts)
   setting_password_min_length: Minimālais garums
   setting_password_min_adhered_rules: Minimum number of required classes
   setting_per_page_options: Objects per page options
@@ -1411,7 +1410,7 @@ lv:
   setting_user_format: Users display format
   setting_users_deletable_by_admins: User accounts deletable by admins
   setting_users_deletable_by_self: Users allowed to delete their accounts
-  setting_welcome_text: Welcome text
+  setting_welcome_text: Sveiciena teksts
   setting_wiki_compression: Wiki history compression
   setting_work_package_group_assignment: Allow assignment to groups
   settings:
@@ -1485,7 +1484,7 @@ lv:
     saistītus datus?
   text_project_identifier_info: Only lower case letters (a-z), numbers, dashes and
     underscores are allowed, must start with a lower case letter.
-  text_reassign: Reassign to
+  text_reassign: Nodot
   text_reassign_to: 'work package:'
   text_regexp_info: eg. ^[A-Z0-9]+$
   text_repository_usernames_mapping: |
@@ -1495,7 +1494,7 @@ lv:
     be sent.
   text_select_project_modules: 'Atlasiet moduļus, kuri būs šim projektam:'
   text_status_changed_by_changeset: Applied in changeset %{value}.
-  text_subprojects_destroy_warning: 'Its subproject(s): %{value} will be also deleted.'
+  text_subprojects_destroy_warning: 'Tā apakšprojekti: %{value} arī tiks dzēsti.'
   text_time_logged_by_changeset: Applied in changeset %{value}.
   text_tip_work_package_begin_day: work package beginning this day
   text_tip_work_package_begin_end_day: work package beginning and ending this day
@@ -1537,7 +1536,7 @@ lv:
       project_type: Projekta tips
       project_types: Project types
     project_menu:
-      planning_elements: Planning elements
+      planning_elements: Plānošanas elementi
       project_associations: Dependencies
       reportings: Status reportings
       reports: Timeline reports
@@ -1557,9 +1556,9 @@ lv:
     delete_thing: Dzēst
     duration: Duration
     duration_days:
-      one: 1 day
-      other: "%{count} days"
-      zero: "%{count} days"
+      one: "%{count} dienas"
+      other: "%{count} dienām"
+      zero: "%{count} dienām"
     edit_color: Edit color
     edit_project_type: Edit project type
     edit_thing: Labot
@@ -1733,12 +1732,12 @@ lv:
     authentication_settings_disabled_due_to_external_authentication: This user authenticates
       via an external authentication provider, so there is no password in OpenProject
       to be changed.
-    assign_random_password: Assign random password (sent to user via e-mail)
+    assign_random_password: Piešķirt ģenerētu paroli (nosūtīt lietotājam, uz e-pastu)
     blocked: locked temporarily
     blocked_num_failed_logins:
-      one: locked temporarily (one failed login attempt)
-      other: locked temporarily (%{count} failed login attempts)
-      zero: locked temporarily (%{count} failed login attempts)
+      one: bloķēts īslaicīgi (viens neizdevies pieteikšanās mēģinājums)
+      other: bloķēts īslaicīgi (%{count} neizdevušies pieteikšanās mēģinājumi)
+      zero: bloķēts īslaicīgi (%{count} neizdevušies pieteikšanās mēģinājumi)
     deleted: Deleted user
     error_status_change_failed: 'Changing the user status failed due to the following
       errors: %{errors}'
