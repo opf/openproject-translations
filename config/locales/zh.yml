@@ -28,6 +28,9 @@ zh:
       login_consequences:
         other: "将从系统中删除该帐户。因此，用户将不再能够用他当前的凭据登录。用户可以选择由该应用程序允许的方式再次成为此应用程序的用户。"
         self: "将从系统中删除您的帐户。因此，您将不再能够使用您的当前凭据登录。如果你选择再次成为此应用程序的用户，你可以通过此应用程序所允许的方式进行。"
+      login_verification:
+        other: Enter the login %{name} to verify the deletion.
+        self: Enter your login %{name} to verify the deletion.
     error_inactive_activation_by_mail: "您的帐户尚未激活。要激活您的帐户，请单击通过电子邮件发送到您的链接。"
     error_inactive_manual_activation: "您的帐户尚未激活。请等待管理员激活您的帐户。"
     error_self_registration_disabled: "此系统上禁用了用户注册。请让管理员为您创建帐户。"
@@ -114,6 +117,7 @@ zh:
         language: "语言"
         last_login_on: "上次登录"
         mail_notification: "电子邮件通知"
+        current_password: Current Password
         new_password: "新密码"
         password_confirmation: "确认"
         force_password_change: "强制在下次登录时更改密码"
@@ -352,6 +356,7 @@ zh:
   button_edit: "编辑"
   button_edit_associated_wikipage: "编辑关联的 Wiki 页面： %{page_title}"
   button_expand_all: "全部展开"
+  button_generate: Generate
   button_list: "列表"
   button_lock: "锁定"
   button_log_time: "记录时间"
@@ -641,6 +646,17 @@ zh:
   instructions_after_registration: "只要您的帐户已被激活您可以点击 %{signin} 登录。"
   instructions_after_logout: "你可以点击 %{signin} 重新登录。"
   instructions_after_error: "你可以尝试点击 %{signin} 重新登录。如果错误仍然存在，请向您的管理员寻求帮助。"
+  my_account:
+    access_tokens:
+      no_results:
+        title: No access tokens to display
+        description: All of them have been disabled. They can be re-enabled in the
+          administration menu.
+      access_token: Access token
+      headers:
+        action: Action
+        expiration: Expires
+      indefinite_expiration: Never
   label_account: "帐户"
   label_activity: "活动"
   label_add_edit_translations: Add and edit translations
@@ -662,6 +678,7 @@ zh:
   label_and_its_subprojects: "%{value} 及其子项目"
   label_api_access_key: API 访问键
   label_api_access_key_created_on: API 访问密钥创建于 %{value} 前
+  label_api_access_key_type: API
   label_applied_status: "应用的状态"
   label_ascending: "升序"
   label_assigned_to_me_work_packages: "分配给我的工作包"
@@ -777,6 +794,7 @@ zh:
   label_feed_plural: "订阅源"
   label_feeds_access_key: RSS 访问密钥
   label_feeds_access_key_created_on: RSS 访问密钥创建于 %{value} 前
+  label_feeds_access_key_type: RSS
   label_file_added: "添加文件"
   label_file_plural: "文件"
   label_filter_add: "添加筛选器"
@@ -860,8 +878,8 @@ zh:
   label_message_posted: "添加消息"
   label_min_max_length: "最小-最大长度"
   label_minute_plural: "分钟"
-  label_missing_api_access_key: "缺少 API 访问密钥"
-  label_missing_feeds_access_key: "缺少一个 RSS 访问键"
+  label_missing_api_access_key: Missing API access key
+  label_missing_feeds_access_key: Missing RSS access key
   label_modification: "%{count} 更改"
   label_modification_plural: "%{count} 更改"
   label_modified: "修改"
@@ -1169,12 +1187,14 @@ zh:
   notice_account_registered_and_logged_in: "欢迎，您的帐户已激活。您现在已登录。"
   notice_activation_failed: The account could not be activated.
   notice_api_access_key_reseted: "您的 API 访问密钥被重置。"
+  notice_api_access_key_generated: Your API access key was generated.
   notice_can_t_change_password: "此帐户使用外部身份验证源。无法更改密码。"
   notice_email_error: "发送邮件 (%{value}) 时出错"
   notice_email_sent: "电子邮件被发送到 %{value}"
   notice_failed_to_save_work_packages: "%{total} 个选定工作包中的 %{count} 保存失败： %{ids} 。"
   notice_failed_to_save_members: "成员保存失败： %{errors} 。"
   notice_feeds_access_key_reseted: "您的 RSS 访问密钥被重置。"
+  notice_feeds_access_key_generated: Your RSS access key was generated.
   notice_file_not_found: "你想要访问的页面不存在或已被删除。"
   notice_forced_logout: "%{ttl_time} 分钟不活动后，您已经被自动注销。"
   notice_internal_server_error: "你想要访问的页面上出现错误。如果您继续遇到问题请联系您 %{app_title} 管理员寻求帮助。"
@@ -1202,6 +1222,7 @@ zh:
   notice_unable_delete_version: "不能删除版本。"
   notice_user_missing_authentication_method: User has yet to chose a password or another
     way the sign in.
+  present_access_key_value: 'Your %{key_name} is: %{value}'
   notice_automatic_set_of_standard_type: "自动设置标准类型。"
   notice_logged_out: "您已被注销。"
   notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
@@ -1523,6 +1544,8 @@ zh:
     array:
       sentence_connector: "和"
       skip_last_comma: "非"
+  text_access_token_hint: Access tokens allow you to grant external applications access
+    to resources in OpenProject.
   text_analyze: "进一步分析： %{subject}"
   text_are_you_sure: "是否确定？"
   text_are_you_sure_with_children: "删除工作包和所有子工作包吗？"
@@ -1568,6 +1591,7 @@ zh:
   text_load_default_configuration: "加载默认配置"
   text_min_max_length_info: 0 表示没有限制
   text_no_roles_defined: There are no roles defined.
+  text_no_access_tokens_configurable: There are no access tokens which can be configured.
   text_no_configuration_data: "角色、 类型、 工作包状态和工作流有尚未配置。 \n强烈建议加载默认配置。加载完成后你将能够修改它。"
   text_no_notes: There are no comments available for this work package.
   text_notice_too_many_values_are_inperformant: "注意： 每个页面显示超过 100 个项目会增加页面加载时间。"

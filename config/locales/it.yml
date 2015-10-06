@@ -34,6 +34,9 @@ it:
           grado di accedere con le tue credenziali correnti. Se in futuro sceglierai
           di diventare nuovamente utente di quest'applicazione, potrai farlo ripercorrendo
           le normali procedure.
+      login_verification:
+        other: Enter the login %{name} to verify the deletion.
+        self: Enter your login %{name} to verify the deletion.
     error_inactive_activation_by_mail: Il tuo account non è stato ancora attivato.
       Per attivare il tuo account, clicca sul link che ti è stato inviato via email.
     error_inactive_manual_activation: Il tuo account non è stato ancora attivato.
@@ -124,6 +127,7 @@ it:
         language: Linguaggio
         last_login_on: Ultimo accesso
         mail_notification: Notifiche email
+        current_password: Current Password
         new_password: Nuova password
         password_confirmation: Conferma
         force_password_change: Richiedi la modifica della password al prossimo login
@@ -374,6 +378,7 @@ it:
   button_edit: Modifica
   button_edit_associated_wikipage: 'Modifica pagina wiki associata: %{page_title}'
   button_expand_all: Espandi tutto
+  button_generate: Generate
   button_list: Elenca
   button_lock: Blocca
   button_log_time: Registra l'orario effettuato
@@ -686,6 +691,17 @@ it:
   instructions_after_logout: Può accedere nuovamente cliccando %{signin}.
   instructions_after_error: Si può provare ad accedere nuovamente cliccando %{signin}.
     Se l'errore persiste, chiedi aiuto al tuo amministratore.
+  my_account:
+    access_tokens:
+      no_results:
+        title: No access tokens to display
+        description: All of them have been disabled. They can be re-enabled in the
+          administration menu.
+      access_token: Access token
+      headers:
+        action: Action
+        expiration: Expires
+      indefinite_expiration: Never
   label_account: Account
   label_activity: Attività
   label_add_edit_translations: Aggiungi e modifica traduzioni
@@ -709,6 +725,7 @@ it:
   label_and_its_subprojects: "%{value} e i suoi sotto-progetti"
   label_api_access_key: Chiave di accesso API
   label_api_access_key_created_on: Chiave di accesso API creata %{value} fa
+  label_api_access_key_type: API
   label_applied_status: Stato applicato
   label_ascending: Crescente
   label_assigned_to_me_work_packages: Pacchetti di lavoro assegnati a me
@@ -826,6 +843,7 @@ it:
   label_feed_plural: Feed
   label_feeds_access_key: Chiave di accesso RSS
   label_feeds_access_key_created_on: Chiave di accesso RSS creato %{value} fa
+  label_feeds_access_key_type: RSS
   label_file_added: File aggiunto
   label_file_plural: File
   label_filter_add: Aggiungi filtro
@@ -915,8 +933,8 @@ it:
   label_message_posted: Messaggio aggiunto
   label_min_max_length: Lunghezza Min - Max
   label_minute_plural: minuti
-  label_missing_api_access_key: Manca una chiave di accesso API
-  label_missing_feeds_access_key: Manca una chiave di accesso RSS
+  label_missing_api_access_key: Missing API access key
+  label_missing_feeds_access_key: Missing RSS access key
   label_modification: "%{count} cambiamento"
   label_modification_plural: "%{count} cambiamenti"
   label_modified: modificato
@@ -1250,6 +1268,7 @@ it:
     Sei già connesso.
   notice_activation_failed: The account could not be activated.
   notice_api_access_key_reseted: La chiave di accesso API è stata reimpostata.
+  notice_api_access_key_generated: Your API access key was generated.
   notice_can_t_change_password: Questo account utilizza un servizio di autenticazione
     esterno. Impossibile cambiare la password.
   notice_email_error: Errore durante l'invio della posta (%{value})
@@ -1258,6 +1277,7 @@ it:
     (work-package) su %{total} selezionati: %{ids}.'
   notice_failed_to_save_members: 'Impossibile salvare il membro(i): %{errors}.'
   notice_feeds_access_key_reseted: La chiave di accesso RSS è stata reimpostata.
+  notice_feeds_access_key_generated: Your RSS access key was generated.
   notice_file_not_found: La pagina alla quale stavi tentando di accedere non esiste
     o è stata rimossa.
   notice_forced_logout: Sei stato disconnesso automaticamente dopo %{ttl_time} minuti
@@ -1294,6 +1314,7 @@ it:
   notice_unable_delete_version: Impossibile eliminare la versione.
   notice_user_missing_authentication_method: User has yet to chose a password or another
     way the sign in.
+  present_access_key_value: 'Your %{key_name} is: %{value}'
   notice_automatic_set_of_standard_type: Impostare automaticamente il tipo predefinito.
   notice_logged_out: Ti sei appena disconnesso.
   notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
@@ -1664,6 +1685,8 @@ it:
     array:
       sentence_connector: e
       skip_last_comma: falso
+  text_access_token_hint: Access tokens allow you to grant external applications access
+    to resources in OpenProject.
   text_analyze: 'Analizzare ulteriormente: %{subject}'
   text_are_you_sure: Sei sicuro?
   text_are_you_sure_with_children: Eliminare la macro-attività (work package) e tutte
@@ -1722,6 +1745,7 @@ it:
   text_load_default_configuration: Carica la configurazione predefinita
   text_min_max_length_info: 0 significa nessuna restrizione
   text_no_roles_defined: There are no roles defined.
+  text_no_access_tokens_configurable: There are no access tokens which can be configured.
   text_no_configuration_data: Ruoli, tipi, stati delle macro-attività (work package)
     e flusso di lavoro non sono stati ancora configurati. Si consiglia di caricare
     la configurazione predefinita. Sarà possibile modificarla in seguito.

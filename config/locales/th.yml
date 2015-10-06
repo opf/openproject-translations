@@ -30,6 +30,9 @@ th:
           จะยังสามารถเป็นผู้ใช้ในแอปพลิเคชั่นนี้ได้อีกครั้งโดยการอนุญาตให้ใช้งาน"
         self: "บัญชีผู้ใช้ของคุณจะถูกลบออกจากระบบ เพราะฉะนั้น คุณจะไม่สามารถล็อกอินได้อีกต่อไป
           หากคุณต้องการกลับมาเป็นผู้ใช้แอปพลิเคชั่นนี้ใหม่อีกครั้ง คุณสามารถทำได้โดยวิธีการอนุญาตให้ใช้งานแอปพลิเคชั่น"
+      login_verification:
+        other: Enter the login %{name} to verify the deletion.
+        self: Enter your login %{name} to verify the deletion.
     error_inactive_activation_by_mail: "บัญชีของคุณได้ไม่ได้เปิดการใช้งาน กรุณาคลิกที่ลิงค์ที่ถูกส่งไปยังอีเมลของคุณ
       เพื่อเปิดการใช้งาน"
     error_inactive_manual_activation: "บัญชีผู้ใช้ของคุณยังไม่ได้เปิดใช้งาน กรุณารอเพื่อให้ผู้ดูแลระบบ
@@ -119,6 +122,7 @@ th:
         language: "ภาษา"
         last_login_on: "ล็อกอินครั้งสุดท้าย"
         mail_notification: "อีเมล์แจ้งเตือน"
+        current_password: Current Password
         new_password: "รหัสผ่านใหม่"
         password_confirmation: "ยืนยันรหัสผ่าน"
         force_password_change: "บังคับให้เปลี่ยนรหัสผ่านเมื่อมีการเข้าสู่ระบบครั้งถัดไป"
@@ -366,6 +370,7 @@ th:
   button_edit: "แก้ไข"
   button_edit_associated_wikipage: "แก้ไขหน้าวิกิที่เกี่ยวข้อง: %{page_title}"
   button_expand_all: "ขยายทั้งหมด"
+  button_generate: Generate
   button_list: "รายการ"
   button_lock: "ล็อค"
   button_log_time: "เวลาที่ถูกบันทึก"
@@ -669,6 +674,17 @@ th:
   instructions_after_logout: "คุณสามารถเข้าสู่ระบบอีกครั้งโดยคลิก %{signin}"
   instructions_after_error: "คุณสามารถลองเข้าสู่ระบบอีกครั้งโดยคลิก %{signin} หากยังพบข้อผิดพลาด
     โปรดสอบถามผู้ดูแลระบบเพื่อขอความช่วยเหลือ"
+  my_account:
+    access_tokens:
+      no_results:
+        title: No access tokens to display
+        description: All of them have been disabled. They can be re-enabled in the
+          administration menu.
+      access_token: Access token
+      headers:
+        action: Action
+        expiration: Expires
+      indefinite_expiration: Never
   label_account: "บัญชี"
   label_activity: "กิจกรรม"
   label_add_edit_translations: Add and edit translations
@@ -690,6 +706,7 @@ th:
   label_and_its_subprojects: "%{value} และโครงการย่อยที่เกี่ยวข้องทั้งหมด"
   label_api_access_key: "คีย์การเข้าถึง API"
   label_api_access_key_created_on: "คีย์การเข้าถึง API ซึ่งสร้างเมื่อ %{value} ที่ผ่านมา"
+  label_api_access_key_type: API
   label_applied_status: "ใช้สถานะ"
   label_ascending: "จากน้อยไปมาก"
   label_assigned_to_me_work_packages: "ชุดภารกิจที่ฉันได้รับมอบหมาย"
@@ -805,6 +822,7 @@ th:
   label_feed_plural: "ตัวดึงข้อมูล"
   label_feeds_access_key: "คีย์การเข้าถึง RSS"
   label_feeds_access_key_created_on: "คีย์การเข้าถึง API ซึ่งสร้างเมื่อ %{value} ที่ผ่านมา"
+  label_feeds_access_key_type: RSS
   label_file_added: "ไฟล์ที่เพิ่ม"
   label_file_plural: "ไฟล์"
   label_filter_add: "เพิ่มตัวกรอง"
@@ -888,8 +906,8 @@ th:
   label_message_posted: "เพิ่มข้อความแล้ว"
   label_min_max_length: "ความยาวสูงสุด - ต่ำสุด"
   label_minute_plural: minutes
-  label_missing_api_access_key: "ไม่พบคีย์การเข้าถึง API"
-  label_missing_feeds_access_key: "ไม่พบคีย์สำหรับเข้าใช้ RSS"
+  label_missing_api_access_key: Missing API access key
+  label_missing_feeds_access_key: Missing RSS access key
   label_modification: "เปลี่ยนแปลง %{count} รายการ"
   label_modification_plural: "เปลี่ยนแปลง %{count} รายการ"
   label_modified: "ถูกแก้ไข"
@@ -1203,6 +1221,7 @@ th:
     คุณสามารถล็อกอินได้ทันที"
   notice_activation_failed: The account could not be activated.
   notice_api_access_key_reseted: "มีการรีเซตคีย์การเข้าถึง API ของคุณ"
+  notice_api_access_key_generated: Your API access key was generated.
   notice_can_t_change_password: "ไม่สามารถเปลี่ยนรหัสผ่านได้ เนื่องจากบัญชีผู้ใช้นี้
     ใช้การระบุตัวตนจากแหล่งภายนอก"
   notice_email_error: "พบข้อผิดพลาดระหว่างการส่งอีเมล์ (%{value})"
@@ -1211,6 +1230,7 @@ th:
     ที่เลือก: %{ids}"
   notice_failed_to_save_members: "ไม่สามารถบันทึกสมาชิก: %{errors}"
   notice_feeds_access_key_reseted: "มีการรีเซตคีย์เข้าถึงข้อมูล RSS ของคุณ"
+  notice_feeds_access_key_generated: Your RSS access key was generated.
   notice_file_not_found: "เพจที่คุณกำลังพยายามเข้าถึงไม่มีอยู่ หรือถูกลบออก"
   notice_forced_logout: "คุณได้ออกจากระบบโดยอัตโนมัติเนื่องจากจากไม่มีกิจกรรมใดๆ ในระบบเป็นเวลา
     %{ttl_time} นาที"
@@ -1239,6 +1259,7 @@ th:
   notice_unable_delete_version: "ไม่สามารถลบเวอร์ชั่น"
   notice_user_missing_authentication_method: User has yet to chose a password or another
     way the sign in.
+  present_access_key_value: 'Your %{key_name} is: %{value}'
   notice_automatic_set_of_standard_type: "ตั้งค่าชนิดมาตรฐานโดยอัตโนมัติ"
   notice_logged_out: "คุณได้ออกจากระบบแล้ว"
   notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
@@ -1581,6 +1602,8 @@ th:
     array:
       sentence_connector: "และ"
       skip_last_comma: "เป็นเท็จ"
+  text_access_token_hint: Access tokens allow you to grant external applications access
+    to resources in OpenProject.
   text_analyze: "การวิเคราะห์เพิ่มเติม: %{subject}"
   text_are_you_sure: "คุณแน่ใจหรือไม่ ?"
   text_are_you_sure_with_children: "ลบชุดภารกิจและ ชุดภารกิจย่อยที่เกี่ยวข้องทั้งหมดหรือไม่?"
@@ -1630,6 +1653,7 @@ th:
   text_load_default_configuration: "โหลดการกำหนดค่าเริ่มต้น"
   text_min_max_length_info: 0 หมายถึง ไม่มีข้อจำกัด
   text_no_roles_defined: There are no roles defined.
+  text_no_access_tokens_configurable: There are no access tokens which can be configured.
   text_no_configuration_data: "ยังไม่ได้มีการกำหนดค่า บาทบาท, ประเภท, สถานะของชุดภารกิจ
     \n ขอแนะนำให้โหลดค่าเริ่มต้นของการตั้งค่ามาใช้ ซึ่งคุณสามารถปรับเปลี่ยนได้หลังจากที่โหลดแล้ว"
   text_no_notes: There are no comments available for this work package.

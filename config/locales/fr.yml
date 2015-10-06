@@ -37,6 +37,9 @@ fr:
           actuelles. Si vous décidez de devenir un utilisateur de nouveau sur cette
           application, vous pouvez faire ainsi en utilisant les moyens que cette application
           autorise.
+      login_verification:
+        other: Enter the login %{name} to verify the deletion.
+        self: Enter your login %{name} to verify the deletion.
     error_inactive_activation_by_mail: Votre compte n'a pas encore été activé. Pour
       activer votre compte, cliquez sur le lien qui vous a été envoyé par courriel.
     error_inactive_manual_activation: Votre compte n'a pas encore été activé. Veuillez
@@ -127,6 +130,7 @@ fr:
         language: Langue
         last_login_on: Dernière connexion
         mail_notification: Notifications par courriel
+        current_password: Current Password
         new_password: Nouveau mot de passe
         password_confirmation: Confirmation
         force_password_change: Appliquer le changement de mot de passe à la prochaine
@@ -379,6 +383,7 @@ fr:
   button_edit: "Éditer"
   button_edit_associated_wikipage: "Éditer la page wiki associée : %{page_title}"
   button_expand_all: Tout déplier
+  button_generate: Generate
   button_list: Liste
   button_lock: Verrouiller
   button_log_time: Enregister temps
@@ -690,6 +695,17 @@ fr:
   instructions_after_logout: Vous pouvez vous ré-authentifier en cliquant sur %{signin}.
   instructions_after_error: Vous pouvez encore essayer de vous authentifier en cliquant
     sur %{signin}. Si l'erreur persiste, demandez de l'aide à votre administrateur.
+  my_account:
+    access_tokens:
+      no_results:
+        title: No access tokens to display
+        description: All of them have been disabled. They can be re-enabled in the
+          administration menu.
+      access_token: Access token
+      headers:
+        action: Action
+        expiration: Expires
+      indefinite_expiration: Never
   label_account: Compte
   label_activity: Activité
   label_add_edit_translations: Add and edit translations
@@ -713,6 +729,7 @@ fr:
   label_and_its_subprojects: "%{value} et ses sous-projets"
   label_api_access_key: Clé d'accès API
   label_api_access_key_created_on: Clé d'accès API créé il y a %{value}
+  label_api_access_key_type: API
   label_applied_status: Statut appliqué
   label_ascending: Croissant
   label_assigned_to_me_work_packages: Lots de Travaux m'étant assignés
@@ -829,6 +846,7 @@ fr:
   label_feed_plural: Fluxs
   label_feeds_access_key: Clé d'accès RSS
   label_feeds_access_key_created_on: Clé d'accès RSS créé il y a %{value}
+  label_feeds_access_key_type: RSS
   label_file_added: Fichier ajouté
   label_file_plural: Fichiers
   label_filter_add: Ajouter le filtre
@@ -916,8 +934,8 @@ fr:
   label_message_posted: Message ajouté
   label_min_max_length: longueur Min - Max
   label_minute_plural: minutes
-  label_missing_api_access_key: Clé d'accès API manquante
-  label_missing_feeds_access_key: Clé d'accès RSS manquante
+  label_missing_api_access_key: Missing API access key
+  label_missing_feeds_access_key: Missing RSS access key
   label_modification: "%{count} changement"
   label_modification_plural: "%{count} changements"
   label_modified: modifié
@@ -1251,6 +1269,7 @@ fr:
     êtes maintenant connecté.
   notice_activation_failed: The account could not be activated.
   notice_api_access_key_reseted: Votre clé d'accès API a été réinitialisée.
+  notice_api_access_key_generated: Your API access key was generated.
   notice_can_t_change_password: Ce compte utilise une source d'authentification externe.
     Impossible de changer le mot de passe.
   notice_email_error: Une erreur est survenue lors de l'envoi du mail (%{value})
@@ -1259,6 +1278,7 @@ fr:
     lot(s) de travaux sur %{total} sélectionnés: %{ids}."
   notice_failed_to_save_members: "Échec de sauvegarde du ou des membres: %{errors}."
   notice_feeds_access_key_reseted: Votre clé d'accès RSS a été réinitialisée.
+  notice_feeds_access_key_generated: Your RSS access key was generated.
   notice_file_not_found: La page à laquelle vous essayez d'accéder n'existe pas ou
     a été supprimée.
   notice_forced_logout: Vous avez été déconnecté après %{ttl_time} minutes d'inactivité.
@@ -1294,6 +1314,7 @@ fr:
   notice_unable_delete_version: Impossible de supprimer la version.
   notice_user_missing_authentication_method: User has yet to chose a password or another
     way the sign in.
+  present_access_key_value: 'Your %{key_name} is: %{value}'
   notice_automatic_set_of_standard_type: Fixer le type standard automatiquement.
   notice_logged_out: Vous avez été déconnecté.
   notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
@@ -1651,6 +1672,8 @@ fr:
     array:
       sentence_connector: et
       skip_last_comma: faux
+  text_access_token_hint: Access tokens allow you to grant external applications access
+    to resources in OpenProject.
   text_analyze: 'Analyse suivante: %{subject}'
   text_are_you_sure: "Êtes-vous sûr ?"
   text_are_you_sure_with_children: Supprimer le Lot de Travail et tous ses Lots de
@@ -1707,6 +1730,7 @@ fr:
   text_load_default_configuration: Charger la configuration par défaut
   text_min_max_length_info: 0 signifie aucune restriction
   text_no_roles_defined: There are no roles defined.
+  text_no_access_tokens_configurable: There are no access tokens which can be configured.
   text_no_configuration_data: |
     Les rôles, types, status de Lots de Travaux et workflows ne sont pas encore configurés pour l'instant.
     Il est hautement recommander de charger la configuration par défaut. Vous pourrez la modifier une fois chargée.

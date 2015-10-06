@@ -32,6 +32,9 @@ tr:
         self: Hesabınız sistemden silinir. Bu nedenle, artık geçerli kimlik bilgileriyle
           oturum açmanız mümkün olmaz. Eğer bu uygulamaya tekrar üye olmak isterseniz.
           uygulamanın izin verdiği yollarla bunu gerçekleştirebilirsiniz.
+      login_verification:
+        other: Enter the login %{name} to verify the deletion.
+        self: Enter your login %{name} to verify the deletion.
     error_inactive_activation_by_mail: Hesabınız henüz etkinleştirilmedi. Hesabınızı
       etkinleştirmek için size gönderilen e-posta bağlantısını tıklatın.
     error_inactive_manual_activation: Hesabınız henüz aktif değil. Lütfen bir yöneticinin
@@ -123,6 +126,7 @@ tr:
         language: Dil
         last_login_on: Son giriş
         mail_notification: E-posta bildirimleri
+        current_password: Current Password
         new_password: Yeni parola
         password_confirmation: Onay
         force_password_change: Sonraki oturum açma işleminde şifre değişikliğine zorla
@@ -370,6 +374,7 @@ tr:
   button_edit: Düzenle
   button_edit_associated_wikipage: 'Edit associated Wiki page: %{page_title}'
   button_expand_all: Tümünü genişlet
+  button_generate: Generate
   button_list: Listele
   button_lock: Kilitle
   button_log_time: Günlük süresi
@@ -675,6 +680,17 @@ tr:
   instructions_after_logout: You can sign in again by clicking %{signin}.
   instructions_after_error: You can try to sign in again by clicking %{signin}. If
     the error persists, ask your admin for help.
+  my_account:
+    access_tokens:
+      no_results:
+        title: No access tokens to display
+        description: All of them have been disabled. They can be re-enabled in the
+          administration menu.
+      access_token: Access token
+      headers:
+        action: Action
+        expiration: Expires
+      indefinite_expiration: Never
   label_account: Hesap
   label_activity: Aktivite
   label_add_edit_translations: Add and edit translations
@@ -698,6 +714,7 @@ tr:
   label_and_its_subprojects: "%{value} and its subprojects"
   label_api_access_key: API access key
   label_api_access_key_created_on: API access key created %{value} ago
+  label_api_access_key_type: API
   label_applied_status: Applied status
   label_ascending: Ascending
   label_assigned_to_me_work_packages: Work packages assigned to me
@@ -813,6 +830,7 @@ tr:
   label_feed_plural: Akışlar
   label_feeds_access_key: RSS erişim anahtarı
   label_feeds_access_key_created_on: RSS erişim anahtarı %{value} önce oluşturuldu
+  label_feeds_access_key_type: RSS
   label_file_added: Dosya eklendi
   label_file_plural: Files
   label_filter_add: Filtre ekle
@@ -898,8 +916,8 @@ tr:
   label_message_posted: Mesaj eklendi
   label_min_max_length: En az - En çok uzunluk
   label_minute_plural: dakika
-  label_missing_api_access_key: API erişim anahtarı kayıp
-  label_missing_feeds_access_key: RSS erişim anahtarı kayıp
+  label_missing_api_access_key: Missing API access key
+  label_missing_feeds_access_key: Missing RSS access key
   label_modification: "%{count} değişim"
   label_modification_plural: "%{count} değişim"
   label_modified: değiştirildi
@@ -1222,6 +1240,7 @@ tr:
     You are logged in now.
   notice_activation_failed: The account could not be activated.
   notice_api_access_key_reseted: Your API access key was reset.
+  notice_api_access_key_generated: Your API access key was generated.
   notice_can_t_change_password: This account uses an external authentication source.
     Impossible to change the password.
   notice_email_error: An error occurred while sending mail (%{value})
@@ -1230,6 +1249,7 @@ tr:
     %{total} selected: %{ids}.'
   notice_failed_to_save_members: 'Failed to save member(s): %{errors}.'
   notice_feeds_access_key_reseted: Your RSS access key was reset.
+  notice_feeds_access_key_generated: Your RSS access key was generated.
   notice_file_not_found: The page you were trying to access doesn't exist or has been
     removed.
   notice_forced_logout: You have been automatically logged out after %{ttl_time} minutes
@@ -1264,6 +1284,7 @@ tr:
   notice_unable_delete_version: Unable to delete version.
   notice_user_missing_authentication_method: User has yet to chose a password or another
     way the sign in.
+  present_access_key_value: 'Your %{key_name} is: %{value}'
   notice_automatic_set_of_standard_type: Set standard type automatically.
   notice_logged_out: You have been logged out.
   notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
@@ -1610,6 +1631,8 @@ tr:
     array:
       sentence_connector: and
       skip_last_comma: 'false'
+  text_access_token_hint: Access tokens allow you to grant external applications access
+    to resources in OpenProject.
   text_analyze: 'Further analyze: %{subject}'
   text_are_you_sure: Are you sure?
   text_are_you_sure_with_children: Delete work package and all child work packages?
@@ -1663,6 +1686,7 @@ tr:
   text_load_default_configuration: Load the default configuration
   text_min_max_length_info: 0 means no restriction
   text_no_roles_defined: There are no roles defined.
+  text_no_access_tokens_configurable: There are no access tokens which can be configured.
   text_no_configuration_data: |
     Roles, types, work package statuses and workflow have not been configured yet.
     It is highly recommended to load the default configuration. You will be able to modify it once loaded.

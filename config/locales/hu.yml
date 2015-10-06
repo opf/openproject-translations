@@ -32,6 +32,9 @@ hu:
         self: A felhasználói hozzáférésed törlésre kerül a rendszerből. Ezért,  már
           nem tud bejelentkezni a jelenlegi hozzáférésével. Ha úgy dönt, hogy a felhasználó
           az alkalmazást újra hasznáhatja, akkor azt újra megteheti.
+      login_verification:
+        other: Enter the login %{name} to verify the deletion.
+        self: Enter your login %{name} to verify the deletion.
     error_inactive_activation_by_mail: A felhasználói hozzáférésed még nem aktív.
       Felhasználói fiókjának aktiválásához kattintson az e-mailben kapott linkre.
     error_inactive_manual_activation: A felhasználói hozzáférésed még nem aktív. Várja
@@ -122,6 +125,7 @@ hu:
         language: Nyelv
         last_login_on: Utolsó bejelentkezés
         mail_notification: Email értesítés
+        current_password: Current Password
         new_password: "Új jelszó"
         password_confirmation: Megerősítés
         force_password_change: Kötelező jelszóváltás a következő bejelentkezéskor
@@ -371,6 +375,7 @@ hu:
   button_edit: Szerkesztés
   button_edit_associated_wikipage: 'A hozzárendelt Wiki oldal: %{page_title} szerkesztése'
   button_expand_all: Az összes kibontása
+  button_generate: Generate
   button_list: Lista
   button_lock: Tilt
   button_log_time: Bejelentkezett időtartam
@@ -682,6 +687,17 @@ hu:
   instructions_after_logout: "Újra be tud jelentkezni ide  %{signin} kattintva."
   instructions_after_error: Próbáljon meg újból bejelentkezni ide  %{signin} kattintva.
     Ha a hiba továbbra is fennáll, kérje a rendszergazda segítséget.
+  my_account:
+    access_tokens:
+      no_results:
+        title: No access tokens to display
+        description: All of them have been disabled. They can be re-enabled in the
+          administration menu.
+      access_token: Access token
+      headers:
+        action: Action
+        expiration: Expires
+      indefinite_expiration: Never
   label_account: Felhasználói fiók
   label_activity: Tevékenység
   label_add_edit_translations: Add and edit translations
@@ -705,6 +721,7 @@ hu:
   label_and_its_subprojects: "%{value} és az alprojektjei"
   label_api_access_key: API-hozzáférés kulcs
   label_api_access_key_created_on: 'APIhozzáférési kulcs készítette: %{value} ezelőtt'
+  label_api_access_key_type: API
   label_applied_status: Alkalmazott státusz
   label_ascending: Növekvő
   label_assigned_to_me_work_packages: Hozzámrendelt munkacsomag
@@ -821,6 +838,7 @@ hu:
   label_feed_plural: Hírek
   label_feeds_access_key: RSS hozzáférési kulcs
   label_feeds_access_key_created_on: 'RSS-hozzáférési kulcs készítette: %{value} ezelőtt '
+  label_feeds_access_key_type: RSS
   label_file_added: Fájl hozzáadva
   label_file_plural: Fájlok
   label_filter_add: Szűrő hozzáadása
@@ -908,8 +926,8 @@ hu:
   label_message_posted: "Üzenet hozzáadva"
   label_min_max_length: Min - Max hossza
   label_minute_plural: minutes
-  label_missing_api_access_key: Hiányzik az API-hozzáférési kulcs
-  label_missing_feeds_access_key: Hiányzik egy RSS hozzáférési kulcs
+  label_missing_api_access_key: Missing API access key
+  label_missing_feeds_access_key: Missing RSS access key
   label_modification: "%{count} változás"
   label_modification_plural: "%{count} változás"
   label_modified: módosított
@@ -1236,6 +1254,7 @@ hu:
     bejelentkezhet."
   notice_activation_failed: The account could not be activated.
   notice_api_access_key_reseted: Az API-hozzáférés kulcs alaphelyzetbe állt.
+  notice_api_access_key_generated: Your API access key was generated.
   notice_can_t_change_password: Ez a fiók egy külső hitelesítési forrást használ.
     Lehetetlen a jelszó csere.
   notice_email_error: Egy hiba az email küldése közben (%{value})
@@ -1244,6 +1263,7 @@ hu:
     %{total} kiválasztott: %{ids}.'
   notice_failed_to_save_members: 'Nem sikerült menteni a tag(ok)at: %{errors}.'
   notice_feeds_access_key_reseted: Az RSS-hozzáférési kulcs alaphelyzetbe állítva.
+  notice_feeds_access_key_generated: Your RSS access key was generated.
   notice_file_not_found: Az elérni kivánt oldal nem létezik, vagy már eltávolították.
   notice_forced_logout: Automatikusan kijelentkezett %{ttl_time} perc inaktivitás
     után.
@@ -1274,6 +1294,7 @@ hu:
   notice_unable_delete_version: Nem lehet törölni a verziót.
   notice_user_missing_authentication_method: User has yet to chose a password or another
     way the sign in.
+  present_access_key_value: 'Your %{key_name} is: %{value}'
   notice_automatic_set_of_standard_type: Automatikusan beállítja alap típust .
   notice_logged_out: Kijelentkeztél.
   notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
@@ -1626,6 +1647,8 @@ hu:
     array:
       sentence_connector: "és"
       skip_last_comma: hamis
+  text_access_token_hint: Access tokens allow you to grant external applications access
+    to resources in OpenProject.
   text_analyze: 'További elemzése: %{subject}'
   text_are_you_sure: Biztos vagy benne?
   text_are_you_sure_with_children: Törli a munkacsomagot és minden gyermek munkacsomagot?
@@ -1681,6 +1704,7 @@ hu:
   text_load_default_configuration: Az alapértelmezett konfiguráció betöltése
   text_min_max_length_info: 0 azt jelenti, hogy nincs korlátozás
   text_no_roles_defined: There are no roles defined.
+  text_no_access_tokens_configurable: There are no access tokens which can be configured.
   text_no_configuration_data: Szerepkörök, típusok, a munkacsomag állapotok és a munkafolyamatok
     nincsenek beállítva. Erősen ajánlott, az alapértelmezett konfiguráció betöltése.
     Akkor képes lesz arra, hogy módosítsa.

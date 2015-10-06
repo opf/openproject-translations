@@ -32,6 +32,9 @@ da:
         self: Din konto vil blive slettet fra systemet. Derfor vil du ikke længere
           kunne logge ind med dine nuværende oplysninger. Du vil dog kunne blive bruger
           af denne app igen med en ny registrering.
+      login_verification:
+        other: Enter the login %{name} to verify the deletion.
+        self: Enter your login %{name} to verify the deletion.
     error_inactive_activation_by_mail: Din konto er endnu ikke blevet aktiveret. For
       at aktivere din konto, klik på det link, der blev sendt til dig.
     error_inactive_manual_activation: Din konto er endnu ikke blevet aktiveret. Vent
@@ -122,6 +125,7 @@ da:
         language: Sprog
         last_login_on: Seneste login
         mail_notification: E-mail-påmindelser
+        current_password: Current Password
         new_password: Ny adgangskode
         password_confirmation: Bekræftelse
         force_password_change: "Ændring af adgangskode virksom ved næste login"
@@ -369,6 +373,7 @@ da:
   button_edit: Rediger
   button_edit_associated_wikipage: 'Rediger tilknyttet wiki-side: %{page_title}'
   button_expand_all: Fold alle ud
+  button_generate: Generate
   button_list: List
   button_lock: Lås
   button_log_time: Tidsregistrering
@@ -676,6 +681,17 @@ da:
   instructions_after_logout: Du kan logge ind igen ved at klikke %{signin}.
   instructions_after_error: Du kan forsøge at logge ind igen ved at klikke %{signin}.
     Hvis fejlen stadig opstår, spørg da admin. efter hjælp.
+  my_account:
+    access_tokens:
+      no_results:
+        title: No access tokens to display
+        description: All of them have been disabled. They can be re-enabled in the
+          administration menu.
+      access_token: Access token
+      headers:
+        action: Action
+        expiration: Expires
+      indefinite_expiration: Never
   label_account: Konto
   label_activity: Aktivitet
   label_add_edit_translations: Tilføje og redigere oversættelser
@@ -699,6 +715,7 @@ da:
   label_and_its_subprojects: "%{value} og dets delprojekter"
   label_api_access_key: API adgangsnøgle
   label_api_access_key_created_on: API adgangsnøgle oprettet for %{value} siden
+  label_api_access_key_type: API
   label_applied_status: Tildelt status
   label_ascending: Stigende
   label_assigned_to_me_work_packages: Mine tilknyttede arbejdspakker
@@ -814,6 +831,7 @@ da:
   label_feed_plural: Indlæg
   label_feeds_access_key: RSS adgangsnøgle
   label_feeds_access_key_created_on: RSS adgangsnøgle lavet for %{value} siden
+  label_feeds_access_key_type: RSS
   label_file_added: Fil tilføjet
   label_file_plural: Filer
   label_filter_add: Tilføj filter
@@ -901,8 +919,8 @@ da:
   label_message_posted: Meddelelse tilføjet
   label_min_max_length: Min. - maks. længde
   label_minute_plural: minutter
-  label_missing_api_access_key: Der mangler en API adgangsnøgle
-  label_missing_feeds_access_key: Der mangler en RSS adgangsnøgle
+  label_missing_api_access_key: Missing API access key
+  label_missing_feeds_access_key: Missing RSS access key
   label_modification: "%{count} ændring"
   label_modification_plural: "%{count} ændringer"
   label_modified: "ændret"
@@ -1226,6 +1244,7 @@ da:
     nu logget ind.
   notice_activation_failed: Kontoen kunne ikke aktiveres.
   notice_api_access_key_reseted: Din API-adgangsnøgle blev nulstillet.
+  notice_api_access_key_generated: Your API access key was generated.
   notice_can_t_change_password: Denne konto benytter en ekstern kilde til godkendelse.
     Det er ikke muligt at ændre adgangskoden her.
   notice_email_error: Der opstod en fejl ved afsendelse af mail (%{value})
@@ -1234,6 +1253,7 @@ da:
     i %{total} valgte: %{ids}.'
   notice_failed_to_save_members: 'Det lykkedes ikke at gemme medlem(mer): %{errors}.'
   notice_feeds_access_key_reseted: Din RSS-adgangsnøgle blev nulstillet.
+  notice_feeds_access_key_generated: Your RSS access key was generated.
   notice_file_not_found: Den side du prøvede at gå til eksisterer ikke eller er blevet
     flyttet.
   notice_forced_logout: Du er blevet automatisk logget ud efter %{ttl_time} minutters
@@ -1267,6 +1287,7 @@ da:
   notice_unable_delete_version: Ude af stand til at slette versionen.
   notice_user_missing_authentication_method: Brugeren mangler at vælge adgangskode,
     eller anden log ind-metode.
+  present_access_key_value: 'Your %{key_name} is: %{value}'
   notice_automatic_set_of_standard_type: Fastsæt typen automatisk.
   notice_logged_out: Du er blevet logget ud.
   notice_wont_delete_auth_source: Godkendelsestilstanden kan ikke slettes, så længe
@@ -1614,6 +1635,8 @@ da:
     array:
       sentence_connector: og
       skip_last_comma: forkert
+  text_access_token_hint: Access tokens allow you to grant external applications access
+    to resources in OpenProject.
   text_analyze: 'Yderligere gennemgang: %{subject}'
   text_are_you_sure: Er du sikker?
   text_are_you_sure_with_children: Slet arbejdspakker og alle underordnede pakker?
@@ -1667,6 +1690,7 @@ da:
   text_load_default_configuration: Hent forhåndsvalgt opsætning
   text_min_max_length_info: 0 betyder ingen begrænsning
   text_no_roles_defined: Der er ikke defineret nogle roller.
+  text_no_access_tokens_configurable: There are no access tokens which can be configured.
   text_no_configuration_data: Roller, typer, statusser for arbejdspakker og arbejdsgange
     er endnu ikke sat op. Det anbefales stærkt at hente forhåndsopsætningen. Du vil
     kunne ændre den når den er indlæst.

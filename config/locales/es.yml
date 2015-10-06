@@ -7,20 +7,22 @@ es:
     deleted: Cuenta eliminada con éxito
     deletion_info:
       data_consequences:
-        other: Of the data the user created (e.g. email, preferences, work packages,
-          wiki entries) as much as possible will be deleted. Note however, that data
-          like work packages and wiki entries can not be deleted without impeding
-          the work of the other users. Such data is hence reassigned to an account
-          called "Deleted user". As the data of every deleted account is reassigned
-          to this account it will not be possible to distinguish the data the user
-          created from the data of another deleted account.
-        self: Of the data you created (e.g. email, preferences, work packages, wiki
-          entries) as much as possible will be deleted. Note however, that data like
-          work packages and wiki entries can not be deleted without impeding the work
-          of the other users. Such data is hence reassigned to an account called "Deleted
-          user". As the data of every deleted account is reassigned to this account
-          it will not be possible to distinguish the data you created from the data
-          of another deleted account.
+        other: De los datos del usuario creado (por ejemplo correo electrónico, preferencias,
+          paquetes de trabajo, entradas wiki) serán eliminados, en la medida de lo
+          posible. Sin embargo, tenga en cuenta que no se pueden eliminar datos como
+          entradas wiki y paquetes de trabajo sin obstaculizar el trabajo de los demás
+          usuarios. Dichos datos, por lo tanto, serán reasignados a una cuenta denominada
+          "Usuarios Eliminados". Como los datos de cada cuenta borrada son reasignados
+          al eliminarla, no será posible distinguir los datos del usuario creado a
+          partir de los datos de otra cuenta eliminada.
+        self: De los datos que ha creado (por ejemplo correo electrónico, preferencias,
+          paquetes de trabajo, entradas wiki) serán eliminados tanto como sea posible.
+          Sin embargo, tenga en cuenta que no se pueden eliminar datos como entradas
+          wiki y paquetes de trabajo sin obstaculizar el trabajo de los demás usuarios.
+          Dichos datos por lo tanto son reasignados a una cuenta denominada "Usuarios
+          Eliminados". Como los datos de cada cuenta eliminada son reasignados a esta
+          cuenta no será posible distinguir los datos que creado a partir de los datos
+          de otra cuenta eliminada.
       heading: Borrar cuenta de %{name}
       info:
         other: Borrar la cuenta de usuario es una acción irreversible.
@@ -34,6 +36,9 @@ es:
           iniciar sesión con tus credenciales actuales. Si usted decide convertirse
           en un usuario de nuevo esta aplicación, puedes hacerlo mediante el uso de
           los medios otorga a esta aplicación.
+      login_verification:
+        other: Enter the login %{name} to verify the deletion.
+        self: Enter your login %{name} to verify the deletion.
     error_inactive_activation_by_mail: Su cuenta aún no está activada. Para activar
       su cuenta, haga clic en el enlace que fue enviado por correo electrónico.
     error_inactive_manual_activation: Su cuenta aún no está activada. Por favor, espere
@@ -42,8 +47,9 @@ es:
       este sistema. Por favor pida a un administrador que cree una cuenta para usted.
     login_with_auth_provider: o inicie sesión con su cuenta existente
     signup_with_auth_provider: o regístrate usando
-    auth_source_login: Please login as <em>%{login}</em> to activate your account.
-    omniauth_login: Please login to activate your account.
+    auth_source_login: Por favor, inicia sesión como <em>%{login}</em> para activar
+      tu cuenta.
+    omniauth_login: Por favor inicie sesión para activar su cuenta.
   actionview_instancetag_blank_option: Por favor, elija
   activerecord:
     attributes:
@@ -123,6 +129,7 @@ es:
         language: Idioma
         last_login_on: Ultimó acceso
         mail_notification: Notificaciones de correo electrónico
+        current_password: Current Password
         new_password: Nueva contraseña
         password_confirmation: Confirmación
         force_password_change: Aplicar el cambio de contraseña en la próxima sesión
@@ -347,7 +354,7 @@ es:
     version: Versión
     work_package: Paquete de trabajo
   button_add: Añadir
-  button_add_member: Add member
+  button_add_member: Añadir miembro
   button_add_watcher: Añadir observador
   button_annotate: Anotar
   button_apply: Aplicar
@@ -372,6 +379,7 @@ es:
   button_edit: Editar
   button_edit_associated_wikipage: 'Editar página Wiki asociada: %{page_title}'
   button_expand_all: Expandir todos
+  button_generate: Generate
   button_list: Lista
   button_lock: Bloquear
   button_log_time: Tiempo de registro
@@ -379,7 +387,7 @@ es:
   button_move: Mover
   button_move_and_follow: Mover y seguir
   button_quote: Comentario
-  button_remove: Remove
+  button_remove: Eliminar
   button_remove_widget: Quitar componente
   button_rename: Cambiar el nombre
   button_reply: Respuesta
@@ -672,19 +680,30 @@ es:
     blocks:
       community: OpenProject Community
     links:
-      user_guides: User guides
+      user_guides: Guia de usuario
       faq: FAQ
-      glossary: Glossary
-      shortcuts: Shortcuts
+      glossary: Glosario
+      shortcuts: Accesos directos
       forums: Foros
   instructions_after_registration: Podras entrar tan pronto como tu cuenta halla sido
     activada haciendo clic sobre %{signin}.
   instructions_after_logout: Puedes entrar nuevamente haciendo clic sobre  %{signin}.
   instructions_after_error: Puedes intentar entrar nuevamente haciendo clic sobre
     %{signin}. Si el error persiste, contacta a tu administrador para que te ayude.
+  my_account:
+    access_tokens:
+      no_results:
+        title: No access tokens to display
+        description: All of them have been disabled. They can be re-enabled in the
+          administration menu.
+      access_token: Access token
+      headers:
+        action: Action
+        expiration: Expires
+      indefinite_expiration: Never
   label_account: Cuenta
   label_activity: Actividad
-  label_add_edit_translations: Add and edit translations
+  label_add_edit_translations: Añadir y editar traducciones
   label_add_another_file: Agregar otro archivo
   label_add_columns: Agregar columnas seleccionadas
   label_add_note: Añadir una nota
@@ -705,6 +724,7 @@ es:
   label_and_its_subprojects: "%{value} y sus subproyectos"
   label_api_access_key: Código de acceso API
   label_api_access_key_created_on: Código de acceso API creado  hace %{value}
+  label_api_access_key_type: API
   label_applied_status: Estado aplicado
   label_ascending: Ascendente
   label_assigned_to_me_work_packages: Paquetes de trabajo asignados a mí
@@ -820,6 +840,7 @@ es:
   label_feed_plural: Flujos
   label_feeds_access_key: Código de acceso RSS
   label_feeds_access_key_created_on: Código de acceso RSS creado hace %{value}
+  label_feeds_access_key_type: RSS
   label_file_added: Archivo agregado
   label_file_plural: Archivos
   label_filter_add: Añadir filtro
@@ -907,8 +928,8 @@ es:
   label_message_posted: Mensaje añadido
   label_min_max_length: Tamaño mínimo-máximo
   label_minute_plural: minutos
-  label_missing_api_access_key: Falta una llave de acceso API
-  label_missing_feeds_access_key: Falta una clave de acceso RSS
+  label_missing_api_access_key: Missing API access key
+  label_missing_feeds_access_key: Missing RSS access key
   label_modification: cambio de %{count}
   label_modification_plural: "%{count} cambios"
   label_modified: modificado
@@ -1242,6 +1263,7 @@ es:
     Ahora estás logueado.
   notice_activation_failed: The account could not be activated.
   notice_api_access_key_reseted: Su API de acceso ha sido re-iniciada.
+  notice_api_access_key_generated: Your API access key was generated.
   notice_can_t_change_password: Esta cuenta utiliza una fuente de autenticación externa.
     Es imposible cambiar la contraseña.
   notice_email_error: Un error ha ocurrido mientras se enviaba el correo (%{value})
@@ -1250,6 +1272,7 @@ es:
     en %{total} seleccionado: %{ids}.'
   notice_failed_to_save_members: 'Fallo al salvar miembro(s): %{errors}.'
   notice_feeds_access_key_reseted: Su clave de acceso RSS ha sido re-iniciada.
+  notice_feeds_access_key_generated: Your RSS access key was generated.
   notice_file_not_found: La página que estaba intentando acceder no existe o ha sido
     eliminada.
   notice_forced_logout: Su sesión ha sido cerrada automáticamente después de %{ttl_time}
@@ -1287,6 +1310,7 @@ es:
   notice_unable_delete_version: No se puede eliminar la versión.
   notice_user_missing_authentication_method: User has yet to chose a password or another
     way the sign in.
+  present_access_key_value: 'Your %{key_name} is: %{value}'
   notice_automatic_set_of_standard_type: Establecer tipo estándar automáticamente.
   notice_logged_out: Has cerrado la sesion.
   notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
@@ -1649,6 +1673,8 @@ es:
     array:
       sentence_connector: y
       skip_last_comma: falso
+  text_access_token_hint: Access tokens allow you to grant external applications access
+    to resources in OpenProject.
   text_analyze: 'Análisis futuro: %{subject}'
   text_are_you_sure: "¿Estás seguro?"
   text_are_you_sure_with_children: "¿Eliminar el paquete de trabajo y todos sus paquetes
@@ -1707,6 +1733,7 @@ es:
   text_load_default_configuration: Cargar la configuración predeterminada
   text_min_max_length_info: 0 significa sin restricción
   text_no_roles_defined: There are no roles defined.
+  text_no_access_tokens_configurable: There are no access tokens which can be configured.
   text_no_configuration_data: Roles, tipos, estado de petición y flujo de trabajo
     no han sido configurados. Se recomienda cargar la configuración por defecto. Podrá
     modificarla cuando haya sido cargada.

@@ -33,6 +33,9 @@ nl:
           langer zitten kundig Meld u aan met uw huidige referenties. Als u ervoor
           kiest om een gebruiker van deze toepassing opnieuw te worden, kan je dus
           met behulp van de middelen deze toepassing verleent.
+      login_verification:
+        other: Enter the login %{name} to verify the deletion.
+        self: Enter your login %{name} to verify the deletion.
     error_inactive_activation_by_mail: Uw account is nog niet geactiveerd. Klik op
       de link in de u toegestuurde mail om uw account te activeren.
     error_inactive_manual_activation: Uw account is nog niet geactiveerd. Wacht totdat
@@ -122,6 +125,7 @@ nl:
         language: Taal
         last_login_on: Last login
         mail_notification: E-mailnotificaties
+        current_password: Current Password
         new_password: Nieuw wachtwoord
         password_confirmation: Bevestiging
         force_password_change: Afdwingen van wachtwoordwijziging bij volgende login
@@ -371,6 +375,7 @@ nl:
   button_edit: Wijzig
   button_edit_associated_wikipage: 'Bewerk gekoppelde wikipagina: %{page_title}'
   button_expand_all: Alles uitklappen
+  button_generate: Generate
   button_list: Lijst
   button_lock: Vergrendelen
   button_log_time: Gelogde tijd
@@ -679,6 +684,17 @@ nl:
   instructions_after_logout: You can sign in again by clicking %{signin}.
   instructions_after_error: You can try to sign in again by clicking %{signin}. If
     the error persists, ask your admin for help.
+  my_account:
+    access_tokens:
+      no_results:
+        title: No access tokens to display
+        description: All of them have been disabled. They can be re-enabled in the
+          administration menu.
+      access_token: Access token
+      headers:
+        action: Action
+        expiration: Expires
+      indefinite_expiration: Never
   label_account: Account
   label_activity: Activiteit
   label_add_edit_translations: Add and edit translations
@@ -702,6 +718,7 @@ nl:
   label_and_its_subprojects: "%{value} en zijn subprojecten"
   label_api_access_key: API sleutel
   label_api_access_key_created_on: API sleutel %{value} geleden gemaakt
+  label_api_access_key_type: API
   label_applied_status: Toegepaste status
   label_ascending: Oplopend
   label_assigned_to_me_work_packages: Werkpakketten toegewezen aan mij
@@ -818,6 +835,7 @@ nl:
   label_feed_plural: Feeds
   label_feeds_access_key: RSS toegangssleutel
   label_feeds_access_key_created_on: RSS toegangssleutel %{value} geleden gemaakt
+  label_feeds_access_key_type: RSS
   label_file_added: Bestand toegevoegd
   label_file_plural: Bestanden
   label_filter_add: Filter toevoegen
@@ -905,8 +923,8 @@ nl:
   label_message_posted: Bericht toegevoegd
   label_min_max_length: Min - maximumlengte
   label_minute_plural: minutes
-  label_missing_api_access_key: De API key ontbreekt
-  label_missing_feeds_access_key: De RSS key ontbreekt
+  label_missing_api_access_key: Missing API access key
+  label_missing_feeds_access_key: Missing RSS access key
   label_modification: "%{count} wijziging"
   label_modification_plural: "%{count} wijzigingen"
   label_modified: gewijzigd
@@ -1238,6 +1256,7 @@ nl:
     nu ingelogd.
   notice_activation_failed: The account could not be activated.
   notice_api_access_key_reseted: Uw API-toegangssleutel is opnieuw ingesteld.
+  notice_api_access_key_generated: Your API access key was generated.
   notice_can_t_change_password: Dit account gebruikt een externe verificatie bron.
     Het is onmogelijk om het wachtwoord te wijzigen.
   notice_email_error: Er is een fout opgetreden bij het verzenden van mail (%{value})
@@ -1246,6 +1265,7 @@ nl:
     opslaan mislukt: %{ids}."
   notice_failed_to_save_members: 'Lid/leden opslaan mislukt: %{errors}.'
   notice_feeds_access_key_reseted: Uw RSS toegangssleutel is opnieuw ingesteld.
+  notice_feeds_access_key_generated: Your RSS access key was generated.
   notice_file_not_found: De pagina die u probeerde te benaderen bestaat niet of is
     verwijderd.
   notice_forced_logout: U bent automatisch uitgelogd na %{ttl_time} minuten van inactiviteit.
@@ -1277,6 +1297,7 @@ nl:
   notice_unable_delete_version: Niet in staat om versie te verwijderen.
   notice_user_missing_authentication_method: User has yet to chose a password or another
     way the sign in.
+  present_access_key_value: 'Your %{key_name} is: %{value}'
   notice_automatic_set_of_standard_type: Standaardtype automatisch ingesteld.
   notice_logged_out: You have been logged out.
   notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
@@ -1625,6 +1646,8 @@ nl:
     array:
       sentence_connector: en
       skip_last_comma: onwaar
+  text_access_token_hint: Access tokens allow you to grant external applications access
+    to resources in OpenProject.
   text_analyze: 'Verdere analyse: %{subject}'
   text_are_you_sure: Weet u het zeker?
   text_are_you_sure_with_children: Verwijder werk pakket en alle kinderen daarvan?
@@ -1678,6 +1701,7 @@ nl:
   text_load_default_configuration: De standaardconfiguratie laden
   text_min_max_length_info: 0 betekent geen beperking
   text_no_roles_defined: There are no roles defined.
+  text_no_access_tokens_configurable: There are no access tokens which can be configured.
   text_no_configuration_data: "Rollen, typen, werk pakket statussen en workflow zijn
     niet geconfigureerd nog. \ndit is sterk aanbevolen voor het laden van de standaardconfiguratie.
     U kunt deze wijzigen als het eenmaal geladen is."

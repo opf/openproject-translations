@@ -32,6 +32,9 @@ ru:
           не сможете войти в систему с текущими учетными данными. Если  снова хотите
           \ стать пользователем, то делайте это через средства пердоставления прав
           этого приложения."
+      login_verification:
+        other: Enter the login %{name} to verify the deletion.
+        self: Enter your login %{name} to verify the deletion.
     error_inactive_activation_by_mail: "Ваша учетная запись не была активирована.
       Для активации нажмите на ссылку, высланную вам по электронной почте."
     error_inactive_manual_activation: "Ваша учетная запись не была активирована. Пожалуйста,
@@ -122,6 +125,7 @@ ru:
         language: "Язык"
         last_login_on: "Последний вход в систему"
         mail_notification: "Уведомления по электронной почте"
+        current_password: Current Password
         new_password: "Новый пароль"
         password_confirmation: "Подтверждение"
         force_password_change: "Принудительное изменение пароля при следующем входе"
@@ -375,6 +379,7 @@ ru:
   button_edit: "Правка"
   button_edit_associated_wikipage: "Редактирование связанной wiki-страницы: %{page_title}"
   button_expand_all: "Развернуть все"
+  button_generate: Generate
   button_list: "Список"
   button_lock: "Заблокировать"
   button_log_time: "Учет времени"
@@ -593,7 +598,7 @@ ru:
   description_compare_to: "Сравнить с этапом"
   description_current_position: "Вы находитесь здесь:"
   description_date_from: "Введите дату начала"
-  description_date_range_interval: "Укажите диапазон, выбрав дату начала и окончания"
+  description_date_range_interval: "Укажите диапазон, указав дату начала и окончания"
   description_date_range_list: "Выберите диапазон из списка"
   description_date_to: "Введите дату окончания"
   description_enter_number: "Введите номер"
@@ -694,6 +699,17 @@ ru:
   instructions_after_logout: "Вы можете войти в снова, нажав %{signin}."
   instructions_after_error: "Вы можете попробовать войти снова, нажав %{signin}. Если
     ошибка повторится, обратитесь к вашему администратору за помощью."
+  my_account:
+    access_tokens:
+      no_results:
+        title: No access tokens to display
+        description: All of them have been disabled. They can be re-enabled in the
+          administration menu.
+      access_token: Access token
+      headers:
+        action: Action
+        expiration: Expires
+      indefinite_expiration: Never
   label_account: "Учетная запись"
   label_activity: "Деятельность"
   label_add_edit_translations: "Добавить и редактировать перевод"
@@ -717,6 +733,7 @@ ru:
   label_and_its_subprojects: "%{value} и его подпроектов"
   label_api_access_key: "Ключ доступа к API"
   label_api_access_key_created_on: "Ключ доступа к API, созданный %{value} назад"
+  label_api_access_key_type: API
   label_applied_status: "Прикладной статус"
   label_ascending: "По возрастанию"
   label_assigned_to_me_work_packages: "Пакет работ, назначенный мне"
@@ -832,6 +849,7 @@ ru:
   label_feed_plural: "Ленты"
   label_feeds_access_key: "Ключ доступа к RSS"
   label_feeds_access_key_created_on: "Ключ доступа RSS, созданный %{value} назад"
+  label_feeds_access_key_type: RSS
   label_file_added: "Файл добавлен"
   label_file_plural: "Файлы"
   label_filter_add: "Добавить фильтр"
@@ -919,8 +937,8 @@ ru:
   label_message_posted: "Сообщение добавлено"
   label_min_max_length: "Минимальная - Максимальная длина"
   label_minute_plural: "минуты"
-  label_missing_api_access_key: "Отсутствует ключ API доступа"
-  label_missing_feeds_access_key: "Отсутствует ключ доступа к RSS"
+  label_missing_api_access_key: Missing API access key
+  label_missing_feeds_access_key: Missing RSS access key
   label_modification: "%{count} изменение"
   label_modification_plural: "%{count} изменения"
   label_modified: "изменение"
@@ -1257,6 +1275,7 @@ ru:
     Вы вошли в систему."
   notice_activation_failed: "Учетная запись не может быть активирована."
   notice_api_access_key_reseted: "Ваш API-ключ доступа был сброшен."
+  notice_api_access_key_generated: Your API access key was generated.
   notice_can_t_change_password: "Эта учетная запись использует механизм внешней аутентификации.
     Невозможно изменить пароль."
   notice_email_error: "При отправке сообщения возникла ошибка (%{value})"
@@ -1265,6 +1284,7 @@ ru:
     из %{total},  выбрано: %{ids}."
   notice_failed_to_save_members: "Не удалось сохранить участника(-ов): %{errors}."
   notice_feeds_access_key_reseted: "Ваш RSS-ключ доступа был сброшен."
+  notice_feeds_access_key_generated: Your RSS access key was generated.
   notice_file_not_found: "Страница, к которой Вы обратились, не существует или была
     удалена."
   notice_forced_logout: "Вы автоматически вышли из системы после %{ttl_time} минут
@@ -1298,6 +1318,7 @@ ru:
   notice_unable_delete_version: "Не удается удалить версию."
   notice_user_missing_authentication_method: "Пользователь еще не выбрал пароль или
     другой способ авторизации."
+  present_access_key_value: 'Your %{key_name} is: %{value}'
   notice_automatic_set_of_standard_type: "Установить стандартный тип автоматически."
   notice_logged_out: "Вы вышли из системы."
   notice_wont_delete_auth_source: "Способ проверки подлинности нельзя удалить, пока
@@ -1395,12 +1416,12 @@ ru:
   permission_view_wiki_pages: "Просмотр wiki"
   project:
     destroy:
-      confirmation: If you continue, the project %{identifier} and all related data
-        will be permanently destroyed.
-      info: Deleting the project is an irreversible action.
-      project_verification: Enter the project's name %{name} to verify the deletion.
-      subprojects_confirmation: 'Its subproject(s): %{value} will also be deleted.'
-      title: Do you really want to delete the project %{name}?
+      confirmation: "Если вы продолжите, проект %{identifier} и все связанные с ним
+        данные будут перманентно уничтожены."
+      info: "Удаление проекта – действие необратимое."
+      project_verification: "Введите имя проекта %{name} для проверки удаления."
+      subprojects_confirmation: "Его подпроекты: %{value} также будут удалены."
+      title: "Вы действительно хотите удалить проект %{name}?"
   project_module_activity: "Деятельность"
   project_module_boards: "Форумы"
   project_module_calendar: "Календарь"
@@ -1451,21 +1472,21 @@ ru:
     create_successful: "Репозиторий был зарегистрирован."
     delete_sucessful: "Репозиторий был удален."
     destroy:
-      confirmation: If you continue, this will permanently delete the managed repository
-        of %{project_name}.
-      info: Deleting the repository is an irreversible action.
+      confirmation: "Если вы продолжите, управляемый репозиторий %{project_name} будет
+        удален тоже."
+      info: "Удаление репозитория – действие необратимое."
       linked_text: "Вы собираетесь удалить связанный репозиторий %{url} из проекта
         %{project_name}. \nПримечание: Этим вы не удалите содержимое этого репозитория,
         так как оно не управляется OpenProject.\n"
       managed_path_note: "Следующий каталог будет удален: %{path}"
-      title: Do you really want to delete the %{repository_type} of the project %{project_name}?
+      title: "Вы действительно хотите удалить %{repository_type} проекта %{project_name}?"
     errors:
       build_failed: "Не удается создать репозиторий с выбранной конфигурацией. %{reason}"
       empty_repository: "Репозиторий существует, но является пустым и пока не содержит
         каких-либо изменений."
-      exists_on_filesystem: The repository directory already exists in the filesystem.
-      filesystem_access_failed: 'An error occurred while accessing the repository
-        in the filesystem: %{message}'
+      exists_on_filesystem: "Папка репозитория уже существует в файловой системе."
+      filesystem_access_failed: "При обращении к репозиторию в файловой системе произошла
+        ошибка: %{message}"
       deletion_failed: "Репозиторий не удаляется с диска из-за отсутствия разрешений.
         Обратитесь к администратору для решения этой проблемы."
       not_manageable: "Этот поставщик репозитория не может управляться OpenProject."
@@ -1651,6 +1672,8 @@ ru:
     array:
       sentence_connector: "и"
       skip_last_comma: "Ложно"
+  text_access_token_hint: Access tokens allow you to grant external applications access
+    to resources in OpenProject.
   text_analyze: "Дополнительный анализ: %{subject}"
   text_are_you_sure: "Вы уверены?"
   text_are_you_sure_with_children: "Удалить пакет работ и все дочерние пакеты работ?"
@@ -1706,6 +1729,7 @@ ru:
   text_load_default_configuration: "Загрузить конфигурацию по умолчанию"
   text_min_max_length_info: 0 означает отсутствие ограничений
   text_no_roles_defined: "Роли не определены."
+  text_no_access_tokens_configurable: There are no access tokens which can be configured.
   text_no_configuration_data: "Роли, типы,  статусы пакетов работ и рабочие потоки
     еще не сконфигурированы. Настоятельно рекомендуем для правки загрузить конфигурацию
     по умолчанию."
@@ -1719,7 +1743,7 @@ ru:
   text_powered_by: "С использованием %{link}"
   text_project_identifier_info: "Разрешены только строчные буквы (a-z), цифры, тире
     и знаки подчеркивания, начинать с буквы нижнего регистра."
-  text_reassign: 'Reassign to work package:'
+  text_reassign: "Переназначить для пакета работ:"
   text_regexp_info: "например:  ^[A-Z0-9]+$"
   text_repository_usernames_mapping: "Выберете или обновите пользователя OpenProject
     сопоставленного с именами пользователей найдеными в журнале репозитория. Пользователи
@@ -2012,8 +2036,8 @@ ru:
     updated_automatically_by_child_changes: _Обновлено автоматически в связи с изменением
       значения в пакете работ потомка %{child}_
     destroy:
-      info: Deleting the work package is an irreversible action.
-      title: Do you really want to delete the work package?
+      info: "Удаление рабочего пакета – действие необратимое."
+      title: "Вы действительно хотите удалить этот пакет работ?"
   nothing_to_preview: "Нет ничего для предосмотра"
   api_v3:
     attributes:

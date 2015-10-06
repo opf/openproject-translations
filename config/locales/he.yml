@@ -32,6 +32,9 @@ he:
         self: "חשבונך יימחק מהמערכת. לפיכך, לא תוכל להכנס באמצעות האישור הקיים. אם
           תבחר להפוך למשתמש של האפליקצייה שוב, תוכל לעשות זאת שוב על-ידי האפשרויות
           השאפליקצייה מאפשרת."
+      login_verification:
+        other: Enter the login %{name} to verify the deletion.
+        self: Enter your login %{name} to verify the deletion.
     error_inactive_activation_by_mail: "החשבון שלך עדיין לא הופעל. כדי להפעיל את חשבונך,
       לחץ על הקישור שנשלח לדוא״ל שלך."
     error_inactive_manual_activation: "החשבון שלך עדיין לא הופעל. אנא המתן לפעלת חשבונך
@@ -121,6 +124,7 @@ he:
         language: "שפה"
         last_login_on: "כניסה אחרונה"
         mail_notification: התראות דוא"ל
+        current_password: Current Password
         new_password: "סיסמה חדשה"
         password_confirmation: "אימות"
         force_password_change: "לאכוף שינוי סיסמה בכניסה הבאה"
@@ -369,6 +373,7 @@ he:
   button_edit: "עריכה"
   button_edit_associated_wikipage: "ערוך את דף הויקי הקשור: %{page_title}"
   button_expand_all: "הרחב הכל"
+  button_generate: Generate
   button_list: "רשימה"
   button_lock: "נעול"
   button_log_time: "נרשם ביומן"
@@ -671,6 +676,17 @@ he:
   instructions_after_logout: You can sign in again by clicking %{signin}.
   instructions_after_error: You can try to sign in again by clicking %{signin}. If
     the error persists, ask your admin for help.
+  my_account:
+    access_tokens:
+      no_results:
+        title: No access tokens to display
+        description: All of them have been disabled. They can be re-enabled in the
+          administration menu.
+      access_token: Access token
+      headers:
+        action: Action
+        expiration: Expires
+      indefinite_expiration: Never
   label_account: "חשבון"
   label_activity: "פעילות"
   label_add_edit_translations: Add and edit translations
@@ -694,6 +710,7 @@ he:
   label_and_its_subprojects: "%{value} and its subprojects"
   label_api_access_key: "מפתח גישה API"
   label_api_access_key_created_on: API access key created %{value} ago
+  label_api_access_key_type: API
   label_applied_status: Applied status
   label_ascending: "סדר עולה"
   label_assigned_to_me_work_packages: Work packages assigned to me
@@ -809,6 +826,7 @@ he:
   label_feed_plural: Feeds
   label_feeds_access_key: RSS access key
   label_feeds_access_key_created_on: RSS access key created %{value} ago
+  label_feeds_access_key_type: RSS
   label_file_added: File added
   label_file_plural: "קבצים"
   label_filter_add: Add filter
@@ -894,8 +912,8 @@ he:
   label_message_posted: Message added
   label_min_max_length: Min - Max length
   label_minute_plural: minutes
-  label_missing_api_access_key: Missing an API access key
-  label_missing_feeds_access_key: Missing a RSS access key
+  label_missing_api_access_key: Missing API access key
+  label_missing_feeds_access_key: Missing RSS access key
   label_modification: "%{count} change"
   label_modification_plural: "%{count} changes"
   label_modified: modified
@@ -1218,6 +1236,7 @@ he:
     You are logged in now.
   notice_activation_failed: The account could not be activated.
   notice_api_access_key_reseted: Your API access key was reset.
+  notice_api_access_key_generated: Your API access key was generated.
   notice_can_t_change_password: This account uses an external authentication source.
     Impossible to change the password.
   notice_email_error: An error occurred while sending mail (%{value})
@@ -1226,6 +1245,7 @@ he:
     %{total} selected: %{ids}.'
   notice_failed_to_save_members: 'Failed to save member(s): %{errors}.'
   notice_feeds_access_key_reseted: Your RSS access key was reset.
+  notice_feeds_access_key_generated: Your RSS access key was generated.
   notice_file_not_found: The page you were trying to access doesn't exist or has been
     removed.
   notice_forced_logout: You have been automatically logged out after %{ttl_time} minutes
@@ -1260,6 +1280,7 @@ he:
   notice_unable_delete_version: Unable to delete version.
   notice_user_missing_authentication_method: User has yet to chose a password or another
     way the sign in.
+  present_access_key_value: 'Your %{key_name} is: %{value}'
   notice_automatic_set_of_standard_type: Set standard type automatically.
   notice_logged_out: You have been logged out.
   notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
@@ -1606,6 +1627,8 @@ he:
     array:
       sentence_connector: and
       skip_last_comma: 'false'
+  text_access_token_hint: Access tokens allow you to grant external applications access
+    to resources in OpenProject.
   text_analyze: 'Further analyze: %{subject}'
   text_are_you_sure: "האם הינך בטוח?"
   text_are_you_sure_with_children: Delete work package and all child work packages?
@@ -1659,6 +1682,7 @@ he:
   text_load_default_configuration: Load the default configuration
   text_min_max_length_info: 0 means no restriction
   text_no_roles_defined: There are no roles defined.
+  text_no_access_tokens_configurable: There are no access tokens which can be configured.
   text_no_configuration_data: |
     Roles, types, work package statuses and workflow have not been configured yet.
     It is highly recommended to load the default configuration. You will be able to modify it once loaded.

@@ -33,6 +33,9 @@
           kan logge på med dine kontoopplysninger. Hvis du velger å bli en bruker
           av denne applikasjonen igjen, kan du registrere deg på nytt så fremt applikasjonen
           tillater det.
+      login_verification:
+        other: Enter the login %{name} to verify the deletion.
+        self: Enter your login %{name} to verify the deletion.
     error_inactive_activation_by_mail: Din konto er ennå ikke aktivert. For å aktivere
       kontoen må du følge lenken som er sendt deg på e-post.
     error_inactive_manual_activation: Kontoen din er ennå ikke aktivert. Vennligst
@@ -122,6 +125,7 @@
         language: Språk
         last_login_on: Siste innlogging
         mail_notification: E-postvarsler
+        current_password: Current Password
         new_password: Nytt passord
         password_confirmation: Bekreftelse
         force_password_change: Tving passordbytte ved neste innlogging
@@ -371,6 +375,7 @@
   button_edit: Rediger
   button_edit_associated_wikipage: 'Rediger tilknyttet Wiki-side: %{page_title}'
   button_expand_all: Utvid alle
+  button_generate: Generate
   button_list: Liste
   button_lock: Lås
   button_log_time: Logg tid
@@ -678,6 +683,17 @@
   instructions_after_logout: Du kan logge inn på nytt ved å trykke %{signin}.
   instructions_after_error: Du kan forsøke å logge inn på nytt ved å trykke %{signin}.
     Dersom feilen vedvarer må du kontakte din systemadministrator for hjelp.
+  my_account:
+    access_tokens:
+      no_results:
+        title: No access tokens to display
+        description: All of them have been disabled. They can be re-enabled in the
+          administration menu.
+      access_token: Access token
+      headers:
+        action: Action
+        expiration: Expires
+      indefinite_expiration: Never
   label_account: Konto
   label_activity: Aktivitet
   label_add_edit_translations: Add and edit translations
@@ -701,6 +717,7 @@
   label_and_its_subprojects: "%{value} og dens underprosjekter"
   label_api_access_key: API adgangsnøkkel
   label_api_access_key_created_on: API adgangsnøkkel ble opprettet for %{value} siden
+  label_api_access_key_type: API
   label_applied_status: Tildelt status
   label_ascending: Stigende
   label_assigned_to_me_work_packages: Arbeidspakker tildelt meg
@@ -816,6 +833,7 @@
   label_feed_plural: Feeds
   label_feeds_access_key: RSS tilgangsnøkkel
   label_feeds_access_key_created_on: RSS tilgangsnøkkel opprettet for %{value} siden
+  label_feeds_access_key_type: RSS
   label_file_added: Lagt til fil
   label_file_plural: Filer
   label_filter_add: Legg til filter
@@ -902,8 +920,8 @@
   label_message_posted: Melding lagt til
   label_min_max_length: Min-/makslengde
   label_minute_plural: minutes
-  label_missing_api_access_key: Mangler API tilgangsnøkkel
-  label_missing_feeds_access_key: Mangler RSS tilgangsnøkkel
+  label_missing_api_access_key: Missing API access key
+  label_missing_feeds_access_key: Missing RSS access key
   label_modification: "%{count} endring"
   label_modification_plural: "%{count} endringer"
   label_modified: endret
@@ -1227,6 +1245,7 @@
     nå innlogget.
   notice_activation_failed: The account could not be activated.
   notice_api_access_key_reseted: Din API tilgangsnøkkel ble nullstilt.
+  notice_api_access_key_generated: Your API access key was generated.
   notice_can_t_change_password: Denne kontoen bruker en ekstern autentiseringskilde.
     Det er ikke mulig å endre passordet.
   notice_email_error: Det oppstod en feil under sending av e-post (%{value})
@@ -1235,6 +1254,7 @@
     arbeidspakke(r) av %{total} valgte: %{ids}.'
   notice_failed_to_save_members: 'Feil ved lagring av medlem(mer): %{errors}.'
   notice_feeds_access_key_reseted: Din RSS tilgangsnøkel ble nullstilt.
+  notice_feeds_access_key_generated: Your RSS access key was generated.
   notice_file_not_found: Siden du forsøker å nå eksisterer ikke eller har blitt fjernet.
   notice_forced_logout: Du ble automatisk utlogget etter %{ttl_time} minutters inaktivitet.
   notice_internal_server_error: Det oppstod en feil på siden du forsøkte å nå. Dersom
@@ -1266,6 +1286,7 @@
   notice_unable_delete_version: Kunne ikke slette versjon.
   notice_user_missing_authentication_method: User has yet to chose a password or another
     way the sign in.
+  present_access_key_value: 'Your %{key_name} is: %{value}'
   notice_automatic_set_of_standard_type: Sett standardtype automatisk.
   notice_logged_out: Du ble logget av.
   notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
@@ -1613,6 +1634,8 @@
     array:
       sentence_connector: og
       skip_last_comma: usant
+  text_access_token_hint: Access tokens allow you to grant external applications access
+    to resources in OpenProject.
   text_analyze: 'Videre analyse: %{subject}'
   text_are_you_sure: Er du sikker?
   text_are_you_sure_with_children: Slette arbeidspakken og alle underordnede arbeidspakker?
@@ -1666,6 +1689,7 @@
   text_load_default_configuration: Last inn standardoppsettet
   text_min_max_length_info: 0 betyr ingen restriksjoner
   text_no_roles_defined: There are no roles defined.
+  text_no_access_tokens_configurable: There are no access tokens which can be configured.
   text_no_configuration_data: |
     Roller, typer, arbeidspakkestatuser og arbeidsflyt har ikke blitt satt opp ennå.
     Det er sterkt anbefalt å laste standardoppsettet. Du kan redigere disse når de er lastet inn.

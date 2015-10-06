@@ -32,6 +32,9 @@ pt:
         self: A sua conta será apagada do sistema. Em consequência,  não poderá mais
           entrar com as suas credenciais atuais. Poderá escolher ser utilizador desta
           aplicação outra vez nos termos permitidos pela aplicação.
+      login_verification:
+        other: Enter the login %{name} to verify the deletion.
+        self: Enter your login %{name} to verify the deletion.
     error_inactive_activation_by_mail: A sua conta ainda não foi activada. Para activar
       sua conta, clique no link que foi enviado por e-mail.
     error_inactive_manual_activation: A sua conta ainda não foi ativada. Por favor
@@ -121,6 +124,7 @@ pt:
         language: Idioma
         last_login_on: "Último login"
         mail_notification: Notificações por e-mail
+        current_password: Current Password
         new_password: Nova senha
         password_confirmation: Confirmação
         force_password_change: Forçar alteração de senha no próximo login
@@ -369,6 +373,7 @@ pt:
   button_edit: Editar
   button_edit_associated_wikipage: 'Editar página Wiki associada: %{page_title}'
   button_expand_all: Expandir Tudo
+  button_generate: Generate
   button_list: Lista
   button_lock: Bloquear
   button_log_time: Tempo de registro
@@ -677,6 +682,17 @@ pt:
   instructions_after_logout: You can sign in again by clicking %{signin}.
   instructions_after_error: You can try to sign in again by clicking %{signin}. If
     the error persists, ask your admin for help.
+  my_account:
+    access_tokens:
+      no_results:
+        title: No access tokens to display
+        description: All of them have been disabled. They can be re-enabled in the
+          administration menu.
+      access_token: Access token
+      headers:
+        action: Action
+        expiration: Expires
+      indefinite_expiration: Never
   label_account: Conta
   label_activity: Atividade
   label_add_edit_translations: Add and edit translations
@@ -700,6 +716,7 @@ pt:
   label_and_its_subprojects: "%{value} and its subprojects"
   label_api_access_key: API access key
   label_api_access_key_created_on: API access key created %{value} ago
+  label_api_access_key_type: API
   label_applied_status: Status aplicado
   label_ascending: Ascendente
   label_assigned_to_me_work_packages: Tarefas atribuídas a mim
@@ -816,6 +833,7 @@ pt:
   label_feed_plural: Feeds
   label_feeds_access_key: Chave de acesso RSS
   label_feeds_access_key_created_on: Chave de acesso RSS criada %{value} atrás
+  label_feeds_access_key_type: RSS
   label_file_added: Ficheiro adicionado
   label_file_plural: Ficheiros
   label_filter_add: Adicionar filtro
@@ -903,8 +921,8 @@ pt:
   label_message_posted: Mensagem adicionada
   label_min_max_length: Tamanho Mín - Max
   label_minute_plural: minutos
-  label_missing_api_access_key: Falta uma chave de acesso a API
-  label_missing_feeds_access_key: Falta uma chave de acesso RSS
+  label_missing_api_access_key: Missing API access key
+  label_missing_feeds_access_key: Missing RSS access key
   label_modification: "%{count} modificação"
   label_modification_plural: modificações %{count}
   label_modified: modificado
@@ -1230,6 +1248,7 @@ pt:
     você está autenticado.
   notice_activation_failed: The account could not be activated.
   notice_api_access_key_reseted: Your API access key was reset.
+  notice_api_access_key_generated: Your API access key was generated.
   notice_can_t_change_password: Esta conta usa autenticação externa. Impossível para
     alterar a palavra-passe.
   notice_email_error: An error occurred while sending mail (%{value})
@@ -1238,6 +1257,7 @@ pt:
     %{total} selected: %{ids}.'
   notice_failed_to_save_members: 'Failed to save member(s): %{errors}.'
   notice_feeds_access_key_reseted: Your RSS access key was reset.
+  notice_feeds_access_key_generated: Your RSS access key was generated.
   notice_file_not_found: A página que está a tentar aceder não existe ou foi removida.
   notice_forced_logout: You have been automatically logged out after %{ttl_time} minutes
     of inactivity.
@@ -1271,6 +1291,7 @@ pt:
   notice_unable_delete_version: Não é possível eliminar a versão.
   notice_user_missing_authentication_method: User has yet to chose a password or another
     way the sign in.
+  present_access_key_value: 'Your %{key_name} is: %{value}'
   notice_automatic_set_of_standard_type: Defina o tipo por defeito automaticamente.
   notice_logged_out: You have been logged out.
   notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
@@ -1619,6 +1640,8 @@ pt:
     array:
       sentence_connector: e
       skip_last_comma: falso
+  text_access_token_hint: Access tokens allow you to grant external applications access
+    to resources in OpenProject.
   text_analyze: 'Further analyze: %{subject}'
   text_are_you_sure: Tem a certeza?
   text_are_you_sure_with_children: Delete work package and all child work packages?
@@ -1672,6 +1695,7 @@ pt:
   text_load_default_configuration: Carregar a configuração por defeito
   text_min_max_length_info: 0 significa sem restrições
   text_no_roles_defined: There are no roles defined.
+  text_no_access_tokens_configurable: There are no access tokens which can be configured.
   text_no_configuration_data: |
     Roles, types, work package statuses and workflow have not been configured yet.
     It is highly recommended to load the default configuration. You will be able to modify it once loaded.

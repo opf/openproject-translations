@@ -28,6 +28,9 @@ zh-TW:
       login_consequences:
         other: "將從系統中刪除該帳號。因此，使用者將不再能夠用他當前的帳密登錄。未來必須重新申請，才能再度成為使用者。"
         self: "您的帳號將從系統中刪除。因此，您將不再能夠使用當前的帳密登錄。未來必需重新申請，才能再度成為使用者。"
+      login_verification:
+        other: Enter the login %{name} to verify the deletion.
+        self: Enter your login %{name} to verify the deletion.
     error_inactive_activation_by_mail: "您的帳號尚未啟用。要啟用您的帳號，請點擊系統通過電子郵件發送給您的連結。"
     error_inactive_manual_activation: "您的帳號尚未啟用。請等待管理員啟用您的帳號。"
     error_self_registration_disabled: "此系統禁止使用者註冊。請通知管理員為您建立帳號。"
@@ -114,6 +117,7 @@ zh-TW:
         language: "語言"
         last_login_on: "上次登入時間"
         mail_notification: "電子郵件通知"
+        current_password: Current Password
         new_password: "新密碼"
         password_confirmation: "確認密碼"
         force_password_change: "強制在下次登入時更改密碼"
@@ -362,6 +366,7 @@ zh-TW:
   button_edit: "編輯"
   button_edit_associated_wikipage: "編輯關聯的維基頁面：%{page_title}"
   button_expand_all: "全部展開"
+  button_generate: Generate
   button_list: "清單"
   button_lock: "鎖定"
   button_log_time: "日誌的時間"
@@ -663,6 +668,17 @@ zh-TW:
   instructions_after_logout: "您可點擊 %{signin} 再次登入。"
   instructions_after_error: You can try to sign in again by clicking %{signin}. If
     the error persists, ask your admin for help.
+  my_account:
+    access_tokens:
+      no_results:
+        title: No access tokens to display
+        description: All of them have been disabled. They can be re-enabled in the
+          administration menu.
+      access_token: Access token
+      headers:
+        action: Action
+        expiration: Expires
+      indefinite_expiration: Never
   label_account: "帳號"
   label_activity: "活動"
   label_add_edit_translations: Add and edit translations
@@ -686,6 +702,7 @@ zh-TW:
   label_and_its_subprojects: "%{value} 與它的子專案"
   label_api_access_key: API access key
   label_api_access_key_created_on: API access key created %{value} ago
+  label_api_access_key_type: API
   label_applied_status: "套用的狀態"
   label_ascending: Ascending
   label_assigned_to_me_work_packages: "分配給我的工作項目"
@@ -801,6 +818,7 @@ zh-TW:
   label_feed_plural: Feeds
   label_feeds_access_key: RSS access key
   label_feeds_access_key_created_on: RSS access key created %{value} ago
+  label_feeds_access_key_type: RSS
   label_file_added: "檔案已新增"
   label_file_plural: "檔案"
   label_filter_add: "新增篩選器"
@@ -885,8 +903,8 @@ zh-TW:
   label_message_posted: "訊息已新增"
   label_min_max_length: Min - Max length
   label_minute_plural: minutes
-  label_missing_api_access_key: Missing an API access key
-  label_missing_feeds_access_key: Missing a RSS access key
+  label_missing_api_access_key: Missing API access key
+  label_missing_feeds_access_key: Missing RSS access key
   label_modification: "%{count} change"
   label_modification_plural: "%{count} changes"
   label_modified: "已修改"
@@ -1205,6 +1223,7 @@ zh-TW:
   notice_account_registered_and_logged_in: "歡迎，您的帳號已被啟用。您現在已經登入了。"
   notice_activation_failed: The account could not be activated.
   notice_api_access_key_reseted: Your API access key was reset.
+  notice_api_access_key_generated: Your API access key was generated.
   notice_can_t_change_password: This account uses an external authentication source.
     Impossible to change the password.
   notice_email_error: An error occurred while sending mail (%{value})
@@ -1213,6 +1232,7 @@ zh-TW:
     %{total} selected: %{ids}.'
   notice_failed_to_save_members: "無法保存成員: %{errors}。"
   notice_feeds_access_key_reseted: Your RSS access key was reset.
+  notice_feeds_access_key_generated: Your RSS access key was generated.
   notice_file_not_found: "您試圖存取的頁面不存在或已被移除。"
   notice_forced_logout: "由於超過 %{ttl_time} 分鐘沒有操作，您已被自動登出。"
   notice_internal_server_error: An error occurred on the page you were trying to access.
@@ -1244,6 +1264,7 @@ zh-TW:
   notice_unable_delete_version: "無法刪除版本"
   notice_user_missing_authentication_method: User has yet to chose a password or another
     way the sign in.
+  present_access_key_value: 'Your %{key_name} is: %{value}'
   notice_automatic_set_of_standard_type: "自動設定標準類型"
   notice_logged_out: "您已登出"
   notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
@@ -1588,6 +1609,8 @@ zh-TW:
     array:
       sentence_connector: "和"
       skip_last_comma: "否"
+  text_access_token_hint: Access tokens allow you to grant external applications access
+    to resources in OpenProject.
   text_analyze: 'Further analyze: %{subject}'
   text_are_you_sure: "是否確定？"
   text_are_you_sure_with_children: "刪除工作項目以及所有子工作項目?"
@@ -1640,6 +1663,7 @@ zh-TW:
   text_load_default_configuration: "載入預設組態"
   text_min_max_length_info: 0 代表沒有限制
   text_no_roles_defined: There are no roles defined.
+  text_no_access_tokens_configurable: There are no access tokens which can be configured.
   text_no_configuration_data: |
     角色，類型，工作項目狀態與工作流程都尚未設定。
     強烈建議先載入預設值，然後再修改它們。

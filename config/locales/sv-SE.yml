@@ -32,6 +32,9 @@ sv-SE:
         self: Kontot tas bort från systemet. Därför kommer du inte längre att kunna
           logga in med dina aktuella autentiseringsuppgifter. Du kan välja att bli
           användare igen genom det sätt som detta system medger.
+      login_verification:
+        other: Enter the login %{name} to verify the deletion.
+        self: Enter your login %{name} to verify the deletion.
     error_inactive_activation_by_mail: Ditt konto har ännu inte aktiverats. För att
       aktivera ditt konto, klicka på länken som har skickas till dig via E-post.
     error_inactive_manual_activation: Ditt konto har ännu inte aktiverats. Du måste
@@ -121,6 +124,7 @@ sv-SE:
         language: Språk
         last_login_on: Senaste inloggning
         mail_notification: E-postaviseringar
+        current_password: Current Password
         new_password: Nytt lösenord
         password_confirmation: Bekräftelse
         force_password_change: Tvinga lösenordsändring vid nästa inloggning
@@ -368,6 +372,7 @@ sv-SE:
   button_edit: Redigera
   button_edit_associated_wikipage: 'Redigerade associerad wikisida: %{page_title}'
   button_expand_all: Expandera alla
+  button_generate: Generate
   button_list: Lista
   button_lock: Lås
   button_log_time: Logga tid
@@ -674,6 +679,17 @@ sv-SE:
   instructions_after_logout: Du kan logga in igen genom att klicka på %{signin}.
   instructions_after_error: Du kan försöka logga in igen genom att klicka på %{signin}.
     Om felet kvarstår, be din systemadministratör om hjälp.
+  my_account:
+    access_tokens:
+      no_results:
+        title: No access tokens to display
+        description: All of them have been disabled. They can be re-enabled in the
+          administration menu.
+      access_token: Access token
+      headers:
+        action: Action
+        expiration: Expires
+      indefinite_expiration: Never
   label_account: Konto
   label_activity: Aktivitet
   label_add_edit_translations: Lägg till och editera översättningar
@@ -697,6 +713,7 @@ sv-SE:
   label_and_its_subprojects: "%{value} och dess delprojekt"
   label_api_access_key: API åtkomstnyckel
   label_api_access_key_created_on: API åtkomstnyckel skapade %{value} sedan
+  label_api_access_key_type: API
   label_applied_status: Tillämpad status
   label_ascending: Stigande
   label_assigned_to_me_work_packages: Arbetspaket som tilldelats till mig
@@ -813,6 +830,7 @@ sv-SE:
   label_feed_plural: Flöden
   label_feeds_access_key: RSS access key
   label_feeds_access_key_created_on: RSS access key skapad %{value} sen
+  label_feeds_access_key_type: RSS
   label_file_added: Fil tillagd
   label_file_plural: Filer
   label_filter_add: Lägg till filter
@@ -900,8 +918,8 @@ sv-SE:
   label_message_posted: Meddelande tillaggt
   label_min_max_length: Min - Maxlängd
   label_minute_plural: minuter
-  label_missing_api_access_key: En API åtkomstnyckel saknas
-  label_missing_feeds_access_key: En RSS åtkomstnyckel saknas
+  label_missing_api_access_key: Missing API access key
+  label_missing_feeds_access_key: Missing RSS access key
   label_modification: "%{count} förändring"
   label_modification_plural: "%{count} förändringar"
   label_modified: modifierad
@@ -1225,6 +1243,7 @@ sv-SE:
     är nu inloggad.
   notice_activation_failed: The account could not be activated.
   notice_api_access_key_reseted: Din API åtkomstnyckel återställdes.
+  notice_api_access_key_generated: Your API access key was generated.
   notice_can_t_change_password: Detta konto använder en extern autentiseringskälla.
     Omöjligt att ändra lösenordet.
   notice_email_error: Ett fel uppstod när E-post skulle skickas (%{value})
@@ -1233,6 +1252,7 @@ sv-SE:
     av %{total} valt: %{ids}.'
   notice_failed_to_save_members: 'Det gick inte att spara medlem(mar): %{errors}.'
   notice_feeds_access_key_reseted: Din RSS-åtkomstnyckel återställdes.
+  notice_feeds_access_key_generated: Your RSS access key was generated.
   notice_file_not_found: Sidan du försökte komma åt existerar inte eller har tagits
     bort.
   notice_forced_logout: Du har blivit automatiskt utloggad efter %{ttl_time} minuter
@@ -1265,6 +1285,7 @@ sv-SE:
   notice_unable_delete_version: Det gick inte att ta bort version.
   notice_user_missing_authentication_method: User has yet to chose a password or another
     way the sign in.
+  present_access_key_value: 'Your %{key_name} is: %{value}'
   notice_automatic_set_of_standard_type: Ange standard typ automatiskt.
   notice_logged_out: Du har loggats ut.
   notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
@@ -1613,6 +1634,8 @@ sv-SE:
     array:
       sentence_connector: och
       skip_last_comma: falsk
+  text_access_token_hint: Access tokens allow you to grant external applications access
+    to resources in OpenProject.
   text_analyze: 'Vidare analys: %{subject}'
   text_are_you_sure: "Är du säker?"
   text_are_you_sure_with_children: Ta bort arbetspaket och alla underarbetspaket?
@@ -1666,6 +1689,7 @@ sv-SE:
   text_load_default_configuration: Ladda standardkonfigurationen
   text_min_max_length_info: 0 innebär ingen begränsning
   text_no_roles_defined: There are no roles defined.
+  text_no_access_tokens_configurable: There are no access tokens which can be configured.
   text_no_configuration_data: Roller, typer, status för arbetspaket och arbetsflöden
     har inte konfigurerats ännu. Det rekommenderas starkt att läsa in standardkonfigurationen.
     Du kommer att kunna ändra dem när de är initialiserade.

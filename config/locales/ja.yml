@@ -18,6 +18,9 @@ ja:
       login_consequences:
         other: "このアカウントはシステムから削除されます。したがって、このユーザは現在の認証情報でログイン不可能になります。再度このアプリケーションのユーザになることは可能です。"
         self: "自分のアカウントがシステムから削除されます。したがって、現在の認証情報ではログイン不可能になります。再度このアプリケーションのユーザになることは可能です。"
+      login_verification:
+        other: Enter the login %{name} to verify the deletion.
+        self: Enter your login %{name} to verify the deletion.
     error_inactive_activation_by_mail: "アカウントが有効化されていません。アカウントを有効にするために、受信したメール内のリンクをクリックしてください。"
     error_inactive_manual_activation: "あなたのアカウントは未だ有効化されていません。管理者がアカウントを有効化するまでにお待ちください。"
     error_self_registration_disabled: "このシステムでは、ユーザ登録が無効化されています。アカウントを作成するには管理者にお問い合わせください。"
@@ -104,6 +107,7 @@ ja:
         language: "言語"
         last_login_on: "最終ログイン日時"
         mail_notification: "電子メールの通知"
+        current_password: Current Password
         new_password: "新しいパスワード"
         password_confirmation: "確認のため再入力"
         force_password_change: "次回ログイン時にパスワード変更を強制する"
@@ -341,6 +345,7 @@ ja:
   button_edit: "編集"
   button_edit_associated_wikipage: "関連するWiki ページを編集: %{page_title}"
   button_expand_all: "全てを展開"
+  button_generate: Generate
   button_list: "リスト"
   button_lock: "ロック"
   button_log_time: "時間を記録"
@@ -633,6 +638,17 @@ ja:
   instructions_after_registration: "%{signin}をクリックして、アカウントが有効された後にログインできます。"
   instructions_after_logout: "%{signin}をクリックして再びログインできます。"
   instructions_after_error: "%{signin} をクリックして再びログインを試行できます。エラーが解決しない場合は、管理者にお問い合わせください。"
+  my_account:
+    access_tokens:
+      no_results:
+        title: No access tokens to display
+        description: All of them have been disabled. They can be re-enabled in the
+          administration menu.
+      access_token: Access token
+      headers:
+        action: Action
+        expiration: Expires
+      indefinite_expiration: Never
   label_account: "アカウント"
   label_activity: "活動"
   label_add_edit_translations: Add and edit translations
@@ -654,6 +670,7 @@ ja:
   label_and_its_subprojects: "%{value}とその子プロジェクト"
   label_api_access_key: APIアクセスキー
   label_api_access_key_created_on: APIアクセスキーが%{value}前に作成されました
+  label_api_access_key_type: API
   label_applied_status: "適用されるステータス"
   label_ascending: "昇順"
   label_assigned_to_me_work_packages: "担当している作業項目"
@@ -769,6 +786,7 @@ ja:
   label_feed_plural: "フィード"
   label_feeds_access_key: RSSアクセスキー
   label_feeds_access_key_created_on: RSSアクセスキーが%{value}前に作成されました
+  label_feeds_access_key_type: RSS
   label_file_added: "ファイルが追加されました。"
   label_file_plural: "ファイルを添付する"
   label_filter_add: "フィルターを追加"
@@ -852,8 +870,8 @@ ja:
   label_message_posted: "メッセージが追加されました。"
   label_min_max_length: "最短 ～ 最大長"
   label_minute_plural: "分"
-  label_missing_api_access_key: APIアクセスキーが見つかりません。
-  label_missing_feeds_access_key: RSSアクセスキーが見つかりません。
+  label_missing_api_access_key: Missing API access key
+  label_missing_feeds_access_key: Missing RSS access key
   label_modification: "%{count}件の変更"
   label_modification_plural: "%{count}件の変更"
   label_modified: "変更"
@@ -1161,12 +1179,14 @@ ja:
   notice_account_registered_and_logged_in: "ようこそ、アカウントが有効になりました。只今ログイン中ます。"
   notice_activation_failed: The account could not be activated.
   notice_api_access_key_reseted: APIアクセスキーを初期化しました。
+  notice_api_access_key_generated: Your API access key was generated.
   notice_can_t_change_password: "このアカウントでは外部認証を使っています。パスワードは変更できません。"
   notice_email_error: "メール送信中にエラーが発生しました（%{value}）。"
   notice_email_sent: "%{value}宛にメールを送信しました。"
   notice_failed_to_save_work_packages: "全%{total}件中に%{count}件の作業項目が保存できませんでした: %{ids}。"
   notice_failed_to_save_members: "メンバーの保存に失敗しました: %{errors}。"
   notice_feeds_access_key_reseted: RSSアクセスキーを初期化しました。
+  notice_feeds_access_key_generated: Your RSS access key was generated.
   notice_file_not_found: "アクセスしようとしたページが存在しないか削除されています。"
   notice_forced_logout: "%{ttl_time}分間の非活動のために、自動的にログアウトされました。"
   notice_internal_server_error: "アクセスしようとしたページでエラーが発生しました。継続して問題が発生している場合、%{app_title}の管理者にお問い合わせください。"
@@ -1192,6 +1212,7 @@ ja:
   notice_unable_delete_version: "バージョンを削除できません。"
   notice_user_missing_authentication_method: User has yet to chose a password or another
     way the sign in.
+  present_access_key_value: 'Your %{key_name} is: %{value}'
   notice_automatic_set_of_standard_type: "自動的に標準型を設定します。"
   notice_logged_out: "ログアウトしました。"
   notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
@@ -1530,6 +1551,8 @@ ja:
     array:
       sentence_connector: "及び"
       skip_last_comma: "偽"
+  text_access_token_hint: Access tokens allow you to grant external applications access
+    to resources in OpenProject.
   text_analyze: "さらに分析: %{subject}"
   text_are_you_sure: "よろしいですか？"
   text_are_you_sure_with_children: "仕事項目と子項目を削除してもよろしいですか？"
@@ -1576,6 +1599,7 @@ ja:
   text_load_default_configuration: "デフォルト設定をロード"
   text_min_max_length_info: 0だと無制限になります。
   text_no_roles_defined: There are no roles defined.
+  text_no_access_tokens_configurable: There are no access tokens which can be configured.
   text_no_configuration_data: |
     ロール、作業項目のステータスと型、ワークフローが未設定です。
     デフォルト設定のロードを強くお勧めします。ロードした後、それを修正することができます。

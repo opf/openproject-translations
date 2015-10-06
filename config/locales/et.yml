@@ -32,6 +32,9 @@ et:
         self: Sinu konto kustutatakse süsteemist. Seetõttu ei saa sa enam sisse logida
           oma praeguste kasutajatunnustega. Küll aga võid sa registreerida end uuesti
           rakenduse kasutajaks.
+      login_verification:
+        other: Enter the login %{name} to verify the deletion.
+        self: Enter your login %{name} to verify the deletion.
     error_inactive_activation_by_mail: Sinu konto ei ole veel aktiivne. Sulle saadetud
       e-kirjas on link, millega saad oma konto aktiveerida.
     error_inactive_manual_activation: Sinu konto pole aktiveeritud veel. Palun oota,
@@ -121,6 +124,7 @@ et:
         language: Keel
         last_login_on: Last login
         mail_notification: Eposti märguandmed
+        current_password: Current Password
         new_password: Uus parool
         password_confirmation: Kinnitamine
         force_password_change: Sunni parooli vahetada järgmisel sisselogimisel
@@ -369,6 +373,7 @@ et:
   button_edit: Muuda
   button_edit_associated_wikipage: Muuda seotud vikilehte "%{page_title}"
   button_expand_all: Voldi kõik lahti
+  button_generate: Generate
   button_list: Listi
   button_lock: Lukusta
   button_log_time: Logi aeg
@@ -677,6 +682,17 @@ et:
   instructions_after_logout: You can sign in again by clicking %{signin}.
   instructions_after_error: You can try to sign in again by clicking %{signin}. If
     the error persists, ask your admin for help.
+  my_account:
+    access_tokens:
+      no_results:
+        title: No access tokens to display
+        description: All of them have been disabled. They can be re-enabled in the
+          administration menu.
+      access_token: Access token
+      headers:
+        action: Action
+        expiration: Expires
+      indefinite_expiration: Never
   label_account: Konto
   label_activity: Tegevus
   label_add_edit_translations: Add and edit translations
@@ -700,6 +716,7 @@ et:
   label_and_its_subprojects: "%{value} ja selle alamprojektid"
   label_api_access_key: API ligipääsutunnus
   label_api_access_key_created_on: API ligipääsutunnus on loodud %{value} tagasi
+  label_api_access_key_type: API
   label_applied_status: Rakendatud olek
   label_ascending: Kasvav
   label_assigned_to_me_work_packages: Minu teemad
@@ -816,6 +833,7 @@ et:
   label_feed_plural: Kanalid
   label_feeds_access_key: RSS kasutuse võti
   label_feeds_access_key_created_on: RSS kasutuse võti on loodud %{value} tagasi
+  label_feeds_access_key_type: RSS
   label_file_added: Fail on lisatud
   label_file_plural: Failid
   label_filter_add: Lisa filter
@@ -900,8 +918,8 @@ et:
   label_message_posted: Sõnum on lisatud
   label_min_max_length: Min - Max pikkus
   label_minute_plural: minutes
-  label_missing_api_access_key: Puudub API kasutamise võti
-  label_missing_feeds_access_key: Puudub RSS kasutamise võti
+  label_missing_api_access_key: Missing API access key
+  label_missing_feeds_access_key: Missing RSS access key
   label_modification: "%{count} muudatust"
   label_modification_plural: "%{count} muudatust"
   label_modified: muudetud
@@ -1223,6 +1241,7 @@ et:
     logitakse nüüd sisse.
   notice_activation_failed: The account could not be activated.
   notice_api_access_key_reseted: Sinu API juurdepääsuvõti nulliti.
+  notice_api_access_key_generated: Your API access key was generated.
   notice_can_t_change_password: See konto kasutab välist autentimisallikat. Siin ei
     saa selle konto parooli vahetada.
   notice_email_error: Kirja saatmisel tekkis viga (%{value})
@@ -1231,6 +1250,7 @@ et:
     salvestada: %{ids}."
   notice_failed_to_save_members: 'Liiget või liikmeid ei õnnestunud salvestada: %{errors}.'
   notice_feeds_access_key_reseted: Sinu Atom juurdepääsuvõti nulliti.
+  notice_feeds_access_key_generated: Your RSS access key was generated.
   notice_file_not_found: Sellist lehte ei leitud.
   notice_forced_logout: Sind logiti automaatselt välja %{ttl_time} tegevuseta minuti
     järel.
@@ -1260,6 +1280,7 @@ et:
   notice_unable_delete_version: Versiooni kustutamine ei õnnestunud.
   notice_user_missing_authentication_method: User has yet to chose a password or another
     way the sign in.
+  present_access_key_value: 'Your %{key_name} is: %{value}'
   notice_automatic_set_of_standard_type: Vaikimisi tüüp valitakse automaatselt.
   notice_logged_out: You have been logged out.
   notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
@@ -1610,6 +1631,8 @@ et:
     array:
       sentence_connector: ja
       skip_last_comma: väär
+  text_access_token_hint: Access tokens allow you to grant external applications access
+    to resources in OpenProject.
   text_analyze: 'Analüüsi täiendavalt: %{subject}'
   text_are_you_sure: Kas oled kindel?
   text_are_you_sure_with_children: Oled Sa kindel oma soovis see teema koos selle
@@ -1666,6 +1689,7 @@ et:
   text_load_default_configuration: Laadi vaikeasetused
   text_min_max_length_info: 0 tähendab, et piiranguid ei ole
   text_no_roles_defined: There are no roles defined.
+  text_no_access_tokens_configurable: There are no access tokens which can be configured.
   text_no_configuration_data: |-
     Rollid, valdkonnad, olekud ja töövood ei ole veel seadistatud.
     Väga soovitav on laadida vaikeasetused. Peale laadimist saad neid ise muuta.
