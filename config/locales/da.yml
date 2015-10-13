@@ -1451,13 +1451,14 @@ da:
       title: Do you really want to delete the %{repository_type} of the project %{project_name}?
     errors:
       build_failed: Kan ikke oprette repositoriet med den valgte konfiguration. %{reason}
+      managed_delete: Unable to delete the managed repository.
+      managed_delete_local: 'Unable to delete the local repository on filesystem at
+        ''%{path}'': %{error_message}'
       empty_repository: Repositoriet findes, men er tomt. Det indeholder endnu ingen
         revideringer.
       exists_on_filesystem: Repositoriemappen findes allerede på disken.
       filesystem_access_failed: 'En fejl opstod under tilgang til repositoriet på
         disken: %{message}'
-      deletion_failed: Repositoriet kunne ikke slettes fra disken grundet manglende
-        tilladelser. Kontakt venligst din administrator for at løse problemet.
       not_manageable: Denne repositorieleverandør kan ikke administreres af OpenProject.
       path_permission_failed: 'En fejl opstod under forsøget på at oprette følgende
         sti: %{path}. Sørg venligst for, at OpenProject har skrivetilladelse til den
@@ -1478,13 +1479,16 @@ da:
       local_title: Link eksisterende lokalt Git-repositorie
       local_introduction: Har du et eksisterende underversions-repositorie, kan du
         lænke dette med OpenProject for at kunne tilgå det indefra applikationen.
-      managed_path: Administreret Git-sti (uddrag)
       managed_introduction: Lad OpenProject oprette og integrere et lokalt Git-repositorie
         automatisk.
       managed_title: Git-repositorie integreret i OpenProject
       path: Sti til Git-repositorie
       path_encoding: Indkod sti for arkivering
     go_to_revision: Gå til revision
+    managed_remote: Managed repositories for this vendor are handled remotely.
+    managed_remote_note: Information on the URL and path of this repository is not
+      available prior to its creation.
+    managed_url: Managed URL
     settings:
       automatic_managed_repos_disabled: Deaktivér automatisk oprettelse
       automatic_managed_repos: Automatisk oprettelse af administrerede repositorier
@@ -1513,7 +1517,6 @@ da:
       managed_title: Underversions-repositorie integreret i OpenProject
       managed_introduction: Lad OpenProject oprette og integrere et lokalt underversions-repositorie
         automatisk.
-      managed_url: Administreret URL
       password: Repositorie-adgangskode
       username: Repositorie-brugernavn
     named_repository: "%{vendor_name}-repositorie"

@@ -1433,13 +1433,14 @@ id:
       title: Do you really want to delete the %{repository_type} of the project %{project_name}?
     errors:
       build_failed: Pembuatan repository gagal. %{reason}
+      managed_delete: Unable to delete the managed repository.
+      managed_delete_local: 'Unable to delete the local repository on filesystem at
+        ''%{path}'': %{error_message}'
       empty_repository: Pada repository yang ditemukan belum terdapat revisi sama
         sekali.
       exists_on_filesystem: The repository directory already exists in the filesystem.
       filesystem_access_failed: 'An error occurred while accessing the repository
         in the filesystem: %{message}'
-      deletion_failed: The repository could not be deleted from disk due to lacking
-        permissions. Please contact your administrator to resolve this issue.
       not_manageable: Repository dari vendor yang anda pilih belum bisa dikelola oleh
         OpenProject.
       path_permission_failed: Terjadi error saat membuat %{path}. Pastikan OpenProject
@@ -1459,13 +1460,16 @@ id:
       local_title: Ambil dari Git lokal
       local_introduction: Repository Git lokal yang anda miliki dapat dihubungkan
         dengan OpenProject untuk dikelola dari dalam.
-      managed_path: Git yang dikelola (preview)
       managed_introduction: Perbolehkan Repository Git lokal untuk dikelola secara
         otomatis oleh OpenProject.
       managed_title: Repository Git telah terintegrasi
       path: Path Git
       path_encoding: Path encoding
     go_to_revision: Go to revision
+    managed_remote: Managed repositories for this vendor are handled remotely.
+    managed_remote_note: Information on the URL and path of this repository is not
+      available prior to its creation.
+    managed_url: Managed URL
     settings:
       automatic_managed_repos_disabled: Nonaktifkan pembuatan otomatis
       automatic_managed_repos: Pembuatan otomatis di repository
@@ -1493,7 +1497,6 @@ id:
       managed_title: Repository Subversion telah diintegrasikan ke OpenProject
       managed_introduction: Ijinkan OpenProject membuat dan mengintegrasikan Subversion
         lokal secara otomatis.
-      managed_url: URL yang dikelola
       password: Password Repository
       username: Username Repository
     named_repository: "%{vendor_name} repository"

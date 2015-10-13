@@ -30,13 +30,12 @@ fr:
       login_consequences:
         other: Le compte sera supprimé du système. Par conséquent, l'utilisateur ne
           sera plus en mesure de se connecter avec ses informations d'identification
-          actuelles. Il/elle peut choisir de redevenir un utilisateur de cette application
-          par le biais d'une autorisation de l'application.
+          actuelles. Il/elle pourra choisir de redevenir un utilisateur de cette application
+          en suivant les procédures habituelles.
         self: Votre compte sera supprimé du système. Par conséquent, vous ne serez
           plus en mesure de vous identifier avec vos informations d'identification
-          actuelles. Si vous décidez de devenir un utilisateur de nouveau sur cette
-          application, vous pouvez faire ainsi en utilisant les moyens que cette application
-          autorise.
+          actuelles. Vous pourrez choisir de redevenir un utilisateur de cette application
+          en suivant les procédures habituelles.
       login_verification:
         other: Enter the login %{name} to verify the deletion.
         self: Enter your login %{name} to verify the deletion.
@@ -133,8 +132,8 @@ fr:
         current_password: Mot de passe actuel
         new_password: Nouveau mot de passe
         password_confirmation: Confirmation
-        force_password_change: Appliquer le changement de mot de passe à la prochaine
-          connexion
+        force_password_change: Obliger l'utilisateur à changer de mot de passe à la
+          prochaine connexion
       user_preference:
         comments_sorting: Afficher les commentaires
         hide_mail: Masquer mon adresse courriel
@@ -1478,13 +1477,14 @@ fr:
     errors:
       build_failed: Impossible de créer le dépôt avec la configuration sélectionnée.
         %{reason}
+      managed_delete: Unable to delete the managed repository.
+      managed_delete_local: 'Unable to delete the local repository on filesystem at
+        ''%{path}'': %{error_message}'
       empty_repository: Le dépôt existe mais il est vide. Il ne contient aucune révision
         pour le moment.
       exists_on_filesystem: The repository directory already exists in the filesystem.
       filesystem_access_failed: 'An error occurred while accessing the repository
         in the filesystem: %{message}'
-      deletion_failed: Le dépôt n'a pas pu être supprimé du disque par manque de permissions.
-        Veuillez contacter votre administrateur pour résoudre ce problème.
       not_manageable: Ce fournisseur de dépôt ne peut pas être géré par OpenProject.
       path_permission_failed: 'Une erreur s''est produite en essayant de créer le
         chemin d''accès suivant: %{path}. Veuillez vous assurer que OpenProject peut
@@ -1506,13 +1506,16 @@ fr:
       local_title: Lier à un dépôt local Git existant
       local_introduction: Si vous avez un dépôt Git existant, vous pouvez le lier
         à OpenProject pour y accéder depuis l'application.
-      managed_path: Chemin d'accès Git géré (aperçu)
       managed_introduction: Laisser OpenProject créer et intégrer automatiquement
         un dépôt local Git.
       managed_title: Dépôt Git intégré à OpenProject
       path: Chemin d'accès au dépôt Git
       path_encoding: Encodage du chemin d'accès
     go_to_revision: Aller à la révision
+    managed_remote: Managed repositories for this vendor are handled remotely.
+    managed_remote_note: Information on the URL and path of this repository is not
+      available prior to its creation.
+    managed_url: Managed URL
     settings:
       automatic_managed_repos_disabled: Désactiver la création automatique
       automatic_managed_repos: Création automatique des dépôts gérés
@@ -1542,7 +1545,6 @@ fr:
       managed_title: Dépôt Subversion intégré à OpenProject
       managed_introduction: Laisser OpenProject créer et intégrer automatiquement
         un dépôt local Subversion.
-      managed_url: URL gérée
       password: Mot de passe du dépôt
       username: Nom d'utilisateur du dépôt
     named_repository: dépôt %{vendor_name}

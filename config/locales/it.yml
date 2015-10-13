@@ -1486,14 +1486,14 @@ it:
     errors:
       build_failed: Impossibile creare il repository con la configurazione richiesta.
         %{reason}
+      managed_delete: Unable to delete the managed repository.
+      managed_delete_local: 'Unable to delete the local repository on filesystem at
+        ''%{path}'': %{error_message}'
       empty_repository: L'archivio esiste, ma è vuoto. Non contiene ancora alcuna
         revisione.
       exists_on_filesystem: La directory di repository esiste già nel file system.
       filesystem_access_failed: 'Si è verificato un errore durante l''accesso dell''archivio
         nel file system: %{message}'
-      deletion_failed: Il repository non può essere eliminato dal disco a causa della
-        mancanza di autorizzazioni. Si prega di contattare l'amministratore per risolvere
-        il problema.
       not_manageable: Questo tipo di archivo non può essere gestito da OpenProject.
       path_permission_failed: 'Si è verificato un errore cercando di creare il seguente
         percorso: %{path}. Si prega di verificare che OpenProject possa scrivere in
@@ -1514,13 +1514,16 @@ it:
       local_title: Collega un archivio Git locale
       local_introduction: Se si dispone di un archivio Git locale preesistente, è
         possibile collegarlo con OpenProject per accedervi dall'interno dell'applicazione.
-      managed_path: Percorso al Git gestito (anteprima)
       managed_introduction: Permetti ad OpenProject di creare ed integrare un archivio
         Git locale automaticamente.
       managed_title: Archivio Git integrato in OpenProject
       path: Percorso all'archivio Git
       path_encoding: Codifica del percorso
     go_to_revision: Vai alla revisione
+    managed_remote: Managed repositories for this vendor are handled remotely.
+    managed_remote_note: Information on the URL and path of this repository is not
+      available prior to its creation.
+    managed_url: Managed URL
     settings:
       automatic_managed_repos_disabled: Disabilita la creazione automatica
       automatic_managed_repos: Creazione automatica degli spazi di archiviazione gestiti
@@ -1550,7 +1553,6 @@ it:
       managed_title: L'archivio Subversion è stato integrato in OpenProject
       managed_introduction: Permetti ad OpenProject di creare ed integrare un archivio
         Subversion locale automaticamente.
-      managed_url: URL gestito
       password: Password di accesso all'archivio
       username: Nome utente di accesso all'archivio
     named_repository: archivio di progetto %{vendor_name}

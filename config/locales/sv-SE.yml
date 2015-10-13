@@ -1449,13 +1449,14 @@ sv-SE:
     errors:
       build_failed: Det gick inte att skapa versionsarkivet med den valda konfigurationen.
         %{reason}
+      managed_delete: Unable to delete the managed repository.
+      managed_delete_local: 'Unable to delete the local repository on filesystem at
+        ''%{path}'': %{error_message}'
       empty_repository: Verionsarkivet finns, men är tomt. Det innehåller inte några
         revisioner ännu.
       exists_on_filesystem: The repository directory already exists in the filesystem.
       filesystem_access_failed: 'An error occurred while accessing the repository
         in the filesystem: %{message}'
-      deletion_failed: The repository could not be deleted from disk due to lacking
-        permissions. Please contact your administrator to resolve this issue.
       not_manageable: Denna leverantör av versionsarkiv kan inte hanteras av OpenProject.
       path_permission_failed: 'Ett fel uppstod vid försök att skapa följande sökväg:
         %{path}. Se till att OpenProject kan skriva till mappen.'
@@ -1476,13 +1477,16 @@ sv-SE:
       local_title: Länka befintligt lokalt Git-versionsarkiv
       local_introduction: Om du har ett existerande lokalt Git-versionsarkiv, så kan
         du länka till det ifrån OpenProject för att nå det inifrån applikationen.
-      managed_path: Hanterad sökväg till Git (förhandsgranska)
       managed_introduction: Låt OpenProject automatiskt skapa och integrera ett lokalt
         Git-versionsarkiv.
       managed_title: Git-versionsarkivet integreras i OpenProject
       path: Sökväg till Git-versionsarkiv
       path_encoding: Sökvägskodning
     go_to_revision: Gå till revision
+    managed_remote: Managed repositories for this vendor are handled remotely.
+    managed_remote_note: Information on the URL and path of this repository is not
+      available prior to its creation.
+    managed_url: Managed URL
     settings:
       automatic_managed_repos_disabled: Disable automatic creation
       automatic_managed_repos: Automatic creation of managed repositories
@@ -1510,7 +1514,6 @@ sv-SE:
       managed_title: Subversion-arkiv integrerade i OpenProject
       managed_introduction: Låt OpenProject skapa och integrera ett lokalt Subversion-arkiv
         automatiskt.
-      managed_url: Hanterad URL
       password: Lösenord för arkiv
       username: Användarnamn för arkiv
     named_repository: "%{vendor_name} repository"

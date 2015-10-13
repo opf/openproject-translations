@@ -1381,12 +1381,13 @@ zh:
       title: Do you really want to delete the %{repository_type} of the project %{project_name}?
     errors:
       build_failed: "在所选的配置下无法创建版本库。%{reason}"
+      managed_delete: Unable to delete the managed repository.
+      managed_delete_local: 'Unable to delete the local repository on filesystem at
+        ''%{path}'': %{error_message}'
       empty_repository: "版本库已存在，不过该库是空的。它还不包括任何版本。"
       exists_on_filesystem: The repository directory already exists in the filesystem.
       filesystem_access_failed: 'An error occurred while accessing the repository
         in the filesystem: %{message}'
-      deletion_failed: The repository could not be deleted from disk due to lacking
-        permissions. Please contact your administrator to resolve this issue.
       not_manageable: "此版本库提供商不能被 OpenProject 管理。"
       path_permission_failed: "在创建目录： %{path} 时发生错误。请确定 OpenProject 对该目录有可写权限。"
       unauthorized: "您无权访问版本库或凭据无效。"
@@ -1401,12 +1402,15 @@ zh:
         path_encoding: 'Override Git path encoding (Default: UTF-8)'
       local_title: "链接现有的本地 Git 版本库"
       local_introduction: "如果您已有本地 Git 版本库，可以将其链接到 OpenProject 来访问。"
-      managed_path: "被管理的 Git 路径 (预览)"
       managed_introduction: "让 OpenProject 创建并自动集成一个本地 Git 版本库。"
       managed_title: Git 版本库集成入 OpenProject
       path: Git 版本库路径
       path_encoding: "路径编码"
     go_to_revision: "切换到版本"
+    managed_remote: Managed repositories for this vendor are handled remotely.
+    managed_remote_note: Information on the URL and path of this repository is not
+      available prior to its creation.
+    managed_url: Managed URL
     settings:
       automatic_managed_repos_disabled: Disable automatic creation
       automatic_managed_repos: Automatic creation of managed repositories
@@ -1431,7 +1435,6 @@ zh:
         url: "输入版本库 URL。这可能既指向本地版本库 (以 %{local_proto} 开头) ，或者是一个远程版本库。下面的 URL 方案是被支持的:"
       managed_title: Subversion 版本库集成到 OpenProject
       managed_introduction: "让 OpenProject 创建和自动集成一个Subversion本地存储库。"
-      managed_url: "被管理的 URL"
       password: "版本库密码"
       username: "版本库用户名"
     named_repository: "%{vendor_name} repository"

@@ -1475,13 +1475,14 @@ es:
     errors:
       build_failed: No se puede crear el repositorio con la configuración seleccionada.
         %{reason}
+      managed_delete: Unable to delete the managed repository.
+      managed_delete_local: 'Unable to delete the local repository on filesystem at
+        ''%{path}'': %{error_message}'
       empty_repository: El repositorio existe, pero está vacío. No contiene revisiones
         aún.
       exists_on_filesystem: The repository directory already exists in the filesystem.
       filesystem_access_failed: 'An error occurred while accessing the repository
         in the filesystem: %{message}'
-      deletion_failed: The repository could not be deleted from disk due to lacking
-        permissions. Please contact your administrator to resolve this issue.
       not_manageable: Este proveedor de repositorios no puede ser gestionado por OpenProject.
       path_permission_failed: 'Error al intentar crear la siguiente ruta: %{path}.
         Por favor asegúrese de que OpenProject puede escribir en esa carpeta.'
@@ -1501,13 +1502,16 @@ es:
       local_title: Enlace de repositorio Git local existente
       local_introduction: Si tienes un repositorio Git local existente, puede enlazarlo
         con OpenProject para acceder a él desde dentro de la aplicación.
-      managed_path: Ruta Git administrada (preview)
       managed_introduction: Permitir que OpenProject cree e integre un repositorio
         Git local automáticamente.
       managed_title: Repositorios Git integrados en OpenProject
       path: Ruta de acceso al repositorio Git
       path_encoding: Ruta de codificación
     go_to_revision: Ir a la revisión
+    managed_remote: Managed repositories for this vendor are handled remotely.
+    managed_remote_note: Information on the URL and path of this repository is not
+      available prior to its creation.
+    managed_url: Managed URL
     settings:
       automatic_managed_repos_disabled: Desactivar la creación automática
       automatic_managed_repos: Creación automática de repositorios gestionados
@@ -1540,7 +1544,6 @@ es:
       managed_title: Subversiones de repositorio integradas en OpenProject
       managed_introduction: Permitir que OpenProject cree e integre una Subversion
         de repositorio local automáticamente.
-      managed_url: URL administrada
       password: Contraseña del repositorio
       username: Nombre de usuario del repositorio
     named_repository: "%{vendor_name} repository"
