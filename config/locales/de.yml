@@ -1407,7 +1407,7 @@ de:
   permission_view_wiki_pages: Wiki ansehen
   project:
     destroy:
-      confirmation: Wenn Sie fortfahren wird das Projekt %{identifier} und alle damit
+      confirmation: Wenn Sie fortfahren, wird das Projekt %{identifier} und alle damit
         zusammenhängenden Daten dauerhaft gelöscht werden.
       info: Die Löschung des Projekts kann nicht rückgängig gemacht werden.
       project_verification: Geben Sie den Projektnamen %{name} ein um die Löschung
@@ -1468,12 +1468,14 @@ de:
       confirmation: Wenn Sie fortfahren wird das verwaltete Projektarchiv des Projekts
         %{project_name} endgültig gelöscht.
       info: Die Löschung des Projektarchivs kann nicht rückgängig gemacht werden.
-      linked_text: 'Sie sind dabei, das verknüpfte Projektarchiv %{url} des Projekts
-        %{project_name} zu entfernen. Hinweis: Dies löscht NICHT den Inhalt dieses
-        Projektarchivs, da es nicht von OpenProject verwaltet wird.'
+      info_not_managed: 'Note: This will NOT delete the contents of this repository,
+        as it is not managed by OpenProject.'
+      linked_text: You're about to remove the linked repository %{url} from the project
+        %{project_name}.
       managed_path_note: 'Das folgende Verzeichnis wird gelöscht werden: %{path}'
-      title: Wollen Sie wirklich den %{repository_type} des Projekts %{project_name}
+      title: Wollen Sie wirklich das %{repository_type} des Projekts %{project_name}
         löschen?
+      title_not_managed: Do you really want to delete the linked %{repository_type}?
     errors:
       build_failed: Projektarchiv mit der gewählten Konfiguration konnte nicht erstellt
         werden. %{reason}
@@ -1499,9 +1501,9 @@ de:
         mehr verfügbar für den Versionskontroll-Anbieter %{vendor}.
       disabled_or_unknown_vendor: Der Versionskontrollsystem-Anbieter %{vendor} ist
         deaktiviert oder nicht mehr verfügbar.
-      remote_call_failed: 'Calling the managed remote failed with message ''%{message}''
-        (Code: %{code})'
-      remote_invalid_response: Received an invalid response from the managed remote.
+      remote_call_failed: 'Aufruf des verwalteten Projektarchivs mit Fehlermeldung
+        "%{message}" gescheitert (Code: %{code})'
+      remote_invalid_response: Ungültige Antwort vom verwalteten Projektarchiv erhalten.
     git:
       instructions:
         managed_url: Dies ist die URL des verwalteten (lokalen) Git Verzeichnis.
