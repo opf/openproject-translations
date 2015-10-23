@@ -130,7 +130,7 @@ it:
         language: Linguaggio
         last_login_on: Ultimo accesso
         mail_notification: Notifiche email
-        current_password: Current password
+        current_password: Password corrente
         new_password: Nuova password
         password_confirmation: Conferma
         force_password_change: Richiedi la modifica della password al prossimo login
@@ -171,13 +171,13 @@ it:
         reported_project_status: Stato del progetto
         created_at: Creato
       work_package:
-        done_ratio: Progress (%)
+        done_ratio: Avanzamento (%)
         fixed_version: Versione
         parent: Superiore
         parent_issue: Superiore
         parent_work_package: Superiore
         priority: Priorità
-        progress: Progress (%)
+        progress: Avanzamento (%)
         responsible: Responsabile
         spent_time: Tempo speso
         subproject: Sottoprogetto
@@ -255,8 +255,8 @@ it:
         user:
           attributes:
             password:
-              weak: 'Must contain characters of the following classes (at least %{min_count}
-                of %{all_count}): %{rules}.'
+              weak: 'Deve contenere caratteri delle seguenti classi (almeno %{min_count}
+                di %{all_count}): %{rules}.'
               lowercase: minuscolo (es. 'a')
               uppercase: maiuscolo (es. 'A')
               numeric: numerico (es. '1')
@@ -720,7 +720,7 @@ it:
   label_additional_workflow_transitions_for_author: Transizioni aggiuntive consentite
     quando l'utente è l'autore
   label_administration: Amministrazione
-  label_advanced_settings: Advanced settings
+  label_advanced_settings: Impostazioni avanzate
   label_age: Età
   label_ago: giorni fa
   label_all: tutti
@@ -879,7 +879,7 @@ it:
   label_integer: Intero
   label_internal: Interno
   label_invite_user: Invita utente
-  label_show_hide: Show/hide
+  label_show_hide: Mostra/Nascondi
   label_work_package_added: Macro-attività (work package) aggiunta
   label_work_package_category_new: Nuova categoria
   label_work_package_category_plural: Categorie delle macro-attività (work package)
@@ -1128,7 +1128,7 @@ it:
   label_user_mail_option_only_my_events: Solo per le cose che osservo o nelle quali
     sono coinvolto
   label_user_mail_option_only_owner: Solo per le cose di cui sono proprietario
-  label_user_mail_option_selected: For any event on the selected projects only
+  label_user_mail_option_selected: Per qualsiasi evento solo nei progetti selezionati
   label_user_new: Nuovo utente
   label_user_plural: Utenti
   label_user_search: Cerca per utente
@@ -1423,7 +1423,11 @@ it:
       project_verification: Immettere il nome del progetto %{name} per verificare
         l'eliminazione.
       subprojects_confirmation: 'Anche il suo sottoprogetto(i): %{value} sarà eliminato(i).'
-      title: Delete the project %{name}
+      title: Elimina il progetto %{name}
+    identifier:
+      warning_one: Members of the project will have to relocate the project's repositories.
+      warning_two: Existing links to the project will no longer work.
+      title: Change the project's identifier
   project_module_activity: Attività
   project_module_boards: Forum
   project_module_calendar: Calendario
@@ -1469,30 +1473,31 @@ it:
       text_instructions: Questo testo viene visualizzato insieme all'URL di checkout
         per fornire indicazioni su come effettuare un checkout sull'archivio.
       not_available: Le istruzioni di check-out non sono disponibili per questo archivio
-    create_managed_delay: 'Attenzione: L''archivio è in gestito automaticamente, verrà
+    create_managed_delay: 'Attenzione: L''archivio è gestito automaticamente, verrà
       creato in modo asincrono sul disco e sarà disponibile a breve.'
     create_successful: L'archivio è stato registrato.
     delete_sucessful: L'archivio è stato eliminato.
     destroy:
-      confirmation: If you continue, this will permanently delete the managed repository.
+      confirmation: Se si continua, questo eliminerà definitivamente l'archivio gestito
+        dal sistema.
       info: L'eliminazione del repository è un'operazione irreversibile.
-      info_not_managed: 'Note: This will NOT delete the contents of this repository,
-        as it is not managed by OpenProject.'
+      info_not_managed: 'Nota: questa azione NON eliminerà il contenuto di questo
+        archivio, che non è gestito direttamente da OpenProject.'
       managed_path_note: 'La seguente cartella sarà eliminata: %{path}'
-      repository_verification: Enter the project's identifier %{identifier} to verify
-        the deletion of its repository.
-      subtitle: Do you really want to delete the %{repository_type} of the project
-        %{project_name}?
-      subtitle_not_managed: Do you really want to remove the linked %{repository_type}
-        %{url} from the project %{project_name}?
-      title: Delete the %{repository_type}
-      title_not_managed: Remove the linked %{repository_type}?
+      repository_verification: Immettere l'identificatore del progetto %{identifier}
+        per verificare l'eliminazione del suo archivio gestito dal sistema.
+      subtitle: Vuoi davvero eliminare la risorsa %{repository_type} del %{project_name}
+        progetto?
+      subtitle_not_managed: Vuoi davvero eliminare la risorsa %{repository_type} accessibile
+        al link %{url} dal progetto %{project_name}?
+      title: Elimina la risorsa %{repository_type}
+      title_not_managed: Eliminare la risorsa collegata %{repository_type}?
     errors:
       build_failed: Impossibile creare il repository con la configurazione richiesta.
         %{reason}
-      managed_delete: Unable to delete the managed repository.
-      managed_delete_local: 'Unable to delete the local repository on filesystem at
-        ''%{path}'': %{error_message}'
+      managed_delete: Impossibile eliminare l'archivio gestito dal sistema.
+      managed_delete_local: 'Impossibile eliminare l''archivio locale sul filesystem
+        al percorso ''%{path}'': %{error_message}'
       empty_repository: L'archivio esiste, ma è vuoto. Non contiene ancora alcuna
         revisione.
       exists_on_filesystem: La directory di repository esiste già nel file system.
@@ -1510,9 +1515,10 @@ it:
         più disponibile per la piattaforma %{vendor} SCM.
       disabled_or_unknown_vendor: Il tipo di SCM %{vendor} è disabilitato o non più
         disponibile.
-      remote_call_failed: 'Calling the managed remote failed with message ''%{message}''
-        (Code: %{code})'
-      remote_invalid_response: Received an invalid response from the managed remote.
+      remote_call_failed: 'La chiamata alla risorsa remota gestita dal sistema è fallita
+        restituendo il messaggio ''%{message}'' (codice: %{code})'
+      remote_invalid_response: "È stata ricevuta una risposta non valida dalla risorsa
+        remota gestita."
     git:
       instructions:
         managed_url: Questo è l'URL dell'archivio Git (locale) gestito direttamente.
@@ -1527,10 +1533,10 @@ it:
       path: Percorso all'archivio Git
       path_encoding: Codifica del percorso
     go_to_revision: Vai alla revisione
-    managed_remote: Managed repositories for this vendor are handled remotely.
-    managed_remote_note: Information on the URL and path of this repository is not
-      available prior to its creation.
-    managed_url: Managed URL
+    managed_remote: Gli archivi di sistema di questo tipo sono gestiti in remoto.
+    managed_remote_note: Le informazioni sull'URL e sul percorso di questo archivio
+      non sono disponibili prima della sua creazione.
+    managed_url: URL gestito
     settings:
       automatic_managed_repos_disabled: Disabilita la creazione automatica
       automatic_managed_repos: Creazione automatica degli spazi di archiviazione gestiti
@@ -2076,7 +2082,7 @@ it:
       i valori all'interno della macro-attività (work package) figlia %{child}_
     destroy:
       info: Eliminare una macro-attività (work package) è un'operazione irreversibile.
-      title: Delete the work package
+      title: Eliminare la macro-attività (work package)
   nothing_to_preview: Niente in anteprima
   api_v3:
     attributes:
