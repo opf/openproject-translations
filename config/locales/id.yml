@@ -209,6 +209,10 @@ id:
         before_or_equal_to: harus sebelum atau maksimal %{date}.
         could_not_be_copied: sebagian tidak dapat dicopy.
       models:
+        project:
+          attributes:
+            types:
+              in_use_by_work_packages: 'still in use by work packages: %{types}'
         project_association:
           identical_projects: Dependensi tidak dapat dilakukan terhadap proyek yang
             identik.
@@ -1091,8 +1095,7 @@ id:
   label_used_by: Digunakan oleh
   label_user_activity: "%{value} aktivitas"
   label_user_anonymous: Anonimus
-  label_user_mail_no_self_notified: Saya tidak ingin diberitahu untuk perubahan yang
-    saya buat sendiri
+  label_user_mail_self_notified: I want to be notified of changes that I make myself
   label_user_mail_option_all: Untuk semua Event pada semua proyek saya
   label_user_mail_option_none: Tidak ada event
   label_user_mail_option_only_assigned: Hanya untuk hal-hal yang saya ditugaskan untuk
@@ -1280,8 +1283,6 @@ id:
   notice_logged_out: Anda telah logout.
   notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
     as there are still users using it.
-  error_types_in_use_by_work_packages: 'Tipe tersebut masih direferensikan oleh Paket-Penugasan
-    : %{types}'
   notice_project_cannot_update_custom_fields: You cannot update the project's available
     custom fields.
   number:

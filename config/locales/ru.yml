@@ -215,6 +215,10 @@ ru:
         before_or_equal_to: "должны быть до или ровно %{date}."
         could_not_be_copied: "не может быть скопировано (полностью)."
       models:
+        project:
+          attributes:
+            types:
+              in_use_by_work_packages: 'still in use by work packages: %{types}'
         project_association:
           identical_projects: "У проекта не можеть быть зависимости с самим собой."
           project_association_not_allowed: "не разрешает ассоциаций."
@@ -1121,8 +1125,7 @@ ru:
   label_used_by: "Используется"
   label_user_activity: "%{value} деятельности"
   label_user_anonymous: "Анонимно"
-  label_user_mail_no_self_notified: "Не уведомлять меня об изменениях, сделанных мной
-    самим"
+  label_user_mail_self_notified: I want to be notified of changes that I make myself
   label_user_mail_option_all: "Для любого события на моих проектах"
   label_user_mail_option_none: "Нет событий"
   label_user_mail_option_only_assigned: "Только для тех, к которым я причастен"
@@ -1325,8 +1328,6 @@ ru:
   notice_logged_out: "Вы вышли из системы."
   notice_wont_delete_auth_source: "Способ проверки подлинности нельзя удалить, пока
     есть пользователи его использующие."
-  error_types_in_use_by_work_packages: "На следующие типы: %{types}, по прежнему ссылаются
-    пакеты работ"
   notice_project_cannot_update_custom_fields: "Вы не можете обновлять имеющиеся настраиваемые
     поля проекта."
   number:

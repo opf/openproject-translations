@@ -219,6 +219,10 @@ fr:
         before_or_equal_to: doit être antérieur(e) ou égal(e) à %{date}.
         could_not_be_copied: n'a pas pu être copié (entièrement).
       models:
+        project:
+          attributes:
+            types:
+              in_use_by_work_packages: 'still in use by work packages: %{types}'
         project_association:
           identical_projects: Une dépendance ne peut pas être créée entre un projet
             et lui-même.
@@ -1115,7 +1119,7 @@ fr:
   label_used_by: Utilisé par
   label_user_activity: Activité de %{value}
   label_user_anonymous: Anonyme
-  label_user_mail_no_self_notified: Je ne veux pas être notifié de mes propres changements
+  label_user_mail_self_notified: I want to be notified of changes that I make myself
   label_user_mail_option_all: Pour tout évènement sur tous mes projets
   label_user_mail_option_none: Aucun évènement
   label_user_mail_option_only_assigned: Seulement pour les tâches qui me sont assignées
@@ -1319,8 +1323,6 @@ fr:
   notice_logged_out: Vous avez été déconnecté.
   notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
     as there are still users using it.
-  error_types_in_use_by_work_packages: 'Les types suivants sont toujours référencés
-    par des Lots de Travaux: %{types}'
   notice_project_cannot_update_custom_fields: Vous ne pouvez pas mettre à jour les
     champs personnalisés du projet.
   number:

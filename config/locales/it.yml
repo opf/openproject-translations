@@ -219,6 +219,10 @@ it:
         before_or_equal_to: deve essere precedente o uguale al %{date}.
         could_not_be_copied: non possono essere copiati (integralmente).
       models:
+        project:
+          attributes:
+            types:
+              in_use_by_work_packages: 'still in use by work packages: %{types}'
         project_association:
           identical_projects: Non può essere creata una dipendenza di un progetto
             con se stesso.
@@ -1120,8 +1124,7 @@ it:
   label_used_by: Usato da
   label_user_activity: attività di %{value}
   label_user_anonymous: Anonimo
-  label_user_mail_no_self_notified: Non voglio essere notificato dei cambiamenti che
-    ho fatto
+  label_user_mail_self_notified: I want to be notified of changes that I make myself
   label_user_mail_option_all: Per qualsiasi evento su tutti i miei progetti
   label_user_mail_option_none: Per nessun evento
   label_user_mail_option_only_assigned: Solo per cose alle quali sono stato assegnato
@@ -1324,8 +1327,6 @@ it:
   notice_logged_out: Ti sei appena disconnesso.
   notice_wont_delete_auth_source: La modalità di autenticazione non può essere eliminata
     finché ci sono ancora utenti che la utilizzano.
-  error_types_in_use_by_work_packages: 'Alcune macro-attività (work package) fanno
-    ancora riferimento ai seguenti tipi: %{types}'
   notice_project_cannot_update_custom_fields: Non è possibile aggiornare i campi personalizzati
     disponibili nel progetto.
   number:
