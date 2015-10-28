@@ -4,10 +4,14 @@ require 'tempfile'
 require 'zip'
 
 class I18nProvider
-  def initialize(project_id, api_key, crowdin_directory)
+  def initialize(project_id,
+                 api_key,
+                 crowdin_directory,
+                 previous_crowdin_directory)
     @project_id = project_id
     @api_key = api_key
     @crowdin_directory = crowdin_directory
+    @previous_crowdin_directory = previous_crowdin_directory
     @crowdin = create_handle
   end
 
@@ -85,17 +89,44 @@ class I18nProvider
     end
   end
 
-  def each_locale
+  def open_locale_zip
     begin
-      languages_files = create_temp_file('crowdin_translations')
-      download_locales(languages_files.path)
-      Zip::File.open(languages_files.path) do |zip_file|
-        zip_file.glob("*/#{@crowdin_directory}/*.yml").each do |entry|
-          yield entry
-        end
+      # download if not downloaded or downloaded for wrong project
+      if defined? @languages_files == nil \
+        || @languages_files.length == 0 \
+        || wrong_languages_files?
+        @languages_files = create_temp_file('crowdin_translations')
+        download_locales(@languages_files.path)
+        @languages_files_for = @project_id
+      end
+      Zip::File.open(@languages_files.path) do |zip_file|
+        yield zip_file
       end
     ensure
-      unlink_temp_file(languages_files)
+      if !(defined? @languages_files).nil?
+        close_tmp_file(@languages_files)
+      end
+    end
+  end
+
+  def wrong_languages_files?
+    @languages_files_for == @project_id
+  end
+
+  def each_locale
+    open_locale_zip do |zip_file|
+      zip_file.glob("*/#{@crowdin_directory}/*.yml").each do |entry|
+        yield entry
+      end
+    end
+  end
+
+  def each_previous_locale
+    # todo catch if previous version does not exist?
+    open_locale_zip do |zip_file|
+      zip_file.glob("*/#{@previous_crowdin_directory}/*.yml").each do |entry|
+        yield entry
+      end
     end
   end
 
@@ -119,7 +150,26 @@ class I18nProvider
     tempfile
   end
 
-  def unlink_temp_file(tempfile)
-    tempfile.unlink
+  def close_tmp_file(tempfile)
+    # this will be garbage collected automatically
+    tempfile.close
+  end
+
+  def upload_old_translations(dest_without_dir, source, language_name, params)
+    locale_temp_file = create_temp_file('old_locale')
+    begin
+      dest = "/#{@crowdin_directory}/#{dest_without_dir}"
+      open_locale_zip do |zip_file|
+        source_entry = zip_file.find_entry(source)
+        # that's not pretty but seems to work
+        File.delete(locale_temp_file.path) if File.file?(locale_temp_file.path)
+        source_entry.extract locale_temp_file.path
+      end
+      files = [{ dest: dest, source: locale_temp_file.path }]
+
+      @crowdin.upload_translation(files, language_name, params)
+    ensure
+      close_tmp_file(locale_temp_file)
+    end
   end
 end
