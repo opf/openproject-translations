@@ -98,7 +98,7 @@ lv:
       role:
         assignable: Pieteikuma tipi, kas var būt piesaistīti šai lomai
       time_entry:
-        activity: Aktivitāte
+        activity: Activity
         hours: Stundas
         spent_on: Datums
         type: Veids
@@ -243,12 +243,12 @@ lv:
               numeric: cipari (piemēram, "1")
               special: speciālie simboli (piemēram, ' %')
               reused:
-                one: iepriekš jau lietota. Lūdzu, izvēlieties vienu, kas atšķiras
-                  no Jūsu pēdējās.
-                other: iepriekš jau lietots. Lūdzu, izvēlieties vienu, kas atšķiras
-                  no jūsu pēdējām %{count}.
-                zero: iepriekš jau lietots. Lūdzu, izvēlieties vienu, kas atšķiras
-                  no jūsu pēdējām %{count}.
+                one: has been used before. Please choose one that is different from
+                  your last one.
+                other: has been used before. Please choose one that is different from
+                  your last %{count}.
+                zero: has been used before. Please choose one that is different from
+                  your last %{count}.
               match:
                 confirm: Apstipriniet jauno paroli.
                 description: Lauka vērtībai "Paroles apstiprinājums" jāsakrīt ar lauku
@@ -259,9 +259,9 @@ lv:
       template:
         body: 'Please check the following fields:'
         header:
-          one: Modelī %{model} ir kļūda kas neļauj to saglabāt
-          other: Modelī %{model} ir %{count} kļūdas, kas neļauj to saglabāt
-          zero: Modelī %{model} ir %{count} kļūdas, kas neļauj to saglabāt
+          one: 1 error prohibited this %{model} from being saved
+          other: "%{count} errors prohibited this %{model} from being saved"
+          zero: "%{count} errors prohibited this %{model} from being saved"
     models:
       attachment: Fails
       board: Forum
@@ -276,9 +276,9 @@ lv:
       project: Project
       query: Custom query
       role:
-        one: Loma
-        other: Lomas
-        zero: Lomas
+        one: Role
+        other: Roles
+        zero: Roles
       type: Veids
       planning_element: Plānojot elementus
       project_type: Projekta tips
@@ -370,7 +370,7 @@ lv:
   button_list: List
   button_lock: Lock
   button_log_time: Log time
-  button_login: Ienākt
+  button_login: Sign in
   button_move: Move
   button_move_and_follow: Move and follow
   button_quote: Citēt
@@ -463,55 +463,55 @@ lv:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: aptuveni %{count} stundas
-        other: aptuveni %{count} stundām
-        zero: aptuveni %{count} stundām
+        one: about 1 hour
+        other: about %{count} hours
+        zero: about %{count} hours
       about_x_months:
-        one: aptuveni %{count} mēneša
-        other: aptuveni %{count} mēnešiem
-        zero: aptuveni %{count} mēnešiem
+        one: about 1 month
+        other: about %{count} months
+        zero: about %{count} months
       about_x_years:
-        one: "%{count} gada"
-        other: "%{count} gadiem"
-        zero: "%{count} gadiem"
+        one: about 1 year
+        other: about %{count} years
+        zero: about %{count} years
       almost_x_years:
-        one: gandrīz 1 gadu
-        other: gandrīz %{count} gadi
-        zero: gandrīz %{count} gadi
+        one: almost 1 year
+        other: almost %{count} years
+        zero: almost %{count} years
       half_a_minute: half a minute
       less_than_x_minutes:
-        one: mazāk nekā %{count} minūtes
-        other: mazāk nekā %{count} minūtēm
-        zero: mazāk nekā %{count} minūtēm
+        one: less than a minute
+        other: less than %{count} minutes
+        zero: less than %{count} minutes
       less_than_x_seconds:
-        one: mazāk nekā %{count} sekundes
-        other: mazāk nekā %{count} sekundēm
-        zero: mazāk nekā %{count} sekundēm
+        one: less than 1 second
+        other: less than %{count} seconds
+        zero: less than %{count} seconds
       over_x_years:
-        one: senāk kā %{count} gada
-        other: senāk kā %{count} gadiem
-        zero: senāk kā %{count} gadiem
+        one: over 1 year
+        other: over %{count} years
+        zero: over %{count} years
       x_days:
-        one: "%{count} dienas"
-        other: "%{count} dienām"
-        zero: "%{count} dienām"
+        one: 1 day
+        other: "%{count} days"
+        zero: "%{count} days"
       x_minutes:
-        one: 1 minūte
-        other: "%{count} minūtēm"
-        zero: "%{count} minūtēm"
+        one: 1 minute
+        other: "%{count} minutes"
+        zero: "%{count} minutes"
       x_months:
-        one: "%{count} mēneša"
-        other: "%{count} mēnešiem"
-        zero: "%{count} mēnešiem"
+        one: 1 month
+        other: "%{count} months"
+        zero: "%{count} months"
       x_seconds:
-        one: 1 sekunde
-        other: "%{count} sekundes"
-        zero: "%{count} sekundes"
+        one: 1 second
+        other: "%{count} seconds"
+        zero: "%{count} seconds"
     units:
       hour:
-        one: stunda
-        other: stundas
-        zero: stundas
+        one: hour
+        other: hours
+        zero: hours
   default_activity_development: Development
   default_activity_management: Management
   default_activity_other: Other
@@ -567,7 +567,7 @@ lv:
   default_type_deliverable: Deliverable
   default_type_epic: Epic
   default_type_feature: Feature
-  default_type_milestone: Atskaites punkts
+  default_type_milestone: Milestone
   default_type_phase: Phase
   default_type_task: Task
   default_type_user_story: User story
@@ -920,7 +920,7 @@ lv:
   label_overall_activity: Overall activity
   label_overall_spent_time: Overall spent time
   label_overview: Pārskats
-  label_password_lost: Atjaunot paroli
+  label_password_lost: Forgot your password?
   label_password_rule_lowercase: Lowercase
   label_password_rule_numeric: Numeric Characters
   label_password_rule_special: Special Characters
@@ -1082,25 +1082,25 @@ lv:
   label_workflow_plural: Workflows
   label_workflow_summary: Summary
   label_x_closed_work_packages_abbr:
-    one: "%{count} slēgts"
-    other: "%{count} slēgti"
-    zero: "%{count} slēgti"
+    one: 1 closed
+    other: "%{count} closed"
+    zero: "%{count} closed"
   label_x_comments:
-    one: "%{count} komentārs"
-    other: "%{count} komentāri"
-    zero: "%{count} komentāri"
+    one: 1 comment
+    other: "%{count} comments"
+    zero: "%{count} comments"
   label_x_open_work_packages_abbr:
-    one: "%{count} atvērts"
-    other: "%{count} atvērti"
-    zero: "%{count} atvērti"
+    one: 1 open
+    other: "%{count} open"
+    zero: "%{count} open"
   label_x_open_work_packages_abbr_on_total:
-    one: atvērts 1 / %{total}
-    other: atvērti %{count} / %{total}
-    zero: atvērti %{count} / %{total}
+    one: 1 open / %{total}
+    other: "%{count} open / %{total}"
+    zero: "%{count} open / %{total}"
   label_x_projects:
-    one: "%{count} projekts"
-    other: "%{count} projekti"
-    zero: "%{count} projekti"
+    one: 1 project
+    other: "%{count} projects"
+    zero: "%{count} projects"
   label_year: Year
   label_yesterday: yesterday
   label_keyboard_function: Function
@@ -1234,9 +1234,9 @@ lv:
         format: "%n %u"
         units:
           byte:
-            one: Baits
-            other: Baiti
-            zero: Baiti
+            one: Byte
+            other: Bytes
+            zero: Bytes
           gb: GB
           kb: kB
           mb: MB
@@ -1556,9 +1556,9 @@ lv:
     delete_thing: Dzēst
     duration: Duration
     duration_days:
-      one: "%{count} dienas"
-      other: "%{count} dienām"
-      zero: "%{count} dienām"
+      one: 1 day
+      other: "%{count} days"
+      zero: "%{count} days"
     edit_color: Edit color
     edit_project_type: Edit project type
     edit_thing: Labot
@@ -1735,9 +1735,9 @@ lv:
     assign_random_password: Piešķirt ģenerētu paroli (nosūtīt lietotājam, uz e-pastu)
     blocked: locked temporarily
     blocked_num_failed_logins:
-      one: bloķēts īslaicīgi (viens neizdevies pieteikšanās mēģinājums)
-      other: bloķēts īslaicīgi (%{count} neizdevušies pieteikšanās mēģinājumi)
-      zero: bloķēts īslaicīgi (%{count} neizdevušies pieteikšanās mēģinājumi)
+      one: locked temporarily (one failed login attempt)
+      other: locked temporarily (%{count} failed login attempts)
+      zero: locked temporarily (%{count} failed login attempts)
     deleted: Deleted user
     error_status_change_failed: 'Changing the user status failed due to the following
       errors: %{errors}'
