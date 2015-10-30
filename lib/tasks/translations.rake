@@ -35,7 +35,7 @@ namespace :translations do
     env_name = 'OPENPROJECT_CROWDIN_KEY'
     raise "ERROR: please specify a crowdin API key via the #{env_name} environment variable" unless ENV[env_name]
     crowdin_project_key = ENV[env_name]
-    crowdin_directory = OpenProject::VERSION.to_semver
+    crowdin_directory = "#{OpenProject::VERSION::MAJOR}.#{OpenProject::VERSION::MINOR}"
   end
 
   desc "request a new build of the language export files"
