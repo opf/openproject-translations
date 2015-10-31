@@ -1,4 +1,4 @@
-#encoding: utf-8
+# encoding: utf-8
 #
 #-- copyright
 # OpenProject is a project management system.
@@ -31,23 +31,23 @@ namespace :translations do
     !!(translation_file_path.basename.to_s[0..-5] =~ /\Ajs-.+\z/)
   end
 
-  task :check_for_api_key => :environment do
+  task check_for_api_key: :environment do
     env_name = 'OPENPROJECT_CROWDIN_KEY'
-    raise "ERROR: please specify a crowdin API key via the #{env_name} environment variable" unless ENV[env_name]
+    fail "ERROR: please specify a crowdin API key via the #{env_name} environment variable" unless ENV[env_name]
     crowdin_project_key = ENV[env_name]
     crowdin_directory = "#{OpenProject::VERSION::MAJOR}.#{OpenProject::VERSION::MINOR}"
   end
 
-  desc "request a new build of the language export files"
-  task :request_build => :check_for_api_key do
+  desc 'request a new build of the language export files'
+  task request_build: :check_for_api_key do
     crowdin = Crowdin::API.new project_id: crowdin_project_name, api_key: crowdin_project_key
     crowdin.export_translations
   end
 
-  desc "fetch available translations from crowdin, and puts them into this gem"
-  task :download => :check_for_api_key do
+  desc 'fetch available translations from crowdin, and puts them into this gem'
+  task download: :check_for_api_key do
     unless File.writable? OpenProject::Translations::Engine.root.join 'config', 'locales'
-      raise "#{OpenProject::Translations::Engine.root.join 'config', 'locales'} need to be writable"
+      fail "#{OpenProject::Translations::Engine.root.join 'config', 'locales'} need to be writable"
     end
 
     # nuke locales directory to get rid of old files
@@ -84,45 +84,43 @@ namespace :translations do
     end
   end
 
-  desc "Upload current en.yml to crowdin, so that the crowd can update their translations"
-  task :upload => :check_for_api_key do
-    puts "Uploading current OpenProject en.yml to crowdin"
+  desc 'Upload current en.yml to crowdin, so that the crowd can update their translations'
+  task upload: :check_for_api_key do
+    puts 'Uploading current OpenProject en.yml to crowdin'
     crowdin = Crowdin::API.new project_id: crowdin_project_name, api_key: crowdin_project_key
 
     # create crowdin directory just in case it doesn't exist.
-    dir = crowdin.project_info['files'].find {|f| f['name'] == crowdin_directory && f['node_type'] == 'directory'}
-    unless dir
-      crowdin.add_directory(crowdin_directory)
-    end
+    dir = crowdin.project_info['files'].find { |f| f['name'] == crowdin_directory && f['node_type'] == 'directory' }
+    crowdin.add_directory(crowdin_directory) unless dir
 
     # either add or update the english translation file
     path_to_translation = Rails.root.join 'config', 'locales', 'en.yml'
-    dir = crowdin.project_info['files'].find {|f| f['name'] == crowdin_directory && f['node_type'] == 'directory'}
-    if dir['files'].find {|f| f['name'] == 'en.yml'}
-      crowdin.update_file [{dest: "/#{crowdin_directory}/en.yml", source: path_to_translation.to_s, title: 'OpenProject wording', export_pattern: '%two_letters_code%.yml'}], type: 'yaml'
+    dir = crowdin.project_info['files'].find { |f| f['name'] == crowdin_directory && f['node_type'] == 'directory' }
+    if dir['files'].find { |f| f['name'] == 'en.yml' }
+      crowdin.update_file [{ dest: "/#{crowdin_directory}/en.yml", source: path_to_translation.to_s, title: 'OpenProject wording', export_pattern: '%two_letters_code%.yml' }], type: 'yaml'
     else
-      crowdin.add_file [{dest: "/#{crowdin_directory}/en.yml", source: path_to_translation.to_s, title: 'OpenProject wording', export_pattern: '%two_letters_code%.yml'}], type: 'yaml'
+      crowdin.add_file [{ dest: "/#{crowdin_directory}/en.yml", source: path_to_translation.to_s, title: 'OpenProject wording', export_pattern: '%two_letters_code%.yml' }], type: 'yaml'
     end
 
     # either add or update the english javascript translation file
     path_to_translation = Rails.root.join 'config', 'locales', 'js-en.yml'
-    dir = crowdin.project_info['files'].find {|f| f['name'] == crowdin_directory && f['node_type'] == 'directory'}
-    if dir['files'].find {|f| f['name'] == 'js-en.yml'}
-      crowdin.update_file [{dest: "/#{crowdin_directory}/js-en.yml", source: path_to_translation.to_s, title: 'OpenProject JavaScript wording', export_pattern: 'js-%two_letters_code%.yml'}], type: 'yaml'
+    dir = crowdin.project_info['files'].find { |f| f['name'] == crowdin_directory && f['node_type'] == 'directory' }
+    if dir['files'].find { |f| f['name'] == 'js-en.yml' }
+      crowdin.update_file [{ dest: "/#{crowdin_directory}/js-en.yml", source: path_to_translation.to_s, title: 'OpenProject JavaScript wording', export_pattern: 'js-%two_letters_code%.yml' }], type: 'yaml'
     else
-      crowdin.add_file [{dest: "/#{crowdin_directory}/js-en.yml", source: path_to_translation.to_s, title: 'OpenProject JavaScript wording', export_pattern: 'js-%two_letters_code%.yml'}], type: 'yaml'
+      crowdin.add_file [{ dest: "/#{crowdin_directory}/js-en.yml", source: path_to_translation.to_s, title: 'OpenProject JavaScript wording', export_pattern: 'js-%two_letters_code%.yml' }], type: 'yaml'
     end
   end
 
-  desc "Insert missing translation keys into all translation files. This circumvents a crowdin bug."
-  task :fix_missing_keys => :environment do
+  desc 'Insert missing translation keys into all translation files. This circumvents a crowdin bug.'
+  task fix_missing_keys: :environment do
     puts 'Fixing missing keys and language names...'
 
     # see: https://stackoverflow.com/questions/9381553/ruby-merge-nested-hash
     class ::Hash
       def deep_merge(second)
-          merger = proc { |key, v1, v2| Hash === v1 && Hash === v2 ? v1.merge(v2, &merger) : v2 }
-          self.merge(second, &merger)
+        merger = proc { |_key, v1, v2| Hash === v1 && Hash === v2 ? v1.merge(v2, &merger) : v2 }
+        merge(second, &merger)
       end
     end
 
@@ -132,15 +130,15 @@ namespace :translations do
       # For language variants ('zh-TW') crowdin gives us only the language key ('zh') so we replace it.
       # from /path/to/openproject-translations/config/locales/zh-TW.yml we extract 'zh-TW'
       language_key = if js_translation?(translation_file_path)
-        # ignore the 'js-' prefix of js translations
-        translation_file_path.basename.to_s[3..-5]
-      else
-        translation_file_path.basename.to_s[0..-5]
+                       # ignore the 'js-' prefix of js translations
+                       translation_file_path.basename.to_s[3..-5]
+                     else
+                       translation_file_path.basename.to_s[0..-5]
       end
 
       # Unfortunately OpenProject has some vendored translations in jstoolbar, which
       # needs different names sometimes, so we map exceptions here
-      mapping = Hash.new {|hash, key| key }
+      mapping = Hash.new { |_hash, key| key }
       mapping['zh-CN'] = 'zh'
       mapping['es-ES'] = 'es'
       mapping['pt-PT'] = 'pt'
@@ -171,9 +169,9 @@ namespace :translations do
 
       # add missing english keys
       if js_translation?(translation_file)
-        translation = {language_key => english_js_translation['en'].deep_merge(translation.values.first)}
+        translation = { language_key => english_js_translation['en'].deep_merge(translation.values.first) }
       else
-        translation = {language_key => english_translation['en'].deep_merge(translation.values.first)}
+        translation = { language_key => english_translation['en'].deep_merge(translation.values.first) }
       end
 
       # write file back to disk
@@ -185,8 +183,8 @@ namespace :translations do
     end
   end
 
-  desc "Update Gemfile.lock to newest Version of OpenProject Translation"
-  task :update_gemfile_lock => :environment do
+  desc 'Update Gemfile.lock to newest Version of OpenProject Translation'
+  task update_gemfile_lock: :environment do
     target_path = 'tmp/openproject'
     branch = ENV['Translation_working_branch']
 
@@ -202,9 +200,7 @@ namespace :translations do
       system 'git commit -m "Update reference to OpenProject-Translations"'
 
       DEBUG = ENV['DEBUG'] || false
-      unless DEBUG
-        system "git push origin #{branch}"
-      end
+      system "git push origin #{branch}" unless DEBUG
     end
     unless DEBUG
       require 'fileutils'

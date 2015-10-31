@@ -17,6 +17,6 @@ module OpenProject
     IN_CONTEXT_TRANSLATION_CODE = 'lol'
     IN_CONTEXT_TRANSLATION_NAME = 'In-Context Crowdin Translation'
 
-    require "open_project/translations/engine"
+    require 'open_project/translations/engine'
   end
 end

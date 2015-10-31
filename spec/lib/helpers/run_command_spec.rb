@@ -15,7 +15,7 @@ describe RunCommand do
       let(:command) { "ech 'test'" }
 
       it 'raises an error' do
-        expect{run_command(command)}.to raise_error(/command/)
+        expect { run_command(command) }.to raise_error(/command/)
       end
     end
   end

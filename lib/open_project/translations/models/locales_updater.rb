@@ -8,7 +8,7 @@ require_relative './locales_updater_configuration'
 
 ENGLISH_TRANSLATION_FILE = 'en.yml'
 ENGLISH_JS_TRANSLATION_FILE = 'js-en.yml'
-ACCEPTANCE_LEVEL = ENV['ACCEPTANCE_LEVEL'].nil? ? 100: ENV['ACCEPTANCE_LEVEL'].to_i
+ACCEPTANCE_LEVEL = ENV['ACCEPTANCE_LEVEL'].nil? ? 100 : ENV['ACCEPTANCE_LEVEL'].to_i
 
 class LocalesUpdater
   include TmpDirectory
@@ -80,7 +80,7 @@ class LocalesUpdater
   def upload_english(plugin_name)
     # either add or update the english (js) translation file
     titles = {
-      ENGLISH_TRANSLATION_FILE => plugin_name +' Wording',
+      ENGLISH_TRANSLATION_FILE => plugin_name + ' Wording',
       ENGLISH_JS_TRANSLATION_FILE => plugin_name + ' JavaScript Wording'
     }
     [ENGLISH_TRANSLATION_FILE, ENGLISH_JS_TRANSLATION_FILE].each do |translation_file|
@@ -98,7 +98,7 @@ class LocalesUpdater
   end
 
   def download_and_replace_locales
-    # todo delete all locales here? maybe for the case that
+    # TODO: delete all locales here? maybe for the case that
     # we do not support a language anymore.
     target_directory = Pathname(File.join('config', 'locales'))
     @i18n_provider.each_locale do |entry|

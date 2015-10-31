@@ -8,7 +8,7 @@ class LocalesUpdaterConfiguration
   end
 
   def self.configuration
-    # todo raise error if something is missing
+    # TODO: raise error if something is missing
     @configuration ||= YAML.load_file(CONFIGURATION_FILE)
   end
 end

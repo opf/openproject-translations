@@ -3,7 +3,7 @@ require_relative '../../../lib/open_project/translations/models/locales_updater'
 
 describe LocalesUpdater do
   let(:locales_updater) { LocalesUpdater.new }
-  let(:configuration) {
+  let(:configuration) do
     { plugins:
       { 'test-project' =>
         {
@@ -14,7 +14,7 @@ describe LocalesUpdater do
         }
       }
     }
-  }
+  end
   let(:uri) { 'test-uri' }
   let(:api_key) { 'test-key' }
   let(:project_id) { 'test-id' }
