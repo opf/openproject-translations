@@ -46,7 +46,7 @@ es:
         no_results_title_text: There are currently no work package categories.
         no_results_content_text: Create a new work package category
       custom_fields:
-        no_results_title_text: There are currently custom fields available.
+        no_results_title_text: There are currently no custom fields available.
       types:
         no_results_title_text: There are currently no types available.
       versions:
@@ -373,8 +373,7 @@ es:
                 trabajo debe estar en el mismo proyecto que el paquete de trabajo.
               does_not_exist: La categoría especificada no existe.
             estimated_hours:
-              only_values_greater_or_equal_zeroes_allowed: Las horas estimadas deben
-                ser >=0.
+              only_values_greater_or_equal_zeroes_allowed: must be >= 0.
         user:
           attributes:
             password:
@@ -385,10 +384,10 @@ es:
               numeric: numérico (por ejemplo, ' 1')
               special: especial (por ejemplo, ' %')
               reused:
-                one: ya ha sido utilizado antes. Por favor elige uno diferente al
-                  anterior.
-                other: ya ha sido utilizado antes. Por favor elige uno diferente a
-                  los %{count} anteriores.
+                one: has been used before. Please choose one that is different from
+                  your last one.
+                other: has been used before. Please choose one that is different from
+                  your last %{count}.
               match:
                 confirm: Confirmar Nueva Contraseña.
                 description: "'La confirmación de la contraseña' debe coincidir con
@@ -399,8 +398,8 @@ es:
       template:
         body: 'Por favor revise los siguientes campos:'
         header:
-          one: 1 error no permite guardar este %{model}
-          other: "%{count} errores no permiten que %{model} sea guardado"
+          one: 1 error prohibited this %{model} from being saved
+          other: "%{count} errors prohibited this %{model} from being saved"
     models:
       attachment: Archivo
       board: Foro
@@ -414,7 +413,7 @@ es:
       project: Proyecto
       query: Consulta personalizada
       role:
-        one: Rol
+        one: Role
         other: Roles
       type: Tipo
       project_type: Tipo de proyecto
@@ -602,43 +601,43 @@ es:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: aproximadamente 1 hora
-        other: aproximadamente %{count} horas
+        one: about 1 hour
+        other: about %{count} hours
       about_x_months:
-        one: aproximadamente 1 mes
-        other: aproximadamente %{count} meses
+        one: about 1 month
+        other: about %{count} months
       about_x_years:
-        one: aproximadamente 1 año
-        other: aproximadamente %{count} años
+        one: about 1 year
+        other: about %{count} years
       almost_x_years:
-        one: casi 1 año
-        other: casi %{count} años
+        one: almost 1 year
+        other: almost %{count} years
       half_a_minute: medio minuto
       less_than_x_minutes:
-        one: menos de un minuto
-        other: menos de %{count} minutos
+        one: less than a minute
+        other: less than %{count} minutes
       less_than_x_seconds:
-        one: menos de 1 segundo
-        other: menos de %{count} segundos
+        one: less than 1 second
+        other: less than %{count} seconds
       over_x_years:
-        one: más de 1 año
-        other: más de %{count} años
+        one: over 1 year
+        other: over %{count} years
       x_days:
-        one: 1 día
-        other: "%{count} días"
+        one: 1 day
+        other: "%{count} days"
       x_minutes:
-        one: 1 minuto
-        other: "%{count} minutos"
+        one: 1 minute
+        other: "%{count} minutes"
       x_months:
-        one: 1 mes
-        other: "%{count} meses"
+        one: 1 month
+        other: "%{count} months"
       x_seconds:
-        one: 1 segundo
-        other: "%{count} segundos"
+        one: 1 second
+        other: "%{count} seconds"
     units:
       hour:
-        one: hora
-        other: horas
+        one: hour
+        other: hours
   default_activity_development: Desarrollo
   default_activity_management: Administración
   default_activity_other: Otros
@@ -1281,24 +1280,24 @@ es:
   label_workflow_plural: Flujos de trabajo
   label_workflow_summary: Resumen
   label_x_closed_work_packages_abbr:
-    one: 1 cerrado
-    other: "%{count} cerrados"
+    one: 1 closed
+    other: "%{count} closed"
     zero: 0 closed
   label_x_comments:
-    one: 1 comentario
-    other: "%{count} comentarios"
+    one: 1 comment
+    other: "%{count} comments"
     zero: no comments
   label_x_open_work_packages_abbr:
-    one: 1 abierto
-    other: "%{count} abiertos"
+    one: 1 open
+    other: "%{count} open"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
-    one: 1 abierto / %{total}
-    other: "%{count} abiertos / %{total}"
+    one: 1 open / %{total}
+    other: "%{count} open / %{total}"
     zero: 0 open / %{total}
   label_x_projects:
-    one: 1 proyecto
-    other: "%{count} proyectos"
+    one: 1 project
+    other: "%{count} projects"
     zero: no projects
   label_year: Año
   label_yesterday: ayer
@@ -1463,7 +1462,8 @@ es:
           mb: MB
           tb: TB
   permission_add_work_package_notes: Añadir notas
-  permission_add_work_packages: Añadir paquetes de trabajo
+  permission_add_work_packages: Add work packages (also allows to add attachments
+    to all work packages)
   permission_add_messages: Publicar mensajes
   permission_add_project: Crear proyecto
   permission_add_subprojects: Crear subproyectos
@@ -1958,8 +1958,8 @@ es:
     delete_thing: Borrar
     duration: Duración
     duration_days:
-      one: 1 día
-      other: "%{count} días"
+      one: 1 day
+      other: "%{count} days"
     edit_color: Editar colores
     edit_project_type: Editar tipo de proyecto
     edit_thing: Editar
@@ -2141,8 +2141,8 @@ es:
     assign_random_password: Assign random password (sent to user via email)
     blocked: bloqueado temporalmente
     blocked_num_failed_logins:
-      one: bloqueado temporalmente (un intento de inicio de sesión fallido)
-      other: bloqueado temporalmente (%{count} intentos de inicio de sesión fallidos)
+      one: locked temporarily (one failed login attempt)
+      other: locked temporarily (%{count} failed login attempts)
     deleted: Usuario eliminado
     error_status_change_failed: 'Cambiar la condición de usuario falló debido a los
       errores siguientes: %{errors}'

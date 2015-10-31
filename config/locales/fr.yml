@@ -46,7 +46,7 @@ fr:
         no_results_title_text: Aucune catégorie de lots de travaux pour le moment.
         no_results_content_text: Créer une nouvelle catégorie de lots de travaux
       custom_fields:
-        no_results_title_text: There are currently custom fields available.
+        no_results_title_text: There are currently no custom fields available.
       types:
         no_results_title_text: There are currently no types available.
       versions:
@@ -376,8 +376,7 @@ fr:
                 doit faire partie du même projet que le module de travail.
               does_not_exist: La catégorie spécifiée n'existe pas.
             estimated_hours:
-              only_values_greater_or_equal_zeroes_allowed: Le nombre d'heures estimé
-                doit être >= 0.
+              only_values_greater_or_equal_zeroes_allowed: must be >= 0.
         user:
           attributes:
             password:
@@ -388,10 +387,10 @@ fr:
               numeric: numérique (par exemple, « 1 »)
               special: spécial (par exemple, « % »)
               reused:
-                one: a déjà été utilisé auparavant. Veuillez en choisir un qui diffère
-                  de votre choix précédent.
-                other: a déjà été utilisé auparavant. Veuillez en choisir un qui diffère
-                  de vos %{count} choix précédents.
+                one: has been used before. Please choose one that is different from
+                  your last one.
+                other: has been used before. Please choose one that is different from
+                  your last %{count}.
               match:
                 confirm: Confirmez le nouveau mot de passe.
                 description: La confirmation du mot de passe doit correspondre à celui
@@ -402,8 +401,8 @@ fr:
       template:
         body: 'Veuillez vérifier les champs suivants:'
         header:
-          one: 1 erreur empêche ce %{model} d'être sauvegardé
-          other: "%{count} erreurs empêchent ce %{model} d'être sauvegardé"
+          one: 1 error prohibited this %{model} from being saved
+          other: "%{count} errors prohibited this %{model} from being saved"
     models:
       attachment: Fichier
       board: Forum
@@ -417,8 +416,8 @@ fr:
       project: Projet
       query: Requête personnalisée
       role:
-        one: Rôle
-        other: Rôles
+        one: Role
+        other: Roles
       type: Type
       project_type: Type de projet
       user: Utilisateur
@@ -607,43 +606,43 @@ fr:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: environ 1 heure
-        other: environ %{count} heures
+        one: about 1 hour
+        other: about %{count} hours
       about_x_months:
-        one: environ 1 mois
-        other: environ %{count} mois
+        one: about 1 month
+        other: about %{count} months
       about_x_years:
-        one: environ 1 an
-        other: environ %{count} ans
+        one: about 1 year
+        other: about %{count} years
       almost_x_years:
-        one: presque 1 an
-        other: presque %{count} ans
+        one: almost 1 year
+        other: almost %{count} years
       half_a_minute: une demi-minute
       less_than_x_minutes:
-        one: moins d'une minute
-        other: moins de %{count} minutes
+        one: less than a minute
+        other: less than %{count} minutes
       less_than_x_seconds:
-        one: moins de 1 seconde
-        other: moins de %{count} secondes
+        one: less than 1 second
+        other: less than %{count} seconds
       over_x_years:
-        one: plus de 1 an
-        other: plus de %{count} ans
+        one: over 1 year
+        other: over %{count} years
       x_days:
-        one: 1 jour
-        other: "%{count} jours"
+        one: 1 day
+        other: "%{count} days"
       x_minutes:
         one: 1 minute
         other: "%{count} minutes"
       x_months:
-        one: 1 mois
-        other: "%{count} mois"
+        one: 1 month
+        other: "%{count} months"
       x_seconds:
-        one: 1 seconde
-        other: "%{count} secondes"
+        one: 1 second
+        other: "%{count} seconds"
     units:
       hour:
-        one: heure
-        other: heures
+        one: hour
+        other: hours
   default_activity_development: Développement
   default_activity_management: Gestion
   default_activity_other: Autre
@@ -693,7 +692,7 @@ fr:
   default_role_project_admin: Administrateur du projet
   default_role_non_member: Non membre
   default_role_reader: Lecteur
-  default_role_member: Membres
+  default_role_member: Membre
   default_type: Lot de Travaux
   default_type_bug: Bug
   default_type_deliverable: Livrable
@@ -1286,24 +1285,24 @@ fr:
   label_workflow_plural: Flux de travail
   label_workflow_summary: Résumé
   label_x_closed_work_packages_abbr:
-    one: 1 clôturé
-    other: "%{count} clôturés"
+    one: 1 closed
+    other: "%{count} closed"
     zero: 0 closed
   label_x_comments:
-    one: 1 commentaire
-    other: "%{count} commentaires"
+    one: 1 comment
+    other: "%{count} comments"
     zero: no comments
   label_x_open_work_packages_abbr:
-    one: 1 ouvert
-    other: "%{count} ouverts"
+    one: 1 open
+    other: "%{count} open"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
-    one: 1 ouvert / %{total}
-    other: "%{count} ouverts / %{total}"
+    one: 1 open / %{total}
+    other: "%{count} open / %{total}"
     zero: 0 open / %{total}
   label_x_projects:
-    one: 1 projet
-    other: "%{count} projets"
+    one: 1 project
+    other: "%{count} projects"
     zero: no projects
   label_year: Année
   label_yesterday: hier
@@ -1460,14 +1459,15 @@ fr:
         format: "%n %u"
         units:
           byte:
-            one: Octet
-            other: Octets
+            one: Byte
+            other: Bytes
           gb: Go
           kb: ko
           mb: Mo
           tb: To
   permission_add_work_package_notes: Ajouter des notes
-  permission_add_work_packages: Ajouter des lots de travaux
+  permission_add_work_packages: Add work packages (also allows to add attachments
+    to all work packages)
   permission_add_messages: Poster des messages
   permission_add_project: Créer un projet
   permission_add_subprojects: Créer des sous-projets
@@ -1956,8 +1956,8 @@ fr:
     delete_thing: Supprimer
     duration: Durée
     duration_days:
-      one: 1 jour
-      other: "%{count} jours"
+      one: 1 day
+      other: "%{count} days"
     edit_color: "Éditer la couleur"
     edit_project_type: Editer le type de projet
     edit_thing: "Éditer"
@@ -2140,8 +2140,8 @@ fr:
     assign_random_password: Assign random password (sent to user via email)
     blocked: verrouillé temporairement
     blocked_num_failed_logins:
-      one: verrouillé temporairement (une tentative de connexion échouée)
-      other: verrouillé temporairement (%{count} tentatives de connexion échouées)
+      one: locked temporarily (one failed login attempt)
+      other: locked temporarily (%{count} failed login attempts)
     deleted: Utilisateur supprimé
     error_status_change_failed: 'Le changement du statut de l''utilisateur a échoué
       dû aux erreurs suivantes: %{errors}'

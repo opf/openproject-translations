@@ -46,12 +46,12 @@ ru:
         no_results_title_text: "На данный момент категории пакетов работ отсутствуют."
         no_results_content_text: "Создать новую категорию пакета работ"
       custom_fields:
-        no_results_title_text: "Доступные на данный момент настраиваемые поля."
+        no_results_title_text: There are currently no custom fields available.
       types:
         no_results_title_text: "На данный момент доступных типов нет."
       versions:
-        no_results_title_text: "На данный момент других версий у проекта нет."
-        no_results_content_text: "Создать новую версию"
+        no_results_title_text: "На сегодня других вариантов у проекта нет."
+        no_results_content_text: "Создать новый вариант"
   project_types:
     index:
       no_results_title_text: "На данный момент типы проектов отсутствуют."
@@ -103,15 +103,15 @@ ru:
         no_results_title_text: "В настоящее время нет рабочих пакетов, о которых я
           сообщал."
       responsible:
-        no_results_title_text: There are currently no work packages that I am responsible
-          for.
+        no_results_title_text: "В настоящее время нет рабочих пакетов, за которые
+          я несу ответственность."
       watched:
         no_results_title_text: "На данный момент у меня нет рабочих пакетов, за которыми
           я наблюдаю."
     summary:
       reports:
         category:
-          no_results_title_text: "В настоящее время нет доступных категорий."
+          no_results_title_text: "В данный момент категории отсутствуют."
         assigned_to:
           no_results_title_text: "На данный момент у этого проекта нет участников."
         responsible:
@@ -119,11 +119,11 @@ ru:
         author:
           no_results_title_text: "На данный момент у этого проекта нет участников."
         priority:
-          no_results_title_text: "В настоящее время приоритеты не установлены."
+          no_results_title_text: "В данный момент приоритеты не установлены."
         type:
           no_results_title_text: "На данный момент доступных типов нет."
         version:
-          no_results_title_text: "Пока что нет доступных версий."
+          no_results_title_text: "Доступных вариантов нет."
   label_invitation: "Приглашение"
   account:
     delete: "Удалить учётную запись"
@@ -220,7 +220,7 @@ ru:
         identifier: "Идентификатор"
         work_packages: "Задачи"
         parent: "Подпроект"
-        versions: "Версии"
+        versions: "Варианты"
         project_type: "Тип проекта"
         responsible: "Ответственный"
         types: "Типы"
@@ -254,8 +254,8 @@ ru:
         password_confirmation: "Подтверждение"
         force_password_change: "Принудительное изменение пароля при следующем входе"
       user_preference:
-        comments_sorting: "Показать комментарии"
-        hide_mail: "Скрыть мой адрес электронной почты"
+        comments_sorting: "Показывать комментарии"
+        hide_mail: "Скрывать мой адрес электронной почты"
         impaired: "Режим отображения для людей с ограниченными возможностями"
         time_zone: "Часовой пояс"
         warn_on_leaving_unsaved: "Предупреждать меня, когда покидаю страницу с несохраненным
@@ -291,7 +291,7 @@ ru:
         created_at: "Создан"
       work_package:
         done_ratio: "Прогресс (%)"
-        fixed_version: "Версия"
+        fixed_version: "Вариант"
         parent: "Родитель"
         parent_issue: "Родитель"
         parent_work_package: "Родитель"
@@ -337,7 +337,7 @@ ru:
         after_or_equal_to: "должна быть после или ровно %{date}."
         before: "должны быть до %{date}."
         before_or_equal_to: "должны быть до или ровно %{date}."
-        could_not_be_copied: "не может быть скопировано (полностью)."
+        could_not_be_copied: "не копируется (полностью)."
       models:
         project:
           attributes:
@@ -371,8 +371,7 @@ ru:
                 быть в рамках того же проекта, что и пакет работ."
               does_not_exist: "Указанная категория не существует."
             estimated_hours:
-              only_values_greater_or_equal_zeroes_allowed: "Предполагаемое количество
-                часов должен быть >= 0."
+              only_values_greater_or_equal_zeroes_allowed: must be >= 0.
         user:
           attributes:
             password:
@@ -383,12 +382,12 @@ ru:
               numeric: "цифры (например \"1\")"
               special: "спецсимволы (например, \"%\")"
               reused:
-                one: "использовался ранее. Пожалуйста, выберите отличный от вашего
-                  последнего."
-                other: "использовался ранее. Пожалуйста, выберите отличный от ваших
-                  последних %{count}."
-                few: "использовался ранее. Пожалуйста, выберите отличный от ваших
-                  последних %{count}."
+                one: has been used before. Please choose one that is different from
+                  your last one.
+                other: has been used before. Please choose one that is different from
+                  your last %{count}.
+                few: has been used before. Please choose one that is different from
+                  your last %{count}.
               match:
                 confirm: "Подтвердите новый пароль."
                 description: "«Подтвержденный пароль» должен совпадать с введенным
@@ -400,9 +399,9 @@ ru:
       template:
         body: "Пожалуйста, проверьте следующие поля:"
         header:
-          one: 1 ошибка препятствует сохранению %{model}
-          other: "%{count} ошибок препятствует сохранению %{model}"
-          few: "%{count} ошибок препятствует сохранению %{model}"
+          one: 1 error prohibited this %{model} from being saved
+          other: "%{count} errors prohibited this %{model} from being saved"
+          few: "%{count} errors prohibited this %{model} from being saved"
     models:
       attachment: "Файл"
       board: "Форум"
@@ -416,13 +415,13 @@ ru:
       project: "Проект"
       query: "Запрос пользователя"
       role:
-        one: "Роль"
-        other: "Роли"
-        few: "Роли"
+        one: Role
+        other: Roles
+        few: Roles
       type: "Тип"
       project_type: "Тип проекта"
       user: "Пользователь"
-      version: "Версия"
+      version: "Вариант"
       wiki: Wiki
       wiki_page: Wiki-страница
       workflow: "Рабочий поток"
@@ -473,13 +472,13 @@ ru:
     start_date: "Дата начала"
     status: "Состояние"
     subject: "Тема"
-    summary: "Резюме"
+    summary: "Сводка"
     title: "Заголовок"
     type: "Тип"
     updated_at: "Обновлено"
     updated_on: "Обновлено"
     user: "Пользователь"
-    version: "Версия"
+    version: "Вариант"
     work_package: "Пакет работ"
   button_add: "Добавить"
   button_add_member: "Добавить участника"
@@ -606,55 +605,55 @@ ru:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: "около часа"
-        other: "около %{count} часов"
-        few: "около %{count} часов"
+        one: about 1 hour
+        other: about %{count} hours
+        few: about %{count} hours
       about_x_months:
-        one: "около месяца"
-        other: "около %{count} месяцев"
-        few: "около %{count} месяцев"
+        one: about 1 month
+        other: about %{count} months
+        few: about %{count} months
       about_x_years:
-        one: "около года"
-        other: "примерно %{count} лет"
-        few: "примерно %{count} года"
+        one: about 1 year
+        other: about %{count} years
+        few: about %{count} years
       almost_x_years:
-        one: "почти год"
-        other: "почти %{count} лет"
-        few: "почти %{count} года"
+        one: almost 1 year
+        other: almost %{count} years
+        few: almost %{count} years
       half_a_minute: "полминуты"
       less_than_x_minutes:
-        one: "менее минуты"
-        other: "менее %{count} минут"
-        few: "менее %{count} минуты"
+        one: less than a minute
+        other: less than %{count} minutes
+        few: less than %{count} minutes
       less_than_x_seconds:
-        one: "меньше секунды"
-        other: "меньше чем за %{count} секунд"
-        few: "меньше чем за %{count} секунды"
+        one: less than 1 second
+        other: less than %{count} seconds
+        few: less than %{count} seconds
       over_x_years:
-        one: "более года"
-        other: "более %{count} лет"
-        few: "более %{count} лет"
+        one: over 1 year
+        other: over %{count} years
+        few: over %{count} years
       x_days:
-        one: 1 день
-        other: "%{count} дней"
-        few: "%{count} дня"
+        one: 1 day
+        other: "%{count} days"
+        few: "%{count} days"
       x_minutes:
-        one: 1 минута
-        other: "%{count} минут"
-        few: "%{count} минуты"
+        one: 1 minute
+        other: "%{count} minutes"
+        few: "%{count} minutes"
       x_months:
-        one: 1 месяц
-        other: "%{count} месяцев"
-        few: "%{count} месяца"
+        one: 1 month
+        other: "%{count} months"
+        few: "%{count} months"
       x_seconds:
-        one: 1 секунда
-        other: "%{count} секунд"
-        few: "%{count} секунды"
+        one: 1 second
+        other: "%{count} seconds"
+        few: "%{count} seconds"
     units:
       hour:
-        one: "час"
-        other: "часов"
-        few: "часа"
+        one: hour
+        other: hours
+        few: hours
   default_activity_development: "Разработка"
   default_activity_management: "Управление"
   default_activity_other: "Другие"
@@ -878,7 +877,7 @@ ru:
   label_authentication: "Аутентификация"
   label_available_project_work_package_categories: "Доступные категории рабочих пакетов"
   label_available_project_boards: "Доступные форумы"
-  label_available_project_versions: "Доступные версии"
+  label_available_project_versions: "Доступные варианты"
   label_available_project_repositories: "Доступные репозитории"
   label_api_documentation: "Документация по API"
   label_blocked_by: "заблокировано"
@@ -1222,7 +1221,7 @@ ru:
   label_subproject_new: "Новый подпроект"
   label_subproject_plural: "Подпроекты"
   label_subtask_plural: "Подзадачи"
-  label_summary: "Резюме"
+  label_summary: "Сводка"
   label_system: "Система"
   label_system_storage: "Информация хранилища"
   label_table_of_contents: "Содержание"
@@ -1262,7 +1261,7 @@ ru:
   label_user_plural: "Пользователи"
   label_user_search: "Найти пользователя"
   label_version_new: "Новая версия"
-  label_version_plural: "Версии"
+  label_version_plural: "Варианты"
   label_version_sharing_descendants: "С подпроектами"
   label_version_sharing_hierarchy: "С иерархией проектов"
   label_version_sharing_none: "Не в совместном использовании"
@@ -1292,32 +1291,32 @@ ru:
   label_work_package_types: "Типы рабочих пакетов"
   label_workflow: "Рабочий поток"
   label_workflow_plural: "Рабочие потоки"
-  label_workflow_summary: "Резюме"
+  label_workflow_summary: "Сводка"
   label_x_closed_work_packages_abbr:
-    one: 1 закрыто
-    other: "%{count} закрыто"
+    one: 1 closed
+    other: "%{count} closed"
     zero: 0 closed
-    few: "%{count} закрыто"
+    few: "%{count} closed"
   label_x_comments:
-    one: 1 комментарий
-    other: "%{count} комментариев"
+    one: 1 comment
+    other: "%{count} comments"
     zero: no comments
-    few: "%{count} комментария"
+    few: "%{count} comments"
   label_x_open_work_packages_abbr:
-    one: 1 открыт
-    other: "%{count} открыто"
+    one: 1 open
+    other: "%{count} open"
     zero: 0 open
-    few: "%{count} открыто"
+    few: "%{count} open"
   label_x_open_work_packages_abbr_on_total:
-    one: 1 открыт / %{total}
-    other: "%{count} открыто / %{total}"
+    one: 1 open / %{total}
+    other: "%{count} open / %{total}"
     zero: 0 open / %{total}
-    few: "%{count} открыто / %{total}"
+    few: "%{count} open / %{total}"
   label_x_projects:
-    one: 1 проект
-    other: "%{count} проектов"
+    one: 1 project
+    other: "%{count} projects"
     zero: no projects
-    few: "%{count} проекта"
+    few: "%{count} projects"
   label_year: "Год"
   label_yesterday: "вчера"
   label_keyboard_function: "Функция"
@@ -1467,15 +1466,16 @@ ru:
         format: "%n %u"
         units:
           byte:
-            one: "Байт"
-            other: "Байтов"
-            few: "Байта"
+            one: Byte
+            other: Bytes
+            few: Bytes
           gb: "ГБ"
           kb: "кБ"
           mb: "МБ"
           tb: TБ
   permission_add_work_package_notes: "Добавить заметки"
-  permission_add_work_packages: "Добавление пакетов работ"
+  permission_add_work_packages: Add work packages (also allows to add attachments
+    to all work packages)
   permission_add_messages: "Написать сообщения"
   permission_add_project: "Создать проект"
   permission_add_subprojects: "Создать подпроект"
@@ -1504,7 +1504,7 @@ ru:
   permission_edit_project_associations: "Редактировать зависимости проекта"
   permission_edit_reportings: "Редактировать отчеты"
   permission_edit_time_entries: "Редактировать записи о времени"
-  permission_edit_timelines: "Редактировать графики времени"
+  permission_edit_timelines: "Редактировать графики"
   permission_edit_wiki_pages: "Редактировать wiki-страницы"
   permission_export_work_packages: "Экспорт пакетов работ"
   permission_export_wiki_pages: "Экспорт wiki-страниц"
@@ -1940,12 +1940,12 @@ ru:
       project_type: "Тип проекта"
       project_types: "Типы проекта"
     project_menu:
-      project_associations: "Зависимости"
-      reportings: "Отчеты о статусе"
+      project_associations: "Связи"
+      reportings: "Отчетность"
       reports: "Отчеты по графикам"
       timelines: "Графики"
-    add_project_association: "Добавление зависимостей"
-    associations: "Зависимости"
+    add_project_association: "Добавить связь"
+    associations: "Связи"
     board_could_not_be_saved: "Форум сохранён быть не может"
     button_delete_all: "Удалить всё"
     change: "Изменения в планировании"
@@ -1959,9 +1959,9 @@ ru:
     delete_thing: "Удалить"
     duration: "Продолжительность"
     duration_days:
-      one: 1 день
-      other: "%{count} дней"
-      few: "%{count} дня"
+      one: 1 day
+      other: "%{count} days"
+      few: "%{count} days"
     edit_color: "Изменить цвет"
     edit_project_type: "Редактировать тип проекта"
     edit_thing: "Правка"
@@ -2065,7 +2065,7 @@ ru:
       ассоциация с отчетностью."
     no_right_to_view_timeline: "Вы не имеете необходимых прав для просмотра связанной
       шкалы времени."
-    no_timeline_for_id: "Нет шкалы времени с ID %{id}."
+    no_timeline_for_id: "Нет графика с ID %{id}."
     notice_successful_deleted_all_elements: "Успешно удалены все элементы"
     outline: "Сбросить схему"
     outlines:
@@ -2139,9 +2139,9 @@ ru:
       электронной почте)"
     blocked: "Временно заблокирован"
     blocked_num_failed_logins:
-      one: "временно заблокирован (одна неудачная попытка входа)"
-      other: "временно заблокирован (%{count} неудачных попыток входа в систему)"
-      few: "временно заблокирован (%{count} неудачные попытки входа в систему)"
+      one: locked temporarily (one failed login attempt)
+      other: locked temporarily (%{count} failed login attempts)
+      few: locked temporarily (%{count} failed login attempts)
     deleted: "Удалённый пользователь"
     error_status_change_failed: "Изменение статуса пользователя не удалось из-за следующей
       ошибки: %{errors}"

@@ -46,7 +46,7 @@ id:
         no_results_title_text: There are currently no work package categories.
         no_results_content_text: Create a new work package category
       custom_fields:
-        no_results_title_text: There are currently custom fields available.
+        no_results_title_text: There are currently no custom fields available.
       types:
         no_results_title_text: There are currently no types available.
       versions:
@@ -363,7 +363,7 @@ id:
                 dari kategori yang berlaku pada proyek.
               does_not_exist: Kategori yang dipilih tidak ada.
             estimated_hours:
-              only_values_greater_or_equal_zeroes_allowed: Estimasi jam harus >= 0.
+              only_values_greater_or_equal_zeroes_allowed: must be >= 0.
         user:
           attributes:
             password:
@@ -376,8 +376,8 @@ id:
               reused:
                 one: has been used before. Please choose one that is different from
                   your last one.
-                other: password pernah dipakai. Password harus berbeda dari %{count}
-                  password yang lalu.
+                other: has been used before. Please choose one that is different from
+                  your last %{count}.
               match:
                 confirm: Konfirmasi password baru.
                 description: Isian konfirmasi password tidak sama dengan masukan password.
@@ -388,7 +388,7 @@ id:
         body: 'Silakan periksa isian berikut :'
         header:
           one: 1 error prohibited this %{model} from being saved
-          other: "%{count} error menyebabkan %{model} gagal untuk disimpan"
+          other: "%{count} errors prohibited this %{model} from being saved"
     models:
       attachment: File
       board: Forum
@@ -403,7 +403,7 @@ id:
       query: Query kustom
       role:
         one: Role
-        other: Role
+        other: Roles
       type: Tipe
       project_type: Tipe Project
       user: User
@@ -592,42 +592,42 @@ id:
     distance_in_words:
       about_x_hours:
         one: about 1 hour
-        other: sekitar %{count} jam
+        other: about %{count} hours
       about_x_months:
         one: about 1 month
-        other: sekitar %{count} bulan
+        other: about %{count} months
       about_x_years:
         one: about 1 year
-        other: sekitar %{count} tahun
+        other: about %{count} years
       almost_x_years:
         one: almost 1 year
-        other: hampir %{count} tahun
+        other: almost %{count} years
       half_a_minute: setengah menit
       less_than_x_minutes:
         one: less than a minute
-        other: kurang dari %{count} menit
+        other: less than %{count} minutes
       less_than_x_seconds:
         one: less than 1 second
-        other: kurang dari %{count} detik
+        other: less than %{count} seconds
       over_x_years:
         one: over 1 year
-        other: selama %{count} tahun
+        other: over %{count} years
       x_days:
         one: 1 day
-        other: "%{count} hari"
+        other: "%{count} days"
       x_minutes:
         one: 1 minute
-        other: "%{count} menit"
+        other: "%{count} minutes"
       x_months:
         one: 1 month
-        other: "%{count} bulan"
+        other: "%{count} months"
       x_seconds:
         one: 1 second
-        other: "%{count} detik"
+        other: "%{count} seconds"
     units:
       hour:
         one: hour
-        other: jam
+        other: hours
   default_activity_development: Pengembangan
   default_activity_management: Manajemen
   default_activity_other: Lainnya
@@ -1264,7 +1264,7 @@ id:
     zero: 0 closed
   label_x_comments:
     one: 1 comment
-    other: "%{count} komentar"
+    other: "%{count} comments"
     zero: no comments
   label_x_open_work_packages_abbr:
     one: 1 open
@@ -1276,7 +1276,7 @@ id:
     zero: 0 open / %{total}
   label_x_projects:
     one: 1 project
-    other: "%{count} proyek"
+    other: "%{count} projects"
     zero: no projects
   label_year: Tahun
   label_yesterday: kemarin
@@ -1420,13 +1420,14 @@ id:
         units:
           byte:
             one: Byte
-            other: Byte
+            other: Bytes
           gb: GB
           kb: kB
           mb: MB
           tb: TB
   permission_add_work_package_notes: Tambahkan catatan
-  permission_add_work_packages: Tambah Paket-Penugasan
+  permission_add_work_packages: Add work packages (also allows to add attachments
+    to all work packages)
   permission_add_messages: Kirim pesan
   permission_add_project: Buat Project
   permission_add_subprojects: Buat Sub Project
@@ -1896,7 +1897,7 @@ id:
     duration: Durasi
     duration_days:
       one: 1 day
-      other: "%{count} hari"
+      other: "%{count} days"
     edit_color: Edit warna
     edit_project_type: Edit Tipe Project
     edit_thing: Edit
