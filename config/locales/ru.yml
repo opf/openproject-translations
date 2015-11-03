@@ -46,7 +46,7 @@ ru:
         no_results_title_text: "На данный момент категории пакетов работ отсутствуют."
         no_results_content_text: "Создать новую категорию пакета работ"
       custom_fields:
-        no_results_title_text: There are currently no custom fields available.
+        no_results_title_text: "В данный момент настраиваемые поля отсутствуют."
       types:
         no_results_title_text: "На данный момент доступных типов нет."
       versions:
@@ -86,7 +86,8 @@ ru:
       no_results_content_text: "Создать новый тип"
   versions:
     overview:
-      no_results_title_text: "В данный момент пакетов работ для этой версии нет."
+      no_results_title_text: There are currently no work packages assigned to this
+        version.
   wiki:
     no_results_title_text: "На данный момент wiki-страницы отсутствуют."
     index:
@@ -371,7 +372,7 @@ ru:
                 быть в рамках того же проекта, что и пакет работ."
               does_not_exist: "Указанная категория не существует."
             estimated_hours:
-              only_values_greater_or_equal_zeroes_allowed: must be >= 0.
+              only_values_greater_or_equal_zeroes_allowed: "должно быть > = 0."
         user:
           attributes:
             password:
@@ -382,12 +383,15 @@ ru:
               numeric: "цифры (например \"1\")"
               special: "спецсимволы (например, \"%\")"
               reused:
-                one: has been used before. Please choose one that is different from
-                  your last one.
-                other: has been used before. Please choose one that is different from
-                  your last %{count}.
-                few: has been used before. Please choose one that is different from
-                  your last %{count}.
+                one: |
+                  использовался ранее. Пожалуйста, укажите отличный от вашего
+                  последнего.
+                other: |
+                  использовался ранее. Пожалуйста, выберите отличный от ваших
+                  последних %{count}.
+                few: |
+                  использовался ранее. Пожалуйста, выберите отличный от ваших
+                  последних %{count}.
               match:
                 confirm: "Подтвердите новый пароль."
                 description: "«Подтвержденный пароль» должен совпадать с введенным
@@ -399,9 +403,9 @@ ru:
       template:
         body: "Пожалуйста, проверьте следующие поля:"
         header:
-          one: 1 error prohibited this %{model} from being saved
-          other: "%{count} errors prohibited this %{model} from being saved"
-          few: "%{count} errors prohibited this %{model} from being saved"
+          one: 1 ошибка препятствует сохранению %{model}
+          other: "%{count} ошибок препятствуют сохранению %{model}"
+          few: "%{count} ошибки препятствует сохранению %{model}"
     models:
       attachment: "Файл"
       board: "Форум"
@@ -415,9 +419,9 @@ ru:
       project: "Проект"
       query: "Запрос пользователя"
       role:
-        one: Role
-        other: Roles
-        few: Roles
+        one: "Роль"
+        other: "Роли"
+        few: "Роли"
       type: "Тип"
       project_type: "Тип проекта"
       user: "Пользователь"
@@ -605,55 +609,55 @@ ru:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: about 1 hour
-        other: about %{count} hours
-        few: about %{count} hours
+        one: "около часа"
+        other: "около %{count} часов"
+        few: "около %{count} часов"
       about_x_months:
-        one: about 1 month
-        other: about %{count} months
-        few: about %{count} months
+        one: "около месяца"
+        other: "около %{count} месяцев"
+        few: "около %{count} месяцев"
       about_x_years:
-        one: about 1 year
-        other: about %{count} years
-        few: about %{count} years
+        one: "около года"
+        other: "около %{count} лет"
+        few: "около %{count} лет"
       almost_x_years:
-        one: almost 1 year
-        other: almost %{count} years
-        few: almost %{count} years
+        one: "почти год"
+        other: "почти %{count} лет"
+        few: "почти %{count} года"
       half_a_minute: "полминуты"
       less_than_x_minutes:
-        one: less than a minute
-        other: less than %{count} minutes
-        few: less than %{count} minutes
+        one: "менее минуты"
+        other: "менее %{count} минут"
+        few: "менее %{count} минут"
       less_than_x_seconds:
-        one: less than 1 second
-        other: less than %{count} seconds
-        few: less than %{count} seconds
+        one: "меньше секунды"
+        other: "меньше %{count} секунд"
+        few: "меньше %{count} секунд"
       over_x_years:
-        one: over 1 year
-        other: over %{count} years
-        few: over %{count} years
+        one: "более года"
+        other: "более %{count} лет"
+        few: "более %{count} лет"
       x_days:
-        one: 1 day
-        other: "%{count} days"
-        few: "%{count} days"
+        one: 1 день
+        other: "%{count} дней"
+        few: "%{count} дня"
       x_minutes:
-        one: 1 minute
-        other: "%{count} minutes"
-        few: "%{count} minutes"
+        one: 1 минута
+        other: "%{count} минут"
+        few: "%{count} минуты"
       x_months:
-        one: 1 month
-        other: "%{count} months"
-        few: "%{count} months"
+        one: 1 месяц
+        other: "%{count} месяцев"
+        few: "%{count} месяца"
       x_seconds:
-        one: 1 second
-        other: "%{count} seconds"
-        few: "%{count} seconds"
+        one: 1 секунда
+        other: "%{count} секунд"
+        few: "%{count} секунды"
     units:
       hour:
-        one: hour
-        other: hours
-        few: hours
+        one: "час"
+        other: "часов"
+        few: "часа"
   default_activity_development: "Разработка"
   default_activity_management: "Управление"
   default_activity_other: "Другие"
@@ -1293,30 +1297,30 @@ ru:
   label_workflow_plural: "Рабочие потоки"
   label_workflow_summary: "Сводка"
   label_x_closed_work_packages_abbr:
-    one: 1 closed
-    other: "%{count} closed"
+    one: 1 закрыто
+    other: "%{count} закрыто"
     zero: 0 closed
-    few: "%{count} closed"
+    few: "%{count} закрыто"
   label_x_comments:
-    one: 1 comment
-    other: "%{count} comments"
+    one: 1 комментарий
+    other: "%{count} комментариев"
     zero: no comments
-    few: "%{count} comments"
+    few: "%{count} комментария"
   label_x_open_work_packages_abbr:
-    one: 1 open
-    other: "%{count} open"
+    one: 1 открыт
+    other: "%{count} открыто"
     zero: 0 open
-    few: "%{count} open"
+    few: "%{count} открыто"
   label_x_open_work_packages_abbr_on_total:
-    one: 1 open / %{total}
-    other: "%{count} open / %{total}"
+    one: 1 открыт / %{total}
+    other: "%{count} открыто / %{total}"
     zero: 0 open / %{total}
-    few: "%{count} open / %{total}"
+    few: "%{count} открыто / %{total}"
   label_x_projects:
-    one: 1 project
-    other: "%{count} projects"
+    one: 1 проект
+    other: "%{count} проектов"
     zero: no projects
-    few: "%{count} projects"
+    few: "%{count} проекта"
   label_year: "Год"
   label_yesterday: "вчера"
   label_keyboard_function: "Функция"
@@ -1466,16 +1470,16 @@ ru:
         format: "%n %u"
         units:
           byte:
-            one: Byte
-            other: Bytes
-            few: Bytes
+            one: "Байт"
+            other: "Байтов"
+            few: "Байт"
           gb: "ГБ"
           kb: "кБ"
           mb: "МБ"
           tb: TБ
   permission_add_work_package_notes: "Добавить заметки"
-  permission_add_work_packages: Add work packages (also allows to add attachments
-    to all work packages)
+  permission_add_work_packages: "Добавление пакетов работ (включет добавление к ним
+    вложений)"
   permission_add_messages: "Написать сообщения"
   permission_add_project: "Создать проект"
   permission_add_subprojects: "Создать подпроект"
@@ -1959,9 +1963,9 @@ ru:
     delete_thing: "Удалить"
     duration: "Продолжительность"
     duration_days:
-      one: 1 day
-      other: "%{count} days"
-      few: "%{count} days"
+      one: 1 день
+      other: "%{count} дней"
+      few: "%{count} дня"
     edit_color: "Изменить цвет"
     edit_project_type: "Редактировать тип проекта"
     edit_thing: "Правка"
@@ -2139,9 +2143,9 @@ ru:
       электронной почте)"
     blocked: "Временно заблокирован"
     blocked_num_failed_logins:
-      one: locked temporarily (one failed login attempt)
-      other: locked temporarily (%{count} failed login attempts)
-      few: locked temporarily (%{count} failed login attempts)
+      one: "временно заблокирован (одна неудачная попытка авторизации)"
+      other: "временно заблокирован (%{count} неудачных попыток авторизации)"
+      few: "временно заблокирован (%{count} неудачные попытки авторизации)"
     deleted: "Удалённый пользователь"
     error_status_change_failed: "Изменение статуса пользователя не удалось из-за следующей
       ошибки: %{errors}"
