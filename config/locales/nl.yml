@@ -186,13 +186,13 @@ nl:
         equal_to: moet gelijk zijn aan %{count}
         even: moet gelijk zijn
         exclusion: is gereserveerd
-        file_too_large: is too large (maximum size is %{count} Bytes)
+        file_too_large: is te groot (maximale grootte is %{count} Bytes)
         greater_than: moet groter zijn dan %{count}
         greater_than_or_equal_to: moet groter dan of gelijk zijn aan %{count}
-        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
-          length
+        smaller_than_or_equal_to_max_length: moet kleiner zijn of even groot zijn
+          als de maximale lengte
         greater_than_start_date: moet groter zijn dan begindatum
-        inclusion: is not set to one of the allowed values
+        inclusion: is niet ingesteld op één van de toegestane waarden
         invalid: is ongeldig
         less_than: moet minder dan %{count}
         less_than_or_equal_to: moet kleiner zijn dan of gelijk aan %{count}
@@ -216,8 +216,8 @@ nl:
             itself.
           project_association_not_allowed: staat geen associaties toe
         repository:
-          not_whitelisted: is not allowed by the configuration
-          no_directory: is not a directory
+          not_whitelisted: is niet toegestaan in deze configuratie
+          no_directory: is geen map
         work_package:
           is_not_a_valid_target_for_time_entries: 'Werkpakket #%{id} is niet een geldig
             doel voor het opnieuw toewijzen van de tijden.'
@@ -246,17 +246,17 @@ nl:
         user:
           attributes:
             password:
-              weak: 'Must contain characters of the following classes (at least %{min_count}
-                of %{all_count}): %{rules}'
+              weak: Moet karakters bevatten van de volgende klasses (ten minste %{min_count}
+                van %{all_count}):%{rules}
               lowercase: kleine letters (bijvoorbeeld 'a')
               uppercase: hoofdletters (bijvoorbeeld ' A')
               numeric: numerieke (bijvoorbeeld ' 1')
               special: speciale (bijvoorbeeld ' %')
               reused:
-                one: has been used before. Please choose one that is different from
-                  your last one.
-                other: has been used before. Please choose one that is different from
-                  your last %{count}.
+                one: is reeds eerder gebruikt. Kies er één die verschilt van uw laatste
+                  %{count}.
+                other: is reeds eerder gebruikt. Kies er één die verschilt van uw
+                  laatste %{count}.
               match:
                 confirm: Confirm new password.
                 description: "'Password confirmation' should match the input in the
@@ -283,8 +283,8 @@ nl:
       project: Project
       query: Aangepaste query
       role:
-        one: Role
-        other: Roles
+        one: Rol
+        other: Rol
       type: Type
       planning_element: Planning element
       project_type: Projecttype
@@ -471,43 +471,43 @@ nl:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: about 1 hour
-        other: about %{count} hours
+        one: ongeveer %{count} uur
+        other: ongeveer %{count} uren
       about_x_months:
-        one: about 1 month
-        other: about %{count} months
+        one: ongeveer %{count} maand
+        other: ongeveer %{count} maanden
       about_x_years:
-        one: about 1 year
-        other: about %{count} years
+        one: ongeveer %{count} jaar
+        other: ongeveer %{count} jaren
       almost_x_years:
-        one: almost 1 year
-        other: almost %{count} years
+        one: bijna %{count} jaar
+        other: bijna %{count} jaren
       half_a_minute: een halve minuut
       less_than_x_minutes:
-        one: less than a minute
-        other: less than %{count} minutes
+        one: minder dan %{count} minuut
+        other: minder dan %{count} minuten
       less_than_x_seconds:
-        one: less than 1 second
-        other: less than %{count} seconds
+        one: minder dan %{count} seconde
+        other: minder dan %{count} seconden
       over_x_years:
-        one: over 1 year
-        other: over %{count} years
+        one: meer dan %{count} jaar
+        other: meer dan %{count} jaren
       x_days:
-        one: 1 day
-        other: "%{count} days"
+        one: "%{count} dag"
+        other: "%{count} dagen"
       x_minutes:
         one: 1 minute
-        other: "%{count} minutes"
+        other: "%{count} minuten"
       x_months:
-        one: 1 month
-        other: "%{count} months"
+        one: "%{count} maand"
+        other: "%{count} maanden"
       x_seconds:
         one: 1 second
-        other: "%{count} seconds"
+        other: "%{count} seconden"
     units:
       hour:
-        one: hour
-        other: hours
+        one: uur
+        other: uren
   default_activity_development: Ontwikkeling
   default_activity_management: Management
   default_activity_other: Overig
@@ -1085,11 +1085,11 @@ nl:
   label_workflow_summary: Overzicht
   label_x_closed_work_packages_abbr:
     one: 1 closed
-    other: "%{count} closed"
+    other: "%{count} gesloten"
     zero: 0 closed
   label_x_comments:
-    one: 1 comment
-    other: "%{count} comments"
+    one: "%{count} reactie"
+    other: "%{count} reacties"
     zero: no comments
   label_x_open_work_packages_abbr:
     one: 1 open
@@ -1417,7 +1417,7 @@ nl:
   setting_user_format: Notatie voor weergave van gebruikers
   setting_users_deletable_by_admins: Gebruikersaccounts verwijderbaar door beheerder
   setting_users_deletable_by_self: Gebruikers kunnen hun accounts verwijderen
-  setting_welcome_text: Welkomsttekst
+  setting_welcome_text: Welkom tekst
   setting_wiki_compression: Compressie van wiki geschiedenis
   setting_work_package_group_assignment: Sta toewijzingen een groepen toe
   settings:
