@@ -1,4 +1,4 @@
-#encoding: utf-8
+# encoding: utf-8
 #
 #-- copyright
 # OpenProject is a project management system.
@@ -17,7 +17,7 @@
 require_relative '../open_project/translations/models/locales_updater'
 
 namespace :translations_for_plugins do
-  desc "todo, upload english, download locales, commit to plugin repo"
+  desc 'todo, upload english, download locales, commit to plugin repo'
   task :update do
     LocalesUpdater.new.update_all_locales_of_all_repos(debug: false)
   end

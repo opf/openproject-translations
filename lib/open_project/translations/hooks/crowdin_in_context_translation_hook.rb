@@ -14,8 +14,8 @@
 
 module OpenProject::Translations::Hooks
   class CrowdinInContextTranslations < Redmine::Hook::ViewListener
-    def view_layouts_base_html_head(context)
-      if ::I18n.locale == :lol #the in-context translation pseudo-language
+    def view_layouts_base_html_head(_context)
+      if ::I18n.locale == :lol # the in-context translation pseudo-language
         "<script type=\"text/javascript\">
            var _jipt = [];
            _jipt.push(['project', 'openproject']);

@@ -104,7 +104,7 @@ describe I18nProvider do
   describe '#translation_status_high_enough?' do
     let(:code) { 'test-code' }
     let(:percent) { 100 }
-    let(:translations_statuses) { [ { 'code' => code, 'translated_progress' => percent } ] }
+    let(:translations_statuses) { [{ 'code' => code, 'translated_progress' => percent }] }
 
     before do
       i18n_provider.instance_variable_set(:@translations_statuses, translations_statuses)
@@ -114,7 +114,7 @@ describe I18nProvider do
       let(:acceptance_leve) { 101 }
 
       it 'returns false' do
-        expect(i18n_provider.translation_status_high_enough?(code, acceptance_leve) ).to be_falsey
+        expect(i18n_provider.translation_status_high_enough?(code, acceptance_leve)).to be_falsey
       end
     end
 
@@ -122,10 +122,9 @@ describe I18nProvider do
       let(:acceptance_leve) { 99 }
 
       it 'returns false' do
-        expect(i18n_provider.translation_status_high_enough?(code, acceptance_leve) ).to be_truthy
+        expect(i18n_provider.translation_status_high_enough?(code, acceptance_leve)).to be_truthy
       end
     end
-
 
     context 'when @tranlation_statuses is nil' do
       let(:translations_statuses) { nil }

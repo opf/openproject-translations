@@ -21,10 +21,10 @@ module OpenProject::Translations
     include OpenProject::Plugins::ActsAsOpEngine
 
     register 'openproject-translations',
-             :author_url => 'https://openproject.org',
-             :requires_openproject => '>= 4.0.0'
+             author_url: 'https://openproject.org',
+             requires_openproject: '>= 4.0.0'
 
-    patches [ :ApplicationHelper ]
+    patches [:ApplicationHelper]
 
     initializer 'translations.disable_core_specs' do
       require File.join(File.dirname(__FILE__), 'disabled_specs')

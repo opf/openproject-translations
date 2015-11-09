@@ -5,7 +5,7 @@ module RunCommand
     shell = Mixlib::ShellOut.new(command)
     shell.run_command
     if shell.error? && !(shell.stdout =~ /nothing to commit/)
-      raise "The following command returned an error: #{command}. Error message: #{shell.stderr}"
+      fail "The following command returned an error: #{command}. Error message: #{shell.stderr}"
     end
 
     shell.stdout.gsub(/\n$/, '')

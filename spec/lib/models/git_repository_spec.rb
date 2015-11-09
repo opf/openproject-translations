@@ -2,7 +2,7 @@ require 'spec_helper'
 require_relative '../../../lib/open_project/translations/models/git_repository'
 
 describe GitRepository do
-  #subject { instance_double('GitRepository') }
+  # subject { instance_double('GitRepository') }
   subject { GitRepository.new(uri, path) }
   let(:uri) { 'test-url' }
   let(:path) { 'test-path' }
@@ -77,14 +77,14 @@ describe GitRepository do
   describe '#push' do
     it 'calls run_command with correct parameters' do
       allow(subject).to receive(:within_repo).and_yield
-      expect(subject).to receive(:run_command).with("git push")
+      expect(subject).to receive(:run_command).with('git push')
       subject.push
     end
 
     context 'with pushing tags' do
       it 'calls run_command with correct parameters' do
         allow(subject).to receive(:within_repo).and_yield
-        expect(subject).to receive(:run_command).with("git push --tags")
+        expect(subject).to receive(:run_command).with('git push --tags')
         subject.push(true)
       end
     end

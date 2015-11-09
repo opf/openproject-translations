@@ -18,7 +18,7 @@ module OpenProject::Translations::Patches
   module ApplicationHelperPatch
     def self.included(base)
       base.class_eval do
-        def all_lang_options_for_select_with_translation_plugin(blank=true)
+        def all_lang_options_for_select_with_translation_plugin(blank = true)
           lang_options = all_lang_options_for_select_without_translation_plugin(blank)
 
           # rename in-context translation language name for the language select box
@@ -33,7 +33,7 @@ module OpenProject::Translations::Patches
         end
         alias_method_chain :all_lang_options_for_select, :translation_plugin
 
-        def lang_options_for_select_with_translation_plugin(blank=true)
+        def lang_options_for_select_with_translation_plugin(blank = true)
           lang_options = lang_options_for_select_without_translation_plugin(blank)
           # rename in-context translation language name for the language select box
           lang_options.map do |lang_name, lang_code|

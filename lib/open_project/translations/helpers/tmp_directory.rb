@@ -15,9 +15,7 @@ module TmpDirectory
     else
       tmp_path = path
     end
-    if delete_if_exists
-      remove_tmp_directory(tmp_path)
-    end
+    remove_tmp_directory(tmp_path) if delete_if_exists
 
     FileUtils.mkdir_p tmp_path
     tmp_path
