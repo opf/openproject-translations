@@ -32,7 +32,7 @@ describe Redmine::I18n, type: :helper do
     def core_lang_files
       Dir.glob(Rails.root.join('config/locales/*.yml'))
         .map { |f| File.basename(f) }
-        .reject { |b| b.starts_with? 'js' }
+        .reject { |b| b.starts_with?('js') || b.include?('seeder') }
     end
   end
 end
