@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.version     = OpenProject::Translations::VERSION
   s.authors     = "OpenProject GmbH"
   s.email       = "info@openproject.com"
-  s.homepage    = "https://www.openproject.org/projects/translations"
+  s.homepage    = "https://community.openproject.org/projects/translations"
   s.summary     = 'OpenProject Translations'
   s.description = 'Adds translations to OpenProject.'
   s.license     = "GPLv3"
