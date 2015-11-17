@@ -130,7 +130,7 @@ it:
     deletion_info:
       data_consequences:
         other: I dati creati dall'utente (ad esempio posta elettronica, preferenze,
-          pacchetti di lavoro, voci wiki) verranno eliminati completamente se possibile.
+          macro-attività, voci wiki) verranno eliminati completamente se possibile.
           Si noti, tuttavia, che alcuni tipi di dati, come ad esempio i pacchetti
           di lavoro e le voci wiki, non possono essere eliminati senza creare un ostacolo
           per il lavoro di altri utenti. La proprietà di tali dati sarà pertanto trasferita
@@ -139,7 +139,7 @@ it:
           più possibile distinguere i dati creati dall'utente dai dati di un altro
           account eliminato.
         self: I dati creati dalle tue attività (ad esempio posta elettronica, preferenze,
-          pacchetti di lavoro, voci wiki) verranno eliminati completamente se possibile.
+          macro-attività, voci wiki) verranno eliminati completamente se possibile.
           Si noti, tuttavia, che alcuni tipi di dati, come ad esempio i pacchetti
           di lavoro e le voci wiki, non possono essere eliminati senza creare un ostacolo
           per il lavoro di altri utenti. La proprietà di tali dati sarà pertanto trasferita
@@ -438,7 +438,7 @@ it:
     attachments: Allegati
     author: Autore
     base: 'Errore Generale:'
-    blocks_ids: ID dei work packages bloccati
+    blocks_ids: ID delle macro-attività bloccate
     category: Categoria
     comment: Commento
     comments: Commento
@@ -703,11 +703,11 @@ it:
   default_type_user_story: User story
   description_active: Attivo?
   description_attachment_toggle: Mostra/Nascondi allegati
-  description_autocomplete: Questo campo utilizza completamento automatico. Mentre
-    si digita il titolo di un pacchetto di lavoro verrà visualizzato un elenco di
-    possibili candidati. Sceglierne uno utilizzando i tasti freccia su e freccia giù
-    e selezionarlo con tab o invio. In alternativa è possibile immettere direttamente
-    il numero del pacchetto di lavoro.
+  description_autocomplete: Questo campo utilizza il completamento automatico. Mentre
+    si digita il titolo di una macro-attività verrà visualizzato un elenco di possibili
+    candidati. Sceglierne uno utilizzando i tasti freccia su e freccia giù e selezionarlo
+    con tab o invio. In alternativa è possibile immettere direttamente il numero del
+    pacchetto di lavoro.
   description_available_columns: Colonne disponibili
   description_choose_project: Progetti
   description_compare_from: Confronta dalla versione
@@ -766,10 +766,10 @@ it:
   error_scm_command_failed: 'Si è verificato un errore durante il tentativo di accesso
     all''archivio: %{value}'
   error_scm_not_found: La voce o la revisione non è stata trovata nell'archivio.
-  error_unable_delete_status: Lo stato del work package non può essere eliminato poiché
-    è utilizzato da almeno un work package.
-  error_unable_delete_default_status: Impossibile eliminare lo stato predefinito del
-    work package. Si prega di selezionare un altro stato predefinito del work package
+  error_unable_delete_status: Lo stato della macro-attività non può essere eliminato
+    poiché è utilizzato da almeno una macro-attività.
+  error_unable_delete_default_status: Impossibile eliminare lo stato predefinito della
+    macro-attività. Si prega di selezionare un altro stato predefinito della macro-attività
     prima di eliminare quello corrente.
   error_unable_to_connect: Impossibile connettersi (%{value})
   error_workflow_copy_source: Si prega di selezionare un tipo di origine o un ruolo
@@ -1204,7 +1204,7 @@ it:
   label_start_to_start: dall'inizio all'inizio
   label_statistics: Statistiche
   label_status: Stato
-  label_status_updated: Stato del pacchetto di lavoro aggiornato
+  label_status_updated: Stato della macro-attiività aggiornato
   label_stay_logged_in: Resta connesso
   label_storage_free_space: Spazio di archiviazione su disco rimanente
   label_storage_used_space: Spazio di archiviazione su disco utilizzato
@@ -1356,21 +1356,23 @@ it:
   mail_body_account_information_external: Puoi usare il tuo %{value} account per accedere.
   mail_body_lost_password: 'Per cambiare la password, clicca nel link seguente:'
   mail_body_register: 'Per attivare il tuo account, clicca sul seguente link:'
-  mail_body_reminder: "%{count} macro-attività (work package) a te assegnata/e scadono
-    nei prossimi %{days} giorni:"
+  mail_body_reminder: "%{count} macro-attività a te assegnata/e scadono nei prossimi
+    %{days} giorni:"
   mail_body_wiki_content_added: La pagina wiki '%{id}' è stata aggiunta da %{author}.
   mail_body_wiki_content_updated: La pagina wiki '%{id}' è stata aggiornata da %{author}.
   mail_subject_account_activation_request: "%{value} richiesta di attivazione account"
   mail_subject_lost_password: La tua %{value} password
   mail_subject_register: La tua %{value} attivazione dell'account
-  mail_subject_reminder: "%{count} pacchetto(i) di lavoro in scadenza nei prossimi
-    %{days} giorni"
+  mail_subject_reminder: "%{count} macro-attività in scadenza nei prossimi %{days}
+    giorni"
   mail_subject_wiki_content_added: La pagina wiki '%{id}' è stata aggiunta
   mail_subject_wiki_content_updated: La pagina wiki '%{id}' è stata aggiornata
   more_actions: Altre funzioni
   noscript_description: "È necessario attivare JavaScript per poter usare OpenProject!"
   noscript_heading: JavaScript disabilitato
   noscript_learn_more: Scopri di più
+  notice_accessibility_mode: The accessibility mode can be enabled in your account
+    [settings](url).
   notice_account_activated: Il tuo account è stato attivato. Ora puoi accedere.
   notice_account_already_activated: L'account è già stato attivato.
   notice_account_invalid_token: Token di attivazione non valido
@@ -1507,7 +1509,7 @@ it:
   permission_list_attachments: Elencare allegati
   permission_log_time: Registrazioni dell'orario effettuato
   permission_manage_boards: Gestire forum
-  permission_manage_categories: Gestire le categorie delle macro-attività (work package)
+  permission_manage_categories: Gestire le categorie delle macro-attività
   permission_manage_work_package_relations: Gestisci le correlazioni tra macro-attività
   permission_manage_members: Gestire i membri dei team
   permission_manage_news: Gestire le notizie
@@ -1712,8 +1714,7 @@ it:
     di tentativi di login
   setting_brute_force_block_minutes: Durata del blocco utente
   setting_cache_formatted_text: Cache del testo formattato
-  setting_column_options: Personalizza l'aspetto degli elenchi di macro-attività (work
-    package)
+  setting_column_options: Personalizza l'aspetto degli elenchi di macro-attività
   setting_commit_fix_keywords: Parole chiave di ripristino
   setting_commit_logs_encoding: Codifica dei messaggi di accettazione modifiche (commit)
   setting_commit_logtime_activity_id: Attività svolta durante l'orario registrato
@@ -1760,7 +1761,7 @@ it:
     in arrivo
   setting_mail_handler_api_description: Il gestore di posta elettronica web consente
     ad OpenProject di ricevere e-mail contenenti comandi specifici come strumento
-    di automazione (ad esempio, per creare e aggiornare pacchetti di lavoro).
+    di automazione (ad esempio, per creare e aggiornare macro-attività).
   setting_mail_handler_api_key: Chiave API
   setting_mail_handler_body_delimiters: Troncare le email dopo una di queste linee
   setting_new_project_user_role_id: Ruolo assegnato ad un utente non amministratore
@@ -1833,8 +1834,7 @@ it:
     esterne l'accesso alle risorse in OpenProject.
   text_analyze: 'Analizzare ulteriormente: %{subject}'
   text_are_you_sure: Sei sicuro?
-  text_are_you_sure_with_children: Eliminare la macro-attività (work package) e tutte
-    le sue sotto-attività?
+  text_are_you_sure_with_children: Eliminare la macro-attività e tutte le sue sotto-attività?
   text_assign_to_project: Assegna al progetto
   text_caracters_maximum: "%{count} caratteri massimo."
   text_caracters_minimum: Deve essere lungo almeno %{count} caratteri.
@@ -1844,7 +1844,7 @@ it:
   text_default_encoding: 'Predefinito: UTF-8'
   text_destroy: Cancella
   text_destroy_with_associated: 'Ci sono ulteriori oggetti associati con la/le macro-attività
-    (work package) che devono essere eliminati. Tali oggetti sono dei seguenti tipi:'
+    che devono essere eliminati. Tali oggetti sono dei seguenti tipi:'
   text_destroy_what_to_do: Cosa vuoi fare?
   text_diff_truncated: "... Questo diff è stato troncato perché supera la dimensione
     massima che può essere visualizzata."
@@ -1888,11 +1888,10 @@ it:
   text_no_roles_defined: Non ci sono ruoli definiti.
   text_no_access_tokens_configurable: Non sono presenti token di accesso che possono
     essere configurati.
-  text_no_configuration_data: Ruoli, tipi, stati delle macro-attività (work package)
-    e flusso di lavoro non sono stati ancora configurati. Si consiglia di caricare
-    la configurazione predefinita. Sarà possibile modificarla in seguito.
-  text_no_notes: Non ci sono commenti disponibili per questa macro-attività (work
-    package).
+  text_no_configuration_data: Ruoli, tipi, stati delle macro-attività e flusso di
+    lavoro non sono stati ancora configurati. Si consiglia di caricare la configurazione
+    predefinita. Sarà possibile modificarla in seguito.
+  text_no_notes: Non ci sono commenti disponibili per questa macro-attività.
   text_notice_too_many_values_are_inperformant: 'Nota: La visualizzazione di più di
     100 elementi per pagina può aumentare il tempo di caricamento della pagina.'
   text_own_membership_delete_confirmation: |
@@ -1902,7 +1901,7 @@ it:
   text_powered_by: Offerto da %{link}
   text_project_identifier_info: Solo le lettere minuscole (a-z), numeri, trattini
     e trattini bassi sono consentiti, devi iniziare con una lettera maiuscola.
-  text_reassign: 'Riassegna alla macro-attività (work package):'
+  text_reassign: 'Riassegna alla macro-attività:'
   text_regexp_info: es. ^[A-Z0-9]+$
   text_repository_usernames_mapping: Seleziona o aggiorna l'utente OpenProject mappato
     per ogni nome utente trovato nel registro dell'archivio. Gli utenti con lo stesso
@@ -1919,8 +1918,8 @@ it:
   text_unallowed_characters: Caratteri non consentiti
   text_user_invited: L'utente è stato invitato ed è in attesa di registrazione.
   text_user_mail_option: Per i progetti non selezionati, si riceveranno solo le notifiche
-    sulle cose da guardare o dove sei coinvolto (es. macro-attività (work package)
-    dove sei l'autore o che ti sono state assegnate).
+    sulle cose da guardare o dove sei coinvolto (es. macro-attività dove sei l'autore
+    o che ti sono state assegnate).
   text_user_wrote: "%{value} ha scritto:"
   text_warn_on_leaving_unsaved: La pagina corrente contiene testo non salvato che
     andrà perso se abbandoni questa pagina.
@@ -1998,14 +1997,14 @@ it:
         timeframe_end: 'Il termine dell''arco di tempo '
         compare_to_relative: 'Il valore del confronto relativo '
         compare_to_absolute: 'Il valore del confronto assoluto '
-        planning_element_time_relative_one: 'L''inizio per le macro-attività (work
-          package) in un certo arco di tempo '
-        planning_element_time_relative_two: 'Il termine per le macro-attività (work
-          package) in un certo arco di tempo '
-        planning_element_time_absolute_one: 'L''inizio per le macro-attività (work
-          package) in un certo arco di tempo  '
-        planning_element_time_absolute_two: 'Il termine per le macro-attività (work
-          package) in un arco lasso di tempo  '
+        planning_element_time_relative_one: 'L''inizio per le macro-attività in un
+          certo arco di tempo '
+        planning_element_time_relative_two: 'Il termine per le macro-attività in un
+          certo arco di tempo '
+        planning_element_time_absolute_one: 'L''inizio per le macro-attività in un
+          certo arco di tempo  '
+        planning_element_time_absolute_two: 'Il termine per le macro-attività in un
+          arco lasso di tempo  '
       sort:
         sortation: Ordina per
         alphabet: alfabeto
@@ -2052,8 +2051,8 @@ it:
       work_package_assignee: Mostra le macro-attività che hanno un assegnatario
       types: Mostra tipi
       status: Mostra stati
-      project_time_filter: Progetti con una macro-attività (work package) di un certo
-        tipo in un certo arco di tempo
+      project_time_filter: Progetti con una macro-attività di un certo tipo in un
+        certo arco di tempo
       project_time_filter_timeframe: Arco di tempo
       project_time_filter_historical_from: da
       project_time_filter_historical_to: a
@@ -2101,8 +2100,8 @@ it:
       edit: 'Modifica stato: %{comment}'
       show: 'Stato: %{comment}'
     planning_element_update: 'Aggiorna: %{title}'
-    work_packages_are_displayed_in_aggregations: Le macro-attività (work package)
-      vengono visualizzate nelle aggregazioni
+    work_packages_are_displayed_in_aggregations: Le macro-attività vengono visualizzate
+      nelle aggregazioni
     project_association_new: Aggiungi dipendenza del progetto
     project_association_new_for_with: Imposta una dipendenza per %{project_a} con
     project_association_with_other: Dipendenza del progetto tra "%{project_a}" e "%{project_b}"
@@ -2118,14 +2117,14 @@ it:
     really_delete_project_type: Sei sicuro di voler eliminare il seguente tipo del
       progetto? I progetti che usano questo tipo non verranno eliminati.
     really_delete_timeline: Sei sicuro di voler eliminare il seguente prospetto cronologico?
-      Le macro attività (work package) visibili in questo prospetto non verranno eliminate.
+      Le macro attività visibili in questo prospetto non verranno eliminate.
     really_delete_reporting: Sei sicuro di voler eliminare il seguente prospetto?
       Anche i prospetti generati in precedenza verranno eliminati.
     start: Inizio
     timeline: Prospetto cronologico
     timelines: Rapporti tempistiche
     settings: Tempistiche
-    vertical_work_package: Macro-attività (work package) verticali
+    vertical_work_package: Macro-attività verticali
     without_project_type: Senza tipo progetto
     you_are_viewing_the_selected_timeline: Stai visualizzando il prospetto cronologico
       selezionato
@@ -2193,10 +2192,10 @@ it:
   query_menu_item_for: Voce di menù per la query "%{title}"
   work_package:
     updated_automatically_by_child_changes: _Aggiornata automaticamente cambiando
-      i valori all'interno della macro-attività (work package) figlia %{child}_
+      i valori all'interno della macro-attività figlia %{child}_
     destroy:
-      info: Eliminare una macro-attività (work package) è un'operazione irreversibile.
-      title: Eliminare la macro-attività (work package)
+      info: Eliminare una macro-attività è un'operazione irreversibile.
+      title: Eliminare la macro-attività
   nothing_to_preview: Niente in anteprima
   api_v3:
     attributes:
@@ -2229,15 +2228,14 @@ it:
         context_object_not_found: Impossibile trovare la risorsa indicata come contesto.
       validation:
         done_ratio: La percentuale di completamento non può essere impostata sulla
-          macro-attività (work package) principale, quando viene dedotta dallo stato
-          o quando è disabilitata.
+          macro-attività principale, quando viene dedotta dallo stato o quando è disabilitata.
         due_date: La data di scadenza non può essere impostata sulla macro-attività
-          (work package) principale.
+          principale.
         estimated_hours: Le ore stimate non può essere impostate sulla macro-attività
-          (work package) principale.
+          principale.
         invalid_user_assigned_to_work_package: All'utente scelto non è consentito
-          di essere '%{property}' per questa macro-attività (work package).
+          di essere '%{property}' per questa macro-attività.
         start_date: La data di inizio non può essere impostata sulla macro-attività
-          (work package) principale.
+          principale.
     resources:
       schema: Schema
