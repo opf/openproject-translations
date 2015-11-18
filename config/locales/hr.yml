@@ -1,9 +1,9 @@
 ---
-ko:
+hr:
   account:
-    delete: "계정 삭제"
-    delete_confirmation: "이 계정을 정말로 삭제합니까?"
-    deleted: "계정을 성공적으로 삭제했습니다."
+    delete: Delete account
+    delete_confirmation: Are you sure you want to delete the account?
+    deleted: Account successfully deleted
     deletion_info:
       data_consequences:
         other: Of the data the user created (e.g. e-mail, preferences, work packages,
@@ -13,49 +13,57 @@ ko:
           called "Deleted user". As the data of every deleted account is reassigned
           to this account it will not be possible to distinguish the data the user
           created from the data of another deleted account.
-        self: 당신에 대한 데이터(예를 들어 이메일, 환경 설정, 일감, 위키 항목)를 가능한 범위까지 지울 것입니다. 다만 일감이나 위키
-          항목과 같은 데이터는 지워버릴 경우 다른 사용자의 작업을 방해하게 됩니다. 따라서 그러한 데이터는 "삭제된 사용자" 계정에 귀속됩니다.
-          삭제된 사용자의 작업물이 하나의 계정으로 귀속되기에, 당신이 만든 작업물과 다른 삭제된 사용자가 만든 작업물을 구분할 수 없게 됩니다.
-      heading: "계정 %{name}를 삭제"
+        self: Of the data you created (e.g. e-mail, preferences, work packages, wiki
+          entries) as much as possible will be deleted. Note however, that data like
+          work packages and wiki entries can not be deleted without impeding the work
+          of the other users. Such data is hence reassigned to an account called "Deleted
+          user". As the data of every deleted account is reassigned to this account
+          it will not be possible to distinguish the data you created from the data
+          of another deleted account.
+      heading: Delete account %{name}
       info:
-        other: "사용자 계정을 삭제하는것은 돌이킬 수 없는 행동입니다."
-        self: "당신의 계정을 삭제하는 것은 되돌릴 수 없습니다."
+        other: Deleting the user account is an irreversible action.
+        self: Deleting your user account is an irreversible action.
       login_consequences:
-        other: "이 계정이 시스템에서 삭제됩니다. 따라서 사용자는 지금의 인증 정보로 더 이상 로그인할 수 없습니다. 이 사람은 이 애플리케이션이
-          허용하는 방법을 따르면 다시 사용자가 될 수 있습니다."
-        self: "당신의 계정이 시스템에서 삭제됩니다. 따라서 당신은 지금의 인증 정보로 더 이상 로그인할 수 없습니다. 원한다면 이 애플리케이션이
-          허용하는 방법을 따라서 다시 사용자가 될 수 있습니다."
-    error_inactive_activation_by_mail: "당신의 계정이 아직 활성화되지 않았습니다. 계정을 활성화하기 위해, 이메일로
-      전송된 링크를 클릭하십시오."
-    error_inactive_manual_activation: "당신의 계정이 아직 활성화되지 않았습니다. 관리자가 계정을 승인할때까지 기다려
-      주십시오."
-    error_self_registration_disabled: "사용자 등록은 이 시스템에서 비활성화되어 있습니다. 계정 생성을 원한다면 관리자에게
-      요청하십시오."
-    login_with_auth_provider: "또는 이미 있는 계정으로 로그인"
-  actionview_instancetag_blank_option: "선택하십시오"
+        other: The account will be deleted from the system. Therefore, the user will
+          no longer be able to log in with his current credentials. He/she can choose
+          to become a user of this application again by the means this application
+          grants.
+        self: Your account will be deleted from the system. Therefore, you will no
+          longer be able to log in with your current credentials. If you choose to
+          become a user of this application again, you can do so by using the means
+          this application grants.
+    error_inactive_activation_by_mail: Your account has not yet been activated. To
+      activate your account, click on the link that was emailed to you.
+    error_inactive_manual_activation: Your account has not yet been activated. Please
+      wait for an administrator to activate your account.
+    error_self_registration_disabled: User registration is disabled on this system.
+      Please ask an administrator to create an account for you.
+    login_with_auth_provider: or sign in with your existing account
+  actionview_instancetag_blank_option: Please select
   activerecord:
     attributes:
       attachment:
-        downloads: "다운로드"
-        file: "파일"
-        filename: "파일"
-        filesize: "크기"
+        downloads: Downloads
+        file: File
+        filename: File
+        filesize: Size
       auth_source:
-        account: "계정"
-        attr_firstname: "성 속성"
-        attr_lastname: "이름 속성"
-        attr_login: "로그인 속성"
-        attr_mail: "이메일 속성"
-        base_dn: "기본 DN"
-        host: "호스트"
-        onthefly: "필요에 따라 자동으로 계정 생성"
-        port: "포트"
+        account: Account
+        attr_firstname: Firstname attribute
+        attr_lastname: Lastname attribute
+        attr_login: Login attribute
+        attr_mail: Email attribute
+        base_dn: Base DN
+        host: Host
+        onthefly: On-the-fly user creation
+        port: Port
       comment:
-        commented: "덧글을 달았습니다."
+        commented: Commented
       custom_field:
-        default_value: "기본값"
-        editable: "편집 가능"
-        field_format: "형식"
+        default_value: Default value
+        editable: Editable
+        field_format: Format
         is_filter: Used as a filter
         is_required: Required
         max_length: Maximum length
@@ -77,7 +85,7 @@ ko:
       member:
         roles: Roles
       project:
-        homepage: "홈페이지"
+        homepage: Homepage
         identifier: Identifier
         work_packages: Work Packages
         parent: Subproject of
@@ -149,13 +157,13 @@ ko:
         reported_project_status: Project status
         created_at: Created
       work_package:
-        done_ratio: "% 완료"
+        done_ratio: "% done"
         fixed_version: Version
         parent: Parent
         parent_issue: Parent
         parent_work_package: Parent
         priority: Priority
-        progress: "% 완료"
+        progress: "% done"
         responsible: Responsible
         spent_time: Spent time
         subproject: Subproject
@@ -165,31 +173,33 @@ ko:
     errors:
       messages:
         accepted: must be accepted
-        blank: "에 내용을 입력해 주세요"
-        cant_link_a_work_package_with_a_descendant: "작업 패키지는 하위 작업들 중 하나에 연결 될 수 없습니다."
+        blank: can't be blank
+        cant_link_a_work_package_with_a_descendant: A work package cannot be linked
+          to one of its subtasks
         circular_dependency: This relation would create a circular dependency
         confirmation: doesn't match confirmation
-        empty: "에 내용을 입력해 주세요"
-        equal_to: "은(는) %{count}과 같아야 합니다"
-        even: "에 짝수를 입력해 주세요"
-        exclusion: "은(는) 이미 예약되어 있는 값입니다"
-        file_too_large: "은(는) 너무 큽니다. (최대 %{count} 바이트)"
-        greater_than: "은(는) %{count}보다 커야 합니다"
-        greater_than_or_equal_to: "은(는) %{count}보다 크거야 같아야 합니다"
-        smaller_than_or_equal_to_max_length: "은(는) 최대 길이보다 같거나 작아야 합니다."
-        greater_than_start_date: "은(는) 시작 날짜 이후이어야 합니다."
-        inclusion: "은(는) 허용되는 값이 아닙니다."
-        invalid: "은(는) 올바르지 않은 값입니다"
-        less_than: "은(는) %{count}보다 작아야 합니다"
-        less_than_or_equal_to: "은(는) %{count} 보다 작거나 같아야 합니다"
-        not_a_date: "은(는) 날짜가 아닙니다."
-        not_a_number: "은(는) 숫자가 아닙니다."
-        not_an_integer: "은(는) 정수가 아닙니다."
-        not_same_project: "은(는) 동일한 프로젝트에 속하지 않습니다."
-        odd: "에 홀수를 입력해 주세요"
-        taken: "은(는) 이미 존재합니다."
-        too_long: "은(는) 너무 깁니다 (최대 %{count}글자까지 가능합니다)"
-        too_short: "은(는) 너무 짧습니다. (최소 %{count}글자까지 가능합니다)"
+        empty: can't be empty
+        equal_to: must be equal to %{count}
+        even: must be even
+        exclusion: is reserved
+        file_too_large: is too large (maximum size is %{count} Bytes)
+        greater_than: must be greater than %{count}
+        greater_than_or_equal_to: must be greater than or equal to %{count}
+        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
+          length
+        greater_than_start_date: must be greater than start date
+        inclusion: is not set to one of the allowed values
+        invalid: is invalid
+        less_than: must be less than %{count}
+        less_than_or_equal_to: must be less than or equal to %{count}
+        not_a_date: is not a date
+        not_a_number: is not a number
+        not_an_integer: is not an integer
+        not_same_project: doesn't belong to the same project
+        odd: must be odd
+        taken: has already been taken
+        too_long: is too long (maximum is %{count} characters)
+        too_short: is too short (minimum is %{count} characters)
         wrong_length: is the wrong length (should be %{count} characters)
         after: must be after %{date}
         after_or_equal_to: must be after or equal to %{date}
@@ -214,12 +224,11 @@ ko:
             parent_id:
               cannot_be_milestone: cannot be a milestone
               cannot_be_in_another_project: cannot be in another project
-              not_a_valid_parent: "은(는) 올바르지 않은 값입니다"
+              not_a_valid_parent: is invalid
               does_not_exist: does not exist
             status_id:
-              status_transition_invalid: |
-                유효한 전환 이전에서 현재 사용자의 역할에 대한 새로운 상태로 존재 하기
-                때문에 유효 하지 않습니다.
+              status_transition_invalid: is invalid because no valid transition exists
+                from old to new status for the current user's roles
             priority_id:
               only_active_priorities_allowed: needs to be active
             category:
@@ -243,6 +252,8 @@ ko:
                   your last one.
                 other: has been used before. Please choose one that is different from
                   your last %{count}.
+                few: has been used before. Please choose one that is different from
+                  your last %{count}.
               match:
                 confirm: Confirm new password.
                 description: "'Password confirmation' should match the input in the
@@ -255,13 +266,14 @@ ko:
         header:
           one: 1 error prohibited this %{model} from being saved
           other: "%{count} errors prohibited this %{model} from being saved"
+          few: "%{count} errors prohibited this %{model} from being saved"
     models:
-      attachment: "파일"
+      attachment: File
       board: Forum
       comment: Comment
       custom_field: Custom field
       group: Group
-      issue: "이슈"
+      issue: Issue
       category: Category
       status: Work package status
       member: Member
@@ -270,9 +282,10 @@ ko:
       query: Custom query
       role:
         one: Role
-        other: "역할"
+        other: Roles
+        few: Roles
       type: Type
-      planning_element: "계획 요소"
+      planning_element: Planning element
       project_type: Project type
       user: User
       version: Version
@@ -310,7 +323,7 @@ ko:
     group: Group
     groupname: Group name
     id: ID
-    is_default: "기본값"
+    is_default: Default value
     is_for_all: For all projects
     is_public: Public
     issue: Work package
@@ -456,48 +469,60 @@ ko:
     distance_in_words:
       about_x_hours:
         one: about 1 hour
-        other: "약 %{count} 시간"
+        other: about %{count} hours
+        few: about %{count} hours
       about_x_months:
         one: about 1 month
         other: about %{count} months
+        few: about %{count} months
       about_x_years:
         one: about 1 year
         other: about %{count} years
+        few: about %{count} years
       almost_x_years:
         one: almost 1 year
         other: almost %{count} years
+        few: almost %{count} years
       half_a_minute: half a minute
       less_than_x_minutes:
         one: less than a minute
         other: less than %{count} minutes
+        few: less than %{count} minutes
       less_than_x_seconds:
         one: less than 1 second
         other: less than %{count} seconds
+        few: less than %{count} seconds
       over_x_years:
         one: over 1 year
         other: over %{count} years
+        few: over %{count} years
       x_days:
         one: 1 day
         other: "%{count} days"
+        few: "%{count} days"
       x_minutes:
         one: 1 minute
         other: "%{count} minutes"
+        few: "%{count} minutes"
       x_months:
         one: 1 month
         other: "%{count} months"
+        few: "%{count} months"
       x_seconds:
         one: 1 second
         other: "%{count} seconds"
+        few: "%{count} seconds"
     units:
       hour:
         one: hour
         other: hours
+        few: hours
   default_activity_development: Development
-  default_activity_management: "관리"
+  default_activity_management: Management
   default_activity_other: Other
   default_activity_specification: Specification
-  default_activity_support: "지원"
-  default_activity_testing: "테스팅"
+  default_activity_support: Support
+  default_activity_testing: Testing
   default_color_black: Black
   default_color_blue: Blue
   default_color_blue_dark: Blue (dark)
@@ -509,7 +534,7 @@ ko:
   default_color_grey: Grey
   default_color_magenta: Magenta
   default_color_orange: Orange
-  default_color_red: "빨강"
+  default_color_red: Red
   default_color_white: White
   default_color_yellow: Yellow
   default_status_closed: Closed
@@ -533,23 +558,23 @@ ko:
   default_priority_immediate: Immediate
   default_project_type_scrum: Scrum team
   default_project_type_standard: Standard project
-  default_reported_project_status_green: "초록"
-  default_reported_project_status_amber: "황색"
-  default_reported_project_status_red: "빨강"
+  default_reported_project_status_green: Green
+  default_reported_project_status_amber: Amber
+  default_reported_project_status_red: Red
   default_role_anonymous: Anonymous
   default_role_developer: Developer
   default_role_project_admin: Project admin
   default_role_non_member: Non member
-  default_role_reader: "참관자"
+  default_role_reader: Reader
   default_role_member: Member
   default_type: Work Package
   default_type_bug: Bug
-  default_type_deliverable: "출시 가능"
+  default_type_deliverable: Deliverable
   default_type_epic: Epic
   default_type_feature: Feature
   default_type_milestone: Milestone
   default_type_phase: Phase
-  default_type_task: "일감"
+  default_type_task: Task
   default_type_user_story: User story
   description_active: Active?
   description_attachment_toggle: Show/Hide attachments
@@ -639,7 +664,7 @@ ko:
   general_csv_encoding: UTF-8
   general_csv_separator: ","
   general_first_day_of_week: '7'
-  general_lang_name: "한국어"
+  general_lang_name: English
   general_pdf_encoding: ISO-8859-1
   general_text_no: 'no'
   general_text_yes: 'yes'
@@ -652,7 +677,7 @@ ko:
   instructions_after_logout: You can sign in again by clicking %{signin}.
   instructions_after_error: You can try to sign in again by clicking %{signin}. If
     the error persists, ask your admin for help.
-  label_account: "계정"
+  label_account: Account
   label_activity: Activity
   label_add_another_file: Add another file
   label_add_columns: Add selected columns
@@ -1062,22 +1087,27 @@ ko:
     one: 1 closed
     other: "%{count} closed"
     zero: 0 closed
+    few: "%{count} closed"
   label_x_comments:
     one: 1 comment
     other: "%{count} comments"
     zero: no comments
+    few: "%{count} comments"
   label_x_open_work_packages_abbr:
     one: 1 open
     other: "%{count} open"
     zero: 0 open
+    few: "%{count} open"
   label_x_open_work_packages_abbr_on_total:
     one: 1 open / %{total}
     other: "%{count} open / %{total}"
     zero: 0 open / %{total}
+    few: "%{count} open / %{total}"
   label_x_projects:
     one: 1 project
     other: "%{count} projects"
     zero: no projects
+    few: "%{count} projects"
   label_year: Year
   label_yesterday: yesterday
   label_keyboard_function: Function
@@ -1213,7 +1243,8 @@ ko:
         units:
           byte:
             one: Byte
-            other: "바이트"
+            other: Bytes
+            few: Bytes
           gb: GB
           kb: kB
           mb: MB
@@ -1388,7 +1419,7 @@ ko:
   setting_user_format: Users display format
   setting_users_deletable_by_admins: User accounts deletable by admins
   setting_users_deletable_by_self: Users allowed to delete their accounts
-  setting_welcome_text: "환영 문구"
+  setting_welcome_text: Welcome text
   setting_wiki_compression: Wiki history compression
   setting_work_package_group_assignment: Allow assignment to groups
   settings:
@@ -1458,20 +1489,21 @@ ko:
     Are you sure you want to continue?
   text_plugin_assets_writable: Plugin assets directory writable
   text_powered_by: Powered by %{link}
-  text_project_destroy_confirmation: "이 프로젝트와 관련된 데이터를 삭제 하시겠습니까?"
+  text_project_destroy_confirmation: Are you sure you want to delete this project
+    and related data?
   text_project_identifier_info: Only lower case letters (a-z), numbers, dashes and
     underscores are allowed, must start with a lower case letter.
   text_reassign: Reassign to
-  text_reassign_to: "작업 패키지:"
+  text_reassign_to: 'work package:'
   text_regexp_info: eg. ^[A-Z0-9]+$
   text_repository_usernames_mapping: |
     Select or update the OpenProject user mapped to each username found in the repository log.
     Users with the same OpenProject and repository username or email are automatically mapped.
   text_select_mail_notifications: Select actions for which email notifications should
     be sent.
-  text_select_project_modules: "이 프로젝트에 사용할 모듈을 선택 합니다."
+  text_select_project_modules: 'Select modules to enable for this project:'
   text_status_changed_by_changeset: Applied in changeset %{value}.
-  text_subprojects_destroy_warning: "하위프로젝트: %{value} 또한 삭제 됩니다."
+  text_subprojects_destroy_warning: 'Its subproject(s): %{value} will be also deleted.'
   text_time_logged_by_changeset: Applied in changeset %{value}.
   text_tip_work_package_begin_day: work package beginning this day
   text_tip_work_package_begin_end_day: work package beginning and ending this day
@@ -1513,7 +1545,7 @@ ko:
       project_type: Project type
       project_types: Project types
     project_menu:
-      planning_elements: "계획 요소"
+      planning_elements: Planning elements
       project_associations: Dependencies
       reportings: Status reportings
       reports: Timeline reports
@@ -1534,7 +1566,8 @@ ko:
     duration: Duration
     duration_days:
       one: 1 day
-      other: "%{count} 일"
+      other: "%{count} days"
+      few: "%{count} days"
     edit_color: Edit color
     edit_project_type: Edit project type
     edit_thing: Edit
@@ -1601,7 +1634,7 @@ ko:
       grouping_one: First grouping criterion
       grouping_one_phrase: Is a subproject of
       grouping_other: Other
-      grouping_two: "두번째 그룹화 기준"
+      grouping_two: Second grouping criterion
       grouping_two_phrase: Has a dependency to project type
       hide_chart: Hide chart
       noneElement: "(none)"
@@ -1708,11 +1741,12 @@ ko:
     authentication_settings_disabled_due_to_external_authentication: This user authenticates
       via an external authentication provider, so there is no password in OpenProject
       to be changed.
-    assign_random_password: "무작위 암호 설정(전자 메일로 사용자에게 보내집니다)"
+    assign_random_password: Assign random password (sent to user via e-mail)
     blocked: locked temporarily
     blocked_num_failed_logins:
       one: locked temporarily (one failed login attempt)
-      other: "일시적으로 잠김 (%{count} 로그인 시도 실패)"
+      other: locked temporarily (%{count} failed login attempts)
+      few: locked temporarily (%{count} failed login attempts)
     deleted: Deleted user
     error_status_change_failed: 'Changing the user status failed due to the following
       errors: %{errors}'
@@ -1752,26 +1786,27 @@ ko:
     attributes:
       lock_version: Lock Version
     errors:
-      code_401: "접근하기 위해서 인증해야 합니다."
+      code_401: You need to be authenticated to access this resource.
       code_401_wrong_credentials: You did not provide the correct credentials.
-      code_403: "접근 권한이 없습니다."
+      code_403: You are not authorized to access this resource.
       code_404: The requested resource could not be found.
-      code_409: "수정사항이 출동되어 업데이트 할 수 없습니다."
-      invalid_content_type: "예상되는 CONTENT-TYPE 은 '%{content_type}' 이지만, '%{actual}'
-        을 응답 받았습니다."
+      code_409: Couldn't update the resource because of conflicting modifications.
+      invalid_content_type: Expected CONTENT-TYPE to be '%{content_type}' but got
+        '%{actual}'.
       invalid_format: 'Invalid format for property ''%{property}'': Expected format
         like ''%{expected_format}'', but got ''%{actual}''.'
       invalid_json: The request could not be parsed as JSON.
       invalid_relation: The relation is invalid.
       invalid_resource: For property '%{property}' a link like '%{expected}' is expected,
         but got '%{actual}'.
-      invalid_user_status_transition: "현재 사용자의 계정 상태는이 작업을 허용 하지 않습니다."
+      invalid_user_status_transition: The current user account status does not allow
+        this operation.
       missing_content_type: not specified
       missing_request_body: There was no request body.
       multipart_body_error: The request body did not contain the expected multipart
         parts.
       multiple_errors: Multiple field constraints have been violated.
-      writing_read_only_attributes: "읽기 전용 특성은 변경할 수 없습니다."
+      writing_read_only_attributes: You must not write a read-only attribute.
       render:
         context_not_parsable: The context provided is not a link to a resource.
         unsupported_context: The resource given is not supported as context.
@@ -1781,8 +1816,8 @@ ko:
           by status or when it is disabled.
         due_date: Due date cannot be set on parent work packages.
         estimated_hours: Estimated hours cannot be set on parent work packages.
-        invalid_user_assigned_to_work_package: "선택한 사용자는 이 작업 패키지에 대해 '%{property}'
-          허가되지 않았습니다."
+        invalid_user_assigned_to_work_package: The chosen user is not allowed to be
+          '%{property}' for this work package.
         start_date: Start date cannot be set on parent work packages.
     resources:
       schema: Schema
