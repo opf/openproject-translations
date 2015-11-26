@@ -302,8 +302,8 @@ hr:
     updated: 'Ažurirano: %{title}'
   attributes:
     active: Aktivno
-    assigned_to: Dodijelio
-    assignee: Dodijelio
+    assigned_to: Dodijeljeno korisniku
+    assignee: Dodijeljeno korisniku
     attachments: Prilozi
     author: Autor
     base: 'Opća greška:'
@@ -691,9 +691,9 @@ hr:
   label_add_related_work_packages: Dodaj odgovarajuće radne pakete
   label_add_subtask: Novi pod radni zadatak
   label_added: dodano
-  label_added_time_by: Dodano od strane %{author} %{age} prije
+  label_added_time_by: Dodao korisnik %{author} %{age} prije
   label_additional_workflow_transitions_for_assignee: Dodatne workflow tranzicije
-    su dopuštene samo kad je korisniku dodijeljen zadatak
+    su dopuštene samo kad je korisnik opunomoćen za određeni zadatak
   label_additional_workflow_transitions_for_author: Dodatne workflow tranzicije su
     dopuštene kada je korisnik autor
   label_administration: Administracija
@@ -1045,7 +1045,7 @@ hr:
   label_update_work_package_done_ratios: Ažuiraj omjer učinjenoga radnog paketa
   label_updated_time: Ažurirano prije %{value}
   label_updated_time_at: "%{author}%{age}"
-  label_updated_time_by: Ažurirano od strane %{author} prije %{age}
+  label_updated_time_by: Ažurirao korisnik %{author} prije %{age}
   label_used_by: Koristio
   label_user_activity: "%{value}-a aktivnost"
   label_user_anonymous: Anonimno
@@ -1067,7 +1067,7 @@ hr:
   label_version_sharing_hierarchy: S hijerarhijom projekta
   label_version_sharing_none: Nije dijeljeno
   label_version_sharing_system: Sa svim projektima
-  label_version_sharing_tree: With project tree
+  label_version_sharing_tree: S verzijom projektnog stabla
   label_view_all_revisions: Prikaži sve revizije
   label_view_diff: Prikaži razlike
   label_view_revisions: Prikaz revizija
@@ -1083,9 +1083,10 @@ hr:
   label_wiki_page: Wiki stranica
   label_wiki_page_plural: Wiki stranice
   label_wiki_show_index_page_link: Prikaži stavku podizbornika 'Kazalo sadržaja'
-  label_wiki_show_menu_item: Show as menu item in project navigation
-  label_wiki_show_new_page_link: Show submenu item 'Create new child page'
-  label_wiki_show_submenu_item: 'Show as submenu item of '
+  label_wiki_show_menu_item: Prikaži kao stavku izbornika u izborniku projekta
+  label_wiki_show_new_page_link: Prikaži stavku podizbornika 'Kreiraj novu podređenu
+    stranicu'
+  label_wiki_show_submenu_item: 'Prikaži kao stavku podizbornika iz '
   label_work_package: Radni paket
   label_workflow: Tijek rada
   label_workflow_plural: Workflows
@@ -1134,13 +1135,15 @@ hr:
   label_keyboard_shortcut_go_activity: Idi na aktivnosti projekta
   label_keyboard_shortcut_go_calendar: Idi na kalendar projekta
   label_keyboard_shortcut_go_news: Idi na vijesti projekta
-  label_keyboard_shortcut_go_timelines: Idi na Vremenski tijek projekta
+  label_keyboard_shortcut_go_timelines: Idi na Kronologiju projekta
   label_keyboard_shortcut_new_work_package: Kreirajte novi radni paket
   label_keyboard_shortcut_details_package: Prikaži detalje ranih paketa
-  label_keyboard_shortcut_go_edit: Go to edit the current item (on detail pages only)
-  label_keyboard_shortcut_open_more_menu: Open more-menu (on detail pages only)
-  label_keyboard_shortcut_go_preview: Go to preview the current edit (on edit pages
-    only)
+  label_keyboard_shortcut_go_edit: Idi na uređivanje trenutne stavke (samo na stranici
+    s detaljima)
+  label_keyboard_shortcut_open_more_menu: Otvori još stavki izbornika (na stranici
+    s detaljima)
+  label_keyboard_shortcut_go_preview: Idi na pregled trenutnog uređivanja (samo na
+    stranicama uređivanja)
   label_keyboard_shortcut_focus_previous_item: Focus previous list element (on some
     lists only)
   label_keyboard_shortcut_focus_next_item: Focus next list element (on some lists
@@ -1149,20 +1152,22 @@ hr:
   auth_source:
     using_abstract_auth_source: Can't use an abstract authentication source.
     ldap_error: 'LDAP-Greška: %{error_message}'
-    ldap_auth_failed: Could not authenticate at the LDAP-Server.
-  macro_execution_error: Error executing the macro %{macro_name}
+    ldap_auth_failed: Neuspjela autentifikacija na LDAP poslužitelju.
+  macro_execution_error: Došlo je do pogreške tijekom izvođenja makroa %{macro_name}
   macro_unavailable: Makro %{macro_name} ne možete biti prikazan.
   mail_body_account_activation_request: 'Novi korisnik je (%{value}) je registriran.
     Čeka se na vaše odobrenje:'
   mail_body_account_information: Informacije o vašem korisničkom računu
-  mail_body_account_information_external: You can use your %{value} account to log
-    in.
-  mail_body_lost_password: 'To change your password, click on the following link:'
-  mail_body_register: 'To activate your account, click on the following link:'
+  mail_body_account_information_external: Možete koristiti vaš %{value} korisnički
+    račun za pristup sustavu.
+  mail_body_lost_password: 'Da bi ste promijenili lozinku, molimo vas odaberite sljedeću
+    poveznicu:'
+  mail_body_register: 'Da bi ste aktivirali vaš korisnički račun, molim vas odaberite
+    sljedeću poveznicu:'
   mail_body_reminder: "%{count} work package(s) that are assigned to you are due in
     the next %{days} days:"
-  mail_body_wiki_content_added: The '%{id}' wiki page has been added by %{author}.
-  mail_body_wiki_content_updated: The '%{id}' wiki page has been updated by %{author}.
+  mail_body_wiki_content_added: "'%{id}' wiki stranicu je dodao korisnik %{author}."
+  mail_body_wiki_content_updated: "'%{id}' wiki stranicu je ažurirao korisnik %{author}."
   mail_subject_account_activation_request: "%{value} account activation request"
   mail_subject_lost_password: Vaša %{value} lozinka
   mail_subject_register: Your %{value} account activation
@@ -1193,19 +1198,19 @@ hr:
   notice_account_unknown_email: Nepoznat korisnik.
   notice_account_update_failed: Account setting could not be safed. Please have a
     look at your account page.
-  notice_account_updated: Account was successfully updated.
+  notice_account_updated: Korisnički račun je uspješno ažuriran.
   notice_account_wrong_password: Pogrešna lozinka
-  notice_account_registered_and_logged_in: Welcome, your account has been activated.
-    You are logged in now.
+  notice_account_registered_and_logged_in: Dobrodošli, vaš korisnički račun je sada
+    aktiviran te ste istovremeno i prijavljeni u sustav.
   notice_api_access_key_reseted: Vaš API pristupni ključ je uspješno poništen.
-  notice_can_t_change_password: This account uses an external authentication source.
-    Impossible to change the password.
+  notice_can_t_change_password: Ovaj korisnički račun koristi eksternu autentifikaciju.
+    Kao takav, nije moguće promijeniti loziku.
   notice_email_error: An error occurred while sending mail (%{value})
   notice_email_sent: Email poruka je poslana %{value}
   notice_failed_to_save_work_packages: 'Neuspjelo spremanje %{count} radnog(ih) paketa
     na %{total} odabranih: %{ids}.'
   notice_failed_to_save_members: 'Failed to save member(s): %{errors}.'
-  notice_feeds_access_key_reseted: Your RSS access key was reset.
+  notice_feeds_access_key_reseted: Vaš RSS pristupni ključ je resetiran.
   notice_file_not_found: The page you were trying to access doesn't exist or has been
     removed.
   notice_forced_logout: You have been automatically logged out after %{ttl_time} minutes
@@ -1219,11 +1224,10 @@ hr:
   notice_locking_conflict_additional_information: The update(s) came from %{users}.
   notice_locking_conflict_reload_page: Please reload the page, review the changes
     and reapply your updates.
-  notice_no_principals_found: No results found.
-  notice_bad_request: Bad Request.
-  notice_not_authorized: You are not authorized to access this page.
-  notice_not_authorized_archived_project: The project you're trying to access has
-    been archived.
+  notice_no_principals_found: Nema pronađenih rezultata.
+  notice_bad_request: Neispravan zahtjev.
+  notice_not_authorized: Niste autorizirani da pristupite ovoj stranici.
+  notice_not_authorized_archived_project: Projekt kojem pokušavate pristupiti je arhiviran.
   notice_project_not_deleted: Projekt nije izbrisan.
   notice_successful_connection: Uspješna spojen.
   notice_successful_create: Uspješno kreirano.
@@ -1232,10 +1236,10 @@ hr:
   notice_to_many_principals_to_display: |
     There are too many results.
     Narrow down the search by typing in the name of the new member (or group).
-  notice_unable_delete_time_entry: Unable to delete time log entry.
-  notice_unable_delete_version: Unable to delete version.
-  notice_automatic_set_of_standard_type: Set standard type automatically.
-  notice_logged_out: You have been logged out.
+  notice_unable_delete_time_entry: Nije moguće brisanje evidentiranih zapisa o vremenu.
+  notice_unable_delete_version: Nije moguće izbrisati verziju.
+  notice_automatic_set_of_standard_type: Automatski postavite standardni tip.
+  notice_logged_out: Uspješno ste odjavljeni.
   error_types_in_use_by_work_packages: 'Sljdeći tipovi radnih zadataka su i dalje
     povezani s radnim paketima: %{types}'
   number:
@@ -1275,7 +1279,7 @@ hr:
   permission_delete_own_messages: Obriši vlastite poruke
   permission_delete_project_associations: Obriši ovisnosti projekta
   permission_delete_reportings: Izbriši izvještaje
-  permission_delete_timelines: Delete timelines
+  permission_delete_timelines: Izbriši kronologiju
   permission_delete_wiki_pages: Izbriši wiki stranice
   permission_delete_wiki_pages_attachments: Izbriši priloge
   permission_edit_work_package_notes: Uredi bilješke
@@ -1286,26 +1290,26 @@ hr:
   permission_edit_own_time_entries: Edit own time logs
   permission_edit_project: Uredi projekt
   permission_edit_project_associations: Edit project dependencies
-  permission_edit_reportings: Edit reportings
-  permission_edit_time_entries: Edit time logs
-  permission_edit_timelines: Edit timelines
+  permission_edit_reportings: Uredi izvješćivanje
+  permission_edit_time_entries: Uredi zapise o vremenu
+  permission_edit_timelines: Uredi kronologiju
   permission_edit_wiki_pages: Uredi wiki stranice
-  permission_export_work_packages: Export work packages
-  permission_export_wiki_pages: Export wiki pages
-  permission_list_attachments: List attachments
-  permission_log_time: Log spent time
+  permission_export_work_packages: Izvez radnih paketa
+  permission_export_wiki_pages: Izvezi Wiki stranice
+  permission_list_attachments: Izlistaj sve privitke
+  permission_log_time: Zapiši utrošeno vrijeme
   permission_manage_boards: Upravljanje Forumima
-  permission_manage_categories: Manage work package categories
-  permission_manage_work_package_relations: Manage work package relations
+  permission_manage_categories: Upravljaj kategorijama radnih paketa
+  permission_manage_work_package_relations: Upravljaj relacijama radnih paketa
   permission_manage_members: Upravljanje korisnicima
   permission_manage_news: Upravljanje vijestima
   permission_manage_project_activities: Upravljanje aktivnosima projekta
-  permission_manage_public_queries: Manage public queries
-  permission_manage_repository: Manage repository
+  permission_manage_public_queries: Upravljanje javnim upitima
+  permission_manage_repository: Upravljanje repozitorijem
   permission_manage_subtasks: Upravljanje podzadacima
-  permission_manage_versions: Manage versions
+  permission_manage_versions: Upravljanje verzijama
   permission_manage_wiki: Uredi wiki
-  permission_manage_wiki_menu: Manage wiki menu
+  permission_manage_wiki_menu: Upravljanje wiki izbornikom
   permission_move_work_packages: Premjesti radne pakete
   permission_protect_wiki_pages: Zaštiti wiki stranice
   permission_rename_wiki_pages: Preimenuj wiki stranice
@@ -1321,7 +1325,7 @@ hr:
   permission_view_project_associations: Prikaži ovisnosti projekta
   permission_view_reportings: Prikaži izvještaje
   permission_view_time_entries: Prikaži utrošeno vrijeme
-  permission_view_timelines: Prikaži vremenske odrednice
+  permission_view_timelines: Prikaži kronologiju
   permission_view_wiki_edits: Pogledaj povijest wiki stranice
   permission_view_wiki_pages: Prikaži wiki
   project_module_activity: Aktivnost
@@ -1331,17 +1335,17 @@ hr:
   project_module_news: Vijesti
   project_module_repository: Repozitorij
   project_module_time_tracking: Praćenje vremena
-  project_module_timelines: Vremenski tijek
+  project_module_timelines: Kronologija
   project_module_wiki: Wiki
   query_fields:
-    assigned_to_role: Assignee's role
-    member_of_group: Assignee's group
+    assigned_to_role: Rola opunomoćenog korisnika
+    member_of_group: Grupa opunomoćenog korisnika
     subproject_id: Potprojekt
   search_input_placeholder: pretraživanje ...
   setting_activity_days_default: Prikazani dani na aktivnosti projekta
-  setting_app_subtitle: Application subtitle
-  setting_app_title: Application title
-  setting_attachment_max_size: Attachment max. size
+  setting_app_subtitle: Podnaslov aplikacije
+  setting_app_title: Naslov aplikacije
+  setting_attachment_max_size: Max. veličina privitka
   setting_autofetch_changesets: Automatsko dohvaćanje commit-ova
   setting_autologin: Automatska prijava
   setting_available_languages: Dostupni jezici
@@ -1364,29 +1368,29 @@ hr:
   setting_default_projects_modules: Default enabled modules for new projects
   setting_default_projects_public: New projects are public by default
   setting_diff_max_lines_displayed: Max number of diff lines displayed
-  setting_display_subprojects_work_packages: Display subprojects work packages on
-    main projects by default
-  setting_emails_footer: Emails footer
+  setting_display_subprojects_work_packages: Prikaži radne pakete podprojekata na
+    glavnom projektu kao početne
+  setting_emails_footer: Podnožje email poruke
   setting_emails_header: Zaglavlja email-a
-  setting_enabled_scm: Enabled SCM
-  setting_feeds_enabled: Enable Feeds
+  setting_enabled_scm: Omogući SCM
+  setting_feeds_enabled: Omogući sažetke sadržaja aktivnosti
   setting_feeds_limit: Feed content limit
   setting_file_max_size_displayed: Max size of text files displayed inline
-  setting_gravatar_default: Default Gravatar image
-  setting_gravatar_enabled: Use Gravatar user icons
+  setting_gravatar_default: Zadane Gravatar slike
+  setting_gravatar_enabled: Koristi Gravatar korisničke ikone
   setting_host_name: Hostname
   setting_work_package_done_ratio: Izračunaj omjer učinjenoga radnog paketa
   setting_work_package_done_ratio_field: Koristi polje radnog paketa
   setting_work_package_done_ratio_status: Koristi status radnog paketa
   setting_work_package_done_ratio_disabled: Onemogući (sakrij omjer učinjenoga)
-  setting_work_package_list_default_columns: Display by default
+  setting_work_package_list_default_columns: Zadani prikaz
   setting_work_package_list_summable_columns: Summable
   setting_work_package_properties: Work package properties
   setting_work_package_startdate_is_adddate: Use current date as start date for new
     work packages
   setting_work_packages_export_limit: Work packages export limit
   setting_log_requesting_user: Log user login, name, and mail address for all requests
-  setting_login_required: Authentication required
+  setting_login_required: Potrebna autentifikacija
   setting_mail_from: Emission email address
   setting_mail_handler_api_enabled: Enable incoming email web service
   setting_mail_handler_api_description: The email web handler enables OpenProject
@@ -1395,17 +1399,17 @@ hr:
   setting_mail_handler_api_key: API ključ
   setting_mail_handler_body_delimiters: Truncate emails after one of these lines
   setting_new_project_user_role_id: Role given to a non-admin user who creates a project
-  setting_password_active_rules: Active character classes
+  setting_password_active_rules: Aktivne klase znakova
   setting_password_count_former_banned: Number of most recently used passwords banned
     for reuse
   setting_password_days_valid: Broj dana, nakon kojeg će korisnik morati promjeniti
     lozinku (0 za onemogućiti ovu opciju)
   setting_password_min_length: Minimalna duljina
   setting_password_min_adhered_rules: Minimum number of required classes
-  setting_per_page_options: Objects per page options
+  setting_per_page_options: Postavke objekata po stranici
   setting_plain_text_mail: Plain text mail (no HTML)
   setting_protocol: Protokol
-  setting_repositories_encodings: Repositories encodings
+  setting_repositories_encodings: Postavke kodiranja repozitorija
   setting_repository_authentication_caching_enabled: Enable caching for authentication
     request of version control software
   setting_repository_log_display_limit: Maximum number of revisions displayed on file
@@ -1418,8 +1422,8 @@ hr:
   setting_session_ttl_enabled: Sesija je istekla
   setting_start_of_week: Kalendar počinje s
   setting_sys_api_enabled: Enable repository management web service
-  setting_sys_api_description: The repository management web service provides integration
-    and user authorization for accessing repositories.
+  setting_sys_api_description: Web servis za upravljanje repozitorijom omogućava integraciju
+    i autorizaciju za pristup repozitorijima.
   setting_text_formatting: Formatiranje teksta
   setting_time_format: Format vremena
   setting_ui_theme: Tema
@@ -1448,7 +1452,7 @@ hr:
   text_are_you_sure: Da li ste sigurni?
   text_are_you_sure_with_children: Izbriši radni paket i sve podređene radne pakete?
   text_assign_to_project: Pridruži projektu
-  text_caracters_maximum: "%{count} characters maximum."
+  text_caracters_maximum: "%{count} maksimalno znakova."
   text_caracters_minimum: Must be at least %{count} characters long.
   text_comma_separated: Multiple values allowed (comma separated).
   text_custom_field_possible_values_info: One line for each value
@@ -1467,12 +1471,12 @@ hr:
   text_enumeration_destroy_question: "%{count} objects are assigned to this value."
   text_file_repository_writable: Attachments directory writable
   text_git_repo_example: a bare and local repository (e.g. /gitrepo, c:\gitrepo)
-  text_work_package_added: Work package %{id} has been reported by %{author}.
+  text_work_package_added: Radni paket %{id} je priopćio %{author}.
   text_work_package_category_destroy_assignments: Remove category assignments
   text_work_package_category_destroy_question: Some work packages (%{count}) are assigned
     to this category. What do you want to do?
   text_work_package_category_reassign_to: Reassign work packages to this category
-  text_work_package_updated: Work package %{id} has been updated by %{author}.
+  text_work_package_updated: Radni paket%{id} je ažurirao %{author}.
   text_work_packages_destroy_confirmation: Are you sure you want to delete the selected
     work package(s)?
   text_work_packages_ref_in_commit_messages: Referencing and fixing work packages
@@ -1521,9 +1525,9 @@ hr:
   text_tip_work_package_end_day: work package ending this day
   text_type_no_workflow: No workflow defined for this type
   text_unallowed_characters: Nedozvoljeni znakovi
-  text_user_mail_option: For unselected projects, you will only receive notifications
-    about things you watch or you're involved in (eg. work packages you're the author
-    or assignee).
+  text_user_mail_option: Za ne označene projekte, primiti će te samo notifikacije
+    o stvarima koje nadgledate ili u koje ste uključeni (npr. radni paketi kojim ste
+    autor ili koji su vam dodijeljeni).
   text_user_wrote: "%{value} je napisao:"
   text_warn_on_leaving_unsaved: The current page contains unsaved text that will be
     lost if you leave this page.
@@ -1532,8 +1536,8 @@ hr:
   text_wiki_page_destroy_children: Delete child pages and all their descendants
   text_wiki_page_destroy_question: This page has %{descendants} child page(s) and
     descendant(s). What do you want to do?
-  text_wiki_page_nullify_children: Keep child pages as root pages
-  text_wiki_page_reassign_children: Reassign child pages to this parent page
+  text_wiki_page_nullify_children: Korisiti podređene stranice kao izvršne
+  text_wiki_page_reassign_children: Pridruži podređene stranice ovoj nadređenoj stranici
   text_workflow_edit: Select a role and a type to edit the workflow
   text_zoom_in: Zumiraj
   text_zoom_out: Odzumiraj
@@ -1560,7 +1564,7 @@ hr:
       project_associations: Ovisnosti
       reportings: Izvješća statusa
       reports: Izvješća vremenskog tijeka
-      timelines: Vremenski tijek
+      timelines: Kronologija
     add_project_association: Dodaj ovisnost
     associations: Ovisnosti
     board_could_not_be_saved: Forum nije moguće spremiti
@@ -1570,8 +1574,7 @@ hr:
     color_could_not_be_saved: Boju nije moguće spremiti
     current_planning: Trenutno planiranje
     dates: Datumi
-    dates_are_calculated_based_on_sub_elements: Dates are calculated based on sub
-      elements.
+    dates_are_calculated_based_on_sub_elements: Datumi se određuju na osnovu podelemenata.
     delete_all: Obriši sve
     delete_thing: Obriši
     duration: Trajanje
@@ -1582,19 +1585,20 @@ hr:
     edit_color: Uredi boju
     edit_project_type: Uredi tip projekta
     edit_thing: Uredi
-    edit_timeline: Edit timeline report %{timeline}
-    delete_timeline: Delete timeline report %{timeline}
+    edit_timeline: Uredi izvješće kronologije %{timeline}
+    delete_timeline: Izbriši izvješće kronologije %{timeline}
     empty: "(prazno)"
     enable_type_in_project: Omogući tip "%{type}"
     end: Kraj
     errors:
-      not_implemented: The timeline could not be rendered because it uses a feature
-        that is not yet implemented.
-      report_comparison: The timeline could not render the configured comparisons.
-        Please check the appropriate section in the configuration, resetting it can
-        help solve this problem.
-      report_epicfail: The timeline could not be loaded due to an unexpected error.
-      report_timeout: The timeline could not be loaded in a reasonable amount of time.
+      not_implemented: Kronologiju nije moguće posložiti zato što koristi mogućnosti
+        koje još nisu implementirane.
+      report_comparison: Kronologija nije u stanju prikazati konfigurirane usporedbe.
+        Molim vas provjerite odgovarajuću konfiguraciju. Resetiranje može pomoći u
+        riješavanju ovog problema.
+      report_epicfail: Kronologiju nije moguće učitati. Uslijedila je neočekivana
+        pogreška.
+      report_timeout: Kronologiju nije moguće učitati u razumnom vremenu.
     filter:
       errors:
         timeframe_start: 'The timeframe start '
@@ -1612,12 +1616,12 @@ hr:
       sort:
         sortation: Sortiraj prema
         alphabet: abecedi
-        explicit_order: explicit order
-        project_sortation: Sort projects by
+        explicit_order: eksplicitni redoslijed
+        project_sortation: Sortiraj projekte kao
         date: datum
         default: zadana
       column:
-        assigned_to: Dodijelio
+        assigned_to: Dodijeljeno korisniku
         type: Tip
         due_date: Datum završteka
         name: Naziv
@@ -1654,7 +1658,7 @@ hr:
       parent: Show subprojects of
       work_package_filters: Filtriraj radne pakete
       work_package_responsible: Show work packages with responsible
-      work_package_assignee: Show work packages with assignee
+      work_package_assignee: Prikaži radne pakete s dodijeljenim opunomoćenikom
       types: Prikaži tipove
       status: Prikaži status
       project_time_filter: Projects with a work package of a certain type in a certain
@@ -1706,32 +1710,32 @@ hr:
       show: 'Status: %{comment}'
     planning_element_update: 'Ažurirano: %{title}'
     work_packages_are_displayed_in_aggregations: Work packages are displayed in aggregations
-    project_association_new: Add project dependency
-    project_association_new_for_with: Set dependency for “%{project_a}” with
-    project_association_with_other: Project dependency between “%{project_a}” and
-      “%{project_b}”
-    project_association_of_type: Dependency to project of type “%{type}”
-    project_type_could_not_be_saved: Project type could not be saved
+    project_association_new: Dodaj ovisnost projekta
+    project_association_new_for_with: Postavite ovisnost za projekt "%{project_a}"
+      s
+    project_association_with_other: Ovisnost projekta između "%{project_a}" i "%{project_b}"
+    project_association_of_type: Ovisnost o projektu tipa "%{type}"
+    project_type_could_not_be_saved: Tip projekta nije moguće spremiti
     type_could_not_be_saved: Tip nije moguće spremiti
-    reporting_could_not_be_saved: Reporting could not be saved
+    reporting_could_not_be_saved: Izvještavanje nije moguće spremiti
     properties: Postavke
-    really_delete_color: Are you sure, you want to delete the following color? Types
-      using this color will not be deleted.
-    really_delete_project_association_between_project_a_and_project_b: Are you sure,
-      you want to delete the dependency between “%{project_a}” and “%{project_b}”?
-    really_delete_project_type: Are you sure, you want to delete the following project
-      type? Projects using this type will not be deleted.
-    really_delete_timeline: Are you sure, you want to delete the following timeline
-      report? Work packages shown in this timeline report will not be deleted.
-    really_delete_reporting: Are you sure, you want to delete the following reporting?
-      Previous reporting statuses will be deleted, too.
+    really_delete_color: Da li ste sigurni da želite izbrisati sljedeću boju? Tipovi
+      koji koriste ovu boju neće biti izbrisani.
+    really_delete_project_association_between_project_a_and_project_b: Da li ste sigurni
+      da želite izbrisati ovisnost između "%{project_a}" i "%{project_b}"?
+    really_delete_project_type: Da li ste sigurni da želite izbrisati sljedeći tip
+      projekta? Projekti koji koriste ovaj tip neće biti izbrisani.
+    really_delete_timeline: Da li ste sigurni da želite izbrisati sljedeće kronološke
+      izvještaje? Radni paket prikazani u ovom kronološkom izvješću neće biti izbrisani.
+    really_delete_reporting: Da li ste sigurni da želite izbrisati sljedeće izvještavanje?
+      Prethodni statusi izvještavanja biti će također izbrisani.
     start: Početak
     timeline: Izvješća vremenskog tijeka
     timelines: Izvješća vremenskog tijeka
-    settings: Vremenski tijek
+    settings: Kronologija
     vertical_work_package: Vertikalni radni paketi
     without_project_type: Bez tipa projekta
-    you_are_viewing_the_selected_timeline: You are viewing the selected timeline report
+    you_are_viewing_the_selected_timeline: Pregledavate odabrano kronološko izvješće
     zoom:
       in: Zumiraj
       out: Odzumiraj
@@ -1741,7 +1745,7 @@ hr:
       quarters: Kvartali
       years: Godine
   queries:
-    apply_filter: Apply preconfigured filter
+    apply_filter: Primjenite prethodno konfigurirani filter
   total_progress: Ukupni progres
   user:
     all: sve
@@ -1749,9 +1753,9 @@ hr:
     activate: Aktiviraj
     activate_and_reset_failed_logins: Aktiviraj i poništi neuspjele pokušaje prijave
     authentication_provider: Pružatelj usluge provjere autentičnosti
-    authentication_settings_disabled_due_to_external_authentication: This user authenticates
-      via an external authentication provider, so there is no password in OpenProject
-      to be changed.
+    authentication_settings_disabled_due_to_external_authentication: Ovaj korisnik
+      se autentificira preko eksternog pružatelja autentifikacije, prema tome ne postoji
+      lozinka u OpenProjectu koju je potrebno promijeniti.
     assign_random_password: Dodijelite nasuminčno odabranu zaporku (pošaljite korisniku
       putem emaila)
     blocked: privremeno zaključano
@@ -1777,9 +1781,9 @@ hr:
   version_status_locked: zaključano
   version_status_open: otvori
   note: Bilješka
-  note_password_login_disabled: Password login has been disabled by %{configuration}.
+  note_password_login_disabled: Prijava korištenjem lozinke je onemogućena %{configuration}.
   warning: Upozorenje
-  warning_attachments_not_saved: "%{count} file(s) could not be saved."
+  warning_attachments_not_saved: "%{count} datoteka(e) ne mogu biti spremljene."
   menu_item: Stavka izbornika
   menu_item_setting: Vidljivost
   wiki_menu_item_for: Stavka izbornika za wiki stranicu "%{title}"
@@ -1788,24 +1792,23 @@ hr:
     izbornika. U sljdećem koraku morate izabrati wiki stranicu za koju će se generirati
     nova stavka. Za brisanje wiki stranice, wiki modul mora biti deaktiviran od strane
     administratora projekta.
-  wiki_menu_item_delete_not_permitted: The wiki menu item of the only wiki page cannot
-    be deleted.
-  query_menu_item_for: Menu item for query "%{title}"
+  wiki_menu_item_delete_not_permitted: Wiki stavka izbornika jedine wiki stranice
+    ne može biti izbrisana.
+  query_menu_item_for: Stavka izbornika za upit "%{title}"
   work_package:
-    updated_automatically_by_child_changes: _Updated automatically by changing values
-      within child work package %{child}_
+    updated_automatically_by_child_changes: _Ažuriraj automatski tako da promijenite
+      vrijednosti zajedno s podređenim radnim paketom %{child}_
   nothing_to_preview: Ne postoji zapis za pregled
   api_v3:
     attributes:
       lock_version: Zaključavanje verzije
     errors:
-      code_401: You need to be authenticated to access this resource.
-      code_401_wrong_credentials: You did not provide the correct credentials.
-      code_403: You are not authorized to access this resource.
+      code_401: Morate biti autorizirani za pristup ovom resursu.
+      code_401_wrong_credentials: Niste naveli ispravnu akreditaciju.
+      code_403: Niste autorizirani za pristup ovom resursu.
       code_404: The requested resource could not be found.
       code_409: Couldn't update the resource because of conflicting modifications.
-      invalid_content_type: Expected CONTENT-TYPE to be '%{content_type}' but got
-        '%{actual}'.
+      invalid_content_type: Očekivani CONTENT-TYPE '%{content_type}' međutim je '%{actual}'.
       invalid_format: 'Invalid format for property ''%{property}'': Expected format
         like ''%{expected_format}'', but got ''%{actual}''.'
       invalid_json: The request could not be parsed as JSON.
@@ -1821,16 +1824,17 @@ hr:
       multiple_errors: Multiple field constraints have been violated.
       writing_read_only_attributes: You must not write a read-only attribute.
       render:
-        context_not_parsable: The context provided is not a link to a resource.
+        context_not_parsable: Predviđena dopuna nije poveznica na resurs.
         unsupported_context: The resource given is not supported as context.
         context_object_not_found: Cannot find the resource given as the context.
       validation:
         done_ratio: Omjer učinjenoga radnog paketa ne može biti zadan nadređenom radnom
           paketu, kada je zaključen statusom ili kada je onemogućen.
-        due_date: Due date cannot be set on parent work packages.
-        estimated_hours: Estimated hours cannot be set on parent work packages.
-        invalid_user_assigned_to_work_package: The chosen user is not allowed to be
-          '%{property}' for this work package.
-        start_date: Start date cannot be set on parent work packages.
+        due_date: Krajnji rok ne može biti postavljen nadređenim radnim paketima.
+        estimated_hours: Predviđeni sati ne mogu biti postavljeni na nadređeni radni
+          paket.
+        invalid_user_assigned_to_work_package: Izabranom korisniku nije dopušteno
+          da bude '%{property}' za ovaj radni paket.
+        start_date: Datum početka ne može biti postavljen na nadređenim radnim paketima.
     resources:
       schema: Shema
