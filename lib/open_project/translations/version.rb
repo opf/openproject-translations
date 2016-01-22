@@ -14,6 +14,6 @@
 
 module OpenProject
   module Translations
-    VERSION = "5.0.10"
+    VERSION = "5.0.11"
   end
 end
