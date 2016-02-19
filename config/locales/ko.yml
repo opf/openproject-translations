@@ -109,7 +109,7 @@ ko:
     summary:
       reports:
         category:
-          no_results_title_text: There are currently no categories available.
+          no_results_title_text: "현재 사용가능한 카테고리가 없습니다."
         assigned_to:
           no_results_title_text: "프로젝트에 멤버 파트가 없습니다."
         responsible:
@@ -117,11 +117,11 @@ ko:
         author:
           no_results_title_text: "프로젝트에 멤버 파트가 없습니다."
         priority:
-          no_results_title_text: There are currently no priorities available.
+          no_results_title_text: "현재 사용가능한 우선순위가 없습니다."
         type:
           no_results_title_text: "사용 가능한 타입이 없습니다."
         version:
-          no_results_title_text: There are currently no versions available.
+          no_results_title_text: "현재 사용가능한 버전이 없습니다."
   label_invitation: "초대"
   account:
     delete: "계정 삭제"
@@ -129,20 +129,12 @@ ko:
     deleted: "계정을 성공적으로 삭제했습니다."
     deletion_info:
       data_consequences:
-        other: Of the data the user created (e.g. email, preferences, work packages,
-          wiki entries) as much as possible will be deleted. Note however, that data
-          like work packages and wiki entries can not be deleted without impeding
-          the work of the other users. Such data is hence reassigned to an account
-          called "Deleted user". As the data of every deleted account is reassigned
-          to this account it will not be possible to distinguish the data the user
-          created from the data of another deleted account.
-        self: Of the data you created (e.g. email, preferences, work packages, wiki
-          entries) as much as possible will be deleted. Note however, that data like
-          work packages and wiki entries can not be deleted without impeding the work
-          of the other users. Such data is hence reassigned to an account called "Deleted
-          user". As the data of every deleted account is reassigned to this account
-          it will not be possible to distinguish the data you created from the data
-          of another deleted account.
+        other: 이 사용자에 대한 데이터(예를 들어 이메일, 환경 설정, 일감, 위키 항목)를 가능한 범위까지 지울 것입니다. 다만 일감이나
+          위키 항목과 같은 데이터는 지워버릴 경우 다른 사용자의 작업을 방해하게 됩니다. 따라서 그러한 데이터는 "삭제된 사용자" 계정에
+          귀속됩니다. 삭제된 사용자의 작업물이 하나의 계정으로 귀속되기에, 작업물을 만든 원래 사용자가 누구인지 구분할 수 없게 됩니다.
+        self: 당신에 대한 데이터(예를 들어 이메일, 환경 설정, 일감, 위키 항목)를 가능한 범위까지 지울 것입니다. 다만 일감이나 위키
+          항목과 같은 데이터는 지워버릴 경우 다른 사용자의 작업을 방해하게 됩니다. 따라서 그러한 데이터는 "삭제된 사용자" 계정에 귀속됩니다.
+          삭제된 사용자의 작업물이 하나의 계정으로 귀속되기에, 당신이 만든 작업물과 다른 삭제된 사용자가 만든 작업물을 구분할 수 없게 됩니다.
       heading: "계정 %{name}를 삭제"
       info:
         other: "사용자 계정을 삭제하는것은 돌이킬 수 없는 행동입니다."
@@ -153,8 +145,8 @@ ko:
         self: "당신의 계정이 시스템에서 삭제됩니다. 따라서 당신은 지금의 인증 정보로 더 이상 로그인할 수 없습니다. 원한다면 이 애플리케이션이
           허용하는 방법을 따라서 다시 사용자가 될 수 있습니다."
       login_verification:
-        other: Enter the login %{name} to verify the deletion.
-        self: Enter your login %{name} to verify the deletion.
+        other: "삭제를 확인 하려면 로그인 %{name} (을)를 입력하세요."
+        self: "삭제를 확인 하려면 로그인 %{name} (을)를 입력하세요."
     error_inactive_activation_by_mail: "당신의 계정이 아직 활성화되지 않았습니다. 계정을 활성화하기 위해, 이메일로
       전송된 링크를 클릭하십시오."
     error_inactive_manual_activation: "당신의 계정이 아직 활성화되지 않았습니다. 관리자가 계정을 승인할때까지 기다려
@@ -162,9 +154,9 @@ ko:
     error_self_registration_disabled: "사용자 등록은 이 시스템에서 비활성화되어 있습니다. 계정 생성을 원한다면 관리자에게
       요청하십시오."
     login_with_auth_provider: "또는 이미 있는 계정으로 로그인"
-    signup_with_auth_provider: or sign up using
-    auth_source_login: Please login as <em>%{login}</em> to activate your account.
-    omniauth_login: Please login to activate your account.
+    signup_with_auth_provider: "또는 사용 가입하기"
+    auth_source_login: "<em>%{login}</em> 계정을 활성화하려면 로그인하시기 바랍니다."
+    omniauth_login: "계정을 활성화하려면 로그인하시기 바랍니다."
   actionview_instancetag_blank_option: "선택하십시오"
   activerecord:
     attributes:
@@ -234,9 +226,9 @@ ko:
         spent_on: "날짜"
         type: "타입"
       type:
-        is_in_roadmap: In roadmap
-        in_aggregation: In aggregation
-        is_milestone: Is milestone
+        is_in_roadmap: "로그맵 내"
+        in_aggregation: "집계에"
+        is_milestone: "마일스톤"
         color: "색상"
       user:
         admin: "관리자"
@@ -244,7 +236,7 @@ ko:
         language: "언어"
         last_login_on: "최종 로그인"
         mail_notification: "이메일 알림"
-        current_password: Current password
+        current_password: "기존 비밀번호"
         new_password: "새로운 비밀번호"
         password_confirmation: "확인"
         force_password_change: "다음 로그인 암호 변경 적용"
@@ -299,50 +291,49 @@ ko:
         watcher: Watcher
     errors:
       messages:
-        accepted: must be accepted.
+        accepted: "허용 되어야 합니다."
         blank: "내용을 입력해주세요"
-        cant_link_a_work_package_with_a_descendant: A work package cannot be linked
-          to one of its subtasks.
-        circular_dependency: This relation would create a circular dependency.
-        confirmation: doesn't match %{attribute}.
-        empty: can't be empty.
-        even: must be even.
-        exclusion: is reserved.
-        file_too_large: is too large (maximum size is %{count} Bytes).
-        greater_than: must be greater than %{count}.
-        greater_than_or_equal_to: must be greater than or equal to %{count}.
-        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
-          length.
-        greater_than_start_date: must be greater than start date.
-        inclusion: is not set to one of the allowed values.
-        invalid: is invalid.
-        less_than_or_equal_to: must be less than or equal to %{count}.
-        not_a_date: is not a date.
-        not_a_number: is not a number.
-        not_an_integer: is not an integer.
-        not_same_project: doesn't belong to the same project.
-        odd: must be odd.
-        taken: has already been taken.
-        too_long: is too long (maximum is %{count} characters).
-        too_short: is too short (minimum is %{count} characters).
-        wrong_length: is the wrong length (should be %{count} characters).
-        after: must be after %{date}.
-        after_or_equal_to: must be after or equal to %{date}.
-        before: must be before %{date}.
-        before_or_equal_to: must be before or equal to %{date}.
-        could_not_be_copied: could not be (fully) copied.
+        cant_link_a_work_package_with_a_descendant: "작업 패키지는 하위 작업패키지들 중 하나에 연결 될
+          수 없습니다."
+        circular_dependency: "이 연계는 순환 종속관계를 만듭니다."
+        confirmation: "%{attribute} 속성에 부합하지 않습니다."
+        empty: "비워둘 수 없습니다."
+        even: "에 짝수를 입력해 주세요"
+        exclusion: "예약됨"
+        file_too_large: "은(는) 너무 큽니다. (최대 %{count} 바이트)"
+        greater_than: "은(는) %{count}보다 커야 합니다"
+        greater_than_or_equal_to: "은(는) %{count}보다 크거야 같아야 합니다"
+        smaller_than_or_equal_to_max_length: "은(는) 최대 길이보다 같거나 작아야 합니다."
+        greater_than_start_date: "은(는) 시작 날짜 이후이어야 합니다."
+        inclusion: "은(는) 허용되는 값이 아닙니다."
+        invalid: "은(는) 올바르지 않은 값입니다"
+        less_than_or_equal_to: "은(는) %{count} 보다 작거나 같아야 합니다"
+        not_a_date: "은(는) 날짜가 아닙니다."
+        not_a_number: "은(는) 숫자가 아닙니다."
+        not_an_integer: "은(는) 정수가 아닙니다."
+        not_same_project: "은(는) 동일한 프로젝트에 속하지 않습니다."
+        odd: "에 홀수를 입력해 주세요"
+        taken: "은(는) 이미 존재합니다."
+        too_long: "은(는) 너무 깁니다 (최대 %{count}자까지 가능합니다)"
+        too_short: "은(는) 너무 짧습니다. (최소 %{count} 자 이상이어야 합니다)"
+        wrong_length: "너무 짧습니다 (최소 %{count} 자 이상이어야 합니다)."
+        after: "은(는) %{date} 후이어야  합니다."
+        after_or_equal_to: "은(는) %{date} 이후여야 합니다."
+        before: "은(는) %{date} 보다 전이어야 합니다."
+        before_or_equal_to: "은(는) %{date} 이전이어야 합니다."
+        could_not_be_copied: "은(는) (완전히) 복제될 수 없습니다."
       models:
         project:
           attributes:
             types:
-              in_use_by_work_packages: 'still in use by work packages: %{types}'
+              in_use_by_work_packages: "아직 작업 패키지에 사용됨: %{types}"
         project_association:
           identical_projects: Dependency cannot be created between one project and
             itself.
-          project_association_not_allowed: does not allow associations.
+          project_association_not_allowed: "이(가) 연계를 허용하지 않습니다."
         repository:
-          not_available: SCM vendor is not available
-          not_whitelisted: is not allowed by the configuration.
+          not_available: SCM 업체가 가용하지 않습니다.
+          not_whitelisted: "은(는) 설절에 허용되지 않습니다."
           no_directory: "디텍터리가 아님"
         work_package:
           is_not_a_valid_target_for_time_entries: 'Work package #%{id} is not a valid
@@ -353,7 +344,7 @@ ko:
             parent_id:
               cannot_be_milestone: "마일스톤에 포함될 수 없음"
               cannot_be_in_another_project: "다른 프로젝트에 포함될 수 없음"
-              not_a_valid_parent: is invalid.
+              not_a_valid_parent: "은(는) 올바르지 않은 값입니다"
               does_not_exist: "존재하지 않음"
             status_id:
               status_transition_invalid: "현재 사용자 역할이 새 상태로 바르게 전환될 수 없으므로 유효 하지 않음"
@@ -368,8 +359,7 @@ ko:
         user:
           attributes:
             password:
-              weak: 'Must contain characters of the following classes (at least %{min_count}
-                of %{all_count}): %{rules}.'
+              weak: "다음과 같은 문자를 포함 해야 합니다 (최소 %{all_count} 중 %{min_count}): %{rules}."
               lowercase: lowercase (e.g. 'a')
               uppercase: uppercase (e.g. 'A')
               numeric: "숫자 (예: ' 1')"
@@ -414,9 +404,7 @@ ko:
       work_package: "작업 패키지"
   errors:
     header_invalid_fields: "다음 필드에 문제가 있습니다."
-    field_erroneous_label: |
-      This field is invalid: %{full_errors}
-      Please enter a valid value.
+    field_erroneous_label: "이 필드는 유효 하지 않습니다: %{full_errors} \n유효한 값을 입력 해 주십시오.\n"
   activity:
     created: "작성: %{title}"
     updated: "업데이트: %{title}"
@@ -470,7 +458,7 @@ ko:
     version: Version
     work_package: "작업 패키지"
   button_add: Add
-  button_add_member: Add member
+  button_add_member: "멤버 추가"
   button_add_watcher: Add watcher
   button_annotate: Annotate
   button_apply: Apply
@@ -495,7 +483,7 @@ ko:
   button_edit: Edit
   button_edit_associated_wikipage: 'Edit associated Wiki page: %{page_title}'
   button_expand_all: Expand all
-  button_generate: Generate
+  button_generate: "생성"
   button_list: List
   button_lock: Lock
   button_log_time: Log time
@@ -510,6 +498,7 @@ ko:
   button_reset: Reset
   button_rollback: Rollback to this version
   button_save: Save
+  button_save_back: "저장하고 돌아가기"
   button_show: Show
   button_sort: Sort
   button_submit: Submit
@@ -736,6 +725,9 @@ ko:
   error_can_not_reopen_work_package_on_closed_version: A work package assigned to
     a closed version cannot be reopened
   error_check_user_and_role: Please choose a user and a role.
+  error_cookie_missing: The OpenProject cookie is missing. Please ensure that cookies
+    are enabled, as this application will not properly function without.
+  error_token_authenticity: Unable to verify Cross-Site Request Forgery token.
   error_work_package_done_ratios_not_updated: Work package done ratios not updated.
   error_work_package_not_found_in_project: The work package was not found or does
     not belong to this project
@@ -755,6 +747,8 @@ ko:
     Please select another default work package status before deleting the current
     one.
   error_unable_to_connect: Unable to connect (%{value})
+  error_unable_delete_wiki: "위키 페이지를 삭제할 수 없습니다."
+  error_unable_update_wiki: "위키 페이지를 업데이트할 수 없습니다."
   error_workflow_copy_source: Please select a source type or role
   error_workflow_copy_target: Please select target type(s) and role(s)
   error_menu_item_not_created: Menu item could not be added
@@ -804,9 +798,8 @@ ko:
   my_account:
     access_tokens:
       no_results:
-        title: No access tokens to display
-        description: All of them have been disabled. They can be re-enabled in the
-          administration menu.
+        title: "표시할 수 있는 접근 토큰이 없습니다."
+        description: "모두 비활성화 되었습니다. 관리 메뉴에서 가용 상태로 되돌릴 수 있습니다."
       access_token: "액세스 토큰"
       headers:
         action: "액션"
@@ -872,7 +865,7 @@ ko:
   label_wiki_menu_item: Wiki menu item
   label_select_main_menu_item: Select new main menu item
   label_required_disk_storage: "필요한 디스크 스토리지"
-  label_resend_invitation: Resend invitation
+  label_resend_invitation: "초대장 다시 보내기"
   label_change_plural: Changes
   label_change_properties: Change properties
   label_change_status: Change status
@@ -1002,8 +995,7 @@ ko:
   label_work_package_view_all: View all work packages
   label_work_package_view_all_assigned_to_me: View all work packages assigned to me
   label_work_package_view_all_reported_by_me: View all work packages reported by me
-  label_work_package_view_all_responsible_for: View all work packages that I am responsible
-    for
+  label_work_package_view_all_responsible_for: "내가 책임을 갖고 있는 모든 작업 패키지 보기"
   label_work_package_view_all_watched: View all watched work packages
   label_work_package_watchers: Watchers
   label_journal_diff: Description Comparison
@@ -1026,7 +1018,7 @@ ko:
   label_login: Sign in
   label_logout: Sign out
   label_main_menu: Side Menu
-  label_manage_groups: Manage groups
+  label_manage_groups: "그룹 관리"
   label_managed_repositories_vendor: "관리 되는 %{vendor} 저장소"
   label_max_size: Maximum size
   label_me: me
@@ -1040,8 +1032,8 @@ ko:
   label_message_posted: Message added
   label_min_max_length: Min - Max length
   label_minute_plural: minutes
-  label_missing_api_access_key: Missing API access key
-  label_missing_feeds_access_key: Missing RSS access key
+  label_missing_api_access_key: "사라진 API 접근 키"
+  label_missing_feeds_access_key: "사라진 RSS 접근 키"
   label_modification: "%{count} change"
   label_modification_plural: "%{count} changes"
   label_modified: modified
@@ -1071,7 +1063,7 @@ ko:
   label_next_week: Next week
   label_no_change_option: "(No change)"
   label_no_data: No data to display
-  label_nothing_display: Nothing to display
+  label_nothing_display: "표시할 것이 없음"
   label_nobody: nobody
   label_none: none
   label_none_parentheses: "(none)"
@@ -1105,20 +1097,20 @@ ko:
   label_preview: Preview
   label_previous: Previous
   label_previous_week: Previous week
-  label_principal_invite_via_email: " or invite new users via email"
-  label_principal_search: Add existing users or groups
-  label_professional_support: Professional support
+  label_principal_invite_via_email: " 또는 이메일을 통해 새 사용자 초대하기"
+  label_principal_search: "기존 사용자 또는 그룹 추가"
+  label_professional_support: "전문적 지원"
   label_profile: Profile
   label_project_all: All Projects
-  label_project_count: Total number of projects
+  label_project_count: "전체 프로젝트 수"
   label_project_copy_notifications: Send email notifications during the project copy
   label_project_latest: Latest projects
   label_project_default_type: Allow empty type
-  label_project_hierarchy: Project hierarchy
+  label_project_hierarchy: "프로젝트 계층 구조"
   label_project_new: New project
   label_project_plural: Projects
   label_project_settings: Project settings
-  label_projects_storage_information: "%{count} projects using %{storage} disk storage"
+  label_projects_storage_information: "%{count} 개의 프로젝트가 %{storage} 디스크 스토리지를 사용 중"
   label_project_view_all: View all projects
   label_public_projects: Public projects
   label_query_new: New query
@@ -1135,18 +1127,18 @@ ko:
   label_relates_to: related to
   label_relation_delete: Delete relation
   label_relation_new: New relation
-  label_release_notes: Release notes
+  label_release_notes: "릴리스 노트"
   label_remove_columns: Remove selected columns
   label_renamed: renamed
   label_reply_plural: Replies
   label_report: Report
-  label_report_bug: Report a bug
+  label_report_bug: "버그 제보"
   label_report_plural: Reports
   label_reported_work_packages: Reported work packages
   label_reporting: Reporting
   label_reporting_plural: Reportings
   label_repository: Repository
-  label_repository_root: Repository root
+  label_repository_root: "최상위 저장소"
   label_repository_plural: Repositories
   label_responsible_for_work_packages: Work packages I am responsible for
   label_result_plural: Results
@@ -1162,14 +1154,14 @@ ko:
   label_role_and_permissions: Roles and permissions
   label_role_new: New role
   label_role_plural: "역할"
-  label_role_search: Assign roles to new members
+  label_role_search: "새 멤버에게 역할 배정하기"
   label_scm: SCM
   label_search: Search
   label_search_titles_only: Search titles only
   label_send_information: Send account information to the user
   label_send_test_email: Send a test email
   label_settings: Settings
-  label_system_settings: System settings
+  label_system_settings: "시스템 설정"
   label_show_completed_versions: Show completed versions
   label_sort: Sort
   label_sort_by: Sort by %{value}
@@ -1185,17 +1177,17 @@ ko:
   label_status: Status
   label_status_updated: Work package status updated
   label_stay_logged_in: Stay logged in
-  label_storage_free_space: Remaining disk space
-  label_storage_used_space: Used disk space
-  label_storage_group: Storage filesystem %{identifier}
-  label_storage_for: Encompasses storage for
+  label_storage_free_space: "남은 디스크 공간"
+  label_storage_used_space: "사용 중 디스크 공간"
+  label_storage_group: "저장 파일 시스템 %{identifier}"
+  label_storage_for: "을(를) 위한 전체 저장 공간"
   label_string: Text
   label_subproject_new: New subproject
   label_subproject_plural: Subprojects
   label_subtask_plural: Subtasks
   label_summary: Summary
   label_system: System
-  label_system_storage: Storage information
+  label_system_storage: "저장 공간 정보"
   label_table_of_contents: Table of Contents
   label_tag: Tag
   label_text: Long text
@@ -1212,7 +1204,7 @@ ko:
   label_total: Total
   label_type_new: New type
   label_type_plural: "종류"
-  label_type_default_new_projects: Type activated for new projects by default
+  label_type_default_new_projects: "새 프로젝트를 위한 기본으로 활성화된 유형"
   label_ui: User Interface
   label_update_work_package_done_ratios: Update work package done ratios
   label_updated_time: Updated %{value} ago
@@ -1221,13 +1213,13 @@ ko:
   label_used_by: Used by
   label_user_activity: "%{value}'s activity"
   label_user_anonymous: Anonymous
-  label_user_mail_self_notified: I want to be notified of changes that I make myself
+  label_user_mail_self_notified: "내가 만든 것이 변경되면 알림을 받고 싶습니다."
   label_user_mail_option_all: For any event on all my projects
   label_user_mail_option_none: No events
   label_user_mail_option_only_assigned: Only for things I am assigned to
   label_user_mail_option_only_my_events: Only for things I watch or I'm involved in
   label_user_mail_option_only_owner: Only for things I am the owner of
-  label_user_mail_option_selected: For any event on the selected projects only
+  label_user_mail_option_selected: "선택된 프로젝트에서 발생하는 이벤트만"
   label_user_new: New user
   label_user_plural: Users
   label_user_search: Search for user
@@ -1258,7 +1250,7 @@ ko:
   label_wiki_show_submenu_item: 'Show as submenu item of '
   label_work_package: "작업 패키지"
   label_work_package_status: "작업 패키지 상태"
-  label_work_package_types: Work package types
+  label_work_package_types: "작업 패키지 유형"
   label_workflow: "워크플로"
   label_workflow_plural: Workflows
   label_workflow_summary: Summary
@@ -1293,7 +1285,7 @@ ko:
   label_keyboard_shortcut_some_pages_only: 'Special shortcuts:'
   label_keyboard_shortcut_search_global: Global search
   label_keyboard_shortcut_search_project: Find a project
-  label_keyboard_shortcut_go_my_page: Go to my page
+  label_keyboard_shortcut_go_my_page: "내 페이지 이동"
   label_keyboard_shortcut_show_help: Show this help message
   label_keyboard_shortcut_go_overview: Go to project overview
   label_keyboard_shortcut_go_work_package: Go to project work packages
@@ -1340,11 +1332,10 @@ ko:
   noscript_description: You need to activate JavaScript in order to use OpenProject!
   noscript_heading: JavaScript disabled
   noscript_learn_more: Learn more
-  notice_accessibility_mode: The accessibility mode can be enabled in your account
-    [settings](url).
+  notice_accessibility_mode: "접근가능 모드는 당신의 계정 [settings](url)에서 활성화될 수 있습니다."
   notice_account_activated: Your account has been activated. You can now log in.
-  notice_account_already_activated: The account has already been activated.
-  notice_account_invalid_token: Invalid activation token
+  notice_account_already_activated: "계정이 이미 활성화 되었습니다."
+  notice_account_invalid_token: "잘못 된 활성화 토큰"
   notice_account_invalid_credentials: Invalid user or password
   notice_account_invalid_credentials_or_blocked: Invalid user or password or the account
     is blocked due to multiple failed login attempts. If so, it will be unblocked
@@ -1366,9 +1357,9 @@ ko:
   notice_account_wrong_password: Wrong password
   notice_account_registered_and_logged_in: Welcome, your account has been activated.
     You are logged in now.
-  notice_activation_failed: The account could not be activated.
+  notice_activation_failed: "계정이 활성화 되지 못했습니다."
   notice_api_access_key_reseted: Your API access key was reset.
-  notice_api_access_key_generated: Your API access key was generated.
+  notice_api_access_key_generated: "당신의 API 접근 키가 생성 되었습니다."
   notice_can_t_change_password: This account uses an external authentication source.
     Impossible to change the password.
   notice_email_error: An error occurred while sending mail (%{value})
@@ -1377,7 +1368,7 @@ ko:
     %{total} selected: %{ids}.'
   notice_failed_to_save_members: 'Failed to save member(s): %{errors}.'
   notice_feeds_access_key_reseted: Your RSS access key was reset.
-  notice_feeds_access_key_generated: Your RSS access key was generated.
+  notice_feeds_access_key_generated: "당신의 RSS 접근 키가 생성 되었습니다."
   notice_file_not_found: The page you were trying to access doesn't exist or has been
     removed.
   notice_forced_logout: You have been automatically logged out after %{ttl_time} minutes
@@ -1391,10 +1382,10 @@ ko:
   notice_locking_conflict_additional_information: The update(s) came from %{users}.
   notice_locking_conflict_reload_page: Please reload the page, review the changes
     and reapply your updates.
-  notice_member_added: Added %{name} to the project.
-  notice_members_added: Added %{number} users to the the project.
-  notice_member_removed: Removed %{user} from project.
-  notice_member_deleted: "%{user} has been removed from the project and deleted."
+  notice_member_added: "%{name} 이(가) 프로젝트에 추가 됨"
+  notice_members_added: "%{number} 사용자가 프로젝트에 추가됨."
+  notice_member_removed: "프로젝트에서 %{user} 사용자가 제거됨."
+  notice_member_deleted: "%{user}는 프로젝트에서 제거 되고 삭제됨."
   notice_no_principals_found: No results found.
   notice_bad_request: Bad Request.
   notice_not_authorized: You are not authorized to access this page.
@@ -1410,16 +1401,13 @@ ko:
     Narrow down the search by typing in the name of the new member (or group).
   notice_unable_delete_time_entry: Unable to delete time log entry.
   notice_unable_delete_version: Unable to delete version.
-  notice_user_missing_authentication_method: User has yet to chose a password or another
-    way the sign in.
-  notice_user_invitation_resent: Another invitation has been sent to %{email}.
-  present_access_key_value: 'Your %{key_name} is: %{value}'
+  notice_user_missing_authentication_method: "사용자가 패스워드나 로그인 할 수 있는 다른 방법이 없습니다."
+  notice_user_invitation_resent: "다른 초대장이 %{email} 로 발송 되었습니다."
+  present_access_key_value: "당신의 %{key_name} : %{value}"
   notice_automatic_set_of_standard_type: Set standard type automatically.
   notice_logged_out: You have been logged out.
-  notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
-    as there are still users using it.
-  notice_project_cannot_update_custom_fields: You cannot update the project's available
-    custom fields.
+  notice_wont_delete_auth_source: "사용자가 사용 중인 인증 모드는 삭제할 수 없습니다."
+  notice_project_cannot_update_custom_fields: "당신은 프로젝트의 가용 사용자 정의 필드를 갱신할 수 없습니다."
   number:
     format:
       delimiter: ''
@@ -1440,8 +1428,7 @@ ko:
           mb: MB
           tb: TB
   permission_add_work_package_notes: Add notes
-  permission_add_work_packages: Add work packages (also allows to add attachments
-    to all work packages)
+  permission_add_work_packages: "작업 패키지 추가 (모든 작업 패키지에 파일 첨부 허가)"
   permission_add_messages: Post messages
   permission_add_project: Create project
   permission_add_subprojects: Create subprojects
@@ -1598,8 +1585,8 @@ ko:
         are invalid.
       unavailable: The repository is unavailable.
       exception_title: 'Cannot access the repository: %{message}'
-      disabled_or_unknown_type: The selected type %{type} is disabled or no longer
-        available for the SCM vendor %{vendor}.
+      disabled_or_unknown_type: "선택한 유형 %{type} 은(는) 비활성화 되었거나, 더이상 SCM 공급 업체 %{vendor}에
+        사용할 수 없습니다."
       disabled_or_unknown_vendor: The SCM vendor %{vendor} is disabled or no longer
         available.
       remote_call_failed: 'Calling the managed remote failed with message ''%{message}''
@@ -1718,7 +1705,7 @@ ko:
     (e.g., to create and update work packages).
   setting_mail_handler_api_key: API key
   setting_mail_handler_body_delimiters: Truncate emails after one of these lines
-  setting_mail_handler_body_delimiter_regex: Truncate emails matching this regex
+  setting_mail_handler_body_delimiter_regex: "이 정규식에 일치하는 이메일을 자름"
   setting_new_project_user_role_id: Role given to a non-admin user who creates a project
   setting_password_active_rules: Active character classes
   setting_password_count_former_banned: Number of most recently used passwords banned
@@ -1849,7 +1836,7 @@ ko:
     underscores are allowed, must start with a lower case letter.
   text_reassign: 'Reassign to work package:'
   text_regexp_info: eg. ^[A-Z0-9]+$
-  text_regexp_multiline: The regex is applied in a multi-line mode. e.g., ^---\s+
+  text_regexp_multiline: "멀티라인 모드에서 정규식이 적용됩니다. 예, e.g., ^---\\s+"
   text_repository_usernames_mapping: |
     Select or update the OpenProject user mapped to each username found in the repository log.
     Users with the same OpenProject and repository username or email are automatically mapped.
