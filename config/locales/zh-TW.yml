@@ -6,13 +6,7 @@ zh-TW:
     deleted: "成功刪除帳號"
     deletion_info:
       data_consequences:
-        other: Of the data the user created (e.g. e-mail, preferences, work packages,
-          wiki entries) as much as possible will be deleted. Note however, that data
-          like work packages and wiki entries can not be deleted without impeding
-          the work of the other users. Such data is hence reassigned to an account
-          called "Deleted user". As the data of every deleted account is reassigned
-          to this account it will not be possible to distinguish the data the user
-          created from the data of another deleted account.
+        other: 您創建的資料 （例如電子郵件、 我的最愛、 工作項目，維基條目） 一樣可能會被刪除。但是請注意像工作項目和維基條目的資料刪除可能導致阻礙其他使用者的工作。這種資料因此重新分配到稱為"刪除使用者"的帳戶。由每筆被刪除而分配到這帳戶將不可能再從刪除帳戶中分配資料給你創建。
         self: 您創建的資料 （例如電子郵件、 我的最愛、 工作項目，維基條目） 一樣可能會被刪除。但是請注意像工作項目和維基條目的資料刪除可能導致阻礙其他使用者的工作。這種資料因此重新分配到稱為"刪除使用者"的帳戶。由每筆被刪除而分配到這帳戶將不可能再從刪除帳戶中分配資料給你創建。
       heading: "刪除帳號 %{name}"
       info:
@@ -197,12 +191,10 @@ zh-TW:
           not_whitelisted: "組態不允許"
           no_directory: "不是一個目錄"
         work_package:
-          is_not_a_valid_target_for_time_entries: 'Work package #%{id} is not a valid
-            target for reassigning the time entries.'
+          is_not_a_valid_target_for_time_entries: "工作項目 #%{id} 不是重新分配時間項目有效的目標"
           attributes:
             due_date:
-              not_start_date: is not on start date, although this is required for
-                milestones
+              not_start_date: "不在開始的日期，儘管它是里程碑所必需的"
             parent_id:
               cannot_be_milestone: "不能成為一個里程碑"
               cannot_be_in_another_project: "不能在另一個專案中"
@@ -215,17 +207,14 @@ zh-TW:
             priority_id:
               only_active_priorities_allowed: "必須是啟用的"
             category:
-              only_same_project_categories_allowed: The category of a work package
-                must be within the same project as the work package.
-              does_not_exist: The specified category does not exist.
+              only_same_project_categories_allowed: "工作項目的類別必須與工作項目在同一個專案中"
+              does_not_exist: "指定的類別不存在"
             estimated_hours:
-              only_values_greater_or_equal_zeroes_allowed: The estimated hours must
-                be >= 0.
+              only_values_greater_or_equal_zeroes_allowed: "預估的時間必須大於０"
         user:
           attributes:
             password:
-              weak: 'Must contain characters of the following classes (at least %{min_count}
-                of %{all_count}): %{rules}'
+              weak: "必須包含以下的字元 (至少 %{all_count} 個中的 %{min_count} 個): %{rules}"
               lowercase: "小寫（例如：「a」）"
               uppercase: "大寫（例如：「Ａ」）"
               numeric: "數字（例如：「1」）"
@@ -233,12 +222,10 @@ zh-TW:
               reused:
                 one: has been used before. Please choose one that is different from
                   your last one.
-                other: has been used before. Please choose one that is different from
-                  your last %{count}.
+                other: "先前已被使用，請選擇不同於您最後 %{count} 個的"
               match:
-                confirm: Confirm new password.
-                description: "'Password confirmation' should match the input in the
-                  'New password' field."
+                confirm: "確認新密碼"
+                description: "‘確認密碼’ 應該要符合 '新密碼'"
         member:
           principal_blank: "請至少選擇一個使用者或群組。"
           role_blank: "請至少選擇一個角色。"
@@ -246,7 +233,7 @@ zh-TW:
         body: "請檢查下列欄位："
         header:
           one: 1 error prohibited this %{model} from being saved
-          other: "%{count} errors prohibited this %{model} from being saved"
+          other: "%{count} 個錯誤導致 %{model} 被禁止儲存"
     models:
       attachment: "檔案"
       board: "討論區"
@@ -262,9 +249,9 @@ zh-TW:
       query: "自訂查詢"
       role:
         one: Role
-        other: Roles
+        other: "角色"
       type: "類型"
-      planning_element: Planning element
+      planning_element: "計畫中元素"
       project_type: "專案類型"
       user: "使用者"
       version: "版本"
@@ -273,7 +260,7 @@ zh-TW:
       workflow: "工作流程"
       work_package: "工作項目"
   errors:
-    header_invalid_fields: 'There were problems with the following fields:'
+    header_invalid_fields: "以下的欄位有問題:"
   activity:
     created: "建立：%{title}"
     updated: "更新：%{title}"
@@ -284,7 +271,7 @@ zh-TW:
     attachments: "附加檔"
     author: "作者"
     base: "一般錯誤:"
-    blocks_ids: IDs of blocked work packages
+    blocks_ids: "已被限制的工作項目 IDs"
     category: "類別"
     comment: "評論"
     comments: "評論"
@@ -380,13 +367,13 @@ zh-TW:
   button_configure_menu_entry: "設定選單項目"
   button_delete_menu_entry: "刪除選單項目"
   copy_project:
-    started: Started to copy project "%{source_project_name}" to "%{target_project_name}".
-      You will be informed by Mail as soon as "%{target_project_name}" is available.
-    failed: Cannot copy project %{source_project_name}
+    started: "開始複製專案 (從 “%{source_project_name}” 到 “%{target_project_name}”)。當 “%{target_project_name}”
+      可以使用以後，我們會盡快用郵件通知您。"
+    failed: "無法複製專案 %{source_project_name}"
     succeeded: "專案 %{target_project_name} 建立成功"
     errors: "錯誤"
     text:
-      failed: Could not copy project "%{source_project_name}" to project "%{target_project_name}".
+      failed: 無法從 “%{source_project_name}” 複製專案到 "%{target_project_name}"
       succeeded: 複製 "%{source_project_name}" 到 "%{target_project_name}"。
   create_child_page: "建立子頁面"
   create_child_page_for: '建立子頁面: "%{title}"'
@@ -423,9 +410,9 @@ zh-TW:
     - "星期五"
     - "星期六"
     formats:
-      default: "%m/%d/%Y"
-      long: "%B %d, %Y"
-      short: "%b %d"
+      default: "%Y年%m月%d日"
+      long: "%Y年%B%d日"
+      short: "%b%d日"
     month_names:
     - 
     - "一月"
@@ -650,23 +637,21 @@ zh-TW:
   label_add_subtask: "新增子任務"
   label_added: "已新增"
   label_added_time_by: "由%{author}於%{age}前新增"
-  label_additional_workflow_transitions_for_assignee: Additional transitions allowed
-    when the user is the assignee
-  label_additional_workflow_transitions_for_author: Additional transitions allowed
-    when the user is the author
+  label_additional_workflow_transitions_for_assignee: "當使用者是被指派者，其他過度狀態是被允許的"
+  label_additional_workflow_transitions_for_author: "當使用者是作者，其他過度狀態是被允許的"
   label_administration: "系統管理"
   label_age: "年齡"
   label_ago: "天前"
   label_all: "所有"
   label_all_time: "所有的時間"
-  label_all_words: All words
+  label_all_words: "所以的詞"
   label_and_its_subprojects: "%{value} 與它的子專案"
-  label_api_access_key: API access key
-  label_api_access_key_created_on: API access key created %{value} ago
+  label_api_access_key: API金鑰
+  label_api_access_key_created_on: API金鑰在 %{value} 以前被建立
   label_applied_status: "套用的狀態"
-  label_ascending: Ascending
+  label_ascending: "昇冪"
   label_assigned_to_me_work_packages: "分配給我的工作項目"
-  label_associated_revisions: Associated revisions
+  label_associated_revisions: "關聯的修訂"
   label_attachment_delete: "刪除檔案"
   label_attachment_new: "新增檔案"
   label_attachment_plural: "檔案"
@@ -677,15 +662,15 @@ zh-TW:
   label_auth_source_plural: "身份驗證模式"
   label_authentication: "身份驗證"
   label_blocked_by: "標示禁止者"
-  label_blocks: blocks
+  label_blocks: "區塊"
   label_board_locked: "鎖定"
   label_board_new: "新增論壇"
   label_board_plural: "論壇"
-  label_board_sticky: Sticky
-  label_boolean: Boolean
-  label_branch: Branch
+  label_board_sticky: "附著"
+  label_boolean: "布林值"
+  label_branch: "分支"
   label_browse: "瀏覽"
-  label_bulk_edit_selected_work_packages: Bulk edit selected work packages
+  label_bulk_edit_selected_work_packages: "整批編輯選取的工作項目"
   label_calendar: "行事曆"
   label_calendar_show: "顯示行事曆"
   label_category: "類別"
@@ -697,22 +682,22 @@ zh-TW:
   label_change_view_all: "檢視所有更改"
   label_changes_details: "所有更改的詳細資訊"
   label_changeset_plural: Changesets
-  label_checked: checked
-  label_chronological_order: In chronological order
+  label_checked: "已選取"
+  label_chronological_order: "按先後順序"
   label_close_versions: "關閉已完成的版本"
   label_closed_work_packages: "已關閉"
-  label_collapse: Collapse
+  label_collapse: "折疊"
   label_configuration: "組態"
   label_comment_add: "新增評論"
   label_comment_added: "評論已新增"
   label_comment_delete: "刪除評論"
   label_comment_plural: "評論"
-  label_commits_per_author: Commits per author
-  label_commits_per_month: Commits per month
+  label_commits_per_author: "每個作者的Commit"
+  label_commits_per_month: "每個月的Commits"
   label_confirmation: "確認密碼"
-  label_contains: contains
+  label_contains: "包含"
   label_content: "內容"
-  label_copied: copied
+  label_copied: "已複製"
   label_copy_same_as_target: "與目標相同"
   label_copy_source: "來源"
   label_copy_target: "目標"
@@ -721,26 +706,26 @@ zh-TW:
   label_core_version: "核心版本"
   label_current_status: "目前狀態"
   label_current_version: "目前版本"
-  label_custom_field_new: New custom field
+  label_custom_field_new: "新自訂欄位"
   label_custom_field_plural: "自訂欄位"
   label_custom_field_default_type: "空類型"
   label_date: "日期"
-  label_date_from: From
-  label_date_from_to: From %{start} to %{end}
+  label_date_from: "寄件者"
+  label_date_from_to: "從 %{start} 到 %{end}"
   label_date_range: "日期範圍"
   label_date_to: "到"
-  label_day_plural: days
+  label_day_plural: "天"
   label_default: "預設"
   label_deleted: "已刪除"
-  label_deleted_custom_field: "(deleted custom field)"
-  label_descending: Descending
-  label_details: Details
-  label_diff: diff
+  label_deleted_custom_field: "(已刪除的自訂欄位)"
+  label_descending: "降冪"
+  label_details: "詳細資料"
+  label_diff: "比較"
   label_diff_inline: inline
-  label_diff_side_by_side: side by side
-  label_disabled: disabled
-  label_display: Display
-  label_display_per_page: 'Per page: %{value}'
+  label_diff_side_by_side: "並排"
+  label_disabled: "已停用"
+  label_display: "顯示"
+  label_display_per_page: "每頁: %{value}"
   label_display_used_statuses_only: "只顯示這個類型用到的狀態"
   label_download: "%{count} Download"
   label_download_plural: "%{count} Downloads"
@@ -872,37 +857,37 @@ zh-TW:
   label_next_week: "下一週"
   label_no_change_option: "(沒有變動)"
   label_no_data: "沒有資料可顯示"
-  label_nobody: nobody
+  label_nobody: "沒有人"
   label_none: "無"
-  label_not_contains: doesn't contain
+  label_not_contains: "不包含"
   label_not_equals: "不是"
   label_notify_member_plural: "電子郵件通知"
   label_open_menu: "開啟選單"
-  label_open_work_packages: open
-  label_open_work_packages_plural: open
+  label_open_work_packages: "打開"
+  label_open_work_packages_plural: "打開"
   label_optional_description: "說明"
-  label_options: Options
-  label_overall_activity: Overall activity
+  label_options: "選項"
+  label_overall_activity: "全部活動"
   label_overall_spent_time: "總體耗時"
   label_overview: "概要"
-  label_password_lost: Forgot your password?
+  label_password_lost: "忘記你的密碼?"
   label_password_rule_lowercase: "小寫"
-  label_password_rule_numeric: Numeric Characters
+  label_password_rule_numeric: "數字字元"
   label_password_rule_special: "特殊字元"
   label_password_rule_uppercase: "大寫"
-  label_path_encoding: Path encoding
-  label_pdf_with_descriptions: PDF with Descriptions
+  label_path_encoding: "路徑編碼"
+  label_pdf_with_descriptions: "有說明的 PDF 檔"
   label_per_page: "每頁"
   label_permissions: "權限"
   label_permissions_report: "權限報表"
   label_personalize_page: "個人化本頁"
-  label_planning: Planning
+  label_planning: "計劃中"
   label_please_login: "請登入"
   label_plugins: "擴充套件"
   label_precedes: precedes
   label_preferences: "喜好設定"
   label_preview: "預覽"
-  label_previous: Previous
+  label_previous: "上一個"
   label_previous_week: "前一週"
   label_principal_search: "搜尋使用者或群組"
   label_profile: Profile
@@ -914,24 +899,24 @@ zh-TW:
   label_project_plural: "專案"
   label_project_settings: "專案設定"
   label_project_view_all: "檢視所有專案"
-  label_public_projects: Public projects
+  label_public_projects: "公開專案"
   label_query_new: "新增查詢"
   label_query_plural: "自訂查詢"
   label_query_menu_item: "查詢選單項目"
-  label_read: Read...
+  label_read: "讀取..."
   label_register: "建立新帳號"
-  label_register_with_developer: Register as developer
-  label_registered_on: Registered on
+  label_register_with_developer: "註冊成開發者"
+  label_registered_on: "註冊在"
   label_registration_activation_by_email: "以電子郵件啟動帳號"
   label_registration_automatic_activation: "自動啟用帳號"
   label_registration_manual_activation: "手動啟用帳號"
-  label_related_work_packages: Related work packages
-  label_relates_to: related to
-  label_relation_delete: Delete relation
-  label_relation_new: New relation
+  label_related_work_packages: "相關的工作項目"
+  label_relates_to: "相關於"
+  label_relation_delete: "刪除關聯"
+  label_relation_new: "新增關聯"
   label_remove_columns: "移除所選欄"
-  label_renamed: renamed
-  label_reply_plural: Replies
+  label_renamed: "重新命名"
+  label_reply_plural: "回覆"
   label_report: "報表"
   label_report_plural: "報表"
   label_reported_work_packages: "提出的工作項目"
@@ -941,7 +926,7 @@ zh-TW:
   label_repository_plural: Repositories
   label_responsible_for_work_packages: "責任歸屬於我的工作項目"
   label_result_plural: "結果"
-  label_reverse_chronological_order: In reverse chronological order
+  label_reverse_chronological_order: "在反序排列"
   label_revision: "修訂"
   label_revision_id: "修訂版 %{value}"
   label_revision_plural: "修訂"
@@ -957,19 +942,19 @@ zh-TW:
   label_scm: SCM
   label_search: "搜尋"
   label_search_titles_only: "僅搜尋標題"
-  label_send_information: Send account information to the user
+  label_send_information: "傳送帳號資訊給使用者"
   label_send_test_email: "發送測試電子郵件"
   label_settings: "設定"
   label_show_completed_versions: "顯示已完成的版本"
   label_sort: "排序"
-  label_sort_by: Sort by %{value}
-  label_sorted_by: sorted by %{value}
+  label_sort_by: "按 %{value} 排序"
+  label_sorted_by: "以 %{value} 排序"
   label_sort_higher: "往上移動"
   label_sort_highest: "移到頂端"
   label_sort_lower: "往下移動"
   label_sort_lowest: "移到底部"
   label_spent_time: "耗時"
-  label_start_to_end: start to end
+  label_start_to_end: "開始到結束"
   label_start_to_start: start to start
   label_statistics: "統計"
   label_status: "狀態"
@@ -982,15 +967,15 @@ zh-TW:
   label_summary: "大綱"
   label_system: "系统"
   label_table_of_contents: "目錄"
-  label_tag: Tag
-  label_text: Long text
+  label_tag: "標記"
+  label_text: "長文字"
   label_theme: "佈景主題"
   label_this_month: "本月"
   label_this_week: "本週"
   label_this_year: "今年"
   label_time_entry_plural: "耗時"
-  label_time_sheet_menu: Time sheet
-  label_time_tracking: Time tracking
+  label_time_sheet_menu: "時間表"
+  label_time_tracking: "時間追蹤"
   label_today: "今天"
   label_top_menu: "頂層選單"
   label_topic_plural: "主題"
@@ -1002,17 +987,16 @@ zh-TW:
   label_updated_time: "%{value}前更新"
   label_updated_time_at: "%{author} %{age}"
   label_updated_time_by: "由%{author}於%{age}前更新"
-  label_used_by: Used by
-  label_user_activity: "%{value}'s activity"
+  label_used_by: "使用者"
+  label_user_activity: "%{value} 的活動"
   label_user_anonymous: "匿名者"
-  label_user_mail_no_self_notified: I don't want to be notified of changes that I
-    make myself
-  label_user_mail_option_all: For any event on all my projects
-  label_user_mail_option_none: No events
-  label_user_mail_option_only_assigned: Only for things I am assigned to
-  label_user_mail_option_only_my_events: Only for things I watch or I'm involved in
-  label_user_mail_option_only_owner: Only for things I am the owner of
-  label_user_mail_option_selected: For any event on the selected projects only...
+  label_user_mail_no_self_notified: "當我變更自己的時候不想要接收通知"
+  label_user_mail_option_all: "對於我所有的專案的任何事件"
+  label_user_mail_option_none: "沒有事件"
+  label_user_mail_option_only_assigned: "只針對我被指派的事情"
+  label_user_mail_option_only_my_events: "只針對我關注的或者與我有關的事情"
+  label_user_mail_option_only_owner: "針對我是擁有者的事情"
+  label_user_mail_option_selected: "只針對選取的專案的任何事件"
   label_user_new: "新增使用者"
   label_user_plural: "使用者"
   label_user_search: "搜尋使用者"
@@ -1031,16 +1015,16 @@ zh-TW:
   label_wiki_content_added: "維基頁面已新增"
   label_wiki_content_updated: "維基頁面已更新"
   label_wiki_toc: "目錄"
-  label_wiki_dont_show_menu_item: Do not show this wikipage in project navigation
-  label_wiki_edit: Wiki edit
-  label_wiki_edit_plural: Wiki edits
-  label_wiki_navigation: Wiki navigation
+  label_wiki_dont_show_menu_item: "不要在專案導覽呈現這個 wiki 頁面"
+  label_wiki_edit: Wiki 編輯
+  label_wiki_edit_plural: Wiki 編輯
+  label_wiki_navigation: Wiki 導覽
   label_wiki_page: "維基頁面"
   label_wiki_page_plural: "維基頁面"
-  label_wiki_show_index_page_link: Show submenu item 'Table of Contents'
-  label_wiki_show_menu_item: Show as menu item in project navigation
-  label_wiki_show_new_page_link: Show submenu item 'Create new child page'
-  label_wiki_show_submenu_item: 'Show as submenu item of '
+  label_wiki_show_index_page_link: "顯示子功能表 '表格內容'"
+  label_wiki_show_menu_item: "在專案導覽中以子功能表呈現"
+  label_wiki_show_new_page_link: "顯示子功能表 '新增子頁面'"
+  label_wiki_show_submenu_item: "呈現於子功能表的 "
   label_work_package: "工作項目"
   label_workflow: "工作流程"
   label_workflow_plural: "工作流程"
@@ -1141,39 +1125,33 @@ zh-TW:
   notice_account_updated: Account was successfully updated.
   notice_account_wrong_password: Wrong password
   notice_account_registered_and_logged_in: "歡迎，您的帳號已被啟用。您現在已經登入了。"
-  notice_api_access_key_reseted: Your API access key was reset.
-  notice_can_t_change_password: This account uses an external authentication source.
-    Impossible to change the password.
-  notice_email_error: An error occurred while sending mail (%{value})
-  notice_email_sent: An email was sent to %{value}
-  notice_failed_to_save_work_packages: 'Failed to save %{count} work package(s) on
-    %{total} selected: %{ids}.'
+  notice_api_access_key_reseted: "您的 API 金鑰被重置了"
+  notice_can_t_change_password: "此帳號使用外部身份驗證。無法修改密碼。"
+  notice_email_error: "傳送郵件 (%{value}) 的時候發生錯誤"
+  notice_email_sent: "一封郵件被傳送給 %{value}"
+  notice_failed_to_save_work_packages: "%{total} 個選取的工作項目中的 %{count} 儲存失敗: %{ids}"
   notice_failed_to_save_members: "無法保存成員: %{errors}。"
-  notice_feeds_access_key_reseted: Your RSS access key was reset.
+  notice_feeds_access_key_reseted: "您的 RSS 金鑰已被重置"
   notice_file_not_found: "您試圖存取的頁面不存在或已被移除。"
   notice_forced_logout: "由於超過 %{ttl_time} 分鐘沒有操作，您已被自動登出。"
-  notice_internal_server_error: An error occurred on the page you were trying to access.
-    If you continue to experience problems please contact your %{app_title} administrator
-    for assistance.
+  notice_internal_server_error: "你試圖前往的頁面發生一個錯誤。如果你一直遇到問題，請聯絡你的 %{app_title} 管理員以得到協助！"
   notice_work_package_done_ratios_updated: "工作項目完成比例已更新"
-  notice_locking_conflict: Information has been updated by at least one other user
-    in the meantime.
-  notice_locking_conflict_additional_information: The update(s) came from %{users}.
+  notice_locking_conflict: "在此同時，資訊已經被至少一個使用者更新"
+  notice_locking_conflict_additional_information: "更新來自於 %{users}"
   notice_locking_conflict_reload_page: "請重新載入頁面，檢查所做的更改並重新套用您的更新。"
-  notice_no_principals_found: No results found.
-  notice_bad_request: Bad Request.
-  notice_not_authorized: You are not authorized to access this page.
-  notice_not_authorized_archived_project: The project you're trying to access has
-    been archived.
-  notice_project_not_deleted: The project wasn't deleted.
-  notice_successful_connection: Successful connection.
+  notice_no_principals_found: "沒有找到結果"
+  notice_bad_request: "錯誤的請求"
+  notice_not_authorized: "你沒有存取此頁面的權限"
+  notice_not_authorized_archived_project: "你欲存取的專案已被封存"
+  notice_project_not_deleted: "專案沒有被刪除"
+  notice_successful_connection: "連接成功"
   notice_successful_create: "建立成功"
-  notice_successful_delete: Successful deletion.
-  notice_successful_update: Successful update.
+  notice_successful_delete: "刪除成功"
+  notice_successful_update: "更新成功"
   notice_to_many_principals_to_display: |
-    There are too many results.
-    Narrow down the search by typing in the name of the new member (or group).
-  notice_unable_delete_time_entry: Unable to delete time log entry.
+    搜尋的結果太多。
+    請透過輸入新成員 (群組) 的名稱來縮小搜尋的範圍。
+  notice_unable_delete_time_entry: "無法刪除時間日誌項目"
   notice_unable_delete_version: "無法刪除版本"
   notice_automatic_set_of_standard_type: "自動設定標準類型"
   notice_logged_out: "您已登出"
@@ -1192,72 +1170,72 @@ zh-TW:
         units:
           byte:
             one: Byte
-            other: Bytes
+            other: "位元組 (Bytes)"
           gb: GB
           kb: kB
           mb: MB
           tb: TB
-  permission_add_work_package_notes: Add notes
+  permission_add_work_package_notes: "增加註釋"
   permission_add_work_packages: "新增工作項目"
   permission_add_messages: "張貼訊息"
   permission_add_project: "建立專案"
   permission_add_subprojects: "建立子專案"
   permission_add_work_package_watchers: "新增監看者"
-  permission_browse_repository: Browse repository
-  permission_change_wiki_parent_page: Change parent wiki page
+  permission_browse_repository: "瀏覽版本庫"
+  permission_change_wiki_parent_page: "更改上層 Wiki 頁面"
   permission_comment_news: "對新聞發表評論"
-  permission_commit_access: Submit commits
+  permission_commit_access: "送出 Commits"
   permission_copy_projects: "複製專案"
   permission_delete_work_package_watchers: "刪除監看者"
-  permission_delete_work_packages: Delete work packages
+  permission_delete_work_packages: "刪除工作項目"
   permission_delete_messages: "刪除訊息"
   permission_delete_own_messages: "刪除自己張貼的訊息"
-  permission_delete_project_associations: Delete project dependencies
+  permission_delete_project_associations: "刪除專案依賴項目"
   permission_delete_reportings: "刪除報表"
   permission_delete_timelines: "刪除時間軸"
   permission_delete_wiki_pages: "刪除維基頁面"
   permission_delete_wiki_pages_attachments: "刪除附件"
-  permission_edit_work_package_notes: Edit notes
-  permission_edit_work_packages: Edit work packages
+  permission_edit_work_package_notes: "編輯註釋"
+  permission_edit_work_packages: "編輯工作項目"
   permission_edit_messages: "編輯訊息"
-  permission_edit_own_work_package_notes: Edit own notes
+  permission_edit_own_work_package_notes: "編輯自己的註釋"
   permission_edit_own_messages: "編輯自己張貼的訊息"
-  permission_edit_own_time_entries: Edit own time logs
+  permission_edit_own_time_entries: "編輯自己的時間日誌"
   permission_edit_project: "編輯專案"
-  permission_edit_project_associations: Edit project dependencies
+  permission_edit_project_associations: "編輯專案的依賴項目"
   permission_edit_reportings: "編輯報表"
-  permission_edit_time_entries: Edit time logs
+  permission_edit_time_entries: "編輯時間日誌"
   permission_edit_timelines: "編輯時間軸"
   permission_edit_wiki_pages: "編輯維基頁面"
-  permission_export_work_packages: Export work packages
+  permission_export_work_packages: "匯出工作項目"
   permission_export_wiki_pages: "匯出維基頁面"
-  permission_list_attachments: List attachments
+  permission_list_attachments: "列出附件"
   permission_log_time: "記錄耗時"
-  permission_manage_boards: Manage forums
-  permission_manage_categories: Manage work package categories
-  permission_manage_work_package_relations: Manage work package relations
+  permission_manage_boards: "管理論壇"
+  permission_manage_categories: "管理工作項目類別"
+  permission_manage_work_package_relations: "管理工作項目關聯"
   permission_manage_members: "管理成員"
-  permission_manage_news: Manage news
-  permission_manage_project_activities: Manage project activities
-  permission_manage_public_queries: Manage public queries
-  permission_manage_repository: Manage repository
-  permission_manage_subtasks: Manage subtasks
+  permission_manage_news: "管理消息"
+  permission_manage_project_activities: "管理專案活動"
+  permission_manage_public_queries: "管理公開查詢"
+  permission_manage_repository: "管理版本庫"
+  permission_manage_subtasks: "管理子任務"
   permission_manage_versions: "管理版本"
   permission_manage_wiki: "管理維基"
   permission_manage_wiki_menu: "管理維基"
   permission_move_work_packages: "移動工作項目"
   permission_protect_wiki_pages: "專案維基頁面"
   permission_rename_wiki_pages: "重新命名維基頁面"
-  permission_save_queries: Save queries
+  permission_save_queries: "儲存查詢"
   permission_select_project_modules: "選擇專案的模組"
   permission_manage_types: "選擇類型"
   permission_view_calendar: "檢視行事曆"
-  permission_view_changesets: View changesets
-  permission_view_commit_author_statistics: View commit author statistics
+  permission_view_changesets: "檢視變更"
+  permission_view_commit_author_statistics: "檢視 Commit 的作者統計資訊"
   permission_view_work_package_watchers: "檢視監看者清單"
-  permission_view_work_packages: View Work Packages
+  permission_view_work_packages: "檢視工作項目"
   permission_view_messages: "檢視訊息"
-  permission_view_project_associations: View project dependencies
+  permission_view_project_associations: "檢視專案依賴項目"
   permission_view_reportings: "檢視報表"
   permission_view_time_entries: "檢視耗時"
   permission_view_timelines: "檢視時間軸"
@@ -1269,16 +1247,16 @@ zh-TW:
   project_module_work_package_tracking: Work package tracking
   project_module_news: "新知"
   project_module_repository: Repository
-  project_module_time_tracking: Time tracking
+  project_module_time_tracking: "時間追蹤"
   project_module_timelines: "時間軸"
   project_module_wiki: "維基"
   query_fields:
     assigned_to_role: "負責執行者的角色"
     member_of_group: "負責執行者的群組"
     subproject_id: "子專案"
-  search_input_placeholder: search ...
-  setting_activity_days_default: Days displayed on project activity
-  setting_app_subtitle: Application subtitle
+  search_input_placeholder: "搜尋 ..."
+  setting_activity_days_default: "專案活動顯示的天數"
+  setting_app_subtitle: "應用程式副標題"
   setting_app_title: Application title
   setting_attachment_max_size: Attachment max. size
   setting_autofetch_changesets: Autofetch commits
@@ -1568,7 +1546,7 @@ zh-TW:
         compare_relative_suffix: ago
         compare_absolute: Compare current planning to %{date}
       time_relative:
-        days: days
+        days: "天"
         weeks: "週"
         months: "月"
       exclude_own_work_packages: Hide work packages from this project
@@ -1705,7 +1683,7 @@ zh-TW:
     authorization_rejected: "你不被允許登入。"
   version_status_closed: "已關閉"
   version_status_locked: "鎖定"
-  version_status_open: open
+  version_status_open: "打開"
   note: "注意"
   note_password_login_disabled: Password login has been disabled by %{configuration}.
   warning: Warning
