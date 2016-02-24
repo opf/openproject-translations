@@ -531,6 +531,7 @@ fr:
   button_reset: Réinitialiser
   button_rollback: Revenir à cette version
   button_save: Enregistrer
+  button_save_back: Enregistrer et revenir
   button_show: Afficher
   button_sort: Trier
   button_submit: Envoyer
@@ -761,6 +762,9 @@ fr:
   error_can_not_reopen_work_package_on_closed_version: Un lot de travaux assigné à
     une version fermée ne peut être ré-ouvert
   error_check_user_and_role: Veuillez choisir un utilisateur et un rôle.
+  error_cookie_missing: The OpenProject cookie is missing. Please ensure that cookies
+    are enabled, as this application will not properly function without.
+  error_token_authenticity: Unable to verify Cross-Site Request Forgery token.
   error_work_package_done_ratios_not_updated: Les ratios de Lots de Travaux achevés
     n'ont pas été mis à jour.
   error_work_package_not_found_in_project: Le Lot de Travaux n'a pas été trouvé ou
@@ -782,6 +786,8 @@ fr:
     des lots de travaux. Veuillez sélectionner un autre statut par défaut avant de
     supprimer l'actuel.
   error_unable_to_connect: Impossible de se connecter (%{value})
+  error_unable_delete_wiki: Impossible de supprimer la page wiki.
+  error_unable_update_wiki: Impossible de mettre la page wiki à jour.
   error_workflow_copy_source: Veuillez sélectioner un type de source ou rôle
   error_workflow_copy_target: Veuillez sélectioner une cible type(s) et rôle(s)
   error_menu_item_not_created: L'élément de menu n'a pas pu être ajouté
@@ -899,7 +905,7 @@ fr:
   label_wiki_menu_item: "Élément de menu wiki"
   label_select_main_menu_item: Sélectionner nouvel élément de menu principal
   label_required_disk_storage: Espace disque requis
-  label_resend_invitation: Resend invitation
+  label_resend_invitation: Renvoyer l'invitation
   label_change_plural: Changements
   label_change_properties: Modifier les propriétés
   label_change_status: Changer le statut
@@ -1022,7 +1028,7 @@ fr:
   label_work_package_note_added: Note de Lot de Travaux ajoutée
   label_work_package_edit: "Éditer le lot de travaux %{name}"
   label_work_package_plural: Lots de Travaux
-  label_work_package_priority_updated: Priorité du Lot de Travaux mise à jour
+  label_work_package_priority_updated: Priorité du lot de travaux mise à jour
   label_work_package_status_new: Nouveau statut
   label_work_package_status_plural: Statuts du Lot de Travaux
   label_work_package_tracking: Suivi du Lot de Travaux
@@ -1040,6 +1046,7 @@ fr:
   label_jump_to_a_project: Aller à un projet…
   label_language_based: Basé sur le langage de l'utilisateur
   label_last_activity: Dernière activité
+  label_last_change_on: Last change on
   label_last_changes: les %{count} derniers changements
   label_last_login: Dernière connexion
   label_last_month: le mois dernier
@@ -1137,6 +1144,7 @@ fr:
   label_previous_week: Semaine précédente
   label_principal_invite_via_email: " ou inviter de nouveaux utilisateurs par courriel"
   label_principal_search: Ajouter des utilisateurs ou groupes existant
+  label_product_version: Product version
   label_professional_support: Support professionnel
   label_profile: Profil
   label_project_all: Tous les projets
@@ -1456,7 +1464,7 @@ fr:
   notice_unable_delete_version: Impossible de supprimer la version.
   notice_user_missing_authentication_method: L'utilisateur n'a pas encore choisi de
     mot de passe ou d'autre moyen d'identification.
-  notice_user_invitation_resent: Another invitation has been sent to %{email}.
+  notice_user_invitation_resent: Une nouvelle invitation a été envoyée à %{email}.
   present_access_key_value: 'Votre %{key_name} est : %{value}'
   notice_automatic_set_of_standard_type: Fixer le type standard automatiquement.
   notice_logged_out: Vous avez été déconnecté.
@@ -1774,7 +1782,8 @@ fr:
   setting_mail_handler_api_key: Clé API
   setting_mail_handler_body_delimiters: Tronquer les courriels à partir de l'une de
     ces lignes
-  setting_mail_handler_body_delimiter_regex: Truncate emails matching this regex
+  setting_mail_handler_body_delimiter_regex: Tronquer les courriels correspondant
+    à cette expression régulière
   setting_new_project_user_role_id: Rôle donné à un utilisateur non administrateur
     qui crée un projet
   setting_password_active_rules: Les classes de caractère activées
@@ -1914,7 +1923,8 @@ fr:
     avec une lettre en minuscule.
   text_reassign: 'Réaffecter au lot de travaux :'
   text_regexp_info: ex. ^[A-Z0-9]+$
-  text_regexp_multiline: The regex is applied in a multi-line mode. e.g., ^---\s+
+  text_regexp_multiline: L'expression régulière est appliquée en mode multi-ligne,
+    e.g. ^---\s+
   text_repository_usernames_mapping: |
     Définir ou modifier les associations entre les utilisateurs d'OpenProject et les utilisateurs trouvés dans le dépôt.
     Les utilisateurs ayant des noms ou des adresses de courriel identiques sont automatiquement associés.
@@ -2150,8 +2160,9 @@ fr:
       quarters: Trimestres
       years: Années
   title_remove_and_delete_user: Retirer du projet l'utilisateur invité et le supprimer.
-  tooltip_resend_invitation: Sends another invitation email with a fresh token in
-    case the old one expired or the user did not get the original email.
+  tooltip_resend_invitation: Envoie un nouveau courriel d'invitation avec un nouveau
+    jeton, au cas où l'ancien jeton aurait expiré ou l'utilisateur n'aurait pas reçu
+    le courriel original.
   queries:
     apply_filter: Appliquer le filtre pré-configuré
   total_progress: Progression totale
