@@ -437,9 +437,8 @@ es:
       work_package: Paquete de trabajo
   errors:
     header_invalid_fields: 'Hubo problemas con los siguientes campos:'
-    field_erroneous_label: |
-      This field is invalid: %{full_errors}
-      Please enter a valid value.
+    field_erroneous_label: 'Este campo es inválido: %{full_errors} por favor, ingrese
+      un valor válido.'
   activity:
     created: 'Creado: %{title}'
     updated: 'Actualizado: %{title}'
@@ -533,6 +532,7 @@ es:
   button_reset: Reiniciar
   button_rollback: Volver a esta versión
   button_save: Guardar
+  button_save_back: Guardar y volver
   button_show: Mostrar
   button_sort: Ordenar
   button_submit: Enviar
@@ -762,6 +762,11 @@ es:
   error_can_not_reopen_work_package_on_closed_version: No se puede volver a abrir
     un paquete de trabajo asignado a una versión cerrada
   error_check_user_and_role: Por favor elige un usuario y un rol.
+  error_cookie_missing: No se encuentra la cookie de OpenProject. Por favor asegúrese
+    de que las cookies están habilitadas, sin ellas esta aplicación no funcionará
+    correctamente.
+  error_token_authenticity: No se ha podido comprobar el token de falsificación de
+    petición de Cross-Site.
   error_work_package_done_ratios_not_updated: Ejecución de paquete de trabajos no
     actualizado.
   error_work_package_not_found_in_project: El paquete de trabajo no se ha encontrado
@@ -783,6 +788,8 @@ es:
     por defecto. Por favor, seleccione otro estado de trabajo predeterminado antes
     de eliminar el actual.
   error_unable_to_connect: No se puede conectar (%{value})
+  error_unable_delete_wiki: No se puede eliminar la página wiki.
+  error_unable_update_wiki: No se puede actualizar la página wiki.
   error_workflow_copy_source: Por favor, seleccione un tipo de fuente o rol
   error_workflow_copy_target: Por favor, seleccione tipo(s) de objetivos y role(s)
   error_menu_item_not_created: No se pudo agregar el elemento de menú
@@ -901,7 +908,7 @@ es:
   label_wiki_menu_item: Elemento de menú wiki
   label_select_main_menu_item: Seleccione nuevo elemento de menú principal
   label_required_disk_storage: Almacenamiento en disco requerido
-  label_resend_invitation: Resend invitation
+  label_resend_invitation: Reenviar invitación
   label_change_plural: Cambios
   label_change_properties: Cambiar propiedades
   label_change_status: Cambiar estado
@@ -1459,7 +1466,7 @@ es:
   notice_unable_delete_version: No se puede eliminar la versión.
   notice_user_missing_authentication_method: El usuario todavía tiene que escoger
     una contraseña u otra forma de acceso.
-  notice_user_invitation_resent: Another invitation has been sent to %{email}.
+  notice_user_invitation_resent: Otra invitación se ha enviado a %{email}.
   present_access_key_value: 'Su %{key_name} es: %{value}'
   notice_automatic_set_of_standard_type: Establecer tipo estándar automáticamente.
   notice_logged_out: Has cerrado la sesion.
@@ -1784,7 +1791,8 @@ es:
   setting_mail_handler_api_key: Clave API
   setting_mail_handler_body_delimiters: Truncar los correos electrónicos después de
     una de estas líneas
-  setting_mail_handler_body_delimiter_regex: Truncate emails matching this regex
+  setting_mail_handler_body_delimiter_regex: Truncar correos que coincidan con esta
+    regex
   setting_new_project_user_role_id: Papel ortorgado a usuario no administrador que
     crea un proyecto
   setting_password_active_rules: Activar clases de personajes
@@ -1869,14 +1877,14 @@ es:
   text_destroy_what_to_do: "¿Qué quieres hacer?"
   text_diff_truncated: "... Esta diferencia se truncó porque excede el tamaño máximo
     que puede visualizarse."
-  text_email_delivery_not_configured: "El envío de correo electrónico no está configurado
+  text_email_delivery_not_configured: El envío de correo electrónico no está configurado
     y las notificaciones estan deshabilitadas. \nConfigure su servidor SMTP en config/configuration.yml
-    y reinicie la aplicación para habilitarlas."
+    y reinicie la aplicación para habilitarlas.
   text_enumeration_category_reassign_to: 'Reasignarlos a este valor:'
   text_enumeration_destroy_question: "% {count} objetos han sido asignados a este
     valor."
   text_file_repository_writable: Directorio de adjuntos escribible
-  text_git_repo_example: un repositorio local y vacío (por ejemplo /gitrepo, c:\gitrepo)
+  text_git_repo_example: un repositorio local y vacío (por ejemplo /gitrepo, c:\\gitrepo)
   text_hint_disable_with_0: 'Nota: Desactivar con 0'
   text_work_package_added: Los paquetes de trabajo %{id} han sido actualizados por
     %{author}.
@@ -1917,16 +1925,17 @@ es:
   text_no_notes: No hay comentarios disponibles para este paquete de trabajo.
   text_notice_too_many_values_are_inperformant: 'Nota: Si se muestran más de 100 elementos
     por página puede incrementar el tiempo de carga de la página.'
-  text_own_membership_delete_confirmation: "Usted está a punto de eliminar algunos
+  text_own_membership_delete_confirmation: Usted está a punto de eliminar algunos
     o todos sus permisos y después no será posible editar este proyecto. \n ¿está
-    seguro que desea continuar?"
+    seguro que desea continuar?
   text_plugin_assets_writable: Directorio de Plugins activos escribible
   text_powered_by: Con tecnología de %{link}
   text_project_identifier_info: Se permiten sólo letras minúsculas (a-z), números,
     guiones y guiones bajos, debe comenzar con una letra minúscula.
   text_reassign: 'Reasignar al paquete de trabajo:'
   text_regexp_info: eg. ^[A-Z0-9]+$
-  text_regexp_multiline: The regex is applied in a multi-line mode. e.g., ^---\s+
+  text_regexp_multiline: La expresión regular se aplica en modo multilínea. por ejemplo,
+    ^---\s+
   text_repository_usernames_mapping: Seleccione o actualize el usuario de OpenProject
     asignado a cada nombre en el registro del repositorio. Los usuarios con el mismo
     nombre o email serán mapeados automáticamente.
@@ -2161,8 +2170,8 @@ es:
       quarters: Cuatrimestres
       years: Años
   title_remove_and_delete_user: Eliminar al usurio invitado del proyecto y eliminarlo.
-  tooltip_resend_invitation: Sends another invitation email with a fresh token in
-    case the old one expired or the user did not get the original email.
+  tooltip_resend_invitation: Enviar otra invitación con token nuevo en caso de que
+    el viejo haya expirado o el usuario no recibió el correo electrónico original.
   queries:
     apply_filter: Aplicar filtro preconfigurado
   total_progress: Progreso total
