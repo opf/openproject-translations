@@ -103,15 +103,15 @@ pl:
       assigned:
         no_results_title_text: Nie ma żadnych Zestawów Zadań przypisanych do mnie.
       reported:
-        no_results_title_text: There are currently no work packages that I have reported.
+        no_results_title_text: Obecnie nie ma Zestawów zadań, które zostały zgłoszone.
       responsible:
         no_results_title_text: Nie ma aktualnie żadnych zadań, za które jestem odpowiedzialny.
       watched:
-        no_results_title_text: There are currently no work packages that I am watching.
+        no_results_title_text: Obecnie nie ma Zestawów zadań, które możesz przeglądać.
     summary:
       reports:
         category:
-          no_results_title_text: There are currently no categories available.
+          no_results_title_text: Obecnie żadne kategorie nie są dostępne.
         assigned_to:
           no_results_title_text: Nie ma jeszcze żadnych członków projektu.
         responsible:
@@ -119,11 +119,11 @@ pl:
         author:
           no_results_title_text: Nie ma jeszcze żadnych członków projektu.
         priority:
-          no_results_title_text: There are currently no priorities available.
+          no_results_title_text: Obecnie żadne priorytety nie są dostępne.
         type:
           no_results_title_text: Nie ma dostępnych typów.
         version:
-          no_results_title_text: There are currently no versions available.
+          no_results_title_text: Obecnie żadne wersje nie są dostępne.
   label_invitation: Zaproszenie
   account:
     delete: Usuń konto
@@ -155,8 +155,8 @@ pl:
           już mógł zalogować się przy użyciu bieżących poświadczeń. Będziesz natomiast
           mógł stać się użytkownikiem tej aplikacji ponownie.
       login_verification:
-        other: Enter the login %{name} to verify the deletion.
-        self: Enter your login %{name} to verify the deletion.
+        other: Wprowadź swój login %{name} aby zweryfikować usunięcie.
+        self: Wprowadź swój login %{name} aby zweryfikować usunięcie.
     error_inactive_activation_by_mail: Twoje konto nie zostało jeszcze aktywowane.
       Aby aktywować swoje konto, kliknij na link, który został do Ciebie wysłany mailem.
     error_inactive_manual_activation: Twoje konto nie zostało jeszcze aktywowane.
@@ -308,9 +308,9 @@ pl:
       messages:
         accepted: musi być zaakceptowane.
         blank: nie może być puste.
-        cant_link_a_work_package_with_a_descendant: A work package cannot be linked
-          to one of its subtasks.
-        circular_dependency: This relation would create a circular dependency.
+        cant_link_a_work_package_with_a_descendant: Zestaw zadań nie może być powiązany
+          z jego podzadaniami.
+        circular_dependency: Ta relacja może wytworzyć zależność cykliczną.
         confirmation: nie pasuje do %{attribute}.
         empty: nie może być puste.
         even: musi być takie samo.
@@ -331,8 +331,8 @@ pl:
         odd: musi być nieparzyste.
         taken: zostały już podjęte.
         too_long: jest zbyt długi (maksymalnie %{count} znaków).
-        too_short: is too short (minimum is %{count} characters).
-        wrong_length: is the wrong length (should be %{count} characters).
+        too_short: jest zbyt krótkie (min. %{count} znaków).
+        wrong_length: ma nieprawidłową długość (powinno mieć %{count} znaków).
         after: musi być po %{date}.
         after_or_equal_to: musi być po lub równe %{date}.
         before: musi być przed %{date}.
@@ -342,15 +342,15 @@ pl:
         project:
           attributes:
             types:
-              in_use_by_work_packages: 'still in use by work packages: %{types}'
+              in_use_by_work_packages: 'nadal w użyciu przez Zestawy zadań: %{types}'
         project_association:
           identical_projects: Zależność nie może powstać pomiędzy projektem a nim
             samym.
           project_association_not_allowed: does not allow associations.
         repository:
-          not_available: SCM vendor is not available
-          not_whitelisted: is not allowed by the configuration.
-          no_directory: is not a directory.
+          not_available: Producent SCM nie jest dostępny
+          not_whitelisted: nie jest dozwolone w tej konfiguracji.
+          no_directory: nie jest katalogiem.
         work_package:
           is_not_a_valid_target_for_time_entries: 'Zadanie #%{id} jest niepoprawnym
             celem do ponownego rozpisania czasu.'
@@ -360,25 +360,25 @@ pl:
                 dla Kamieni Milowych.
             parent_id:
               cannot_be_milestone: cannot be a milestone.
-              cannot_be_in_another_project: cannot be in another project.
+              cannot_be_in_another_project: nie może być w innym projekcie.
               not_a_valid_parent: jest nieprawidłowe.
-              does_not_exist: does not exist.
+              does_not_exist: nie istnieje.
             status_id:
               status_transition_invalid: jest niewłaściwy z powodu braku prawidłowego
                 przekształcenia ze starego do nowego statusu dla aktualnej roli użytkownika.
             priority_id:
-              only_active_priorities_allowed: needs to be active.
+              only_active_priorities_allowed: musi być aktywny.
             category:
               only_same_project_categories_allowed: Kategoria zadania musi być taka
                 sama w ramach tego samego projektu.
               does_not_exist: Podana kategoria nie istnieje.
             estimated_hours:
-              only_values_greater_or_equal_zeroes_allowed: must be >= 0.
+              only_values_greater_or_equal_zeroes_allowed: musi mieć wartość > = 0.
         user:
           attributes:
             password:
-              weak: 'Must contain characters of the following classes (at least %{min_count}
-                of %{all_count}): %{rules}.'
+              weak: 'Musi zawierać znaki z następujących klas (co najmniej %{min_count}
+                z %{all_count}): %{rules}.'
               lowercase: małe litery (np. 'a')
               uppercase: wielkie litery (np. 'A')
               numeric: liczbowe (np. 1)
@@ -409,7 +409,7 @@ pl:
       custom_field: Pola niestandardowe
       group: Grupa
       category: Kategoria
-      status: Stan zadania
+      status: Statusy Zadań
       member: Członek
       news: Aktualności
       project: Projekt
@@ -428,9 +428,8 @@ pl:
       work_package: Zadania
   errors:
     header_invalid_fields: 'Wystąpił problem z następującymi polami:'
-    field_erroneous_label: |
-      This field is invalid: %{full_errors}
-      Please enter a valid value.
+    field_erroneous_label: 'To pole jest nieprawidłowe: %{full_errors} proszę podać
+      prawidłową wartość.'
   activity:
     created: 'Utworzona: %{title}'
     updated: 'Aktualizacja: %{title}'
@@ -461,7 +460,7 @@ pl:
     id: ID
     is_default: Wartość domyślna
     is_for_all: Dla wszystkich projektów
-    is_public: Publicznego
+    is_public: Publiczny
     issue: Zadania
     lastname: Nazwisko
     login: Login
@@ -509,7 +508,7 @@ pl:
   button_edit: Edycja
   button_edit_associated_wikipage: 'Edytuj powiązaną stronę Wiki: %{page_title}'
   button_expand_all: Rozwiń wszystkie
-  button_generate: Generate
+  button_generate: Utwórz
   button_list: Lista
   button_lock: Blokada
   button_log_time: Rejestruj czas pracy
@@ -517,14 +516,14 @@ pl:
   button_move: Przenieś
   button_move_and_follow: Przenieś i kontynuuj
   button_quote: Cytat
-  button_remove: Remove
+  button_remove: Usuń
   button_remove_widget: Usuń widżet
   button_rename: Zmień nazwę
   button_reply: Odpowiedz
   button_reset: Reset
   button_rollback: Wycofaj do tej wersji
   button_save: Zapisz
-  button_save_back: Save and back
+  button_save_back: Zapisz i wróć
   button_show: Pokaż
   button_sort: Sortowanie
   button_submit: Prześlij
@@ -550,7 +549,7 @@ pl:
     text:
       failed: Nie można skopiować projektu "%{source_project_name}" do "%{target_project_name}".
       succeeded: Skopiowano projekt "%{source_project_name}" do "%{target_project_name}".
-  create_new_page: Create wiki page
+  create_new_page: Utwórz stronę wiki
   date:
     abbr_day_names:
     - Nie
@@ -785,8 +784,8 @@ pl:
   error_unable_delete_default_status: Nie można usunąć domyślnego statusu zadań. Proszę
     wybrać innych domyślny status zadań przed usunięciem aktualnego.
   error_unable_to_connect: Nie można połączyć (%{value})
-  error_unable_delete_wiki: Unable to delete the wiki page.
-  error_unable_update_wiki: Unable to update the wiki page.
+  error_unable_delete_wiki: Nie można usunąć strony wiki.
+  error_unable_update_wiki: Nie można zaktualizować strony wiki.
   error_workflow_copy_source: Wybierz typ źródła lub rolę
   error_workflow_copy_target: Wybierz docelowy typ oraz rolę
   error_menu_item_not_created: Nie można dodać elementu menu
@@ -795,7 +794,7 @@ pl:
     Proszę spróbować ponownie.
   events:
     project: Projekt edytowany
-    changeset: Changeset edytowane
+    changeset: Komentarze edytowane
     message: Wiadomość edytowana
     news: Aktualności
     reply: Odpowiedział
@@ -804,9 +803,9 @@ pl:
     work_package_closed: Zadanie zamknięte
     work_package_edit: Zadanie edytowane
     work_package_note: Dodano uwagę do zadania
-  general_csv_decimal_separator: "."
+  general_csv_decimal_separator: ","
   general_csv_encoding: UTF-8
-  general_csv_separator: ","
+  general_csv_separator: "."
   general_first_day_of_week: '7'
   general_lang_name: Polish
   general_pdf_encoding: ISO-8859-2
@@ -818,15 +817,15 @@ pl:
   gui_validation_error_plural: "%{count} błędy/ów"
   homescreen:
     additional:
-      projects: Newest visible projects in this instance.
-      users: Nowy użytkownik w tej instancji.
+      projects: Najnowsze projekty
+      users: Nowi użytkownicy
     blocks:
-      community: OpenProject Community
+      community: Społeczność OpenProject
     links:
       user_guides: Przewodniki
-      faq: FAQ
-      glossary: Glossary
-      shortcuts: Shortcuts
+      faq: Najczęściej Zadawane Pytania
+      glossary: Słownik
+      shortcuts: Podpowiedzi
       forums: Fora
   instructions_after_registration: Możesz się zalogować w momencie gdy Twoje konto
     zostanie aktywowane poprzez kliknięcie %{signin}.
@@ -836,17 +835,17 @@ pl:
   my_account:
     access_tokens:
       no_results:
-        title: No access tokens to display
-        description: All of them have been disabled. They can be re-enabled in the
-          administration menu.
-      access_token: Access token
+        title: Brak tokenów dostępu
+        description: Wszystkie elementy zostały wyłączone. Można je ponownie włączyć
+          w menu administratora.
+      access_token: Token dostępu
       headers:
-        action: Action
-        expiration: Expires
-      indefinite_expiration: Never
+        action: Czynność
+        expiration: Wygasa
+      indefinite_expiration: Nigdy
   label_account: Konto
   label_activity: Działanie
-  label_add_edit_translations: Add and edit translations
+  label_add_edit_translations: Dodawanie i edycja tłumaczeń
   label_add_another_file: Dodaj plik
   label_add_columns: Dodaj wybrane kolumny
   label_add_note: Dodaj notatkę
@@ -859,7 +858,7 @@ pl:
   label_additional_workflow_transitions_for_author: Dodatkowe przejścia dozwolone,
     gdy użytkownik jest autorem
   label_administration: Administracja
-  label_advanced_settings: Advanced settings
+  label_advanced_settings: Zaawansowane ustawienia
   label_age: Wiek
   label_ago: dni temu
   label_all: wszystkie
@@ -903,18 +902,18 @@ pl:
   label_category: Kategoria
   label_wiki_menu_item: Element menu Wiki
   label_select_main_menu_item: Wybierz nową pozycję menu głównego
-  label_required_disk_storage: Required disk storage
-  label_resend_invitation: Resend invitation
+  label_required_disk_storage: Wymagane miejsce na dysku
+  label_resend_invitation: Wyślij ponownie zaproszenie
   label_change_plural: Zmiany
   label_change_properties: Zmiana właściwości
   label_change_status: Zmiana stanu
   label_change_view_all: Zobacz wszystkie zmiany
   label_changes_details: Szczegóły wszystkich zmian
-  label_changeset_plural: Changesets
+  label_changeset_plural: Zmiany
   label_checked: sprawdzone
-  label_check_uncheck_all_in_column: Check/Uncheck all in column
-  label_check_uncheck_all_in_row: Check/Uncheck all in row
-  label_child_element: Child element
+  label_check_uncheck_all_in_column: Sprawdź/Odznacz wszystko w kolumnie
+  label_check_uncheck_all_in_row: Sprawdź/Odznacz wszystko w wierszu
+  label_child_element: Element podrzędny
   label_chronological_order: W porządku chronologicznym
   label_close_versions: Zamknij zakończone wersje
   label_closed_work_packages: Zamknięte
@@ -1023,7 +1022,7 @@ pl:
   label_work_package_category_new: Nowa kategoria
   label_work_package_category_plural: Kategorie zadań
   label_work_package_hierarchy: Hierarchia zadań
-  label_work_package_new: Nowe zadanie
+  label_work_package_new: Nowe Zadanie
   label_work_package_note_added: Dodano uwagę do zadania
   label_work_package_edit: Edycja zadania %{name}
   label_work_package_plural: Zadania
@@ -1098,7 +1097,7 @@ pl:
   label_news_added: Wiadomość dodana
   label_news_comment_added: Komentarz został dodany do wiadomości
   label_news_latest: Najnowsze wiadomości
-  label_news_new: Dodawanie wiadomość
+  label_news_new: Dodaj wiadomość
   label_news_edit: Edycja wiadomości
   label_news_plural: Aktualności
   label_news_view_all: Zobacz wszystkie wiadomości
@@ -1206,7 +1205,7 @@ pl:
   label_send_information: Wyślij Informacje o koncie do użytkownika
   label_send_test_email: Wyślij wiadomość testową
   label_settings: Ustawienia
-  label_system_settings: Ustawienia systemu
+  label_system_settings: Ustawienia
   label_show_completed_versions: Pokaż zakończone wersje
   label_sort: Sortowanie
   label_sort_by: Sortuj wg %{value}
@@ -1294,10 +1293,10 @@ pl:
   label_wiki_show_new_page_link: Pokaż element podmenu "Utwórz nową stronę podrzędną"
   label_wiki_show_submenu_item: 'Pokaż jako pozycję podmenu '
   label_work_package: Zadania
-  label_work_package_status: Stan zadania
+  label_work_package_status: Statusy Zadań
   label_work_package_types: Typy Zadań
   label_workflow: Przepływ pracy
-  label_workflow_plural: Przepływy pracy
+  label_workflow_plural: Przepływ zadań
   label_workflow_summary: Streszczenie
   label_x_closed_work_packages_abbr:
     one: 1 zamknięte
@@ -1467,7 +1466,7 @@ pl:
     format:
       delimiter: ''
       precision: 3
-      separator: "."
+      separator: ","
     human:
       format:
         delimiter: ''
@@ -1588,7 +1587,7 @@ pl:
         read: Tylko do odczytu
         none: No checkout access, you may only view the repository through this application.
       access_permission: Your permissions on this repository
-      url: Checkout URL
+      url: Sprawdzenie bazowego adresu URL
       base_url_text: |
         The base URL to use for generating checkout URLs (e.g., https://myserver.example.org/repos/).
         Note: The base URL is only used for rewriting checkout URLs in managed repositories. Other repositories are not altered.
@@ -1636,17 +1635,17 @@ pl:
       exists_on_filesystem: The repository directory already exists in the filesystem.
       filesystem_access_failed: 'An error occurred while accessing the repository
         in the filesystem: %{message}'
-      not_manageable: This repository vendor cannot be managed by OpenProject.
+      not_manageable: Ten producent repozytorium nie może być zarządzany przez OpenProject.
       path_permission_failed: 'An error occurred trying to create the following path:
         %{path}. Please ensure that OpenProject may write to that folder.'
       unauthorized: You're not authorized to access the repository or the credentials
         are invalid.
       unavailable: The repository is unavailable.
       exception_title: 'Cannot access the repository: %{message}'
-      disabled_or_unknown_type: The selected type %{type} is disabled or no longer
-        available for the SCM vendor %{vendor}.
-      disabled_or_unknown_vendor: The SCM vendor %{vendor} is disabled or no longer
-        available.
+      disabled_or_unknown_type: Wybrany typ %{type} jest wyłączony lub nie jest już
+        dostępny dla %{vendor} producenta SCM.
+      disabled_or_unknown_vendor: SCM dostawcy %{vendor} jest wyłączony lub nie jest
+        już dostępny.
       remote_call_failed: 'Calling the managed remote failed with message ''%{message}''
         (Code: %{code})'
       remote_invalid_response: Received an invalid response from the managed remote.
@@ -1661,62 +1660,62 @@ pl:
       local_title: Link existing local Git repository
       local_introduction: If you have an existing local Git repository, you can link
         it with OpenProject to access it from within the application.
-      managed_introduction: Let OpenProject create and integrate a local Git repository
-        automatically.
-      managed_title: Git repository integrated into OpenProject
-      path: Path to Git repository
+      managed_introduction: Niech OpenProject tworzy i integruje lokalne repozytorium
+        Git automatycznie.
+      managed_title: Repozytorium Git integruje się z OpenProject
+      path: "Ścieżka do repozytorium Git"
       path_encoding: Path encoding
-    go_to_revision: Go to revision
-    managed_remote: Managed repositories for this vendor are handled remotely.
-    managed_remote_note: Information on the URL and path of this repository is not
-      available prior to its creation.
-    managed_url: Managed URL
+    go_to_revision: Przejdź do podglądu
+    managed_remote: Zarządzane repozytoria dla tego producenta są obsługiwane zdalnie.
+    managed_remote_note: Informacja na temat adresu URL i ścieżka repozytorium nie
+      są dostępne przed ich utworzeniem.
+    managed_url: Zarządzanie adresem URL
     settings:
-      automatic_managed_repos_disabled: Disable automatic creation
-      automatic_managed_repos: Automatic creation of managed repositories
-      automatic_managed_repos_text: By setting a vendor here, newly created projects
-        will automatically receive a managed repository of this vendor.
+      automatic_managed_repos_disabled: Wyłącz automatyczne tworzenie
+      automatic_managed_repos: Automatyczne tworzenie zarządzanych repozytoriów
+      automatic_managed_repos_text: Poprzez ustawienie producenta, nowe projekty automatycznie
+        otrzymają zarządzane repozytorium tego producenta.
     scm_vendor: System zarządzania kontroli źródła
-    scm_type: Repository type
+    scm_type: Typ repozytorium
     scm_types:
-      local: Link existing local repository
-      existing: Link existing repository
-      managed: Create new repository in OpenProject
+      local: Połącz istniejące lokalne repozytorium
+      existing: Połącz istniejące repozytorium
+      managed: Tworzenie nowego repozytorium w OpenProject
     storage:
-      not_available: Disk storage consumption is not available for this repository.
+      not_available: Zużycie pamięci dysku nie jest dostępne dla tego repozytorium.
       update_timeout: |
         Keep the last required disk space information for a repository for N minutes.
         As counting the required disk space of a repository may be costly, increase this value to reduce performance impact.
     subversion:
-      existing_title: Existing Subversion repository
-      existing_introduction: If you have an existing Subversion repository, you can
-        link it with OpenProject to access it from within the application.
+      existing_title: Istniejące repozytorium Subversion
+      existing_introduction: Jeśli masz repozytorium Subversion, możesz połączyć go
+        z OpenProject, aby otrzymać dostęp z poziomu aplikacji.
       instructions:
-        managed_url: This is the URL of the managed (local) Subversion repository.
+        managed_url: Jest to adres URL do zarządzanego repozytorium Subversion (lokalnego).
         url: |
           Enter the repository URL. This may either target a local repository (starting with %{local_proto} ), or a remote repository.
           The following URL schemes are supported:
-      managed_title: Subversion repository integrated into OpenProject
-      managed_introduction: Let OpenProject create and integrate a local Subversion
-        repository automatically.
-      password: Repository Password
+      managed_title: Repozytorium Subversion zintegrowano z OpenProject
+      managed_introduction: OpenProject utworzy i zintegruje lokalne repozytorium
+        Subversion automatycznie.
+      password: Hasło Repozytorium
       username: Użytkownik repozytorium
-    named_repository: "%{vendor_name} repository"
-    update_settings_successful: The settings have been sucessfully saved.
-    url: URL to repository
+    named_repository: "%{vendor_name} repozytorium"
+    update_settings_successful: Ustawienia zostały zapisane.
+    url: Adres URL do repozytorium
     warnings:
-      cannot_annotate: This file cannot be annotated.
+      cannot_annotate: Ten plik nie może być odnotowany.
   search_input_placeholder: szukaj...
   setting_activity_days_default: Dni wyświetlane w aktywności projektu
   setting_app_subtitle: Podtytuł
   setting_app_title: Tytuł
   setting_attachment_max_size: Maks. rozmiar załącznika
-  setting_autofetch_changesets: Autofetch repository changes
+  setting_autofetch_changesets: Autopobieranie zmian repozytorium
   setting_autologin: Automatyczne logowanie
   setting_available_languages: Dostępne języki
   setting_bcc_recipients: Adresaci ukrytych kopii (bcc)
-  setting_brute_force_block_after_failed_logins: Block user after this number of failed
-    login attempts
+  setting_brute_force_block_after_failed_logins: Zablokuj użytkownika po tej liczbie
+    nieudanych prób zalogowania
   setting_brute_force_block_minutes: Czas, kiedy użytkownik jest zablokowany
   setting_cache_formatted_text: Tekst sformatowany w pamięci podręcznej
   setting_column_options: Dostosuj wygląd listy zadań
@@ -1730,7 +1729,7 @@ pl:
   setting_default_language: Język domyślny
   setting_default_notification_option: Domyślnie opcja powiadomienia
   setting_default_projects_modules: Domyślnie włączone moduły dla nowych projektów
-  setting_default_projects_public: Nowe projekty są domyślnie publiczne
+  setting_default_projects_public: Nowe projekty są publiczne (domyślnie)
   setting_diff_max_lines_displayed: Maksymalna wyświetlana liczba linii różnic
   setting_display_subprojects_work_packages: Wyświetlaj domyślnie zadania podprojektów
     na głównym projekcie
@@ -1772,20 +1771,20 @@ pl:
   setting_password_active_rules: Aktywne klasy znaków
   setting_password_count_former_banned: Liczba ostatnio używanych haseł zakazane do
     ponownego wykorzystania
-  setting_password_days_valid: Number of days, after which to enforce a password change
+  setting_password_days_valid: Liczba dni, po których konieczna będzie zmiana hasła
   setting_password_min_length: Minimalna długość
   setting_password_min_adhered_rules: Minimalna liczba wymaganych klas
   setting_per_page_options: Obiektów na stronie
   setting_plain_text_mail: Poczta czystym tekstem (bez HTML)
   setting_protocol: Protokół
-  setting_repositories_automatic_managed_vendor: Automatic repository vendor type
+  setting_repositories_automatic_managed_vendor: Typ automatycznego producenta repozytorium
   setting_repositories_encodings: Kodowanie repozytorium
   setting_repository_authentication_caching_enabled: Włącz buforowanie dla żądania
     uwierzytelnienia oprogramowania do kontroli wersji
-  setting_repository_storage_cache_minutes: Repository disk size cache
-  setting_repository_checkout_display: Show checkout instructions
-  setting_repository_checkout_base_url: Checkout base URL
-  setting_repository_checkout_text: Checkout instruction text
+  setting_repository_storage_cache_minutes: Rozmiar pamięci podręcznej dysku repozytorium
+  setting_repository_checkout_display: Pokaż polecenie sprawdzenia
+  setting_repository_checkout_base_url: Sprawdzenie bazowego adresu URL
+  setting_repository_checkout_text: Sprawdzenie tekstu instrukcji
   setting_repository_log_display_limit: Maksymalna liczba zmian wyświetlanych na pliku
     dziennika
   setting_rest_api_enabled: Włącz usługi sieci web REST
@@ -1821,14 +1820,14 @@ pl:
     brute_force_prevention: Automatyczne blokowanie użytkowników
   show_hide_project_menu: Pokaż/Ukryj menu projektu
   status_active: aktywne
-  status_invited: invited
+  status_invited: zaproszony
   status_registered: zarejestrowany
   support:
     array:
       sentence_connector: i
       skip_last_comma: fałsz
-  text_access_token_hint: Access tokens allow you to grant external applications access
-    to resources in OpenProject.
+  text_access_token_hint: Tokeny dostępu umożliwiają zewnętrznym aplikacjom dostęp
+    do zasobów w OpenProject.
   text_analyze: 'Further analyze: %{subject}'
   text_are_you_sure: Jesteś pewien?
   text_are_you_sure_with_children: Usunąć zadanie i wszystkie podrzędne zadania?
@@ -1861,8 +1860,8 @@ pl:
     to this category. What do you want to do?
   text_work_package_category_reassign_to: Reassign work packages to this category
   text_work_package_updated: Work package %{id} has been updated by %{author}.
-  text_work_package_watcher_added: You have been added as a watcher to Work package
-    %{id} by %{watcher_setter}.
+  text_work_package_watcher_added: Zostałeś dodany jako obserwator do Zespołu zadań
+    %{id} przez %{watcher_setter}.
   text_work_packages_destroy_confirmation: Are you sure you want to delete the selected
     work package(s)?
   text_work_packages_ref_in_commit_messages: Referencing and fixing work packages
@@ -1878,13 +1877,13 @@ pl:
   text_journal_deleted_with_diff: "%{label} deleted (%{link})"
   text_journal_set_to: "%{label} set to %{value}"
   text_journal_set_with_diff: "%{label} set (%{link})"
-  text_latest_note: 'The latest comment is: %{note}'
+  text_latest_note: 'Ostatni komentarz: %{note}'
   text_length_between: Length between %{min} and %{max} characters.
   text_line_separated: Wiele wartości dopuszczalne (jeden wiersz dla każdej wartości).
   text_load_default_configuration: Załaduj domyślną konfigurację
   text_min_max_length_info: 0 means no restriction
-  text_no_roles_defined: There are no roles defined.
-  text_no_access_tokens_configurable: There are no access tokens which can be configured.
+  text_no_roles_defined: Nie ma żadnych zdefiniowanych uprawnień.
+  text_no_access_tokens_configurable: Brak tokenów dostępu, które mogą być skonfigurowane.
   text_no_configuration_data: |
     Roles, types, work package statuses and workflow have not been configured yet.
     It is highly recommended to load the default configuration. You will be able to modify it once loaded.
@@ -1898,7 +1897,7 @@ pl:
   text_powered_by: Napędzany przez %{link}
   text_project_identifier_info: Tylko małe litery (a-z), cyfry, myślniki i podkreślenia
     są dozwolone, oraz musi zaczynać się małą literą.
-  text_reassign: 'Reassign to work package:'
+  text_reassign: 'Ponowne przydzielenie do Zestawu zadań:'
   text_regexp_info: np. ^[A-Z0-9]+$
   text_regexp_multiline: Wyrażenie regularne jest stosowane w trybie wielolinijkowym.
     np. ^---\s+
@@ -2063,7 +2062,7 @@ pl:
     history: Historia
     new_color: Nowy kolor
     new_association: Nowa zależność
-    new_work_package: Nowe zadanie
+    new_work_package: Nowe Zadanie
     new_project_type: Nowy typ projektu
     new_reporting: Nowe zgłoszenie
     new_timeline: Nowy raport na osi czasu
@@ -2127,8 +2126,8 @@ pl:
       years: Lata
   title_remove_and_delete_user: Usuń dotychczasowego użytkownika z projektu i usuń
     go.
-  tooltip_resend_invitation: Sends another invitation email with a fresh token in
-    case the old one expired or the user did not get the original email.
+  tooltip_resend_invitation: Ponowne wysłanie zaproszenia e-mail z nowym tokenem,
+    gdy upłynie termin ważności poprzedniego lub gdy użytkownik nie otrzymał maila.
   queries:
     apply_filter: Zastosuj wstępny filtr
   total_progress: Całkowity postęp
@@ -2153,7 +2152,7 @@ pl:
     lock: Blokuj trwale
     locked: zablokowany trwale
     registered: zarejestrowany
-    invited: invited
+    invited: zaproszony
     reset_failed_logins: Resetuj nieudane logowania
     status_user_and_brute_force: "%{user} i %{brute_force}"
     unlock: Odblokuj
@@ -2176,7 +2175,7 @@ pl:
   wiki_menu_item_setting: Widoczność
   wiki_menu_item_new_main_item_explanation: Usuwasz jedyny główny element menu wiki.
     Teraz musisz wybrać stronę wiki dla których zostanie wygenerowany nowy główny
-    element. Aby usunąć wiki, moduł wiki może zostać dezaktywowany poprzez administratorów
+    element. Aby usunąć wpis, moduł wiki może zostać dezaktywowany poprzez administratorów
     projektu.
   wiki_menu_item_delete_not_permitted: Nie można usunąć elementu menu dla jedynej
     strony wiki.
@@ -2185,8 +2184,8 @@ pl:
     updated_automatically_by_child_changes: _Zaktualizowane automatycznie przez zmianę
       wartości wewnątrz podrzędnego zadania %{child}_
     destroy:
-      info: Deleting the work package is an irreversible action.
-      title: Delete the work package
+      info: Usunięcie Zestawu zadań jest czynnością nieodwracalną.
+      title: Usuń Zestawy zadań
   nothing_to_preview: Nie ma nic do podglądu
   api_v3:
     attributes:
@@ -2197,7 +2196,7 @@ pl:
       code_403: Nie masz uprawnień do tego zasobu.
       code_404: Nie można odnaleźć żądanego zasobu.
       code_409: Nie można zaktualizować zasobu ze względu na konfliktujące modyfikacje.
-      code_500: An internal error has occured.
+      code_500: Wystąpił błąd wewnętrzny.
       invalid_content_type: Oczekiwano CONTENT-TYPE '%{content_type}' a otrzymano
         '%{actual}'.
       invalid_format: 'Błędny format dla własności ''%{property}'': Format oczekiwany
