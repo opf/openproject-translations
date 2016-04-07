@@ -261,8 +261,8 @@ pl:
       template:
         body: 'Sprawdź następujące pola:'
         header:
-          one: 1 error prohibited this %{model} from being saved
-          other: "%{count} errors prohibited this %{model} from being saved"
+          one: 1 błąd uniemożliwia zapisanie %{model}
+          other: "%{count} błędu/ów uniemożliwia zapisanie %{model}"
           few: "%{count} errors prohibited this %{model} from being saved"
     models:
       attachment: Plik
@@ -272,7 +272,7 @@ pl:
       group: Grupa
       issue: Problem
       category: Kategoria
-      status: Stan zadania
+      status: Statusy Zadań
       member: Członek
       news: Aktualności
       project: Projekt
@@ -322,7 +322,7 @@ pl:
     id: ID
     is_default: Wartość domyślna
     is_for_all: Dla wszystkich projektów
-    is_public: Publicznego
+    is_public: Publiczny
     issue: Zadania
     lastname: Nazwisko
     login: Login
@@ -332,7 +332,7 @@ pl:
     priority: Priorytet
     project: Projekt
     responsible: Odpowiedzialny
-    role: Role
+    role: Rola
     start_date: Data rozpoczęcia
     status: Stan
     subject: Temat
@@ -515,7 +515,7 @@ pl:
         one: godzina
         other: hours
         few: hours
-  default_activity_development: Development
+  default_activity_development: Rozwój
   default_activity_management: Zarządzanie
   default_activity_other: Inne
   default_activity_specification: Specyfikacja
@@ -540,7 +540,7 @@ pl:
   default_status_developed: Opracowany
   default_status_in_development: W rozwoju
   default_status_in_progress: W Toku
-  default_status_in_specification: W specyfikacji
+  default_status_in_specification: W określaniu
   default_status_in_testing: Testowany
   default_status_new: Nowy
   default_status_on_hold: Zawieszony
@@ -561,19 +561,19 @@ pl:
   default_reported_project_status_red: Czerwony
   default_role_anonymous: Anonimowy
   default_role_developer: Deweloper
-  default_role_project_admin: Project admin
+  default_role_project_admin: Administrator projektu
   default_role_non_member: nie jest członkiem
   default_role_reader: Czytnik
   default_role_member: Członek
   default_type: Zadania
   default_type_bug: Błąd
   default_type_deliverable: Dostarczalny
-  default_type_epic: Epic
+  default_type_epic: Wydarzenie
   default_type_feature: Cecha/Funkcja
   default_type_milestone: Kamień milowy
   default_type_phase: Etap
   default_type_task: Zadanie
-  default_type_user_story: User story
+  default_type_user_story: Wpis użytkownika
   description_active: Aktywne?
   description_attachment_toggle: Pokaż/Ukryj załączniki
   description_autocomplete: To pole używa funkcji autouzupełniania. Podczas pisania
@@ -612,7 +612,7 @@ pl:
   enumeration_activities: Działania
   enumeration_work_package_priorities: Priorytety zadania
   enumeration_system_activity: Aktywność systemu
-  enumeration_reported_project_statuses: Stanu zgłoszonego projektu
+  enumeration_reported_project_statuses: Status zgłoszonego projektu
   error_can_not_archive_project: Ten projekt nie może być archiwizowany
   error_can_not_delete_custom_field: Nie można usunąć pola niestandardowego
   error_can_not_delete_type: Ten typ zawiera zadania i nie może być usunięty.
@@ -636,11 +636,10 @@ pl:
   error_scm_command_failed: 'Wystąpił błąd podczas próby dostępu do repozytorium:
     %{value}'
   error_scm_not_found: Nie znaleziono wpisu lub zmiany w repozytorium.
-  error_unable_delete_status: The work package status cannot be deleted since it is
-    used by at least one work package.
-  error_unable_delete_default_status: Unable to delete the default work package status.
-    Please select another default work package status before deleting the current
-    one.
+  error_unable_delete_status: Status Zestawu zadań nie może być usunięty dopóki jest
+    używany przynajmniej w jednym Zestawie zadań.
+  error_unable_delete_default_status: Nie można usunąć domyślnego statusu zadań. Proszę
+    wybrać innych domyślny status zadań przed usunięciem aktualnego.
   error_unable_to_connect: Nie można połączyć (%{value})
   error_workflow_copy_source: Wybierz typ źródła lub rolę
   error_workflow_copy_target: Wybierz docelowy typ oraz rolę
@@ -650,7 +649,7 @@ pl:
     Proszę spróbować ponownie.
   events:
     project: Projekt edytowany
-    changeset: Changeset edytowane
+    changeset: Komentarze edytowane
     message: Wiadomość edytowana
     news: Aktualności
     reply: Odpowiedział
@@ -659,9 +658,9 @@ pl:
     work_package_closed: Zadanie zamknięte
     work_package_edit: Zadanie edytowane
     work_package_note: Dodano uwagę do zadania
-  general_csv_decimal_separator: "."
+  general_csv_decimal_separator: ","
   general_csv_encoding: UTF-8
-  general_csv_separator: ","
+  general_csv_separator: "."
   general_first_day_of_week: '7'
   general_lang_name: Polish
   general_pdf_encoding: ISO-8859-2
@@ -732,7 +731,7 @@ pl:
   label_change_status: Zmiana stanu
   label_change_view_all: Zobacz wszystkie zmiany
   label_changes_details: Szczegóły wszystkich zmian
-  label_changeset_plural: Changesets
+  label_changeset_plural: Zmiany
   label_checked: sprawdzone
   label_chronological_order: W porządku chronologicznym
   label_close_versions: Zamknij zakończone wersje
@@ -788,7 +787,7 @@ pl:
   label_enable_multi_select: Włącz wybór wielokrotny
   label_end_to_end: koniec do końca
   label_end_to_start: koniec do początku
-  label_enumeration_new: Nowa wartość wyliczenia
+  label_enumeration_new: Nowa wartość
   label_enumerations: Listy
   label_environment: "Środowisko"
   label_equals: jest
@@ -834,7 +833,7 @@ pl:
   label_work_package_category_new: Nowa kategoria
   label_work_package_category_plural: Kategorie zadań
   label_work_package_hierarchy: Hierarchia zadań
-  label_work_package_new: Nowe zadanie
+  label_work_package_new: Nowe Zadanie
   label_work_package_note_added: Dodano uwagę do zadania
   label_work_package_edit: Edycja zadania %{name}
   label_work_package_plural: Zadania
@@ -904,7 +903,7 @@ pl:
   label_news_added: Wiadomość dodana
   label_news_comment_added: Komentarz został dodany do wiadomości
   label_news_latest: Najnowsze wiadomości
-  label_news_new: Dodawanie wiadomość
+  label_news_new: Dodaj wiadomość
   label_news_edit: Edycja wiadomości
   label_news_plural: Aktualności
   label_news_view_all: Zobacz wszystkie wiadomości
@@ -1030,7 +1029,7 @@ pl:
   label_this_week: ten tydzień
   label_this_year: ten rok
   label_time_entry_plural: Czas pracy
-  label_time_sheet_menu: Time sheet
+  label_time_sheet_menu: Grafik
   label_time_tracking: Zarządzanie czasem
   label_today: Dzisiaj
   label_top_menu: Głowne Menu
@@ -1084,7 +1083,7 @@ pl:
   label_wiki_show_submenu_item: 'Pokaż jako pozycję podmenu '
   label_work_package: Zadania
   label_workflow: Przepływ pracy
-  label_workflow_plural: Przepływy pracy
+  label_workflow_plural: Przepływ zadań
   label_workflow_summary: Streszczenie
   label_x_closed_work_packages_abbr:
     one: 1 zamknięte
@@ -1144,9 +1143,9 @@ pl:
     only)
   label_visible_elements: Elementy widoczne
   auth_source:
-    using_abstract_auth_source: Can't use an abstract authentication source.
+    using_abstract_auth_source: Nie można użyć fikcyjnego źródła uwierzytelniania.
     ldap_error: 'Błąd LDAP: %{error_message}'
-    ldap_auth_failed: Could not authenticate at the LDAP-Server.
+    ldap_auth_failed: Nie można uwierzytelnić na serwerze LDAP.
   macro_execution_error: Błąd podczas wykonywania makra %{macro_name}
   macro_unavailable: Makro %{macro_name} nie może zostać wyświetlone.
   mail_body_account_activation_request: 'A new user (%{value}) has registered. The
@@ -1237,7 +1236,7 @@ pl:
     format:
       delimiter: ''
       precision: 3
-      separator: "."
+      separator: ","
     human:
       format:
         delimiter: ''
@@ -1356,7 +1355,7 @@ pl:
   setting_default_language: Język domyślny
   setting_default_notification_option: Domyślnie opcja powiadomienia
   setting_default_projects_modules: Domyślnie włączone moduły dla nowych projektów
-  setting_default_projects_public: Nowe projekty są domyślnie publiczne
+  setting_default_projects_public: Nowe projekty są publiczne (domyślnie)
   setting_diff_max_lines_displayed: Maksymalna wyświetlana liczba linii różnic
   setting_display_subprojects_work_packages: Wyświetlaj domyślnie zadania podprojektów
     na głównym projekcie
@@ -1384,10 +1383,10 @@ pl:
     dla wszystkich żądań
   setting_login_required: Wymagane uwierzytelnienie
   setting_mail_from: Adres emisji
-  setting_mail_handler_api_enabled: Enable incoming email web service
-  setting_mail_handler_api_description: The email web handler enables OpenProject
-    to receive emails containing specific commands as an instrumentation mechanism
-    (e.g., to create and update work packages).
+  setting_mail_handler_api_enabled: Włącz usługę przychodzących wiadomości e-mail
+  setting_mail_handler_api_description: Silnik e-mail umożliwia OpenProject otrzymywać
+    e-maile zawierające konkretne polecenia jako mechanizm instrumentacji (np. do
+    tworzenia i aktualizacji pakietów roboczych).
   setting_mail_handler_api_key: Klucz API
   setting_mail_handler_body_delimiters: Obcinanie e-mail po jednej z tych linii
   setting_new_project_user_role_id: Rola dla użytkownika bez uprawnień administratora,
@@ -1415,9 +1414,9 @@ pl:
   setting_session_ttl_hint: Value below 5 works like disabled
   setting_session_ttl_enabled: Sesja wygasła
   setting_start_of_week: Początek tygodnia od
-  setting_sys_api_enabled: Enable repository management web service
-  setting_sys_api_description: The repository management web service provides integration
-    and user authorization for accessing repositories.
+  setting_sys_api_enabled: Uaktywnij zarządzanie repozytoriami przez www
+  setting_sys_api_description: Zarządzanie repozytoriami przez www umożliwia integrację
+    i autoryzację użytkowników do dostępu do repozytoriów.
   setting_text_formatting: Formatowanie tekstu
   setting_time_format: Format czasu
   setting_ui_theme: Motyw
@@ -1670,7 +1669,7 @@ pl:
     history: Historia
     new_color: Nowy kolor
     new_association: Nowa zależność
-    new_work_package: Nowe zadanie
+    new_work_package: Nowe Zadanie
     new_project_type: Nowy typ projektu
     new_reporting: Nowe zgłoszenie
     new_timeline: Nowy raport na osi czasu
@@ -1778,7 +1777,7 @@ pl:
   wiki_menu_item_setting: Widoczność
   wiki_menu_item_new_main_item_explanation: Usuwasz jedyny główny element menu wiki.
     Teraz musisz wybrać stronę wiki dla których zostanie wygenerowany nowy główny
-    element. Aby usunąć wiki, moduł wiki może zostać dezaktywowany poprzez administratorów
+    element. Aby usunąć wpis, moduł wiki może zostać dezaktywowany poprzez administratorów
     projektu.
   wiki_menu_item_delete_not_permitted: Nie można usunąć elementu menu dla jedynej
     strony wiki.
@@ -1792,7 +1791,7 @@ pl:
       lock_version: Wersja zablokowana
     errors:
       code_401: Musisz być uwierzytelniony, aby otrzymać dostęp do tego zasobu.
-      code_401_wrong_credentials: You did not provide the correct credentials.
+      code_401_wrong_credentials: Nie wprowadziłeś prawidłowych danych uwierzytelniania.
       code_403: Nie masz uprawnień do tego zasobu.
       code_404: Nie można odnaleźć żądanego zasobu.
       code_409: Nie można zaktualizować zasobu ze względu na konfliktujące modyfikacje.
@@ -1800,7 +1799,7 @@ pl:
         '%{actual}'.
       invalid_format: 'Błędny format dla własności ''%{property}'': Format oczekiwany
         ''%{expected_format}'', otrzymano ''%{actual}''.'
-      invalid_json: The request could not be parsed as JSON.
+      invalid_json: "Żądanie nie może być przetworzone jako JSON."
       invalid_relation: Powiązanie jest nieprawidłowe.
       invalid_resource: Dla właściwości '%{property}' wymagany jest link taki jak
         '%{expected}', dostarczono '%{actual}'.
@@ -1808,8 +1807,8 @@ pl:
         na wykonanie tej operacji.
       missing_content_type: nie określono
       missing_request_body: There was no request body.
-      multipart_body_error: The request body did not contain the expected multipart
-        parts.
+      multipart_body_error: "Żądanie źródła nie zawiera oczekiwanych wieloczęściowych
+        elementów."
       multiple_errors: Zostały naruszone ograniczenia wielu pól.
       writing_read_only_attributes: Nie możesz zapisać atrybutu tylko do odczytu.
       render:
