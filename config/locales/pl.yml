@@ -287,7 +287,11 @@ pl:
         reported_project_status: Stan projektu
         created_at: Utworzono
       work_package:
+        begin_insertion: Początek wstawiania
+        begin_deletion: Początek usuwania
         done_ratio: Postęp (%)
+        end_insertion: Koniec wstawiania
+        end_deletion: Koniec usuwania
         fixed_version: Wersja
         parent: Rodzic
         parent_issue: Rodzic
@@ -342,7 +346,7 @@ pl:
         project_association:
           identical_projects: Zależność nie może powstać pomiędzy projektem a nim
             samym.
-          project_association_not_allowed: does not allow associations.
+          project_association_not_allowed: niedozwolone połączenia.
         repository:
           not_available: Producent SCM nie jest dostępny
           not_whitelisted: nie jest dozwolone w tej konfiguracji.
@@ -355,7 +359,7 @@ pl:
               not_start_date: nie jest w dniu rozpoczęcia, chociaż jest to wymagane
                 dla Kamieni Milowych.
             parent_id:
-              cannot_be_milestone: cannot be a milestone.
+              cannot_be_milestone: nie może być kamieniem milowym.
               cannot_be_in_another_project: nie może być w innym projekcie.
               not_a_valid_parent: jest nieprawidłowe.
               does_not_exist: nie istnieje.
@@ -468,7 +472,7 @@ pl:
     responsible: Odpowiedzialny
     role: Rola
     start_date: Data rozpoczęcia
-    status: Stan
+    status: Status
     subject: Temat
     summary: Streszczenie
     title: Tytuł
@@ -967,7 +971,7 @@ pl:
   label_enabled_project_custom_fields: Aktywne pola niestandardowe
   label_enabled_project_types: Aktywne typy
   label_enabled_project_modules: Aktywne moduły
-  label_enabled_project_activities: Enabled time tracking activities
+  label_enabled_project_activities: Włączony czas śledzenia działań
   label_end_to_end: koniec do końca
   label_end_to_start: koniec do początku
   label_enumeration_new: Nowa wartość
@@ -1216,7 +1220,7 @@ pl:
   label_start_to_end: od początku do końca
   label_start_to_start: rozpoczęcie-rozpoczęcie
   label_statistics: Statystyki
-  label_status: Stan
+  label_status: Status
   label_status_updated: Status zadania został zaktualizowany
   label_stay_logged_in: Pozostań zalogowany
   label_storage_free_space: Pozostałe miejsca na dysku
@@ -1246,7 +1250,7 @@ pl:
   label_total: Ogółem
   label_type_new: Nowy typ
   label_type_plural: Typy
-  label_type_default_new_projects: Type activated for new projects by default
+  label_type_default_new_projects: Typ włączony domyślnie dla nowych projektów
   label_ui: Interfejs użytkownika
   label_update_work_package_done_ratios: Aktualizacja wskaźników postępu zadania
   label_updated_time: Aktualizacja %{value} temu
@@ -1575,7 +1579,7 @@ pl:
     subproject_id: Podprojekt
   repositories:
     at_identifier: w %{identifier}
-    atom_revision_feed: Atom revision feed
+    atom_revision_feed: Przegląd wersji Atom'a
     autofetch_information: Zaznacz, jeśli chcesz aby repozytoria były aktualizowane
       automatycznie podczas uzyskiwania dostępu do strony z modułem repozytorium.
       To obejmuje pobieranie z repozytorium i odświeżanie wymagalnej przestrzeni dyskowej.
@@ -1583,16 +1587,17 @@ pl:
       access:
         readwrite: Zapis + Odczyt
         read: Tylko do odczytu
-        none: No checkout access, you may only view the repository through this application.
-      access_permission: Your permissions on this repository
+        none: Brak możliwości sprawdzenia, za pomocą tej aplikacji możesz jedynie
+          przeglądać repozytorium.
+      access_permission: Twoje uprawnienia do repozytorium
       url: Sprawdzenie bazowego adresu URL
       base_url_text: |
         The base URL to use for generating checkout URLs (e.g., https://myserver.example.org/repos/).
         Note: The base URL is only used for rewriting checkout URLs in managed repositories. Other repositories are not altered.
       default_instructions:
-        git: |
-          The data contained in this repository can be downloaded to your computer with Git.
-          Please consult the documentation of Git if you need more information on the checkout procedure and available clients.
+        git: Dane zawarte w tym repozytorium można pobrać na swój komputer za pomocą
+          Git. Jeśli potrzebujesz więcej informacji na temat procedury realizacji
+          transakcji i klientów zapoznaj się z dokumentacją Git.
         subversion: |
           The data contained in this repository can be downloaded to your computer with Subversion.
           Please consult the documentation of Subversion if you need more information on the checkout procedure and available clients.
@@ -1638,8 +1643,8 @@ pl:
         %{path}. Please ensure that OpenProject may write to that folder.'
       unauthorized: You're not authorized to access the repository or the credentials
         are invalid.
-      unavailable: The repository is unavailable.
-      exception_title: 'Cannot access the repository: %{message}'
+      unavailable: Repozytorium jest niedostępne.
+      exception_title: 'Nie można uzyskać dostępu do repozytorium: %{message}'
       disabled_or_unknown_type: Wybrany typ %{type} jest wyłączony lub nie jest już
         dostępny dla %{vendor} producenta SCM.
       disabled_or_unknown_vendor: SCM dostawcy %{vendor} jest wyłączony lub nie jest
@@ -1804,10 +1809,11 @@ pl:
   setting_user_format: Format wyświetlania nazwy użytkownika
   setting_users_deletable_by_admins: Konta użytkowników mogą być usuwane przez administratorów
   setting_users_deletable_by_self: Użytkownicy mogą usuwać swoje konta
-  setting_welcome_text: Welcome block text
-  setting_welcome_title: Welcome block title
+  setting_welcome_text: Tekst bloku powitalnego
+  setting_welcome_title: Tytuł bloku powitalnego
   setting_welcome_on_homescreen: Wyświetl wiadomość powitalną na ekranie głównym
-  setting_welcome_on_projects_page: Display welcome block on project overview
+  setting_welcome_on_projects_page: Wyświetl blok powitalny na stronie powitalnej
+    przeglądu projektu
   setting_wiki_compression: Kompresja historii wiki
   setting_work_package_group_assignment: Allow assignment to groups
   settings:
@@ -1816,7 +1822,7 @@ pl:
     passwords: Hasła
     session: Sesja
     brute_force_prevention: Automatyczne blokowanie użytkowników
-  show_hide_project_menu: Expand/Collapse project menu
+  show_hide_project_menu: Rozwiń/zwiń menu projektu
   status_active: aktywne
   status_invited: zaproszony
   status_registered: zarejestrowany
@@ -1850,7 +1856,7 @@ pl:
   text_enumeration_destroy_question: "%{count} objects are assigned to this value."
   text_file_repository_writable: Można zapisywać do katalogu z załącznikami
   text_git_repo_example: a bare and local repository (e.g. /gitrepo, c:\\gitrepo)
-  text_hint_disable_with_0: 'Note: Disable with 0'
+  text_hint_disable_with_0: 'Uwaga: Wyłącz z 0'
   text_hours_between: Między %{min} i %{max} godzin.
   text_work_package_added: Work package %{id} has been reported by %{author}.
   text_work_package_category_destroy_assignments: Remove category assignments
@@ -2006,7 +2012,7 @@ pl:
         type: Typ
         due_date: Data zakończenia
         name: Nazwa
-        status: Stan
+        status: Status
         responsible: Odpowiedzialny
         start_date: Data rozpoczęcia
       columns: Kolumny
