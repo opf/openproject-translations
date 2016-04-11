@@ -6,9 +6,9 @@ pl:
       loading: "Ładowanie ..."
     close_popup_title: Zamknij okienko
     clipboard:
-      browser_error: Your browser doesn't support copying to clipboard. Please copy
-        the selected text manually.
-      copied_successful: Sucessfully copied to clipboard!
+      browser_error: Twoja przeglądarka nie wspiera kopiowania do schowka. Skopiuj
+        tekst ręcznie.
+      copied_successful: Skopiowano do schowka!
     button_add_watcher: Dodaj obserwatora
     button_cancel: Anuluj
     button_check_all: Zaznacz wszystko
@@ -20,7 +20,7 @@ pl:
     button_edit: Edycja
     button_filter: Filtr
     button_list_view: Widok listy
-    button_show_view: Fullscreen view
+    button_show_view: Tryb pełnoekranowy
     button_log_time: Rejestruj czas pracy
     button_more: Więcej
     button_move: Przenieś
@@ -35,30 +35,33 @@ pl:
     description_selected_columns: Wybrane kolumny
     description_subwork_package: Część zadania
     filter:
+      description:
+        text_open_filter: Otwórz filtr klawiszami strzałek przytrzymując klawisz 'ALT'.
+        text_close_filter: Aby wybrać wpis wybierz opcję i kliknij np. enter. Aby
+          usunąć filtr zaznacz (pusty) wpis.
       noneElement: "(brak)"
       sorting:
         criteria:
-          one: First sorting criteria
-          two: Second sorting criteria
-          three: Third sorting criteria
+          one: Pierwsze kryterium sortowania
+          two: Drugie kryterium sortowania
+          three: Trzecie kryterium sortowania
     general_text_no: nie
     general_text_yes: tak
     general_text_No: Nie
     general_text_Yes: Tak
     label_activate: Aktywuj
-    label_activity_no: Activity entry number %{activityNo}
-    label_activity_with_comment_no: Activity entry number %{activityNo}. Has a user
-      comment.
+    label_activity_no: Aktywność %{activityNo}
+    label_activity_with_comment_no: Aktywność %{activityNo} została skomentowana.
     label_add_columns: Dodaj wybrane kolumny
     label_add_comment: Dodaj komentarz
-    label_add_comment_title: Click to add a comment
+    label_add_comment_title: Kliknij aby dodać komentarz
     label_added_by: dodał
     label_added_time_by: Dodał %{author} %{age}
     label_ago: dni temu
     label_all: wszystkie
     label_all_work_packages: wszystkie zadania
     label_ascending: Rosnąco
-    label_author: 'Author: %{user}'
+    label_author: 'Autor: %{user}'
     label_board_locked: Zablokowany
     label_board_sticky: Przyklejony
     label_create_work_package: Tworzenie nowego zadania
@@ -73,11 +76,11 @@ pl:
     label_collapsed: zwinięty
     label_collapse_all: Zwiń wszystko
     label_comment: Komentarz
-    label_committed_at: "%{committed_revision_link} at %{date}"
-    label_committed_link: committed revision %{revision_identifier}
+    label_committed_at: "%{committed_revision_link} w %{date}"
+    label_committed_link: rewizja przeprowadzona %{revision_identifier}
     label_contains: zawiera
-    label_created_on: created on
-    label_edit_comment: Edit this comment
+    label_created_on: utworzono
+    label_edit_comment: Edytuj komentarz
     label_equals: jest
     label_expand: Rozwiń
     label_expanded: rozwinięty
@@ -91,7 +94,7 @@ pl:
     label_format_pdf_with_descriptions: PDF z opisami
     label_greater_or_equal: ">="
     label_group_by: Grupuj według
-    label_hide_attributes: Hide empty attributes
+    label_hide_attributes: Ukryj puste atrybuty
     label_hide_column: Ukryj kolumnę
     label_in: w
     label_in_less_than: w mniej niż
@@ -117,13 +120,13 @@ pl:
     label_open_work_packages: Otwarte
     label_previous: Poprzedni
     label_per_page: 'Na stronie:'
-    label_quote_comment: Quote this comment
+    label_quote_comment: Cytuj komentarz
     label_remove_columns: Usuń zaznaczone kolumny
     label_save_as: Zapisz jako
     label_select_watcher: Wybierz obserwatora...
     label_selected_filter_list: Wybrane filtry
     label_share: Udostępnij
-    label_show_attributes: Show all attributes
+    label_show_attributes: Pokaż wszystkie atrybuty
     label_show_in_menu: Pokaż stronę w menu
     label_sort_by: Sortuj według
     label_sorted_by: posortowane według
@@ -136,7 +139,7 @@ pl:
     label_today: Dzisiaj
     label_total_progress: "%{percent}% Całkowitego postępu"
     label_visible_for_others: Strona widoczna dla innych
-    label_updated_on: updated on
+    label_updated_on: zaktualizowany
     label_work_package: Zadania
     label_work_package_plural: Zadania
     label_watch: Obserwuj
@@ -151,38 +154,37 @@ pl:
     label_custom_queries: Kwerendy prywatne
     label_columns: Kolumny
     label_attachments: Pliki
-    label_drop_files: Drop files here
-    label_drop_files_hint: or click to add files
-    label_remove_file: Delete %{fileName}
-    label_remove_watcher: Remove watcher %{name}
-    label_remove_all_files: Delete all files
-    label_add_description: Add a description for %{file}
-    label_upload_notification: 'Uploading files for Work package #%{id}: %{subject}'
-    label_files_to_upload: 'These files will be uploaded:'
-    label_rejected_files: 'These files cannot be uploaded:'
-    label_rejected_files_reason: These files cannot be uploaded as their size is greater
-      than %{maximumFilesize}
-    label_wait: Please wait for configuration...
-    label_upload_counter: "%{done} of %{count} files finished"
-    label_validation_error: 'The work package could not be saved due to the following
-      errors:'
+    label_drop_files: Upuść pliki tutaj
+    label_drop_files_hint: lub kliknij aby dodać pliki
+    label_remove_file: Usuń %{fileName}
+    label_remove_watcher: Usuń obserwującego %{name}
+    label_remove_all_files: Usuń wszystkie pliki
+    label_add_description: Dodaj opis do %{file}
+    label_upload_notification: 'Wgrywanie plików dla Zestawu Zadań #%{id}: %{subject}'
+    label_files_to_upload: 'Pliki te zostaną przesłane:'
+    label_rejected_files: 'Pliki nie mogą być przesłane:'
+    label_rejected_files_reason: Wymienione pliki nie mogą być przesłane gdyż ich
+      rozmiar jest większy niż %{maximumFilesize}
+    label_wait: Proszę poczekaj na zakończenie konfiguracji...
+    label_upload_counter: "%{done} z %{count} plików ukończono"
+    label_validation_error: 'Zadania nie mogą być zapisane z powodu błędów:'
     placeholders:
       default: "-"
     text_are_you_sure: Jesteś pewien?
     watchers:
-      label_loading: loading watchers...
-      label_error_loading: An error occured while loading the watchers
-      label_search_watchers: Search watchers
+      label_loading: "ładowanie obserwatorów..."
+      label_error_loading: Wystąpił błąd podczas ładowania obserwatorów
+      label_search_watchers: Szukaj obserwatorów
       label_add: Dodawanie obserwatorów
-      label_discard: Discard selection
-      label_click_to_add: Click to add watchers
+      label_discard: Odznacz wszystkie
+      label_click_to_add: Kliknij aby dodać obserwatorów
     filter_labels:
       assigned_to: Przypisany do
       assigned_to_role: Przypisany do roli
       author: Autor
       category: Kategoria
       created_at: Utworzone
-      done_ratio: Progress (%)
+      done_ratio: Postęp (%)
       due_date: Termin
       estimated_hours: Szacowany czas
       fixed_version: Wersja
@@ -191,12 +193,12 @@ pl:
       parent_issue: Rodzic
       parent_work_package: Rodzic
       priority: Priorytet
-      progress: Progress (%)
+      progress: Postęp (%)
       project: Projekt
       responsible: Odpowiedzialny
       spent_time: Czas pracy
       start_date: Data rozpoczęcia
-      status: Stan
+      status: Status
       subject: Temat
       subproject: Podprojekt
       time_entries: Rejestruj czas pracy
@@ -225,8 +227,8 @@ pl:
       add_precedes: Dodaj poprzedzający
       add_follows: Dodaj następujące
     repositories:
-      select_tag: Select tag
-      select_branch: Select branch
+      select_tag: Wybierz tag
+      select_branch: Wybierz gałąź
     field_value_enter_prompt: Wprowadź wartość dla '%{field}'
     select2:
       input_too_short:
@@ -246,7 +248,7 @@ pl:
       work package(s)?
     text_query_destroy_confirmation: Czy jesteś pewien, że chcesz usunąć zaznaczone
       elementy?
-    text_attachment_destroy_confirmation: Are you sure you want to delete the attachment?
+    text_attachment_destroy_confirmation: Jesteś pewien, że chcesz usunąć ten załącznik?
     timelines:
       cancel: Anuluj
       change: Zmiany w zakresie planowania
@@ -268,13 +270,13 @@ pl:
           type: Typ
           due_date: Data zakończenia
           name: Nazwa
-          status: Stan
+          status: Status
           responsible: Odpowiedzialny
           start_date: Data rozpoczęcia
         grouping_other: Inne
         noneSelection: "(brak)"
       name: Nazwa
-      new_work_package: Nowe zadanie
+      new_work_package: Nowe Zadanie
       outline: Reset Outline
       outlines:
         aggregation: Pokaż tylko podsumowania
@@ -327,16 +329,16 @@ pl:
       image: Obraz
     work_packages:
       button_clear: Wyczyść
-      comment_added: The comment was successfully added.
-      comment_send_failed: An error has occured. Could not submit the comment.
-      comment_updated: The comment was successfully updated.
+      comment_added: Komentarz został dodany pomyślnie.
+      comment_send_failed: Wystąpił błąd. Nie można zamieścić komentarza.
+      comment_updated: Komentarz zaktualizowano pomyślnie.
       description_filter: Filtr
       description_enter_text: Wpisz tekst
       description_options_hide: Ukryj opcje
       description_options_show: Pokaż opcje
       error: Wystąpił błąd.
-      error_update_failed: The work package could not be updated.
-      edit_attribute: "%{attribute} - Edit"
+      error_update_failed: Zadanie nie może być zaktualizowane.
+      edit_attribute: "%{attribute} - Edytuj"
       key_value: "%{key}: %{value}"
       label_enable_multi_select: Włącz wybór wielokrotny
       label_disable_multi_select: Wyłącz wybór wielokrotny
@@ -344,12 +346,12 @@ pl:
       label_options: Opcje
       label_column_multiselect: "Łączone pole rozwijane: Wybierz za pomocą klawiszy
         strzałek, potwierdź wybór klawiszem enter, usuń klawiszem backspace"
-      message_error_during_bulk_delete: Wystąpił błąd podczas próby usunięcia pracy.
+      message_error_during_bulk_delete: Wystąpił błąd podczas próby usunięcia zadania.
       message_successful_bulk_delete: Pomyślnie usunięto zadania.
       no_value: Brak wartości
       create:
-        header: New Work Package
-        header_with_parent: 'New work package (Child of %{type} #%{id})'
+        header: Nowe Zadanie
+        header_with_parent: 'Nowe Zadanie (dziecko %{type} #%{id})'
       no_results:
         title: Brak zadań do wyświetlenia
         description_html: "<p>Nie zostały utworzone lub wszystkie zadania są odfiltrowane.</p>"
@@ -373,7 +375,7 @@ pl:
         projectName: Projekt
         responsible: Odpowiedzialny
         startDate: Data rozpoczęcia
-        status: Stan
+        status: Status
         subject: Temat
         title: Tytuł
         type: Typ
@@ -422,8 +424,8 @@ pl:
         delete: Usuń
       filter: Filtr
       unselected_title: Zadania
-      search_query_label: Search saved filter queries
-      search_query_title: Click to search saved filter queries
+      search_query_label: Szukaj zapisanych filtrów
+      search_query_title: Kliknij aby wyszukać zapisane filtry
     modals:
       label_settings: Zmień nazwę kwerendy
       label_name: Nazwa
@@ -438,14 +440,14 @@ pl:
     notice_bad_request: Nieprawidłowe żądanie.
     relations:
       empty: Brak relacji
-      remove: Remove relation
+      remove: Usuń relację
     inplace:
       button_edit: "%{attribute}: Edytuj"
       button_save: "%{attribute}: Zapisz"
       button_cancel: "%{attribute}: Anuluj"
       button_save_all: Zapisz
       button_cancel_all: Anuluj
-      link_formatting_help: Formatowanie tekstu
+      link_formatting_help: Formatowanie tekstu - pomoc
       btn_preview_enable: Podgląd
       btn_preview_disable: Wyłącz podgląd
       null_value_label: Brak wartości

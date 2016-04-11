@@ -65,8 +65,8 @@ fr:
       no_results_title_text: Aucun jeton d'accès disponible pour le moment.
   news:
     index:
-      no_results_title_text: Il n'y a actuellement aucune nouvelle à publier.
-      no_results_content_text: Ajouter une nouvelle
+      no_results_title_text: Il n'y a actuellement aucune actualité à publier.
+      no_results_content_text: Ajouter une actualité
     my_page:
       no_results_title_text: Rien de nouveau à signaler.
   users:
@@ -74,8 +74,8 @@ fr:
       no_results_title_text: Cet utilisateur n'est membre d'aucun projet pour le moment.
   reportings:
     index:
-      no_results_title_text: Il n'y a actuellement aucun rapport de statuts.
-      no_results_content_text: Ajouter un rapport de statuts
+      no_results_title_text: Il n'y a actuellement aucun rapport d'état.
+      no_results_content_text: Ajouter un rapport d'état
   statuses:
     index:
       no_results_title_text: Aucun statut de lots de travaux pour le moment.
@@ -293,12 +293,16 @@ fr:
         name: Nom
         options: ''
       reporting:
-        reported_project_status_comment: Commentaire du statut
-        reporting_to_project: Rapports de projet
+        reported_project_status_comment: Commentaire de l'état
+        reporting_to_project: Rapporte au projet
         reported_project_status: "État du projet"
         created_at: Créé
       work_package:
+        begin_insertion: Begin of the insertion
+        begin_deletion: Begin of the deletion
         done_ratio: Progrès (%)
+        end_insertion: End of the insertion
+        end_deletion: End of the deletion
         fixed_version: Version
         parent: Parent
         parent_issue: Parent
@@ -308,7 +312,7 @@ fr:
         responsible: Responsable
         spent_time: Temps passé
         subproject: Sous-projet
-        time_entries: Enregister temps
+        time_entries: Consigner temps
         type: Type
         watcher: Observateur
     errors:
@@ -519,7 +523,7 @@ fr:
   button_generate: Générer
   button_list: Liste
   button_lock: Verrouiller
-  button_log_time: Enregister temps
+  button_log_time: Consigner temps
   button_login: Connexion
   button_move: Déplacer
   button_move_and_follow: Déplacer et suivre
@@ -558,9 +562,7 @@ fr:
       failed: Impossible de copier le projet "%{source_project_name}" vers le projet
         "%{target_project_name}".
       succeeded: Projet "%{source_project_name}" copié vers "%{target_project_name}".
-  create_child_page: Créer nouvelle page enfant
-  create_child_page_for: 'Créer la nouvelle page de l''enfant: "%{title}"'
-  create_new_page: Créer nouvelle page
+  create_new_page: Create wiki page
   date:
     abbr_day_names:
     - Dim
@@ -764,7 +766,8 @@ fr:
   error_check_user_and_role: Veuillez choisir un utilisateur et un rôle.
   error_cookie_missing: Le cookie OpenProject est manquant. Assurez-vous que les cookies
     sont activés, sans quoi cette application ne fonctionnera pas correctement.
-  error_token_authenticity: Unable to verify Cross-Site Request Forgery token.
+  error_token_authenticity: Impossible de vérifier le jeton de Cross-Site Request
+    Forgery.
   error_work_package_done_ratios_not_updated: Les ratios de Lots de Travaux achevés
     n'ont pas été mis à jour.
   error_work_package_not_found_in_project: Le Lot de Travaux n'a pas été trouvé ou
@@ -1344,7 +1347,7 @@ fr:
   label_keyboard_shortcut_go_activity: Aller aux activités du projet
   label_keyboard_shortcut_go_calendar: Aller au calendrier du projet
   label_keyboard_shortcut_go_news: Aller aux actualités du projet
-  label_keyboard_shortcut_go_timelines: Aller à la vue Chronologique
+  label_keyboard_shortcut_go_timelines: Aller aux lignes du temps
   label_keyboard_shortcut_new_work_package: Créer un nouveau Lot de Travaux
   label_keyboard_shortcut_details_package: Afficher le volet de détails des Lots de
     Travaux
@@ -1506,8 +1509,8 @@ fr:
   permission_delete_messages: Supprimer des messages
   permission_delete_own_messages: Supprimer ses propres messages
   permission_delete_project_associations: Supprimer des dépendances du projet
-  permission_delete_reportings: Supprimer des rapports
-  permission_delete_timelines: Supprimer des lignes du temps
+  permission_delete_reportings: Supprimer rapports
+  permission_delete_timelines: Supprimer lignes du temps
   permission_delete_wiki_pages: Supprimer des pages wiki
   permission_delete_wiki_pages_attachments: Supprimer des pièces jointes
   permission_edit_work_package_notes: "Éditer des notes"
@@ -1518,7 +1521,7 @@ fr:
   permission_edit_own_time_entries: "Éditer mes propres enregistrements de temps"
   permission_edit_project: "Éditer le projet"
   permission_edit_project_associations: "Éditer les dépendances du project"
-  permission_edit_reportings: "Éditer les rapports"
+  permission_edit_reportings: "Éditer rapports"
   permission_edit_time_entries: "Éditer les enregistrements de temps"
   permission_edit_timelines: "Éditer les lignes du temps"
   permission_edit_wiki_pages: "Éditer les pages wiki"
@@ -1551,7 +1554,7 @@ fr:
   permission_view_work_packages: Voir les Lots de Travaux
   permission_view_messages: Voir les messages
   permission_view_project_associations: Voir les dépendances du projet
-  permission_view_reportings: Voir les rapports
+  permission_view_reportings: Voir rapports
   permission_view_time_entries: Voir temps passé
   permission_view_timelines: Voir les lignes du temps
   permission_view_wiki_edits: Voir l'historique du wiki
@@ -1871,6 +1874,7 @@ fr:
   text_file_repository_writable: Répertoire des pièces jointes accessible en écriture
   text_git_repo_example: un dépôt vide et local (e.x., /gitrepo, c:\\gitrepo)
   text_hint_disable_with_0: 'Note : Désactivez avec 0'
+  text_hours_between: Between %{min} and %{max} hours.
   text_work_package_added: Le Lot de Travaux %{id} a été signalé par %{author}.
   text_work_package_category_destroy_assignments: Supprimer les affectations de catégorie
   text_work_package_category_destroy_question: "(%{count}) Lots de Travaux sont assignés
@@ -1971,8 +1975,8 @@ fr:
       project_types: Types de projet
     project_menu:
       project_associations: Dépendances
-      reportings: Rapports des statuts
-      reports: Rapport Chronologique
+      reportings: Rapports d'état
+      reports: Lignes du temps
       timelines: Chronologie
     add_project_association: Ajouter une dépendance
     associations: Dépendances
@@ -1994,8 +1998,8 @@ fr:
     edit_color: "Éditer la couleur"
     edit_project_type: Editer le type de projet
     edit_thing: "Éditer"
-    edit_timeline: "Éditer le rapport Chronologique %{timeline}"
-    delete_timeline: Supprimer le rapport Chronologique %{timeline}
+    edit_timeline: "Éditer la ligne du temps %{timeline}"
+    delete_timeline: Supprimer la ligne du temps %{timeline}
     empty: "(vide)"
     enable_type_in_project: Autorise le type « %{type} »
     end: Fin
@@ -2092,12 +2096,12 @@ fr:
     new_work_package: Nouveau Lot de Travaux
     new_project_type: Nouveau type de projet
     new_reporting: Nouveau rapport
-    new_timeline: Nouveau calendrier lié
+    new_timeline: Nouvelle ligne du temps
     no_projects_for_reporting_available: Il n'y a pas de projets pour lesquels une
       association de rapport peut être créée.
     no_right_to_view_timeline: Vous n'avez pas les permissions nécessaires pour consulter
       la ligne du temps référencée.
-    no_timeline_for_id: Il n'y a pas de calendrier lié avec l'ID %{id}.
+    no_timeline_for_id: Il n'y a pas de la ligne du temps avec l'ID %{id}.
     notice_successful_deleted_all_elements: Tous les éléments ont été supprimés avec
       succès
     outline: Réinitialiser le contour
@@ -2110,13 +2114,13 @@ fr:
       level5: Déplier 5 niveaux
       all: Tout montrer
     reporting_for_project:
-      show: 'Statut signalé au projet: %{title}'
-      edit_delete: 'Rapport de statut pour le projet: %{title}'
-      history: 'Historique du statut pour le projet: %{title}'
+      show: "État rapporté au projet : %{title}"
+      edit_delete: 'rapport d''état pour le projet : %{title}'
+      history: 'Historique d''état pour le projet : %{title}'
     reporting:
-      delete: 'Supprimer le statut: %{comment}'
-      edit: 'Modifier le statut: %{comment}'
-      show: 'Statut: %{comment}'
+      delete: 'Supprimer l''état : %{comment}'
+      edit: 'Modifier l''état : %{comment}'
+      show: "État : %{comment}"
     planning_element_update: 'Mis à jour: %{title}'
     work_packages_are_displayed_in_aggregations: Les Lots de Travaux sont affichés
       dans les agrégations
@@ -2127,7 +2131,7 @@ fr:
     project_association_of_type: Dépendance au projet de type « %{type} »
     project_type_could_not_be_saved: Le projet type n'a pas pu être sauvegardé
     type_could_not_be_saved: Le type n'a pas pu être sauvegardé
-    reporting_could_not_be_saved: Le rapport n'a pas pu être sauvegardé
+    reporting_could_not_be_saved: Le rapport n'a pas pu être enregistré
     properties: Propriétés
     really_delete_color: "Êtes-vous sûr de vouloir supprimer la couleur suivante ?
       Les types utilisant cette couleur ne seront pas supprimés."
@@ -2136,14 +2140,13 @@ fr:
       ?
     really_delete_project_type: Voulez-vous vraiment supprimer le projet type suivant?
       Les projets utilisant ce type ne seront pas supprimés.
-    really_delete_timeline: Voulez-vous vraiment supprimer le rapport Chronologique
-      suivant ? Les Lots de Travaux présentés dans ce rapport Chronologique ne seront
-      pas supprimés.
-    really_delete_reporting: Voulez-vous vraiment supprimer le rapport suivant? Les
-      statuts de rapport précédents seront eux aussi supprimés.
+    really_delete_timeline: Voulez-vous vraiment supprimer la ligne du temps suivante
+      ? Les lots de travaux affichés dans cette ligne du temps ne seront pas supprimés.
+    really_delete_reporting: Voulez-vous vraiment supprimer le rapport suivant ? Les
+      rapports d'état précédents seront également supprimés.
     start: Début
-    timeline: Rapport Chronologique
-    timelines: Rapport Chronologique
+    timeline: Ligne du temps
+    timelines: Lignes du temps
     settings: Chronologie
     vertical_work_package: Lots de Travaux verticaux
     without_project_type: Sans le projet type
