@@ -163,9 +163,10 @@ lv:
     error_self_registration_disabled: Lietotāja reģistrācija ir atspējota šajā sistēmā.
       Lūdzu, jautājiet administratoram, lai Jums izveido kontu.
     login_with_auth_provider: vai pierakstieties, izmantojot savu esošo kontu
-    signup_with_auth_provider: or sign up using
-    auth_source_login: Please login as <em>%{login}</em> to activate your account.
-    omniauth_login: Please login to activate your account.
+    signup_with_auth_provider: vai reģistrējies, izmantojot
+    auth_source_login: Lūdzu, autorizējaties kā <em>%{login}</em>, lai aktivizētu
+      savu kontu.
+    omniauth_login: Lūdzu, autorizējaties, lai aktivizētu savu kontu.
   actionview_instancetag_blank_option: Lūdzu, atlasiet
   activerecord:
     attributes:
@@ -235,9 +236,9 @@ lv:
         spent_on: Datums
         type: Veids
       type:
-        is_in_roadmap: In roadmap
-        in_aggregation: In aggregation
-        is_milestone: Is milestone
+        is_in_roadmap: Ceļvedī
+        in_aggregation: Apkopojumā
+        is_milestone: Ir atskaites punkts
         color: Krāsa
       user:
         admin: Administrators
@@ -245,7 +246,7 @@ lv:
         language: Valoda
         last_login_on: Pēdējā pieslēgšanās
         mail_notification: E-pasta paziņojumi
-        current_password: Current password
+        current_password: Pašreizējā parole
         new_password: Jaunā parole
         password_confirmation: Jaunā parole atkārtoti
         force_password_change: Pieprasīt paroles nomaiņu pie nākamās ielogošanās
@@ -285,11 +286,11 @@ lv:
         reported_project_status: Projekta statuss
         created_at: Izveidots
       work_package:
-        begin_insertion: Begin of the insertion
-        begin_deletion: Begin of the deletion
+        begin_insertion: Ievietošanas sākums
+        begin_deletion: Dzēšanas sākums
         done_ratio: Progress (%)
-        end_insertion: End of the insertion
-        end_deletion: End of the deletion
+        end_insertion: Ievietošanas beigas
+        end_deletion: Dzēšanas beigas
         fixed_version: Versija
         parent: Parent
         parent_issue: Parent
@@ -304,62 +305,62 @@ lv:
         watcher: Watcher
     errors:
       messages:
-        accepted: must be accepted.
-        blank: can't be blank.
-        cant_link_a_work_package_with_a_descendant: A work package cannot be linked
-          to one of its subtasks.
-        circular_dependency: This relation would create a circular dependency.
-        confirmation: doesn't match %{attribute}.
-        empty: can't be empty.
-        even: must be even.
-        exclusion: is reserved.
-        file_too_large: is too large (maximum size is %{count} Bytes).
-        greater_than: must be greater than %{count}.
-        greater_than_or_equal_to: must be greater than or equal to %{count}.
-        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
-          length.
-        greater_than_start_date: must be greater than start date.
-        inclusion: is not set to one of the allowed values.
-        invalid: is invalid.
-        less_than_or_equal_to: must be less than or equal to %{count}.
-        not_a_date: is not a date.
-        not_a_number: is not a number.
-        not_an_integer: is not an integer.
-        not_same_project: doesn't belong to the same project.
-        odd: must be odd.
-        taken: has already been taken.
-        too_long: is too long (maximum is %{count} characters).
-        too_short: is too short (minimum is %{count} characters).
-        wrong_length: is the wrong length (should be %{count} characters).
-        after: must be after %{date}.
-        after_or_equal_to: must be after or equal to %{date}.
-        before: must be before %{date}.
-        before_or_equal_to: must be before or equal to %{date}.
-        could_not_be_copied: could not be (fully) copied.
+        accepted: ir jāapstiprina.
+        blank: nevar būt tukšs.
+        cant_link_a_work_package_with_a_descendant: Darbu kompleksu nevar saistīt
+          vienu no tā apakšuzdevumiem.
+        circular_dependency: "Šī attiecība radītu riņķveida saistību."
+        confirmation: neatbilst %{attribute}.
+        empty: nedrīkst būt tukšs.
+        even: jābūt vienlīdzīgiem.
+        exclusion: rezervēts.
+        file_too_large: ir pārāk liels (maksimālais lielums ir %{count} baiti).
+        greater_than: jābūt lielākam par %{count}.
+        greater_than_or_equal_to: jābūt lielākam vai vienādam ar %{count}.
+        smaller_than_or_equal_to_max_length: jābūt mazākam vai vienādam ar maksimālo
+          garumu.
+        greater_than_start_date: ir jābūt vēlākam par sākuma datumu.
+        inclusion: nav iestatīts uz vienu no atļautajām vērtībām.
+        invalid: nav derīgs.
+        less_than_or_equal_to: jābūt mazākam vai vienādam ar %{count}.
+        not_a_date: nav datums.
+        not_a_number: nav skaitlis.
+        not_an_integer: nav vesels skaitlis.
+        not_same_project: neietilpst vienā un tai pašā projektā.
+        odd: jābūt nepāra.
+        taken: jau tika aizņemts.
+        too_long: ir pārāk garš (maksimums ir %{count} rakstzīmes).
+        too_short: ir pārāk īss (minimums ir %{count} rakstzīmes).
+        wrong_length: ir nepareizs garums (vajadzētu būt %{count} rakstzīmes).
+        after: jābūt pēc %{date}.
+        after_or_equal_to: jābūt pēc vai vienādam ar %{date}.
+        before: jābūt pirms %{date}.
+        before_or_equal_to: jābūt pirms vai vienādam ar %{date}.
+        could_not_be_copied: nevarēja tikt nokopēts (pilnībā).
       models:
         project:
           attributes:
             types:
-              in_use_by_work_packages: 'still in use by work packages: %{types}'
+              in_use_by_work_packages: 'darbu komplekss joprojām izmanto: %{types}'
         project_association:
           identical_projects: Dependency cannot be created between one project and
             itself.
-          project_association_not_allowed: does not allow associations.
+          project_association_not_allowed: nepieļauj sasaisti.
         repository:
-          not_available: SCM vendor is not available
-          not_whitelisted: is not allowed by the configuration.
-          no_directory: is not a directory.
+          not_available: SCM pārdevējs nav pieejams
+          not_whitelisted: konfigurācija nepieļauj.
+          no_directory: nav mape.
         work_package:
           is_not_a_valid_target_for_time_entries: 'Work package #%{id} is not a valid
             target for reassigning the time entries.'
           attributes:
             due_date:
-              not_start_date: is not on start date, although this is required for
-                milestones.
+              not_start_date: nav sākuma datums, kaut arī tas ir nepieciešams atskaites
+                punktam.
             parent_id:
               cannot_be_milestone: nevar būt atskaites punkts.
               cannot_be_in_another_project: nevar būt cits projekts.
-              not_a_valid_parent: is invalid.
+              not_a_valid_parent: nav derīgs.
               does_not_exist: nepastāv.
             status_id:
               status_transition_invalid: nav derīgs, jo derīga pāreja no vecā uz jauno
@@ -825,6 +826,8 @@ lv:
       glossary: Kopsavilkums
       shortcuts: "Īsinājumtaustiņi"
       forums: Forums
+      blog: Openproject blog
+      boards: Community Forum
   instructions_after_registration: You can sign in as soon as your account has been
     activated by clicking %{signin}.
   instructions_after_logout: You can sign in again by clicking %{signin}.
@@ -1806,7 +1809,7 @@ lv:
     brute_force_prevention: Automated user blocking
   show_hide_project_menu: Expand/Collapse project menu
   status_active: active
-  status_invited: invited
+  status_invited: uzaicināts
   status_registered: registered
   support:
     array:
@@ -1837,7 +1840,7 @@ lv:
   text_enumeration_destroy_question: "%{count} objects are assigned to this value."
   text_file_repository_writable: Attachments directory writable
   text_git_repo_example: a bare and local repository (e.g. /gitrepo, c:\\gitrepo)
-  text_hint_disable_with_0: 'Note: Disable with 0'
+  text_hint_disable_with_0: 'Piezīme: Atspējots ar 0'
   text_hours_between: Between %{min} and %{max} hours.
   text_work_package_added: Work package %{id} has been reported by %{author}.
   text_work_package_category_destroy_assignments: Remove category assignments
@@ -1845,8 +1848,8 @@ lv:
     to this category. What do you want to do?
   text_work_package_category_reassign_to: Reassign work packages to this category
   text_work_package_updated: Work package %{id} has been updated by %{author}.
-  text_work_package_watcher_added: You have been added as a watcher to Work package
-    %{id} by %{watcher_setter}.
+  text_work_package_watcher_added: Jūs tikāt pievienots kā vērotājs darbu kompleksam
+    %{id}, pievienoja %{watcher_setter}.
   text_work_packages_destroy_confirmation: Are you sure you want to delete the selected
     work package(s)?
   text_work_packages_ref_in_commit_messages: Referencing and fixing work packages
@@ -1862,12 +1865,12 @@ lv:
   text_journal_deleted_with_diff: "%{label} deleted (%{link})"
   text_journal_set_to: "%{label} set to %{value}"
   text_journal_set_with_diff: "%{label} set (%{link})"
-  text_latest_note: 'The latest comment is: %{note}'
+  text_latest_note: 'Jaunākais komentārs: %{note}'
   text_length_between: Length between %{min} and %{max} characters.
   text_line_separated: Multiple values allowed (one line for each value).
   text_load_default_configuration: Load the default configuration
   text_min_max_length_info: 0 means no restriction
-  text_no_roles_defined: There are no roles defined.
+  text_no_roles_defined: Nav nevienas definētas lomas.
   text_no_access_tokens_configurable: There are no access tokens which can be configured.
   text_no_configuration_data: |
     Roles, types, work package statuses and workflow have not been configured yet.
@@ -2120,6 +2123,10 @@ lv:
     case the old one expired or the user did not get the original email.
   queries:
     apply_filter: Apply preconfigured filter
+  top_menu:
+    additional_resources: Additional resources
+    getting_started: Getting started
+    help_and_support: Help and support
   total_progress: Kopējais progress
   user:
     all: all
@@ -2142,7 +2149,7 @@ lv:
     lock: Lock permanently
     locked: locked permanently
     registered: registered
-    invited: invited
+    invited: uzaicināts
     reset_failed_logins: Reset failed logins
     status_user_and_brute_force: "%{user} and %{brute_force}"
     unlock: Unlock
