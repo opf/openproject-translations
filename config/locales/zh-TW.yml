@@ -267,11 +267,11 @@ zh-TW:
         reported_project_status: "專案狀態"
         created_at: "已建立"
       work_package:
-        begin_insertion: Begin of the insertion
-        begin_deletion: Begin of the deletion
+        begin_insertion: "開始插入"
+        begin_deletion: "開始刪除"
         done_ratio: "進度 (%)"
-        end_insertion: End of the insertion
-        end_deletion: End of the deletion
+        end_insertion: "結束插入"
+        end_deletion: "結束刪除"
         fixed_version: "版本"
         parent: "主"
         parent_issue: "主"
@@ -508,8 +508,8 @@ zh-TW:
   button_configure_menu_entry: "設定選單項目"
   button_delete_menu_entry: "刪除選單項目"
   copy_project:
-    started: Started to copy project "%{source_project_name}" to "%{target_project_name}".
-      You will be informed by mail as soon as "%{target_project_name}" is available.
+    started: "開始複製專案從「%{source_project_name}」到 「%{target_project_name}」。當「%{target_project_name}」
+      可以使用以後，我們會盡快用郵件通知您。"
     failed: "無法複製專案 %{source_project_name}"
     succeeded: "專案 %{target_project_name} 建立成功"
     errors: "錯誤"
@@ -768,8 +768,8 @@ zh-TW:
       glossary: "術語表 "
       shortcuts: "快捷鍵"
       forums: "論壇"
-      blog: Openproject blog
-      boards: Community Forum
+      blog: Openproject 部落格
+      boards: "社群論壇"
   instructions_after_registration: "帳號啟用後即可點擊 %{signin} 登入"
   instructions_after_logout: "您可點擊 %{signin} 再次登入。"
   instructions_after_error: "你可以試著再按一次 %{signin} 來嘗試登入。如果持續發生錯誤，請向您的管理員尋求幫助。"
@@ -802,6 +802,7 @@ zh-TW:
   label_all: "所有"
   label_all_time: "所有的時間"
   label_all_words: "所以的詞"
+  label_always_visible: Always displayed
   label_and_its_subprojects: "%{value} 與它的子專案"
   label_api_access_key: API金鑰
   label_api_access_key_created_on: API金鑰在 %{value} 以前被建立
@@ -930,6 +931,7 @@ zh-TW:
   label_float: "浮點數"
   label_follows: "關注"
   label_force_user_language_to_default: "設置使用者使用預設語言"
+  label_form_configuration: Form configuration
   label_general: "一般"
   label_generate_key: "產生一個金鑰"
   label_git_path: ".git 目錄的路徑"
@@ -1575,6 +1577,15 @@ zh-TW:
     warnings:
       cannot_annotate: "這個檔案無法註釋"
   search_input_placeholder: "搜尋 ..."
+  setting_email_delivery_method: Email delivery method
+  setting_sendmail_location: Location of the sendmail executable
+  setting_smtp_enable_starttls_auto: Automatically use STARTTLS if available
+  setting_smtp_address: SMTP server
+  setting_smtp_port: SMTP port
+  setting_smtp_authentication: SMTP authentication
+  setting_smtp_domain: SMTP HELLO domain
+  setting_smtp_user_name: SMTP username
+  setting_smtp_password: SMTP password
   setting_activity_days_default: "專案活動顯示的天數"
   setting_app_subtitle: "應用程式副標題"
   setting_app_title: "應用程式標題"
@@ -1681,7 +1692,7 @@ zh-TW:
     passwords: "密碼"
     session: Session
     brute_force_prevention: Automated user blocking
-  show_hide_project_menu: Expand/Collapse project menu
+  show_hide_project_menu: "展開/折疊專案選單"
   status_active: "啟用"
   status_invited: "已邀請"
   status_registered: registered
@@ -1694,6 +1705,9 @@ zh-TW:
   text_are_you_sure: "是否確定？"
   text_are_you_sure_with_children: "刪除工作項目以及所有子工作項目?"
   text_assign_to_project: "分配給專案"
+  text_form_configuration: You can customize which attributes will be displayed by
+    default in forms for work packages of this type. Fields that are required cannot
+    be customized and will always be shown.
   text_caracters_maximum: "最多 %{count} 個字元。"
   text_caracters_minimum: "必須至少 %{count} 個字元長。"
   text_comma_separated: Multiple values allowed (comma separated).
@@ -1714,7 +1728,7 @@ zh-TW:
   text_file_repository_writable: Attachments directory writable
   text_git_repo_example: a bare and local repository (e.g. /gitrepo, c:\\gitrepo)
   text_hint_disable_with_0: "注意: 0 表示停用"
-  text_hours_between: Between %{min} and %{max} hours.
+  text_hours_between: "在 %{min} 到 %{max} 小時。"
   text_work_package_added: Work package %{id} has been reported by %{author}.
   text_work_package_category_destroy_assignments: Remove category assignments
   text_work_package_category_destroy_question: "一些工作項目(%{count})被分配給此類別。你想要做什麼？"
@@ -1786,6 +1800,7 @@ zh-TW:
   text_workflow_edit: "選擇角色與類型以編輯對應的工作流程"
   text_zoom_in: "放大"
   text_zoom_out: "縮小"
+  text_setup_mail_configuration: Configure your email provider
   time:
     am: am
     formats:
@@ -1985,12 +2000,17 @@ zh-TW:
       years: "年"
   title_remove_and_delete_user: "從專案移除已被邀請的使用者別且刪除他/她"
   tooltip_resend_invitation: "重新寄送一封含有新的權杖的邀請函以防舊的過期或者使用者沒有收到原始的郵件！"
+  tooltip:
+    attribute_visibility:
+      default: Show if not empty
+      visible: Always show
+      hidden: Hide by default
   queries:
     apply_filter: Apply preconfigured filter
   top_menu:
-    additional_resources: Additional resources
-    getting_started: Getting started
-    help_and_support: Help and support
+    additional_resources: "其他資源"
+    getting_started: "開始"
+    help_and_support: "説明和支援"
   total_progress: "總進度"
   user:
     all: "所有"
