@@ -10,6 +10,10 @@ id:
       no_results_content_text: Buat proyek baru
     plugins:
       no_results_title_text: Tidak ada plugin yang tersedia saat ini.
+  announcements:
+    show_until: Show until
+    is_active: currently displayed
+    is_inactive: currently not displayed
   auth_sources:
     index:
       no_results_content_title: Tidak ada mode otentikasi saat ini.
@@ -169,6 +173,8 @@ id:
   actionview_instancetag_blank_option: Silakan pilih
   activerecord:
     attributes:
+      announcements:
+        show_until: Display until
       attachment:
         downloads: Download
         file: File
@@ -826,6 +832,7 @@ id:
         expiration: Expires
       indefinite_expiration: Never
   label_account: Akun
+  label_active: Aktif
   label_activity: Activity
   label_add_edit_translations: Add and edit translations
   label_add_another_file: Tambah file lain
@@ -847,6 +854,7 @@ id:
   label_all_time: Sepanjang waktu
   label_all_words: Semua kata
   label_always_visible: Always displayed
+  label_announcement: Announcement
   label_and_its_subprojects: "%{value} dan Sub Project yang"
   label_api_access_key: API access key
   label_api_access_key_created_on: API access key dibuat %{value} yg lalu
@@ -1804,8 +1812,8 @@ id:
   text_are_you_sure_with_children: Hapus Paket-Penugasan dan semua paket turunannya?
   text_assign_to_project: Tetapkan untuk Project
   text_form_configuration: You can customize which attributes will be displayed by
-    default in forms for work packages of this type. Fields that are required cannot
-    be customized and will always be shown.
+    default in forms for work packages of this type. Fields that are required but
+    don't have a default value cannot be customized. They will always be shown.
   text_caracters_maximum: maks. %{count} karakter.
   text_caracters_minimum: Panjang katakter setidaknya %{count} karakter.
   text_comma_separated: Jika ada beberapa nilai, pisahkan dengan koma.
@@ -2107,7 +2115,7 @@ id:
   tooltip:
     attribute_visibility:
       default: Show if not empty
-      visible: Always show
+      visible: Show even if empty
       hidden: Hide by default
   queries:
     apply_filter: Terapkan Filter yang telah dikonfigurasikan

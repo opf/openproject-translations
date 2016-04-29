@@ -10,6 +10,10 @@ nl:
       no_results_content_text: Create a new project
     plugins:
       no_results_title_text: There are currently no plugins available.
+  announcements:
+    show_until: Show until
+    is_active: currently displayed
+    is_inactive: currently not displayed
   auth_sources:
     index:
       no_results_content_title: There are currently no authentication modes.
@@ -174,6 +178,8 @@ nl:
   actionview_instancetag_blank_option: Gelieve te selecteren
   activerecord:
     attributes:
+      announcements:
+        show_until: Display until
       attachment:
         downloads: Downloads
         file: Bestand
@@ -836,6 +842,7 @@ nl:
         expiration: Expires
       indefinite_expiration: Never
   label_account: Account
+  label_active: Actief
   label_activity: Activiteit
   label_add_edit_translations: Add and edit translations
   label_add_another_file: Toevoegen van een ander bestand
@@ -857,6 +864,7 @@ nl:
   label_all_time: aller tijden
   label_all_words: Alle woorden
   label_always_visible: Always displayed
+  label_announcement: Announcement
   label_and_its_subprojects: "%{value} en zijn subprojecten"
   label_api_access_key: API sleutel
   label_api_access_key_created_on: API sleutel %{value} geleden gemaakt
@@ -1832,8 +1840,8 @@ nl:
   text_are_you_sure_with_children: Verwijder werk pakket en alle kinderen daarvan?
   text_assign_to_project: Wijs aan project toe
   text_form_configuration: You can customize which attributes will be displayed by
-    default in forms for work packages of this type. Fields that are required cannot
-    be customized and will always be shown.
+    default in forms for work packages of this type. Fields that are required but
+    don't have a default value cannot be customized. They will always be shown.
   text_caracters_maximum: maximaal %{count} tekens.
   text_caracters_minimum: Moet ten minste %{count} tekens lang zijn.
   text_comma_separated: Meerdere waarden toegestaan (door komma's gescheiden).
@@ -2137,7 +2145,7 @@ nl:
   tooltip:
     attribute_visibility:
       default: Show if not empty
-      visible: Always show
+      visible: Show even if empty
       hidden: Hide by default
   queries:
     apply_filter: Apply preconfigured filter

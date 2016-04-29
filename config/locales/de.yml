@@ -10,6 +10,10 @@ de:
       no_results_content_text: Neues Projekt erstellen
     plugins:
       no_results_title_text: Zur Zeit stehen keine Plugins zur Verfügung.
+  announcements:
+    show_until: Show until
+    is_active: currently displayed
+    is_inactive: currently not displayed
   auth_sources:
     index:
       no_results_content_title: Derzeit gibt es keine Authentifizierungsmodi.
@@ -180,6 +184,8 @@ de:
   actionview_instancetag_blank_option: Bitte auswählen
   activerecord:
     attributes:
+      announcements:
+        show_until: Display until
       attachment:
         downloads: Downloads
         file: Datei
@@ -848,6 +854,7 @@ de:
         expiration: Läuft aus
       indefinite_expiration: Nie
   label_account: Konto
+  label_active: Aktiv
   label_activity: Aktivität
   label_add_edit_translations: Hinzufügen und Bearbeiten von Übersetzungen
   label_add_another_file: Eine weitere Datei hinzufügen
@@ -869,6 +876,7 @@ de:
   label_all_time: gesamter Zeitraum
   label_all_words: Alle Wörter
   label_always_visible: Always displayed
+  label_announcement: Announcement
   label_and_its_subprojects: "%{value} und dessen Unterprojekte"
   label_api_access_key: API-Zugriffsschlüssel
   label_api_access_key_created_on: Der API-Zugriffsschlüssel wurde vor %{value} erstellt
@@ -1864,8 +1872,8 @@ de:
   text_are_you_sure_with_children: Lösche Aufgabe und alle Unteraufgaben?
   text_assign_to_project: Dem Projekt zuweisen
   text_form_configuration: You can customize which attributes will be displayed by
-    default in forms for work packages of this type. Fields that are required cannot
-    be customized and will always be shown.
+    default in forms for work packages of this type. Fields that are required but
+    don't have a default value cannot be customized. They will always be shown.
   text_caracters_maximum: Max. %{count} Zeichen.
   text_caracters_minimum: Muss mindestens %{count} Zeichen lang sein.
   text_comma_separated: Mehrere Werte erlaubt (durch Komma getrennt).
@@ -2181,7 +2189,7 @@ de:
   tooltip:
     attribute_visibility:
       default: Show if not empty
-      visible: Always show
+      visible: Show even if empty
       hidden: Hide by default
   queries:
     apply_filter: vorkonfigurierten Filter anwenden

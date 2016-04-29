@@ -10,6 +10,10 @@ hr:
       no_results_content_text: Novi projekt
     plugins:
       no_results_title_text: Nema dostupnih dodataka.
+  announcements:
+    show_until: Show until
+    is_active: currently displayed
+    is_inactive: currently not displayed
   auth_sources:
     index:
       no_results_content_title: Trenutno ne postoji mehanizam provjere autentičnosti.
@@ -178,6 +182,8 @@ hr:
   actionview_instancetag_blank_option: Molimo odaberite
   activerecord:
     attributes:
+      announcements:
+        show_until: Display until
       attachment:
         downloads: Preuzimanja
         file: Datoteka
@@ -857,6 +863,7 @@ hr:
         expiration: Vrijedi do
       indefinite_expiration: Nikad
   label_account: Korisnički račun
+  label_active: Aktivno
   label_activity: Aktivnost
   label_add_edit_translations: Dodaj i uredi prijevode
   label_add_another_file: Nova datoteka
@@ -878,6 +885,7 @@ hr:
   label_all_time: sve vrijeme
   label_all_words: Sve riječi
   label_always_visible: Always displayed
+  label_announcement: Announcement
   label_and_its_subprojects: "%{value} i njegovi podprojekti"
   label_api_access_key: API pristupni ključ
   label_api_access_key_created_on: API pristupni ključ kreiran %{value} prije
@@ -1864,8 +1872,8 @@ hr:
   text_are_you_sure_with_children: Izbriši radni paket i sve podređene radne pakete?
   text_assign_to_project: Pridruži projektu
   text_form_configuration: You can customize which attributes will be displayed by
-    default in forms for work packages of this type. Fields that are required cannot
-    be customized and will always be shown.
+    default in forms for work packages of this type. Fields that are required but
+    don't have a default value cannot be customized. They will always be shown.
   text_caracters_maximum: "%{count} maksimalno znakova."
   text_caracters_minimum: Must be at least %{count} characters long.
   text_comma_separated: Multiple values allowed (comma separated).
@@ -2169,7 +2177,7 @@ hr:
   tooltip:
     attribute_visibility:
       default: Show if not empty
-      visible: Always show
+      visible: Show even if empty
       hidden: Hide by default
   queries:
     apply_filter: Primjenite prethodno konfigurirani filter

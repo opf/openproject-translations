@@ -10,6 +10,10 @@ zh:
       no_results_content_text: "创建一个新的项目"
     plugins:
       no_results_title_text: "目前没有插件可用。"
+  announcements:
+    show_until: Show until
+    is_active: currently displayed
+    is_inactive: currently not displayed
   auth_sources:
     index:
       no_results_content_title: "目前是非身份验证模式。"
@@ -151,6 +155,8 @@ zh:
   actionview_instancetag_blank_option: "请选择"
   activerecord:
     attributes:
+      announcements:
+        show_until: Display until
       attachment:
         downloads: "下载"
         file: "文件"
@@ -785,6 +791,7 @@ zh:
         expiration: "过期"
       indefinite_expiration: "永不"
   label_account: "帐户"
+  label_active: "激活"
   label_activity: "活动"
   label_add_edit_translations: "添加和编辑翻译"
   label_add_another_file: "添加另一个文件"
@@ -804,6 +811,7 @@ zh:
   label_all_time: "所有的时间"
   label_all_words: "所有的词"
   label_always_visible: Always displayed
+  label_announcement: Announcement
   label_and_its_subprojects: "%{value} 及其子项目"
   label_api_access_key: API 访问键
   label_api_access_key_created_on: API 访问密钥创建于 %{value} 前
@@ -1690,8 +1698,8 @@ zh:
   text_are_you_sure_with_children: "删除工作包和所有子工作包吗？"
   text_assign_to_project: "分配给项目"
   text_form_configuration: You can customize which attributes will be displayed by
-    default in forms for work packages of this type. Fields that are required cannot
-    be customized and will always be shown.
+    default in forms for work packages of this type. Fields that are required but
+    don't have a default value cannot be customized. They will always be shown.
   text_caracters_maximum: "最多 %{count} 字符。"
   text_caracters_minimum: "必须至少为 %{count} 个字符长。"
   text_comma_separated: "允许有多个值 （逗号分隔）。"
@@ -1954,7 +1962,7 @@ zh:
   tooltip:
     attribute_visibility:
       default: Show if not empty
-      visible: Always show
+      visible: Show even if empty
       hidden: Hide by default
   queries:
     apply_filter: "应用预配置筛选器"

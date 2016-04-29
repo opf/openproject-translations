@@ -10,6 +10,10 @@ es:
       no_results_content_text: Crear un nuevo proyecto
     plugins:
       no_results_title_text: No hay complementos disponibles.
+  announcements:
+    show_until: Show until
+    is_active: currently displayed
+    is_inactive: currently not displayed
   auth_sources:
     index:
       no_results_content_title: Actualmente no hay modos de autenticación.
@@ -185,6 +189,8 @@ es:
   actionview_instancetag_blank_option: Por favor, elija
   activerecord:
     attributes:
+      announcements:
+        show_until: Display until
       attachment:
         downloads: Descargas
         file: Archivo
@@ -852,6 +858,7 @@ es:
         expiration: Expira
       indefinite_expiration: Nunca
   label_account: Cuenta
+  label_active: Activo
   label_activity: Actividad
   label_add_edit_translations: Añadir y editar traducciones
   label_add_another_file: Agregar otro archivo
@@ -873,6 +880,7 @@ es:
   label_all_time: todo el tiempo
   label_all_words: Todas las palabras
   label_always_visible: Always displayed
+  label_announcement: Announcement
   label_and_its_subprojects: "%{value} y sus subproyectos"
   label_api_access_key: Código de acceso API
   label_api_access_key_created_on: Código de acceso API creado  hace %{value}
@@ -1882,8 +1890,8 @@ es:
     dependientes?"
   text_assign_to_project: Asignar al proyecto
   text_form_configuration: You can customize which attributes will be displayed by
-    default in forms for work packages of this type. Fields that are required cannot
-    be customized and will always be shown.
+    default in forms for work packages of this type. Fields that are required but
+    don't have a default value cannot be customized. They will always be shown.
   text_caracters_maximum: "% {count} caracteres máximo."
   text_caracters_minimum: Debe tener al menos %{count} caracteres de largo.
   text_comma_separated: Permitir múltiples valores (separados por comas).
@@ -2197,7 +2205,7 @@ es:
   tooltip:
     attribute_visibility:
       default: Show if not empty
-      visible: Always show
+      visible: Show even if empty
       hidden: Hide by default
   queries:
     apply_filter: Aplicar filtro preconfigurado

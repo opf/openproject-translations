@@ -10,6 +10,10 @@ ja:
       no_results_content_text: Create a new project
     plugins:
       no_results_title_text: There are currently no plugins available.
+  announcements:
+    show_until: Show until
+    is_active: currently displayed
+    is_inactive: currently not displayed
   auth_sources:
     index:
       no_results_content_title: There are currently no authentication modes.
@@ -156,6 +160,8 @@ ja:
   actionview_instancetag_blank_option: "選択してください"
   activerecord:
     attributes:
+      announcements:
+        show_until: Display until
       attachment:
         downloads: "ダウンロード数"
         file: "ファイル"
@@ -794,6 +800,7 @@ ja:
         expiration: Expires
       indefinite_expiration: Never
   label_account: "アカウント"
+  label_active: "有効"
   label_activity: "活動"
   label_add_edit_translations: Add and edit translations
   label_add_another_file: "別のファイルを追加"
@@ -813,6 +820,7 @@ ja:
   label_all_time: "全期間"
   label_all_words: "全ての単語"
   label_always_visible: Always displayed
+  label_announcement: Announcement
   label_and_its_subprojects: "%{value}とその子プロジェクト"
   label_api_access_key: APIアクセスキー
   label_api_access_key_created_on: APIアクセスキーが%{value}前に作成されました
@@ -1744,8 +1752,8 @@ ja:
   text_are_you_sure_with_children: "仕事項目と子項目を削除してもよろしいですか？"
   text_assign_to_project: "プロジェクト自体に割り当てする"
   text_form_configuration: You can customize which attributes will be displayed by
-    default in forms for work packages of this type. Fields that are required cannot
-    be customized and will always be shown.
+    default in forms for work packages of this type. Fields that are required but
+    don't have a default value cannot be customized. They will always be shown.
   text_caracters_maximum: "最大%{count}文字です。"
   text_caracters_minimum: "最低%{count}文字の長さが必要です。"
   text_comma_separated: "（カンマで区切ることで）複数の値を設定できます。"
@@ -2017,7 +2025,7 @@ ja:
   tooltip:
     attribute_visibility:
       default: Show if not empty
-      visible: Always show
+      visible: Show even if empty
       hidden: Hide by default
   queries:
     apply_filter: "構成済みのフィルタを適用する"

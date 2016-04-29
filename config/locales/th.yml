@@ -10,6 +10,10 @@ th:
       no_results_content_text: Create a new project
     plugins:
       no_results_title_text: There are currently no plugins available.
+  announcements:
+    show_until: Show until
+    is_active: currently displayed
+    is_inactive: currently not displayed
   auth_sources:
     index:
       no_results_content_title: There are currently no authentication modes.
@@ -171,6 +175,8 @@ th:
   actionview_instancetag_blank_option: "โปรดเลือก"
   activerecord:
     attributes:
+      announcements:
+        show_until: Display until
       attachment:
         downloads: "ดาวน์โหลด"
         file: "ไฟล์"
@@ -827,6 +833,7 @@ th:
         expiration: Expires
       indefinite_expiration: Never
   label_account: "บัญชี"
+  label_active: "ใช้งานอยู่"
   label_activity: "กิจกรรม"
   label_add_edit_translations: Add and edit translations
   label_add_another_file: "เพิ่มไฟล์อื่น"
@@ -846,6 +853,7 @@ th:
   label_all_time: "ตลอดเวลา"
   label_all_words: "ทุกคำ"
   label_always_visible: Always displayed
+  label_announcement: Announcement
   label_and_its_subprojects: "%{value} และโครงการย่อยที่เกี่ยวข้องทั้งหมด"
   label_api_access_key: "คีย์การเข้าถึง API"
   label_api_access_key_created_on: "คีย์การเข้าถึง API ซึ่งสร้างเมื่อ %{value} ที่ผ่านมา"
@@ -1791,8 +1799,8 @@ th:
   text_are_you_sure_with_children: "ลบชุดภารกิจและ ชุดภารกิจย่อยที่เกี่ยวข้องทั้งหมดหรือไม่?"
   text_assign_to_project: "กำหนดไปยังโครงการ"
   text_form_configuration: You can customize which attributes will be displayed by
-    default in forms for work packages of this type. Fields that are required cannot
-    be customized and will always be shown.
+    default in forms for work packages of this type. Fields that are required but
+    don't have a default value cannot be customized. They will always be shown.
   text_caracters_maximum: "สูงสุด %{count} ตัวอักษร"
   text_caracters_minimum: "ต้องมีความยาวอย่างน้อย %{count} ตัวอักษร"
   text_comma_separated: "สามารถระบุได้หลายค่า (คั่นด้วยเครื่องหมาย comma)"
@@ -2073,7 +2081,7 @@ th:
   tooltip:
     attribute_visibility:
       default: Show if not empty
-      visible: Always show
+      visible: Show even if empty
       hidden: Hide by default
   queries:
     apply_filter: "ใช้ตัวกรองที่กำหนดไว้ล่วงหน้า"

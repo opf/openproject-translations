@@ -10,6 +10,10 @@ da:
       no_results_content_text: Create a new project
     plugins:
       no_results_title_text: There are currently no plugins available.
+  announcements:
+    show_until: Show until
+    is_active: currently displayed
+    is_inactive: currently not displayed
   auth_sources:
     index:
       no_results_content_title: There are currently no authentication modes.
@@ -174,6 +178,8 @@ da:
   actionview_instancetag_blank_option: Vælg venligst
   activerecord:
     attributes:
+      announcements:
+        show_until: Display until
       attachment:
         downloads: Hentninger
         file: Fil
@@ -834,6 +840,7 @@ da:
         expiration: Udløber
       indefinite_expiration: Aldrig
   label_account: Konto
+  label_active: Aktiv
   label_activity: Aktivitet
   label_add_edit_translations: Tilføje og redigere oversættelser
   label_add_another_file: Tilføj en anden fil
@@ -855,6 +862,7 @@ da:
   label_all_time: alle tider
   label_all_words: Alle ord
   label_always_visible: Always displayed
+  label_announcement: Announcement
   label_and_its_subprojects: "%{value} og dets delprojekter"
   label_api_access_key: API adgangsnøgle
   label_api_access_key_created_on: API adgangsnøgle oprettet for %{value} siden
@@ -1821,8 +1829,8 @@ da:
   text_are_you_sure_with_children: Slet arbejdspakker og alle underordnede pakker?
   text_assign_to_project: Tilknyt til projektet
   text_form_configuration: You can customize which attributes will be displayed by
-    default in forms for work packages of this type. Fields that are required cannot
-    be customized and will always be shown.
+    default in forms for work packages of this type. Fields that are required but
+    don't have a default value cannot be customized. They will always be shown.
   text_caracters_maximum: "%{count} tegn som maksimum."
   text_caracters_minimum: Skal være mindst %{count} tegn lang.
   text_comma_separated: Flere værdier tilladt (adskilt med komma).
@@ -2124,7 +2132,7 @@ da:
   tooltip:
     attribute_visibility:
       default: Show if not empty
-      visible: Always show
+      visible: Show even if empty
       hidden: Hide by default
   queries:
     apply_filter: Tildel filter som specificeret på forhånd
