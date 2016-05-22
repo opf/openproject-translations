@@ -142,7 +142,7 @@
         hexcode: Hexadesimalkode
       project_association:
         description: "Årsak"
-        project_b: Dependent project
+        project_b: Avhengig av prosjektet
       project_type:
         allows_association: Tillater assosiasjoner
         name: Navn
@@ -182,12 +182,12 @@
         equal_to: må være identisk med %{count}
         even: må være lik
         exclusion: er reservert
-        file_too_large: is too large (maximum size is %{count} Bytes)
+        file_too_large: er for stor (maks størrelse er %{count} byte)
         greater_than: må være større enn %{count}
         greater_than_or_equal_to: må være større enn eller lik %{count}
         smaller_than_or_equal_to_max_length: må være mindre enn eller lik maksimumslengden
         greater_than_start_date: må være senere enn startdato
-        inclusion: is not set to one of the allowed values
+        inclusion: ikke er satt til en av de tillatte verdiene
         invalid: er ugyldig
         less_than: må være mindre enn %{count}
         less_than_or_equal_to: må være mindre enn eller lik %{count}
@@ -207,12 +207,11 @@
         could_not_be_copied: kunne ikke kopieres (fullstendig)
       models:
         project_association:
-          identical_projects: Dependency cannot be created between one project and
-            itself.
+          identical_projects: Avhengighet kan ikke opprette innbyrdes ett prosjekt.
           project_association_not_allowed: tillater ikke assosiasjoner
         repository:
-          not_whitelisted: is not allowed by the configuration
-          no_directory: is not a directory
+          not_whitelisted: er ikke tillatt av konfigurasjonen
+          no_directory: er ikke en katalog
         work_package:
           is_not_a_valid_target_for_time_entries: Arbeidspakke nr. %{id} er ikke et
             gyldig mål for nytildeling av tidsoppføringer.
@@ -232,37 +231,37 @@
             priority_id:
               only_active_priorities_allowed: må være aktiv
             category:
-              only_same_project_categories_allowed: The category of a work package
-                must be within the same project as the work package.
-              does_not_exist: The specified category does not exist.
+              only_same_project_categories_allowed: Kategorien for en arbeidpakke
+                må være innenfor samme prosjekt som arbeidspakken.
+              does_not_exist: Den angitte kategorien finnes ikke.
             estimated_hours:
-              only_values_greater_or_equal_zeroes_allowed: The estimated hours must
-                be >= 0.
+              only_values_greater_or_equal_zeroes_allowed: De estimerte timene må
+                være > = 0.
         user:
           attributes:
             password:
-              weak: 'Must contain characters of the following classes (at least %{min_count}
-                of %{all_count}): %{rules}'
+              weak: 'Må inneholde tegn fra de følgende klassene (minst %{min_count}
+                av %{all_count}): %{rules}'
               lowercase: små bokstaver (f.eks. "a")
               uppercase: store bokstaver (f.eks. "A")
               numeric: numerisk (f.eks. "1")
               special: spesialtegn (f.eks. "%")
               reused:
-                one: has been used before. Please choose one that is different from
-                  your last one.
+                one: har blitt brukt tidligere. Vennligst velg en som er forskjellig
+                  fra den forrige %{count}.
                 other: has been used before. Please choose one that is different from
                   your last %{count}.
               match:
-                confirm: Confirm new password.
-                description: "'Password confirmation' should match the input in the
-                  'New password' field."
+                confirm: Bekreft nytt passord.
+                description: Bekreftelse av passord må samsvare med inndata i det
+                  nye passordet feltet.
         member:
           principal_blank: Velg minst én bruker eller gruppe.
           role_blank: Velg minst én rolle.
       template:
         body: 'Kontroller følgende felter:'
         header:
-          one: 1 error prohibited this %{model} from being saved
+          one: 1 feil forhindret lagring av denne %{model}
           other: "%{count} errors prohibited this %{model} from being saved"
     models:
       attachment: Fil
@@ -278,7 +277,7 @@
       project: Prosjekt
       query: Egendefinert spørring
       role:
-        one: Role
+        one: Rolle
         other: Roles
       type: Type
       planning_element: Planleggingselement
@@ -301,7 +300,7 @@
     attachments: Vedlegg
     author: Forfatter
     base: 'Generell feil:'
-    blocks_ids: IDs of blocked work packages
+    blocks_ids: IDer for blokkerte arbeidspakker
     category: Kategori
     comment: Kommentar
     comments: Kommentar
@@ -465,51 +464,51 @@
   datetime:
     distance_in_words:
       about_x_hours:
-        one: about 1 hour
+        one: rundt 1 time
         other: about %{count} hours
       about_x_months:
-        one: about 1 month
+        one: rundt 1 måned
         other: about %{count} months
       about_x_years:
-        one: about 1 year
+        one: rundt 1 år
         other: about %{count} years
       almost_x_years:
-        one: almost 1 year
+        one: nesten 1 år
         other: almost %{count} years
       half_a_minute: et halvt minutt
       less_than_x_minutes:
         one: mindre enn ett minutt
         other: mindre enn %{count} minutter
       less_than_x_seconds:
-        one: less than 1 second
+        one: mindre enn 1 sekund
         other: less than %{count} seconds
       over_x_years:
-        one: over 1 year
+        one: over 1 år
         other: over %{count} years
       x_days:
-        one: 1 day
+        one: 1 dag
         other: "%{count} days"
       x_minutes:
-        one: 1 minute
+        one: 1 minutt
         other: "%{count} minutes"
       x_months:
-        one: 1 month
+        one: 1 måned
         other: "%{count} months"
       x_seconds:
-        one: 1 second
+        one: 1 sekund
         other: "%{count} seconds"
     units:
       hour:
-        one: hour
+        one: time
         other: hours
   default_activity_development: Utvikling
   default_activity_management: Administrasjon
   default_activity_other: "Øvrig"
-  default_activity_specification: Specification
+  default_activity_specification: Spesifikasjon
   default_activity_support: Brukerstøtte
   default_activity_testing: Testing
-  default_color_black: Black
-  default_color_blue: Blue
+  default_color_black: Sort
+  default_color_blue: Blå
   default_color_blue_dark: Blå (mørk)
   default_color_blue_light: Blå (lys)
   default_color_green_dark: Grønn (mørk)
@@ -531,36 +530,36 @@
   default_status_in_testing: I testing
   default_status_new: Ny
   default_status_on_hold: På vent
-  default_status_rejected: Rejected
-  default_status_scheduled: Scheduled
-  default_status_specified: Specified
-  default_status_tested: Tested
-  default_status_test_failed: Test failed
-  default_status_to_be_scheduled: To be scheduled
+  default_status_rejected: Avvist
+  default_status_scheduled: Planlagt
+  default_status_specified: Angitt
+  default_status_tested: Testet
+  default_status_test_failed: Testen mislyktes
+  default_status_to_be_scheduled: Skal planlegges
   default_priority_low: Lav
   default_priority_normal: Normal
   default_priority_high: Høy
   default_priority_immediate: "Øyeblikkelig"
   default_project_type_scrum: Scrum team
-  default_project_type_standard: Standard project
+  default_project_type_standard: Standardprosjekt
   default_reported_project_status_green: Grønn
   default_reported_project_status_amber: Gul
   default_reported_project_status_red: Rød
   default_role_anonymous: Anonym
   default_role_developer: Utvikler
-  default_role_project_admin: Project admin
+  default_role_project_admin: Prosjekt admin
   default_role_non_member: Ikke-medlem
   default_role_reader: Leser
   default_role_member: Medlem
   default_type: Arbeidspakke
   default_type_bug: Feil
   default_type_deliverable: Leverbar
-  default_type_epic: Epic
+  default_type_epic: Episk
   default_type_feature: Funksjon
   default_type_milestone: Milepæl
   default_type_phase: Fase
   default_type_task: Oppgave
-  default_type_user_story: User story
+  default_type_user_story: Brukerens historie
   description_active: Aktiv?
   description_attachment_toggle: Vis/Skjul vedlegg
   description_autocomplete: Dette feltet bruker autofullfør. Når du begynner å skrive
@@ -623,11 +622,10 @@
   error_scm_command_failed: 'Det oppstod en feil ved forsøk på å åpne pakkebrønnen:
     %{value}'
   error_scm_not_found: Oppføringen eller revisjonen ble ikke funnet i pakkebrønnen.
-  error_unable_delete_status: The work package status cannot be deleted since it is
-    used by at least one work package.
-  error_unable_delete_default_status: Unable to delete the default work package status.
-    Please select another default work package status before deleting the current
-    one.
+  error_unable_delete_status: Arbeidspakken kan ikke bli slettet siden den benyttes
+    av minst en annen arbeidspakke.
+  error_unable_delete_default_status: Kunne ikke slette standard status for arbeidspakke.
+    Vennligst velg en annen standard status før du sletter den gjeldende.
   error_unable_to_connect: Kunne ikke koble til (%{value})
   error_workflow_copy_source: Vennligst velg en kildetype eller rolle
   error_workflow_copy_target: Vennligst velg måltype(r) og rolle(r)
@@ -1014,7 +1012,7 @@
   label_this_week: denne uken
   label_this_year: dette året
   label_time_entry_plural: Tid brukt
-  label_time_sheet_menu: Time sheet
+  label_time_sheet_menu: Timeliste
   label_time_tracking: Tidsstyring
   label_today: i dag
   label_top_menu: Toppmeny
@@ -1072,23 +1070,23 @@
   label_workflow_plural: Arbeidsflyt
   label_workflow_summary: Sammendrag
   label_x_closed_work_packages_abbr:
-    one: 1 closed
-    other: "%{count} closed"
+    one: 1 lukket
+    other: "%{count} stengt"
     zero: 0 closed
   label_x_comments:
-    one: 1 comment
+    one: "%{count} kommentar"
     other: "%{count} comments"
     zero: no comments
   label_x_open_work_packages_abbr:
-    one: 1 open
+    one: "%{count} åpen"
     other: "%{count} open"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
-    one: 1 open / %{total}
+    one: 1 åpen / %{total}
     other: "%{count} open / %{total}"
     zero: 0 open / %{total}
   label_x_projects:
-    one: 1 project
+    one: "%{count} prosjekt"
     other: "%{count} projects"
     zero: no projects
   label_year: "År"
@@ -1545,7 +1543,7 @@
     delete_thing: Slett
     duration: Varighet
     duration_days:
-      one: 1 day
+      one: 1 dag
       other: "%{count} days"
     edit_color: Endre farge
     edit_project_type: Endre prosjekttype
