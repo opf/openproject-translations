@@ -11,9 +11,9 @@ it:
     plugins:
       no_results_title_text: Al momento non vi sono plugin disponibili.
   announcements:
-    show_until: Show until
-    is_active: currently displayed
-    is_inactive: currently not displayed
+    show_until: Visualizza fino a
+    is_active: attualmente visualizzato
+    is_inactive: attualmente non visualizzato
   auth_sources:
     index:
       no_results_content_title: Al momento non vi è alcuna modalità di autenticazione.
@@ -184,7 +184,7 @@ it:
   activerecord:
     attributes:
       announcements:
-        show_until: Display until
+        show_until: Visualizza fino a
       attachment:
         downloads: Scaricati
         file: File
@@ -230,7 +230,7 @@ it:
         roles: Ruoli
       project:
         identifier: Identificatore
-        latest_activity_at: Latest activity at
+        latest_activity_at: Ultima attività alle
         parent: Sotto-progetto di
         project_type: Tipo di progetto
         queries: Interrogazioni
@@ -336,9 +336,9 @@ it:
         greater_than_or_equal_to: deve essere maggiore o uguale di %{count}.
         smaller_than_or_equal_to_max_length: deve essere minore o uguale alla lunghezza
           massima.
-        greater_than_start_date: must be greater than the start date.
-        greater_than_or_equal_to_start_date: must be greater than or equal to the
-          start date.
+        greater_than_start_date: deve essere successivo alla data di inizio.
+        greater_than_or_equal_to_start_date: deve essere successivo o uguale alla
+          data di inizio.
         inclusion: non è impostata su uno dei valori consentiti.
         invalid: non è valido.
         less_than_or_equal_to: deve essere inferiore o uguale a %{count}.
@@ -833,15 +833,15 @@ it:
       projects: Progetti visibili più recenti in questa istanza.
       users: Utenti registrati più recenti in questa istanza.
     blocks:
-      community: OpenProject community
+      community: Comunità OpenProject
     links:
       user_guides: Guide utente
       faq: FAQ
       glossary: Glossario
       shortcuts: Tasti di scelta rapida
       forums: Forum
-      blog: OpenProject blog
-      boards: Community forum
+      blog: Blog OpenProject
+      boards: Forum della Comunità
   instructions_after_registration: Puoi accedere non appena il tuo account è stato
     attivato cliccando %{signin}.
   instructions_after_logout: Può accedere nuovamente cliccando %{signin}.
@@ -880,8 +880,8 @@ it:
   label_all: tutti
   label_all_time: tutto il tempo
   label_all_words: Tutte le parole
-  label_always_visible: Always displayed
-  label_announcement: Announcement
+  label_always_visible: Visualizzato sempre
+  label_announcement: Annuncio
   label_and_its_subprojects: "%{value} e i suoi sotto-progetti"
   label_api_access_key: Chiave di accesso API
   label_api_access_key_created_on: Chiave di accesso API creata %{value} fa
@@ -1012,7 +1012,7 @@ it:
   label_follows: segue
   label_force_user_language_to_default: Imposta la lingua degli utenti che non hanno
     una lingua consentita a quella predefinita
-  label_form_configuration: Form configuration
+  label_form_configuration: Configurazione del modulo
   label_general: Generale
   label_generate_key: Genera chiave
   label_git_path: Percorso per la cartella .git
@@ -1744,15 +1744,16 @@ it:
     warnings:
       cannot_annotate: Questo file non può essere annotato.
   search_input_placeholder: cerca ...
-  setting_email_delivery_method: Email delivery method
-  setting_sendmail_location: Location of the sendmail executable
-  setting_smtp_enable_starttls_auto: Automatically use STARTTLS if available
-  setting_smtp_address: SMTP server
-  setting_smtp_port: SMTP port
-  setting_smtp_authentication: SMTP authentication
-  setting_smtp_domain: SMTP HELLO domain
-  setting_smtp_user_name: SMTP username
-  setting_smtp_password: SMTP password
+  setting_email_delivery_method: Metodo di invio e-mail
+  setting_sendmail_location: Percorso dell'eseguibile del programma di invio della
+    posta
+  setting_smtp_enable_starttls_auto: Usa automaticamente, se disponibile, STARTTLS
+  setting_smtp_address: Server SMTP
+  setting_smtp_port: Porta SMTP
+  setting_smtp_authentication: Autenticazione SMTP
+  setting_smtp_domain: Dominio HELLO SMTP
+  setting_smtp_user_name: Nome utente SMTP
+  setting_smtp_password: Password SMTP
   setting_activity_days_default: Intervallo di giorni visualizzati sulle attività
     del progetto
   setting_app_subtitle: Sottotitolo applicazione
@@ -1880,7 +1881,7 @@ it:
     passwords: Password
     session: Sessione
     brute_force_prevention: Blocco automatico degli utenti
-  show_hide_project_menu: Espandi/Comprimi il menù del progetto
+  show_hide_project_menu: Espandi/Comprimi il menù di progetto
   status_active: attivo
   status_invited: invitato
   status_registered: registrato
@@ -1895,9 +1896,11 @@ it:
   text_are_you_sure_with_children: Eliminare la macro-attività (work package) e tutte
     le sue sotto-attività?
   text_assign_to_project: Assegna al progetto
-  text_form_configuration: You can customize which attributes will be displayed by
-    default in forms for work packages of this type. Fields that are required but
-    don't have a default value cannot be customized. They will always be shown.
+  text_form_configuration: You can customize which attributes will be displayed in
+    forms for work packages of this type. 'Active' fields will be shown in the collapsed
+    work package view if they have a value, fields that are 'Always displayed' even
+    if they don't. Inactive fields will never be shown, even if they have a value.
+    Only fields that are not required or have a default value can be customized.
   text_caracters_maximum: "%{count} caratteri massimo."
   text_caracters_minimum: Deve essere lungo almeno %{count} caratteri.
   text_comma_separated: Sono ammessi valori multipli (separati da virgola).
@@ -1918,8 +1921,8 @@ it:
   text_file_repository_writable: Cartella allegati scrivibile
   text_git_repo_example: un semplice archivio fisico locale (ad esempio /gitrepo,
     c:\\gitrepo)
-  text_hint_date_format: Enter a date in the form of YYYY-MM-DD. Other formats may
-    be changed to an unwanted date.
+  text_hint_date_format: Inserisci una data nel formato AAAA-MM-GG. Gli altri formati
+    potrebbero essere interpretati in una data errata.
   text_hint_disable_with_0: 'Nota: Disattivare con 0'
   text_hours_between: Tra %{min} e %{max} ore.
   text_work_package_added: La macro-attività (work package) %{id} è stata segnalata
@@ -2005,7 +2008,7 @@ it:
   text_workflow_edit: Seleziona un ruolo e un tipo per modificare il flusso di lavoro
   text_zoom_in: Zoom avanti
   text_zoom_out: Zoom indietro
-  text_setup_mail_configuration: Configure your email provider
+  text_setup_mail_configuration: Configura il tuo provider di posta elettronica
   time:
     am: AM
     formats:
@@ -2217,9 +2220,9 @@ it:
     caso quello precedente sia scaduto o l'utente non ha ricevuto l'email originale.
   tooltip:
     attribute_visibility:
-      default: Show if not empty
-      visible: Show even if empty
-      hidden: Hide by default
+      default: Visualizza se non vuoto
+      visible: Visualizza anche se vuoto
+      hidden: Nascondi di default
   queries:
     apply_filter: Applica il filtro preconfigurato
   top_menu:
