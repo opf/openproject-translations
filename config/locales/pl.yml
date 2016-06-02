@@ -11,7 +11,7 @@ pl:
     plugins:
       no_results_title_text: Aktualnie nie ma dostępnych żadnych dodatków.
   announcements:
-    show_until: Show until
+    show_until: Pokazuj do
     is_active: obecnie wyświetlane
     is_inactive: obecnie nie są wyświetlane
   auth_sources:
@@ -175,7 +175,7 @@ pl:
   activerecord:
     attributes:
       announcements:
-        show_until: Display until
+        show_until: Wyświetlaj do
       attachment:
         downloads: Pliki do pobrania
         file: Plik
@@ -221,7 +221,7 @@ pl:
         roles: Role
       project:
         identifier: Identyfikator
-        latest_activity_at: Latest activity at
+        latest_activity_at: Ostatnia aktywność o
         parent: Projekt nadrzędny
         project_type: Typ projektu
         queries: Kwerendy
@@ -327,9 +327,9 @@ pl:
         greater_than_or_equal_to: musi być większe niż lub równe %{count}.
         smaller_than_or_equal_to_max_length: musi być mniejsze niż lub równe z maksymalnej
           długości.
-        greater_than_start_date: must be greater than the start date.
-        greater_than_or_equal_to_start_date: must be greater than or equal to the
-          start date.
+        greater_than_start_date: musi być późniejsza niż data początku.
+        greater_than_or_equal_to_start_date: musi być późniejsza niż data początku
+          albo równa jej.
         inclusion: jest niezgodne z jednym z dozwolonych wartości.
         invalid: jest nieprawidłowe.
         less_than_or_equal_to: musi być mniejsze niż lub równe %{count}.
@@ -830,14 +830,14 @@ pl:
       projects: Najnowsze projekty
       users: Nowi użytkownicy
     blocks:
-      community: OpenProject community
+      community: Społeczność OpenProject
     links:
       user_guides: Przewodniki
       faq: Najczęściej Zadawane Pytania
       glossary: Słownik
       shortcuts: Podpowiedzi
       forums: Fora
-      blog: OpenProject blog
+      blog: Blog OpenProject
       boards: Forum społeczności
   instructions_after_registration: Możesz się zalogować w momencie gdy Twoje konto
     zostanie aktywowane poprzez kliknięcie %{signin}.
@@ -1420,7 +1420,7 @@ pl:
   notice_account_register_done: Konto zostało pomyślnie utworzone. Aby aktywować swoje
     konto, kliknij na link, który został do Ciebie wysłany.
   notice_account_unknown_email: Nieznany użytkownik.
-  notice_account_update_failed: Account setting could not be safed. Please have a
+  notice_account_update_failed: Account setting could not be saved. Please have a
     look at your account page.
   notice_account_updated: Konto zostało pomyślnie zaktualizowane.
   notice_account_wrong_password: Nieprawidłowe hasło
@@ -1607,78 +1607,79 @@ pl:
           przeglądać repozytorium.
       access_permission: Twoje uprawnienia do repozytorium
       url: Sprawdzenie bazowego adresu URL
-      base_url_text: |
-        The base URL to use for generating checkout URLs (e.g., https://myserver.example.org/repos/).
-        Note: The base URL is only used for rewriting checkout URLs in managed repositories. Other repositories are not altered.
+      base_url_text: 'Podstawowy adres URL używany jest do generowania tzw. checkout
+        URL (np. https://myserver.example.org/repos/). Uwaga: Podstawowy adres URL
+        jest używany do przepisywania checkout URL tylko w zarządzanych repozytoriach.
+        Inne repozytoria nie są zmieniane.'
       default_instructions:
         git: Dane zawarte w tym repozytorium można pobrać na swój komputer za pomocą
           Git. Jeśli potrzebujesz więcej informacji na temat procedury realizacji
           transakcji i klientów zapoznaj się z dokumentacją Git.
-        subversion: |
-          The data contained in this repository can be downloaded to your computer with Subversion.
-          Please consult the documentation of Subversion if you need more information on the checkout procedure and available clients.
-      enable_instructions_text: Displays checkout instructions defined below on all
-        repository-related pages.
-      instructions: Checkout instructions
-      show_instructions: Display checkout instructions
-      text_instructions: This text is displayed alongside the checkout URL for guidance
-        on how to check out the repository.
-      not_available: Checkout instructions are not defined for this repository. Ask
-        your administrator to enable them for this repository in the system settings.
-    create_managed_delay: 'Please note: The repository is managed, it is created asynchronously
-      on the disk and will be available shortly.'
-    create_successful: The repository has been registered.
-    delete_sucessful: The repository has been deleted.
+        subversion: Dane zawarte w tym repozytorium można pobrać na swój komputer
+          za pomocą Subversion. Jeśli potrzebujesz więcej informacji na temat procedury
+          checkout i dostępnych klientów, zapoznaj się z dokumentacją Subversion.
+      enable_instructions_text: Pokazuj określone poniżej instrukcje nt. checkout
+        na wszystkich stronach związanych z repozytorium.
+      instructions: Instrukcje dot. checkout
+      show_instructions: Wyświetlaj instrukcje dot. checkout
+      text_instructions: Ten tekst jest wyświetlany obok checkout URL w celu wskazówki
+        nt. wykonania checkout repozytorium.
+      not_available: Dla tego repozytorium nie zdefiniowano instrukcji dot. checkout.
+        Poproś administratora o włączenie ich dla tego repozytorium w ustawieniach
+        systemu.
+    create_managed_delay: 'Uwaga: repozytorium jest zarządzany. Jest asynchronicznie
+      tworzony na dysku i wkrótce będzie dostępny.'
+    create_successful: Repozytorium zarejestrowano.
+    delete_sucessful: Repozytorium usunięto.
     destroy:
-      confirmation: If you continue, this will permanently delete the managed repository.
-      info: Deleting the repository is an irreversible action.
-      info_not_managed: 'Note: This will NOT delete the contents of this repository,
-        as it is not managed by OpenProject.'
-      managed_path_note: 'The following directory will be erased: %{path}'
-      repository_verification: Enter the project's identifier %{identifier} to verify
-        the deletion of its repository.
-      subtitle: Do you really want to delete the %{repository_type} of the project
-        %{project_name}?
-      subtitle_not_managed: Do you really want to remove the linked %{repository_type}
-        %{url} from the project %{project_name}?
-      title: Delete the %{repository_type}
-      title_not_managed: Remove the linked %{repository_type}?
+      confirmation: Jeśli będziesz kontynuować, to trwale usunie zarządzane repozytorium.
+      info: Usuniecie repozytorium jest operacją nieodwracalną.
+      info_not_managed: 'Uwaga: To NIE usunie zawartości tego repozytorium, ponieważ
+        nie jest zarządzany przez OpenProject.'
+      managed_path_note: 'Następny katalog zostanie usunięty: %{path}'
+      repository_verification: Wprowadź identyfikator %{identifier} projektu, aby
+        potwierdzić usunięcie jego repozytorium.
+      subtitle: Czy naprawdę chcesz usunąć %{repository_type} z projektu %{project_name}?
+      subtitle_not_managed: Czy naprawdę chcesz usunąć powiązane %{repository_type}%{url}
+        z projektu %{project_name}?
+      title: Usuń %{repository_type}
+      title_not_managed: Usunąć połączone %{repository_type}?
     errors:
-      build_failed: Unable to create the repository with the selected configuration.
-        %{reason}
-      managed_delete: Unable to delete the managed repository.
-      managed_delete_local: 'Unable to delete the local repository on filesystem at
+      build_failed: Nie można utworzyć repozytorium w wybranej konfiguracji. %{reason}
+      managed_delete: Nie można usunąć zarządzanego repozytorium.
+      managed_delete_local: 'Nie można usunąć lokalnego repozytorium w systemie plików
         ''%{path}'': %{error_message}'
-      empty_repository: The repository exists, but is empty. It does not contain any
-        revisions yet.
-      exists_on_filesystem: The repository directory already exists in the filesystem.
-      filesystem_access_failed: 'An error occurred while accessing the repository
-        in the filesystem: %{message}'
+      empty_repository: Repozytorium istnieje, ale jest puste. Nie zawiera jeszcze
+        żadnych rewizji.
+      exists_on_filesystem: Katalog repozytorium już istnieje w systemie plików.
+      filesystem_access_failed: 'Wystąpił błąd podczas uzyskiwania dostępu do repozytorium
+        w systemie plików: %{message}'
       not_manageable: Ten producent repozytorium nie może być zarządzany przez OpenProject.
-      path_permission_failed: 'An error occurred trying to create the following path:
-        %{path}. Please ensure that OpenProject may write to that folder.'
-      unauthorized: You're not authorized to access the repository or the credentials
-        are invalid.
+      path_permission_failed: 'Wystąpił błąd podczas próby utworzenia następującej
+        ścieżki: %{path}. Upewnij się, że OpenProject może zapisywać do tego folderu.'
+      unauthorized: Nie masz uprawnień do uzyskania dostępu do repozytorium bądź poświadczenia
+        są nieprawidłowe.
       unavailable: Repozytorium jest niedostępne.
       exception_title: 'Nie można uzyskać dostępu do repozytorium: %{message}'
       disabled_or_unknown_type: Wybrany typ %{type} jest wyłączony lub nie jest już
         dostępny dla %{vendor} producenta SCM.
       disabled_or_unknown_vendor: SCM dostawcy %{vendor} jest wyłączony lub nie jest
         już dostępny.
-      remote_call_failed: 'Calling the managed remote failed with message ''%{message}''
-        (Code: %{code})'
-      remote_invalid_response: Received an invalid response from the managed remote.
-      remote_save_failed: Could not save the repository with the parameters retrieved
-        from the remote.
+      remote_call_failed: 'Wywołanie zarządzanego zdalnego repozytorium nie powiodła.
+        Błąd ''%{message}'' (Kod: %{code})'
+      remote_invalid_response: Otrzymaną nieprawidłową odpowiedź od zarządzanego zasobu
+        zdalnego.
+      remote_save_failed: Nie można zapisać repozytorium z parametrami pobranymi ze
+        zdalnego.
     git:
       instructions:
-        managed_url: This is the URL of the managed (local) Git repository.
-        path: Specify the path to your local Git repository ( e.g., %{example_path}
+        managed_url: Jest to adres URL zarządzanego repozytorium Git (lokalnego).
+        path: Określ ścieżkę do swojego lokalnego repozytorium Git (np. %{example_path}
           ).
-        path_encoding: 'Override Git path encoding (Default: UTF-8)'
-      local_title: Link existing local Git repository
-      local_introduction: If you have an existing local Git repository, you can link
-        it with OpenProject to access it from within the application.
+        path_encoding: 'Zastąp kodowanie ścieżki Git (domyślne: UTF-8)'
+      local_title: Połącz istniejące lokalne repozytorium Git
+      local_introduction: Jeśli masz istniejące lokalne repozytorium Git, możesz połączyć
+        go z OpenProject, aby mieć dostęp do niego z poziomu aplikacji.
       managed_introduction: Niech OpenProject tworzy i integruje lokalne repozytorium
         Git automatycznie.
       managed_title: Repozytorium Git integruje się z OpenProject
@@ -1702,18 +1703,17 @@ pl:
       managed: Tworzenie nowego repozytorium w OpenProject
     storage:
       not_available: Zużycie pamięci dysku nie jest dostępne dla tego repozytorium.
-      update_timeout: |
-        Keep the last required disk space information for a repository for N minutes.
-        As counting the required disk space of a repository may be costly, increase this value to reduce performance impact.
+      update_timeout: Zachowaj informacje o ostatnim wymaganym dla repozytorium miejscu
+        na dysku przez N minut.
     subversion:
       existing_title: Istniejące repozytorium Subversion
       existing_introduction: Jeśli masz repozytorium Subversion, możesz połączyć go
         z OpenProject, aby otrzymać dostęp z poziomu aplikacji.
       instructions:
         managed_url: Jest to adres URL do zarządzanego repozytorium Subversion (lokalnego).
-        url: |
-          Enter the repository URL. This may either target a local repository (starting with %{local_proto} ), or a remote repository.
-          The following URL schemes are supported:
+        url: 'Wprowadź adres URL repozytorium. To może być docelowe repozytorium lokalne
+          (począwszy od %{local_proto}) lub zdalne repozytorium. Obsługiwane są następujące
+          schematy URL:'
       managed_title: Repozytorium Subversion zintegrowano z OpenProject
       managed_introduction: OpenProject utworzy i zintegruje lokalne repozytorium
         Subversion automatycznie.
@@ -1726,14 +1726,14 @@ pl:
       cannot_annotate: Ten plik nie może być odnotowany.
   search_input_placeholder: szukaj...
   setting_email_delivery_method: Metoda dostarczenia maila
-  setting_sendmail_location: Location of the sendmail executable
-  setting_smtp_enable_starttls_auto: Automatically use STARTTLS if available
-  setting_smtp_address: SMTP server
-  setting_smtp_port: SMTP port
-  setting_smtp_authentication: SMTP authentication
-  setting_smtp_domain: SMTP HELLO domain
-  setting_smtp_user_name: SMTP username
-  setting_smtp_password: SMTP password
+  setting_sendmail_location: Lokalizacja pliku wykonywalnego sendmail
+  setting_smtp_enable_starttls_auto: Automatycznie użyj STARTTLS, jeśli jest dostępny
+  setting_smtp_address: Serwer SMTP
+  setting_smtp_port: Port SMTP
+  setting_smtp_authentication: Uwierzytelnianie SMTP
+  setting_smtp_domain: Domena SMTP HELLO
+  setting_smtp_user_name: Nazwa użytkownika SMTP
+  setting_smtp_password: Hasło SMTP
   setting_activity_days_default: Dni wyświetlane w aktywności projektu
   setting_app_subtitle: Podtytuł
   setting_app_title: Tytuł
@@ -1861,11 +1861,12 @@ pl:
   text_are_you_sure: Jesteś pewien?
   text_are_you_sure_with_children: Usunąć zadanie i wszystkie podrzędne zadania?
   text_assign_to_project: Przypisz do projektu
-  text_form_configuration: You can customize which attributes will be displayed in
-    forms for work packages of this type. 'Active' fields will be shown in the collapsed
-    work package view if they have a value, fields that are 'Always displayed' even
-    if they don't. Inactive fields will never be shown, even if they have a value.
-    Only fields that are not required or have a default value can be customized.
+  text_form_configuration: Możesz dostosować, które atrybuty będą wyświetlane w formularzach
+    dla zestawów zadań tego typu. "Aktywne" pola będą wyświetlane w zwiniętym widoku
+    pakietu prac w tym przypadku, jeśli mają wartość. Pola, oznaczone jako "Pokazuj
+    zawsze" będą pokazywane nawet wtedy, kiedy nie mają żadnej wartości. Nieaktywne
+    pola nigdy nie są pokazywane, nawet jeśli zawierają jakąś wartość. Można skonfigurować
+    tylko pola nieobowiązkowe lub niemające wartości domyślnej.
   text_caracters_maximum: "%{count} characters maximum."
   text_caracters_minimum: Co najmniej %{count} znaków długości.
   text_comma_separated: Dozwolone kilka wartości (rozdzielone przecinkami).
@@ -1886,8 +1887,8 @@ pl:
   text_enumeration_destroy_question: "%{count} objects are assigned to this value."
   text_file_repository_writable: Można zapisywać do katalogu z załącznikami
   text_git_repo_example: a bare and local repository (e.g. /gitrepo, c:\\gitrepo)
-  text_hint_date_format: Enter a date in the form of YYYY-MM-DD. Other formats may
-    be changed to an unwanted date.
+  text_hint_date_format: Wprowadź datę w formacie RRRR-MM-DD. Inne formaty mogą się
+    zmienić na niechcianą datę.
   text_hint_disable_with_0: 'Uwaga: Wyłącz z 0'
   text_hours_between: Między %{min} i %{max} godzin.
   text_work_package_added: Work package %{id} has been reported by %{author}.
@@ -1903,9 +1904,9 @@ pl:
   text_work_packages_ref_in_commit_messages: Referencing and fixing work packages
     in commit messages
   text_journal_added: "%{label} %{value} added"
-  text_journal_aggregation_time_explanation: Combine journals for display if their
-    age difference is less than the specified timespan. This will also delay mail
-    notifications by the same amount of time.
+  text_journal_aggregation_time_explanation: Połącz dzienniki dla wyświetlania, jeśli
+    ich różnica wiekowa jest poniżej wskazanej wartości. To opóźni dostawę powiadomień
+    mailowych o ten sam czas.
   text_journal_changed: "%{label} zmienione z %{old} na %{new}"
   text_journal_changed_no_detail: "%{label} updated"
   text_journal_changed_with_diff: "%{label} changed (%{link})"
@@ -1965,7 +1966,7 @@ pl:
   text_workflow_edit: Wybierz rolę i typ do edycji przepływu pracy
   text_zoom_in: Powiększ
   text_zoom_out: Pomniejsz
-  text_setup_mail_configuration: Configure your email provider
+  text_setup_mail_configuration: Skonfiguruj dostawcę poczty e-mail
   time:
     am: am
     formats:
@@ -2167,15 +2168,15 @@ pl:
     gdy upłynie termin ważności poprzedniego lub gdy użytkownik nie otrzymał maila.
   tooltip:
     attribute_visibility:
-      default: Show if not empty
-      visible: Show even if empty
-      hidden: Hide by default
+      default: Pokazuj, jeśli nie jest pusta
+      visible: Pokazuj, nawet gdy pusta
+      hidden: Domyślnie ukryj
   queries:
     apply_filter: Zastosuj wstępny filtr
   top_menu:
-    additional_resources: Additional resources
-    getting_started: Getting started
-    help_and_support: Help and support
+    additional_resources: Dodatkowe zasoby
+    getting_started: Pierwsze kroki
+    help_and_support: Pomoc i wsparcie
   total_progress: Całkowity postęp
   user:
     all: wszystkie
