@@ -742,7 +742,6 @@ th:
   description_selected_columns: "คอลัมน์ที่เลือก"
   description_sub_work_package: "ชุดภารกิจย่อย"
   description_toc_toggle: "แสดง/ซ่อนสารบัญ"
-  description_user_mail_notification: "การตั้งค่าการแจ้งเตือนทางอีเมล"
   description_wiki_subpages_reassign: "เลือกหน้าหลักใหม่"
   direction: ltr
   enumeration_activities: "กิจกรรม (ติดตามการใชเวลา)"
@@ -1249,7 +1248,6 @@ th:
   label_used_by: "ใช้โดย"
   label_user_activity: "กิจกรรมของ %{value}"
   label_user_anonymous: "ไม่ระบุชื่อ"
-  label_user_mail_self_notified: I want to be notified of changes that I make myself
   label_user_mail_option_all: "สำหรับเหตุการณ์ใด ๆ ก็ตามในโครงการทั้งหมดของฉัน"
   label_user_mail_option_none: "ไม่พบเหตุการณ์"
   label_user_mail_option_only_assigned: "เฉพาะสิ่งที่ฉันได้รับมอบหมาย"
@@ -1266,6 +1264,7 @@ th:
   label_version_sharing_none: "ไม่ได้แบ่งปัน"
   label_version_sharing_system: "พร้อมด้วยทุกโครงการ"
   label_version_sharing_tree: "พร้อมด้วยแผนผังโครงการ"
+  label_video: Video
   label_view_all_revisions: "ดูการปรับปรุงทั้งหมด"
   label_view_diff: "ดูผลต่าง"
   label_view_revisions: "ดูการปรับปรุง"
@@ -1454,6 +1453,11 @@ th:
           kb: "กิโลไบต์"
           mb: "เมกะไบต์"
           tb: "เทราไบต์"
+  onboarding:
+    text_getting_started: This video provides you an overview of OpenProject. It helps
+      you to set up your first project and to start collaborating with your team members.
+    text_show_again: You can restart this video from the help menu
+    welcome: Hi %{name}, welcome to OpenProject
   permission_add_work_package_notes: "เพิ่มหมายเหตุ"
   permission_add_work_packages: Add work packages (also allows to add attachments
     to all work packages)
@@ -1887,8 +1891,6 @@ th:
   text_type_no_workflow: "ไม่มีการกำหนดกระบวนการทำงานสำหรับประเภทนี้"
   text_unallowed_characters: "ตัวอักษรที่ไม่อนุญาตให้ใช้"
   text_user_invited: The user has been invited and is pending registration.
-  text_user_mail_option: "สำหรับโครงการที่ไม่ได้เลือก, คุณจะได้รับการแจ้งเตือนเฉพาะสิ่งที่คุณเฝ้าดูหรือมีความเกี่ยวข้องเท่านั้น
-    (เช่นชุดภารกิจที่คุณเป็นผู้สร้าง หรือได้รับมอบหมาย)"
   text_user_wrote: "%{value} เขียนว่า:"
   text_warn_on_leaving_unsaved: "หน้าปัจจุบันมีข้อความที่ยังไม่ได้บันทึก ซึ่งจะสูญหายหากคุณออกจากหน้านี้"
   text_wiki_destroy_confirmation: "คุณแน่ใจหรือว่าจะลบวิกิและเนื้อหาของวิกินี้ ?"
@@ -2110,6 +2112,7 @@ th:
     authentication_provider: "ผู้ให้บริการการรับรองความถูกต้องของการระบุตัวตน"
     authentication_settings_disabled_due_to_external_authentication: "ผู้ใช้นี้ได้รับการรับรองความถูกต้องจากภายนอก
       ดังนั้นจึงไม่มีรหัสผ่านใน OpenProject ที่สามารถเปลี่ยนแปลงได้"
+    authorization_rejected: You are not allowed to sign in.
     assign_random_password: Assign random password (sent to user via email)
     blocked: "ล็อคชั่วคราว"
     blocked_num_failed_logins:
@@ -2118,19 +2121,24 @@ th:
     deleted: "ผู้ใช้ที่ถูกลบ"
     error_status_change_failed: "ล้มเหลวในการเปลี่ยนสถานะของผู้ใช้เนื่องจากข้อผิดพลาดต่อไปนี้:
       %{errors}"
+    invite: Invite user via email
+    invited: invited
     lock: "ล็อคอย่างถาวร"
     locked: "ถูกล็อคอย่างถาวร"
-    registered: "ลงทะเบียน"
-    invited: invited
-    reset_failed_logins: "รีเซ็ตล็อกอินที่ล้มเหลว"
-    status_user_and_brute_force: "%{user} และ %{brute_force}"
-    unlock: "ปลดล็อก"
-    unlock_and_reset_failed_logins: "ปลดล็อค และรีเซตค่าล็อกอินที่ล้มเหลว"
     no_login: This user authenticates through login by password. Since it is disabled,
       they cannot log in.
     password_change_unsupported: Change of password is not supported.
-    authorization_rejected: You are not allowed to sign in.
-    invite: Invite user via email
+    registered: "ลงทะเบียน"
+    reset_failed_logins: "รีเซ็ตล็อกอินที่ล้มเหลว"
+    settings:
+      mail_notifications: Send email notifications
+      mail_project_explanaition: For unselected projects, you will only receive notifications
+        about things you watch or you're involved in (e.g. work packages you're the
+        author or assignee of).
+      mail_self_notified: I want to be notified of changes that I make myself
+    status_user_and_brute_force: "%{user} และ %{brute_force}"
+    unlock: "ปลดล็อก"
+    unlock_and_reset_failed_logins: "ปลดล็อค และรีเซตค่าล็อกอินที่ล้มเหลว"
   version_status_closed: "ปิด"
   version_status_locked: "ล็อก"
   version_status_open: "เปิด"

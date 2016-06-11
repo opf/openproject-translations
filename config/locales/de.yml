@@ -754,7 +754,6 @@ de:
   description_selected_columns: Ausgewählte Spalten
   description_sub_work_package: Untergeordnetes Arbeitspaket
   description_toc_toggle: Inhaltsverzeichnis aus/einblenden
-  description_user_mail_notification: Mailbenachrichtigungseinstellungen
   description_wiki_subpages_reassign: Neue Elternseite wählen
   direction: Ltr
   enumeration_activities: Aktivitäten (Zeiterfassung)
@@ -1278,8 +1277,6 @@ de:
   label_used_by: Benutzt von
   label_user_activity: Aktivität von %{value}
   label_user_anonymous: Anonymus
-  label_user_mail_self_notified: Ich möchte über Änderungen benachrichtigt werden,
-    die ich selbst vornehme
   label_user_mail_option_all: Für alle Ereignisse in all meinen Projekten
   label_user_mail_option_none: Für keine Ereignisse
   label_user_mail_option_only_assigned: Nur für Aufgaben, für die ich zuständig bin.
@@ -1297,6 +1294,7 @@ de:
   label_version_sharing_none: Nicht gemeinsam verwenden
   label_version_sharing_system: Mit allen Projekten
   label_version_sharing_tree: Mit Projektbaum
+  label_video: Video
   label_view_all_revisions: Alle Revisionen anzeigen
   label_view_diff: Unterschiede anzeigen
   label_view_revisions: Revisionen anzeigen
@@ -1504,6 +1502,11 @@ de:
           kb: kB
           mb: MB
           tb: TB
+  onboarding:
+    text_getting_started: This video provides you an overview of OpenProject. It helps
+      you to set up your first project and to start collaborating with your team members.
+    text_show_again: You can restart this video from the help menu
+    welcome: Hi %{name}, welcome to OpenProject
   permission_add_work_package_notes: Kommentare hinzufügen
   permission_add_work_packages: Arbeitspakete hinzufügen (enthält Recht Anhänge zu
     Arbeitspaketen hinzuzufügen)
@@ -1971,9 +1974,6 @@ de:
   text_type_no_workflow: Kein Workflow für diesen Typ definiert.
   text_unallowed_characters: Nicht erlaubte Zeichen
   text_user_invited: Der Nutzer ist eingeladen worden und wartet auf Registrierung.
-  text_user_mail_option: Für nicht ausgewählte Projekte werden Sie nur Benachrichtigungen
-    für Dinge erhalten, die Sie beobachten oder an denen Sie beteiligt sind (z. B.
-    Arbeitspakete, deren Autor Sie sind oder die Ihnen zugewiesen sind).
   text_user_wrote: "%{value} schrieb:"
   text_warn_on_leaving_unsaved: Der eingegebene Text wird nicht gespeichert, wenn
     Sie die Seite jetzt verlassen.
@@ -2219,6 +2219,7 @@ de:
     authentication_settings_disabled_due_to_external_authentication: Dieser Nutzer
       authentifiziert sich über einen externen Authentifizierungsprovider, so dass
       das Passwort über OpenProject nicht geändert werden kann.
+    authorization_rejected: Sie dürfen sich nicht einloggen.
     assign_random_password: Zufälliges Passwort zuweisen (wird dem Nutzer per E-Mail
       geschickt)
     blocked: temporär gesperrt
@@ -2228,19 +2229,25 @@ de:
     deleted: Gelöschter Nutzer
     error_status_change_failed: 'Der Nutzerstatus konnte nicht geändert werden aufgrund
       folgender Fehler: %{errors}'
+    invite: Nutzer via E-Mail einladen
+    invited: eingeladen
     lock: Dauerhaft sperren
     locked: dauerhaft gesperrt
-    registered: angemeldet
-    invited: eingeladen
-    reset_failed_logins: Fehlgeschlagene Logins zurücksetzen
-    status_user_and_brute_force: "%{user} und %{brute_force}"
-    unlock: Entsperren
-    unlock_and_reset_failed_logins: Entsperren und fehlgeschlagene Logins zurücksetzen
     no_login: Dieser Nutzer wird per Passwort authentifiziert. Er kann sich jedoch
       nicht einloggen, da Login per Passwort deaktiviert ist.
     password_change_unsupported: Passwortänderung wird nicht unterstützt
-    authorization_rejected: Sie dürfen sich nicht einloggen.
-    invite: Nutzer via E-Mail einladen
+    registered: angemeldet
+    reset_failed_logins: Fehlgeschlagene Logins zurücksetzen
+    settings:
+      mail_notifications: Send email notifications
+      mail_project_explanaition: For unselected projects, you will only receive notifications
+        about things you watch or you're involved in (e.g. work packages you're the
+        author or assignee of).
+      mail_self_notified: Ich möchte über Änderungen benachrichtigt werden, die ich
+        selbst vornehme
+    status_user_and_brute_force: "%{user} und %{brute_force}"
+    unlock: Entsperren
+    unlock_and_reset_failed_logins: Entsperren und fehlgeschlagene Logins zurücksetzen
   version_status_closed: geschlossen
   version_status_locked: gesperrt
   version_status_open: offen

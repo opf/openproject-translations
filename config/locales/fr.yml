@@ -759,7 +759,6 @@ fr:
   description_selected_columns: Colonnes Sélectionnées
   description_sub_work_package: Sous-Lot de Travaux de l'actuel
   description_toc_toggle: Afficher/Masquer la table de matières
-  description_user_mail_notification: Paramètres de notification par e-mail
   description_wiki_subpages_reassign: Assigner une nouvelle page parente
   direction: de gauche à droite
   enumeration_activities: Activités (suivi de temps)
@@ -1281,8 +1280,6 @@ fr:
   label_used_by: Utilisé par
   label_user_activity: Activité de %{value}
   label_user_anonymous: Anonyme
-  label_user_mail_self_notified: Je veux être notifié des modifications que je fais
-    moi-même
   label_user_mail_option_all: Pour tout évènement sur tous mes projets
   label_user_mail_option_none: Aucun évènement
   label_user_mail_option_only_assigned: Seulement pour les tâches qui me sont assignées
@@ -1301,6 +1298,7 @@ fr:
   label_version_sharing_none: Non partagé
   label_version_sharing_system: Avec tous les projets
   label_version_sharing_tree: Avec l'arbre du projet
+  label_video: Video
   label_view_all_revisions: Afficher toutes les révisions
   label_view_diff: Afficher les différences
   label_view_revisions: Afficher les révisions
@@ -1510,6 +1508,11 @@ fr:
           kb: ko
           mb: Mo
           tb: To
+  onboarding:
+    text_getting_started: This video provides you an overview of OpenProject. It helps
+      you to set up your first project and to start collaborating with your team members.
+    text_show_again: You can restart this video from the help menu
+    welcome: Hi %{name}, welcome to OpenProject
   permission_add_work_package_notes: Ajouter des notes
   permission_add_work_packages: Ajouter des lots de travaux (permet également d'ajouter
     des pièces jointes à tous les lots de travaux)
@@ -1977,9 +1980,6 @@ fr:
   text_type_no_workflow: Aucun flux de travail défini pour ce type...
   text_unallowed_characters: Caractères non autorisés
   text_user_invited: L'utilisateur a été invité et est en attente d'enregistrement.
-  text_user_mail_option: Pour les projets non sélectionnés, vous recevrez uniquement
-    des notifications sur les éléments que vous suivez ou auxquels vous participez
-    (e.g. les lots de travaux dont vous êtes l'auteur ou qui vous sont assignés).
   text_user_wrote: "%{value} écrit:"
   text_warn_on_leaving_unsaved: La page actuelle contient du texte non sauvegardé
     qui sera perdu si vous quittez cette page.
@@ -2223,6 +2223,7 @@ fr:
     authentication_settings_disabled_due_to_external_authentication: Cet utilisateur
       s'authentifie via un fournisseur d'authentification externe, il n'y a aucun
       mot de passe dans OpenProject à changer.
+    authorization_rejected: Vous n'êtes pas autorisé à vous authentifier.
     assign_random_password: Assigner un mot de passe aléatoire (envoyé à l'utilisateur
       par courriel)
     blocked: verrouillé temporairement
@@ -2232,19 +2233,24 @@ fr:
     deleted: Utilisateur supprimé
     error_status_change_failed: 'Le changement du statut de l''utilisateur a échoué
       dû aux erreurs suivantes: %{errors}'
+    invite: Inviter l'utilisateur par courriel
+    invited: invité
     lock: Verrouillage permanent
     locked: verrouillé en permanence
-    registered: enregistré
-    invited: invité
-    reset_failed_logins: Réinitialiser les connexions echouées
-    status_user_and_brute_force: "%{user} et %{brute_force}"
-    unlock: Déverrouiller
-    unlock_and_reset_failed_logins: Déverrouiller et réinitialiser les échecs de connexion
     no_login: Cet utilisateur s'authentifie avec un mot de passe. Tant que cela est
       désactivé, il ne peut s'authentifier.
     password_change_unsupported: Le changement de mot de passe n'est pas supporté.
-    authorization_rejected: Vous n'êtes pas autorisé à vous authentifier.
-    invite: Inviter l'utilisateur par courriel
+    registered: enregistré
+    reset_failed_logins: Réinitialiser les connexions echouées
+    settings:
+      mail_notifications: Send email notifications
+      mail_project_explanaition: For unselected projects, you will only receive notifications
+        about things you watch or you're involved in (e.g. work packages you're the
+        author or assignee of).
+      mail_self_notified: Je veux être notifié des modifications que je fais moi-même
+    status_user_and_brute_force: "%{user} et %{brute_force}"
+    unlock: Déverrouiller
+    unlock_and_reset_failed_logins: Déverrouiller et réinitialiser les échecs de connexion
   version_status_closed: clôturé
   version_status_locked: verrouillé
   version_status_open: ouvert
