@@ -16,7 +16,7 @@ ro:
       no_results_content_text: Creare mod de autentificare nou
   boards:
     show:
-      no_results_title_text: "În acest moment nu există mesaje pentru această planșă."
+      no_results_title_text: "În acest moment nu există mesaje pentru acest forum."
   custom_fields:
     tab:
       no_results_title_text: "În acest moment nu există câmpuri personalizate."
@@ -29,8 +29,8 @@ ro:
       no_results_title_text: "În acest moment nu există utilizatori care să facă parte
         din acest grup."
     memberships:
-      no_results_title_text: "În acest moment nu există niciun proiect care să facă
-        parte din acest grup."
+      no_results_title_text: "În acest moment nu există proiecte care să facă parte
+        din acest grup."
   planning_element_type_colors:
     index:
       no_results_title_text: "În acest moment nu există culori."
@@ -42,8 +42,8 @@ ro:
       activities:
         no_results_title_text: "În acest moment nu există activități disponibile."
       boards:
-        no_results_title_text: "În acest moment nu există planșe pentru acest proiect."
-        no_results_content_text: Creare planșă nouă
+        no_results_title_text: "În acest moment nu există forumuri pentru acest proiect."
+        no_results_content_text: Creare forum nou
       categories:
         no_results_title_text: "În acest moment nu există categorii de pachete de
           lucru."
@@ -778,9 +778,9 @@ ro:
   error_can_not_reopen_work_package_on_closed_version: A work package assigned to
     a closed version cannot be reopened
   error_check_user_and_role: Please choose a user and a role.
-  error_cookie_missing: The OpenProject cookie is missing. Please ensure that cookies
-    are enabled, as this application will not properly function without.
-  error_token_authenticity: Unable to verify Cross-Site Request Forgery token.
+  error_cookie_missing: Cookie-ul OpenProject lipseşte. Vă rugăm să verificați setările
+    referitoare la cookies, această aplicație nu va funcţiona corespunzător fără acestea.
+  error_token_authenticity: Nu se poate verifica token-ul "Cross-Site Request Forgery".
   error_work_package_done_ratios_not_updated: Work package done ratios not updated.
   error_work_package_not_found_in_project: The work package was not found or does
     not belong to this project
@@ -1569,9 +1569,9 @@ ro:
       subprojects_confirmation: 'Se vor șterge și sub-proiectul/sub-proiectele: %{value}.'
       title: "Ștergere proiect %{name}"
     identifier:
-      warning_one: Members of the project will have to relocate the project's repositories.
-      warning_two: Existing links to the project will no longer work.
-      title: Change the project's identifier
+      warning_one: Participanții la proiect vor trebui să mute arhivele proiectului.
+      warning_two: Legăturile existente la acest proiect nu vor mai funcționa.
+      title: Modificare identificator proiect
   project_module_activity: Activity
   project_module_boards: Forums
   project_module_calendar: Calendar
@@ -1586,107 +1586,114 @@ ro:
     member_of_group: Assignee's group
     subproject_id: Subproject
   repositories:
-    at_identifier: at %{identifier}
-    atom_revision_feed: Atom revision feed
-    autofetch_information: |
-      Check this if you want repositories to be updated automatically when accessing the repository module page.
-      This encompasses the retrieval of commits from the repository and refreshing the required disk storage.
+    at_identifier: la %{identifier}
+    atom_revision_feed: Lista de revizii Atom
+    autofetch_information: Bifați dacă doriţi ca repository-urile să fie actualizate
+      automat la accesarea paginii din modulul "repository". Această operațiune cuprinde
+      obținerea commit-urilor din repository si recalcularea spațiului de disc necesar.
     checkout:
       access:
-        readwrite: Read + Write
-        read: Read-only
-        none: No checkout access, you may only view the repository through this application.
-      access_permission: Your permissions on this repository
-      url: Checkout URL
-      base_url_text: |
-        The base URL to use for generating checkout URLs (e.g., https://myserver.example.org/repos/).
-        Note: The base URL is only used for rewriting checkout URLs in managed repositories. Other repositories are not altered.
+        readwrite: Citire + Scriere
+        read: Doar citire
+        none: Nu aveți acces de extragere (checkout), puteţi doar vizualiza repository-ul
+          în această aplicație.
+      access_permission: Permisiunile pe acest repository
+      url: URL extragere (checkout)
+      base_url_text: "Baza URL utilizată pentru generarea URL-urilor de extragere
+        (checkout) - de exemplu https://serverulmeu.example.org/repos/. \nNotă: Baza
+        URL este folosită doar pentru rescrierea URL-urilor de extragere în repository-urile
+        gestionate. Alte repository-uri nu sunt afectate.\n"
       default_instructions:
-        git: |
-          The data contained in this repository can be downloaded to your computer with Git.
-          Please consult the documentation of Git if you need more information on the checkout procedure and available clients.
-        subversion: |
-          The data contained in this repository can be downloaded to your computer with Subversion.
-          Please consult the documentation of Subversion if you need more information on the checkout procedure and available clients.
-      enable_instructions_text: Displays checkout instructions defined below on all
-        repository-related pages.
-      instructions: Checkout instructions
-      show_instructions: Display checkout instructions
-      text_instructions: This text is displayed alongside the checkout URL for guidance
-        on how to check out the repository.
-      not_available: Checkout instructions are not defined for this repository. Ask
-        your administrator to enable them for this repository in the system settings.
-    create_managed_delay: 'Please note: The repository is managed, it is created asynchronously
-      on the disk and will be available shortly.'
-    create_successful: The repository has been registered.
-    delete_sucessful: The repository has been deleted.
+        git: "Datele conţinute în acest repository pot fi descărcate în computerul
+          dumneavoastră cu Git. \nVă rugăm să consultaţi documentaţia Git dacă aveţi
+          nevoie de informaţii suplimentare despre procedura de extragere (checkout)
+          şi aplicațiile client disponibile.\n"
+        subversion: "Datele conţinute în acest repository pot fi descărcate în computerul
+          dumneavoastră cu Subversion. \nVă rugăm să consultaţi documentaţia Subversion
+          dacă aveţi nevoie de informaţii suplimentare despre procedura de extragere
+          (checkout) şi aplicațiile client disponibile.\n"
+      enable_instructions_text: Afișează instrucțiunile de checkout definite mai jos
+        pe toate paginile care au legătură cu repository-ul.
+      instructions: Instrucțiuni de checkout
+      show_instructions: Afișare instrucțiuni de extragere (checkout)
+      text_instructions: Acest text este afişat alături de URL-ul de extragere (checkout)
+        pentru asistență în procesul de checkout din repository.
+      not_available: Instrucțiunile de extragere (checkout) nu sunt definite pentru
+        acest repository. Solicitați administratorului să le activeze pentru acest
+        repository în cadrul setărilor de sistem.
+    create_managed_delay: 'Atenție: Repository-ul este gestionat, este creat în mod
+      asincron pe disc și va fi disponibil în scurt timp.'
+    create_successful: Repository-ul a fost înregistrat.
+    delete_sucessful: Repository-ul a fost șters.
     destroy:
-      confirmation: If you continue, this will permanently delete the managed repository.
-      info: Deleting the repository is an irreversible action.
-      info_not_managed: 'Note: This will NOT delete the contents of this repository,
-        as it is not managed by OpenProject.'
-      managed_path_note: 'The following directory will be erased: %{path}'
-      repository_verification: Enter the project's identifier %{identifier} to verify
-        the deletion of its repository.
-      subtitle: Do you really want to delete the %{repository_type} of the project
+      confirmation: Prin continuarea operațiunii veți șterge permanent repository-ul
+        gestionat.
+      info: "Ștergerea repository-ului este o acțiune ireversibilă."
+      info_not_managed: 'Atenție: Această acțiune NU va șterge conținutul repository-ului,
+        deoarece acesta nu este gestionat de OpenProject.'
+      managed_path_note: 'Urmatorul director va fi şters: %{path}'
+      repository_verification: Introduceţi identificatorul proiectului %{identifier}
+        pentru a verifica ștergerea sa din repository.
+      subtitle: Sunteți sigur că doriţi să ştergeţi %{repository_type} din proiectul
         %{project_name}?
-      subtitle_not_managed: Do you really want to remove the linked %{repository_type}
-        %{url} from the project %{project_name}?
-      title: Delete the %{repository_type}
-      title_not_managed: Remove the linked %{repository_type}?
+      subtitle_not_managed: Sunteți sigur că doriţi să ştergeţi %{repository_type}
+        %{url} din proiectul %{project_name}?
+      title: "Ştergere %{repository_type}"
+      title_not_managed: Doriți eliminarea %{repository_type} corespunzător?
     errors:
-      build_failed: Unable to create the repository with the selected configuration.
-        %{reason}
-      managed_delete: Unable to delete the managed repository.
-      managed_delete_local: 'Unable to delete the local repository on filesystem at
-        ''%{path}'': %{error_message}'
-      empty_repository: The repository exists, but is empty. It does not contain any
-        revisions yet.
-      exists_on_filesystem: The repository directory already exists in the filesystem.
-      filesystem_access_failed: 'An error occurred while accessing the repository
-        in the filesystem: %{message}'
-      not_manageable: This repository vendor cannot be managed by OpenProject.
-      path_permission_failed: 'An error occurred trying to create the following path:
-        %{path}. Please ensure that OpenProject may write to that folder.'
-      unauthorized: You're not authorized to access the repository or the credentials
-        are invalid.
-      unavailable: The repository is unavailable.
-      exception_title: 'Cannot access the repository: %{message}'
-      disabled_or_unknown_type: The selected type %{type} is disabled or no longer
-        available for the SCM vendor %{vendor}.
-      disabled_or_unknown_vendor: The SCM vendor %{vendor} is disabled or no longer
-        available.
-      remote_call_failed: 'Calling the managed remote failed with message ''%{message}''
-        (Code: %{code})'
-      remote_invalid_response: Received an invalid response from the managed remote.
-      remote_save_failed: Could not save the repository with the parameters retrieved
-        from the remote.
+      build_failed: Imposibil de creat repository-ul cu configuraţia selectată. %{reason}
+      managed_delete: Nu se poate șterge repository-ul gestionat.
+      managed_delete_local: 'Nu se poate șterge repository-ul local de la adresa ''%{path}'':
+        %{error_message}'
+      empty_repository: Repository-ul există, dar este gol. Nu conține nicio revizie
+        deocamdată.
+      exists_on_filesystem: Directorul repository-ului există deja în sistemul de
+        fișiere.
+      filesystem_access_failed: 'A apărut o eroare la accesarea repository-ului în
+        sistemul de fişiere: %{message}'
+      not_manageable: Acest furnizor de repository nu poate fi gestionat de OpenProject.
+      path_permission_failed: 'A apărut o eroare la încercarea de a crea calea următoare:
+        %{path}. Asiguraţi-vă că OpenProject are drepturi de scriere în acel folder.'
+      unauthorized: Nu sunteți autorizat să accesați repository-ul sau credențialele
+        nu sunt valide.
+      unavailable: Repository-ul este indisponibil.
+      exception_title: 'Repository-ul nu este accesibil: %{message}'
+      disabled_or_unknown_type: Tipul selectat - %{type} - este dezactivat sau nu
+        mai este disponibil pentru furnizorul SCM %{vendor}.
+      disabled_or_unknown_vendor: Furnizorul SCM %{vendor} este dezactivat sau nu
+        mai este disponibil.
+      remote_call_failed: 'Apelarea serviciului la distanță a eșuat cu mesajul ''%{message}''
+        (Cod: %{code})'
+      remote_invalid_response: A fost primit un răspuns invalid de la serviciul la
+        distanță.
+      remote_save_failed: Repository-ul nu a putut fi salvat cu parametrii primiți
+        de la serviciul la distanță.
     git:
       instructions:
-        managed_url: This is the URL of the managed (local) Git repository.
-        path: Specify the path to your local Git repository ( e.g., %{example_path}
-          ).
-        path_encoding: 'Override Git path encoding (Default: UTF-8)'
-      local_title: Link existing local Git repository
-      local_introduction: If you have an existing local Git repository, you can link
-        it with OpenProject to access it from within the application.
-      managed_introduction: Let OpenProject create and integrate a local Git repository
-        automatically.
-      managed_title: Git repository integrated into OpenProject
-      path: Path to Git repository
+        managed_url: Aceasta este adresa URL a repository-ului Git gestionat (local).
+        path: Specificaţi calea către repository-ul Git local (de exemplu %{example_path}).
+        path_encoding: 'Suprascriere codificare text Git (implicit: UTF-8)'
+      local_title: Legare la repository Git local existent
+      local_introduction: Dacă aveţi deja un repository de Git local, puteți să-l
+        conectați cu OpenProject pentru a-l accesa din aplicație.
+      managed_introduction: Permiteți aplicației OpenProject să creeze şi să integreze
+        un repository Git local automat.
+      managed_title: Repository Git integrat cu OpenProject
+      path: Calea către repository-ul Git
       path_encoding: Path encoding
-    go_to_revision: Go to revision
-    managed_remote: Managed repositories for this vendor are handled remotely.
-    managed_remote_note: Information on the URL and path of this repository is not
-      available prior to its creation.
-    managed_url: Managed URL
+    go_to_revision: Deplasare la revizia
+    managed_remote: Repository-urile gestionate pentru acest furnizor sunt controlate
+      de la distanță.
+    managed_remote_note: Informații privind URL-ul și calea acestui depozit nu sunt
+      disponibile înainte de crearea sa.
+    managed_url: URL gestionat
     settings:
-      automatic_managed_repos_disabled: Disable automatic creation
-      automatic_managed_repos: Automatic creation of managed repositories
-      automatic_managed_repos_text: By setting a vendor here, newly created projects
-        will automatically receive a managed repository of this vendor.
-    scm_vendor: Source control management system
-    scm_type: Repository type
+      automatic_managed_repos_disabled: Dezactivare creare automată
+      automatic_managed_repos: Crearea automată a repository-urilor gestionate
+      automatic_managed_repos_text: Prin setarea unui furnizor aici, proiectele nou
+        create vor primi automat un repository getionat al acestui vendor.
+    scm_vendor: Sistem de management al controlului codului sursă
+    scm_type: Tip repository
     scm_types:
       local: Link existing local repository
       existing: Link existing repository
@@ -1772,7 +1779,8 @@ ro:
     (e.g., to create and update work packages).
   setting_mail_handler_api_key: API key
   setting_mail_handler_body_delimiters: Truncate emails after one of these lines
-  setting_mail_handler_body_delimiter_regex: Truncate emails matching this regex
+  setting_mail_handler_body_delimiter_regex: Trunchiaţi email-uri care se potrivesc
+    cu acest regex
   setting_new_project_user_role_id: Role given to a non-admin user who creates a project
   setting_password_active_rules: Active character classes
   setting_password_count_former_banned: Number of most recently used passwords banned
@@ -1860,7 +1868,7 @@ ro:
   text_hint_date_format: Enter a date in the form of YYYY-MM-DD. Other formats may
     be changed to an unwanted date.
   text_hint_disable_with_0: 'Note: Disable with 0'
-  text_hours_between: Between %{min} and %{max} hours.
+  text_hours_between: "Între %{min} şi %{max} ore."
   text_work_package_added: Work package %{id} has been reported by %{author}.
   text_work_package_category_destroy_assignments: Remove category assignments
   text_work_package_category_destroy_question: Some work packages (%{count}) are assigned
@@ -1906,7 +1914,8 @@ ro:
     underscores are allowed, must start with a lower case letter.
   text_reassign: 'Reassign to work package:'
   text_regexp_info: eg. ^[A-Z0-9]+$
-  text_regexp_multiline: The regex is applied in a multi-line mode. e.g., ^---\s+
+  text_regexp_multiline: 'Formula regex este aplicată într-un mod multilinie - de
+    exemplu: ^---\s+'
   text_repository_usernames_mapping: |
     Select or update the OpenProject user mapped to each username found in the repository log.
     Users with the same OpenProject and repository username or email are automatically mapped.
