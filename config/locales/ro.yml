@@ -374,7 +374,7 @@ ro:
             itself.
           project_association_not_allowed: nu permite asocieri.
         repository:
-          not_available: Nu este disponibil furnizor de SCM
+          not_available: Nu este disponibil furnizorul de SCM
           not_whitelisted: nu este permisă de configurație.
           no_directory: nu este un director.
         work_package:
@@ -1211,7 +1211,7 @@ ro:
   label_reporting: Reporting
   label_reporting_plural: Reportings
   label_repository: Repository
-  label_repository_root: Rădăcina arhivei
+  label_repository_root: Rădăcina repo-ului
   label_repository_plural: Repositories
   label_responsible_for_work_packages: Work packages I am responsible for
   label_result_plural: Results
@@ -1487,8 +1487,8 @@ ro:
   notice_logged_out: You have been logged out.
   notice_wont_delete_auth_source: Modul de autentificare nu poate fi șters atâta timp
     cât există utilizatori care încă îl folosesc.
-  notice_project_cannot_update_custom_fields: 'You cannot update the project''s available
-    custom fields. The project is invalid: %{errors}'
+  notice_project_cannot_update_custom_fields: 'Nu puteți actualiza câmpurile particularizate
+    disponibile ale proiectului. Proiectul este invalid: %{errors}'
   number:
     format:
       delimiter: ''
@@ -1522,10 +1522,10 @@ ro:
   permission_add_project: Create project
   permission_add_subprojects: Create subprojects
   permission_add_work_package_watchers: Add watchers
-  permission_browse_repository: Acces doar-în-citire la arhivă (vizualizare și împrumut)
+  permission_browse_repository: Acces doar citire la repo (vizualizare și descărcare)
   permission_change_wiki_parent_page: Change parent wiki page
   permission_comment_news: Comment news
-  permission_commit_access: Acces de citire/scriere la arhivă (predare)
+  permission_commit_access: Acces de citire/scriere la repo (încărcare)
   permission_copy_projects: Copy projects
   permission_delete_work_package_watchers: Delete watchers
   permission_delete_work_packages: Delete work packages
@@ -1571,7 +1571,7 @@ ro:
   permission_select_project_modules: Select project modules
   permission_manage_types: Select types
   permission_view_calendar: View calendar
-  permission_view_changesets: Vizualizare revizii arhivă în OpenProject
+  permission_view_changesets: Vizualizare revizii repo în OpenProject
   permission_view_commit_author_statistics: View commit author statistics
   permission_view_work_package_watchers: View watchers list
   permission_view_work_packages: View Work Packages
@@ -1613,52 +1613,51 @@ ro:
   repositories:
     at_identifier: la %{identifier}
     atom_revision_feed: Lista de revizii Atom
-    autofetch_information: Bifați dacă doriţi ca repository-urile să fie actualizate
-      automat la accesarea paginii din modulul "repository". Această operațiune cuprinde
-      obținerea commit-urilor din repository si recalcularea spațiului de disc necesar.
+    autofetch_information: Bifați dacă doriţi ca repo-urile să fie actualizate automat
+      la accesarea paginii din modulul "Repo". Această operațiune cuprinde obținerea
+      commit-urilor din repo si recalcularea spațiului de disc necesar.
     checkout:
       access:
         readwrite: Citire + Scriere
         read: Doar citire
-        none: Nu aveți acces de extragere (checkout), puteţi doar vizualiza repository-ul
+        none: Nu aveți acces de extragere (checkout), puteţi doar vizualiza repo-ul
           în această aplicație.
-      access_permission: Permisiunile pe acest repository
+      access_permission: Permisiunile pe acest repo
       url: URL extragere (checkout)
-      base_url_text: "Baza URL utilizată pentru generarea URL-urilor de extragere
+      base_url_text: "Baza URL utilizată pentru generarea URL-urilor de descărcare
         (checkout) - de exemplu https://serverulmeu.example.org/repos/. \nNotă: Baza
-        URL este folosită doar pentru rescrierea URL-urilor de extragere în repository-urile
-        gestionate. Alte repository-uri nu sunt afectate.\n"
+        URL este folosită doar pentru rescrierea URL-urilor de extragere în repo-urile
+        gestionate. Alte repo-uri nu sunt afectate.\n"
       default_instructions:
-        git: "Datele conţinute în acest repository pot fi descărcate în computerul
-          dumneavoastră cu Git. \nVă rugăm să consultaţi documentaţia Git dacă aveţi
-          nevoie de informaţii suplimentare despre procedura de extragere (checkout)
-          şi aplicațiile client disponibile.\n"
-        subversion: "Datele conţinute în acest repository pot fi descărcate în computerul
+        git: "Datele conţinute în acest repo pot fi descărcate în computerul dumneavoastră
+          cu Git. \nVă rugăm să consultaţi documentaţia Git dacă aveţi nevoie de informaţii
+          suplimentare despre procedura de descărcare (checkout) şi aplicațiile client
+          disponibile.\n"
+        subversion: "Datele conţinute în acest repo pot fi descărcate în computerul
           dumneavoastră cu Subversion. \nVă rugăm să consultaţi documentaţia Subversion
-          dacă aveţi nevoie de informaţii suplimentare despre procedura de extragere
+          dacă aveţi nevoie de informaţii suplimentare despre procedura de descărcare
           (checkout) şi aplicațiile client disponibile.\n"
-      enable_instructions_text: Afișează instrucțiunile de checkout definite mai jos
-        pe toate paginile care au legătură cu repository-ul.
+      enable_instructions_text: Afișează instrucțiunile de descărcare definite mai
+        jos pe toate paginile care au legătură cu repo-ul.
       instructions: Instrucțiuni de checkout
       show_instructions: Afișare instrucțiuni de extragere (checkout)
-      text_instructions: Acest text este afişat alături de URL-ul de extragere (checkout)
-        pentru asistență în procesul de checkout din repository.
-      not_available: Instrucțiunile de extragere (checkout) nu sunt definite pentru
-        acest repository. Solicitați administratorului să le activeze pentru acest
-        repository în cadrul setărilor de sistem.
-    create_managed_delay: 'Atenție: Repository-ul este gestionat, este creat în mod
-      asincron pe disc și va fi disponibil în scurt timp.'
-    create_successful: Repository-ul a fost înregistrat.
-    delete_sucessful: Repository-ul a fost șters.
+      text_instructions: Acest text este afişat alături de URL-ul de descărcare (checkout)
+        pentru asistență în procesul de extragere din repo.
+      not_available: Instrucțiunile de descărcare (checkout) nu sunt definite pentru
+        acest repo. Solicitați administratorului să le activeze pentru acest repo
+        în cadrul setărilor de sistem.
+    create_managed_delay: 'Atenție: Repo-ul este gestionat, este creat în mod asincron
+      pe disc și va fi disponibil în scurt timp.'
+    create_successful: Repo-ul a fost înregistrat.
+    delete_sucessful: Repo-ul a fost șters.
     destroy:
-      confirmation: Prin continuarea operațiunii veți șterge permanent repository-ul
-        gestionat.
-      info: "Ștergerea repository-ului este o acțiune ireversibilă."
-      info_not_managed: 'Atenție: Această acțiune NU va șterge conținutul repository-ului,
+      confirmation: Prin continuarea operațiunii veți șterge permanent repo-ul gestionat.
+      info: "Ștergerea repo-ului este o acțiune ireversibilă."
+      info_not_managed: 'Atenție: Această acțiune NU va șterge conținutul repo-ului,
         deoarece acesta nu este gestionat de OpenProject.'
       managed_path_note: 'Urmatorul director va fi şters: %{path}'
       repository_verification: Introduceţi identificatorul proiectului %{identifier}
-        pentru a verifica ștergerea sa din repository.
+        pentru a verifica ștergerea sa din repo.
       subtitle: Sunteți sigur că doriţi să ştergeţi %{repository_type} din proiectul
         %{project_name}?
       subtitle_not_managed: Sunteți sigur că doriţi să ştergeţi %{repository_type}
@@ -1666,23 +1665,21 @@ ro:
       title: "Ştergere %{repository_type}"
       title_not_managed: Doriți eliminarea %{repository_type} corespunzător?
     errors:
-      build_failed: Imposibil de creat repository-ul cu configuraţia selectată. %{reason}
-      managed_delete: Nu se poate șterge repository-ul gestionat.
-      managed_delete_local: 'Nu se poate șterge repository-ul local de la adresa ''%{path}'':
+      build_failed: Imposibil de creat repo-ul cu configuraţia selectată. %{reason}
+      managed_delete: Nu se poate șterge repo-ul gestionat.
+      managed_delete_local: 'Nu se poate șterge repo-ul local de la adresa ''%{path}'':
         %{error_message}'
-      empty_repository: Repository-ul există, dar este gol. Nu conține nicio revizie
-        deocamdată.
-      exists_on_filesystem: Directorul repository-ului există deja în sistemul de
-        fișiere.
-      filesystem_access_failed: 'A apărut o eroare la accesarea repository-ului în
-        sistemul de fişiere: %{message}'
-      not_manageable: Acest furnizor de repository nu poate fi gestionat de OpenProject.
+      empty_repository: Repo-ul există, dar este gol. Nu conține nicio revizie deocamdată.
+      exists_on_filesystem: Directorul repo-ului există deja în sistemul de fișiere.
+      filesystem_access_failed: 'A apărut o eroare la accesarea repo-ului în sistemul
+        de fişiere: %{message}'
+      not_manageable: Acest furnizor de repo nu poate fi gestionat de OpenProject.
       path_permission_failed: 'A apărut o eroare la încercarea de a crea calea următoare:
         %{path}. Asiguraţi-vă că OpenProject are drepturi de scriere în acel folder.'
-      unauthorized: Nu sunteți autorizat să accesați repository-ul sau credențialele
-        nu sunt valide.
-      unavailable: Repository-ul este indisponibil.
-      exception_title: 'Repository-ul nu este accesibil: %{message}'
+      unauthorized: Nu sunteți autorizat să accesați repo-ul sau credențialele nu
+        sunt valide.
+      unavailable: Repo-ul este indisponibil.
+      exception_title: 'Repo-ul nu este accesibil: %{message}'
       disabled_or_unknown_type: Tipul selectat - %{type} - este dezactivat sau nu
         mai este disponibil pentru furnizorul SCM %{vendor}.
       disabled_or_unknown_vendor: Furnizorul SCM %{vendor} este dezactivat sau nu
@@ -1691,62 +1688,64 @@ ro:
         (Cod: %{code})'
       remote_invalid_response: A fost primit un răspuns invalid de la serviciul la
         distanță.
-      remote_save_failed: Repository-ul nu a putut fi salvat cu parametrii primiți
-        de la serviciul la distanță.
+      remote_save_failed: Repo-ul nu a putut fi salvat cu parametrii primiți de la
+        serviciul la distanță.
     git:
       instructions:
-        managed_url: Aceasta este adresa URL a repository-ului Git gestionat (local).
-        path: Specificaţi calea către repository-ul Git local (de exemplu %{example_path}).
+        managed_url: Aceasta este adresa URL a repo-ului Git gestionat (local).
+        path: Specificaţi calea către repo-ul Git local (de exemplu %{example_path}).
         path_encoding: 'Suprascriere codificare text Git (implicit: UTF-8)'
-      local_title: Legare la repository Git local existent
-      local_introduction: Dacă aveţi deja un repository de Git local, puteți să-l
-        conectați cu OpenProject pentru a-l accesa din aplicație.
+      local_title: Legare la repo Git local existent
+      local_introduction: Dacă aveţi deja un repo de Git local, puteți să-l conectați
+        cu OpenProject pentru a-l accesa din aplicație.
       managed_introduction: Permiteți aplicației OpenProject să creeze şi să integreze
-        un repository Git local automat.
-      managed_title: Repository Git integrat cu OpenProject
-      path: Calea către repository-ul Git
+        un repo Git local automat.
+      managed_title: Repo Git integrat cu OpenProject
+      path: Calea către repo-ul Git
       path_encoding: Path encoding
     go_to_revision: Deplasare la revizia
-    managed_remote: Repository-urile gestionate pentru acest furnizor sunt controlate
-      de la distanță.
-    managed_remote_note: Informații privind URL-ul și calea acestui depozit nu sunt
-      disponibile înainte de crearea sa.
+    managed_remote: Repo-urile gestionate pentru acest furnizor sunt controlate de
+      la distanță.
+    managed_remote_note: Informații privind URL-ul și calea acestui repo nu sunt disponibile
+      înainte de crearea sa.
     managed_url: URL gestionat
     settings:
       automatic_managed_repos_disabled: Dezactivare creare automată
-      automatic_managed_repos: Crearea automată a repository-urilor gestionate
+      automatic_managed_repos: Crearea automată a repo-urilor gestionate
       automatic_managed_repos_text: Prin setarea unui furnizor aici, proiectele nou
-        create vor primi automat un repository getionat al acestui vendor.
+        create vor primi automat un repo gestionat al acestui vendor.
     scm_vendor: Sistem de management al controlului codului sursă
-    scm_type: Tip repository
+    scm_type: Tip repo
     scm_types:
-      local: Link existing local repository
-      existing: Link existing repository
-      managed: Create new repository in OpenProject
+      local: Link la repo local
+      existing: Link la repo existent
+      managed: Creare repo nou în OpenProject
     storage:
-      not_available: Disk storage consumption is not available for this repository.
-      update_timeout: |
-        Keep the last required disk space information for a repository for N minutes.
-        As counting the required disk space of a repository may be costly, increase this value to reduce performance impact.
+      not_available: Consumul de spațiu de stocare nu este disponibil pentru acest
+        repo.
+      update_timeout: "Păstraţi informaţia referitoare la spaţiul de stocare necesar
+        pentru un repo timp de N minute. \nDeoarece măsurarea spațiului necesar pentru
+        un repo poate fi costisitoare, creșteți această valoare pentru a reduce impactul
+        în performanță.\n"
     subversion:
-      existing_title: Existing Subversion repository
-      existing_introduction: If you have an existing Subversion repository, you can
-        link it with OpenProject to access it from within the application.
+      existing_title: Repo Subversion existent
+      existing_introduction: Dacă aveţi deja un repo de Subversion, puteți să-l conectați
+        cu OpenProject pentru a-l accesa din aplicație.
       instructions:
-        managed_url: This is the URL of the managed (local) Subversion repository.
+        managed_url: Aceasta este adresa URL a repo-ului Subversion gestionat (local).
         url: |
-          Enter the repository URL. This may either target a local repository (starting with %{local_proto} ), or a remote repository.
-          The following URL schemes are supported:
-      managed_title: Subversion repository integrated into OpenProject
-      managed_introduction: Let OpenProject create and integrate a local Subversion
-        repository automatically.
-      password: Repository Password
-      username: Repository username
-    named_repository: "%{vendor_name} repository"
-    update_settings_successful: The settings have been sucessfully saved.
-    url: URL to repository
+          Introduceţi adresa URL a repo-ului. Aceasta poate să adreseze fie un repo local (începe cu %{local_proto}), fie un repo la distanță.
+          Următoarele modele de adrese URL sunt acceptate:
+      managed_title: Repo Subversion integrat cu OpenProject
+      managed_introduction: Permiteți aplicației OpenProject să creeze şi să integreze
+        un repo Subversion local automat.
+      password: Parola repo
+      username: Utilizatorul repo
+    named_repository: Repo %{vendor_name}
+    update_settings_successful: Setările au fost salvate cu succes.
+    url: Adresa URL a repo-ului
     warnings:
-      cannot_annotate: This file cannot be annotated.
+      cannot_annotate: Acest fișier nu poate fi adnotat.
   search_input_placeholder: search ...
   setting_email_delivery_method: Metoda de livrare e-mail
   setting_sendmail_location: Locația executabilului "sendmail"
@@ -1761,13 +1760,13 @@ ro:
   setting_app_subtitle: Application subtitle
   setting_app_title: Application title
   setting_attachment_max_size: Attachment max. size
-  setting_autofetch_changesets: Autofetch repository changes
+  setting_autofetch_changesets: Preluare automată a schimbărilor din repo
   setting_autologin: Autologin
   setting_available_languages: Available languages
   setting_bcc_recipients: Blind carbon copy recipients (bcc)
-  setting_brute_force_block_after_failed_logins: Block user after this number of failed
-    login attempts
-  setting_brute_force_block_minutes: Time the user is blocked for
+  setting_brute_force_block_after_failed_logins: Blocare utilizator după acest număr
+    de încercări de autentificare nereușite
+  setting_brute_force_block_minutes: Durata pentru care utilizatorul este blocat
   setting_cache_formatted_text: Cache formatted text
   setting_column_options: Customize the appearance of the work package lists
   setting_commit_fix_keywords: Fixing keywords
@@ -1803,7 +1802,7 @@ ro:
   setting_work_package_startdate_is_adddate: Use current date as start date for new
     work packages
   setting_work_packages_export_limit: Work packages export limit
-  setting_journal_aggregation_time_minutes: Display journals as aggregated within
+  setting_journal_aggregation_time_minutes: Intervalul de timp pentru agregarea jurnalelor
   setting_log_requesting_user: Log user login, name, and mail address for all requests
   setting_login_required: Authentication required
   setting_mail_from: Emission email address
@@ -1819,20 +1818,23 @@ ro:
   setting_password_active_rules: Active character classes
   setting_password_count_former_banned: Number of most recently used passwords banned
     for reuse
-  setting_password_days_valid: Number of days, after which to enforce a password change
+  setting_password_days_valid: Numărul de zile după care este obligatorie schimbarea
+    parolei
   setting_password_min_length: Minimum length
   setting_password_min_adhered_rules: Minimum number of required classes
   setting_per_page_options: Objects per page options
   setting_plain_text_mail: Plain text mail (no HTML)
   setting_protocol: Protocol
-  setting_repositories_automatic_managed_vendor: Automatic repository vendor type
+  setting_repositories_automatic_managed_vendor: Tipul de furnizor pentru repo-urile
+    automate
   setting_repositories_encodings: Repositories encodings
   setting_repository_authentication_caching_enabled: Enable caching for authentication
     request of version control software
-  setting_repository_storage_cache_minutes: Repository disk size cache
-  setting_repository_checkout_display: Show checkout instructions
-  setting_repository_checkout_base_url: Checkout base URL
-  setting_repository_checkout_text: Checkout instruction text
+  setting_repository_storage_cache_minutes: Spațiul de disc rezervat pentru tampon
+    (cache)
+  setting_repository_checkout_display: Afișare instrucțiuni de descărcare (checkout)
+  setting_repository_checkout_base_url: URL de bază pentru descărcare (checkout)
+  setting_repository_checkout_text: Text instrucțiuni de descărcare
   setting_repository_log_display_limit: Maximum number of revisions displayed on file
     log
   setting_rest_api_enabled: Enable REST web service
@@ -1854,10 +1856,11 @@ ro:
   setting_user_format: Users display format
   setting_users_deletable_by_admins: User accounts deletable by admins
   setting_users_deletable_by_self: Users allowed to delete their accounts
-  setting_welcome_text: Welcome block text
-  setting_welcome_title: Welcome block title
-  setting_welcome_on_homescreen: Display welcome block on homescreen
-  setting_welcome_on_projects_page: Display welcome block on project overview
+  setting_welcome_text: Text bloc "bun venit"
+  setting_welcome_title: Titlu bloc "bun venit"
+  setting_welcome_on_homescreen: Afişare bloc "bun venit" pe ecranul de start
+  setting_welcome_on_projects_page: Afişare bloc "bun venit" în vederea de ansamblu
+    a proiectului
   setting_wiki_compression: Wiki history compression
   setting_work_package_group_assignment: Allow assignment to groups
   settings:
@@ -1868,14 +1871,14 @@ ro:
     brute_force_prevention: Automated user blocking
   show_hide_project_menu: Extindere/Restrângere meniu proiect
   status_active: active
-  status_invited: invited
+  status_invited: invitat
   status_registered: registered
   support:
     array:
       sentence_connector: and
       skip_last_comma: 'false'
-  text_access_token_hint: Access tokens allow you to grant external applications access
-    to resources in OpenProject.
+  text_access_token_hint: Tichetele de acces permit aplicaţiilor externe accesul la
+    resurse din OpenProject.
   text_analyze: 'Further analyze: %{subject}'
   text_are_you_sure: Are you sure?
   text_are_you_sure_with_children: Delete work package and all child work packages?
@@ -1905,9 +1908,9 @@ ro:
   text_enumeration_destroy_question: "%{count} objects are assigned to this value."
   text_file_repository_writable: Attachments directory writable
   text_git_repo_example: a bare and local repository (e.g. /gitrepo, c:\\gitrepo)
-  text_hint_date_format: Enter a date in the form of YYYY-MM-DD. Other formats may
-    be changed to an unwanted date.
-  text_hint_disable_with_0: 'Note: Disable with 0'
+  text_hint_date_format: Introduceţi o dată sub forma AAAA-LL-ZZ. Alte formate pot
+    fi modificate în valori nedorite.
+  text_hint_disable_with_0: 'Atenție: Dezactivare cu valoarea 0'
   text_hours_between: "Între %{min} şi %{max} ore."
   text_work_package_added: Work package %{id} has been reported by %{author}.
   text_work_package_category_destroy_assignments: Remove category assignments
@@ -1915,16 +1918,16 @@ ro:
     to this category. What do you want to do?
   text_work_package_category_reassign_to: Reassign work packages to this category
   text_work_package_updated: Work package %{id} has been updated by %{author}.
-  text_work_package_watcher_added: You have been added as a watcher to Work package
-    %{id} by %{watcher_setter}.
+  text_work_package_watcher_added: Ați fost adăugat ca observator la pachetul de lucru
+    %{id} de către %{watcher_setter}.
   text_work_packages_destroy_confirmation: Are you sure you want to delete the selected
     work package(s)?
   text_work_packages_ref_in_commit_messages: Referencing and fixing work packages
     in commit messages
   text_journal_added: "%{label} %{value} added"
-  text_journal_aggregation_time_explanation: Combine journals for display if their
-    age difference is less than the specified timespan. This will also delay mail
-    notifications by the same amount of time.
+  text_journal_aggregation_time_explanation: Combină jurnalele de afişare dacă diferența
+    de timp este mai mică decât intervalul specificat. Acest lucru va întârzia, de
+    asemenea, notificările prin e-mail cu același interval.
   text_journal_changed: "%{label} changed from %{old} to %{new}"
   text_journal_changed_no_detail: "%{label} updated"
   text_journal_changed_with_diff: "%{label} changed (%{link})"
@@ -1932,17 +1935,17 @@ ro:
   text_journal_deleted_with_diff: "%{label} deleted (%{link})"
   text_journal_set_to: "%{label} set to %{value}"
   text_journal_set_with_diff: "%{label} set (%{link})"
-  text_latest_note: 'The latest comment is: %{note}'
+  text_latest_note: 'Ultimul comentariu este: %{note}'
   text_length_between: Length between %{min} and %{max} characters.
   text_line_separated: Multiple values allowed (one line for each value).
   text_load_default_configuration: Load the default configuration
   text_min_max_length_info: 0 means no restriction
-  text_no_roles_defined: There are no roles defined.
-  text_no_access_tokens_configurable: There are no access tokens which can be configured.
+  text_no_roles_defined: Nu există roluri definite.
+  text_no_access_tokens_configurable: Nu există tichete de acces care pot fi configurate.
   text_no_configuration_data: |
     Roles, types, work package statuses and workflow have not been configured yet.
     It is highly recommended to load the default configuration. You will be able to modify it once loaded.
-  text_no_notes: There are no comments available for this work package.
+  text_no_notes: Nu sunt comentarii disponibile pentru acest pachet de lucru.
   text_notice_too_many_values_are_inperformant: 'Note: Displaying more than 100 items
     per page can increase the page load time.'
   text_own_membership_delete_confirmation: |
@@ -1952,7 +1955,7 @@ ro:
   text_powered_by: Powered by %{link}
   text_project_identifier_info: Only lower case letters (a-z), numbers, dashes and
     underscores are allowed, must start with a lower case letter.
-  text_reassign: 'Reassign to work package:'
+  text_reassign: 'Reatribuire la pachetul de lucru:'
   text_regexp_info: eg. ^[A-Z0-9]+$
   text_regexp_multiline: 'Formula regex este aplicată într-un mod multilinie - de
     exemplu: ^---\s+'
@@ -1968,7 +1971,7 @@ ro:
   text_tip_work_package_end_day: work package ending this day
   text_type_no_workflow: No workflow defined for this type
   text_unallowed_characters: Unallowed characters
-  text_user_invited: The user has been invited and is pending registration.
+  text_user_invited: Utilizatorul a fost invitat şi este în curs de înregistrare.
   text_user_wrote: "%{value} wrote:"
   text_warn_on_leaving_unsaved: The current page contains unsaved text that will be
     lost if you leave this page.
@@ -2183,10 +2186,10 @@ ro:
       months: Months
       quarters: Quarters
       years: Years
-  title_remove_and_delete_user: Remove the invited user from the project and delete
-    him/her.
-  tooltip_resend_invitation: Sends another invitation email with a fresh token in
-    case the old one expired or the user did not get the original email.
+  title_remove_and_delete_user: Eliminaţi utilizatorul invitat din proiect şi ştergeţi-l.
+  tooltip_resend_invitation: Trimite un alt e-mail de invitaţie cu un nou tichet de
+    înregistrare în cazul în care cel vechi a expirat sau utilizatorul nu a primit
+    e-mail-ul original.
   tooltip:
     attribute_visibility:
       default: Arată dacă nu e gol
@@ -2209,7 +2212,8 @@ ro:
       via an external authentication provider, so there is no password in OpenProject
       to be changed.
     authorization_rejected: You are not allowed to sign in.
-    assign_random_password: Assign random password (sent to user via email)
+    assign_random_password: Atribuiţi o parolă aleatoare (trimisă utilizatorului prin
+      e-mail)
     blocked: locked temporarily
     blocked_num_failed_logins:
       one: locked temporarily (one failed login attempt)
@@ -2218,8 +2222,8 @@ ro:
     deleted: Deleted user
     error_status_change_failed: 'Changing the user status failed due to the following
       errors: %{errors}'
-    invite: Invite user via email
-    invited: invited
+    invite: Invitare utilizator prin e-mail
+    invited: invitat
     lock: Lock permanently
     locked: locked permanently
     no_login: This user authenticates through login by password. Since it is disabled,
@@ -2258,8 +2262,8 @@ ro:
     updated_automatically_by_child_changes: _Updated automatically by changing values
       within child work package %{child}_
     destroy:
-      info: Deleting the work package is an irreversible action.
-      title: Delete the work package
+      info: "Ştergerea pachetul de lucru este o acţiune ireversibilă."
+      title: "Ştergere a pachetului de lucru"
   nothing_to_preview: Nothing to preview
   api_v3:
     attributes:
@@ -2270,7 +2274,7 @@ ro:
       code_403: You are not authorized to access this resource.
       code_404: The requested resource could not be found.
       code_409: Couldn't update the resource because of conflicting modifications.
-      code_500: An internal error has occured.
+      code_500: A apărut o eroare internă.
       invalid_content_type: Expected CONTENT-TYPE to be '%{content_type}' but got
         '%{actual}'.
       invalid_format: 'Invalid format for property ''%{property}'': Expected format
