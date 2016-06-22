@@ -35,6 +35,8 @@ pl:
     description_select_work_package: 'Zaznacz zestaw Zadań #%{id}'
     description_selected_columns: Wybrane kolumny
     description_subwork_package: 'Otwórz zadanie-dziecko #%{id}'
+    error:
+      internal: An internal error has occcurred.
     filter:
       description:
         text_open_filter: Otwórz filtr klawiszami strzałek przytrzymując klawisz 'ALT'.
@@ -339,11 +341,13 @@ pl:
       description_enter_text: Wpisz tekst
       description_options_hide: Ukryj opcje
       description_options_show: Pokaż opcje
-      error: Wystąpił błąd.
-      error_edit_prohibited: Edytowanie %{attribute} jest zablokowane w tym Zestawie
-        Zadań. Właściwość pochodzi z relacji (np. dziecka) lub z innego powodu nie
-        jest konfigurowalna.
-      error_update_failed: Zadanie nie może być zaktualizowane.
+      error:
+        edit_prohibited: Editing %{attribute} is blocked for this work package. Either
+          this attribute is derived from relations (e.g, children) or otherwise not
+          configurable.
+        format:
+          date: "%{attribute} is no valid date - YYYY-MM-DD expected."
+        general: Wystąpił błąd.
       edit_attribute: "%{attribute} - Edytuj"
       key_value: "%{key}: %{value}"
       label_enable_multi_select: Włącz wybór wielokrotny

@@ -35,6 +35,8 @@ es:
     description_select_work_package: 'Seleccione el paquete de trabajo #%{id}'
     description_selected_columns: Columnas seleccionadas
     description_subwork_package: 'Hijo del paquete de trabajo #%{id}'
+    error:
+      internal: An internal error has occcurred.
     filter:
       description:
         text_open_filter: Abrir este filtro con 'ALT' y las flechas de dirección.
@@ -344,11 +346,13 @@ es:
       description_enter_text: Ingrese texto
       description_options_hide: Ocultar opciones
       description_options_show: Mostrar opciones
-      error: Un error ha ocurrido.
-      error_edit_prohibited: La edición de %{attribute} está bloqueada para este paquete
-        de trabajo. Ya sea que este atributo se derive de las relaciones (por ejemplo,
-        niños) o de lo contrario que no sea configurable.
-      error_update_failed: El paquete de trabajo no pudo ser actualizado.
+      error:
+        edit_prohibited: Editing %{attribute} is blocked for this work package. Either
+          this attribute is derived from relations (e.g, children) or otherwise not
+          configurable.
+        format:
+          date: "%{attribute} is no valid date - YYYY-MM-DD expected."
+        general: Un error ha ocurrido.
       edit_attribute: "%{attribute} - Editar"
       key_value: "%{key}: %{value}"
       label_enable_multi_select: Habilitar selección múltiple

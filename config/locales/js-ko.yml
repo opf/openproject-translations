@@ -34,6 +34,8 @@ ko:
     description_select_work_package: "작업 패키지 #%{id} 선택"
     description_selected_columns: "선택된 열"
     description_subwork_package: "작업 패키지 #%{id}의 자식"
+    error:
+      internal: An internal error has occcurred.
     filter:
       description:
         text_open_filter: "'ALT'와 화살표 키로 이 필터를 여세요."
@@ -328,10 +330,13 @@ ko:
       description_enter_text: "텍스트 입력"
       description_options_hide: "옵션 숨기기"
       description_options_show: "옵션 표시"
-      error: "오류가 발생했습니다."
-      error_edit_prohibited: "%{attribute} 편집은 이 작업 패키지에 대해 차단되었습니다. 이 특성은 관계(예: 자식)에서
-        파생되었거나 그렇지 않으면 구성할 수 없습니다."
-      error_update_failed: "작업 패키지를 갱신할 수 없습니다."
+      error:
+        edit_prohibited: Editing %{attribute} is blocked for this work package. Either
+          this attribute is derived from relations (e.g, children) or otherwise not
+          configurable.
+        format:
+          date: "%{attribute} is no valid date - YYYY-MM-DD expected."
+        general: "오류가 발생했습니다."
       edit_attribute: "%{attribute}-편집"
       key_value: "%{key}: %{value}"
       label_enable_multi_select: "다중 선택 사용"

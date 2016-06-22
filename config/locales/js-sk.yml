@@ -35,6 +35,8 @@ sk:
     description_select_work_package: 'Vyberte pracovný balík #%{id}'
     description_selected_columns: Vybraté stĺpce
     description_subwork_package: 'Podradený pracovný balík #%{id}'
+    error:
+      internal: An internal error has occcurred.
     filter:
       description:
         text_open_filter: Open this filter with 'ALT' and arrow keys.
@@ -341,11 +343,13 @@ sk:
       description_enter_text: Zadajte text
       description_options_hide: Skryť možnosti
       description_options_show: Zobraziť možnosti
-      error: Vyskytla sa chyba.
-      error_edit_prohibited: "Úprava %{attribute} je blokovaná pre tento pracovný
-        balík. Buď je tento atribút odvodený zo vzťahov (napr. z podriadených), alebo
-        nie je konfigurovateľný."
-      error_update_failed: Pracovný balíček nebolo možné aktualizovať.
+      error:
+        edit_prohibited: Editing %{attribute} is blocked for this work package. Either
+          this attribute is derived from relations (e.g, children) or otherwise not
+          configurable.
+        format:
+          date: "%{attribute} is no valid date - YYYY-MM-DD expected."
+        general: Vyskytla sa chyba.
       edit_attribute: "%{attribute} - Edit"
       key_value: "%{key}: %{value}"
       label_enable_multi_select: Povoliť hromadný výber

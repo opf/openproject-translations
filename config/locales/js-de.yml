@@ -35,6 +35,8 @@ de:
     description_select_work_package: 'Arbeitspaket #%{id} auswählen'
     description_selected_columns: Ausgewählte Spalten
     description_subwork_package: 'Kind von Arbeitspaket #%{id}'
+    error:
+      internal: An internal error has occcurred.
     filter:
       description:
         text_open_filter: Öffnen Sie diesen Filter mittels "Alt" und den Pfeiltasten.
@@ -343,11 +345,13 @@ de:
       description_enter_text: Text eingeben
       description_options_hide: Optionen ausblenden
       description_options_show: Optionen anzeigen
-      error: Ein Fehler ist aufgetreten.
-      error_edit_prohibited: Bearbeitung von %{attribute} ist für dieses Arbeitspaket
-        gesperrt. Entweder wird dieses Attribut von verwandten Arbeitspaketen (z.B.
-        Unterelementen) abgeleitet oder es ist anderweitig nicht konfigurierbar.
-      error_update_failed: Das Arbeitspaket konnte nicht aktualisiert werden.
+      error:
+        edit_prohibited: Editing %{attribute} is blocked for this work package. Either
+          this attribute is derived from relations (e.g, children) or otherwise not
+          configurable.
+        format:
+          date: "%{attribute} is no valid date - YYYY-MM-DD expected."
+        general: Ein Fehler ist aufgetreten.
       edit_attribute: "%{attribute} - Bearbeiten"
       key_value: "%{key}: %{value}"
       label_enable_multi_select: Mehrfachauswahl aktivieren

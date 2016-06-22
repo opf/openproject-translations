@@ -35,6 +35,8 @@ ru:
     description_select_work_package: "Выберите пакет работ #%{id}"
     description_selected_columns: "Выбранные столбцы"
     description_subwork_package: "Потомок пакета работ #%{id}"
+    error:
+      internal: An internal error has occcurred.
     filter:
       description:
         text_open_filter: "Откройте этот фильтр с «ALT» и клавишей со стрелкой."
@@ -341,11 +343,13 @@ ru:
       description_enter_text: "Введите текст"
       description_options_hide: "Скрыть параметры"
       description_options_show: "Показать параметры"
-      error: "Произошла ошибка."
-      error_edit_prohibited: "Редактирование %{attribute} заблокирован для этой пакета
-        работ. Либо этот атрибут является производным от отношений (например, детей)
-        или иным причинам не конфигурируется."
-      error_update_failed: "Пакет работ не может быть обновлен."
+      error:
+        edit_prohibited: Editing %{attribute} is blocked for this work package. Either
+          this attribute is derived from relations (e.g, children) or otherwise not
+          configurable.
+        format:
+          date: "%{attribute} is no valid date - YYYY-MM-DD expected."
+        general: "Произошла ошибка."
       edit_attribute: "%{attribute} - изменить"
       key_value: "%{key}: %{value}"
       label_enable_multi_select: "Разрешить множественный выбор"

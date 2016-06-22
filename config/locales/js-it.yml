@@ -35,6 +35,8 @@ it:
     description_select_work_package: 'Seleziona la macro-attività #%{id}'
     description_selected_columns: Colonne selezionate
     description_subwork_package: 'Subordinata alla macro-attività #%{id}'
+    error:
+      internal: An internal error has occcurred.
     filter:
       description:
         text_open_filter: Apri questo filtro con i tasti 'ALT' e le frecce.
@@ -344,11 +346,13 @@ it:
       description_enter_text: Inserisci testo
       description_options_hide: Nascondi opzioni
       description_options_show: Mostra opzioni
-      error: Si è verificato un errore.
-      error_edit_prohibited: La modifica di %{attribute} è bloccata per questa macro-attività.
-        O questo attributo è proveniente da relazioni (ad es., con attività subordinate)
-        o in caso contrario non è configurabile.
-      error_update_failed: La macro-attività non può essere aggiornata.
+      error:
+        edit_prohibited: Editing %{attribute} is blocked for this work package. Either
+          this attribute is derived from relations (e.g, children) or otherwise not
+          configurable.
+        format:
+          date: "%{attribute} is no valid date - YYYY-MM-DD expected."
+        general: Si è verificato un errore.
       edit_attribute: "%{attribute} - Modifica"
       key_value: "%{key}: %{value}"
       label_enable_multi_select: Abilita multiseleziona

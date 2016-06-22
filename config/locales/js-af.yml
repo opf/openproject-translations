@@ -35,6 +35,8 @@ af:
     description_select_work_package: 'Kies werkspakket #%{id}'
     description_selected_columns: Geselekteerde kolomme
     description_subwork_package: 'Kind van werkspakket #%{id}'
+    error:
+      internal: An internal error has occcurred.
     filter:
       description:
         text_open_filter: Open this filter with 'ALT' and arrow keys.
@@ -340,11 +342,13 @@ af:
       description_enter_text: Tik teks
       description_options_hide: Hide options
       description_options_show: Show options
-      error: An error has occured.
-      error_edit_prohibited: Redigering van %{attribute} is geblokkeer vir hierdie
-        werkspakket. Hierdie eienskap is of afgelei van verhoudings (bv., kinders)
-        of andersins nie veranderbaar nie.
-      error_update_failed: The work package could not be updated.
+      error:
+        edit_prohibited: Editing %{attribute} is blocked for this work package. Either
+          this attribute is derived from relations (e.g, children) or otherwise not
+          configurable.
+        format:
+          date: "%{attribute} is no valid date - YYYY-MM-DD expected."
+        general: An error has occured.
       edit_attribute: "%{attribute} - Edit"
       key_value: "%{key}: %{value}"
       label_enable_multi_select: Enable multiselect

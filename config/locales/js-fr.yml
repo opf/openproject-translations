@@ -35,6 +35,8 @@ fr:
     description_select_work_package: 'Sélectionner le lot de travaux #%{id}'
     description_selected_columns: Colonnes Sélectionnées
     description_subwork_package: 'Enfant du lot de travaux #%{id}'
+    error:
+      internal: An internal error has occcurred.
     filter:
       description:
         text_open_filter: Ouvrir ce filtre avec les touches « ALT » et fléchées.
@@ -345,11 +347,13 @@ fr:
       description_enter_text: Saisir texte
       description_options_hide: Masquer les options
       description_options_show: Afficher les options
-      error: Une erreur s'est produite.
-      error_edit_prohibited: L'édition de %{attribute} est bloquée pour ce lot de
-        travaux. Cet attribut peut être dérivé de relations (par ex. enfants) ou n'est
-        pas configurable.
-      error_update_failed: Le lot de travaux n'a pas pu être mis à jour.
+      error:
+        edit_prohibited: Editing %{attribute} is blocked for this work package. Either
+          this attribute is derived from relations (e.g, children) or otherwise not
+          configurable.
+        format:
+          date: "%{attribute} is no valid date - YYYY-MM-DD expected."
+        general: Une erreur s'est produite.
       edit_attribute: "%{attribute} - Éditer"
       key_value: "%{key} : %{value}"
       label_enable_multi_select: Activer la sélection multiple

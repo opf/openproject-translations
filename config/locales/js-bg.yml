@@ -35,6 +35,8 @@ bg:
     description_select_work_package: 'Select work package #%{id}'
     description_selected_columns: "Избрани колони"
     description_subwork_package: 'Child of work package #%{id}'
+    error:
+      internal: An internal error has occcurred.
     filter:
       description:
         text_open_filter: Отворете този филтър с клавишите "ALT" и клавишите за стрелки.
@@ -343,11 +345,13 @@ bg:
       description_enter_text: "Въведи текст"
       description_options_hide: "Скрий опциите"
       description_options_show: "Покажи опциите"
-      error: "Възникна грешка."
-      error_edit_prohibited: Editing %{attribute} is blocked for this work package.
-        Either this attribute is derived from relations (e.g, children) or otherwise
-        not configurable.
-      error_update_failed: "Работният пакет не можа да бъде актуализиран."
+      error:
+        edit_prohibited: Editing %{attribute} is blocked for this work package. Either
+          this attribute is derived from relations (e.g, children) or otherwise not
+          configurable.
+        format:
+          date: "%{attribute} is no valid date - YYYY-MM-DD expected."
+        general: "Възникна грешка."
       edit_attribute: "%{attribute} - Редактиране"
       key_value: "%{key}: %{value}"
       label_enable_multi_select: "Разреши множествено избиране"

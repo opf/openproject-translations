@@ -35,6 +35,8 @@ ro:
     description_select_work_package: 'Selectaţi pachetul de lucru #%{id}'
     description_selected_columns: Coloane selectate
     description_subwork_package: 'Fiu al pachetului de lucru #%{id}'
+    error:
+      internal: An internal error has occcurred.
     filter:
       description:
         text_open_filter: Deschideți acest filtru cu 'ALT' și tastele săgeată.
@@ -345,11 +347,13 @@ ro:
       description_enter_text: Introduceţi textul
       description_options_hide: Ascundere opțiuni
       description_options_show: Afișare opțiuni
-      error: A apărut o eroare.
-      error_edit_prohibited: Editarea câmpului %{attribute} este blocată pentru acest
-        pachet de lucru. Fie acest câmp este calculat indirect (de exemplu pe baza
-        fiilor) sau nu este modificabil.
-      error_update_failed: Pachetul de lucru nu a putut fi actualizat.
+      error:
+        edit_prohibited: Editing %{attribute} is blocked for this work package. Either
+          this attribute is derived from relations (e.g, children) or otherwise not
+          configurable.
+        format:
+          date: "%{attribute} is no valid date - YYYY-MM-DD expected."
+        general: A apărut o eroare.
       edit_attribute: "%{attribute} - Editare"
       key_value: "%{key}: %{value}"
       label_enable_multi_select: Activare selecție multiplă

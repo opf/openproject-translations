@@ -35,6 +35,8 @@ id:
     description_select_work_package: 'Select work package #%{id}'
     description_selected_columns: Kolom dipilih
     description_subwork_package: 'Child of work package #%{id}'
+    error:
+      internal: An internal error has occcurred.
     filter:
       description:
         text_open_filter: Open this filter with 'ALT' and arrow keys.
@@ -338,11 +340,13 @@ id:
       description_enter_text: Masukkan teks
       description_options_hide: Sembunyikan opsi
       description_options_show: Tampilkan opsi
-      error: Terdapat Kesalahan.
-      error_edit_prohibited: Editing %{attribute} is blocked for this work package.
-        Either this attribute is derived from relations (e.g, children) or otherwise
-        not configurable.
-      error_update_failed: The work package could not be updated.
+      error:
+        edit_prohibited: Editing %{attribute} is blocked for this work package. Either
+          this attribute is derived from relations (e.g, children) or otherwise not
+          configurable.
+        format:
+          date: "%{attribute} is no valid date - YYYY-MM-DD expected."
+        general: Terdapat Kesalahan.
       edit_attribute: "%{attribute} - Edit"
       key_value: "%{key}: %{value}"
       label_enable_multi_select: Enable multiselect

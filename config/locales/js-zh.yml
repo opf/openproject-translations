@@ -34,6 +34,8 @@ zh:
     description_select_work_package: "选择工作包 #%{id}"
     description_selected_columns: "选定的列"
     description_subwork_package: "子工作包 #%{id}"
+    error:
+      internal: An internal error has occcurred.
     filter:
       description:
         text_open_filter: "使用 ALT 和方向键打开筛选器。"
@@ -326,9 +328,13 @@ zh:
       description_enter_text: "输入文本"
       description_options_hide: "隐藏选项"
       description_options_show: "显示选项"
-      error: "发生了错误。"
-      error_edit_prohibited: "已阻止对此工作包编辑 %{attribute}。此属性来源于关系（如儿童）或无法配置。"
-      error_update_failed: "无法更新工作包。"
+      error:
+        edit_prohibited: Editing %{attribute} is blocked for this work package. Either
+          this attribute is derived from relations (e.g, children) or otherwise not
+          configurable.
+        format:
+          date: "%{attribute} is no valid date - YYYY-MM-DD expected."
+        general: "发生了错误。"
       edit_attribute: "%{attribute} - 编辑"
       key_value: "%{key}: %{value}"
       label_enable_multi_select: "启用多选"

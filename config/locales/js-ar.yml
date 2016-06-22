@@ -35,6 +35,8 @@ ar:
     description_select_work_package: "اختر مجموعة العمل #%{id}"
     description_selected_columns: "الاعمدة المحددة"
     description_subwork_package: "إنتاج مجموعة العمل #%{id}"
+    error:
+      internal: An internal error has occcurred.
     filter:
       description:
         text_open_filter: "فتح هذا المرشح باستخدام 'ALT' و مفاتيح الأسهم."
@@ -340,10 +342,13 @@ ar:
       description_enter_text: "ادخل نصا"
       description_options_hide: "إخفاء الخيارات"
       description_options_show: "إظهار الخيارات"
-      error: "لقد حدث خطأ ما."
-      error_edit_prohibited: "تعديل %{attribute} محظور لمجموعة العمل هذه. إما أن تكون
-        هذه الميزة مستمدة من علاقات (مثل: الأبناء) أو ما عدا ذلك فإنها غير قابلة للتشكيل."
-      error_update_failed: "الحزمة العاملة لايمكنها أن تعدل."
+      error:
+        edit_prohibited: Editing %{attribute} is blocked for this work package. Either
+          this attribute is derived from relations (e.g, children) or otherwise not
+          configurable.
+        format:
+          date: "%{attribute} is no valid date - YYYY-MM-DD expected."
+        general: "لقد حدث خطأ ما."
       edit_attribute: "%{attribute}_ عدل"
       key_value: "%{key}:%{value}"
       label_enable_multi_select: "السماح بالاختيار المتعدد"
