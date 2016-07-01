@@ -11,9 +11,9 @@ tr:
     plugins:
       no_results_title_text: "Şu anda kullanılabilir eklenti mevcut değil."
   announcements:
-    show_until: Show until
-    is_active: currently displayed
-    is_inactive: currently not displayed
+    show_until: Son görüntülenme tarihi
+    is_active: "şu an görüntülenen"
+    is_inactive: "şu an görüntülenmeyen"
   auth_sources:
     index:
       no_results_content_title: "Şu anda bir doğrulama modu bulunmamakta."
@@ -180,7 +180,7 @@ tr:
   activerecord:
     attributes:
       announcements:
-        show_until: Display until
+        show_until: Son yayın tarihi
       attachment:
         downloads: "İndirmeler"
         file: Dosya
@@ -226,7 +226,7 @@ tr:
         roles: Roller
       project:
         identifier: Tanımlayıcı
-        latest_activity_at: Latest activity at
+        latest_activity_at: Son etkinlik zamanı
         parent: Subproject of
         project_type: Proje türü
         queries: Sorgular
@@ -332,14 +332,14 @@ tr:
         greater_than_or_equal_to: "%{count} ya da daha büyük olması gerekir."
         smaller_than_or_equal_to_max_length: en fazla uzunluğa eşit veya daha küçük
           olmalıdır.
-        greater_than_start_date: must be greater than the start date.
-        greater_than_or_equal_to_start_date: must be greater than or equal to the
-          start date.
+        greater_than_start_date: başlangıç tarihinden daha büyük olması gerekir.
+        greater_than_or_equal_to_start_date: başlangıç tarihi ile aynı ya da daha
+          büyük olması gerekir.
         inclusion: is not set to one of the allowed values.
         invalid: geçersizdir.
         less_than_or_equal_to: must be less than or equal to %{count}.
         not_a_date: bir tarih değil.
-        not_an_iso_date: 'is not a valid date. Required format: YYYY-MM-DD.'
+        not_an_iso_date: 'geçerli bir tarih değil. Gerekli biçim:: YYYY-AA-GG.'
         not_a_number: bir sayı değil.
         not_an_integer: bir tamsayı değil.
         not_same_project: aynı projeye ait değil.
@@ -378,6 +378,9 @@ tr:
               cannot_be_in_another_project: cannot be in another project.
               not_a_valid_parent: geçersizdir.
               does_not_exist: mevcut değil.
+            start_date:
+              violates_relationships: can only be set to %{soonest_start} or later
+                so as not to violate the work package's relationships.
             status_id:
               status_transition_invalid: is invalid because no valid transition exists
                 from old to new status for the current user's roles.
@@ -554,8 +557,9 @@ tr:
   button_configure_menu_entry: Menü öğesini düzenle
   button_delete_menu_entry: Menü öğesini sil
   copy_project:
-    started: Started to copy project "%{source_project_name}" to "%{target_project_name}".
-      You will be informed by mail as soon as "%{target_project_name}" is available.
+    started: '"%{source_project_name}" adlı proje "%{target_project_name}" adlı yeni
+      bir projeye kopyalanmaya başladı. "%{target_project_name}" projesi hazır olduğunda
+      e-posta ile bilgilendirileceksiniz.'
     failed: Cannot copy project %{source_project_name}
     succeeded: Created project %{target_project_name}
     errors: Hata
@@ -819,7 +823,7 @@ tr:
       projects: Newest visible projects in this instance.
       users: Newest registered users in this instance.
     blocks:
-      community: OpenProject community
+      community: OpenProject topluluğu
     links:
       user_guides: Kullanıcı rehberleri
       faq: SSS
@@ -1400,8 +1404,8 @@ tr:
   notice_account_register_done: Account was successfully created. To activate your
     account, click on the link that was emailed to you.
   notice_account_unknown_email: Unknown user.
-  notice_account_update_failed: Account setting could not be saved. Please have a
-    look at your account page.
+  notice_account_update_failed: Hesabı ayarları kaydedilemedi. Lütfen hesap sayfanızın
+    bir göz atın.
   notice_account_updated: Account was successfully updated.
   notice_account_wrong_password: Wrong password
   notice_account_registered_and_logged_in: Welcome, your account has been activated.
@@ -2149,7 +2153,7 @@ tr:
   tooltip:
     attribute_visibility:
       default: Boş değilse göster
-      visible: Show even if empty
+      visible: Boş olsa bile göster
       hidden: Varsayılan olarak gizle
   queries:
     apply_filter: "Önceden yapılandırılmış filtre uygula"
@@ -2186,7 +2190,7 @@ tr:
     registered: kayıtlı
     reset_failed_logins: Reset failed logins
     settings:
-      mail_notifications: Send email notifications
+      mail_notifications: E-posta bildirimleri gönder
       mail_project_explanaition: For unselected projects, you will only receive notifications
         about things you watch or you're involved in (e.g. work packages you're the
         author or assignee of).

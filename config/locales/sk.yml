@@ -11,9 +11,9 @@ sk:
     plugins:
       no_results_title_text: Momentálne nie sú k dispozícii žiadne zásuvné moduly.
   announcements:
-    show_until: Show until
-    is_active: currently displayed
-    is_inactive: currently not displayed
+    show_until: Zobraziť do
+    is_active: aktuálne zobrazené
+    is_inactive: v súčasnosti nie je zobrazené
   auth_sources:
     index:
       no_results_content_title: Momentálne nie sú žiadne metódy overovania identity.
@@ -111,8 +111,8 @@ sk:
         no_results_title_text: Momentálne neexistujú žiadne pracovné balíčky, ktoré
           by boli hlásené.
       responsible:
-        no_results_title_text: There are currently no work packages that I am responsible
-          for.
+        no_results_title_text: Momentálne neexistujú žiadne pracovné balíčky, za ktoré
+          som zodpovedný.
       watched:
         no_results_title_text: Momentálne nemá nastavenú funkciu pozorovania pre žiadne
           pracovné balíčky.
@@ -137,8 +137,8 @@ sk:
           no_results_title_text: V súčasnosti nie sú k dispozícii žiadne verzie.
   label_invitation: Pozvánka
   account:
-    delete: Odstrániť konto
-    delete_confirmation: Naozaj chcete odstrániť toto konto?
+    delete: Vymazať účet
+    delete_confirmation: Ste si istý, že chcete vymazať daný účet?
     deleted: "Účet bol úspešne vymazaný"
     deletion_info:
       data_consequences:
@@ -168,8 +168,8 @@ sk:
           prihlásiť pomocou aktuálneho mena a hesla. Ak sa rozhodnete znovu zaregistrovať,
           môžte tak urobiť prostredníctvom tohto formulára.
       login_verification:
-        other: Enter the login %{name} to verify the deletion.
-        self: Enter your login %{name} to verify the deletion.
+        other: Zadajte prihlasovacie meno %{name} na overenie odstránenia.
+        self: Zadajte vaše prihlasovacie meno %{name} na overenie odstránenia.
     error_inactive_activation_by_mail: Váš účet ešte nebol aktivovaný. Ak ho chcete
       aktivovať, kliknite na odkaz, ktorý bol doručený na Vašu e-mailovú adresu.
     error_inactive_manual_activation: Váš účet ešte nebol aktivovaný. Počkajte prosím,
@@ -177,14 +177,14 @@ sk:
     error_self_registration_disabled: Registrácia užívateľa je v tomto systéme zakázaná.
       Požiadajte prosím správcu, aby pre Vás účet vytvoril.
     login_with_auth_provider: alebo sa prihláste so svojím existujúcim účtom
-    signup_with_auth_provider: or sign up using
-    auth_source_login: Please login as <em>%{login}</em> to activate your account.
-    omniauth_login: Please login to activate your account.
+    signup_with_auth_provider: alebo sa zaregistrujte pomocou
+    auth_source_login: Prihláste sa ako <em>%{login}</em> pre aktiváciu účtu.
+    omniauth_login: Prihláste sa aby ste aktivovali svoj účet.
   actionview_instancetag_blank_option: Prosím, vyberte
   activerecord:
     attributes:
       announcements:
-        show_until: Display until
+        show_until: Zobrazovať, až kým
       attachment:
         downloads: Na stiahnutie
         file: Súbor
@@ -192,7 +192,7 @@ sk:
         filesize: Veľkosť
       auth_source:
         account: "Účet"
-        attr_firstname: Meno
+        attr_firstname: Krstné meno
         attr_lastname: Priezvisko
         attr_login: Používateľské meno
         attr_mail: E-mail adresa
@@ -230,10 +230,10 @@ sk:
         roles: Role
       project:
         identifier: Identifikátor
-        latest_activity_at: Latest activity at
+        latest_activity_at: Posledná aktivita v
         parent: podprojekt projektu
         project_type: Typ projektu
-        queries: Dopyty
+        queries: Požiadavky
         responsible: Zodpovedný
         types: Typy
         versions: Verzie
@@ -252,9 +252,9 @@ sk:
         spent_on: Dátum
         type: Typ
       type:
-        is_in_roadmap: In roadmap
-        in_aggregation: In aggregation
-        is_milestone: Is milestone
+        is_in_roadmap: V pláne
+        in_aggregation: V súhrnne
+        is_milestone: Je medzník
         color: Farba
       user:
         admin: Správca
@@ -262,7 +262,7 @@ sk:
         language: Jazyk
         last_login_on: Posledné prihlásenie
         mail_notification: Upozornenia e-mailom
-        current_password: Current password
+        current_password: Aktuálne heslo
         new_password: Nové heslo
         password_confirmation: Potvrdenie
         force_password_change: Požadovať zmenu hesla pri ďalšom prihlásení
@@ -336,14 +336,14 @@ sk:
         greater_than_or_equal_to: musí byť väčšie alebo rovné ako %{count}.
         smaller_than_or_equal_to_max_length: musí byť menšie alebo rovné ako maximálne
           dĺžka.
-        greater_than_start_date: must be greater than the start date.
-        greater_than_or_equal_to_start_date: must be greater than or equal to the
-          start date.
+        greater_than_start_date: musí byť väčší ako počiatočný dátum.
+        greater_than_or_equal_to_start_date: musí byť väčší alebo rovný ako počiatočný
+          dátum.
         inclusion: nie je nastavená na niektorú z povolených hodnôt.
         invalid: je neplatný.
         less_than_or_equal_to: musí byť menšie alebo rovné ako %{count}.
         not_a_date: nie je platný dátum.
-        not_an_iso_date: 'is not a valid date. Required format: YYYY-MM-DD.'
+        not_an_iso_date: 'nie je platný dátum. Požadovaný formát: RRRR-MM-DD.'
         not_a_number: nie je číslo.
         not_an_integer: nie je celé číslo.
         not_same_project: nepodlieha rovnakému projektu.
@@ -383,6 +383,9 @@ sk:
                 nachádzajúci sa v inom projekte (musí byť povolené správcom systému).
               not_a_valid_parent: je neplatný.
               does_not_exist: neexistuje.
+            start_date:
+              violates_relationships: can only be set to %{soonest_start} or later
+                so as not to violate the work package's relationships.
             status_id:
               status_transition_invalid: je neplatný, pretože neexistuje žiadny platný
                 prechod zo starého na nový stav v prípade aktuálne pridelených rolí
@@ -788,7 +791,7 @@ sk:
   error_check_user_and_role: Zvoľte si, prosím, používateľ a rolu.
   error_cookie_missing: Chýbajú súbory cookie pre OpenProject. Skontrolujte, či sú
     povolené súbory cookie, nakoľko bez nich táto aplikácia nebude správne fungovať.
-  error_token_authenticity: Unable to verify Cross-Site Request Forgery token.
+  error_token_authenticity: Nie je možné overiť token medzi stránkovej požiadavky.
   error_work_package_done_ratios_not_updated: Work package done ratios not updated.
   error_work_package_not_found_in_project: The work package was not found or does
     not belong to this project
@@ -844,7 +847,7 @@ sk:
       projects: Newest visible projects in this instance.
       users: Newest registered users in this instance.
     blocks:
-      community: OpenProject community
+      community: OpenProject komunita
     links:
       user_guides: Používateľské príručky
       faq: "Často kladené otázky"
@@ -852,7 +855,7 @@ sk:
       shortcuts: Skratky
       forums: Fóra
       blog: OpenProject blog
-      boards: Community forum
+      boards: Komunitné fórum
   instructions_after_registration: Môžete prihlásiť ihneď potom, ako váš účet bude
     aktivovaný. Akciu iniciujete kliknutí na %{signin}.
   instructions_after_logout: Môžete znovu prihlásiť kliknutím na tlačidlo %{signin}.
@@ -866,9 +869,9 @@ sk:
           administration menu.
       access_token: Access token
       headers:
-        action: Action
-        expiration: Expires
-      indefinite_expiration: Never
+        action: Akcia
+        expiration: Expiruje
+      indefinite_expiration: Nikdy
   label_account: "Účet"
   label_active: Aktívny
   label_activity: "Činnosť"
@@ -892,7 +895,7 @@ sk:
   label_all_time: všetok čas
   label_all_words: Všetky slová
   label_always_visible: Vždy zobrazené
-  label_announcement: Announcement
+  label_announcement: Oznámenie
   label_and_its_subprojects: "%{value} a jemu podriadené projekty"
   label_api_access_key: Prístupový kľúč API
   label_api_access_key_created_on: Prístupový kľúč pre API vytvorený %{value} vzad
@@ -1093,7 +1096,7 @@ sk:
   label_manage_groups: Manage groups
   label_managed_repositories_vendor: "Úložiská spravované %{vendor}"
   label_max_size: Maximálna veľkosť
-  label_me: me
+  label_me: mňa
   label_member_new: Nový člen
   label_member_plural: "Členovia"
   label_memder_view_all: View all members
@@ -1274,7 +1277,7 @@ sk:
   label_today: dnes
   label_top_menu: Top Menu
   label_topic_plural: Topics
-  label_total: Total
+  label_total: Dohromady
   label_type_new: New type
   label_type_plural: Typy
   label_type_default_new_projects: Type activated for new projects by default
@@ -1433,8 +1436,8 @@ sk:
   notice_account_register_done: Account was successfully created. To activate your
     account, click on the link that was emailed to you.
   notice_account_unknown_email: Unknown user.
-  notice_account_update_failed: Account setting could not be saved. Please have a
-    look at your account page.
+  notice_account_update_failed: Nastavenie konta sa nepodarilo uložiť. Prosím, skontrolujte
+    si stránku účtu.
   notice_account_updated: Account was successfully updated.
   notice_account_wrong_password: Wrong password
   notice_account_registered_and_logged_in: Welcome, your account has been activated.
@@ -1482,16 +1485,16 @@ sk:
     Narrow down the search by typing in the name of the new member (or group).
   notice_unable_delete_time_entry: Unable to delete time log entry.
   notice_unable_delete_version: Unable to delete version.
-  notice_user_missing_authentication_method: User has yet to chose a password or another
-    way the sign in.
+  notice_user_missing_authentication_method: Používateľ si musí zvoliť heslo alebo
+    vybrať iný spôsob prihlásenia.
   notice_user_invitation_resent: Another invitation has been sent to %{email}.
   present_access_key_value: 'Your %{key_name} is: %{value}'
   notice_automatic_set_of_standard_type: Set standard type automatically.
   notice_logged_out: You have been logged out.
-  notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
-    as there are still users using it.
-  notice_project_cannot_update_custom_fields: 'You cannot update the project''s available
-    custom fields. The project is invalid: %{errors}'
+  notice_wont_delete_auth_source: Režim overenia nie je možné odstrániť pokiaľ existujú
+    používatelia, ktorí ho používajú.
+  notice_project_cannot_update_custom_fields: 'Dostupné vlastné polia projektu sa
+    nedajú aktualizovať. Projekt je neplatný: %{errors}'
   number:
     format:
       delimiter: ''
@@ -1513,17 +1516,17 @@ sk:
           mb: MB
           tb: TB
   onboarding:
-    text_getting_started: This video provides you an overview of OpenProject. It helps
-      you to set up your first project and to start collaborating with your team members.
-    text_show_again: You can restart this video from the help menu
-    welcome: Hi %{name}, welcome to OpenProject
-  permission_add_work_package_notes: Add notes
+    text_getting_started: Toto video poskytuje prehľad o OpenProject. Pomáha vám nastaviť
+      váš prvý projekt a začať spolupracovať s členmi svojho tímu.
+    text_show_again: Môžete spustiť toto video z ponuky Pomocník
+    welcome: Ahoj %{name}, Vitajte v OpenProject
+  permission_add_work_package_notes: Pridať poznámky
   permission_add_work_packages: Add work packages (also allows to add attachments
     to all work packages)
   permission_add_messages: Post messages
   permission_add_project: Create project
   permission_add_subprojects: Create subprojects
-  permission_add_work_package_watchers: Add watchers
+  permission_add_work_package_watchers: Pridať pozorovateľov
   permission_browse_repository: Read-only access to repository (browse and checkout)
   permission_change_wiki_parent_page: Change parent wiki page
   permission_comment_news: Comment news
@@ -1600,7 +1603,7 @@ sk:
       warning_two: Existing links to the project will no longer work.
       title: Change the project's identifier
     archive:
-      are_you_sure: Are you sure you want to archive the project '%{name}'?
+      are_you_sure: Naozaj chcete archivovať projekt "%{name}"?
   project_module_activity: "Činnosť"
   project_module_boards: Fóra
   project_module_calendar: Kalendár
@@ -1746,7 +1749,7 @@ sk:
       cannot_annotate: This file cannot be annotated.
   search_input_placeholder: search ...
   setting_email_delivery_method: Spôsob doručenia e-mailu
-  setting_sendmail_location: Location of the sendmail executable
+  setting_sendmail_location: Umiestnenie sendmail spustiteľného programu
   setting_smtp_enable_starttls_auto: Automaticky použiť STARTTLS, ak je k dispozícii
   setting_smtp_address: SMTP server
   setting_smtp_port: SMTP port
@@ -1877,11 +1880,12 @@ sk:
   text_are_you_sure: Are you sure?
   text_are_you_sure_with_children: Delete work package and all child work packages?
   text_assign_to_project: Assign to the project
-  text_form_configuration: You can customize which attributes will be displayed in
-    forms for work packages of this type. 'Active' fields will be shown in the collapsed
-    work package view if they have a value, fields that are 'Always displayed' even
-    if they don't. Inactive fields will never be shown, even if they have a value.
-    Only fields that are not required or have a default value can be customized.
+  text_form_configuration: Môžete prispôsobiť, ktoré atribúty sa zobrazia vo formulároch
+    na prácu s pracovnými balíkmi tohto typu. "Aktívne" polia sa zobrazia v zbalenom
+    zobrazení balíka ak majú nastavenú hodnotu, polia, ktoré sú "Vždy zobrazené",
+    sa zobrazia aj bez hodnoty. Neaktívne polia sa nikdy nezobrazia, ani keď budú
+    mať hodnotu. Len polia, ktoré nie sú povinné, alebo majú predvolenú hodnotu možno
+    prispôsobiť.
   text_caracters_maximum: "%{count} characters maximum."
   text_caracters_minimum: Must be at least %{count} characters long.
   text_comma_separated: Multiple values allowed (comma separated).
@@ -2186,7 +2190,7 @@ sk:
   tooltip:
     attribute_visibility:
       default: Zobraziť, ak nie je prázdny
-      visible: Show even if empty
+      visible: Ukázať aj keď je prázdny
       hidden: "Štandardne skryť"
   queries:
     apply_filter: Aplikovať predkonfigurovaný filter
@@ -2205,7 +2209,8 @@ sk:
       sa overuje za pomoci externého poskytovateľa autentifikácie, takže jeho heslo
       nie je možné zmeniť pomocou OpenProject .
     authorization_rejected: Nemôžete sa prihlásiť.
-    assign_random_password: Assign random password (sent to user via email)
+    assign_random_password: Priradiť náhodné heslo (a odoslať používateľovi prostredníctvom
+      e-mailu)
     blocked: locked temporarily
     blocked_num_failed_logins:
       one: dočasne zamknuté (jeden neúspešný pokus o prihlásenie)
@@ -2214,7 +2219,7 @@ sk:
     deleted: Odstránený používateľ
     error_status_change_failed: 'Changing the user status failed due to the following
       errors: %{errors}'
-    invite: Invite user via email
+    invite: Pozvať používateľa prostredníctvom e-mailu
     invited: invited
     lock: Lock permanently
     locked: locked permanently
@@ -2224,10 +2229,10 @@ sk:
     registered: registrovaný
     reset_failed_logins: Reset failed logins
     settings:
-      mail_notifications: Send email notifications
-      mail_project_explanaition: For unselected projects, you will only receive notifications
-        about things you watch or you're involved in (e.g. work packages you're the
-        author or assignee of).
+      mail_notifications: Posielať e-mailové oznámenia
+      mail_project_explanaition: Pri projektoch, ktoré neboli vybrané, budete dostávať
+        upozornenia týkajúce sa iba vašich alebo vami sledovaných vecí (napr. vecí,
+        ktorých ste autor, alebo ku ktorým ste priradení).
       mail_self_notified: I want to be notified of changes that I make myself
     status_user_and_brute_force: "%{user} and %{brute_force}"
     unlock: Odomknúť
@@ -2253,8 +2258,8 @@ sk:
     updated_automatically_by_child_changes: _Modifikované automaticky z dôvodu zmeny
       hodnôt v rámci podradeného pracovného balíčka %{child}_
     destroy:
-      info: Deleting the work package is an irreversible action.
-      title: Delete the work package
+      info: Odstránenie pracovného balíka je nevratná akcia.
+      title: Odstrániť pracovný balík
   nothing_to_preview: Nič na zobrazenie náhľadu
   api_v3:
     attributes:
@@ -2265,10 +2270,10 @@ sk:
       code_403: Nemáte oprávnenie na prístup k tomuto prostriedku.
       code_404: Požadovaný prostriedok sa nenašiel.
       code_409: Nepodarilo sa aktualizovať prostriedok kvôli konfliktným modifikáciam.
-      code_500: An internal error has occured.
+      code_500: Nastala vnútorná chyba.
       expected:
-        date: YYYY-MM-DD (ISO 8601 date only)
-        duration: ISO 8601 duration
+        date: RRRR-MM-DD (len dátumu ISO 8601)
+        duration: ISO 8601 trvanie
       invalid_content_type: Očakávaný typ obsahu je "%{content_type}", dodaný bol
         však "%{actual}".
       invalid_format: 'Neplatný formát parametra "%{property}": systémom očakávaný
