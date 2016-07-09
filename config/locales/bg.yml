@@ -11,9 +11,9 @@ bg:
     plugins:
       no_results_title_text: "В момента има няма плъгини на разположение."
   announcements:
-    show_until: Show until
-    is_active: currently displayed
-    is_inactive: currently not displayed
+    show_until: "Покажи до"
+    is_active: "в момента е показан"
+    is_inactive: "в момента не се показват"
   auth_sources:
     index:
       no_results_content_title: "В момента има няма режими на удостоверяване."
@@ -183,7 +183,7 @@ bg:
   activerecord:
     attributes:
       announcements:
-        show_until: Display until
+        show_until: "Показване до"
       attachment:
         downloads: "Файлове за изтегляне"
         file: "Файл"
@@ -229,7 +229,7 @@ bg:
         roles: "Роли"
       project:
         identifier: "Идентификатор"
-        latest_activity_at: Latest activity at
+        latest_activity_at: "Последна активност на"
         parent: "Подпроект на"
         project_type: "Тип проект"
         queries: "Търсения"
@@ -332,64 +332,64 @@ bg:
         even: "трябва да бъде четно число."
         exclusion: "е запазено."
         file_too_large: "е твърде голям (максимален размер %{count} байта)."
-        greater_than: must be greater than %{count}.
-        greater_than_or_equal_to: must be greater than or equal to %{count}.
-        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
-          length.
-        greater_than_start_date: must be greater than the start date.
-        greater_than_or_equal_to_start_date: must be greater than or equal to the
-          start date.
-        inclusion: is not set to one of the allowed values.
+        greater_than: "трябва да бъде по-голямо от %{count}."
+        greater_than_or_equal_to: "трябва да бъде по-голямо от или равно на %{count}."
+        smaller_than_or_equal_to_max_length: "трябва да бъде по-малка от или равна
+          на максималната дължина."
+        greater_than_start_date: "трябва да бъде по-голяма от началната дата."
+        greater_than_or_equal_to_start_date: "трябва да бъде по-голяма от или равна
+          на началната дата."
+        inclusion: "не е зададена, като позволена стойност."
         invalid: "е невалиден."
-        less_than_or_equal_to: must be less than or equal to %{count}.
+        less_than_or_equal_to: "трябва да бъде по-малка или равна на %{count}."
         not_a_date: "не е определена дата."
-        not_an_iso_date: 'is not a valid date. Required format: YYYY-MM-DD.'
+        not_an_iso_date: "не е валидна дата. Изискван формат: ГГГГ-ММ-ДД."
         not_a_number: "не е число."
         not_an_integer: "не е цяло число."
         not_same_project: "не принадлежат към един и същ проект."
-        odd: must be odd.
-        taken: has already been taken.
-        too_long: is too long (maximum is %{count} characters).
-        too_short: is too short (minimum is %{count} characters).
-        wrong_length: is the wrong length (should be %{count} characters).
-        after: must be after %{date}.
-        after_or_equal_to: must be after or equal to %{date}.
+        odd: "трябва да бъде нечетен."
+        taken: "вече съществува."
+        too_long: "е твърде дълго (максимума е %{count} знаци)."
+        too_short: "е твърде кратък (минимум е %{count} знаци)."
+        wrong_length: "е грешна дължина (трябва да бъде %{count} знаци)."
+        after: "трябва да бъде след %{date}."
+        after_or_equal_to: "трябва да бъде след или равно на %{date}."
         before: "трябва да бъде преди %{date}."
         before_or_equal_to: "трябва да бъде преди или е равно на %{date}."
-        could_not_be_copied: could not be (fully) copied.
+        could_not_be_copied: "не можа да бъде копиран (изцяло)."
       models:
         project:
           attributes:
             types:
-              in_use_by_work_packages: 'still in use by work packages: %{types}'
+              in_use_by_work_packages: "все още се използва от работни пакети: %{types}"
         project_association:
           identical_projects: "Зависимост не може да бъде създадена между проект и
             самият него."
-          project_association_not_allowed: does not allow associations.
+          project_association_not_allowed: "не позволява асоциации."
         repository:
-          not_available: SCM vendor is not available
-          not_whitelisted: is not allowed by the configuration.
-          no_directory: is not a directory.
+          not_available: SCM доставчик не е наличен
+          not_whitelisted: "не е позволено от конфигурацията."
+          no_directory: "не е директория."
         work_package:
           is_not_a_valid_target_for_time_entries: "Работен пакет #%{id} не е валидна
             цел за преразпределяне на времевите записи."
           attributes:
             due_date:
-              not_start_date: is not on start date, although this is required for
-                milestones.
+              not_start_date: "не е на начална дата, въпреки че това е необходимо
+                за важни събития."
             parent_id:
-              cannot_be_milestone: cannot be a milestone.
-              cannot_be_in_another_project: cannot be in another project.
+              cannot_be_milestone: "не може да бъде крайъгълен камък."
+              cannot_be_in_another_project: "не може да бъде в друг проект."
               not_a_valid_parent: "е невалиден."
               does_not_exist: "не съществува."
             start_date:
-              violates_relationships: can only be set to %{soonest_start} or later
-                so as not to violate the work package's relationships.
+              violates_relationships: "може да се зададе само до %{soonest_start}
+                или по-късно, за да не нарушават взаймоотношения на работни пакети."
             status_id:
-              status_transition_invalid: is invalid because no valid transition exists
-                from old to new status for the current user's roles.
+              status_transition_invalid: "е невалидно, защото не съществува валиден
+                преход от старото към новото състояние за текущите потребителски роли."
             priority_id:
-              only_active_priorities_allowed: needs to be active.
+              only_active_priorities_allowed: "трябва да бъде активен."
             category:
               only_same_project_categories_allowed: "Категорията на работен пакет
                 трябва да бъде в същия проект като работния пакет."
@@ -399,8 +399,8 @@ bg:
         user:
           attributes:
             password:
-              weak: 'Must contain characters of the following classes (at least %{min_count}
-                of %{all_count}): %{rules}.'
+              weak: "Трябва да съдържа знаци от следните класове (най-малко %{min_count}
+                на %{all_count}): %{rules}."
               lowercase: малки букви (например "а")
               uppercase: главни (например "А")
               numeric: "цифрова (например ' 1')"
@@ -447,9 +447,8 @@ bg:
       work_package: "Работен пакет"
   errors:
     header_invalid_fields: "Имаше проблеми със следните полета:"
-    field_erroneous_label: |
-      This field is invalid: %{full_errors}
-      Please enter a valid value.
+    field_erroneous_label: "Това поле е невалиднo: %{full_errors} Моля, въведете валидна
+      стойност."
   activity:
     created: "Създадено: %{title}"
     updated: "Актуализиран: %{title}"
@@ -504,7 +503,7 @@ bg:
     version: "Версия"
     work_package: "Работен пакет"
   button_add: "Добави"
-  button_add_member: Add member
+  button_add_member: "Добавяне на член"
   button_add_watcher: "Добавяне на наблюдател"
   button_annotate: "Добавяне на обяснителни бележки"
   button_apply: "Приложи"
@@ -529,7 +528,7 @@ bg:
   button_edit: "Редактиране"
   button_edit_associated_wikipage: "Редактиране на свързани Wiki страница: %{page_title}"
   button_expand_all: "Разгъване на всички"
-  button_generate: Generate
+  button_generate: "Генерирай"
   button_list: "Списък"
   button_lock: "Заключи"
   button_log_time: "Отчетено време"
@@ -561,8 +560,9 @@ bg:
   button_configure_menu_entry: "Конфигуриране на елемент от меню"
   button_delete_menu_entry: "Изтриване на елемент от меню"
   copy_project:
-    started: Started to copy project "%{source_project_name}" to "%{target_project_name}".
-      You will be informed by mail as soon as "%{target_project_name}" is available.
+    started: Започна копиране на проект "%{source_project_name}" в "%{target_project_name}".
+      Ще бъдете информирани по пощата веднага, след като "%{target_project_name}"
+      е достъпен.
     failed: "Не може да се копира проект %{source_project_name}"
     succeeded: "Създаден проект %{target_project_name}"
     errors: "Грешка"
@@ -792,8 +792,8 @@ bg:
     по подразбиране. Моля изберете друг статус по подразбиране за работен пакет преди
     да изтриете настоящият."
   error_unable_to_connect: "Не може да се свърже (%{value})"
-  error_unable_delete_wiki: Unable to delete the wiki page.
-  error_unable_update_wiki: Unable to update the wiki page.
+  error_unable_delete_wiki: "Не може да изтрие wiki страницата."
+  error_unable_update_wiki: "Не може да актуализира wiki страницата."
   error_workflow_copy_source: "Моля изберете тип източник или роля"
   error_workflow_copy_target: "Моля изберете целеви тип(ове) и роля(и)"
   error_menu_item_not_created: "Не можа да бъде добавен елемент към менюто"
@@ -825,18 +825,18 @@ bg:
   gui_validation_error_plural: "%{count} грешки"
   homescreen:
     additional:
-      projects: Newest visible projects in this instance.
-      users: Newest registered users in this instance.
+      projects: "Най-новите проекти, видими в този случай."
+      users: "Най-новите регистрирани потребители в този случай."
     blocks:
-      community: OpenProject community
+      community: OpenProject Общността
     links:
       user_guides: "Ръководства за потребителя"
       faq: "Често задавани въпроси"
       glossary: "Терминологичен речник"
       shortcuts: "Кратки клавишни комбинации"
       forums: "Форуми"
-      blog: OpenProject blog
-      boards: Community forum
+      blog: OpenProject блог
+      boards: "Форум на Общността"
   instructions_after_registration: "Можете да влезете веднага след като вашият акаунт
     е бил активиран като щракнете %{signin}."
   instructions_after_logout: "Можете да влезете в отново като щракнете %{signin}."
@@ -845,18 +845,18 @@ bg:
   my_account:
     access_tokens:
       no_results:
-        title: No access tokens to display
-        description: All of them have been disabled. They can be re-enabled in the
-          administration menu.
-      access_token: Access token
+        title: "Няма налични билети за показване"
+        description: "Всички от тях са забранени. Те могат да бъдат повторно разрешени
+          в меню за администриране."
+      access_token: "Маркер за достъп"
       headers:
-        action: Action
+        action: "Действие"
         expiration: "Изтича на"
       indefinite_expiration: "Никога"
   label_account: "Акаунт"
   label_active: "Активен"
   label_activity: "Активност"
-  label_add_edit_translations: Add and edit translations
+  label_add_edit_translations: "Добавяне и редактиране на преводи"
   label_add_another_file: "Добавяне на друг файл"
   label_add_columns: "Добавяне на избраните колони"
   label_add_note: "Добавяне на бележка"
@@ -869,14 +869,14 @@ bg:
   label_additional_workflow_transitions_for_author: "Допълнителни промени са рарзрешени,
     когато потребителят е автор"
   label_administration: "Администрация"
-  label_advanced_settings: Advanced settings
+  label_advanced_settings: "Разширени настройки"
   label_age: "Възраст"
   label_ago: "преди"
   label_all: "всички"
   label_all_time: "всички времена"
   label_all_words: "Всички думи"
-  label_always_visible: Always displayed
-  label_announcement: Announcement
+  label_always_visible: "Винаги се показват"
+  label_announcement: "Известие"
   label_and_its_subprojects: "%{value} и неговите подпроекти"
   label_api_access_key: API ключ за достъп
   label_api_access_key_created_on: API ключ за достъп е създаден преди %{value}
@@ -894,7 +894,7 @@ bg:
   label_auth_source_new: "Нов начин на оторизация"
   label_auth_source_plural: "Начини на оторизация"
   label_authentication: "Оторизация"
-  label_available_project_work_package_categories: Available work package categories
+  label_available_project_work_package_categories: "Налични категории работни пакети"
   label_available_project_boards: "Налични табла"
   label_available_project_versions: "Налични версии"
   label_available_project_repositories: "Достъпни хранилища"
@@ -1005,10 +1005,11 @@ bg:
   label_filter_add: "Добавяне на филтър"
   label_filter_plural: "Филтри"
   label_float: "Плаващ"
+  label_folder: Folder
   label_follows: "следва"
   label_force_user_language_to_default: "Задаване на език по подразбиране за потребителите
     с липсващи в системата езици"
-  label_form_configuration: Form configuration
+  label_form_configuration: "Конфигурация на формата"
   label_general: "Общ"
   label_generate_key: "Генериране на ключ"
   label_git_path: "Път до .git директория"
@@ -1291,7 +1292,7 @@ bg:
   label_version_sharing_none: "Не е споделен"
   label_version_sharing_system: "С всички проекти"
   label_version_sharing_tree: "С проектно дърво"
-  label_video: Video
+  label_video: "Видео"
   label_view_all_revisions: "Покажи всички ревизии"
   label_view_diff: "Прегледай различията"
   label_view_revisions: "Изглед ревизии"
@@ -1397,11 +1398,11 @@ bg:
   noscript_description: "Трябва да активирате JavaScript за да ползвате OpenProject!"
   noscript_heading: JavaScript disabled
   noscript_learn_more: Learn more
-  notice_accessibility_mode: The accessibility mode can be enabled in your [account
-    settings](url).
+  notice_accessibility_mode: "Режим на достъпност може да бъде активиран във вашия
+    профил [settings](url)."
   notice_account_activated: Your account has been activated. You can now log in.
-  notice_account_already_activated: The account has already been activated.
-  notice_account_invalid_token: Invalid activation token
+  notice_account_already_activated: "Този потребител вече е потвърден."
+  notice_account_invalid_token: "Невалиден маркер за активиране"
   notice_account_invalid_credentials: Invalid user or password
   notice_account_invalid_credentials_or_blocked: Invalid user or password or the account
     is blocked due to multiple failed login attempts. If so, it will be unblocked
@@ -1417,15 +1418,15 @@ bg:
   notice_account_register_done: Account was successfully created. To activate your
     account, click on the link that was emailed to you.
   notice_account_unknown_email: Unknown user.
-  notice_account_update_failed: Account setting could not be saved. Please have a
-    look at your account page.
+  notice_account_update_failed: "Настройка на акаунт не могат да бъдат записани. Моля
+    погледнете страницата на акаунта си."
   notice_account_updated: Account was successfully updated.
   notice_account_wrong_password: "Грешна парола"
   notice_account_registered_and_logged_in: "Добре дошли вашият акаунт е активиран.
     Вие сте влезли в момента."
-  notice_activation_failed: The account could not be activated.
+  notice_activation_failed: "Акаунтът не може да бъде активиран."
   notice_api_access_key_reseted: API ключа ви за достъп е сменен с нов.
-  notice_api_access_key_generated: Your API access key was generated.
+  notice_api_access_key_generated: API достъп ключ е генериран.
   notice_can_t_change_password: "Този профил е с външен метод за аутентикация. Невъзможна
     смяна на паролата."
   notice_email_error: "Възникна грешка при изпращане на поща (%{value})"
@@ -1434,7 +1435,7 @@ bg:
     от %{total} избрани: %{ids}."
   notice_failed_to_save_members: "Неуспешно записване на членовете: %{errors}."
   notice_feeds_access_key_reseted: "Вашият RSS ключ за достъп е сменен с нов."
-  notice_feeds_access_key_generated: Your RSS access key was generated.
+  notice_feeds_access_key_generated: "Вашият RSS ключ за достъпе генериран."
   notice_file_not_found: "Несъществуваща или преместена страница."
   notice_forced_logout: "Вие автоматично излязохте след %{ttl_time} минути на неактивност."
   notice_internal_server_error: "Възникна грешка в страницата, до която се опитвате
@@ -1447,10 +1448,10 @@ bg:
   notice_locking_conflict_additional_information: "Обновленията са от %{users}."
   notice_locking_conflict_reload_page: "Моля презаредете страницата, прегледайте промените
     и приложете отново вашите обновления."
-  notice_member_added: Added %{name} to the project.
+  notice_member_added: "Добавен %{name} в проекта."
   notice_members_added: "Добавени са %{number} потребителите към проекта."
-  notice_member_removed: Removed %{user} from project.
-  notice_member_deleted: "%{user} has been removed from the project and deleted."
+  notice_member_removed: "Премахнат %{user} от проект."
+  notice_member_deleted: "%{user} е отстранен от проекта и изтрит."
   notice_no_principals_found: "Не са намерени разултати."
   notice_bad_request: "Грешна заявка."
   notice_not_authorized: "Нямате право на достъп до тази страница."
@@ -1465,16 +1466,16 @@ bg:
     като въведете името на нов член (или група)."
   notice_unable_delete_time_entry: "Не може да изтриете запис в регистъра на време."
   notice_unable_delete_version: "Не може да изтриете версия."
-  notice_user_missing_authentication_method: User has yet to chose a password or another
-    way the sign in.
-  notice_user_invitation_resent: Another invitation has been sent to %{email}.
+  notice_user_missing_authentication_method: "Потребителят все още не е избрал парола
+    или друг начин за влизане."
+  notice_user_invitation_resent: "Друга покана е изпратена до %{email}."
   present_access_key_value: 'Your %{key_name} is: %{value}'
   notice_automatic_set_of_standard_type: "Задаване на стандартен тип автоматично."
   notice_logged_out: "Вие излязохте."
   notice_wont_delete_auth_source: "Режим на удостоверяване не може да бъде изтрит,
     докато все още има потребители, които го използват."
-  notice_project_cannot_update_custom_fields: 'You cannot update the project''s available
-    custom fields. The project is invalid: %{errors}'
+  notice_project_cannot_update_custom_fields: "Не можете да актуализирате наличните
+    потребителски полета на проекта. Проектът е невалиден: %{errors}"
   number:
     format:
       delimiter: ''
@@ -1495,10 +1496,11 @@ bg:
           mb: "МB"
           tb: TB
   onboarding:
-    text_getting_started: This video provides you an overview of OpenProject. It helps
-      you to set up your first project and to start collaborating with your team members.
-    text_show_again: You can restart this video from the help menu
-    welcome: Hi %{name}, welcome to OpenProject
+    text_getting_started: "Това видео ви дава общ преглед на OpenProject. Той помага
+      да настроите първия си проект и да започнете да си сътрудничите с членове на
+      Вашият екип."
+    text_show_again: "Можете да рестартирате това видео от менюто помощ"
+    welcome: "Здравейте %{name}, добре дошли в OpenProject"
   permission_add_work_package_notes: "Добавяне на бележки"
   permission_add_work_packages: Add work packages (also allows to add attachments
     to all work packages)
@@ -1581,7 +1583,7 @@ bg:
       warning_two: Existing links to the project will no longer work.
       title: Change the project's identifier
     archive:
-      are_you_sure: Are you sure you want to archive the project '%{name}'?
+      are_you_sure: Наистина ли искате да архивирате на проекта "%{name}"?
   project_module_activity: "Активност"
   project_module_boards: "Форуми"
   project_module_calendar: "Календар"
@@ -1690,25 +1692,25 @@ bg:
     settings:
       automatic_managed_repos_disabled: Disable automatic creation
       automatic_managed_repos: Automatic creation of managed repositories
-      automatic_managed_repos_text: By setting a vendor here, newly created projects
-        will automatically receive a managed repository of this vendor.
-    scm_vendor: Source control management system
-    scm_type: Repository type
+      automatic_managed_repos_text: "Като зададете доставчик тук, новосъздадени проекти
+        ще получат автоматично управлявано хранилище на този доставчик."
+    scm_vendor: "Система управлявана от източника"
+    scm_type: "Тип хранилище"
     scm_types:
-      local: Link existing local repository
-      existing: Link existing repository
-      managed: Create new repository in OpenProject
+      local: "Връзка към локални места за съхранение"
+      existing: "Връзка към съществуващо място за съхранение"
+      managed: "Създаване на ново хранилище в OpenProject"
     storage:
-      not_available: Disk storage consumption is not available for this repository.
-      update_timeout: |
-        Keep the last required disk space information for a repository for N minutes.
-        As counting the required disk space of a repository may be costly, increase this value to reduce performance impact.
+      not_available: "Диск за съхранение на потреблението не е наличен за това хранилище."
+      update_timeout: "Запази последният изисква информация за дисково пространство
+        за хранилище за N минути. Като броим нужното пространство на хранилище може
+        да бъде скъпо, увеличи тази стойност да се намали влиянието върху производителността."
     subversion:
-      existing_title: Existing Subversion repository
-      existing_introduction: If you have an existing Subversion repository, you can
-        link it with OpenProject to access it from within the application.
+      existing_title: "Съществуващо хранилище за подверсии"
+      existing_introduction: "Ако имате съществуваща хранилище за подверсии, можете
+        да го свържете с OpenProject за достъп до него от приложението."
       instructions:
-        managed_url: This is the URL of the managed (local) Subversion repository.
+        managed_url: "Това е URL на управляваните (локални) хранилища за подпроекти."
         url: |
           Enter the repository URL. This may either target a local repository (starting with %{local_proto} ), or a remote repository.
           The following URL schemes are supported:
@@ -1723,15 +1725,15 @@ bg:
     warnings:
       cannot_annotate: This file cannot be annotated.
   search_input_placeholder: search ...
-  setting_email_delivery_method: Email delivery method
-  setting_sendmail_location: Location of the sendmail executable
-  setting_smtp_enable_starttls_auto: Automatically use STARTTLS if available
-  setting_smtp_address: SMTP server
-  setting_smtp_port: SMTP port
-  setting_smtp_authentication: SMTP authentication
-  setting_smtp_domain: SMTP HELLO domain
-  setting_smtp_user_name: SMTP username
-  setting_smtp_password: SMTP password
+  setting_email_delivery_method: "Метод за доставка на имейл"
+  setting_sendmail_location: "Местоположение на sendmail програма"
+  setting_smtp_enable_starttls_auto: "Автоматично използвай STARTTLS ако е налично"
+  setting_smtp_address: SMTP сървър
+  setting_smtp_port: SMTP порт
+  setting_smtp_authentication: SMTP Удостоверяване
+  setting_smtp_domain: SMTP HELLO домейн
+  setting_smtp_user_name: SMTP потребителско име
+  setting_smtp_password: SMTP парола
   setting_activity_days_default: Days displayed on project activity
   setting_app_subtitle: Application subtitle
   setting_app_title: Application title
@@ -1840,7 +1842,7 @@ bg:
     passwords: Passwords
     session: Session
     brute_force_prevention: Automated user blocking
-  show_hide_project_menu: Expand/Collapse project menu
+  show_hide_project_menu: "Разгъване/свиване на проектното меню"
   status_active: active
   status_invited: invited
   status_registered: registered
@@ -1854,11 +1856,12 @@ bg:
   text_are_you_sure: Are you sure?
   text_are_you_sure_with_children: Delete work package and all child work packages?
   text_assign_to_project: Assign to the project
-  text_form_configuration: You can customize which attributes will be displayed in
-    forms for work packages of this type. 'Active' fields will be shown in the collapsed
-    work package view if they have a value, fields that are 'Always displayed' even
-    if they don't. Inactive fields will never be shown, even if they have a value.
-    Only fields that are not required or have a default value can be customized.
+  text_form_configuration: Можете да персонализирате кои атрибути ще бъдат показани
+    във форми за работни пакети от този тип. "Активни" полета ще бъдат показани в
+    изгледа срина работа пакет, ако те имат стойност, полета, които са "Винаги показва"
+    дори ако те не. Неактивни полета никога не ще бъдат показани, дори ако те имат
+    стойност. Единствените полета, които не са необходими или имат стойност по подразбиране
+    може да бъде персонализиран.
   text_caracters_maximum: "%{count} characters maximum."
   text_caracters_minimum: Must be at least %{count} characters long.
   text_comma_separated: Multiple values allowed (comma separated).
@@ -1881,7 +1884,7 @@ bg:
   text_hint_date_format: Enter a date in the form of YYYY-MM-DD. Other formats may
     be changed to an unwanted date.
   text_hint_disable_with_0: 'Note: Disable with 0'
-  text_hours_between: Between %{min} and %{max} hours.
+  text_hours_between: "Между %{min} и %{max} часа."
   text_work_package_added: Work package %{id} has been reported by %{author}.
   text_work_package_category_destroy_assignments: Remove category assignments
   text_work_package_category_destroy_question: Some work packages (%{count}) are assigned
@@ -1954,7 +1957,7 @@ bg:
   text_workflow_edit: Select a role and a type to edit the workflow
   text_zoom_in: Zoom in
   text_zoom_out: Zoom out
-  text_setup_mail_configuration: Configure your email provider
+  text_setup_mail_configuration: "Конфигуриране на вашия имейл доставчик"
   time:
     am: am
     formats:
@@ -2160,15 +2163,15 @@ bg:
     case the old one expired or the user did not get the original email.
   tooltip:
     attribute_visibility:
-      default: Show if not empty
-      visible: Show even if empty
-      hidden: Hide by default
+      default: "Покажи, ако не са празни"
+      visible: "Покажи дори и да са празни"
+      hidden: "Скрий по подразбиране"
   queries:
     apply_filter: Apply preconfigured filter
   top_menu:
-    additional_resources: Additional resources
-    getting_started: Getting started
-    help_and_support: Help and support
+    additional_resources: "Допълнителни ресурси"
+    getting_started: "Първи стъпки"
+    help_and_support: "Помощ и поддръжка"
   total_progress: Total progress
   user:
     all: "всички"
@@ -2198,10 +2201,10 @@ bg:
     registered: registered
     reset_failed_logins: Reset failed logins
     settings:
-      mail_notifications: Send email notifications
-      mail_project_explanaition: For unselected projects, you will only receive notifications
-        about things you watch or you're involved in (e.g. work packages you're the
-        author or assignee of).
+      mail_notifications: "Изпращане на email уведомления"
+      mail_project_explanaition: "За неизбраните проекти, ще получавате известия само
+        за наблюдавани дейности или в които участвате (т.е. авторски или предназначени
+        за Вас)."
       mail_self_notified: "Искам да бъдете уведомявани за промени, които аз правя"
     status_user_and_brute_force: "%{user} and %{brute_force}"
     unlock: "Отключване"
@@ -2241,8 +2244,8 @@ bg:
       code_409: Couldn't update the resource because of conflicting modifications.
       code_500: An internal error has occured.
       expected:
-        date: YYYY-MM-DD (ISO 8601 date only)
-        duration: ISO 8601 duration
+        date: "ГГГГ-ММ-ДД (само за дата ISO 8601)"
+        duration: ISO 8601 продължителност
       invalid_content_type: Expected CONTENT-TYPE to be '%{content_type}' but got
         '%{actual}'.
       invalid_format: 'Invalid format for property ''%{property}'': Expected format
