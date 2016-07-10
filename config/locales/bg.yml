@@ -324,58 +324,58 @@ bg:
         even: "трябва да бъде четно число."
         exclusion: "е запазено."
         file_too_large: "е твърде голям (максимален размер %{count} байта)."
-        greater_than: must be greater than %{count}.
-        greater_than_or_equal_to: must be greater than or equal to %{count}.
-        smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
-          length.
-        greater_than_start_date: must be greater than start date.
-        inclusion: is not set to one of the allowed values.
+        greater_than: "трябва да бъде по-голямо от %{count}."
+        greater_than_or_equal_to: "трябва да бъде по-голямо от или равно на %{count}."
+        smaller_than_or_equal_to_max_length: "трябва да бъде по-малка от или равна
+          на максималната дължина."
+        greater_than_start_date: "трябва да бъде по-голяма от началната дата."
+        inclusion: "не е зададена, като позволена стойност."
         invalid: "е невалиден."
-        less_than_or_equal_to: must be less than or equal to %{count}.
+        less_than_or_equal_to: "трябва да бъде по-малка или равна на %{count}."
         not_a_date: "не е определена дата."
         not_a_number: "не е число."
         not_an_integer: "не е цяло число."
         not_same_project: "не принадлежат към един и същ проект."
-        odd: must be odd.
-        taken: has already been taken.
-        too_long: is too long (maximum is %{count} characters).
-        too_short: is too short (minimum is %{count} characters).
-        wrong_length: is the wrong length (should be %{count} characters).
-        after: must be after %{date}.
-        after_or_equal_to: must be after or equal to %{date}.
+        odd: "трябва да бъде нечетен."
+        taken: "вече съществува."
+        too_long: "е твърде дълго (максимума е %{count} знаци)."
+        too_short: "е твърде кратък (минимум е %{count} знаци)."
+        wrong_length: "е грешна дължина (трябва да бъде %{count} знаци)."
+        after: "трябва да бъде след %{date}."
+        after_or_equal_to: "трябва да бъде след или равно на %{date}."
         before: "трябва да бъде преди %{date}."
         before_or_equal_to: "трябва да бъде преди или е равно на %{date}."
-        could_not_be_copied: could not be (fully) copied.
+        could_not_be_copied: "не можа да бъде копиран (изцяло)."
       models:
         project:
           attributes:
             types:
-              in_use_by_work_packages: 'still in use by work packages: %{types}'
+              in_use_by_work_packages: "все още се използва от работни пакети: %{types}"
         project_association:
           identical_projects: "Зависимост не може да бъде създадена между проект и
             самият него."
-          project_association_not_allowed: does not allow associations.
+          project_association_not_allowed: "не позволява асоциации."
         repository:
-          not_available: SCM vendor is not available
-          not_whitelisted: is not allowed by the configuration.
-          no_directory: is not a directory.
+          not_available: SCM доставчик не е наличен
+          not_whitelisted: "не е позволено от конфигурацията."
+          no_directory: "не е директория."
         work_package:
           is_not_a_valid_target_for_time_entries: "Работен пакет #%{id} не е валидна
             цел за преразпределяне на времевите записи."
           attributes:
             due_date:
-              not_start_date: is not on start date, although this is required for
-                milestones.
+              not_start_date: "не е на начална дата, въпреки че това е необходимо
+                за важни събития."
             parent_id:
-              cannot_be_milestone: cannot be a milestone.
-              cannot_be_in_another_project: cannot be in another project.
+              cannot_be_milestone: "не може да бъде крайъгълен камък."
+              cannot_be_in_another_project: "не може да бъде в друг проект."
               not_a_valid_parent: "е невалиден."
               does_not_exist: "не съществува."
             status_id:
-              status_transition_invalid: is invalid because no valid transition exists
-                from old to new status for the current user's roles.
+              status_transition_invalid: "е невалидно, защото не съществува валиден
+                преход от старото към новото състояние за текущите потребителски роли."
             priority_id:
-              only_active_priorities_allowed: needs to be active.
+              only_active_priorities_allowed: "трябва да бъде активен."
             category:
               only_same_project_categories_allowed: "Категорията на работен пакет
                 трябва да бъде в същия проект като работния пакет."
@@ -385,8 +385,8 @@ bg:
         user:
           attributes:
             password:
-              weak: 'Must contain characters of the following classes (at least %{min_count}
-                of %{all_count}): %{rules}.'
+              weak: "Трябва да съдържа знаци от следните класове (най-малко %{min_count}
+                на %{all_count}): %{rules}."
               lowercase: малки букви (например "а")
               uppercase: главни (например "А")
               numeric: "цифрова (например ' 1')"
@@ -433,9 +433,8 @@ bg:
       work_package: "Работен пакет"
   errors:
     header_invalid_fields: "Имаше проблеми със следните полета:"
-    field_erroneous_label: |
-      This field is invalid: %{full_errors}
-      Please enter a valid value.
+    field_erroneous_label: "Това поле е невалиднo: %{full_errors} Моля, въведете валидна
+      стойност."
   activity:
     created: "Създадено: %{title}"
     updated: "Актуализиран: %{title}"
@@ -489,7 +488,7 @@ bg:
     version: "Версия"
     work_package: "Работен пакет"
   button_add: "Добави"
-  button_add_member: Add member
+  button_add_member: "Добавяне на член"
   button_add_watcher: "Добавяне на наблюдател"
   button_annotate: "Добавяне на обяснителни бележки"
   button_apply: "Приложи"
@@ -514,7 +513,7 @@ bg:
   button_edit: "Редактиране"
   button_edit_associated_wikipage: "Редактиране на свързани Wiki страница: %{page_title}"
   button_expand_all: "Разгъване на всички"
-  button_generate: Generate
+  button_generate: "Генерирай"
   button_list: "Списък"
   button_lock: "Заключи"
   button_log_time: "Отчетено време"
@@ -555,7 +554,7 @@ bg:
     text:
       failed: Не можа да се копира проект "%{source_project_name}" в проект "%{target_project_name}".
       succeeded: Копиран проект "%{source_project_name}" в "%{target_project_name}".
-  create_new_page: Create wiki page
+  create_new_page: "Създаване на wiki страница"
   date:
     abbr_day_names:
     - "нд"
@@ -779,8 +778,8 @@ bg:
     по подразбиране. Моля изберете друг статус по подразбиране за работен пакет преди
     да изтриете настоящият."
   error_unable_to_connect: "Не може да се свърже (%{value})"
-  error_unable_delete_wiki: Unable to delete the wiki page.
-  error_unable_update_wiki: Unable to update the wiki page.
+  error_unable_delete_wiki: "Не може да изтрие wiki страницата."
+  error_unable_update_wiki: "Не може да актуализира wiki страницата."
   error_workflow_copy_source: "Моля изберете тип източник или роля"
   error_workflow_copy_target: "Моля изберете целеви тип(ове) и роля(и)"
   error_menu_item_not_created: "Не можа да бъде добавен елемент към менюто"
@@ -812,8 +811,8 @@ bg:
   gui_validation_error_plural: "%{count} грешки"
   homescreen:
     additional:
-      projects: Newest visible projects in this instance.
-      users: Newest registered users in this instance.
+      projects: "Най-новите проекти, видими в този случай."
+      users: "Най-новите регистрирани потребители в този случай."
     blocks:
       community: OpenProject Общността
     links:
@@ -830,17 +829,17 @@ bg:
   my_account:
     access_tokens:
       no_results:
-        title: No access tokens to display
-        description: All of them have been disabled. They can be re-enabled in the
-          administration menu.
-      access_token: Access token
+        title: "Няма налични билети за показване"
+        description: "Всички от тях са забранени. Те могат да бъдат повторно разрешени
+          в меню за администриране."
+      access_token: "Маркер за достъп"
       headers:
-        action: Action
+        action: "Действие"
         expiration: "Изтича на"
       indefinite_expiration: "Никога"
   label_account: "Акаунт"
   label_activity: "Активност"
-  label_add_edit_translations: Add and edit translations
+  label_add_edit_translations: "Добавяне и редактиране на преводи"
   label_add_another_file: "Добавяне на друг файл"
   label_add_columns: "Добавяне на избраните колони"
   label_add_note: "Добавяне на бележка"
@@ -853,7 +852,7 @@ bg:
   label_additional_workflow_transitions_for_author: "Допълнителни промени са рарзрешени,
     когато потребителят е автор"
   label_administration: "Администрация"
-  label_advanced_settings: Advanced settings
+  label_advanced_settings: "Разширени настройки"
   label_age: "Възраст"
   label_ago: "преди"
   label_all: "всички"
@@ -876,7 +875,7 @@ bg:
   label_auth_source_new: "Нов начин на оторизация"
   label_auth_source_plural: "Начини на оторизация"
   label_authentication: "Оторизация"
-  label_available_project_work_package_categories: Available work package categories
+  label_available_project_work_package_categories: "Налични категории работни пакети"
   label_available_project_boards: "Налични табла"
   label_available_project_versions: "Налични версии"
   label_available_project_repositories: "Достъпни хранилища"
@@ -1380,8 +1379,8 @@ bg:
   notice_accessibility_mode: "Режим достъпност може да бъде активиран във вашия профил
     [settings](url)."
   notice_account_activated: Your account has been activated. You can now log in.
-  notice_account_already_activated: The account has already been activated.
-  notice_account_invalid_token: Invalid activation token
+  notice_account_already_activated: "Този потребител вече е потвърден."
+  notice_account_invalid_token: "Невалиден маркер за активиране"
   notice_account_invalid_credentials: Invalid user or password
   notice_account_invalid_credentials_or_blocked: Invalid user or password or the account
     is blocked due to multiple failed login attempts. If so, it will be unblocked
@@ -1403,9 +1402,9 @@ bg:
   notice_account_wrong_password: "Грешна парола"
   notice_account_registered_and_logged_in: "Добре дошли вашият акаунт е активиран.
     Вие сте влезли в момента."
-  notice_activation_failed: The account could not be activated.
+  notice_activation_failed: "Акаунтът не може да бъде активиран."
   notice_api_access_key_reseted: API ключа ви за достъп е сменен с нов.
-  notice_api_access_key_generated: Your API access key was generated.
+  notice_api_access_key_generated: API достъп ключ е генериран.
   notice_can_t_change_password: "Този профил е с външен метод за аутентикация. Невъзможна
     смяна на паролата."
   notice_email_error: "Възникна грешка при изпращане на поща (%{value})"
@@ -1414,7 +1413,7 @@ bg:
     от %{total} избрани: %{ids}."
   notice_failed_to_save_members: "Неуспешно записване на членовете: %{errors}."
   notice_feeds_access_key_reseted: "Вашият RSS ключ за достъп е сменен с нов."
-  notice_feeds_access_key_generated: Your RSS access key was generated.
+  notice_feeds_access_key_generated: "Вашият RSS ключ за достъпе генериран."
   notice_file_not_found: "Несъществуваща или преместена страница."
   notice_forced_logout: "Вие автоматично излязохте след %{ttl_time} минути на неактивност."
   notice_internal_server_error: "Възникна грешка в страницата, до която се опитвате
@@ -1427,10 +1426,10 @@ bg:
   notice_locking_conflict_additional_information: "Обновленията са от %{users}."
   notice_locking_conflict_reload_page: "Моля презаредете страницата, прегледайте промените
     и приложете отново вашите обновления."
-  notice_member_added: Added %{name} to the project.
+  notice_member_added: "Добавен %{name} в проекта."
   notice_members_added: "Добавени са %{number} потребителите към проекта."
-  notice_member_removed: Removed %{user} from project.
-  notice_member_deleted: "%{user} has been removed from the project and deleted."
+  notice_member_removed: "Премахнат %{user} от проект."
+  notice_member_deleted: "%{user} е отстранен от проекта и изтрит."
   notice_no_principals_found: "Не са намерени разултати."
   notice_bad_request: "Грешна заявка."
   notice_not_authorized: "Нямате право на достъп до тази страница."
@@ -1445,9 +1444,9 @@ bg:
     като въведете името на нов член (или група)."
   notice_unable_delete_time_entry: "Не може да изтриете запис в регистъра на време."
   notice_unable_delete_version: "Не може да изтриете версия."
-  notice_user_missing_authentication_method: User has yet to choose a password or
-    another way to sign in.
-  notice_user_invitation_resent: Another invitation has been sent to %{email}.
+  notice_user_missing_authentication_method: "Потребителят все още не е избрал парола
+    или друг начин за влизане."
+  notice_user_invitation_resent: "Друга покана е изпратена до %{email}."
   present_access_key_value: 'Your %{key_name} is: %{value}'
   notice_automatic_set_of_standard_type: "Задаване на стандартен тип автоматично."
   notice_logged_out: "Вие излязохте."
@@ -1661,25 +1660,25 @@ bg:
     settings:
       automatic_managed_repos_disabled: Disable automatic creation
       automatic_managed_repos: Automatic creation of managed repositories
-      automatic_managed_repos_text: By setting a vendor here, newly created projects
-        will automatically receive a managed repository of this vendor.
-    scm_vendor: Source control management system
-    scm_type: Repository type
+      automatic_managed_repos_text: "Като зададете доставчик тук, новосъздадени проекти
+        ще получат автоматично управлявано хранилище на този доставчик."
+    scm_vendor: "Система управлявана от източника"
+    scm_type: "Тип хранилище"
     scm_types:
-      local: Link existing local repository
-      existing: Link existing repository
-      managed: Create new repository in OpenProject
+      local: "Връзка към локални места за съхранение"
+      existing: "Връзка към съществуващо място за съхранение"
+      managed: "Създаване на ново хранилище в OpenProject"
     storage:
-      not_available: Disk storage consumption is not available for this repository.
-      update_timeout: |
-        Keep the last required disk space information for a repository for N minutes.
-        As counting the required disk space of a repository may be costly, increase this value to reduce performance impact.
+      not_available: "Диск за съхранение на потреблението не е наличен за това хранилище."
+      update_timeout: "Запази последният изисква информация за дисково пространство
+        за хранилище за N минути. Като броим нужното пространство на хранилище може
+        да бъде скъпо, увеличи тази стойност да се намали влиянието върху производителността."
     subversion:
-      existing_title: Existing Subversion repository
-      existing_introduction: If you have an existing Subversion repository, you can
-        link it with OpenProject to access it from within the application.
+      existing_title: "Съществуващо хранилище за подверсии"
+      existing_introduction: "Ако имате съществуваща хранилище за подверсии, можете
+        да го свържете с OpenProject за достъп до него от приложението."
       instructions:
-        managed_url: This is the URL of the managed (local) Subversion repository.
+        managed_url: "Това е URL на управляваните (локални) хранилища за подпроекти."
         url: |
           Enter the repository URL. This may either target a local repository (starting with %{local_proto} ), or a remote repository.
           The following URL schemes are supported:
@@ -1838,7 +1837,7 @@ bg:
   text_hint_date_format: Enter a date in the form of YYYY-MM-DD. Other formats may
     be changed to an unwanted date.
   text_hint_disable_with_0: 'Note: Disable with 0'
-  text_hours_between: Between %{min} and %{max} hours.
+  text_hours_between: "Между %{min} и %{max} часа."
   text_work_package_added: Work package %{id} has been reported by %{author}.
   text_work_package_category_destroy_assignments: Remove category assignments
   text_work_package_category_destroy_question: Some work packages (%{count}) are assigned
