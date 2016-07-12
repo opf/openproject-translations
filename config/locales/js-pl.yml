@@ -4,9 +4,9 @@ pl:
     ajax:
       hide: Ukryj
       loading: "Ładowanie ..."
-    close_popup_title: Zamknij okienko
+    close_popup_title: Zamknij okno
     clipboard:
-      browser_error: Twoja przeglądarka nie wspiera kopiowania do schowka. Skopiuj
+      browser_error: Twoja przeglądarka nie obsługuje kopiowania do schowka. Skopiuj
         tekst ręcznie.
       copied_successful: Skopiowano do schowka!
     button_add_watcher: Dodaj obserwatora
@@ -31,14 +31,14 @@ pl:
     button_settings: Ustawienia
     button_uncheck_all: Odznacz wszystko
     button_update: Aktualizacja
-    button_export-pdf: Download PDF
+    button_export-pdf: Pobierz plik PDF
     button_export-atom: Download Atom
     description_available_columns: Dostępne kolumny
     description_select_work_package: 'Zaznacz zestaw Zadań #%{id}'
     description_selected_columns: Wybrane kolumny
     description_subwork_package: 'Otwórz zadanie-dziecko #%{id}'
     error:
-      internal: An internal error has occurred.
+      internal: Wystąpił błąd wewnętrzny.
     filter:
       description:
         text_open_filter: Otwórz filtr klawiszami strzałek przytrzymując klawisz 'ALT'.
@@ -64,7 +64,7 @@ pl:
     label_added_time_by: Dodał %{author} %{age}
     label_ago: dni temu
     label_all: wszystkie
-    label_all_work_packages: wszystkie zadania
+    label_all_work_packages: wszystkie pakiety pracy
     label_ascending: Rosnąco
     label_author: 'Autor: %{user}'
     label_board_locked: Zablokowany
@@ -174,13 +174,18 @@ pl:
     label_wait: Proszę poczekaj na zakończenie konfiguracji...
     label_upload_counter: "%{done} z %{count} plików ukończono"
     label_validation_error: 'Zadania nie mogą być zapisane z powodu błędów:'
+    pagination:
+      no_other_page: You are on the only page.
+      pages:
+        next: Forward to the next page
+        previous: Back to the previous page
     placeholders:
       default: "-"
       selection: Proszę wybrać
     text_are_you_sure: Jesteś pewien?
     watchers:
       label_loading: "ładowanie obserwatorów..."
-      label_error_loading: An error occurred while loading the watchers
+      label_error_loading: Wystąpił błąd podczas ładowania obserwatorów.
       label_search_watchers: Szukaj obserwatorów
       label_add: Dodawanie obserwatorów
       label_discard: Odznacz wszystkie
@@ -261,7 +266,7 @@ pl:
       change: Zmiany w zakresie planowania
       due_date: Termin
       empty: "(puste)"
-      error: An error has occurred.
+      error: Wystapił błąd.
       errors:
         not_implemented: The timeline could not be rendered because it uses a feature
           that is not yet implemented.
@@ -337,20 +342,21 @@ pl:
     work_packages:
       button_clear: Wyczyść
       comment_added: Komentarz został dodany pomyślnie.
-      comment_send_failed: An error has occurred. Could not submit the comment.
+      comment_send_failed: Wystąpił błąd. Nie można zamieścić komentarza.
       comment_updated: Komentarz zaktualizowano pomyślnie.
-      confirm_edit_cancel: Are you sure you want to cancel editing the work package?
+      confirm_edit_cancel: Czy na pewno chcesz anulować edycję pakietu pracy?
       description_filter: Filtr
       description_enter_text: Wpisz tekst
       description_options_hide: Ukryj opcje
       description_options_show: Pokaż opcje
       error:
-        edit_prohibited: Editing %{attribute} is blocked for this work package. Either
-          this attribute is derived from relations (e.g, children) or otherwise not
-          configurable.
+        edit_prohibited: Edytowanie atrybutu %{attribute} w tym pakiecie pracy jest
+          zablokowane. Ten atrybut jest dziedziczony z relacji (np. dziecka) lub nie
+          można go skonfigurować z innego powodu.
         format:
-          date: "%{attribute} is no valid date - YYYY-MM-DD expected."
-        general: An error has occurred.
+          date: 'Atrybut %{attribute} jest nieprawidłową datą. Oczekiwany format:
+            RRRR-MM-DD.'
+        general: Wystapił błąd.
       edit_attribute: "%{attribute} - Edytuj"
       key_value: "%{key}: %{value}"
       label_enable_multi_select: Włącz wybór wielokrotny
@@ -399,6 +405,10 @@ pl:
         updatedAt: Aktualizacja
         versionName: Wersja
         version: Wersja
+      jump_marks:
+        pagination: Jump to table pagination
+        label_pagination: Click here to skip over the work packages table and go to
+          pagination
       placeholders:
         default: "-"
         description: Kliknij, aby wprowadzić opis...
@@ -417,9 +427,9 @@ pl:
         errors:
           unretrievable_query: Nie można pobrać zapytania z URL
       table:
-        summary: Table with rows of work package and columns of work package attributes.
-        text_inline_edit: Most cells of this table are buttons that activate inline-editing
-          functionality of that attribute.
+        summary: Tabela, której wiersze zawierają pakiety pracy, a kolumny ich atrybuty.
+        text_inline_edit: Większość komórek w tej tabeli to przyciski uruchamiające
+          edycję danego atrybutu.
         text_sort_hint: Za pomocą linków w nagłówkach tabeli można sortować, grupować,
           zmieniać kolejność, usuwać i dodać kolumny.
       tabs:
@@ -480,7 +490,7 @@ pl:
         number: "%{field} nie jest prawidłową liczbą"
         maxlength: "%{field} nie może zawierać więcej niż %{maxLength} znaku(ów)"
         minlength: "%{field} nie może zawierać mniej niż %{minLength} znaku(ów)"
-        messages_on_field: 'This field is invalid: %{messages}'
+        messages_on_field: 'To pole jest nieprawidłowe: %{messages}'
     error_could_not_resolve_version_name: Nie można rozpoznać wersji
     error_could_not_resolve_user_name: Nie można rozpoznać nazwy użytkownika
     units:
