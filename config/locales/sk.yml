@@ -145,13 +145,13 @@ sk:
           preto preradené na účet nazvaný "Odstránený používateľ". Keďže dáta všetkých
           odstránených účtov sú automaticky priraďované na uvedený účet, nebude možné
           rozlíšiť dáta tohto používateľa od dát ostatných už odstránených používateľov.
-        self: Of the data you created (e.g. email, preferences, work packages, wiki
-          entries) as much as possible will be deleted. Note however, that data like
-          work packages and wiki entries can not be deleted without impeding the work
-          of the other users. Such data is hence reassigned to an account called "Deleted
-          user". As the data of every deleted account is reassigned to this account
-          it will not be possible to distinguish the data you created from the data
-          of another deleted account.
+        self: Z dát, ktoré ste vytvorili, (správy, nastavenia, pracovné balíčky, príspevky
+          vo wiki) bude odstránené možné maximum. Upozorňujeme však, že dáta ako pracovné
+          balíčky a príspevky do wiki nemôžu byť odstránené bez toho, aby znehodnotili
+          prácu iných užívateľov. Z toho dôvodu budú takéto dáta priradené účtu nazvanému
+          „Odstránený používateľ“. Keďže k tomuto účtu sú priradené neodstrániteľné
+          dáta všetkých zrušených účtov, nie je možné odlíšiť dáta vytvorené vami
+          od dát vytvorených iným zrušeným používateľom.
       heading: Odstrániť účet %{name}
       info:
         other: Odstránenie používateľského konta je nevratná akcia.
@@ -295,11 +295,11 @@ sk:
         reported_project_status: Stav projektu
         created_at: Vytvorený
       work_package:
-        begin_insertion: Begin of the insertion
-        begin_deletion: Begin of the deletion
+        begin_insertion: Začiatok vkladania
+        begin_deletion: Začiatok odstraňovania
         done_ratio: Stav spracovania (%)
-        end_insertion: End of the insertion
-        end_deletion: End of the deletion
+        end_insertion: Koniec vkladania
+        end_deletion: Koniec odstraňovania
         fixed_version: Verzia
         parent: Nadradený balíček
         parent_issue: Nadradený balíček
@@ -350,7 +350,8 @@ sk:
         project:
           attributes:
             types:
-              in_use_by_work_packages: 'still in use by work packages: %{types}'
+              in_use_by_work_packages: 'stále používané týmito pracovnými balíkmi:
+                %{types}'
         project_association:
           identical_projects: Závislosť nemožno vytvoriť medzi projekt a sámým sebou.
           project_association_not_allowed: nedovoľuje vytváranie väzieb na iné projekty.
@@ -383,12 +384,12 @@ sk:
                 musí nachádzať v rámci rovnakého projektu ako pracovný balíček.
               does_not_exist: "Špecifikovaná kategória neexistuje."
             estimated_hours:
-              only_values_greater_or_equal_zeroes_allowed: must be >= 0.
+              only_values_greater_or_equal_zeroes_allowed: musí byť najmenej 0.
         user:
           attributes:
             password:
-              weak: 'Must contain characters of the following classes (at least %{min_count}
-                of %{all_count}): %{rules}.'
+              weak: 'Musí obsahovať znaky z nasledujúcich tried (najmenej%{min_count}
+                z %{all_count}): %{rules}.'
               lowercase: malé písmená (napríklad "a")
               uppercase: veľké písmená (napríklad "A")
               numeric: "Čísla (napríklad 1)"
@@ -729,10 +730,10 @@ sk:
   default_type_user_story: Užívateľský príbeh
   description_active: Aktívny?
   description_attachment_toggle: Zobraziť / skryť prílohy
-  description_autocomplete: This field uses autocomplete. While typing the title of
-    a work package you will receive a list of possible candidates. Choose one using
-    the arrow up and arrow down key and select it with tab or enter. Alternatively
-    you can enter the work package number directly.
+  description_autocomplete: Toto pole používa funkciu automatické dokončovanie. Pri
+    zadávaní názvu pracovného balíčka vám poskytne zoznam možných návrhov. Vyberte
+    jeden pomocou šípok nahor a nadol a zvoľte ho pomocou klávesy Tab alebo Enter.
+    Iný spôsob je zadať priamo číslo pracovného balíčka.
   description_available_columns: Dostupné stĺpce
   description_choose_project: Projekty
   description_compare_from: Porovnať od verzie
@@ -762,7 +763,7 @@ sk:
   description_toc_toggle: Zobraziť / skryť obsah
   description_user_mail_notification: Nastavenia e-mail notifikácie
   description_wiki_subpages_reassign: Vybrať novú nadradenú stránku
-  direction: ltr
+  direction: zľava doprava
   enumeration_activities: "Činnosti (sledovanie času)"
   enumeration_work_package_priorities: Priority Pracovného balíka
   enumeration_system_activity: Systémové aktivity
@@ -778,9 +779,10 @@ sk:
   error_cookie_missing: Chýbajú súbory cookie pre OpenProject. Skontrolujte, či sú
     povolené súbory cookie, nakoľko bez nich táto aplikácia nebude správne fungovať.
   error_token_authenticity: Nie je možné overiť token medzi stránkovej požiadavky.
-  error_work_package_done_ratios_not_updated: Work package done ratios not updated.
-  error_work_package_not_found_in_project: The work package was not found or does
-    not belong to this project
+  error_work_package_done_ratios_not_updated: Pracovný balíček dokončený, štatistiky
+    neboli prerátané.
+  error_work_package_not_found_in_project: Pracovný balíček nebol nájdený alebo nepatrí
+    k tomuto projektu
   error_must_be_project_member: musíte byť členom projektu
   error_no_default_work_package_status: Žiadny predvolený stav pracovného balíka nieje
     definovaný. Prosím skontrolujte konfiguráciu (ísť do "Správa-> pracovného balíka
@@ -807,11 +809,11 @@ sk:
     Prosím skúste to znova.
   events:
     project: Projekt upravený
-    changeset: Changeset edited
+    changeset: Sada zmien upravená
     message: Správa upravená
     news: Novinky
     reply: Zodpovedané
-    time_entry: Timelog edited
+    time_entry: "Časový záznam zmenený"
     wiki_page: Wiki stránka upravená
     work_package_closed: Pracovný balíček uzatvorený
     work_package_edit: Pracovný balíček upravený
@@ -866,10 +868,10 @@ sk:
   label_add_subtask: Pridať podúlohu
   label_added: pridané
   label_added_time_by: Pridal %{author} %{age} vzad
-  label_additional_workflow_transitions_for_assignee: Additional transitions allowed
-    when the user is the assignee
-  label_additional_workflow_transitions_for_author: Additional transitions allowed
-    when the user is the author
+  label_additional_workflow_transitions_for_assignee: Povolené dodatočné prechody,
+    pokiaľ je užívateľ priradený
+  label_additional_workflow_transitions_for_author: Povolené dodatočné prechody, pokiaľ
+    je užívateľ autorom
   label_administration: Administrácia
   label_advanced_settings: Advanced settings
   label_age: Vek
@@ -899,21 +901,21 @@ sk:
   label_available_project_versions: Dostupné verzie
   label_available_project_repositories: Dosupné úložíská
   label_api_documentation: API documentation
-  label_blocked_by: blocked by
-  label_blocks: blocks
+  label_blocked_by: zablokované používateľom
+  label_blocks: bloky
   label_blog: Blog
   label_board_locked: Uzamknuté
   label_board_new: Nové fórum
   label_board_plural: Fóra
   label_board_sticky: Sticky
-  label_boolean: Boolean
+  label_boolean: Booleovská hodnota (pavda/nepravda)
   label_branch: Vetva
   label_browse: Prechádzať
-  label_bulk_edit_selected_work_packages: Bulk edit selected work packages
+  label_bulk_edit_selected_work_packages: Hromadne upraviť vybrané pracovné balíčky
   label_calendar: Kalendár
   label_calendar_show: Zobraziť kalendár
   label_category: Kategória
-  label_wiki_menu_item: Wiki menu item
+  label_wiki_menu_item: Položka menu wiki
   label_select_main_menu_item: Vyberte novú položku hlavného menu
   label_required_disk_storage: Required disk storage
   label_resend_invitation: Resend invitation
@@ -922,7 +924,7 @@ sk:
   label_change_status: Zmeniť stav
   label_change_view_all: Zobraziť všetky zmeny
   label_changes_details: Podrobnosti o všetkých zmenách
-  label_changeset_plural: Changesets
+  label_changeset_plural: Sady zmien
   label_checked: skontrolované
   label_check_uncheck_all_in_column: Check/Uncheck all in column
   label_check_uncheck_all_in_row: Check/Uncheck all in row
@@ -1088,8 +1090,8 @@ sk:
   label_minute_plural: minúty
   label_missing_api_access_key: Missing API access key
   label_missing_feeds_access_key: Missing RSS access key
-  label_modification: "%{count} change"
-  label_modification_plural: "%{count} changes"
+  label_modification: "%{count} zmena"
+  label_modification_plural: "%{count} zmien"
   label_modified: upravené
   label_module_plural: Moduly
   label_modules: Moduly
@@ -1101,12 +1103,12 @@ sk:
   label_my_account: Môj účet
   label_my_account_data: Moje prihlasovacie parametre
   label_my_page: Moja stránka
-  label_my_page_block: My page block
+  label_my_page_block: Blok mojich strán
   label_my_projects: Moje projekty
   label_my_queries: Moje vlastné dopyty
   label_new: Nový
   label_new_statuses_allowed: Nové stavy povolené
-  label_news_added: News added
+  label_news_added: Novinky pridané
   label_news_comment_added: Komentár pridaný do Novinky
   label_news_latest: Najnovšie novinky
   label_news_new: Pridať Novinky
@@ -1132,16 +1134,16 @@ sk:
   label_overall_activity: Celková aktivita
   label_overall_spent_time: Celkový strávený čas
   label_overview: Prehľad
-  label_password_lost: Forgot your password?
-  label_password_rule_lowercase: Lowercase
-  label_password_rule_numeric: Numeric Characters
-  label_password_rule_special: Special Characters
-  label_password_rule_uppercase: Uppercase
-  label_path_encoding: Path encoding
+  label_password_lost: Zabudli ste heslo?
+  label_password_rule_lowercase: Malé písmená
+  label_password_rule_numeric: "Číselné znaky"
+  label_password_rule_special: "Špeciálne znaky"
+  label_password_rule_uppercase: Veľké písmená
+  label_path_encoding: Kódovanie cesty
   label_pdf_with_descriptions: PDF s popisom
-  label_per_page: Per page
-  label_permissions: Permissions
-  label_permissions_report: Permissions report
+  label_per_page: Na stranu
+  label_permissions: Oprávnenia
+  label_permissions_report: Výkaz oprávnení
   label_personalize_page: Personalize this page
   label_planning: Planning
   label_please_login: Please log in
@@ -1394,8 +1396,7 @@ sk:
   noscript_description: Musíte aktivovať JavaScript, aby ste mohli používať OpenProject!
   noscript_heading: JavaScript disabled
   noscript_learn_more: Learn more
-  notice_accessibility_mode: The accessibility mode can be enabled in your account
-    [settings](url).
+  notice_accessibility_mode: Režim prístupov môžete sprístupniť vo vašom účte [settings](url).
   notice_account_activated: Your account has been activated. You can now log in.
   notice_account_already_activated: The account has already been activated.
   notice_account_invalid_token: Invalid activation token
@@ -1675,7 +1676,7 @@ sk:
         automatically.
       managed_title: Git repository integrated into OpenProject
       path: Path to Git repository
-      path_encoding: Path encoding
+      path_encoding: Kódovanie cesty
     go_to_revision: Go to revision
     managed_remote: Managed repositories for this vendor are handled remotely.
     managed_remote_note: Information on the URL and path of this repository is not
