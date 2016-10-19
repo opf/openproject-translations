@@ -4,7 +4,7 @@ ro:
     ajax:
       hide: Ascundere
       loading: Se încarcă...
-    close_popup_title: "Închidere pop-up"
+    close_popup_title: Închidere pop-up
     close_filter_title: Close filter
     close_form_title: Close form
     clipboard:
@@ -16,8 +16,8 @@ ro:
     button_check_all: Selectează tot
     button_confirm: Confirm
     button_copy: Copiere
-    button_delete: "Ștergere"
-    button_delete_watcher: "Ştergere observator"
+    button_delete: Ștergere
+    button_delete_watcher: Ştergere observator
     button_details_view: Vizualizare detaliată
     button_duplicate: Duplicare
     button_edit: Editare
@@ -72,7 +72,7 @@ ro:
     label_all_work_packages: toate pachetele de lucru
     label_ascending: Crescător
     label_author: 'Autor: %{user}'
-    label_board_locked: "Închis"
+    label_board_locked: Închis
     label_board_sticky: Lipicios
     label_create_work_package: Creare pachet de lucru nou
     label_date: Dată
@@ -82,7 +82,7 @@ ro:
     label_descending: Descrescător
     label_description: Descriere
     label_cancel_comment: Anulează comentariu
-    label_closed_work_packages: "închis"
+    label_closed_work_packages: închis
     label_collapse: Restrângere
     label_collapsed: restrâns
     label_collapse_all: Restrângere totală
@@ -107,9 +107,9 @@ ro:
     label_group_by: Grupare după
     label_hide_attributes: Arată mai puţin
     label_hide_column: Ascundere coloana
-    label_in: "în"
-    label_in_less_than: "în mai puțin de"
-    label_in_more_than: "în mai mult de"
+    label_in: în
+    label_in_less_than: în mai puțin de
+    label_in_more_than: în mai mult de
     label_latest_activity: Ultima acțiune
     label_last_updated_on: Ultima actualizare la data de
     label_less_or_equal: "<="
@@ -119,7 +119,7 @@ ro:
     label_menu_collapse: restrângere
     label_menu_expand: extindere
     label_more_than_ago: acum mai mult de zile
-    label_next: "Înainte"
+    label_next: Înainte
     label_no_data: Nu există date de afișat
     label_no_due_date: fără dată sfârșit
     label_no_start_date: fără dată început
@@ -130,7 +130,7 @@ ro:
     label_open_menu: Deschidere meniu
     label_open_work_packages: deschise
     label_password: Parolă
-    label_previous: "Înapoi"
+    label_previous: Înapoi
     label_per_page: 'Pe pagină:'
     label_please_wait: Așteptați
     label_quote_comment: Citare comentariu
@@ -163,7 +163,7 @@ ro:
       %{subject}.
     label_unwatch: Stop monitorizare
     label_unwatch_work_package: Opriți urmărirea pachetului de lucru
-    label_uploaded_by: "Încărcat de"
+    label_uploaded_by: Încărcat de
     label_global_queries: Interogări publice
     label_custom_queries: Interogări private
     label_columns: Coloane
@@ -171,9 +171,9 @@ ro:
     label_drop_files: Trageți fișierele aici
     label_drop_files_hint: sau dați click pentru a adăuga fişiere
     label_add_attachments: Add attachments
-    label_remove_file: "Ştergere %{fileName}"
+    label_remove_file: Ştergere %{fileName}
     label_remove_watcher: Eliminare observator %{name}
-    label_remove_all_files: "Ştergeţi toate fişierele"
+    label_remove_all_files: Ştergeţi toate fişierele
     label_add_description: Adăugați o descriere pentru %{file}
     label_upload_notification: 'Fişierele pentru pachetul de lucru #%{id}: %{subject}
       sunt în curs de încărcare'
@@ -192,7 +192,7 @@ ro:
       no_other_page: Sunteți pe pagina unică.
       pages:
         next: Avansare la pagina următoare
-        previous: "Înapoi la pagina precedentă"
+        previous: Înapoi la pagina precedentă
     placeholders:
       default: "-"
       selection: Vă rugăm să selectaţi
@@ -235,15 +235,31 @@ ro:
     relation_labels:
       parent: Părinte
       children: Fii
-      relates: "În relație cu"
+      relates: În relație cu
       duplicates: Dublează
       duplicated: Dublate de
       blocks: Blochează
       blocked: Blocat de
       precedes: Precede
       follows: Urmează după
+      includes: Includes
+      part_of: Part of
+      requires: Requires
+      required: Required by
+      relation_type: relation type
+    relations_hierarchy:
+      hierarchy_headline: hierarchy
     relation_buttons:
       change_parent: Modificare părinte
+      remove_parent: Remove parent
+      add_parent: Add existing parent
+      add_new_child: Create new child
+      add_existing_child: Add existing child
+      remove_child: Remove child
+      add_new_relation: Create new relation
+      remove: Remove relation
+      save: Save relation
+      abort: Abort
       add_child: Adăugare fiu
       add_related_to: Adăugare relație cu
       add_duplicates: Adăugare dublează
@@ -252,6 +268,8 @@ ro:
       add_blocked_by: Adăugare blocat de
       add_precedes: Adăugare precede
       add_follows: Adăugare urmează după
+    relations_autocomplete:
+      placeholder: Enter the related work package id
     repositories:
       select_tag: Selectare etichetă
       select_branch: Selectare ramură
@@ -389,12 +407,12 @@ ro:
       message_successful_bulk_delete: Pachetele de lucru au fost șterse cu succes.
       message_successful_show_in_fullscreen: Click aici pentru a afișa acest pachet
         de lucru pe tot ecranul.
-      message_view_spent_time: View logged time
       no_value: Nici o valoare
       inline_create:
         title: Click aici pentru a adăuga un nou pachet de lucru în listă
       create:
         header: Pachet de lucru nou
+        button: Create
         header_with_parent: 'Pachet de lucru nou (fiul lui %{type} #%{id})'
       no_results:
         title: Nu sunt pachete de lucru de afișat.
@@ -466,6 +484,7 @@ ro:
         days: zile
         weeks: săptămâni
         months: luni
+      message_view_spent_time: View logged time
     toolbar:
       settings:
         columns: Coloane...
@@ -478,7 +497,7 @@ ro:
         export: Exportare ...
         share: Distribuire ...
         page_settings: Redenumire interogare ...
-        delete: "Ștergere"
+        delete: Ștergere
       filter: Filtrare
       unselected_title: Pachet de lucru
       search_query_label: Căutare interogare de filtrare salvată
@@ -486,13 +505,13 @@ ro:
     modals:
       label_settings: Redenumire interogare
       label_name: Nume
-      label_delete_page: "Ştergeți pagina curentă"
+      label_delete_page: Ştergeți pagina curentă
       button_apply: Salvare
       button_save: Salvare
       button_submit: Trimitere
       button_cancel: Anulare
     notice_successful_create: Creare reuşită.
-    notice_successful_delete: "Ştergere reuşită."
+    notice_successful_delete: Ştergere reuşită.
     notice_successful_update: Actualizare reușită.
     notice_bad_request: Cerere invalidă.
     relations:

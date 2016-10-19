@@ -282,7 +282,7 @@
         name: Navn
         hexcode: Hexadesimalkode
       project_association:
-        description: "Årsak"
+        description: Årsak
         project_b: Avhengig av prosjektet
       project_type:
         allows_association: Tillater assosiasjoner
@@ -660,7 +660,7 @@
         other: hours
   default_activity_development: Utvikling
   default_activity_management: Administrasjon
-  default_activity_other: "Øvrig"
+  default_activity_other: Øvrig
   default_activity_specification: Spesifikasjon
   default_activity_support: Brukerstøtte
   default_activity_testing: Testing
@@ -696,7 +696,7 @@
   default_priority_low: Lav
   default_priority_normal: Normal
   default_priority_high: Høy
-  default_priority_immediate: "Øyeblikkelig"
+  default_priority_immediate: Øyeblikkelig
   default_project_type_scrum: Scrum team
   default_project_type_standard: Standardprosjekt
   default_reported_project_status_green: Grønn
@@ -791,6 +791,11 @@
   error_workflow_copy_target: Vennligst velg måltype(r) og rolle(r)
   error_menu_item_not_created: Menyelement kunne ikke opprettes
   error_menu_item_not_saved: Menyelementet kunne ikke lagres
+  error_wiki_root_menu_item_conflict: 'Can''t rename "%{old_name}" to "%{new_name}"
+    due to a conflict in the resulting menu item with the existing menu item "%{existing_caption}"
+    (%{existing_identifier}).
+
+'
   error_external_authentication_failed: Det oppstod en feil i forbindelse med ekstern
     autentisering. Vennligst forsøk igjen.
   events:
@@ -972,6 +977,7 @@
   label_download_plural: "%{count} Nedlastinger"
   label_downloads_abbr: D/L
   label_duplicated_by: duplisert av
+  label_duplicate: duplicate
   label_duplicates: duplikater
   label_edit: Rediger
   label_enable_multi_select: Veksle multivalg
@@ -982,6 +988,7 @@
   label_end_to_end: ende til ende
   label_end_to_start: ende til start
   label_enumeration_new: Ny listeverdi
+  label_enumeration_value: Enumeration value
   label_enumerations: Opplistinger
   label_environment: Miljø
   label_equals: er
@@ -1019,6 +1026,7 @@
   label_in_less_than: i mindre enn
   label_in_more_than: i mer enn
   label_incoming_emails: Inkommende e-post
+  label_includes: includes
   label_index_by_date: Indeksèr etter dato
   label_index_by_title: Indeksèr på tittel
   label_information: Informasjon
@@ -1027,6 +1035,7 @@
   label_internal: Intern
   label_invite_user: Invite user
   label_show_hide: Show/hide
+  label_journal: Journal
   label_journal_diff: Sammenligning av beskrivelse
   label_jump_to_a_project: Gå til et prosjekt...
   label_language_based: Basert på brukerens språk
@@ -1056,6 +1065,7 @@
   label_member_plural: Medlemmer
   label_memder_view_all: View all members
   label_menu_item_name: Navn på menyelement
+  label_message: Message
   label_message_last: Siste melding
   label_message_new: Ny melding
   label_message_plural: Meldinger
@@ -1099,14 +1109,15 @@
   label_not_contains: inneholder ikke
   label_not_equals: er ikke
   label_notify_member_plural: E-postoppdateringer
-  label_open_menu: "Åpne meny"
-  label_open_work_packages: "åpne"
-  label_open_work_packages_plural: "åpne"
+  label_open_menu: Åpne meny
+  label_open_work_packages: åpne
+  label_open_work_packages_plural: åpne
   label_optional_description: Beskrivelse
   label_options: Alternativer
   label_overall_activity: Samlet aktivitet
   label_overall_spent_time: Samlet tidsbruk
   label_overview: Oversikt
+  label_part_of: part of
   label_password_lost: Glemt passord?
   label_password_rule_lowercase: Små bokstaver
   label_password_rule_numeric: Numeriske tegn
@@ -1170,6 +1181,8 @@
   label_repository: Pakkebrønn
   label_repository_root: Repository root
   label_repository_plural: Pakkebrønner
+  label_required: required
+  label_requires: requires
   label_responsible_for_work_packages: Arbeidspakker jeg står som ansvarlig for
   label_result_plural: Resultater
   label_reverse_chronological_order: I omvendt kronologisk rekkefølge
@@ -1291,11 +1304,10 @@
   label_work_package_plural: Arbeidspakker
   label_work_package_priority_updated: Oppdatert prioritet for arbeidspakke
   label_work_package_status: Status for arbeidspakke
-  label_work_package_status_new: Ny status
   label_work_package_status_plural: Statuser for arbeidspakke
-  label_work_package_tracking: Sporing av arbeidspakke
   label_work_package_types: Work package types
   label_work_package_updated: Arbeidspakke oppdatert
+  label_work_package_tracking: Sporing av arbeidspakke
   label_work_package_view_all: Vis alle arbeidspakker
   label_work_package_view_all_assigned_to_me: Vis alle arbeidspakker tildelt meg
   label_work_package_view_all_reported_by_me: Vis alle arbeidspakker rapportert av
@@ -1327,7 +1339,7 @@
     one: "%{count} prosjekt"
     other: "%{count} projects"
     zero: no projects
-  label_year: "År"
+  label_year: År
   label_yesterday: i går
   label_keyboard_function: Funksjon
   label_keyboard_shortcut: Snarvei
@@ -1351,7 +1363,7 @@
   label_keyboard_shortcut_details_package: Vis arbeidspakker i detalje fanen
   label_keyboard_shortcut_go_edit: Gå til redigering av gjeldende element (kun på
     detaljsider)
-  label_keyboard_shortcut_open_more_menu: "Åpne mer-meny (kun på detaljsider)"
+  label_keyboard_shortcut_open_more_menu: Åpne mer-meny (kun på detaljsider)
   label_keyboard_shortcut_go_preview: Gå til forhåndsvisning av gjeldende redigering
     (kun på redigeringssider)
   label_keyboard_shortcut_focus_previous_item: Sett fokus på forrige listeelement
@@ -1835,7 +1847,7 @@
   setting_work_package_group_assignment: Tillat tildeling til grupper
   settings:
     general: Generell
-    other: "Øvrig"
+    other: Øvrig
     passwords: Passord
     session: Sesjon
     brute_force_prevention: Automatisk blokkering av brukere
@@ -2064,7 +2076,7 @@
       grouping_hide_group: Skjul gruppen "%{group}"
       grouping_one: Første grupperingskriterie
       grouping_one_phrase: Er et underprosjekt for
-      grouping_other: "Øvrig"
+      grouping_other: Øvrig
       hide_chart: Skjul diagram
       noneElement: "(ingen)"
       noneSelection: "(ingen)"
@@ -2156,7 +2168,7 @@
       weeks: Uker
       months: Måneder
       quarters: Kvartaler
-      years: "År"
+      years: År
   title_remove_and_delete_user: Remove the invited user from the project and delete
     him/her.
   tooltip_resend_invitation: Sends another invitation email with a fresh token in
@@ -2211,7 +2223,7 @@
     unlock_and_reset_failed_logins: Lås opp og nullstill mislykkede innloggingsforsøk
   version_status_closed: lukket
   version_status_locked: låst
-  version_status_open: "åpne"
+  version_status_open: åpne
   note: Notat
   note_password_login_disabled: Passordinnlogging er deaktivert av %{configuration}.
   warning: Advarsel
@@ -2276,3 +2288,4 @@
         start_date: Startdato kan ikke angis på overordnede arbeidspakker.
     resources:
       schema: Skjema
+  label_work_package_status_new: Ny status

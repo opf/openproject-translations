@@ -3,10 +3,10 @@ pl:
   js:
     ajax:
       hide: Ukryj
-      loading: "Ładowanie ..."
+      loading: Ładowanie ...
     close_popup_title: Zamknij okno
-    close_filter_title: Close filter
-    close_form_title: Close form
+    close_filter_title: Zamknij filtr
+    close_form_title: Zamknij formularz
     clipboard:
       browser_error: Twoja przeglądarka nie obsługuje kopiowania do schowka. Skopiuj
         tekst ręcznie.
@@ -14,7 +14,7 @@ pl:
     button_add_watcher: Dodaj obserwatora
     button_cancel: Anuluj
     button_check_all: Zaznacz wszystko
-    button_confirm: Confirm
+    button_confirm: Potwierdź
     button_copy: Kopiuj
     button_delete: Usuń
     button_delete_watcher: Usuń obserwatora
@@ -112,7 +112,7 @@ pl:
     label_last_updated_on: Ostatnia aktualizacja
     label_less_or_equal: "<="
     label_less_than_ago: mniej niż dni temu
-    label_loading: "Ładowanie..."
+    label_loading: Ładowanie...
     label_me: mnie
     label_menu_collapse: Zwiń
     label_menu_expand: Rozwiń
@@ -167,7 +167,7 @@ pl:
     label_attachments: Pliki
     label_drop_files: Upuść pliki tutaj
     label_drop_files_hint: lub kliknij aby dodać pliki
-    label_add_attachments: Add attachments
+    label_add_attachments: Dodaj Załączniki
     label_remove_file: Usuń %{fileName}
     label_remove_watcher: Usuń obserwującego %{name}
     label_remove_all_files: Usuń wszystkie pliki
@@ -181,8 +181,9 @@ pl:
     label_upload_counter: "%{done} z %{count} plików ukończono"
     label_validation_error: 'Zadania nie mogą być zapisane z powodu błędów:'
     password_confirmation:
-      field_description: You need to enter your account password to confirm this change.
-      title: Confirm your password to continue
+      field_description: Musisz wprowadzić hasło do twojego konta aby potwierdzić
+        te zmiany.
+      title: Potwierdź hasło aby kontynuować
     pagination:
       no_other_page: You are on the only page.
       pages:
@@ -193,7 +194,7 @@ pl:
       selection: Proszę wybrać
     text_are_you_sure: Jesteś pewien?
     watchers:
-      label_loading: "ładowanie obserwatorów..."
+      label_loading: ładowanie obserwatorów...
       label_error_loading: Wystąpił błąd podczas ładowania obserwatorów.
       label_search_watchers: Szukaj obserwatorów
       label_add: Dodawanie obserwatorów
@@ -237,8 +238,24 @@ pl:
       blocked: Zablokowane przez
       precedes: Poprzedza
       follows: Następujący
+      includes: Includes
+      part_of: Part of
+      requires: Requires
+      required: Required by
+      relation_type: relation type
+    relations_hierarchy:
+      hierarchy_headline: hierarchy
     relation_buttons:
       change_parent: Zmień nadrzędny
+      remove_parent: Remove parent
+      add_parent: Add existing parent
+      add_new_child: Create new child
+      add_existing_child: Add existing child
+      remove_child: Remove child
+      add_new_relation: Create new relation
+      remove: Remove relation
+      save: Save relation
+      abort: Abort
       add_child: Dodaj podrzędny
       add_related_to: Dodaj powiązane do
       add_duplicates: Dodaj duplikaty
@@ -247,6 +264,8 @@ pl:
       add_blocked_by: Dodaj zablokowane przez
       add_precedes: Dodaj poprzedzający
       add_follows: Dodaj następujące
+    relations_autocomplete:
+      placeholder: Enter the related work package id
     repositories:
       select_tag: Wybierz tag
       select_branch: Wybierz gałąź
@@ -257,7 +276,7 @@ pl:
         other: Please enter {{count}} more characters
         zero: Please enter more characters
         few: Please enter {{count}} more characters
-      load_more: "Ładowanie większej liczby wyników ..."
+      load_more: Ładowanie większej liczby wyników ...
       no_matches: Nie znaleziono dopasowań
       searching: Wyszukiwanie ...
       selection_too_big:
@@ -329,12 +348,12 @@ pl:
       outlines: Poziom hierarchii
     unsupported_browser:
       title: Twoja wersja przeglądarki nie jest obsługiwana
-      message: The browser version you are using is no longer supported by OpenProject.
-      update_message: Please update your browser.
-      update_ie_user: Please switch to Mozilla Firefox or Google Chrome, or upgrade
-        to Microsoft Edge.
+      message: Wersja przeglądarki, której używasz nie jest już wspierana przez OpenProject.
+      update_message: Prosimy uaktualnić przeglądarkę.
+      update_ie_user: Proszę przejść do programu Mozilla Firefox lub Google Chrome,
+        lub zaistalować przeglądarkę Microsoft Edge.
       learn_more: Dowiedz się więcej
-      close_warning: Ignore this warning.
+      close_warning: Zignoruj to ostrzeżenie.
     wiki_formatting:
       strong: Pogrubienie
       italic: Kursywa
@@ -375,18 +394,18 @@ pl:
       label_disable_multi_select: Wyłącz wybór wielokrotny
       label_filter_add: Dodaj filtr
       label_options: Opcje
-      label_column_multiselect: "Łączone pole rozwijane: Wybierz za pomocą klawiszy
-        strzałek, potwierdź wybór klawiszem enter, usuń klawiszem backspace"
+      label_column_multiselect: 'Łączone pole rozwijane: Wybierz za pomocą klawiszy
+        strzałek, potwierdź wybór klawiszem enter, usuń klawiszem backspace'
       message_error_during_bulk_delete: Wystąpił błąd podczas próby usunięcia zadania.
       message_successful_bulk_delete: Pomyślnie usunięto zadania.
       message_successful_show_in_fullscreen: Kliknij tutaj, aby otworzyć ten pakiet
         prac w trybie pełnoekranowym.
-      message_view_spent_time: View logged time
       no_value: Brak wartości
       inline_create:
         title: Kliknij tutaj, aby dodać nowy pakiet prac do tej listy
       create:
         header: Nowe Zadanie
+        button: Create
         header_with_parent: 'Nowe Zadanie (dziecko %{type} #%{id})'
       no_results:
         title: Brak pakietów prac do wyświetlenia.
@@ -439,14 +458,15 @@ pl:
         display_sums: Wyświetlanie sumy
         errors:
           unretrievable_query: Nie można pobrać zapytania z URL
-          not_found: There is no such query
+          not_found: Tam jest nie takiego wyniku zapytania
       table:
         summary: Tabela, której wiersze zawierają pakiety pracy, a kolumny ich atrybuty.
         text_inline_edit: Większość komórek w tej tabeli to przyciski uruchamiające
           edycję danego atrybutu.
         text_sort_hint: Za pomocą linków w nagłówkach tabeli można sortować, grupować,
           zmieniać kolejność, usuwać i dodać kolumny.
-        text_select_hint: Select boxes should be opened with 'ALT' and arrow keys.
+        text_select_hint: Zaznacz boxy które powinny zostać otwarte poprzez jednoczesne
+          użycie klawisza 'ALT' oraz strzałek.
       tabs:
         overview: Przegląd
         activity: Działanie
@@ -457,6 +477,7 @@ pl:
         days: dni
         weeks: tygodnie
         months: miesiące
+      message_view_spent_time: Wyświetl zarejestrowany czas
     toolbar:
       settings:
         columns: Kolumny ...

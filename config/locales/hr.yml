@@ -434,7 +434,7 @@ hr:
       group: Grupa
       category: Kategorija
       status: Status Radnog paketa
-      member: "Član"
+      member: Član
       news: Vijesti
       project: Projekt
       query: Prilagođeni upit
@@ -581,7 +581,7 @@ hr:
     - Pon
     - Uto
     - Sri
-    - "Čet"
+    - Čet
     - Pet
     - Sub
     abbr_month_names:
@@ -603,7 +603,7 @@ hr:
     - Ponedjeljak
     - Utorak
     - Srijeda
-    - "Četvrtak"
+    - Četvrtak
     - Petak
     - Subota
     formats:
@@ -699,7 +699,7 @@ hr:
   default_color_orange: Narančasta
   default_color_red: Crvena
   default_color_white: Bijela
-  default_color_yellow: "Žuta"
+  default_color_yellow: Žuta
   default_status_closed: Zaključeno
   default_status_confirmed: Potvrđeno
   default_status_developed: Razvijeno
@@ -718,7 +718,7 @@ hr:
   default_priority_low: Nizak
   default_priority_normal: Normalan
   default_priority_high: Visoki
-  default_priority_immediate: "Žuran"
+  default_priority_immediate: Žuran
   default_project_type_scrum: Scrum tim
   default_project_type_standard: Standardni projekt
   default_reported_project_status_green: Zelena
@@ -729,7 +729,7 @@ hr:
   default_role_project_admin: Projekt administrator
   default_role_non_member: Nije član
   default_role_reader: Lektor
-  default_role_member: "Član"
+  default_role_member: Član
   default_type: Radni paket
   default_type_bug: Bug
   default_type_deliverable: Za isporuku
@@ -815,6 +815,11 @@ hr:
   error_workflow_copy_target: Molim vas odaberite odredišni tip(ove) i rolu(e)
   error_menu_item_not_created: Nije moguće dodati element izbornika
   error_menu_item_not_saved: Nije moguće spremiti element izbornika
+  error_wiki_root_menu_item_conflict: 'Can''t rename "%{old_name}" to "%{new_name}"
+    due to a conflict in the resulting menu item with the existing menu item "%{existing_caption}"
+    (%{existing_identifier}).
+
+'
   error_external_authentication_failed: Došlo je do greške tijekom izvođenja vanjske
     autentifikacije. Molim vas pokušajte opet.
   events:
@@ -848,7 +853,7 @@ hr:
       community: OpenProject community
     links:
       user_guides: Korisnički priručnici
-      faq: "Često postavljana pitanja"
+      faq: Često postavljana pitanja
       glossary: Kazalo pojmova
       shortcuts: Prečaci
       forums: Forumi
@@ -996,6 +1001,7 @@ hr:
   label_download_plural: "%{count} Preuzimanja"
   label_downloads_abbr: D/L
   label_duplicated_by: duplicirano od
+  label_duplicate: duplicate
   label_duplicates: duplikati
   label_edit: Uredi
   label_enable_multi_select: Aktiviraj/deaktiviraj selekciju
@@ -1006,6 +1012,7 @@ hr:
   label_end_to_end: s kraja na kraj
   label_end_to_start: s kraja na početak
   label_enumeration_new: Nova vrijednost numeriranja
+  label_enumeration_value: Enumeration value
   label_enumerations: Numeriranja
   label_environment: Okruženje
   label_equals: je
@@ -1043,6 +1050,7 @@ hr:
   label_in_less_than: u manje od
   label_in_more_than: u više od
   label_incoming_emails: Dolazne poruke
+  label_includes: includes
   label_index_by_date: Indeksiraj po datumu
   label_index_by_title: Indeksiraj po naslovu
   label_information: Informacija
@@ -1051,6 +1059,7 @@ hr:
   label_internal: Unutarnji
   label_invite_user: Pozovi korisnika
   label_show_hide: Pokaži/Sakrij
+  label_journal: Journal
   label_journal_diff: Opis uspoređivanja
   label_jump_to_a_project: Pređi na projekt...
   label_language_based: Na osnovi jezika korisnika
@@ -1077,9 +1086,10 @@ hr:
   label_max_size: Maksimalna veličina
   label_me: ja
   label_member_new: Novi član
-  label_member_plural: "Članovi"
+  label_member_plural: Članovi
   label_memder_view_all: Pogledaj sve članove
   label_menu_item_name: Naziv stavke izbornika
+  label_message: Message
   label_message_last: Posljednja poruka
   label_message_new: Nova poruka
   label_message_plural: Poruke
@@ -1131,6 +1141,7 @@ hr:
   label_overall_activity: Ukupna aktivnost
   label_overall_spent_time: Ukupno utrošeno vrijeme
   label_overview: Pregled
+  label_part_of: part of
   label_password_lost: Zaboravili ste lozinku?
   label_password_rule_lowercase: Mala slova
   label_password_rule_numeric: Znamenke
@@ -1195,6 +1206,8 @@ hr:
   label_repository: Repozitorij
   label_repository_root: Izvršni repozitorij
   label_repository_plural: Repozitoriji
+  label_required: required
+  label_requires: requires
   label_responsible_for_work_packages: Radni paketi za koje sam odgovoran
   label_result_plural: Rezultati
   label_reverse_chronological_order: U obrnutom kronološkom redu
@@ -1318,11 +1331,10 @@ hr:
   label_work_package_plural: Radni paketi
   label_work_package_priority_updated: Prioritet Radnog paketa je ažuriran
   label_work_package_status: Status Radnog paketa
-  label_work_package_status_new: Novi status
   label_work_package_status_plural: Statusi radnog paketa
-  label_work_package_tracking: Praćenje radnog paketa
   label_work_package_types: Tip ranog paketa
   label_work_package_updated: Radni paket je ažuriran
+  label_work_package_tracking: Praćenje radnog paketa
   label_work_package_view_all: Pogledaj sve radne pakete
   label_work_package_view_all_assigned_to_me: Pogledaj sve radne pakete dodijeljene
     meni
@@ -1612,7 +1624,7 @@ hr:
         izbrisani.'
       title: Izbriši projekt %{name}
     identifier:
-      warning_one: "Članovi projekta morati će relocirati repozitorije projketa."
+      warning_one: Članovi projekta morati će relocirati repozitorije projketa.
       warning_two: Postojeće poveznice na projektu neće više funkcionirati.
       title: Promjeni identifikator projekta
     archive:
@@ -1637,7 +1649,7 @@ hr:
       ažurirani tijekom pristupa stranici repozitorija modula.
     checkout:
       access:
-        readwrite: "Čitanje + pisanje"
+        readwrite: Čitanje + pisanje
         read: Samo čitanje
         none: Nema provjere pristupa, a jedini mogući pregled repozitorija je kroz
           ovu aplikaciju.
@@ -1913,7 +1925,7 @@ hr:
   text_destroy: Obriši
   text_destroy_with_associated: 'There are additional objects assossociated with the
     work package(s) that are to be deleted. Those objects are of the following types:'
-  text_destroy_what_to_do: "Što želite uraditi?"
+  text_destroy_what_to_do: Što želite uraditi?
   text_diff_truncated: "... This diff was truncated because it exceeds the maximum
     size that can be displayed."
   text_email_delivery_not_configured: |
@@ -2253,7 +2265,7 @@ hr:
       mail_project_explanaition: For unselected projects, you will only receive notifications
         about things you watch or you're involved in (e.g. work packages you're the
         author or assignee of).
-      mail_self_notified: "Želim biti obavješten o promjenama koje sam izvršio"
+      mail_self_notified: Želim biti obavješten o promjenama koje sam izvršio
     status_user_and_brute_force: "%{user} i %{brute_force}"
     unlock: Otključaj
     unlock_and_reset_failed_logins: Unlock and reset failed logins
@@ -2326,3 +2338,4 @@ hr:
         start_date: Datum početka ne može biti postavljen na nadređenim radnim paketima.
     resources:
       schema: Shema
+  label_work_package_status_new: Novi status
