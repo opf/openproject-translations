@@ -31,14 +31,15 @@ it:
     button_settings: Impostazioni
     button_uncheck_all: Deseleziona tutti
     button_update: Aggiorna
-    button_export-pdf: Download PDF
-    button_export-atom: Download Atom
+    button_export-pdf: Scarica PDF
+    button_export-atom: Scarica Atom
     description_available_columns: Colonne disponibili
+    description_current_position: 'Sei qui:'
     description_select_work_package: 'Seleziona la macro-attività #%{id}'
     description_selected_columns: Colonne selezionate
     description_subwork_package: 'Subordinata alla macro-attività #%{id}'
     error:
-      internal: An internal error has occurred.
+      internal: Si è verificato un errore interno.
     filter:
       description:
         text_open_filter: Apri questo filtro con i tasti 'ALT' e le frecce.
@@ -89,7 +90,7 @@ it:
     label_contains: contiene
     label_created_on: creato il
     label_edit_comment: Modifica questo commento
-    label_equals: "è"
+    label_equals: è
     label_expand: Espandi
     label_expanded: espanso
     label_expand_all: Espandi tutto
@@ -180,17 +181,17 @@ it:
     label_validation_error: 'La macro-attività non può essere salvata a causa dei
       seguenti errori:'
     pagination:
-      no_other_page: You are on the only page.
+      no_other_page: Sei nella pagina unica.
       pages:
-        next: Forward to the next page
-        previous: Back to the previous page
+        next: Vai alla pagina successiva
+        previous: Torna alla pagina precedente
     placeholders:
       default: "-"
       selection: Si prega di selezionare
     text_are_you_sure: Sei sicuro?
     watchers:
       label_loading: caricamento osservatori in corso...
-      label_error_loading: An error occurred while loading the watchers
+      label_error_loading: Si è verificato un errore nel caricamento degli osservatori
       label_search_watchers: Ricerca osservatori
       label_add: Aggiungere osservatori
       label_discard: Annulla la selezione
@@ -268,7 +269,7 @@ it:
       change: Cambiare nella pianificazione
       due_date: Data di consegna
       empty: "(vuoto)"
-      error: An error has occurred.
+      error: Si è verificato un errore.
       errors:
         not_implemented: Non è stato possibile renderizzare la cronologia perché utilizza
           una funzionalità che non è stata ancora implementata.
@@ -324,9 +325,12 @@ it:
       outlines: Livello della gerarchia
     unsupported_browser:
       title: La versione del browser non è supportata
-      message: La versione di browser che si utilizza non è più supportato da OpenProject.
-        Si prega di aggiornare il browser.
+      message: La versione del browser in uso non è più supportata da OpenProject.
+      update_message: Aggiornare il browser, prego.
+      update_ie_user: Passare a Mozilla Firefox o Google Chrome, oppure aggiornare
+        a Microsoft Edge.
       learn_more: Scopri di più
+      close_warning: Ignora questo avviso.
     wiki_formatting:
       strong: Grassetto
       italic: Corsivo
@@ -346,20 +350,20 @@ it:
     work_packages:
       button_clear: Pulisci
       comment_added: Il commento è stato aggiunto con successo.
-      comment_send_failed: An error has occurred. Could not submit the comment.
+      comment_send_failed: Si è verificato un errore. Impossibile inviare il commento.
       comment_updated: Il commento è stato aggiornato correttamente.
-      confirm_edit_cancel: Are you sure you want to cancel editing the work package?
+      confirm_edit_cancel: Sicuro di voler eliminare questa macro-attività?
       description_filter: Filtro
       description_enter_text: Inserisci testo
       description_options_hide: Nascondi opzioni
       description_options_show: Mostra opzioni
       error:
-        edit_prohibited: Editing %{attribute} is blocked for this work package. Either
-          this attribute is derived from relations (e.g, children) or otherwise not
-          configurable.
+        edit_prohibited: La modifica di %{attribute} è bloccata per questa macro-attività.
+          Questo attributo o deriva da relazioni (ad es., con attività subordinate)
+          oppure non è configurabile.
         format:
-          date: "%{attribute} is no valid date - YYYY-MM-DD expected."
-        general: An error has occurred.
+          date: "%{attribute} data non valida - atteso YYYY-MM-DD."
+        general: Si è verificato un errore.
       edit_attribute: "%{attribute} - Modifica"
       key_value: "%{key}: %{value}"
       label_enable_multi_select: Abilita multiseleziona
@@ -374,6 +378,7 @@ it:
         successo.
       message_successful_show_in_fullscreen: Clicca qui per aprire questa macro-attività
         in una visualizzazione a schermo intero.
+      message_view_spent_time: Mostra tempo di connessione
       no_value: Nessun valore
       inline_create:
         title: Clicca qui per aggiungere un nuovo work package a questa lista
@@ -412,9 +417,9 @@ it:
         versionName: Versione
         version: Versione
       jump_marks:
-        pagination: Jump to table pagination
-        label_pagination: Click here to skip over the work packages table and go to
-          pagination
+        pagination: Salta alla impaginazione tabella
+        label_pagination: Clicca qui per saltare la tabella macro-attività e passare
+          alla impaginazione
       placeholders:
         default: "-"
         description: Clicca per inserire la descrizione...
@@ -432,12 +437,15 @@ it:
         display_sums: Visualizza somme
         errors:
           unretrievable_query: Impossibile recuperare la query dall'URL
+          not_found: La query non esiste
       table:
-        summary: Table with rows of work package and columns of work package attributes.
-        text_inline_edit: Most cells of this table are buttons that activate inline-editing
-          functionality of that attribute.
-        text_sort_hint: With the links in the table headers you can sort, group, reorder,
-          remove and add table columns.
+        summary: Tabella con righe di macro-attività e colonne dei loro attributi.
+        text_inline_edit: Molte celle di questa tabella sono pulsanti che attivano
+          le funzionalità di modifica in linea di tale attributo.
+        text_sort_hint: Con i collegamenti nelle intestazioni di tabella puoi ordinare,
+          raggruppare, riordinare, rimuovere e aggiungere le colonne della tabella.
+        text_select_hint: Le caselle di selezione devono essere aperte con ' ALT '
+          e i tasti freccia.
       tabs:
         overview: Panoramica
         activity: Attività
@@ -496,7 +504,7 @@ it:
         number: "%{field} non è un numero valido"
         maxlength: "%{field} non può contenere più di %{maxLength} cifra/e"
         minlength: "%{field} non può contenere meno di %{minLength} cifra/e"
-        messages_on_field: 'This field is invalid: %{messages}'
+        messages_on_field: 'Questo campo non è valido: %{messages}'
     error_could_not_resolve_version_name: Impossibile determinare il nome della versione
     error_could_not_resolve_user_name: Impossibile determinare il nome utente
     units:
