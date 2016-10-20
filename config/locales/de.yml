@@ -170,13 +170,19 @@ de:
       login_verification:
         other: Geben Sie den Benutzernamen %{name} ein um die Löschung zu bestätigen.
         self: Geben Sie Ihren Benutzernamen %{name} ein um die Löschung zu bestätigen.
-    error_inactive_activation_by_mail: Ihr Konto wurde noch nicht aktiviert. Zur Aktivierung
-      folgen Sie bitte dem Link, der Ihnen bei der Registrierung per E-Mail zugeschickt
-      wurde.
-    error_inactive_manual_activation: Ihr Konto wurde noch nicht aktiviert. Bitte
+    error_inactive_activation_by_mail: 'Ihr Konto wurde noch nicht aktiviert. Zur
+      Aktivierung folgen Sie bitte dem Link, der Ihnen bei der Registrierung per E-Mail
+      zugeschickt wurde.
+
+'
+    error_inactive_manual_activation: 'Ihr Konto wurde noch nicht aktiviert. Bitte
       warten Sie auf die Aktivierung Ihres Kontos durch einen Administrator.
-    error_self_registration_disabled: Auf diesem System ist die Nutzerregistrierung
+
+'
+    error_self_registration_disabled: 'Auf diesem System ist die Nutzerregistrierung
       deaktiviert. Bitte fragen Sie einen Administrator nach einem Nutzerkonto.
+
+'
     login_with_auth_provider: oder melden Sie sich mit einem bestehenden Konto an
     signup_with_auth_provider: oder authentifizieren Sie sich mit
     auth_source_login: Bitte melden Sie sich als <em>%{login}</em> an um Ihr Konto
@@ -452,7 +458,7 @@ de:
   errors:
     header_invalid_fields: 'Bei den folgenden Feldern traten Fehler auf:'
     field_erroneous_label: "Dieses Feld ist ungültig: %{full_errors} \nBitte geben
-      Sie einen gültigen Wert ein.\n"
+      Sie einen gültigen Wert ein."
   activity:
     created: 'Erstellt: %{title}'
     updated: 'Aktualisiert: %{title}'
@@ -626,9 +632,9 @@ de:
     - November
     - Dezember
     order:
-    - :day
-    - :month
-    - :year
+    - ":day"
+    - ":month"
+    - ":year"
   datetime:
     distance_in_words:
       about_x_hours:
@@ -730,10 +736,12 @@ de:
   default_type_user_story: User Story
   description_active: Aktiv?
   description_attachment_toggle: Dateien ein-/ausblenden
-  description_autocomplete: Dieses Feld unterstützt Autovervollständigung. Bei Eingabe
+  description_autocomplete: 'Dieses Feld unterstützt Autovervollständigung. Bei Eingabe
     eines Arbeitspaket-Titels erhalten Sie ein Liste möglicher Arbeitspakete angezeigt.
     Wählen Sie mit den Pfeiltasten den gewünschten Eintrag und bestätigen Sie mit
     Tab oder Enter. Alternativ können Sie die Arbeitspaketnummer direkt eingeben.
+
+'
   description_available_columns: Verfügbare Spalten
   description_choose_project: Projekte
   description_compare_from: Vergleiche von
@@ -1318,7 +1326,7 @@ de:
   label_work_package_added: Arbeitspaket hinzugefügt
   label_work_package_category_new: Neue Kategorie
   label_work_package_category_plural: Arbeitspaket-Kategorien
-  label_work_package_hierarchy: Arbeitspakethierarchie
+  label_work_package_hierarchy: Work package hierarchy
   label_work_package_new: Neues Arbeitspaket
   label_work_package_note_added: Kommentar zu Arbeitspaket hinzugefügt
   label_work_package_edit: Arbeitspaket %{name} editieren
@@ -1489,7 +1497,7 @@ de:
   notice_successful_create: Erfolgreich angelegt.
   notice_successful_delete: Erfolgreich gelöscht.
   notice_successful_update: Erfolgreich aktualisiert.
-  notice_to_many_principals_to_display: |
+  notice_to_many_principals_to_display: |-
     Es gibt zu viele Treffer.
     Bitte engen Sie die Suche ein, indem sie den Namen der Person (oder der Gruppe) eingeben.
   notice_unable_delete_time_entry: Der Zeiterfassungseintrag konnte nicht gelöscht
@@ -1633,7 +1641,7 @@ de:
   repositories:
     at_identifier: auf %{identifier}
     atom_revision_feed: Revisionen als Atom Feed
-    autofetch_information: |
+    autofetch_information: |-
       Wählen Sie diese Option um das Projektarchiv beim Zugriff auf die Projektarchiv-Modul-Seite automatisch zu aktualisieren.
       Dies umfasst das Abrufen von Commits aus dem Projektarchiv und die Aktualisierung des erforderliche Festplattenspeichers.
     checkout:
@@ -1644,14 +1652,14 @@ de:
           Applikation betrachten.
       access_permission: Ihre Berechtigungen für dieses Projektarchiv
       url: Checkout-URL
-      base_url_text: |
+      base_url_text: |-
         Der URL-Präfix, der für die Generierung von Checkout-URLs verwendet wird (z.B. https://myserver.example.org/repos).
         Hinweis: Dieser URL-Präfix wird nur zum Umschreiben von verwalteten Projektarchiven verwendet. Die URLs anderer Projektarchive werden nicht verändert.
       default_instructions:
-        git: |
+        git: |-
           Die Daten in diesem Projektarchiv können mittels Git auf Ihren Computer übertragen werden.
           Weitere Informationen zu dem Auschecken von Projektarchiven und verfügbare Client-Softwares erhalten Sie in der Dokumentation von Git.
-        subversion: |
+        subversion: |-
           Die Daten in diesem Projektarchiv können mittels Subversion auf Ihren Computer übertragen werden.
           Weitere Informationen zu dem Auschecken von Projektarchiven und verfügbare Client-Softwares erhalten Sie in der Dokumentation von Subversion.
       enable_instructions_text: Zeige die nachstehenden Checkout-Anweisungen auf allen
@@ -1747,7 +1755,7 @@ de:
     storage:
       not_available: Genutzter Festplattenspeicher ist nicht für dieses Projektarchiv
         verfügbar.
-      update_timeout: |
+      update_timeout: |-
         Speichere die Informationen bzgl. des genutzten Festplattenspeichers eines Projektarchivs für N Minuten.
         Erhöhen Sie diesen Wert zur Verbesserung der Performance, da die Erfassung des genutzten Festplattenspeichers Ressourcen-intensiv ist.
     subversion:
@@ -1911,12 +1919,14 @@ de:
   text_are_you_sure: Sind Sie sicher?
   text_are_you_sure_with_children: Lösche Aufgabe und alle Unteraufgaben?
   text_assign_to_project: Dem Projekt zuweisen
-  text_form_configuration: Sie können anpassen, welche Attribute in Arbeitspaket-Formularen
+  text_form_configuration: 'Sie können anpassen, welche Attribute in Arbeitspaket-Formularen
     dieses Typs angezeigt werden. "Aktive" Attribute werden in der zusammengeklappten
     Arbeitspaketansicht angezeigt, wenn sie einen Wert haben, "Immer angezeigte" Attribute
     werden auch ohne Wert immer angezeigt. Inaktive Felder werden nicht angezeigt,
     auch wenn sie einen Wert haben. Nur die Felder, die nicht erforderlich sind oder
     die einen Standardwert haben können angepasst werden.
+
+'
   text_caracters_maximum: Max. %{count} Zeichen.
   text_caracters_minimum: Muss mindestens %{count} Zeichen lang sein.
   text_comma_separated: Mehrere Werte erlaubt (durch Komma getrennt).
@@ -1931,14 +1941,14 @@ de:
   text_destroy_what_to_do: Was soll mit den Objekten geschehen?
   text_diff_truncated: "... Dieser Diff wurde abgeschnitten, weil er die maximale
     Anzahl anzuzeigender Zeilen überschreitet."
-  text_email_delivery_not_configured: |
+  text_email_delivery_not_configured: |-
     Der SMTP-Server ist nicht konfiguriert und Mailbenachrichtigungen sind ausgeschaltet.
     Nehmen Sie die Einstellungen für Ihren SMTP-Server in config/configuration.yml vor und starten Sie die Applikation neu.
   text_enumeration_category_reassign_to: 'Die Objekte stattdessen diesem Wert zuordnen:'
   text_enumeration_destroy_question: "%{count} Objekte sind diesem Wert zugeordnet."
   text_file_repository_writable: Verzeichnis für Dateien beschreibbar
   text_git_repo_example: ein freigegebenes, lokales Projektarchiv (z.B. /gitrepo,
-    c:\\gitrepo)
+    c:\gitrepo)
   text_hint_date_format: Geben Sie ein Datum im Format JJJJ-MM-TT ein. Andere Formate
     können zu einem falschen Datum führen.
   text_hint_disable_with_0: 'Hinweis: Deaktivieren mit 0'
@@ -1980,7 +1990,7 @@ de:
   text_no_notes: Es sind keine Kommentare für dieses Arbeitspaket vorhanden.
   text_notice_too_many_values_are_inperformant: 'Achtung: Das Anzeigen von mehr als
     100 Objekten pro Seite kann die Seitenladezeiten erhöhen.'
-  text_own_membership_delete_confirmation: |
+  text_own_membership_delete_confirmation: |-
     Sie sind dabei, einige oder alle Ihre Berechtigungen zu entfernen. Es ist möglich, dass Sie danach das Projekt nicht mehr ansehen oder bearbeiten dürfen.
     Sind Sie sicher, dass Sie dies tun möchten?
   text_plugin_assets_writable: Verzeichnis für Plugin-Assets beschreibbar
@@ -1991,7 +2001,7 @@ de:
   text_regexp_info: z. B. ^[A-Z0-9]+$
   text_regexp_multiline: Der reguläre Ausdruck wird in einem mehrzeiligen Modus angewandt,
     z.B. ^---\s+
-  text_repository_usernames_mapping: |
+  text_repository_usernames_mapping: |-
     Bitte legen Sie die Zuordnung der OpenProject-Benutzer zu den Benutzernamen der Commit-Log-Meldungen des Projektarchivs fest.
     Benutzer mit identischen OpenProject- und Projektarchiv-Benutzernamen oder -E-Mail-Adressen werden automatisch zugeordnet.
   text_select_mail_notifications: Bitte wählen Sie die Aktionen aus, für die eine
@@ -2201,17 +2211,27 @@ de:
     type_could_not_be_saved: Typ konnte nicht gespeichert werden.
     reporting_could_not_be_saved: Statusbericht konnte nicht gespeichert werden.
     properties: Eigenschaften
-    really_delete_color: Möchten Sie die folgende Farbe wirklich löschen? Typen, die
-      diese Farbe verwenden, bleiben erhalten.
-    really_delete_project_association_between_project_a_and_project_b: Möchten Sie
+    really_delete_color: 'Möchten Sie die folgende Farbe wirklich löschen? Typen,
+      die diese Farbe verwenden, bleiben erhalten.
+
+'
+    really_delete_project_association_between_project_a_and_project_b: 'Möchten Sie
       die Projekt-Abhängigkeit zwischen „%{project_a}“ und „%{project_b}“ wirklich
       löschen?
-    really_delete_project_type: Möchten Sie den folgenden Projekt-Typ wirklich löschen?
+
+'
+    really_delete_project_type: 'Möchten Sie den folgenden Projekt-Typ wirklich löschen?
       Projekte dieses Typs bleiben erhalten.
-    really_delete_timeline: Möchten Sie diesen Zeitplan-Report wirklich löschen? Arbeitspakete
-      dieses Reports bleiben erhalten.
-    really_delete_reporting: Möchten Sie diesen Statusbericht wirklich löschen? Vorherige
+
+'
+    really_delete_timeline: 'Möchten Sie diesen Zeitplan-Report wirklich löschen?
+      Arbeitspakete dieses Reports bleiben erhalten.
+
+'
+    really_delete_reporting: 'Möchten Sie diesen Statusbericht wirklich löschen? Vorherige
       gemeldete Statusberichte gehen dabei verloren.
+
+'
     start: Beginn
     timeline: Zeitplan-Report
     timelines: Zeitplan-Reporte
@@ -2229,9 +2249,11 @@ de:
       years: Jahre
   title_remove_and_delete_user: Den eingeladenen Benutzer aus dem Projekt entfernen
     und löschen.
-  tooltip_resend_invitation: Sendet eine weitere Einladungs-Email mit einem neuen
+  tooltip_resend_invitation: 'Sendet eine weitere Einladungs-Email mit einem neuen
     Token für den Fall, dass die alte Version abgelaufen ist oder der Benutzer die
     E-Mail nicht erhalten.
+
+'
   tooltip:
     attribute_visibility:
       default: Anzeigen wenn nicht leer
@@ -2250,9 +2272,11 @@ de:
     activate: Aktivieren
     activate_and_reset_failed_logins: Aktivieren und fehlgeschlagene Logins zurücksetzen
     authentication_provider: Authentifizierungsprovider
-    authentication_settings_disabled_due_to_external_authentication: Dieser Nutzer
+    authentication_settings_disabled_due_to_external_authentication: 'Dieser Nutzer
       authentifiziert sich über einen externen Authentifizierungsprovider, so dass
       das Passwort über OpenProject nicht geändert werden kann.
+
+'
     authorization_rejected: Sie dürfen sich nicht einloggen.
     assign_random_password: Zufälliges Passwort zuweisen (wird dem Nutzer per E-Mail
       geschickt)
@@ -2293,16 +2317,20 @@ de:
   menu_item_setting: Sichtbarkeit
   wiki_menu_item_for: Menüpunkt für die Wikiseite "%{title}"
   wiki_menu_item_setting: Sichtbarkeit
-  wiki_menu_item_new_main_item_explanation: Der einzige Wiki-Hauptmenüpunkt wird gelöscht.
-    Sie müssen nun eine Wikiseite auswählen, für die ein neuer Menüpunkt erzeugt wird.
-    Um das Wiki zu entfernen kann das Wiki Modul durch Projektadministratoren deaktiviert
-    werden.
+  wiki_menu_item_new_main_item_explanation: 'Der einzige Wiki-Hauptmenüpunkt wird
+    gelöscht. Sie müssen nun eine Wikiseite auswählen, für die ein neuer Menüpunkt
+    erzeugt wird. Um das Wiki zu entfernen kann das Wiki Modul durch Projektadministratoren
+    deaktiviert werden.
+
+'
   wiki_menu_item_delete_not_permitted: Der Wiki-Menüpunkt der einzigen Wiki-Seite
     kann nicht gelöscht werden.
   query_menu_item_for: Menüpunkt für die Suche "%{title}"
   work_package:
-    updated_automatically_by_child_changes: _Automatisch durch die Änderungen in Unteraufgabe
-      %{child} aktualisiert_
+    updated_automatically_by_child_changes: '_Automatisch durch die Änderungen in
+      Unteraufgabe %{child} aktualisiert_
+
+'
     destroy:
       info: Die Löschung des Arbeitspakets kann nicht rückgängig gemacht werden.
       title: Arbeitspaket löschen
@@ -2357,4 +2385,3 @@ de:
         start_date: Das Startdatum kann für Eltern-Arbeitspakete nicht gesetzt werden.
     resources:
       schema: Schema
-  label_work_package_status_new: Neuer Status

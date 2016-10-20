@@ -150,9 +150,15 @@ ja:
       login_verification:
         other: Enter the login %{name} to verify the deletion.
         self: Enter your login %{name} to verify the deletion.
-    error_inactive_activation_by_mail: アカウントが有効化されていません。アカウントを有効にするために、受信したメール内のリンクをクリックしてください。
-    error_inactive_manual_activation: あなたのアカウントは未だ有効化されていません。管理者がアカウントを有効化するまでにお待ちください。
-    error_self_registration_disabled: このシステムでは、ユーザ登録が無効化されています。アカウントを作成するには管理者にお問い合わせください。
+    error_inactive_activation_by_mail: 'アカウントが有効化されていません。アカウントを有効にするために、受信したメール内のリンクをクリックしてください。
+
+'
+    error_inactive_manual_activation: 'あなたのアカウントは未だ有効化されていません。管理者がアカウントを有効化するまでにお待ちください。
+
+'
+    error_self_registration_disabled: 'このシステムでは、ユーザ登録が無効化されています。アカウントを作成するには管理者にお問い合わせください。
+
+'
     login_with_auth_provider: または、既存のアカウントでログインしてください。
     signup_with_auth_provider: もしくはこちらでサインアップ
     auth_source_login: アカウントをアクティブにするのに<em>%{login}</em>としてログインしてください。
@@ -415,7 +421,7 @@ ja:
       work_package: 作業項目
   errors:
     header_invalid_fields: 次のフィールドに問題がありました：
-    field_erroneous_label: |
+    field_erroneous_label: |-
       This field is invalid: %{full_errors}
       Please enter a valid value.
   activity:
@@ -692,7 +698,9 @@ ja:
   default_type_user_story: ユーザストーリー
   description_active: 有効？
   description_attachment_toggle: 添付ファイルの表示/非表示
-  description_autocomplete: このフィールドは、オートコンプリートを使用します。作業項目のタイトルを入力中は可能な候補のリストが表示されます。矢印キーを利用していずれかを選んで、タブキーかエンターキーで選択できます。または作業項目の番号を直接入力もできます。
+  description_autocomplete: 'このフィールドは、オートコンプリートを使用します。作業項目のタイトルを入力中は可能な候補のリストが表示されます。矢印キーを利用していずれかを選んで、タブキーかエンターキーで選択できます。または作業項目の番号を直接入力もできます。
+
+'
   description_available_columns: 利用できる項目
   description_choose_project: プロジェクト
   description_compare_from: Compare from
@@ -1254,7 +1262,7 @@ ja:
   label_work_package_added: 作業項目が追加されました。
   label_work_package_category_new: 新規カテゴリ
   label_work_package_category_plural: 作業項目のカテゴリ
-  label_work_package_hierarchy: 作業項目の階層
+  label_work_package_hierarchy: Work package hierarchy
   label_work_package_new: 新しい作業項目
   label_work_package_note_added: 仕事項目の注記が追加されました。
   label_work_package_edit: 作業項目%{name}を編集
@@ -1401,8 +1409,8 @@ ja:
   notice_to_many_principals_to_display: 検索結果が多すぎです。新たにメンバー名（またはグループ名）を入力して検索を絞り込んでください。
   notice_unable_delete_time_entry: 作業時間記録を削除できません。
   notice_unable_delete_version: バージョンを削除できません。
-  notice_user_missing_authentication_method: User has yet to chose a password or another
-    way the sign in.
+  notice_user_missing_authentication_method: User has yet to choose a password or
+    another way to sign in.
   notice_user_invitation_resent: Another invitation has been sent to %{email}.
   present_access_key_value: 'Your %{key_name} is: %{value}'
   notice_automatic_set_of_standard_type: 自動的に標準型を設定します。
@@ -1535,7 +1543,7 @@ ja:
   repositories:
     at_identifier: at %{identifier}
     atom_revision_feed: Atom revision feed
-    autofetch_information: |
+    autofetch_information: |-
       Check this if you want repositories to be updated automatically when accessing the repository module page.
       This encompasses the retrieval of commits from the repository and refreshing the required disk storage.
     checkout:
@@ -1545,14 +1553,14 @@ ja:
         none: No checkout access, you may only view the repository through this application.
       access_permission: Your permissions on this repository
       url: Checkout URL
-      base_url_text: |
+      base_url_text: |-
         The base URL to use for generating checkout URLs (e.g., https://myserver.example.org/repos/).
         Note: The base URL is only used for rewriting checkout URLs in managed repositories. Other repositories are not altered.
       default_instructions:
-        git: |
+        git: |-
           The data contained in this repository can be downloaded to your computer with Git.
           Please consult the documentation of Git if you need more information on the checkout procedure and available clients.
-        subversion: |
+        subversion: |-
           The data contained in this repository can be downloaded to your computer with Subversion.
           Please consult the documentation of Subversion if you need more information on the checkout procedure and available clients.
       enable_instructions_text: Displays checkout instructions defined below on all
@@ -1642,7 +1650,7 @@ ja:
       managed: Create new repository in OpenProject
     storage:
       not_available: Disk storage consumption is not available for this repository.
-      update_timeout: |
+      update_timeout: |-
         Keep the last required disk space information for a repository for N minutes.
         As counting the required disk space of a repository may be costly, increase this value to reduce performance impact.
     subversion:
@@ -1652,7 +1660,7 @@ ja:
       existing_url: Existing URL
       instructions:
         managed_url: This is the URL of the managed (local) Subversion repository.
-        url: |
+        url: |-
           Enter the repository URL. This may either target a local repository (starting with %{local_proto} ), or a remote repository.
           The following URL schemes are supported:
       managed_title: Subversion repository integrated into OpenProject
@@ -1791,11 +1799,13 @@ ja:
   text_are_you_sure: よろしいですか？
   text_are_you_sure_with_children: 仕事項目と子項目を削除してもよろしいですか？
   text_assign_to_project: プロジェクト自体に割り当てする
-  text_form_configuration: You can customize which attributes will be displayed in
-    forms for work packages of this type. 'Active' fields will be shown in the collapsed
-    work package view if they have a value, fields that are 'Always displayed' even
-    if they don't. Inactive fields will never be shown, even if they have a value.
+  text_form_configuration: 'You can customize which attributes will be displayed in
+    forms for work packages of this type. ''Active'' fields will be shown in the collapsed
+    work package view if they have a value, fields that are ''Always displayed'' even
+    if they don''t. Inactive fields will never be shown, even if they have a value.
     Only fields that are not required or have a default value can be customized.
+
+'
   text_caracters_maximum: 最大%{count}文字です。
   text_caracters_minimum: 最低%{count}文字の長さが必要です。
   text_comma_separated: "（カンマで区切ることで）複数の値を設定できます。"
@@ -1807,13 +1817,13 @@ ja:
   text_destroy_with_associated: 削除される仕事項目と追加の対象物が関連付けています。それらの対象物は次の種類です：
   text_destroy_what_to_do: どれかを選択して下さい。
   text_diff_truncated: "... 差分の行数が表示可能な上限を超えました。超過分は表示しません。"
-  text_email_delivery_not_configured: |
+  text_email_delivery_not_configured: |-
     メールの送信設定が行われていないため、メール通知は利用できません。
     Config/configuration.yml で SMTPサーバーの設定を行い、アプリケーションを再起動してください。
   text_enumeration_category_reassign_to: '次の値に割り当て直す:'
   text_enumeration_destroy_question: "%{count}件のオブジェクトがこの値に割り当てられています。"
   text_file_repository_writable: 添付ファイルのディレクトリが書き込み可能
-  text_git_repo_example: ローカルのリポジトリ （/gitrepo、c:\\gitrepo など）
+  text_git_repo_example: ローカルのリポジトリ （/gitrepo、c:\gitrepo など）
   text_hint_date_format: Enter a date in the form of YYYY-MM-DD. Other formats may
     be changed to an unwanted date.
   text_hint_disable_with_0: 注：0で無効になる
@@ -1843,12 +1853,12 @@ ja:
   text_min_max_length_info: 0だと無制限になります。
   text_no_roles_defined: There are no roles defined.
   text_no_access_tokens_configurable: There are no access tokens which can be configured.
-  text_no_configuration_data: |
+  text_no_configuration_data: |-
     ロール、作業項目のステータスと型、ワークフローが未設定です。
     デフォルト設定のロードを強くお勧めします。ロードした後、それを修正することができます。
   text_no_notes: There are no comments available for this work package.
   text_notice_too_many_values_are_inperformant: '注: 1ページあたり100以上の項目を表示すると読み込み時間が増加することがあります。'
-  text_own_membership_delete_confirmation: |
+  text_own_membership_delete_confirmation: |-
     一部またはすべての権限を自分自身から剥奪しようとしているため、このプロジェクトを編集できなくなる可能性があります。
     本当に続けますか？
   text_plugin_assets_writable: プラグインの「assets」ディレクトリが書き込み可能
@@ -1857,7 +1867,7 @@ ja:
   text_reassign: 'Reassign to work package:'
   text_regexp_info: 例) ^[A-Z0-9]+$
   text_regexp_multiline: The regex is applied in a multi-line mode. e.g., ^---\s+
-  text_repository_usernames_mapping: |
+  text_repository_usernames_mapping: |-
     リポジトリのログから検出されたユーザ名をどのOpenProjectユーザに関連づけるのか選択してください。
     ログ上のユーザ名またはメールアドレスがOpenProjectのユーザと一致する場合は自動的に関連づけられます。
   text_select_mail_notifications: 電子メール通知の送信対象とする操作を選択してください。
@@ -2046,11 +2056,19 @@ ja:
     type_could_not_be_saved: 作業項目の型を保存できませんでした。
     reporting_could_not_be_saved: レポートを保存できませんでした。
     properties: プロパティ
-    really_delete_color: 次の色を削除してもよろしいですか。この色を使用している作業項目は削除されません。
-    really_delete_project_association_between_project_a_and_project_b: "%{project_a}”と“%{project_b}”の間の依存関係を削除してもよろしいですか？"
-    really_delete_project_type: このプロジェクトの種類を削除してもよろしいですか。この種類を使用しているプロジェクトは削除されません。
-    really_delete_timeline: 次のタイムラインレポートを削除してもよろしいですか？このタイムラインレポートに表示されている作業項目は削除されません。
-    really_delete_reporting: 以下のレポートを削除してもよろしいですか？以前レポートステータスも削除されます。
+    really_delete_color: '次の色を削除してもよろしいですか。この色を使用している作業項目は削除されません。
+
+'
+    really_delete_project_association_between_project_a_and_project_b: "%{project_a}”と“%{project_b}”の間の依存関係を削除してもよろしいですか？\n"
+    really_delete_project_type: 'このプロジェクトの種類を削除してもよろしいですか。この種類を使用しているプロジェクトは削除されません。
+
+'
+    really_delete_timeline: '次のタイムラインレポートを削除してもよろしいですか？このタイムラインレポートに表示されている作業項目は削除されません。
+
+'
+    really_delete_reporting: '以下のレポートを削除してもよろしいですか？以前レポートステータスも削除されます。
+
+'
     start: 開始
     timeline: タイムラインレポート
     timelines: タイムラインレポート
@@ -2068,8 +2086,10 @@ ja:
       years: " 年"
   title_remove_and_delete_user: Remove the invited user from the project and delete
     him/her.
-  tooltip_resend_invitation: Sends another invitation email with a fresh token in
+  tooltip_resend_invitation: 'Sends another invitation email with a fresh token in
     case the old one expired or the user did not get the original email.
+
+'
   tooltip:
     attribute_visibility:
       default: Show if not empty
@@ -2088,7 +2108,9 @@ ja:
     activate: 有効にする
     activate_and_reset_failed_logins: 有効にして、ログリン失敗回数をリセットする
     authentication_provider: 認証プロバイダー
-    authentication_settings_disabled_due_to_external_authentication: 外部認証プロバイダー経由でこのユーザを認証しますので、OpenProjectではパスワードの変更ができません。
+    authentication_settings_disabled_due_to_external_authentication: '外部認証プロバイダー経由でこのユーザを認証しますので、OpenProjectではパスワードの変更ができません。
+
+'
     authorization_rejected: ログインすることはできません。
     assign_random_password: Assign random password (sent to user via email)
     blocked: 一時的ロック
@@ -2125,11 +2147,15 @@ ja:
   menu_item_setting: 可視性
   wiki_menu_item_for: Wikiページ"%{title}"のメニュー項目
   wiki_menu_item_setting: 可視性
-  wiki_menu_item_new_main_item_explanation: 唯一の主なＷｉｋｉメニュー項目が削除されます。新しい主要項目が生成するためにＷｉｋｉページを選択する必要があります。Ｗｉｋｉを削除するには、プロジェクト管理者によってＷｉｋｉモジュールを無効にすることができます。
+  wiki_menu_item_new_main_item_explanation: '唯一の主なＷｉｋｉメニュー項目が削除されます。新しい主要項目が生成するためにＷｉｋｉページを選択する必要があります。Ｗｉｋｉを削除するには、プロジェクト管理者によってＷｉｋｉモジュールを無効にすることができます。
+
+'
   wiki_menu_item_delete_not_permitted: 唯一のＷｉｋｉページにあるＷｉｋｉメニュー項目は削除できません。
   query_menu_item_for: クエリ"%{title}"のメニュー項目
   work_package:
-    updated_automatically_by_child_changes: _子作業項目%{child}の変更による自動更新されました_
+    updated_automatically_by_child_changes: '_子作業項目%{child}の変更による自動更新されました_
+
+'
     destroy:
       info: Deleting the work package is an irreversible action.
       title: Delete the work package
@@ -2173,4 +2199,3 @@ ja:
         start_date: 開始日は、親ワークパッケージに設定できません。
     resources:
       schema: スキーマ
-  label_work_package_status_new: 新規ステータス

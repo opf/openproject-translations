@@ -145,9 +145,15 @@ zh-TW:
       login_verification:
         other: 輸入登入的 %{name} 來確認刪除
         self: 輸入你的登入 %{name} 來確認刪除
-    error_inactive_activation_by_mail: 您的帳號尚未啟用。要啟用您的帳號，請點擊系統通過電子郵件發送給您的連結。
-    error_inactive_manual_activation: 您的帳號尚未啟用。請等待管理員啟用您的帳號。
-    error_self_registration_disabled: 此系統禁止使用者註冊。請通知管理員為您建立帳號。
+    error_inactive_activation_by_mail: '您的帳號尚未啟用。要啟用您的帳號，請點擊系統通過電子郵件發送給您的連結。
+
+'
+    error_inactive_manual_activation: '您的帳號尚未啟用。請等待管理員啟用您的帳號。
+
+'
+    error_self_registration_disabled: '此系統禁止使用者註冊。請通知管理員為您建立帳號。
+
+'
     login_with_auth_provider: 或使用您的現有帳號登錄
     signup_with_auth_provider: 或者註冊
     auth_source_login: 請登入 <em>%{login}</em> 來啟用您的帳號。
@@ -409,7 +415,7 @@ zh-TW:
       work_package: 工作項目
   errors:
     header_invalid_fields: '以下的欄位有問題:'
-    field_erroneous_label: |
+    field_erroneous_label: |-
       此欄位不正確: %{full_errors}
       請輸入一個有效的值！
   activity:
@@ -686,8 +692,10 @@ zh-TW:
   default_type_user_story: 使用者需求
   description_active: 啟用？
   description_attachment_toggle: 顯示/隱藏附件
-  description_autocomplete: 這個欄位使用自動完成的功能。當你在輸入工作項目的標題的時候，你將會收到可能的候選清單。請使用上下鍵移動游標並且按下
+  description_autocomplete: '這個欄位使用自動完成的功能。當你在輸入工作項目的標題的時候，你將會收到可能的候選清單。請使用上下鍵移動游標並且按下
     Tab 鍵或 Enter 鍵選擇。或者您可直接輸入工作項目編號。
+
+'
   description_available_columns: 可用欄
   description_choose_project: 專案
   description_compare_from: Compare from
@@ -1244,7 +1252,7 @@ zh-TW:
   label_work_package_added: 工作項目已新增
   label_work_package_category_new: 新增類別
   label_work_package_category_plural: 工作項目類別
-  label_work_package_hierarchy: 工作項目結構
+  label_work_package_hierarchy: Work package hierarchy
   label_work_package_new: 新增工作項目
   label_work_package_note_added: 工作項目註記已新增
   label_work_package_edit: 編輯工作項目 %{name}
@@ -1387,12 +1395,13 @@ zh-TW:
   notice_successful_create: 建立成功
   notice_successful_delete: 刪除成功
   notice_successful_update: 更新成功
-  notice_to_many_principals_to_display: |
+  notice_to_many_principals_to_display: |-
     搜尋的結果太多。
     請透過輸入新成員 (群組) 的名稱來縮小搜尋的範圍。
   notice_unable_delete_time_entry: 無法刪除時間日誌項目
   notice_unable_delete_version: 無法刪除版本
-  notice_user_missing_authentication_method: 使用者尚未選擇一組密碼或者其他登入的方式
+  notice_user_missing_authentication_method: User has yet to choose a password or
+    another way to sign in.
   notice_user_invitation_resent: 另外一個邀請已經傳送到 %{email}
   present_access_key_value: 您的 %{key_name} 是 %{value}
   notice_automatic_set_of_standard_type: 自動設定標準類型
@@ -1522,7 +1531,7 @@ zh-TW:
   repositories:
     at_identifier: 在 %{identifier}
     atom_revision_feed: 單一修訂串流
-    autofetch_information: |
+    autofetch_information: |-
       如果你想要版本庫在存取版本庫模組頁面的時候自動更新，請打勾。
       這包含了從版本庫讀取 Commits 然後更新所需的磁碟空間 。
     checkout:
@@ -1535,10 +1544,10 @@ zh-TW:
       base_url_text: '要用於生成 Checkout Url (例如，HTTPs://myserver.example.org/repos/)
         的 Base URL。註釋: Base URL 僅用於託管的版本庫中的 Checkout URLs 重寫。其他版本庫不會被更改。'
       default_instructions:
-        git: |
+        git: |-
           這個版本庫的資料可以透過您電腦的 Git 下載。
           如果你需要更多關於 Checkout 步驟和可用的客戶端，請查閱 Git 的使用文件。
-        subversion: |
+        subversion: |-
           這個版本庫的資料可以透過您電腦的 Subversion 下載。
           如果你需要更多關於 Checkout 步驟和可用的客戶端，請查閱 Subversion 的使用文件。
       enable_instructions_text: 顯示以下的 Checkout 說明在所有版本庫相關的頁面
@@ -1606,7 +1615,7 @@ zh-TW:
       managed: 在 OpenProject 建立一個新的版本庫
     storage:
       not_available: 這個版本庫沒有可用的磁碟消耗資訊
-      update_timeout: |
+      update_timeout: |-
         替一個版本庫維持最後需要的磁碟空間資訊 N 分鐘。
         計算一個版本庫的所需磁碟空間也許要消耗很多效能，增加這個值來降低效能的影響。
     subversion:
@@ -1755,11 +1764,13 @@ zh-TW:
   text_are_you_sure: 是否確定？
   text_are_you_sure_with_children: 刪除工作項目以及所有子工作項目?
   text_assign_to_project: 分配給專案
-  text_form_configuration: You can customize which attributes will be displayed in
-    forms for work packages of this type. 'Active' fields will be shown in the collapsed
-    work package view if they have a value, fields that are 'Always displayed' even
-    if they don't. Inactive fields will never be shown, even if they have a value.
+  text_form_configuration: 'You can customize which attributes will be displayed in
+    forms for work packages of this type. ''Active'' fields will be shown in the collapsed
+    work package view if they have a value, fields that are ''Always displayed'' even
+    if they don''t. Inactive fields will never be shown, even if they have a value.
     Only fields that are not required or have a default value can be customized.
+
+'
   text_caracters_maximum: 最多 %{count} 個字元。
   text_caracters_minimum: 必須至少 %{count} 個字元長。
   text_comma_separated: Multiple values allowed (comma separated).
@@ -1773,13 +1784,13 @@ zh-TW:
   text_destroy_what_to_do: 您想要做什麼？
   text_diff_truncated: "... This diff was truncated because it exceeds the maximum
     size that can be displayed."
-  text_email_delivery_not_configured: |
+  text_email_delivery_not_configured: |-
     Email delivery is not configured, and notifications are disabled.
     Configure your SMTP server in config/configuration.yml and restart the application to enable them.
   text_enumeration_category_reassign_to: '重新指定為這個值:'
   text_enumeration_destroy_question: "%{count} objects are assigned to this value."
   text_file_repository_writable: Attachments directory writable
-  text_git_repo_example: a bare and local repository (e.g. /gitrepo, c:\\gitrepo)
+  text_git_repo_example: a bare and local repository (e.g. /gitrepo, c:\gitrepo)
   text_hint_date_format: Enter a date in the form of YYYY-MM-DD. Other formats may
     be changed to an unwanted date.
   text_hint_disable_with_0: '注意: 0 表示停用'
@@ -1810,13 +1821,13 @@ zh-TW:
   text_min_max_length_info: 0 代表沒有限制
   text_no_roles_defined: 沒有定義的角色
   text_no_access_tokens_configurable: 沒有存取權杖可以被設定
-  text_no_configuration_data: |
+  text_no_configuration_data: |-
     角色，類型，工作項目狀態與工作流程都尚未設定。
     強烈建議先載入預設值，然後再修改它們。
   text_no_notes: 這個工作項目沒有評論
   text_notice_too_many_values_are_inperformant: 'Note: Displaying more than 100 items
     per page can increase the page load time.'
-  text_own_membership_delete_confirmation: |
+  text_own_membership_delete_confirmation: |-
     You are about to remove some or all of your permissions and may no longer be able to edit this project after that.
     Are you sure you want to continue?
   text_plugin_assets_writable: Plugin assets directory writable
@@ -1826,7 +1837,7 @@ zh-TW:
   text_reassign: '重新指派到工作項目:'
   text_regexp_info: '例如: ^[A-Z0-9]+$'
   text_regexp_multiline: 這個正規表達式被套用在多行模式
-  text_repository_usernames_mapping: |
+  text_repository_usernames_mapping: |-
     Select or update the OpenProject user mapped to each username found in the repository log.
     Users with the same OpenProject and repository username or email are automatically mapped.
   text_select_mail_notifications: Select actions for which email notifications should
@@ -2030,13 +2041,23 @@ zh-TW:
     type_could_not_be_saved: 類型無法保存
     reporting_could_not_be_saved: Reporting could not be saved
     properties: 屬性
-    really_delete_color: 確定要刪除這個顏色? 使用這個類型的顏色不會被刪除。
-    really_delete_project_association_between_project_a_and_project_b: Are you sure,
+    really_delete_color: '確定要刪除這個顏色? 使用這個類型的顏色不會被刪除。
+
+'
+    really_delete_project_association_between_project_a_and_project_b: 'Are you sure,
       you want to delete the dependency between “%{project_a}” and “%{project_b}”?
-    really_delete_project_type: 確定要刪除這個專案類型嗎?用到這個類型的專案不會被刪除。
-    really_delete_timeline: Are you sure, you want to delete the following timeline
+
+'
+    really_delete_project_type: '確定要刪除這個專案類型嗎?用到這個類型的專案不會被刪除。
+
+'
+    really_delete_timeline: 'Are you sure, you want to delete the following timeline
       report? Work packages shown in this timeline report will not be deleted.
-    really_delete_reporting: 您確定要刪除以下報告嗎？以前報告狀態也將被刪除。
+
+'
+    really_delete_reporting: '您確定要刪除以下報告嗎？以前報告狀態也將被刪除。
+
+'
     start: 開始
     timeline: 時間軸報表
     timelines: 時間軸報表
@@ -2053,7 +2074,9 @@ zh-TW:
       quarters: 季
       years: 年
   title_remove_and_delete_user: 從專案移除已被邀請的使用者別且刪除他/她
-  tooltip_resend_invitation: 重新寄送一封含有新的權杖的邀請函以防舊的過期或者使用者沒有收到原始的郵件！
+  tooltip_resend_invitation: '重新寄送一封含有新的權杖的邀請函以防舊的過期或者使用者沒有收到原始的郵件！
+
+'
   tooltip:
     attribute_visibility:
       default: 如果不為空就顯示
@@ -2072,9 +2095,11 @@ zh-TW:
     activate: 啟用
     activate_and_reset_failed_logins: 啟用並重置失敗的登錄
     authentication_provider: 驗證提供者
-    authentication_settings_disabled_due_to_external_authentication: This user authenticates
+    authentication_settings_disabled_due_to_external_authentication: 'This user authenticates
       via an external authentication provider, so there is no password in OpenProject
       to be changed.
+
+'
     authorization_rejected: 你不被允許登入。
     assign_random_password: 指定亂數密碼 (通過電子郵件寄送給使用者)
     blocked: 暫時鎖定
@@ -2113,15 +2138,19 @@ zh-TW:
   menu_item_setting: 可見度
   wiki_menu_item_for: Menu item for wikipage "%{title}"
   wiki_menu_item_setting: 可見度
-  wiki_menu_item_new_main_item_explanation: You are deleting the only main wiki menu
+  wiki_menu_item_new_main_item_explanation: 'You are deleting the only main wiki menu
     item. You now have to choose a wiki page for which a new main item will be generated.
     To delete the wiki the wiki module can be deactivated by project administrators.
+
+'
   wiki_menu_item_delete_not_permitted: The wiki menu item of the only wiki page cannot
     be deleted.
   query_menu_item_for: Menu item for query "%{title}"
   work_package:
-    updated_automatically_by_child_changes: _Updated automatically by changing values
+    updated_automatically_by_child_changes: '_Updated automatically by changing values
       within child work package %{child}_
+
+'
     destroy:
       info: 刪除工作項目是一個不可逆的動作
       title: 刪除工作項目
@@ -2130,15 +2159,15 @@ zh-TW:
     attributes:
       lock_version: 鎖定版本
     errors:
-      code_401: |
+      code_401: |-
         You need to be authenticated to access this resource.
         您必須取得授權才能使用這個資源。
       code_401_wrong_credentials: You did not provide the correct credentials.
-      code_403: |
+      code_403: |-
         You are not authorized to access this resource.
         您未被授權使用這個資源。
       code_404: The requested resource could not be found.
-      code_409: |
+      code_409: |-
         Couldn't update the resource because of conflicting modifications.
         因為修改的衝突，所以無法更新這個資源。
       code_500: 發生內部錯誤
@@ -2157,7 +2186,7 @@ zh-TW:
       missing_request_body: 沒有請求正文。
       multipart_body_error: 請求正文不包含預期的多段部分。
       multiple_errors: Multiple field constraints have been violated.
-      writing_read_only_attributes: |
+      writing_read_only_attributes: |-
         You must not write a read-only attribute.
         您不可寫入唯讀的屬性。
       render:
@@ -2173,4 +2202,3 @@ zh-TW:
         start_date: Start date cannot be set on parent work packages.
     resources:
       schema: 架構
-  label_work_package_status_new: 新狀態

@@ -164,12 +164,18 @@ et:
       login_verification:
         other: Enter the login %{name} to verify the deletion.
         self: Enter your login %{name} to verify the deletion.
-    error_inactive_activation_by_mail: Sinu konto ei ole veel aktiivne. Sulle saadetud
+    error_inactive_activation_by_mail: 'Sinu konto ei ole veel aktiivne. Sulle saadetud
       e-kirjas on link, millega saad oma konto aktiveerida.
-    error_inactive_manual_activation: Sinu konto pole aktiveeritud veel. Palun oota,
+
+'
+    error_inactive_manual_activation: 'Sinu konto pole aktiveeritud veel. Palun oota,
       kuni administraator aktiveerib selle.
-    error_self_registration_disabled: Konto loomine on hetkel keelatud. Palun küsi
+
+'
+    error_self_registration_disabled: 'Konto loomine on hetkel keelatud. Palun küsi
       administraatoril tekitada konto sulle.
+
+'
     login_with_auth_provider: või logi sisse oma olemasoleva kontoga
     signup_with_auth_provider: or sign up using
     auth_source_login: Please login as <em>%{login}</em> to activate your account.
@@ -441,7 +447,7 @@ et:
       work_package: Teema
   errors:
     header_invalid_fields: 'Järgmiste väljadega esines tõrkeid:'
-    field_erroneous_label: |
+    field_erroneous_label: |-
       This field is invalid: %{full_errors}
       Please enter a valid value.
   activity:
@@ -615,9 +621,9 @@ et:
     - november
     - detsember
     order:
-    - :aasta
-    - :kuu
-    - :päev
+    - ":aasta"
+    - ":kuu"
+    - ":päev"
   datetime:
     distance_in_words:
       about_x_hours:
@@ -719,10 +725,12 @@ et:
   default_type_user_story: User story
   description_active: Aktiivne?
   description_attachment_toggle: Kuva/peida manused
-  description_autocomplete: See väli kasutab väärtuste automaatset pakkumist. Teema
+  description_autocomplete: 'See väli kasutab väärtuste automaatset pakkumist. Teema
     pealkirja sisestamise ajal pakutakse võimalike kandidaatide nimekirja. Võid valida
     ühe pakutavatest kandidaatidest kasutades noolteklahve ja valida saab tabulaatori
     või reavahetuse klahviga. Alternatiivina saate sisestada kohe teema numbri.
+
+'
   description_available_columns: Saadaolevad väljad
   description_choose_project: Projektid
   description_compare_from: Compare from
@@ -1299,7 +1307,7 @@ et:
   label_work_package_added: Teema lisatud
   label_work_package_category_new: Uus kategooria
   label_work_package_category_plural: Teema kategooriad
-  label_work_package_hierarchy: Teema hierarhia
+  label_work_package_hierarchy: Work package hierarchy
   label_work_package_new: Uus teema
   label_work_package_note_added: Märkus lisatud teemale
   label_work_package_edit: Muuda teemat %{name}
@@ -1463,8 +1471,8 @@ et:
     sisestades uue kasutaja või grupi nime.
   notice_unable_delete_time_entry: Ajakulu sissekande kustutamine ei õnnestunud.
   notice_unable_delete_version: Versiooni kustutamine ei õnnestunud.
-  notice_user_missing_authentication_method: User has yet to chose a password or another
-    way the sign in.
+  notice_user_missing_authentication_method: User has yet to choose a password or
+    another way to sign in.
   notice_user_invitation_resent: Another invitation has been sent to %{email}.
   present_access_key_value: 'Your %{key_name} is: %{value}'
   notice_automatic_set_of_standard_type: Vaikimisi tüüp valitakse automaatselt.
@@ -1598,7 +1606,7 @@ et:
   repositories:
     at_identifier: at %{identifier}
     atom_revision_feed: Atom revision feed
-    autofetch_information: |
+    autofetch_information: |-
       Check this if you want repositories to be updated automatically when accessing the repository module page.
       This encompasses the retrieval of commits from the repository and refreshing the required disk storage.
     checkout:
@@ -1608,14 +1616,14 @@ et:
         none: No checkout access, you may only view the repository through this application.
       access_permission: Your permissions on this repository
       url: Checkout URL
-      base_url_text: |
+      base_url_text: |-
         The base URL to use for generating checkout URLs (e.g., https://myserver.example.org/repos/).
         Note: The base URL is only used for rewriting checkout URLs in managed repositories. Other repositories are not altered.
       default_instructions:
-        git: |
+        git: |-
           The data contained in this repository can be downloaded to your computer with Git.
           Please consult the documentation of Git if you need more information on the checkout procedure and available clients.
-        subversion: |
+        subversion: |-
           The data contained in this repository can be downloaded to your computer with Subversion.
           Please consult the documentation of Subversion if you need more information on the checkout procedure and available clients.
       enable_instructions_text: Displays checkout instructions defined below on all
@@ -1705,7 +1713,7 @@ et:
       managed: Create new repository in OpenProject
     storage:
       not_available: Disk storage consumption is not available for this repository.
-      update_timeout: |
+      update_timeout: |-
         Keep the last required disk space information for a repository for N minutes.
         As counting the required disk space of a repository may be costly, increase this value to reduce performance impact.
     subversion:
@@ -1715,7 +1723,7 @@ et:
       existing_url: Existing URL
       instructions:
         managed_url: This is the URL of the managed (local) Subversion repository.
-        url: |
+        url: |-
           Enter the repository URL. This may either target a local repository (starting with %{local_proto} ), or a remote repository.
           The following URL schemes are supported:
       managed_title: Subversion repository integrated into OpenProject
@@ -1865,11 +1873,13 @@ et:
   text_are_you_sure_with_children: Oled Sa kindel oma soovis see teema koos selle
     alamteemadega täielikult kustutada?
   text_assign_to_project: Määra projektile
-  text_form_configuration: You can customize which attributes will be displayed in
-    forms for work packages of this type. 'Active' fields will be shown in the collapsed
-    work package view if they have a value, fields that are 'Always displayed' even
-    if they don't. Inactive fields will never be shown, even if they have a value.
+  text_form_configuration: 'You can customize which attributes will be displayed in
+    forms for work packages of this type. ''Active'' fields will be shown in the collapsed
+    work package view if they have a value, fields that are ''Always displayed'' even
+    if they don''t. Inactive fields will never be shown, even if they have a value.
     Only fields that are not required or have a default value can be customized.
+
+'
   text_caracters_maximum: "%{count} märki kõige rohkem."
   text_caracters_minimum: Peab olema vähemalt %{count} märki pikk.
   text_comma_separated: Lubatud erinevad väärtused (komaga eraldatult).
@@ -1884,14 +1894,14 @@ et:
   text_destroy_what_to_do: Mis sa soovid ette võtta?
   text_diff_truncated: "... Osa erinevusi jäi välja, sest neid on näitamiseks liiga
     palju."
-  text_email_delivery_not_configured: |
+  text_email_delivery_not_configured: |-
     E-kirjade saatmine ei ole seadistatud ja teavitusi ei saadeta.
     Konfigureeri oma SMTP server failis config/configuration.yml ja taaskäivita OpenProject.
   text_enumeration_category_reassign_to: 'Määra neile uus väärtus:'
   text_enumeration_destroy_question: Selle väärtusega on %{count} objekti.
   text_file_repository_writable: Manuste kataloog on kirjutatav
   text_git_repo_example: hoidla peab olema paljas (bare) ja kohalik (nt. /gitrepo,
-    c:\\gitrepo)
+    c:\gitrepo)
   text_hint_date_format: Enter a date in the form of YYYY-MM-DD. Other formats may
     be changed to an unwanted date.
   text_hint_disable_with_0: 'Note: Disable with 0'
@@ -1926,13 +1936,12 @@ et:
   text_min_max_length_info: 0 tähendab, et piiranguid ei ole
   text_no_roles_defined: There are no roles defined.
   text_no_access_tokens_configurable: There are no access tokens which can be configured.
-  text_no_configuration_data: |-
-    Rollid, valdkonnad, olekud ja töövood ei ole veel seadistatud.
-    Väga soovitav on laadida vaikeasetused. Peale laadimist saad neid ise muuta.
+  text_no_configuration_data: Rollid, valdkonnad, olekud ja töövood ei ole veel seadistatud.\nVäga
+    soovitav on laadida vaikeasetused. Peale laadimist saad neid ise muuta.
   text_no_notes: There are no comments available for this work package.
   text_notice_too_many_values_are_inperformant: 'Note: Displaying more than 100 items
     per page can increase the page load time.'
-  text_own_membership_delete_confirmation: |
+  text_own_membership_delete_confirmation: |-
     Sa võtad endalt ära osa või kõik õigused ega saa edaspidi seda projekti võib-olla enam muuta.
     Oled sa jätkamises kindel?
   text_plugin_assets_writable: Lisamoodulite abifailide kataloog on kirjutatav
@@ -2139,16 +2148,26 @@ et:
     type_could_not_be_saved: Tüüpi ei saa salvestada
     reporting_could_not_be_saved: Aruandlust ei saa salvestada
     properties: Atribuudid
-    really_delete_color: Kas oled kindel, et tahad seda värvi kustutada? Tüübid, mis
-      seda värvi kasutavad, jäävad alles.
-    really_delete_project_association_between_project_a_and_project_b: Kas oled kindel,
+    really_delete_color: 'Kas oled kindel, et tahad seda värvi kustutada? Tüübid,
+      mis seda värvi kasutavad, jäävad alles.
+
+'
+    really_delete_project_association_between_project_a_and_project_b: 'Kas oled kindel,
       et tahad kustutada sõltuvuse projektide “%{project_a}” ja “%{project_b}” vahel?
-    really_delete_project_type: Kas sa oled kindel, et tahad kustutada selle projektitüübi?
+
+'
+    really_delete_project_type: 'Kas sa oled kindel, et tahad kustutada selle projektitüübi?
       Projektid, mis kasutavad seda tüüpi, jäävad alles.
-    really_delete_timeline: Kas sa oled kindel, et tahad kustutada seda aruannet?
+
+'
+    really_delete_timeline: 'Kas sa oled kindel, et tahad kustutada seda aruannet?
       Aruandes näidatud teemad jäävad alles.
-    really_delete_reporting: Kas sa oled kindel, et tahad seda aruannet kustutada?
+
+'
+    really_delete_reporting: 'Kas sa oled kindel, et tahad seda aruannet kustutada?
       Eelmised aruande olekud kustutatakse ka ära.
+
+'
     start: Algus
     timeline: Perioodi aruanne
     timelines: Ajakavade aruandlused
@@ -2166,8 +2185,10 @@ et:
       years: Aastad
   title_remove_and_delete_user: Remove the invited user from the project and delete
     him/her.
-  tooltip_resend_invitation: Sends another invitation email with a fresh token in
+  tooltip_resend_invitation: 'Sends another invitation email with a fresh token in
     case the old one expired or the user did not get the original email.
+
+'
   tooltip:
     attribute_visibility:
       default: Show if not empty
@@ -2186,9 +2207,11 @@ et:
     activate: Aktiveerimine
     activate_and_reset_failed_logins: Aktiveeri ja unusta ebaõnnestunud sisselogimised
     authentication_provider: Autentimisteenuse pakkuja
-    authentication_settings_disabled_due_to_external_authentication: See kasutaja
-      autendib end välise autentimisteenuse pakkuja abil, seega ei saa parooli OpenProject'is
+    authentication_settings_disabled_due_to_external_authentication: 'See kasutaja
+      autendib end välise autentimisteenuse pakkuja abil, seega ei saa parooli OpenProject''is
       muuta.
+
+'
     authorization_rejected: You are not allowed to sign in.
     assign_random_password: Assign random password (sent to user via email)
     blocked: ajutiselt blokeeritud
@@ -2227,15 +2250,19 @@ et:
   menu_item_setting: Nähtavus
   wiki_menu_item_for: Menüüvalik vikilehele "%{title}"
   wiki_menu_item_setting: Nähtavus
-  wiki_menu_item_new_main_item_explanation: Sa oled kustutamas ainsat viki põhilehele
+  wiki_menu_item_new_main_item_explanation: 'Sa oled kustutamas ainsat viki põhilehele
     viivat menüüvalikut. Nüüd pead sa valima ühe viki lehtedest, mille jaoks genereeritakse
     uus peamine menüüvalik. Kui soovid hoopiski vabaneda vikilehtedest, siis palu
     projekti administraatoril viki moodul välja lülitada.
+
+'
   wiki_menu_item_delete_not_permitted: Ainsa vikilehe menüüvalikut ei saa kustutada.
   query_menu_item_for: Menüüvalik päringule "%{title}"
   work_package:
-    updated_automatically_by_child_changes: _Uuendati automaatselt, kuna muudeti alamteemat
-      %{child}_
+    updated_automatically_by_child_changes: '_Uuendati automaatselt, kuna muudeti
+      alamteemat %{child}_
+
+'
     destroy:
       info: Deleting the work package is an irreversible action.
       title: Delete the work package
@@ -2283,4 +2310,3 @@ et:
         start_date: Start date cannot be set on parent work packages.
     resources:
       schema: Schema
-  label_work_package_status_new: Uus olek

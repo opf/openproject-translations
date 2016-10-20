@@ -170,12 +170,18 @@ sk:
       login_verification:
         other: Zadajte prihlasovacie meno %{name} na overenie odstránenia.
         self: Zadajte vaše prihlasovacie meno %{name} na overenie odstránenia.
-    error_inactive_activation_by_mail: Váš účet ešte nebol aktivovaný. Ak ho chcete
+    error_inactive_activation_by_mail: 'Váš účet ešte nebol aktivovaný. Ak ho chcete
       aktivovať, kliknite na odkaz, ktorý bol doručený na Vašu e-mailovú adresu.
-    error_inactive_manual_activation: Váš účet ešte nebol aktivovaný. Počkajte prosím,
+
+'
+    error_inactive_manual_activation: 'Váš účet ešte nebol aktivovaný. Počkajte prosím,
       kým ho správca zaktivuje.
-    error_self_registration_disabled: Registrácia užívateľa je v tomto systéme zakázaná.
+
+'
+    error_self_registration_disabled: 'Registrácia užívateľa je v tomto systéme zakázaná.
       Požiadajte prosím správcu, aby pre Vás účet vytvoril.
+
+'
     login_with_auth_provider: alebo sa prihláste so svojím existujúcim účtom
     signup_with_auth_provider: alebo sa zaregistrujte pomocou
     auth_source_login: Prihláste sa ako <em>%{login}</em> pre aktiváciu účtu.
@@ -628,9 +634,9 @@ sk:
     - November
     - December
     order:
-    - :rok
-    - :mesiac
-    - :deň
+    - ":rok"
+    - ":mesiac"
+    - ":deň"
   datetime:
     distance_in_words:
       about_x_hours:
@@ -744,10 +750,12 @@ sk:
   default_type_user_story: Užívateľský príbeh
   description_active: Aktívny?
   description_attachment_toggle: Zobraziť / skryť prílohy
-  description_autocomplete: Toto pole používa funkciu automatické dokončovanie. Pri
+  description_autocomplete: 'Toto pole používa funkciu automatické dokončovanie. Pri
     zadávaní názvu pracovného balíčka vám poskytne zoznam možných návrhov. Vyberte
     jeden pomocou šípok nahor a nadol a zvoľte ho pomocou klávesy Tab alebo Enter.
     Iný spôsob je zadať priamo číslo pracovného balíčka.
+
+'
   description_available_columns: Dostupné stĺpce
   description_choose_project: Projekty
   description_compare_from: Compare from
@@ -1323,7 +1331,7 @@ sk:
   label_work_package_added: Pracovný balíček pridáný
   label_work_package_category_new: Nová kategória
   label_work_package_category_plural: kategórie pracovných balíčkov
-  label_work_package_hierarchy: Hierarchia Pracovného balíka
+  label_work_package_hierarchy: Work package hierarchy
   label_work_package_new: Nový pracovný balíček
   label_work_package_note_added: Poznámka pracovného balíčka pridaná
   label_work_package_edit: Úprava pracovného balíčka %{name}
@@ -1499,13 +1507,13 @@ sk:
   notice_successful_create: Successful creation.
   notice_successful_delete: Successful deletion.
   notice_successful_update: Successful update.
-  notice_to_many_principals_to_display: |
+  notice_to_many_principals_to_display: |-
     There are too many results.
     Narrow down the search by typing in the name of the new member (or group).
   notice_unable_delete_time_entry: Unable to delete time log entry.
   notice_unable_delete_version: Unable to delete version.
-  notice_user_missing_authentication_method: Používateľ si musí zvoliť heslo alebo
-    vybrať iný spôsob prihlásenia.
+  notice_user_missing_authentication_method: User has yet to choose a password or
+    another way to sign in.
   notice_user_invitation_resent: Another invitation has been sent to %{email}.
   present_access_key_value: 'Your %{key_name} is: %{value}'
   notice_automatic_set_of_standard_type: Set standard type automatically.
@@ -1640,7 +1648,7 @@ sk:
   repositories:
     at_identifier: at %{identifier}
     atom_revision_feed: Atom revision feed
-    autofetch_information: |
+    autofetch_information: |-
       Check this if you want repositories to be updated automatically when accessing the repository module page.
       This encompasses the retrieval of commits from the repository and refreshing the required disk storage.
     checkout:
@@ -1650,14 +1658,14 @@ sk:
         none: No checkout access, you may only view the repository through this application.
       access_permission: Your permissions on this repository
       url: Checkout URL
-      base_url_text: |
+      base_url_text: |-
         The base URL to use for generating checkout URLs (e.g., https://myserver.example.org/repos/).
         Note: The base URL is only used for rewriting checkout URLs in managed repositories. Other repositories are not altered.
       default_instructions:
-        git: |
+        git: |-
           The data contained in this repository can be downloaded to your computer with Git.
           Please consult the documentation of Git if you need more information on the checkout procedure and available clients.
-        subversion: |
+        subversion: |-
           The data contained in this repository can be downloaded to your computer with Subversion.
           Please consult the documentation of Subversion if you need more information on the checkout procedure and available clients.
       enable_instructions_text: Displays checkout instructions defined below on all
@@ -1747,7 +1755,7 @@ sk:
       managed: Create new repository in OpenProject
     storage:
       not_available: Disk storage consumption is not available for this repository.
-      update_timeout: |
+      update_timeout: |-
         Keep the last required disk space information for a repository for N minutes.
         As counting the required disk space of a repository may be costly, increase this value to reduce performance impact.
     subversion:
@@ -1757,7 +1765,7 @@ sk:
       existing_url: Existing URL
       instructions:
         managed_url: This is the URL of the managed (local) Subversion repository.
-        url: |
+        url: |-
           Enter the repository URL. This may either target a local repository (starting with %{local_proto} ), or a remote repository.
           The following URL schemes are supported:
       managed_title: Subversion repository integrated into OpenProject
@@ -1904,12 +1912,14 @@ sk:
   text_are_you_sure: Are you sure?
   text_are_you_sure_with_children: Delete work package and all child work packages?
   text_assign_to_project: Assign to the project
-  text_form_configuration: Môžete prispôsobiť, ktoré atribúty sa zobrazia vo formulároch
+  text_form_configuration: 'Môžete prispôsobiť, ktoré atribúty sa zobrazia vo formulároch
     na prácu s pracovnými balíkmi tohto typu. "Aktívne" polia sa zobrazia v zbalenom
     zobrazení balíka ak majú nastavenú hodnotu, polia, ktoré sú "Vždy zobrazené",
     sa zobrazia aj bez hodnoty. Neaktívne polia sa nikdy nezobrazia, ani keď budú
     mať hodnotu. Len polia, ktoré nie sú povinné, alebo majú predvolenú hodnotu možno
     prispôsobiť.
+
+'
   text_caracters_maximum: "%{count} characters maximum."
   text_caracters_minimum: Must be at least %{count} characters long.
   text_comma_separated: Multiple values allowed (comma separated).
@@ -1923,13 +1933,13 @@ sk:
   text_destroy_what_to_do: What do you want to do?
   text_diff_truncated: "... This diff was truncated because it exceeds the maximum
     size that can be displayed."
-  text_email_delivery_not_configured: |
+  text_email_delivery_not_configured: |-
     Email delivery is not configured, and notifications are disabled.
     Configure your SMTP server in config/configuration.yml and restart the application to enable them.
   text_enumeration_category_reassign_to: 'Reassign them to this value:'
   text_enumeration_destroy_question: "%{count} objects are assigned to this value."
   text_file_repository_writable: Attachments directory writable
-  text_git_repo_example: a bare and local repository (e.g. /gitrepo, c:\\gitrepo)
+  text_git_repo_example: a bare and local repository (e.g. /gitrepo, c:\gitrepo)
   text_hint_date_format: Enter a date in the form of YYYY-MM-DD. Other formats may
     be changed to an unwanted date.
   text_hint_disable_with_0: 'Note: Disable with 0'
@@ -1981,7 +1991,7 @@ sk:
   text_regexp_info: eg. ^[A-Z0-9]+$
   text_regexp_multiline: Regex je aplikovaný v režime s viacerými riadkami. napríklad
     ^---\s+
-  text_repository_usernames_mapping: |
+  text_repository_usernames_mapping: |-
     Select or update the OpenProject user mapped to each username found in the repository log.
     Users with the same OpenProject and repository username or email are automatically mapped.
   text_select_mail_notifications: Select actions for which email notifications should
@@ -2187,16 +2197,26 @@ sk:
     type_could_not_be_saved: Type could not be saved
     reporting_could_not_be_saved: Reporting could not be saved
     properties: Properties
-    really_delete_color: Are you sure, you want to delete the following color? Types
+    really_delete_color: 'Are you sure, you want to delete the following color? Types
       using this color will not be deleted.
-    really_delete_project_association_between_project_a_and_project_b: Are you sure,
+
+'
+    really_delete_project_association_between_project_a_and_project_b: 'Are you sure,
       you want to delete the dependency between “%{project_a}” and “%{project_b}”?
-    really_delete_project_type: Are you sure, you want to delete the following project
+
+'
+    really_delete_project_type: 'Are you sure, you want to delete the following project
       type? Projects using this type will not be deleted.
-    really_delete_timeline: Are you sure, you want to delete the following timeline
+
+'
+    really_delete_timeline: 'Are you sure, you want to delete the following timeline
       report? Work packages shown in this timeline report will not be deleted.
-    really_delete_reporting: Are you sure, you want to delete the following reporting?
+
+'
+    really_delete_reporting: 'Are you sure, you want to delete the following reporting?
       Previous reporting statuses will be deleted, too.
+
+'
     start: Začiatok
     timeline: Timeline report
     timelines: Timeline reports
@@ -2214,8 +2234,10 @@ sk:
       years: Roky
   title_remove_and_delete_user: Remove the invited user from the project and delete
     him/her.
-  tooltip_resend_invitation: Sends another invitation email with a fresh token in
+  tooltip_resend_invitation: 'Sends another invitation email with a fresh token in
     case the old one expired or the user did not get the original email.
+
+'
   tooltip:
     attribute_visibility:
       default: Zobraziť, ak nie je prázdny
@@ -2234,9 +2256,11 @@ sk:
     activate: Aktivovať
     activate_and_reset_failed_logins: Activate and reset failed logins
     authentication_provider: Poskytovateľ služby overovania identity
-    authentication_settings_disabled_due_to_external_authentication: Tento používateľ
+    authentication_settings_disabled_due_to_external_authentication: 'Tento používateľ
       sa overuje za pomoci externého poskytovateľa autentifikácie, takže jeho heslo
       nie je možné zmeniť pomocou OpenProject .
+
+'
     authorization_rejected: Nemôžete sa prihlásiť.
     assign_random_password: Priradiť náhodné heslo (a odoslať používateľovi prostredníctvom
       e-mailu)
@@ -2277,15 +2301,19 @@ sk:
   menu_item_setting: Viditeľnosť
   wiki_menu_item_for: Položka menu pre wiki "%{title}"
   wiki_menu_item_setting: Viditeľnosť
-  wiki_menu_item_new_main_item_explanation: You are deleting the only main wiki menu
+  wiki_menu_item_new_main_item_explanation: 'You are deleting the only main wiki menu
     item. You now have to choose a wiki page for which a new main item will be generated.
     To delete the wiki the wiki module can be deactivated by project administrators.
+
+'
   wiki_menu_item_delete_not_permitted: The wiki menu item of the only wiki page cannot
     be deleted.
   query_menu_item_for: Položka menu pre dopyt "%{title}"
   work_package:
-    updated_automatically_by_child_changes: _Modifikované automaticky z dôvodu zmeny
+    updated_automatically_by_child_changes: '_Modifikované automaticky z dôvodu zmeny
       hodnôt v rámci podradeného pracovného balíčka %{child}_
+
+'
     destroy:
       info: Odstránenie pracovného balíka je nevratná akcia.
       title: Odstrániť pracovný balík
@@ -2337,4 +2365,3 @@ sk:
           podriadené pracovné balíčky.
     resources:
       schema: Schéma
-  label_work_package_status_new: Nový stav

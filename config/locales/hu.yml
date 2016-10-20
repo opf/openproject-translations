@@ -164,13 +164,19 @@ hu:
       login_verification:
         other: Enter the login %{name} to verify the deletion.
         self: Enter your login %{name} to verify the deletion.
-    error_inactive_activation_by_mail: A felhasználói hozzáférésed még nem aktív.
+    error_inactive_activation_by_mail: 'A felhasználói hozzáférésed még nem aktív.
       Felhasználói fiókjának aktiválásához kattintson az e-mailben kapott linkre.
-    error_inactive_manual_activation: A felhasználói hozzáférésed még nem aktív. Várja
-      meg, hogy a rendszergazda aktiválja a fiókot.
-    error_self_registration_disabled: A felhasználói regisztráció le van tiltva a
+
+'
+    error_inactive_manual_activation: 'A felhasználói hozzáférésed még nem aktív.
+      Várja meg, hogy a rendszergazda aktiválja a fiókot.
+
+'
+    error_self_registration_disabled: 'A felhasználói regisztráció le van tiltva a
       rendszerben. Kérje meg a rendszergazdát, hogy hozzon létre egy felhasználói
       hozzáférést.
+
+'
     login_with_auth_provider: vagy jelentkezzen be a meglévő hozzáférésével.
     signup_with_auth_provider: or sign up using
     auth_source_login: Please login as <em>%{login}</em> to activate your account.
@@ -443,7 +449,7 @@ hu:
       work_package: Munkacsomag
   errors:
     header_invalid_fields: 'Problémák merültek fel az alábbi mezőkkel:'
-    field_erroneous_label: |
+    field_erroneous_label: |-
       This field is invalid: %{full_errors}
       Please enter a valid value.
   activity:
@@ -618,9 +624,9 @@ hu:
     - November
     - December
     order:
-    - :év
-    - :hónap
-    - :nap
+    - ":év"
+    - ":hónap"
+    - ":nap"
   datetime:
     distance_in_words:
       about_x_hours:
@@ -722,10 +728,12 @@ hu:
   default_type_user_story: User story
   description_active: Aktív?
   description_attachment_toggle: Csatolmányt mutat/elrejt
-  description_autocomplete: Ez a mező automatikus kiegészítést használ. gépelés közben
+  description_autocomplete: 'Ez a mező automatikus kiegészítést használ. gépelés közben
     a munkacsomag címnek kap egy listát a választhatóak közül. Válasszon egyet a felfelé
     vagy a lefelé mutató billentyű segítségével, és válasszuk ki a tab, vagy vagy
     az enter billentyűvel. alternatívaként megadhatja a munkacsomag számát közvetlenül.
+
+'
   description_available_columns: Elérhető oszlopok
   description_choose_project: Projektek
   description_compare_from: Compare from
@@ -1306,7 +1314,7 @@ hu:
   label_work_package_added: Munka-csomag hozzáadva
   label_work_package_category_new: Új kategória
   label_work_package_category_plural: Munkacsomag kategóriák
-  label_work_package_hierarchy: Munkacsomag hierarchia
+  label_work_package_hierarchy: Work package hierarchy
   label_work_package_new: Új munkacsomag
   label_work_package_note_added: Munkacsomag megjegyzés hozzáadva
   label_work_package_edit: Munkacsomag %{name} szerkesztése
@@ -1477,8 +1485,8 @@ hu:
     új tagok (vagy csoport) nevének beírásával.
   notice_unable_delete_time_entry: Nem tudom törtölni az idő naplóbejegyzést.
   notice_unable_delete_version: Nem lehet törölni a verziót.
-  notice_user_missing_authentication_method: User has yet to chose a password or another
-    way the sign in.
+  notice_user_missing_authentication_method: User has yet to choose a password or
+    another way to sign in.
   notice_user_invitation_resent: Another invitation has been sent to %{email}.
   present_access_key_value: 'Your %{key_name} is: %{value}'
   notice_automatic_set_of_standard_type: Automatikusan beállítja alap típust .
@@ -1611,7 +1619,7 @@ hu:
   repositories:
     at_identifier: at %{identifier}
     atom_revision_feed: Atom revision feed
-    autofetch_information: |
+    autofetch_information: |-
       Check this if you want repositories to be updated automatically when accessing the repository module page.
       This encompasses the retrieval of commits from the repository and refreshing the required disk storage.
     checkout:
@@ -1621,14 +1629,14 @@ hu:
         none: No checkout access, you may only view the repository through this application.
       access_permission: Your permissions on this repository
       url: Checkout URL
-      base_url_text: |
+      base_url_text: |-
         The base URL to use for generating checkout URLs (e.g., https://myserver.example.org/repos/).
         Note: The base URL is only used for rewriting checkout URLs in managed repositories. Other repositories are not altered.
       default_instructions:
-        git: |
+        git: |-
           The data contained in this repository can be downloaded to your computer with Git.
           Please consult the documentation of Git if you need more information on the checkout procedure and available clients.
-        subversion: |
+        subversion: |-
           The data contained in this repository can be downloaded to your computer with Subversion.
           Please consult the documentation of Subversion if you need more information on the checkout procedure and available clients.
       enable_instructions_text: Displays checkout instructions defined below on all
@@ -1718,7 +1726,7 @@ hu:
       managed: Create new repository in OpenProject
     storage:
       not_available: Disk storage consumption is not available for this repository.
-      update_timeout: |
+      update_timeout: |-
         Keep the last required disk space information for a repository for N minutes.
         As counting the required disk space of a repository may be costly, increase this value to reduce performance impact.
     subversion:
@@ -1728,7 +1736,7 @@ hu:
       existing_url: Existing URL
       instructions:
         managed_url: This is the URL of the managed (local) Subversion repository.
-        url: |
+        url: |-
           Enter the repository URL. This may either target a local repository (starting with %{local_proto} ), or a remote repository.
           The following URL schemes are supported:
       managed_title: Subversion repository integrated into OpenProject
@@ -1880,11 +1888,13 @@ hu:
   text_are_you_sure: Biztos vagy benne?
   text_are_you_sure_with_children: Törli a munkacsomagot és minden gyermek munkacsomagot?
   text_assign_to_project: Hozzárendelés projekthez
-  text_form_configuration: You can customize which attributes will be displayed in
-    forms for work packages of this type. 'Active' fields will be shown in the collapsed
-    work package view if they have a value, fields that are 'Always displayed' even
-    if they don't. Inactive fields will never be shown, even if they have a value.
+  text_form_configuration: 'You can customize which attributes will be displayed in
+    forms for work packages of this type. ''Active'' fields will be shown in the collapsed
+    work package view if they have a value, fields that are ''Always displayed'' even
+    if they don''t. Inactive fields will never be shown, even if they have a value.
     Only fields that are not required or have a default value can be customized.
+
+'
   text_caracters_maximum: legfeljebb %{count} hosszúságú karakter lehet.
   text_caracters_minimum: Legalább %{count} karakter hosszúnak kell lennie.
   text_comma_separated: Többszörös érték megengedett (vesszővel elválasztva).
@@ -1906,7 +1916,7 @@ hu:
   text_enumeration_destroy_question: "%{count} objektum ehhez az értékhez van újra
     hozzárendelve."
   text_file_repository_writable: A mellékletek könyvtára írható
-  text_git_repo_example: a rövid és a helyi csomag tároló (pl. /gitrepo, c:\\gitrepo)
+  text_git_repo_example: a rövid és a helyi csomag tároló (pl. /gitrepo, c:\gitrepo)
   text_hint_date_format: Enter a date in the form of YYYY-MM-DD. Other formats may
     be changed to an unwanted date.
   text_hint_disable_with_0: 'Note: Disable with 0'
@@ -2163,16 +2173,26 @@ hu:
     type_could_not_be_saved: A típust nem lehet menteni
     reporting_could_not_be_saved: A jelentés mentése nem sikerült
     properties: Tulajdonságok
-    really_delete_color: Biztos, hogy törli a következő színt? Ezt a színt használja
+    really_delete_color: 'Biztos, hogy törli a következő színt? Ezt a színt használja
       egy típus, igy nem törlhető.
-    really_delete_project_association_between_project_a_and_project_b: Biztos, hogy
+
+'
+    really_delete_project_association_between_project_a_and_project_b: 'Biztos, hogy
       törli a függőséget "%{project_a}" és "%{project_b}" között?
-    really_delete_project_type: Biztos, hogy törli a következő projekt-típust?Egy
+
+'
+    really_delete_project_type: 'Biztos, hogy törli a következő projekt-típust?Egy
       projekt használja ezt a típust igy nem törölhető.
-    really_delete_timeline: Biztos, hogy törölni akarja az alábbi ütemterv jelentést?
+
+'
+    really_delete_timeline: 'Biztos, hogy törölni akarja az alábbi ütemterv jelentést?
       Az ütemterv jelentésben szereplő munkacsomagok, igy nem törölhető.
-    really_delete_reporting: Biztosan, törli a következő jelentést? Az előző jelentés
+
+'
+    really_delete_reporting: 'Biztosan, törli a következő jelentést? Az előző jelentés
       állapotát is törli.
+
+'
     start: Kezdő időpont
     timeline: Ütemterv jelentés
     timelines: Jelentések az idővonalakról
@@ -2191,8 +2211,10 @@ hu:
       years: Évek
   title_remove_and_delete_user: Remove the invited user from the project and delete
     him/her.
-  tooltip_resend_invitation: Sends another invitation email with a fresh token in
+  tooltip_resend_invitation: 'Sends another invitation email with a fresh token in
     case the old one expired or the user did not get the original email.
+
+'
   tooltip:
     attribute_visibility:
       default: Show if not empty
@@ -2212,9 +2234,11 @@ hu:
     activate_and_reset_failed_logins: Aktiválja és alaphelyzetbe állitja a sikertelen
       bejelentkezéseket
     authentication_provider: Hitelesítés-ellenőrző
-    authentication_settings_disabled_due_to_external_authentication: Ez a felhasználó
+    authentication_settings_disabled_due_to_external_authentication: 'Ez a felhasználó
       egy külső hitelesítés szolgáltató keresztül hitelesít, így nincs megváltoztatható
       jelszó az alkalmazásban.
+
+'
     authorization_rejected: Nem megengedett bejelentkezés.
     assign_random_password: Assign random password (sent to user via email)
     blocked: ideiglenesen zárolva
@@ -2254,15 +2278,19 @@ hu:
   menu_item_setting: Látható
   wiki_menu_item_for: Wikipage "%{title}" menüeleme
   wiki_menu_item_setting: Látható
-  wiki_menu_item_new_main_item_explanation: Csak a fő wiki menüelemet törölted. Most
+  wiki_menu_item_new_main_item_explanation: 'Csak a fő wiki menüelemet törölted. Most
     ki kell választani egy wiki oldalt, amelyre egy új fő menüelem jön létre. Ha törli
     a wiki oldalakat a projekt adminisztrátor tudja letiltani a wiki modult.
+
+'
   wiki_menu_item_delete_not_permitted: A wiki menüpontjában egyetlen wiki oldalt nem
     lehet törölni.
   query_menu_item_for: Menüpont lekérdezés "%{title}"
   work_package:
-    updated_automatically_by_child_changes: Automatikusan frissíti a változó értékeken
+    updated_automatically_by_child_changes: 'Automatikusan frissíti a változó értékeken
       belöl a gyermek munkacsomag %{child} alapján
+
+'
     destroy:
       info: Deleting the work package is an irreversible action.
       title: Delete the work package
@@ -2310,4 +2338,3 @@ hu:
         start_date: Start date cannot be set on parent work packages.
     resources:
       schema: Schema
-  label_work_package_status_new: Új állapot

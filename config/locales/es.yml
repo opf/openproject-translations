@@ -175,12 +175,19 @@ es:
       login_verification:
         other: Introduzca su login %{name} para confirmar la eliminación.
         self: Introduzca su login %{name} para confirmar la eliminación.
-    error_inactive_activation_by_mail: Su cuenta aún no está activada. Para activar
+    error_inactive_activation_by_mail: 'Su cuenta aún no está activada. Para activar
       su cuenta, haga clic en el enlace que fue enviado por correo electrónico.
-    error_inactive_manual_activation: Su cuenta aún no está activada. Por favor, espere
-      a que el administrador active su cuenta.
-    error_self_registration_disabled: El registro de usuarios está deshabilitado en
-      este sistema. Por favor pida a un administrador que cree una cuenta para usted.
+
+'
+    error_inactive_manual_activation: 'Su cuenta aún no está activada. Por favor,
+      espere a que el administrador active su cuenta.
+
+'
+    error_self_registration_disabled: 'El registro de usuarios está deshabilitado
+      en este sistema. Por favor pida a un administrador que cree una cuenta para
+      usted.
+
+'
     login_with_auth_provider: o inicie sesión con su cuenta existente
     signup_with_auth_provider: o regístrate usando
     auth_source_login: Por favor, inicia sesión como <em>%{login}</em> para activar
@@ -628,9 +635,9 @@ es:
     - Noviembre
     - Diciembre
     order:
-    - :año
-    - :mes
-    - :día
+    - ":año"
+    - ":mes"
+    - ":día"
   datetime:
     distance_in_words:
       about_x_hours:
@@ -732,11 +739,13 @@ es:
   default_type_user_story: Historia de usuario
   description_active: Activo?
   description_attachment_toggle: Mostrar/ocultar archivos adjuntos
-  description_autocomplete: Este campo utiliza Autocompletar. Mientras se escribe
+  description_autocomplete: 'Este campo utiliza Autocompletar. Mientras se escribe
     el título de un paquete de trabajo recibirá una lista de posibles candidatos.
     Elija uno usando las teclas de  flecha arriba y abajo  y selecciónelo con el tabulador
     o enter. Alternativamente usted puede ingresar el número del paquete de trabajo
     directamente.
+
+'
   description_available_columns: Columnas disponibles
   description_choose_project: Proyectos
   description_compare_from: Comparar desde
@@ -1324,7 +1333,7 @@ es:
   label_work_package_added: Paquete de trabajo añadido
   label_work_package_category_new: Nueva categoría
   label_work_package_category_plural: Categorías de paquete de trabajo
-  label_work_package_hierarchy: Jerarquía del paquete de trabajo
+  label_work_package_hierarchy: Work package hierarchy
   label_work_package_new: Nuevo paquete de trabajo
   label_work_package_note_added: Nota de paquete de trabajo añadido
   label_work_package_edit: Editar paquete de trabajo %{name}
@@ -1499,14 +1508,14 @@ es:
   notice_successful_create: Creación exitosa.
   notice_successful_delete: Eliminado con éxito.
   notice_successful_update: Actualización correcta.
-  notice_to_many_principals_to_display: |
+  notice_to_many_principals_to_display: |-
     Hay demasiados resultados.
     Afine la búsqueda ingresando el nombre del nuevo miembro (o grupo).
   notice_unable_delete_time_entry: No es posible eliminar la entrada de registro de
     hora.
   notice_unable_delete_version: No se puede eliminar la versión.
-  notice_user_missing_authentication_method: El usuario todavía tiene que escoger
-    una contraseña u otra forma de acceso.
+  notice_user_missing_authentication_method: El usuario todavía tiene que elegir una
+    contraseña u otra manera de iniciar sesión.
   notice_user_invitation_resent: Otra invitación se ha enviado a %{email}.
   present_access_key_value: 'Su %{key_name} es: %{value}'
   notice_automatic_set_of_standard_type: Establecer tipo estándar automáticamente.
@@ -1646,7 +1655,7 @@ es:
     autofetch_information: "Marque esta casilla si desea que los repositorios sean
       actualizados automáticamente al acceder a la página del módulo del repositorio.
       \nEsto abarca la recuperación de entregas del repositorio y actualizar el almacenamiento
-      en disco necesario.\n"
+      en disco necesario."
     checkout:
       access:
         readwrite: Lectura + Escritura
@@ -1655,14 +1664,14 @@ es:
           solo puede ver el repositorio.
       access_permission: Sus permisos sobre este repositorio
       url: URL de Checkout
-      base_url_text: |
+      base_url_text: |-
         La URL base para generar las URLs de checkout (ej: https://myserver.example.org/repos/).
         Nota: La URL base solo se utiliza para sobreescribir las URLs de checkout en repositorios administrados. El resto de repositorios no son alterados.
       default_instructions:
-        git: |
+        git: |-
           Los datos almacenados en este repositorio pueden ser descargados a su ordenador con Git.
           Por favor, consulte la documentación de Git si necesita mas información sobre el procedimiento de checkout y clientes disponibles.
-        subversion: |
+        subversion: |-
           Los datos almacenados en este repositorio pueden ser descargados a su ordenador con Subversion.
           Por favor, consulte la documentación de Subversion si necesita mas información sobre el procedimiento de checkout y clientes disponibles.
       enable_instructions_text: Muestra las instrucciones de checkout definidas mas
@@ -1771,7 +1780,7 @@ es:
           (local).
         url: "Introduzca la URL del repositorio. Esta puede apuntar ya sea un repositorio
           local (a partir de %{local_proto}), o un repositorio remoto. \nLos siguientes
-          esquemas URL son compatibles:\n"
+          esquemas URL son compatibles:"
       managed_title: Subversiones de repositorio integradas en OpenProject
       managed_introduction: Permitir que OpenProject cree e integre una Subversion
         de repositorio local automáticamente.
@@ -1929,12 +1938,14 @@ es:
   text_are_you_sure_with_children: "¿Eliminar el paquete de trabajo y todos sus paquetes
     dependientes?"
   text_assign_to_project: Asignar al proyecto
-  text_form_configuration: Puede personalizar qué atributos se mostrarán en formularios
-    para los paquetes de trabajo de este tipo. Los campos 'activos' se mostrarán en
-    la vista contraída del paquete de trabajo si tienen un valor, estos campos están
-    'Siempre visibles' incluso si no lo tienen. Los campos inactivos no se mostrarán
-    nunca, incluso si tienen un valor. Solo pueden personalizarse los campos que no
-    son obligatorios o tienen un valor predeterminado.
+  text_form_configuration: 'Puede personalizar qué atributos se mostrarán en formularios
+    para los paquetes de trabajo de este tipo. Los campos ''activos'' se mostrarán
+    en la vista contraída del paquete de trabajo si tienen un valor, estos campos
+    están ''Siempre visibles'' incluso si no lo tienen. Los campos inactivos no se
+    mostrarán nunca, incluso si tienen un valor. Solo pueden personalizarse los campos
+    que no son obligatorios o tienen un valor predeterminado.
+
+'
   text_caracters_maximum: "% {count} caracteres máximo."
   text_caracters_minimum: Debe tener al menos %{count} caracteres de largo.
   text_comma_separated: Permitir múltiples valores (separados por comas).
@@ -1949,14 +1960,14 @@ es:
   text_destroy_what_to_do: "¿Qué quieres hacer?"
   text_diff_truncated: "... Esta diferencia se truncó porque excede el tamaño máximo
     que puede visualizarse."
-  text_email_delivery_not_configured: "El envío de correo electrónico no está configurado
+  text_email_delivery_not_configured: El envío de correo electrónico no está configurado
     y las notificaciones estan deshabilitadas. \nConfigure su servidor SMTP en config/configuration.yml
-    y reinicie la aplicación para habilitarlas."
+    y reinicie la aplicación para habilitarlas.
   text_enumeration_category_reassign_to: 'Reasignarlos a este valor:'
   text_enumeration_destroy_question: "% {count} objetos han sido asignados a este
     valor."
   text_file_repository_writable: Directorio de adjuntos escribible
-  text_git_repo_example: un repositorio local y vacío (por ejemplo /gitrepo, c:\\gitrepo)
+  text_git_repo_example: un repositorio local y vacío (por ejemplo /gitrepo, c:\gitrepo)
   text_hint_date_format: Indique una fecha en el formato AAAA-MM-DD. Otros formatos
     pueden dar lugar a que se interprete una fecha errónea.
   text_hint_disable_with_0: 'Nota: Desactivar con 0'
@@ -2000,9 +2011,9 @@ es:
   text_no_notes: No hay comentarios disponibles para este paquete de trabajo.
   text_notice_too_many_values_are_inperformant: 'Nota: Si se muestran más de 100 elementos
     por página puede incrementar el tiempo de carga de la página.'
-  text_own_membership_delete_confirmation: "Usted está a punto de eliminar algunos
+  text_own_membership_delete_confirmation: Usted está a punto de eliminar algunos
     o todos sus permisos y después no será posible editar este proyecto. \n ¿está
-    seguro que desea continuar?"
+    seguro que desea continuar?
   text_plugin_assets_writable: Directorio de Plugins activos escribible
   text_powered_by: Con tecnología de %{link}
   text_project_identifier_info: Se permiten sólo letras minúsculas (a-z), números,
@@ -2220,16 +2231,16 @@ es:
     reporting_could_not_be_saved: No se ha podido guardar el informe
     properties: Propiedades
     really_delete_color: "¿Esta seguro que desea eliminar el siguiente color? Los
-      tipos que usan este color no se eliminarán."
+      tipos que usan este color no se eliminarán.\n"
     really_delete_project_association_between_project_a_and_project_b: "¿Esta seguro
-      que desea eliminar la dependencia entre '%{project_a}' y '%{project_b}'?"
+      que desea eliminar la dependencia entre '%{project_a}' y '%{project_b}'?\n"
     really_delete_project_type: "¿Estás seguro que desea eliminar el siguiente tipo
-      de proyecto? Los proyectos que usan este tipo no se eliminarán."
+      de proyecto? Los proyectos que usan este tipo no se eliminarán.\n"
     really_delete_timeline: "¿Estás seguro que desea eliminar el siguiente informe
       de línea de tiempo? No se eliminarán los paquetes de trabajo mostrados en este
-      informe de línea de tiempo."
+      informe de línea de tiempo.\n"
     really_delete_reporting: "¿Esta seguro que desea eliminar el siguiente informe?
-      Los informes de estados anteriores se eliminaran, también."
+      Los informes de estados anteriores se eliminaran, también.\n"
     start: Inicio
     timeline: Informe de línea de tiempo
     timelines: Informes de cronograma
@@ -2247,8 +2258,10 @@ es:
       quarters: Cuatrimestres
       years: Años
   title_remove_and_delete_user: Eliminar al usurio invitado del proyecto y eliminarlo.
-  tooltip_resend_invitation: Enviar otra invitación con token nuevo en caso de que
+  tooltip_resend_invitation: 'Enviar otra invitación con token nuevo en caso de que
     el viejo haya expirado o el usuario no recibió el correo electrónico original.
+
+'
   tooltip:
     attribute_visibility:
       default: Mostrar si no está vacía
@@ -2268,9 +2281,11 @@ es:
     activate_and_reset_failed_logins: Activar y restablecer los inicios de sesión
       fallidos
     authentication_provider: Proveedor de autenticación
-    authentication_settings_disabled_due_to_external_authentication: Este usuario
+    authentication_settings_disabled_due_to_external_authentication: 'Este usuario
       se autentica mediante un proveedor de autenticación externa, así que no hay
       ninguna contraseña en OpenProject para ser cambiada.
+
+'
     authorization_rejected: No tienes permitido iniciar sesion.
     assign_random_password: Asignar contraseña aleatoria (Enviar al usuario vía email)
     blocked: bloqueado temporalmente
@@ -2310,16 +2325,20 @@ es:
   menu_item_setting: Visibilidad
   wiki_menu_item_for: Elemento de menú para wiki '%{title}'
   wiki_menu_item_setting: Visibilidad
-  wiki_menu_item_new_main_item_explanation: Usted esta eliminando el único elemento
+  wiki_menu_item_new_main_item_explanation: 'Usted esta eliminando el único elemento
     de menú wiki principal. Ahora tiene que elegir un wiki para el cual un nuevo elemento
     de menú principal será generado. Para eliminar el wiki, éste módulo puede ser
     desactivado por los administradores del proyecto.
+
+'
   wiki_menu_item_delete_not_permitted: El único elemento de menú de la única página
     wiki no puede ser eliminado.
   query_menu_item_for: Elemento de menu para consulta "%{title}"
   work_package:
-    updated_automatically_by_child_changes: _Actualizado automáticamente cambiando
+    updated_automatically_by_child_changes: '_Actualizado automáticamente cambiando
       los valores en el paquete de trabajo hijo %{child}_
+
+'
     destroy:
       info: La eliminación del paquete de trabajo no se puede deshacer.
       title: Eliminar el pauqete de trabajo
@@ -2371,4 +2390,3 @@ es:
           padres.
     resources:
       schema: Esquema
-  label_work_package_status_new: Nuevo estatus
