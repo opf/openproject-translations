@@ -191,6 +191,21 @@ ro:
     auth_source_login: Autentifică-te ca <em>%{login}</em> pentru a activa contul.
     omniauth_login: Autentifică-te pentru activarea contului tău.
   actionview_instancetag_blank_option: Vă rugăm să selectaţi
+  activemodel:
+    errors:
+      models:
+        relations/base_contract:
+          attributes:
+            to:
+              error_not_found: work package in `to` position not found or not visible
+              error_readonly: an existing relation's `to` link is immutable
+            from:
+              error_not_found: work package in `from` position not found or not visible
+              error_readonly: an existing relation's `from` link is immutable
+        users/base_contract:
+          attributes:
+            status:
+              invalid_on_create: is not a valid status for new users.
   activerecord:
     attributes:
       announcements:
@@ -793,6 +808,7 @@ ro:
   error_can_not_delete_custom_field: Câmpul personalizat nu poate fi șters
   error_can_not_delete_type: Acest tip conține pachete de lucru și nu poate fi șters.
   error_can_not_delete_standard_type: Tipurile standard nu pot fi șterse.
+  error_can_not_invite_user: Failed to send invitation to user.
   error_can_not_remove_role: Acest rol este utilizat și nu poate fi șters.
   error_can_not_reopen_work_package_on_closed_version: Un pachet de lucru atribuit
     la o versiune închisă nu poate fi redeschis

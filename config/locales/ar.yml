@@ -177,6 +177,21 @@ ar:
     auth_source_login: الرجاء الدخول ك <em>%{login}</em>لتفعيل حسابك.
     omniauth_login: الرجاء تسجيل الدخول لتفعيل حسابك.
   actionview_instancetag_blank_option: من فضلك اختر
+  activemodel:
+    errors:
+      models:
+        relations/base_contract:
+          attributes:
+            to:
+              error_not_found: work package in `to` position not found or not visible
+              error_readonly: an existing relation's `to` link is immutable
+            from:
+              error_not_found: work package in `from` position not found or not visible
+              error_readonly: an existing relation's `from` link is immutable
+        users/base_contract:
+          attributes:
+            status:
+              invalid_on_create: is not a valid status for new users.
   activerecord:
     attributes:
       announcements:
@@ -830,6 +845,7 @@ ar:
   error_can_not_delete_custom_field: غير قادر على حذف الحقل المخصص
   error_can_not_delete_type: هذا النوع يحتوي على مجموعة عمل ولا يمكن حذفه.
   error_can_not_delete_standard_type: لا بمكن حذف الانماط القياسية.
+  error_can_not_invite_user: Failed to send invitation to user.
   error_can_not_remove_role: هذا الدور هو قيد الاستخدام ولا يمكن حذفه.
   error_can_not_reopen_work_package_on_closed_version: لا يمكن إعادة فتح مجموعة العمل
     المسندة الى نسخة مغلقة

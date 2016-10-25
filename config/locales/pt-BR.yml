@@ -181,6 +181,21 @@ pt-BR:
     auth_source_login: Faça login como <em>%{login}</em> para ativar sua conta.
     omniauth_login: Faça login para ativar sua conta.
   actionview_instancetag_blank_option: Por favor selecione
+  activemodel:
+    errors:
+      models:
+        relations/base_contract:
+          attributes:
+            to:
+              error_not_found: work package in `to` position not found or not visible
+              error_readonly: an existing relation's `to` link is immutable
+            from:
+              error_not_found: work package in `from` position not found or not visible
+              error_readonly: an existing relation's `from` link is immutable
+        users/base_contract:
+          attributes:
+            status:
+              invalid_on_create: is not a valid status for new users.
   activerecord:
     attributes:
       announcements:
@@ -767,6 +782,7 @@ pt-BR:
   error_can_not_delete_custom_field: Não é possível excluir o campo personalizado
   error_can_not_delete_type: Este tipo contém pacotes de trabalho e não pode ser excluído.
   error_can_not_delete_standard_type: Tipos padrão não podem ser excluídos.
+  error_can_not_invite_user: Failed to send invitation to user.
   error_can_not_remove_role: Este papel está em uso e não pode ser excluído.
   error_can_not_reopen_work_package_on_closed_version: Um pacote de trabalho atribuído
     a uma versão fechada não pode ser reaberto
@@ -801,9 +817,9 @@ pt-BR:
   error_workflow_copy_target: Por favor, selecione o tipo de destino(s) e papel(éis)
   error_menu_item_not_created: Item de menu não pôde ser adicionado
   error_menu_item_not_saved: Item de menu não pôde ser salvo
-  error_wiki_root_menu_item_conflict: 'Can''t rename "%{old_name}" to "%{new_name}"
-    due to a conflict in the resulting menu item with the existing menu item "%{existing_caption}"
-    (%{existing_identifier}).
+  error_wiki_root_menu_item_conflict: 'Não é possível mudar o nome de"%{old_name}"
+    para "%{new_name}" devido a um conflito no item de menu resultante com o item
+    de menu existente "%{existing_caption}" (%{existing_identifier}).
 
 '
   error_external_authentication_failed: Ocorreu um erro durante a autenticação externa.
@@ -988,7 +1004,7 @@ pt-BR:
   label_download_plural: "%{count} Baixados"
   label_downloads_abbr: D/L
   label_duplicated_by: duplicado por
-  label_duplicate: duplicate
+  label_duplicate: duplicado
   label_duplicates: duplicados
   label_edit: Editar
   label_enable_multi_select: Alternar para seleção múltipla
@@ -999,7 +1015,7 @@ pt-BR:
   label_end_to_end: fim a fim
   label_end_to_start: fim para início
   label_enumeration_new: Novo valor de enumeração
-  label_enumeration_value: Enumeration value
+  label_enumeration_value: Valor de enumeração
   label_enumerations: Enumerações
   label_environment: Ambiente
   label_equals: é
@@ -1037,7 +1053,7 @@ pt-BR:
   label_in_less_than: em menos de
   label_in_more_than: em mais de
   label_incoming_emails: E-mails recebidos
-  label_includes: includes
+  label_includes: inclui
   label_index_by_date: Índice por data
   label_index_by_title: Índice por título
   label_information: Informação
@@ -1046,7 +1062,7 @@ pt-BR:
   label_internal: Interno
   label_invite_user: Convidar usuário
   label_show_hide: Exibir/ocultar
-  label_journal: Journal
+  label_journal: Diário
   label_journal_diff: Comparação de Descrição
   label_jump_to_a_project: Saltar para um projeto...
   label_language_based: Com base no idioma do usuário
@@ -1076,7 +1092,7 @@ pt-BR:
   label_member_plural: Membros
   label_memder_view_all: Visualizar todos os membros
   label_menu_item_name: Nome do item de menu
-  label_message: Message
+  label_message: Mensagem
   label_message_last: Última mensagem
   label_message_new: Nova mensagem
   label_message_plural: Mensagens
@@ -1128,7 +1144,7 @@ pt-BR:
   label_overall_activity: Atividade global
   label_overall_spent_time: Tempo total gasto
   label_overview: Visão geral
-  label_part_of: part of
+  label_part_of: parte de
   label_password_lost: Esqueceu a senha?
   label_password_rule_lowercase: Letras minúsculas
   label_password_rule_numeric: Caracteres Numéricos
@@ -1194,8 +1210,8 @@ pt-BR:
   label_repository: Repositório
   label_repository_root: Raiz do repositório
   label_repository_plural: Repositórios
-  label_required: required
-  label_requires: requires
+  label_required: necessário
+  label_requires: necessita
   label_responsible_for_work_packages: Pacotes de trabalho sob minha responsabilidade
   label_result_plural: Resultados
   label_reverse_chronological_order: Em ordem cronológica inversa
@@ -1310,7 +1326,7 @@ pt-BR:
   label_work_package_added: Pacote de trabalho adicionado
   label_work_package_category_new: Nova categoria
   label_work_package_category_plural: Categorias de pacote de trabalho
-  label_work_package_hierarchy: Work package hierarchy
+  label_work_package_hierarchy: Hierarquia de pacotes de trabalho
   label_work_package_new: Novo pacote de trabalho
   label_work_package_note_added: Anotação acrescentada ao pacote de trabalho
   label_work_package_edit: Editar pacote de trabalho %{name}

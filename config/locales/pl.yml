@@ -178,6 +178,21 @@ pl:
     auth_source_login: Zaloguj się jako <em>%{login}</em> aby aktywować konto.
     omniauth_login: Zaloguj się, aby aktywować konto.
   actionview_instancetag_blank_option: Proszę wybrać
+  activemodel:
+    errors:
+      models:
+        relations/base_contract:
+          attributes:
+            to:
+              error_not_found: work package in `to` position not found or not visible
+              error_readonly: an existing relation's `to` link is immutable
+            from:
+              error_not_found: work package in `from` position not found or not visible
+              error_readonly: an existing relation's `from` link is immutable
+        users/base_contract:
+          attributes:
+            status:
+              invalid_on_create: is not a valid status for new users.
   activerecord:
     attributes:
       announcements:
@@ -779,6 +794,7 @@ pl:
   error_can_not_delete_custom_field: Nie można usunąć pola niestandardowego
   error_can_not_delete_type: Ten typ zawiera zadania i nie może być usunięty.
   error_can_not_delete_standard_type: Nie można usunąć standardowych typów.
+  error_can_not_invite_user: Failed to send invitation to user.
   error_can_not_remove_role: Ta Rola jest używana i nie można jej usunąć.
   error_can_not_reopen_work_package_on_closed_version: Nie można otworzyć zadania
     przypisanego do zamkniętej wersji

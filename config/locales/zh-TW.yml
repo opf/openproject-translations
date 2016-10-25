@@ -159,6 +159,21 @@ zh-TW:
     auth_source_login: 請登入 <em>%{login}</em> 來啟用您的帳號。
     omniauth_login: 請登入來啟用您的帳號。
   actionview_instancetag_blank_option: 請選擇
+  activemodel:
+    errors:
+      models:
+        relations/base_contract:
+          attributes:
+            to:
+              error_not_found: work package in `to` position not found or not visible
+              error_readonly: an existing relation's `to` link is immutable
+            from:
+              error_not_found: work package in `from` position not found or not visible
+              error_readonly: an existing relation's `from` link is immutable
+        users/base_contract:
+          attributes:
+            status:
+              invalid_on_create: is not a valid status for new users.
   activerecord:
     attributes:
       announcements:
@@ -732,6 +747,7 @@ zh-TW:
   error_can_not_delete_custom_field: 無法刪除自訂欄位
   error_can_not_delete_type: 這個類型還有工作項目在使用，無法刪除。
   error_can_not_delete_standard_type: 標準類型無法刪除
+  error_can_not_invite_user: Failed to send invitation to user.
   error_can_not_remove_role: 這個角色正在使用中，無法刪除。
   error_can_not_reopen_work_package_on_closed_version: 被指定到已關閉版本的工作項目將無法重新開啟
   error_check_user_and_role: 請選擇一個使用者與一個角色。
