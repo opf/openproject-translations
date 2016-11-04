@@ -74,7 +74,7 @@ pl:
     label_board_locked: Zablokowany
     label_board_sticky: Przyklejony
     label_create_work_package: Tworzenie nowego zadania
-    label_created_by: Created by
+    label_created_by: Utworzony przez
     label_date: Data
     label_date_with_format: 'Wprowadź %{date_attribute} w następującym formacie: %{format}'
     label_deactivate: Wyłącz
@@ -193,6 +193,7 @@ pl:
     placeholders:
       default: "-"
       selection: Proszę wybrać
+      relation_description: Click to add description for this relation
     text_are_you_sure: Jesteś pewien?
     watchers:
       label_loading: ładowanie obserwatorów...
@@ -239,26 +240,29 @@ pl:
       blocked: Zablokowane przez
       precedes: Poprzedza
       follows: Następujący
-      includes: Includes
-      partof: Part of
-      requires: Requires
-      required: Required by
-      relation_type: relation type
+      includes: Zawiera
+      partof: Część
+      requires: Wymaga
+      required: Wymagane przez
+      relation_type: typ relacji
     relations_hierarchy:
-      hierarchy_headline: hierarchy
+      hierarchy_headline: hierarchia
     relation_buttons:
       change_parent: Zmień nadrzędny
-      remove_parent: Remove parent
-      add_parent: Add existing parent
-      add_new_child: Create new child
-      add_existing_child: Add existing child
-      remove_child: Remove child
-      add_new_relation: Create new relation
+      remove_parent: Usuń nadrzędny
+      group_by_wp_type: Group by work package type
+      group_by_relation_type: Group by relation type
+      add_parent: Dodaj do istniejącego nadrzędnego
+      add_new_child: Utwórz nowy podrzędny
+      add_existing_child: Dodaj istniejący podrzędny
+      remove_child: Usuń podrzędny
+      add_new_relation: Utwórz nową relację
+      update_description: Set or update description of this relation
       remove: Usuń relację
-      save: Save relation
-      abort: Abort
+      save: Zapisz relację
+      abort: Przerwij
     relations_autocomplete:
-      placeholder: Enter the related work package id
+      placeholder: Wprowadź id pakietu roboczego
     repositories:
       select_tag: Wybierz tag
       select_branch: Wybierz gałąź
@@ -393,13 +397,14 @@ pl:
       message_successful_bulk_delete: Pomyślnie usunięto zadania.
       message_successful_show_in_fullscreen: Kliknij tutaj, aby otworzyć ten pakiet
         prac w trybie pełnoekranowym.
+      message_view_spent_time: Show spent time for this work package
       no_value: Brak wartości
       inline_create:
         title: Kliknij tutaj, aby dodać nowy pakiet prac do tej listy
       create:
-        header: New %{type}
-        header_no_type: New work package (Type not yet set)
-        header_with_parent: 'New %{type} (Child of %{type} #%{id})'
+        header: Nowy %{type}
+        header_no_type: Nowy pakiet roboczy (typ jeszcze nie ustawiony)
+        header_with_parent: 'New %{type} (Child of %{parent_type} #%{id})'
         button: Utwórz
       no_results:
         title: Brak pakietów prac do wyświetlenia.
