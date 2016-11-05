@@ -274,13 +274,13 @@ et:
       user:
         admin: Administraator
         auth_source: Autentimise viis
+        current_password: Current password
+        force_password_change: Sunni parooli vahetada järgmisel sisselogimisel
         language: Keel
         last_login_on: Viimane sisselogimine
         mail_notification: Eposti märguandmed
-        current_password: Current password
         new_password: Uus parool
         password_confirmation: Kinnitamine
-        force_password_change: Sunni parooli vahetada järgmisel sisselogimisel
       user_preference:
         comments_sorting: Kuva kommentaare
         hide_mail: Peida minu eposti aadress
@@ -298,18 +298,15 @@ et:
         parent_title: Pärineb lehelt
         redirect_existing_links: Suuna olemasolevad lingid ümber
       planning_element_type_color:
-        name: Nimi
         hexcode: Hex kood
       project_association:
         description: Põhjus
         project_b: Sõltuv projekt
       project_type:
         allows_association: Võimaldab seoste loomist
-        name: Nimi
         reported_project_statuses: Esitatud projektiolekuid
         position: Positsioon
       timeline:
-        name: Nimi
         options: ''
       reporting:
         reported_project_status_comment: Oleku kommentaar
@@ -343,6 +340,7 @@ et:
           to one of its subtasks.
         circular_dependency: This relation would create a circular dependency.
         confirmation: doesn't match %{attribute}.
+        does_not_exist: does not exist.
         empty: ei tohi olla tühi.
         even: peab olema paarisarv.
         exclusion: on reserveeritud.
@@ -381,6 +379,11 @@ et:
           identical_projects: Dependency cannot be created between one project and
             itself.
           project_association_not_allowed: ei luba seoseid.
+        query:
+          filters:
+            custom_fields:
+              inexistent: There is no custom field for the filter.
+              invalid: The custom field is not valid in the given context.
         repository:
           not_available: SCM vendor is not available
           not_whitelisted: is not allowed by the configuration.
@@ -396,7 +399,6 @@ et:
               cannot_be_milestone: cannot be a milestone.
               cannot_be_in_another_project: cannot be in another project.
               not_a_valid_parent: on vigane.
-              does_not_exist: does not exist.
             start_date:
               violates_relationships: can only be set to %{soonest_start} or later
                 so as not to violate the work package's relationships.

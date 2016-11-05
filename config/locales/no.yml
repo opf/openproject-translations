@@ -275,13 +275,13 @@
       user:
         admin: Administrator
         auth_source: Autentiseringsmodus
+        current_password: Current password
+        force_password_change: Tving passordbytte ved neste innlogging
         language: Språk
         last_login_on: Siste innlogging
         mail_notification: E-postvarsler
-        current_password: Current password
         new_password: Nytt passord
         password_confirmation: Bekreftelse
-        force_password_change: Tving passordbytte ved neste innlogging
       user_preference:
         comments_sorting: Vis kommentarer
         hide_mail: Skjul min e-postadresse
@@ -300,18 +300,15 @@
         parent_title: Overordnet side
         redirect_existing_links: Omdirigere eksisterende lenker
       planning_element_type_color:
-        name: Navn
         hexcode: Hexadesimalkode
       project_association:
         description: Årsak
         project_b: Avhengig av prosjektet
       project_type:
         allows_association: Tillater assosiasjoner
-        name: Navn
         reported_project_statuses: Rapporterte prosjektstatuser
         position: Plassering
       timeline:
-        name: Navn
         options: ''
       reporting:
         reported_project_status_comment: Statuskommentar
@@ -345,6 +342,7 @@
           to one of its subtasks.
         circular_dependency: This relation would create a circular dependency.
         confirmation: doesn't match %{attribute}.
+        does_not_exist: does not exist.
         empty: can't be empty.
         even: must be even.
         exclusion: is reserved.
@@ -381,6 +379,11 @@
         project_association:
           identical_projects: Avhengighet kan ikke opprette innbyrdes ett prosjekt.
           project_association_not_allowed: does not allow associations.
+        query:
+          filters:
+            custom_fields:
+              inexistent: There is no custom field for the filter.
+              invalid: The custom field is not valid in the given context.
         repository:
           not_available: SCM vendor is not available
           not_whitelisted: is not allowed by the configuration.
@@ -396,7 +399,6 @@
               cannot_be_milestone: cannot be a milestone.
               cannot_be_in_another_project: cannot be in another project.
               not_a_valid_parent: is invalid.
-              does_not_exist: does not exist.
             start_date:
               violates_relationships: can only be set to %{soonest_start} or later
                 so as not to violate the work package's relationships.

@@ -274,13 +274,13 @@ tr:
       user:
         admin: Yönetici
         auth_source: Kimlik doğrulama modu
+        current_password: Mevcut şifre
+        force_password_change: Sonraki oturum açma işleminde şifre değişikliğine zorla
         language: Dil
         last_login_on: Son giriş
         mail_notification: E-posta bildirimleri
-        current_password: Mevcut şifre
         new_password: Yeni parola
         password_confirmation: Onay
-        force_password_change: Sonraki oturum açma işleminde şifre değişikliğine zorla
       user_preference:
         comments_sorting: Yorumları görüntüle
         hide_mail: E-mail adresimi gizle
@@ -298,18 +298,15 @@ tr:
         parent_title: Üst sayfa
         redirect_existing_links: Varolan bağlantıları yönlendirme
       planning_element_type_color:
-        name: İsim
         hexcode: Hex kodu
       project_association:
         description: Sebep
         project_b: Bağımlı proje
       project_type:
         allows_association: İlişkisi sağlar
-        name: İsim
         reported_project_statuses: Bildirilen proje durumları
         position: Pozisyon
       timeline:
-        name: İsim
         options: ''
       reporting:
         reported_project_status_comment: Durum yorumu
@@ -343,6 +340,7 @@ tr:
           bağlanamaz.
         circular_dependency: Bu ilişki döngüsel bağımlılık oluşturacak.
         confirmation: "%{attribute} eşleşmiyor."
+        does_not_exist: mevcut değil.
         empty: boş olamaz.
         even: çift olmalı.
         exclusion: ayrılmıştır.
@@ -381,6 +379,11 @@ tr:
           identical_projects: Dependency cannot be created between one project and
             itself.
           project_association_not_allowed: ilişkilere izin vermez.
+        query:
+          filters:
+            custom_fields:
+              inexistent: There is no custom field for the filter.
+              invalid: The custom field is not valid in the given context.
         repository:
           not_available: SCM vendor is not available
           not_whitelisted: is not allowed by the configuration.
@@ -396,7 +399,6 @@ tr:
               cannot_be_milestone: cannot be a milestone.
               cannot_be_in_another_project: cannot be in another project.
               not_a_valid_parent: geçersizdir.
-              does_not_exist: mevcut değil.
             start_date:
               violates_relationships: can only be set to %{soonest_start} or later
                 so as not to violate the work package's relationships.

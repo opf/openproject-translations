@@ -272,13 +272,13 @@ th:
       user:
         admin: ผู้ดูแลระบบ
         auth_source: โหมดการระบุตัวตนผู้ใช้
+        current_password: Current password
+        force_password_change: บังคับให้เปลี่ยนรหัสผ่านเมื่อมีการเข้าสู่ระบบครั้งถัดไป
         language: ภาษา
         last_login_on: ล็อกอินครั้งสุดท้าย
         mail_notification: อีเมล์แจ้งเตือน
-        current_password: Current password
         new_password: รหัสผ่านใหม่
         password_confirmation: ยืนยันรหัสผ่าน
-        force_password_change: บังคับให้เปลี่ยนรหัสผ่านเมื่อมีการเข้าสู่ระบบครั้งถัดไป
       user_preference:
         comments_sorting: แสดงความคิดเห็น
         hide_mail: ซ่อนอีเมลของฉัน
@@ -296,18 +296,15 @@ th:
         parent_title: หน้าหลัก
         redirect_existing_links: Redirect Link ที่ใช้อยู่
       planning_element_type_color:
-        name: ชื่อ
         hexcode: Hex code
       project_association:
         description: สาเหตุ
         project_b: Dependent project
       project_type:
         allows_association: อนุญาตให้เกี่ยวข้อง
-        name: ชื่อ
         reported_project_statuses: รายงานสถานะโครงการ
         position: ตำแหน่ง
       timeline:
-        name: ชื่อ
         options: ''
       reporting:
         reported_project_status_comment: ความคิดเห็นเกี่ยวกับสถานะ
@@ -341,6 +338,7 @@ th:
           to one of its subtasks.
         circular_dependency: This relation would create a circular dependency.
         confirmation: doesn't match %{attribute}.
+        does_not_exist: does not exist.
         empty: can't be empty.
         even: must be even.
         exclusion: is reserved.
@@ -379,6 +377,11 @@ th:
           identical_projects: Dependency cannot be created between one project and
             itself.
           project_association_not_allowed: does not allow associations.
+        query:
+          filters:
+            custom_fields:
+              inexistent: There is no custom field for the filter.
+              invalid: The custom field is not valid in the given context.
         repository:
           not_available: SCM vendor is not available
           not_whitelisted: is not allowed by the configuration.
@@ -393,7 +396,6 @@ th:
               cannot_be_milestone: cannot be a milestone.
               cannot_be_in_another_project: cannot be in another project.
               not_a_valid_parent: is invalid.
-              does_not_exist: does not exist.
             start_date:
               violates_relationships: can only be set to %{soonest_start} or later
                 so as not to violate the work package's relationships.
