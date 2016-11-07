@@ -200,15 +200,19 @@ es:
         relations/base_contract:
           attributes:
             to:
-              error_not_found: work package in `to` position not found or not visible
-              error_readonly: an existing relation's `to` link is immutable
+              error_not_found: el paquete de trabajo en posición 'a' no se ha encontrado
+                o no es visible
+              error_readonly: no se puede modificar el enlace de una relación existente
+                'a'
             from:
-              error_not_found: work package in `from` position not found or not visible
-              error_readonly: an existing relation's `from` link is immutable
+              error_not_found: el paquete de trabajo en la posición 'de' no se ha
+                encontrado o no es visible
+              error_readonly: no se puede modificar el enlace de una relación existente
+                'de'
         users/base_contract:
           attributes:
             status:
-              invalid_on_create: is not a valid status for new users.
+              invalid_on_create: no es un estado válido para nuevos usuarios.
   activerecord:
     attributes:
       announcements:
@@ -397,8 +401,8 @@ es:
         query:
           filters:
             custom_fields:
-              inexistent: There is no custom field for the filter.
-              invalid: The custom field is not valid in the given context.
+              inexistent: No hay ningún campo personalizado para el filtro.
+              invalid: El campo personalizado no es válido en el contexto válido.
         repository:
           not_available: El proveedor SMC no está disponible
           not_whitelisted: no está permitido por la configuración.
@@ -801,7 +805,7 @@ es:
   error_can_not_delete_type: Este tipo contiene paquetes de trabajo y no se puede
     eliminar.
   error_can_not_delete_standard_type: Tipos estándar no se pueden borrar.
-  error_can_not_invite_user: Failed to send invitation to user.
+  error_can_not_invite_user: Error al enviar la invitación al usuario.
   error_can_not_remove_role: Este rol esta en uso y no puede ser eliminado
   error_can_not_reopen_work_package_on_closed_version: No se puede volver a abrir
     un paquete de trabajo asignado a una versión cerrada
@@ -809,8 +813,8 @@ es:
   error_cookie_missing: No se encuentra la cookie de OpenProject. Por favor asegúrese
     de que las cookies están habilitadas, ya que sin ellas esta aplicación no funcionará
     correctamente.
-  error_pdf_export_too_many_columns: Too many columns selected for the PDF export.
-    Please reduce the number of columns.
+  error_pdf_export_too_many_columns: Demasiadas columnas seleccionadas para la exportación
+    de PDF. Reduzca el número de columnas.
   error_token_authenticity: No se ha podido comprobar el token de falsificación de
     petición de Cross-Site.
   error_work_package_done_ratios_not_updated: Ejecución de paquete de trabajos no
@@ -840,9 +844,9 @@ es:
   error_workflow_copy_target: Por favor, seleccione tipo(s) de objetivos y role(s)
   error_menu_item_not_created: No se pudo agregar el elemento de menú
   error_menu_item_not_saved: Elemento de menú no podría ser guardado
-  error_wiki_root_menu_item_conflict: 'Can''t rename "%{old_name}" to "%{new_name}"
-    due to a conflict in the resulting menu item with the existing menu item "%{existing_caption}"
-    (%{existing_identifier}).
+  error_wiki_root_menu_item_conflict: 'No se puede renombrar "%{old_name}" a "%{new_name}"
+    debido a un conflicto en el elemento de menú resultante con el elemento de menú
+    existente "%{existing_caption}" (%{existing_identifier}).
 
 '
   error_external_authentication_failed: Se ha producido un error durante la autenticación
@@ -1027,7 +1031,7 @@ es:
   label_download_plural: "%{count} de descargas"
   label_downloads_abbr: D/L
   label_duplicated_by: duplicado por
-  label_duplicate: duplicate
+  label_duplicate: duplicar
   label_duplicates: duplicados
   label_edit: Editar
   label_enable_multi_select: Selección multiple
@@ -1038,7 +1042,7 @@ es:
   label_end_to_end: de punta a punta
   label_end_to_start: finalizar para comenzar
   label_enumeration_new: Nuevo valor de enumeración
-  label_enumeration_value: Enumeration value
+  label_enumeration_value: Valor de enumeración
   label_enumerations: Enumeraciones
   label_environment: Entorno
   label_equals: es
@@ -1076,7 +1080,7 @@ es:
   label_in_less_than: en menos de
   label_in_more_than: en más de
   label_incoming_emails: Correos electrónicos entrantes
-  label_includes: includes
+  label_includes: incluye
   label_index_by_date: Índice por fecha
   label_index_by_title: Índice por título
   label_information: Información
@@ -1085,7 +1089,7 @@ es:
   label_internal: Interno
   label_invite_user: Invitar usuario
   label_show_hide: Mostrar/ocultar
-  label_journal: Journal
+  label_journal: Diario
   label_journal_diff: Comparación de la descripción
   label_jump_to_a_project: Saltar a un proyecto...
   label_language_based: Basado en el idioma del usuario
@@ -1115,7 +1119,7 @@ es:
   label_member_plural: Miembros
   label_memder_view_all: Ver todos los miembros
   label_menu_item_name: Nombre del elemento de menú
-  label_message: Message
+  label_message: Mensaje
   label_message_last: Último mensaje
   label_message_new: Nuevo mensaje
   label_message_plural: Mensajes
@@ -1167,7 +1171,7 @@ es:
   label_overall_activity: Actividad general
   label_overall_spent_time: Tiempo total gastado
   label_overview: Resumen
-  label_part_of: part of
+  label_part_of: parte de
   label_password_lost: Contraseña perdida
   label_password_rule_lowercase: Minúscula
   label_password_rule_numeric: Caracteres numéricos
@@ -1233,8 +1237,8 @@ es:
   label_repository: Repositorio
   label_repository_root: Raiz del repositorio
   label_repository_plural: Repositorios
-  label_required: required
-  label_requires: requires
+  label_required: requerido
+  label_requires: requiere
   label_responsible_for_work_packages: Soy responsable de estos paquetes de trabajo
   label_result_plural: Resultados
   label_reverse_chronological_order: En orden cronológico inverso
@@ -1353,7 +1357,7 @@ es:
   label_work_package_added: Paquete de trabajo añadido
   label_work_package_category_new: Nueva categoría
   label_work_package_category_plural: Categorías de paquete de trabajo
-  label_work_package_hierarchy: Work package hierarchy
+  label_work_package_hierarchy: Jerarquía del paquete de trabajo
   label_work_package_new: Nuevo paquete de trabajo
   label_work_package_note_added: Nota de paquete de trabajo añadido
   label_work_package_edit: Editar paquete de trabajo %{name}
@@ -1813,7 +1817,7 @@ es:
     url: URL al repositorio
     warnings:
       cannot_annotate: No se pueden realizar notas sobre este fichero.
-  search_input_placeholder: Search ...
+  search_input_placeholder: Buscar...
   setting_email_delivery_method: Método de envío de correo electrónico
   setting_sendmail_location: Ubicación del ejecutable de sendmail
   setting_smtp_enable_starttls_auto: Usar STARTTLS automáticamente si está disponible
@@ -2049,10 +2053,10 @@ es:
   text_select_mail_notifications: Seleccione las acciones que serán notificadas por
     correo.
   text_status_changed_by_changeset: Aplicado en el conjunto de cambios %{value}.
-  text_table_difference_description: In this table the single %{entries} are shown.
-    You can view the difference between any two entries by first selecting the according
-    checkboxes in the table. When clicking on the button below the table the differences
-    are shown.
+  text_table_difference_description: En esta tabla, se muestran %{entries} individuales.
+    Puede ver la diferencia entre dos entradas cualesquiera seleccionando primero
+    los cuadros de verificación adecuados en la tabla. Al hacer clic en el botón bajo
+    la tabla, se muestran las diferencias.
   text_time_logged_by_changeset: Aplicado en el conjunto de cambios %{value}.
   text_tip_work_package_begin_day: paquete de trabajo comienza este día
   text_tip_work_package_begin_end_day: paquete de trabajo comienza y termina este

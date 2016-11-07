@@ -198,15 +198,17 @@ pt:
         relations/base_contract:
           attributes:
             to:
-              error_not_found: work package in `to` position not found or not visible
-              error_readonly: an existing relation's `to` link is immutable
+              error_not_found: pacote de trabalho na posição 'para' não foi encontrada
+                ou não está visível
+              error_readonly: uma ligação 'para' existente não pode ser mudada
             from:
-              error_not_found: work package in `from` position not found or not visible
-              error_readonly: an existing relation's `from` link is immutable
+              error_not_found: pacote de trabalho na posição 'de' não foi encontrada
+                ou não está visível
+              error_readonly: uma ligação 'de' existente não pode ser mudada
         users/base_contract:
           attributes:
             status:
-              invalid_on_create: is not a valid status for new users.
+              invalid_on_create: não é um estado válido para novos utilizadores.
   activerecord:
     attributes:
       announcements:
@@ -392,8 +394,8 @@ pt:
         query:
           filters:
             custom_fields:
-              inexistent: There is no custom field for the filter.
-              invalid: The custom field is not valid in the given context.
+              inexistent: Não existe nenhum campo personalizado para o filtro.
+              invalid: O campo personalizado não é válido no contexto em questão.
         repository:
           not_available: Fornecedor SCM não está disponível
           not_whitelisted: não é permitido pela configuração.
@@ -796,7 +798,7 @@ pt:
   error_can_not_delete_custom_field: Não é possível eliminar o campo personalizado
   error_can_not_delete_type: Este tipo contém pacotes de trabalho e não pode ser apagado.
   error_can_not_delete_standard_type: Tipos de padrão não podem ser eliminados.
-  error_can_not_invite_user: Failed to send invitation to user.
+  error_can_not_invite_user: Falha no envio do convite ao utilizador.
   error_can_not_remove_role: Esta função já está a ser utilizada e não pode ser eliminada.
   error_can_not_reopen_work_package_on_closed_version: Uma tarefa atribuída a uma
     versão fechada não pode ser reaberta
@@ -804,8 +806,8 @@ pt:
   error_cookie_missing: O cookie OpenProject está em falta. Por favor, certifique-se
     de que os cookies estão habilitados, uma vez que esta aplicação não funcionará
     corretamente sem eles.
-  error_pdf_export_too_many_columns: Too many columns selected for the PDF export.
-    Please reduce the number of columns.
+  error_pdf_export_too_many_columns: Demasiadas colunas selecionadas para a exportação
+    PDF. Reduza o número de colunas.
   error_token_authenticity: Não é possível verificar o token de Cross-Site Request
     Forgery.
   error_work_package_done_ratios_not_updated: Percentagens de progresso do pacote

@@ -193,15 +193,19 @@ it:
         relations/base_contract:
           attributes:
             to:
-              error_not_found: work package in `to` position not found or not visible
-              error_readonly: an existing relation's `to` link is immutable
+              error_not_found: impossibile trovare o visualizzare la macro-attività
+                in posizione "a"
+              error_readonly: impossibile modificare il collegamento ad una relazione
+                esistente "a"
             from:
-              error_not_found: work package in `from` position not found or not visible
-              error_readonly: an existing relation's `from` link is immutable
+              error_not_found: impossibile trovare o visualizzare la macro-attività
+                in posizione "da"
+              error_readonly: impossibile modificare il collegamento ad una relazione
+                esistente "da"
         users/base_contract:
           attributes:
             status:
-              invalid_on_create: is not a valid status for new users.
+              invalid_on_create: non è uno stato valido per i nuovi utenti.
   activerecord:
     attributes:
       announcements:
@@ -389,8 +393,8 @@ it:
         query:
           filters:
             custom_fields:
-              inexistent: There is no custom field for the filter.
-              invalid: The custom field is not valid in the given context.
+              inexistent: Nessun campo personalizzato per il filtro.
+              invalid: Il campo personalizzato non è valido nel contesto dato.
         repository:
           not_available: Il gestore SCM non è disponibile
           not_whitelisted: non è consentito dalla configurazione.
@@ -796,15 +800,15 @@ it:
   error_can_not_delete_type: Questo tipo risulta contenere macro-attività e non può
     essere eliminato.
   error_can_not_delete_standard_type: Tipi standard non possono essere eliminati.
-  error_can_not_invite_user: Failed to send invitation to user.
+  error_can_not_invite_user: Impossibile inviare l'invito all'utente.
   error_can_not_remove_role: Questo ruolo è in uso e non può essere eliminato.
   error_can_not_reopen_work_package_on_closed_version: Una macro-attività (work package)
     assegnata ad una versione chiusa non può essere riaperta
   error_check_user_and_role: Si prega di scegliere un utente e un ruolo.
   error_cookie_missing: Il cookie di OpenProject è mancante. Prego, verifica che i
     cookie siano attivati, questa applicazione non funziona correttamente senza.
-  error_pdf_export_too_many_columns: Too many columns selected for the PDF export.
-    Please reduce the number of columns.
+  error_pdf_export_too_many_columns: Troppe colonne selezionate per l'esportazione
+    in PDF. Ridurre il numero di colonne.
   error_token_authenticity: Impossibile verificare il token di Cross-Site Request
     Forgery.
   error_work_package_done_ratios_not_updated: Percentuale di completamento della macro-attività
@@ -835,9 +839,9 @@ it:
     (o i ruoli) obiettivo
   error_menu_item_not_created: La voce di menu non può essere aggiunta
   error_menu_item_not_saved: La voce di menu non può essere salvata
-  error_wiki_root_menu_item_conflict: 'Can''t rename "%{old_name}" to "%{new_name}"
-    due to a conflict in the resulting menu item with the existing menu item "%{existing_caption}"
-    (%{existing_identifier}).
+  error_wiki_root_menu_item_conflict: 'Impossibile rinominare "%{old_name}" a "%{new_name}"
+    a causa di un conflitto nella voce di menu risultante con la voce di menu esistente
+    "%{existing_caption}" (%{existing_identifier}).
 
 '
   error_external_authentication_failed: Si è verificato un errore durante l'autenticazione
@@ -1022,7 +1026,7 @@ it:
   label_download_plural: "%{count} Scaricati"
   label_downloads_abbr: D/L
   label_duplicated_by: duplicato da
-  label_duplicate: duplicate
+  label_duplicate: duplica
   label_duplicates: duplica
   label_edit: Modifica
   label_enable_multi_select: Attiva/disattiva multiselezione
@@ -1033,7 +1037,7 @@ it:
   label_end_to_end: end to end
   label_end_to_start: da fine a inizio
   label_enumeration_new: Nuovo valore di enumerazione
-  label_enumeration_value: Enumeration value
+  label_enumeration_value: Valore di enumerazione
   label_enumerations: Enumerazioni
   label_environment: Ambiente
   label_equals: è
@@ -1071,7 +1075,7 @@ it:
   label_in_less_than: in meno di
   label_in_more_than: in più di
   label_incoming_emails: Email in arrivo
-  label_includes: includes
+  label_includes: include
   label_index_by_date: Indicizza per data
   label_index_by_title: Indicizza per titolo
   label_information: Informazioni
@@ -1080,7 +1084,7 @@ it:
   label_internal: Interno
   label_invite_user: Invita utente
   label_show_hide: Mostra/Nascondi
-  label_journal: Journal
+  label_journal: Diario
   label_journal_diff: Confronto Descrizione
   label_jump_to_a_project: Salta ad altro progetto...
   label_language_based: Basato sulla lingua dell'utente
@@ -1110,7 +1114,7 @@ it:
   label_member_plural: Membri
   label_memder_view_all: Visualizza tutti i membri
   label_menu_item_name: Nome della voce di menu
-  label_message: Message
+  label_message: "Messaggio\t"
   label_message_last: Ultimo messaggio
   label_message_new: Nuovo messaggio
   label_message_plural: Messaggi
@@ -1162,7 +1166,7 @@ it:
   label_overall_activity: Totale attività
   label_overall_spent_time: Totale tempo impiegato
   label_overview: Panoramica
-  label_part_of: part of
+  label_part_of: parte di
   label_password_lost: Password dimenticata?
   label_password_rule_lowercase: Minuscolo
   label_password_rule_numeric: Caratteri Numerici
@@ -1228,8 +1232,8 @@ it:
   label_repository: Archivio
   label_repository_root: Cartella radice dell'archivio
   label_repository_plural: Archivi
-  label_required: required
-  label_requires: requires
+  label_required: obbligatorio
+  label_requires: richiede
   label_responsible_for_work_packages: Pacchetti di lavoro di cui sono responsabile
   label_result_plural: Risultati
   label_reverse_chronological_order: In ordine cronologico inverso
@@ -1348,7 +1352,7 @@ it:
   label_work_package_added: Macro-attività (work package) aggiunta
   label_work_package_category_new: Nuova categoria
   label_work_package_category_plural: Categorie della macro-attività
-  label_work_package_hierarchy: Work package hierarchy
+  label_work_package_hierarchy: Gerarchia Macro-attività
   label_work_package_new: Nuova macro-attività (work package)
   label_work_package_note_added: Nota del pacchetto di lavoro aggiunta
   label_work_package_edit: Modifica la macro-attività (work package) %{name}
