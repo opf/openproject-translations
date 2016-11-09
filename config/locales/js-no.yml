@@ -5,6 +5,8 @@
       hide: Skjul
       loading: Laster inn ...
     close_popup_title: Lukk sprettoppvindu
+    close_filter_title: Close filter
+    close_form_title: Close form
     clipboard:
       browser_error: Nettleseren støtter ikke kopiering til utklippstavle. Kopier
         den merkede teksten manuelt.
@@ -12,6 +14,7 @@
     button_add_watcher: Legg til overvåker
     button_cancel: Avbryt
     button_check_all: Velg alle
+    button_confirm: Confirm
     button_copy: Kopier
     button_delete: Slett
     button_delete_watcher: Slett overvåker
@@ -24,8 +27,8 @@
     button_log_time: Logg tid
     button_more: Mer
     button_move: Flytt
-    button_open_details: "Åpne detaljvisning"
-    button_open_fullscreen: "Åpne fullskjermvisning"
+    button_open_details: Åpne detaljvisning
+    button_open_fullscreen: Åpne fullskjermvisning
     button_quote: Sitèr
     button_save: Lagre
     button_settings: Innstillinger
@@ -34,6 +37,7 @@
     button_export-pdf: Download PDF
     button_export-atom: Download Atom
     description_available_columns: Tilgjengelige Kolonner
+    description_current_position: 'Du er her:'
     description_select_work_package: 'Velg arbeidspakke #%{id}'
     description_selected_columns: Valgte Kolonner
     description_subwork_package: 'Barn av arbeidspakke #%{id}'
@@ -41,7 +45,7 @@
       internal: An internal error has occurred.
     filter:
       description:
-        text_open_filter: "Åpne dette filteret med 'ALT' og piltastene."
+        text_open_filter: Åpne dette filteret med 'ALT' og piltastene.
         text_close_filter: To select an entry leave the focus for example by pressing
           enter. To leave without filter select the first (empty) entry.
       noneElement: "(ingen)"
@@ -71,6 +75,7 @@
     label_board_locked: Låst
     label_board_sticky: Sticky
     label_create_work_package: Opprett ny arbeidspakke
+    label_created_by: Created by
     label_date: Dato
     label_date_with_format: 'Angi %{date_attribute} med følgende format: %{format}'
     label_deactivate: Deaktiver
@@ -122,8 +127,9 @@
     label_not_contains: inneholder ikke
     label_not_equals: er ikke
     label_on: på
-    label_open_menu: "Åpne meny"
-    label_open_work_packages: "åpne"
+    label_open_menu: Åpne meny
+    label_open_work_packages: åpne
+    label_password: Passord
     label_previous: Forrige
     label_per_page: 'Pr. side:'
     label_please_wait: Please wait
@@ -163,6 +169,7 @@
     label_attachments: Filer
     label_drop_files: Drop files here
     label_drop_files_hint: or click to add files
+    label_add_attachments: Add attachments
     label_remove_file: Delete %{fileName}
     label_remove_watcher: Remove watcher %{name}
     label_remove_all_files: Delete all files
@@ -176,6 +183,9 @@
     label_upload_counter: "%{done} of %{count} files finished"
     label_validation_error: 'The work package could not be saved due to the following
       errors:'
+    password_confirmation:
+      field_description: You need to enter your account password to confirm this change.
+      title: Confirm your password to continue
     pagination:
       no_other_page: You are on the only page.
       pages:
@@ -184,6 +194,7 @@
     placeholders:
       default: "-"
       selection: Vennligst velg
+      relation_description: Click to add description for this relation
     text_are_you_sure: Er du sikker?
     watchers:
       label_loading: loading watchers...
@@ -230,16 +241,29 @@
       blocked: Blokkert av
       precedes: Rangerer foran
       follows: Følger
+      includes: Includes
+      partof: Part of
+      requires: Requires
+      required: Required by
+      relation_type: relation type
+    relations_hierarchy:
+      hierarchy_headline: hierarchy
     relation_buttons:
       change_parent: Endre overordnet
-      add_child: Legg til underordnet
-      add_related_to: Legg til relatert til
-      add_duplicates: Legg til duplikater
-      add_duplicated_by: Legg til duplikert av
-      add_blocks: Legg til blokkeringer
-      add_blocked_by: Legg til blokkert av
-      add_precedes: Legg til forgjenger
-      add_follows: Legg til følger
+      remove_parent: Remove parent
+      group_by_wp_type: Group by work package type
+      group_by_relation_type: Group by relation type
+      add_parent: Add existing parent
+      add_new_child: Create new child
+      add_existing_child: Add existing child
+      remove_child: Remove child
+      add_new_relation: Create new relation
+      update_description: Set or update description of this relation
+      remove: Remove relation
+      save: Save relation
+      abort: Abort
+    relations_autocomplete:
+      placeholder: Enter the related work package id
     repositories:
       select_tag: Select tag
       select_branch: Select branch
@@ -283,7 +307,7 @@
           status: Status
           responsible: Ansvarlig
           start_date: Startdato
-        grouping_other: "Øvrig"
+        grouping_other: Øvrig
         noneSelection: "(ingen)"
       name: Navn
       new_work_package: Ny arbeidspakke
@@ -311,16 +335,19 @@
         weeks: Uker
         months: Måneder
         quarters: Kvartaler
-        years: "År"
+        years: År
         slider: Zoom-bryter
     tl_toolbar:
       zooms: Zoom-nivå
       outlines: Nivå
     unsupported_browser:
       title: Din nettleserversjon er ikke støttet
-      message: Nettleserversjonen du bruker støttes ikke lenger av OpenProject. Vennligst
-        oppdater nettleseren.
+      message: The browser version you are using is no longer supported by OpenProject.
+      update_message: Please update your browser.
+      update_ie_user: Please switch to Mozilla Firefox or Google Chrome, or upgrade
+        to Microsoft Edge.
       learn_more: Mer informasjon
+      close_warning: Ignore this warning.
     wiki_formatting:
       strong: Halvfet
       italic: Kursiv
@@ -366,12 +393,15 @@
       message_successful_bulk_delete: Arbeidspakkene ble slettet.
       message_successful_show_in_fullscreen: Klikk her for å åpne denne arbeidspakken
         i fullskjermsmodus.
+      message_view_spent_time: Show spent time for this work package
       no_value: Ingen verdi
       inline_create:
         title: Klikk her for å legge til en nye arbeidspakke i listen
       create:
-        header: Ny arbeidspakke
-        header_with_parent: 'New work package (Child of %{type} #%{id})'
+        header: New %{type}
+        header_no_type: New work package (Type not yet set)
+        header_with_parent: 'New %{type} (Child of %{parent_type} #%{id})'
+        button: Opprett
       no_results:
         title: Ingen arbeidspakke å vise.
         description: Enten kan den ikke opprettes eller så er alle arbeidspakker filtrert
@@ -380,7 +410,7 @@
         details: Detaljer
         people: Personer
         estimatesAndTime: Estimater og tid
-        other: "Øvrig"
+        other: Øvrig
       properties:
         assignee: Deltaker
         author: Forfatter
@@ -424,12 +454,14 @@
         display_sums: Vis summer
         errors:
           unretrievable_query: Kunne ikke hente spørringen fra URL
+          not_found: There is no such query
       table:
         summary: Table with rows of work package and columns of work package attributes.
         text_inline_edit: Most cells of this table are buttons that activate inline-editing
           functionality of that attribute.
         text_sort_hint: With the links in the table headers you can sort, group, reorder,
           remove and add table columns.
+        text_select_hint: Select boxes should be opened with 'ALT' and arrow keys.
       tabs:
         overview: Oversikt
         activity: Aktivitet

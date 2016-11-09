@@ -15,11 +15,8 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,db,doc,lib}/**/*"] + %w(README.md)
 
-  s.add_dependency 'rails', '~> 4.2.3'
-  s.add_dependency "rubyzip"
-  # fixing rest-client to 1.x to prevent CI from updating it to incompatible 2.x
-  # as crowdin-api which it is a dependency to does not limit the version
-  s.add_dependency 'rest-client', '~> 1.8' 
-  s.add_dependency 'crowdin-api', '~> 0.4.0'
+  s.add_dependency 'rails', '~> 5.0.0'
+  s.add_dependency 'rubyzip'
+  s.add_dependency 'crowdin-api', '~> 0.4.1'
   s.add_dependency 'mixlib-shellout', '~> 2.1.0'
 end

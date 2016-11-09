@@ -5,6 +5,8 @@ et:
       hide: Peida
       loading: Laadimine ...
     close_popup_title: Sulge hüpikaken
+    close_filter_title: Close filter
+    close_form_title: Close form
     clipboard:
       browser_error: Your browser doesn't support copying to clipboard. Please copy
         the selected text manually.
@@ -12,10 +14,11 @@ et:
     button_add_watcher: Lisa jälgija
     button_cancel: Tühista
     button_check_all: Märgi kõik
+    button_confirm: Confirm
     button_copy: Kopeeri
     button_delete: Kustuta
     button_delete_watcher: Kustuta jäligja
-    button_details_view: "Üksikasjalik vaade"
+    button_details_view: Üksikasjalik vaade
     button_duplicate: Duplitseeri
     button_edit: Muuda
     button_filter: Filter
@@ -34,6 +37,7 @@ et:
     button_export-pdf: Download PDF
     button_export-atom: Download Atom
     description_available_columns: Saadaolevad väljad
+    description_current_position: 'Oled siin:'
     description_select_work_package: 'Select work package #%{id}'
     description_selected_columns: Valitud väljad
     description_subwork_package: 'Child of work package #%{id}'
@@ -71,6 +75,7 @@ et:
     label_board_locked: Lukus
     label_board_sticky: Külgejääv
     label_create_work_package: Lisa uus teema
+    label_created_by: Created by
     label_date: Kuupäev
     label_date_with_format: 'Enter the %{date_attribute} using the following format:
       %{format}'
@@ -125,6 +130,7 @@ et:
     label_on: 'on'
     label_open_menu: Ava menüü
     label_open_work_packages: avatud
+    label_password: Parool
     label_previous: Eelmine
     label_per_page: 'Lehekülje kohta:'
     label_please_wait: Please wait
@@ -156,7 +162,7 @@ et:
     label_watcher_deleted_successfully: Watcher successfully deleted!
     label_work_package_details_you_are_here: You're on the %{tab} tab for %{type}
       %{subject}.
-    label_unwatch: "Ära jälgi"
+    label_unwatch: Ära jälgi
     label_unwatch_work_package: Unwatch work package
     label_uploaded_by: Uploaded by
     label_global_queries: Shared queries
@@ -165,6 +171,7 @@ et:
     label_attachments: Failid
     label_drop_files: Drop files here
     label_drop_files_hint: or click to add files
+    label_add_attachments: Add attachments
     label_remove_file: Delete %{fileName}
     label_remove_watcher: Remove watcher %{name}
     label_remove_all_files: Delete all files
@@ -178,6 +185,9 @@ et:
     label_upload_counter: "%{done} of %{count} files finished"
     label_validation_error: 'The work package could not be saved due to the following
       errors:'
+    password_confirmation:
+      field_description: You need to enter your account password to confirm this change.
+      title: Confirm your password to continue
     pagination:
       no_other_page: You are on the only page.
       pages:
@@ -186,6 +196,7 @@ et:
     placeholders:
       default: "-"
       selection: Palun vali
+      relation_description: Click to add description for this relation
     text_are_you_sure: Kas oled kindel?
     watchers:
       label_loading: loading watchers...
@@ -232,16 +243,29 @@ et:
       blocked: Blocked by
       precedes: Precedes
       follows: Follows
+      includes: Includes
+      partof: Part of
+      requires: Requires
+      required: Required by
+      relation_type: relation type
+    relations_hierarchy:
+      hierarchy_headline: hierarchy
     relation_buttons:
       change_parent: Change parent
-      add_child: Add child
-      add_related_to: Add related to
-      add_duplicates: Add duplicates
-      add_duplicated_by: Add duplicated by
-      add_blocks: Add blocks
-      add_blocked_by: Add blocked by
-      add_precedes: Add precedes
-      add_follows: Add follows
+      remove_parent: Remove parent
+      group_by_wp_type: Group by work package type
+      group_by_relation_type: Group by relation type
+      add_parent: Add existing parent
+      add_new_child: Create new child
+      add_existing_child: Add existing child
+      remove_child: Remove child
+      add_new_relation: Create new relation
+      update_description: Set or update description of this relation
+      remove: Remove relation
+      save: Save relation
+      abort: Abort
+    relations_autocomplete:
+      placeholder: Enter the related work package id
     repositories:
       select_tag: Select tag
       select_branch: Select branch
@@ -322,8 +346,11 @@ et:
     unsupported_browser:
       title: Your browser version is not supported
       message: The browser version you are using is no longer supported by OpenProject.
-        Please update your browser.
+      update_message: Please update your browser.
+      update_ie_user: Please switch to Mozilla Firefox or Google Chrome, or upgrade
+        to Microsoft Edge.
       learn_more: Loe rohkem
+      close_warning: Ignore this warning.
     wiki_formatting:
       strong: Strong
       italic: Krusiiv
@@ -370,18 +397,21 @@ et:
       message_successful_bulk_delete: Successfully deleted work packages.
       message_successful_show_in_fullscreen: Click here to open this work package
         in fullscreen view.
+      message_view_spent_time: Show spent time for this work package
       no_value: No value
       inline_create:
         title: Click here to add a new work package to this list
       create:
-        header: Uus teema
-        header_with_parent: 'New work package (Child of %{type} #%{id})'
+        header: New %{type}
+        header_no_type: New work package (Type not yet set)
+        header_with_parent: 'New %{type} (Child of %{parent_type} #%{id})'
+        button: Loo uus
       no_results:
         title: No work packages to display.
         description: Either none have been created or all work packages are filtered
           out.
       property_groups:
-        details: "Üksikasjad"
+        details: Üksikasjad
         people: Inimesed
         estimatesAndTime: Hinnangud ja aeg
         other: Muu
@@ -428,14 +458,16 @@ et:
         display_sums: Kuva summasid
         errors:
           unretrievable_query: Unable to retrieve query from URL
+          not_found: There is no such query
       table:
         summary: Table with rows of work package and columns of work package attributes.
         text_inline_edit: Most cells of this table are buttons that activate inline-editing
           functionality of that attribute.
         text_sort_hint: With the links in the table headers you can sort, group, reorder,
           remove and add table columns.
+        text_select_hint: Select boxes should be opened with 'ALT' and arrow keys.
       tabs:
-        overview: "Ülevaade"
+        overview: Ülevaade
         activity: Tegevus
         relations: Seosed
         watchers: Jälgijad

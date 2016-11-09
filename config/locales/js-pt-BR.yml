@@ -5,6 +5,8 @@ pt-BR:
       hide: Ocultar
       loading: Carregando ...
     close_popup_title: Fechar pop-up
+    close_filter_title: Fechar filtro
+    close_form_title: Fechar formulário
     clipboard:
       browser_error: Seu navegador não suporta copiar para a área de transferência.
         Por favor, copie o texto selecionado manualmente.
@@ -12,6 +14,7 @@ pt-BR:
     button_add_watcher: Adicionar observador
     button_cancel: Cancelar
     button_check_all: Selecionar todos
+    button_confirm: Confirmar
     button_copy: Copiar
     button_delete: Excluir
     button_delete_watcher: Excluir observador
@@ -34,6 +37,7 @@ pt-BR:
     button_export-pdf: Baixar PDF
     button_export-atom: Baixar Atom
     description_available_columns: Colunas disponíveis
+    description_current_position: 'Você está aqui:'
     description_select_work_package: 'Selecionar o pacote de trabalho #%{id}'
     description_selected_columns: Colunas selecionadas
     description_subwork_package: 'Filho do pacote de trabalho #%{id}'
@@ -71,6 +75,7 @@ pt-BR:
     label_board_locked: Bloqueado
     label_board_sticky: Afixado
     label_create_work_package: Criar novo pacote de trabalho
+    label_created_by: Criado por
     label_date: Data
     label_date_with_format: 'Digite a %{date_attribute} usando o seguinte formato:
       %{format}'
@@ -88,7 +93,7 @@ pt-BR:
     label_contains: contém
     label_created_on: criado em
     label_edit_comment: Editar este comentário
-    label_equals: "é"
+    label_equals: é
     label_expand: Expandir
     label_expanded: expandido
     label_expand_all: Expandir todos
@@ -106,8 +111,8 @@ pt-BR:
     label_in: em
     label_in_less_than: em menos de
     label_in_more_than: em mais de
-    label_latest_activity: "Últimas atividades"
-    label_last_updated_on: "Última atualização em"
+    label_latest_activity: Últimas atividades
+    label_last_updated_on: Última atualização em
     label_less_or_equal: "<="
     label_less_than_ago: menos dias atrás
     label_loading: Carregando...
@@ -125,6 +130,7 @@ pt-BR:
     label_on: ligado
     label_open_menu: Abrir menu
     label_open_work_packages: aberto
+    label_password: Senha
     label_previous: Anterior
     label_per_page: 'Por página:'
     label_please_wait: Por favor, aguarde
@@ -165,6 +171,7 @@ pt-BR:
     label_attachments: Arquivos
     label_drop_files: Solte os arquivos aqui
     label_drop_files_hint: ou clique para adicionar arquivos
+    label_add_attachments: Adicionar anexos
     label_remove_file: Excluir %{fileName}
     label_remove_watcher: Remover observador %{name}
     label_remove_all_files: Excluir todos os arquivos
@@ -179,6 +186,9 @@ pt-BR:
     label_upload_counter: "%{done} de %{count} de arquivos finalizados"
     label_validation_error: 'O pacote de trabalho não pôde ser salvo devido aos seguintes
       erros:'
+    password_confirmation:
+      field_description: Você precisa digitar sua senha para confirmar essa alteração.
+      title: Confirme sua senha para continuar
     pagination:
       no_other_page: Você está na página única.
       pages:
@@ -187,6 +197,7 @@ pt-BR:
     placeholders:
       default: "-"
       selection: Por favor selecione
+      relation_description: Clique para adicionar a descrição para esta relação
     text_are_you_sure: Tem certeza?
     watchers:
       label_loading: carregando observadores...
@@ -229,20 +240,33 @@ pt-BR:
       relates: Relacionado a
       duplicates: Duplicados
       duplicated: Duplicado por
-      blocks: Blocos
+      blocks: Bloqueios
       blocked: Bloqueado por
       precedes: Precede
       follows: Segue
+      includes: Inclui
+      partof: Parte de
+      requires: Requer
+      required: Requerido por
+      relation_type: tipo de relação
+    relations_hierarchy:
+      hierarchy_headline: hierarquia
     relation_buttons:
       change_parent: Alterar pai
-      add_child: Adicionar filho
-      add_related_to: Adicionar relacionados com
-      add_duplicates: Adicionar duplicados
-      add_duplicated_by: Adicionar duplicados por
-      add_blocks: Adicionar bloqueios
-      add_blocked_by: Adicionar bloqueados por
-      add_precedes: Adicionar precede
-      add_follows: Adicionar seguidor
+      remove_parent: Remover pai
+      group_by_wp_type: Agrupar por tipo de pacote de trabalho
+      group_by_relation_type: Agrupar por tipo de relação
+      add_parent: Adicionar pai existente
+      add_new_child: Criar novo filho
+      add_existing_child: Adicionar ao filho existente
+      remove_child: Remover filho
+      add_new_relation: Criar nova relação
+      update_description: Definir ou atualizar a descrição desta relação
+      remove: Remover relação
+      save: Salvar relação
+      abort: Abortar
+    relations_autocomplete:
+      placeholder: Insira o id do pacote de trabalho relacionado
     repositories:
       select_tag: Selecionar marca
       select_branch: Selecionar o branch
@@ -323,8 +347,12 @@ pt-BR:
     unsupported_browser:
       title: Sua versão de navegador não é suportada
       message: A versão do navegador que você está usando não é mais suportada pelo
-        OpenProject. Por favor, atualize seu navegador.
+        OpenProject.
+      update_message: Por favor, atualize seu navegador.
+      update_ie_user: Por favor mude para o Mozilla Firefox ou Google Chrome, ou atualize
+        para o Microsoft Edge.
       learn_more: Saiba mais
+      close_warning: Ignorar este aviso.
     wiki_formatting:
       strong: Negrito
       italic: Itálico
@@ -370,12 +398,15 @@ pt-BR:
       message_successful_bulk_delete: Pacotes de trabalho excluídos com sucesso.
       message_successful_show_in_fullscreen: Clique aqui para abrir este pacote de
         trabalho na visualização de tela cheia.
+      message_view_spent_time: Mostrar o tempo gasto para este pacote de trabalho
       no_value: Nenhum valor
       inline_create:
         title: Clique aqui para adicionar um novo pacote de trabalho a esta lista
       create:
-        header: Novo pacote de trabalho
-        header_with_parent: 'Novo pacote de trabalho (Filho de %{type} #%{id})'
+        header: Novo %{type}
+        header_no_type: Novo pacote de trabalho (Tipo ainda não definido)
+        header_with_parent: 'Novo %{type} (Filho de %{parent_type} #%{id})'
+        button: Criar
       no_results:
         title: Não há pacotes de trabalho para exibir.
         description: Nenhum pacote criado ou todos os pacotes de trabalho foram filtrados.
@@ -427,6 +458,7 @@ pt-BR:
         display_sums: Exibir somas
         errors:
           unretrievable_query: Não foi possível recuperar a consulta de URL
+          not_found: Não existe tal consulta
       table:
         summary: Tabela com linhas de pacote de trabalho e colunas com atributos do
           pacote de trabalho.
@@ -434,6 +466,8 @@ pt-BR:
           a funcionalidade de edição em linha do atributo.
         text_sort_hint: Com os links nos cabeçalhos da tabela você pode classificar,
           agrupar, reordenar, remover e adicionar colunas na tabela.
+        text_select_hint: Caixas de seleção devem ser abertas com 'ALT' e teclas de
+          seta.
       tabs:
         overview: Visão geral
         activity: Atividade

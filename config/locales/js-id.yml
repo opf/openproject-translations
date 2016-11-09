@@ -5,6 +5,8 @@ id:
       hide: Sembunyikan
       loading: Loading ...
     close_popup_title: Tutup
+    close_filter_title: Tutup Penyaring
+    close_form_title: Tutup formulir
     clipboard:
       browser_error: Browser Anda tidak mendukung menyalin ke clipboard. Harap menyalin
         teks yang dipilih secara manual.
@@ -12,6 +14,7 @@ id:
     button_add_watcher: Tambah pemantau
     button_cancel: Batal
     button_check_all: Cek semua
+    button_confirm: Konfirmasi
     button_copy: Salin
     button_delete: Hapus
     button_delete_watcher: Hapus pemantau
@@ -20,7 +23,7 @@ id:
     button_edit: Edit
     button_filter: Filter
     button_list_view: Tampilan tabel
-    button_show_view: Fullscreen view
+    button_show_view: Tampilan layar penuh
     button_log_time: Catatan waktu
     button_more: Lanjut
     button_move: Pindahkan
@@ -34,6 +37,7 @@ id:
     button_export-pdf: Download PDF
     button_export-atom: Download Atom
     description_available_columns: Kolom tersedia
+    description_current_position: 'Anda di sini:'
     description_select_work_package: 'Select work package #%{id}'
     description_selected_columns: Kolom dipilih
     description_subwork_package: 'Child of work package #%{id}'
@@ -41,15 +45,15 @@ id:
       internal: An internal error has occurred.
     filter:
       description:
-        text_open_filter: Open this filter with 'ALT' and arrow keys.
+        text_open_filter: Buka filter ini dengan 'ALT' dan tombol panah.
         text_close_filter: To select an entry leave the focus for example by pressing
           enter. To leave without filter select the first (empty) entry.
       noneElement: "(kosong)"
       sorting:
         criteria:
-          one: First sorting criteria
-          two: Second sorting criteria
-          three: Third sorting criteria
+          one: Kriteria penyortiran pertama
+          two: Kriteria penyortiran kedua
+          three: Kriteria penyortiran ketiga
     general_text_no: 'no'
     general_text_yes: 'yes'
     general_text_No: 'No'
@@ -71,6 +75,7 @@ id:
     label_board_locked: Locked
     label_board_sticky: Sticky
     label_create_work_package: Buat Paket-Penugasan baru
+    label_created_by: Created by
     label_date: Tanggal
     label_date_with_format: 'Enter the %{date_attribute} using the following format:
       %{format}'
@@ -125,6 +130,7 @@ id:
     label_on: pada
     label_open_menu: Buka menu
     label_open_work_packages: buka
+    label_password: Password
     label_previous: Sebelumnya
     label_per_page: 'Per halaman:'
     label_please_wait: Please wait
@@ -164,6 +170,7 @@ id:
     label_attachments: File
     label_drop_files: Drop file di sini
     label_drop_files_hint: atau klik untuk menambahkan
+    label_add_attachments: Tambahkan lampiran
     label_remove_file: Hapus %{fileName}
     label_remove_watcher: Remove watcher %{name}
     label_remove_all_files: Hapus semua file
@@ -177,6 +184,9 @@ id:
     label_upload_counter: "%{done} dari %{count} file selesai"
     label_validation_error: 'Proses penyimpanan work package gagal. Kesalahan yang
       terjadi:'
+    password_confirmation:
+      field_description: Anda harus mengisi kata sandi akun untuk mengkonfirmasi perubahan.
+      title: Konfirmasi kata sandi anda untuk melanjutkan
     pagination:
       no_other_page: You are on the only page.
       pages:
@@ -185,6 +195,7 @@ id:
     placeholders:
       default: Hapus nilai
       selection: Silakan pilih
+      relation_description: Click to add description for this relation
     text_are_you_sure: Anda yakin?
     watchers:
       label_loading: memuat pengamat...
@@ -231,16 +242,29 @@ id:
       blocked: Diblokir oleh
       precedes: Mendahului
       follows: Berikut
+      includes: Includes
+      partof: Part of
+      requires: Requires
+      required: Required by
+      relation_type: relation type
+    relations_hierarchy:
+      hierarchy_headline: hierarchy
     relation_buttons:
       change_parent: Perubahan induk
-      add_child: Tambahkan Sub
-      add_related_to: Tambahkan kaitan dengan
-      add_duplicates: Tambahkan duplikat
-      add_duplicated_by: Tambahkan duplikat oleh
-      add_blocks: Tambahkan blok
-      add_blocked_by: Tambahkan diblokir oleh
-      add_precedes: Tambahkan mendahului
-      add_follows: Tambahkan berikut
+      remove_parent: Remove parent
+      group_by_wp_type: Group by work package type
+      group_by_relation_type: Group by relation type
+      add_parent: Add existing parent
+      add_new_child: Create new child
+      add_existing_child: Add existing child
+      remove_child: Remove child
+      add_new_relation: Create new relation
+      update_description: Set or update description of this relation
+      remove: Remove relation
+      save: Save relation
+      abort: Abort
+    relations_autocomplete:
+      placeholder: Enter the related work package id
     repositories:
       select_tag: Pilih tag
       select_branch: Pilih cabang
@@ -255,7 +279,7 @@ id:
       searching: Mencari ...
       selection_too_big:
         one: You can only select one item
-        other: You can only select {{limit}} items
+        other: Anda hanya dapat memilih {{limit}} item
         zero: You cannot select any items
     text_work_packages_destroy_confirmation: Yakin akan menghapus?
     text_query_destroy_confirmation: Apakah Anda yakin Anda ingin menghapus query
@@ -319,9 +343,12 @@ id:
       outlines: Hierarchy level
     unsupported_browser:
       title: Versi peramban Anda tidak didukung
-      message: Versi browser yang Anda gunakan tidak lagi didukung oleh OpenProject.
-        Perbarui browser Anda.
+      message: Versi browser yang anda gunakan terlalu usang untuk OpenProject.
+      update_message: Mohon tingkatkan browsermu.
+      update_ie_user: Mohon ubah ke Mozzila atau Google Chrome, atau tingkatkan Microsoft
+        Edge.
       learn_more: Pelajari lebih lanjut
+      close_warning: Abaikan peringatan ini.
     wiki_formatting:
       strong: Tebal
       italic: Miring
@@ -367,12 +394,15 @@ id:
       message_successful_bulk_delete: Paket-Penugasan telah dihapus.
       message_successful_show_in_fullscreen: Click here to open this work package
         in fullscreen view.
+      message_view_spent_time: Show spent time for this work package
       no_value: Kosongkan
       inline_create:
         title: Click here to add a new work package to this list
       create:
-        header: Paket-Penugasan baru
-        header_with_parent: 'New work package (Child of %{type} #%{id})'
+        header: New %{type}
+        header_no_type: New work package (Type not yet set)
+        header_with_parent: 'New %{type} (Child of %{parent_type} #%{id})'
+        button: Buat baru
       no_results:
         title: No work packages to display.
         description: Either none have been created or all work packages are filtered
@@ -425,12 +455,15 @@ id:
         display_sums: Tampilkan jumlah
         errors:
           unretrievable_query: Tidak dapat mengambil queri URL
+          not_found: Tidak ada pertanyaan lagi
       table:
         summary: Table with rows of work package and columns of work package attributes.
         text_inline_edit: Most cells of this table are buttons that activate inline-editing
           functionality of that attribute.
         text_sort_hint: With the links in the table headers you can sort, group, reorder,
           remove and add table columns.
+        text_select_hint: Pilih kotak yang seharusnya terbuka dengan 'ALT' dan tanda
+          kursor.
       tabs:
         overview: Tinjauan
         activity: Activity
@@ -495,5 +528,5 @@ id:
     units:
       hour:
         one: 1 hour
-        other: "%{count} hours"
+        other: "%{count} jam"
         zero: 0 hours

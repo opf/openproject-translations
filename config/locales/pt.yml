@@ -174,18 +174,41 @@ pt:
       login_verification:
         other: Insira os dados da sessão %{name} para verificar a eliminação.
         self: Insira os dados da sua sessão %{name} para verificar a eliminação.
-    error_inactive_activation_by_mail: A sua conta ainda não foi activada. Para activar
+    error_inactive_activation_by_mail: 'A sua conta ainda não foi activada. Para activar
       sua conta, clique no link que foi enviado por e-mail.
-    error_inactive_manual_activation: A sua conta ainda não foi ativada. Por favor
+
+'
+    error_inactive_manual_activation: 'A sua conta ainda não foi ativada. Por favor
       aguarde um administrador ativar a sua conta.
-    error_self_registration_disabled: O seu registo de utilizador está desactivado
+
+'
+    error_self_registration_disabled: 'O seu registo de utilizador está desactivado
       no sistema. Por favor peça a um administrador para lhe criar uma conta.
+
+'
     login_with_auth_provider: ou inicie sessão com a sua conta
     signup_with_auth_provider: ou registe-se, utilizando
     auth_source_login: Por favor, inicie a sessão como <em>%{login}</em> para ativar
       a sua conta.
     omniauth_login: Por favor, inicie a sessão para ativar a sua conta.
   actionview_instancetag_blank_option: Por favor, selecione
+  activemodel:
+    errors:
+      models:
+        relations/base_contract:
+          attributes:
+            to:
+              error_not_found: pacote de trabalho na posição 'para' não foi encontrada
+                ou não está visível
+              error_readonly: uma ligação 'para' existente não pode ser mudada
+            from:
+              error_not_found: pacote de trabalho na posição 'de' não foi encontrada
+                ou não está visível
+              error_readonly: uma ligação 'de' existente não pode ser mudada
+        users/base_contract:
+          attributes:
+            status:
+              invalid_on_create: não é um estado válido para novos utilizadores.
   activerecord:
     attributes:
       announcements:
@@ -235,7 +258,7 @@ pt:
         roles: Funções
       project:
         identifier: Identificador
-        latest_activity_at: "Última atividade em"
+        latest_activity_at: Última atividade em
         parent: Subprojeto de
         project_type: Tipo do projeto
         queries: Consultas
@@ -259,18 +282,18 @@ pt:
       type:
         is_in_roadmap: No roteiro
         in_aggregation: Na agregação
-        is_milestone: "É um marco"
+        is_milestone: É um marco
         color: Cor
       user:
         admin: Administrador
         auth_source: Modo de autenticação
-        language: Idioma
-        last_login_on: "Último login"
-        mail_notification: Notificações por e-mail
         current_password: Senha atual
+        force_password_change: Forçar alteração da senha na próxima sessão
+        language: Idioma
+        last_login_on: Último login
+        mail_notification: Notificações por e-mail
         new_password: Nova senha
         password_confirmation: Confirmação
-        force_password_change: Forçar alteração da senha na próxima sessão
       user_preference:
         comments_sorting: Exibir comentários
         hide_mail: Ocultar meu endereço de e-mail
@@ -288,18 +311,15 @@ pt:
         parent_title: Página pai
         redirect_existing_links: Redirecionar links existentes
       planning_element_type_color:
-        name: Nome
         hexcode: Código hex
       project_association:
         description: Causa
         project_b: Projecto dependente
       project_type:
         allows_association: Permitir associação
-        name: Nome
         reported_project_statuses: Ultimo Ponto situação
         position: Posição
       timeline:
-        name: Nome
         options: ''
       reporting:
         reported_project_status_comment: Comentário ao ponto de situação
@@ -333,10 +353,11 @@ pt:
           ser ligado a uma das suas sub-tarefas.
         circular_dependency: Esta relação vai criar uma dependência circular.
         confirmation: não coincide %{attribute}.
+        does_not_exist: não existe.
         empty: não pode estar em branco.
         even: deve ser par.
-        exclusion: "é reservado."
-        file_too_large: "é muito grande (tamanho máximo é %{count} Bytes)."
+        exclusion: é reservado.
+        file_too_large: é muito grande (tamanho máximo é %{count} Bytes).
         greater_than: deve ser maior que %{count}.
         greater_than_or_equal_to: deve ser maior ou igual a %{count}.
         smaller_than_or_equal_to_max_length: deve ser menor ou igual ao comprimento
@@ -344,17 +365,17 @@ pt:
         greater_than_start_date: deve ser superior à data de inicio.
         greater_than_or_equal_to_start_date: deve ser maior ou igual à data de início.
         inclusion: não está definido como um dos valores permitidos.
-        invalid: "é inválido."
+        invalid: é inválido.
         less_than_or_equal_to: deve ser menor ou igual a %{count}.
         not_a_date: não é uma data.
-        not_an_iso_date: 'is not a valid date. Required format: YYYY-MM-DD.'
+        not_an_iso_date: 'não é uma data válida. Formato exigido: AAAA-MM-DD.'
         not_a_number: não é um número.
         not_an_integer: não é um número inteiro.
         not_same_project: não pertence ao mesmo projeto.
         odd: deve ser ímpar.
         taken: já está a ser utilizado.
-        too_long: "é muito longo (o máximo é %{count} caracteres)."
-        too_short: "é muito curto (o mínimo é de %{count} carateres)."
+        too_long: é muito longo (o máximo é %{count} caracteres).
+        too_short: é muito curto (o mínimo é de %{count} carateres).
         wrong_length: tamanho errado (deve ser %{count} caracteres).
         after: deve ser depois %{date}.
         after_or_equal_to: tem de ser depois ou igual a %{date}.
@@ -370,6 +391,11 @@ pt:
           identical_projects: A dependência não pode ser criada entre um projecto
             e ele mesmo.
           project_association_not_allowed: não permite associações.
+        query:
+          filters:
+            custom_fields:
+              inexistent: Não existe nenhum campo personalizado para o filtro.
+              invalid: O campo personalizado não é válido no contexto em questão.
         repository:
           not_available: Fornecedor SCM não está disponível
           not_whitelisted: não é permitido pela configuração.
@@ -384,14 +410,13 @@ pt:
             parent_id:
               cannot_be_milestone: não pode ser um marco.
               cannot_be_in_another_project: não pode ser em outro projeto.
-              not_a_valid_parent: "é inválido."
-              does_not_exist: não existe.
+              not_a_valid_parent: é inválido.
             start_date:
-              violates_relationships: can only be set to %{soonest_start} or later
-                so as not to violate the work package's relationships.
+              violates_relationships: só pode ser definida como %{soonest_start} ou
+                posterior de modo a não violar as relações do pacote de trabalho.
             status_id:
-              status_transition_invalid: "é inválido porque não existe transição válida
-                da antiga para a nova situação do utilizador actual."
+              status_transition_invalid: é inválido porque não existe transição válida
+                da antiga para a nova situação do utilizador actual.
             priority_id:
               only_active_priorities_allowed: tem que estar ativo.
             category:
@@ -451,7 +476,7 @@ pt:
       work_package: Pacote de trabalho
   errors:
     header_invalid_fields: 'Existem problemas com os seguintes campos:'
-    field_erroneous_label: |
+    field_erroneous_label: |-
       Este campo é inválido: %{full_errors}
       Por favor, insira um valor válido.
   activity:
@@ -487,7 +512,7 @@ pt:
     is_for_all: Para todos os projetos
     is_public: Público
     issue: Pacote de trabalho
-    lastname: "Último nome"
+    lastname: Último nome
     login: Login
     mail: E-mail
     name: Nome
@@ -626,9 +651,9 @@ pt:
     - Novembro
     - Dezembro
     order:
-    - :ano
-    - :mês
-    - :dia
+    - ":ano"
+    - ":mês"
+    - ":dia"
   datetime:
     distance_in_words:
       about_x_hours:
@@ -711,7 +736,7 @@ pt:
   default_project_type_scrum: Equipa Scrum
   default_project_type_standard: Projeto padrão
   default_reported_project_status_green: Verde
-  default_reported_project_status_amber: "Âmbar"
+  default_reported_project_status_amber: Âmbar
   default_reported_project_status_red: Vermelho
   default_role_anonymous: Anónimo
   default_role_developer: Programador
@@ -722,7 +747,7 @@ pt:
   default_type: Tarefa
   default_type_bug: Bug
   default_type_deliverable: Pronto a entregar
-  default_type_epic: "Épico"
+  default_type_epic: Épico
   default_type_feature: Funcionalidade
   default_type_milestone: Marco
   default_type_phase: Fase
@@ -730,14 +755,16 @@ pt:
   default_type_user_story: História do utilizador
   description_active: Ativo?
   description_attachment_toggle: Mostrar/ocultar anexos
-  description_autocomplete: Este campo usa AutoCompletar. Ao digitar o título de um
-    pacote de trabalho, receberá uma lista de possíveis candidatos. Escolha um com
-    a seta para e seta para baixo chave e selecione-o com tab ou enter. Como alternativa,
+  description_autocomplete: 'Este campo usa AutoCompletar. Ao digitar o título de
+    um pacote de trabalho, receberá uma lista de possíveis candidatos. Escolha um
+    com a seta para e seta para baixo chave e selecione-o com tab ou enter. Como alternativa,
     pode inserir o número do pacote de trabalho diretamente.
+
+'
   description_available_columns: Colunas disponíveis
   description_choose_project: Projetos
-  description_compare_from: Compare a partir da versão
-  description_compare_to: Compare com a versão
+  description_compare_from: Comparar de
+  description_compare_to: Comparar com
   description_current_position: 'Você está aqui:'
   description_date_from: Data de início
   description_date_range_interval: Escolha o intervalo selecionando a data inicial
@@ -771,6 +798,7 @@ pt:
   error_can_not_delete_custom_field: Não é possível eliminar o campo personalizado
   error_can_not_delete_type: Este tipo contém pacotes de trabalho e não pode ser apagado.
   error_can_not_delete_standard_type: Tipos de padrão não podem ser eliminados.
+  error_can_not_invite_user: Falha no envio do convite ao utilizador.
   error_can_not_remove_role: Esta função já está a ser utilizada e não pode ser eliminada.
   error_can_not_reopen_work_package_on_closed_version: Uma tarefa atribuída a uma
     versão fechada não pode ser reaberta
@@ -778,6 +806,8 @@ pt:
   error_cookie_missing: O cookie OpenProject está em falta. Por favor, certifique-se
     de que os cookies estão habilitados, uma vez que esta aplicação não funcionará
     corretamente sem eles.
+  error_pdf_export_too_many_columns: Demasiadas colunas selecionadas para a exportação
+    PDF. Reduza o número de colunas.
   error_token_authenticity: Não é possível verificar o token de Cross-Site Request
     Forgery.
   error_work_package_done_ratios_not_updated: Percentagens de progresso do pacote
@@ -806,6 +836,11 @@ pt:
   error_workflow_copy_target: Por favor, selecione o tipo de alvo(s) e função(ões)
   error_menu_item_not_created: Item de menu não pôde ser adicionado
   error_menu_item_not_saved: Item de menu não pôde ser guardado
+  error_wiki_root_menu_item_conflict: 'Não é possível mudar o nome de"%{old_name}"
+    para "%{new_name}" devido a um conflito no item de menu resultante com o item
+    de menu existente "%{existing_caption}" (%{existing_identifier}).
+
+'
   error_external_authentication_failed: Ocorreu um erro durante a autenticação externa.
     Por favor, tente novamente.
   events:
@@ -930,6 +965,8 @@ pt:
   label_change_status: Alterar estado
   label_change_view_all: Ver todas as alterações
   label_changes_details: Detalhes de todas as alterações
+  label_changeset: Changeset
+  label_changeset_id: Changeset ID
   label_changeset_plural: Conjunto de alterações
   label_checked: verificado
   label_check_uncheck_all_in_column: Marcar/desmarcar tudo na coluna
@@ -986,6 +1023,7 @@ pt:
   label_download_plural: "%{count} Descarregados"
   label_downloads_abbr: D/L
   label_duplicated_by: duplicado por
+  label_duplicate: duplicado
   label_duplicates: duplicados
   label_edit: Editar
   label_enable_multi_select: Alternar para selecção múltipla
@@ -996,9 +1034,10 @@ pt:
   label_end_to_end: de ponta a ponta
   label_end_to_start: fim para início
   label_enumeration_new: Novo valor de enumeração
+  label_enumeration_value: Valor de enumeração
   label_enumerations: Enumerações
   label_environment: Ambiente
-  label_equals: "é"
+  label_equals: é
   label_example: Exemplo
   label_export_to: 'Também disponível em:'
   label_f_hour: "%{value} hora"
@@ -1012,7 +1051,7 @@ pt:
   label_filter_add: Adicionar filtro
   label_filter_plural: Filtros
   label_float: Float
-  label_folder: Folder
+  label_folder: Pasta
   label_follows: segue
   label_force_user_language_to_default: Idioma de utilizadores definida com uma linguagem
     não permitida como padrão
@@ -1033,48 +1072,28 @@ pt:
   label_in_less_than: em menos de
   label_in_more_than: em mais de
   label_incoming_emails: E-mails recebidos
-  label_index_by_date: "Índice por data"
-  label_index_by_title: "Índice por título"
+  label_includes: inclui
+  label_index_by_date: Índice por data
+  label_index_by_title: Índice por título
   label_information: Informação
   label_information_plural: Informação
   label_integer: Número Inteiro
   label_internal: Interno
   label_invite_user: Convidar utilziador
   label_show_hide: Mostrar/ocultar
-  label_work_package_added: Tarefa adicionada
-  label_work_package_category_new: Nova categoria
-  label_work_package_category_plural: Categorias de tarefas
-  label_work_package_hierarchy: Hierarquia de tarefas
-  label_work_package_new: Nova tarefa
-  label_work_package_note_added: Anotação adicionada ao pacote de trabalho
-  label_work_package_edit: Editar pacote de trabalho %{name}
-  label_work_package_plural: Tarefas
-  label_work_package_priority_updated: Prioridade da tarefa atualizada
-  label_work_package_status_new: Novo estado
-  label_work_package_status_plural: Estado da tarefa
-  label_work_package_tracking: Controle de pacote de trabalho
-  label_work_package_updated: Tarefa atualizada
-  label_work_package_view_all: Ver todas as tarefas
-  label_work_package_view_all_assigned_to_me: Mostrar todos os pacotes de trabalho
-    que me estão atribuídos
-  label_work_package_view_all_reported_by_me: Mostrar todos os pacotes de trabalho
-    reportados por mim
-  label_work_package_view_all_responsible_for: Ver todos os pacotes de trabalho que
-    eu sou responsável por
-  label_work_package_view_all_watched: Mostrar todos os pacotes de trabalho observados
-  label_work_package_watchers: Observadores
+  label_journal: Diário
   label_journal_diff: Comparação de descrição
   label_jump_to_a_project: Saltar para um projeto...
   label_language_based: Com base no idioma do utilizador
-  label_last_activity: "Última atividade"
-  label_last_change_on: "Última alteração"
-  label_last_changes: "últimas %{count} alterações"
-  label_last_login: "Último login"
-  label_last_month: "ùltimo mês"
-  label_last_n_days: "últimos %{count} dias"
+  label_last_activity: Última atividade
+  label_last_change_on: Última alteração
+  label_last_changes: últimas %{count} alterações
+  label_last_login: Último login
+  label_last_month: ùltimo mês
+  label_last_n_days: últimos %{count} dias
   label_last_week: semana passada
-  label_latest_revision: "Última revisão"
-  label_latest_revision_plural: "Últimas revisões"
+  label_latest_revision: Última revisão
+  label_latest_revision_plural: Últimas revisões
   label_ldap_authentication: Autenticação LDAP
   label_less_or_equal: "<="
   label_less_than_ago: menos que dias atrás
@@ -1092,7 +1111,8 @@ pt:
   label_member_plural: Membros
   label_memder_view_all: Ver todos os membros
   label_menu_item_name: Nome do item de menu
-  label_message_last: "Última mensagem"
+  label_message: Mensagem
+  label_message_last: Última mensagem
   label_message_new: Nova mensagem
   label_message_plural: Mensagens
   label_message_posted: Mensagem adicionada
@@ -1101,7 +1121,6 @@ pt:
   label_missing_api_access_key: Chave de acesso da API em falta
   label_missing_feeds_access_key: Chave de acesso da RSS em falta
   label_modification: "%{count} modificação"
-  label_modification_plural: modificações %{count}
   label_modified: modificado
   label_module_plural: Módulos
   label_modules: Módulos
@@ -1120,7 +1139,7 @@ pt:
   label_new_statuses_allowed: Permitidos novos estados
   label_news_added: Notícia adicionada
   label_news_comment_added: Comentário adicionado às notícias
-  label_news_latest: "Últimas Notícias"
+  label_news_latest: Últimas Notícias
   label_news_new: Adicionar notícias
   label_news_edit: Editar notícias
   label_news_plural: Noticias
@@ -1144,6 +1163,7 @@ pt:
   label_overall_activity: Atividade global
   label_overall_spent_time: Total de tempo registado
   label_overview: Sinopse
+  label_part_of: parte de
   label_password_lost: Esqueceu a sua senha?
   label_password_rule_lowercase: Minúsculas
   label_password_rule_numeric: Carateres Numéricos
@@ -1172,7 +1192,7 @@ pt:
   label_project_count: Número total de projetos
   label_project_copy_notifications: Envie notificações por correio eletrónico durante
     a cópia do projeto
-  label_project_latest: "Últimos projetos"
+  label_project_latest: Últimos projetos
   label_project_default_type: Permitir tipo vazio
   label_project_hierarchy: Hierarquia do projeto
   label_project_new: Novo Projecto
@@ -1209,6 +1229,8 @@ pt:
   label_repository: Repositório
   label_repository_root: Raiz do repositório
   label_repository_plural: Repositórios
+  label_required: necessário
+  label_requires: necessita
   label_responsible_for_work_packages: Tarefas, por que sou responsável
   label_result_plural: Resultados
   label_reverse_chronological_order: Em ordem cronológica inversa
@@ -1223,7 +1245,7 @@ pt:
   label_role_and_permissions: Funções e permissões
   label_role_new: Nova função
   label_role_plural: Funções
-  label_role_search: Atribuir funções aos novos membros
+  label_role_search: Atribuir função aos novos membros
   label_scm: SCM
   label_search: Pesquisar
   label_search_titles_only: Pesquisar apenas títulos
@@ -1300,7 +1322,7 @@ pt:
   label_version_sharing_none: Não partilhado
   label_version_sharing_system: Com todos os projetos
   label_version_sharing_tree: Com a árvore de projeto
-  label_video: Video
+  label_video: Vídeo
   label_view_all_revisions: Ver os todas as revisões
   label_view_diff: Ver diferenças
   label_view_revisions: Ver revisões
@@ -1312,6 +1334,7 @@ pt:
   label_wiki_dont_show_menu_item: Não mostrar esta página wiki na navegação do projecto
   label_wiki_edit: Editar wiki
   label_wiki_edit_plural: Edições de wiki
+  label_wiki_page_id: ID da página wiki
   label_wiki_navigation: Navegação wiki
   label_wiki_page: Página wiki
   label_wiki_page_plural: Páginas wiki
@@ -1320,8 +1343,30 @@ pt:
   label_wiki_show_new_page_link: Mostrar o item de sub-menu 'Criar nova página filha'
   label_wiki_show_submenu_item: 'Mostrar como item do sub-menu de '
   label_work_package: Pacote de trabalho
+  label_work_package_added: Tarefa adicionada
+  label_work_package_category_new: Nova categoria
+  label_work_package_category_plural: Categorias de tarefas
+  label_work_package_hierarchy: Hierarquia de pacotes de trabalho
+  label_work_package_new: Nova tarefa
+  label_work_package_note_added: Anotação adicionada ao pacote de trabalho
+  label_work_package_edit: Editar pacote de trabalho %{name}
+  label_work_package_plural: Tarefas
+  label_work_package_priority_updated: Prioridade da tarefa atualizada
   label_work_package_status: Estado da tarefa
+  label_work_package_status_new: Novo estado
+  label_work_package_status_plural: Estado da tarefa
   label_work_package_types: Tipos de pacote de trabalho
+  label_work_package_updated: Tarefa atualizada
+  label_work_package_tracking: Controle de pacote de trabalho
+  label_work_package_view_all: Ver todas as tarefas
+  label_work_package_view_all_assigned_to_me: Mostrar todos os pacotes de trabalho
+    que me estão atribuídos
+  label_work_package_view_all_reported_by_me: Mostrar todos os pacotes de trabalho
+    reportados por mim
+  label_work_package_view_all_responsible_for: Ver todos os pacotes de trabalho que
+    eu sou responsável por
+  label_work_package_view_all_watched: Mostrar todos os pacotes de trabalho observados
+  label_work_package_watchers: Observadores
   label_workflow: Fluxo de trabalho
   label_workflow_plural: Fluxos de Trabalho
   label_workflow_summary: Resumo
@@ -1407,8 +1452,8 @@ pt:
   noscript_description: Tem de ativar o JavaScript para usar o OpenProject!
   noscript_heading: JavaScript desativado
   noscript_learn_more: Saber mais
-  notice_accessibility_mode: The accessibility mode can be enabled in your [account
-    settings](url).
+  notice_accessibility_mode: O modo de acessibilidade pode ser ativado nas [definições
+    de conta](url).
   notice_account_activated: A sua conta foi ativada. É agora possível autenticar-se.
   notice_account_already_activated: A conta já foi ativada.
   notice_account_invalid_token: Token de ativação inválido
@@ -1418,7 +1463,7 @@ pt:
     for, esta será desbloqueada automaticamente em um curto espaço de tempo.
   notice_account_lost_email_sent: Foi enviada uma mensagem com as instruções para
     alterar a sua senha.
-  notice_account_new_password_forced: "É necessário uma nova senha."
+  notice_account_new_password_forced: É necessário uma nova senha.
   notice_account_password_expired: A sua senha expirou depois de %{days} dias. Por
     favor, defina uma nova.
   notice_account_password_updated: Senha atualizada com sucesso.
@@ -1427,8 +1472,8 @@ pt:
   notice_account_register_done: A conta foi criada com sucesso. Para ativar a sua
     conta, clique no link que lhe foi enviado por email.
   notice_account_unknown_email: Utilizador desconhecido.
-  notice_account_update_failed: Account setting could not be saved. Please have a
-    look at your account page.
+  notice_account_update_failed: A definição de conta não pôde ser guardada. Por favor
+    confira a página da sua conta.
   notice_account_updated: Conta foi actualizada com sucesso.
   notice_account_wrong_password: Senha errada
   notice_account_registered_and_logged_in: Bem-vindo, sua conta foi ativada. Agora
@@ -1466,6 +1511,8 @@ pt:
   notice_bad_request: Pedido inválido.
   notice_not_authorized: Não está autorizado a aceder a esta página.
   notice_not_authorized_archived_project: O projeto ao qual tentou aceder foi arquivado.
+  notice_password_confirmation_failed: Sua palavra-passe não está correta. As alterações
+    não foram guardadas.
   notice_project_not_deleted: O projeto não foi eliminado.
   notice_successful_connection: Ligação bem sucedida.
   notice_successful_create: Criado com sucesso.
@@ -1483,8 +1530,8 @@ pt:
   notice_logged_out: A sua sessão foi terminada.
   notice_wont_delete_auth_source: O modo de autenticação não pode ser apagado enquanto
     houver utilizadores a usá-lo.
-  notice_project_cannot_update_custom_fields: 'You cannot update the project''s available
-    custom fields. The project is invalid: %{errors}'
+  notice_project_cannot_update_custom_fields: 'Não pode atualizar os campos personalizados
+    disponíveis do projeto. O projeto não é válido: %{errors}'
   number:
     format:
       delimiter: ''
@@ -1505,10 +1552,11 @@ pt:
           mb: " MB"
           tb: TB
   onboarding:
-    text_getting_started: This video provides you an overview of OpenProject. It helps
-      you to set up your first project and to start collaborating with your team members.
-    text_show_again: You can restart this video from the help menu
-    welcome: Hi %{name}, welcome to OpenProject
+    text_getting_started: Este vídeo apresenta uma visão geral do OpenProject. Ajuda
+      a configurar o seu primeiro projeto e começar a colaborar com os membros da
+      equipa.
+    text_show_again: Pode reiniciar este vídeo através do menu de ajuda
+    welcome: Bem-vindo ao OpenProject
   permission_add_work_package_notes: Adicionar notas
   permission_add_work_packages: Adicionar pacotes de trabalho (também permite adicionar
     anexos para todos os pacotes de trabalho)
@@ -1571,6 +1619,7 @@ pt:
   permission_view_work_package_watchers: Ver lista de observadores
   permission_view_work_packages: Ver tarefas
   permission_view_messages: Ver mensagens
+  permission_view_members: Ver membros
   permission_view_project_associations: Ver dependências do projeto
   permission_view_reportings: Ver comunicações
   permission_view_time_entries: Ver o tempo gasto
@@ -1593,7 +1642,7 @@ pt:
       warning_two: Os links existentes para o projeto já não funcionarão.
       title: Alterar o identificador do projeto
     archive:
-      are_you_sure: Are you sure you want to archive the project '%{name}'?
+      are_you_sure: Tem a certeza de que deseja arquivar o projeto '%{name}'?
   project_module_activity: Atividade
   project_module_boards: Fórums
   project_module_calendar: Calendário
@@ -1695,11 +1744,13 @@ pt:
           %{example_path}).
         path_encoding: 'Substituir o caminho de codificação Git (padrão: UTF-8)'
       local_title: Ligação existente a repositório Git local
+      local_url: URL local
       local_introduction: Se tem um repositório de Git local existente, pode vinculá-lo
         com o OpenProject para aceder a ele dentro da aplicação.
       managed_introduction: Deixe o OpenProject criar e integrar um repositório Git
         local automaticamente.
       managed_title: Repositório git integrado no OpenProject
+      managed_url: Gerir URL
       path: Caminho para o repositório Git
       path_encoding: Codificação do caminho
     go_to_revision: Ir para revisão
@@ -1729,6 +1780,7 @@ pt:
       existing_title: Repositório de subversão existente
       existing_introduction: Se tem um repositório de Subversion existente, pode vinculá-lo
         com o OpenProject para aceder a ele dentro da aplicação.
+      existing_url: URL existente
       instructions:
         managed_url: Esta é a URL do repositório Subversion (local) gerido.
         url: 'Digite a URL do repositório. Isto também pode direcionar um repositório
@@ -1737,6 +1789,7 @@ pt:
       managed_title: Repositório Subversion integrado no OpenProject
       managed_introduction: Deixe o OpenProject criar e integrar um repositório Subversion
         local automaticamente.
+      managed_url: Gerir URL
       password: Senha do Repositório
       username: Nome do utilizador do repositório
     named_repository: "%{vendor_name} repositório"
@@ -1744,7 +1797,7 @@ pt:
     url: URL para repositório
     warnings:
       cannot_annotate: Este ficheiro não pode ser anotado.
-  search_input_placeholder: pesquisar ...
+  search_input_placeholder: Procurar ...
   setting_email_delivery_method: Método de entrega de email
   setting_sendmail_location: Localização do executável do sendmail
   setting_smtp_enable_starttls_auto: Automaticamente usar STARTTLS se disponível
@@ -1886,16 +1939,18 @@ pt:
   text_are_you_sure_with_children: Apagar o pacote de trabalho e todos os pacotes
     de trabalho filhos?
   text_assign_to_project: Atribuir ao projeto
-  text_form_configuration: Pode personalizar quais os atributos que serão exibidos
-    em formas para pacotes de trabalho deste tipo. Os campos 'Ativos' serão mostrados
+  text_form_configuration: 'Pode personalizar quais os atributos que serão exibidos
+    em formas para pacotes de trabalho deste tipo. Os campos ''Ativos'' serão mostrados
     na visualização recolhida de pacotes de trabalho se tiverem um valor, campos que
-    estão 'Sempre exibidos' mesmo que não o façam. Os campos inativos nunca serão
+    estão ''Sempre exibidos'' mesmo que não o façam. Os campos inativos nunca serão
     mostrados, mesmo que tenham um valor. Apenas os campos que não são obrigatórios
     ou têm um valor por defeito podem ser personalizados.
+
+'
   text_caracters_maximum: "%{count} caracteres no máximo."
   text_caracters_minimum: Deve ter pelo menos %{count} caracteres.
   text_comma_separated: Permitidos múltiplos valores (separados por vírgula).
-  text_comment_wiki_page: 'Comment to wiki page: %{page}'
+  text_comment_wiki_page: 'Comentário para página wiki: %{page}'
   text_custom_field_possible_values_info: Uma linha para cada valor
   text_default_administrator_account_changed: Conta padrão de administrador alterada
   text_default_encoding: 'Padrão: UTF-8'
@@ -1905,13 +1960,13 @@ pt:
   text_destroy_what_to_do: O que deseja fazer?
   text_diff_truncated: "... Este diff foi truncado porque excede o tamanho máximo
     que pode ser mostrado."
-  text_email_delivery_not_configured: |
+  text_email_delivery_not_configured: |-
     Entrega por e-mail não está configurada, e as notificação estão desativadas.
     Configure o seu servidor de SMTP em config/configuration.yml e reinicie a aplicação para ativar estas funcionalidades.
   text_enumeration_category_reassign_to: 'Re-atribuí-los para este valor:'
   text_enumeration_destroy_question: "%{count} objetos estão atribuídos a esse valor."
   text_file_repository_writable: Diretório de anexos com permissões de escrita
-  text_git_repo_example: um repositório de bare e local (por exemplo, /gitrepo, c:\\gitrepo)
+  text_git_repo_example: um repositório de bare e local (por exemplo, /gitrepo, c:\gitrepo)
   text_hint_date_format: Insira uma data na forma de YYYY-MM-DD. Outros formatos podem
     ser alterados para uma data não desejada.
   text_hint_disable_with_0: 'Nota: Desativar com 0'
@@ -1947,17 +2002,17 @@ pt:
   text_min_max_length_info: 0 significa sem restrições
   text_no_roles_defined: Não existem papéis definidos.
   text_no_access_tokens_configurable: Não há tokens de acesso que possam ser configurados.
-  text_no_configuration_data: |
+  text_no_configuration_data: |-
     Os papéis, tipos, estados de pacotes de trabalho e o fluxo de trabalho ainda não foram configurados.
     É recomendado carregar as configurações padrão. Poderá modificá-las depois de estarem carregadas.
   text_no_notes: Não há comentários disponíveis para este pacote de trabalho.
   text_notice_too_many_values_are_inperformant: 'Nota: Exibir mais de 100 itens por
     página pode aumentar o tempo de carregamento da página.'
-  text_own_membership_delete_confirmation: |
+  text_own_membership_delete_confirmation: |-
     Está prestes a eliminar parcial ou totalmente as suas permissões. É possível que não possa editar o projeto após esta acção.
     Tem a certeza de que deseja continuar?
-  text_plugin_assets_writable: "É possíver escrever na pasta de ativos dos módulos
-    de extensão"
+  text_plugin_assets_writable: É possíver escrever na pasta de ativos dos módulos
+    de extensão
   text_powered_by: Desenvolvido por %{link}
   text_project_identifier_info: Apenas letras minúsculas (a-z), números, traços e
     underscores são permitidos, deve começar com uma letra minúscula.
@@ -1965,12 +2020,15 @@ pt:
   text_regexp_info: ex. ^[A-Z0-9]+$
   text_regexp_multiline: Regex é aplicado num modo de várias linhas. por exemplo,
     ^---\s+
-  text_repository_usernames_mapping: |
+  text_repository_usernames_mapping: |-
     Selecionar ou atualizar o utilizador de OpenProjecto mapeado a cada nome de utilizador encontrado no repositório.
     Utilizadores com o mesmo nome de utilizador ou e-mail no OpenProject e no repositório são mapeados automaticamente.
   text_select_mail_notifications: Selecionar as ações que originam uma notificação
     por e-mail.
   text_status_changed_by_changeset: Aplicado no changeset %{value}.
+  text_table_difference_description: Nesta tabela, as únicas %{entries} são mostradas.
+    Pode ver a diferença entre quaisquer duas entradas selecionando primeiro as caixas
+    de seleção na tabela. Ao clicar no botão abaixo da tabela as diferenças são mostradas.
   text_time_logged_by_changeset: Aplicado no changeset %{value}.
   text_tip_work_package_begin_day: pacote de trabalho a começar neste dia
   text_tip_work_package_begin_end_day: pacote de trabalho a começar e a terminar neste
@@ -2099,7 +2157,7 @@ pt:
       grouping: Agrupar
       grouping_hide_group: Ocultar o grupo "%{group}"
       grouping_one: Primeiro critério de agrupamento
-      grouping_one_phrase: "É um subprojeto do"
+      grouping_one_phrase: É um subprojeto do
       grouping_other: Outro
       hide_chart: Esconder gráfico
       noneElement: "(nenhum)"
@@ -2169,17 +2227,27 @@ pt:
     type_could_not_be_saved: Tipo não pôde ser guardado
     reporting_could_not_be_saved: Não foi possível guardar o relatório
     properties: Propriedades
-    really_delete_color: Tem a certeza que deseja apagar a seguinte cor? Os tipos
+    really_delete_color: 'Tem a certeza que deseja apagar a seguinte cor? Os tipos
       que utilizam essa cor não serão apagados.
-    really_delete_project_association_between_project_a_and_project_b: Tem a certeza
+
+'
+    really_delete_project_association_between_project_a_and_project_b: 'Tem a certeza
       que deseja apagar a dependência entre "%{project_a}" e "%{project_b}"?
-    really_delete_project_type: Tem a certeza que deseja apagar o seguinte tipo de
+
+'
+    really_delete_project_type: 'Tem a certeza que deseja apagar o seguinte tipo de
       projeto? Os projetos que utilizam este tipo não serão apagados.
-    really_delete_timeline: Tens a certeza que deseja apagar o seguinte relatório
+
+'
+    really_delete_timeline: 'Tens a certeza que deseja apagar o seguinte relatório
       de linha temporal? Os pacotes de trabalho mostrados neste relatório de linha
       temporal não serão apagados.
-    really_delete_reporting: Tens a certeza que apagar excluir o seguinte relatório?
+
+'
+    really_delete_reporting: 'Tens a certeza que apagar excluir o seguinte relatório?
       Os estados de relatórios anteriores serão também apagados.
+
+'
     start: Início
     timeline: Relatório de linha temporal
     timelines: Relatório de linha temporal
@@ -2197,8 +2265,10 @@ pt:
       quarters: Trimestres
       years: Anos
   title_remove_and_delete_user: Remova o utilizador convidado do projeto e apague-o/a.
-  tooltip_resend_invitation: Envia outro email de convite com um token novo, caso
+  tooltip_resend_invitation: 'Envia outro email de convite com um token novo, caso
     o antigo tenha expirado ou se o utilizador não recebeu o email original.
+
+'
   tooltip:
     attribute_visibility:
       default: Mostrar se não estiver vazio
@@ -2217,9 +2287,11 @@ pt:
     activate: Ativar
     activate_and_reset_failed_logins: Ativar e redefinir logins falhados
     authentication_provider: Authentication Provider
-    authentication_settings_disabled_due_to_external_authentication: Este utilizador
+    authentication_settings_disabled_due_to_external_authentication: 'Este utilizador
       autentica-se através de um provedor de autenticação externo, assim não existe
       nenhuma senha em OpenProject para ser alterada.
+
+'
     authorization_rejected: Não tem permissão para iniciar sessão.
     assign_random_password: Atribuir senha aleatória (enviada para o utilizador via
       mensagem eletrónica)
@@ -2240,10 +2312,10 @@ pt:
     registered: registado
     reset_failed_logins: Restaurar inícios de sessão falhados
     settings:
-      mail_notifications: Send email notifications
-      mail_project_explanaition: For unselected projects, you will only receive notifications
-        about things you watch or you're involved in (e.g. work packages you're the
-        author or assignee of).
+      mail_notifications: Enviar notificações de email
+      mail_project_explanaition: Para projetos não selecionados, só vai receber notificações
+        sobre aquilo que vê ou em que está envolvido (ex. pacotes de trabalho dos
+        quais é autor ou que lhe estão atribuídos).
       mail_self_notified: Quero ser notificado de alterações feitas por mim
     status_user_and_brute_force: "%{user} e %{brute_force}"
     unlock: Desbloquear
@@ -2259,16 +2331,20 @@ pt:
   menu_item_setting: Visibilidade
   wiki_menu_item_for: Item de menu para página wiki "%{title}"
   wiki_menu_item_setting: Visibilidade
-  wiki_menu_item_new_main_item_explanation: Está a apagar o único item de menu wiki
+  wiki_menu_item_new_main_item_explanation: 'Está a apagar o único item de menu wiki
     principal. Tem agora que escolher uma página wiki para gerar um novo item principal.
     Para apagar o wiki, o módulo wiki pode ser desativado pelos administradores do
     projeto.
+
+'
   wiki_menu_item_delete_not_permitted: O item de menu wiki da página wiki únicã não
     pode ser apagado.
   query_menu_item_for: Item de menu para consulta "%{title}"
   work_package:
-    updated_automatically_by_child_changes: _Atualizado automaticamente através da
+    updated_automatically_by_child_changes: '_Atualizado automaticamente através da
       alteração de valor na tarefa %{child}_
+
+'
     destroy:
       info: Apagar o pacote de trabalho é uma ação irreversível.
       title: Eliminar o pacote de trabalho
@@ -2284,8 +2360,8 @@ pt:
       code_409: Não consegui atualizar o recurso devido a modificações conflitantes.
       code_500: Ocorreu um erro interno.
       expected:
-        date: YYYY-MM-DD (ISO 8601 date only)
-        duration: ISO 8601 duration
+        date: AAAA-MM-DD (Data ISO 8601 apenas)
+        duration: Duração de ISO 8601
       invalid_content_type: Espera-se que CONTENT-TYPE saja '%{content_type}' mas
         tem '%{actual}'.
       invalid_format: 'Formato inválido para a propriedade ''%{property}'': esperado

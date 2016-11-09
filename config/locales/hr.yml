@@ -167,19 +167,40 @@ hr:
       login_verification:
         other: Unesite korisničko ime %{name} za potvrdu brisanja.
         self: Molim vas unesite vaše korisničko ime %{name} za potrvrdu brisanja.
-    error_inactive_activation_by_mail: Vaš korisnički račun još nije aktiviran. Da
+    error_inactive_activation_by_mail: 'Vaš korisnički račun još nije aktiviran. Da
       bi ste aktivirali vaš korisnički račun, molimo vas da potvrdite poveznicu koja
       vam je poslana na email.
-    error_inactive_manual_activation: Vaš korisnički račun još nije aktiviran. Molim
+
+'
+    error_inactive_manual_activation: 'Vaš korisnički račun još nije aktiviran. Molim
       vas da pričekate da administrator aktivira vaš korisnički račun.
-    error_self_registration_disabled: Registracija korisnika je onemogućena na ovom
+
+'
+    error_self_registration_disabled: 'Registracija korisnika je onemogućena na ovom
       sustavu. Molim vas, obratite se administratoru za izradu korisničkog računa.
+
+'
     login_with_auth_provider: ili pristupite s vašim postojećim korinisičkim računom
     signup_with_auth_provider: ili pristupite koristeći
     auth_source_login: Molimo vas, prijavite se kao <em>%{login}</em> da bi ste aktivirali
       vaš korisnički račun.
     omniauth_login: Molim vas prijavite se da bi ste aktivirali vaš korisnički račun.
   actionview_instancetag_blank_option: Molimo odaberite
+  activemodel:
+    errors:
+      models:
+        relations/base_contract:
+          attributes:
+            to:
+              error_not_found: work package in `to` position not found or not visible
+              error_readonly: an existing relation's `to` link is immutable
+            from:
+              error_not_found: work package in `from` position not found or not visible
+              error_readonly: an existing relation's `from` link is immutable
+        users/base_contract:
+          attributes:
+            status:
+              invalid_on_create: is not a valid status for new users.
   activerecord:
     attributes:
       announcements:
@@ -258,13 +279,13 @@ hr:
       user:
         admin: Administrator
         auth_source: Provjera autentičnosti
+        current_password: Trenutna lozinka
+        force_password_change: Promjena lozinke pri sljedećoj prijavi na sustav
         language: Jezik
         last_login_on: Zadnja prijava
         mail_notification: Obavijesti e-mailom
-        current_password: Trenutna lozinka
         new_password: Nova lozinka
         password_confirmation: Potvrda
-        force_password_change: Promjena lozinke pri sljedećoj prijavi na sustav
       user_preference:
         comments_sorting: Prikaži komentare
         hide_mail: Sakriji moju e-mail adresu
@@ -283,18 +304,15 @@ hr:
         parent_title: Nadređena stranica
         redirect_existing_links: Preusmjeri postojeće poveznice
       planning_element_type_color:
-        name: Naziv
         hexcode: Heksadecimalni kod
       project_association:
         description: Uzrok
         project_b: U ovisnosti o projektu
       project_type:
         allows_association: Omogućava udruženje
-        name: Naziv
         reported_project_statuses: Priopćeni statusi projekta
         position: Pozicija
       timeline:
-        name: Naziv
         options: ''
       reporting:
         reported_project_status_comment: Komentar statusa
@@ -328,6 +346,7 @@ hr:
           podređenim radnim zadacima.
         circular_dependency: Ova relacija izraditi će skupnu odnosno cirkularnu ovisnost.
         confirmation: ne odgovara %{attribute}.
+        does_not_exist: ne postoji.
         empty: ne može biti prazan unos.
         even: mora biti izjednačeno.
         exclusion: je rezerviran.
@@ -367,6 +386,11 @@ hr:
           identical_projects: Nije moguće stvoriti ovisnost između projekta i samoga
             sebe.
           project_association_not_allowed: ne dozvoljava udruživanje.
+        query:
+          filters:
+            custom_fields:
+              inexistent: There is no custom field for the filter.
+              invalid: The custom field is not valid in the given context.
         repository:
           not_available: SCM dobavljač nije dostupn
           not_whitelisted: nije dopušteno postavljenom konfiguracijom.
@@ -382,7 +406,6 @@ hr:
               cannot_be_milestone: ne može biti ključna točka.
               cannot_be_in_another_project: ne može biti u još jednom projektu.
               not_a_valid_parent: je nevažeće.
-              does_not_exist: ne postoji.
             start_date:
               violates_relationships: can only be set to %{soonest_start} or later
                 so as not to violate the work package's relationships.
@@ -434,7 +457,7 @@ hr:
       group: Grupa
       category: Kategorija
       status: Status Radnog paketa
-      member: "Član"
+      member: Član
       news: Vijesti
       project: Projekt
       query: Prilagođeni upit
@@ -452,7 +475,7 @@ hr:
       work_package: Radni paket
   errors:
     header_invalid_fields: 'Došlo je do problema s sljedećim poljima:'
-    field_erroneous_label: |
+    field_erroneous_label: |-
       This field is invalid: %{full_errors}
       Please enter a valid value.
   activity:
@@ -581,7 +604,7 @@ hr:
     - Pon
     - Uto
     - Sri
-    - "Čet"
+    - Čet
     - Pet
     - Sub
     abbr_month_names:
@@ -603,7 +626,7 @@ hr:
     - Ponedjeljak
     - Utorak
     - Srijeda
-    - "Četvrtak"
+    - Četvrtak
     - Petak
     - Subota
     formats:
@@ -625,9 +648,9 @@ hr:
     - Studeni
     - Prosinac
     order:
-    - :godina
-    - :mjesec
-    - :Dan
+    - ":godina"
+    - ":mjesec"
+    - ":Dan"
   datetime:
     distance_in_words:
       about_x_hours:
@@ -699,7 +722,7 @@ hr:
   default_color_orange: Narančasta
   default_color_red: Crvena
   default_color_white: Bijela
-  default_color_yellow: "Žuta"
+  default_color_yellow: Žuta
   default_status_closed: Zaključeno
   default_status_confirmed: Potvrđeno
   default_status_developed: Razvijeno
@@ -718,7 +741,7 @@ hr:
   default_priority_low: Nizak
   default_priority_normal: Normalan
   default_priority_high: Visoki
-  default_priority_immediate: "Žuran"
+  default_priority_immediate: Žuran
   default_project_type_scrum: Scrum tim
   default_project_type_standard: Standardni projekt
   default_reported_project_status_green: Zelena
@@ -729,7 +752,7 @@ hr:
   default_role_project_admin: Projekt administrator
   default_role_non_member: Nije član
   default_role_reader: Lektor
-  default_role_member: "Član"
+  default_role_member: Član
   default_type: Radni paket
   default_type_bug: Bug
   default_type_deliverable: Za isporuku
@@ -741,14 +764,16 @@ hr:
   default_type_user_story: User story
   description_active: Aktivno?
   description_attachment_toggle: Prikaži/Sakrij priloge
-  description_autocomplete: Ovo polje koristi automatsko dopunjavanje. Tijekom unosa
+  description_autocomplete: 'Ovo polje koristi automatsko dopunjavanje. Tijekom unosa
     naziva radnog paketa pojaviti će se lista mogućih dopuna. Odaberite dopunu koristeći
     strelice na tikovnici i potvrdite s tab ili enter tipkom. Alternativno tome, možete
     unijeti broj radnog pakata izravno.
+
+'
   description_available_columns: Dostupni stupci
   description_choose_project: Projekti
-  description_compare_from: Usporedi s verzijom
-  description_compare_to: Usporedi s verzijom
+  description_compare_from: Compare from
+  description_compare_to: Compare to
   description_current_position: 'Nalazite se ovdje:'
   description_date_from: Unesite datum početka
   description_date_range_interval: Odaberite raspon tako da odaberete datum početka
@@ -782,12 +807,15 @@ hr:
   error_can_not_delete_custom_field: Nije moguće izbrisati prilagođeno polje
   error_can_not_delete_type: Ovaj tip sadrži radni paket i ne može biti izbrisan.
   error_can_not_delete_standard_type: Standardni tipovi ne mogu biti izbrisani.
+  error_can_not_invite_user: Failed to send invitation to user.
   error_can_not_remove_role: Ova rola se koristi i ne može biti izbrisana.
   error_can_not_reopen_work_package_on_closed_version: Dodijeljeni radni paket zaključenoj
     verziji ne može biti ponovno otvoren
   error_check_user_and_role: Molim Vas odaberite korisnika i rolu.
   error_cookie_missing: The OpenProject cookie is missing. Please ensure that cookies
     are enabled, as this application will not properly function without.
+  error_pdf_export_too_many_columns: Too many columns selected for the PDF export.
+    Please reduce the number of columns.
   error_token_authenticity: Unable to verify Cross-Site Request Forgery token.
   error_work_package_done_ratios_not_updated: Omjer učinjenoga radnog paketa nije
     ažuriran.
@@ -815,6 +843,11 @@ hr:
   error_workflow_copy_target: Molim vas odaberite odredišni tip(ove) i rolu(e)
   error_menu_item_not_created: Nije moguće dodati element izbornika
   error_menu_item_not_saved: Nije moguće spremiti element izbornika
+  error_wiki_root_menu_item_conflict: 'Can''t rename "%{old_name}" to "%{new_name}"
+    due to a conflict in the resulting menu item with the existing menu item "%{existing_caption}"
+    (%{existing_identifier}).
+
+'
   error_external_authentication_failed: Došlo je do greške tijekom izvođenja vanjske
     autentifikacije. Molim vas pokušajte opet.
   events:
@@ -848,7 +881,7 @@ hr:
       community: OpenProject community
     links:
       user_guides: Korisnički priručnici
-      faq: "Često postavljana pitanja"
+      faq: Često postavljana pitanja
       glossary: Kazalo pojmova
       shortcuts: Prečaci
       forums: Forumi
@@ -939,6 +972,8 @@ hr:
   label_change_status: Promijeni status
   label_change_view_all: Pogledaj sve promjene
   label_changes_details: Detalji svih promjena
+  label_changeset: Changeset
+  label_changeset_id: Changeset ID
   label_changeset_plural: Changesets
   label_checked: provjereno
   label_check_uncheck_all_in_column: Označi/Odznači sve u stupcu
@@ -994,6 +1029,7 @@ hr:
   label_download_plural: "%{count} Preuzimanja"
   label_downloads_abbr: D/L
   label_duplicated_by: duplicirano od
+  label_duplicate: duplicate
   label_duplicates: duplikati
   label_edit: Uredi
   label_enable_multi_select: Aktiviraj/deaktiviraj selekciju
@@ -1004,6 +1040,7 @@ hr:
   label_end_to_end: s kraja na kraj
   label_end_to_start: s kraja na početak
   label_enumeration_new: Nova vrijednost numeriranja
+  label_enumeration_value: Enumeration value
   label_enumerations: Numeriranja
   label_environment: Okruženje
   label_equals: je
@@ -1041,6 +1078,7 @@ hr:
   label_in_less_than: u manje od
   label_in_more_than: u više od
   label_incoming_emails: Dolazne poruke
+  label_includes: includes
   label_index_by_date: Indeksiraj po datumu
   label_index_by_title: Indeksiraj po naslovu
   label_information: Informacija
@@ -1049,27 +1087,7 @@ hr:
   label_internal: Unutarnji
   label_invite_user: Pozovi korisnika
   label_show_hide: Pokaži/Sakrij
-  label_work_package_added: Radni paket dodan
-  label_work_package_category_new: Nova kategorija
-  label_work_package_category_plural: Kategorije radnih paketa
-  label_work_package_hierarchy: Hijerarhija radnih paketa
-  label_work_package_new: Novi radni paket
-  label_work_package_note_added: Bilješka za Radni paket je dodana
-  label_work_package_edit: Uredi radni paket %{name}
-  label_work_package_plural: Radni paketi
-  label_work_package_priority_updated: Prioritet Radnog paketa je ažuriran
-  label_work_package_status_new: Novi status
-  label_work_package_status_plural: Statusi radnog paketa
-  label_work_package_tracking: Praćenje radnog paketa
-  label_work_package_updated: Radni paket je ažuriran
-  label_work_package_view_all: Pogledaj sve radne pakete
-  label_work_package_view_all_assigned_to_me: Pogledaj sve radne pakete dodijeljene
-    meni
-  label_work_package_view_all_reported_by_me: Pogledaj sve radne pakete koje sam priopćio
-  label_work_package_view_all_responsible_for: Pogeldaj sve radne pakete za koje sam
-    odgovoran
-  label_work_package_view_all_watched: Pogledaj sve nadgledane radne pakete
-  label_work_package_watchers: Nadglednici
+  label_journal: Journal
   label_journal_diff: Opis uspoređivanja
   label_jump_to_a_project: Pređi na projekt...
   label_language_based: Na osnovi jezika korisnika
@@ -1096,9 +1114,10 @@ hr:
   label_max_size: Maksimalna veličina
   label_me: ja
   label_member_new: Novi član
-  label_member_plural: "Članovi"
+  label_member_plural: Članovi
   label_memder_view_all: Pogledaj sve članove
   label_menu_item_name: Naziv stavke izbornika
+  label_message: Message
   label_message_last: Posljednja poruka
   label_message_new: Nova poruka
   label_message_plural: Poruke
@@ -1108,7 +1127,6 @@ hr:
   label_missing_api_access_key: Nedostaje API pretplatnički ključ
   label_missing_feeds_access_key: Nedostaje RSS udaljeni pretplatnički ključ
   label_modification: "%{count} promjena"
-  label_modification_plural: "%{count} promjena"
   label_modified: modificirano
   label_module_plural: Moduli
   label_modules: Moduli
@@ -1151,6 +1169,7 @@ hr:
   label_overall_activity: Ukupna aktivnost
   label_overall_spent_time: Ukupno utrošeno vrijeme
   label_overview: Pregled
+  label_part_of: part of
   label_password_lost: Zaboravili ste lozinku?
   label_password_rule_lowercase: Mala slova
   label_password_rule_numeric: Znamenke
@@ -1215,6 +1234,8 @@ hr:
   label_repository: Repozitorij
   label_repository_root: Izvršni repozitorij
   label_repository_plural: Repozitoriji
+  label_required: required
+  label_requires: requires
   label_responsible_for_work_packages: Radni paketi za koje sam odgovoran
   label_result_plural: Rezultati
   label_reverse_chronological_order: U obrnutom kronološkom redu
@@ -1229,7 +1250,7 @@ hr:
   label_role_and_permissions: Role i dozvole
   label_role_new: Nova rola
   label_role_plural: Role
-  label_role_search: Dodijeli role novim korisnicima
+  label_role_search: Assign role to new members
   label_scm: SCM
   label_search: Pretraživanje
   label_search_titles_only: Pretraži samo naslove
@@ -1318,6 +1339,7 @@ hr:
   label_wiki_dont_show_menu_item: Ne prikazuj ovu wiki stranicu u izborniku projekta
   label_wiki_edit: Uređivanje wiki stranice
   label_wiki_edit_plural: Uređivanje wiki stranica
+  label_wiki_page_id: Wiki page ID
   label_wiki_navigation: Wiki navigacija
   label_wiki_page: Wiki stranica
   label_wiki_page_plural: Wiki stranice
@@ -1327,8 +1349,29 @@ hr:
     stranicu'
   label_wiki_show_submenu_item: 'Prikaži kao stavku podizbornika iz '
   label_work_package: Radni paket
+  label_work_package_added: Radni paket dodan
+  label_work_package_category_new: Nova kategorija
+  label_work_package_category_plural: Kategorije radnih paketa
+  label_work_package_hierarchy: Work package hierarchy
+  label_work_package_new: Novi radni paket
+  label_work_package_note_added: Bilješka za Radni paket je dodana
+  label_work_package_edit: Uredi radni paket %{name}
+  label_work_package_plural: Radni paketi
+  label_work_package_priority_updated: Prioritet Radnog paketa je ažuriran
   label_work_package_status: Status Radnog paketa
+  label_work_package_status_new: Novi status
+  label_work_package_status_plural: Statusi radnog paketa
   label_work_package_types: Tip ranog paketa
+  label_work_package_updated: Radni paket je ažuriran
+  label_work_package_tracking: Praćenje radnog paketa
+  label_work_package_view_all: Pogledaj sve radne pakete
+  label_work_package_view_all_assigned_to_me: Pogledaj sve radne pakete dodijeljene
+    meni
+  label_work_package_view_all_reported_by_me: Pogledaj sve radne pakete koje sam priopćio
+  label_work_package_view_all_responsible_for: Pogeldaj sve radne pakete za koje sam
+    odgovoran
+  label_work_package_view_all_watched: Pogledaj sve nadgledane radne pakete
+  label_work_package_watchers: Nadglednici
   label_workflow: Tijek rada
   label_workflow_plural: Tijek rada
   label_workflow_summary: Sažetak
@@ -1476,25 +1519,27 @@ hr:
   notice_locking_conflict_reload_page: Molim vas ponovno učitajte stranicu, pregledajte
     promjene i ponovno učitajte vaša ažuriranja.
   notice_member_added: Dodano %{name} projektu.
-  notice_members_added: Dodani %{number} korisnici projektu.
+  notice_members_added: Added %{number} users to the project.
   notice_member_removed: "%{user} je uklonjen s projekta."
   notice_member_deleted: "%{user} je uklonjen s projekta i izbrisan."
   notice_no_principals_found: Nema pronađenih rezultata.
   notice_bad_request: Neispravan zahtjev.
   notice_not_authorized: Niste autorizirani da pristupite ovoj stranici.
   notice_not_authorized_archived_project: Projekt kojem pokušavate pristupiti je arhiviran.
+  notice_password_confirmation_failed: Your password is not correct. The changes were
+    not saved.
   notice_project_not_deleted: Projekt nije izbrisan.
   notice_successful_connection: Uspješna spojen.
   notice_successful_create: Uspješno kreirano.
   notice_successful_delete: Brisanje uspješno.
   notice_successful_update: Ažuriranje je uspješno završeno.
-  notice_to_many_principals_to_display: |
+  notice_to_many_principals_to_display: |-
     Prikazano je previše rezultata.
     Sužite rezultate pretrage na način da unesete ime novog člana (ili grupe).
   notice_unable_delete_time_entry: Nije moguće brisanje evidentiranih zapisa o vremenu.
   notice_unable_delete_version: Nije moguće izbrisati verziju.
-  notice_user_missing_authentication_method: Korisnik mora odabrati lozinku ili drugi
-    način prijave.
+  notice_user_missing_authentication_method: User has yet to choose a password or
+    another way to sign in.
   notice_user_invitation_resent: Another invitation has been sent to %{email}.
   present_access_key_value: 'Vaš %{key_name} je: %{value}'
   notice_automatic_set_of_standard_type: Automatski postavite standardni tip.
@@ -1527,7 +1572,7 @@ hr:
     text_getting_started: This video provides you an overview of OpenProject. It helps
       you to set up your first project and to start collaborating with your team members.
     text_show_again: You can restart this video from the help menu
-    welcome: Hi %{name}, welcome to OpenProject
+    welcome: Welcome to OpenProject
   permission_add_work_package_notes: Dodaj bilješke
   permission_add_work_packages: Dodaj radni paket (također omogućava dodavanje privitaka
     svim radnim paketima)
@@ -1589,6 +1634,7 @@ hr:
   permission_view_work_package_watchers: Prikaži listu nadglednika
   permission_view_work_packages: Prikaži radne pakete
   permission_view_messages: Prikaži poruke
+  permission_view_members: View members
   permission_view_project_associations: Prikaži ovisnosti projekta
   permission_view_reportings: Prikaži izvještaje
   permission_view_time_entries: Prikaži utrošeno vrijeme
@@ -1607,7 +1653,7 @@ hr:
         izbrisani.'
       title: Izbriši projekt %{name}
     identifier:
-      warning_one: "Članovi projekta morati će relocirati repozitorije projketa."
+      warning_one: Članovi projekta morati će relocirati repozitorije projketa.
       warning_two: Postojeće poveznice na projektu neće više funkcionirati.
       title: Promjeni identifikator projekta
     archive:
@@ -1632,22 +1678,22 @@ hr:
       ažurirani tijekom pristupa stranici repozitorija modula.
     checkout:
       access:
-        readwrite: "Čitanje + pisanje"
+        readwrite: Čitanje + pisanje
         read: Samo čitanje
         none: Nema provjere pristupa, a jedini mogući pregled repozitorija je kroz
           ovu aplikaciju.
       access_permission: Vaše dozvole na ovom repozitoriju
       url: URL provjere
-      base_url_text: |
+      base_url_text: |-
         Temeljni URL za korištenje kod generiranja URL-ova prijave (npr., https://myserver.example.org/repos/).
         Napomena: Temeljni URL je samo korišten kod ponovnog generiranja URL-ova prijave na upravljanim repozitorijima. Ostali repozitoriji su nepromijenjeni.
       default_instructions:
         git: "Podaci koji se nalaze u ovom repozitoriju mogu biti dohvaćeni na pc
           kroz Git. \nMolim vas provjerite dokumentaciju Gita ukoliko trebate još
-          informacija o procedurama prijave i dostupnim klijentima.\n"
+          informacija o procedurama prijave i dostupnim klijentima."
         subversion: "Podaci koji se nalaze u ovom repozitoriju mogu biti dohvaćeni
           na pc kroz Subversion. \nMolim vas provjerite dokumentaciju Subversiona
-          ukoliko trebate još informacija o procedurama prijave i dostupnim klijentima.\n"
+          ukoliko trebate još informacija o procedurama prijave i dostupnim klijentima."
       enable_instructions_text: Prikaži upute za provjeru na svim stranicama vezanim
         za repozitorij.
       instructions: Provjeri naredbe
@@ -1706,11 +1752,13 @@ hr:
         path: Sprecificirajte putanju do vašeg lokalnog Git repozitorija (npr. %{example_path}).
         path_encoding: 'Promjenite putanju Git enkodiranja (Zadana: UTF-8)'
       local_title: Povežite postojeći lokalni Git repozitorij
+      local_url: Local URL
       local_introduction: Ukoliko imate postojeći lokalni Git repozitorij, možete
         ga povezati s OpenProject-om da bi ste mogi pristupati pomoću aplikacije.
       managed_introduction: Dopusti OpenProjectu automatsko kreiranje i integraciju
         lokalnog Git repozitorija.
       managed_title: Git repozitorij je integriran s OpenProject-om
+      managed_url: Upravljani URL
       path: Putanja do Git repozitorija
       path_encoding: Staza kodiranja
     go_to_revision: Idi na revizije
@@ -1732,21 +1780,23 @@ hr:
       managed: Kreiraj novi repozitorij u OpenProjectu
     storage:
       not_available: Pregled zauzeća diska nije dostupano u ovom repozitoriju.
-      update_timeout: |
+      update_timeout: |-
         Spremi informaciju o potrebnom prostoru na disku za repozitorij za N minuta.
         Tijekom izračuna potrebnog prostora na disku može doći do usprenja rada mašine, da bi ste izbjegli smanjenje performansi podignite ovu vrijednost.
     subversion:
       existing_title: Postojeći Subversion repozitorij
       existing_introduction: Ukoliko imate postojeći lokalni Subversion repozitorij,
         možete ga povezati s OpenProject-om da bi ste mogi pristupati pomoću aplikacije.
+      existing_url: Existing URL
       instructions:
         managed_url: Ovo je URL upravljanog (lokalnog) Subversion repozitorija.
-        url: |
+        url: |-
           Unesite URL repozitorija. Odredište može biti ili lokalni repozitorij (počevši s %{local_proto}), ili udaljeni repozitorij.
           Sljedeće URL sheme su podržane:
       managed_title: Subversion repozitorij je integriran u OpenProject
       managed_introduction: Dopusti OpenProjectu automatsko kreiranje i integraciju
         lokalnog Subversion repozitorija.
+      managed_url: Upravljani URL
       password: Lozinka repozitorija
       username: Korisničko ime repozitorija
     named_repository: "%{vendor_name} repozitorij"
@@ -1754,7 +1804,7 @@ hr:
     url: URL na repozitorij
     warnings:
       cannot_annotate: Ovu datoteka ne može biti zabilježena.
-  search_input_placeholder: pretraživanje ...
+  search_input_placeholder: Search ...
   setting_email_delivery_method: Email delivery method
   setting_sendmail_location: Location of the sendmail executable
   setting_smtp_enable_starttls_auto: Automatically use STARTTLS if available
@@ -1889,11 +1939,13 @@ hr:
   text_are_you_sure: Da li ste sigurni?
   text_are_you_sure_with_children: Izbriši radni paket i sve podređene radne pakete?
   text_assign_to_project: Pridruži projektu
-  text_form_configuration: You can customize which attributes will be displayed in
-    forms for work packages of this type. 'Active' fields will be shown in the collapsed
-    work package view if they have a value, fields that are 'Always displayed' even
-    if they don't. Inactive fields will never be shown, even if they have a value.
+  text_form_configuration: 'You can customize which attributes will be displayed in
+    forms for work packages of this type. ''Active'' fields will be shown in the collapsed
+    work package view if they have a value, fields that are ''Always displayed'' even
+    if they don''t. Inactive fields will never be shown, even if they have a value.
     Only fields that are not required or have a default value can be customized.
+
+'
   text_caracters_maximum: "%{count} maksimalno znakova."
   text_caracters_minimum: Must be at least %{count} characters long.
   text_comma_separated: Multiple values allowed (comma separated).
@@ -1904,16 +1956,16 @@ hr:
   text_destroy: Obriši
   text_destroy_with_associated: 'There are additional objects assossociated with the
     work package(s) that are to be deleted. Those objects are of the following types:'
-  text_destroy_what_to_do: "Što želite uraditi?"
+  text_destroy_what_to_do: Što želite uraditi?
   text_diff_truncated: "... This diff was truncated because it exceeds the maximum
     size that can be displayed."
-  text_email_delivery_not_configured: |
+  text_email_delivery_not_configured: |-
     Email delivery is not configured, and notifications are disabled.
     Configure your SMTP server in config/configuration.yml and restart the application to enable them.
   text_enumeration_category_reassign_to: 'Reassign them to this value:'
   text_enumeration_destroy_question: "%{count} objects are assigned to this value."
   text_file_repository_writable: Attachments directory writable
-  text_git_repo_example: a bare and local repository (e.g. /gitrepo, c:\\gitrepo)
+  text_git_repo_example: a bare and local repository (e.g. /gitrepo, c:\gitrepo)
   text_hint_date_format: Enter a date in the form of YYYY-MM-DD. Other formats may
     be changed to an unwanted date.
   text_hint_disable_with_0: 'Napomena: Onemogućite s 0'
@@ -1954,7 +2006,7 @@ hr:
   text_no_notes: Nema dostupnih komentar za ovaj randi paket.
   text_notice_too_many_values_are_inperformant: 'Note: Displaying more than 100 items
     per page can increase the page load time.'
-  text_own_membership_delete_confirmation: |
+  text_own_membership_delete_confirmation: |-
     You are about to remove some or all of your permissions and may no longer be able to edit this project after that.
     Are you sure you want to continue?
   text_plugin_assets_writable: Plugin assets directory writable
@@ -1964,12 +2016,16 @@ hr:
   text_reassign: 'Dodijeli radnom paketu:'
   text_regexp_info: npr. ^[A-Z0-9] + $
   text_regexp_multiline: The regex is applied in a multi-line mode. e.g., ^---\s+
-  text_repository_usernames_mapping: |
+  text_repository_usernames_mapping: |-
     Select or update the OpenProject user mapped to each username found in the repository log.
     Users with the same OpenProject and repository username or email are automatically mapped.
   text_select_mail_notifications: Select actions for which email notifications should
     be sent.
   text_status_changed_by_changeset: Primjenjeno na changeset %{value}.
+  text_table_difference_description: In this table the single %{entries} are shown.
+    You can view the difference between any two entries by first selecting the according
+    checkboxes in the table. When clicking on the button below the table the differences
+    are shown.
   text_time_logged_by_changeset: Primjenjeno na changeset %{value}.
   text_tip_work_package_begin_day: radni paket počinje danas
   text_tip_work_package_begin_end_day: radni paket počinje i završava današnjim danom
@@ -2165,16 +2221,26 @@ hr:
     type_could_not_be_saved: Tip nije moguće spremiti
     reporting_could_not_be_saved: Izvještavanje nije moguće spremiti
     properties: Postavke
-    really_delete_color: Da li ste sigurni da želite izbrisati sljedeću boju? Tipovi
+    really_delete_color: 'Da li ste sigurni da želite izbrisati sljedeću boju? Tipovi
       koji koriste ovu boju neće biti izbrisani.
-    really_delete_project_association_between_project_a_and_project_b: Da li ste sigurni
-      da želite izbrisati ovisnost između "%{project_a}" i "%{project_b}"?
-    really_delete_project_type: Da li ste sigurni da želite izbrisati sljedeći tip
+
+'
+    really_delete_project_association_between_project_a_and_project_b: 'Da li ste
+      sigurni da želite izbrisati ovisnost između "%{project_a}" i "%{project_b}"?
+
+'
+    really_delete_project_type: 'Da li ste sigurni da želite izbrisati sljedeći tip
       projekta? Projekti koji koriste ovaj tip neće biti izbrisani.
-    really_delete_timeline: Da li ste sigurni da želite izbrisati sljedeće kronološke
+
+'
+    really_delete_timeline: 'Da li ste sigurni da želite izbrisati sljedeće kronološke
       izvještaje? Radni paket prikazani u ovom kronološkom izvješću neće biti izbrisani.
-    really_delete_reporting: Da li ste sigurni da želite izbrisati sljedeće izvještavanje?
+
+'
+    really_delete_reporting: 'Da li ste sigurni da želite izbrisati sljedeće izvještavanje?
       Prethodni statusi izvještavanja biti će također izbrisani.
+
+'
     start: Početak
     timeline: Izvješća vremenskog tijeka
     timelines: Izvješća vremenskog tijeka
@@ -2192,8 +2258,10 @@ hr:
       years: Godine
   title_remove_and_delete_user: Uklonite pozvanog korinsika iz projekta i izbrište
     njega/nju.
-  tooltip_resend_invitation: Sends another invitation email with a fresh token in
+  tooltip_resend_invitation: 'Sends another invitation email with a fresh token in
     case the old one expired or the user did not get the original email.
+
+'
   tooltip:
     attribute_visibility:
       default: Show if not empty
@@ -2212,9 +2280,11 @@ hr:
     activate: Aktiviraj
     activate_and_reset_failed_logins: Aktiviraj i poništi neuspjele pokušaje prijave
     authentication_provider: Pružatelj usluge provjere autentičnosti
-    authentication_settings_disabled_due_to_external_authentication: Ovaj korisnik
+    authentication_settings_disabled_due_to_external_authentication: 'Ovaj korisnik
       se autentificira preko eksternog pružatelja autentifikacije, prema tome ne postoji
       lozinka u OpenProjectu koju je potrebno promijeniti.
+
+'
     authorization_rejected: Nije vam dopuštena prijava.
     assign_random_password: Pridružite nasumičnu lozinku (biti će poslana korisniku
       uemail poruci)
@@ -2240,7 +2310,7 @@ hr:
       mail_project_explanaition: For unselected projects, you will only receive notifications
         about things you watch or you're involved in (e.g. work packages you're the
         author or assignee of).
-      mail_self_notified: "Želim biti obavješten o promjenama koje sam izvršio"
+      mail_self_notified: Želim biti obavješten o promjenama koje sam izvršio
     status_user_and_brute_force: "%{user} i %{brute_force}"
     unlock: Otključaj
     unlock_and_reset_failed_logins: Unlock and reset failed logins
@@ -2255,16 +2325,20 @@ hr:
   menu_item_setting: Vidljivost
   wiki_menu_item_for: Stavka izbornika za wiki stranicu "%{title}"
   wiki_menu_item_setting: Vidljivost
-  wiki_menu_item_new_main_item_explanation: Izbrisati će te samo glavnu stavku wiki
+  wiki_menu_item_new_main_item_explanation: 'Izbrisati će te samo glavnu stavku wiki
     izbornika. U sljdećem koraku morate izabrati wiki stranicu za koju će se generirati
     nova stavka. Za brisanje wiki stranice, wiki modul mora biti deaktiviran od strane
     administratora projekta.
+
+'
   wiki_menu_item_delete_not_permitted: Wiki stavka izbornika jedine wiki stranice
     ne može biti izbrisana.
   query_menu_item_for: Stavka izbornika za upit "%{title}"
   work_package:
-    updated_automatically_by_child_changes: _Ažuriraj automatski tako da promijenite
+    updated_automatically_by_child_changes: '_Ažuriraj automatski tako da promijenite
       vrijednosti zajedno s podređenim radnim paketom %{child}_
+
+'
     destroy:
       info: Brisanje radnog paketa je nepovratan čin.
       title: Izbriši radni paket

@@ -165,17 +165,38 @@
       login_verification:
         other: Enter the login %{name} to verify the deletion.
         self: Enter your login %{name} to verify the deletion.
-    error_inactive_activation_by_mail: Din konto er ennå ikke aktivert. For å aktivere
+    error_inactive_activation_by_mail: 'Din konto er ennå ikke aktivert. For å aktivere
       kontoen må du følge lenken som er sendt deg på e-post.
-    error_inactive_manual_activation: Kontoen din er ennå ikke aktivert. Vennligst
+
+'
+    error_inactive_manual_activation: 'Kontoen din er ennå ikke aktivert. Vennligst
       vent til en administrator har aktivert kontoen.
-    error_self_registration_disabled: Brukerregistrering er deaktivert i dette systemet.
+
+'
+    error_self_registration_disabled: 'Brukerregistrering er deaktivert i dette systemet.
       Vennligst be en administrator om å opprette en konto for deg.
+
+'
     login_with_auth_provider: eller logg på med din eksisterende konto
     signup_with_auth_provider: or sign up using
     auth_source_login: Please login as <em>%{login}</em> to activate your account.
     omniauth_login: Please login to activate your account.
   actionview_instancetag_blank_option: Vennligst velg
+  activemodel:
+    errors:
+      models:
+        relations/base_contract:
+          attributes:
+            to:
+              error_not_found: work package in `to` position not found or not visible
+              error_readonly: an existing relation's `to` link is immutable
+            from:
+              error_not_found: work package in `from` position not found or not visible
+              error_readonly: an existing relation's `from` link is immutable
+        users/base_contract:
+          attributes:
+            status:
+              invalid_on_create: is not a valid status for new users.
   activerecord:
     attributes:
       announcements:
@@ -254,13 +275,13 @@
       user:
         admin: Administrator
         auth_source: Autentiseringsmodus
+        current_password: Current password
+        force_password_change: Tving passordbytte ved neste innlogging
         language: Språk
         last_login_on: Siste innlogging
         mail_notification: E-postvarsler
-        current_password: Current password
         new_password: Nytt passord
         password_confirmation: Bekreftelse
-        force_password_change: Tving passordbytte ved neste innlogging
       user_preference:
         comments_sorting: Vis kommentarer
         hide_mail: Skjul min e-postadresse
@@ -279,18 +300,15 @@
         parent_title: Overordnet side
         redirect_existing_links: Omdirigere eksisterende lenker
       planning_element_type_color:
-        name: Navn
         hexcode: Hexadesimalkode
       project_association:
-        description: "Årsak"
+        description: Årsak
         project_b: Avhengig av prosjektet
       project_type:
         allows_association: Tillater assosiasjoner
-        name: Navn
         reported_project_statuses: Rapporterte prosjektstatuser
         position: Plassering
       timeline:
-        name: Navn
         options: ''
       reporting:
         reported_project_status_comment: Statuskommentar
@@ -324,6 +342,7 @@
           to one of its subtasks.
         circular_dependency: This relation would create a circular dependency.
         confirmation: doesn't match %{attribute}.
+        does_not_exist: does not exist.
         empty: can't be empty.
         even: must be even.
         exclusion: is reserved.
@@ -360,6 +379,11 @@
         project_association:
           identical_projects: Avhengighet kan ikke opprette innbyrdes ett prosjekt.
           project_association_not_allowed: does not allow associations.
+        query:
+          filters:
+            custom_fields:
+              inexistent: There is no custom field for the filter.
+              invalid: The custom field is not valid in the given context.
         repository:
           not_available: SCM vendor is not available
           not_whitelisted: is not allowed by the configuration.
@@ -375,7 +399,6 @@
               cannot_be_milestone: cannot be a milestone.
               cannot_be_in_another_project: cannot be in another project.
               not_a_valid_parent: is invalid.
-              does_not_exist: does not exist.
             start_date:
               violates_relationships: can only be set to %{soonest_start} or later
                 so as not to violate the work package's relationships.
@@ -441,7 +464,7 @@
       work_package: Arbeidspakke
   errors:
     header_invalid_fields: 'Det oppstod problemer med følgende felter:'
-    field_erroneous_label: |
+    field_erroneous_label: |-
       This field is invalid: %{full_errors}
       Please enter a valid value.
   activity:
@@ -615,9 +638,9 @@
     - November
     - Desember
     order:
-    - :år
-    - :måned
-    - :dag
+    - ":år"
+    - ":måned"
+    - ":dag"
   datetime:
     distance_in_words:
       about_x_hours:
@@ -660,7 +683,7 @@
         other: hours
   default_activity_development: Utvikling
   default_activity_management: Administrasjon
-  default_activity_other: "Øvrig"
+  default_activity_other: Øvrig
   default_activity_specification: Spesifikasjon
   default_activity_support: Brukerstøtte
   default_activity_testing: Testing
@@ -696,7 +719,7 @@
   default_priority_low: Lav
   default_priority_normal: Normal
   default_priority_high: Høy
-  default_priority_immediate: "Øyeblikkelig"
+  default_priority_immediate: Øyeblikkelig
   default_project_type_scrum: Scrum team
   default_project_type_standard: Standardprosjekt
   default_reported_project_status_green: Grønn
@@ -719,14 +742,16 @@
   default_type_user_story: Brukerens historie
   description_active: Aktiv?
   description_attachment_toggle: Vis/Skjul vedlegg
-  description_autocomplete: Dette feltet bruker autofullfør. Når du begynner å skrive
+  description_autocomplete: 'Dette feltet bruker autofullfør. Når du begynner å skrive
     tittelen på en arbeidspakke vil du få opp en liste over mulige kandidater. Bruk
     pil opp og ned og velg med tab eller enter. Alternativt kan du skrive nummeret
     på arbeidspakken direkte inn i feltet.
+
+'
   description_available_columns: Tilgjengelige Kolonner
   description_choose_project: Prosjekter
-  description_compare_from: Sammenlign fra versjon
-  description_compare_to: Sammenlign med versjon
+  description_compare_from: Compare from
+  description_compare_to: Compare to
   description_current_position: 'Du er her:'
   description_date_from: Skriv startdato
   description_date_range_interval: Angi intervall ved å velge start- og sluttdato
@@ -759,12 +784,15 @@
   error_can_not_delete_custom_field: Kunne ikke slette det egendefinerte feltet
   error_can_not_delete_type: Denne typen inneholder arbeidspakker og kan ikke slettes.
   error_can_not_delete_standard_type: Standardtyper kan ikke slettes.
+  error_can_not_invite_user: Failed to send invitation to user.
   error_can_not_remove_role: Denne rollen er i bruk og kan ikke slettes.
   error_can_not_reopen_work_package_on_closed_version: En arbeidspakke tilknyttet
     en lukket versjon kan ikke gjenåpnes
   error_check_user_and_role: Velg en bruker og en rolle.
   error_cookie_missing: Cookie OpenProject mangler. Kontroller at informasjonskapsler
     er aktivert, dette programmet fungerer ikke riktig uten.
+  error_pdf_export_too_many_columns: Too many columns selected for the PDF export.
+    Please reduce the number of columns.
   error_token_authenticity: Kan ikke bekrefte Cross-Site Request forfalskning token.
   error_work_package_done_ratios_not_updated: Gjennomføringsgraden for arbeidspakken
     er ikke oppdatert.
@@ -791,6 +819,11 @@
   error_workflow_copy_target: Vennligst velg måltype(r) og rolle(r)
   error_menu_item_not_created: Menyelement kunne ikke opprettes
   error_menu_item_not_saved: Menyelementet kunne ikke lagres
+  error_wiki_root_menu_item_conflict: 'Can''t rename "%{old_name}" to "%{new_name}"
+    due to a conflict in the resulting menu item with the existing menu item "%{existing_caption}"
+    (%{existing_identifier}).
+
+'
   error_external_authentication_failed: Det oppstod en feil i forbindelse med ekstern
     autentisering. Vennligst forsøk igjen.
   events:
@@ -915,6 +948,8 @@
   label_change_status: Endre status
   label_change_view_all: Vis alle endringer
   label_changes_details: Detaljer for alle endringer
+  label_changeset: Changeset
+  label_changeset_id: Changeset ID
   label_changeset_plural: Changesets
   label_checked: valgt
   label_check_uncheck_all_in_column: Check/Uncheck all in column
@@ -970,6 +1005,7 @@
   label_download_plural: "%{count} Nedlastinger"
   label_downloads_abbr: D/L
   label_duplicated_by: duplisert av
+  label_duplicate: duplicate
   label_duplicates: duplikater
   label_edit: Rediger
   label_enable_multi_select: Veksle multivalg
@@ -980,6 +1016,7 @@
   label_end_to_end: ende til ende
   label_end_to_start: ende til start
   label_enumeration_new: Ny listeverdi
+  label_enumeration_value: Enumeration value
   label_enumerations: Opplistinger
   label_environment: Miljø
   label_equals: er
@@ -1017,6 +1054,7 @@
   label_in_less_than: i mindre enn
   label_in_more_than: i mer enn
   label_incoming_emails: Inkommende e-post
+  label_includes: includes
   label_index_by_date: Indeksèr etter dato
   label_index_by_title: Indeksèr på tittel
   label_information: Informasjon
@@ -1025,27 +1063,7 @@
   label_internal: Intern
   label_invite_user: Invite user
   label_show_hide: Show/hide
-  label_work_package_added: Lagt til arbeidspakke
-  label_work_package_category_new: Ny kategori
-  label_work_package_category_plural: Kategorier for arbeidspakker
-  label_work_package_hierarchy: Hierarki for arbeidspakker
-  label_work_package_new: Ny arbeidspakke
-  label_work_package_note_added: Lagt til arbeidspakkenotat
-  label_work_package_edit: Rediger arbeidspakke %{name}
-  label_work_package_plural: Arbeidspakker
-  label_work_package_priority_updated: Oppdatert prioritet for arbeidspakke
-  label_work_package_status_new: Ny status
-  label_work_package_status_plural: Statuser for arbeidspakke
-  label_work_package_tracking: Sporing av arbeidspakke
-  label_work_package_updated: Arbeidspakke oppdatert
-  label_work_package_view_all: Vis alle arbeidspakker
-  label_work_package_view_all_assigned_to_me: Vis alle arbeidspakker tildelt meg
-  label_work_package_view_all_reported_by_me: Vis alle arbeidspakker rapportert av
-    meg
-  label_work_package_view_all_responsible_for: View all work packages that I am responsible
-    for
-  label_work_package_view_all_watched: Vis alle overvåkede arbeidspakker
-  label_work_package_watchers: Overvåkere
+  label_journal: Journal
   label_journal_diff: Sammenligning av beskrivelse
   label_jump_to_a_project: Gå til et prosjekt...
   label_language_based: Basert på brukerens språk
@@ -1075,6 +1093,7 @@
   label_member_plural: Medlemmer
   label_memder_view_all: View all members
   label_menu_item_name: Navn på menyelement
+  label_message: Message
   label_message_last: Siste melding
   label_message_new: Ny melding
   label_message_plural: Meldinger
@@ -1084,7 +1103,6 @@
   label_missing_api_access_key: Missing API access key
   label_missing_feeds_access_key: Missing RSS access key
   label_modification: "%{count} endring"
-  label_modification_plural: "%{count} endringer"
   label_modified: endret
   label_module_plural: Moduler
   label_modules: Moduler
@@ -1119,14 +1137,15 @@
   label_not_contains: inneholder ikke
   label_not_equals: er ikke
   label_notify_member_plural: E-postoppdateringer
-  label_open_menu: "Åpne meny"
-  label_open_work_packages: "åpne"
-  label_open_work_packages_plural: "åpne"
+  label_open_menu: Åpne meny
+  label_open_work_packages: åpne
+  label_open_work_packages_plural: åpne
   label_optional_description: Beskrivelse
   label_options: Alternativer
   label_overall_activity: Samlet aktivitet
   label_overall_spent_time: Samlet tidsbruk
   label_overview: Oversikt
+  label_part_of: part of
   label_password_lost: Glemt passord?
   label_password_rule_lowercase: Små bokstaver
   label_password_rule_numeric: Numeriske tegn
@@ -1190,6 +1209,8 @@
   label_repository: Pakkebrønn
   label_repository_root: Repository root
   label_repository_plural: Pakkebrønner
+  label_required: required
+  label_requires: requires
   label_responsible_for_work_packages: Arbeidspakker jeg står som ansvarlig for
   label_result_plural: Resultater
   label_reverse_chronological_order: I omvendt kronologisk rekkefølge
@@ -1204,7 +1225,7 @@
   label_role_and_permissions: Roller og tilganger
   label_role_new: Ny rolle
   label_role_plural: Roller
-  label_role_search: Assign roles to new members
+  label_role_search: Assign role to new members
   label_scm: SCM
   label_search: Søk
   label_search_titles_only: Bare søk i titler
@@ -1292,6 +1313,7 @@
   label_wiki_dont_show_menu_item: Ikke vis denne wiki-siden i prosjektmenyen
   label_wiki_edit: Wiki-redigering
   label_wiki_edit_plural: Wiki-redigeringer
+  label_wiki_page_id: Wiki page ID
   label_wiki_navigation: Wiki-meny
   label_wiki_page: Wiki-side
   label_wiki_page_plural: Wiki-sider
@@ -1300,8 +1322,29 @@
   label_wiki_show_new_page_link: Vis undermenyelement 'Opprett ny underside'
   label_wiki_show_submenu_item: 'Vis som undermenyelement for '
   label_work_package: Arbeidspakke
+  label_work_package_added: Lagt til arbeidspakke
+  label_work_package_category_new: Ny kategori
+  label_work_package_category_plural: Kategorier for arbeidspakker
+  label_work_package_hierarchy: Work package hierarchy
+  label_work_package_new: Ny arbeidspakke
+  label_work_package_note_added: Lagt til arbeidspakkenotat
+  label_work_package_edit: Rediger arbeidspakke %{name}
+  label_work_package_plural: Arbeidspakker
+  label_work_package_priority_updated: Oppdatert prioritet for arbeidspakke
   label_work_package_status: Status for arbeidspakke
+  label_work_package_status_new: Ny status
+  label_work_package_status_plural: Statuser for arbeidspakke
   label_work_package_types: Work package types
+  label_work_package_updated: Arbeidspakke oppdatert
+  label_work_package_tracking: Sporing av arbeidspakke
+  label_work_package_view_all: Vis alle arbeidspakker
+  label_work_package_view_all_assigned_to_me: Vis alle arbeidspakker tildelt meg
+  label_work_package_view_all_reported_by_me: Vis alle arbeidspakker rapportert av
+    meg
+  label_work_package_view_all_responsible_for: View all work packages that I am responsible
+    for
+  label_work_package_view_all_watched: Vis alle overvåkede arbeidspakker
+  label_work_package_watchers: Overvåkere
   label_workflow: Arbeidsflyt
   label_workflow_plural: Arbeidsflyt
   label_workflow_summary: Sammendrag
@@ -1325,7 +1368,7 @@
     one: "%{count} prosjekt"
     other: "%{count} projects"
     zero: no projects
-  label_year: "År"
+  label_year: År
   label_yesterday: i går
   label_keyboard_function: Funksjon
   label_keyboard_shortcut: Snarvei
@@ -1349,7 +1392,7 @@
   label_keyboard_shortcut_details_package: Vis arbeidspakker i detalje fanen
   label_keyboard_shortcut_go_edit: Gå til redigering av gjeldende element (kun på
     detaljsider)
-  label_keyboard_shortcut_open_more_menu: "Åpne mer-meny (kun på detaljsider)"
+  label_keyboard_shortcut_open_more_menu: Åpne mer-meny (kun på detaljsider)
   label_keyboard_shortcut_go_preview: Gå til forhåndsvisning av gjeldende redigering
     (kun på redigeringssider)
   label_keyboard_shortcut_focus_previous_item: Sett fokus på forrige listeelement
@@ -1433,25 +1476,27 @@
   notice_locking_conflict_reload_page: Vennligst oppdater siden, se gjennom endringene
     og legg til dine oppdateringer på nytt.
   notice_member_added: Added %{name} to the project.
-  notice_members_added: Added %{number} users to the the project.
+  notice_members_added: Added %{number} users to the project.
   notice_member_removed: Removed %{user} from project.
   notice_member_deleted: "%{user} has been removed from the project and deleted."
   notice_no_principals_found: Ingen treff.
   notice_bad_request: Ugyldig forespørsel.
   notice_not_authorized: Du har ikke tilgang til å åpne denne siden.
   notice_not_authorized_archived_project: Prosjektet du forsøker å åpne er arkivert.
+  notice_password_confirmation_failed: Your password is not correct. The changes were
+    not saved.
   notice_project_not_deleted: Prosjektet ble ikke slettet.
   notice_successful_connection: Vellykket tilkobling.
   notice_successful_create: Opprettelsen var vellykket.
   notice_successful_delete: Slettingen var vellykket.
   notice_successful_update: Oppdateringen var vellykket.
-  notice_to_many_principals_to_display: |
+  notice_to_many_principals_to_display: |-
     Det er for mange resultater.
     Forsøk å innskrenke søket ved å skrive inn navnet på det nye medlemmet (eller gruppen).
   notice_unable_delete_time_entry: Kunne ikke slette oppføringen i tidsloggen.
   notice_unable_delete_version: Kunne ikke slette versjon.
-  notice_user_missing_authentication_method: User has yet to chose a password or another
-    way the sign in.
+  notice_user_missing_authentication_method: User has yet to choose a password or
+    another way to sign in.
   notice_user_invitation_resent: Another invitation has been sent to %{email}.
   present_access_key_value: 'Your %{key_name} is: %{value}'
   notice_automatic_set_of_standard_type: Sett standardtype automatisk.
@@ -1483,7 +1528,7 @@
     text_getting_started: This video provides you an overview of OpenProject. It helps
       you to set up your first project and to start collaborating with your team members.
     text_show_again: You can restart this video from the help menu
-    welcome: Hi %{name}, welcome to OpenProject
+    welcome: Welcome to OpenProject
   permission_add_work_package_notes: Legg til notater
   permission_add_work_packages: Add work packages (also allows to add attachments
     to all work packages)
@@ -1545,6 +1590,7 @@
   permission_view_work_package_watchers: Vis liste over overvåkere
   permission_view_work_packages: Vis arbeidspakker
   permission_view_messages: Vis meldinger
+  permission_view_members: View members
   permission_view_project_associations: Vis prosjektavhengigheter
   permission_view_reportings: Vis rapporteringer
   permission_view_time_entries: Vis tidsbruk
@@ -1583,7 +1629,7 @@
   repositories:
     at_identifier: at %{identifier}
     atom_revision_feed: Atom revision feed
-    autofetch_information: |
+    autofetch_information: |-
       Check this if you want repositories to be updated automatically when accessing the repository module page.
       This encompasses the retrieval of commits from the repository and refreshing the required disk storage.
     checkout:
@@ -1593,14 +1639,14 @@
         none: No checkout access, you may only view the repository through this application.
       access_permission: Your permissions on this repository
       url: Checkout URL
-      base_url_text: |
+      base_url_text: |-
         The base URL to use for generating checkout URLs (e.g., https://myserver.example.org/repos/).
         Note: The base URL is only used for rewriting checkout URLs in managed repositories. Other repositories are not altered.
       default_instructions:
-        git: |
+        git: |-
           The data contained in this repository can be downloaded to your computer with Git.
           Please consult the documentation of Git if you need more information on the checkout procedure and available clients.
-        subversion: |
+        subversion: |-
           The data contained in this repository can be downloaded to your computer with Subversion.
           Please consult the documentation of Subversion if you need more information on the checkout procedure and available clients.
       enable_instructions_text: Displays checkout instructions defined below on all
@@ -1663,11 +1709,13 @@
           ).
         path_encoding: 'Override Git path encoding (Default: UTF-8)'
       local_title: Link existing local Git repository
+      local_url: Local URL
       local_introduction: If you have an existing local Git repository, you can link
         it with OpenProject to access it from within the application.
       managed_introduction: Let OpenProject create and integrate a local Git repository
         automatically.
       managed_title: Git repository integrated into OpenProject
+      managed_url: Managed URL
       path: Path to Git repository
       path_encoding: Koding av sti
     go_to_revision: Go to revision
@@ -1688,21 +1736,23 @@
       managed: Create new repository in OpenProject
     storage:
       not_available: Disk storage consumption is not available for this repository.
-      update_timeout: |
+      update_timeout: |-
         Keep the last required disk space information for a repository for N minutes.
         As counting the required disk space of a repository may be costly, increase this value to reduce performance impact.
     subversion:
       existing_title: Existing Subversion repository
       existing_introduction: If you have an existing Subversion repository, you can
         link it with OpenProject to access it from within the application.
+      existing_url: Existing URL
       instructions:
         managed_url: This is the URL of the managed (local) Subversion repository.
-        url: |
+        url: |-
           Enter the repository URL. This may either target a local repository (starting with %{local_proto} ), or a remote repository.
           The following URL schemes are supported:
       managed_title: Subversion repository integrated into OpenProject
       managed_introduction: Let OpenProject create and integrate a local Subversion
         repository automatically.
+      managed_url: Managed URL
       password: Repository Password
       username: Repository username
     named_repository: "%{vendor_name} repository"
@@ -1710,7 +1760,7 @@
     url: URL to repository
     warnings:
       cannot_annotate: This file cannot be annotated.
-  search_input_placeholder: søk ...
+  search_input_placeholder: Search ...
   setting_email_delivery_method: Leveringsmetode for e-post
   setting_sendmail_location: Plasseringen av sendmail kjørbar
   setting_smtp_enable_starttls_auto: Bruk STARTTLS automatisk hvis tilgjengelig
@@ -1826,7 +1876,7 @@
   setting_work_package_group_assignment: Tillat tildeling til grupper
   settings:
     general: Generell
-    other: "Øvrig"
+    other: Øvrig
     passwords: Passord
     session: Sesjon
     brute_force_prevention: Automatisk blokkering av brukere
@@ -1844,11 +1894,13 @@
   text_are_you_sure: Er du sikker?
   text_are_you_sure_with_children: Slette arbeidspakken og alle underordnede arbeidspakker?
   text_assign_to_project: Tildel til prosjektet
-  text_form_configuration: You can customize which attributes will be displayed in
-    forms for work packages of this type. 'Active' fields will be shown in the collapsed
-    work package view if they have a value, fields that are 'Always displayed' even
-    if they don't. Inactive fields will never be shown, even if they have a value.
+  text_form_configuration: 'You can customize which attributes will be displayed in
+    forms for work packages of this type. ''Active'' fields will be shown in the collapsed
+    work package view if they have a value, fields that are ''Always displayed'' even
+    if they don''t. Inactive fields will never be shown, even if they have a value.
     Only fields that are not required or have a default value can be customized.
+
+'
   text_caracters_maximum: Maks %{count} tegn.
   text_caracters_minimum: Må bestå av minimum %{count} tegn.
   text_comma_separated: Flere verdier er tillatt (separeres med komma).
@@ -1862,13 +1914,13 @@
   text_destroy_what_to_do: Hva vil du gjøre?
   text_diff_truncated: "... Denne diff ble forkortet fordi den overstiger maksimalgrensen
     for hva som kan vises."
-  text_email_delivery_not_configured: |
+  text_email_delivery_not_configured: |-
     E-postlevering er ikke konfigurert, og varslinger er deaktivert.
     Du kan konfigurere SMTP-oppsettet i config/configuration.yml og restarte applikasjonen for å aktivere.
   text_enumeration_category_reassign_to: 'Endre dem til denne verdien:'
   text_enumeration_destroy_question: "%{count} objekter er knyttet til denne verdien."
   text_file_repository_writable: Vedleggsmappen er skrivbar
-  text_git_repo_example: en blank og lokal pakkebrønn (e.g. /gitrepo, c:\\gitrepo)
+  text_git_repo_example: en blank og lokal pakkebrønn (e.g. /gitrepo, c:\gitrepo)
   text_hint_date_format: Enter a date in the form of YYYY-MM-DD. Other formats may
     be changed to an unwanted date.
   text_hint_disable_with_0: 'Note: Disable with 0'
@@ -1903,13 +1955,13 @@
   text_min_max_length_info: 0 betyr ingen restriksjoner
   text_no_roles_defined: There are no roles defined.
   text_no_access_tokens_configurable: There are no access tokens which can be configured.
-  text_no_configuration_data: |
+  text_no_configuration_data: |-
     Roller, typer, arbeidspakkestatuser og arbeidsflyt har ikke blitt satt opp ennå.
     Det er sterkt anbefalt å laste standardoppsettet. Du kan redigere disse når de er lastet inn.
   text_no_notes: There are no comments available for this work package.
   text_notice_too_many_values_are_inperformant: 'Merk: Visning av mer enn 100 elementer
     pr. side kan medføre at siden bruker lenger tid på å laste.'
-  text_own_membership_delete_confirmation: |
+  text_own_membership_delete_confirmation: |-
     Du er i ferd med å fjerne noen eller alle dine egne rettigheter og du vil kanskje ikke kunne redigere dette prosjektet etterpå.
     Er du sikker på at du vil fortsette?
   text_plugin_assets_writable: Mappen for programtillegg er skrivbar
@@ -1919,12 +1971,16 @@
   text_reassign: 'Reassign to work package:'
   text_regexp_info: f.eks. ^[A-Z0-9]+$
   text_regexp_multiline: Denne regexen brukes i flerlinjemodus. f.eks ^---\s+
-  text_repository_usernames_mapping: |
+  text_repository_usernames_mapping: |-
     Velg eller oppdater OpenProject-brukeren knyttet til hvert enkelt brukernavn i pakkebrønn-loggen.
     Brukere med samme OpenProject- og pakkebrønn-brukernavn eller e-post tilknyttes automatisk.
   text_select_mail_notifications: Velg hendelser for hvilke e-postvarsler som skal
     sendes.
   text_status_changed_by_changeset: Benyttet i changeset %{value}.
+  text_table_difference_description: In this table the single %{entries} are shown.
+    You can view the difference between any two entries by first selecting the according
+    checkboxes in the table. When clicking on the button below the table the differences
+    are shown.
   text_time_logged_by_changeset: Benyttet i changeset %{value}.
   text_tip_work_package_begin_day: arbeidspakker som påbegynnes denne dagen
   text_tip_work_package_begin_end_day: arbeidspakker som begynner eller slutter denne
@@ -2051,7 +2107,7 @@
       grouping_hide_group: Skjul gruppen "%{group}"
       grouping_one: Første grupperingskriterie
       grouping_one_phrase: Er et underprosjekt for
-      grouping_other: "Øvrig"
+      grouping_other: Øvrig
       hide_chart: Skjul diagram
       noneElement: "(ingen)"
       noneSelection: "(ingen)"
@@ -2119,16 +2175,26 @@
     type_could_not_be_saved: Type kunne ikke lagres
     reporting_could_not_be_saved: Rapportering kunne ikke lagres
     properties: Egenskaper
-    really_delete_color: Er du sikker på at du vil slette følgende farge? Typer som
+    really_delete_color: 'Er du sikker på at du vil slette følgende farge? Typer som
       bruker denne fargen vil ikke bli slettet.
-    really_delete_project_association_between_project_a_and_project_b: Er du sikker
+
+'
+    really_delete_project_association_between_project_a_and_project_b: 'Er du sikker
       på at du vil slette avhengigheten mellom "%{project_a}" og "%{project_b}"?
-    really_delete_project_type: Er du sikker på at du vil slette følgende prosjekttype?
+
+'
+    really_delete_project_type: 'Er du sikker på at du vil slette følgende prosjekttype?
       Prosjekter som bruker denne typen vil ikke bli slettet.
-    really_delete_timeline: Er du sikker på at du vil slette følgende tidslinjerapport?
+
+'
+    really_delete_timeline: 'Er du sikker på at du vil slette følgende tidslinjerapport?
       Arbeidspakker vist i denne tidslinjerapporten vil ikke bli slettet.
-    really_delete_reporting: Er du sikker på at du vil slette følgende rapportering?
+
+'
+    really_delete_reporting: 'Er du sikker på at du vil slette følgende rapportering?
       Tidligere rapporteringsstatuser vil også bli slettet.
+
+'
     start: Start
     timeline: Tidslinjerapport
     timelines: Tidslinjerapporter
@@ -2143,11 +2209,13 @@
       weeks: Uker
       months: Måneder
       quarters: Kvartaler
-      years: "År"
+      years: År
   title_remove_and_delete_user: Remove the invited user from the project and delete
     him/her.
-  tooltip_resend_invitation: Sends another invitation email with a fresh token in
+  tooltip_resend_invitation: 'Sends another invitation email with a fresh token in
     case the old one expired or the user did not get the original email.
+
+'
   tooltip:
     attribute_visibility:
       default: Vis hvis ikke tom
@@ -2166,9 +2234,11 @@
     activate: Aktiver
     activate_and_reset_failed_logins: Aktiver og nullstill mislykkede innlogginger
     authentication_provider: Autentiseringstjeneste
-    authentication_settings_disabled_due_to_external_authentication: Denne brukeren
+    authentication_settings_disabled_due_to_external_authentication: 'Denne brukeren
       autentiseres via en ekstern autentiseringstjeneste, og passord kan derfor ikke
       endres i OpenProject.
+
+'
     authorization_rejected: Du har ikke tilgang til å logge på.
     assign_random_password: Assign random password (sent to user via email)
     blocked: midlertidig låst
@@ -2198,7 +2268,7 @@
     unlock_and_reset_failed_logins: Lås opp og nullstill mislykkede innloggingsforsøk
   version_status_closed: lukket
   version_status_locked: låst
-  version_status_open: "åpne"
+  version_status_open: åpne
   note: Notat
   note_password_login_disabled: Passordinnlogging er deaktivert av %{configuration}.
   warning: Advarsel
@@ -2207,15 +2277,20 @@
   menu_item_setting: Synlighet
   wiki_menu_item_for: Menyelement for wiki-siden "%{title}"
   wiki_menu_item_setting: Synlighet
-  wiki_menu_item_new_main_item_explanation: Du er i ferd med å slette det eneste wiki-menyelementet.
-    Du må velge en wiki-side som skal brukes for generering av et nytt hovedelement.
-    For å slette hele wikien må wiki-modulen deaktiveres av en prosjektadministrator.
+  wiki_menu_item_new_main_item_explanation: 'Du er i ferd med å slette det eneste
+    wiki-menyelementet. Du må velge en wiki-side som skal brukes for generering av
+    et nytt hovedelement. For å slette hele wikien må wiki-modulen deaktiveres av
+    en prosjektadministrator.
+
+'
   wiki_menu_item_delete_not_permitted: Menyelementet til den eneste wiki-siden kan
     ikke slettes.
   query_menu_item_for: Menyelement for spørringen "%{title}"
   work_package:
-    updated_automatically_by_child_changes: _Oppdatert automatisk ved å endre verdier
+    updated_automatically_by_child_changes: '_Oppdatert automatisk ved å endre verdier
       i underordnet arbeidspakke %{child}_
+
+'
     destroy:
       info: Deleting the work package is an irreversible action.
       title: Delete the work package

@@ -5,6 +5,8 @@ pt:
       hide: Ocultar
       loading: A carregar...
     close_popup_title: Fechar janela
+    close_filter_title: Fechar filtro
+    close_form_title: Fechar formulário
     clipboard:
       browser_error: O seu navegador não suporta o copiar para a área de transferência.
         Por favor, copie manualmente o texto selecionado.
@@ -12,6 +14,7 @@ pt:
     button_add_watcher: Adicionar observadores
     button_cancel: Cancelar
     button_check_all: Seleccionar Todos
+    button_confirm: Confirmar
     button_copy: Copiar
     button_delete: Eliminar
     button_delete_watcher: Eliminar observador
@@ -31,14 +34,15 @@ pt:
     button_settings: Definições
     button_uncheck_all: Anular selecção
     button_update: Atualizar
-    button_export-pdf: Download PDF
-    button_export-atom: Download Atom
+    button_export-pdf: Transferir PDF
+    button_export-atom: Transferir Atom
     description_available_columns: Colunas disponíveis
+    description_current_position: 'Você está aqui:'
     description_select_work_package: 'Selecionar pacote de trabalho #%{id}'
     description_selected_columns: Colunas selecionadas
     description_subwork_package: 'Filho de pacote de trabalho #%{id}'
     error:
-      internal: An internal error has occurred.
+      internal: Ocorreu um erro interno.
     filter:
       description:
         text_open_filter: Abra este filtro com 'ALT' e teclas de seta.
@@ -71,6 +75,7 @@ pt:
     label_board_locked: Bloqueado
     label_board_sticky: Pegajoso
     label_create_work_package: Criar nova tarefa
+    label_created_by: Criado por
     label_date: Data
     label_date_with_format: 'Digite o %{date_attribute} usando o seguinte formato:
       %{format}'
@@ -88,7 +93,7 @@ pt:
     label_contains: contém
     label_created_on: criado a
     label_edit_comment: Editar este comentário
-    label_equals: "é"
+    label_equals: é
     label_expand: Expandir
     label_expanded: expandido
     label_expand_all: Expandir Tudo
@@ -106,8 +111,8 @@ pt:
     label_in: em
     label_in_less_than: em menos de
     label_in_more_than: em mais de
-    label_latest_activity: "Última atividade"
-    label_last_updated_on: "Última actualização em"
+    label_latest_activity: Última atividade
+    label_last_updated_on: Última actualização em
     label_less_or_equal: "<="
     label_less_than_ago: menos que dias atrás
     label_loading: A carregar...
@@ -125,6 +130,7 @@ pt:
     label_on: 'on'
     label_open_menu: Abrir menu
     label_open_work_packages: abrir
+    label_password: Senha
     label_previous: Anterior
     label_per_page: 'Por página:'
     label_please_wait: Aguarde, por favor
@@ -165,6 +171,7 @@ pt:
     label_attachments: Ficheiros
     label_drop_files: Largar ficheiro aqui
     label_drop_files_hint: ou clique para adicionar ficheiros
+    label_add_attachments: Adicionar anexos
     label_remove_file: Apagar %{fileName}
     label_remove_watcher: Remover o observador %{name}
     label_remove_all_files: Elimina todos os ficheiros
@@ -177,18 +184,22 @@ pt:
     label_wait: Por favor aguarde pela configuração...
     label_upload_counter: "%{done} de %{count} de ficheiros acabados"
     label_validation_error: 'A tarefa não pode ser guardada devido aos seguintes erros:'
+    password_confirmation:
+      field_description: Tem que digitar a sua palavra-passe para confirmar esta alteração.
+      title: Confirme a sua palavra-passe para continuar
     pagination:
-      no_other_page: You are on the only page.
+      no_other_page: Mais nenhuma página a apresentar.
       pages:
-        next: Forward to the next page
-        previous: Back to the previous page
+        next: Avançar para a próxima página
+        previous: Voltar à página anterior
     placeholders:
       default: "-"
       selection: Por favor, selecione
+      relation_description: Clique para adicionar a descrição para esta relação
     text_are_you_sure: Tem a certeza?
     watchers:
       label_loading: carregando observadores...
-      label_error_loading: An error occurred while loading the watchers
+      label_error_loading: Ocorreu um erro ao carregar os observadores
       label_search_watchers: Pesquisar observadores
       label_add: Adicionar observadores
       label_discard: Descartar selecção
@@ -231,16 +242,29 @@ pt:
       blocked: Bloqueado por
       precedes: Anterior
       follows: Seguinte
+      includes: Inclui
+      partof: Parte de
+      requires: Requer
+      required: Exigido por
+      relation_type: tipo de relação
+    relations_hierarchy:
+      hierarchy_headline: hierarquia
     relation_buttons:
       change_parent: Alterar pai
-      add_child: Adicionar filho
-      add_related_to: Adicionar relacionado com
-      add_duplicates: Adicionar duplicados
-      add_duplicated_by: Adicionar duplicados por
-      add_blocks: Adicionar bloqueado
-      add_blocked_by: Adicionar bloqueado por
-      add_precedes: Adicionar anterior
-      add_follows: Adicionar seguinte
+      remove_parent: Remover pai
+      group_by_wp_type: Agrupar por tipo de pacote de trabalho
+      group_by_relation_type: Agrupar por tipo de relação
+      add_parent: Adicionar pai existente
+      add_new_child: Criar novo filho
+      add_existing_child: Adicionar filho existente
+      remove_child: Remover filho
+      add_new_relation: Criar nova relação
+      update_description: Definir ou atualizar a descrição desta relação
+      remove: Remova a relação
+      save: Guardar relação
+      abort: Abortar
+    relations_autocomplete:
+      placeholder: Insira o id de pacote de trabalho relacionado
     repositories:
       select_tag: Selecionar a tag
       select_branch: Selecionar o branch
@@ -266,7 +290,7 @@ pt:
       change: Alteração no planeamento
       due_date: Prazo
       empty: "(vazio)"
-      error: An error has occurred.
+      error: Ocorreu um erro.
       errors:
         not_implemented: Não foi possível processar a linha temporal porque utiliza
           um recurso que ainda não está implementado.
@@ -319,9 +343,12 @@ pt:
       outlines: Nível da hierarquia
     unsupported_browser:
       title: A versão do seu browser não é suportada
-      message: A versão do seu browser não é suportada pelo OpenProject. Por favor,
-        atualize o seu browser.
+      message: A versão do seu browser já não é suportada pelo OpenProject.
+      update_message: Por favor, atualize o seu browser.
+      update_ie_user: Por favor mude para o Mozilla Firefox ou Google Chrome, ou atualize
+        para o Microsoft Edge.
       learn_more: Saber mais
+      close_warning: Ignore este aviso.
     wiki_formatting:
       strong: Negrito
       italic: Itálico
@@ -341,20 +368,19 @@ pt:
     work_packages:
       button_clear: Limpar
       comment_added: O comentário foi adicionado com sucesso.
-      comment_send_failed: An error has occurred. Could not submit the comment.
+      comment_send_failed: Ocorreu um erro. Não foi possível submeter o comentário.
       comment_updated: O comentário foi atualizado com sucesso.
-      confirm_edit_cancel: Are you sure you want to cancel editing the work package?
+      confirm_edit_cancel: Tem certeza que deseja cancelar a edição do pacote de trabalho?
       description_filter: Filtro
       description_enter_text: Digite o texto
       description_options_hide: Ocultar opções
       description_options_show: Mostrar opções
       error:
-        edit_prohibited: Editing %{attribute} is blocked for this work package. Either
-          this attribute is derived from relations (e.g, children) or otherwise not
-          configurable.
+        edit_prohibited: A edição de %{attribute} está bloqueada neste pacote de trabalho.
+          Ou este atributo deriva de relações (por exemplo, filhos) ou não é configurável.
         format:
-          date: "%{attribute} is no valid date - YYYY-MM-DD expected."
-        general: An error has occurred.
+          date: "%{attribute} não é data válida - AAAA-MM-DD esperado."
+        general: Ocorreu um erro.
       edit_attribute: "%{attribute} - Editar"
       key_value: "%{key}: %{value}"
       label_enable_multi_select: Ativar seleção múltipla
@@ -367,12 +393,15 @@ pt:
       message_successful_bulk_delete: Tarefas eliminadas com sucesso.
       message_successful_show_in_fullscreen: Clique aqui para abrir este pacote de
         trabalho na visualização de ecrã cheio.
+      message_view_spent_time: Mostrar o tempo gasto para este pacote de trabalho
       no_value: Sem valor
       inline_create:
         title: Clique aqui para adicionar um novo pacote de trabalho a esta lista
       create:
-        header: Nova tarefa
-        header_with_parent: 'Novo pacote de trabalho (filho de %{type} #%{id})'
+        header: Nova %{type}
+        header_no_type: Novo pacote de trabalho (tipo ainda não definido)
+        header_with_parent: 'Nova %{type} (Filho de %{parent_type} #%{id})'
+        button: Criar
       no_results:
         title: Não há pacotes de trabalho para exibir.
         description: Ou não foram criados ou todos os pacotes de trabalho estão filtrados.
@@ -404,9 +433,9 @@ pt:
         versionName: Versão
         version: Versão
       jump_marks:
-        pagination: Jump to table pagination
-        label_pagination: Click here to skip over the work packages table and go to
-          pagination
+        pagination: Saltar para paginação da tabela
+        label_pagination: Clique aqui para saltar a tabela de pacotes de trabalho
+          e ir para paginação
       placeholders:
         default: "-"
         description: Clique para inserir a descrição...
@@ -424,12 +453,15 @@ pt:
         display_sums: Exibir somas
         errors:
           unretrievable_query: Não é possível recuperar a consulta do URL
+          not_found: Não existe tal 'query'
       table:
-        summary: Table with rows of work package and columns of work package attributes.
-        text_inline_edit: Most cells of this table are buttons that activate inline-editing
-          functionality of that attribute.
+        summary: Tabela com linhas do pacote de trabalho e colunas dos atributos do
+          pacote de trabalho.
+        text_inline_edit: A maioria das células desta tabela são botões que activam
+          a funcionalidade de edição-inline do atributo.
         text_sort_hint: Com os links nos cabeçalhos da tabela pode classificar, agrupar,
           reordenar, remover e adicionar colunas da tabela.
+        text_select_hint: Caixas de seleção devem ser abertas com 'ALT' e teclas direcionais.
       tabs:
         overview: Sinopse
         activity: Atividade
@@ -488,7 +520,7 @@ pt:
         number: "%{field} não é um número válido"
         maxlength: "%{field} não pode conter mais do que %{maxLength} dígito(s)"
         minlength: "%{field} não pode conter menos de %{minLength} dígito(s)"
-        messages_on_field: 'This field is invalid: %{messages}'
+        messages_on_field: 'Este campo é inválido: %{messages}'
     error_could_not_resolve_version_name: Não consegui resolver o nome da versão
     error_could_not_resolve_user_name: Não consegui resolver o nome do utilizador
     units:

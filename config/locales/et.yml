@@ -164,17 +164,38 @@ et:
       login_verification:
         other: Enter the login %{name} to verify the deletion.
         self: Enter your login %{name} to verify the deletion.
-    error_inactive_activation_by_mail: Sinu konto ei ole veel aktiivne. Sulle saadetud
+    error_inactive_activation_by_mail: 'Sinu konto ei ole veel aktiivne. Sulle saadetud
       e-kirjas on link, millega saad oma konto aktiveerida.
-    error_inactive_manual_activation: Sinu konto pole aktiveeritud veel. Palun oota,
+
+'
+    error_inactive_manual_activation: 'Sinu konto pole aktiveeritud veel. Palun oota,
       kuni administraator aktiveerib selle.
-    error_self_registration_disabled: Konto loomine on hetkel keelatud. Palun küsi
+
+'
+    error_self_registration_disabled: 'Konto loomine on hetkel keelatud. Palun küsi
       administraatoril tekitada konto sulle.
+
+'
     login_with_auth_provider: või logi sisse oma olemasoleva kontoga
     signup_with_auth_provider: or sign up using
     auth_source_login: Please login as <em>%{login}</em> to activate your account.
     omniauth_login: Please login to activate your account.
   actionview_instancetag_blank_option: Palun vali
+  activemodel:
+    errors:
+      models:
+        relations/base_contract:
+          attributes:
+            to:
+              error_not_found: work package in `to` position not found or not visible
+              error_readonly: an existing relation's `to` link is immutable
+            from:
+              error_not_found: work package in `from` position not found or not visible
+              error_readonly: an existing relation's `from` link is immutable
+        users/base_contract:
+          attributes:
+            status:
+              invalid_on_create: is not a valid status for new users.
   activerecord:
     attributes:
       announcements:
@@ -225,7 +246,7 @@ et:
       project:
         identifier: Identifikaator
         latest_activity_at: Latest activity at
-        parent: "Ülemprojekt"
+        parent: Ülemprojekt
         project_type: Projekti tüüp
         queries: Päringuid
         responsible: Vastutaja
@@ -253,13 +274,13 @@ et:
       user:
         admin: Administraator
         auth_source: Autentimise viis
+        current_password: Current password
+        force_password_change: Sunni parooli vahetada järgmisel sisselogimisel
         language: Keel
         last_login_on: Viimane sisselogimine
         mail_notification: Eposti märguandmed
-        current_password: Current password
         new_password: Uus parool
         password_confirmation: Kinnitamine
-        force_password_change: Sunni parooli vahetada järgmisel sisselogimisel
       user_preference:
         comments_sorting: Kuva kommentaare
         hide_mail: Peida minu eposti aadress
@@ -277,18 +298,15 @@ et:
         parent_title: Pärineb lehelt
         redirect_existing_links: Suuna olemasolevad lingid ümber
       planning_element_type_color:
-        name: Nimi
         hexcode: Hex kood
       project_association:
         description: Põhjus
         project_b: Sõltuv projekt
       project_type:
         allows_association: Võimaldab seoste loomist
-        name: Nimi
         reported_project_statuses: Esitatud projektiolekuid
         position: Positsioon
       timeline:
-        name: Nimi
         options: ''
       reporting:
         reported_project_status_comment: Oleku kommentaar
@@ -322,6 +340,7 @@ et:
           to one of its subtasks.
         circular_dependency: This relation would create a circular dependency.
         confirmation: doesn't match %{attribute}.
+        does_not_exist: does not exist.
         empty: ei tohi olla tühi.
         even: peab olema paarisarv.
         exclusion: on reserveeritud.
@@ -360,6 +379,11 @@ et:
           identical_projects: Dependency cannot be created between one project and
             itself.
           project_association_not_allowed: ei luba seoseid.
+        query:
+          filters:
+            custom_fields:
+              inexistent: There is no custom field for the filter.
+              invalid: The custom field is not valid in the given context.
         repository:
           not_available: SCM vendor is not available
           not_whitelisted: is not allowed by the configuration.
@@ -375,7 +399,6 @@ et:
               cannot_be_milestone: cannot be a milestone.
               cannot_be_in_another_project: cannot be in another project.
               not_a_valid_parent: on vigane.
-              does_not_exist: does not exist.
             start_date:
               violates_relationships: can only be set to %{soonest_start} or later
                 so as not to violate the work package's relationships.
@@ -441,7 +464,7 @@ et:
       work_package: Teema
   errors:
     header_invalid_fields: 'Järgmiste väljadega esines tõrkeid:'
-    field_erroneous_label: |
+    field_erroneous_label: |-
       This field is invalid: %{full_errors}
       Please enter a valid value.
   activity:
@@ -453,7 +476,7 @@ et:
     assignee: Määratud tegija
     attachments: Manused
     author: Autor
-    base: "Üldine tõrge:"
+    base: 'Üldine tõrge:'
     blocks_ids: IDs of blocked work packages
     category: Kategooria
     comment: Kommentaar
@@ -546,7 +569,7 @@ et:
   button_unarchive: Paki arhiiv lahti
   button_uncheck_all: Nulli valik
   button_unlock: Ava lukust
-  button_unwatch: "Ära jälgi"
+  button_unwatch: Ära jälgi
   button_update: Uuenda
   button_view: Kuva
   button_watch: Vaata
@@ -615,9 +638,9 @@ et:
     - november
     - detsember
     order:
-    - :aasta
-    - :kuu
-    - :päev
+    - ":aasta"
+    - ":kuu"
+    - ":päev"
   datetime:
     distance_in_words:
       about_x_hours:
@@ -719,14 +742,16 @@ et:
   default_type_user_story: User story
   description_active: Aktiivne?
   description_attachment_toggle: Kuva/peida manused
-  description_autocomplete: See väli kasutab väärtuste automaatset pakkumist. Teema
+  description_autocomplete: 'See väli kasutab väärtuste automaatset pakkumist. Teema
     pealkirja sisestamise ajal pakutakse võimalike kandidaatide nimekirja. Võid valida
     ühe pakutavatest kandidaatidest kasutades noolteklahve ja valida saab tabulaatori
     või reavahetuse klahviga. Alternatiivina saate sisestada kohe teema numbri.
+
+'
   description_available_columns: Saadaolevad väljad
   description_choose_project: Projektid
-  description_compare_from: Võrdle alates versioonist
-  description_compare_to: Võrdle versiooniga
+  description_compare_from: Compare from
+  description_compare_to: Compare to
   description_current_position: 'Oled siin:'
   description_date_from: Sisestage alguskuupäev
   description_date_range_interval: Vali vahemik algus- ja lõpukuupäeva abil
@@ -759,12 +784,15 @@ et:
   error_can_not_delete_custom_field: Lisavälja ei saa kustutada
   error_can_not_delete_type: Tüüp on mõnes teemas kasutusel ja seda ei saa kustutada.
   error_can_not_delete_standard_type: Standardseid tüüpe ei saa kustutada.
+  error_can_not_invite_user: Failed to send invitation to user.
   error_can_not_remove_role: See roll on kasutuses ja seda ei saa kustutada.
   error_can_not_reopen_work_package_on_closed_version: Suletud versiooni juurde kuulunud
     teemat ei saa taasavada
   error_check_user_and_role: Palun vali kasutaja ja roll.
   error_cookie_missing: The OpenProject cookie is missing. Please ensure that cookies
     are enabled, as this application will not properly function without.
+  error_pdf_export_too_many_columns: Too many columns selected for the PDF export.
+    Please reduce the number of columns.
   error_token_authenticity: Unable to verify Cross-Site Request Forgery token.
   error_work_package_done_ratios_not_updated: Teema edenemise astmed jäid uuendamata.
   error_work_package_not_found_in_project: Teemat ei leitud või see ei kuulu siia
@@ -772,8 +800,8 @@ et:
   error_must_be_project_member: peab olema projekti liige
   error_no_default_work_package_status: Teema algolek on määramata. Palun vaata seadistused
     üle ("Seadistused -> Teemade olekud").
-  error_no_type_in_project: "Ühtegi tüüpi ei ole seotud selle projektiga. Palun kontrolli
-    projekti seadeid."
+  error_no_type_in_project: Ühtegi tüüpi ei ole seotud selle projektiga. Palun kontrolli
+    projekti seadeid.
   error_omniauth_registration_timed_out: Registreerimine välise autentija kaudu aegus.
     Palun proovi uuesti.
   error_scm_command_failed: 'Juurdepääsu katsel versioonihalduse süsteemile ilmnes
@@ -785,13 +813,18 @@ et:
   error_unable_delete_default_status: Unable to delete the default work package status.
     Please select another default work package status before deleting the current
     one.
-  error_unable_to_connect: "Ühenduse loomine ebaõnnestus (%{value})"
+  error_unable_to_connect: Ühenduse loomine ebaõnnestus (%{value})
   error_unable_delete_wiki: Unable to delete the wiki page.
   error_unable_update_wiki: Unable to update the wiki page.
   error_workflow_copy_source: Palun vali lähtepunkti liik või roll
   error_workflow_copy_target: Palun vali sihtpunkti tüübid ja rollid
   error_menu_item_not_created: Menüü üksust ei saanud lisada
   error_menu_item_not_saved: Menüü üksust ei saanud salvestada
+  error_wiki_root_menu_item_conflict: 'Can''t rename "%{old_name}" to "%{new_name}"
+    due to a conflict in the resulting menu item with the existing menu item "%{existing_caption}"
+    (%{existing_identifier}).
+
+'
   error_external_authentication_failed: Välisel autentimisel ilmnes tõrge. Palun proovi
     uuesti.
   events:
@@ -916,6 +949,8 @@ et:
   label_change_status: Muuda olekut
   label_change_view_all: Vaata kõiki muutusi
   label_changes_details: Kõigi muutuste üksikasjad
+  label_changeset: Changeset
+  label_changeset_id: Changeset ID
   label_changeset_plural: Toimikud
   label_checked: märgitud
   label_check_uncheck_all_in_column: Check/Uncheck all in column
@@ -958,7 +993,7 @@ et:
   label_deleted: kustutatud
   label_deleted_custom_field: "(kustutatud lisaväli)"
   label_descending: Kahanev
-  label_details: "Üksikasjad"
+  label_details: Üksikasjad
   label_development_roadmap: Development roadmap
   label_diff: diff
   label_diff_inline: Põimitult
@@ -972,6 +1007,7 @@ et:
   label_download_plural: "%{count} allalaadimisi"
   label_downloads_abbr: A/L
   label_duplicated_by: dubleeris
+  label_duplicate: duplicate
   label_duplicates: duplikaadid
   label_edit: Muuda
   label_enable_multi_select: Võimalda mitmene valik
@@ -982,6 +1018,7 @@ et:
   label_end_to_end: otsast lõpuni
   label_end_to_start: lõpust alguseni
   label_enumeration_new: Uus loendatav väärtus
+  label_enumeration_value: Enumeration value
   label_enumerations: Loendid
   label_environment: Keskkond
   label_equals: võrdub
@@ -1003,7 +1040,7 @@ et:
   label_force_user_language_to_default: Sea keel kasutajatele, kellel on vaikimisi
     keeleks valitud mittelubatud keel
   label_form_configuration: Form configuration
-  label_general: "Üldine"
+  label_general: Üldine
   label_generate_key: Genereeri võti
   label_git_path: Tee .git kataloog
   label_greater_or_equal: ">="
@@ -1019,6 +1056,7 @@ et:
   label_in_less_than: on väiksem kui
   label_in_more_than: on suurem kui
   label_incoming_emails: Sissetulevad e-postisõnumid
+  label_includes: includes
   label_index_by_date: Indeks kuupäeva järgi
   label_index_by_title: Indeks pealkirja järgi
   label_information: Teave
@@ -1027,26 +1065,7 @@ et:
   label_internal: Sisemine
   label_invite_user: Invite user
   label_show_hide: Show/hide
-  label_work_package_added: Teema lisatud
-  label_work_package_category_new: Uus kategooria
-  label_work_package_category_plural: Teema kategooriad
-  label_work_package_hierarchy: Teema hierarhia
-  label_work_package_new: Uus teema
-  label_work_package_note_added: Märkus lisatud teemale
-  label_work_package_edit: Muuda teemat %{name}
-  label_work_package_plural: Teemad
-  label_work_package_priority_updated: Teema prioriteet uuendatud
-  label_work_package_status_new: Uus olek
-  label_work_package_status_plural: Teemade olekud
-  label_work_package_tracking: Teema jälgimine
-  label_work_package_updated: Teema uuendatud
-  label_work_package_view_all: Kuva kõiki teemasid
-  label_work_package_view_all_assigned_to_me: Kuva kõik minule kuuluvad teemad
-  label_work_package_view_all_reported_by_me: Kuva kõik minu poolt lisatud teemad
-  label_work_package_view_all_responsible_for: View all work packages that I am responsible
-    for
-  label_work_package_view_all_watched: Kuva kõik jälgimisel olevad teemad
-  label_work_package_watchers: Jälgijad
+  label_journal: Journal
   label_journal_diff: Kirjelduse võrdlus
   label_jump_to_a_project: Mine projekti...
   label_language_based: Põhineb kasutaja keelel
@@ -1067,7 +1086,7 @@ et:
   label_logged_as: Logitud sisse kui
   label_login: Logi sisse
   label_logout: Logi välja
-  label_main_menu: "Ääremenüü"
+  label_main_menu: Ääremenüü
   label_manage_groups: Manage groups
   label_managed_repositories_vendor: Managed %{vendor} repositories
   label_max_size: Maksimaalne suurus
@@ -1076,6 +1095,7 @@ et:
   label_member_plural: Liikmed
   label_memder_view_all: Vaata kõiki liikmeid
   label_menu_item_name: Menüüvaliku nimi
+  label_message: Message
   label_message_last: Viimane sõnum
   label_message_new: Uus sõnum
   label_message_plural: Sõnumid
@@ -1085,7 +1105,6 @@ et:
   label_missing_api_access_key: Missing API access key
   label_missing_feeds_access_key: Missing RSS access key
   label_modification: "%{count} muudatust"
-  label_modification_plural: "%{count} muudatust"
   label_modified: muudetud
   label_module_plural: Moodulid
   label_modules: Moodulid
@@ -1125,9 +1144,10 @@ et:
   label_open_work_packages_plural: avatud
   label_optional_description: Kirjeldus
   label_options: Valikud
-  label_overall_activity: "Üldine tegevuste ajalugu"
+  label_overall_activity: Üldine tegevuste ajalugu
   label_overall_spent_time: Kokku kulutatud aeg
-  label_overview: "Ülevaade"
+  label_overview: Ülevaade
+  label_part_of: part of
   label_password_lost: Unustasid parooli
   label_password_rule_lowercase: Väiketäheline
   label_password_rule_numeric: Numbrid
@@ -1136,8 +1156,8 @@ et:
   label_path_encoding: Teeraja kodeering
   label_pdf_with_descriptions: PDF koos kirjeldustega
   label_per_page: Lehekülje kohta
-  label_permissions: "Õigused"
-  label_permissions_report: "Õiguste aruanne"
+  label_permissions: Õigused
+  label_permissions_report: Õiguste aruanne
   label_personalize_page: Isikupärasta see leht
   label_planning: Planeerimine
   label_please_login: Palun logi sisse
@@ -1180,7 +1200,7 @@ et:
   label_relation_new: Uus seos
   label_release_notes: Release notes
   label_remove_columns: Eemalda valitud väljad
-  label_renamed: "ümber nimetatud"
+  label_renamed: ümber nimetatud
   label_reply_plural: Vastused
   label_report: Aruanne
   label_report_bug: Report a bug
@@ -1191,6 +1211,8 @@ et:
   label_repository: Hoidla
   label_repository_root: Repository root
   label_repository_plural: Hoidlad
+  label_required: required
+  label_requires: requires
   label_responsible_for_work_packages: Teemad minu vastutuses
   label_result_plural: Tulemused
   label_reverse_chronological_order: Pööratud ajalises järjestuses
@@ -1205,7 +1227,7 @@ et:
   label_role_and_permissions: Rollid ja õigused
   label_role_new: Uus roll
   label_role_plural: Rollid
-  label_role_search: Assign roles to new members
+  label_role_search: Assign role to new members
   label_scm: Lähtekoodi haldusvahendid
   label_search: Otsi
   label_search_titles_only: Ainult pealkirjadest
@@ -1250,7 +1272,7 @@ et:
   label_time_sheet_menu: Time sheet
   label_time_tracking: Ajakulu arvestus
   label_today: täna
-  label_top_menu: "Ülemine menüü"
+  label_top_menu: Ülemine menüü
   label_topic_plural: Teemad
   label_total: Kokku
   label_type_new: Uus tüüp
@@ -1290,9 +1312,10 @@ et:
   label_wiki_content_added: Viki leht on lisatud
   label_wiki_content_updated: Viki leht on uuendatud
   label_wiki_toc: Sisukord
-  label_wiki_dont_show_menu_item: "Ära näita seda vikilehte projektimenüüs"
+  label_wiki_dont_show_menu_item: Ära näita seda vikilehte projektimenüüs
   label_wiki_edit: Viki muutmine
   label_wiki_edit_plural: Viki muutmised
+  label_wiki_page_id: Wiki page ID
   label_wiki_navigation: Viki navigeerimine
   label_wiki_page: Viki leht
   label_wiki_page_plural: Viki lehed
@@ -1301,8 +1324,28 @@ et:
   label_wiki_show_new_page_link: Näita alammenüüs valikut 'Loo uus alamleht'
   label_wiki_show_submenu_item: 'Näita kui alammenüüd (<--) '
   label_work_package: Teema
+  label_work_package_added: Teema lisatud
+  label_work_package_category_new: Uus kategooria
+  label_work_package_category_plural: Teema kategooriad
+  label_work_package_hierarchy: Work package hierarchy
+  label_work_package_new: Uus teema
+  label_work_package_note_added: Märkus lisatud teemale
+  label_work_package_edit: Muuda teemat %{name}
+  label_work_package_plural: Teemad
+  label_work_package_priority_updated: Teema prioriteet uuendatud
   label_work_package_status: Teema olek
+  label_work_package_status_new: Uus olek
+  label_work_package_status_plural: Teemade olekud
   label_work_package_types: Work package types
+  label_work_package_updated: Teema uuendatud
+  label_work_package_tracking: Teema jälgimine
+  label_work_package_view_all: Kuva kõiki teemasid
+  label_work_package_view_all_assigned_to_me: Kuva kõik minule kuuluvad teemad
+  label_work_package_view_all_reported_by_me: Kuva kõik minu poolt lisatud teemad
+  label_work_package_view_all_responsible_for: View all work packages that I am responsible
+    for
+  label_work_package_view_all_watched: Kuva kõik jälgimisel olevad teemad
+  label_work_package_watchers: Jälgijad
   label_workflow: Töövoog
   label_workflow_plural: Töövood
   label_workflow_summary: Kokkuvõte
@@ -1335,7 +1378,7 @@ et:
   label_keyboard_shortcut_within_project: 'Projektiga seotud kiirklahvid:'
   label_keyboard_shortcut_global_shortcuts: 'Igal pool töötavad kiirklahvid:'
   label_keyboard_shortcut_some_pages_only: 'Erikiirklahvid:'
-  label_keyboard_shortcut_search_global: "Üldine otsing"
+  label_keyboard_shortcut_search_global: Üldine otsing
   label_keyboard_shortcut_search_project: Leia projekt
   label_keyboard_shortcut_go_my_page: Go to my page
   label_keyboard_shortcut_show_help: Kuva käesolevat abiteksti
@@ -1431,15 +1474,17 @@ et:
   notice_locking_conflict_reload_page: Palun vii oma muudatused sisse uue, toimetatud
     leheküljele  -- laadi lehekülg uuesti ja sisesta oma muudatused uuesti.
   notice_member_added: Added %{name} to the project.
-  notice_members_added: Added %{number} users to the the project.
+  notice_members_added: Added %{number} users to the project.
   notice_member_removed: Removed %{user} from project.
   notice_member_deleted: "%{user} has been removed from the project and deleted."
-  notice_no_principals_found: "Ühtki kasutajat ega gruppi ei leitud."
+  notice_no_principals_found: Ühtki kasutajat ega gruppi ei leitud.
   notice_bad_request: Vigane päring.
   notice_not_authorized: Sul ei ole sellele lehele ligipääsuks õigusi.
   notice_not_authorized_archived_project: See projekt on arhiveeritud.
+  notice_password_confirmation_failed: Your password is not correct. The changes were
+    not saved.
   notice_project_not_deleted: Projekti ei ole kustutatud.
-  notice_successful_connection: "Ühenduse loomine õnnestus."
+  notice_successful_connection: Ühenduse loomine õnnestus.
   notice_successful_create: Loomine õnnestus.
   notice_successful_delete: Kustutamine õnnestus.
   notice_successful_update: Uuendamine õnnestus.
@@ -1447,8 +1492,8 @@ et:
     sisestades uue kasutaja või grupi nime.
   notice_unable_delete_time_entry: Ajakulu sissekande kustutamine ei õnnestunud.
   notice_unable_delete_version: Versiooni kustutamine ei õnnestunud.
-  notice_user_missing_authentication_method: User has yet to chose a password or another
-    way the sign in.
+  notice_user_missing_authentication_method: User has yet to choose a password or
+    another way to sign in.
   notice_user_invitation_resent: Another invitation has been sent to %{email}.
   present_access_key_value: 'Your %{key_name} is: %{value}'
   notice_automatic_set_of_standard_type: Vaikimisi tüüp valitakse automaatselt.
@@ -1480,7 +1525,7 @@ et:
     text_getting_started: This video provides you an overview of OpenProject. It helps
       you to set up your first project and to start collaborating with your team members.
     text_show_again: You can restart this video from the help menu
-    welcome: Hi %{name}, welcome to OpenProject
+    welcome: Welcome to OpenProject
   permission_add_work_package_notes: Märkusi lisada
   permission_add_work_packages: Add work packages (also allows to add attachments
     to all work packages)
@@ -1543,6 +1588,7 @@ et:
   permission_view_work_package_watchers: Jälgijate nimekirja kuvada
   permission_view_work_packages: Teemasid kuvada
   permission_view_messages: Kuva sõnumeid
+  permission_view_members: View members
   permission_view_project_associations: Kuva projekti sõltuvusi
   permission_view_reportings: Kuvada teadaandeid
   permission_view_time_entries: Kuva ajakulu
@@ -1581,7 +1627,7 @@ et:
   repositories:
     at_identifier: at %{identifier}
     atom_revision_feed: Atom revision feed
-    autofetch_information: |
+    autofetch_information: |-
       Check this if you want repositories to be updated automatically when accessing the repository module page.
       This encompasses the retrieval of commits from the repository and refreshing the required disk storage.
     checkout:
@@ -1591,14 +1637,14 @@ et:
         none: No checkout access, you may only view the repository through this application.
       access_permission: Your permissions on this repository
       url: Checkout URL
-      base_url_text: |
+      base_url_text: |-
         The base URL to use for generating checkout URLs (e.g., https://myserver.example.org/repos/).
         Note: The base URL is only used for rewriting checkout URLs in managed repositories. Other repositories are not altered.
       default_instructions:
-        git: |
+        git: |-
           The data contained in this repository can be downloaded to your computer with Git.
           Please consult the documentation of Git if you need more information on the checkout procedure and available clients.
-        subversion: |
+        subversion: |-
           The data contained in this repository can be downloaded to your computer with Subversion.
           Please consult the documentation of Subversion if you need more information on the checkout procedure and available clients.
       enable_instructions_text: Displays checkout instructions defined below on all
@@ -1661,11 +1707,13 @@ et:
           ).
         path_encoding: 'Override Git path encoding (Default: UTF-8)'
       local_title: Link existing local Git repository
+      local_url: Local URL
       local_introduction: If you have an existing local Git repository, you can link
         it with OpenProject to access it from within the application.
       managed_introduction: Let OpenProject create and integrate a local Git repository
         automatically.
       managed_title: Git repository integrated into OpenProject
+      managed_url: Managed URL
       path: Path to Git repository
       path_encoding: Teeraja kodeering
     go_to_revision: Go to revision
@@ -1686,21 +1734,23 @@ et:
       managed: Create new repository in OpenProject
     storage:
       not_available: Disk storage consumption is not available for this repository.
-      update_timeout: |
+      update_timeout: |-
         Keep the last required disk space information for a repository for N minutes.
         As counting the required disk space of a repository may be costly, increase this value to reduce performance impact.
     subversion:
       existing_title: Existing Subversion repository
       existing_introduction: If you have an existing Subversion repository, you can
         link it with OpenProject to access it from within the application.
+      existing_url: Existing URL
       instructions:
         managed_url: This is the URL of the managed (local) Subversion repository.
-        url: |
+        url: |-
           Enter the repository URL. This may either target a local repository (starting with %{local_proto} ), or a remote repository.
           The following URL schemes are supported:
       managed_title: Subversion repository integrated into OpenProject
       managed_introduction: Let OpenProject create and integrate a local Subversion
         repository automatically.
+      managed_url: Managed URL
       password: Repository Password
       username: Repository username
     named_repository: "%{vendor_name} repository"
@@ -1708,7 +1758,7 @@ et:
     url: URL to repository
     warnings:
       cannot_annotate: This file cannot be annotated.
-  search_input_placeholder: otsi...
+  search_input_placeholder: Search ...
   setting_email_delivery_method: Email delivery method
   setting_sendmail_location: Location of the sendmail executable
   setting_smtp_enable_starttls_auto: Automatically use STARTTLS if available
@@ -1758,7 +1808,7 @@ et:
   setting_work_package_done_ratio: Määra teema edenemise aste
   setting_work_package_done_ratio_field: kasutades vastavat välja
   setting_work_package_done_ratio_status: kasutades teema olekut
-  setting_work_package_done_ratio_disabled: "Ära kuva edenemist"
+  setting_work_package_done_ratio_disabled: Ära kuva edenemist
   setting_work_package_list_default_columns: Kuva vaikimisi
   setting_work_package_list_summable_columns: Summeeruvad
   setting_work_package_properties: Teemade atribuudid
@@ -1824,7 +1874,7 @@ et:
   setting_wiki_compression: Viki ajaloo tihendamine
   setting_work_package_group_assignment: Luba teemade andmine gruppidele
   settings:
-    general: "Üldine"
+    general: Üldine
     other: Muu
     passwords: Paroolid
     session: Seanss
@@ -1844,11 +1894,13 @@ et:
   text_are_you_sure_with_children: Oled Sa kindel oma soovis see teema koos selle
     alamteemadega täielikult kustutada?
   text_assign_to_project: Määra projektile
-  text_form_configuration: You can customize which attributes will be displayed in
-    forms for work packages of this type. 'Active' fields will be shown in the collapsed
-    work package view if they have a value, fields that are 'Always displayed' even
-    if they don't. Inactive fields will never be shown, even if they have a value.
+  text_form_configuration: 'You can customize which attributes will be displayed in
+    forms for work packages of this type. ''Active'' fields will be shown in the collapsed
+    work package view if they have a value, fields that are ''Always displayed'' even
+    if they don''t. Inactive fields will never be shown, even if they have a value.
     Only fields that are not required or have a default value can be customized.
+
+'
   text_caracters_maximum: "%{count} märki kõige rohkem."
   text_caracters_minimum: Peab olema vähemalt %{count} märki pikk.
   text_comma_separated: Lubatud erinevad väärtused (komaga eraldatult).
@@ -1863,14 +1915,14 @@ et:
   text_destroy_what_to_do: Mis sa soovid ette võtta?
   text_diff_truncated: "... Osa erinevusi jäi välja, sest neid on näitamiseks liiga
     palju."
-  text_email_delivery_not_configured: |
+  text_email_delivery_not_configured: |-
     E-kirjade saatmine ei ole seadistatud ja teavitusi ei saadeta.
     Konfigureeri oma SMTP server failis config/configuration.yml ja taaskäivita OpenProject.
   text_enumeration_category_reassign_to: 'Määra neile uus väärtus:'
   text_enumeration_destroy_question: Selle väärtusega on %{count} objekti.
   text_file_repository_writable: Manuste kataloog on kirjutatav
   text_git_repo_example: hoidla peab olema paljas (bare) ja kohalik (nt. /gitrepo,
-    c:\\gitrepo)
+    c:\gitrepo)
   text_hint_date_format: Enter a date in the form of YYYY-MM-DD. Other formats may
     be changed to an unwanted date.
   text_hint_disable_with_0: 'Note: Disable with 0'
@@ -1910,7 +1962,7 @@ et:
   text_no_notes: There are no comments available for this work package.
   text_notice_too_many_values_are_inperformant: 'Note: Displaying more than 100 items
     per page can increase the page load time.'
-  text_own_membership_delete_confirmation: |
+  text_own_membership_delete_confirmation: |-
     Sa võtad endalt ära osa või kõik õigused ega saa edaspidi seda projekti võib-olla enam muuta.
     Oled sa jätkamises kindel?
   text_plugin_assets_writable: Lisamoodulite abifailide kataloog on kirjutatav
@@ -1924,6 +1976,10 @@ et:
     tegijaga. Sama nime või e-postiga kasutajad seostatakse automaatselt.
   text_select_mail_notifications: Tegevused, millest peaks e-kirjaga teavitama.
   text_status_changed_by_changeset: Kehtestati toimikus %{value}.
+  text_table_difference_description: In this table the single %{entries} are shown.
+    You can view the difference between any two entries by first selecting the according
+    checkboxes in the table. When clicking on the button below the table the differences
+    are shown.
   text_time_logged_by_changeset: Kehtestati toimikus %{value}.
   text_tip_work_package_begin_day: teema avamise päev
   text_tip_work_package_begin_end_day: teema avati ja sulgeti samal päeval
@@ -2039,7 +2095,7 @@ et:
         days: päeva
         weeks: nädalat
         months: kuud
-      exclude_own_work_packages: "Ära kuva minu poolt lisatud teemad"
+      exclude_own_work_packages: Ära kuva minu poolt lisatud teemad
       exclude_reporters: Peida muud projektid
       exclude_empty: Peida tühjad projektid
       grouping: Rühmitamine
@@ -2071,7 +2127,7 @@ et:
       timeframe: Kuva ajakava
       timeframe_end: kuni
       timeframe_start: alates
-      timeline: "Üldseaded"
+      timeline: Üldseaded
       zoom: Suurendus
     history: Ajalugu
     new_color: Uus värv
@@ -2113,16 +2169,26 @@ et:
     type_could_not_be_saved: Tüüpi ei saa salvestada
     reporting_could_not_be_saved: Aruandlust ei saa salvestada
     properties: Atribuudid
-    really_delete_color: Kas oled kindel, et tahad seda värvi kustutada? Tüübid, mis
-      seda värvi kasutavad, jäävad alles.
-    really_delete_project_association_between_project_a_and_project_b: Kas oled kindel,
+    really_delete_color: 'Kas oled kindel, et tahad seda värvi kustutada? Tüübid,
+      mis seda värvi kasutavad, jäävad alles.
+
+'
+    really_delete_project_association_between_project_a_and_project_b: 'Kas oled kindel,
       et tahad kustutada sõltuvuse projektide “%{project_a}” ja “%{project_b}” vahel?
-    really_delete_project_type: Kas sa oled kindel, et tahad kustutada selle projektitüübi?
+
+'
+    really_delete_project_type: 'Kas sa oled kindel, et tahad kustutada selle projektitüübi?
       Projektid, mis kasutavad seda tüüpi, jäävad alles.
-    really_delete_timeline: Kas sa oled kindel, et tahad kustutada seda aruannet?
+
+'
+    really_delete_timeline: 'Kas sa oled kindel, et tahad kustutada seda aruannet?
       Aruandes näidatud teemad jäävad alles.
-    really_delete_reporting: Kas sa oled kindel, et tahad seda aruannet kustutada?
+
+'
+    really_delete_reporting: 'Kas sa oled kindel, et tahad seda aruannet kustutada?
       Eelmised aruande olekud kustutatakse ka ära.
+
+'
     start: Algus
     timeline: Perioodi aruanne
     timelines: Ajakavade aruandlused
@@ -2140,8 +2206,10 @@ et:
       years: Aastad
   title_remove_and_delete_user: Remove the invited user from the project and delete
     him/her.
-  tooltip_resend_invitation: Sends another invitation email with a fresh token in
+  tooltip_resend_invitation: 'Sends another invitation email with a fresh token in
     case the old one expired or the user did not get the original email.
+
+'
   tooltip:
     attribute_visibility:
       default: Show if not empty
@@ -2160,9 +2228,11 @@ et:
     activate: Aktiveerimine
     activate_and_reset_failed_logins: Aktiveeri ja unusta ebaõnnestunud sisselogimised
     authentication_provider: Autentimisteenuse pakkuja
-    authentication_settings_disabled_due_to_external_authentication: See kasutaja
-      autendib end välise autentimisteenuse pakkuja abil, seega ei saa parooli OpenProject'is
+    authentication_settings_disabled_due_to_external_authentication: 'See kasutaja
+      autendib end välise autentimisteenuse pakkuja abil, seega ei saa parooli OpenProject''is
       muuta.
+
+'
     authorization_rejected: You are not allowed to sign in.
     assign_random_password: Assign random password (sent to user via email)
     blocked: ajutiselt blokeeritud
@@ -2201,15 +2271,19 @@ et:
   menu_item_setting: Nähtavus
   wiki_menu_item_for: Menüüvalik vikilehele "%{title}"
   wiki_menu_item_setting: Nähtavus
-  wiki_menu_item_new_main_item_explanation: Sa oled kustutamas ainsat viki põhilehele
+  wiki_menu_item_new_main_item_explanation: 'Sa oled kustutamas ainsat viki põhilehele
     viivat menüüvalikut. Nüüd pead sa valima ühe viki lehtedest, mille jaoks genereeritakse
     uus peamine menüüvalik. Kui soovid hoopiski vabaneda vikilehtedest, siis palu
     projekti administraatoril viki moodul välja lülitada.
+
+'
   wiki_menu_item_delete_not_permitted: Ainsa vikilehe menüüvalikut ei saa kustutada.
   query_menu_item_for: Menüüvalik päringule "%{title}"
   work_package:
-    updated_automatically_by_child_changes: _Uuendati automaatselt, kuna muudeti alamteemat
-      %{child}_
+    updated_automatically_by_child_changes: '_Uuendati automaatselt, kuna muudeti
+      alamteemat %{child}_
+
+'
     destroy:
       info: Deleting the work package is an irreversible action.
       title: Delete the work package

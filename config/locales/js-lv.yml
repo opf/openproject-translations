@@ -5,6 +5,8 @@ lv:
       hide: Hide
       loading: Notiek ielāde...
     close_popup_title: Aizvērt logu
+    close_filter_title: Close filter
+    close_form_title: Close form
     clipboard:
       browser_error: Jūsu pārlūkprogramma neatbalsta kopēšanu starpliktuvē. Lūdzu,
         kopējiet atlasīto tekstu izmantojot ctrl+c un ctrl+v
@@ -12,6 +14,7 @@ lv:
     button_add_watcher: Add watcher
     button_cancel: Atcelt
     button_check_all: Check all
+    button_confirm: Confirm
     button_copy: Copy
     button_delete: Dzēst
     button_delete_watcher: Dzēst vērotāju
@@ -34,6 +37,7 @@ lv:
     button_export-pdf: Download PDF
     button_export-atom: Download Atom
     description_available_columns: Available Columns
+    description_current_position: 'Jūs esat šeit:'
     description_select_work_package: 'Select work package #%{id}'
     description_selected_columns: Selected Columns
     description_subwork_package: 'Child of work package #%{id}'
@@ -71,6 +75,7 @@ lv:
     label_board_locked: Slēgts
     label_board_sticky: Svarīgi
     label_create_work_package: Create new work package
+    label_created_by: Created by
     label_date: Datums
     label_date_with_format: 'Enter the %{date_attribute} using the following format:
       %{format}'
@@ -125,6 +130,7 @@ lv:
     label_on: " "
     label_open_menu: Open menu
     label_open_work_packages: aktīvi
+    label_password: Parole
     label_previous: Iepriekšējā
     label_per_page: 'Katrā lappusē:'
     label_please_wait: Please wait
@@ -144,7 +150,7 @@ lv:
     label_sum_for: Sum for
     label_subject: Nosaukums
     label_this_week: this week
-    label_today: "šodien"
+    label_today: šodien
     label_total_progress: "%{percent}% Total progress"
     label_visible_for_others: Page visible for others
     label_updated_on: labots
@@ -164,18 +170,22 @@ lv:
     label_attachments: Faili
     label_drop_files: Nomest failus šeit
     label_drop_files_hint: vai klikšķiniet šeit, lai pievienotu failus
+    label_add_attachments: Add attachments
     label_remove_file: Dzēst %{fileName}
     label_remove_watcher: Noņemt vērotāju %{name}
     label_remove_all_files: Dzēst visus failus
     label_add_description: Pievienot aprakstu priekš %{file}
     label_upload_notification: 'Augšupielādēt failus Darba pakai #%{id}: %{subject}'
-    label_files_to_upload: "Šie faili tiks augšupielādēti:"
+    label_files_to_upload: 'Šie faili tiks augšupielādēti:'
     label_rejected_files: 'Nevar augšupielādēt šos failus:'
-    label_rejected_files_reason: "Šos failus nevar augšupielādēt, jo to izmērs ir
-      lielāks par %{maximumFilesize}"
+    label_rejected_files_reason: Šos failus nevar augšupielādēt, jo to izmērs ir lielāks
+      par %{maximumFilesize}
     label_wait: Lūdzu, uzgaidiet, konfigurācija...
     label_upload_counter: "%{done} no %{count} faili pabeigti"
     label_validation_error: 'Darba paku nevarēja saglabāt saistībā ar šādām kļūdām:'
+    password_confirmation:
+      field_description: You need to enter your account password to confirm this change.
+      title: Confirm your password to continue
     pagination:
       no_other_page: You are on the only page.
       pages:
@@ -184,6 +194,7 @@ lv:
     placeholders:
       default: "-"
       selection: Lūdzu, atlasiet
+      relation_description: Click to add description for this relation
     text_are_you_sure: Are you sure?
     watchers:
       label_loading: ielādē vērotājus...
@@ -230,16 +241,29 @@ lv:
       blocked: Blocked by
       precedes: Precedes
       follows: Follows
+      includes: Includes
+      partof: Part of
+      requires: Requires
+      required: Required by
+      relation_type: relation type
+    relations_hierarchy:
+      hierarchy_headline: hierarchy
     relation_buttons:
       change_parent: Mainīt vecāku
-      add_child: Pievienot bērnu
-      add_related_to: Pievienot saistīto
-      add_duplicates: Add duplicates
-      add_duplicated_by: Add duplicated by
-      add_blocks: Add blocks
-      add_blocked_by: Add blocked by
-      add_precedes: Add precedes
-      add_follows: Add follows
+      remove_parent: Remove parent
+      group_by_wp_type: Group by work package type
+      group_by_relation_type: Group by relation type
+      add_parent: Add existing parent
+      add_new_child: Create new child
+      add_existing_child: Add existing child
+      remove_child: Remove child
+      add_new_relation: Create new relation
+      update_description: Set or update description of this relation
+      remove: Noņemt saistību
+      save: Save relation
+      abort: Abort
+    relations_autocomplete:
+      placeholder: Enter the related work package id
     repositories:
       select_tag: Izvēlieties atzīmi
       select_branch: Izvēlieties zaru
@@ -321,8 +345,11 @@ lv:
     unsupported_browser:
       title: Your browser version is not supported
       message: The browser version you are using is no longer supported by OpenProject.
-        Please update your browser.
+      update_message: Please update your browser.
+      update_ie_user: Please switch to Mozilla Firefox or Google Chrome, or upgrade
+        to Microsoft Edge.
       learn_more: Uzzināt vairāk
+      close_warning: Ignore this warning.
     wiki_formatting:
       strong: Trekns
       italic: Slīps
@@ -369,12 +396,15 @@ lv:
       message_successful_bulk_delete: Successfully deleted work packages.
       message_successful_show_in_fullscreen: Click here to open this work package
         in fullscreen view.
+      message_view_spent_time: Show spent time for this work package
       no_value: Nav vērtības
       inline_create:
         title: Click here to add a new work package to this list
       create:
-        header: New work package
-        header_with_parent: 'Jauna darbu paka (%{type} #%{id} bērns)'
+        header: New %{type}
+        header_no_type: New work package (Type not yet set)
+        header_with_parent: 'New %{type} (Child of %{parent_type} #%{id})'
+        button: Izveidot
       no_results:
         title: No work packages to display.
         description: Either none have been created or all work packages are filtered
@@ -427,12 +457,14 @@ lv:
         display_sums: Display Sums
         errors:
           unretrievable_query: Unable to retrieve query from URL
+          not_found: There is no such query
       table:
         summary: Table with rows of work package and columns of work package attributes.
         text_inline_edit: Most cells of this table are buttons that activate inline-editing
           functionality of that attribute.
         text_sort_hint: With the links in the table headers you can sort, group, reorder,
           remove and add table columns.
+        text_select_hint: Select boxes should be opened with 'ALT' and arrow keys.
       tabs:
         overview: Pārskats
         activity: Activity

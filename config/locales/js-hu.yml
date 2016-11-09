@@ -3,8 +3,10 @@ hu:
   js:
     ajax:
       hide: Elrejt
-      loading: Betöltés...
+      loading: Betöltés folyamatban… ...
     close_popup_title: Előugró ablak bezárása
+    close_filter_title: Close filter
+    close_form_title: Close form
     clipboard:
       browser_error: A böngésző nem támogatja a vágólapra másolása. Kérjük, másolja
         a kijelölt szöveget manuálisan.
@@ -12,6 +14,7 @@ hu:
     button_add_watcher: Megfigyelő hozzáadása
     button_cancel: Mégsem
     button_check_all: Az összes kijelölése
+    button_confirm: Confirm
     button_copy: Másol
     button_delete: Töröl
     button_delete_watcher: Megfigyelő törlése
@@ -34,6 +37,7 @@ hu:
     button_export-pdf: Download PDF
     button_export-atom: Download Atom
     description_available_columns: Elérhető oszlopok
+    description_current_position: 'Itt vagy:'
     description_select_work_package: 'Select work package #%{id}'
     description_selected_columns: Oszlopok kiválasztása
     description_subwork_package: 'Child of work package #%{id}'
@@ -70,7 +74,8 @@ hu:
     label_author: 'Author: %{user}'
     label_board_locked: Zárolva
     label_board_sticky: Kiemelt
-    label_create_work_package: "Új munkacsomag létrehozása"
+    label_create_work_package: Új munkacsomag létrehozása
+    label_created_by: Created by
     label_date: Dátum
     label_date_with_format: 'Adja meg a %{date_attribute}, a következő formátumban:
       %{format}'
@@ -80,7 +85,7 @@ hu:
     label_cancel_comment: Megjegyzés törlése
     label_closed_work_packages: Lezárva
     label_collapse: Collapse
-    label_collapsed: "összecsukott"
+    label_collapsed: összecsukott
     label_collapse_all: Az összes bezárása
     label_comment: Vélemény
     label_committed_at: "%{committed_revision_link} at %{date}"
@@ -112,7 +117,7 @@ hu:
     label_less_than_ago: kevesebb, nappal ezelött
     label_loading: Betöltés...
     label_me: Nekem
-    label_menu_collapse: "összecsuk"
+    label_menu_collapse: összecsuk
     label_menu_expand: kibont
     label_more_than_ago: több, nappal ezelőtt
     label_next: " Következő"
@@ -125,6 +130,7 @@ hu:
     label_on: be
     label_open_menu: Menü megnyitása
     label_open_work_packages: kinyit
+    label_password: Jelszó
     label_previous: Korábbi
     label_per_page: 'Oldalanként:'
     label_please_wait: Please wait
@@ -141,7 +147,7 @@ hu:
     label_sort_higher: Mozgatás felfelé
     label_sort_lower: Mozgás lefelé
     label_sorting: Rendezés
-    label_sum_for: "Összeg"
+    label_sum_for: Összeg
     label_subject: Tárgy
     label_this_week: ezen a héten
     label_today: Ma
@@ -157,13 +163,14 @@ hu:
     label_work_package_details_you_are_here: Te a %{tab} lapon %{type} %{subject}.
     label_unwatch: Ellenőrizetlen
     label_unwatch_work_package: Nem megfigyelt munkacsomag
-    label_uploaded_by: "Által feltöltött"
+    label_uploaded_by: Által feltöltött
     label_global_queries: Megosztott lekérdezések
     label_custom_queries: Privát lekérdezések
     label_columns: Oszlopok
     label_attachments: Fájlok
     label_drop_files: Drop files here
     label_drop_files_hint: or click to add files
+    label_add_attachments: Add attachments
     label_remove_file: Delete %{fileName}
     label_remove_watcher: Remove watcher %{name}
     label_remove_all_files: Delete all files
@@ -177,6 +184,9 @@ hu:
     label_upload_counter: "%{done} of %{count} files finished"
     label_validation_error: 'The work package could not be saved due to the following
       errors:'
+    password_confirmation:
+      field_description: You need to enter your account password to confirm this change.
+      title: Confirm your password to continue
     pagination:
       no_other_page: You are on the only page.
       pages:
@@ -185,6 +195,7 @@ hu:
     placeholders:
       default: "-"
       selection: Kérem válasszon
+      relation_description: Click to add description for this relation
     text_are_you_sure: Biztos vagy benne?
     watchers:
       label_loading: loading watchers...
@@ -213,7 +224,7 @@ hu:
       responsible: Felelős
       spent_time: Eltöltött idő
       start_date: Indulási dátum
-      status: "Állapot"
+      status: Állapot
       subject: Tárgy
       subproject: Alprojekt
       time_entries: Bejelentkezett időtartam
@@ -231,16 +242,29 @@ hu:
       blocked: Blokkolta
       precedes: Megelőzi
       follows: Következik
+      includes: Includes
+      partof: Part of
+      requires: Requires
+      required: Required by
+      relation_type: relation type
+    relations_hierarchy:
+      hierarchy_headline: hierarchy
     relation_buttons:
       change_parent: Szülő módosítása
-      add_child: Gyermek hozzáadása
-      add_related_to: Kapcsolat hozzáadása
-      add_duplicates: Ismétlődések hozzáadása
-      add_duplicated_by: Ismétlődések hozzáadása szerint
-      add_blocks: Blokk hozzáadása
-      add_blocked_by: Blokk hozzáadása szerint
-      add_precedes: Előző hozzáadása
-      add_follows: Következő hozzáadása
+      remove_parent: Remove parent
+      group_by_wp_type: Group by work package type
+      group_by_relation_type: Group by relation type
+      add_parent: Add existing parent
+      add_new_child: Create new child
+      add_existing_child: Add existing child
+      remove_child: Remove child
+      add_new_relation: Create new relation
+      update_description: Set or update description of this relation
+      remove: Remove relation
+      save: Save relation
+      abort: Abort
+    relations_autocomplete:
+      placeholder: Enter the related work package id
     repositories:
       select_tag: Select tag
       select_branch: Select branch
@@ -280,13 +304,13 @@ hu:
           type: Típus
           due_date: Záró dátuma
           name: Név
-          status: "Állapot"
+          status: Állapot
           responsible: Felelős
           start_date: Indulási dátum
         grouping_other: Egyéb
         noneSelection: "(nincs)"
       name: Név
-      new_work_package: "Új munkacsomag"
+      new_work_package: Új munkacsomag
       outline: A vázlat alaphelyzetbe állitása
       outlines:
         aggregation: Csak az összesítések megjelenítése
@@ -312,16 +336,19 @@ hu:
         weeks: Hetek
         months: Hónapok
         quarters: Negyedek
-        years: "Évek"
+        years: Évek
         slider: Nagyítás/kicsinyítés
     tl_toolbar:
       zooms: Nagyítási szint
       outlines: Hierarchia szint
     unsupported_browser:
       title: Az ön böngészője nem támogatott
-      message: Az ön általá használt böngésző-verziót az OpenProject már nem támogatja.
-        Kérjük frissítse böngészőjét.
+      message: The browser version you are using is no longer supported by OpenProject.
+      update_message: Please update your browser.
+      update_ie_user: Please switch to Mozilla Firefox or Google Chrome, or upgrade
+        to Microsoft Edge.
       learn_more: További információ
+      close_warning: Ignore this warning.
     wiki_formatting:
       strong: Erős
       italic: Dőlt betű
@@ -345,7 +372,7 @@ hu:
       comment_updated: The comment was successfully updated.
       confirm_edit_cancel: Are you sure you want to cancel editing the work package?
       description_filter: Szűrő
-      description_enter_text: "Írjon szöveget"
+      description_enter_text: Írjon szöveget
       description_options_hide: Beállítások elrejtése
       description_options_show: Beállítások megjelenítése
       error:
@@ -367,12 +394,15 @@ hu:
       message_successful_bulk_delete: Sikerült törölni a munkacsomagokat.
       message_successful_show_in_fullscreen: Click here to open this work package
         in fullscreen view.
+      message_view_spent_time: Show spent time for this work package
       no_value: Nincs érték
       inline_create:
         title: Click here to add a new work package to this list
       create:
-        header: "Új munkacsomag"
-        header_with_parent: 'New work package (Child of %{type} #%{id})'
+        header: New %{type}
+        header_no_type: New work package (Type not yet set)
+        header_with_parent: 'New %{type} (Child of %{parent_type} #%{id})'
+        button: Létrehoz
       no_results:
         title: No work packages to display.
         description: Either none have been created or all work packages are filtered
@@ -397,7 +427,7 @@ hu:
         projectName: Projekt
         responsible: Felelős
         startDate: Indulási dátum
-        status: "Állapot"
+        status: Állapot
         subject: Tárgy
         title: Cím
         type: Típus
@@ -425,14 +455,16 @@ hu:
         display_sums: Megjelenitendő összegek
         errors:
           unretrievable_query: Nem olvasható be a lekérdezés az URL-címről
+          not_found: There is no such query
       table:
         summary: Table with rows of work package and columns of work package attributes.
         text_inline_edit: Most cells of this table are buttons that activate inline-editing
           functionality of that attribute.
         text_sort_hint: With the links in the table headers you can sort, group, reorder,
           remove and add table columns.
+        text_select_hint: Select boxes should be opened with 'ALT' and arrow keys.
       tabs:
-        overview: "Áttekintő"
+        overview: Áttekintő
         activity: Tevékenység
         relations: Kapcsolatok
         watchers: Megfigyelők
@@ -447,7 +479,7 @@ hu:
         sort_by: Rendezés...
         group_by: Csoportosítás...
         display_sums: Megjelenitendő összegek
-        hide_sums: "Összegek elrejtése"
+        hide_sums: Összegek elrejtése
         save: Mentés
         save_as: Mentés másként ...
         export: Exportálás...

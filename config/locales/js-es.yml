@@ -5,6 +5,8 @@ es:
       hide: Ocultar
       loading: Cargando ...
     close_popup_title: Cerrar ventana emergente
+    close_filter_title: Cerrar filtro
+    close_form_title: Cerrar formulario
     clipboard:
       browser_error: Su navegador no soporta copiar al portapapeles. Por favor, copie
         el texto seleccionado manualmente.
@@ -12,6 +14,7 @@ es:
     button_add_watcher: Añadir observador
     button_cancel: Cancelar
     button_check_all: Marcar todo
+    button_confirm: Confirmar
     button_copy: Copiar
     button_delete: Borrar
     button_delete_watcher: Eliminar los observadores
@@ -34,6 +37,7 @@ es:
     button_export-pdf: Descargar PDF
     button_export-atom: Descargar Atom
     description_available_columns: Columnas disponibles
+    description_current_position: 'Usted está aquí:'
     description_select_work_package: 'Seleccione el paquete de trabajo #%{id}'
     description_selected_columns: Columnas seleccionadas
     description_subwork_package: 'Hijo del paquete de trabajo #%{id}'
@@ -72,8 +76,9 @@ es:
     label_board_locked: Bloqueado
     label_board_sticky: Adhesivo
     label_create_work_package: Crear un nuevo paquete de trabajo
+    label_created_by: Creado por
     label_date: Fecha
-    label_date_with_format: 'Introduce el %{date_attribute} usando el siguiente formato:
+    label_date_with_format: 'Introduzca el %{date_attribute} usando el siguiente formato:
       %{format}'
     label_deactivate: Desactivar
     label_descending: Descendente
@@ -126,6 +131,7 @@ es:
     label_on: en
     label_open_menu: Abrir menú
     label_open_work_packages: abrir
+    label_password: Contraseña
     label_previous: Anterior
     label_per_page: 'Por pagina:'
     label_please_wait: Por favor, espere
@@ -166,6 +172,7 @@ es:
     label_attachments: Archivos
     label_drop_files: Suelta los archivos aquí
     label_drop_files_hint: o haga clic en Agregar archivos
+    label_add_attachments: Añadir adjuntos
     label_remove_file: Eliminar %{fileName}
     label_remove_watcher: Eliminar observador %{name}
     label_remove_all_files: Borrar todos los archivos
@@ -180,14 +187,19 @@ es:
     label_upload_counter: "%{done} de %{count} archivos terminados"
     label_validation_error: 'El paquete de trabajo no puede ser guardado debido a
       los errores siguientes:'
+    password_confirmation:
+      field_description: Necesitas introducir la contraseña de tu cuenta para confirmar
+        este cambio.
+      title: Confirma tu contraseña para continuar
     pagination:
-      no_other_page: You are on the only page.
+      no_other_page: Usted está en la única página.
       pages:
-        next: Forward to the next page
-        previous: Back to the previous page
+        next: Avanzar a la siguiente página
+        previous: Volver a la página anterior
     placeholders:
       default: "-"
       selection: Por favor, elija
+      relation_description: Haga clic para añadir la descripción a esta relación
     text_are_you_sure: "¿Estás seguro?"
     watchers:
       label_loading: cargando observadores...
@@ -234,16 +246,29 @@ es:
       blocked: Bloqueado por
       precedes: Precede
       follows: Sigue
+      includes: Incluye
+      partof: Parte de
+      requires: Requiere
+      required: Requerido por
+      relation_type: tipo de relación
+    relations_hierarchy:
+      hierarchy_headline: jerarquía
     relation_buttons:
       change_parent: Cambiar padre
-      add_child: Agregar hijo
-      add_related_to: Agregar relacionado a
-      add_duplicates: Agregar duplicados
-      add_duplicated_by: Agregar duplicados por
-      add_blocks: Agregar bloqueos
-      add_blocked_by: Agregar bloqueado por
-      add_precedes: Añadir predecesores
-      add_follows: Añadir seguidores
+      remove_parent: Eliminar padre
+      group_by_wp_type: Agrupar por tipo de paquete de trabajo
+      group_by_relation_type: Grupo por tipo de relación
+      add_parent: Añadir padre existente
+      add_new_child: Crear nuevo hijo
+      add_existing_child: Añadir hijo existente
+      remove_child: Eliminar hijo
+      add_new_relation: Crear nueva relación
+      update_description: Establecer o actualizar la descripción de esta relación
+      remove: Eliminar la relación
+      save: Guardar relación
+      abort: Abandonar
+    relations_autocomplete:
+      placeholder: Indique el ID del paquete de trabajo relacionado
     repositories:
       select_tag: Seleccionar etiqueta
       select_branch: Seleccione Sucursal
@@ -325,9 +350,13 @@ es:
       outlines: Nivel de jerarquía
     unsupported_browser:
       title: La versión de su navegador no está soportada
-      message: La version de su navegador no está soportada por OpenProject. Por favor,
-        actualice su navegador.
+      message: La versión del navegador que estás utilizando ya no está soportada
+        por OpenProject.
+      update_message: Por favor, actualiza tu navegador.
+      update_ie_user: Por favor, cambia a Mozilla Firefox o Google Chrome, o actualiza
+        a Microsoft Edge.
       learn_more: Saber más
+      close_warning: Ignore esta advertencia.
     wiki_formatting:
       strong: Negrita
       italic: Cursiva
@@ -375,12 +404,15 @@ es:
       message_successful_bulk_delete: Paquetes de trabajo eliminados exitosamente.
       message_successful_show_in_fullscreen: Haga clic aquí para abrir este paquete
         de trabajo en la vista de pantalla completa.
+      message_view_spent_time: Mostrar el tiempo invertido en este paquete de trabajo
       no_value: Sin valor
       inline_create:
         title: Haga clic aquí para agregar un nuevo paquete de trabajo a esta lista
       create:
-        header: Nuevo paquete de trabajo
-        header_with_parent: 'Nuevo pquete de trabajo (hijo de %{type} #%{id})'
+        header: Nuevo %{type}
+        header_no_type: Nuevo paquete de trabajo (tipo aún no establecido)
+        header_with_parent: 'Nuevo %{type} (Hijo de %{parent_type} #%{id})'
+        button: Crear
       no_results:
         title: No hay paquetes de trabajo para mostrar.
         description: O bien no se han creado o se filtran todos los paquetes de trabajo.
@@ -412,9 +444,9 @@ es:
         versionName: Versión
         version: Versión
       jump_marks:
-        pagination: Jump to table pagination
-        label_pagination: Click here to skip over the work packages table and go to
-          pagination
+        pagination: Saltar a la paginación de la tabla
+        label_pagination: Haga clic aquí para omitir la tabla de paquetes de trabajo
+          e ir a la paginación
       placeholders:
         default: "-"
         description: Pulse para introducir una descripción...
@@ -433,12 +465,15 @@ es:
         errors:
           unretrievable_query: Imposible recuperar la sentencia desde la direccion
             URL
+          not_found: La consulta no existe
       table:
         summary: Tabla con filas de paquetes de trabajo y columnas con sus atributos.
         text_inline_edit: Mayoría de las celdas de esta tabla son botones que activan
           la funcionalidad de edición de dicho atributo.
         text_sort_hint: Con los enlaces en los encabezamientos de las tablas puede
           ordenar, agrupar, reordenar, quitar y añadir columnas de las tablas.
+        text_select_hint: Los cuadros de selección deben ser abiertos con 'ALT' y
+          las teclas de cursor.
       tabs:
         overview: Resumen
         activity: Actividad

@@ -132,7 +132,7 @@ sv-SE:
   label_invitation: Inbjudan
   account:
     delete: Ta bort konto
-    delete_confirmation: "Är du säker du vill ta bort kontot?"
+    delete_confirmation: Är du säker du vill ta bort kontot?
     deleted: Kontot har tagits bort
     deletion_info:
       data_consequences:
@@ -164,17 +164,38 @@ sv-SE:
       login_verification:
         other: Enter the login %{name} to verify the deletion.
         self: Enter your login %{name} to verify the deletion.
-    error_inactive_activation_by_mail: Ditt konto har ännu inte aktiverats. För att
+    error_inactive_activation_by_mail: 'Ditt konto har ännu inte aktiverats. För att
       aktivera ditt konto, klicka på länken som har skickas till dig via E-post.
-    error_inactive_manual_activation: Ditt konto har ännu inte aktiverats. Du måste
+
+'
+    error_inactive_manual_activation: 'Ditt konto har ännu inte aktiverats. Du måste
       vänta på att en administratör aktiverar ditt konto.
-    error_self_registration_disabled: Användarregistrering är inaktiverat på det här
-      systemet. Be en administratör att skapa ett konto för dig.
+
+'
+    error_self_registration_disabled: 'Användarregistrering är inaktiverat på det
+      här systemet. Be en administratör att skapa ett konto för dig.
+
+'
     login_with_auth_provider: eller logga in med ditt befintliga konto
     signup_with_auth_provider: eller registrera dig via
     auth_source_login: Please login as <em>%{login}</em> to activate your account.
     omniauth_login: Please login to activate your account.
   actionview_instancetag_blank_option: Välj
+  activemodel:
+    errors:
+      models:
+        relations/base_contract:
+          attributes:
+            to:
+              error_not_found: work package in `to` position not found or not visible
+              error_readonly: an existing relation's `to` link is immutable
+            from:
+              error_not_found: work package in `from` position not found or not visible
+              error_readonly: an existing relation's `from` link is immutable
+        users/base_contract:
+          attributes:
+            status:
+              invalid_on_create: is not a valid status for new users.
   activerecord:
     attributes:
       announcements:
@@ -253,13 +274,13 @@ sv-SE:
       user:
         admin: Administratör
         auth_source: Autentiseringsläge
+        current_password: Current password
+        force_password_change: Tvinga lösenordsändring vid nästa inloggning
         language: Språk
         last_login_on: Senaste inloggning
         mail_notification: E-postaviseringar
-        current_password: Current password
         new_password: Nytt lösenord
         password_confirmation: Bekräftelse
-        force_password_change: Tvinga lösenordsändring vid nästa inloggning
       user_preference:
         comments_sorting: Visa kommentarer
         hide_mail: Dölj min E-postadress
@@ -274,21 +295,18 @@ sv-SE:
       wiki_content:
         text: Text
       wiki_page:
-        parent_title: "Överordnad sida"
+        parent_title: Överordnad sida
         redirect_existing_links: Omdirigera befintliga länkar
       planning_element_type_color:
-        name: Namn
         hexcode: Hex-kod
       project_association:
         description: Orsak
         project_b: Underordnat projekt
       project_type:
         allows_association: Tillåter projektberoenden
-        name: Namn
         reported_project_statuses: Rapporterad projektstatus
         position: Position
       timeline:
-        name: Namn
         options: ''
       reporting:
         reported_project_status_comment: Status kommentar
@@ -302,9 +320,9 @@ sv-SE:
         end_insertion: End of the insertion
         end_deletion: End of the deletion
         fixed_version: Version
-        parent: "Överordnad"
-        parent_issue: "Överordnad"
-        parent_work_package: "Överordnad"
+        parent: Överordnad
+        parent_issue: Överordnad
+        parent_work_package: Överordnad
         priority: Prioritet
         progress: Progress (%)
         responsible: Ansvarig
@@ -322,10 +340,11 @@ sv-SE:
           till någon av dess underaktiviteter.
         circular_dependency: Detta förhållande skulle skapa ett cirkelberoende.
         confirmation: matchar inte %{attribute}.
+        does_not_exist: finns inte.
         empty: kan inte vara tomt.
         even: måste vara jämn.
-        exclusion: "är reserverat."
-        file_too_large: "är för stor (största storleken är %{count} Bytes)."
+        exclusion: är reserverat.
+        file_too_large: är för stor (största storleken är %{count} Bytes).
         greater_than: måste vara större än %{count}.
         greater_than_or_equal_to: måste vara större än eller lika med %{count}.
         smaller_than_or_equal_to_max_length: måste vara mindre än eller lika med maximal
@@ -334,17 +353,17 @@ sv-SE:
         greater_than_or_equal_to_start_date: must be greater than or equal to the
           start date.
         inclusion: inte är inställd på ett av de tillåtna värdena.
-        invalid: "är ogiltig."
+        invalid: är ogiltig.
         less_than_or_equal_to: måste vara mindre än eller lika med %{count}.
-        not_a_date: "är inte ett datum."
+        not_a_date: är inte ett datum.
         not_an_iso_date: 'is not a valid date. Required format: YYYY-MM-DD.'
-        not_a_number: "är inte ett nummer."
-        not_an_integer: "är inte ett heltal."
+        not_a_number: är inte ett nummer.
+        not_an_integer: är inte ett heltal.
         not_same_project: tillhör inte samma projekt.
         odd: måste vara udda.
         taken: har redan använts.
-        too_long: "är för långt (maximalt är %{count} tecken)."
-        too_short: "är för kort (minimum är %{count} tecken)."
+        too_long: är för långt (maximalt är %{count} tecken).
+        too_short: är för kort (minimum är %{count} tecken).
         wrong_length: har fel längd (måste vara %{count} tecken).
         after: måste vara efter %{date}.
         after_or_equal_to: måste vara efter eller lika med %{date}.
@@ -360,28 +379,32 @@ sv-SE:
           identical_projects: Beroende kan inte skapas mellan ett projekt och sig
             själv.
           project_association_not_allowed: tillåter inte förbindelser.
+        query:
+          filters:
+            custom_fields:
+              inexistent: There is no custom field for the filter.
+              invalid: The custom field is not valid in the given context.
         repository:
           not_available: SCM leverantör är inte tillgänglig
           not_whitelisted: tillåts inte av konfigurationen.
-          no_directory: "är inte en katalog."
+          no_directory: är inte en katalog.
         work_package:
           is_not_a_valid_target_for_time_entries: 'Arbetspaket #%{id} är inte ett
             giltigt mål för omfördelning av tidrapporterna.'
           attributes:
             due_date:
-              not_start_date: "är inte på startdatum, även om detta behövs för milstolpar."
+              not_start_date: är inte på startdatum, även om detta behövs för milstolpar.
             parent_id:
               cannot_be_milestone: kan inte vara en milstolpe.
               cannot_be_in_another_project: kan inte vara i ett annat projekt.
-              not_a_valid_parent: "är ogiltig."
-              does_not_exist: finns inte.
+              not_a_valid_parent: är ogiltig.
             start_date:
               violates_relationships: can only be set to %{soonest_start} or later
                 so as not to violate the work package's relationships.
             status_id:
-              status_transition_invalid: "är ogiltig eftersom det finns någon giltig
+              status_transition_invalid: är ogiltig eftersom det finns någon giltig
                 övergång ifrån den gamla till nya statusen för den aktuella användarens
-                roller."
+                roller.
             priority_id:
               only_active_priorities_allowed: måste vara aktiv.
             category:
@@ -441,7 +464,7 @@ sv-SE:
       work_package: Arbetspaket
   errors:
     header_invalid_fields: 'Det fanns problem med följande fält:'
-    field_erroneous_label: |
+    field_erroneous_label: |-
       This field is invalid: %{full_errors}
       Please enter a valid value.
   activity:
@@ -488,7 +511,7 @@ sv-SE:
     role: Role
     start_date: Startdatum
     status: Status
-    subject: "Ämne"
+    subject: Ämne
     summary: Sammanfattning
     title: Titel
     type: Typ
@@ -505,9 +528,9 @@ sv-SE:
   button_archive: Arkivera
   button_back: Tillbaka
   button_cancel: Avbryt
-  button_change: "Ändra"
-  button_change_parent_page: "Ändra överordnad sida"
-  button_change_password: "Ändra lösenord"
+  button_change: Ändra
+  button_change_parent_page: Ändra överordnad sida
+  button_change_password: Ändra lösenord
   button_check_all: Markera alla
   button_clear: Rensa
   button_collapse_all: Fäll ihop alla
@@ -533,10 +556,10 @@ sv-SE:
   button_quote: Citat
   button_remove: Ta bort
   button_remove_widget: Ta bort widget
-  button_rename: "Ändra namn"
+  button_rename: Ändra namn
   button_reply: Svara
-  button_reset: "Återställ"
-  button_rollback: "Återgå till denna version"
+  button_reset: Återställ
+  button_rollback: Återgå till denna version
   button_save: Spara
   button_save_back: Save and back
   button_show: Visa
@@ -614,9 +637,9 @@ sv-SE:
     - November
     - December
     order:
-    - :år
-    - :månad
-    - :dag
+    - ":år"
+    - ":månad"
+    - ":dag"
   datetime:
     distance_in_words:
       about_x_hours:
@@ -718,14 +741,16 @@ sv-SE:
   default_type_user_story: User story
   description_active: Aktiv?
   description_attachment_toggle: Visa/Dölj bilagor
-  description_autocomplete: Det här fältet använder komplettera automatiskt. Medan
+  description_autocomplete: 'Det här fältet använder komplettera automatiskt. Medan
     du skriver rubriken på ett arbetspaket får du en lista över möjliga alternative.
     Välj ett med hjälp av piltangenterna och markera den med TAB eller ENTER. Alternativt
     kan du ange arbetspaketets nummer direkt.
+
+'
   description_available_columns: Tillgängliga kolumner
   description_choose_project: Projekt
-  description_compare_from: Jämför från version
-  description_compare_to: Jämför med version
+  description_compare_from: Compare from
+  description_compare_to: Compare to
   description_current_position: 'Du är här:'
   description_date_from: Ange startdatum
   description_date_range_interval: Välj intervall genom att välja start- och slutdatum
@@ -739,7 +764,7 @@ sv-SE:
   description_message_content: Meddelandets innehåll
   description_my_project: Du är medlem
   description_notes: Anteckningar
-  description_parent_work_package: "Överordnat arbetspaket av nuvarande"
+  description_parent_work_package: Överordnat arbetspaket av nuvarande
   description_project_scope: Sökningens omfattning
   description_query_sort_criteria_attribute: Sorteringsattribut
   description_query_sort_criteria_direction: Sorteringsriktning
@@ -758,12 +783,15 @@ sv-SE:
   error_can_not_delete_custom_field: Det går inte att ta bort anpassat fält
   error_can_not_delete_type: Denna typ innehåller arbetspaket och kan inte tas bort.
   error_can_not_delete_standard_type: Standardtyper kan inte tas bort.
+  error_can_not_invite_user: Failed to send invitation to user.
   error_can_not_remove_role: Denna roll används och kan inte tas bort.
   error_can_not_reopen_work_package_on_closed_version: Ett arbetspaket som tilldelats
     en stängd version kan inte öppnas igen
   error_check_user_and_role: Välj en användare och en roll.
   error_cookie_missing: The OpenProject cookie is missing. Please ensure that cookies
     are enabled, as this application will not properly function without.
+  error_pdf_export_too_many_columns: Too many columns selected for the PDF export.
+    Please reduce the number of columns.
   error_token_authenticity: Unable to verify Cross-Site Request Forgery token.
   error_work_package_done_ratios_not_updated: Arbetspaketets andel avklarat är inte
     uppdaterat.
@@ -790,6 +818,11 @@ sv-SE:
   error_workflow_copy_target: Välj måltyp(er) och roll(er)
   error_menu_item_not_created: Menyobjektet kunde inte läggas till
   error_menu_item_not_saved: Menyobjektet kunde inte sparas
+  error_wiki_root_menu_item_conflict: 'Can''t rename "%{old_name}" to "%{new_name}"
+    due to a conflict in the resulting menu item with the existing menu item "%{existing_caption}"
+    (%{existing_identifier}).
+
+'
   error_external_authentication_failed: Ett fel uppstod under extern autentisering.
     Försök igen.
   events:
@@ -862,7 +895,7 @@ sv-SE:
     när användaren är författaren
   label_administration: Administration
   label_advanced_settings: Advanced settings
-  label_age: "Ålder"
+  label_age: Ålder
   label_ago: dagar sedan
   label_all: alla
   label_all_time: all tid
@@ -910,10 +943,12 @@ sv-SE:
   label_required_disk_storage: Erfordrat lagringsutrymme
   label_resend_invitation: Resend invitation
   label_change_plural: Förändringar
-  label_change_properties: "Ändra egenskaper"
-  label_change_status: "Ändra status"
+  label_change_properties: Ändra egenskaper
+  label_change_status: Ändra status
   label_change_view_all: Visa alla ändringar
   label_changes_details: Uppgifter om alla förändringar
+  label_changeset: Changeset
+  label_changeset_id: Changeset ID
   label_changeset_plural: Uppdateringar
   label_checked: vald
   label_check_uncheck_all_in_column: Markera/avmarkera alla i kolumnen
@@ -970,6 +1005,7 @@ sv-SE:
   label_download_plural: "%{count} Nedladdningar"
   label_downloads_abbr: D/L
   label_duplicated_by: duplicerad genom
+  label_duplicate: duplicate
   label_duplicates: dubblett av
   label_edit: Redigera
   label_enable_multi_select: Växla multival
@@ -980,9 +1016,10 @@ sv-SE:
   label_end_to_end: slut till slut
   label_end_to_start: slut till start
   label_enumeration_new: Nytt textvärde
+  label_enumeration_value: Enumeration value
   label_enumerations: Textvärden
   label_environment: Miljö
-  label_equals: "är"
+  label_equals: är
   label_example: Exempel
   label_export_to: 'Finns även som:'
   label_f_hour: "%{value} timme"
@@ -1017,6 +1054,7 @@ sv-SE:
   label_in_less_than: i mindre än
   label_in_more_than: i mer än
   label_incoming_emails: Inkommande E-post
+  label_includes: includes
   label_index_by_date: Index efter datum
   label_index_by_title: Index efter titel
   label_information: Information
@@ -1025,28 +1063,7 @@ sv-SE:
   label_internal: Intern
   label_invite_user: Bjud in användare
   label_show_hide: Show/hide
-  label_work_package_added: Arbetspaket lades till
-  label_work_package_category_new: Ny kategori
-  label_work_package_category_plural: Arbetspaketkategorier
-  label_work_package_hierarchy: Arbetspaketshierarki
-  label_work_package_new: Nya arbetspaket
-  label_work_package_note_added: Anteckning lades till arbetspaket
-  label_work_package_edit: Redigera arbetspaket %{name}
-  label_work_package_plural: Arbetspaketen
-  label_work_package_priority_updated: Arbetspaketets prioritet uppdaterad
-  label_work_package_status_new: Ny status
-  label_work_package_status_plural: Arbetspaketstatus
-  label_work_package_tracking: Arbetspaketsspårning
-  label_work_package_updated: Arbetspaketet uppdaterat
-  label_work_package_view_all: Visa alla arbetspaket
-  label_work_package_view_all_assigned_to_me: Visa alla arbetspaket som tilldelats
-    till mig
-  label_work_package_view_all_reported_by_me: Visa alla arbetspaket som rapporterats
-    av mig
-  label_work_package_view_all_responsible_for: View all work packages that I am responsible
-    for
-  label_work_package_view_all_watched: Visa alla bevakade arbetspaket
-  label_work_package_watchers: Bevakare
+  label_journal: Journal
   label_journal_diff: Jämför beskrivning
   label_jump_to_a_project: Hoppa till projekt...
   label_language_based: Baserat på användarens språk
@@ -1076,6 +1093,7 @@ sv-SE:
   label_member_plural: Medlemmar
   label_memder_view_all: Visa alla medlemmar
   label_menu_item_name: Namn på menyalternativ
+  label_message: Message
   label_message_last: Senaste meddelandet
   label_message_new: Nytt meddelande
   label_message_plural: Meddelanden
@@ -1085,7 +1103,6 @@ sv-SE:
   label_missing_api_access_key: Missing API access key
   label_missing_feeds_access_key: Missing RSS access key
   label_modification: "%{count} förändring"
-  label_modification_plural: "%{count} förändringar"
   label_modified: modifierad
   label_module_plural: Moduler
   label_modules: Moduler
@@ -1118,16 +1135,17 @@ sv-SE:
   label_none: ingen
   label_none_parentheses: "(ingen)"
   label_not_contains: innehåller inte
-  label_not_equals: "är inte"
+  label_not_equals: är inte
   label_notify_member_plural: Uppdateringar via E-post
-  label_open_menu: "Öppna meny"
-  label_open_work_packages: "öppna"
-  label_open_work_packages_plural: "öppna"
+  label_open_menu: Öppna meny
+  label_open_work_packages: öppna
+  label_open_work_packages_plural: öppna
   label_optional_description: Beskrivning
   label_options: Alternativ
   label_overall_activity: Total aktivitet
   label_overall_spent_time: Totalt förbrukad tid
-  label_overview: "Översikt"
+  label_overview: Översikt
+  label_part_of: part of
   label_password_lost: Glömt ditt lösenord?
   label_password_rule_lowercase: Gemener
   label_password_rule_numeric: Numeriska tecken
@@ -1180,7 +1198,7 @@ sv-SE:
   label_relation_new: Ny relation
   label_release_notes: Release notes
   label_remove_columns: Ta bort markerade kolumner
-  label_renamed: "ändrat namn"
+  label_renamed: ändrat namn
   label_reply_plural: Svar
   label_report: Rapport
   label_report_bug: Rapportera ett fel
@@ -1191,6 +1209,8 @@ sv-SE:
   label_repository: Versionsarkiv
   label_repository_root: Repository root
   label_repository_plural: Versionsarkiv
+  label_required: required
+  label_requires: requires
   label_responsible_for_work_packages: Arbetspaket jag är ansvarig för
   label_result_plural: Resultat
   label_reverse_chronological_order: I omvänd kronologisk ordning
@@ -1205,7 +1225,7 @@ sv-SE:
   label_role_and_permissions: Roller och behörigheter
   label_role_new: Ny roll
   label_role_plural: Roller
-  label_role_search: Assign roles to new members
+  label_role_search: Assign role to new members
   label_scm: SCM
   label_search: Sök
   label_search_titles_only: Sök endast i titlar
@@ -1251,7 +1271,7 @@ sv-SE:
   label_time_tracking: Tidredovisning
   label_today: idag
   label_top_menu: Huvudmeny
-  label_topic_plural: "Ämnen"
+  label_topic_plural: Ämnen
   label_total: Total
   label_type_new: Ny typ
   label_type_plural: Typer
@@ -1293,6 +1313,7 @@ sv-SE:
   label_wiki_dont_show_menu_item: Visa inte denna wiki-sida i projektets meny
   label_wiki_edit: Wiki redigering
   label_wiki_edit_plural: Wiki redigeringar
+  label_wiki_page_id: Wiki page ID
   label_wiki_navigation: Wiki-navigering
   label_wiki_page: Wiki-sida
   label_wiki_page_plural: Wiki-sidor
@@ -1301,8 +1322,30 @@ sv-SE:
   label_wiki_show_new_page_link: Visa undermenyn "Skapa ny underordnad sida"
   label_wiki_show_submenu_item: 'Visa som undermenyalternativ för '
   label_work_package: Arbetspaket
+  label_work_package_added: Arbetspaket lades till
+  label_work_package_category_new: Ny kategori
+  label_work_package_category_plural: Arbetspaketkategorier
+  label_work_package_hierarchy: Work package hierarchy
+  label_work_package_new: Nya arbetspaket
+  label_work_package_note_added: Anteckning lades till arbetspaket
+  label_work_package_edit: Redigera arbetspaket %{name}
+  label_work_package_plural: Arbetspaketen
+  label_work_package_priority_updated: Arbetspaketets prioritet uppdaterad
   label_work_package_status: Arbetspaketstatus
+  label_work_package_status_new: Ny status
+  label_work_package_status_plural: Arbetspaketstatus
   label_work_package_types: Work package types
+  label_work_package_updated: Arbetspaketet uppdaterat
+  label_work_package_tracking: Arbetspaketsspårning
+  label_work_package_view_all: Visa alla arbetspaket
+  label_work_package_view_all_assigned_to_me: Visa alla arbetspaket som tilldelats
+    till mig
+  label_work_package_view_all_reported_by_me: Visa alla arbetspaket som rapporterats
+    av mig
+  label_work_package_view_all_responsible_for: View all work packages that I am responsible
+    for
+  label_work_package_view_all_watched: Visa alla bevakade arbetspaket
+  label_work_package_watchers: Bevakare
   label_workflow: Arbetsflöde
   label_workflow_plural: Arbetsflöden
   label_workflow_summary: Sammanfattning
@@ -1326,7 +1369,7 @@ sv-SE:
     one: 1 project
     other: "%{count} projects"
     zero: no projects
-  label_year: "År"
+  label_year: År
   label_yesterday: igår
   label_keyboard_function: Funktion
   label_keyboard_shortcut: Genväg
@@ -1350,7 +1393,7 @@ sv-SE:
   label_keyboard_shortcut_details_package: Visa informationsfönstret för arbetspaket
   label_keyboard_shortcut_go_edit: Gå till redigering av den aktuella artikeln (på
     detaljsidor endast)
-  label_keyboard_shortcut_open_more_menu: "Öppna mer-menyn (på detaljsidor endast)"
+  label_keyboard_shortcut_open_more_menu: Öppna mer-menyn (på detaljsidor endast)
   label_keyboard_shortcut_go_preview: Gå till förhandsgranskning av den aktuella redigeringen
     (på Redigera sidor endast)
   label_keyboard_shortcut_focus_previous_item: Fokusera tidigare listelement (på vissa
@@ -1436,24 +1479,26 @@ sv-SE:
   notice_locking_conflict_reload_page: Vänligen ladda om sidan, granska ändringarna
     och tilldela dina uppdateringar igen.
   notice_member_added: Added %{name} to the project.
-  notice_members_added: Added %{number} users to the the project.
+  notice_members_added: Added %{number} users to the project.
   notice_member_removed: Removed %{user} from project.
   notice_member_deleted: "%{user} has been removed from the project and deleted."
   notice_no_principals_found: Inga resultat hittades.
   notice_bad_request: Felaktig förfrågan.
   notice_not_authorized: Du har inte behörighet att komma åt denna sida.
   notice_not_authorized_archived_project: Projektet som du försöker komma åt har arkiverats.
+  notice_password_confirmation_failed: Your password is not correct. The changes were
+    not saved.
   notice_project_not_deleted: Projektet raderades ej.
   notice_successful_connection: Lyckad anslutning.
   notice_successful_create: Skapades utan problem.
   notice_successful_delete: Raderades utan problem.
   notice_successful_update: Uppdaterades utan problem.
   notice_to_many_principals_to_display: "Det finns för många resultat. \nBegränsa
-    sökningen genom att skriva namnet på den nya medlemmen (eller gruppen).\n"
+    sökningen genom att skriva namnet på den nya medlemmen (eller gruppen)."
   notice_unable_delete_time_entry: Det gick inte att ta bort tidrapport.
   notice_unable_delete_version: Det gick inte att ta bort version.
-  notice_user_missing_authentication_method: User has yet to chose a password or another
-    way the sign in.
+  notice_user_missing_authentication_method: User has yet to choose a password or
+    another way to sign in.
   notice_user_invitation_resent: Another invitation has been sent to %{email}.
   present_access_key_value: 'Your %{key_name} is: %{value}'
   notice_automatic_set_of_standard_type: Ange standard typ automatiskt.
@@ -1485,7 +1530,7 @@ sv-SE:
     text_getting_started: This video provides you an overview of OpenProject. It helps
       you to set up your first project and to start collaborating with your team members.
     text_show_again: You can restart this video from the help menu
-    welcome: Hi %{name}, welcome to OpenProject
+    welcome: Welcome to OpenProject
   permission_add_work_package_notes: Lägg till anteckningar
   permission_add_work_packages: Add work packages (also allows to add attachments
     to all work packages)
@@ -1494,7 +1539,7 @@ sv-SE:
   permission_add_subprojects: Skapa delprojekt
   permission_add_work_package_watchers: Lägg till bevakare
   permission_browse_repository: Read-only access to repository (browse and checkout)
-  permission_change_wiki_parent_page: "Ändra överordnad wiki-sida"
+  permission_change_wiki_parent_page: Ändra överordnad wiki-sida
   permission_comment_news: Kommentera nyhet
   permission_commit_access: Read/write access to repository (commit)
   permission_copy_projects: Kopiera projekt
@@ -1548,6 +1593,7 @@ sv-SE:
   permission_view_work_package_watchers: Visa lista med bevakare
   permission_view_work_packages: Visa arbetspaket
   permission_view_messages: Visa meddelanden
+  permission_view_members: View members
   permission_view_project_associations: Visa projektberoenden
   permission_view_reportings: Visa rapporter
   permission_view_time_entries: Visa förbrukad tid
@@ -1586,7 +1632,7 @@ sv-SE:
   repositories:
     at_identifier: at %{identifier}
     atom_revision_feed: Atom revision feed
-    autofetch_information: |
+    autofetch_information: |-
       Check this if you want repositories to be updated automatically when accessing the repository module page.
       This encompasses the retrieval of commits from the repository and refreshing the required disk storage.
     checkout:
@@ -1596,14 +1642,14 @@ sv-SE:
         none: No checkout access, you may only view the repository through this application.
       access_permission: Your permissions on this repository
       url: Checkout URL
-      base_url_text: |
+      base_url_text: |-
         The base URL to use for generating checkout URLs (e.g., https://myserver.example.org/repos/).
         Note: The base URL is only used for rewriting checkout URLs in managed repositories. Other repositories are not altered.
       default_instructions:
-        git: |
+        git: |-
           The data contained in this repository can be downloaded to your computer with Git.
           Please consult the documentation of Git if you need more information on the checkout procedure and available clients.
-        subversion: |
+        subversion: |-
           The data contained in this repository can be downloaded to your computer with Subversion.
           Please consult the documentation of Subversion if you need more information on the checkout procedure and available clients.
       enable_instructions_text: Displays checkout instructions defined below on all
@@ -1666,11 +1712,13 @@ sv-SE:
           ).
         path_encoding: 'Override Git path encoding (Default: UTF-8)'
       local_title: Länka befintligt lokalt Git-versionsarkiv
+      local_url: Local URL
       local_introduction: Om du har ett existerande lokalt Git-versionsarkiv, så kan
         du länka till det ifrån OpenProject för att nå det inifrån applikationen.
       managed_introduction: Låt OpenProject automatiskt skapa och integrera ett lokalt
         Git-versionsarkiv.
       managed_title: Git-versionsarkivet integreras i OpenProject
+      managed_url: Managed URL
       path: Sökväg till Git-versionsarkiv
       path_encoding: Sökvägskodning
     go_to_revision: Gå till revision
@@ -1691,13 +1739,14 @@ sv-SE:
       managed: Skapa nytt arkiv i OpenProject
     storage:
       not_available: Disk storage consumption is not available for this repository.
-      update_timeout: |
+      update_timeout: |-
         Keep the last required disk space information for a repository for N minutes.
         As counting the required disk space of a repository may be costly, increase this value to reduce performance impact.
     subversion:
       existing_title: Befintligt Subversion-arkiv
       existing_introduction: Om du har ett befintlig Subversion-arkiv, kan du länka
         det med OpenProject för att komma åt den inifrån programmet.
+      existing_url: Existing URL
       instructions:
         managed_url: Detta är URL:n till det hanterade (lokala) Subversion-arkivet.
         url: 'Ange URL för arkivet. Detta kan antingen ange ett lokalt arkiv (utgående
@@ -1705,6 +1754,7 @@ sv-SE:
       managed_title: Subversion-arkiv integrerade i OpenProject
       managed_introduction: Låt OpenProject skapa och integrera ett lokalt Subversion-arkiv
         automatiskt.
+      managed_url: Managed URL
       password: Lösenord för arkiv
       username: Användarnamn för arkiv
     named_repository: "%{vendor_name} repository"
@@ -1712,7 +1762,7 @@ sv-SE:
     url: URL till arkiv
     warnings:
       cannot_annotate: This file cannot be annotated.
-  search_input_placeholder: sök ...
+  search_input_placeholder: Search ...
   setting_email_delivery_method: Email delivery method
   setting_sendmail_location: Location of the sendmail executable
   setting_smtp_enable_starttls_auto: Automatically use STARTTLS if available
@@ -1843,14 +1893,16 @@ sv-SE:
   text_access_token_hint: Access tokens allow you to grant external applications access
     to resources in OpenProject.
   text_analyze: 'Vidare analys: %{subject}'
-  text_are_you_sure: "Är du säker?"
+  text_are_you_sure: Är du säker?
   text_are_you_sure_with_children: Ta bort arbetspaket och alla underarbetspaket?
   text_assign_to_project: Tilldela till projektet
-  text_form_configuration: You can customize which attributes will be displayed in
-    forms for work packages of this type. 'Active' fields will be shown in the collapsed
-    work package view if they have a value, fields that are 'Always displayed' even
-    if they don't. Inactive fields will never be shown, even if they have a value.
+  text_form_configuration: 'You can customize which attributes will be displayed in
+    forms for work packages of this type. ''Active'' fields will be shown in the collapsed
+    work package view if they have a value, fields that are ''Always displayed'' even
+    if they don''t. Inactive fields will never be shown, even if they have a value.
     Only fields that are not required or have a default value can be customized.
+
+'
   text_caracters_maximum: maximalt %{count} tecken.
   text_caracters_minimum: Måste vara minst %{count} tecken lång.
   text_comma_separated: Flera värden tillåtna (kommaseparerade).
@@ -1870,7 +1922,7 @@ sv-SE:
   text_enumeration_category_reassign_to: 'Tilldela dem till detta värde:'
   text_enumeration_destroy_question: "%{count} objekt har tilldelats detta värde."
   text_file_repository_writable: Katalog skrivbar för bifogade filer
-  text_git_repo_example: ett tomt och lokalt versionsarkiv (t.ex. /gitrepo, c:\\gitrepo)
+  text_git_repo_example: ett tomt och lokalt versionsarkiv (t.ex. /gitrepo, c:\gitrepo)
   text_hint_date_format: Enter a date in the form of YYYY-MM-DD. Other formats may
     be changed to an unwanted date.
   text_hint_disable_with_0: 'Notera: Inaktivera med 0'
@@ -1883,8 +1935,7 @@ sv-SE:
   text_work_package_updated: Arbetspaketet %{id} har uppdaterats av %{author}.
   text_work_package_watcher_added: You have been added as a watcher to Work package
     %{id} by %{watcher_setter}.
-  text_work_packages_destroy_confirmation: "Är du säker du vill ta bort det valda
-    arbetspaket(paketen)?"
+  text_work_packages_destroy_confirmation: Är du säker du vill ta bort det valda arbetspaket(paketen)?
   text_work_packages_ref_in_commit_messages: Referenser och fixande av arbetspaket
     i incheckningsmeddelanden
   text_journal_added: "%{label} %{value} lades till"
@@ -1926,6 +1977,10 @@ sv-SE:
     eller E-post i OpenProject och versionsarkivet kopplas automatiskt.
   text_select_mail_notifications: Välj åtgärder för vilka E-postaviseringar ska skickas.
   text_status_changed_by_changeset: Tillämpad i uppdatering %{value}.
+  text_table_difference_description: In this table the single %{entries} are shown.
+    You can view the difference between any two entries by first selecting the according
+    checkboxes in the table. When clicking on the button below the table the differences
+    are shown.
   text_time_logged_by_changeset: Tillämpad i uppdatering %{value}.
   text_tip_work_package_begin_day: arbetspaket som börjar denna dag
   text_tip_work_package_begin_end_day: arbetspaket som börjar och slutar denna dag
@@ -1936,8 +1991,8 @@ sv-SE:
   text_user_wrote: "%{value} skrev:"
   text_warn_on_leaving_unsaved: Den aktuella sidan innehåller osparad text som kommer
     att förloras om du lämnar den här sidan.
-  text_wiki_destroy_confirmation: "Är du säker du vill ta bort denna wiki och allt
-    dess innehåll?"
+  text_wiki_destroy_confirmation: Är du säker du vill ta bort denna wiki och allt
+    dess innehåll?
   text_wiki_page_destroy_children: Ta bort underordnade sidor och alla deras ättlingar
   text_wiki_page_destroy_question: Denna sida har %{descendants} underordnade sidor
     och ättlingar. Vad vill du göra?
@@ -1975,7 +2030,7 @@ sv-SE:
     associations: Beroenden
     board_could_not_be_saved: Forum kunde inte sparas
     button_delete_all: Ta bort alla
-    change: "Ändra i planeringen"
+    change: Ändra i planeringen
     children: Underordnade element
     color_could_not_be_saved: Färg kunde inte sparas
     current_planning: Nuvarande planering
@@ -2051,7 +2106,7 @@ sv-SE:
       grouping: Gruppering
       grouping_hide_group: Dölj grupp "%{group}"
       grouping_one: Första grupperingsvillkor
-      grouping_one_phrase: "Är ett delprojekt av"
+      grouping_one_phrase: Är ett delprojekt av
       grouping_other: Andra
       hide_chart: Dölj diagram
       noneElement: "(ingen)"
@@ -2093,7 +2148,7 @@ sv-SE:
       tidslinjen.
     no_timeline_for_id: Det finns ingen tidslinje med ID %{id}.
     notice_successful_deleted_all_elements: Lyckades ta bort alla element
-    outline: "Återställa disposition"
+    outline: Återställa disposition
     outlines:
       aggregation: Visa endast aggregeringar
       level1: Expandera nivå 1
@@ -2120,16 +2175,26 @@ sv-SE:
     type_could_not_be_saved: Typen kunde inte sparas
     reporting_could_not_be_saved: Rapportering kunde inte sparas
     properties: Egenskaper
-    really_delete_color: "Är du säker på att du vill ta bort följande färg? Typer
-      med den här färgen kommer inte att raderas."
-    really_delete_project_association_between_project_a_and_project_b: Är du säker
+    really_delete_color: 'Är du säker på att du vill ta bort följande färg? Typer
+      med den här färgen kommer inte att raderas.
+
+'
+    really_delete_project_association_between_project_a_and_project_b: 'Är du säker
       på att du vill ta bort beroendet mellan "%{project_a}" och "%{project_b}"?
-    really_delete_project_type: "Är du säker på att du vill ta bort följande projekttyp?
-      Projekt som använder denna typ raderas inte."
-    really_delete_timeline: "Är du säker på att du vill ta bort följande tidslinjerapport?
-      Arbetspaket som visas denna tidslinjerapport tas inte bort."
-    really_delete_reporting: "Är du säker på att du vill ta bort följande rapportering?
-      Tidigare statusrapportering tas också bort."
+
+'
+    really_delete_project_type: 'Är du säker på att du vill ta bort följande projekttyp?
+      Projekt som använder denna typ raderas inte.
+
+'
+    really_delete_timeline: 'Är du säker på att du vill ta bort följande tidslinjerapport?
+      Arbetspaket som visas denna tidslinjerapport tas inte bort.
+
+'
+    really_delete_reporting: 'Är du säker på att du vill ta bort följande rapportering?
+      Tidigare statusrapportering tas också bort.
+
+'
     start: Start
     timeline: Tidslinjerapport
     timelines: Tidslinjerapporter
@@ -2144,11 +2209,13 @@ sv-SE:
       weeks: Veckor
       months: Månader
       quarters: Kvartal
-      years: "År"
+      years: År
   title_remove_and_delete_user: Remove the invited user from the project and delete
     him/her.
-  tooltip_resend_invitation: Sends another invitation email with a fresh token in
+  tooltip_resend_invitation: 'Sends another invitation email with a fresh token in
     case the old one expired or the user did not get the original email.
+
+'
   tooltip:
     attribute_visibility:
       default: Show if not empty
@@ -2167,9 +2234,11 @@ sv-SE:
     activate: Aktivera
     activate_and_reset_failed_logins: Aktivera och nollställ misslyckade inloggningsförsök
     authentication_provider: Autentiseringstjänst
-    authentication_settings_disabled_due_to_external_authentication: Användaren autentiseras
+    authentication_settings_disabled_due_to_external_authentication: 'Användaren autentiseras
       via en extern autentiseringstjänst, så det finns inget lösenord i OpenProject
       som kan ändras.
+
+'
     authorization_rejected: Du är inte tillåten att logga in.
     assign_random_password: Assign random password (sent to user via email)
     blocked: tillfälligt låst
@@ -2185,7 +2254,7 @@ sv-SE:
     locked: låst permanent
     no_login: Användaren autentiseras via inloggning med lösenord. Eftersom det är
       inaktiverat, kan inte de logga in.
-    password_change_unsupported: "Ändring av lösenord stöds inte."
+    password_change_unsupported: Ändring av lösenord stöds inte.
     registered: Registrerad
     reset_failed_logins: Nollställ misslyckade inloggningsförsök
     settings:
@@ -2199,7 +2268,7 @@ sv-SE:
     unlock_and_reset_failed_logins: Lås upp och nollställ misslyckade inloggningsförsök
   version_status_closed: stängt
   version_status_locked: låst
-  version_status_open: "öppna"
+  version_status_open: öppna
   note: Observera
   note_password_login_disabled: Inloggning med lösenord har inaktiverats av %{configuration}.
   warning: Varning
@@ -2208,15 +2277,19 @@ sv-SE:
   menu_item_setting: Synlighet
   wiki_menu_item_for: Menyobjekt för wiki-sida "%{title}"
   wiki_menu_item_setting: Synlighet
-  wiki_menu_item_new_main_item_explanation: Du tar bort det enda huvudobjektet i wiki
-    menyn. Du måste nu välja en wikisida för vilket ett nytt huvudobjekt kommer att
-    genereras. För att radera wikin inaktiverar projektadministratören wiki-modulen.
+  wiki_menu_item_new_main_item_explanation: 'Du tar bort det enda huvudobjektet i
+    wiki menyn. Du måste nu välja en wikisida för vilket ett nytt huvudobjekt kommer
+    att genereras. För att radera wikin inaktiverar projektadministratören wiki-modulen.
+
+'
   wiki_menu_item_delete_not_permitted: Menyalternativet wiki på den enda wiki-sidan
     kan inte tas bort.
   query_menu_item_for: Menyalternativet för frågan "%{title}"
   work_package:
-    updated_automatically_by_child_changes: _Uppdateras automatiskt genom att ändra
+    updated_automatically_by_child_changes: '_Uppdateras automatiskt genom att ändra
       värdena för underarbetspaket %{child} _
+
+'
     destroy:
       info: Deleting the work package is an irreversible action.
       title: Delete the work package

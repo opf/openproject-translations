@@ -5,6 +5,8 @@ de:
       hide: Verbergen
       loading: Lädt ...
     close_popup_title: Dialog schließen
+    close_filter_title: Filter schließen
+    close_form_title: Formular schließen
     clipboard:
       browser_error: Ihr Browser unterstützt das Kopieren in die Zwischenablage nicht
         nativ. Bitte selektieren und kopieren Sie den Text händisch.
@@ -12,6 +14,7 @@ de:
     button_add_watcher: Beobachter hinzufügen
     button_cancel: Abbrechen
     button_check_all: Alles auswählen
+    button_confirm: Bestätigen
     button_copy: Kopieren
     button_delete: Löschen
     button_delete_watcher: Beobachter löschen
@@ -24,7 +27,7 @@ de:
     button_log_time: Zeit buchen
     button_more: Mehr
     button_move: Verschieben
-    button_open_details: "Öffne Detailansicht"
+    button_open_details: Öffne Detailansicht
     button_open_fullscreen: Vollbildansicht öffnen
     button_quote: Zitieren
     button_save: Speichern
@@ -34,6 +37,7 @@ de:
     button_export-pdf: PDF-Download
     button_export-atom: Atom-Download
     description_available_columns: Verfügbare Spalten
+    description_current_position: 'Sie sind hier:'
     description_select_work_package: 'Arbeitspaket #%{id} auswählen'
     description_selected_columns: Ausgewählte Spalten
     description_subwork_package: 'Kind von Arbeitspaket #%{id}'
@@ -71,6 +75,7 @@ de:
     label_board_locked: Gesperrt
     label_board_sticky: Wichtig (immer oben)
     label_create_work_package: Erstelle neues Arbeitspaket
+    label_created_by: Erstellt von
     label_date: Datum
     label_date_with_format: 'Die %{date_attribute} im folgenden Format eingeben: %{format}'
     label_deactivate: Deaktiviere
@@ -124,6 +129,7 @@ de:
     label_on: am
     label_open_menu: Menü öffnen
     label_open_work_packages: offen
+    label_password: Kennwort
     label_previous: Zurück
     label_per_page: 'Pro Seite:'
     label_please_wait: Bitte warten
@@ -164,6 +170,7 @@ de:
     label_attachments: Dateien
     label_drop_files: Dateien hier ablegen
     label_drop_files_hint: oder klicken Sie um Dateien hinzuzufügen
+    label_add_attachments: Anhänge hinzufügen
     label_remove_file: "%{fileName} löschen"
     label_remove_watcher: Beobachter %{name} entfernen
     label_remove_all_files: Alle Dateien löschen
@@ -177,6 +184,9 @@ de:
     label_upload_counter: "%{done} von %{count} Dateien fertig"
     label_validation_error: 'Das Arbeitspaket konnte aufgrund folgender Fehler nicht
       gespeichert werden:'
+    password_confirmation:
+      field_description: Sie müssen Ihr Kennwort eingeben um diese Änderungen zu speichern.
+      title: Geben Sie Ihr Kennwort ein um fortzufahren
     pagination:
       no_other_page: Sie befinden sich auf der einzigen Seite.
       pages:
@@ -185,6 +195,7 @@ de:
     placeholders:
       default: "-"
       selection: Bitte auswählen
+      relation_description: Klicken, um eine Beschreibung für diese Beziehung anzulegen
     text_are_you_sure: Sind Sie sicher?
     watchers:
       label_loading: Lade Beobachter...
@@ -204,9 +215,9 @@ de:
       estimated_hours: Geschätzter Aufwand
       fixed_version: Version
       member_of_group: Gruppe der zugewiesenen Person
-      parent: "Übergeordnete Aufgabe"
-      parent_issue: "Übergeordnete Aufgabe"
-      parent_work_package: "Übergeordnete Aufgabe"
+      parent: Übergeordnete Aufgabe
+      parent_issue: Übergeordnete Aufgabe
+      parent_work_package: Übergeordnete Aufgabe
       priority: Priorität
       progress: Fortschritt (%)
       project: Projekt
@@ -222,7 +233,7 @@ de:
       version: Version
       watcher: Beobachter
     relation_labels:
-      parent: "Übergeordnete Aufgabe"
+      parent: Übergeordnete Aufgabe
       children: Untergeordnete Arbeitspakete
       relates: Verwandt mit
       duplicates: Dupliziert
@@ -231,16 +242,29 @@ de:
       blocked: Blockiert durch
       precedes: Vorgänger von
       follows: Folgt
+      includes: Enthält
+      partof: Enthalten in
+      requires: Benötigt
+      required: Benötigt von
+      relation_type: Beziehungstyp
+    relations_hierarchy:
+      hierarchy_headline: Hierarchie
     relation_buttons:
-      change_parent: "Übergeordnetes Arbeitspaket ändern"
-      add_child: Untergeordnetes Arbeitspaket hinzufügen
-      add_related_to: Beziehung hinzufügen
-      add_duplicates: Duplikatsbeziehung hinzufügen
-      add_duplicated_by: Dupliziert-von-Beziehung hinzufügen
-      add_blocks: Blockiert hinzufügen
-      add_blocked_by: Blockiert durch hinzufügen
-      add_precedes: Vorgänger von hinzufügen
-      add_follows: Folgt hinzufügen
+      change_parent: Übergeordnetes Arbeitspaket ändern
+      remove_parent: Übergeordnetes Arbeitspaket entfernen
+      group_by_wp_type: Nach Arbeitspaket-Typ gruppieren
+      group_by_relation_type: Nach Relations-Typ gruppieren
+      add_parent: Übergeordnetes Arbeitspaket setzen
+      add_new_child: Neue Unteraufgabe
+      add_existing_child: Unteraufgabe zuweisen
+      remove_child: Unteraufgabe entfernen
+      add_new_relation: Neue Beziehung erstellen
+      update_description: Beschreibung dieser Beziehung erstellen oder bearbeiten
+      remove: Beziehung entfernen
+      save: Beziehung speichern
+      abort: Abbrechen
+    relations_autocomplete:
+      placeholder: ID des zugehörigen Arbeitspaketes eingeben
     repositories:
       select_tag: Tag auswählen
       select_branch: Branch auswählen
@@ -323,18 +347,22 @@ de:
       outlines: Hierarchie-Stufe
     unsupported_browser:
       title: Ihre Browserversion wird nicht unterstützt
-      message: Die Browser-Version, die Sie verwenden, wird nicht mehr von OpenProject
-        unterstützt. Bitte aktualisieren Sie Ihren Browser.
+      message: Die von Ihnen verwendete Browser-Version wird nicht mehr von OpenProject
+        unterstützt.
+      update_message: Bitte aktualisieren Sie Ihren Browser.
+      update_ie_user: Bitte wechseln Sie zu Mozilla Firefox oder Google Chrome, oder
+        führen ein Upgrade auf Microsoft Edge durch.
       learn_more: Weitere Informationen
+      close_warning: Diese Warnung ignorieren.
     wiki_formatting:
       strong: Fett
       italic: Kursiv
       underline: Unterstrichen
       deleted: Duchgestrichen
       code: Quelltext
-      heading1: "Überschrift 1. Ordnung"
-      heading2: "Überschrift 2. Ordnung"
-      heading3: "Überschrift 3. Ordnung"
+      heading1: Überschrift 1. Ordnung
+      heading2: Überschrift 2. Ordnung
+      heading3: Überschrift 3. Ordnung
       unordered_list: Aufzählungsliste
       ordered_list: Nummerierte Liste
       quote: Zitieren
@@ -372,12 +400,15 @@ de:
       message_successful_bulk_delete: Arbeitspakete erfolgreich gelöscht.
       message_successful_show_in_fullscreen: Klicken Sie hier, um dieses Arbeitspaket
         in der Vollbild-Ansicht zu öffnen.
+      message_view_spent_time: Aufgewendete Zeit für dieses Arbeitspaket anzeigen
       no_value: Kein Wert
       inline_create:
         title: Klicken Sie hier, um ein neues Arbeitspaket zu dieser Liste hinzufügen
       create:
-        header: Neues Arbeitspaket
-        header_with_parent: 'Neues Arbeitspaket (Kind von %{type} #%{id})'
+        header: 'Neu: %{type}'
+        header_no_type: Neues Arbeitspaket (Typ noch nicht gesetzt)
+        header_with_parent: 'Neu: %{type} (Kind von %{parent_type} #%{id})'
+        button: Anlegen
       no_results:
         title: Keine Arbeitspakete anzuzeigen.
         description: Es wurden entweder keine Arbeitspakete erzeugt oder alle Arbeitspakete
@@ -430,15 +461,18 @@ de:
         display_sums: Summen anzeigen
         errors:
           unretrievable_query: Die URL enthält keine benutzerdefinierte Abfrage
+          not_found: Filter existiert nicht
       table:
         summary: Tabelle mit Zeilen von Arbeitspaketen und Spalten von Attributen
           dieser Arbeitspakete.
         text_inline_edit: Die meisten Zellen dieser Tabelle sind Schalter, über die
           Sie einzelne Attribute direkt bearbeiten können.
-        text_sort_hint: "Über die Links in den Spaltenüberschriften kann Spalten sortiert,
-          gruppiert, verschoben, entfernt oder hinzugefügt werden."
+        text_sort_hint: Über die Links in den Spaltenüberschriften kann Spalten sortiert,
+          gruppiert, verschoben, entfernt oder hinzugefügt werden.
+        text_select_hint: Auswahlfelder können mit 'ALT' und Pfeiltasten geöffnet
+          werden.
       tabs:
-        overview: "Übersicht"
+        overview: Übersicht
         activity: Aktivität
         relations: Beziehungen
         watchers: Beobachter

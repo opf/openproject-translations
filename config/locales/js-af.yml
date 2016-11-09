@@ -5,6 +5,8 @@ af:
       hide: Versteek
       loading: Loading ...
     close_popup_title: Close popup
+    close_filter_title: Close filter
+    close_form_title: Close form
     clipboard:
       browser_error: Your browser doesn't support copying to clipboard. Please copy
         the selected text manually.
@@ -12,6 +14,7 @@ af:
     button_add_watcher: Voeg kyker by
     button_cancel: Kanselleer
     button_check_all: Kontroleer almal
+    button_confirm: Confirm
     button_copy: Kopieer
     button_delete: Skrap
     button_delete_watcher: Delete watcher
@@ -34,6 +37,7 @@ af:
     button_export-pdf: Download PDF
     button_export-atom: Download Atom
     description_available_columns: Kolomme beskikbaar
+    description_current_position: 'Jy is hier:'
     description_select_work_package: 'Kies werkspakket #%{id}'
     description_selected_columns: Geselekteerde kolomme
     description_subwork_package: 'Kind van werkspakket #%{id}'
@@ -71,6 +75,7 @@ af:
     label_board_locked: Gesluit
     label_board_sticky: Klewerig
     label_create_work_package: Create new work package
+    label_created_by: Created by
     label_date: Datum
     label_date_with_format: 'Tik die %{date_attribute} in die volgende formaat: %{format}'
     label_deactivate: Deactivate
@@ -124,6 +129,7 @@ af:
     label_on: 'on'
     label_open_menu: Maak kieslys oop
     label_open_work_packages: maak oop
+    label_password: Wagwoord
     label_previous: Vorige
     label_per_page: 'Per page:'
     label_please_wait: Please wait
@@ -164,6 +170,7 @@ af:
     label_attachments: Lêers
     label_drop_files: Drop files here
     label_drop_files_hint: or click to add files
+    label_add_attachments: Add attachments
     label_remove_file: Delete %{fileName}
     label_remove_watcher: Remove watcher %{name}
     label_remove_all_files: Delete all files
@@ -177,6 +184,9 @@ af:
     label_upload_counter: "%{done} of %{count} files finished"
     label_validation_error: 'The work package could not be saved due to the following
       errors:'
+    password_confirmation:
+      field_description: You need to enter your account password to confirm this change.
+      title: Confirm your password to continue
     pagination:
       no_other_page: You are on the only page.
       pages:
@@ -185,6 +195,7 @@ af:
     placeholders:
       default: "-"
       selection: Kies asseblief
+      relation_description: Click to add description for this relation
     text_are_you_sure: Are you sure?
     watchers:
       label_loading: loading watchers...
@@ -231,16 +242,29 @@ af:
       blocked: Blocked by
       precedes: Precedes
       follows: Follows
+      includes: Includes
+      partof: Part of
+      requires: Requires
+      required: Required by
+      relation_type: relation type
+    relations_hierarchy:
+      hierarchy_headline: hierarchy
     relation_buttons:
       change_parent: Change parent
-      add_child: Add child
-      add_related_to: Add related to
-      add_duplicates: Add duplicates
-      add_duplicated_by: Add duplicated by
-      add_blocks: Add blocks
-      add_blocked_by: Add blocked by
-      add_precedes: Add precedes
-      add_follows: Add follows
+      remove_parent: Remove parent
+      group_by_wp_type: Group by work package type
+      group_by_relation_type: Group by relation type
+      add_parent: Add existing parent
+      add_new_child: Create new child
+      add_existing_child: Add existing child
+      remove_child: Remove child
+      add_new_relation: Create new relation
+      update_description: Set or update description of this relation
+      remove: Remove relation
+      save: Save relation
+      abort: Abort
+    relations_autocomplete:
+      placeholder: Enter the related work package id
     repositories:
       select_tag: Select tag
       select_branch: Select branch
@@ -322,8 +346,11 @@ af:
     unsupported_browser:
       title: Your browser version is not supported
       message: The browser version you are using is no longer supported by OpenProject.
-        Please update your browser.
+      update_message: Please update your browser.
+      update_ie_user: Please switch to Mozilla Firefox or Google Chrome, or upgrade
+        to Microsoft Edge.
       learn_more: Learn more
+      close_warning: Ignore this warning.
     wiki_formatting:
       strong: Strong
       italic: Italic
@@ -370,12 +397,15 @@ af:
       message_successful_bulk_delete: Successfully deleted work packages.
       message_successful_show_in_fullscreen: Klik hier om hierdie werkspakket in volskermmodus
         oop te maak.
+      message_view_spent_time: Show spent time for this work package
       no_value: No value
       inline_create:
         title: Klik hier om 'n nuwe werkspakket by hierdie lys te voeg
       create:
-        header: Nuwe werkspakket
-        header_with_parent: 'New work package (Child of %{type} #%{id})'
+        header: New %{type}
+        header_no_type: New work package (Type not yet set)
+        header_with_parent: 'New %{type} (Child of %{parent_type} #%{id})'
+        button: Skep
       no_results:
         title: Geen werkspakkette om te wys.
         description: Geen geskep óf alle werkspakkette is uitgefiltreer.
@@ -427,12 +457,14 @@ af:
         display_sums: Vertoon totale
         errors:
           unretrievable_query: Unable to retrieve query from URL
+          not_found: There is no such query
       table:
         summary: Table with rows of work package and columns of work package attributes.
         text_inline_edit: Most cells of this table are buttons that activate inline-editing
           functionality of that attribute.
         text_sort_hint: With the links in the table headers you can sort, group, reorder,
           remove and add table columns.
+        text_select_hint: Select boxes should be opened with 'ALT' and arrow keys.
       tabs:
         overview: Oorsig
         activity: Aktiwiteit
