@@ -194,15 +194,19 @@ fr:
         relations/base_contract:
           attributes:
             to:
-              error_not_found: work package in `to` position not found or not visible
-              error_readonly: an existing relation's `to` link is immutable
+              error_not_found: lot de travaux dans la position `à` introuvable ou
+                invisible
+              error_readonly: impossible de modifier le lien d'une relation existante
+                `à`
             from:
-              error_not_found: work package in `from` position not found or not visible
-              error_readonly: an existing relation's `from` link is immutable
+              error_not_found: lot de travaux dans la position `de` introuvable ou
+                invisible
+              error_readonly: impossible de modifier le lien d'une relation existante
+                `de`
         users/base_contract:
           attributes:
             status:
-              invalid_on_create: is not a valid status for new users.
+              invalid_on_create: n’est pas un statut valide pour les nouveaux utilisateurs.
   activerecord:
     attributes:
       announcements:
@@ -392,8 +396,8 @@ fr:
         query:
           filters:
             custom_fields:
-              inexistent: There is no custom field for the filter.
-              invalid: The custom field is not valid in the given context.
+              inexistent: Il n’y a pas de champ personnalisé pour le filtre.
+              invalid: Le champ personnalisé n’est pas valide dans le contexte donné.
         repository:
           not_available: Le fournisseur de gestion de contrôle de sources n'est pas
             disponible
@@ -799,15 +803,15 @@ fr:
   error_can_not_delete_type: Ce type contient des Lots de Travaux et ne peut être
     supprimé.
   error_can_not_delete_standard_type: Les types standards ne peuvent pas être supprimés.
-  error_can_not_invite_user: Failed to send invitation to user.
+  error_can_not_invite_user: Échec de l'envoi de l'invitation à l'utilisateur.
   error_can_not_remove_role: Ce rôle est utilisé et ne peut être supprimé.
   error_can_not_reopen_work_package_on_closed_version: Un lot de travaux assigné à
     une version fermée ne peut être ré-ouvert
   error_check_user_and_role: Veuillez choisir un utilisateur et un rôle.
   error_cookie_missing: Le cookie OpenProject est manquant. Assurez-vous que les cookies
     sont activés, sans quoi cette application ne fonctionnera pas correctement.
-  error_pdf_export_too_many_columns: Too many columns selected for the PDF export.
-    Please reduce the number of columns.
+  error_pdf_export_too_many_columns: Trop de colonnes sélectionnées pour l’exportation
+    PDF. Veuillez réduire le nombre de colonnes.
   error_token_authenticity: Impossible de vérifier le jeton de Cross-Site Request
     Forgery.
   error_work_package_done_ratios_not_updated: Les ratios de Lots de Travaux achevés
@@ -837,9 +841,9 @@ fr:
   error_workflow_copy_target: Veuillez sélectioner une cible type(s) et rôle(s)
   error_menu_item_not_created: L'élément de menu n'a pas pu être ajouté
   error_menu_item_not_saved: L'élément de menu n'a pas pu être sauvegardé
-  error_wiki_root_menu_item_conflict: 'Can''t rename "%{old_name}" to "%{new_name}"
-    due to a conflict in the resulting menu item with the existing menu item "%{existing_caption}"
-    (%{existing_identifier}).
+  error_wiki_root_menu_item_conflict: 'Impossible de renommer "%{old_name}" pour "%{new_name}"
+    en raison d’un conflit dans l’élément de menu résultant avec l’élément de menu
+    existant "%{existing_caption}" (%{existing_identifier}).
 
 '
   error_external_authentication_failed: Une erreur s'est produite lors de l'authentification
@@ -966,8 +970,8 @@ fr:
   label_change_status: Changer le statut
   label_change_view_all: Afficher tous les changements
   label_changes_details: Détails de tous les changements
-  label_changeset: Changeset
-  label_changeset_id: Changeset ID
+  label_changeset: Lot de modification
+  label_changeset_id: ID de lot de modification
   label_changeset_plural: Lots de modification
   label_checked: vérifié
   label_check_uncheck_all_in_column: Cocher/Décocher tout dans la colonne
@@ -1024,7 +1028,7 @@ fr:
   label_download_plural: "%{count} Téléchargements"
   label_downloads_abbr: Téléchargement
   label_duplicated_by: dupliqué par
-  label_duplicate: duplicate
+  label_duplicate: dupliquer
   label_duplicates: doublons
   label_edit: Éditer
   label_enable_multi_select: Basculer multisélection
@@ -1035,7 +1039,7 @@ fr:
   label_end_to_end: bout à bout
   label_end_to_start: fin à début
   label_enumeration_new: Nouvelle valeur d'énumération
-  label_enumeration_value: Enumeration value
+  label_enumeration_value: Valeur d'énumération
   label_enumerations: Énumérations
   label_environment: Environement
   label_equals: est
@@ -1073,7 +1077,7 @@ fr:
   label_in_less_than: en moins de
   label_in_more_than: en plus de
   label_incoming_emails: Courriels entrants
-  label_includes: includes
+  label_includes: comporte
   label_index_by_date: Index par date
   label_index_by_title: Index par titre
   label_information: Information
@@ -1164,7 +1168,7 @@ fr:
   label_overall_activity: Activité totale
   label_overall_spent_time: Total du temps passé
   label_overview: Vue globale
-  label_part_of: part of
+  label_part_of: partie de
   label_password_lost: Mot de passe oublié
   label_password_rule_lowercase: Minuscules
   label_password_rule_numeric: Caractères numériques
@@ -1229,8 +1233,8 @@ fr:
   label_repository: Dépôt
   label_repository_root: Racine du dépôt
   label_repository_plural: Dépôts
-  label_required: required
-  label_requires: requires
+  label_required: requis
+  label_requires: requiert
   label_responsible_for_work_packages: Lots de Travaux dont je suis responsable
   label_result_plural: Résultats
   label_reverse_chronological_order: Dans l'ordre chronologique inversé
@@ -1245,7 +1249,7 @@ fr:
   label_role_and_permissions: Rôles et permissions
   label_role_new: Nouveau rôle
   label_role_plural: Rôles
-  label_role_search: Assign role to new members
+  label_role_search: Assigner un rôle aux nouveaux membres
   label_scm: SCM
   label_search: Recherche
   label_search_titles_only: Recherche uniquement de Titres
@@ -1336,7 +1340,7 @@ fr:
     du projet
   label_wiki_edit: Modification wiki
   label_wiki_edit_plural: Modifications wiki
-  label_wiki_page_id: Wiki page ID
+  label_wiki_page_id: ID de page Wiki
   label_wiki_navigation: Navigation wiki
   label_wiki_page: Page wiki
   label_wiki_page_plural: Pages wiki
@@ -1349,7 +1353,7 @@ fr:
   label_work_package_added: Lot de Travaux ajouté
   label_work_package_category_new: Nouvelle catégorie
   label_work_package_category_plural: Catégories de Lots de Travaux
-  label_work_package_hierarchy: Work package hierarchy
+  label_work_package_hierarchy: Hiérarchie du lot de travaux
   label_work_package_new: Nouveau Lot de Travaux
   label_work_package_note_added: Note de Lot de Travaux ajoutée
   label_work_package_edit: Éditer le lot de travaux %{name}
@@ -1510,7 +1514,7 @@ fr:
   notice_locking_conflict_reload_page: Veuillez rafraîchir la page, vérifier les changements
     et rélancer la mise à jour.
   notice_member_added: "%{name} a été ajouté au projet."
-  notice_members_added: Added %{number} users to the project.
+  notice_members_added: "%{number} utilisateurs ont été ajoutés au projet."
   notice_member_removed: "%{user} a été retiré du projet."
   notice_member_deleted: "%{user} a été retiré du projet et supprimé."
   notice_no_principals_found: Aucun résultat trouvé.
@@ -1518,8 +1522,8 @@ fr:
   notice_not_authorized: Vous n'êtes pas autorisé à accéder à cette page.
   notice_not_authorized_archived_project: Le projet auquel vous essayer d'accéder
     a été archivé.
-  notice_password_confirmation_failed: Your password is not correct. The changes were
-    not saved.
+  notice_password_confirmation_failed: Votre mot de passe n’est pas correct. Les changements
+    n’ont pas été enregistrés.
   notice_project_not_deleted: Le projet n'a pas été supprimé.
   notice_successful_connection: Connection réussie.
   notice_successful_create: Création réussie.
@@ -1563,7 +1567,7 @@ fr:
       aide à élaborer votre premier projet et à commencer à collaborer avec les membres
       de votre équipe.
     text_show_again: Vous pouvez relancer cette vidéo au départ du menu d'aide
-    welcome: Welcome to OpenProject
+    welcome: Bienvenue dans OpenProject
   permission_add_work_package_notes: Ajouter des notes
   permission_add_work_packages: Ajouter des lots de travaux (permet également d'ajouter
     des pièces jointes à tous les lots de travaux)
@@ -1626,7 +1630,7 @@ fr:
   permission_view_work_package_watchers: Voir la liste des observateurs
   permission_view_work_packages: Voir les Lots de Travaux
   permission_view_messages: Voir les messages
-  permission_view_members: View members
+  permission_view_members: Afficher les membres
   permission_view_project_associations: Voir les dépendances du projet
   permission_view_reportings: Voir rapports
   permission_view_time_entries: Voir temps passé
@@ -1750,7 +1754,7 @@ fr:
         path_encoding: 'Outrepasser le paramètre d''encodage de chemin d''accès Git
           (défaut: UTF-8)'
       local_title: Lier à un dépôt local Git existant
-      local_url: Local URL
+      local_url: URL locale
       local_introduction: Si vous avez un dépôt Git existant, vous pouvez le lier
         à OpenProject pour y accéder depuis l'application.
       managed_introduction: Laisser OpenProject créer et intégrer automatiquement
@@ -1785,7 +1789,7 @@ fr:
       existing_title: Dépôt Subversion existant
       existing_introduction: Si vous avez un dépôt Subversion existant, vous pouvez
         le lier avec OpenProject pour y accéder depuis l'application.
-      existing_url: Existing URL
+      existing_url: URL existante
       instructions:
         managed_url: Ceci est l'URL du dépôt Subversion géré localement.
         url: |-
@@ -1802,7 +1806,7 @@ fr:
     url: URL du dépôt
     warnings:
       cannot_annotate: Ce fichier ne peut pas être annoté.
-  search_input_placeholder: Search ...
+  search_input_placeholder: Rechercher...
   setting_email_delivery_method: Méthode de livraison d'e-mail
   setting_sendmail_location: Emplacement de l’exécutable sendmail
   setting_smtp_enable_starttls_auto: Utiliser automatiquement STARTTLS si disponible
@@ -2034,10 +2038,10 @@ fr:
   text_select_mail_notifications: Sélectionnez les actions pour lesquelles une notification
     par courriel sera envoyée.
   text_status_changed_by_changeset: Enregistré dans « changeset » %{value}.
-  text_table_difference_description: In this table the single %{entries} are shown.
-    You can view the difference between any two entries by first selecting the according
-    checkboxes in the table. When clicking on the button below the table the differences
-    are shown.
+  text_table_difference_description: Dans ce tableau sont affichés les %{entries}
+    individuelles. Vous pouvez visualiser la différence entre deux entrées en sélectionnant
+    d'abord les cases à cocher correspondantes dans le tableau. Les différences apparaissent
+    lorsque vous cliquez sur le bouton situé sous le tableau.
   text_time_logged_by_changeset: Enregistré dans « changeset » %{value}.
   text_tip_work_package_begin_day: lots de travaux débutant aujourd'hui
   text_tip_work_package_begin_end_day: lots de travaux débutant et se terminant aujourd'hui
