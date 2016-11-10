@@ -165,15 +165,15 @@ zh:
         relations/base_contract:
           attributes:
             to:
-              error_not_found: work package in `to` position not found or not visible
-              error_readonly: an existing relation's `to` link is immutable
+              error_not_found: 找不到这个工作包
+              error_readonly: 关系要持久
             from:
-              error_not_found: work package in `from` position not found or not visible
-              error_readonly: an existing relation's `from` link is immutable
+              error_not_found: 找不到这个工作包
+              error_readonly: 关系要持久
         users/base_contract:
           attributes:
             status:
-              invalid_on_create: is not a valid status for new users.
+              invalid_on_create: 不是新用户的有效状态
   activerecord:
     attributes:
       announcements:
@@ -331,7 +331,7 @@ zh:
         invalid: 是无效的。
         less_than_or_equal_to: 必须小于或等于 %{count}。
         not_a_date: 不是日期。
-        not_an_iso_date: 'is not a valid date. Required format: YYYY-MM-DD.'
+        not_an_iso_date: 不是有效日期。所需格式：YYYY-MM-DD。
         not_a_number: 不是一个数字。
         not_an_integer: 不是一个整数。
         not_same_project: 不属于同一个项目。
@@ -356,8 +356,8 @@ zh:
         query:
           filters:
             custom_fields:
-              inexistent: There is no custom field for the filter.
-              invalid: The custom field is not valid in the given context.
+              inexistent: 过滤器没有自定义字段
+              invalid: 自定义字段无效
         repository:
           not_available: 供应链管理供应商不可用
           not_whitelisted: 配置所不允许的。
@@ -372,8 +372,7 @@ zh:
               cannot_be_in_another_project: 不能在另一个项目中。
               not_a_valid_parent: 是无效的。
             start_date:
-              violates_relationships: can only be set to %{soonest_start} or later
-                so as not to violate the work package's relationships.
+              violates_relationships: 仅可以设置为 %{soonest_start} 或更高版本，以免违反工作包的关系。
             status_id:
               status_transition_invalid: 是无效的，因为在当前用户的角色下，没有从旧到新的状态有效的过渡存在。
             priority_id:
@@ -746,13 +745,12 @@ zh:
   error_can_not_delete_custom_field: 无法删除自定义字段
   error_can_not_delete_type: 这种类型包含工作包，不能被删除。
   error_can_not_delete_standard_type: 标准类型不能被删除。
-  error_can_not_invite_user: Failed to send invitation to user.
+  error_can_not_invite_user: 无法向用户发送邀请。
   error_can_not_remove_role: 该角色正在使用，无法删除。
   error_can_not_reopen_work_package_on_closed_version: 不能重新打开一个已经分配给已关闭版本的工作包
   error_check_user_and_role: 请选择用户和角色。
   error_cookie_missing: OpenProject cookie 丢失。请确保已启用 cookie，因为如果不启用，此应用程序将无法正常运行。
-  error_pdf_export_too_many_columns: Too many columns selected for the PDF export.
-    Please reduce the number of columns.
+  error_pdf_export_too_many_columns: 选择 PDF 导出的列太多。请减少列数。
   error_token_authenticity: 无法验证跨站域请求伪造令牌。
   error_work_package_done_ratios_not_updated: 工作包完成比率不更新。
   error_work_package_not_found_in_project: 工作包找不到或不属于此项目
@@ -771,9 +769,8 @@ zh:
   error_workflow_copy_target: 请选择目标类型和角色
   error_menu_item_not_created: 不能添加菜单项
   error_menu_item_not_saved: 不能保存菜单项
-  error_wiki_root_menu_item_conflict: 'Can''t rename "%{old_name}" to "%{new_name}"
-    due to a conflict in the resulting menu item with the existing menu item "%{existing_caption}"
-    (%{existing_identifier}).
+  error_wiki_root_menu_item_conflict: '无法将 "%{old_name}" 重命名为 "%{new_name}"，因为结果菜单项与现有菜单项
+    "%{existing_caption}" (%{existing_identifier}) 存在冲突。
 
 '
   error_external_authentication_failed: 在外部身份验证期间出错。请再试一次。
@@ -951,7 +948,7 @@ zh:
   label_download_plural: "%{count} 下载"
   label_downloads_abbr: D/L
   label_duplicated_by: 复制于
-  label_duplicate: duplicate
+  label_duplicate: 重复
   label_duplicates: 复制
   label_edit: 编辑
   label_enable_multi_select: 切换多选
@@ -962,7 +959,7 @@ zh:
   label_end_to_end: 结束结束
   label_end_to_start: 结束开始
   label_enumeration_new: 新的枚举值
-  label_enumeration_value: Enumeration value
+  label_enumeration_value: 枚举值
   label_enumerations: 枚举
   label_environment: 环境
   label_equals: 是
@@ -979,7 +976,7 @@ zh:
   label_filter_add: 添加筛选器
   label_filter_plural: 筛选器
   label_float: 浮动
-  label_folder: Folder
+  label_folder: 文件夹
   label_follows: 跟踪
   label_force_user_language_to_default: 设置拥有非允许语言的用户的默认语言
   label_form_configuration: 表格配置
@@ -999,7 +996,7 @@ zh:
   label_in_less_than: 在小于
   label_in_more_than: 在多于
   label_incoming_emails: 传入电子邮件
-  label_includes: includes
+  label_includes: 包括
   label_index_by_date: 按日期索引
   label_index_by_title: 按标题索引
   label_information: 信息
@@ -1008,7 +1005,7 @@ zh:
   label_internal: 内部
   label_invite_user: 邀请用户
   label_show_hide: 显示/隐藏
-  label_journal: Journal
+  label_journal: 日志
   label_journal_diff: 描述的对比
   label_jump_to_a_project: 跳转到一个项目...
   label_language_based: 基于用户的语言
@@ -1038,7 +1035,7 @@ zh:
   label_member_plural: 成员
   label_memder_view_all: 查看所有成员
   label_menu_item_name: 菜单项名称
-  label_message: Message
+  label_message: 消息
   label_message_last: 最后一条消息
   label_message_new: 新消息
   label_message_plural: 消息
@@ -1090,7 +1087,7 @@ zh:
   label_overall_activity: 总体活动
   label_overall_spent_time: 花的总时间
   label_overview: 概述
-  label_part_of: part of
+  label_part_of: 一部分
   label_password_lost: 丢失的密码
   label_password_rule_lowercase: 小写
   label_password_rule_numeric: 数字字符
@@ -1154,8 +1151,8 @@ zh:
   label_repository: 代码库
   label_repository_root: 存储库根
   label_repository_plural: 代码库
-  label_required: required
-  label_requires: requires
+  label_required: 必填
+  label_requires: 要求
   label_responsible_for_work_packages: 我负责的工作包
   label_result_plural: 结果
   label_reverse_chronological_order: 在相反的顺序
@@ -1170,7 +1167,7 @@ zh:
   label_role_and_permissions: 角色和权限
   label_role_new: 新的角色
   label_role_plural: 角色
-  label_role_search: Assign role to new members
+  label_role_search: 将角色分配给新成员
   label_scm: SCM
   label_search: 搜索
   label_search_titles_only: 仅搜索标题
@@ -1245,7 +1242,7 @@ zh:
   label_version_sharing_none: 不共享
   label_version_sharing_system: 与所有项目
   label_version_sharing_tree: 与项目树
-  label_video: Video
+  label_video: 视频
   label_view_all_revisions: 查看所有修订版本
   label_view_diff: 查看差异
   label_view_revisions: 查看修订版本
@@ -1269,7 +1266,7 @@ zh:
   label_work_package_added: 添加工作包
   label_work_package_category_new: 新的类别
   label_work_package_category_plural: 工作包类别
-  label_work_package_hierarchy: Work package hierarchy
+  label_work_package_hierarchy: 工作包的层次结构
   label_work_package_new: 新工作包
   label_work_package_note_added: 添加工作包注释
   label_work_package_edit: 编辑工作包 %{name}
@@ -1362,8 +1359,7 @@ zh:
   noscript_description: 您需要激活JavaScript才能使用 OpenProject！
   noscript_heading: JavaScript 被禁用
   noscript_learn_more: 了解更多信息
-  notice_accessibility_mode: The accessibility mode can be enabled in your [account
-    settings](url).
+  notice_accessibility_mode: 可以在您的 [account settings](url) 中启用辅助功能模式。
   notice_account_activated: 您的帐户已激活。您现在可以登录。
   notice_account_already_activated: 已激活该帐户。
   notice_account_invalid_token: 无效的激活标记
@@ -1376,8 +1372,7 @@ zh:
   notice_account_pending: 您的帐户已创建，正在等待管理员的批准。
   notice_account_register_done: 成功创建帐户。要激活您的帐户，请单击通过电子邮件发送到您的链接。
   notice_account_unknown_email: 未知用户。
-  notice_account_update_failed: Account setting could not be saved. Please have a
-    look at your account page.
+  notice_account_update_failed: 帐户设置无法保存。请看查看您的帐户页面。
   notice_account_updated: 帐户已成功更新。
   notice_account_wrong_password: 密码错误
   notice_account_registered_and_logged_in: 欢迎，您的帐户已激活。您现在已登录。
@@ -1399,15 +1394,14 @@ zh:
   notice_locking_conflict_additional_information: 更新来自 %{users}。
   notice_locking_conflict_reload_page: 请重新加载该页面，查看所做的更改并重新应用您的更新。
   notice_member_added: 向项目添加 %{name}。
-  notice_members_added: Added %{number} users to the project.
+  notice_members_added: 添加了 %{number} 个用户到该项目。
   notice_member_removed: 已从项目删除 %{user}。
   notice_member_deleted: "%{user} 已从项目中移除并删除。"
   notice_no_principals_found: 没有找到结果。
   notice_bad_request: 错误的请求。
   notice_not_authorized: 您无权访问此页。
   notice_not_authorized_archived_project: 您尝试访问的项目已存档。
-  notice_password_confirmation_failed: Your password is not correct. The changes were
-    not saved.
+  notice_password_confirmation_failed: 您输入的密码不正确，更改不会生效。
   notice_project_not_deleted: 项目没有被删除
   notice_successful_connection: 成功连接。
   notice_successful_create: 成功创建。
@@ -1416,15 +1410,13 @@ zh:
   notice_to_many_principals_to_display: 有太多结果。\n键入新成员（或组）缩小搜索。
   notice_unable_delete_time_entry: 不能删除时间记录条目。
   notice_unable_delete_version: 不能删除版本。
-  notice_user_missing_authentication_method: User has yet to choose a password or
-    another way to sign in.
+  notice_user_missing_authentication_method: 用户尚未选择密码或另一种方式登录。
   notice_user_invitation_resent: 另一个邀请已发送到 %{email}。
   present_access_key_value: '你的 %{key_name} 是: %{value}'
   notice_automatic_set_of_standard_type: 自动设置标准类型。
   notice_logged_out: 您已被注销。
   notice_wont_delete_auth_source: 不能删除身份验证模式，仍有用户正在使用。
-  notice_project_cannot_update_custom_fields: 'You cannot update the project''s available
-    custom fields. The project is invalid: %{errors}'
+  notice_project_cannot_update_custom_fields: 您无法更新项目的可用自定义字段。项目无效：%{errors}
   number:
     format:
       delimiter: ''
@@ -1445,10 +1437,9 @@ zh:
           mb: MB
           tb: TB
   onboarding:
-    text_getting_started: This video provides you an overview of OpenProject. It helps
-      you to set up your first project and to start collaborating with your team members.
-    text_show_again: You can restart this video from the help menu
-    welcome: Welcome to OpenProject
+    text_getting_started: 此视频将向您概述 OpenProject。可以帮助您设置首个项目并开始与您的团队成员合作。
+    text_show_again: 您可以从帮助菜单重新启动此视频
+    welcome: 欢迎来到 OpenProject
   permission_add_work_package_notes: 添加注释
   permission_add_work_packages: 添加工作包 (也允许将附件添加到所有的工作包)
   permission_add_messages: 发布消息
@@ -1509,7 +1500,7 @@ zh:
   permission_view_work_package_watchers: 查看关注人列表
   permission_view_work_packages: 查看工作包
   permission_view_messages: 查看消息
-  permission_view_members: View members
+  permission_view_members: 查看成员
   permission_view_project_associations: 查看项目依赖项
   permission_view_reportings: 查看报告
   permission_view_time_entries: 查看消耗时间
@@ -1530,7 +1521,7 @@ zh:
       warning_two: 该项目的现有链接将不再有效。
       title: 更改项目的标识符
     archive:
-      are_you_sure: Are you sure you want to archive the project '%{name}'?
+      are_you_sure: 是否确定想要存档项目 '%{name}'？
   project_module_activity: 活动
   project_module_boards: 论坛
   project_module_calendar: 日历
@@ -1643,7 +1634,7 @@ zh:
     url: 版本的 URL
     warnings:
       cannot_annotate: 此文件不能进行注释。
-  search_input_placeholder: Search ...
+  search_input_placeholder: 搜索
   setting_email_delivery_method: 电子邮件发送方法
   setting_sendmail_location: Sendmail 的执行位置
   setting_smtp_enable_starttls_auto: 如果可用，自动使用 STARTTLS
@@ -1771,7 +1762,7 @@ zh:
   text_caracters_maximum: 最多 %{count} 字符。
   text_caracters_minimum: 必须至少为 %{count} 个字符长。
   text_comma_separated: 允许有多个值 （逗号分隔）。
-  text_comment_wiki_page: 'Comment to wiki page: %{page}'
+  text_comment_wiki_page: Wiki 页面（%{page}）的评论
   text_custom_field_possible_values_info: 每个值一行
   text_default_administrator_account_changed: 更改默认管理员帐户
   text_default_encoding: 默认值： UTF-8
@@ -2079,10 +2070,8 @@ zh:
     registered: 已注册
     reset_failed_logins: 重置失败的帐户
     settings:
-      mail_notifications: Send email notifications
-      mail_project_explanaition: For unselected projects, you will only receive notifications
-        about things you watch or you're involved in (e.g. work packages you're the
-        author or assignee of).
+      mail_notifications: 发送电子邮件通知
+      mail_project_explanaition: 对于未选中的项目，您将只能收到自己跟踪或参与的项目的通知（例如，您是作者或者被指派的工作包）。
       mail_self_notified: 我想要自己的更改通知
     status_user_and_brute_force: "%{user} 和 %{brute_force}"
     unlock: 解锁​​​​
@@ -2122,8 +2111,8 @@ zh:
       code_409: 无法更新资源，因为发生冲突的修改。
       code_500: 发生了内部错误。
       expected:
-        date: YYYY-MM-DD (ISO 8601 date only)
-        duration: ISO 8601 duration
+        date: YYYY-MM-DD（仅适用于 ISO 8601 日期）
+        duration: ISO 8601 持续时间
       invalid_content_type: 预期CONTENT-TYPE为%{content_type}，但是获得了'%{actual}'。
       invalid_format: "'%{property}' 属性的格式无效: 需要的格式是 '%{expected_format}'，但得到的是 '%{actual}'。"
       invalid_json: 请求无法被解析成JSON格式。
