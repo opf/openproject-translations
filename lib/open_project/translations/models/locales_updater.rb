@@ -8,7 +8,6 @@ require_relative './locales_updater_configuration'
 
 ENGLISH_TRANSLATION_FILE = 'en.yml'
 ENGLISH_JS_TRANSLATION_FILE = 'js-en.yml'
-ACCEPTANCE_LEVEL = ENV['ACCEPTANCE_LEVEL'].nil? ? 100: ENV['ACCEPTANCE_LEVEL'].to_i
 
 class LocalesUpdater
   include TmpDirectory
@@ -23,8 +22,8 @@ class LocalesUpdater
         within_tmp_directory(path: File.join(FileUtils.pwd, plugin_name), debug: debug) do
           within_plugin_repo(configuration_hash: specifics, path: FileUtils.pwd, debug: debug) do
             puts "Uploading english for #{plugin_name}"
-            upload_english(plugin_name)
-            request_build
+            upload_english(plugin_name, debug)
+            request_build(debug)
             puts "Downloading translations for #{plugin_name}"
             download_and_replace_locales
           end
@@ -77,11 +76,15 @@ class LocalesUpdater
     @plugin_repo.push unless debug
   end
 
-  def upload_english(plugin_name)
+  def upload_english(plugin_name, debug)
+    if debug
+      puts 'Skipping uploading english due to debug mode'
+      return
+    end
     # either add or update the english (js) translation file
     titles = {
-      ENGLISH_TRANSLATION_FILE => plugin_name +' Wording',
-      ENGLISH_JS_TRANSLATION_FILE => plugin_name + ' JavaScript Wording'
+      ENGLISH_TRANSLATION_FILE => "#{plugin_name} Wording",
+      ENGLISH_JS_TRANSLATION_FILE => "#{plugin_name} JavaScript Wording"
     }
     [ENGLISH_TRANSLATION_FILE, ENGLISH_JS_TRANSLATION_FILE].each do |translation_file|
       path_to_translation = Pathname.new('config') + 'locales' + translation_file
@@ -93,7 +96,11 @@ class LocalesUpdater
     end
   end
 
-  def request_build
+  def request_build(debug)
+    if debug
+      puts 'Skipping requesting build due to debug mode'
+      return
+    end
     @i18n_provider.request_build
   end
 
@@ -105,11 +112,16 @@ class LocalesUpdater
       language_name = entry.name.split('/').first # the file is put in a directory containing the language name
 
       # only take translations with enough percent translated
-      next unless @i18n_provider.translation_status_high_enough?(language_name, ACCEPTANCE_LEVEL)
+      next unless @i18n_provider.translation_status_high_enough?(language_name, acceptance_level)
 
       filepath = target_directory.join "#{js_translation?(Pathname.new(entry.name)) ? 'js-' : ''}#{language_name}.yml"
       replace_file(filepath, entry)
     end
+  end
+
+  def acceptance_level
+    return 100 if ENV['ACCEPTANCE_LEVEL'].nil?
+    ENV['ACCEPTANCE_LEVEL'].to_i
   end
 
   def replace_file(filepath, new_file)

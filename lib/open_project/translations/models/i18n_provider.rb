@@ -33,6 +33,7 @@ class I18nProvider
       end
     rescue Crowdin::API::Errors::Error => e
       puts "Error during update of #{@project_de}: #{e.message}"
+      raise e
     end
   end
 
@@ -73,6 +74,7 @@ class I18nProvider
       @crowdin.export_translations
     rescue Crowdin::API::Errors::Error => e
       puts "Error during update of #{@project_id}: #{e.message}"
+      raise e
     end
   end
 
@@ -82,6 +84,7 @@ class I18nProvider
       @crowdin.download_translation 'all', output: output
     rescue Crowdin::API::Errors::Error => e
       puts "Error during update of #{@project_id}: #{e.message}"
+      raise e
     end
   end
 
