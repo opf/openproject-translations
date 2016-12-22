@@ -203,7 +203,9 @@ nl:
         users/base_contract:
           attributes:
             status:
-              invalid_on_create: is not a valid status for new users.
+              invalid_on_create: is niet een geldige status voor nieuwe gebruikers.
+            auth_source:
+              error_not_found: not found
   activerecord:
     attributes:
       announcements:
@@ -392,8 +394,8 @@ nl:
         query:
           filters:
             custom_fields:
-              inexistent: There is no custom field for the filter.
-              invalid: The custom field is not valid in the given context.
+              inexistent: Er is geen aangepast veld voor dit filter.
+              invalid: Het aangepaste veld is niet geldig in deze context.
         repository:
           not_available: SCM-leverancier is niet beschikbaar
           not_whitelisted: is niet toegestaan door de configuratie.
@@ -761,7 +763,7 @@ nl:
   description_available_columns: Beschikbare kolommen
   description_choose_project: Projecten
   description_compare_from: Compare from
-  description_compare_to: Compare to
+  description_compare_to: Vergelijk met
   description_current_position: 'U bent hier:'
   description_date_from: Begindatum opgeven
   description_date_range_interval: Kies bereik door begin- en einddatum te selecteren
@@ -794,15 +796,16 @@ nl:
   error_can_not_delete_custom_field: Aangepast veld kan niet verwijderd worden
   error_can_not_delete_type: Dit type bevat werkpakketten en kan niet worden verwijderd.
   error_can_not_delete_standard_type: Standaard types kunnen niet worden verwijderd.
-  error_can_not_invite_user: Failed to send invitation to user.
+  error_can_not_invite_user: Het versturen van de uitnodiging naar de gebruiker is
+    mislukt.
   error_can_not_remove_role: Deze rol is in gebruik en kan niet worden verwijderd.
   error_can_not_reopen_work_package_on_closed_version: Een werkpakket toegewezen aan
     een gesloten versie kan niet worden heropend
   error_check_user_and_role: Kies een gebruiker en een rol.
   error_cookie_missing: De cookie voor OpenProject ontbreekt. Zorg ervoor dat cookies
     zijn ingeschakeld aangezien deze toepassing anders niet goed zal functioneren.
-  error_pdf_export_too_many_columns: Too many columns selected for the PDF export.
-    Please reduce the number of columns.
+  error_pdf_export_too_many_columns: Te veel kolommen geselecteerd voor het exporteren
+    naar PDF. Beperk het aantal kolommen.
   error_token_authenticity: Unable to verify Cross-Site Request Forgery token.
   error_work_package_done_ratios_not_updated: Werkpakket gedaan ratio's niet bijgewerkt.
   error_work_package_not_found_in_project: Het werkpakket werd niet gevonden of maakt
@@ -1065,7 +1068,7 @@ nl:
   label_in_less_than: in minder dan
   label_in_more_than: in meer dan
   label_incoming_emails: Inkomende e-mails
-  label_includes: includes
+  label_includes: bevat
   label_index_by_date: indexeren op datum
   label_index_by_title: indexeren op titel
   label_information: Informatie
@@ -1156,7 +1159,7 @@ nl:
   label_overall_activity: Totale activiteit
   label_overall_spent_time: Totale verbruikte tijd
   label_overview: Overzicht
-  label_part_of: part of
+  label_part_of: onderdeel van
   label_password_lost: Wachtwoord vergeten
   label_password_rule_lowercase: Kleine letters
   label_password_rule_numeric: Numerieke tekens
@@ -1222,8 +1225,8 @@ nl:
   label_repository: Repository
   label_repository_root: Opslagplaats root
   label_repository_plural: Repositories
-  label_required: required
-  label_requires: requires
+  label_required: vereist
+  label_requires: vereist
   label_responsible_for_work_packages: Werkpakketten waar ik verantwoordelijk voor
     ben
   label_result_plural: Resultaten
@@ -1239,7 +1242,7 @@ nl:
   label_role_and_permissions: Rollen en machtigingen
   label_role_new: Nieuwe rol
   label_role_plural: Rollen
-  label_role_search: Assign role to new members
+  label_role_search: Rol toewijzen aan nieuwe leden
   label_scm: SCM
   label_search: Zoeken
   label_search_titles_only: Alleen zoeken in titels
@@ -1507,8 +1510,8 @@ nl:
   notice_not_authorized: U bent niet gemachtigd om deze pagina te openen.
   notice_not_authorized_archived_project: Het project dat u probeert te bezoeken is
     gearchiveerd.
-  notice_password_confirmation_failed: Your password is not correct. The changes were
-    not saved.
+  notice_password_confirmation_failed: Uw wachtwoord is niet correct. De wijzigingen
+    zijn niet opgeslagen.
   notice_project_not_deleted: Het project is niet verwijderd.
   notice_successful_connection: Geslaagde verbinding.
   notice_successful_create: Aanmaak geslaagd.
@@ -1551,7 +1554,7 @@ nl:
     text_getting_started: This video provides you an overview of OpenProject. It helps
       you to set up your first project and to start collaborating with your team members.
     text_show_again: You can restart this video from the help menu
-    welcome: Welcome to OpenProject
+    welcome: Welkom bij OpenProject
   permission_add_work_package_notes: Notities toevoegen
   permission_add_work_packages: Werkpakketten toevoegen (staat ook toe bijlagen aan
     alle werkpakketten toe te voegen)
@@ -1614,7 +1617,7 @@ nl:
   permission_view_work_package_watchers: Lijst van de watchers weergave
   permission_view_work_packages: Weergave werkpakketten
   permission_view_messages: Berichten weergeven
-  permission_view_members: View members
+  permission_view_members: Bekijk leden
   permission_view_project_associations: Weergave project afhankelijkheden
   permission_view_reportings: Weergave rapporteringen
   permission_view_time_entries: Verbruikte tijd weergeven
@@ -1738,7 +1741,7 @@ nl:
           ).
         path_encoding: 'Override Git path encoding (Default: UTF-8)'
       local_title: Link existing local Git repository
-      local_url: Local URL
+      local_url: Lokale URL
       local_introduction: If you have an existing local Git repository, you can link
         it with OpenProject to access it from within the application.
       managed_introduction: Let OpenProject create and integrate a local Git repository
@@ -1772,7 +1775,7 @@ nl:
       existing_title: Existing Subversion repository
       existing_introduction: If you have an existing Subversion repository, you can
         link it with OpenProject to access it from within the application.
-      existing_url: Existing URL
+      existing_url: Bestaande URL
       instructions:
         managed_url: This is the URL of the managed (local) Subversion repository.
         url: |-
@@ -1789,7 +1792,7 @@ nl:
     url: URL to repository
     warnings:
       cannot_annotate: This file cannot be annotated.
-  search_input_placeholder: Search ...
+  search_input_placeholder: Zoeken ...
   setting_email_delivery_method: Email delivery method
   setting_sendmail_location: Location of the sendmail executable
   setting_smtp_enable_starttls_auto: Automatically use STARTTLS if available
