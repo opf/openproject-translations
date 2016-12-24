@@ -180,7 +180,7 @@ ja:
             status:
               invalid_on_create: 新規ユーザーの有効なステータスではありません。
             auth_source:
-              error_not_found: not found
+              error_not_found: 存在しません
   activerecord:
     attributes:
       announcements:
@@ -772,11 +772,8 @@ ja:
   error_omniauth_registration_timed_out: 外部認証プロバイダーを経由して登録がタイムアウトしました。もう一度やり直してください。
   error_scm_command_failed: "「%{value}」リポジトリにアクセスしようとしてエラーが発生しました。"
   error_scm_not_found: リポジトリに、エントリ/リビジョンが存在しません。
-  error_unable_delete_status: The work package status cannot be deleted since it is
-    used by at least one work package.
-  error_unable_delete_default_status: Unable to delete the default work package status.
-    Please select another default work package status before deleting the current
-    one.
+  error_unable_delete_status: 一つ以上の作業項目によって使用されているため、作業項目のステータスを削除できません。
+  error_unable_delete_default_status: 作業項目の既定のステータスを削除できません。削除する前に別の既定値を選択してください。
   error_unable_to_connect: 接続できません。 （%{value}）
   error_unable_delete_wiki: Unable to delete the wiki page.
   error_unable_update_wiki: Unable to update the wiki page.
@@ -784,9 +781,8 @@ ja:
   error_workflow_copy_target: コピー先となる型と役割を選択してください。
   error_menu_item_not_created: メニュー項目を追加できませんでした。
   error_menu_item_not_saved: メニュー項目を保存できませんでした。
-  error_wiki_root_menu_item_conflict: 'Can''t rename "%{old_name}" to "%{new_name}"
-    due to a conflict in the resulting menu item with the existing menu item "%{existing_caption}"
-    (%{existing_identifier}).
+  error_wiki_root_menu_item_conflict: '結果のメニュー項目が既存のメニュー項目 "%{existing_caption}" (%{existing_identifier})
+    と競合するため、"%{old_name}" の名前を "%{new_name}" に変更できません。
 
 '
   error_external_authentication_failed: 外部認証中にエラーが発生しました。もう一度やり直してください。
@@ -965,7 +961,7 @@ ja:
   label_download_plural: "%{count}件ダウンロード"
   label_downloads_abbr: D/L
   label_duplicated_by: 次の項目が重複
-  label_duplicate: duplicate
+  label_duplicate: 重複
   label_duplicates: 次と重複
   label_edit: 編集
   label_enable_multi_select: 複数選択の切り替え
@@ -976,7 +972,7 @@ ja:
   label_end_to_end: 最後～最後
   label_end_to_start: 最後～最初
   label_enumeration_new: 新しい値
-  label_enumeration_value: Enumeration value
+  label_enumeration_value: 列挙型の値
   label_enumerations: 列挙型の一覧
   label_environment: 環境
   label_equals: 等しい
@@ -1022,7 +1018,7 @@ ja:
   label_internal: 社内
   label_invite_user: Invite user
   label_show_hide: Show/hide
-  label_journal: Journal
+  label_journal: 履歴記述
   label_journal_diff: 説明の比較
   label_jump_to_a_project: プロジェクトへ移動...
   label_language_based: ユーザの言語設定に基づく
@@ -1052,7 +1048,7 @@ ja:
   label_member_plural: メンバー
   label_memder_view_all: View all members
   label_menu_item_name: メニュー項目の名称
-  label_message: Message
+  label_message: メッセージ
   label_message_last: 最新のメッセージ
   label_message_new: 新規メッセージ
   label_message_plural: メッセージ
@@ -1226,7 +1222,7 @@ ja:
   label_this_week: 今週
   label_this_year: 今年
   label_time_entry_plural: 作業時間の記録
-  label_time_sheet_menu: Time sheet
+  label_time_sheet_menu: タイムシート
   label_time_tracking: 作業時間の記録
   label_today: 今日
   label_top_menu: トップメニュー
@@ -1352,11 +1348,11 @@ ja:
   label_keyboard_shortcut_go_preview: 現在の編集のプレビューへ移動（編集ページのみ）
   label_keyboard_shortcut_focus_previous_item: 前のリスト項目へフォーカスする(特定のリストのみ）
   label_keyboard_shortcut_focus_next_item: 次のリスト項目へフォーカスする(特定のリストのみ）
-  label_visible_elements: Visible elements
+  label_visible_elements: 表示する要素
   auth_source:
-    using_abstract_auth_source: Can't use an abstract authentication source.
-    ldap_error: 'LDAP-Error: %{error_message}'
-    ldap_auth_failed: Could not authenticate at the LDAP-Server.
+    using_abstract_auth_source: 概要認証元を使用できません。
+    ldap_error: 'LDAPエラー: %{error_message}'
+    ldap_auth_failed: LDAPサーバーで認証できませんでした。
   macro_execution_error: マクロ%{macro_name}を実行中にエラーが発生しました。
   macro_unavailable: マクロ%{macro_name}を表示できません。
   mail_body_account_activation_request: 新しいユーザ%{value}が登録されました。このアカウントは承認待ちです：
@@ -1497,7 +1493,7 @@ ja:
   permission_edit_time_entries: 作業時間記録の編集
   permission_edit_timelines: タイムラインの編集
   permission_edit_wiki_pages: Wikiページの編集
-  permission_export_work_packages: Export work packages
+  permission_export_work_packages: 作業項目のエクスポート
   permission_export_wiki_pages: Wikiページのエクスポート
   permission_list_attachments: 添付ファイルの一覧表
   permission_log_time: 作業時間の記録
@@ -1732,7 +1728,7 @@ ja:
   setting_display_subprojects_work_packages: デフォルトで子プロジェクトの作業項目を親プロジェクトに表示する
   setting_emails_footer: 電子メールのフッター
   setting_emails_header: 電子メールのヘッダー
-  setting_email_login: Use e-mail as login
+  setting_email_login: ログインとしてメールアドレスを使用する
   setting_enabled_scm: 使用するバージョン管理システム
   setting_feeds_enabled: フィードを有効にする
   setting_feeds_limit: フィードの項目数の上限
@@ -1753,10 +1749,9 @@ ja:
   setting_log_requesting_user: 全てのリクエストに対し、ユーザのログイン名、名前、メールアドレスをログに記録する
   setting_login_required: 認証が必要
   setting_mail_from: 送信元のメールアドレス
-  setting_mail_handler_api_enabled: Enable incoming email web service
-  setting_mail_handler_api_description: The email web handler enables OpenProject
-    to receive emails containing specific commands as an instrumentation mechanism
-    (e.g., to create and update work packages).
+  setting_mail_handler_api_enabled: 受信メールWebサービスを有効にする
+  setting_mail_handler_api_description: メールWebハンドラーにより、OpenProjectは機械的な仕組みで特定のコマンドが含まれているメールを受信することができます
+    (例えば、作業項目の作成と更新)。
   setting_mail_handler_api_key: APIキー
   setting_mail_handler_body_delimiters: メール本文から一致する行以降を切り捨てる
   setting_mail_handler_body_delimiter_regex: Truncate emails matching this regex
@@ -1769,7 +1764,7 @@ ja:
   setting_per_page_options: オプションページごとの項目数
   setting_plain_text_mail: テキストメール（HTMLなし）
   setting_protocol: プロトコル
-  setting_registration_footer: Registration footer
+  setting_registration_footer: 登録フッター
   setting_repositories_automatic_managed_vendor: Automatic repository vendor type
   setting_repositories_encodings: リポジトリのエンコーディング
   setting_repository_authentication_caching_enabled: バージョン管理ソフトウェアの認証要求に対してキャッシュを有効
@@ -1785,9 +1780,8 @@ ja:
   setting_session_ttl_hint: 5未満の値は無効にすると同様
   setting_session_ttl_enabled: セッションの有効期限
   setting_start_of_week: カレンダーの開始日
-  setting_sys_api_enabled: Enable repository management web service
-  setting_sys_api_description: The repository management web service provides integration
-    and user authorization for accessing repositories.
+  setting_sys_api_enabled: リポジトリ管理Webサービスを有効にする
+  setting_sys_api_description: リポジトリ管理Webサービスは、リポジトリへのアクセスの統合およびユーザー認証を提供します。
   setting_text_formatting: テキストの書式
   setting_time_format: 時刻の形式
   setting_ui_theme: テーマ
@@ -2116,9 +2110,7 @@ ja:
       default: Show if not empty
       visible: Show even if empty
       hidden: Hide by default
-    setting_email_login: 'If enabled a user will be unable to chose a login during
-      registration. Instead their given e-mail address will serve as the login. An
-      administrator may still change the login separately.
+    setting_email_login: '有効にした場合、登録時にユーザはログインを選択することができません。代わりに、指定されたメール アドレスがログインとして機能します。管理者はログインを個別に変更できます。
 
 '
   queries:
@@ -2191,7 +2183,7 @@ ja:
       lock_version: ロックバージョン
     errors:
       code_401: このリソースへのアクセスするには認証を行う必要があります。
-      code_401_wrong_credentials: You did not provide the correct credentials.
+      code_401_wrong_credentials: 正しい認証情報が提供されていません。
       code_403: このリソースにアクセスする権限がありません。
       code_404: 要求したリソースが見つかりません。
       code_409: 変更が競合しているため、リソースを更新できませんでした。
@@ -2202,15 +2194,14 @@ ja:
       invalid_content_type: コンテンツの種類は'%{content_type}'を期待されたが '%{actual}'を得ました。
       invalid_format: '不正なフォーマットのプロパティ ''%{property}'': 期待されるフォーマットは ''%{expected_format}'',
         ですが ''%{actual}''を受け取りました.'
-      invalid_json: The request could not be parsed as JSON.
-      invalid_relation: The relation is invalid.
+      invalid_json: JSONとして要求を解析できませんでした。
+      invalid_relation: 関係は無効です。
       invalid_resource: プロパティ '%{property}' は '%{expected}'のようなリンクであることが期待されていますが実際は
         '%{actual}'が指定されています。
       invalid_user_status_transition: 現在のユーザのアカウントステータスはこの操作を許可していません。
       missing_content_type: 指定されていません。
-      missing_request_body: There was no request body.
-      multipart_body_error: The request body did not contain the expected multipart
-        parts.
+      missing_request_body: 要求の本体がありませんでした。
+      multipart_body_error: 要求の本体に、期待したマルチパートが含まれていませんでした。
       multiple_errors: 複数フィールド制限に違反が生じました。
       writing_read_only_attributes: 読み取り専用の属性を書き込みできません。
       render:
