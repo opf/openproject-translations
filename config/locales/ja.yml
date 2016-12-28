@@ -11,9 +11,9 @@ ja:
     plugins:
       no_results_title_text: 現在利用可能なプラグインはありません。
   announcements:
-    show_until: Show until
-    is_active: currently displayed
-    is_inactive: currently not displayed
+    show_until: までを表示
+    is_active: 現在表示されています
+    is_inactive: 現在表示されていません
   auth_sources:
     index:
       no_results_content_title: 現在認証モードはありません。
@@ -50,23 +50,23 @@ ja:
         no_results_title_text: 現在、作業項目のカテゴリはありません。
         no_results_content_text: 新しい作業項目のカテゴリを作成
       custom_fields:
-        no_results_title_text: There are currently no custom fields available.
+        no_results_title_text: 現在、有効なカスタム フィールドはありません。
       types:
-        no_results_title_text: There are currently no types available.
+        no_results_title_text: 現在、有効な種類はありません。
       versions:
-        no_results_title_text: There are currently no versions for the project.
-        no_results_content_text: Create a new version
+        no_results_title_text: 現在、プロジェクトのバージョンはありません。
+        no_results_content_text: 新しいバージョンを作成
   project_types:
     index:
-      no_results_title_text: There are currently no project types.
-      no_results_content_text: Create a new project type
+      no_results_title_text: 現在、プロジェクトの種類はありません。
+      no_results_content_text: 新しいプロジェクトの種類を作成
   members:
     index:
-      no_results_title_text: There are currently no members part of this project.
-      no_results_content_text: Add a member to the project
+      no_results_title_text: 現在、このプロジェクトのメンバーはいません。
+      no_results_content_text: プロジェクトにメンバーを追加
   my:
     access_token:
-      no_results_title_text: There are currently no access tokens available.
+      no_results_title_text: 現在、有効なアクセス トークンはありません。
   news:
     index:
       no_results_title_text: There is currently no news to report.
@@ -86,8 +86,8 @@ ja:
       no_results_content_text: Add a new status
   types:
     index:
-      no_results_title_text: There are currently no types.
-      no_results_content_text: Create a new type
+      no_results_title_text: 現在、種類はありません。
+      no_results_content_text: 新しい種類を作成
   versions:
     overview:
       no_results_title_text: There are currently no work packages assigned to this
@@ -118,15 +118,15 @@ ja:
         category:
           no_results_title_text: There are currently no categories available.
         assigned_to:
-          no_results_title_text: There are currently no members part of this project.
+          no_results_title_text: 現在、このプロジェクトのメンバーはいません。
         responsible:
-          no_results_title_text: There are currently no members part of this project.
+          no_results_title_text: 現在、このプロジェクトのメンバーはいません。
         author:
-          no_results_title_text: There are currently no members part of this project.
+          no_results_title_text: 現在、このプロジェクトのメンバーはいません。
         priority:
           no_results_title_text: There are currently no priorities available.
         type:
-          no_results_title_text: There are currently no types available.
+          no_results_title_text: 現在、有効な種類はありません。
         version:
           no_results_title_text: There are currently no versions available.
   label_invitation: 案内
@@ -167,7 +167,7 @@ ja:
   activerecord:
     attributes:
       announcements:
-        show_until: Display until
+        show_until: までを表示
       attachment:
         downloads: ダウンロード数
         file: ファイル
@@ -213,7 +213,7 @@ ja:
         roles: ロール
       project:
         identifier: 識別子
-        latest_activity_at: Latest activity at
+        latest_activity_at: 最新の活動
         parent: 親プロジェクト名
         project_type: プロジェクトの種類
         queries: クエリ
@@ -317,14 +317,13 @@ ja:
         greater_than: は%{count}より大きい値にしてください。
         greater_than_or_equal_to: は%{count}以上の値にしてください。
         smaller_than_or_equal_to_max_length: は最大長さより以下でなければなりません。
-        greater_than_start_date: must be greater than the start date.
-        greater_than_or_equal_to_start_date: must be greater than or equal to the
-          start date.
+        greater_than_start_date: は開始日より後にしてください。
+        greater_than_or_equal_to_start_date: は開始日以後にしてください。
         inclusion: は許可されている値ではありません。
         invalid: は不正な値です。
         less_than_or_equal_to: は%{count}以下の値にしてください。
         not_a_date: は日付にしてください。
-        not_an_iso_date: 'is not a valid date. Required format: YYYY-MM-DD.'
+        not_an_iso_date: 'は有効な日付ではありません。必要な形式: YYYY-MM-dd。'
         not_a_number: は数値にしてください。
         not_an_integer: は整数にしてください。
         not_same_project: は同じプロジェクトに属していません。
@@ -342,7 +341,7 @@ ja:
         project:
           attributes:
             types:
-              in_use_by_work_packages: 'still in use by work packages: %{types}'
+              in_use_by_work_packages: 'まだ作業項目によって使用されています: %{types}'
         project_association:
           identical_projects: 同一プロジェクトと依存関係を作成できません。
           project_association_not_allowed: 関連付けを許可していません。
@@ -361,8 +360,7 @@ ja:
               not_a_valid_parent: は不正な値です。
               does_not_exist: は存在しません。
             start_date:
-              violates_relationships: can only be set to %{soonest_start} or later
-                so as not to violate the work package's relationships.
+              violates_relationships: は、作業項目の関係に違反しないように %{soonest_start} またはそれ以降にのみ設定できます。
             status_id:
               status_transition_invalid: ユーザの現在のロールでは旧ステータスから新ステータスへの有効な遷移がないため無効
             priority_id:
@@ -535,8 +533,7 @@ ja:
   button_configure_menu_entry: メニュー項目の設定
   button_delete_menu_entry: メニュー項目の削除
   copy_project:
-    started: Started to copy project "%{source_project_name}" to "%{target_project_name}".
-      You will be informed by mail as soon as "%{target_project_name}" is available.
+    started: プロジェクト「%{source_project_name}」を「%{target_project_name}」にコピーを開始しました。「%{target_project_name}」が利用可能になり次第、メールで通知されます。
     failed: プロジェクト「%{source_project_name}」をコピーできません。
     succeeded: "「%{target_project_name}」プロジェクトを作成しました。"
     errors: エラー！
@@ -740,9 +737,8 @@ ja:
   error_can_not_remove_role: このロールは使用されています。削除できません。
   error_can_not_reopen_work_package_on_closed_version: 終了したバージョンにひも付けされた作業項目は再度開けません。
   error_check_user_and_role: ユーザとロールを選択してください。
-  error_cookie_missing: The OpenProject cookie is missing. Please ensure that cookies
-    are enabled, as this application will not properly function without.
-  error_token_authenticity: Unable to verify Cross-Site Request Forgery token.
+  error_cookie_missing: OpenProject のcookieが見つかりません。cookieが有効であることを確認してください。そうしないとこのアプリケーションは正しく動作しません。
+  error_token_authenticity: クロスサイトリクエストフォージェリのトークンを検証できません。
   error_work_package_done_ratios_not_updated: 作業項目の進捗率が更新できません。
   error_work_package_not_found_in_project: 作業項目が見つからないか、このプロジェクトに属してないかです。
   error_must_be_project_member: プロジェクトのメンバーである必要があります。
@@ -793,15 +789,15 @@ ja:
       projects: Newest visible projects in this instance.
       users: Newest registered users in this instance.
     blocks:
-      community: OpenProject community
+      community: OpenProject コミュニティ
     links:
       user_guides: User guides
       faq: FAQ
       glossary: Glossary
       shortcuts: Shortcuts
       forums: フォーラム
-      blog: OpenProject blog
-      boards: Community forum
+      blog: OpenProject ブログ
+      boards: コミュニティ フォーラム
   instructions_after_registration: "%{signin}をクリックして、アカウントが有効された後にログインできます。"
   instructions_after_logout: "%{signin}をクリックして再びログインできます。"
   instructions_after_error: "%{signin} をクリックして再びログインを試行できます。エラーが解決しない場合は、管理者にお問い合わせください。"
@@ -836,8 +832,8 @@ ja:
   label_all: 全て
   label_all_time: 全期間
   label_all_words: 全ての単語
-  label_always_visible: Always displayed
-  label_announcement: Announcement
+  label_always_visible: 常に表示
+  label_announcement: お知らせ
   label_and_its_subprojects: "%{value}とその子プロジェクト"
   label_api_access_key: APIアクセスキー
   label_api_access_key_created_on: APIアクセスキーが%{value}前に作成されました
@@ -945,7 +941,7 @@ ja:
   label_edit: 編集
   label_enable_multi_select: 複数選択の切り替え
   label_enabled_project_custom_fields: Enabled custom fields
-  label_enabled_project_types: Enabled types
+  label_enabled_project_types: 有効な種類
   label_enabled_project_modules: Enabled modules
   label_enabled_project_activities: Enabled time tracking activities
   label_end_to_end: 最後～最後
@@ -968,10 +964,10 @@ ja:
   label_filter_add: フィルタを追加
   label_filter_plural: フィルタ
   label_float: 小数
-  label_folder: Folder
+  label_folder: フォルダ
   label_follows: 次の項目に後続
   label_force_user_language_to_default: ユーザの言語設定が利用許可されていない場合、デフォルト言語を利用する
-  label_form_configuration: Form configuration
+  label_form_configuration: フォーム設定
   label_general: 概要
   label_generate_key: キーを生成する
   label_git_path: ".gitディレクトリへのパス"
@@ -1021,7 +1017,7 @@ ja:
   label_jump_to_a_project: プロジェクトへ移動...
   label_language_based: ユーザの言語設定に基づく
   label_last_activity: Last activity
-  label_last_change_on: Last change on
+  label_last_change_on: 最終更新
   label_last_changes: 最新の変更%{count}件
   label_last_login: 最終ログイン日時
   label_last_month: 先月
@@ -1119,7 +1115,7 @@ ja:
   label_previous_week: 先週
   label_principal_invite_via_email: " or invite new users via email"
   label_principal_search: 既存のユーザーまたはグループを追加する
-  label_product_version: Product version
+  label_product_version: 製品バージョ​​ン
   label_professional_support: プロフェッショナルサポート
   label_profile: プロファイル
   label_project_all: 全プロジェクト
@@ -1225,7 +1221,7 @@ ja:
   label_total: 合計
   label_type_new: 新しい型
   label_type_plural: 作業項目の型
-  label_type_default_new_projects: Type activated for new projects by default
+  label_type_default_new_projects: デフォルトで新しいプロジェクトに適用される種類
   label_ui: UI（ユーザインターフェイス）
   label_update_work_package_done_ratios: 進捗率の更新
   label_updated_time: "%{value}前に更新"
@@ -1250,7 +1246,7 @@ ja:
   label_version_sharing_none: 共有しない
   label_version_sharing_system: 全プロジェクト
   label_version_sharing_tree: プロジェクトツリー単位
-  label_video: Video
+  label_video: ビデオ
   label_view_all_revisions: 全てのリビジョンを表示
   label_view_diff: 差分を表示
   label_view_revisions: リビジョンを表示
@@ -1272,7 +1268,7 @@ ja:
   label_wiki_show_submenu_item: 上位のメニュー項目
   label_work_package: 作業項目
   label_work_package_status: ステータス名
-  label_work_package_types: Work package types
+  label_work_package_types: 作業項目の種類
   label_workflow: ワークフロー
   label_workflow_plural: ワークフロー
   label_workflow_summary: サマリー
@@ -1348,8 +1344,7 @@ ja:
   noscript_description: OpenProjectを使用するためにJavaScriptを有効にする必要があります！
   noscript_heading: JavaScriptは無効されています。
   noscript_learn_more: もっと詳しく
-  notice_accessibility_mode: The accessibility mode can be enabled in your [account
-    settings](url).
+  notice_accessibility_mode: アクセシビリティモードを [アカウント設定](url) で有効にすることができます。
   notice_account_activated: アカウントが有効になりました。ログインできます。
   notice_account_already_activated: The account has already been activated.
   notice_account_invalid_token: Invalid activation token
@@ -1362,8 +1357,7 @@ ja:
   notice_account_pending: アカウントを作成しました。システム管理者の承認待ちです。
   notice_account_register_done: アカウントが正常に作成されました。アカウントを有効にするには、送信された電子メール内のリンクをクリックします。
   notice_account_unknown_email: ユーザが存在しません。
-  notice_account_update_failed: Account setting could not be saved. Please have a
-    look at your account page.
+  notice_account_update_failed: アカウントの設定は保存できませんでした。個人ページをご確認ください。
   notice_account_updated: アカウントが正常に更新されました。
   notice_account_wrong_password: パスワードが正しくありません。
   notice_account_registered_and_logged_in: ようこそ、アカウントが有効になりました。只今ログイン中ます。
@@ -1406,10 +1400,9 @@ ja:
   present_access_key_value: 'Your %{key_name} is: %{value}'
   notice_automatic_set_of_standard_type: 自動的に標準型を設定します。
   notice_logged_out: ログアウトしました。
-  notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
-    as there are still users using it.
-  notice_project_cannot_update_custom_fields: 'You cannot update the project''s available
-    custom fields. The project is invalid: %{errors}'
+  notice_wont_delete_auth_source: 認証モードは、まだ使用しているユーザが残っている限り、削除できません。
+  notice_project_cannot_update_custom_fields: 'プロジェクトの有効なカスタムフィールドを更新できません。プロジェクトは無効です:
+    %{errors}'
   number:
     format:
       delimiter: ''
@@ -1430,10 +1423,9 @@ ja:
           mb: MB
           tb: TB
   onboarding:
-    text_getting_started: This video provides you an overview of OpenProject. It helps
-      you to set up your first project and to start collaborating with your team members.
-    text_show_again: You can restart this video from the help menu
-    welcome: Hi %{name}, welcome to OpenProject
+    text_getting_started: このビデオはOpenProjectの概要を提供します。最初のプロジェクトをセットアップして、チームメンバーと共同作業を始めるのに役立ちます。
+    text_show_again: ヘルプメニューからこのビデオを再度開始することができます。
+    welcome: "%{name} さん、OpenProject へようこそ"
   permission_add_work_package_notes: 注記の追加
   permission_add_work_packages: Add work packages (also allows to add attachments
     to all work packages)
@@ -1517,7 +1509,7 @@ ja:
       warning_two: Existing links to the project will no longer work.
       title: Change the project's identifier
     archive:
-      are_you_sure: Are you sure you want to archive the project '%{name}'?
+      are_you_sure: プロジェクト '%{name}' をアーカイブしてもよろしいですか？
   project_module_activity: 活動
   project_module_boards: フォーラム
   project_module_calendar: カレンダー
@@ -1574,12 +1566,11 @@ ja:
       managed_path_note: 'The following directory will be erased: %{path}'
       repository_verification: Enter the project's identifier %{identifier} to verify
         the deletion of its repository.
-      subtitle: Do you really want to delete the %{repository_type} of the project
-        %{project_name}?
-      subtitle_not_managed: Do you really want to remove the linked %{repository_type}
-        %{url} from the project %{project_name}?
-      title: Delete the %{repository_type}
-      title_not_managed: Remove the linked %{repository_type}?
+      subtitle: プロジェクト %{project_name} の %{repository_type} を削除してもよろしいですか？
+      subtitle_not_managed: プロジェクト %{project_name} からリンクされた %{repository_type} %{url}
+        を削除してもよろしいですか？
+      title: "%{repository_type} を削除"
+      title_not_managed: リンクされた %{repository_type} を削除しますか？
     errors:
       build_failed: Unable to create the repository with the selected configuration.
         %{reason}
@@ -1598,8 +1589,7 @@ ja:
         are invalid.
       unavailable: The repository is unavailable.
       exception_title: 'Cannot access the repository: %{message}'
-      disabled_or_unknown_type: The selected type %{type} is disabled or no longer
-        available for the SCM vendor %{vendor}.
+      disabled_or_unknown_type: 選択した種類 %{type} は無効、または SCM ベンダー %{vendor} でもう利用できません。
       disabled_or_unknown_vendor: The SCM vendor %{vendor} is disabled or no longer
         available.
       remote_call_failed: 'Calling the managed remote failed with message ''%{message}''
@@ -1634,7 +1624,7 @@ ja:
       automatic_managed_repos_text: By setting a vendor here, newly created projects
         will automatically receive a managed repository of this vendor.
     scm_vendor: Source control management system
-    scm_type: Repository type
+    scm_type: リポジトリの種類
     scm_types:
       local: Link existing local repository
       existing: Link existing repository
@@ -1666,15 +1656,15 @@ ja:
     warnings:
       cannot_annotate: This file cannot be annotated.
   search_input_placeholder: 検索...
-  setting_email_delivery_method: Email delivery method
-  setting_sendmail_location: Location of the sendmail executable
-  setting_smtp_enable_starttls_auto: Automatically use STARTTLS if available
-  setting_smtp_address: SMTP server
-  setting_smtp_port: SMTP port
-  setting_smtp_authentication: SMTP authentication
-  setting_smtp_domain: SMTP HELLO domain
-  setting_smtp_user_name: SMTP username
-  setting_smtp_password: SMTP password
+  setting_email_delivery_method: メールの配信方法
+  setting_sendmail_location: Sendmail の実行可能ファイルの場所
+  setting_smtp_enable_starttls_auto: 利用可能な場合、STARTTLS を自動的に使用する
+  setting_smtp_address: SMTPサーバ
+  setting_smtp_port: SMTPポート
+  setting_smtp_authentication: SMTP認証
+  setting_smtp_domain: SMTP HELLO ドメイン
+  setting_smtp_user_name: SMTPユーザ名
+  setting_smtp_password: SMTPパスワード
   setting_activity_days_default: プロジェクトの活動ページに表示される日数
   setting_app_subtitle: アプリケーションのサブタイトル
   setting_app_title: アプリケーションのタイトル
@@ -1727,7 +1717,7 @@ ja:
     (例えば、作業項目の作成と更新)。
   setting_mail_handler_api_key: APIキー
   setting_mail_handler_body_delimiters: メール本文から一致する行以降を切り捨てる
-  setting_mail_handler_body_delimiter_regex: Truncate emails matching this regex
+  setting_mail_handler_body_delimiter_regex: この正規表現に一致するメールを切り捨てる
   setting_new_project_user_role_id: システム管理者以外のプロジェクト作成者に設定するロール
   setting_password_active_rules: 有効な文字種類
   setting_password_count_former_banned: 再利用を禁止される最近使用済みパスワードの数
@@ -1737,7 +1727,7 @@ ja:
   setting_per_page_options: オプションページごとの項目数
   setting_plain_text_mail: テキストメール（HTMLなし）
   setting_protocol: プロトコル
-  setting_repositories_automatic_managed_vendor: Automatic repository vendor type
+  setting_repositories_automatic_managed_vendor: 自動リポジトリ ベンダー種類
   setting_repositories_encodings: リポジトリのエンコーディング
   setting_repository_authentication_caching_enabled: バージョン管理ソフトウェアの認証要求に対してキャッシュを有効
   setting_repository_storage_cache_minutes: Repository disk size cache
@@ -1774,7 +1764,7 @@ ja:
     passwords: パスワード
     session: セッション
     brute_force_prevention: 自動的にユーザをロック
-  show_hide_project_menu: Expand/Collapse project menu
+  show_hide_project_menu: プロジェクトメニューの展開/折りたたみ
   status_active: 有効
   status_invited: invited
   status_registered: 登録済み
@@ -1788,17 +1778,13 @@ ja:
   text_are_you_sure: よろしいですか？
   text_are_you_sure_with_children: 仕事項目と子項目を削除してもよろしいですか？
   text_assign_to_project: プロジェクト自体に割り当てする
-  text_form_configuration: 'You can customize which attributes will be displayed in
-    forms for work packages of this type. ''Active'' fields will be shown in the collapsed
-    work package view if they have a value, fields that are ''Always displayed'' even
-    if they don''t. Inactive fields will never be shown, even if they have a value.
-    Only fields that are not required or have a default value can be customized.
+  text_form_configuration: 'この種類の作業項目のフォームに表示される属性をカスタマイズできます。「有効」なフィールドは、値を持つ場合、折りたたまれた作業項目ビューに表示されます。「常に表示」のフィールドは、値を持たないない場合でも表示されます。有効ではないフィールドは、値を持っている場合でも、表示されません。必須ではない、またはデフォルト値を持つフィールドのみカスタマイズできます。
 
 '
   text_caracters_maximum: 最大%{count}文字です。
   text_caracters_minimum: 最低%{count}文字の長さが必要です。
   text_comma_separated: "（カンマで区切ることで）複数の値を設定できます。"
-  text_comment_wiki_page: 'Comment to wiki page: %{page}'
+  text_comment_wiki_page: 'Wiki ページへのコメント: %{page}'
   text_custom_field_possible_values_info: 選択肢の値は1行に1個ずつ記述してください。
   text_default_administrator_account_changed: 管理者アカウントでデフォルト設定が変更済み
   text_default_encoding: '既定値: UTF-8'
@@ -1816,7 +1802,7 @@ ja:
   text_hint_date_format: Enter a date in the form of YYYY-MM-DD. Other formats may
     be changed to an unwanted date.
   text_hint_disable_with_0: 注：0で無効になる
-  text_hours_between: Between %{min} and %{max} hours.
+  text_hours_between: "%{min} 〜 %{max} 時間。"
   text_work_package_added: 作業項目%{id}が%{author}によって報告されました。
   text_work_package_category_destroy_assignments: カテゴリへの割り当てを削除する
   text_work_package_category_destroy_question: "%{count}件の作業項目がこのカテゴリに割り当てられています。よろしいですか？"
@@ -1855,7 +1841,7 @@ ja:
   text_project_identifier_info: アルファベット小文字(a-z)・数字・ハイフン・アンダースコアが使えます。アルファベット小文字で始まる必要があります。
   text_reassign: 'Reassign to work package:'
   text_regexp_info: 例) ^[A-Z0-9]+$
-  text_regexp_multiline: The regex is applied in a multi-line mode. e.g., ^---\s+
+  text_regexp_multiline: 正規表現は、複数行モードで適用されます。例えば、^---\s+
   text_repository_usernames_mapping: |-
     リポジトリのログから検出されたユーザ名をどのOpenProjectユーザに関連づけるのか選択してください。
     ログ上のユーザ名またはメールアドレスがOpenProjectのユーザと一致する場合は自動的に関連づけられます。
@@ -1880,7 +1866,7 @@ ja:
   text_workflow_edit: ワークフローを編集する役割と作業項目の型を選択してください。
   text_zoom_in: 拡大
   text_zoom_out: 拡大
-  text_setup_mail_configuration: Configure your email provider
+  text_setup_mail_configuration: メール プロバイダーを構成
   time:
     am: 午前
     formats:
@@ -2079,15 +2065,15 @@ ja:
 '
   tooltip:
     attribute_visibility:
-      default: Show if not empty
-      visible: Show even if empty
-      hidden: Hide by default
+      default: 空でない場合に表示
+      visible: 空の場合でも表示
+      hidden: デフォルトで非表示
   queries:
     apply_filter: 構成済みのフィルタを適用する
   top_menu:
-    additional_resources: Additional resources
-    getting_started: Getting started
-    help_and_support: Help and support
+    additional_resources: 追加リソース
+    getting_started: はじめに
+    help_and_support: ヘルプとサポート
   total_progress: 全体の進行状況
   user:
     all: 全て
@@ -2115,10 +2101,8 @@ ja:
     registered: 登録済み
     reset_failed_logins: 失敗したログイン数をリセットする
     settings:
-      mail_notifications: Send email notifications
-      mail_project_explanaition: For unselected projects, you will only receive notifications
-        about things you watch or you're involved in (e.g. work packages you're the
-        author or assignee of).
+      mail_notifications: メール通知を送信
+      mail_project_explanaition: 未選択プロジェクトでは、ウォッチ又は関与している事柄（例： 自分が作成者又は担当者の作業項目）のみメールが送信されます。
       mail_self_notified: I want to be notified of changes that I make myself
     status_user_and_brute_force: "%{user}かつ%{brute_force}"
     unlock: ロックを解除
@@ -2158,8 +2142,8 @@ ja:
       code_409: 変更が競合しているため、リソースを更新できませんでした。
       code_500: An internal error has occured.
       expected:
-        date: YYYY-MM-DD (ISO 8601 date only)
-        duration: ISO 8601 duration
+        date: YYYY-MM-DD (ISO 8601 日付のみ)
+        duration: ISO 8601 期間
       invalid_content_type: コンテンツの種類は'%{content_type}'を期待されたが '%{actual}'を得ました。
       invalid_format: '不正なフォーマットのプロパティ ''%{property}'': 期待されるフォーマットは ''%{expected_format}'',
         ですが ''%{actual}''を受け取りました.'
