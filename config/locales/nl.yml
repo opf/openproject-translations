@@ -12,9 +12,9 @@ nl:
     plugins:
       no_results_title_text: Er zijn momenteel geen plugins beschikbaar.
   announcements:
-    show_until: Show until
-    is_active: currently displayed
-    is_inactive: currently not displayed
+    show_until: Toon tot
+    is_active: momenteel getoond
+    is_inactive: momenteel niet getoond
   auth_sources:
     index:
       no_results_content_title: Er zijn momenteel geen verificatie methodes.
@@ -195,21 +195,22 @@ nl:
         relations/base_contract:
           attributes:
             to:
-              error_not_found: work package in `to` position not found or not visible
-              error_readonly: an existing relation's `to` link is immutable
+              error_not_found: werkpakket in positie `naar` niet gevonden of niet
+                zichtbaar
+              error_readonly: een bestaande `te`-relatie is onveranderlijk
             from:
-              error_not_found: work package in `from` position not found or not visible
-              error_readonly: an existing relation's `from` link is immutable
+              error_not_found: werkpakket in `van`-positie niet gevonden of niet zichtbaar
+              error_readonly: een bestaande `van`-relatielink is onveranderlijk
         users/base_contract:
           attributes:
             status:
               invalid_on_create: is niet een geldige status voor nieuwe gebruikers.
             auth_source:
-              error_not_found: not found
+              error_not_found: niet gevonden
   activerecord:
     attributes:
       announcements:
-        show_until: Display until
+        show_until: Toon tot
       attachment:
         downloads: Downloads
         file: Bestand
@@ -255,7 +256,7 @@ nl:
         roles: Rollen
       project:
         identifier: Identifier
-        latest_activity_at: Latest activity at
+        latest_activity_at: Laatste activiteit om
         parent: Subproject van
         project_type: Projecttype
         queries: Query 's
@@ -287,7 +288,7 @@ nl:
         current_password: Huidig wachtwoord
         force_password_change: Afdwingen van wachtwoordwijziging bij volgende login
         language: Taal
-        last_login_on: Last login
+        last_login_on: Laatste log-in
         mail_notification: E-mailnotificaties
         new_password: Nieuw wachtwoord
         password_confirmation: Bevestiging
@@ -312,7 +313,7 @@ nl:
         hexcode: Hexadecimale code
       project_association:
         description: Oorzaak
-        project_b: Dependent project
+        project_b: Afhankelijk project
       project_type:
         allows_association: Sta associatie toe
         reported_project_statuses: Gerapporteerde projectstatussen
@@ -360,14 +361,13 @@ nl:
         greater_than_or_equal_to: moet groter dan of gelijk zijn aan %{count}.
         smaller_than_or_equal_to_max_length: moet kleiner zijn dan of even groot zijn
           als de maximale lengte.
-        greater_than_start_date: must be greater than the start date.
-        greater_than_or_equal_to_start_date: must be greater than or equal to the
-          start date.
+        greater_than_start_date: moet groter zijn dan startdatum.
+        greater_than_or_equal_to_start_date: moet groter of gelijk zijn aan startdatum.
         inclusion: is niet ingesteld op één van de toegestane waarden.
         invalid: is ongeldig.
         less_than_or_equal_to: moet kleiner zijn dan of gelijk aan %{count}.
         not_a_date: is niet een datum.
-        not_an_iso_date: 'is not a valid date. Required format: YYYY-MM-DD.'
+        not_an_iso_date: 'is geen geldige datum. Vereist formaat: JJJJ-MM-DD.'
         not_a_number: is geen getal.
         not_an_integer: is niet een geheel getal.
         not_same_project: hoort niet bij hetzelfde project.
@@ -388,8 +388,8 @@ nl:
               in_use_by_work_packages: 'nog steeds in gebruik door werkpakketten:
                 %{types}'
         project_association:
-          identical_projects: Dependency cannot be created between one project and
-            itself.
+          identical_projects: Afhankelijkheid kan niet worden gecreëerd tussen een
+            project en hetzelf.
           project_association_not_allowed: staat geen associaties toe.
         query:
           filters:
@@ -412,8 +412,8 @@ nl:
               cannot_be_in_another_project: kan niet in een ander project zijn.
               not_a_valid_parent: is ongeldig.
             start_date:
-              violates_relationships: can only be set to %{soonest_start} or later
-                so as not to violate the work package's relationships.
+              violates_relationships: kan enkel naar %{soonest_start} worden gezet
+                of later met de bedoeling de relaties van het werkpakket niet te schenden.
             status_id:
               status_transition_invalid: is ongeldig omdat geen geldige overgang van
                 de oude naar de nieuwe status voor de huidige gebruikersrollen bestaat.
@@ -440,9 +440,9 @@ nl:
                 other: is reeds eerder gebruikt. Kies er één die verschilt van uw
                   laatste %{count}.
               match:
-                confirm: Confirm new password.
-                description: "'Password confirmation' should match the input in the
-                  'New password' field."
+                confirm: Bevestig nieuw wachtwoord.
+                description: "'Wachtwoordbevestiging' moet hetzelfde zijn als de invoer
+                  bij het 'Nieuw wachtwoord'-veld."
         member:
           principal_blank: Kies ten minste één gebruiker of groep.
           role_blank: Kies ten minste één rol.
@@ -488,7 +488,7 @@ nl:
     attachments: Bijlagen
     author: Auteur
     base: 'Algemene fout:'
-    blocks_ids: IDs of blocked work packages
+    blocks_ids: It's van geblokkeerde werkpakketten
     category: Categorie
     comment: Commentaar
     comments: Commentaar
@@ -519,7 +519,7 @@ nl:
     priority: Prioriteit
     project: Project
     responsible: Verantwoordelijk
-    role: Role
+    role: Rol
     start_date: Startdatum
     status: Status
     subject: Onderwerp
@@ -745,12 +745,12 @@ nl:
   default_type: Werkpakket
   default_type_bug: Fout
   default_type_deliverable: Leverbaar
-  default_type_epic: Epic
+  default_type_epic: Episch
   default_type_feature: Functie
   default_type_milestone: Mijlpaal
   default_type_phase: Fase
   default_type_task: Taak
-  default_type_user_story: User story
+  default_type_user_story: Gebruikersverhaal
   description_active: Actief?
   description_attachment_toggle: Bijlagen weergeven/verbergen
   description_autocomplete: 'Dit veld wordt automatisch aangevuld. Tijdens het typen
@@ -762,7 +762,7 @@ nl:
 '
   description_available_columns: Beschikbare kolommen
   description_choose_project: Projecten
-  description_compare_from: Compare from
+  description_compare_from: Vergelijk van
   description_compare_to: Vergelijk met
   description_current_position: 'U bent hier:'
   description_date_from: Begindatum opgeven
@@ -806,7 +806,7 @@ nl:
     zijn ingeschakeld aangezien deze toepassing anders niet goed zal functioneren.
   error_pdf_export_too_many_columns: Te veel kolommen geselecteerd voor het exporteren
     naar PDF. Beperk het aantal kolommen.
-  error_token_authenticity: Unable to verify Cross-Site Request Forgery token.
+  error_token_authenticity: Niet mogelijk om Cross-Site Request Forgery-token te verifiëren.
   error_work_package_done_ratios_not_updated: Werkpakket gedaan ratio's niet bijgewerkt.
   error_work_package_not_found_in_project: Het werkpakket werd niet gevonden of maakt
     geen deel uit van dit project
@@ -820,8 +820,8 @@ nl:
   error_scm_command_failed: 'Er is een fout opgetreden tijdens het proberen om toegang
     te krijgen tot de repository: %{value}'
   error_scm_not_found: De vermelding of de herziening werd niet gevonden in de repository.
-  error_unable_delete_status: The work package status cannot be deleted since it is
-    used by at least one work package.
+  error_unable_delete_status: De status van het werkpakket kan niet worden verwijderd
+    omdat het door minstens één werkpakket wordt gebruikt.
   error_unable_delete_default_status: Niet in staat de status van het standaard werkpakket
     te verwijderen. Gelieve een andere status van het standaard werkpakket te selecteren
     alvorens de huidige te verwijderen.
@@ -832,9 +832,9 @@ nl:
   error_workflow_copy_target: Selecteer (de) type(n) en rol(len)
   error_menu_item_not_created: Menu-item kan niet worden toegevoegd
   error_menu_item_not_saved: Menu-item kan niet worden opgeslagen
-  error_wiki_root_menu_item_conflict: 'Can''t rename "%{old_name}" to "%{new_name}"
-    due to a conflict in the resulting menu item with the existing menu item "%{existing_caption}"
-    (%{existing_identifier}).
+  error_wiki_root_menu_item_conflict: 'Kan "%{old_name}" niet naar "%{new_name}" hernoemen
+    vanwege een conflict in het resulterende menu-item met het bestaande menu-item.
+    "%{existing_caption}" (%{existing_identifier}).
 
 '
   error_external_authentication_failed: Er heeft zich een fout voorgedaan bij de externe
@@ -867,7 +867,7 @@ nl:
       projects: Nieuwste zichtbare projecten in deze instantie.
       users: Nieuwste geregistreerde gebruikers in deze instantie.
     blocks:
-      community: OpenProject community
+      community: OpenProject gemeenschap
     links:
       user_guides: Gebruikershandleidingen
       faq: Veelgestelde vragen (FAQ)
@@ -875,12 +875,12 @@ nl:
       shortcuts: Snelkoppelingen
       forums: Fora
       blog: OpenProject blog
-      boards: Community forum
-  instructions_after_registration: You can sign in as soon as your account has been
-    activated by clicking %{signin}.
-  instructions_after_logout: You can sign in again by clicking %{signin}.
-  instructions_after_error: You can try to sign in again by clicking %{signin}. If
-    the error persists, ask your admin for help.
+      boards: Gemeenschapsforum
+  instructions_after_registration: U kan inloggen zodra uw account geactiveerd is
+    door te klikken op %{signin}.
+  instructions_after_logout: U kan terug inloggen door op %{signin} te klikken.
+  instructions_after_error: U kan opnieuw proberen inloggen door op %{signin} te klikken.
+    Als de fout aanhoudt, vraag dan uw admin om hulp.
   my_account:
     access_tokens:
       no_results:
@@ -914,8 +914,8 @@ nl:
   label_all: alle
   label_all_time: aller tijden
   label_all_words: Alle woorden
-  label_always_visible: Always displayed
-  label_announcement: Announcement
+  label_always_visible: Altijd weergegeven
+  label_announcement: Mededeling
   label_and_its_subprojects: "%{value} en zijn subprojecten"
   label_api_access_key: API sleutel
   label_api_access_key_created_on: API sleutel %{value} geleden gemaakt
@@ -961,8 +961,8 @@ nl:
   label_change_status: Status wijzigen
   label_change_view_all: Alle wijzigingen weergeven
   label_changes_details: Details van alle wijzigingen
-  label_changeset: Changeset
-  label_changeset_id: Changeset ID
+  label_changeset: Wijzigingenset
+  label_changeset_id: Wijzigingenset ID
   label_changeset_plural: Wijzigingensets
   label_checked: gecontroleerd
   label_check_uncheck_all_in_column: Selecteer/Deselecteer alles in kolom
@@ -972,7 +972,7 @@ nl:
   label_close_versions: Voltooide versies sluiten
   label_closed_work_packages: gesloten
   label_collapse: Samenvouwen
-  label_configuration: configuration
+  label_configuration: configuratie
   label_comment_add: Een opmerking toevoegen
   label_comment_added: Opmerking toegevoegd
   label_comment_delete: Opmerkingen verwijderen
@@ -1019,7 +1019,7 @@ nl:
   label_download_plural: "%{count} Downloads"
   label_downloads_abbr: D/L
   label_duplicated_by: gedupliceerd door
-  label_duplicate: duplicate
+  label_duplicate: dupliceren
   label_duplicates: duplicaten
   label_edit: Wijzig
   label_enable_multi_select: Omschakelen multiselect
@@ -1030,7 +1030,7 @@ nl:
   label_end_to_end: einde tot einde
   label_end_to_start: einde tot start
   label_enumeration_new: Nieuwe opsommingswaarde
-  label_enumeration_value: Enumeration value
+  label_enumeration_value: Opsommingswaarde
   label_enumerations: Opsommingen
   label_environment: Omgeving
   label_equals: is
@@ -1047,20 +1047,20 @@ nl:
   label_filter_add: Filter toevoegen
   label_filter_plural: Filters
   label_float: Zwevend
-  label_folder: Folder
+  label_folder: Map
   label_follows: volgt
   label_force_user_language_to_default: Taal van gebruikers met een niet toegestane
     taal op standaard instellen
-  label_form_configuration: Form configuration
+  label_form_configuration: Formulierconfiguratie
   label_general: Algemeen
   label_generate_key: Genereren van een sleutel
   label_git_path: Pad naar .git map
   label_greater_or_equal: ">="
-  label_group_by: Group by
+  label_group_by: Groeperen op
   label_group_new: Nieuwe groep
   label_group_plural: Groepen
   label_help: Help
-  label_here: here
+  label_here: hier
   label_hide: Verbergen
   label_history: Geschiedenis
   label_home: Home
@@ -1077,14 +1077,14 @@ nl:
   label_internal: Intern
   label_invite_user: Gebruiker uitnodigen
   label_show_hide: Weergeven/verbergen
-  label_journal: Journal
+  label_journal: Logboek
   label_journal_diff: Beschrijving vergelijking
   label_jump_to_a_project: Ga naar een project...
   label_language_based: Op basis van de taal van gebruiker
   label_last_activity: Laatste activiteit
   label_last_change_on: Laatste wijziging op
   label_last_changes: laatste %{count} veranderingen
-  label_last_login: Last login
+  label_last_login: Laatste log-in
   label_last_month: vorige maand
   label_last_n_days: laatste %{count} dagen
   label_last_week: Vorige week
@@ -1107,7 +1107,7 @@ nl:
   label_member_plural: Leden
   label_memder_view_all: Alle leden bekijken
   label_menu_item_name: Naam van het menu-item
-  label_message: Message
+  label_message: Bericht
   label_message_last: Laatste bericht
   label_message_new: Nieuw bericht
   label_message_plural: Berichten
@@ -1284,7 +1284,7 @@ nl:
   label_this_week: deze week
   label_this_year: Dit jaar
   label_time_entry_plural: Bestede tijd
-  label_time_sheet_menu: Time sheet
+  label_time_sheet_menu: Tijdkaart
   label_time_tracking: Tijdregistratie
   label_today: vandaag
   label_top_menu: Hoofdmenu
@@ -1387,7 +1387,7 @@ nl:
     zero: 0 open / %{total}
   label_x_projects:
     one: 1 project
-    other: "%{count} projects"
+    other: "%{count} projecten"
     zero: no projects
   label_year: Jaar
   label_yesterday: gisteren
@@ -1420,13 +1420,13 @@ nl:
     sommige lijsten)
   label_keyboard_shortcut_focus_next_item: Focus volgende lijstelement (enkel op sommige
     lijsten)
-  label_visible_elements: Visible elements
+  label_visible_elements: Zichtbare elementen
   auth_source:
-    using_abstract_auth_source: Can't use an abstract authentication source.
-    ldap_error: 'LDAP-Error: %{error_message}'
-    ldap_auth_failed: Could not authenticate at the LDAP-Server.
-  macro_execution_error: Error executing the macro %{macro_name}
-  macro_unavailable: Macro %{macro_name} cannot be displayed.
+    using_abstract_auth_source: Kan geen abstracte authenticatiebron gebruiken.
+    ldap_error: 'LDAP-fout: %{error_message}'
+    ldap_auth_failed: Kon niet authenticeren met LDAP-server.
+  macro_execution_error: Fout bij het uitvoeren van de macro %{macro_name}
+  macro_unavailable: Macro %{macro_name} kan niet worden weergegeven.
   mail_body_account_activation_request: 'Een nieuwe gebruiker (%{value}) heeft zich
     geregistreerd. Het account wacht op uw goedkeuring:'
   mail_body_account_information: Uw accountinformatie
@@ -1526,7 +1526,7 @@ nl:
   notice_user_invitation_resent: Een nieuwe uitnodiging is verstuurd naar %{email}.
   present_access_key_value: 'Uw %{key_name} is: %{value}'
   notice_automatic_set_of_standard_type: Standaardtype automatisch ingesteld.
-  notice_logged_out: You have been logged out.
+  notice_logged_out: U bent uitgelogd.
   notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
     as there are still users using it.
   notice_project_cannot_update_custom_fields: 'You cannot update the project''s available
