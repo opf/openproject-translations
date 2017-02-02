@@ -182,7 +182,7 @@ fi:
     signup_with_auth_provider: or sign up using
     auth_source_login: Please login as <em>%{login}</em> to activate your account.
     omniauth_login: Please login to activate your account.
-  actionview_instancetag_blank_option: Valitse, ole hyvä
+  actionview_instancetag_blank_option: Valitse
   activemodel:
     errors:
       models:
@@ -338,37 +338,37 @@ fi:
         watcher: Watcher
     errors:
       messages:
-        accepted: täytyy olla hyväksytty
-        blank: ei voi olla sisällötön
+        accepted: täytyy olla hyväksytty.
+        blank: ei voi olla sisällötön.
         cant_link_a_work_package_with_a_descendant: A work package cannot be linked
           to one of its subtasks.
         circular_dependency: Tämä suhde loisi kehän.
-        confirmation: ei vastaa varmennusta
+        confirmation: ei vastaa %{attribute}.
         does_not_exist: does not exist.
-        empty: ei voi olla tyhjä
-        even: täytyy olla parillinen
-        exclusion: on jo varattu
+        empty: ei voi olla tyhjä.
+        even: täytyy olla parillinen.
+        exclusion: on jo varattu.
         file_too_large: is too large (maximum size is %{count} Bytes).
-        greater_than: täytyy olla suurempi kuin %{count}
-        greater_than_or_equal_to: täytyy olla suurempi tai yhtä suuri kuin%{count}
+        greater_than: täytyy olla suurempi kuin %{count}.
+        greater_than_or_equal_to: täytyy olla suurempi tai yhtä suuri kuin%{count}.
         smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
           length.
-        greater_than_start_date: tulee olla aloituspäivän jälkeinen
+        greater_than_start_date: tulee olla aloituspäivän jälkeinen.
         greater_than_or_equal_to_start_date: must be greater than or equal to the
           start date.
-        inclusion: ei löydy listauksesta
-        invalid: on kelvoton
-        less_than_or_equal_to: täytyy olla pienempi tai yhtä suuri kuin %{count}
+        inclusion: ei löydy listauksesta.
+        invalid: ei kelpaa.
+        less_than_or_equal_to: täytyy olla pienempi tai yhtä suuri kuin %{count}.
         not_a_date: is not a date.
         not_an_iso_date: 'is not a valid date. Required format: YYYY-MM-DD.'
-        not_a_number: ei ole numero
+        not_a_number: ei ole numero.
         not_an_integer: is not an integer.
-        not_same_project: ei kuulu samaan projektiin
-        odd: täytyy olla pariton
-        taken: on jo käytössä
-        too_long: on liian pitkä (maksimi on %{count} merkkiä)
-        too_short: on liian lyhyt (minimi on %{count} merkkiä)
-        wrong_length: on väärän pituinen (täytyy olla täsmälleen %{count} merkkiä)
+        not_same_project: ei kuulu samaan projektiin.
+        odd: täytyy olla pariton.
+        taken: on jo käytössä.
+        too_long: on liian pitkä (maksimi on %{count} merkkiä).
+        too_short: on liian lyhyt (minimi on %{count} merkkiä).
+        wrong_length: on väärän pituinen (täytyy olla täsmälleen %{count} merkkiä).
         after: must be after %{date}.
         after_or_equal_to: must be after or equal to %{date}.
         before: must be before %{date}.
@@ -402,7 +402,7 @@ fi:
             parent_id:
               cannot_be_milestone: cannot be a milestone.
               cannot_be_in_another_project: cannot be in another project.
-              not_a_valid_parent: on kelvoton
+              not_a_valid_parent: ei kelpaa.
             start_date:
               violates_relationships: can only be set to %{soonest_start} or later
                 so as not to violate the work package's relationships.
@@ -439,7 +439,7 @@ fi:
           principal_blank: Please choose at least one user or group.
           role_blank: Please choose at least one role.
       template:
-        body: 'Seuraavat kentät aiheuttivat ongelmia:'
+        body: 'Tarkista seuraavat kentät:'
         header:
           one: 1 virhe esti tämän %{model} mallinteen tallentamisen
           other: "%{count} virhettä esti tämän %{model} mallinteen tallentamisen"
@@ -537,7 +537,7 @@ fi:
   button_change_password: Vaihda salasana
   button_check_all: Valitse kaikki
   button_clear: Tyhjää
-  button_collapse_all: Collapse all
+  button_collapse_all: Tiivistä kaikki
   button_configure: Asetukset
   button_copy: Kopioi
   button_copy_and_follow: Copy and follow
@@ -556,11 +556,11 @@ fi:
   button_log_time: Log time
   button_login: Kirjaudu
   button_move: Siirrä
-  button_move_and_follow: Move and follow
-  button_quote: Vastaa
+  button_move_and_follow: Siirrä ja seuraa
+  button_quote: Siteeraa
   button_remove: Remove
   button_remove_widget: Remove widget
-  button_rename: Uudelleen nimeä
+  button_rename: Nimeä uudelleen
   button_reply: Vastaa
   button_reset: Nollaus
   button_rollback: Siirry takaisin tähän versioon
@@ -641,9 +641,9 @@ fi:
     - Marraskuu
     - Joulukuu
     order:
-    - :day
-    - :month
-    - :year
+    - :vuosi
+    - :kuukausi
+    - ":päivä"
   datetime:
     distance_in_words:
       about_x_hours:
@@ -656,15 +656,15 @@ fi:
         one: vuosi
         other: noin %{count} vuotta
       almost_x_years:
-        one: almost 1 year
-        other: almost %{count} years
+        one: lähes 1 vuosi
+        other: lähes %{count} vuotta
       half_a_minute: puoli minuuttia
       less_than_x_minutes:
-        one: aiemmin kuin minuutti
-        other: aiemmin kuin %{count} minuuttia
+        one: alle minuutti
+        other: alle %{count} minuuttia
       less_than_x_seconds:
         one: aiemmin kuin sekunti
-        other: aiemmin kuin %{count} sekuntia
+        other: alle %{count} sekuntia
       over_x_years:
         one: yli vuosi
         other: yli %{count} vuotta
@@ -751,30 +751,30 @@ fi:
     you can enter the work package number directly.
 
 '
-  description_available_columns: Available Columns
-  description_choose_project: Projects
+  description_available_columns: Käytettävissä olevat sarakkeet
+  description_choose_project: Projektit
   description_compare_from: Compare from
   description_compare_to: Compare to
   description_current_position: 'You are here:'
-  description_date_from: Enter start date
-  description_date_range_interval: Choose range by selecting start and end date
+  description_date_from: Syötä aloituspäivämäärä
+  description_date_range_interval: Valitse alkamis- ja päättymispäivämäärä
   description_date_range_list: Choose range from list
-  description_date_to: Enter end date
+  description_date_to: Syötä päättymispäivä
   description_enter_number: Enter number
   description_enter_text: Enter text
-  description_filter: Filter
+  description_filter: Suodata
   description_filter_toggle: Show/Hide filter
   description_category_reassign: Choose category
-  description_message_content: Message content
+  description_message_content: Viestin sisältö
   description_my_project: You are member
   description_notes: Notes
   description_parent_work_package: Parent work package of current
   description_project_scope: Search scope
   description_query_sort_criteria_attribute: Sort attribute
-  description_query_sort_criteria_direction: Sort direction
-  description_search: Searchfield
+  description_query_sort_criteria_direction: Lajittelujärjestys
+  description_search: Hakukenttä
   description_select_work_package: Select work package
-  description_selected_columns: Selected Columns
+  description_selected_columns: Valitut sarakkeet
   description_sub_work_package: Sub work package of current
   description_toc_toggle: Show/Hide table of contents
   description_wiki_subpages_reassign: Choose new parent page
@@ -783,12 +783,12 @@ fi:
   enumeration_work_package_priorities: Work package priorities
   enumeration_system_activity: System Activity
   enumeration_reported_project_statuses: Reported project status
-  error_can_not_archive_project: This project can not be archived
+  error_can_not_archive_project: Tätä projektia ei voida arkistoida
   error_can_not_delete_custom_field: Unable to delete custom field
   error_can_not_delete_type: This type contains work packages and cannot be deleted.
   error_can_not_delete_standard_type: Standard types cannot be deleted.
   error_can_not_invite_user: Failed to send invitation to user.
-  error_can_not_remove_role: This role is in use and can not be deleted.
+  error_can_not_remove_role: Tämä rooli on käytössä joten sitä ei voida poistaa.
   error_can_not_reopen_work_package_on_closed_version: A work package assigned to
     a closed version cannot be reopened
   error_check_user_and_role: Please choose a user and a role.
@@ -1179,7 +1179,7 @@ fi:
   label_project_default_type: Allow empty type
   label_project_hierarchy: Project hierarchy
   label_project_new: Uusi projekti
-  label_project_plural: Projects
+  label_project_plural: Projektit
   label_project_settings: Project settings
   label_projects_storage_information: "%{count} projects using %{storage} disk storage"
   label_project_view_all: View all projects
@@ -1291,7 +1291,7 @@ fi:
   label_user_mail_option_only_assigned: Only for things I watch or I am assigned to
   label_user_mail_option_only_my_events: Only for things I watch or I'm involved in
   label_user_mail_option_only_owner: Only for things I watch or I am the owner of
-  label_user_mail_option_selected: Kaikista tapahtumista vain valitsemistani projekteista...
+  label_user_mail_option_selected: Kaikista tapahtumista vain valitsemistani projekteista
   label_user_new: Uusi käyttäjä
   label_user_plural: Käyttäjät
   label_user_search: 'Search for user:'
