@@ -131,9 +131,9 @@ fi:
           no_results_title_text: There are currently no versions available.
   label_invitation: Invitation
   account:
-    delete: Delete account
-    delete_confirmation: Are you sure you want to delete the account?
-    deleted: Account successfully deleted
+    delete: Poista tili
+    delete_confirmation: Oletko varma, että haluat poistaa tilin?
+    deleted: Tili poistettu
     deletion_info:
       data_consequences:
         other: Of the data the user created (e.g. email, preferences, work packages,
@@ -150,35 +150,34 @@ fi:
           user". As the data of every deleted account is reassigned to this account
           it will not be possible to distinguish the data you created from the data
           of another deleted account.
-      heading: Delete account %{name}
+      heading: Poista tili %{name}
       info:
-        other: Deleting the user account is an irreversible action.
-        self: Deleting your user account is an irreversible action.
+        other: Käyttäjätilin poistamista ei voi kumota.
+        self: Käyttäjätilin poistamista ei voi kumota.
       login_consequences:
-        other: The account will be deleted from the system. Therefore, the user will
-          no longer be able to log in with his current credentials. He/she can choose
-          to become a user of this application again by the means this application
-          grants.
-        self: Your account will be deleted from the system. Therefore, you will no
-          longer be able to log in with your current credentials. If you choose to
-          become a user of this application again, you can do so by using the means
-          this application grants.
+        other: Tili poistetaan järjestelmästä. Käyttäjä ei voi enää kirjautua sisään
+          hänen nykyisillä käyttäjätiedoilla. Hän voi halutessaan rekisteröityä uudestaan
+          tämän sovelluksen käyttäjäksi kuten kuka tahansa joka ei ole vielä sovelluksen
+          käyttäjä.
+        self: Tilisi poistetaan järjestelmästä. Et voi enää kirjautua sisään nykyisillä
+          käyttäjätiedoillasi. Voit halutessasi rekisteröityä uudestaan tämän sovelluksen
+          käyttäjäksi kuten kuka tahansa joka ei ole vielä sovelluksen käyttäjä.
       login_verification:
         other: Enter the login %{name} to verify the deletion.
         self: Enter your login %{name} to verify the deletion.
-    error_inactive_activation_by_mail: 'Your account has not yet been activated. To
-      activate your account, click on the link that was emailed to you.
+    error_inactive_activation_by_mail: 'Tilisi ei ole vielä aktivoitu. Aktivoidaksesi
+      tilin, klikkaa linkkiä joka välitettiin sähköpostiisi.
 
 '
-    error_inactive_manual_activation: 'Your account has not yet been activated. Please
-      wait for an administrator to activate your account.
+    error_inactive_manual_activation: 'Tilisi ei ole vielä aktivoitu. Odota, kunnes
+      järjestelmänvalvoja aktivoi tilisi.
 
 '
-    error_self_registration_disabled: 'User registration is disabled on this system.
-      Please ask an administrator to create an account for you.
+    error_self_registration_disabled: 'Rekisteröityminen ei ole käytössä tässä järjestelmässä.
+      Pyydä järjestelmänvalvojaa luomaan tili.
 
 '
-    login_with_auth_provider: or sign in with your existing account
+    login_with_auth_provider: tai kirjaudu sisään jo olemassa olevalle tilille
     signup_with_auth_provider: or sign up using
     auth_source_login: Please login as <em>%{login}</em> to activate your account.
     omniauth_login: Please login to activate your account.
@@ -205,12 +204,12 @@ fi:
       announcements:
         show_until: Display until
       attachment:
-        downloads: Downloads
-        file: File
-        filename: File
-        filesize: Size
+        downloads: Lataukset
+        file: Tiedosto
+        filename: Tiedosto
+        filesize: Koko
       auth_source:
-        account: Account
+        account: Käyttäjätili
         attr_firstname: Firstname attribute
         attr_lastname: Lastname attribute
         attr_login: Login attribute
@@ -222,41 +221,41 @@ fi:
       changeset:
         repository: Tietovarasto
       comment:
-        commented: Commented
+        commented: Kommentoitu
       custom_field:
-        default_value: Default value
-        editable: Editable
-        field_format: Format
-        is_filter: Used as a filter
-        is_required: Required
-        max_length: Maximum length
-        min_length: Minimum length
-        possible_values: Possible values
-        regexp: Regular expression
-        searchable: Searchable
-        visible: Visible
+        default_value: Oletusarvo
+        editable: Muokattava
+        field_format: Kentän tyyppi
+        is_filter: Käytetään suodattimena
+        is_required: Pakollinen tieto
+        max_length: Enimmäispituus
+        min_length: Vähimmäispituus
+        possible_values: Mahdolliset arvot
+        regexp: Säännöllinen lauseke (reg exp)
+        searchable: Haettavissa
+        visible: Näkyvissä
       custom_value:
-        value: Value
+        value: Arvo
       relation:
-        delay: Delay
-        from: Work Package
-        to: Related work package
+        delay: Viive
+        from: Työpaketti
+        to: Liittyvä työpaketti
       status:
-        is_closed: Work package closed
+        is_closed: Työpaketti suljettu
       journal:
-        notes: Notes
+        notes: Muistiinpanot
       member:
-        roles: Roles
+        roles: Roolit
       project:
-        identifier: Identifier
+        identifier: Tunniste
         latest_activity_at: Latest activity at
-        parent: Subproject of
+        parent: Aliprojekti
         project_type: Project type
         queries: Queries
         responsible: Responsible
         types: Types
-        versions: Versions
-        work_packages: Work Packages
+        versions: Versiot
+        work_packages: Työpaketit
       query:
         column_names: Columns
         group_by: Group results by
@@ -267,75 +266,77 @@ fi:
         assignable: Work packages can be assigned to this role
       time_entry:
         activity: Activity
-        hours: Hours
-        spent_on: Date
-        type: Type
+        hours: Tunnit
+        spent_on: Päivä
+        type: Tyyppi
       type:
         is_in_roadmap: In roadmap
         in_aggregation: In aggregation
         is_milestone: Is milestone
-        color: Color
+        color: Väri
       user:
-        admin: Administrator
+        admin: Järjestelmänvalvoja
         auth_source: Authentication mode
         current_password: Current password
-        force_password_change: Enforce password change on next login
-        language: Language
-        last_login_on: Last login
-        mail_notification: Email notifications
-        new_password: New password
-        password_confirmation: Confirmation
+        force_password_change: Pakota salasanan vaihto seuraavan sisäänkirjautumisen
+          yhteydessä
+        language: Kieli
+        last_login_on: Edellinen kirjautuminen
+        mail_notification: Sähköposti-ilmoitukset
+        new_password: Uusi salasana
+        password_confirmation: Vahvistus
       user_preference:
-        comments_sorting: Display comments
-        hide_mail: Hide my email address
-        impaired: Accessibility mode
-        time_zone: Time zone
-        warn_on_leaving_unsaved: Warn me when leaving a page with unsaved text
+        comments_sorting: Näytä kommentit
+        hide_mail: Piiloita sähköpostiosoitteeni
+        impaired: Helppokäyttötoimintojen tila
+        time_zone: Aikavyöhyke
+        warn_on_leaving_unsaved: Varoita poistuttaessa jos sivulla on tallentamatonta
+          tekstiä
       version:
-        effective_date: Due date
-        sharing: Sharing
+        effective_date: Määräpäivä
+        sharing: Jakaminen
       wiki:
-        start_page: Start page
+        start_page: Aloitussivu
       wiki_content:
-        text: Text
+        text: Teksti
       wiki_page:
-        parent_title: Parent page
-        redirect_existing_links: Redirect existing links
+        parent_title: Isäntäsivu
+        redirect_existing_links: Uudelleenohjaa olemassa olevat linkit
       planning_element_type_color:
-        hexcode: Hex code
+        hexcode: Hex koodi
       project_association:
-        description: Cause
-        project_b: Dependent project
+        description: Syy
+        project_b: Riippuvuus porjektiin
       project_type:
-        allows_association: Allows association
-        reported_project_statuses: Reported project statuses
-        position: Position
+        allows_association: Salli yhteys
+        reported_project_statuses: Raportoidut tilat projektille
+        position: Sijainti
       timeline:
         options: ''
       reporting:
-        reported_project_status_comment: Status comment
-        reporting_to_project: Reports to project
-        reported_project_status: Project status
-        created_at: Created
+        reported_project_status_comment: Tilan kommentti
+        reporting_to_project: Projektin raportit
+        reported_project_status: Projektin tila
+        created_at: Luotu
       work_package:
         begin_insertion: Begin of the insertion
         begin_deletion: Begin of the deletion
         done_ratio: Progress (%)
         end_insertion: End of the insertion
         end_deletion: End of the deletion
-        fixed_version: Version
-        parent: Parent
-        parent_issue: Parent
-        parent_work_package: Parent
-        priority: Priority
+        fixed_version: Versio
+        parent: Ylätaso
+        parent_issue: Ylätaso
+        parent_work_package: Ylätaso
+        priority: Tärkeys
         progress: Progress (%)
         responsible: Responsible
-        spent_hours: Spent time
-        spent_time: Spent time
-        subproject: Subproject
-        time_entries: Log time
-        type: Type
-        watcher: Watcher
+        spent_hours: Käytetty aika
+        spent_time: Käytetty aika
+        subproject: Aliprojekti
+        time_entries: Kirjaa lokiin aika
+        type: Tyyppi
+        watcher: Seuraajat
     errors:
       messages:
         accepted: täytyy olla hyväksytty.
@@ -380,8 +381,7 @@ fi:
             types:
               in_use_by_work_packages: 'still in use by work packages: %{types}'
         project_association:
-          identical_projects: Dependency cannot be created between one project and
-            itself.
+          identical_projects: Riippuvuutta ei voi luoda projektin ja sen itsensä välillä.
           project_association_not_allowed: does not allow associations.
         query:
           filters:
@@ -393,8 +393,8 @@ fi:
           not_whitelisted: is not allowed by the configuration.
           no_directory: is not a directory.
         work_package:
-          is_not_a_valid_target_for_time_entries: 'Work package #%{id} is not a valid
-            target for reassigning the time entries.'
+          is_not_a_valid_target_for_time_entries: 'Työpaketti #%{id} ei ole kelvollinen
+            uusi kohde aikakirjauksille.'
           attributes:
             due_date:
               not_start_date: is not on start date, although this is required for
@@ -414,7 +414,7 @@ fi:
             category:
               only_same_project_categories_allowed: The category of a work package
                 must be within the same project as the work package.
-              does_not_exist: The specified category does not exist.
+              does_not_exist: Määritettyä luokkaa ei ole.
             estimated_hours:
               only_values_greater_or_equal_zeroes_allowed: must be >= 0.
         user:
@@ -422,31 +422,30 @@ fi:
             password:
               weak: 'Must contain characters of the following classes (at least %{min_count}
                 of %{all_count}): %{rules}.'
-              lowercase: lowercase (e.g. 'a')
-              uppercase: uppercase (e.g. 'A')
-              numeric: numeric (e.g. '1')
-              special: special (e.g. '%')
+              lowercase: pieniä kirjaimia (esim. "a")
+              uppercase: isoja kirjaimia (esim. A)
+              numeric: numeerinen (esim. 1)
+              special: erikoismerkki (esim. %)
               reused:
-                one: has been used before. Please choose one that is different from
-                  your last one.
-                other: has been used before. Please choose one that is different from
-                  your last %{count}.
+                one: on käytetty ennenkin. Valitse sellainen, joka poikkeaa edellisestä.
+                other: on käytetty ennenkin. Valitse sellainen, joka poikkeaa %{count}
+                  edellisestä.
               match:
-                confirm: Confirm new password.
-                description: "'Password confirmation' should match the input in the
-                  'New password' field."
+                confirm: Vahvista uusi salasana.
+                description: '"Salasanan vahvistus" -kentän arvon tulee olla identtinen
+                  "Uusi salasana" -kentän arvon kanssa.'
         member:
-          principal_blank: Please choose at least one user or group.
-          role_blank: Please choose at least one role.
+          principal_blank: Valitse vähintään yksi käyttäjä tai ryhmä.
+          role_blank: Valitse vähintään yksi rooli.
       template:
         body: 'Tarkista seuraavat kentät:'
         header:
           one: 1 virhe esti tämän %{model} mallinteen tallentamisen
           other: "%{count} virhettä esti tämän %{model} mallinteen tallentamisen"
     models:
-      attachment: File
-      board: Forum
-      comment: Comment
+      attachment: Tiedosto
+      board: Keskustelupalsta
+      comment: Kommentti
       custom_field: Custom field
       group: Group
       category: Category
@@ -458,10 +457,10 @@ fi:
       role:
         one: Role
         other: Roles
-      type: Type
+      type: Tyyppi
       project_type: Project type
       user: User
-      version: Version
+      version: Versio
       wiki: Wiki
       wiki_page: Wiki page
       workflow: Workflow
@@ -478,88 +477,88 @@ fi:
     active: Active
     assigned_to: Assignee
     assignee: Assignee
-    attachments: Attachments
-    author: Author
-    base: 'General Error:'
-    blocks_ids: IDs of blocked work packages
+    attachments: Liitteet
+    author: Tekijä
+    base: 'Yleinen virhe:'
+    blocks_ids: Estettyjen työpakettien tunnukset
     category: Category
-    comment: Comment
-    comments: Comment
-    content: Content
-    created_at: Created on
-    created_on: Created on
-    custom_values: Custom fields
-    date: Date
-    default_columns: Default columns
-    description: Description
-    display_sums: Display Sums
-    due_date: Due date
-    estimated_hours: Estimated time
-    estimated_time: Estimated time
-    firstname: First name
+    comment: Kommentti
+    comments: Kommentti
+    content: Sisältö
+    created_at: Luontipäivä
+    created_on: Luontipäivä
+    custom_values: Mukautetut kentät
+    date: Päivä
+    default_columns: Oletussarakkeet
+    description: Kuvaus
+    display_sums: Näytä summat
+    due_date: Määräpäivä
+    estimated_hours: Arvioitu aika
+    estimated_time: Arvioitu aika
+    firstname: Etunimi
     group: Group
-    groupname: Group name
-    id: ID
-    is_default: Default value
-    is_for_all: For all projects
-    is_public: Public
+    groupname: Ryhmän nimi
+    id: Tunnus
+    is_default: Oletusarvo
+    is_for_all: Kaikille projekteille
+    is_public: Julkinen
     issue: Work package
-    lastname: Last name
-    login: Login
-    mail: Email
-    name: Name
-    password: Password
-    priority: Priority
+    lastname: Sukunimi
+    login: Kirjautuminen
+    mail: Sähköposti
+    name: Nimi
+    password: Salasana
+    priority: Tärkeys
     project: Project
     responsible: Responsible
-    role: Role
-    start_date: Start date
-    status: Status
-    subject: Subject
-    summary: Summary
-    title: Title
-    type: Type
-    updated_at: Updated on
-    updated_on: Updated on
+    role: Rooli
+    start_date: Aloituspäivä
+    status: Tila
+    subject: Aihe
+    summary: Yhteenveto
+    title: Otsikko
+    type: Tyyppi
+    updated_at: Päivitetty vimeksi
+    updated_on: Päivitetty vimeksi
     user: User
-    version: Version
+    version: Versio
     work_package: Work package
   button_add: Lisää
   button_add_member: Add member
-  button_add_watcher: Add watcher
+  button_add_watcher: Lisää seuraaja
   button_annotate: Lisää selitys
   button_apply: Ota käyttöön
   button_archive: Arkistoi
   button_back: Takaisin
   button_cancel: Peruuta
   button_change: Muuta
-  button_change_parent_page: Change parent page
+  button_change_parent_page: Muuta yläsivua
   button_change_password: Vaihda salasana
   button_check_all: Valitse kaikki
   button_clear: Tyhjää
   button_collapse_all: Tiivistä kaikki
   button_configure: Asetukset
   button_copy: Kopioi
-  button_copy_and_follow: Copy and follow
+  button_copy_and_follow: Kopioi ja seuraa
   button_create: Luo
-  button_create_and_continue: Create and continue
+  button_create_and_continue: Luo ja jatka
   button_delete: Poista
-  button_delete_watcher: Delete watcher %{name}
+  button_delete_watcher: Poista seuraaja %{name}
   button_download: Lataa
-  button_duplicate: Duplicate
+  button_duplicate: Kahdenna
   button_edit: Muokkaa
-  button_edit_associated_wikipage: 'Edit associated Wiki page: %{page_title}'
-  button_expand_all: Expand all
+  button_edit_associated_wikipage: 'Muokkaa liitettyä Wiki-sivua: %{page_title}'
+  button_expand_all: Laajenna kaikki
   button_generate: Generate
   button_list: Lista
   button_lock: Lukitse
-  button_log_time: Log time
+  button_log_time: Kirjaa lokiin aika
   button_login: Kirjaudu
   button_move: Siirrä
   button_move_and_follow: Siirrä ja seuraa
   button_quote: Siteeraa
   button_remove: Remove
-  button_remove_widget: Remove widget
+  button_remove_widget: Poista widgetti
   button_rename: Nimeä uudelleen
   button_reply: Vastaa
   button_reset: Nollaus
@@ -577,16 +576,16 @@ fi:
   button_update: Päivitä
   button_view: Näytä
   button_watch: Seuraa
-  button_manage_menu_entry: Configure menu item
-  button_add_menu_entry: Add menu item
-  button_configure_menu_entry: Configure menu item
-  button_delete_menu_entry: Delete menu item
+  button_manage_menu_entry: Muokkaa valikkovaihtoehtoa
+  button_add_menu_entry: Lisää valikkovaihtoehto
+  button_configure_menu_entry: Muokkaa valikkovaihtoehtoa
+  button_delete_menu_entry: Poista valikkovaihtoehto
   copy_project:
     started: Started to copy project "%{source_project_name}" to "%{target_project_name}".
       You will be informed by mail as soon as "%{target_project_name}" is available.
     failed: Cannot copy project %{source_project_name}
     succeeded: Created project %{target_project_name}
-    errors: Error
+    errors: Virhe
     text:
       failed: Could not copy project "%{source_project_name}" to project "%{target_project_name}".
       succeeded: Copied project "%{source_project_name}" to "%{target_project_name}".
@@ -682,61 +681,61 @@ fi:
         other: "%{count} sekuntia"
     units:
       hour:
-        one: hour
-        other: hours
+        one: tunti
+        other: tuntia
   default_activity_development: Kehitys
-  default_activity_management: Management
-  default_activity_other: Other
-  default_activity_specification: Specification
-  default_activity_support: Support
-  default_activity_testing: Testing
-  default_color_black: Black
-  default_color_blue: Blue
-  default_color_blue_dark: Blue (dark)
-  default_color_blue_light: Blue (light)
-  default_color_green_dark: Green (dark)
-  default_color_green_light: Green (light)
-  default_color_grey_dark: Grey (dark)
-  default_color_grey_light: Grey (light)
-  default_color_grey: Grey
-  default_color_magenta: Magenta
-  default_color_orange: Orange
-  default_color_red: Red
-  default_color_white: White
-  default_color_yellow: Yellow
-  default_status_closed: Closed
-  default_status_confirmed: Confirmed
-  default_status_developed: Developed
-  default_status_in_development: In development
-  default_status_in_progress: In progress
-  default_status_in_specification: In specification
-  default_status_in_testing: In testing
-  default_status_new: New
-  default_status_on_hold: On hold
-  default_status_rejected: Rejected
-  default_status_scheduled: Scheduled
-  default_status_specified: Specified
-  default_status_tested: Tested
-  default_status_test_failed: Test failed
-  default_status_to_be_scheduled: To be scheduled
+  default_activity_management: Hallinta
+  default_activity_other: Muut
+  default_activity_specification: Määrittely
+  default_activity_support: Tuki
+  default_activity_testing: Testaus
+  default_color_black: Musta
+  default_color_blue: Sininen
+  default_color_blue_dark: Sininen (tumma)
+  default_color_blue_light: Sininen (vaalea)
+  default_color_green_dark: Vihreä (tumma)
+  default_color_green_light: Vihreä (vaalea)
+  default_color_grey_dark: Harmaa (tumma)
+  default_color_grey_light: Harmaa (vaalea)
+  default_color_grey: Harmaa
+  default_color_magenta: Purppura (magenta)
+  default_color_orange: Oranssi
+  default_color_red: Punainen
+  default_color_white: Valkoinen
+  default_color_yellow: Keltainen
+  default_status_closed: Suljettu
+  default_status_confirmed: Vahvistettu
+  default_status_developed: Kehitetty
+  default_status_in_development: Kehitys käynnissä
+  default_status_in_progress: Käynnissä
+  default_status_in_specification: Määrittelyssä
+  default_status_in_testing: Testauksessa
+  default_status_new: Uusi
+  default_status_on_hold: Pidossa
+  default_status_rejected: Hylätty
+  default_status_scheduled: Ajoitettu
+  default_status_specified: Määritetty
+  default_status_tested: Testattu
+  default_status_test_failed: Testi epäonnistui
+  default_status_to_be_scheduled: Aikataulutettava
   default_priority_low: Matala
   default_priority_normal: Normaali
   default_priority_high: Korkea
   default_priority_immediate: Valitön
-  default_project_type_scrum: Scrum team
-  default_project_type_standard: Standard project
-  default_reported_project_status_green: Green
-  default_reported_project_status_amber: Amber
-  default_reported_project_status_red: Red
-  default_role_anonymous: Anonymous
+  default_project_type_scrum: Scrum-tiimi
+  default_project_type_standard: Normaali projekti
+  default_reported_project_status_green: Vihreä
+  default_reported_project_status_amber: Kkellanruskea (meripihka)
+  default_reported_project_status_red: Punainen
+  default_role_anonymous: Anonyymi
   default_role_developer: Kehittäjä
-  default_role_project_admin: Project admin
-  default_role_non_member: Non member
-  default_role_reader: Reader
+  default_role_project_admin: Projektin hallinnoija
+  default_role_non_member: Ei jäsen
+  default_role_reader: Lukija
   default_role_member: Member
-  default_type: Work Package
-  default_type_bug: Bug
-  default_type_deliverable: Deliverable
+  default_type: Työpaketti
+  default_type_bug: Virhe
+  default_type_deliverable: Suorite
   default_type_epic: Epic
   default_type_feature: Feature
   default_type_milestone: Milestone
@@ -767,7 +766,7 @@ fi:
   description_category_reassign: Choose category
   description_message_content: Viestin sisältö
   description_my_project: You are member
-  description_notes: Notes
+  description_notes: Muistiinpanot
   description_parent_work_package: Parent work package of current
   description_project_scope: Search scope
   description_query_sort_criteria_attribute: Sort attribute
@@ -837,8 +836,8 @@ fi:
     time_entry: Timelog edited
     wiki_page: Wiki page edited
     work_package_closed: Work Package closed
-    work_package_edit: Work Package edited
-    work_package_note: Work Package note added
+    work_package_edit: Työpakettia muokattu
+    work_package_note: Työpaketin huomio lisätty
   general_csv_decimal_separator: "."
   general_csv_encoding: ISO-8859-15
   general_csv_separator: ","
@@ -849,8 +848,8 @@ fi:
   general_text_yes: kyllä
   general_text_No: Ei
   general_text_Yes: Kyllä
-  gui_validation_error: 1 error
-  gui_validation_error_plural: "%{count} errors"
+  gui_validation_error: 1 virhe
+  gui_validation_error_plural: "%{count} virhettä"
   homescreen:
     additional:
       projects: Newest visible projects in this instance.
@@ -865,11 +864,11 @@ fi:
       forums: Keskustelupalstat
       blog: OpenProject blog
       boards: Community forum
-  instructions_after_registration: You can sign in as soon as your account has been
-    activated by clicking %{signin}.
-  instructions_after_logout: You can sign in again by clicking %{signin}.
-  instructions_after_error: You can try to sign in again by clicking %{signin}. If
-    the error persists, ask your admin for help.
+  instructions_after_registration: Heti kun tilisi on aktivoitu voit kirjatua painamalla
+    %{signin}.
+  instructions_after_logout: Voit kirjautua sisään uudelleen napsauttamalla %{signin}.
+  instructions_after_error: Voit kirjautua uudelleen napsauttamalla %{signin}. Jos
+    virhe toistuu, pyydä apua järjestelmävalvojalta.
   my_account:
     access_tokens:
       no_results:
@@ -881,21 +880,21 @@ fi:
         action: Action
         expiration: Expires
       indefinite_expiration: Never
-  label_account: Account
+  label_account: Käyttäjätili
   label_active: Active
   label_activity: Activity
   label_add_edit_translations: Add and edit translations
   label_add_another_file: Lisää uusi tiedosto
-  label_add_columns: Add selected columns
+  label_add_columns: Lisää valitut sarakkeet
   label_add_note: Lisää muistiinpano
-  label_add_related_work_packages: Add related work packages
-  label_add_subtask: Add subtask
+  label_add_related_work_packages: Lisää tähän liittyvä työpaketti
+  label_add_subtask: Lisätä alitehtävä
   label_added: lisätty
   label_added_time_by: Lisännyt %{author} %{age} sitten
-  label_additional_workflow_transitions_for_assignee: Additional transitions allowed
-    when the user is the assignee
-  label_additional_workflow_transitions_for_author: Additional transitions allowed
-    when the user is the author
+  label_additional_workflow_transitions_for_assignee: Vastuulliselle käyttäjälle on
+    olemassa lisää siirtymiä
+  label_additional_workflow_transitions_for_author: Aloittajalle on olemassa lisää
+    siirtymiä
   label_administration: Ylläpito
   label_advanced_settings: Advanced settings
   label_age: Ikä
@@ -909,9 +908,9 @@ fi:
   label_api_access_key: API access key
   label_api_access_key_created_on: API access key created %{value} ago
   label_api_access_key_type: API
-  label_applied_status: Lisätty tila
-  label_ascending: Ascending
-  label_assigned_to_me_work_packages: Work packages assigned to me
+  label_applied_status: Käytetty tila
+  label_ascending: Nouseva
+  label_assigned_to_me_work_packages: Minulle määritetyt työpaketit
   label_associated_revisions: Liittyvät versiot
   label_attachment_delete: Poista tiedosto
   label_attachment_new: Uusi tiedosto
@@ -935,14 +934,14 @@ fi:
   label_board_plural: Keskustelupalstat
   label_board_sticky: Pysyvä
   label_boolean: Totuusarvomuuttuja
-  label_branch: Branch
+  label_branch: Haara
   label_browse: Selaus
-  label_bulk_edit_selected_work_packages: Bulk edit selected work packages
+  label_bulk_edit_selected_work_packages: Muokkaa useaa työpakettia
   label_calendar: Kalenteri
-  label_calendar_show: Show Calendar
+  label_calendar_show: Näytä kalenteri
   label_category: Category
-  label_wiki_menu_item: Wiki menu item
-  label_select_main_menu_item: Select new main menu item
+  label_wiki_menu_item: Wiki-valikkovaihtoehto
+  label_select_main_menu_item: Valitse uusi valikkovaihtoehto päävalikkoon
   label_required_disk_storage: Required disk storage
   label_resend_invitation: Resend invitation
   label_change_plural: Muutokset
@@ -953,46 +952,46 @@ fi:
   label_changeset: Changeset
   label_changeset_id: Changeset ID
   label_changeset_plural: Muutosryhmät
-  label_checked: checked
+  label_checked: tarkistettu
   label_check_uncheck_all_in_column: Check/Uncheck all in column
   label_check_uncheck_all_in_row: Check/Uncheck all in row
   label_child_element: Child element
   label_chronological_order: Aikajärjestyksessä
   label_close_versions: Sulje valmiit versiot
-  label_closed_work_packages: closed
-  label_collapse: Collapse
-  label_configuration: configuration
+  label_closed_work_packages: suljettu
+  label_collapse: Pienennä
+  label_configuration: asetukset
   label_comment_add: Lisää kommentti
   label_comment_added: Kommentti lisätty
   label_comment_delete: Poista kommentti
   label_comment_plural: Kommentit
   label_commits_per_author: Tapahtumaa per tekijä
   label_commits_per_month: Tapahtumaa per kuukausi
-  label_confirmation: Confirmation
+  label_confirmation: Vahvistus
   label_contains: sisältää
-  label_content: Content
+  label_content: Sisältö
   label_copied: kopioitu
   label_copy_to_clipboard: Copy to clipboard
   label_copy_same_as_target: Sama kuin kohde
   label_copy_source: Lähde
   label_copy_target: Kohde
   label_copy_workflow_from: Kopioi työnkulku
-  label_copy_project: Copy project
-  label_core_version: Core version
+  label_copy_project: Kopioi projekti
+  label_core_version: Nykyinen versio
   label_current_status: Nykyinen tila
   label_current_version: Nykyinen versio
   label_custom_field_new: Uusi räätälöity kenttä
-  label_custom_field_plural: Custom fields
-  label_custom_field_default_type: Empty type
-  label_date: Date
-  label_date_from: From
+  label_custom_field_plural: Mukautetut kentät
+  label_custom_field_default_type: Tyhjä tyyppi
+  label_date: Päivä
+  label_date_from: Alkaen
   label_date_from_to: Ajalla %{start} - %{end}
   label_date_range: Aikaväli
-  label_date_to: To
+  label_date_to: Päättyen
   label_day_plural: päivää
   label_default: Oletus
   label_deleted: poistettu
-  label_deleted_custom_field: "(deleted custom field)"
+  label_deleted_custom_field: "(poistettu mukautettu kenttä)"
   label_descending: Laskeva
   label_details: Yksityiskohdat
   label_development_roadmap: Development roadmap
@@ -1003,20 +1002,20 @@ fi:
   label_display: Näytä
   label_display_per_page: 'Per sivu: %{value}'
   label_display_used_statuses_only: Näytä vain tilat, jotka ovat käytössä tälle tyypille
-  label_download: "%{count} Download"
-  label_download_plural: "%{count} Downloads"
+  label_download: "%{count} Lataus"
+  label_download_plural: "%{count} Latausta"
   label_downloads_abbr: D/L
   label_duplicated_by: kaksoiskappale
   label_duplicate: duplicate
   label_duplicates: kaksoiskappaleet
   label_edit: Muokkaa
-  label_enable_multi_select: Toggle multiselect
+  label_enable_multi_select: Vaihda monivalinta
   label_enabled_project_custom_fields: Enabled custom fields
   label_enabled_project_types: Enabled types
   label_enabled_project_modules: Enabled modules
   label_enabled_project_activities: Enabled time tracking activities
-  label_end_to_end: end to end
-  label_end_to_start: end to start
+  label_end_to_end: lopusta loppuun
+  label_end_to_start: lopusta alkuun
   label_enumeration_new: Uusi arvo
   label_enumeration_value: Enumeration value
   label_enumerations: Lista
@@ -1037,22 +1036,22 @@ fi:
   label_float: Liukuluku
   label_folder: Folder
   label_follows: seuraa
-  label_force_user_language_to_default: Set language of users having a non allowed
-    language to default
+  label_force_user_language_to_default: Määritä oletuskieli jos käytössä on kieli
+    joka ei ole sallittu
   label_form_configuration: Form configuration
   label_general: Yleinen
   label_generate_key: Luo avain
   label_git_path: Path to .git directory
   label_greater_or_equal: ">="
-  label_group_by: Group by
+  label_group_by: Ryhmittely
   label_group_new: New group
   label_group_plural: Groups
   label_help: Ohjeet
   label_here: here
-  label_hide: Hide
+  label_hide: Piilota
   label_history: Historia
   label_home: Koti
-  label_in: in
+  label_in: tässä
   label_in_less_than: pienempi kuin
   label_in_more_than: suurempi kuin
   label_incoming_emails: Saapuvat sähköpostiviestit
@@ -1072,7 +1071,7 @@ fi:
   label_last_activity: Last activity
   label_last_change_on: Last change on
   label_last_changes: viimeiset %{count} muutokset
-  label_last_login: Last login
+  label_last_login: Edellinen kirjautuminen
   label_last_month: viime kuussa
   label_last_n_days: viimeiset %{count} päivää
   label_last_week: viime viikolla
@@ -1083,7 +1082,7 @@ fi:
   label_less_than_ago: vähemmän kuin päivää sitten
   label_list: Lista
   label_loading: Lataa...
-  label_logged_as: Kirjauduttu nimellä
+  label_logged_as: Kirjautuneena
   label_login: Kirjaudu
   label_logout: Kirjaudu ulos
   label_main_menu: Side Menu
@@ -1119,7 +1118,7 @@ fi:
   label_my_page_block: My page block
   label_my_projects: Omat projektit
   label_my_queries: Omat hakuni
-  label_new: New
+  label_new: Uusi
   label_new_statuses_allowed: Uudet tilat sallittu
   label_news_added: Uutinen lisätty
   label_news_comment_added: Kommentti lisätty uutiseen
@@ -1142,7 +1141,7 @@ fi:
   label_open_menu: Open menu
   label_open_work_packages: open
   label_open_work_packages_plural: open
-  label_optional_description: Description
+  label_optional_description: Kuvaus
   label_options: Valinnat
   label_overall_activity: Kokonaishistoria
   label_overall_spent_time: Käytetty kokonaisaika
@@ -1187,13 +1186,13 @@ fi:
   label_query_new: Uusi haku
   label_query_plural: Räätälöidyt haut
   label_query_menu_item: Query menu item
-  label_read: Lukee...
+  label_read: Lue...
   label_register: Rekisteröidy
   label_register_with_developer: Register as developer
-  label_registered_on: Rekisteröity
+  label_registered_on: Rekisteröitynyt
   label_registration_activation_by_email: tilin aktivointi sähköpostitse
-  label_registration_automatic_activation: tilin aktivointi automaattisesti
-  label_registration_manual_activation: tilin aktivointi käsin
+  label_registration_automatic_activation: automaattinen tilin aktivointi
+  label_registration_manual_activation: manuaalinen tilin aktivointi
   label_related_work_packages: Related work packages
   label_relates_to: liittyy
   label_relation_delete: Poista suhde
@@ -1216,17 +1215,17 @@ fi:
   label_responsible_for_work_packages: Work packages I am responsible for
   label_result_plural: Tulokset
   label_reverse_chronological_order: Käänteisessä aikajärjestyksessä
-  label_revision: Versio
-  label_revision_id: Revision %{value}
-  label_revision_plural: Versiot
-  label_roadmap: Roadmap
+  label_revision: Revisio
+  label_revision_id: Revisio %{value}
+  label_revision_plural: Revisiot
+  label_roadmap: Tiekartta
   label_roadmap_edit: Edit roadmap %{name}
   label_roadmap_due_in: Määräaika %{value}
   label_roadmap_no_work_packages: No work packages for this version
   label_roadmap_overdue: "%{value} myöhässä"
   label_role_and_permissions: Roolit ja oikeudet
   label_role_new: Uusi rooli
-  label_role_plural: Roles
+  label_role_plural: Roolit
   label_role_search: Assign role to new members
   label_scm: SCM
   label_search: Haku
@@ -1243,22 +1242,22 @@ fi:
   label_sort_highest: Siirrä ylimmäiseksi
   label_sort_lower: Siirrä alas
   label_sort_lowest: Siirrä alimmaiseksi
-  label_spent_time: Spent time
+  label_spent_time: Käytetty aika
   label_start_to_end: start to end
   label_start_to_start: start to start
   label_statistics: Tilastot
-  label_status: Status
+  label_status: Tila
   label_status_updated: Work package status updated
   label_stay_logged_in: Pysy kirjautuneena
   label_storage_free_space: Remaining disk space
   label_storage_used_space: Used disk space
   label_storage_group: Storage filesystem %{identifier}
   label_storage_for: Encompasses storage for
-  label_string: Text
+  label_string: Teksti
   label_subproject_new: Uusi aliprojekti
   label_subproject_plural: Aliprojektit
   label_subtask_plural: Alitehtävät
-  label_summary: Summary
+  label_summary: Yhteenveto
   label_system: System
   label_system_storage: Storage information
   label_table_of_contents: Sisällysluettelo
@@ -1268,24 +1267,24 @@ fi:
   label_this_month: tässä kuussa
   label_this_week: tällä viikolla
   label_this_year: tänä vuonna
-  label_time_entry_plural: Spent time
-  label_time_sheet_menu: Time sheet
+  label_time_entry_plural: Käytetty aika
+  label_time_sheet_menu: Aikaraportti
   label_time_tracking: Ajan seuranta
   label_today: tänään
-  label_top_menu: Top Menu
+  label_top_menu: Päävalikko
   label_topic_plural: Aiheet
   label_total: Yhteensä
-  label_type_new: New type
+  label_type_new: Uusi tyyppi
   label_type_plural: Types
   label_type_default_new_projects: Type activated for new projects by default
-  label_ui: User Interface
-  label_update_work_package_done_ratios: Update work package done ratios
+  label_ui: Käyttöliittymä
+  label_update_work_package_done_ratios: Päivitä työpaketin valmiusasteet
   label_updated_time: Päivitetty %{value} sitten
   label_updated_time_at: "%{author} %{age}"
   label_updated_time_by: Päivittänyt %{author} %{age} sitten
   label_used_by: Käyttää
   label_user_activity: Käyttäjän %{value} historia
-  label_user_anonymous: Anonymous
+  label_user_anonymous: Anonyymi
   label_user_mail_option_all: Kaikista tapahtumista kaikissa projekteistani
   label_user_mail_option_none: Ei tapahtumia
   label_user_mail_option_only_assigned: Vain niistä joihin olen liittynyt
@@ -1297,7 +1296,7 @@ fi:
   label_user_plural: Käyttäjät
   label_user_search: Etsi käyttäjä
   label_version_new: Uusi versio
-  label_version_plural: Versions
+  label_version_plural: Versiot
   label_version_sharing_descendants: Aliprojektien kanssa
   label_version_sharing_hierarchy: Projektihierarkian kanssa
   label_version_sharing_none: Ei ole jaettu
@@ -1307,35 +1306,35 @@ fi:
   label_view_all_revisions: Katso kaikki versiot
   label_view_diff: Näytä erot
   label_view_revisions: Näytä versiot
-  label_watched_work_packages: Watched work packages
+  label_watched_work_packages: Seuratut työpaketit
   label_week: Viikko
   label_wiki_content_added: Wiki-sivu lisätty
   label_wiki_content_updated: Wiki-sivu päivitetty
   label_wiki_toc: Sisällysluettelo
-  label_wiki_dont_show_menu_item: Do not show this wikipage in project navigation
+  label_wiki_dont_show_menu_item: Älä näytä tätä Wiki-sivua projektin navigoinnissa
   label_wiki_edit: Wikin muokkaus
   label_wiki_edit_plural: Wiki muokkaukset
   label_wiki_page_id: Wiki page ID
-  label_wiki_navigation: Wiki navigation
+  label_wiki_navigation: Wiki navigaatio
   label_wiki_page: Wiki page
   label_wiki_page_plural: Wiki sivut
-  label_wiki_show_index_page_link: Show submenu item 'Table of Contents'
+  label_wiki_show_index_page_link: Näytä alivalikon vaihtoehto "Sisällysluettelo"
   label_wiki_show_menu_item: Show as menu item in project navigation
   label_wiki_show_new_page_link: Show submenu item 'Create new child page'
   label_wiki_show_submenu_item: 'Show as submenu item of '
   label_work_package: Work package
-  label_work_package_added: Work package added
-  label_work_package_category_new: New category
-  label_work_package_category_plural: Work package categories
+  label_work_package_added: Työpaketti lisätty
+  label_work_package_category_new: Uusi luokka
+  label_work_package_category_plural: Työpakettien luokat
   label_work_package_hierarchy: Work package hierarchy
-  label_work_package_new: New work package
-  label_work_package_note_added: Work package note added
-  label_work_package_edit: Edit work package %{name}
-  label_work_package_plural: Work packages
-  label_work_package_priority_updated: Work package priority updated
+  label_work_package_new: Uusi työpaketti
+  label_work_package_note_added: Työpaketin huomio lisätty
+  label_work_package_edit: Muokkaa työpakettia %{name}
+  label_work_package_plural: Työpaketit
+  label_work_package_priority_updated: Työpaketin kiirellisyys päivitetty
   label_work_package_status: Work package status
-  label_work_package_status_new: New status
-  label_work_package_status_plural: Work package statuses
+  label_work_package_status_new: Uusi tila
+  label_work_package_status_plural: Työpaketin tilat
   label_work_package_types: Work package types
   label_work_package_updated: Work package updated
   label_work_package_tracking: Work package tracking
@@ -1347,23 +1346,23 @@ fi:
   label_work_package_view_all_watched: View all watched work packages
   label_work_package_watchers: Watchers
   label_workflow: Workflow
-  label_workflow_plural: Workflows
-  label_workflow_summary: Summary
+  label_workflow_plural: Työnkulut
+  label_workflow_summary: Yhteenveto
   label_x_closed_work_packages_abbr:
-    one: 1 closed
-    other: "%{count} closed"
+    one: 1 suljettu
+    other: "%{count} suljettu"
     zero: 0 closed
   label_x_comments:
     one: 1 kommentti
     other: "%{count} kommenttia"
     zero: no comments
   label_x_open_work_packages_abbr:
-    one: 1 open
-    other: "%{count} open"
+    one: 1 avoin
+    other: "%{count} avoinna"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
-    one: 1 open / %{total}
-    other: "%{count} open / %{total}"
+    one: 1 auki / %{total}
+    other: "%{count} avoinna / %{total}"
     zero: 0 open / %{total}
   label_x_projects:
     one: 1 projekti
@@ -1371,17 +1370,17 @@ fi:
     zero: no projects
   label_year: Vuosi
   label_yesterday: eilen
-  label_keyboard_function: Function
-  label_keyboard_shortcut: Shortcut
-  label_keyboard_accesskey: Accesskey
-  label_keyboard_shortcut_help_heading: Available Keyboard Shortcuts
+  label_keyboard_function: Toiminto
+  label_keyboard_shortcut: Pikanäppäin
+  label_keyboard_accesskey: Pikanäppäin
+  label_keyboard_shortcut_help_heading: Käytettävissä olevat pikanäppäimet
   label_keyboard_shortcut_within_project: 'Project related shortcuts:'
   label_keyboard_shortcut_global_shortcuts: 'Global shortcuts:'
   label_keyboard_shortcut_some_pages_only: 'Special shortcuts:'
   label_keyboard_shortcut_search_global: Global search
-  label_keyboard_shortcut_search_project: Find a project
+  label_keyboard_shortcut_search_project: Hae projektia
   label_keyboard_shortcut_go_my_page: Go to my page
-  label_keyboard_shortcut_show_help: Show this help message
+  label_keyboard_shortcut_show_help: Näyttää tämän ohjesanoman
   label_keyboard_shortcut_go_overview: Go to project overview
   label_keyboard_shortcut_go_work_package: Go to project work packages
   label_keyboard_shortcut_go_wiki: Go to project wiki
@@ -1399,7 +1398,7 @@ fi:
     lists only)
   label_keyboard_shortcut_focus_next_item: Focus next list element (on some lists
     only)
-  label_visible_elements: Visible elements
+  label_visible_elements: Näkyvät elementit
   auth_source:
     using_abstract_auth_source: Can't use an abstract authentication source.
     ldap_error: 'LDAP-Error: %{error_message}'
@@ -1417,19 +1416,19 @@ fi:
     sisään:"
   mail_body_wiki_content_added: The '%{id}' wiki page has been added by %{author}.
   mail_body_wiki_content_updated: The '%{id}' wiki page has been updated by %{author}.
-  mail_subject_account_activation_request: "%{value} tilin aktivointi pyyntö"
+  mail_subject_account_activation_request: "%{value} tilin aktivointipyyntö"
   mail_subject_lost_password: Sinun %{value} salasanasi
   mail_subject_register: "%{value} tilin aktivointi"
   mail_subject_reminder: "%{count} tapahtuma(a) erääntyy %{days} lähipäivinä"
-  mail_subject_wiki_content_added: "'%{id}' wiki page has been added"
-  mail_subject_wiki_content_updated: "'%{id}' wiki page has been updated"
-  more_actions: More functions
+  mail_subject_wiki_content_added: "'%{id}' wiki-sivu on poistettu"
+  mail_subject_wiki_content_updated: "'%{id}' Wiki-sivu on päivitetty"
+  more_actions: Enemmän toimintoja
   noscript_description: You need to activate JavaScript in order to use OpenProject!
   noscript_heading: JavaScript disabled
   noscript_learn_more: Learn more
   notice_accessibility_mode: The accessibility mode can be enabled in your [account
     settings](url).
-  notice_account_activated: Tilisi on nyt aktivoitu, voit kirjautua sisälle.
+  notice_account_activated: Tilisi on aktivoitu. Voit nyt kirjautua sisään.
   notice_account_already_activated: The account has already been activated.
   notice_account_invalid_token: Invalid activation token
   notice_account_invalid_credentials: Virheellinen käyttäjätunnus tai salasana
@@ -1461,7 +1460,7 @@ fi:
   notice_email_sent: Sähköposti on lähetty osoitteeseen %{value}
   notice_failed_to_save_work_packages: 'Failed to save %{count} work package(s) on
     %{total} selected: %{ids}.'
-  notice_failed_to_save_members: 'Failed to save member(s): %{errors}.'
+  notice_failed_to_save_members: 'Jäsentä tai jäseniä ei voitu tallentaa: %{errors}.'
   notice_feeds_access_key_reseted: Atom salasana on nollaantunut.
   notice_feeds_access_key_generated: Your RSS access key was generated.
   notice_file_not_found: Hakemaasi sivua ei löytynyt tai se on poistettu.
@@ -1471,7 +1470,8 @@ fi:
     If you continue to experience problems please contact your %{app_title} administrator
     for assistance.
   notice_work_package_done_ratios_updated: Work package done ratios updated.
-  notice_locking_conflict: Toinen käyttäjä on päivittänyt tiedot.
+  notice_locking_conflict: Vähintään yksi muu käyttäjä on päivitetty tiedot sillä
+    välin.
   notice_locking_conflict_additional_information: The update(s) came from %{users}.
   notice_locking_conflict_reload_page: Please reload the page, review the changes
     and reapply your updates.
@@ -1481,9 +1481,8 @@ fi:
   notice_member_deleted: "%{user} has been removed from the project and deleted."
   notice_no_principals_found: No results found.
   notice_bad_request: Bad Request.
-  notice_not_authorized: Sinulla ei ole oikeutta näyttää tätä sivua.
-  notice_not_authorized_archived_project: The project you're trying to access has
-    been archived.
+  notice_not_authorized: Sinulla ole oikeuksia käyttää tätä sivua.
+  notice_not_authorized_archived_project: Haluamasi projekti on arkistoitu.
   notice_password_confirmation_failed: Your password is not correct. The changes were
     not saved.
   notice_project_not_deleted: The project wasn't deleted.
@@ -1494,7 +1493,7 @@ fi:
   notice_to_many_principals_to_display: |-
     There are too many results.
     Narrow down the search by typing in the name of the new member (or group).
-  notice_unable_delete_time_entry: Unable to delete time log entry.
+  notice_unable_delete_time_entry: Ei voi poistaa aikakirjausta.
   notice_unable_delete_version: Version poisto epäonnistui
   notice_user_missing_authentication_method: User has yet to choose a password or
     another way to sign in.
@@ -1519,12 +1518,12 @@ fi:
         format: "%n %u"
         units:
           byte:
-            one: Tavua
+            one: Tavu
             other: Tavua
-          gb: GB
-          kb: KB
-          mb: MB
-          tb: TB
+          gb: Gt
+          kb: kt
+          mb: Mt
+          tb: Tt
   onboarding:
     text_getting_started: This video provides you an overview of OpenProject. It helps
       you to set up your first project and to start collaborating with your team members.
@@ -1534,14 +1533,14 @@ fi:
   permission_add_work_packages: Add work packages (also allows to add attachments
     to all work packages)
   permission_add_messages: Jätä viesti
-  permission_add_project: Create project
-  permission_add_subprojects: Create subprojects
+  permission_add_project: Luo projekti
+  permission_add_subprojects: Luoda aliprojekteja
   permission_add_work_package_watchers: Add watchers
   permission_browse_repository: Selaa tietovarastoa
-  permission_change_wiki_parent_page: Change parent wiki page
+  permission_change_wiki_parent_page: Vaihda ylätason wikisivu
   permission_comment_news: Kommentoi uutisia
   permission_commit_access: Tee pääsyoikeus
-  permission_copy_projects: Copy projects
+  permission_copy_projects: Kopioi projekteja
   permission_delete_work_package_watchers: Delete watchers
   permission_delete_work_packages: Delete work packages
   permission_delete_messages: Poista viestit
@@ -1621,12 +1620,12 @@ fi:
   project_module_news: News
   project_module_repository: Tietovarasto
   project_module_time_tracking: Ajan seuranta
-  project_module_timelines: Timelines
+  project_module_timelines: Aikataulut
   project_module_wiki: Wiki
   query_fields:
-    assigned_to_role: Assignee's role
-    member_of_group: Assignee's group
-    subproject_id: Subproject
+    assigned_to_role: Vastuuhenkilön rooli
+    member_of_group: Vastuuhenkilön ryhmä
+    subproject_id: Aliprojekti
   repositories:
     at_identifier: at %{identifier}
     atom_revision_feed: Atom revision feed
@@ -1777,7 +1776,7 @@ fi:
   setting_attachment_max_size: Liitteen maksimikoko
   setting_autofetch_changesets: Automaattisten muutosjoukkojen haku
   setting_autologin: Automaatinen kirjautuminen
-  setting_available_languages: Available languages
+  setting_available_languages: Käytettävissä olevat kielet
   setting_bcc_recipients: Vastaanottajat piilokopiona (bcc)
   setting_brute_force_block_after_failed_logins: Block user after this number of failed
     login attempts
@@ -1792,8 +1791,8 @@ fi:
   setting_cross_project_work_package_relations: Allow cross-project work package relations
   setting_date_format: Päivän muoto
   setting_default_language: Vakiokieli
-  setting_default_notification_option: Default notification option
-  setting_default_projects_modules: Default enabled modules for new projects
+  setting_default_notification_option: Oletusasetus ilmoituksille
+  setting_default_projects_modules: Oletusmodulit uusille projketeille
   setting_default_projects_public: Uudet projektit ovat oletuksena julkisia
   setting_diff_max_lines_displayed: Max number of diff lines displayed
   setting_display_subprojects_work_packages: Display subprojects work packages on
@@ -1801,7 +1800,7 @@ fi:
   setting_emails_footer: Sähköpostin alatunniste
   setting_emails_header: Sähköpostit otsikko
   setting_email_login: Use e-mail as login
-  setting_enabled_scm: Versionhallinta käytettävissä
+  setting_enabled_scm: Käytössäoleva versionhallinta
   setting_feeds_enabled: Enable Feeds
   setting_feeds_limit: Syötteen sisällön raja
   setting_file_max_size_displayed: Max size of text files displayed inline
@@ -1813,8 +1812,8 @@ fi:
   setting_work_package_done_ratio_status: Use the work package status
   setting_work_package_done_ratio_disabled: Disable (hide the progress)
   setting_work_package_list_default_columns: Display by default
-  setting_work_package_list_summable_columns: Summable
-  setting_work_package_properties: Work package properties
+  setting_work_package_list_summable_columns: Yhteenlaskettavissa
+  setting_work_package_properties: Työpaketin ominaisuudet
   setting_work_package_startdate_is_adddate: Use current date as start date for new
     work packages
   setting_work_packages_export_limit: Work packages export limit
@@ -1834,7 +1833,7 @@ fi:
   setting_password_count_former_banned: Number of most recently used passwords banned
     for reuse
   setting_password_days_valid: Number of days, after which to enforce a password change
-  setting_password_min_length: Minimum length
+  setting_password_min_length: Vähimmäispituus
   setting_password_min_adhered_rules: Minimum number of required classes
   setting_per_page_options: Sivun objektien määrän asetukset
   setting_plain_text_mail: vain muotoilematonta tekstiä (ei HTML)
@@ -1877,7 +1876,7 @@ fi:
   setting_work_package_group_assignment: Allow assignment to groups
   settings:
     general: Yleinen
-    other: Other
+    other: Muut
     passwords: Passwords
     session: Session
     brute_force_prevention: Automated user blocking
@@ -1999,8 +1998,8 @@ fi:
   text_wiki_page_nullify_children: Keep child pages as root pages
   text_wiki_page_reassign_children: Reassign child pages to this parent page
   text_workflow_edit: Valitse rooli ja tapahtuma muokataksesi työnkulkua
-  text_zoom_in: Zoom in
-  text_zoom_out: Zoom out
+  text_zoom_in: Lähennä
+  text_zoom_out: Loitonna
   text_setup_mail_configuration: Configure your email provider
   time:
     am: aamupäivä
@@ -2016,7 +2015,7 @@ fi:
     start: from
   timelines:
     admin_menu:
-      color: Color
+      color: Väri
       colors: Colors
       project_type: Project type
       project_types: Project types
@@ -2024,7 +2023,7 @@ fi:
       project_associations: Dependencies
       reportings: Status reportings
       reports: Timeline reports
-      timelines: Timelines
+      timelines: Aikataulut
     add_project_association: Add dependency
     associations: Dependencies
     board_could_not_be_saved: Board could not be saved
@@ -2033,17 +2032,16 @@ fi:
     children: Child elements
     color_could_not_be_saved: Color could not be saved
     current_planning: Current planning
-    dates: Dates
-    dates_are_calculated_based_on_sub_elements: Dates are calculated based on sub
-      elements.
+    dates: Päivämäärät
+    dates_are_calculated_based_on_sub_elements: Päivämäärät lasketaan alielementeistä.
     delete_all: Delete all
     delete_thing: Poista
-    duration: Duration
+    duration: Kesto
     duration_days:
       one: päivä
       other: "%{count} päivää"
-    edit_color: Edit color
-    edit_project_type: Edit project type
+    edit_color: Muokkaa väriä
+    edit_project_type: Muokkaa projektin tyyppiä
     edit_thing: Muokkaa
     edit_timeline: Edit timeline report %{timeline}
     delete_timeline: Delete timeline report %{timeline}
@@ -2081,12 +2079,12 @@ fi:
         default: default
       column:
         assigned_to: Assignee
-        type: Type
+        type: Tyyppi
         due_date: End date
-        name: Name
-        status: Status
+        name: Nimi
+        status: Tila
         responsible: Responsible
-        start_date: Start date
+        start_date: Aloituspäivä
       columns: Columns
       comparisons: Comparisons
       comparison:
@@ -2107,7 +2105,7 @@ fi:
       grouping_hide_group: Hide group "%{group}"
       grouping_one: First grouping criterion
       grouping_one_phrase: Is a subproject of
-      grouping_other: Other
+      grouping_other: Muut
       hide_chart: Hide chart
       noneElement: "(none)"
       noneSelection: "(none)"
@@ -2117,7 +2115,7 @@ fi:
       work_package_responsible: Show work packages with responsible
       work_package_assignee: Show work packages with assignee
       types: Show types
-      status: Show status
+      status: Näytä tila
       project_time_filter: Projects with a work package of a certain type in a certain
         timeframe
       project_time_filter_timeframe: Timeframe
@@ -2138,10 +2136,10 @@ fi:
     history: Historia
     new_color: New color
     new_association: New dependency
-    new_work_package: New work package
-    new_project_type: New project type
+    new_work_package: Uusi työpaketti
+    new_project_type: Uusi projektityyppi
     new_reporting: New reporting
-    new_timeline: New timeline report
+    new_timeline: Uusi aikajana-raportti
     no_projects_for_reporting_available: There are no projects to which a reporting
       association can be created.
     no_right_to_view_timeline: You do not have the necessary permission to view the
@@ -2151,12 +2149,12 @@ fi:
     outline: Reset Outline
     outlines:
       aggregation: Show aggregations only
-      level1: Expand level 1
-      level2: Expand level 2
-      level3: Expand level 3
-      level4: Expand level 4
-      level5: Expand level 5
-      all: Show all
+      level1: Laajenna taso 1
+      level2: Laajenna taso 2
+      level3: Laajenna taso 3
+      level4: Laajenna taso 4
+      level5: Laajenna taso 5
+      all: Näytä kaikki
     reporting_for_project:
       show: 'Status reported to project: %{title}'
       edit_delete: 'status report for project: %{title}'
@@ -2175,7 +2173,7 @@ fi:
     project_type_could_not_be_saved: Project type could not be saved
     type_could_not_be_saved: Type could not be saved
     reporting_could_not_be_saved: Reporting could not be saved
-    properties: Properties
+    properties: Ominaisuudet
     really_delete_color: 'Are you sure, you want to delete the following color? Types
       using this color will not be deleted.
 
@@ -2196,16 +2194,16 @@ fi:
       Previous reporting statuses will be deleted, too.
 
 '
-    start: Start
+    start: Aloita
     timeline: Timeline report
     timelines: Timeline reports
-    settings: Timelines
+    settings: Aikataulut
     vertical_work_package: Vertical work packages
     without_project_type: Without project type
     you_are_viewing_the_selected_timeline: You are viewing the selected timeline report
     zoom:
-      in: Zoom in
-      out: Zoom out
+      in: Lähennä
+      out: Loitonna
       days: Days
       weeks: Weeks
       months: Months
@@ -2237,7 +2235,7 @@ fi:
   user:
     all: kaikki
     active: aktiivinen
-    activate: Activate
+    activate: Aktivoi
     activate_and_reset_failed_logins: Activate and reset failed logins
     authentication_provider: Authentication Provider
     authentication_settings_disabled_due_to_external_authentication: 'This user authenticates
@@ -2251,7 +2249,7 @@ fi:
     blocked_num_failed_logins:
       one: locked temporarily (one failed login attempt)
       other: locked temporarily (%{count} failed login attempts)
-    deleted: Deleted user
+    deleted: Poista käyttäjä
     error_status_change_failed: 'Changing the user status failed due to the following
       errors: %{errors}'
     invite: Invite user via email
@@ -2272,13 +2270,13 @@ fi:
     status_user_and_brute_force: "%{user} and %{brute_force}"
     unlock: Vapauta
     unlock_and_reset_failed_logins: Unlock and reset failed logins
-  version_status_closed: closed
-  version_status_locked: locked
+  version_status_closed: suljettu
+  version_status_locked: lukittu
   version_status_open: open
   note: Note
   note_password_login_disabled: Password login has been disabled by %{configuration}.
   warning: Warning
-  warning_attachments_not_saved: "%{count} file(s) could not be saved."
+  warning_attachments_not_saved: "%{count} tiedostoa ei voitu tallentaa."
   menu_item: Menu item
   menu_item_setting: Visibility
   wiki_menu_item_for: Menu item for wikipage "%{title}"
