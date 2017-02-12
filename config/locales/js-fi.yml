@@ -5,8 +5,8 @@ fi:
       hide: Piilota
       loading: Ladataan...
     close_popup_title: Sulje ponnahdus-ikkuna
-    close_filter_title: Close filter
-    close_form_title: Close form
+    close_filter_title: Sulje suodatin
+    close_form_title: Sulje lomake
     clipboard:
       browser_error: Your browser doesn't support copying to clipboard. Please copy
         the selected text manually.
@@ -14,7 +14,7 @@ fi:
     button_add_watcher: Lisää seuraaja
     button_cancel: Peruuta
     button_check_all: Valitse kaikki
-    button_confirm: Confirm
+    button_confirm: Vahvista
     button_copy: Kopioi
     button_delete: Poista
     button_delete_watcher: Poista seuraaja
@@ -75,7 +75,7 @@ fi:
     label_board_locked: Lukittu
     label_board_sticky: Pysyvä
     label_create_work_package: Create new work package
-    label_created_by: Created by
+    label_created_by: Luonut
     label_date: Päivä
     label_date_with_format: 'Enter the %{date_attribute} using the following format:
       %{format}'
@@ -170,7 +170,7 @@ fi:
     label_attachments: Tiedostot
     label_drop_files: Drop files here
     label_drop_files_hint: or click to add files
-    label_add_attachments: Add attachments
+    label_add_attachments: Lisää liitteitä
     label_remove_file: Delete %{fileName}
     label_remove_watcher: Remove watcher %{name}
     label_remove_all_files: Delete all files
@@ -185,8 +185,9 @@ fi:
     label_validation_error: 'The work package could not be saved due to the following
       errors:'
     password_confirmation:
-      field_description: You need to enter your account password to confirm this change.
-      title: Confirm your password to continue
+      field_description: Sinun täytyy syöttää tilisi salasana vahvistaaksesi tämän
+        muutoksen.
+      title: Vahvista salasanasi jatkaaksesi
     pagination:
       no_other_page: You are on the only page.
       pages:
@@ -195,7 +196,7 @@ fi:
     placeholders:
       default: "-"
       selection: Valitse
-      relation_description: Click to add description for this relation
+      relation_description: Painamalla tästä voit lisätä kuvauksen tälle suhteelle
     text_are_you_sure: Oletko varma?
     watchers:
       label_loading: loading watchers...
@@ -243,28 +244,28 @@ fi:
       precedes: Edeltää
       follows: Seuraa
       includes: Sisältää
-      partof: Part of
-      requires: Requires
-      required: Required by
-      relation_type: relation type
+      partof: Osa
+      requires: Edellyttää
+      required: Edellyttämä
+      relation_type: suhdetyyppi
     relations_hierarchy:
-      hierarchy_headline: hierarchy
+      hierarchy_headline: hierarkia
     relation_buttons:
       change_parent: Vaihda pääkohdetta
-      remove_parent: Remove parent
-      group_by_wp_type: Group by work package type
-      group_by_relation_type: Group by relation type
-      add_parent: Add existing parent
-      add_new_child: Create new child
-      add_existing_child: Add existing child
-      remove_child: Remove child
-      add_new_relation: Create new relation
-      update_description: Set or update description of this relation
+      remove_parent: Poista ylätaso
+      group_by_wp_type: Ryhmittele työpaketin tyypin mukaan
+      group_by_relation_type: Ryhmittele suhteen tyypin mukaan
+      add_parent: Lisää olemassaoleva ylätaso
+      add_new_child: Luo uusi alataso
+      add_existing_child: Lisää olemassaoleva alataso
+      remove_child: Poista alataso
+      add_new_relation: Luo uusi suhde
+      update_description: Määritä tai päivitä tämän suhteen kuvaus
       remove: Remove relation
-      save: Save relation
+      save: Tallenna suhde
       abort: Keskeytä
     relations_autocomplete:
-      placeholder: Enter the related work package id
+      placeholder: Kirjoita liittyvä työpaketin tunnus
     repositories:
       select_tag: Select tag
       select_branch: Select branch
@@ -344,12 +345,12 @@ fi:
       outlines: Hierarkian taso
     unsupported_browser:
       title: Selaimesi versiota ei tueta
-      message: The browser version you are using is no longer supported by OpenProject.
-      update_message: Please update your browser.
-      update_ie_user: Please switch to Mozilla Firefox or Google Chrome, or upgrade
-        to Microsoft Edge.
+      message: Selaimesi versiota ei enää tueta.
+      update_message: Päivitäthän selaimesi.
+      update_ie_user: Siirry selaimeen Mozilla Firefox tai Google Chrome, tai päivitä
+        Microsoft Edge.
       learn_more: Learn more
-      close_warning: Ignore this warning.
+      close_warning: Ohita tämä varoitus.
     wiki_formatting:
       strong: Lihavoitu
       italic: Kursivoitu
@@ -395,14 +396,14 @@ fi:
       message_successful_bulk_delete: Poistetut työpaketit.
       message_successful_show_in_fullscreen: Click here to open this work package
         in fullscreen view.
-      message_view_spent_time: Show spent time for this work package
+      message_view_spent_time: Näytä tähän työpakettiin käytetty aika
       no_value: Ei arvoa
       inline_create:
         title: Click here to add a new work package to this list
       create:
-        header: New %{type}
-        header_no_type: New work package (Type not yet set)
-        header_with_parent: 'New %{type} (Child of %{parent_type} #%{id})'
+        header: Uusi %{type}
+        header_no_type: Uusi työpaketti (tarkempi tyyppi määrittämättä)
+        header_with_parent: 'Uusi %{type} (Ylätaso %{parent_type} #%{id})'
         button: Luo
       faulty_query:
         title: Work packages could not be loaded.
@@ -459,14 +460,14 @@ fi:
         display_sums: Näytä summat
         errors:
           unretrievable_query: Ei voi noutaa kyselyn URL-osoitetta
-          not_found: There is no such query
+          not_found: Kyselyä ei ole olemassa
       table:
         summary: Table with rows of work package and columns of work package attributes.
         text_inline_edit: Most cells of this table are buttons that activate inline-editing
           functionality of that attribute.
         text_sort_hint: With the links in the table headers you can sort, group, reorder,
           remove and add table columns.
-        text_select_hint: Select boxes should be opened with 'ALT' and arrow keys.
+        text_select_hint: Valintalaatikot tulisi avata "Alt" tai nuolinäppäimillä.
       tabs:
         overview: Yleiskatsaus
         activity: Aktiviteetti
