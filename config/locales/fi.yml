@@ -11,9 +11,9 @@ fi:
     plugins:
       no_results_title_text: There are currently no plugins available.
   announcements:
-    show_until: Show until
-    is_active: currently displayed
-    is_inactive: currently not displayed
+    show_until: Näytä tähän päivään asti
+    is_active: näkyvissä tällä hetkellä
+    is_inactive: ei näkyvissä
   auth_sources:
     index:
       no_results_content_title: There are currently no authentication modes.
@@ -185,7 +185,7 @@ fi:
   activerecord:
     attributes:
       announcements:
-        show_until: Display until
+        show_until: Näytä tähän päivään asti
       attachment:
         downloads: Lataukset
         file: Tiedosto
@@ -231,7 +231,7 @@ fi:
         roles: Roolit
       project:
         identifier: Tunniste
-        latest_activity_at: Latest activity at
+        latest_activity_at: Viimeisin toiminta
         parent: Aliprojekti
         project_type: Projektityyppi
         queries: Kyselyt
@@ -340,13 +340,13 @@ fi:
         smaller_than_or_equal_to_max_length: must be smaller than or equal to maximum
           length.
         greater_than_start_date: tulee olla aloituspäivän jälkeinen.
-        greater_than_or_equal_to_start_date: must be greater than or equal to the
-          start date.
+        greater_than_or_equal_to_start_date: on oltava suurempi tai yhtä suuri kuin
+          alkamispäivä.
         inclusion: ei löydy listauksesta.
         invalid: ei kelpaa.
         less_than_or_equal_to: täytyy olla pienempi tai yhtä suuri kuin %{count}.
         not_a_date: is not a date.
-        not_an_iso_date: 'is not a valid date. Required format: YYYY-MM-DD.'
+        not_an_iso_date: 'ei ole kelvollinen päivämäärä. Vaadittava muoto: VVVV-KK-PP.'
         not_a_number: ei ole numero.
         not_an_integer: is not an integer.
         not_same_project: ei kuulu samaan projektiin.
@@ -385,8 +385,8 @@ fi:
               not_a_valid_parent: ei kelpaa.
               does_not_exist: does not exist.
             start_date:
-              violates_relationships: can only be set to %{soonest_start} or later
-                so as not to violate the work package's relationships.
+              violates_relationships: voidaan määrittää vain %{soonest_start} tai
+                myöhempään, jotta ei rikota työpaketin suhteita.
             status_id:
               status_transition_invalid: is invalid because no valid transition exists
                 from old to new status for the current user's roles.
@@ -562,8 +562,8 @@ fi:
   button_configure_menu_entry: Muokkaa valikkovaihtoehtoa
   button_delete_menu_entry: Poista valikkovaihtoehto
   copy_project:
-    started: Started to copy project "%{source_project_name}" to "%{target_project_name}".
-      You will be informed by mail as soon as "%{target_project_name}" is available.
+    started: Projektin "%{source_project_name}" kopiointi uudeksi projektiksi "%{target_project_name}"
+      alkoi. Sinulle ilmoitetaan sähköpostitse, kun "%{target_project_name}" on saatavilla.
     failed: Cannot copy project %{source_project_name}
     succeeded: Created project %{target_project_name}
     errors: Virhe
@@ -771,8 +771,8 @@ fi:
   error_can_not_reopen_work_package_on_closed_version: A work package assigned to
     a closed version cannot be reopened
   error_check_user_and_role: Please choose a user and a role.
-  error_cookie_missing: The OpenProject cookie is missing. Please ensure that cookies
-    are enabled, as this application will not properly function without.
+  error_cookie_missing: OpenProject evästeen puuttuu. Varmista, että evästeet ovat
+    käytössä, koska tämä sovellus ei toimi oikein ilman evästeitä.
   error_token_authenticity: Unable to verify Cross-Site Request Forgery token.
   error_work_package_done_ratios_not_updated: Work package done ratios not updated.
   error_work_package_not_found_in_project: The work package was not found or does
@@ -798,9 +798,9 @@ fi:
   error_workflow_copy_target: Valitse kohdetyypit ja -roolit
   error_menu_item_not_created: Menu item could not be added
   error_menu_item_not_saved: Menu item could not be saved
-  error_wiki_root_menu_item_conflict: 'Can''t rename "%{old_name}" to "%{new_name}"
-    due to a conflict in the resulting menu item with the existing menu item "%{existing_caption}"
-    (%{existing_identifier}).
+  error_wiki_root_menu_item_conflict: 'Arvoa "%{old_name}" ei voi uudelleennimetä
+    arvoksi "%{new_name}" koska se olisi konfliktissa valikkoarvon "%{existing_caption}"
+    (%{existing_identifier}) kanssa.
 
 '
   error_external_authentication_failed: An error occured during external authentication.
@@ -833,15 +833,15 @@ fi:
       projects: Newest visible projects in this instance.
       users: Newest registered users in this instance.
     blocks:
-      community: OpenProject community
+      community: OpenProject yhteisö
     links:
       user_guides: User guides
       faq: FAQ
       glossary: Glossary
       shortcuts: Shortcuts
       forums: Keskustelupalstat
-      blog: OpenProject blog
-      boards: Community forum
+      blog: OpenProject blogi
+      boards: Keskustelupalsta
   instructions_after_registration: Heti kun tilisi on aktivoitu voit kirjatua painamalla
     %{signin}.
   instructions_after_logout: Voit kirjautua sisään uudelleen napsauttamalla %{signin}.
@@ -880,8 +880,8 @@ fi:
   label_all: kaikki
   label_all_time: koko ajalta
   label_all_words: kaikki sanat
-  label_always_visible: Always displayed
-  label_announcement: Announcement
+  label_always_visible: Aina näkyvissä
+  label_announcement: Ilmoitus
   label_and_its_subprojects: "%{value} ja aliprojektit"
   label_api_access_key: API avain
   label_api_access_key_created_on: API access key created %{value} ago
@@ -984,7 +984,7 @@ fi:
   label_download_plural: "%{count} Latausta"
   label_downloads_abbr: D/L
   label_duplicated_by: kaksoiskappale
-  label_duplicate: duplicate
+  label_duplicate: kaksoiskappale
   label_duplicates: kaksoiskappaleet
   label_edit: Muokkaa
   label_enable_multi_select: Vaihda monivalinta
@@ -995,7 +995,7 @@ fi:
   label_end_to_end: lopusta loppuun
   label_end_to_start: lopusta alkuun
   label_enumeration_new: Uusi arvo
-  label_enumeration_value: Enumeration value
+  label_enumeration_value: Luettelointiarvo
   label_enumerations: Lista
   label_environment: Ympäristö
   label_equals: sama kuin
@@ -1012,11 +1012,11 @@ fi:
   label_filter_add: Lisää suodatin
   label_filter_plural: Suodattimet
   label_float: Liukuluku
-  label_folder: Folder
+  label_folder: Kansio
   label_follows: seuraa
   label_force_user_language_to_default: Määritä oletuskieli jos käytössä on kieli
     joka ei ole sallittu
-  label_form_configuration: Form configuration
+  label_form_configuration: Lomakkeen muokkaus
   label_general: Yleinen
   label_generate_key: Luo avain
   label_git_path: Polku .git hakemistoon
@@ -1067,7 +1067,7 @@ fi:
   label_jump_to_a_project: Siirry projektiin...
   label_language_based: Pohjautuen käyttäjän kieleen
   label_last_activity: Last activity
-  label_last_change_on: Last change on
+  label_last_change_on: Viimeisin muutos
   label_last_changes: viimeiset %{count} muutokset
   label_last_login: Edellinen kirjautuminen
   label_last_month: viime kuussa
@@ -1165,7 +1165,7 @@ fi:
   label_previous_week: Edellinen viikko
   label_principal_invite_via_email: " or invite new users via email"
   label_principal_search: Add existing users or groups
-  label_product_version: Product version
+  label_product_version: Tuotteen versio
   label_professional_support: Professional support
   label_profile: Profile
   label_project_all: Kaikki projektit
@@ -1402,8 +1402,8 @@ fi:
   noscript_description: You need to activate JavaScript in order to use OpenProject!
   noscript_heading: JavaScript disabled
   noscript_learn_more: Learn more
-  notice_accessibility_mode: The accessibility mode can be enabled in your [account
-    settings](url).
+  notice_accessibility_mode: Helppokäyttöisyys-tilan voi ottaa käyttöön tilisi asetuksista
+    [tilin settings](url).
   notice_account_activated: Tilisi on aktivoitu. Voit nyt kirjautua sisään.
   notice_account_already_activated: The account has already been activated.
   notice_account_invalid_token: Invalid activation token
@@ -1421,8 +1421,8 @@ fi:
   notice_account_register_done: Tilin luonti onnistui. Aktivoidaksesi tilin seuraa
     linkkiä joka välitettiin sähköpostiisi.
   notice_account_unknown_email: Tuntematon käyttäjä.
-  notice_account_update_failed: Account setting could not be saved. Please have a
-    look at your account page.
+  notice_account_update_failed: Tilin asetusten tallentaminen ei onnistunut. Palaa
+    takaisin tilisi sivulle.
   notice_account_updated: Tilin päivitys onnistui.
   notice_account_wrong_password: Väärä salasana
   notice_account_registered_and_logged_in: Welcome, your account has been activated.
@@ -1475,10 +1475,10 @@ fi:
   present_access_key_value: 'Your %{key_name} is: %{value}'
   notice_automatic_set_of_standard_type: Set standard type automatically.
   notice_logged_out: You have been logged out.
-  notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
-    as there are still users using it.
-  notice_project_cannot_update_custom_fields: 'You cannot update the project''s available
-    custom fields. The project is invalid: %{errors}'
+  notice_wont_delete_auth_source: Todennustilaa ei voi poistaa koska sillä on vielä
+    käyttäjiä.
+  notice_project_cannot_update_custom_fields: 'Et voi päivittää projektin käytettävissä
+    olevia mukautettuja kenttiä. Projekti on virheellinen: %{errors}'
   number:
     format:
       delimiter: ''
@@ -1499,10 +1499,11 @@ fi:
           mb: Mt
           tb: Tt
   onboarding:
-    text_getting_started: This video provides you an overview of OpenProject. It helps
-      you to set up your first project and to start collaborating with your team members.
-    text_show_again: You can restart this video from the help menu
-    welcome: Hi %{name}, welcome to OpenProject
+    text_getting_started: Tämä video on antaa yleiskatsauksen tuotteesta OpenProject.
+      Se auttaa sinua perustamaan ensimmäisen projektisi ja johdattaa sinut alkuun
+      työskentelyssä tiimisi jäsenten kanssa.
+    text_show_again: Voit käynnistää tämä videon uudelleen ohjeet-valikosta
+    welcome: Hei %{name}, Tervetuloa OpenProject käyttäjäksi
   permission_add_work_package_notes: Lisää muistiinpanoja
   permission_add_work_packages: Add work packages (also allows to add attachments
     to all work packages)
@@ -1586,7 +1587,7 @@ fi:
       warning_two: Existing links to the project will no longer work.
       title: Change the project's identifier
     archive:
-      are_you_sure: Are you sure you want to archive the project '%{name}'?
+      are_you_sure: Oletko varma, että haluat arkistoida projektin "%{name}"?
   project_module_activity: Aktiviteetti
   project_module_boards: Keskustelupalstat
   project_module_calendar: Kalenteri
@@ -1735,7 +1736,7 @@ fi:
     warnings:
       cannot_annotate: This file cannot be annotated.
   search_input_placeholder: etsi...
-  setting_email_delivery_method: Email delivery method
+  setting_email_delivery_method: Sähköpostiviestien toimitustapa
   setting_sendmail_location: Location of the sendmail executable
   setting_smtp_enable_starttls_auto: Automatically use STARTTLS if available
   setting_smtp_address: SMTP server
@@ -1853,7 +1854,7 @@ fi:
     passwords: Passwords
     session: Session
     brute_force_prevention: Automated user blocking
-  show_hide_project_menu: Expand/Collapse project menu
+  show_hide_project_menu: Laajenna tai tiivistä projektivalikko
   status_active: aktiivinen
   status_invited: invited
   status_registered: registered
@@ -1877,7 +1878,7 @@ fi:
   text_caracters_maximum: "%{count} merkkiä enintään."
   text_caracters_minimum: Täytyy olla vähintään %{count} merkkiä pitkä.
   text_comma_separated: Useat arvot sallittu (eroteltuna pilkulla).
-  text_comment_wiki_page: 'Comment to wiki page: %{page}'
+  text_comment_wiki_page: 'Kommentti wiki-sivulle: %{page}'
   text_custom_field_possible_values_info: Yksi rivi kullekin arvolle
   text_default_administrator_account_changed: Oletuarvoinen järjestelmävalvoja muutettu
   text_default_encoding: 'Default: UTF-8'
@@ -1897,7 +1898,7 @@ fi:
   text_hint_date_format: Enter a date in the form of YYYY-MM-DD. Other formats may
     be changed to an unwanted date.
   text_hint_disable_with_0: 'Note: Disable with 0'
-  text_hours_between: Between %{min} and %{max} hours.
+  text_hours_between: "%{min}-%{max} tuntia."
   text_work_package_added: Work package %{id} has been reported by %{author}.
   text_work_package_category_destroy_assignments: Remove category assignments
   text_work_package_category_destroy_question: Some work packages (%{count}) are assigned
@@ -1973,7 +1974,7 @@ fi:
   text_workflow_edit: Valitse rooli ja tapahtuma muokataksesi työnkulkua
   text_zoom_in: Lähennä
   text_zoom_out: Loitonna
-  text_setup_mail_configuration: Configure your email provider
+  text_setup_mail_configuration: Määritä sähköpostin palveluntarjoajasi
   time:
     am: aamupäivä
     formats:
@@ -2190,13 +2191,13 @@ fi:
 '
   tooltip:
     attribute_visibility:
-      default: Show if not empty
-      visible: Show even if empty
-      hidden: Hide by default
+      default: Näytä, jos ei ole tyhjä
+      visible: Näytä vaikka tyhjä
+      hidden: Oletusarvoisesti piilotettu
   queries:
     apply_filter: Apply preconfigured filter
   top_menu:
-    additional_resources: Additional resources
+    additional_resources: Lisäresurssit
     getting_started: Getting started
     help_and_support: Help and support
   total_progress: Total progress
