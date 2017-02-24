@@ -55,7 +55,7 @@ lt:
         no_results_title_text: Nėra prieinamų tipų.
       versions:
         no_results_title_text: Projektas neturi jokių laidų.
-        no_results_content_text: Sukurti naują laidą
+        no_results_content_text: Sukurti naują versiją
   project_types:
     index:
       no_results_title_text: Nėra jokių projektų rūšių.
@@ -185,17 +185,17 @@ lt:
         relations/base_contract:
           attributes:
             to:
-              error_not_found: work package in `to` position not found or not visible
-              error_readonly: an existing relation's `to` link is immutable
+              error_not_found: darbų paketas į 'iki' poziciją nerastas arba yra nematomas
+              error_readonly: esama ryšio sąsaja 'iki' yra nekintama
             from:
-              error_not_found: work package in `from` position not found or not visible
-              error_readonly: an existing relation's `from` link is immutable
+              error_not_found: darbų paketas į 'nuo' poziciją nerastas arba yra nematomas
+              error_readonly: esama ryšio sąsaja 'nuo' yra nekintama
         users/base_contract:
           attributes:
             status:
-              invalid_on_create: is not a valid status for new users.
+              invalid_on_create: yra netinkama naujų vartotojų būsena.
             auth_source:
-              error_not_found: not found
+              error_not_found: nerasta
   activerecord:
     attributes:
       announcements:
@@ -216,7 +216,7 @@ lt:
         onthefly: Automatinis vartotojų registravimas
         port: Jungtis
       changeset:
-        repository: Saugykla
+        repository: Repozitorija
       comment:
         commented: Komentavo
       custom_field:
@@ -275,7 +275,7 @@ lt:
         admin: Administratorius
         auth_source: Autentifikacijos būdas
         current_password: Dabartinis slaptažodis
-        force_password_change: Verstipasikeisti slaptažodį kitą kartą prisijungus
+        force_password_change: Versti pasikeisti slaptažodį kitą kartą prisijungus
         language: Kalba
         last_login_on: Paskutinis prisijungimas
         mail_notification: El. pašto priminimai
@@ -382,8 +382,8 @@ lt:
         query:
           filters:
             custom_fields:
-              inexistent: There is no custom field for the filter.
-              invalid: The custom field is not valid in the given context.
+              inexistent: Filtrui nėra jokio pasirenkamo laukelio.
+              invalid: Pasirenkamas laukelis nėra tinkamas duotam kontekstui.
         repository:
           not_available: SCM tiekėjas neprieinamas
           not_whitelisted: neleidžiama pagal konfigūraciją.
@@ -765,8 +765,8 @@ lt:
 '
   description_available_columns: Galimi stulpeliai
   description_choose_project: Projektai
-  description_compare_from: Compare from
-  description_compare_to: Compare to
+  description_compare_from: Palyginti nuo
+  description_compare_to: Palyginti iki
   description_current_position: 'Jūs esate čia:'
   description_date_from: Įveskite pradžios datą
   description_date_range_interval: Pasirinkite diapazoną nurodydami pradžios ir pabaigos
@@ -801,15 +801,15 @@ lt:
   error_can_not_delete_type: Šis tipas turi priklausomų darbų paketų ir todėl negali
     būti ištrintas.
   error_can_not_delete_standard_type: Standartinės rolės negali būti ištrintos.
-  error_can_not_invite_user: Failed to send invitation to user.
+  error_can_not_invite_user: Nepavyko išsiųsti pakvietimo vartotojui.
   error_can_not_remove_role: Ši rolė naudojama, todėl negali būti ištrinta.
   error_can_not_reopen_work_package_on_closed_version: Uždarytai versijai priskirtas
     darbų paketas negali būti atvertas
   error_check_user_and_role: Prašome pasirinkti vartotoją ir rolę.
   error_cookie_missing: OpenProject sausainėlis nerastas. Prašome patikrinti, ar sausainėliai
     yra įgalinti, nes kitaip aplikacija tinkamai neveiks.
-  error_pdf_export_too_many_columns: Too many columns selected for the PDF export.
-    Please reduce the number of columns.
+  error_pdf_export_too_many_columns: PDF eksportavimui pasirinkta per daug stulpelių.
+    Prašome sumažinti stulpelių skaičių.
   error_token_authenticity: Nepavyko patvirtinti Cross-Site Request Forgery rakto.
   error_work_package_done_ratios_not_updated: Darbų paketo atlikimo rodikliai neatnaujinti.
   error_work_package_not_found_in_project: Darbų paketas nerastas arba nepriklauso
@@ -821,8 +821,8 @@ lt:
     projekto nustatymus.
   error_omniauth_registration_timed_out: Registracijos, naudojant išorinį autentifikacijos
     teikėją, laikas pasibaigė. Bandykite dar kartą.
-  error_scm_command_failed: 'Įvyko klaida jungiantis prie saugyklos: %{value}'
-  error_scm_not_found: Toks įrašas ar revizija nebuvo rasti saugykloje.
+  error_scm_command_failed: 'Įvyko klaida jungiantis prie repozitorijos: %{value}'
+  error_scm_not_found: Toks įrašas ar revizija nebuvo rasti repozitorijoje.
   error_unable_delete_status: Darbų paketo būsena negali būti ištrinta tol, kol yra
     naudojama bent viename darbų pakete.
   error_unable_delete_default_status: Neįmanoma ištrinti numatytosios darbų paketo
@@ -835,9 +835,8 @@ lt:
     nukopijuoti
   error_menu_item_not_created: Meniu punktas negali būti pridėtas
   error_menu_item_not_saved: Meniu punktas negali būti išsaugotas
-  error_wiki_root_menu_item_conflict: 'Can''t rename "%{old_name}" to "%{new_name}"
-    due to a conflict in the resulting menu item with the existing menu item "%{existing_caption}"
-    (%{existing_identifier}).
+  error_wiki_root_menu_item_conflict: 'Negalima pervadinti „%{old_name}“ į „%{new_name}“
+    dėl konflikto su esamu meniu punktu „%{existing_caption}“ (%{existing_identifier}).
 
 '
   error_external_authentication_failed: Įvyko klaida vykstant išorinei autentikacijai.
@@ -964,8 +963,8 @@ lt:
   label_change_status: Pakeisti būseną
   label_change_view_all: Peržiūrėti visus pakeitimus
   label_changes_details: Visų pakeitimų detalės
-  label_changeset: Changeset
-  label_changeset_id: Changeset ID
+  label_changeset: Pakeitimu paketas
+  label_changeset_id: Pakeitimų paketo ID
   label_changeset_plural: Pakeitimų paketai
   label_checked: patikrintas
   label_check_uncheck_all_in_column: Žymėti/atžymėti visus stulpelyje
@@ -1021,7 +1020,7 @@ lt:
   label_download_plural: "%{count} Atsisiuntimų"
   label_downloads_abbr: D/L
   label_duplicated_by: dubliuojasi su
-  label_duplicate: duplicate
+  label_duplicate: dubliuoti
   label_duplicates: dubliuojasi
   label_edit: Redaguoti
   label_enable_multi_select: Perjungti daugybinį pažymėjimą
@@ -1031,9 +1030,9 @@ lt:
   label_enabled_project_activities: Įgalintos laiko sekimo veiklos
   label_end_to_end: pabaiga į pabaigą
   label_end_to_start: pabaiga į pradžią
-  label_enumeration_new: Nauja išvardinimo reikšmė
-  label_enumeration_value: Enumeration value
-  label_enumerations: Išvardinimai
+  label_enumeration_new: Nauja enumeratoriaus reikšmė
+  label_enumeration_value: Enumeracijos reikšmė
+  label_enumerations: Enumeratoriai
   label_environment: Aplinka
   label_equals: yra
   label_example: Pavyzdys
@@ -1070,7 +1069,7 @@ lt:
   label_in_less_than: mažiau nei
   label_in_more_than: daugiau nei
   label_incoming_emails: Gauti el. laiškai
-  label_includes: includes
+  label_includes: turi savyje
   label_index_by_date: Rūšiuoti pagal datą
   label_index_by_title: Rūšiuoti pagal pavadinimą
   label_information: Informacija
@@ -1079,7 +1078,7 @@ lt:
   label_internal: Vidinis
   label_invite_user: Pakviesti vartotoją
   label_show_hide: Rodyti/slėpti
-  label_journal: Journal
+  label_journal: Žurnalas
   label_journal_diff: Aprašymų palyginimas
   label_jump_to_a_project: Peršokti į projektą...
   label_language_based: Paremta vartotojo kalba
@@ -1109,7 +1108,7 @@ lt:
   label_member_plural: Nariai
   label_memder_view_all: Rodyti visus narius
   label_menu_item_name: Meniu punkto pavadinimas
-  label_message: Message
+  label_message: Pranešimas
   label_message_last: Paskutinis pranešimas
   label_message_new: Naujas pranešimas
   label_message_plural: Pranešimai
@@ -1161,7 +1160,7 @@ lt:
   label_overall_activity: Visa veikla
   label_overall_spent_time: Visas praleistas laikas
   label_overview: Peržiūra
-  label_part_of: part of
+  label_part_of: dalis
   label_password_lost: Pamiršote slaptažodį?
   label_password_rule_lowercase: Mažosios raidės
   label_password_rule_numeric: Skaitiniai simboliai
@@ -1225,11 +1224,11 @@ lt:
   label_reported_work_packages: Atsiskaityti darbų paketai
   label_reporting: Atsiskaitymas
   label_reporting_plural: Atsiskaitymai
-  label_repository: Saugykla
-  label_repository_root: Saugyklos šaknis
-  label_repository_plural: Saugyklos
-  label_required: required
-  label_requires: requires
+  label_repository: Repozitorija
+  label_repository_root: Repozitorijos šaknis
+  label_repository_plural: Repozitorijos
+  label_required: reikalingas
+  label_requires: turi turėti
   label_responsible_for_work_packages: Darbų paketai, už kuriuos atsakau aš
   label_result_plural: Rezultatai
   label_reverse_chronological_order: Atbuline chronologine tvarka
@@ -1244,7 +1243,7 @@ lt:
   label_role_and_permissions: Rolės ir leidimai
   label_role_new: Nauja rolė
   label_role_plural: Rolės
-  label_role_search: Assign role to new members
+  label_role_search: Priskirti rolę naujiems nariams
   label_scm: SCM
   label_search: Paieška
   label_search_titles_only: Ieškoti tik pavadinimų
@@ -1332,7 +1331,7 @@ lt:
   label_wiki_dont_show_menu_item: Nerodyti šio wiki puslapio projekto navigacijoje
   label_wiki_edit: Wiki redagavimas
   label_wiki_edit_plural: Wiki redagavimai
-  label_wiki_page_id: Wiki page ID
+  label_wiki_page_id: Wiki puslapio ID
   label_wiki_navigation: Wiki navigacija
   label_wiki_page: Wiki puslapis
   label_wiki_page_plural: Wiki puslapiai
@@ -1344,7 +1343,7 @@ lt:
   label_work_package_added: Darbų paketas pridėtas
   label_work_package_category_new: Nauja kategorija
   label_work_package_category_plural: Darbų paketo kategorijos
-  label_work_package_hierarchy: Work package hierarchy
+  label_work_package_hierarchy: Darbų paketo hierarchija
   label_work_package_new: Naujas darbų paketas
   label_work_package_note_added: Darbų paketo pastaba pridėta
   label_work_package_edit: Redaguoti darbų paketą %{name}
@@ -1505,7 +1504,7 @@ lt:
   notice_locking_conflict_reload_page: Įkelkite puslapį iš naujo, peržiūrėkite pakeitimus
     ir pateikite savo atnaujinimus.
   notice_member_added: Pridėtas %{name} prie projekto.
-  notice_members_added: Added %{number} users to the project.
+  notice_members_added: Pridėta %{number} vartotojai (-as, -ų) prie projekto.
   notice_member_removed: Pašalintas %{user} iš projekto.
   notice_member_deleted: "%{user} buvo pašalintas iš projekto ir ištrintas."
   notice_no_principals_found: Rezultatų nerasta.
@@ -1513,11 +1512,14 @@ lt:
   notice_not_authorized: Jūs neturite prieigos teisių prie šio puslapio.
   notice_not_authorized_archived_project: Projektas, kurį bandote atidaryti, buvo
     suarchyvuotas.
-  notice_password_confirmation_failed: Your password is not correct. The changes were
-    not saved.
-  notice_principals_found_multiple: "There are %{number} results found. \n Tab to
-    focus the first result."
-  notice_principals_found_single: "There is one result. \n Tab to focus it."
+  notice_password_confirmation_failed: Jūsų pateiktas slaptažodis nėra teisingas.
+    Pakeitimai nebuvo išsaugoti.
+  notice_principals_found_multiple: |-
+    Rasta %{number} rezultatai (-as, -ų).
+    Paspauskite 'Tab', kad susikoncentruotumėte į pirmą rezultatą.
+  notice_principals_found_single: |-
+    Yra vienas rezultatas.
+    Paspauskite 'Tab', kad susikoncentruotumėte į jį.
   notice_project_not_deleted: Projektas nebuvo panaikintas.
   notice_successful_connection: Sėkmingas susijungimas.
   notice_successful_create: Sėkmingas sukūrimas.
@@ -1561,7 +1563,7 @@ lt:
     text_getting_started: Šis video supažindina su OpenProject. Jis padeda susikurti
       pirmąjį projektą ir pradėti bendradarbiauti su savo komandos nariais.
     text_show_again: Jūs galite paleisti šį video iš naujo iš pagalbos meniu
-    welcome: Welcome to OpenProject
+    welcome: Sveiki atvykę į OpenProject
   permission_add_work_package_notes: Pridėti pastabų
   permission_add_work_packages: Pridėti darbų paketų (taip pat leidžia prisegti priedus
     prie visų darbų paketų)
@@ -1569,10 +1571,11 @@ lt:
   permission_add_project: Sukurti projektą
   permission_add_subprojects: Sukurti sub-projektus
   permission_add_work_package_watchers: Pridėti stebėtojus
-  permission_browse_repository: Tik skaityti prieiga prie saugyklos (naršyti ir pasiimti)
+  permission_browse_repository: Tik skaityti prieiga prie repozitorijos (naršyti ir
+    pasiimti)
   permission_change_wiki_parent_page: Pakeisti tėvinį wiki puslapį
   permission_comment_news: Komentuoti naujienas
-  permission_commit_access: Skaitymo/rašymo prieiga prie saugyklos
+  permission_commit_access: Skaitymo/rašymo prieiga į repozitoriją
   permission_copy_projects: Kopijuoti projekus
   permission_delete_work_package_watchers: Pašalinti stebėtojus
   permission_delete_work_packages: Pašalinti darbų paketus
@@ -1606,7 +1609,7 @@ lt:
   permission_manage_news: Valdyti naujienas
   permission_manage_project_activities: Valdyti projekto veiklas
   permission_manage_public_queries: Valdyti viešas užklausas
-  permission_manage_repository: Valdyti saugyklą
+  permission_manage_repository: Valdyti repozitoriją
   permission_manage_subtasks: Valdyti darbų dalis
   permission_manage_versions: Valdyti versijas
   permission_manage_wiki: Valdyti wiki
@@ -1618,13 +1621,13 @@ lt:
   permission_select_project_modules: Parinkti projekto modulius
   permission_manage_types: Pasirinkti tipus
   permission_view_calendar: Peržiūrėti kalendorių
-  permission_view_changesets: Rodyti saugyklos pakeitimus OpenProject
+  permission_view_changesets: Rodyti repozitorijos pakeitimus OpenProject
   permission_view_commit_author_statistics: Peržiūrėti autorių pakeitimų pateikimo
     statistiką
   permission_view_work_package_watchers: Peržiūrėti stebėtojų sąrašą
   permission_view_work_packages: Peržiūrėti darbų paketus
   permission_view_messages: Peržiūrėti žinutes
-  permission_view_members: View members
+  permission_view_members: Rodyti narius
   permission_view_project_associations: Peržiūrėti projekto priklausomybes
   permission_view_reportings: Peržiūrėti ataskaitas
   permission_view_time_entries: Peržiūrėti dirbtą laiką
@@ -1653,7 +1656,7 @@ lt:
   project_module_calendar: Kalendorius
   project_module_work_package_tracking: Darbų paketo sekimas
   project_module_news: Naujienos
-  project_module_repository: Saugykla
+  project_module_repository: Repozitorija
   project_module_time_tracking: Laiko apskaita
   project_module_timelines: Laiko juostos
   project_module_wiki: Wiki
@@ -1665,137 +1668,141 @@ lt:
     at_identifier: "%{identifier}"
     atom_revision_feed: Atominių pakeitimų naujienų srautas
     autofetch_information: |-
-      Patikrinkite tai, jei norite, kad duomenų saugyklos būtų atnaujintos automatiškai, kai atveriamas saugyklos modulio puslapis.
-      Tai apima pakeitimų gavimą iš saugyklos ir reikiamos vietos diske atnaujinimą.
+      Pažymėkite tai, jei norite, kad duomenų repozitorijos būtų atnaujintos automatiškai, kai atveriamas repozitorijos modulio puslapis.
+      Tai apima pakeitimų gavimą iš repozitorijos ir reikiamos vietos diske atnaujinimą.
     checkout:
       access:
         readwrite: Skaityti ir rašyti
         read: Tik skaityti
-        none: Nėra kopijos nuskaitymo galimybės, galite tik peržiūrėti šią saugyklą
+        none: Nėra kopijos nuskaitymo galimybės, galite tik peržiūrėti šią repozitoriją
           naudodami šią programą.
-      access_permission: Jūsų leidimai šioje saugykloje
+      access_permission: Jūsų leidimai šioje repozitorijoje
       url: Kopijos nuskaitymo URL
       base_url_text: |-
         Bazinis URL, kuris naudojamas generuojant kopijos nuskaitymo URLs (pvz., https://myserver.example.org/repos/).
         Pastaba: bazinis URL yra naudojamas tik perrašant kopijos nuskaitymo URLs valdomose saugyklose. Kitos saugyklos nebus keičiamos.
       default_instructions:
-        git: Duomenys, esantys šioje saugykloje gali būti parsiųsti į Jūsų kompiuterį
+        git: Duomenys, esantys šioje repozitorijoje gali būti parsiųsti į Jūsų kompiuterį
           naudojant Git. Esant klausimų dėl Git, informacijos ieškokite Git dokumentacijoje.
-        subversion: Duomenys, esantys šioje saugykloje gali būti parsiųsti į Jūsų
+        subversion: Duomenys, esantys šioje repozitorijoje gali būti parsiųsti į Jūsų
           kompiuterį naudojant Subversion. Esant klausimų dėl Subversion, informacijos
           ieškokite Subversion dokumentacijoje.
       enable_instructions_text: Rodo kopijos nuskaitymo instrukcijas, apibūdintas
-        visuose su saugyklomis susijusiuose puslapiuose.
+        visuose su repozitorijomis susijusiuose puslapiuose.
       instructions: Kopijos nuskaitymo instrukcijos
       show_instructions: Rodyti kopijos nuskaitymo instrukcijos
       text_instructions: Šis vedlio tekstas rodomas kartu su kopijos nuskaitymo URL
-        tam, kad padėtų pasidaryti saugyklos duomenų kopiją.
-      not_available: Kopijos pasidarymo instrukcijos nėra nustatytos šiai saugyklai.
-        Paprašykite administratoriaus, kad jis tai įgalintų šiai saugyklai sistemos
+        tam, kad padėtų pasidaryti repozitorijos duomenų kopiją.
+      not_available: Kopijos pasidarymo instrukcijos nėra nustatytos šiai repozitorijai.
+        Paprašykite administratoriaus, kad jis tai įgalintų šiai repozitorijai sistemos
         nustatymuose.
-    create_managed_delay: 'Atkreipkite dėmesį: saugyklos valdymas vyksta asinchroniškai
-      vietiniame diske ir informacija bus pasiekiama netrukus.'
-    create_successful: Saugykla buvo užregistruota.
-    delete_sucessful: Saugykla buvo ištrinta.
+    create_managed_delay: 'Atkreipkite dėmesį: repozitorijos valdymas vyksta asinchroniškai
+      vietiniame diske ir nuotolio saugykloj, todėl informacija bus pasiekiama tik
+      netrukus.'
+    create_successful: Repozitorija buvo užregistruota.
+    delete_sucessful: Repozitorija buvo ištrinta.
     destroy:
-      confirmation: Jei tęsite, visam laikui ištrinsite valdomą saugyklą.
-      info: Saugyklos ištrynimas yra negrįžtamas veiksmas.
-      info_not_managed: 'Pastaba: tai NEIŠTRINS jokių duomenų saugykloje, kurių nevaldo
-        OpenProject sistema.'
+      confirmation: Jei tęsite, visam laikui ištrinsite valdomą repozitoriją.
+      info: Repozitorijos ištrynimas yra negrįžtamas veiksmas.
+      info_not_managed: 'Pastaba: tai NEIŠTRINS jokių duomenų repozitorijoje, KURIŲ
+        nevaldo OpenProject sistema.'
       managed_path_note: 'Ši katalogas bus išvalytas: %{path}'
       repository_verification: Įveskite projekto identifikatorių %{identifier}, kad
-        patvirtintumėte saugyklos ištrynimą.
-      subtitle: Ar tikrai norite ištrinti projekto %{project_name} saugyklą %{repository_type}?
+        patvirtintumėte repozitorijos ištrynimą.
+      subtitle: Ar tikrai norite ištrinti projekto %{project_name} repozitoriją %{repository_type}?
       subtitle_not_managed: Ar tikrai norite pašalinti susietą %{repository_type}
         %{url} iš projekto %{project_name}?
       title: Ištrinti saugyklą %{repository_type}
       title_not_managed: Ištrinti susietą %{repository_type}?
     errors:
-      build_failed: Nepavyko sukurti saugyklos su parinkta konfigūracija. %{reason}
-      managed_delete: Nepavyko ištrinti valdomos saugyklos.
-      managed_delete_local: 'Nepavyko ištrinti lokalios saugyklos, kuri yra ''%{path}'':
+      build_failed: Nepavyko sukurti repozitorijos su parinkta konfigūracija. %{reason}
+      managed_delete: Nepavyko ištrinti valdomos repozitorijos.
+      managed_delete_local: 'Nepavyko ištrinti lokalios repozitorijos, kuri yra ''%{path}'':
         %{error_message}'
-      empty_repository: Saugykla egzistuoja, bet ji yra tuščia. Ji dar neturi jokių
-        peržiūrų.
-      exists_on_filesystem: Saugyklos katalogas jau yra sukurtas šioje failų sistemoje.
-      filesystem_access_failed: 'Įvyko klaida bandant pasiekti saugyklą failų sistemoje:
-        %{message}'
-      not_manageable: Saugyklos paslaugų teikėjas negali būti valdomas OpenProject
+      empty_repository: Repozitorija egzistuoja, bet ji yra tuščia. Joje dar nėra
+        jokių peržiūrų.
+      exists_on_filesystem: Repozitorijos katalogas jau yra sukurtas šioje failų sistemoje.
+      filesystem_access_failed: 'Įvyko klaida bandant pasiekti repozitoriją failų
+        sistemoje: %{message}'
+      not_manageable: Repozitorijos paslaugų teikėjas negali būti valdomas OpenProject
         sistemos.
       path_permission_failed: 'Įvyko klaida bandant sukurti šį kelią: %{path}. Prašome
         įsitikinti, kad OpenProject turi rašymo teises šiame kataloge.'
-      unauthorized: Jūs neturite teisės pasiekti šią saugyklą arba prisijungimo duomenys
-        yra neteisingi.
-      unavailable: Saugykla yra nepasiekiama.
-      exception_title: 'Neina pasiekti saugyklos: %{message}'
+      unauthorized: Jūs neturite teisės pasiekti šią repozitoriją arba prisijungimo
+        duomenys yra neteisingi.
+      unavailable: Repozitorija yra nepasiekiama.
+      exception_title: 'Neina pasiekti repozitorijos: %{message}'
       disabled_or_unknown_type: Pasirinktas tipas %{type} yra išjungtas arba daugiau
         SCM teikėjui %{vendor} nepasiekiamas.
       disabled_or_unknown_vendor: SCM teikėjas %{vendor} yra išjungtas arba daugiau
         nebepasiekiamas.
-      remote_call_failed: 'Calling the managed remote failed with message ''%{message}''
-        (Code: %{code})'
-      remote_invalid_response: Received an invalid response from the managed remote.
-      remote_save_failed: Could not save the repository with the parameters retrieved
-        from the remote.
+      remote_call_failed: 'Kviečiant nuotolinę paslaugą gautas klaidos pranešimas
+        ''%{message}'' (Kodas: %{code})'
+      remote_invalid_response: Kreipiantis dėl nuotolinės paslaugos gautas neleistinas
+        atsakymas.
+      remote_save_failed: Nepavyko išsaugoti repozitorijos su parametrais, gautais
+        iš nuotolinės paslaugos.
     git:
       instructions:
-        managed_url: This is the URL of the managed (local) Git repository.
-        path: Specify the path to your local Git repository ( e.g., %{example_path}
-          ).
-        path_encoding: 'Override Git path encoding (Default: UTF-8)'
-      local_title: Link existing local Git repository
-      local_url: Local URL
-      local_introduction: If you have an existing local Git repository, you can link
-        it with OpenProject to access it from within the application.
-      managed_introduction: Let OpenProject create and integrate a local Git repository
-        automatically.
-      managed_title: Git repository integrated into OpenProject
-      managed_url: Managed URL
-      path: Path to Git repository
-      path_encoding: Kelio koduotė
-    go_to_revision: Go to revision
-    managed_remote: Managed repositories for this vendor are handled remotely.
-    managed_remote_note: Information on the URL and path of this repository is not
-      available prior to its creation.
-    managed_url: Managed URL
-    settings:
-      automatic_managed_repos_disabled: Disable automatic creation
-      automatic_managed_repos: Automatic creation of managed repositories
-      automatic_managed_repos_text: By setting a vendor here, newly created projects
-        will automatically receive a managed repository of this vendor.
-    scm_vendor: Source control management system
-    scm_type: Repository type
-    scm_types:
-      local: Link existing local repository
-      existing: Link existing repository
-      managed: Create new repository in OpenProject
-    storage:
-      not_available: Disk storage consumption is not available for this repository.
-      update_timeout: |-
-        Keep the last required disk space information for a repository for N minutes.
-        As counting the required disk space of a repository may be costly, increase this value to reduce performance impact.
-    subversion:
-      existing_title: Existing Subversion repository
-      existing_introduction: If you have an existing Subversion repository, you can
-        link it with OpenProject to access it from within the application.
-      existing_url: Existing URL
-      instructions:
-        managed_url: This is the URL of the managed (local) Subversion repository.
-        url: |-
-          Enter the repository URL. This may either target a local repository (starting with %{local_proto} ), or a remote repository.
-          The following URL schemes are supported:
-      managed_title: Sub-versijų saugykla integruota į OpenProject
+        managed_url: Tai yra valdomos (vietinės) Git repozitorijos URL adresas.
+        path: Nurodykite kelią į vietinę Git repozitoriją (pvz., %{example_path}).
+        path_encoding: 'Perrašyti Git kelio koduotę (numatytoji: UTF-8)'
+      local_title: Susieti esamą vietinę Git repozitoriją
+      local_url: Vietinis URL
+      local_introduction: Jei turite jau egzistuojančią vietinę Git repozitoriją,
+        Jūs galite susieti ją su OpenProject, kad galėtumėte repozitoriją pasiekti
+        sistemos viduje.
       managed_introduction: Leisti OpenProject automatiškai sukurti ir integruoti
-        vietinę sub-versijų saugyklą.
-      managed_url: Managed URL
-      password: Saugyklos slaptažodis
-      username: Saugyklos vartotojo vardas
-    named_repository: "%{vendor_name} saugykla"
+        vietinę Git repozitoriją.
+      managed_title: Git repozitorija integruota į OpenProject
+      managed_url: Valdomas URL
+      path: Kelias į Git repozitoriją
+      path_encoding: Kelio koduotė
+    go_to_revision: Eiti į peržiūrą
+    managed_remote: Valdomos saugyklos šiam tiekėjui valdomos nuotoliniu būdu.
+    managed_remote_note: Informacija apie URL ir kelią į repozitoriją nėra galima
+      iki repozitorijos sukūrimo.
+    managed_url: Valdomas URL
+    settings:
+      automatic_managed_repos_disabled: Išjungti automatinį kūrimą
+      automatic_managed_repos: Valdomų saugyklų automatinis kūrimas
+      automatic_managed_repos_text: Nustatant čia paslaugų tiekėją, nauji sukurti
+        projektai automatiškai įgis savo valdomą nuotolinę repozitoriją.
+    scm_vendor: Šaltinio kontrolės valdymo sistema
+    scm_type: Repozitorijos tipas
+    scm_types:
+      local: Susieti esamą vietinę repozitoriją
+      existing: Susieti esamą repozitoriją
+      managed: Sukurti naują repozitoriją OpenProject
+    storage:
+      not_available: Disko vietos naudojimas nėra prieinamas šiai repozitorijai.
+      update_timeout: Laikyti paskiausią reikalingą disko vietos informaciją repozitorijai
+        N minutes (-ių). Kadangi reikalingos vietos repozitorijai skaičiavimas gali
+        būti reiklus resursams, minučių reikšmės didinimas gali stipriai sumažinti
+        sistemos našumą.
+    subversion:
+      existing_title: Esama Subversion repozitorija
+      existing_introduction: Jei jau turite esamą Subversion repozitoriją, Jūs galite
+        ją susieti su OpenProject, kad galėtumėte informaciją pasiekti iš sistemos
+        vidaus.
+      existing_url: Esamas URL
+      instructions:
+        managed_url: Tai yra URL kelias į valdomą (vietinę) Subversion repozitoriją.
+        url: |-
+          Įveskite repozitorijos URL kelią. Jis gali rodyti tiek į vietinę (pasidedančią %{local_proto}), tiek į nuotolinę repozitoriją.
+          Šios URL kelio schemos yra palaikomos:
+      managed_title: Subversion repozitorija integruota į OpenProject
+      managed_introduction: Leisti OpenProject automatiškai sukurti ir integruoti
+        vietinę Subversion repozitoriją.
+      managed_url: Valdomas URL
+      password: Repozitorijos slaptažodis
+      username: Repozitorijos vartotojo vardas
+    named_repository: "%{vendor_name} repozitorija"
     update_settings_successful: Nustatymai sėkmingai išsaugoti.
-    url: URL į saugyklą
+    url: URL į repozitoriją
     warnings:
       cannot_annotate: Šis failas negali turėti pastabų.
-  search_input_placeholder: Search ...
+  search_input_placeholder: Paieška...
   setting_email_delivery_method: El. pašto pristatymo metodas
   setting_sendmail_location: Sendmail vykdomojo failo lokacija
   setting_smtp_enable_starttls_auto: Automatiškai naudoti STARTTLS, jei galima
@@ -1809,7 +1816,7 @@ lt:
   setting_app_subtitle: Programos paantraštė
   setting_app_title: Programos pavadinimas
   setting_attachment_max_size: Didžiausias prisegamo failo dydis
-  setting_autofetch_changesets: Automatiškai įkelti saugyklos pakeitimus
+  setting_autofetch_changesets: Automatiškai įkelti repozitorijos pakeitimus
   setting_autologin: Automatinis prisijungimas
   setting_available_languages: Siūlomos kalbos
   setting_bcc_recipients: Nematomos kopijos (bcc) gavėjai
@@ -1879,11 +1886,12 @@ lt:
   setting_plain_text_mail: Tik tekstas laiške (be HTML)
   setting_protocol: Protokolas
   setting_registration_footer: Registracijos poraštė
-  setting_repositories_automatic_managed_vendor: Automatinis saugyklos tiekėjo tipas
+  setting_repositories_automatic_managed_vendor: Automatinis repozitorijos tiekėjo
+    tipas
   setting_repositories_encodings: Duomenų saugyklų koduotės
   setting_repository_authentication_caching_enabled: Leisti versijos kontrolės programinės
     įrangos autentifikacijos prašymų talpinimą talpykloje
-  setting_repository_storage_cache_minutes: Saugyklos disko dydžio talpykla
+  setting_repository_storage_cache_minutes: Repozitorijos disko dydžio talpykla
   setting_repository_checkout_display: Rodyti kopijos nuskaitymo instrukcijas
   setting_repository_checkout_base_url: Kopijos nuskaitymo bazinis URL
   setting_repository_checkout_text: Kopijos nuskaitymo instrukcijų tekstas
@@ -1896,9 +1904,9 @@ lt:
   setting_session_ttl_hint: Vertė, mažesnė už 5, išjungia
   setting_session_ttl_enabled: Sesija baigiasi
   setting_start_of_week: Savaitės pradžios diena
-  setting_sys_api_enabled: Įgalinti saugyklos valdymo web tarnybą
-  setting_sys_api_description: Saugyklos valdymo web tarnyba teikia integraciją ir
-    vartotojų autorizaciją bandant pasiekti saugyklas.
+  setting_sys_api_enabled: Įgalinti repozitorijos valdymo web tarnybą
+  setting_sys_api_description: Repozitorijos valdymo web tarnyba teikia integraciją
+    ir vartotojų autorizaciją bandant pasiekti repozitorijas.
   setting_text_formatting: Teksto formatavimas
   setting_time_format: Laiko formatas
   setting_ui_theme: Tema
@@ -1963,7 +1971,7 @@ lt:
   text_enumeration_category_reassign_to: 'Priskirti juos šiai reikšmei:'
   text_enumeration_destroy_question: "%{count} objektai(-ų) priskirti(-ų) šiai reikšmei."
   text_file_repository_writable: Į priedų saugyklą rašyti galima
-  text_git_repo_example: tuščia arba vietinė saugykla (pvz., /gitrepo, c:\gitrepo)
+  text_git_repo_example: tuščia arba vietinė repozitorija (pvz., /gitrepo, c:\gitrepo)
   text_hint_date_format: Įveskite datą formatu YYYY-MM-DD (Metai-mėnuo-diena skaitine
     forma). Kiti formatai gali būti paversti į netinkamą datą.
   text_hint_disable_with_0: 'Pastaba: Išjunkite įvesdami 0'
@@ -2016,15 +2024,15 @@ lt:
   text_regexp_multiline: Reguliarioji išraiška yra pritaikoma daug eilučių režime,
     pvz., ^---\s+
   text_repository_usernames_mapping: |-
-    Parinkite ar atnaujinkite OpenProject vartotoją, kuris paminėtas saugyklos žurnale.
-    Vartotojai, turintys tą patį OpenProject ir saugyklos vardą ar el. paštą yra automatiškai surišti.
+    Parinkite ar atnaujinkite OpenProject vartotoją, kuris paminėtas repozitorijos žurnale.
+    Vartotojai, turintys tą patį OpenProject ir repozitorijos vardą ar el. paštą yra automatiškai surišti.
   text_select_mail_notifications: Išrinkite veiksmus, apie kuriuos būtų pranešta el.
     paštu.
   text_status_changed_by_changeset: Atlikta pakeitimų pakete %{value}.
-  text_table_difference_description: In this table the single %{entries} are shown.
-    You can view the difference between any two entries by first selecting the according
-    checkboxes in the table. When clicking on the button below the table the differences
-    are shown.
+  text_table_difference_description: Šioje lentelėje pavieniai %{entries} yra rodomi.
+    Jūs galite palyginti skirtumus tarp bet kutių dviejų įrašų pasirinkdami atitinkamus
+    žymėtinus laukelius lentelėje. Vėliau paspaudus ant mygtuko apačioje parodomi
+    skirtumai.
   text_time_logged_by_changeset: Atlikta pakeitimų pakete %{value}.
   text_tip_work_package_begin_day: darbų paketas, prasidedantis šiandien
   text_tip_work_package_begin_end_day: darbų paketas, prasidedantis ir pasibaigiantis
