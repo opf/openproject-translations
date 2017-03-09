@@ -25,6 +25,13 @@ id:
     tab:
       no_results_title_text: Tidak ada bidang kustom saat ini.
       no_results_content_text: Buat bidang kustom baru
+  deprecations:
+    old_timeline: |-
+      This timelines module will be replaced by an interactive timelines view embedded into
+      the work packages module. This module is being removed from OpenProject 7.0.
+      <br/>
+      Please note that all data within this module will NOT be migrated to the new view,
+      please make all necessary preparations to recreate the information in the new view.
   groups:
     index:
       no_results_title_text: Tidak ada grup untuk saat ini.
@@ -183,7 +190,8 @@ id:
         relations/base_contract:
           attributes:
             to:
-              error_not_found: work package in `to` position not found or not visible
+              error_not_found: work package dalam posisi `to` tidak dapat ditemukan
+                atau tidak terlihat
               error_readonly: an existing relation's `to` link is immutable
             from:
               error_not_found: work package in `from` position not found or not visible
@@ -191,7 +199,7 @@ id:
         users/base_contract:
           attributes:
             status:
-              invalid_on_create: is not a valid status for new users.
+              invalid_on_create: bukan status yang valid untuk user baru.
             auth_source:
               error_not_found: tidak ditemukan
   activerecord:
@@ -746,8 +754,8 @@ id:
 '
   description_available_columns: Kolom tersedia
   description_choose_project: Project
-  description_compare_from: Compare from
-  description_compare_to: Compare to
+  description_compare_from: Bandingkan dari
+  description_compare_to: Bandingkan dengan
   description_current_position: 'Anda di sini:'
   description_date_from: Masukkan tanggal start
   description_date_range_interval: Pilih durasi dengan memilih tanggal start dan finish
@@ -780,15 +788,15 @@ id:
   error_can_not_delete_custom_field: Tidak dapat menghapus isian kustom
   error_can_not_delete_type: Tipe ini berisi Work Package dan tidak dapat dihapus.
   error_can_not_delete_standard_type: Tipe standar tidak dapat dihapus.
-  error_can_not_invite_user: Failed to send invitation to user.
+  error_can_not_invite_user: Gagal untuk mengirimkan undangan kepada pengguna.
   error_can_not_remove_role: Role ini sedang dipakai dan tidak dapat dihapus.
   error_can_not_reopen_work_package_on_closed_version: Paket-Penugasan yang telah
     berakhir tidak dapat dibuka kembali
   error_check_user_and_role: Silakan pilih user dan Role.
   error_cookie_missing: The OpenProject cookie is missing. Please ensure that cookies
     are enabled, as this application will not properly function without.
-  error_pdf_export_too_many_columns: Too many columns selected for the PDF export.
-    Please reduce the number of columns.
+  error_pdf_export_too_many_columns: Kolom yang dipilih utnuk ekspor PDF terlalu banyak.
+    Mohon kurangi jumlah kolom.
   error_token_authenticity: Unable to verify Cross-Site Request Forgery token.
   error_work_package_done_ratios_not_updated: Paket-Penugasan selesai, rasio tidak
     diupdate.
@@ -1048,7 +1056,7 @@ id:
   label_in_less_than: kurang dari
   label_in_more_than: lebih dari
   label_incoming_emails: Email masuk
-  label_includes: includes
+  label_includes: termasuk
   label_index_by_date: Indeks menurut tanggal
   label_index_by_title: Indeks menurut judul
   label_information: Informasi
@@ -1139,7 +1147,7 @@ id:
   label_overall_activity: Keseluruhan Activity
   label_overall_spent_time: Durasi keseluruhan
   label_overview: Tinjauan
-  label_part_of: part of
+  label_part_of: bagian dari
   label_password_lost: Lupa password?
   label_password_rule_lowercase: Huruf kecil
   label_password_rule_numeric: Karakter numerik
@@ -1204,8 +1212,8 @@ id:
   label_repository: Repositori
   label_repository_root: Repository root
   label_repository_plural: Repositori
-  label_required: required
-  label_requires: requires
+  label_required: dibutuhkan
+  label_requires: dibutuhkan
   label_responsible_for_work_packages: Paket-Penugasan dibawah tanggung jawab saya
   label_result_plural: Hasil
   label_reverse_chronological_order: Urutan kronologi terbalik
@@ -1220,7 +1228,7 @@ id:
   label_role_and_permissions: Role dan Izin
   label_role_new: Role baru
   label_role_plural: Peran
-  label_role_search: Assign role to new members
+  label_role_search: Menetapkan role kepada anggota baru
   label_scm: SCM
   label_search: Cari
   label_search_titles_only: Cari judul
@@ -1478,9 +1486,11 @@ id:
   notice_not_authorized_archived_project: Project yang Anda coba akses telah diarsipkan.
   notice_password_confirmation_failed: Your password is not correct. The changes were
     not saved.
-  notice_principals_found_multiple: "There are %{number} results found. \n Tab to
-    focus the first result."
-  notice_principals_found_single: "There is one result. \n Tab to focus it."
+  notice_principals_found_multiple: "Ada beberapa %{number} hasil yang ditemukan.
+    \n Tab untuk fokus ke hasil pertama."
+  notice_principals_found_single: |-
+    Ada satu hasil.
+     Tab untuk lebih fokus.
   notice_project_not_deleted: Project tidak dihapus.
   notice_successful_connection: Sambungan berhasil.
   notice_successful_create: Berhasil dibuat.
@@ -1585,7 +1595,7 @@ id:
   permission_view_work_package_watchers: Lihat daftar pemantau
   permission_view_work_packages: Lihat Paket-Penugasan
   permission_view_messages: Lihat pesan
-  permission_view_members: View members
+  permission_view_members: Tampilkan Anggota
   permission_view_project_associations: Lihat dependensi Project
   permission_view_reportings: Lihat laporan
   permission_view_time_entries: Lihat durasi
@@ -1735,7 +1745,7 @@ id:
       existing_title: Repository Subversion yang sudah ada
       existing_introduction: Repository Git lokal yang anda miliki dapat dihubungkan
         dengan OpenProject untuk dikelola dari dalam.
-      existing_url: Existing URL
+      existing_url: URL yang ada
       instructions:
         managed_url: Ini adalah URL dari repositori Subversion (lokal) yang dikelola.
         url: |-
@@ -1752,7 +1762,7 @@ id:
     url: URL repositori
     warnings:
       cannot_annotate: This file cannot be annotated.
-  search_input_placeholder: Search ...
+  search_input_placeholder: Mencari ...
   setting_email_delivery_method: Email delivery method
   setting_sendmail_location: Location of the sendmail executable
   setting_smtp_enable_starttls_auto: Automatically use STARTTLS if available
