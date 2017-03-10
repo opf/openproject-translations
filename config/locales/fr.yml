@@ -25,6 +25,12 @@ fr:
     tab:
       no_results_title_text: Il n'y a actuellement aucun champ personnalisé.
       no_results_content_text: Créer un nouveau champ personnalisé
+  deprecations:
+    old_timeline: Ce module Ligne du Temps sera remplacé par une ligne du temps interactive
+      dans le module Lot de Travaux. Ce module est retiré d'OpenProject 7.0.<br />
+      Veuillez prendre en considération que les données de ce module ne seront PAS
+      migrées vers la nouvelle vue, merci de réaliser la préparation nécessaire pour
+      transférer l'information vers la nouvelle vue.
   groups:
     index:
       no_results_title_text: Il n'y a actuellement aucun groupe.
@@ -208,7 +214,7 @@ fr:
             status:
               invalid_on_create: n’est pas un statut valide pour les nouveaux utilisateurs.
             auth_source:
-              error_not_found: not found
+              error_not_found: non trouvé
   activerecord:
     attributes:
       announcements:
@@ -1527,6 +1533,9 @@ fr:
     a été archivé.
   notice_password_confirmation_failed: Votre mot de passe n’est pas correct. Les changements
     n’ont pas été enregistrés.
+  notice_principals_found_multiple: Il y a %{number} résultats trouvés. Tabulation
+    pour sélectionner le premier résultat.
+  notice_principals_found_single: Il y a un seul résultat. Tabulation pour le sélectionner.
   notice_project_not_deleted: Le projet n'a pas été supprimé.
   notice_successful_connection: Connection réussie.
   notice_successful_create: Création réussie.
@@ -1849,7 +1858,7 @@ fr:
     des sous-projets dans les projets parents
   setting_emails_footer: Pied de page des courriels
   setting_emails_header: En-tête des courriels
-  setting_email_login: Use e-mail as login
+  setting_email_login: Utiliser l'adresse courriel comme login
   setting_enabled_scm: Permettre SCM
   setting_feeds_enabled: Permettre les flux
   setting_feeds_limit: Limite du contenu du flux
@@ -1895,7 +1904,7 @@ fr:
   setting_per_page_options: Options des objets par page
   setting_plain_text_mail: Courriel au format texte (pas de HTML)
   setting_protocol: Protocole
-  setting_registration_footer: Registration footer
+  setting_registration_footer: Pied de page d’inscription
   setting_repositories_automatic_managed_vendor: Type de fournisseur de dépôt automatique
   setting_repositories_encodings: Encodages de référentiels
   setting_repository_authentication_caching_enabled: Activer la mise en cache pour
@@ -2293,9 +2302,9 @@ fr:
       default: Afficher si pas vide
       visible: Afficher même si vide
       hidden: Masquer par défaut
-    setting_email_login: 'If enabled a user will be unable to chose a login during
-      registration. Instead their given e-mail address will serve as the login. An
-      administrator may still change the login separately.
+    setting_email_login: 'Si activé, un utilisateur ne pourra choisir son login lors
+      de son inscription. Dans ce cas, son adresse courriel servira de login. Un administrateur
+      pourra néanmoins modifier le login par ailleurs.
 
 '
   queries:

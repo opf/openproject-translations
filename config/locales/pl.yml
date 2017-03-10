@@ -25,6 +25,13 @@ pl:
     tab:
       no_results_title_text: Nie ma jeszcze żadnych pól użytkownika.
       no_results_content_text: Utwórz pole użytkownika
+  deprecations:
+    old_timeline: |-
+      This timelines module will be replaced by an interactive timelines view embedded into
+      the work packages module. This module is being removed from OpenProject 7.0.
+      <br/>
+      Please note that all data within this module will NOT be migrated to the new view,
+      please make all necessary preparations to recreate the information in the new view.
   groups:
     index:
       no_results_title_text: Nie ma żadnych grup.
@@ -196,7 +203,7 @@ pl:
             status:
               invalid_on_create: nie jest prawidłowym statusem dla nowych użytkowników.
             auth_source:
-              error_not_found: not found
+              error_not_found: nie znaleziono
   activerecord:
     attributes:
       announcements:
@@ -1513,6 +1520,12 @@ pl:
     been archived.
   notice_password_confirmation_failed: Hasło nie jest poprawne. Zmiany nie zostały
     zapisane.
+  notice_principals_found_multiple: |-
+    Znaleziono %{number} wyników.
+    Naciśnij Tab, aby wybrać pierwszy rezultat.
+  notice_principals_found_single: |-
+    Znaleziono 1 wynik.
+    Naciśnij Tab, aby go wybrać.
   notice_project_not_deleted: Projekt nie został usunięty.
   notice_successful_connection: Połączenie zakończone sukcesem.
   notice_successful_create: Tworzenie zakończone sukcesem.
@@ -1831,7 +1844,7 @@ pl:
     na głównym projekcie
   setting_emails_footer: Stopka wiadomości e-mail
   setting_emails_header: Nagłówek wiadomości e-mail
-  setting_email_login: Use e-mail as login
+  setting_email_login: Użyj adresu e-mail jako login
   setting_enabled_scm: Włączone SCM
   setting_feeds_enabled: Włącz kanały
   setting_feeds_limit: Feed content limit
@@ -1874,7 +1887,7 @@ pl:
   setting_per_page_options: Obiektów na stronie
   setting_plain_text_mail: Poczta czystym tekstem (bez HTML)
   setting_protocol: Protokół
-  setting_registration_footer: Registration footer
+  setting_registration_footer: Rejestracja stopki
   setting_repositories_automatic_managed_vendor: Typ automatycznego producenta repozytorium
   setting_repositories_encodings: Kodowanie repozytorium
   setting_repository_authentication_caching_enabled: Włącz buforowanie dla żądania
@@ -2256,9 +2269,9 @@ pl:
       default: Pokazuj, jeśli nie jest pusta
       visible: Pokazuj, nawet gdy pusta
       hidden: Domyślnie ukryj
-    setting_email_login: 'If enabled a user will be unable to chose a login during
-      registration. Instead their given e-mail address will serve as the login. An
-      administrator may still change the login separately.
+    setting_email_login: 'Jeśli włączone użytkownik nie będzie mógł wybrać logina
+      podczas rejestracji. Zamiast tego ich adres e-mail będzie służyć jako identyfikator
+      logowania. Administrator może zmienić login oddzielnie.
 
 '
   queries:

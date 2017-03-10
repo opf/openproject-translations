@@ -25,6 +25,12 @@ de:
     tab:
       no_results_title_text: Zur Zeit existieren keine benutzerdefinierten Felder.
       no_results_content_text: Neues benutzerdefiniertes Feld anlegen
+  deprecations:
+    old_timeline: |-
+      Diese Ansicht wird mit OpenProject 7.0 durch eine integrierte Zeitplan-Ansicht in dem Arbeitspaketmodul ersetzt.
+      <br/>
+      Bitte beachten Sie, dass alle Daten in diesem Modul nicht automatisch in die neue Ansicht übernommen wird.
+      Bitte treffen Sie daher alle nötigen Vorkehrungen, um die Informationen wiederherzustellen.
   groups:
     index:
       no_results_title_text: Derzeit gibt es keine Gruppen.
@@ -209,7 +215,7 @@ de:
             status:
               invalid_on_create: ist kein gültiger Status für neue Benutzer.
             auth_source:
-              error_not_found: not found
+              error_not_found: nicht gefunden
   activerecord:
     attributes:
       announcements:
@@ -1519,6 +1525,12 @@ de:
     nicht verfügbar.
   notice_password_confirmation_failed: Ihr Passwort ist nicht korrekt. Die Änderungen
     wurden nicht gespeichert.
+  notice_principals_found_multiple: |-
+    Es wurden %{number} Ergebnisse gefunden.
+    Drücke Tab um das erste Ergebnis zu fokussieren.
+  notice_principals_found_single: |-
+    Es wurde ein Ergebnis gefunden.
+    Drücke Tab um es zu fokussieren.
   notice_project_not_deleted: Das Projekt wurde nicht gelöscht.
   notice_successful_connection: Verbindung erfolgreich.
   notice_successful_create: Erfolgreich angelegt.
@@ -1847,7 +1859,7 @@ de:
     anzeigen
   setting_emails_footer: E-Mail-Fußzeile
   setting_emails_header: E-Mail-Kopfzeile
-  setting_email_login: Use e-mail as login
+  setting_email_login: E-Mail als Benutzername verwenden
   setting_enabled_scm: Aktivierte Versionskontrollsysteme
   setting_feeds_enabled: Feeds aktiviert
   setting_feeds_limit: Max. Anzahl Einträge pro Atom-Feed
@@ -1891,7 +1903,7 @@ de:
   setting_per_page_options: Objekte pro Seite
   setting_plain_text_mail: Nur reinen Text (kein HTML) senden
   setting_protocol: Protokoll
-  setting_registration_footer: Registration footer
+  setting_registration_footer: Fußzeile der Registrierung-Ansicht
   setting_repositories_automatic_managed_vendor: Automatisch genutzter Projektarchiv
     Anbieter-Typ
   setting_repositories_encodings: Codierungen der Projektarchive
@@ -2288,9 +2300,10 @@ de:
       default: Anzeigen wenn nicht leer
       visible: Immer anzeigen (selbst wenn kein Wert gesetzt ist)
       hidden: Standardmäßig ausgeblendet
-    setting_email_login: 'If enabled a user will be unable to chose a login during
-      registration. Instead their given e-mail address will serve as the login. An
-      administrator may still change the login separately.
+    setting_email_login: 'Wenn aktiviert, kann ein Nutzer seinen Benutzernamen bei
+      der Registrierung nicht selbst wählen. Stattdessen wird dessen E-Mail-Adresse
+      als Benutzername verwendet. Ein Administrator kann unabhängig davon den Benutzernamen
+      weiterhin ändern.
 
 '
   queries:
