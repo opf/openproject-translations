@@ -432,8 +432,8 @@ fr:
             priority_id:
               only_active_priorities_allowed: doit être active.
             category:
-              only_same_project_categories_allowed: La catégorie du module de travail
-                doit faire partie du même projet que le module de travail.
+              only_same_project_categories_allowed: La catégorie du lot de travaux
+                doit faire partie du même projet que le lot de travaux.
               does_not_exist: La catégorie spécifiée n'existe pas.
             estimated_hours:
               only_values_greater_or_equal_zeroes_allowed: doit être >= 0.
@@ -797,7 +797,7 @@ fr:
   description_query_sort_criteria_attribute: Classer l'attribut
   description_query_sort_criteria_direction: Classer la direction
   description_search: Champs de recherche
-  description_select_work_package: Sélectionner un Lot de Travaux
+  description_select_work_package: Sélectionner un lot de travaux
   description_selected_columns: Colonnes Sélectionnées
   description_sub_work_package: Sous-Lot de Travaux de l'actuel
   description_toc_toggle: Afficher/Masquer la table de matières
@@ -838,8 +838,8 @@ fr:
   error_scm_command_failed: 'Une erreur s''est produite en essayant d''accéder au
     dépôt: %{value}'
   error_scm_not_found: L'entrée ou la révision n'a pas été trouvée dans le dépôt.
-  error_unable_delete_status: Impossible de supprimer le statut du module de travail
-    car il contient des modules de travail.
+  error_unable_delete_status: Le statut de lot de travaux ne peut pas être supprimé
+    tant qu'il est utilisé par au moins un lot de travaux.
   error_unable_delete_default_status: Impossible de supprimer le statut par défaut
     des lots de travaux. Veuillez sélectionner un autre statut par défaut avant de
     supprimer l'actuel.
@@ -1959,8 +1959,8 @@ fr:
     externes un accès aux ressources dans OpenProject.
   text_analyze: 'Analyse suivante: %{subject}'
   text_are_you_sure: Êtes-vous sûr ?
-  text_are_you_sure_with_children: Supprimer le Lot de Travail et tous ses Lots de
-    Travaux enfants?
+  text_are_you_sure_with_children: Supprimer le lot de travaux et tous les lots de
+    travaux enfants ?
   text_assign_to_project: Assigner le projet
   text_form_configuration: 'Vous pouvez personnaliser les attributs qui seront affichés
     dans les formulaires des lots de travaux de ce type. Les champs « Actifs » seront
@@ -2030,7 +2030,7 @@ fr:
   text_no_configuration_data: |-
     Les rôles, types, status de Lots de Travaux et workflows ne sont pas encore configurés pour l'instant.
     Il est hautement recommander de charger la configuration par défaut. Vous pourrez la modifier une fois chargée.
-  text_no_notes: Il n'existe aucun commentaire pour ce paquet de travail.
+  text_no_notes: Il n'existe aucun commentaire pour ce lot de travaux.
   text_notice_too_many_values_are_inperformant: 'Remarque : L''affichage de plus de
     100 articles par page peut augmenter le temps de chargement de la page.'
   text_own_membership_delete_confirmation: |-
@@ -2377,7 +2377,7 @@ fr:
   query_menu_item_for: Élément de menu pour question « %{title} »
   work_package:
     updated_automatically_by_child_changes: '_Mis à jour automatiquement en changeant
-      les valeurs dans le lot de travail enfant %{child}_
+      les valeurs dans le lot de travaux enfant %{child}_
 
 '
     destroy:
@@ -2423,14 +2423,14 @@ fr:
         context_object_not_found: Impossible de trouver la ressource donnée comme
           contexte.
       validation:
-        done_ratio: Le taux d'avancement ne peut être défini sur les modules de travail
+        done_ratio: Le taux d'avancement ne peut être défini sur les lots de travaux
           parents lorsqu'il est déduit en fonction du statut, ou lorsqu'il est désactivé.
         due_date: La date d'échéance ne peut pas être définie dans les lots de travaux
           parents.
         estimated_hours: Les heures estimées ne peuvent être définies sur les lots
           de travaux parents.
-        invalid_user_assigned_to_work_package: L'utilisateur choisi ne doit pas être
-          '%{property} ' pour ce paquet de travail.
+        invalid_user_assigned_to_work_package: L’utilisateur choisi n'est pas autorisé
+          à être « %{property} » pour ce lot de travaux.
         start_date: La date de début ne peut pas être définie dans les lots de travaux
           parents.
     resources:
