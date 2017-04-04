@@ -43,6 +43,9 @@ hr:
     show:
       no_results_title_text: Trenutno nema novih novih postova.
   custom_fields:
+    text_add_new_custom_field: New custom fields can be created on the global administration
+      before they can be added to this project. Please use the following button to
+      create a new custom field.
     is_enabled_globally: Is enabled globally
     enabled_in_project: Enabled in project
     contained_in_type: Contained in type
@@ -124,6 +127,8 @@ hr:
       form_configuration: Form configuration
       projects: Projekti
       enabled_projects: Omogućeni projekti
+      add_group: Add group
+      reset: Reset to defaults
   versions:
     overview:
       no_results_title_text: Trenutno nije dostupan niti jedan radni paket pridružen
@@ -225,6 +230,12 @@ hr:
   activemodel:
     errors:
       models:
+        queries/base_contract:
+          attributes:
+            project:
+              error_not_found: nije pronađeno
+            public:
+              error_unauthorized: "- The user has no permission to create public queries."
         relations/base_contract:
           attributes:
             to:
@@ -474,6 +485,13 @@ hr:
               does_not_exist: Navedena kategorija ne postoji.
             estimated_hours:
               only_values_greater_or_equal_zeroes_allowed: mora biti >=0.
+        type:
+          attributes:
+            attribute_groups:
+              group_without_name: Unnamed groups are not allowed.
+              duplicate_group: The group name %{group} is used more than once. Group
+                names must be unique.
+              attribute_unknown: Invalid work package attribute used.
         user:
           attributes:
             password:
@@ -871,6 +889,9 @@ hr:
     are enabled, as this application will not properly function without.
   error_custom_option_not_found: Opcija ne postoji.
   error_failed_to_delete_entry: Failed to delete this entry.
+  error_invalid_group_by: 'Can''t group by: %{value}'
+  error_invalid_query_column: 'Invalid query column: %{value}'
+  error_invalid_sort_criterion: 'Can''t sort by column: %{value}'
   error_pdf_export_too_many_columns: Too many columns selected for the PDF export.
     Please reduce the number of columns.
   error_token_authenticity: Unable to verify Cross-Site Request Forgery token.
@@ -918,6 +939,12 @@ hr:
     work_package_closed: Radni paket zatvoren
     work_package_edit: Radni paket je uređen
     work_package_note: Bilješka za Radni paket je dodana
+  export:
+    format:
+      atom: Atom
+      csv: CSV
+      pdf: PDF
+      pdf_with_descriptions: PDF s opisima
   general_csv_decimal_separator: "."
   general_csv_encoding: UTF-8
   general_csv_separator: ","
@@ -1000,6 +1027,7 @@ hr:
   label_api_access_key_created_on: API pristupni ključ kreiran %{value} prije
   label_api_access_key_type: API
   label_applied_status: Dodijeljeni status
+  label_archive_project: Archive project
   label_ascending: Uzlazno
   label_assigned_to_me_work_packages: Radni paketi dodijeljeni meni
   label_associated_revisions: Pridružene revizije
@@ -1085,6 +1113,7 @@ hr:
   label_date_to: Prima
   label_day_plural: dani
   label_default: Zadana vrijednost
+  label_delete_project: Delete project
   label_deleted: izbrisano
   label_deleted_custom_field: "(izbrisano prilagođeno polje)"
   label_descending: Silazno
@@ -1117,6 +1146,7 @@ hr:
   label_enterprise: Enterprise
   label_enterprise_edition: Enterprise verzija
   label_environment: Okruženje
+  label_estimates_and_time: Estimates and time
   label_equals: je
   label_example: Primjer
   label_export_to: 'Također dostupan kao:'
@@ -1151,6 +1181,7 @@ hr:
   label_in: u
   label_in_less_than: u manje od
   label_in_more_than: u više od
+  label_inactive: Inactive
   label_incoming_emails: Dolazne poruke
   label_includes: uključuje
   label_index_by_date: Indeksiraj po datumu
@@ -1243,6 +1274,7 @@ hr:
   label_open_work_packages_plural: otvori
   label_optional_description: Opis
   label_options: Mogućnosti
+  label_other: Ostalo
   label_overall_activity: Ukupna aktivnost
   label_overall_spent_time: Ukupno utrošeno vrijeme
   label_overview: Pregled
@@ -1255,6 +1287,7 @@ hr:
   label_path_encoding: Staza kodiranja
   label_pdf_with_descriptions: PDF s opisima
   label_per_page: Po stranici
+  label_people: Osobe
   label_permissions: Dozvole
   label_permissions_report: Dozvole izvješća
   label_personalize_page: Prilagodi ovu stranicu
@@ -2010,7 +2043,8 @@ hr:
     passwords: Lozinke
     session: Sesija
     brute_force_prevention: Automatizirano blokiranje korisnika
-  show_hide_project_menu: Expand/Collapse project menu
+  show_project_menu: Expand project menu
+  hide_project_menu: Collapse project menu
   status_active: aktivno
   status_invited: pozvani
   status_registered: registriran
@@ -2029,10 +2063,10 @@ hr:
   text_are_you_sure_with_children: Izbriši radni paket i sve podređene radne pakete?
   text_assign_to_project: Pridruži projektu
   text_form_configuration: 'You can customize which attributes will be displayed in
-    forms for work packages of this type. ''Active'' fields will be shown in the collapsed
-    work package view if they have a value, fields that are ''Always displayed'' even
-    if they don''t. Inactive fields will never be shown, even if they have a value.
-    Only fields that are not required or have a default value can be customized.
+    forms for work packages of this type. You can freely group the attributes to reflect
+    the needs for your domain. By default fields will only be shown in the collapsed
+    work package view if they have a value. Fields that are ''Always displayed'' will
+    be visibile even if they don''t have a value.
 
 '
   text_caracters_maximum: "%{count} maksimalno znakova."

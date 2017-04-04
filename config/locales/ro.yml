@@ -45,6 +45,9 @@ ro:
     show:
       no_results_title_text: În acest moment nu există mesaje pentru acest forum.
   custom_fields:
+    text_add_new_custom_field: New custom fields can be created on the global administration
+      before they can be added to this project. Please use the following button to
+      create a new custom field.
     is_enabled_globally: Is enabled globally
     enabled_in_project: Enabled in project
     contained_in_type: Contained in type
@@ -130,6 +133,8 @@ ro:
       form_configuration: Configurarea formularului
       projects: Proiecte
       enabled_projects: Enabled projects
+      add_group: Add group
+      reset: Reset to defaults
   versions:
     overview:
       no_results_title_text: În acest moment nu există pachete de lucru alocate acestei
@@ -232,6 +237,12 @@ ro:
   activemodel:
     errors:
       models:
+        queries/base_contract:
+          attributes:
+            project:
+              error_not_found: not found
+            public:
+              error_unauthorized: "- The user has no permission to create public queries."
         relations/base_contract:
           attributes:
             to:
@@ -479,6 +490,13 @@ ro:
               does_not_exist: Categoria specificată nu există.
             estimated_hours:
               only_values_greater_or_equal_zeroes_allowed: trebuie să fie > = 0.
+        type:
+          attributes:
+            attribute_groups:
+              group_without_name: Unnamed groups are not allowed.
+              duplicate_group: The group name %{group} is used more than once. Group
+                names must be unique.
+              attribute_unknown: Invalid work package attribute used.
         user:
           attributes:
             password:
@@ -877,6 +895,9 @@ ro:
     referitoare la cookies, această aplicație nu va funcţiona corespunzător fără acestea.
   error_custom_option_not_found: Option does not exist.
   error_failed_to_delete_entry: Failed to delete this entry.
+  error_invalid_group_by: 'Can''t group by: %{value}'
+  error_invalid_query_column: 'Invalid query column: %{value}'
+  error_invalid_sort_criterion: 'Can''t sort by column: %{value}'
   error_pdf_export_too_many_columns: Too many columns selected for the PDF export.
     Please reduce the number of columns.
   error_token_authenticity: Nu se poate verifica token-ul "Cross-Site Request Forgery".
@@ -923,6 +944,12 @@ ro:
     work_package_closed: Pachet de lucru închis
     work_package_edit: Pachet de lucru editat
     work_package_note: Notă adăugată la pachetul de lucru
+  export:
+    format:
+      atom: Atom
+      csv: CSV
+      pdf: PDF
+      pdf_with_descriptions: PDF cu descrieri
   general_csv_decimal_separator: ","
   general_csv_encoding: UTF-8
   general_csv_separator: ";"
@@ -1004,6 +1031,7 @@ ro:
   label_api_access_key_created_on: Cheia de acces creată acum %{value}
   label_api_access_key_type: API
   label_applied_status: Stare aplicată
+  label_archive_project: Archive project
   label_ascending: Crescător
   label_assigned_to_me_work_packages: Pachete de lucru atribuite mie
   label_associated_revisions: Revizii asociate
@@ -1089,6 +1117,7 @@ ro:
   label_date_to: La
   label_day_plural: zile
   label_default: Implicit
+  label_delete_project: Delete project
   label_deleted: șters
   label_deleted_custom_field: "(câmp personalizat șters)"
   label_descending: Descrescător
@@ -1121,6 +1150,7 @@ ro:
   label_enterprise: Enterprise
   label_enterprise_edition: Enterprise Edition
   label_environment: Mediu
+  label_estimates_and_time: Estimates and time
   label_equals: este
   label_example: Exemplu
   label_export_to: 'Disponibil și în:'
@@ -1155,6 +1185,7 @@ ro:
   label_in: în
   label_in_less_than: în mai puțin de
   label_in_more_than: în mai mult de
+  label_inactive: Inactive
   label_incoming_emails: E-mailuri primite
   label_includes: includes
   label_index_by_date: Indexare după dată
@@ -1247,6 +1278,7 @@ ro:
   label_open_work_packages_plural: deschise
   label_optional_description: Descriere
   label_options: Opțiuni
+  label_other: Altele
   label_overall_activity: Activitate globală
   label_overall_spent_time: Timp consumat global
   label_overview: Vedere de ansamblu
@@ -1259,6 +1291,7 @@ ro:
   label_path_encoding: Codificare cale
   label_pdf_with_descriptions: PDF cu descrieri
   label_per_page: Pe pagină
+  label_people: Persoane
   label_permissions: Drepturi
   label_permissions_report: Raport drepturi
   label_personalize_page: Personalizare pagină
@@ -2022,7 +2055,8 @@ ro:
     passwords: Parole
     session: Sesiune
     brute_force_prevention: Blocare automată a utilizatorilor
-  show_hide_project_menu: Extindere/Restrângere meniu proiect
+  show_project_menu: Expand project menu
+  hide_project_menu: Collapse project menu
   status_active: activ
   status_invited: invitat
   status_registered: înregistrat
@@ -2041,18 +2075,17 @@ ro:
   text_are_you_sure_with_children: Doriți ștergerea pachetului de lucru și a tuturor
     pachetelor fii?
   text_assign_to_project: Alocare la proiect
-  text_form_configuration: 'Aveţi posibilitatea să particularizaţi atributele ce vor
-    fi afişate în formulare pentru pachetele de acest tip. Campurile "active" vor
-    fi afișate ăn modul restrâns de vizualizare a pachetului în cazul în care au o
-    valoare, în schimb câmpurile "afișate permanent" apar și dacă nu au. Câmpurile
-    "inactive" nu vor fi afișate, chiar dacă conțin o valoare. Doar câmpurile care
-    nu sunt obligatorii sau care au o valoare implicită pot fi personalizate.
+  text_form_configuration: 'You can customize which attributes will be displayed in
+    forms for work packages of this type. You can freely group the attributes to reflect
+    the needs for your domain. By default fields will only be shown in the collapsed
+    work package view if they have a value. Fields that are ''Always displayed'' will
+    be visibile even if they don''t have a value.
 
 '
   text_caracters_maximum: maximum %{count} caractere.
   text_caracters_minimum: Trebuie să aibă cel putin %{count} caractere.
   text_comma_separated: Sunt permise valori multiple (separate prin virgulă).
-  text_comment_wiki_page: 'Comment to wiki page: %{page}'
+  text_comment_wiki_page: 'Comentează la pagina wiki: %{page}'
   text_custom_field_possible_values_info: O linie pentru fiecare valoare
   text_default_administrator_account_changed: Contul de administrator implicit a fost
     schimbat

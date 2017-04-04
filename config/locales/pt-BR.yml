@@ -45,9 +45,12 @@ pt-BR:
     show:
       no_results_title_text: Atualmente, não há mensagens para o quadro.
   custom_fields:
-    is_enabled_globally: Is enabled globally
-    enabled_in_project: Enabled in project
-    contained_in_type: Contained in type
+    text_add_new_custom_field: New custom fields can be created on the global administration
+      before they can be added to this project. Please use the following button to
+      create a new custom field.
+    is_enabled_globally: Está habilitado globalmente
+    enabled_in_project: Habilitado no projeto
+    contained_in_type: Contido no tipo
     tab:
       no_results_title_text: Atualmente, não há campos personalizados.
       no_results_content_text: Criar um novo campo personalizado
@@ -125,6 +128,8 @@ pt-BR:
       form_configuration: Configuração do formulário
       projects: Projetos
       enabled_projects: Projetos habilitados
+      add_group: Add group
+      reset: Reset to defaults
   versions:
     overview:
       no_results_title_text: Não há pacote de trabalho atribuído a esta versão.
@@ -221,6 +226,12 @@ pt-BR:
   activemodel:
     errors:
       models:
+        queries/base_contract:
+          attributes:
+            project:
+              error_not_found: não encontrado
+            public:
+              error_unauthorized: "- The user has no permission to create public queries."
         relations/base_contract:
           attributes:
             to:
@@ -468,6 +479,13 @@ pt-BR:
               does_not_exist: Categoria especificada não existe.
             estimated_hours:
               only_values_greater_or_equal_zeroes_allowed: deve ser >= 0.
+        type:
+          attributes:
+            attribute_groups:
+              group_without_name: Unnamed groups are not allowed.
+              duplicate_group: The group name %{group} is used more than once. Group
+                names must be unique.
+              attribute_unknown: Invalid work package attribute used.
         user:
           attributes:
             password:
@@ -852,6 +870,9 @@ pt-BR:
     de que os cookies estão habilitados, sem os quais esta função não funcionará adequadamente.
   error_custom_option_not_found: A opção não existe.
   error_failed_to_delete_entry: Falha ao excluir esta entrada.
+  error_invalid_group_by: 'Can''t group by: %{value}'
+  error_invalid_query_column: 'Invalid query column: %{value}'
+  error_invalid_sort_criterion: 'Can''t sort by column: %{value}'
   error_pdf_export_too_many_columns: Muitas colunas selecionadas para a exportação
     para PDF. Reduza o número de colunas.
   error_token_authenticity: Não foi possível verificar o símbolo de Falsificação de
@@ -900,6 +921,12 @@ pt-BR:
     work_package_closed: Pacote de Trabalho fechado
     work_package_edit: Pacote de Trabalho editado
     work_package_note: Anotação acrescentada ao Pacote de Trabalho
+  export:
+    format:
+      atom: Atom
+      csv: CSV
+      pdf: PDF
+      pdf_with_descriptions: PDF com descrições
   general_csv_decimal_separator: "."
   general_csv_encoding: UTF-8
   general_csv_separator: ","
@@ -981,6 +1008,7 @@ pt-BR:
   label_api_access_key_created_on: Chave de acesso a API criada %{value} atrás
   label_api_access_key_type: API
   label_applied_status: Situação aplicada
+  label_archive_project: Archive project
   label_ascending: Ascendente
   label_assigned_to_me_work_packages: Pacotes de trabalho atribuídos a mim
   label_associated_revisions: Revisões associadas
@@ -1067,6 +1095,7 @@ pt-BR:
   label_date_to: Para
   label_day_plural: dias
   label_default: Padrão
+  label_delete_project: Delete project
   label_deleted: excluído
   label_deleted_custom_field: "(campo personalizado excluído)"
   label_descending: Descendente
@@ -1100,6 +1129,7 @@ pt-BR:
   label_enterprise: Enterprise
   label_enterprise_edition: Enterprise Edition
   label_environment: Ambiente
+  label_estimates_and_time: Estimates and time
   label_equals: é
   label_example: Exemplo
   label_export_to: 'Também disponível em:'
@@ -1134,6 +1164,7 @@ pt-BR:
   label_in: em
   label_in_less_than: em menos de
   label_in_more_than: em mais de
+  label_inactive: Inactive
   label_incoming_emails: E-mails recebidos
   label_includes: inclui
   label_index_by_date: Índice por data
@@ -1226,6 +1257,7 @@ pt-BR:
   label_open_work_packages_plural: aberto
   label_optional_description: Descrição
   label_options: Opções
+  label_other: Outro
   label_overall_activity: Atividade global
   label_overall_spent_time: Tempo total gasto
   label_overview: Visão geral
@@ -1238,6 +1270,7 @@ pt-BR:
   label_path_encoding: Codificação
   label_pdf_with_descriptions: PDF com Descrições
   label_per_page: Por página
+  label_people: Pessoas
   label_permissions: Permissões
   label_permissions_report: Relatório de permissões
   label_personalize_page: Personalizar esta página
@@ -1995,7 +2028,8 @@ pt-BR:
     passwords: Senhas
     session: Sessão
     brute_force_prevention: Bloqueio de usuário automatizado
-  show_hide_project_menu: Expandir/Recolher o menu do projeto
+  show_project_menu: Expand project menu
+  hide_project_menu: Collapse project menu
   status_active: ativo
   status_invited: convidado
   status_registered: registrado
@@ -2014,12 +2048,11 @@ pt-BR:
   text_are_you_sure_with_children: Excluir o pacote de trabalho e todos os pacotes
     de trabalho filhos?
   text_assign_to_project: Atribuir ao projeto
-  text_form_configuration: 'Você pode personalizar quais atributos serão exibidos
-    nos formulários para pacotes de trabalho deste tipo. Os campos ‘Ativos’ serão
-    mostrados na visualização recolhida do pacote de trabalho se tiverem valor, campos
-    que são ‘Sempre exibidos’ serão exibidos mesmo que não tenham valor. Campos inativos
-    nunca serão exibidos, mesmo que tenham valor. Somente os campos não obrigatórios
-    ou que tenham valor padrão podem ser personalizados.
+  text_form_configuration: 'You can customize which attributes will be displayed in
+    forms for work packages of this type. You can freely group the attributes to reflect
+    the needs for your domain. By default fields will only be shown in the collapsed
+    work package view if they have a value. Fields that are ''Always displayed'' will
+    be visibile even if they don''t have a value.
 
 '
   text_caracters_maximum: "%{count} caracteres no máximo."

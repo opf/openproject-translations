@@ -45,6 +45,9 @@ hu:
     show:
       no_results_title_text: There are currently no posts for the board.
   custom_fields:
+    text_add_new_custom_field: New custom fields can be created on the global administration
+      before they can be added to this project. Please use the following button to
+      create a new custom field.
     is_enabled_globally: Is enabled globally
     enabled_in_project: Enabled in project
     contained_in_type: Contained in type
@@ -126,6 +129,8 @@ hu:
       form_configuration: Form configuration
       projects: Projektek
       enabled_projects: Enabled projects
+      add_group: Add group
+      reset: Reset to defaults
   versions:
     overview:
       no_results_title_text: There are currently no work packages assigned to this
@@ -223,6 +228,12 @@ hu:
   activemodel:
     errors:
       models:
+        queries/base_contract:
+          attributes:
+            project:
+              error_not_found: not found
+            public:
+              error_unauthorized: "- The user has no permission to create public queries."
         relations/base_contract:
           attributes:
             to:
@@ -471,6 +482,13 @@ hu:
               does_not_exist: The specified category does not exist.
             estimated_hours:
               only_values_greater_or_equal_zeroes_allowed: must be >= 0.
+        type:
+          attributes:
+            attribute_groups:
+              group_without_name: Unnamed groups are not allowed.
+              duplicate_group: The group name %{group} is used more than once. Group
+                names must be unique.
+              attribute_unknown: Invalid work package attribute used.
         user:
           attributes:
             password:
@@ -855,6 +873,9 @@ hu:
     are enabled, as this application will not properly function without.
   error_custom_option_not_found: Option does not exist.
   error_failed_to_delete_entry: Failed to delete this entry.
+  error_invalid_group_by: 'Can''t group by: %{value}'
+  error_invalid_query_column: 'Invalid query column: %{value}'
+  error_invalid_sort_criterion: 'Can''t sort by column: %{value}'
   error_pdf_export_too_many_columns: Too many columns selected for the PDF export.
     Please reduce the number of columns.
   error_token_authenticity: Unable to verify Cross-Site Request Forgery token.
@@ -903,6 +924,12 @@ hu:
     work_package_closed: A munkacsomag lezárva
     work_package_edit: A munkacsomag szerkesztve
     work_package_note: A munkacsomag jegyzet hozzáadva
+  export:
+    format:
+      atom: Atom
+      csv: CSV
+      pdf: PDF
+      pdf_with_descriptions: PDF leírásokkal
   general_csv_decimal_separator: "."
   general_csv_encoding: UTF-8
   general_csv_separator: ","
@@ -985,6 +1012,7 @@ hu:
   label_api_access_key_created_on: 'APIhozzáférési kulcs készítette: %{value} ezelőtt'
   label_api_access_key_type: API
   label_applied_status: Alkalmazott státusz
+  label_archive_project: Archive project
   label_ascending: Növekvő
   label_assigned_to_me_work_packages: Hozzámrendelt munkacsomag
   label_associated_revisions: Kapcsolódó módosítások
@@ -1070,6 +1098,7 @@ hu:
   label_date_to: Címzettek
   label_day_plural: napok
   label_default: Alapértelmezett
+  label_delete_project: Delete project
   label_deleted: törölve
   label_deleted_custom_field: "(egyéni mező törölve)"
   label_descending: Csökkenő
@@ -1103,6 +1132,7 @@ hu:
   label_enterprise: Enterprise
   label_enterprise_edition: Enterprise Edition
   label_environment: Környezet
+  label_estimates_and_time: Estimates and time
   label_equals: van
   label_example: Példa
   label_export_to: 'Is elérhető:'
@@ -1137,6 +1167,7 @@ hu:
   label_in: in
   label_in_less_than: kevesebb, mint
   label_in_more_than: több mint
+  label_inactive: Inactive
   label_incoming_emails: Bejövő e-mailek
   label_includes: includes
   label_index_by_date: Index dátum szerint
@@ -1229,6 +1260,7 @@ hu:
   label_open_work_packages_plural: kinyit
   label_optional_description: Leírás
   label_options: Beállítások
+  label_other: Egyéb
   label_overall_activity: Általános tevékenység
   label_overall_spent_time: Teljes eltöltött idő
   label_overview: Áttekintő
@@ -1241,6 +1273,7 @@ hu:
   label_path_encoding: Elérési út kódolás
   label_pdf_with_descriptions: PDF-leírások
   label_per_page: Oldalanként
+  label_people: Személyek
   label_permissions: Jogosultságok
   label_permissions_report: Jogosultságok riportálása
   label_personalize_page: A lap testreszabása
@@ -1982,7 +2015,8 @@ hu:
     passwords: Jelszavak
     session: Munkamenet
     brute_force_prevention: Felhasználó automatikus blokkolása
-  show_hide_project_menu: Expand/Collapse project menu
+  show_project_menu: Expand project menu
+  hide_project_menu: Collapse project menu
   status_active: aktív
   status_invited: invited
   status_registered: regisztrált
@@ -2001,10 +2035,10 @@ hu:
   text_are_you_sure_with_children: Törli a munkacsomagot és minden gyermek munkacsomagot?
   text_assign_to_project: Hozzárendelés projekthez
   text_form_configuration: 'You can customize which attributes will be displayed in
-    forms for work packages of this type. ''Active'' fields will be shown in the collapsed
-    work package view if they have a value, fields that are ''Always displayed'' even
-    if they don''t. Inactive fields will never be shown, even if they have a value.
-    Only fields that are not required or have a default value can be customized.
+    forms for work packages of this type. You can freely group the attributes to reflect
+    the needs for your domain. By default fields will only be shown in the collapsed
+    work package view if they have a value. Fields that are ''Always displayed'' will
+    be visibile even if they don''t have a value.
 
 '
   text_caracters_maximum: legfeljebb %{count} hosszúságú karakter lehet.

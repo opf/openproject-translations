@@ -45,6 +45,9 @@ ca:
     show:
       no_results_title_text: Actualment no hi ha cap entrada al tauler.
   custom_fields:
+    text_add_new_custom_field: New custom fields can be created on the global administration
+      before they can be added to this project. Please use the following button to
+      create a new custom field.
     is_enabled_globally: Is enabled globally
     enabled_in_project: Enabled in project
     contained_in_type: Contained in type
@@ -128,6 +131,8 @@ ca:
       form_configuration: Configuració del formulari
       projects: Projectes
       enabled_projects: Enabled projects
+      add_group: Add group
+      reset: Reset to defaults
   versions:
     overview:
       no_results_title_text: Actualment no hi ha cap paquet de treball assignat a
@@ -232,6 +237,12 @@ ca:
   activemodel:
     errors:
       models:
+        queries/base_contract:
+          attributes:
+            project:
+              error_not_found: not found
+            public:
+              error_unauthorized: "- The user has no permission to create public queries."
         relations/base_contract:
           attributes:
             to:
@@ -479,6 +490,13 @@ ca:
               does_not_exist: La categoria especificada no existeix.
             estimated_hours:
               only_values_greater_or_equal_zeroes_allowed: ha de ser > = 0.
+        type:
+          attributes:
+            attribute_groups:
+              group_without_name: Unnamed groups are not allowed.
+              duplicate_group: The group name %{group} is used more than once. Group
+                names must be unique.
+              attribute_unknown: Invalid work package attribute used.
         user:
           attributes:
             password:
@@ -864,6 +882,9 @@ ca:
     sense.
   error_custom_option_not_found: Option does not exist.
   error_failed_to_delete_entry: Failed to delete this entry.
+  error_invalid_group_by: 'Can''t group by: %{value}'
+  error_invalid_query_column: 'Invalid query column: %{value}'
+  error_invalid_sort_criterion: 'Can''t sort by column: %{value}'
   error_pdf_export_too_many_columns: Too many columns selected for the PDF export.
     Please reduce the number of columns.
   error_token_authenticity: No es pot verificar token de Cross-Site Request Forgery.
@@ -912,6 +933,12 @@ ca:
     work_package_closed: Paquet de treball tancat
     work_package_edit: Paquet de treball editat
     work_package_note: Afegida nota al paquet de treball
+  export:
+    format:
+      atom: Atom
+      csv: CSV
+      pdf: PDF
+      pdf_with_descriptions: PDF amb descripcions
   general_csv_decimal_separator: "."
   general_csv_encoding: UTF-8
   general_csv_separator: ","
@@ -994,6 +1021,7 @@ ca:
   label_api_access_key_created_on: Clau d'accés API creada fa %{value}
   label_api_access_key_type: API
   label_applied_status: Estat aplicat
+  label_archive_project: Archive project
   label_ascending: Ascendent
   label_assigned_to_me_work_packages: Paquets de treball assignats a mi
   label_associated_revisions: Revisions associades
@@ -1080,6 +1108,7 @@ ca:
   label_date_to: Fins
   label_day_plural: dies
   label_default: Per defecte
+  label_delete_project: Delete project
   label_deleted: suprimit
   label_deleted_custom_field: "(camp personalitzat suprimit)"
   label_descending: Descendent
@@ -1112,6 +1141,7 @@ ca:
   label_enterprise: Enterprise
   label_enterprise_edition: Enterprise Edition
   label_environment: Entorn
+  label_estimates_and_time: Estimates and time
   label_equals: és
   label_example: Exemple
   label_export_to: 'També disponible en:'
@@ -1146,6 +1176,7 @@ ca:
   label_in: en
   label_in_less_than: en menys de
   label_in_more_than: en més de
+  label_inactive: Inactive
   label_incoming_emails: Correu electrònics d'entrada
   label_includes: includes
   label_index_by_date: Índex per data
@@ -1238,6 +1269,7 @@ ca:
   label_open_work_packages_plural: obrir
   label_optional_description: Descripció
   label_options: Opcions
+  label_other: Altres
   label_overall_activity: Activitat global
   label_overall_spent_time: Temps total invertit
   label_overview: Visió general
@@ -1250,6 +1282,7 @@ ca:
   label_path_encoding: Codificació de les rutes
   label_pdf_with_descriptions: PDF amb descripcions
   label_per_page: Per pàgina
+  label_people: Persones
   label_permissions: Permisos
   label_permissions_report: Informe de permisos
   label_personalize_page: Personalitza aquesta pàgina
@@ -2025,7 +2058,8 @@ ca:
     passwords: Contrasenyes
     session: Sessió
     brute_force_prevention: Bloqueig automàtic d'usuari
-  show_hide_project_menu: Expandeix/contrau menú de projecte
+  show_project_menu: Expand project menu
+  hide_project_menu: Collapse project menu
   status_active: actiu
   status_invited: convidat
   status_registered: registrat
@@ -2044,12 +2078,11 @@ ca:
   text_are_you_sure_with_children: Voleu suprimir el paquet de treball i tots els
     paquets de treball fills?
   text_assign_to_project: Assignar al projecte
-  text_form_configuration: 'Pot personalitzar quins atributs es mostraran en els formularis
-    per a paquets de treball d''aquest tipus. Els camps ''Actiu'' es mostraran a la
-    vista col·lapsada de paquets de treball si tenen un valor, els camps ''Mostrar
-    sempre'' es mostraran fins i tot si no tenen valor. Els camps inactius mai es
-    mostraran, encara que tinguin valor. Només els camps que no són obligatoris o
-    que tenen un valor per defecte es poden personalitzar.
+  text_form_configuration: 'You can customize which attributes will be displayed in
+    forms for work packages of this type. You can freely group the attributes to reflect
+    the needs for your domain. By default fields will only be shown in the collapsed
+    work package view if they have a value. Fields that are ''Always displayed'' will
+    be visibile even if they don''t have a value.
 
 '
   text_caracters_maximum: "%{count} caràcters com a màxim."

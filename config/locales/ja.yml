@@ -39,9 +39,12 @@ ja:
     show:
       no_results_title_text: 現在、掲示板の投稿はありません。
   custom_fields:
-    is_enabled_globally: Is enabled globally
-    enabled_in_project: Enabled in project
-    contained_in_type: Contained in type
+    text_add_new_custom_field: New custom fields can be created on the global administration
+      before they can be added to this project. Please use the following button to
+      create a new custom field.
+    is_enabled_globally: グローバルで有効
+    enabled_in_project: プロジェクトで有効
+    contained_in_type: タイプに含まれる
     tab:
       no_results_title_text: 現在、カスタム フィールドはありません。
       no_results_content_text: 新しいカスタム フィールドを作成
@@ -118,6 +121,8 @@ ja:
       form_configuration: フォーム設定
       projects: プロジェクト
       enabled_projects: 有効なプロジェクト
+      add_group: Add group
+      reset: Reset to defaults
   versions:
     overview:
       no_results_title_text: このバージョンに割り当てられている作業項目はありません。
@@ -194,6 +199,12 @@ ja:
   activemodel:
     errors:
       models:
+        queries/base_contract:
+          attributes:
+            project:
+              error_not_found: 存在しません
+            public:
+              error_unauthorized: "- The user has no permission to create public queries."
         relations/base_contract:
           attributes:
             to:
@@ -431,6 +442,13 @@ ja:
               does_not_exist: 指定されたカテゴリは存在しません。
             estimated_hours:
               only_values_greater_or_equal_zeroes_allowed: ">= 0 にする必要があります。"
+        type:
+          attributes:
+            attribute_groups:
+              group_without_name: Unnamed groups are not allowed.
+              duplicate_group: The group name %{group} is used more than once. Group
+                names must be unique.
+              attribute_unknown: Invalid work package attribute used.
         user:
           attributes:
             password:
@@ -803,6 +821,9 @@ ja:
   error_cookie_missing: OpenProject のcookieが見つかりません。cookieが有効であることを確認してください。そうしないとこのアプリケーションは正しく動作しません。
   error_custom_option_not_found: オプションが存在しません。
   error_failed_to_delete_entry: このエントリを削除できませんでした。
+  error_invalid_group_by: 'Can''t group by: %{value}'
+  error_invalid_query_column: 'Invalid query column: %{value}'
+  error_invalid_sort_criterion: 'Can''t sort by column: %{value}'
   error_pdf_export_too_many_columns: PDF エクスポート用に選択された列が多すぎます。 列の数を減らしてください。
   error_token_authenticity: クロスサイトリクエストフォージェリのトークンを検証できません。
   error_work_package_done_ratios_not_updated: 作業項目の進捗率が更新できません。
@@ -838,6 +859,12 @@ ja:
     work_package_closed: 作業が完了
     work_package_edit: 仕事項目が編集されました。
     work_package_note: 仕事項目の注記が追加されました。
+  export:
+    format:
+      atom: Atom
+      csv: CSV
+      pdf: PDF
+      pdf_with_descriptions: 説明付きPDF
   general_csv_decimal_separator: "."
   general_csv_encoding: UTF-8
   general_csv_separator: ","
@@ -914,6 +941,7 @@ ja:
   label_api_access_key_created_on: APIアクセスキーが%{value}前に作成されました
   label_api_access_key_type: API
   label_applied_status: 適用されるステータス
+  label_archive_project: Archive project
   label_ascending: 昇順
   label_assigned_to_me_work_packages: 担当している作業項目
   label_associated_revisions: 関連するリビジョン
@@ -999,6 +1027,7 @@ ja:
   label_date_to: から
   label_day_plural: " 日"
   label_default: 既定の項目
+  label_delete_project: Delete project
   label_deleted: 削除された
   label_deleted_custom_field: "（削除されたカスタムフィールド）"
   label_descending: 降順
@@ -1031,6 +1060,7 @@ ja:
   label_enterprise: エンタープライズ
   label_enterprise_edition: エンタープライズ版
   label_environment: 環境
+  label_estimates_and_time: Estimates and time
   label_equals: 等しい
   label_example: 例
   label_export_to: こちらもアクセス可能：
@@ -1064,6 +1094,7 @@ ja:
   label_in: 今日から○日後
   label_in_less_than: 今日から○日後以前
   label_in_more_than: 今日から○日後以降
+  label_inactive: Inactive
   label_incoming_emails: 受信メール
   label_includes: インクルード
   label_index_by_date: 索引（日付順）
@@ -1156,6 +1187,7 @@ ja:
   label_open_work_packages_plural: 未完了
   label_optional_description: 説明
   label_options: オプション
+  label_other: その他
   label_overall_activity: 全ての活動
   label_overall_spent_time: 全体の作業時間の記録
   label_overview: 概要
@@ -1168,6 +1200,7 @@ ja:
   label_path_encoding: パスのエンコード
   label_pdf_with_descriptions: 説明付きPDF
   label_per_page: ページ毎
+  label_people: 人
   label_permissions: 権限
   label_permissions_report: 権限のレポート
   label_personalize_page: このページを個人用にカスタマイズする
@@ -1834,7 +1867,8 @@ ja:
     passwords: パスワード
     session: セッション
     brute_force_prevention: 自動的にユーザーをロック
-  show_hide_project_menu: プロジェクトメニューの展開/折りたたみ
+  show_project_menu: Expand project menu
+  hide_project_menu: Collapse project menu
   status_active: 有効
   status_invited: 招待済み
   status_registered: 登録済み
@@ -1849,7 +1883,11 @@ ja:
   text_are_you_sure: よろしいですか？
   text_are_you_sure_with_children: 仕事項目と子項目を削除してもよろしいですか？
   text_assign_to_project: プロジェクト自体に割り当てする
-  text_form_configuration: 'この種類の作業項目のフォームに表示される属性をカスタマイズできます。「有効」なフィールドは、値を持つ場合、折りたたまれた作業項目ビューに表示されます。「常に表示」のフィールドは、値を持たないない場合でも表示されます。有効ではないフィールドは、値を持っている場合でも、表示されません。必須ではない、またはデフォルト値を持つフィールドのみカスタマイズできます。
+  text_form_configuration: 'You can customize which attributes will be displayed in
+    forms for work packages of this type. You can freely group the attributes to reflect
+    the needs for your domain. By default fields will only be shown in the collapsed
+    work package view if they have a value. Fields that are ''Always displayed'' will
+    be visibile even if they don''t have a value.
 
 '
   text_caracters_maximum: 最大%{count}文字です。

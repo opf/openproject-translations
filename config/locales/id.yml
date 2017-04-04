@@ -45,6 +45,9 @@ id:
     show:
       no_results_title_text: Tidak ada pos untuk papan saat ini.
   custom_fields:
+    text_add_new_custom_field: New custom fields can be created on the global administration
+      before they can be added to this project. Please use the following button to
+      create a new custom field.
     is_enabled_globally: Is enabled globally
     enabled_in_project: Enabled in project
     contained_in_type: Contained in type
@@ -126,6 +129,8 @@ id:
       form_configuration: Form configuration
       projects: Project
       enabled_projects: Enabled projects
+      add_group: Add group
+      reset: Reset to defaults
   versions:
     overview:
       no_results_title_text: There are currently no work packages assigned to this
@@ -218,6 +223,12 @@ id:
   activemodel:
     errors:
       models:
+        queries/base_contract:
+          attributes:
+            project:
+              error_not_found: tidak ditemukan
+            public:
+              error_unauthorized: "- The user has no permission to create public queries."
         relations/base_contract:
           attributes:
             to:
@@ -466,6 +477,13 @@ id:
               does_not_exist: Kategori yang dipilih tidak ada.
             estimated_hours:
               only_values_greater_or_equal_zeroes_allowed: must be >= 0.
+        type:
+          attributes:
+            attribute_groups:
+              group_without_name: Unnamed groups are not allowed.
+              duplicate_group: The group name %{group} is used more than once. Group
+                names must be unique.
+              attribute_unknown: Invalid work package attribute used.
         user:
           attributes:
             password:
@@ -846,6 +864,9 @@ id:
     are enabled, as this application will not properly function without.
   error_custom_option_not_found: Option does not exist.
   error_failed_to_delete_entry: Failed to delete this entry.
+  error_invalid_group_by: 'Can''t group by: %{value}'
+  error_invalid_query_column: 'Invalid query column: %{value}'
+  error_invalid_sort_criterion: 'Can''t sort by column: %{value}'
   error_pdf_export_too_many_columns: Kolom yang dipilih utnuk ekspor PDF terlalu banyak.
     Mohon kurangi jumlah kolom.
   error_token_authenticity: Unable to verify Cross-Site Request Forgery token.
@@ -890,6 +911,12 @@ id:
     work_package_closed: Paket-Penugasan telah berakhir
     work_package_edit: Paket-Penugasan telah diedit
     work_package_note: Catatan Paket-Penugasan telah ditambah
+  export:
+    format:
+      atom: Atom
+      csv: CSV
+      pdf: PDF
+      pdf_with_descriptions: PDF disertai deskripsi
   general_csv_decimal_separator: "."
   general_csv_encoding: UTF-8
   general_csv_separator: ","
@@ -972,6 +999,7 @@ id:
   label_api_access_key_created_on: API access key dibuat %{value} yg lalu
   label_api_access_key_type: API
   label_applied_status: Status berjalan
+  label_archive_project: Archive project
   label_ascending: Askending
   label_assigned_to_me_work_packages: Paket-Penugasan yang saya kerjakan
   label_associated_revisions: Revisi terkait
@@ -1057,6 +1085,7 @@ id:
   label_date_to: Ke
   label_day_plural: hari
   label_default: Default
+  label_delete_project: Delete project
   label_deleted: dihapus
   label_deleted_custom_field: "(isian kustom dihapus)"
   label_descending: Deskending
@@ -1090,6 +1119,7 @@ id:
   label_enterprise: Enterprise
   label_enterprise_edition: Enterprise Edition
   label_environment: Environment
+  label_estimates_and_time: Estimates and time
   label_equals: adalah
   label_example: Contoh
   label_export_to: 'Juga tersedia dalam:'
@@ -1123,6 +1153,7 @@ id:
   label_in: dalam
   label_in_less_than: kurang dari
   label_in_more_than: lebih dari
+  label_inactive: Inactive
   label_incoming_emails: Email masuk
   label_includes: termasuk
   label_index_by_date: Indeks menurut tanggal
@@ -1215,6 +1246,7 @@ id:
   label_open_work_packages_plural: buka
   label_optional_description: Deskripsi
   label_options: Opsi
+  label_other: Lainnya
   label_overall_activity: Keseluruhan Activity
   label_overall_spent_time: Durasi keseluruhan
   label_overview: Tinjauan
@@ -1227,6 +1259,7 @@ id:
   label_path_encoding: Path encoding
   label_pdf_with_descriptions: PDF dengan deskripsi
   label_per_page: Per halaman
+  label_people: Orang
   label_permissions: Hak akses
   label_permissions_report: Laporan
   label_personalize_page: Personalisasi halaman
@@ -1956,7 +1989,8 @@ id:
     passwords: Password
     session: Sesi
     brute_force_prevention: Pemblokiran otomatis user
-  show_hide_project_menu: Expand/Collapse project menu
+  show_project_menu: Expand project menu
+  hide_project_menu: Collapse project menu
   status_active: aktif
   status_invited: invited
   status_registered: telah terdaftar
@@ -1975,10 +2009,10 @@ id:
   text_are_you_sure_with_children: Hapus Paket-Penugasan dan semua paket turunannya?
   text_assign_to_project: Tetapkan untuk Project
   text_form_configuration: 'You can customize which attributes will be displayed in
-    forms for work packages of this type. ''Active'' fields will be shown in the collapsed
-    work package view if they have a value, fields that are ''Always displayed'' even
-    if they don''t. Inactive fields will never be shown, even if they have a value.
-    Only fields that are not required or have a default value can be customized.
+    forms for work packages of this type. You can freely group the attributes to reflect
+    the needs for your domain. By default fields will only be shown in the collapsed
+    work package view if they have a value. Fields that are ''Always displayed'' will
+    be visibile even if they don''t have a value.
 
 '
   text_caracters_maximum: maks. %{count} karakter.

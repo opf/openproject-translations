@@ -45,6 +45,9 @@ zh:
     show:
       no_results_title_text: 目前没有发布内容。
   custom_fields:
+    text_add_new_custom_field: New custom fields can be created on the global administration
+      before they can be added to this project. Please use the following button to
+      create a new custom field.
     is_enabled_globally: Is enabled globally
     enabled_in_project: Enabled in project
     contained_in_type: Contained in type
@@ -126,6 +129,8 @@ zh:
       form_configuration: 表格配置
       projects: 项目
       enabled_projects: Enabled projects
+      add_group: Add group
+      reset: Reset to defaults
   versions:
     overview:
       no_results_title_text: 目前没有工作包分配给此版本。
@@ -200,6 +205,12 @@ zh:
   activemodel:
     errors:
       models:
+        queries/base_contract:
+          attributes:
+            project:
+              error_not_found: 未找到
+            public:
+              error_unauthorized: "- The user has no permission to create public queries."
         relations/base_contract:
           attributes:
             to:
@@ -213,7 +224,7 @@ zh:
             status:
               invalid_on_create: 不是新用户的有效状态
             auth_source:
-              error_not_found: not found
+              error_not_found: 未找到
         parse_schema_filter_params_service:
           attributes:
             base:
@@ -438,6 +449,13 @@ zh:
               does_not_exist: 指定的类别不存在。
             estimated_hours:
               only_values_greater_or_equal_zeroes_allowed: 必须 > = 0。
+        type:
+          attributes:
+            attribute_groups:
+              group_without_name: Unnamed groups are not allowed.
+              duplicate_group: The group name %{group} is used more than once. Group
+                names must be unique.
+              attribute_unknown: Invalid work package attribute used.
         user:
           attributes:
             password:
@@ -810,6 +828,9 @@ zh:
   error_cookie_missing: OpenProject cookie 丢失。请确保已启用 cookie，因为如果不启用，此应用程序将无法正常运行。
   error_custom_option_not_found: Option does not exist.
   error_failed_to_delete_entry: Failed to delete this entry.
+  error_invalid_group_by: 'Can''t group by: %{value}'
+  error_invalid_query_column: 'Invalid query column: %{value}'
+  error_invalid_sort_criterion: 'Can''t sort by column: %{value}'
   error_pdf_export_too_many_columns: 选择 PDF 导出的列太多。请减少列数。
   error_token_authenticity: 无法验证跨站域请求伪造令牌。
   error_work_package_done_ratios_not_updated: 工作包完成比率不更新。
@@ -845,6 +866,12 @@ zh:
     work_package_closed: 关闭工作包
     work_package_edit: 编辑工作包
     work_package_note: 添加工作包注释
+  export:
+    format:
+      atom: 原子
+      csv: CSV
+      pdf: PDF
+      pdf_with_descriptions: 带描述的PDF
   general_csv_decimal_separator: "."
   general_csv_encoding: UTF-8
   general_csv_separator: ","
@@ -922,6 +949,7 @@ zh:
   label_api_access_key_created_on: API 访问密钥创建于 %{value} 前
   label_api_access_key_type: API
   label_applied_status: 应用的状态
+  label_archive_project: Archive project
   label_ascending: 升序
   label_assigned_to_me_work_packages: 分配给我的工作包
   label_associated_revisions: 关联的修订版本
@@ -1007,6 +1035,7 @@ zh:
   label_date_to: 到
   label_day_plural: 天
   label_default: 默认
+  label_delete_project: Delete project
   label_deleted: 已删除
   label_deleted_custom_field: "（删除自定义字段）"
   label_descending: 降序
@@ -1039,6 +1068,7 @@ zh:
   label_enterprise: Enterprise
   label_enterprise_edition: Enterprise Edition
   label_environment: 环境
+  label_estimates_and_time: Estimates and time
   label_equals: 是
   label_example: 示例
   label_export_to: 在其中也可用：
@@ -1072,6 +1102,7 @@ zh:
   label_in: 在
   label_in_less_than: 在小于
   label_in_more_than: 在多于
+  label_inactive: Inactive
   label_incoming_emails: 传入电子邮件
   label_includes: 包括
   label_index_by_date: 按日期索引
@@ -1164,6 +1195,7 @@ zh:
   label_open_work_packages_plural: 打开
   label_optional_description: 描述
   label_options: 选项
+  label_other: 其他
   label_overall_activity: 总体活动
   label_overall_spent_time: 花的总时间
   label_overview: 概述
@@ -1176,6 +1208,7 @@ zh:
   label_path_encoding: 路径编码
   label_pdf_with_descriptions: 带描述的PDF
   label_per_page: 每页
+  label_people: 人员
   label_permissions: 权限
   label_permissions_report: 权限报告
   label_personalize_page: 对此页面进行个性化设置
@@ -1487,7 +1520,9 @@ zh:
   notice_password_confirmation_failed: 您输入的密码不正确，更改不会生效。
   notice_principals_found_multiple: "There are %{number} results found. \n Tab to
     focus the first result."
-  notice_principals_found_single: "There is one result. \n Tab to focus it."
+  notice_principals_found_single: |-
+    这有一个结果。
+    点击来关注它。
   notice_project_not_deleted: 项目没有被删除
   notice_successful_connection: 成功连接。
   notice_successful_create: 成功创建。
@@ -1831,7 +1866,8 @@ zh:
     passwords: 密码
     session: 会话
     brute_force_prevention: 自动化的用户阻止
-  show_hide_project_menu: 展开/折叠项目菜单
+  show_project_menu: Expand project menu
+  hide_project_menu: Collapse project menu
   status_active: 激活
   status_invited: 已邀请
   status_registered: 已注册
@@ -1848,7 +1884,11 @@ zh:
   text_are_you_sure: 是否确定？
   text_are_you_sure_with_children: 删除工作包和所有子工作包吗？
   text_assign_to_project: 分配给项目
-  text_form_configuration: '对于这种类型的工作包，您可以自定义以表格显示哪种属性。“活动”字段如果有值，将会以折叠工作包视图显示，即使字段没有值，也会“总是显示”。非活动字段即使有值，也绝对不会显示。仅可以自定义非必填字段或有默认值的字段。
+  text_form_configuration: 'You can customize which attributes will be displayed in
+    forms for work packages of this type. You can freely group the attributes to reflect
+    the needs for your domain. By default fields will only be shown in the collapsed
+    work package view if they have a value. Fields that are ''Always displayed'' will
+    be visibile even if they don''t have a value.
 
 '
   text_caracters_maximum: 最多 %{count} 字符。

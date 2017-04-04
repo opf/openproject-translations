@@ -45,6 +45,9 @@ lv:
     show:
       no_results_title_text: Pašlaik nav nevienu raksta.
   custom_fields:
+    text_add_new_custom_field: New custom fields can be created on the global administration
+      before they can be added to this project. Please use the following button to
+      create a new custom field.
     is_enabled_globally: Is enabled globally
     enabled_in_project: Enabled in project
     contained_in_type: Contained in type
@@ -126,6 +129,8 @@ lv:
       form_configuration: Form configuration
       projects: Projekti
       enabled_projects: Enabled projects
+      add_group: Add group
+      reset: Reset to defaults
   versions:
     overview:
       no_results_title_text: Pašlaik šai versijai nav piešķirtu darbu paku.
@@ -219,6 +224,12 @@ lv:
   activemodel:
     errors:
       models:
+        queries/base_contract:
+          attributes:
+            project:
+              error_not_found: not found
+            public:
+              error_unauthorized: "- The user has no permission to create public queries."
         relations/base_contract:
           attributes:
             to:
@@ -466,6 +477,13 @@ lv:
               does_not_exist: The specified category does not exist.
             estimated_hours:
               only_values_greater_or_equal_zeroes_allowed: jābūt > = 0.
+        type:
+          attributes:
+            attribute_groups:
+              group_without_name: Unnamed groups are not allowed.
+              duplicate_group: The group name %{group} is used more than once. Group
+                names must be unique.
+              attribute_unknown: Invalid work package attribute used.
         user:
           attributes:
             password:
@@ -863,6 +881,9 @@ lv:
     are enabled, as this application will not properly function without.
   error_custom_option_not_found: Option does not exist.
   error_failed_to_delete_entry: Failed to delete this entry.
+  error_invalid_group_by: 'Can''t group by: %{value}'
+  error_invalid_query_column: 'Invalid query column: %{value}'
+  error_invalid_sort_criterion: 'Can''t sort by column: %{value}'
   error_pdf_export_too_many_columns: Too many columns selected for the PDF export.
     Please reduce the number of columns.
   error_token_authenticity: Unable to verify Cross-Site Request Forgery token.
@@ -909,6 +930,12 @@ lv:
     work_package_closed: Slēgtie pieteikumi
     work_package_edit: Labotie pieteikumi
     work_package_note: Pieteikumam pievienotā piezīme
+  export:
+    format:
+      atom: Atoms
+      csv: CSV
+      pdf: PDF
+      pdf_with_descriptions: PDF failu ar aprakstiem
   general_csv_decimal_separator: "."
   general_csv_encoding: UTF-8
   general_csv_separator: ","
@@ -991,6 +1018,7 @@ lv:
   label_api_access_key_created_on: 'API piekļuves atslēga izveidota pirms %{value} '
   label_api_access_key_type: API
   label_applied_status: Applied status
+  label_archive_project: Archive project
   label_ascending: Ascending
   label_assigned_to_me_work_packages: Man piešķirtie pieteikumi
   label_associated_revisions: Associated revisions
@@ -1076,6 +1104,7 @@ lv:
   label_date_to: To
   label_day_plural: days
   label_default: Default
+  label_delete_project: Delete project
   label_deleted: deleted
   label_deleted_custom_field: "(deleted custom field)"
   label_descending: Descending
@@ -1108,6 +1137,7 @@ lv:
   label_enterprise: Enterprise
   label_enterprise_edition: Enterprise Edition
   label_environment: Environment
+  label_estimates_and_time: Estimates and time
   label_equals: is
   label_example: Example
   label_export_to: 'Pieejams arī:'
@@ -1142,6 +1172,7 @@ lv:
   label_in: in
   label_in_less_than: in less than
   label_in_more_than: in more than
+  label_inactive: Inactive
   label_incoming_emails: Incoming emails
   label_includes: includes
   label_index_by_date: Index by date
@@ -1234,6 +1265,7 @@ lv:
   label_open_work_packages_plural: aktīvi
   label_optional_description: Description
   label_options: Options
+  label_other: Other
   label_overall_activity: Overall activity
   label_overall_spent_time: Overall spent time
   label_overview: Pārskats
@@ -1246,6 +1278,7 @@ lv:
   label_path_encoding: Path encoding
   label_pdf_with_descriptions: PDF with Descriptions
   label_per_page: Katrā lappusē
+  label_people: Iesaistītie
   label_permissions: Permissions
   label_permissions_report: Permissions report
   label_personalize_page: Personalizēt šo lapu
@@ -1982,7 +2015,8 @@ lv:
     passwords: Passwords
     session: Session
     brute_force_prevention: Automated user blocking
-  show_hide_project_menu: Expand/Collapse project menu
+  show_project_menu: Expand project menu
+  hide_project_menu: Collapse project menu
   status_active: active
   status_invited: uzaicināts
   status_registered: registered
@@ -2001,10 +2035,10 @@ lv:
   text_are_you_sure_with_children: Delete work package and all child work packages?
   text_assign_to_project: Assign to the project
   text_form_configuration: 'You can customize which attributes will be displayed in
-    forms for work packages of this type. ''Active'' fields will be shown in the collapsed
-    work package view if they have a value, fields that are ''Always displayed'' even
-    if they don''t. Inactive fields will never be shown, even if they have a value.
-    Only fields that are not required or have a default value can be customized.
+    forms for work packages of this type. You can freely group the attributes to reflect
+    the needs for your domain. By default fields will only be shown in the collapsed
+    work package view if they have a value. Fields that are ''Always displayed'' will
+    be visibile even if they don''t have a value.
 
 '
   text_caracters_maximum: "%{count} characters maximum."

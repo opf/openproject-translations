@@ -45,6 +45,9 @@ et:
     show:
       no_results_title_text: There are currently no posts for the board.
   custom_fields:
+    text_add_new_custom_field: New custom fields can be created on the global administration
+      before they can be added to this project. Please use the following button to
+      create a new custom field.
     is_enabled_globally: Is enabled globally
     enabled_in_project: Enabled in project
     contained_in_type: Contained in type
@@ -126,6 +129,8 @@ et:
       form_configuration: Form configuration
       projects: Projektid
       enabled_projects: Enabled projects
+      add_group: Add group
+      reset: Reset to defaults
   versions:
     overview:
       no_results_title_text: There are currently no work packages assigned to this
@@ -222,6 +227,12 @@ et:
   activemodel:
     errors:
       models:
+        queries/base_contract:
+          attributes:
+            project:
+              error_not_found: not found
+            public:
+              error_unauthorized: "- The user has no permission to create public queries."
         relations/base_contract:
           attributes:
             to:
@@ -469,6 +480,13 @@ et:
               does_not_exist: The specified category does not exist.
             estimated_hours:
               only_values_greater_or_equal_zeroes_allowed: must be >= 0.
+        type:
+          attributes:
+            attribute_groups:
+              group_without_name: Unnamed groups are not allowed.
+              duplicate_group: The group name %{group} is used more than once. Group
+                names must be unique.
+              attribute_unknown: Invalid work package attribute used.
         user:
           attributes:
             password:
@@ -851,6 +869,9 @@ et:
     are enabled, as this application will not properly function without.
   error_custom_option_not_found: Option does not exist.
   error_failed_to_delete_entry: Failed to delete this entry.
+  error_invalid_group_by: 'Can''t group by: %{value}'
+  error_invalid_query_column: 'Invalid query column: %{value}'
+  error_invalid_sort_criterion: 'Can''t sort by column: %{value}'
   error_pdf_export_too_many_columns: Too many columns selected for the PDF export.
     Please reduce the number of columns.
   error_token_authenticity: Unable to verify Cross-Site Request Forgery token.
@@ -898,6 +919,12 @@ et:
     work_package_closed: Teema on suletud
     work_package_edit: Teemat on uuendatud
     work_package_note: Teemale on lisatud märkus
+  export:
+    format:
+      atom: Atom
+      csv: CSV
+      pdf: PDF
+      pdf_with_descriptions: PDF koos kirjeldustega
   general_csv_decimal_separator: "."
   general_csv_encoding: UTF-8
   general_csv_separator: ","
@@ -980,6 +1007,7 @@ et:
   label_api_access_key_created_on: API ligipääsutunnus on loodud %{value} tagasi
   label_api_access_key_type: API
   label_applied_status: Rakendatud olek
+  label_archive_project: Archive project
   label_ascending: Kasvav
   label_assigned_to_me_work_packages: Minu teemad
   label_associated_revisions: Seotud muudatused
@@ -1065,6 +1093,7 @@ et:
   label_date_to: Lõpp
   label_day_plural: päeva
   label_default: Vaikimisi
+  label_delete_project: Delete project
   label_deleted: kustutatud
   label_deleted_custom_field: "(kustutatud lisaväli)"
   label_descending: Kahanev
@@ -1098,6 +1127,7 @@ et:
   label_enterprise: Enterprise
   label_enterprise_edition: Enterprise Edition
   label_environment: Keskkond
+  label_estimates_and_time: Estimates and time
   label_equals: võrdub
   label_example: Näide
   label_export_to: 'Saadaval ka:'
@@ -1132,6 +1162,7 @@ et:
   label_in: sisaldub hulgas
   label_in_less_than: on väiksem kui
   label_in_more_than: on suurem kui
+  label_inactive: Inactive
   label_incoming_emails: Sissetulevad e-postisõnumid
   label_includes: includes
   label_index_by_date: Indeks kuupäeva järgi
@@ -1224,6 +1255,7 @@ et:
   label_open_work_packages_plural: avatud
   label_optional_description: Kirjeldus
   label_options: Valikud
+  label_other: Muu
   label_overall_activity: Üldine tegevuste ajalugu
   label_overall_spent_time: Kokku kulutatud aeg
   label_overview: Ülevaade
@@ -1236,6 +1268,7 @@ et:
   label_path_encoding: Teeraja kodeering
   label_pdf_with_descriptions: PDF koos kirjeldustega
   label_per_page: Lehekülje kohta
+  label_people: Inimesed
   label_permissions: Õigused
   label_permissions_report: Õiguste aruanne
   label_personalize_page: Isikupärasta see leht
@@ -1966,7 +1999,8 @@ et:
     passwords: Paroolid
     session: Seanss
     brute_force_prevention: Automatiseeritud kasutajate blokeerimine
-  show_hide_project_menu: Expand/Collapse project menu
+  show_project_menu: Expand project menu
+  hide_project_menu: Collapse project menu
   status_active: aktiivne
   status_invited: invited
   status_registered: registreeritud
@@ -1986,10 +2020,10 @@ et:
     alamteemadega täielikult kustutada?
   text_assign_to_project: Määra projektile
   text_form_configuration: 'You can customize which attributes will be displayed in
-    forms for work packages of this type. ''Active'' fields will be shown in the collapsed
-    work package view if they have a value, fields that are ''Always displayed'' even
-    if they don''t. Inactive fields will never be shown, even if they have a value.
-    Only fields that are not required or have a default value can be customized.
+    forms for work packages of this type. You can freely group the attributes to reflect
+    the needs for your domain. By default fields will only be shown in the collapsed
+    work package view if they have a value. Fields that are ''Always displayed'' will
+    be visibile even if they don''t have a value.
 
 '
   text_caracters_maximum: "%{count} märki kõige rohkem."

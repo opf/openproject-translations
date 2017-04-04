@@ -11,28 +11,27 @@ fi:
     plugins:
       no_results_title_text: Tällä hetkellä ei ole liitännäisiä saatavilla.
     custom_styles:
-      custom_colors: Custom colors
-      customize: 'Customize your OpenProject installation with your own logo. Note:
-        This logo will be publicly accessible.'
+      custom_colors: Mukautetut värit
+      customize: 'Mukauta OpenProject asennusta omalla logollasi. Huom: Tämä logo
+        tulee olemaan julkisesti saatavilla.'
       enterprise_notice: As a special 'Thank you!' for their financial contribution
         to develop OpenProject, this tiny feature is only available for Enterprise
         Edition support subscribers.
-      manage_colors: Edit color select options
+      manage_colors: Muokkaa värin valitsemis asetuksia
       instructions:
-        primary_color: Main color.
-        primary_color_dark: Typically a darker version of the main color used for
-          hover effects.
+        primary_color: Pääväri.
+        primary_color_dark: Yleensä tummempi versio pääväristä on käytössä valintatehosteissa.
         alternative_color: Strong accent color, typically used for most the important
           button on a screen.
     enterprise:
-      upgrade_to_ee: Upgrade to Enterprise Edition
+      upgrade_to_ee: Päivitä yritysversioon
       add_token: Upload an Enterprise Edition support token
       replace_token: Replace your current support token
-      order: Order Enterprise Edition
+      order: Tilaa yritysversio
       paste: Paste your Enterprise Edition support token
       required_for_feature: This feature is only available with an active Enterprise
         Edition support token.
-      enterprise_link: For more information, click here.
+      enterprise_link: Saadaksesi lisätietoja, paina tästä.
   announcements:
     show_until: Näytä tähän päivään asti
     is_active: näkyvissä tällä hetkellä
@@ -45,8 +44,11 @@ fi:
     show:
       no_results_title_text: Tällä hetkellä taululla ei ole viestejä.
   custom_fields:
-    is_enabled_globally: Is enabled globally
-    enabled_in_project: Enabled in project
+    text_add_new_custom_field: New custom fields can be created on the global administration
+      before they can be added to this project. Please use the following button to
+      create a new custom field.
+    is_enabled_globally: On käytössä kaikkialla
+    enabled_in_project: Käytössä projektissa
     contained_in_type: Contained in type
     tab:
       no_results_title_text: Tällä hetkellä ei ole mukautettuja kenttiä.
@@ -126,6 +128,8 @@ fi:
       form_configuration: Lomakkeen muokkaus
       projects: Projektit
       enabled_projects: Enabled projects
+      add_group: Add group
+      reset: Reset to defaults
   versions:
     overview:
       no_results_title_text: Tähän versioon ei ole liitetty yhtään työpakettia.
@@ -224,6 +228,12 @@ fi:
   activemodel:
     errors:
       models:
+        queries/base_contract:
+          attributes:
+            project:
+              error_not_found: ei löydetty
+            public:
+              error_unauthorized: "- The user has no permission to create public queries."
         relations/base_contract:
           attributes:
             to:
@@ -241,7 +251,7 @@ fi:
         parse_schema_filter_params_service:
           attributes:
             base:
-              unsupported_operator: The operator is not supported.
+              unsupported_operator: Operaattoria ei tueta.
               invalid_values: Virheellinen arvo.
               id_filter_required: An 'id' filter is required.
   activerecord:
@@ -275,7 +285,7 @@ fi:
         is_required: Pakollinen tieto
         max_length: Enimmäispituus
         min_length: Vähimmäispituus
-        multi_value: Allow multi-select
+        multi_value: Salli usean kohteen valinta
         possible_values: Mahdolliset arvot
         regexp: Säännöllinen lauseke (reg exp)
         searchable: Haettavissa
@@ -283,9 +293,9 @@ fi:
       custom_value:
         value: Arvo
       enterprise_token:
-        starts_at: Valid since
-        expires_at: Expires at
-        subscriber: Subscriber
+        starts_at: Voimassa alkaen
+        expires_at: Vanhenee
+        subscriber: Tilaaja
         encoded_token: Enterprise support token
       relation:
         delay: Viive
@@ -472,6 +482,13 @@ fi:
               does_not_exist: Määritettyä luokkaa ei ole.
             estimated_hours:
               only_values_greater_or_equal_zeroes_allowed: on oltava > = 0.
+        type:
+          attributes:
+            attribute_groups:
+              group_without_name: Unnamed groups are not allowed.
+              duplicate_group: The group name %{group} is used more than once. Group
+                names must be unique.
+              attribute_unknown: Invalid work package attribute used.
         user:
           attributes:
             password:
@@ -849,8 +866,11 @@ fi:
   error_check_user_and_role: Please choose a user and a role.
   error_cookie_missing: OpenProject evästeen puuttuu. Varmista, että evästeet ovat
     käytössä, koska tämä sovellus ei toimi oikein ilman evästeitä.
-  error_custom_option_not_found: Option does not exist.
+  error_custom_option_not_found: Vaihtoehtoa ei ole olemassa.
   error_failed_to_delete_entry: Tämän merkinnän poisto ei onnistunut.
+  error_invalid_group_by: 'Can''t group by: %{value}'
+  error_invalid_query_column: 'Invalid query column: %{value}'
+  error_invalid_sort_criterion: 'Can''t sort by column: %{value}'
   error_pdf_export_too_many_columns: Liikaa sarakkeita valittuina PDF-vientiin. Pienennä
     sarakkeiden määrää.
   error_token_authenticity: Unable to verify Cross-Site Request Forgery token.
@@ -896,6 +916,12 @@ fi:
     work_package_closed: Työpaketti suljettu
     work_package_edit: Työpakettia muokattu
     work_package_note: Työpaketin huomio lisätty
+  export:
+    format:
+      atom: Atom
+      csv: CSV
+      pdf: PDF
+      pdf_with_descriptions: PDF kuvauksilla
   general_csv_decimal_separator: "."
   general_csv_encoding: ISO-8859-15
   general_csv_separator: ","
@@ -915,16 +941,16 @@ fi:
     blocks:
       community: OpenProject yhteisö
       upsale:
-        become_hero: Become a hero!
-        title: Upgrade to Enterprise Edition
-        description: Boost your productivity with the Enterprise Edition
-        more_info: More information
-        additional_features: Additional powerful premium features
+        become_hero: Ryhdy sankariksi!
+        title: Päivitä yritysversioon
+        description: Tehosta tuottavuuttasi yritysversiolla
+        more_info: Lisätietoja
+        additional_features: Muita tehokkaita erikoisominaisuuksia
         professional_support: Professional support from the OpenProject experts
-        you_contribute: Developers need to pay their bills, too. With Enterprise Edition
-          you substantially contribute to this Open-Source community effort.
+        you_contribute: Myös kehittäjien täytyy maksaa heidän laskunsa. Yritysversiolla
+          edistät merkittävästi tämän avoimen lähdekoodin yhteisön toimintaa.
     links:
-      upgrade_enterprise_edition: Upgrade to Enterprise Edition
+      upgrade_enterprise_edition: Päivitä yritysversioon
       user_guides: Käyttöoppaat
       faq: UKK
       glossary: Sanasto
@@ -978,6 +1004,7 @@ fi:
   label_api_access_key_created_on: API access key created %{value} ago
   label_api_access_key_type: API
   label_applied_status: Käytetty tila
+  label_archive_project: Archive project
   label_ascending: Nouseva
   label_assigned_to_me_work_packages: Minulle määritetyt työpaketit
   label_associated_revisions: Liittyvät versiot
@@ -1012,7 +1039,7 @@ fi:
   label_category: Kategoria
   label_wiki_menu_item: Wiki-valikkovaihtoehto
   label_select_main_menu_item: Valitse uusi valikkovaihtoehto päävalikkoon
-  label_select_project: Select a project
+  label_select_project: Valitse projekti
   label_required_disk_storage: Tarvittava levytila
   label_resend_invitation: Lähetä kutsu uudelleen
   label_change_plural: Muutokset
@@ -1063,6 +1090,7 @@ fi:
   label_date_to: Päättyen
   label_day_plural: päivää
   label_default: Oletus
+  label_delete_project: Delete project
   label_deleted: poistettu
   label_deleted_custom_field: "(poistettu mukautettu kenttä)"
   label_descending: Laskeva
@@ -1092,9 +1120,10 @@ fi:
   label_enumeration_new: Uusi arvo
   label_enumeration_value: Luettelointiarvo
   label_enumerations: Lista
-  label_enterprise: Enterprise
-  label_enterprise_edition: Enterprise Edition
+  label_enterprise: Yritys
+  label_enterprise_edition: Yritysversio
   label_environment: Ympäristö
+  label_estimates_and_time: Estimates and time
   label_equals: sama kuin
   label_example: Esimerkki
   label_export_to: Vie
@@ -1129,6 +1158,7 @@ fi:
   label_in: tässä
   label_in_less_than: pienempi kuin
   label_in_more_than: suurempi kuin
+  label_inactive: Inactive
   label_incoming_emails: Saapuvat sähköpostiviestit
   label_includes: sisältää
   label_index_by_date: Hakemisto päivittäin
@@ -1160,7 +1190,7 @@ fi:
   label_loading: Lataa...
   label_logged_as: Kirjautuneena
   label_login: Kirjaudu
-  label_custom_logo: Custom logo
+  label_custom_logo: Oma logo
   label_logout: Kirjaudu ulos
   label_main_menu: Sivuvalikko
   label_manage_groups: Ryhmien hallinta
@@ -1221,6 +1251,7 @@ fi:
   label_open_work_packages_plural: avoinna
   label_optional_description: Kuvaus
   label_options: Valinnat
+  label_other: Muut
   label_overall_activity: Kokonaishistoria
   label_overall_spent_time: Käytetty kokonaisaika
   label_overview: Yleiskatsaus
@@ -1233,6 +1264,7 @@ fi:
   label_path_encoding: Polun koodaus
   label_pdf_with_descriptions: PDF kuvauksilla
   label_per_page: Per sivu
+  label_people: Henkilöt
   label_permissions: Oikeudet
   label_permissions_report: Käyttöoikeudet-raportti
   label_personalize_page: Personoi tämä sivu
@@ -1968,7 +2000,8 @@ fi:
     passwords: Passwords
     session: Session
     brute_force_prevention: Automated user blocking
-  show_hide_project_menu: Laajenna tai tiivistä projektivalikko
+  show_project_menu: Expand project menu
+  hide_project_menu: Collapse project menu
   status_active: aktiivinen
   status_invited: kutsuttu
   status_registered: registered
@@ -1987,10 +2020,10 @@ fi:
   text_are_you_sure_with_children: Delete work package and all child work packages?
   text_assign_to_project: Assign to the project
   text_form_configuration: 'You can customize which attributes will be displayed in
-    forms for work packages of this type. ''Active'' fields will be shown in the collapsed
-    work package view if they have a value, fields that are ''Always displayed'' even
-    if they don''t. Inactive fields will never be shown, even if they have a value.
-    Only fields that are not required or have a default value can be customized.
+    forms for work packages of this type. You can freely group the attributes to reflect
+    the needs for your domain. By default fields will only be shown in the collapsed
+    work package view if they have a value. Fields that are ''Always displayed'' will
+    be visibile even if they don''t have a value.
 
 '
   text_caracters_maximum: "%{count} merkkiä enintään."

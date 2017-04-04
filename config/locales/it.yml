@@ -45,6 +45,9 @@ it:
     show:
       no_results_title_text: Al momento non vi sono messaggi in bacheca.
   custom_fields:
+    text_add_new_custom_field: New custom fields can be created on the global administration
+      before they can be added to this project. Please use the following button to
+      create a new custom field.
     is_enabled_globally: Is enabled globally
     enabled_in_project: Enabled in project
     contained_in_type: Contained in type
@@ -126,6 +129,8 @@ it:
       form_configuration: Configurazione del modulo
       projects: Progetti
       enabled_projects: Enabled projects
+      add_group: Add group
+      reset: Reset to defaults
   versions:
     overview:
       no_results_title_text: Al momento non vi è alcuna macro-attività assegnata a
@@ -228,6 +233,12 @@ it:
   activemodel:
     errors:
       models:
+        queries/base_contract:
+          attributes:
+            project:
+              error_not_found: non trovato
+            public:
+              error_unauthorized: "- The user has no permission to create public queries."
         relations/base_contract:
           attributes:
             to:
@@ -481,6 +492,13 @@ it:
               does_not_exist: La categoria specificata non esiste.
             estimated_hours:
               only_values_greater_or_equal_zeroes_allowed: deve essere >=0.
+        type:
+          attributes:
+            attribute_groups:
+              group_without_name: Unnamed groups are not allowed.
+              duplicate_group: The group name %{group} is used more than once. Group
+                names must be unique.
+              attribute_unknown: Invalid work package attribute used.
         user:
           attributes:
             password:
@@ -867,6 +885,9 @@ it:
     cookie siano attivati, questa applicazione non funziona correttamente senza.
   error_custom_option_not_found: Option does not exist.
   error_failed_to_delete_entry: Failed to delete this entry.
+  error_invalid_group_by: 'Can''t group by: %{value}'
+  error_invalid_query_column: 'Invalid query column: %{value}'
+  error_invalid_sort_criterion: 'Can''t sort by column: %{value}'
   error_pdf_export_too_many_columns: Troppe colonne selezionate per l'esportazione
     in PDF. Ridurre il numero di colonne.
   error_token_authenticity: Impossibile verificare il token di Cross-Site Request
@@ -917,6 +938,12 @@ it:
     work_package_closed: Pacchetto di lavoro chiuso
     work_package_edit: Macro-attività (work package) modificato
     work_package_note: Aggiunta nota alla macro-attività (work package)
+  export:
+    format:
+      atom: Atom
+      csv: CSV
+      pdf: PDF
+      pdf_with_descriptions: PDF con descrizioni
   general_csv_decimal_separator: "."
   general_csv_encoding: UTF-8
   general_csv_separator: ","
@@ -999,6 +1026,7 @@ it:
   label_api_access_key_created_on: Chiave di accesso API creata %{value} fa
   label_api_access_key_type: API
   label_applied_status: Stato applicato
+  label_archive_project: Archive project
   label_ascending: Crescente
   label_assigned_to_me_work_packages: Pacchetti di lavoro assegnati a me
   label_associated_revisions: Revisioni associate
@@ -1085,6 +1113,7 @@ it:
   label_date_to: A
   label_day_plural: giorni
   label_default: Predefinito
+  label_delete_project: Delete project
   label_deleted: cancellato
   label_deleted_custom_field: "(campo personalizzato eliminato)"
   label_descending: Decrescente
@@ -1117,6 +1146,7 @@ it:
   label_enterprise: Enterprise
   label_enterprise_edition: Enterprise Edition
   label_environment: Ambiente
+  label_estimates_and_time: Estimates and time
   label_equals: è
   label_example: Esempio
   label_export_to: 'Disponibile anche in:'
@@ -1151,6 +1181,7 @@ it:
   label_in: in
   label_in_less_than: in meno di
   label_in_more_than: in più di
+  label_inactive: Inactive
   label_incoming_emails: Email in arrivo
   label_includes: include
   label_index_by_date: Indicizza per data
@@ -1243,6 +1274,7 @@ it:
   label_open_work_packages_plural: aperte
   label_optional_description: Descrizione
   label_options: Opzioni
+  label_other: Altro
   label_overall_activity: Totale attività
   label_overall_spent_time: Totale tempo impiegato
   label_overview: Panoramica
@@ -1255,6 +1287,7 @@ it:
   label_path_encoding: Codifica del percorso
   label_pdf_with_descriptions: PDF con Descrizioni
   label_per_page: Per pagina
+  label_people: Persone
   label_permissions: Permessi
   label_permissions_report: Report permessi
   label_personalize_page: Personalizza questa pagina
@@ -2037,7 +2070,8 @@ it:
     passwords: Password
     session: Sessione
     brute_force_prevention: Blocco automatico degli utenti
-  show_hide_project_menu: Espandi/Comprimi il menù di progetto
+  show_project_menu: Expand project menu
+  hide_project_menu: Collapse project menu
   status_active: attivo
   status_invited: invitato
   status_registered: registrato
@@ -2056,12 +2090,11 @@ it:
   text_are_you_sure_with_children: Eliminare la macro-attività (work package) e tutte
     le sue sotto-attività?
   text_assign_to_project: Assegna al progetto
-  text_form_configuration: 'È possibile personalizzare quali attributi visualizzare
-    nei moduli per macro-attività di questo tipo. I campi ''Attivi'' se hanno un valore
-    saranno visualizzati nella vista compressa delle macro-attività, i campi ''Mostra
-    sempre'' saranno visualizzati anche se non lo fanno. I campi inattivi non saranno
-    mai mostrati, anche se hanno un valore. Possono essere personalizzati solo i campi
-    che non sono necessari o che hanno un valore predefinito.
+  text_form_configuration: 'You can customize which attributes will be displayed in
+    forms for work packages of this type. You can freely group the attributes to reflect
+    the needs for your domain. By default fields will only be shown in the collapsed
+    work package view if they have a value. Fields that are ''Always displayed'' will
+    be visibile even if they don''t have a value.
 
 '
   text_caracters_maximum: "%{count} caratteri massimo."

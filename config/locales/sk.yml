@@ -45,6 +45,9 @@ sk:
     show:
       no_results_title_text: Panel v súčasnosti nemá žiadne príspevky.
   custom_fields:
+    text_add_new_custom_field: New custom fields can be created on the global administration
+      before they can be added to this project. Please use the following button to
+      create a new custom field.
     is_enabled_globally: Is enabled globally
     enabled_in_project: Enabled in project
     contained_in_type: Contained in type
@@ -126,6 +129,8 @@ sk:
       form_configuration: Konfigurácia formulára
       projects: Projekty
       enabled_projects: Enabled projects
+      add_group: Add group
+      reset: Reset to defaults
   versions:
     overview:
       no_results_title_text: Momentálne nie sú priradené žiadne pracovné balíky k
@@ -228,6 +233,12 @@ sk:
   activemodel:
     errors:
       models:
+        queries/base_contract:
+          attributes:
+            project:
+              error_not_found: not found
+            public:
+              error_unauthorized: "- The user has no permission to create public queries."
         relations/base_contract:
           attributes:
             to:
@@ -478,6 +489,13 @@ sk:
               does_not_exist: Špecifikovaná kategória neexistuje.
             estimated_hours:
               only_values_greater_or_equal_zeroes_allowed: musí byť najmenej 0.
+        type:
+          attributes:
+            attribute_groups:
+              group_without_name: Unnamed groups are not allowed.
+              duplicate_group: The group name %{group} is used more than once. Group
+                names must be unique.
+              attribute_unknown: Invalid work package attribute used.
         user:
           attributes:
             password:
@@ -877,6 +895,9 @@ sk:
     povolené súbory cookie, nakoľko bez nich táto aplikácia nebude správne fungovať.
   error_custom_option_not_found: Option does not exist.
   error_failed_to_delete_entry: Failed to delete this entry.
+  error_invalid_group_by: 'Can''t group by: %{value}'
+  error_invalid_query_column: 'Invalid query column: %{value}'
+  error_invalid_sort_criterion: 'Can''t sort by column: %{value}'
   error_pdf_export_too_many_columns: Too many columns selected for the PDF export.
     Please reduce the number of columns.
   error_token_authenticity: Nie je možné overiť token medzi stránkovej požiadavky.
@@ -924,6 +945,12 @@ sk:
     work_package_closed: Pracovný balíček uzatvorený
     work_package_edit: Pracovný balíček upravený
     work_package_note: Poznámka pracovného balíčka pridaná
+  export:
+    format:
+      atom: Atom
+      csv: CSV
+      pdf: PDF
+      pdf_with_descriptions: PDF s popisom
   general_csv_decimal_separator: "."
   general_csv_encoding: UTF-8
   general_csv_separator: ","
@@ -1006,6 +1033,7 @@ sk:
   label_api_access_key_created_on: Prístupový kľúč pre API vytvorený %{value} vzad
   label_api_access_key_type: API
   label_applied_status: Aplikovaný stav
+  label_archive_project: Archive project
   label_ascending: Vzostupne
   label_assigned_to_me_work_packages: Mne priradené pracovné balíčky
   label_associated_revisions: Súvisiace revízie
@@ -1091,6 +1119,7 @@ sk:
   label_date_to: Do
   label_day_plural: dní
   label_default: Predvolený
+  label_delete_project: Delete project
   label_deleted: odstránené
   label_deleted_custom_field: "(odstrániť vlastné pole)"
   label_descending: Zostupne
@@ -1123,6 +1152,7 @@ sk:
   label_enterprise: Enterprise
   label_enterprise_edition: Enterprise Edition
   label_environment: Prostredie
+  label_estimates_and_time: Estimates and time
   label_equals: je
   label_example: Príklad
   label_export_to: 'K dispozícii tiež ako:'
@@ -1157,6 +1187,7 @@ sk:
   label_in: v
   label_in_less_than: v menej ako
   label_in_more_than: vo viac ako
+  label_inactive: Inactive
   label_incoming_emails: Prichádzajúce e-maily
   label_includes: includes
   label_index_by_date: Indexovať podľa dátumu
@@ -1249,6 +1280,7 @@ sk:
   label_open_work_packages_plural: otvorené
   label_optional_description: Popis
   label_options: Voľby
+  label_other: Ostatné
   label_overall_activity: Celková aktivita
   label_overall_spent_time: Celkový strávený čas
   label_overview: Prehľad
@@ -1261,6 +1293,7 @@ sk:
   label_path_encoding: Kódovanie cesty
   label_pdf_with_descriptions: PDF s popisom
   label_per_page: Na stranu
+  label_people: Ľudia
   label_permissions: Oprávnenia
   label_permissions_report: Výkaz oprávnení
   label_personalize_page: Prispôsobiť túto stránku
@@ -2007,7 +2040,8 @@ sk:
     passwords: Heslá
     session: Relácie
     brute_force_prevention: Automatizované blokovanie používateľa
-  show_hide_project_menu: Rozbaliť/Zbaliť ponuku projektu
+  show_project_menu: Expand project menu
+  hide_project_menu: Collapse project menu
   status_active: active
   status_invited: invited
   status_registered: registrovaný
@@ -2025,12 +2059,11 @@ sk:
   text_are_you_sure: Are you sure?
   text_are_you_sure_with_children: Delete work package and all child work packages?
   text_assign_to_project: Assign to the project
-  text_form_configuration: 'Môžete prispôsobiť, ktoré atribúty sa zobrazia vo formulároch
-    na prácu s pracovnými balíkmi tohto typu. "Aktívne" polia sa zobrazia v zbalenom
-    zobrazení balíka ak majú nastavenú hodnotu, polia, ktoré sú "Vždy zobrazené",
-    sa zobrazia aj bez hodnoty. Neaktívne polia sa nikdy nezobrazia, ani keď budú
-    mať hodnotu. Len polia, ktoré nie sú povinné, alebo majú predvolenú hodnotu možno
-    prispôsobiť.
+  text_form_configuration: 'You can customize which attributes will be displayed in
+    forms for work packages of this type. You can freely group the attributes to reflect
+    the needs for your domain. By default fields will only be shown in the collapsed
+    work package view if they have a value. Fields that are ''Always displayed'' will
+    be visibile even if they don''t have a value.
 
 '
   text_caracters_maximum: "%{count} characters maximum."

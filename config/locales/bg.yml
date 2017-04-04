@@ -45,6 +45,9 @@ bg:
     show:
       no_results_title_text: Понастоящем няма съобщения на дъската.
   custom_fields:
+    text_add_new_custom_field: New custom fields can be created on the global administration
+      before they can be added to this project. Please use the following button to
+      create a new custom field.
     is_enabled_globally: Is enabled globally
     enabled_in_project: Enabled in project
     contained_in_type: Contained in type
@@ -126,6 +129,8 @@ bg:
       form_configuration: Конфигурация на формата
       projects: Проекти
       enabled_projects: Enabled projects
+      add_group: Add group
+      reset: Reset to defaults
   versions:
     overview:
       no_results_title_text: В момента има няма работни пакети, присвоен на тази версия.
@@ -225,6 +230,12 @@ bg:
   activemodel:
     errors:
       models:
+        queries/base_contract:
+          attributes:
+            project:
+              error_not_found: not found
+            public:
+              error_unauthorized: "- The user has no permission to create public queries."
         relations/base_contract:
           attributes:
             to:
@@ -473,6 +484,13 @@ bg:
               does_not_exist: Определената категория не съществува.
             estimated_hours:
               only_values_greater_or_equal_zeroes_allowed: трябва да бъде > = 0.
+        type:
+          attributes:
+            attribute_groups:
+              group_without_name: Unnamed groups are not allowed.
+              duplicate_group: The group name %{group} is used more than once. Group
+                names must be unique.
+              attribute_unknown: Invalid work package attribute used.
         user:
           attributes:
             password:
@@ -855,6 +873,9 @@ bg:
     са активирани, тъй като това приложение не функционира правилно без тях.'
   error_custom_option_not_found: Option does not exist.
   error_failed_to_delete_entry: Failed to delete this entry.
+  error_invalid_group_by: 'Can''t group by: %{value}'
+  error_invalid_query_column: 'Invalid query column: %{value}'
+  error_invalid_sort_criterion: 'Can''t sort by column: %{value}'
   error_pdf_export_too_many_columns: Too many columns selected for the PDF export.
     Please reduce the number of columns.
   error_token_authenticity: Не може да удостовери аутентикацията между сайтовете.
@@ -902,6 +923,12 @@ bg:
     work_package_closed: Работният пакет е затворен
     work_package_edit: Работният пакет е редактиран
     work_package_note: Добавена бележка за работен пакет
+  export:
+    format:
+      atom: Атом
+      csv: CSV
+      pdf: PDF
+      pdf_with_descriptions: PDF с описания
   general_csv_decimal_separator: "."
   general_csv_encoding: UTF-8
   general_csv_separator: ","
@@ -984,6 +1011,7 @@ bg:
   label_api_access_key_created_on: API ключ за достъп е създаден преди %{value}
   label_api_access_key_type: API
   label_applied_status: Приложен статус
+  label_archive_project: Archive project
   label_ascending: Възходящо
   label_assigned_to_me_work_packages: Работни пакети, възложени на мен
   label_associated_revisions: Асоциирани ревизии
@@ -1070,6 +1098,7 @@ bg:
   label_date_to: До
   label_day_plural: дни
   label_default: По подразбиране
+  label_delete_project: Delete project
   label_deleted: изтрит
   label_deleted_custom_field: "(изтрито потребителско поле)"
   label_descending: Низходящо
@@ -1103,6 +1132,7 @@ bg:
   label_enterprise: Enterprise
   label_enterprise_edition: Enterprise Edition
   label_environment: Среда
+  label_estimates_and_time: Estimates and time
   label_equals: е
   label_example: Пример
   label_export_to: 'Also available in:'
@@ -1137,6 +1167,7 @@ bg:
   label_in: в
   label_in_less_than: в по-малко от
   label_in_more_than: в повече от
+  label_inactive: Inactive
   label_incoming_emails: Входящи имейли
   label_includes: includes
   label_index_by_date: Индекс по дата
@@ -1229,6 +1260,7 @@ bg:
   label_open_work_packages_plural: open
   label_optional_description: Описание
   label_options: Опции
+  label_other: Други
   label_overall_activity: Overall activity
   label_overall_spent_time: Overall spent time
   label_overview: Общ преглед
@@ -1241,6 +1273,7 @@ bg:
   label_path_encoding: Path encoding
   label_pdf_with_descriptions: PDF с описания
   label_per_page: На страница
+  label_people: Участници
   label_permissions: Права
   label_permissions_report: Доклади за права
   label_personalize_page: Персонализирай тази страница
@@ -1977,7 +2010,8 @@ bg:
     passwords: Пароли
     session: Сесия
     brute_force_prevention: Automated user blocking
-  show_hide_project_menu: Разгъване/свиване на проектното меню
+  show_project_menu: Expand project menu
+  hide_project_menu: Collapse project menu
   status_active: active
   status_invited: invited
   status_registered: registered
@@ -1995,12 +2029,11 @@ bg:
   text_are_you_sure: Сигурни ли сте?
   text_are_you_sure_with_children: Delete work package and all child work packages?
   text_assign_to_project: Assign to the project
-  text_form_configuration: 'Можете да персонализирате кои атрибути ще бъдат показани
-    във форми за работни пакети от този тип. "Активни" полета ще бъдат показани в
-    изгледа срина работа пакет, ако те имат стойност, полета, които са "Винаги показва"
-    дори ако те не. Неактивни полета никога не ще бъдат показани, дори ако те имат
-    стойност. Единствените полета, които не са необходими или имат стойност по подразбиране
-    може да бъде персонализиран.
+  text_form_configuration: 'You can customize which attributes will be displayed in
+    forms for work packages of this type. You can freely group the attributes to reflect
+    the needs for your domain. By default fields will only be shown in the collapsed
+    work package view if they have a value. Fields that are ''Always displayed'' will
+    be visibile even if they don''t have a value.
 
 '
   text_caracters_maximum: "%{count} characters maximum."

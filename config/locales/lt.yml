@@ -44,6 +44,9 @@ lt:
     show:
       no_results_title_text: Nėra jokių įrašų pranešimų lentoje.
   custom_fields:
+    text_add_new_custom_field: New custom fields can be created on the global administration
+      before they can be added to this project. Please use the following button to
+      create a new custom field.
     is_enabled_globally: Is enabled globally
     enabled_in_project: Enabled in project
     contained_in_type: Contained in type
@@ -123,6 +126,8 @@ lt:
       form_configuration: Formos konfigūracija
       projects: Projektai
       enabled_projects: Įgalinti projektai
+      add_group: Add group
+      reset: Reset to defaults
   versions:
     overview:
       no_results_title_text: Šiuo metu nėra šiai versijai priskirtų darbų paketų.
@@ -217,6 +222,12 @@ lt:
   activemodel:
     errors:
       models:
+        queries/base_contract:
+          attributes:
+            project:
+              error_not_found: nerasta
+            public:
+              error_unauthorized: "- The user has no permission to create public queries."
         relations/base_contract:
           attributes:
             to:
@@ -463,6 +474,13 @@ lt:
               does_not_exist: Nurodyta kategorija neegzistuoja.
             estimated_hours:
               only_values_greater_or_equal_zeroes_allowed: turi būti >= 0.
+        type:
+          attributes:
+            attribute_groups:
+              group_without_name: Unnamed groups are not allowed.
+              duplicate_group: The group name %{group} is used more than once. Group
+                names must be unique.
+              attribute_unknown: Invalid work package attribute used.
         user:
           attributes:
             password:
@@ -863,6 +881,9 @@ lt:
     yra įgalinti, nes kitaip aplikacija tinkamai neveiks.
   error_custom_option_not_found: Galimybė neegzistuoja.
   error_failed_to_delete_entry: Šio įrašo nepavyko panaikinti.
+  error_invalid_group_by: 'Can''t group by: %{value}'
+  error_invalid_query_column: 'Invalid query column: %{value}'
+  error_invalid_sort_criterion: 'Can''t sort by column: %{value}'
   error_pdf_export_too_many_columns: PDF eksportavimui pasirinkta per daug stulpelių.
     Prašome sumažinti stulpelių skaičių.
   error_token_authenticity: Nepavyko patvirtinti Cross-Site Request Forgery rakto.
@@ -907,6 +928,12 @@ lt:
     work_package_closed: Darbų paketas uždarytas
     work_package_edit: Darbų paketas redaguotas
     work_package_note: Darbų paketo pastaba pridėta
+  export:
+    format:
+      atom: Atom
+      csv: CSV
+      pdf: PDF
+      pdf_with_descriptions: PDF su aprašymu
   general_csv_decimal_separator: "."
   general_csv_encoding: UTF-8
   general_csv_separator: ","
@@ -989,6 +1016,7 @@ lt:
   label_api_access_key_created_on: API prieigos raktas sukurtas prieš %{value}
   label_api_access_key_type: API
   label_applied_status: Taikomoji būsena
+  label_archive_project: Archive project
   label_ascending: Didėjančia tvarka
   label_assigned_to_me_work_packages: Man priskirti darbų paketai
   label_associated_revisions: Susijusios revizijos
@@ -1074,6 +1102,7 @@ lt:
   label_date_to: Į
   label_day_plural: dienas(-ų)
   label_default: Numatytasis
+  label_delete_project: Delete project
   label_deleted: panaikintas
   label_deleted_custom_field: "(panaikintas vartotojo laukas)"
   label_descending: Mažėjančiai
@@ -1106,6 +1135,7 @@ lt:
   label_enterprise: Enterprise
   label_enterprise_edition: "„Enterprise Edition“"
   label_environment: Aplinka
+  label_estimates_and_time: Estimates and time
   label_equals: yra
   label_example: Pavyzdys
   label_export_to: 'Taip pat galima rasti:'
@@ -1140,6 +1170,7 @@ lt:
   label_in: " "
   label_in_less_than: mažiau nei
   label_in_more_than: daugiau nei
+  label_inactive: Inactive
   label_incoming_emails: Gauti el. laiškai
   label_includes: turi savyje
   label_index_by_date: Rūšiuoti pagal datą
@@ -1232,6 +1263,7 @@ lt:
   label_open_work_packages_plural: atverti
   label_optional_description: Aprašymas
   label_options: Nustatymai
+  label_other: Kita
   label_overall_activity: Visa veikla
   label_overall_spent_time: Visas praleistas laikas
   label_overview: Peržiūra
@@ -1244,6 +1276,7 @@ lt:
   label_path_encoding: Kelio koduotė
   label_pdf_with_descriptions: PDF su aprašymais
   label_per_page: Per puslapį
+  label_people: Žmonės
   label_permissions: Leidimai
   label_permissions_report: Leidimų ataskaita
   label_personalize_page: Suasmeninti šį puslapį
@@ -2007,7 +2040,8 @@ lt:
     passwords: Slaptažodžiai
     session: Sesija
     brute_force_prevention: Automatinis vartotojų blokavimas
-  show_hide_project_menu: Išplėsti/sutraukti projekto meniu
+  show_project_menu: Expand project menu
+  hide_project_menu: Collapse project menu
   status_active: aktyvus
   status_invited: pakviestas
   status_registered: registruotas
@@ -2024,11 +2058,11 @@ lt:
   text_are_you_sure: Ar esate įsitikinę?
   text_are_you_sure_with_children: Ištrinti darbų paketą ir visus jo vaikų paketus?
   text_assign_to_project: Priskirti projektui
-  text_form_configuration: 'Jūs galite nustatyti, kurie atributai bus rodomi šio tipo
-    darbų paketuose. ''Aktyvūs'' laukai bus rodomi sutrauktame darbų paketo rodinyje,
-    jei turi reikšmę. Laukai ''Visada rodoma'' bus rodomi, net jei jie tušti. Neaktyvūs
-    laukai niekada nebus rodomi, net jei turi reikšmę. Tik laukai, kurie nėra būtini
-    ar turi numatytąją reikšmę, gali būti derinami.
+  text_form_configuration: 'You can customize which attributes will be displayed in
+    forms for work packages of this type. You can freely group the attributes to reflect
+    the needs for your domain. By default fields will only be shown in the collapsed
+    work package view if they have a value. Fields that are ''Always displayed'' will
+    be visibile even if they don''t have a value.
 
 '
   text_caracters_maximum: "%{count} simbolių maksimumas."

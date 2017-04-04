@@ -45,6 +45,9 @@ pl:
     show:
       no_results_title_text: Nie ma jeszcze żadnych wiadomości.
   custom_fields:
+    text_add_new_custom_field: New custom fields can be created on the global administration
+      before they can be added to this project. Please use the following button to
+      create a new custom field.
     is_enabled_globally: Is enabled globally
     enabled_in_project: Enabled in project
     contained_in_type: Contained in type
@@ -125,6 +128,8 @@ pl:
       form_configuration: Konfiguracja formularza
       projects: Projekty
       enabled_projects: Aktywne projekty
+      add_group: Add group
+      reset: Reset to defaults
   versions:
     overview:
       no_results_title_text: Nie ma jeszcze żadnego Zestawu zadań przypisanego do
@@ -218,6 +223,12 @@ pl:
   activemodel:
     errors:
       models:
+        queries/base_contract:
+          attributes:
+            project:
+              error_not_found: nie znaleziono
+            public:
+              error_unauthorized: "- The user has no permission to create public queries."
         relations/base_contract:
           attributes:
             to:
@@ -468,6 +479,13 @@ pl:
               does_not_exist: Podana kategoria nie istnieje.
             estimated_hours:
               only_values_greater_or_equal_zeroes_allowed: musi mieć wartość > = 0.
+        type:
+          attributes:
+            attribute_groups:
+              group_without_name: Unnamed groups are not allowed.
+              duplicate_group: The group name %{group} is used more than once. Group
+                names must be unique.
+              attribute_unknown: Invalid work package attribute used.
         user:
           attributes:
             password:
@@ -865,6 +883,9 @@ pl:
     prawidłowo.
   error_custom_option_not_found: Opcja nie istnieje.
   error_failed_to_delete_entry: Nie udało się usunąć tego wpisu.
+  error_invalid_group_by: 'Can''t group by: %{value}'
+  error_invalid_query_column: 'Invalid query column: %{value}'
+  error_invalid_sort_criterion: 'Can''t sort by column: %{value}'
   error_pdf_export_too_many_columns: Wybrano zbyt dużo kolumn do eksportu PDF. Zmniejsz
     liczbę kolumn.
   error_token_authenticity: Nie można zweryfikować tokenu Cross-Site Request Forgery.
@@ -910,6 +931,12 @@ pl:
     work_package_closed: Zadanie zamknięte
     work_package_edit: Zadanie edytowane
     work_package_note: Dodano uwagę do zadania
+  export:
+    format:
+      atom: Atom
+      csv: CSV
+      pdf: PDF
+      pdf_with_descriptions: PDF z opisami
   general_csv_decimal_separator: ","
   general_csv_encoding: UTF-8
   general_csv_separator: "."
@@ -992,6 +1019,7 @@ pl:
   label_api_access_key_created_on: Klucz API utworzony %{value} temu
   label_api_access_key_type: API
   label_applied_status: Nadaj status
+  label_archive_project: Archive project
   label_ascending: Rosnąco
   label_assigned_to_me_work_packages: Zadania przypisane do mnie
   label_associated_revisions: Powiązane rewizje
@@ -1077,6 +1105,7 @@ pl:
   label_date_to: Do
   label_day_plural: dni
   label_default: Domyślnie
+  label_delete_project: Delete project
   label_deleted: usunięte
   label_deleted_custom_field: "(usunięte pole niestandardowe)"
   label_descending: Malejąco
@@ -1110,6 +1139,7 @@ pl:
   label_enterprise: Przedsiębiorstwo
   label_enterprise_edition: Enterprise Edition
   label_environment: Środowisko
+  label_estimates_and_time: Estimates and time
   label_equals: jest
   label_example: Przykład
   label_export_to: 'Dostępne również w:'
@@ -1144,6 +1174,7 @@ pl:
   label_in: w
   label_in_less_than: w mniej niż
   label_in_more_than: w ponad
+  label_inactive: Inactive
   label_incoming_emails: Przychodzące e-maile
   label_includes: obejmuje
   label_index_by_date: Indeks wg daty
@@ -1236,6 +1267,7 @@ pl:
   label_open_work_packages_plural: Otwarte
   label_optional_description: Opis
   label_options: Opcje
+  label_other: Inne
   label_overall_activity: Ogólna aktywność
   label_overall_spent_time: Całkowity spędzony czas
   label_overview: Przegląd
@@ -1248,6 +1280,7 @@ pl:
   label_path_encoding: Path encoding
   label_pdf_with_descriptions: PDF z opisem
   label_per_page: Na stronie
+  label_people: Ludzie
   label_permissions: Uprawnienia
   label_permissions_report: Raport uprawnień
   label_personalize_page: Personalizacja tej strony
@@ -2003,7 +2036,8 @@ pl:
     passwords: Hasła
     session: Sesja
     brute_force_prevention: Automatyczne blokowanie użytkowników
-  show_hide_project_menu: Rozwiń/zwiń menu projektu
+  show_project_menu: Expand project menu
+  hide_project_menu: Collapse project menu
   status_active: aktywne
   status_invited: zaproszony
   status_registered: zarejestrowany
@@ -2021,12 +2055,11 @@ pl:
   text_are_you_sure: Jesteś pewien?
   text_are_you_sure_with_children: Usunąć zadanie i wszystkie podrzędne zadania?
   text_assign_to_project: Przypisz do projektu
-  text_form_configuration: 'Możesz dostosować, które atrybuty będą wyświetlane w formularzach
-    dla zestawów zadań tego typu. "Aktywne" pola będą wyświetlane w zwiniętym widoku
-    pakietu prac w tym przypadku, jeśli mają wartość. Pola, oznaczone jako "Pokazuj
-    zawsze" będą pokazywane nawet wtedy, kiedy nie mają żadnej wartości. Nieaktywne
-    pola nigdy nie są pokazywane, nawet jeśli zawierają jakąś wartość. Można skonfigurować
-    tylko pola nieobowiązkowe lub niemające wartości domyślnej.
+  text_form_configuration: 'You can customize which attributes will be displayed in
+    forms for work packages of this type. You can freely group the attributes to reflect
+    the needs for your domain. By default fields will only be shown in the collapsed
+    work package view if they have a value. Fields that are ''Always displayed'' will
+    be visibile even if they don''t have a value.
 
 '
   text_caracters_maximum: "%{count} characters maximum."

@@ -43,9 +43,12 @@ ru:
     show:
       no_results_title_text: На данный момент сообщений для форума нет.
   custom_fields:
-    is_enabled_globally: Is enabled globally
-    enabled_in_project: Enabled in project
-    contained_in_type: Contained in type
+    text_add_new_custom_field: New custom fields can be created on the global administration
+      before they can be added to this project. Please use the following button to
+      create a new custom field.
+    is_enabled_globally: Разрешено в глобальном масштабе
+    enabled_in_project: Разрешено в проекте
+    contained_in_type: Содержится в типе
     tab:
       no_results_title_text: Нет настраиваемых полей.
       no_results_content_text: Создать новое настраиваемое поле
@@ -122,6 +125,8 @@ ru:
       form_configuration: Настройка форм
       projects: Проекты
       enabled_projects: Доступные проекты
+      add_group: Add group
+      reset: Reset to defaults
   versions:
     overview:
       no_results_title_text: В настоящее время пакетов работ для этой версии нет.
@@ -220,6 +225,12 @@ ru:
   activemodel:
     errors:
       models:
+        queries/base_contract:
+          attributes:
+            project:
+              error_not_found: не найдено
+            public:
+              error_unauthorized: "- The user has no permission to create public queries."
         relations/base_contract:
           attributes:
             to:
@@ -466,6 +477,13 @@ ru:
               does_not_exist: Указанная категория не существует.
             estimated_hours:
               only_values_greater_or_equal_zeroes_allowed: должно быть > = 0.
+        type:
+          attributes:
+            attribute_groups:
+              group_without_name: Unnamed groups are not allowed.
+              duplicate_group: The group name %{group} is used more than once. Group
+                names must be unique.
+              attribute_unknown: Invalid work package attribute used.
         user:
           attributes:
             password:
@@ -867,6 +885,9 @@ ru:
     Cookie разрешены. Без них приложение не будет функционировать должным образом.
   error_custom_option_not_found: Параметр не существует.
   error_failed_to_delete_entry: Не удалось удалить эту запись.
+  error_invalid_group_by: 'Can''t group by: %{value}'
+  error_invalid_query_column: 'Invalid query column: %{value}'
+  error_invalid_sort_criterion: 'Can''t sort by column: %{value}'
   error_pdf_export_too_many_columns: Для экспорта в PDF-файл выбрано слишком много
     столбцов. Пожалуйста, сократите количество столбцов.
   error_token_authenticity: Не удается проверить CSRF-токен.
@@ -914,6 +935,12 @@ ru:
     work_package_closed: Пакет работ закрыт
     work_package_edit: Пакет работ отредактирован
     work_package_note: Примечание к пакету работ добавлено
+  export:
+    format:
+      atom: Atom
+      csv: CSV
+      pdf: PDF
+      pdf_with_descriptions: PDF с описанием
   general_csv_decimal_separator: "."
   general_csv_encoding: UTF-8
   general_csv_separator: ","
@@ -996,6 +1023,7 @@ ru:
   label_api_access_key_created_on: Ключ доступа к API, созданный %{value} назад
   label_api_access_key_type: API
   label_applied_status: Прикладной статус
+  label_archive_project: Archive project
   label_ascending: По возрастанию
   label_assigned_to_me_work_packages: Переданные мне пакеты работ
   label_associated_revisions: Связанные изменения
@@ -1081,6 +1109,7 @@ ru:
   label_date_to: Кому
   label_day_plural: дней
   label_default: По умолчанию
+  label_delete_project: Delete project
   label_deleted: удалено
   label_deleted_custom_field: "(удалено настраиваемое поле)"
   label_descending: По убыванию
@@ -1113,6 +1142,7 @@ ru:
   label_enterprise: Предприятие
   label_enterprise_edition: Корпоративная версия
   label_environment: Переменные среды
+  label_estimates_and_time: Estimates and time
   label_equals: "—"
   label_example: Пример
   label_export_to: 'Также доступна на:'
@@ -1147,6 +1177,7 @@ ru:
   label_in: в
   label_in_less_than: менее чем
   label_in_more_than: более чем
+  label_inactive: Inactive
   label_incoming_emails: Входящие e-mail
   label_includes: включает
   label_index_by_date: Индекс по дате
@@ -1239,6 +1270,7 @@ ru:
   label_open_work_packages_plural: открыто
   label_optional_description: Описание
   label_options: Опции
+  label_other: Другие
   label_overall_activity: Общая деятельность
   label_overall_spent_time: Суммарное потраченное время
   label_overview: Обзор
@@ -1251,6 +1283,7 @@ ru:
   label_path_encoding: Кодирование пути
   label_pdf_with_descriptions: PDF с описаниями
   label_per_page: Постранично
+  label_people: Люди
   label_permissions: Разрешения
   label_permissions_report: Отчёт о разрешениях
   label_personalize_page: Персонализация страницы
@@ -2006,7 +2039,8 @@ ru:
     passwords: Пароли
     session: Сессия
     brute_force_prevention: Автоматическое блокирование пользователя
-  show_hide_project_menu: Развернуть или свернуть меню проекта
+  show_project_menu: Expand project menu
+  hide_project_menu: Collapse project menu
   status_active: Активно
   status_invited: приглашено
   status_registered: Зарегистрирован
@@ -2024,13 +2058,11 @@ ru:
   text_are_you_sure: Вы уверены?
   text_are_you_sure_with_children: Удалить пакет работ и все дочерние пакеты работ?
   text_assign_to_project: Назначить на проект
-  text_form_configuration: 'Вы можете настроить, какие параметры будут отражаться
-    в формах для пакетов работ этого типа. «Активные» поля будут показываться в свернутых
-    пакетах работ в том случае, если они содержат какое-либо значение, а поля, отмеченные
-    как «Показывать всегда» будут показываться даже тогда, когда они не содержат никакого
-    значения. Неактивные поля никогда не будут показываться, даже если они содержат
-    какое-либо значение. Можно настроить лишь поля, не являющиеся обязательным или
-    не имеющие значения по умолчанию.
+  text_form_configuration: 'You can customize which attributes will be displayed in
+    forms for work packages of this type. You can freely group the attributes to reflect
+    the needs for your domain. By default fields will only be shown in the collapsed
+    work package view if they have a value. Fields that are ''Always displayed'' will
+    be visibile even if they don''t have a value.
 
 '
   text_caracters_maximum: 'Максимальное количество символов: %{count}.'

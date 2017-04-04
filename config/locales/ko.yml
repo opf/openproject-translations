@@ -45,6 +45,9 @@ ko:
     show:
       no_results_title_text: 게시판에 포스트가 없습니다.
   custom_fields:
+    text_add_new_custom_field: New custom fields can be created on the global administration
+      before they can be added to this project. Please use the following button to
+      create a new custom field.
     is_enabled_globally: Is enabled globally
     enabled_in_project: Enabled in project
     contained_in_type: Contained in type
@@ -126,6 +129,8 @@ ko:
       form_configuration: 양식 구성
       projects: 프로젝트
       enabled_projects: Enabled projects
+      add_group: Add group
+      reset: Reset to defaults
   versions:
     overview:
       no_results_title_text: 이 버전에 할당된 작업 패키지가 없습니다.
@@ -209,6 +214,12 @@ ko:
   activemodel:
     errors:
       models:
+        queries/base_contract:
+          attributes:
+            project:
+              error_not_found: not found
+            public:
+              error_unauthorized: "- The user has no permission to create public queries."
         relations/base_contract:
           attributes:
             to:
@@ -451,6 +462,13 @@ ko:
               does_not_exist: 지정한 카테고리가 존재하지 않습니다.
             estimated_hours:
               only_values_greater_or_equal_zeroes_allowed: 0 이상이어야 함
+        type:
+          attributes:
+            attribute_groups:
+              group_without_name: Unnamed groups are not allowed.
+              duplicate_group: The group name %{group} is used more than once. Group
+                names must be unique.
+              attribute_unknown: Invalid work package attribute used.
         user:
           attributes:
             password:
@@ -847,6 +865,9 @@ ko:
     활성화해야 합니다.
   error_custom_option_not_found: Option does not exist.
   error_failed_to_delete_entry: Failed to delete this entry.
+  error_invalid_group_by: 'Can''t group by: %{value}'
+  error_invalid_query_column: 'Invalid query column: %{value}'
+  error_invalid_sort_criterion: 'Can''t sort by column: %{value}'
   error_pdf_export_too_many_columns: PDF 내보내기에 대해 너무 많은 열을 선택했습니다. 열 수를 줄이십시오.
   error_token_authenticity: 교차 사이트 요청 위조 토큰을 확인할 수 없습니다.
   error_work_package_done_ratios_not_updated: 작업 패키지 완료 비율이 업데이트되지 않았습니다.
@@ -884,6 +905,12 @@ ko:
     work_package_closed: 작업 패키지 닫힘
     work_package_edit: 작업 패키지 편집됨
     work_package_note: 작업 패키지 메모 추가됨
+  export:
+    format:
+      atom: Atom
+      csv: CSV
+      pdf: PDF
+      pdf_with_descriptions: 설명이 첨부된 PDF
   general_csv_decimal_separator: "."
   general_csv_encoding: UTF-8
   general_csv_separator: ","
@@ -962,6 +989,7 @@ ko:
   label_api_access_key_created_on: API 액세스 키가 %{value} 전에 생성되었습니다.
   label_api_access_key_type: API
   label_applied_status: 적용된 상태
+  label_archive_project: Archive project
   label_ascending: 오름차순
   label_assigned_to_me_work_packages: 내게 할당된 작업 패키지
   label_associated_revisions: 연결된 수정
@@ -1047,6 +1075,7 @@ ko:
   label_date_to: 끝
   label_day_plural: 일
   label_default: 기본
+  label_delete_project: Delete project
   label_deleted: 삭제됨
   label_deleted_custom_field: "(삭제된 사용자 지정 필드)"
   label_descending: 내림차순
@@ -1079,6 +1108,7 @@ ko:
   label_enterprise: Enterprise
   label_enterprise_edition: Enterprise Edition
   label_environment: 환경
+  label_estimates_and_time: Estimates and time
   label_equals: 일치함
   label_example: 예
   label_export_to: '다음에서도 사용 가능:'
@@ -1112,6 +1142,7 @@ ko:
   label_in: "-"
   label_in_less_than: 보다 작음
   label_in_more_than: 보다 큼
+  label_inactive: Inactive
   label_incoming_emails: 들어오는 이메일
   label_includes: 포함
   label_index_by_date: 날짜별 색인
@@ -1204,6 +1235,7 @@ ko:
   label_open_work_packages_plural: 열기
   label_optional_description: 설명
   label_options: 옵션
+  label_other: 기타
   label_overall_activity: 전체 작업
   label_overall_spent_time: 총 소요 시간
   label_overview: 요약
@@ -1216,6 +1248,7 @@ ko:
   label_path_encoding: 경로 인코딩
   label_pdf_with_descriptions: 설명이 포함된 PDF
   label_per_page: 페이지당
+  label_people: 사용자
   label_permissions: 권한
   label_permissions_report: 권한 보고서
   label_personalize_page: 이 페이지 개인 설정
@@ -1903,7 +1936,8 @@ ko:
     passwords: 암호
     session: 세션
     brute_force_prevention: 자동화된 사용자 차단
-  show_hide_project_menu: 프로젝트 메뉴 확장/축소
+  show_project_menu: Expand project menu
+  hide_project_menu: Collapse project menu
   status_active: 활성
   status_invited: 초대됨
   status_registered: 등록됨
@@ -1921,9 +1955,11 @@ ko:
   text_are_you_sure: 계속하시겠습니까?
   text_are_you_sure_with_children: 작업 패키지 및 모든 자식 작업 패키지를 삭제하시겠습니까?
   text_assign_to_project: 프로젝트에 할당
-  text_form_configuration: '이 유형의 작업 패키지에 대한 형식으로 표시될 특성을 사용자 지정할 수 있습니다. ''활성'' 필드는
-    값이 있는 경우 축소된 작업 패키지 보기에 표시되며, 값이 없는 경우에도 ''항상 표시''되는 필드입니다. 비활성 필드는 값이 있더라도 전혀
-    표시되지 않습니다. 필수가 아니거나 기본값이 있는 필드만 사용자 지정할 수 있습니다.
+  text_form_configuration: 'You can customize which attributes will be displayed in
+    forms for work packages of this type. You can freely group the attributes to reflect
+    the needs for your domain. By default fields will only be shown in the collapsed
+    work package view if they have a value. Fields that are ''Always displayed'' will
+    be visibile even if they don''t have a value.
 
 '
   text_caracters_maximum: 최대 %{count}자입니다.

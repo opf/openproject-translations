@@ -45,6 +45,9 @@ zh-TW:
     show:
       no_results_title_text: 目前沒有任何貼文在板上
   custom_fields:
+    text_add_new_custom_field: New custom fields can be created on the global administration
+      before they can be added to this project. Please use the following button to
+      create a new custom field.
     is_enabled_globally: Is enabled globally
     enabled_in_project: Enabled in project
     contained_in_type: Contained in type
@@ -126,6 +129,8 @@ zh-TW:
       form_configuration: 表單設置
       projects: 專案
       enabled_projects: Enabled projects
+      add_group: Add group
+      reset: Reset to defaults
   versions:
     overview:
       no_results_title_text: 目前沒有工作包分配給此版本。
@@ -200,6 +205,12 @@ zh-TW:
   activemodel:
     errors:
       models:
+        queries/base_contract:
+          attributes:
+            project:
+              error_not_found: not found
+            public:
+              error_unauthorized: "- The user has no permission to create public queries."
         relations/base_contract:
           attributes:
             to:
@@ -440,6 +451,13 @@ zh-TW:
               does_not_exist: 指定的類別不存在
             estimated_hours:
               only_values_greater_or_equal_zeroes_allowed: 必須是 > = 0。
+        type:
+          attributes:
+            attribute_groups:
+              group_without_name: Unnamed groups are not allowed.
+              duplicate_group: The group name %{group} is used more than once. Group
+                names must be unique.
+              attribute_unknown: Invalid work package attribute used.
         user:
           attributes:
             password:
@@ -814,6 +832,9 @@ zh-TW:
   error_cookie_missing: OpenProject的Cookie遺失了。請確保瀏覽器的Cookie已經啟用，否則本應用程式將無法正常做用。
   error_custom_option_not_found: Option does not exist.
   error_failed_to_delete_entry: Failed to delete this entry.
+  error_invalid_group_by: 'Can''t group by: %{value}'
+  error_invalid_query_column: 'Invalid query column: %{value}'
+  error_invalid_sort_criterion: 'Can''t sort by column: %{value}'
   error_pdf_export_too_many_columns: Too many columns selected for the PDF export.
     Please reduce the number of columns.
   error_token_authenticity: 無法確認跨網域請求權杖
@@ -851,6 +872,12 @@ zh-TW:
     work_package_closed: 工作項目關閉
     work_package_edit: 工作項目已編輯
     work_package_note: 工作項目註記已新增
+  export:
+    format:
+      atom: Atom
+      csv: CSV
+      pdf: PDF
+      pdf_with_descriptions: 有說明的 PDF 檔
   general_csv_decimal_separator: "."
   general_csv_encoding: UTF-8
   general_csv_separator: ","
@@ -928,6 +955,7 @@ zh-TW:
   label_api_access_key_created_on: API金鑰在 %{value} 以前被建立
   label_api_access_key_type: API
   label_applied_status: 套用的狀態
+  label_archive_project: Archive project
   label_ascending: 昇冪
   label_assigned_to_me_work_packages: 分配給我的工作項目
   label_associated_revisions: 關聯的修訂
@@ -1013,6 +1041,7 @@ zh-TW:
   label_date_to: 到
   label_day_plural: 天
   label_default: 預設
+  label_delete_project: Delete project
   label_deleted: 已刪除
   label_deleted_custom_field: "(已刪除的自訂欄位)"
   label_descending: 降冪
@@ -1045,6 +1074,7 @@ zh-TW:
   label_enterprise: Enterprise
   label_enterprise_edition: Enterprise Edition
   label_environment: 環境
+  label_estimates_and_time: Estimates and time
   label_equals: 是
   label_example: 範例
   label_export_to: 也可匯出成
@@ -1078,6 +1108,7 @@ zh-TW:
   label_in: 在
   label_in_less_than: 少於
   label_in_more_than: 多於
+  label_inactive: Inactive
   label_incoming_emails: 接收到的電子郵件
   label_includes: includes
   label_index_by_date: 按日期索引
@@ -1170,6 +1201,7 @@ zh-TW:
   label_open_work_packages_plural: 打開
   label_optional_description: 說明
   label_options: 選項
+  label_other: 其他
   label_overall_activity: 全部活動
   label_overall_spent_time: 總體耗時
   label_overview: 概要
@@ -1182,6 +1214,7 @@ zh-TW:
   label_path_encoding: 路徑編碼
   label_pdf_with_descriptions: 有說明的 PDF 檔
   label_per_page: 每頁
+  label_people: 人員
   label_permissions: 權限
   label_permissions_report: 權限報表
   label_personalize_page: 個人化本頁
@@ -1860,7 +1893,8 @@ zh-TW:
     passwords: 密碼
     session: Session
     brute_force_prevention: Automated user blocking
-  show_hide_project_menu: 展開/折疊專案選單
+  show_project_menu: Expand project menu
+  hide_project_menu: Collapse project menu
   status_active: 啟用
   status_invited: 已邀請
   status_registered: 已註冊
@@ -1878,10 +1912,10 @@ zh-TW:
   text_are_you_sure_with_children: 刪除工作項目以及所有子工作項目?
   text_assign_to_project: 分配給專案
   text_form_configuration: 'You can customize which attributes will be displayed in
-    forms for work packages of this type. ''Active'' fields will be shown in the collapsed
-    work package view if they have a value, fields that are ''Always displayed'' even
-    if they don''t. Inactive fields will never be shown, even if they have a value.
-    Only fields that are not required or have a default value can be customized.
+    forms for work packages of this type. You can freely group the attributes to reflect
+    the needs for your domain. By default fields will only be shown in the collapsed
+    work package view if they have a value. Fields that are ''Always displayed'' will
+    be visibile even if they don''t have a value.
 
 '
   text_caracters_maximum: 最多 %{count} 個字元。

@@ -45,6 +45,9 @@ ar:
     show:
       no_results_title_text: لا يوجد حالياً منشورات على اللوحة.
   custom_fields:
+    text_add_new_custom_field: New custom fields can be created on the global administration
+      before they can be added to this project. Please use the following button to
+      create a new custom field.
     is_enabled_globally: Is enabled globally
     enabled_in_project: Enabled in project
     contained_in_type: Contained in type
@@ -126,6 +129,8 @@ ar:
       form_configuration: تشكيل النموذج
       projects: المشاريع
       enabled_projects: Enabled projects
+      add_group: Add group
+      reset: Reset to defaults
   versions:
     overview:
       no_results_title_text: لا يوجد حالياً حزم عمل مخصصة لهذا الإصدار.
@@ -218,6 +223,12 @@ ar:
   activemodel:
     errors:
       models:
+        queries/base_contract:
+          attributes:
+            project:
+              error_not_found: not found
+            public:
+              error_unauthorized: "- The user has no permission to create public queries."
         relations/base_contract:
           attributes:
             to:
@@ -462,6 +473,13 @@ ar:
               does_not_exist: الفئة المحددة غير موجودة.
             estimated_hours:
               only_values_greater_or_equal_zeroes_allowed: يجب أن تكون > = 0.
+        type:
+          attributes:
+            attribute_groups:
+              group_without_name: Unnamed groups are not allowed.
+              duplicate_group: The group name %{group} is used more than once. Group
+                names must be unique.
+              attribute_unknown: Invalid work package attribute used.
         user:
           attributes:
             password:
@@ -915,6 +933,9 @@ ar:
     دون ذلك.
   error_custom_option_not_found: Option does not exist.
   error_failed_to_delete_entry: Failed to delete this entry.
+  error_invalid_group_by: 'Can''t group by: %{value}'
+  error_invalid_query_column: 'Invalid query column: %{value}'
+  error_invalid_sort_criterion: 'Can''t sort by column: %{value}'
   error_pdf_export_too_many_columns: تم تحديد عدد كبير جداً من الأعمدة لتصدير PDF.
     الرجاء تقليل عدد الأعمدة.
   error_token_authenticity: غير قادر على التحقق من الرمز المميز "تزوير طلب" عبر الموقع.
@@ -958,6 +979,12 @@ ar:
     work_package_closed: تم اغلاق مجموعة العمل
     work_package_edit: تم تحريرمجموعة العمل
     work_package_note: لم يتم اضافة مجموعة العمل
+  export:
+    format:
+      atom: ذرّة
+      csv: CSV
+      pdf: PDF
+      pdf_with_descriptions: PDF مع مواصفات
   general_csv_decimal_separator: "."
   general_csv_encoding: UTF-8
   general_csv_separator: ","
@@ -1039,6 +1066,7 @@ ar:
   label_api_access_key_created_on: مفتاح الوصول إلى API تم إنشاؤها %{value} قبل ذلك
   label_api_access_key_type: API
   label_applied_status: الحالة المطبقة
+  label_archive_project: Archive project
   label_ascending: ترتيب تصاعدي
   label_assigned_to_me_work_packages: مجموعات العمل الموكلة لي
   label_associated_revisions: التعديلات المرتبطة بها
@@ -1124,6 +1152,7 @@ ar:
   label_date_to: إلى
   label_day_plural: أيام
   label_default: الافتراضي
+  label_delete_project: Delete project
   label_deleted: محذوف
   label_deleted_custom_field: "(حذف حقل مخصص)"
   label_descending: ترتيب تنازلي
@@ -1156,6 +1185,7 @@ ar:
   label_enterprise: Enterprise
   label_enterprise_edition: Enterprise Edition
   label_environment: بيئة
+  label_estimates_and_time: Estimates and time
   label_equals: يكون
   label_example: مثال
   label_export_to: 'متاح أيضاً في:'
@@ -1192,6 +1222,7 @@ ar:
   label_in: في
   label_in_less_than: في أقل من
   label_in_more_than: في أكثر من
+  label_inactive: Inactive
   label_incoming_emails: رسائل البريد الالكتروني الواردة
   label_includes: مشمولة
   label_index_by_date: فهرسة حسب التاريخ
@@ -1284,6 +1315,7 @@ ar:
   label_open_work_packages_plural: فتح
   label_optional_description: الوصف
   label_options: خيارات
+  label_other: اخرى
   label_overall_activity: النشاط الإجمالي
   label_overall_spent_time: الوقت الضائع الإجمالي
   label_overview: نظرة عامة
@@ -1296,6 +1328,7 @@ ar:
   label_path_encoding: ترميز المسار
   label_pdf_with_descriptions: PDF مع مواصفات
   label_per_page: في كل صفحة
+  label_people: الناس
   label_permissions: السماحيات
   label_permissions_report: تقرير السماحيات
   label_personalize_page: تخصيص هذه الصفحة
@@ -2036,7 +2069,8 @@ ar:
     passwords: كلمات المرور
     session: الجلسة
     brute_force_prevention: حجب المستخدم الآلي
-  show_hide_project_menu: توسيع/طي قائمة المشروع
+  show_project_menu: Expand project menu
+  hide_project_menu: Collapse project menu
   status_active: نشِط
   status_invited: مدعوّ
   status_registered: تم التسجيل
@@ -2054,11 +2088,11 @@ ar:
   text_are_you_sure: هل أنت متأكد؟
   text_are_you_sure_with_children: حذف مجموعة العمل وكافة حزم عمل الأطفال؟
   text_assign_to_project: المخصصة للمشروع
-  text_form_configuration: 'تستطيع تخصيص السِّمات التي ستُعرض في نماذج لمجموعات عمل
-    من هذا النوع. سيتم عرض الحقول "النشطة" في معاينة مجموعة العمل القابلة للطي إذا
-    كان لهم قيمة، الحقول "المعروضة دائمًا" حتى لو لم يكن لهم قيمة. الحقول غير النشطة
-    لن يتم عرضها أبدًا، حتى لو كان لهم قيمة. من الممكن فقط تخصيص الحقول غير المطلوبة
-    أو التي لديها قيمة افتراضية.
+  text_form_configuration: 'You can customize which attributes will be displayed in
+    forms for work packages of this type. You can freely group the attributes to reflect
+    the needs for your domain. By default fields will only be shown in the collapsed
+    work package view if they have a value. Fields that are ''Always displayed'' will
+    be visibile even if they don''t have a value.
 
 '
   text_caracters_maximum: "%{count} حرفاً كحد أقصى."
