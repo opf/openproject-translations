@@ -13,9 +13,11 @@ ja:
     button_add_watcher: ウォッチャーを追加
     button_cancel: キャンセル
     button_check_all: 全てを選択
+    button_configure-form: Configure form
     button_confirm: 確認
     button_continue: 続行
     button_copy: コピー
+    button_custom-fields: カスタムフィールド
     button_delete: 削除
     button_delete_watcher: ウォッチャーを削除
     button_details_view: 詳細表示
@@ -50,6 +52,11 @@ ja:
         text_close_filter: エントリを選択するには、例えばエンターキーを押して、フォーカスを外します。フィルターを選択しないで離れるには、最初の
           (空の) のエントリを選択します。
       noneElement: "(なし)"
+      time_zone_converted:
+        two_values: "%{from} - %{to} in your local time."
+        only_start: From %{from} in your local time.
+        only_end: Till %{to} in your local time.
+      value_spacer: "-"
       sorting:
         criteria:
           one: 最初の並べ替え条件
@@ -202,11 +209,10 @@ ja:
 
 '
         upgrade_to_ee: エンタープライズ版にアップグレード
-        upgrade_to_ee_text: Wow! If you need this feature you are a super pro! Would
-          you mind supporting us OpenSource developers by becoming an Enterprise Edition
-          client?
+        upgrade_to_ee_text: この機能が必要な場合、あなたは超プロです! Enterprise Edition クライアントになることによって私達のオープン
+          ソース開発者を支援していただけませんか?
         more_information: 詳細情報
-        nevermind: Nevermind
+        nevermind: 心配しないで
     watchers:
       label_loading: ウォッチャーを読み込み中...
       label_error_loading: ウォッチャーを読み込み中にエラーが発生しました。
@@ -214,34 +220,6 @@ ja:
       label_add: ウォッチャーの追加
       label_discard: 選択範囲を破棄する
       typeahead_placeholder: ウォッチャーの選択肢を検索
-    filter_labels:
-      assigned_to: 担当者
-      assigned_to_role: 担当者のロール
-      author: 作成者
-      category: カテゴリ
-      created_at: 作成日時
-      done_ratio: 進行状況 (%)
-      due_date: 期限
-      estimated_hours: 予定工数
-      fixed_version: バージョン
-      member_of_group: 担当者のグループ
-      parent: 親項目
-      parent_issue: 親項目
-      parent_work_package: 親項目
-      priority: 優先度
-      progress: 進行状況 (%)
-      project: プロジェクト
-      responsible: 責任者
-      spent_time: 作業時間の記録
-      start_date: 開始日
-      status: ステータス
-      subject: 題名
-      subproject: 子プロジェクト
-      time_entries: 時間を記録
-      type: 種別
-      updated_at: 更新日時
-      version: バージョン
-      watcher: ウォッチャー
     relation_labels:
       parent: 親項目
       children: 子
@@ -470,6 +448,11 @@ ja:
         column_names: 列
         group_by: グループ化
         group: グループ化
+        group_by_disabled_by_hierarchy: Group by is disabled due to the hierarchy
+          mode being active.
+        hierarchy_disabled_by_group_by: Hierarchy mode is disabled due to results
+          being grouped by %{column}.
+        hierarchy_mode: Hierarchy mode
         sort_ascending: 昇順にソート
         sort_descending: 降順にソート
         move_column_left: 列を左に移動
@@ -481,6 +464,7 @@ ja:
         errors:
           unretrievable_query: URL からクエリを取得できません。
           not_found: そのようなクエリはありません
+        text_no_results: No matching queries were found.
       table:
         summary: 作業項目の行と、作業項目の属性の列から成る表。
         text_inline_edit: この表のほとんどのセルは、属性のインライン編集機能を有効にするボタンです。

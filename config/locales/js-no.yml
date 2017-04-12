@@ -14,9 +14,11 @@
     button_add_watcher: Legg til overvåker
     button_cancel: Avbryt
     button_check_all: Velg alle
+    button_configure-form: Configure form
     button_confirm: Confirm
     button_continue: Fortsett
     button_copy: Kopier
+    button_custom-fields: Egendefinerte felter
     button_delete: Slett
     button_delete_watcher: Slett overvåker
     button_details_view: Detaljvisning
@@ -51,6 +53,11 @@
         text_close_filter: To select an entry leave the focus for example by pressing
           enter. To leave without filter select the first (empty) entry.
       noneElement: "(ingen)"
+      time_zone_converted:
+        two_values: "%{from} - %{to} in your local time."
+        only_start: From %{from} in your local time.
+        only_end: Till %{to} in your local time.
+      value_spacer: "-"
       sorting:
         criteria:
           one: First sorting criteria
@@ -221,34 +228,6 @@
       label_add: Legg til overvåker
       label_discard: Discard selection
       typeahead_placeholder: Søk etter mulige overvåkere
-    filter_labels:
-      assigned_to: Deltaker
-      assigned_to_role: Deltakers rolle
-      author: Forfatter
-      category: Kategori
-      created_at: Opprettet
-      done_ratio: Progress (%)
-      due_date: Forfallsdato
-      estimated_hours: Tidsestimat
-      fixed_version: Versjon
-      member_of_group: Deltakers gruppe
-      parent: Overordnet
-      parent_issue: Overordnet
-      parent_work_package: Overordnet
-      priority: Prioritet
-      progress: Progress (%)
-      project: Prosjekt
-      responsible: Ansvarlig
-      spent_time: Tid brukt
-      start_date: Startdato
-      status: Status
-      subject: Emne
-      subproject: Underprosjekt
-      time_entries: Logg tid
-      type: Type
-      updated_at: Oppdatert
-      version: Versjon
-      watcher: Overvåker
     relation_labels:
       parent: Overordnet
       children: Underordnede
@@ -490,6 +469,11 @@
         column_names: Kolonner
         group_by: Gruppèr resultater etter
         group: Grupper etter
+        group_by_disabled_by_hierarchy: Group by is disabled due to the hierarchy
+          mode being active.
+        hierarchy_disabled_by_group_by: Hierarchy mode is disabled due to results
+          being grouped by %{column}.
+        hierarchy_mode: Hierarchy mode
         sort_ascending: Stigende sortering
         sort_descending: Synkende sortering
         move_column_left: Flytt kolonne til venstre
@@ -501,6 +485,7 @@
         errors:
           unretrievable_query: Kunne ikke hente spørringen fra URL
           not_found: There is no such query
+        text_no_results: No matching queries were found.
       table:
         summary: Table with rows of work package and columns of work package attributes.
         text_inline_edit: Most cells of this table are buttons that activate inline-editing

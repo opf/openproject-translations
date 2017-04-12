@@ -14,9 +14,11 @@ fa:
     button_add_watcher: Add watcher
     button_cancel: Cancel
     button_check_all: Check all
+    button_configure-form: Configure form
     button_confirm: Confirm
     button_continue: Continue
     button_copy: Copy
+    button_custom-fields: Custom fields
     button_delete: Delete
     button_delete_watcher: حذف ناظر
     button_details_view: نمای جزییات
@@ -51,6 +53,11 @@ fa:
         text_close_filter: To select an entry leave the focus for example by pressing
           enter. To leave without filter select the first (empty) entry.
       noneElement: "(none)"
+      time_zone_converted:
+        two_values: "%{from} - %{to} in your local time."
+        only_start: From %{from} in your local time.
+        only_end: Till %{to} in your local time.
+      value_spacer: "-"
       sorting:
         criteria:
           one: First sorting criteria
@@ -223,34 +230,6 @@ fa:
       label_add: Add watchers
       label_discard: Discard selection
       typeahead_placeholder: جستجو برای دنبال کننده ها
-    filter_labels:
-      assigned_to: Assignee
-      assigned_to_role: Assignee's role
-      author: Author
-      category: Category
-      created_at: Created on
-      done_ratio: Progress (%)
-      due_date: موعد مقرر
-      estimated_hours: Estimated time
-      fixed_version: Version
-      member_of_group: Assignee's group
-      parent: Parent
-      parent_issue: Parent
-      parent_work_package: Parent
-      priority: Priority
-      progress: Progress (%)
-      project: Project
-      responsible: مسئول
-      spent_time: Spent time
-      start_date: Start date
-      status: Status
-      subject: Subject
-      subproject: Subproject
-      time_entries: Log time
-      type: نوع
-      updated_at: Updated on
-      version: Version
-      watcher: Watcher
     relation_labels:
       parent: Parent
       children: بچه ها
@@ -495,6 +474,11 @@ fa:
         column_names: ستون‌ها
         group_by: دسته بندی نتایج با
         group: Group by
+        group_by_disabled_by_hierarchy: Group by is disabled due to the hierarchy
+          mode being active.
+        hierarchy_disabled_by_group_by: Hierarchy mode is disabled due to results
+          being grouped by %{column}.
+        hierarchy_mode: Hierarchy mode
         sort_ascending: Sort ascending
         sort_descending: Sort descending
         move_column_left: Move column left
@@ -506,6 +490,7 @@ fa:
         errors:
           unretrievable_query: Unable to retrieve query from URL
           not_found: There is no such query
+        text_no_results: No matching queries were found.
       table:
         summary: Table with rows of work package and columns of work package attributes.
         text_inline_edit: Most cells of this table are buttons that activate inline-editing

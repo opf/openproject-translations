@@ -13,9 +13,11 @@ th:
     button_add_watcher: เพิ่มผู้ดูข้อมูล
     button_cancel: ยกเลิก
     button_check_all: ตรวจสอบทั้งหมด
+    button_configure-form: Configure form
     button_confirm: ยืนยัน
     button_continue: Continue
     button_copy: คัดลอก
+    button_custom-fields: ฟิลด์ที่กำหนดเอง
     button_delete: ลบ
     button_delete_watcher: ลบผู้ดูข้อมูล
     button_details_view: ดูรายละเอียด
@@ -50,6 +52,11 @@ th:
         text_close_filter: To select an entry leave the focus for example by pressing
           enter. To leave without filter select the first (empty) entry.
       noneElement: "(ไม่มี)"
+      time_zone_converted:
+        two_values: "%{from} - %{to} in your local time."
+        only_start: From %{from} in your local time.
+        only_end: Till %{to} in your local time.
+      value_spacer: "-"
       sorting:
         criteria:
           one: First sorting criteria
@@ -222,34 +229,6 @@ th:
       label_add: เพิ่มผู้เฝ้าดู
       label_discard: Discard selection
       typeahead_placeholder: Search for possible watchers
-    filter_labels:
-      assigned_to: ผู้ได้รับมอบหมาย
-      assigned_to_role: บทบาทของผู้รับผิดชอบ
-      author: ผู้เขียน
-      category: ประเภท
-      created_at: สร้างเมื่อ
-      done_ratio: Progress (%)
-      due_date: วันครบกำหนด
-      estimated_hours: ระยะเวลาโดยประมาณ
-      fixed_version: เวอร์ชัน
-      member_of_group: กลุ่มของผู้รับผิดชอบ
-      parent: ค่าหลัก
-      parent_issue: ค่าหลัก
-      parent_work_package: ค่าหลัก
-      priority: ระดับความสำคัญ
-      progress: Progress (%)
-      project: โครงการ
-      responsible: รับผิดชอบ
-      spent_time: เวลาที่ใช้
-      start_date: วันเริ่มต้น
-      status: สถานะ
-      subject: หัวข้อ
-      subproject: โครงการย่อย
-      time_entries: เวลาที่ถูกบันทึก
-      type: ประเภท
-      updated_at: แก้ไขเมื่อ
-      version: เวอร์ชัน
-      watcher: ผู้ดูข้อมูล
     relation_labels:
       parent: ค่าหลัก
       children: Children
@@ -491,6 +470,11 @@ th:
         column_names: คอลัมน์
         group_by: จัดกลุ่มผลลัพธ์โดย
         group: Group by
+        group_by_disabled_by_hierarchy: Group by is disabled due to the hierarchy
+          mode being active.
+        hierarchy_disabled_by_group_by: Hierarchy mode is disabled due to results
+          being grouped by %{column}.
+        hierarchy_mode: Hierarchy mode
         sort_ascending: Sort ascending
         sort_descending: Sort descending
         move_column_left: ย้ายคอลัมน์ไปทางซ้าย
@@ -502,6 +486,7 @@ th:
         errors:
           unretrievable_query: Unable to retrieve query from URL
           not_found: There is no such query
+        text_no_results: No matching queries were found.
       table:
         summary: Table with rows of work package and columns of work package attributes.
         text_inline_edit: Most cells of this table are buttons that activate inline-editing

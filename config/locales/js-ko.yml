@@ -13,9 +13,11 @@ ko:
     button_add_watcher: 주시자 추가
     button_cancel: 취소
     button_check_all: 모두 선택
+    button_configure-form: Configure form
     button_confirm: 확인
     button_continue: Continue
     button_copy: 복사
+    button_custom-fields: 사용자 정의 필드
     button_delete: 삭제
     button_delete_watcher: 주시하는 사람 삭제
     button_details_view: 자세히
@@ -50,6 +52,11 @@ ko:
         text_close_filter: 항목을 선택하려면 예를 들어 Enter를 눌러 초점을 유지합니다. 필터 없이 두려면 첫 번째(빈)
           항목을 선택합니다.
       noneElement: "(없음)"
+      time_zone_converted:
+        two_values: "%{from} - %{to} in your local time."
+        only_start: From %{from} in your local time.
+        only_end: Till %{to} in your local time.
+      value_spacer: "-"
       sorting:
         criteria:
           one: 첫 번째 정렬 기준
@@ -217,34 +224,6 @@ ko:
       label_add: 주시자 추가
       label_discard: 선택 취소
       typeahead_placeholder: Search for possible watchers
-    filter_labels:
-      assigned_to: 담당자
-      assigned_to_role: 담당자의 역할
-      author: 작성자
-      category: 카테고리
-      created_at: 작성일
-      done_ratio: 진행률 (%)
-      due_date: 기한
-      estimated_hours: 예상된 시간
-      fixed_version: 버전
-      member_of_group: 담당자의 그룹
-      parent: 부모
-      parent_issue: 부모
-      parent_work_package: 부모
-      priority: 우선 순위
-      progress: 진행률 (%)
-      project: 프로젝트
-      responsible: 책임
-      spent_time: 소비한 시간
-      start_date: 시작 날짜
-      status: 상태
-      subject: 제목
-      subproject: 하위 프로젝트
-      time_entries: 작업시간 기록
-      type: 타입
-      updated_at: 업데이트 날짜
-      version: 버전
-      watcher: 주시자
     relation_labels:
       parent: 부모
       children: 자식
@@ -476,6 +455,11 @@ ko:
         column_names: 컬럼
         group_by: 그룹 결과
         group: 그룹화 기준
+        group_by_disabled_by_hierarchy: Group by is disabled due to the hierarchy
+          mode being active.
+        hierarchy_disabled_by_group_by: Hierarchy mode is disabled due to results
+          being grouped by %{column}.
+        hierarchy_mode: Hierarchy mode
         sort_ascending: 오름차순 정렬
         sort_descending: 내림차순 정렬
         move_column_left: 왼쪽으로 열 이동
@@ -487,6 +471,7 @@ ko:
         errors:
           unretrievable_query: URL에서 쿼리를 검색할 수 없음
           not_found: 해당 쿼리는 없습니다
+        text_no_results: No matching queries were found.
       table:
         summary: 작업 패키지의 행 및 작업 패키지 특성의 열이 있는 테이블.
         text_inline_edit: 이 테이블의 셀 대부분은 해당 특성의 인라인 편집 기능을 활성화하는 버튼입니다.
