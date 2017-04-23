@@ -11,9 +11,9 @@ sv-SE:
     plugins:
       no_results_title_text: There are currently no plugins available.
   announcements:
-    show_until: Show until
-    is_active: currently displayed
-    is_inactive: currently not displayed
+    show_until: Visa fram till
+    is_active: visas för tillfället
+    is_inactive: visas ej för tillfället
   auth_sources:
     index:
       no_results_content_title: There are currently no authentication modes.
@@ -194,21 +194,23 @@ sv-SE:
         relations/base_contract:
           attributes:
             to:
-              error_not_found: work package in `to` position not found or not visible
-              error_readonly: an existing relation's `to` link is immutable
+              error_not_found: arbetspaketet i 'till' hittades inte eller är inte
+                synligt
+              error_readonly: en befintlig relations 'till'-länk går ej att ändra
             from:
-              error_not_found: work package in `from` position not found or not visible
-              error_readonly: an existing relation's `from` link is immutable
+              error_not_found: arbetspaketet i 'från' hittades inte eller är inte
+                synligt
+              error_readonly: en befintlig relations 'från'-länk går ej att ändra
         users/base_contract:
           attributes:
             status:
-              invalid_on_create: is not a valid status for new users.
+              invalid_on_create: är inte en giltig status för nya användare.
             auth_source:
               error_not_found: not found
   activerecord:
     attributes:
       announcements:
-        show_until: Display until
+        show_until: Visa fram till
       attachment:
         downloads: Nedladdningar
         file: Fil
@@ -254,7 +256,7 @@ sv-SE:
         roles: Roller
       project:
         identifier: Identifierare
-        latest_activity_at: Latest activity at
+        latest_activity_at: Senaste aktivitet vid
         parent: Delprojekt under
         project_type: Projekttyp
         queries: Frågor
@@ -358,14 +360,13 @@ sv-SE:
         greater_than_or_equal_to: måste vara större än eller lika med %{count}.
         smaller_than_or_equal_to_max_length: måste vara mindre än eller lika med maximal
           längd.
-        greater_than_start_date: must be greater than the start date.
-        greater_than_or_equal_to_start_date: must be greater than or equal to the
-          start date.
+        greater_than_start_date: måste vara senare än startdatumet.
+        greater_than_or_equal_to_start_date: måste vara senare eller lika som startdatumet.
         inclusion: inte är inställd på ett av de tillåtna värdena.
         invalid: är ogiltig.
         less_than_or_equal_to: måste vara mindre än eller lika med %{count}.
         not_a_date: är inte ett datum.
-        not_an_iso_date: 'is not a valid date. Required format: YYYY-MM-DD.'
+        not_an_iso_date: är inte ett giltigt datum. Använd formatet ÅÅÅÅ-MM-DD.
         not_a_number: är inte ett nummer.
         not_an_integer: är inte ett heltal.
         not_same_project: tillhör inte samma projekt.
@@ -408,8 +409,8 @@ sv-SE:
               cannot_be_in_another_project: kan inte vara i ett annat projekt.
               not_a_valid_parent: är ogiltig.
             start_date:
-              violates_relationships: can only be set to %{soonest_start} or later
-                so as not to violate the work package's relationships.
+              violates_relationships: kan endast anges till %{soonest_start} eller
+                senare för att inte skada arbetspaketets relationer.
             status_id:
               status_transition_invalid: är ogiltig eftersom det finns någon giltig
                 övergång ifrån den gamla till nya statusen för den aktuella användarens
@@ -587,8 +588,8 @@ sv-SE:
   button_configure_menu_entry: Konfigurera menyalternativ
   button_delete_menu_entry: Ta bort menyalternativ
   copy_project:
-    started: Started to copy project "%{source_project_name}" to "%{target_project_name}".
-      You will be informed by mail as soon as "%{target_project_name}" is available.
+    started: Började kopiera projekt "%{source_project_name}" till "%{target_project_name}".
+      Du kommer att informeras via E-post när "%{target_project_name}" finns tillgängligt.
     failed: Kan inte kopiera projekt %{source_project_name}
     succeeded: Skapade projektet %{target_project_name}
     errors: Fel
@@ -797,11 +798,11 @@ sv-SE:
   error_can_not_reopen_work_package_on_closed_version: Ett arbetspaket som tilldelats
     en stängd version kan inte öppnas igen
   error_check_user_and_role: Välj en användare och en roll.
-  error_cookie_missing: The OpenProject cookie is missing. Please ensure that cookies
-    are enabled, as this application will not properly function without.
+  error_cookie_missing: OpenProject cookie saknas. Vänligen kontrollera att cookies
+    är aktiverade, eftersom detta program inte fungerar korrekt annars.
   error_pdf_export_too_many_columns: Too many columns selected for the PDF export.
     Please reduce the number of columns.
-  error_token_authenticity: Unable to verify Cross-Site Request Forgery token.
+  error_token_authenticity: Kunde inte verifiera Cross-Site Request Forgery token.
   error_work_package_done_ratios_not_updated: Arbetspaketets andel avklarat är inte
     uppdaterat.
   error_work_package_not_found_in_project: Arbetspaketet hittades inte eller hör inte
@@ -827,8 +828,8 @@ sv-SE:
   error_workflow_copy_target: Välj måltyp(er) och roll(er)
   error_menu_item_not_created: Menyobjektet kunde inte läggas till
   error_menu_item_not_saved: Menyobjektet kunde inte sparas
-  error_wiki_root_menu_item_conflict: 'Can''t rename "%{old_name}" to "%{new_name}"
-    due to a conflict in the resulting menu item with the existing menu item "%{existing_caption}"
+  error_wiki_root_menu_item_conflict: 'Kan inte ändra från "%{old_name}" till "%{new_name}"
+    på grund av en konflikt med det befintliga menyalternativet "%{existing_caption}"
     (%{existing_identifier}).
 
 '
@@ -869,7 +870,7 @@ sv-SE:
       glossary: Ordlista
       shortcuts: Genvägar
       forums: Forum
-      blog: OpenProject blog
+      blog: OpenProject blogg
       boards: Community forum
   instructions_after_registration: Du kan logga in så snart ditt konto har aktiverats
     genom att klicka på %{signin}.
@@ -909,8 +910,8 @@ sv-SE:
   label_all: alla
   label_all_time: all tid
   label_all_words: Alla ord
-  label_always_visible: Always displayed
-  label_announcement: Announcement
+  label_always_visible: Visas alltid
+  label_announcement: Meddelande
   label_and_its_subprojects: "%{value} och dess delprojekt"
   label_api_access_key: API åtkomstnyckel
   label_api_access_key_created_on: API åtkomstnyckel skapade %{value} sedan
@@ -1014,7 +1015,7 @@ sv-SE:
   label_download_plural: "%{count} Nedladdningar"
   label_downloads_abbr: D/L
   label_duplicated_by: duplicerad genom
-  label_duplicate: duplicate
+  label_duplicate: dublett
   label_duplicates: dubblett av
   label_edit: Redigera
   label_enable_multi_select: Växla multival
@@ -1025,7 +1026,7 @@ sv-SE:
   label_end_to_end: slut till slut
   label_end_to_start: slut till start
   label_enumeration_new: Nytt textvärde
-  label_enumeration_value: Enumeration value
+  label_enumeration_value: Uppräkningsvärde
   label_enumerations: Textvärden
   label_environment: Miljö
   label_equals: är
@@ -1042,11 +1043,11 @@ sv-SE:
   label_filter_add: Lägg till filter
   label_filter_plural: Filter
   label_float: Flyttal
-  label_folder: Folder
+  label_folder: Mapp
   label_follows: följer
   label_force_user_language_to_default: Välj standardspråk för användare som har ett
     icke tillåtet språk
-  label_form_configuration: Form configuration
+  label_form_configuration: Ställ in formulär
   label_general: Allmänt
   label_generate_key: Generera en nyckel
   label_git_path: Sökväg till .git katalog
@@ -1077,7 +1078,7 @@ sv-SE:
   label_jump_to_a_project: Hoppa till projekt...
   label_language_based: Baserat på användarens språk
   label_last_activity: Senaste aktivitet
-  label_last_change_on: Last change on
+  label_last_change_on: Senast ändrad
   label_last_changes: sista %{count} förändringarna
   label_last_login: Senaste inloggning
   label_last_month: förra månaden
@@ -1102,7 +1103,7 @@ sv-SE:
   label_member_plural: Medlemmar
   label_memder_view_all: Visa alla medlemmar
   label_menu_item_name: Namn på menyalternativ
-  label_message: Message
+  label_message: Meddelande
   label_message_last: Senaste meddelandet
   label_message_new: Nytt meddelande
   label_message_plural: Meddelanden
@@ -1176,7 +1177,7 @@ sv-SE:
   label_previous_week: Föregående vecka
   label_principal_invite_via_email: " eller bjud in nya användare via e-post"
   label_principal_search: Lägga till befintliga användare eller grupper
-  label_product_version: Product version
+  label_product_version: Produktversion
   label_professional_support: Professionell hjälp
   label_profile: Profil
   label_project_all: Alla projekt
@@ -1437,8 +1438,7 @@ sv-SE:
   noscript_description: Du måste aktivera JavaScript för att använda OpenProject!
   noscript_heading: JavaScript inaktiverat
   noscript_learn_more: Lär dig mer
-  notice_accessibility_mode: The accessibility mode can be enabled in your [account
-    settings](url).
+  notice_accessibility_mode: Hjälpmedelsläget kan aktiveras i dina [kontoinställningar](url).
   notice_account_activated: Ditt konto har aktiverats. Nu kan du logga in.
   notice_account_already_activated: The account has already been activated.
   notice_account_invalid_token: Invalid activation token
@@ -1456,8 +1456,8 @@ sv-SE:
   notice_account_register_done: Kontot har skapats. För att aktivera ditt konto, klicka
     på länken som skickades till dig via E-post.
   notice_account_unknown_email: Okänd användare.
-  notice_account_update_failed: Account setting could not be saved. Please have a
-    look at your account page.
+  notice_account_update_failed: Kontot kunde inte uppdateras. Gå till din profilsida
+    och kontrollera inställningarna.
   notice_account_updated: Kontot har uppdaterats.
   notice_account_wrong_password: Felaktigt lösenord
   notice_account_registered_and_logged_in: Välkommen, ditt konto har aktiverats. Du
@@ -1515,10 +1515,10 @@ sv-SE:
   present_access_key_value: 'Your %{key_name} is: %{value}'
   notice_automatic_set_of_standard_type: Ange standard typ automatiskt.
   notice_logged_out: Du har loggats ut.
-  notice_wont_delete_auth_source: The authentication mode cannot be deleted as long
-    as there are still users using it.
-  notice_project_cannot_update_custom_fields: 'You cannot update the project''s available
-    custom fields. The project is invalid: %{errors}'
+  notice_wont_delete_auth_source: Autentiseringsläget kan inte tas bort så länge det
+    finns användare som använder det.
+  notice_project_cannot_update_custom_fields: 'Du kan inte uppdatera projektets anpassade
+    fält. Projektet är ogiltig: %{errors}'
   number:
     format:
       delimiter: ''
@@ -1539,9 +1539,9 @@ sv-SE:
           mb: MB
           tb: TB
   onboarding:
-    text_getting_started: This video provides you an overview of OpenProject. It helps
-      you to set up your first project and to start collaborating with your team members.
-    text_show_again: You can restart this video from the help menu
+    text_getting_started: Denna video ger dig en översikt över OpenProject. Den hjälper
+      dig att konfigurera ditt första projekt och börja samarbeta med dina gruppmedlemmar.
+    text_show_again: Du kan starta om denna video från hjälpmenyn
     welcome: Welcome to OpenProject
   permission_add_work_package_notes: Lägg till anteckningar
   permission_add_work_packages: Add work packages (also allows to add attachments
@@ -1627,7 +1627,7 @@ sv-SE:
       warning_two: Existing links to the project will no longer work.
       title: Change the project's identifier
     archive:
-      are_you_sure: Are you sure you want to archive the project '%{name}'?
+      are_you_sure: Är du säker på att du vill arkivera projektet '%{name}'?
   project_module_activity: Aktivitet
   project_module_boards: Forum
   project_module_calendar: Kalender
@@ -1775,15 +1775,15 @@ sv-SE:
     warnings:
       cannot_annotate: This file cannot be annotated.
   search_input_placeholder: Search ...
-  setting_email_delivery_method: Email delivery method
-  setting_sendmail_location: Location of the sendmail executable
-  setting_smtp_enable_starttls_auto: Automatically use STARTTLS if available
-  setting_smtp_address: SMTP server
-  setting_smtp_port: SMTP port
-  setting_smtp_authentication: SMTP authentication
-  setting_smtp_domain: SMTP HELLO domain
-  setting_smtp_user_name: SMTP username
-  setting_smtp_password: SMTP password
+  setting_email_delivery_method: Leveransmetod för e-post
+  setting_sendmail_location: Sökväg till sendmail
+  setting_smtp_enable_starttls_auto: Använd STARTTLS om det går
+  setting_smtp_address: SMTP-server
+  setting_smtp_port: SMTP-port
+  setting_smtp_authentication: SMTP-autentisering
+  setting_smtp_domain: SMTP HELLO-domän
+  setting_smtp_user_name: SMTP-användarnamn
+  setting_smtp_password: SMTP-lösenord
   setting_activity_days_default: Dagar som visas i projektaktivitet
   setting_app_subtitle: Undertitel för applikation
   setting_app_title: Programnamn
@@ -1843,7 +1843,8 @@ sv-SE:
     mekanism (e.g., skapa och uppdatera arbetspaket).
   setting_mail_handler_api_key: API-nyckel
   setting_mail_handler_body_delimiters: Trunkera E-post efter en av dessa rader
-  setting_mail_handler_body_delimiter_regex: Truncate emails matching this regex
+  setting_mail_handler_body_delimiter_regex: Trunkera e-postmeddelanden enligt följande
+    regex
   setting_new_project_user_role_id: Roll som ges till en icke-administratör som skapar
     ett projekt
   setting_password_active_rules: Aktiva teckenklasser
@@ -1896,7 +1897,7 @@ sv-SE:
     passwords: Lösenord
     session: Session
     brute_force_prevention: Automatiserad användarblockering
-  show_hide_project_menu: Expand/Collapse project menu
+  show_hide_project_menu: Expandera/minimera projektmenyn
   status_active: aktiv
   status_invited: invited
   status_registered: Registrerad
@@ -1910,17 +1911,17 @@ sv-SE:
   text_are_you_sure: Är du säker?
   text_are_you_sure_with_children: Ta bort arbetspaket och alla underarbetspaket?
   text_assign_to_project: Tilldela till projektet
-  text_form_configuration: 'You can customize which attributes will be displayed in
-    forms for work packages of this type. ''Active'' fields will be shown in the collapsed
-    work package view if they have a value, fields that are ''Always displayed'' even
-    if they don''t. Inactive fields will never be shown, even if they have a value.
-    Only fields that are not required or have a default value can be customized.
+  text_form_configuration: 'Du kan anpassa vilka attribut som ska visas i formulären
+    för arbetspaket av denna typ. Fält med ''Aktiv'' visas i den minimerade vyn om
+    de har ett värde, fält med ''Visas alltid'' visas oavsett. Inaktiva fält visas
+    aldrig, även om de har ett värde. Endast fält som inte är nödvändiga eller har
+    ett standardvärde kan anpassas.
 
 '
   text_caracters_maximum: maximalt %{count} tecken.
   text_caracters_minimum: Måste vara minst %{count} tecken lång.
   text_comma_separated: Flera värden tillåtna (kommaseparerade).
-  text_comment_wiki_page: 'Comment to wiki page: %{page}'
+  text_comment_wiki_page: 'Kommentar på wiki-sida: %{page}'
   text_custom_field_possible_values_info: En rad för varje värde
   text_default_administrator_account_changed: Standardadministratörskontot har ändrats
   text_default_encoding: 'Standard: UTF-8'
@@ -1940,7 +1941,7 @@ sv-SE:
   text_hint_date_format: Enter a date in the form of YYYY-MM-DD. Other formats may
     be changed to an unwanted date.
   text_hint_disable_with_0: 'Notera: Inaktivera med 0'
-  text_hours_between: Between %{min} and %{max} hours.
+  text_hours_between: Mellan %{min} och %{max} timmar.
   text_work_package_added: Arbetspaketet %{id} har rapporterats av %{author}.
   text_work_package_category_destroy_assignments: Ta bort kategoritilldelningar
   text_work_package_category_destroy_question: Vissa arbetspaket (%{count}) har tilldelas
@@ -1985,7 +1986,7 @@ sv-SE:
     och understreck tillåts och måste dessutom börja med en gemen bokstav.
   text_reassign: 'Reassign to work package:'
   text_regexp_info: t.ex. ^[A-Z0-9]+$
-  text_regexp_multiline: The regex is applied in a multi-line mode. e.g., ^---\s+
+  text_regexp_multiline: Regex appliceras i flerradsläge. t.ex. ^---\s+
   text_repository_usernames_mapping: Välj eller uppdatera OpenProject användaren koppling
     till varje användarnamn i versionsarkivloggen. Användare med samma användarnamn
     eller E-post i OpenProject och versionsarkivet kopplas automatiskt.
@@ -2016,7 +2017,7 @@ sv-SE:
   text_workflow_edit: Välj en roll och en typ för att redigera arbetsflödet
   text_zoom_in: Zooma in
   text_zoom_out: Zooma ut
-  text_setup_mail_configuration: Configure your email provider
+  text_setup_mail_configuration: Konfigurera din e-postleverantör
   time:
     am: fm
     formats:
@@ -2232,9 +2233,9 @@ sv-SE:
 '
   tooltip:
     attribute_visibility:
-      default: Show if not empty
-      visible: Show even if empty
-      hidden: Hide by default
+      default: Visa om innehåll finns
+      visible: Visa även om innehåll saknas
+      hidden: Dölj som standard
     setting_email_login: 'If enabled a user will be unable to chose a login during
       registration. Instead their given e-mail address will serve as the login. An
       administrator may still change the login separately.
@@ -2243,9 +2244,9 @@ sv-SE:
   queries:
     apply_filter: Använd förkonfigurerade filter
   top_menu:
-    additional_resources: Additional resources
-    getting_started: Getting started
-    help_and_support: Help and support
+    additional_resources: Ytterligare resurser
+    getting_started: Komma igång
+    help_and_support: Hjälp och support
   total_progress: Totalt klart
   user:
     all: alla
@@ -2277,10 +2278,10 @@ sv-SE:
     registered: Registrerad
     reset_failed_logins: Nollställ misslyckade inloggningsförsök
     settings:
-      mail_notifications: Send email notifications
-      mail_project_explanaition: For unselected projects, you will only receive notifications
-        about things you watch or you're involved in (e.g. work packages you're the
-        author or assignee of).
+      mail_notifications: Skicka e-postaviseringar
+      mail_project_explanaition: För omarkerade projekt kommer du bara få aviseringar
+        om sådant du bevakar eller är involverad i (t.ex. arbetspaket som du skapat
+        eller tilldelats).
       mail_self_notified: I want to be notified of changes that I make myself
     status_user_and_brute_force: "%{user} och %{brute_force}"
     unlock: Lås upp
@@ -2324,7 +2325,7 @@ sv-SE:
       code_409: Kunde inte uppdatera resursen på grund av motstridiga ändringar.
       code_500: Ett internt fel har inträffat.
       expected:
-        date: YYYY-MM-DD (ISO 8601 date only)
+        date: ÅÅÅÅ-MM-DD (endast datum enligt ISO 8601)
         duration: ISO 8601 duration
       invalid_content_type: Förväntade att CONTENT-TYPE var "%{content_type}" men
         erhöll istället "%{actual}".
