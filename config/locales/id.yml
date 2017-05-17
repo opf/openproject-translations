@@ -469,6 +469,9 @@ id:
             start_date:
               violates_relationships: can only be set to %{soonest_start} or later
                 so as not to violate the work package's relationships.
+              violates_parent_relationships: can only be set to %{soonest_start} or
+                later so as not to violate the relationships of the work_package's
+                ancestors.
             status_id:
               status_transition_invalid: gagal melakukan transisi dari status lama
                 ke status baru untuk role ini.
@@ -1397,6 +1400,8 @@ id:
   label_updated_time_at: "%{author} %{age}"
   label_updated_time_by: Diperbarui oleh %{author} %{age} yang lalu
   label_used_by: Digunakan oleh
+  label_used_by_types: Used by types
+  label_used_in_projects: Used in projects
   label_user: User
   label_user_activity: "%{value} aktivitas"
   label_user_anonymous: Anonimus

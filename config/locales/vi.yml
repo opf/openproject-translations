@@ -474,6 +474,9 @@ vi:
             start_date:
               violates_relationships: chỉ có thể được thiếp lập sang %{soonest_start}
                 hoặc mới hơn để không làm vi phạm các mối quan hệ của work package.
+              violates_parent_relationships: can only be set to %{soonest_start} or
+                later so as not to violate the relationships of the work_package's
+                ancestors.
             status_id:
               status_transition_invalid: is invalid because no valid transition exists
                 from old to new status for the current user's roles.
@@ -1406,6 +1409,8 @@ vi:
   label_updated_time_at: "%{author} %{age}"
   label_updated_time_by: Cập nhật bởi %{author} cách đây %{age}
   label_used_by: Được dùng bởi
+  label_used_by_types: Used by types
+  label_used_in_projects: Used in projects
   label_user: Người dùng
   label_user_activity: "%{value} hoạt động"
   label_user_anonymous: Ẩn danh

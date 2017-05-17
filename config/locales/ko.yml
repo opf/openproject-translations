@@ -446,6 +446,9 @@ ko:
             start_date:
               violates_relationships: 은(는) %{soonest_start} 이상으로만 설정할 수 있습니다. 작업 패키지의
                 관계를 위반하지 않도록 하기 위해서입니다.
+              violates_parent_relationships: can only be set to %{soonest_start} or
+                later so as not to violate the relationships of the work_package's
+                ancestors.
             status_id:
               status_transition_invalid: 현재 사용자 역할이 새 상태로 바르게 전환될 수 없으므로 유효 하지 않음
             priority_id:
@@ -1375,6 +1378,8 @@ ko:
   label_updated_time_at: "%{author} %{age}"
   label_updated_time_by: "%{author}이(가) %{age} 전에 업데이트함"
   label_used_by: 사용한 사용자
+  label_used_by_types: Used by types
+  label_used_in_projects: Used in projects
   label_user: 사용자
   label_user_activity: "%{value}의 작업"
   label_user_anonymous: 익명

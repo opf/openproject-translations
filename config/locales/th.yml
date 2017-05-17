@@ -469,6 +469,9 @@ th:
             start_date:
               violates_relationships: can only be set to %{soonest_start} or later
                 so as not to violate the work package's relationships.
+              violates_parent_relationships: can only be set to %{soonest_start} or
+                later so as not to violate the relationships of the work_package's
+                ancestors.
             status_id:
               status_transition_invalid: is invalid because no valid transition exists
                 from old to new status for the current user's roles.
@@ -1390,6 +1393,8 @@ th:
   label_updated_time_at: "%{author} %{age}"
   label_updated_time_by: ปรับปรุงโดย %{author} เมื่อ %{age} ที่ผ่านมา
   label_used_by: ใช้โดย
+  label_used_by_types: Used by types
+  label_used_in_projects: Used in projects
   label_user: ผู้ใช้
   label_user_activity: กิจกรรมของ %{value}
   label_user_anonymous: ไม่ระบุชื่อ
