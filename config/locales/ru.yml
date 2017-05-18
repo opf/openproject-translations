@@ -53,10 +53,14 @@ ru:
       no_results_title_text: Нет настраиваемых полей.
       no_results_content_text: Создать новое настраиваемое поле
   deprecations:
-    old_timeline: Графики этого модуля будут заменены на представление интерактивные
-      графики модуля пакетов работ. Этот модуль будет удален из OpenProject 7.0. <br/>
-      Обратите внимание, не все данные этого модуля будут перенесены в новое представление,
-      пожалуйста сделайте все необходимое для воссоздания информации в новом представлении.
+    old_timeline:
+      replacement: This timelines module is being replaced by the interactive timeline
+        embedded into the work packages module.
+      removal: This module is going to be removed with OpenProject 8.0. The configuration
+        for this view will NOT be migrated to the work package view.
+      further_information_before: Please take a look at
+      link_name: how to migrate to the new timeline.
+      further_information_after: ''
   groups:
     index:
       no_results_title_text: На данный момент группы отсутствуют.
@@ -470,9 +474,8 @@ ru:
             start_date:
               violates_relationships: может быть установлено лишь в %{soonest_start}
                 или позднее и без нарушения взаимосвязи рабочих пакетов.
-              violates_parent_relationships: can only be set to %{soonest_start} or
-                later so as not to violate the relationships of the work_package's
-                ancestors.
+              violates_parent_relationships: может быть установлено лишь в %{soonest_start}
+                или позднее и без нарушения взаимосвязи пакетов работ предков.
             status_id:
               status_transition_invalid: недопустимо, так как  для текущих ролей пользователя
                 нет правильного перехода от старого этапа к новому.
@@ -1428,8 +1431,8 @@ ru:
   label_updated_time_at: "%{author} %{age}"
   label_updated_time_by: Обновил %{author} %{age} назад
   label_used_by: Используется
-  label_used_by_types: Used by types
-  label_used_in_projects: Used in projects
+  label_used_by_types: Используемые типы
+  label_used_in_projects: Используется в проектах
   label_user: Пользователь
   label_user_activity: "%{value} деятельности"
   label_user_anonymous: Анонимно
@@ -2087,6 +2090,9 @@ ru:
   text_comma_separated: Можно ввести несколько значений(через запятую).
   text_comment_wiki_page: 'Комментарий к вики-странице: %{page}'
   text_custom_field_possible_values_info: Каждое значение на отдельной строке
+  text_custom_logo_instructions: A white logo on transparent background is recommended.
+    For best results on both, conventional and retina displays, make sure your image's
+    dimensions are 460px by 110px.
   text_default_administrator_account_changed: Первоначальная учетная запись администратора
     была изменена
   text_default_encoding: 'По-умолчанию: UTF-8'
