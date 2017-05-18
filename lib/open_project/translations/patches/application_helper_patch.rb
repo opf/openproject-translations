@@ -17,35 +17,35 @@ require_dependency 'application_helper'
 module OpenProject::Translations::Patches
   module ApplicationHelperPatch
     def self.included(base)
-      base.class_eval do
-        def all_lang_options_for_select_with_translation_plugin(blank=true)
-          lang_options = all_lang_options_for_select_without_translation_plugin(blank)
+      base.prepend(InstanceMethods)
+    end
 
-          # rename in-context translation language name for the language select box
-          lang_options.map do |lang_name, lang_code|
-            if lang_code == OpenProject::Translations::IN_CONTEXT_TRANSLATION_CODE &&
-               ::I18n.locale != OpenProject::Translations::IN_CONTEXT_TRANSLATION_CODE
-              [OpenProject::Translations::IN_CONTEXT_TRANSLATION_NAME, lang_code]
-            else
-              [lang_name, lang_code]
-            end
+    module InstanceMethods
+      def all_lang_options_for_select(blank=true)
+        lang_options = super
+
+        # rename in-context translation language name for the language select box
+        lang_options.map do |lang_name, lang_code|
+          if lang_code == OpenProject::Translations::IN_CONTEXT_TRANSLATION_CODE &&
+             ::I18n.locale != OpenProject::Translations::IN_CONTEXT_TRANSLATION_CODE
+            [OpenProject::Translations::IN_CONTEXT_TRANSLATION_NAME, lang_code]
+          else
+            [lang_name, lang_code]
           end
         end
-        alias_method_chain :all_lang_options_for_select, :translation_plugin
+      end
 
-        def lang_options_for_select_with_translation_plugin(blank=true)
-          lang_options = lang_options_for_select_without_translation_plugin(blank)
-          # rename in-context translation language name for the language select box
-          lang_options.map do |lang_name, lang_code|
-            if lang_code == OpenProject::Translations::IN_CONTEXT_TRANSLATION_CODE &&
-               ::I18n.locale != OpenProject::Translations::IN_CONTEXT_TRANSLATION_CODE
-              [OpenProject::Translations::IN_CONTEXT_TRANSLATION_NAME, lang_code]
-            else
-              [lang_name, lang_code]
-            end
+      def lang_options_for_select(blank=true)
+        lang_options = super
+        # rename in-context translation language name for the language select box
+        lang_options.map do |lang_name, lang_code|
+          if lang_code == OpenProject::Translations::IN_CONTEXT_TRANSLATION_CODE &&
+             ::I18n.locale != OpenProject::Translations::IN_CONTEXT_TRANSLATION_CODE
+            [OpenProject::Translations::IN_CONTEXT_TRANSLATION_NAME, lang_code]
+          else
+            [lang_name, lang_code]
           end
         end
-        alias_method_chain :lang_options_for_select, :translation_plugin
       end
     end
   end

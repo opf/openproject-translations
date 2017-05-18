@@ -12,23 +12,24 @@
 # See doc/COPYRIGHT.md for more details.
 #++
 
-module Redmine
-  module I18n
-
-    # Add langauges from this plugin to the list of available languages
-    def all_languages_with_translation_plugin
-      plugin_languages = Dir[OpenProject::Translations::Engine.root.join('config', 'locales', '*.{yml}').to_s].map do |file_path|
-        File.basename(file_path).split('.').first.to_sym
-      end
-
-      # do not count javascript translations as separate languages
-      plugin_languages.reject! { |l| l.to_s[0..2] == 'js-' }
-
-      core_languages = all_languages_without_translation_plugin
-
-      (core_languages + plugin_languages).sort.uniq
+module OpenProject::Translations::Patches::RedmineI18nPatch
+  # Add langauges from this plugin to the list of available languages
+  def all_languages
+    plugin_languages = Dir[OpenProject::Translations::Engine.root.join('config', 'locales', '*.{yml}').to_s].map do |file_path|
+      File.basename(file_path).split('.').first.to_sym
     end
 
-    alias_method_chain :all_languages, :translation_plugin
+    # do not count javascript translations as separate languages
+    plugin_languages.reject! { |l| l.to_s[0..2] == 'js-' }
+
+    core_languages = super
+
+    (core_languages + plugin_languages).sort.uniq
+  end
+end
+
+module Redmine
+  module I18n
+    prepend OpenProject::Translations::Patches::RedmineI18nPatch
   end
 end
