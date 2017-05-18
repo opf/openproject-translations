@@ -17,17 +17,18 @@ module Redmine
 
     # Add langauges from this plugin to the list of available languages
     def all_languages_with_translation_plugin
-      plugin_languages = Dir[OpenProject::Translations::Engine.root.join('config', 'locales', '*.{rb,yml}').to_s].map do |file_path|
+      plugin_languages = Dir[OpenProject::Translations::Engine.root.join('config', 'locales', '*.{yml}').to_s].map do |file_path|
         File.basename(file_path).split('.').first.to_sym
       end
 
-      # do not count javascript translations as separate langauges
-      plugin_languages.reject! {|l| l.to_s[0..2] == 'js-' }
+      # do not count javascript translations as separate languages
+      plugin_languages.reject! { |l| l.to_s[0..2] == 'js-' }
 
       core_languages = all_languages_without_translation_plugin
 
       (core_languages + plugin_languages).sort.uniq
     end
+
     alias_method_chain :all_languages, :translation_plugin
   end
 end
