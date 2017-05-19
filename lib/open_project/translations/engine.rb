@@ -26,6 +26,13 @@ module OpenProject::Translations
 
     patches [ :ApplicationHelper ]
 
+    # load custom translation rules, as stored in config/locales/plurals.rb
+    # to be aware of e.g. Japanese not having a plural from for nouns
+    initializer 'translation.pluralization.rules' do
+      require 'i18n/backend/pluralization'
+      I18n::Backend::Simple.send(:include, I18n::Backend::Pluralization)
+    end
+
     config.to_prepare do
       # the patches helper does not work for patches in the Redmine module, so we patch things manually now
       Redmine::I18n # let rails do some autoloading magic with Redmine::I18n
