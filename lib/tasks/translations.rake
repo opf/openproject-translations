@@ -51,7 +51,7 @@ namespace :translations do
     end
 
     # nuke locales directory to get rid of old files
-    OpenProject::Translations::Engine.root.join('config', 'locales').children.each do |file|
+    Dir.glob("#{OpenProject::Translations::Engine.root.join('config', 'locales')}/*.yml").each do |file|
       File.delete(file) if File.file?(file)
     end
 
