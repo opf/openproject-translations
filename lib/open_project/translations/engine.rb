@@ -29,8 +29,8 @@ module OpenProject::Translations
     # load custom translation rules, as stored in config/locales/plurals.rb
     # to be aware of e.g. Japanese not having a plural from for nouns
     initializer 'translation.pluralization.rules' do
-      require 'i18n/backend/pluralization'
-      I18n::Backend::Simple.send(:include, I18n::Backend::Pluralization)
+      require 'open_project/translations/pluralization_backend'
+      I18n::Backend::Simple.send(:include, OpenProject::Translations::PluralizationBackend)
     end
 
     config.to_prepare do
