@@ -45,8 +45,8 @@ sv-SE:
     show:
       no_results_title_text: Det finns för närvarande inga inlägg på anslagstavlan.
   custom_fields:
-    text_add_new_custom_field: 'To add new custom fields to a project you first need
-      to create them before you can add them to this project.
+    text_add_new_custom_field: 'Innan du kan lägga till nya anpassade fält till ett
+      projekt måste du skapa dessa.
 
 '
     is_enabled_globally: Är aktiverad globalt
@@ -57,12 +57,12 @@ sv-SE:
       no_results_content_text: Skapa ett nytt anpassat fält
   deprecations:
     old_timeline:
-      replacement: This timelines module is being replaced by the interactive timeline
-        embedded into the work packages module.
-      removal: This module is going to be removed with OpenProject 8.0. The configuration
-        for this view will NOT be migrated to the work package view.
-      further_information_before: Please take a look at
-      link_name: how to migrate to the new timeline.
+      replacement: Den här tidslinjemodulen ersätts av den interaktiva tidslinjen
+        som finns inbäddad i arbetspaketsmodulen.
+      removal: Den här modulen kommer att tas bort i OpenProject 8.0. Inställningarna
+        för den här vyn kommer INTE att migreras till arbetspaketsvyn.
+      further_information_before: Ta gärna en titt på
+      link_name: hur du migrerar till den nya tidslinjen.
       further_information_after: ''
   groups:
     index:
@@ -230,14 +230,14 @@ sv-SE:
   activemodel:
     errors:
       models:
-        queries/base_contract:
+        query:
           attributes:
             project:
               error_not_found: hittades inte
             public:
               error_unauthorized: "- Användaren har inte behörighet att skapa offentliga
                 frågor."
-        relations/base_contract:
+        relation:
           attributes:
             to:
               error_not_found: arbetspaketet i 'till' hittades inte eller är inte
@@ -247,7 +247,7 @@ sv-SE:
               error_not_found: arbetspaketet i 'från' hittades inte eller är inte
                 synligt
               error_readonly: en befintlig relations 'från'-länk går ej att ändra
-        users/base_contract:
+        user:
           attributes:
             status:
               invalid_on_create: är inte en giltig status för nya användare.
@@ -477,9 +477,8 @@ sv-SE:
             start_date:
               violates_relationships: kan endast anges till %{soonest_start} eller
                 senare för att inte skada arbetspaketets relationer.
-              violates_parent_relationships: can only be set to %{soonest_start} or
-                later so as not to violate the relationships of the work_package's
-                ancestors.
+              violates_parent_relationships: kan endast anges till %{soonest_start}
+                eller senare för att inte skada arbetspaketets relationer.
             status_id:
               status_transition_invalid: är ogiltig eftersom det finns någon giltig
                 övergång ifrån den gamla till nya statusen för den aktuella användarens
@@ -523,7 +522,7 @@ sv-SE:
         body: 'Kontrollera följande fält:'
         header:
           one: 1 fel förhindrade denna %{model} från att sparas
-          other: "%{count} errors prohibited this %{model} from being saved"
+          other: "%{count} fel förhindrade denna %{model} från att sparas"
     models:
       attachment: Fil
       board: Forum
@@ -538,7 +537,7 @@ sv-SE:
       query: Anpassad fråga
       role:
         one: Roll
-        other: Roles
+        other: Roller
       type: Typ
       project_type: Projekttyp
       user: Användare
@@ -731,42 +730,42 @@ sv-SE:
     distance_in_words:
       about_x_hours:
         one: ca 1 timme
-        other: about %{count} hours
+        other: ca %{count} timmar
       about_x_months:
         one: ca 1 månad
-        other: about %{count} months
+        other: ca %{count} månader
       about_x_years:
         one: ca 1 år
-        other: about %{count} years
+        other: ca %{count} år
       almost_x_years:
         one: nästan 1 år
-        other: almost %{count} years
+        other: nästan %{count} år
       half_a_minute: en halv minut
       less_than_x_minutes:
-        one: mindre än en minut
-        other: less than %{count} minutes
+        one: mindre än 1 minut
+        other: mindre än %{count} minuter
       less_than_x_seconds:
         one: mindre än 1 sekund
-        other: less than %{count} seconds
+        other: mindre än %{count} sekunder
       over_x_years:
         one: över 1 år
-        other: over %{count} years
+        other: över %{count} år
       x_days:
         one: 1 dag
-        other: "%{count} days"
+        other: "%{count} dagar"
       x_minutes:
         one: 1 minut
-        other: "%{count} minutes"
+        other: "%{count} minuter"
       x_months:
         one: 1 månad
-        other: "%{count} months"
+        other: "%{count} månader"
       x_seconds:
         one: 1 sekund
-        other: "%{count} seconds"
+        other: "%{count} sekunder"
     units:
       hour:
         one: timme
-        other: hours
+        other: timmar
   default_activity_development: Utveckling
   default_activity_management: Hantering
   default_activity_other: Andra
@@ -1095,7 +1094,7 @@ sv-SE:
   label_core_version: Kärnversion
   label_current_status: Nuvarande status
   label_current_version: Aktuell version
-  label_custom_field_add_no_type: Add this field to a work package type
+  label_custom_field_add_no_type: Lägg till det här fältet till en arbetspaketstyp
   label_custom_field_new: Nytt anpassat fält
   label_custom_field_plural: Anpassade fält
   label_custom_field_default_type: Tom typ
@@ -1411,8 +1410,8 @@ sv-SE:
   label_updated_time_at: "%{author} %{age}"
   label_updated_time_by: Uppdaterad av %{author} %{age} sen
   label_used_by: Används av
-  label_used_by_types: Used by types
-  label_used_in_projects: Used in projects
+  label_used_by_types: Används av typer
+  label_used_in_projects: Används i projekt
   label_user: Användare
   label_user_activity: "%{value}s aktivitet"
   label_user_anonymous: Anonym
@@ -1483,23 +1482,23 @@ sv-SE:
   label_workflow_summary: Sammanfattning
   label_x_closed_work_packages_abbr:
     one: 1 stängd
-    other: "%{count} closed"
+    other: "%{count} stängda"
     zero: 0 closed
   label_x_comments:
     one: 1 kommentar
-    other: "%{count} comments"
+    other: "%{count} kommentarer"
     zero: no comments
   label_x_open_work_packages_abbr:
     one: 1 öppen
-    other: "%{count} open"
+    other: "%{count} öppnade"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
-    one: 1/%{total} öppen
-    other: "%{count} open / %{total}"
+    one: 1 öppen/%{total}
+    other: "%{count} öppna/%{total}"
     zero: 0 open / %{total}
   label_x_projects:
     one: 1 projekt
-    other: "%{count} projects"
+    other: "%{count} projekt"
     zero: no projects
   label_year: År
   label_yesterday: igår
@@ -1663,9 +1662,9 @@ sv-SE:
           mb: MB
           tb: TB
   onboarding:
-    heading_getting_started: Get an overview
-    text_getting_started_description: Get a quick overview of project management and
-      team collaboration with OpenProject.
+    heading_getting_started: Få en översikt
+    text_getting_started_description: Få en snabb överblick över projektledning och
+      samarbete med OpenProject.
     text_show_again: Du kan starta om denna video från hjälpmenyn
     welcome: Välkommen till OpenProject
   permission_add_work_package_notes: Lägg till anteckningar
@@ -1847,7 +1846,7 @@ sv-SE:
         managed_url: Detta är sökvägen till det (lokala) Git -versionsarkivet.
         path: Ange sökvägen till ditt lokala Git-versionsarkiv ( t.ex. %{example_path}
           ).
-        path_encoding: 'Override Git path encoding (Default: UTF-8)'
+        path_encoding: 'Åsidosätt Git sökvägskodning (standard: UTF-8)'
       local_title: Länka befintligt lokalt Git-versionsarkiv
       local_url: Lokal URL
       local_introduction: Om du har ett existerande lokalt Git-versionsarkiv, så kan
@@ -1855,19 +1854,19 @@ sv-SE:
       managed_introduction: Låt OpenProject automatiskt skapa och integrera ett lokalt
         Git-versionsarkiv.
       managed_title: Git-versionsarkivet integreras i OpenProject
-      managed_url: Managed URL
+      managed_url: URL för hantering
       path: Sökväg till Git-versionsarkiv
       path_encoding: Sökvägskodning
     go_to_revision: Gå till revision
-    managed_remote: Managed repositories for this vendor are handled remotely.
-    managed_remote_note: Information on the URL and path of this repository is not
-      available prior to its creation.
-    managed_url: Managed URL
+    managed_remote: Hanterade databaser för denna leverantör hanteras på distans.
+    managed_remote_note: Information om URL och sökväg till den här databasen finns
+      inte innan den skapats.
+    managed_url: URL för hantering
     settings:
-      automatic_managed_repos_disabled: Disable automatic creation
-      automatic_managed_repos: Automatic creation of managed repositories
-      automatic_managed_repos_text: By setting a vendor here, newly created projects
-        will automatically receive a managed repository of this vendor.
+      automatic_managed_repos_disabled: Inaktivera automatiskt skapande
+      automatic_managed_repos: Automatiskt skapande av hanterade databaser
+      automatic_managed_repos_text: Genom att ange en leverantör här så kommer nya
+        projekt automatiskt motta en hanterad databas från denna leverantör.
     scm_vendor: Källkodshanteringssystem
     scm_type: Arkivtyp
     scm_types:
@@ -1875,10 +1874,10 @@ sv-SE:
       existing: Länka befintligt arkiv
       managed: Skapa nytt arkiv i OpenProject
     storage:
-      not_available: Disk storage consumption is not available for this repository.
+      not_available: Hårddiskanvändning är inte tillgängligt för den här databasen.
       update_timeout: |-
-        Keep the last required disk space information for a repository for N minutes.
-        As counting the required disk space of a repository may be costly, increase this value to reduce performance impact.
+        Behåll den senaste informationen om hårddiskanvändning för den här databasen i N minuter.
+        Eftersom beräkningen av detta är resurskrävande kan prestandan förbättras genom att öka det här värdet.
     subversion:
       existing_title: Befintligt Subversion-arkiv
       existing_introduction: Om du har ett befintlig Subversion-arkiv, kan du länka
@@ -1891,16 +1890,16 @@ sv-SE:
       managed_title: Subversion-arkiv integrerade i OpenProject
       managed_introduction: Låt OpenProject skapa och integrera ett lokalt Subversion-arkiv
         automatiskt.
-      managed_url: Managed URL
+      managed_url: URL för hantering
       password: Lösenord för arkiv
       username: Användarnamn för arkiv
     truncated: Tyvärr behövde katalogen minskas till %{limit} filer. %{truncated}
       filer utelämnades från listan.
-    named_repository: "%{vendor_name} repository"
+    named_repository: "%{vendor_name} databas"
     update_settings_successful: Inställningarna har sparats.
     url: URL till arkiv
     warnings:
-      cannot_annotate: This file cannot be annotated.
+      cannot_annotate: Den här filen kan inte kommenteras.
   search_input_placeholder: Sök ...
   setting_email_delivery_method: Leveransmetod för e-post
   setting_sendmail_location: Sökväg till sendmail
@@ -1915,7 +1914,7 @@ sv-SE:
   setting_app_subtitle: Undertitel för applikation
   setting_app_title: Programnamn
   setting_attachment_max_size: Bilaga max. storlek
-  setting_autofetch_changesets: Autofetch repository changes
+  setting_autofetch_changesets: Automatiskt hämtning av databasförändringar
   setting_autologin: Autoinloggning
   setting_available_languages: Tillgängliga språk
   setting_bcc_recipients: Mottagare för kopia (bcc)
@@ -1984,14 +1983,14 @@ sv-SE:
   setting_plain_text_mail: Oformaterad text i e-post (ingen HTML)
   setting_protocol: Protokoll
   setting_registration_footer: Sidfot för registrering
-  setting_repositories_automatic_managed_vendor: Automatic repository vendor type
+  setting_repositories_automatic_managed_vendor: Automatisk leverantörstyp för databas
   setting_repositories_encodings: Teckenkodningar i versionsarkiv
   setting_repository_authentication_caching_enabled: Aktivera cachelagring för autentiseringsbegäran
     av versionsarkivsystemet
-  setting_repository_storage_cache_minutes: Repository disk size cache
-  setting_repository_checkout_display: Show checkout instructions
-  setting_repository_checkout_base_url: Checkout base URL
-  setting_repository_checkout_text: Checkout instruction text
+  setting_repository_storage_cache_minutes: Cachning av databasens hårddiskstorlek
+  setting_repository_checkout_display: Visa instruktioner för utcheckning
+  setting_repository_checkout_base_url: Bas-URL för utcheckning
+  setting_repository_checkout_text: Instruktionstext för utcheckning
   setting_repository_log_display_limit: Maximalt antal revisioner som visas i loggfilen
   setting_repository_truncate_at: Maximalt antal filer som visas i databasläsaren
   setting_rest_api_enabled: Aktivera REST webb tjänst
@@ -2011,10 +2010,10 @@ sv-SE:
   setting_user_format: Användarvisningsformat
   setting_users_deletable_by_admins: Användarkonton kan tas bort av administratörer
   setting_users_deletable_by_self: Användare kan ta bort sina konton
-  setting_welcome_text: Welcome block text
-  setting_welcome_title: Welcome block title
-  setting_welcome_on_homescreen: Display welcome block on homescreen
-  setting_welcome_on_projects_page: Display welcome block on project overview
+  setting_welcome_text: Textblock för välkomstmeddelande
+  setting_welcome_title: Textblock för välkomsttitel
+  setting_welcome_on_homescreen: Visa välkomstblocket på hemsidan
+  setting_welcome_on_projects_page: Visa välkomstblocket på projektsidan
   setting_wiki_compression: Wiki komprimera historia
   setting_work_package_group_assignment: Tillåt tilldelning till grupper
   settings:
@@ -2025,7 +2024,7 @@ sv-SE:
     brute_force_prevention: Automatiserad användarblockering
   show_hide_project_menu: Expandera/minimera projektmenyn
   status_active: aktiv
-  status_invited: invited
+  status_invited: inbjuden
   status_registered: Registrerad
   support:
     array:
@@ -2035,38 +2034,37 @@ sv-SE:
     motoriskt handikappade eller har nedsatt syn. För den senare gruppen syns element
     i fokus extra tydligt. Vänligen notera att Backlogs-modulen inte är tillgänglig
     i det här läget.
-  text_access_token_hint: Access tokens allow you to grant external applications access
-    to resources in OpenProject.
+  text_access_token_hint: Åtkomstnycklar gör det möjligt för externa applikationer
+    att komma åt OpenProject-resurser.
   text_analyze: 'Vidare analys: %{subject}'
   text_are_you_sure: Är du säker?
   text_are_you_sure_with_children: Ta bort arbetspaket och alla underarbetspaket?
   text_assign_to_project: Tilldela till projektet
-  text_form_configuration: 'You can customize which fields will be displayed in work
-    package forms. You can freely group the fields to reflect the needs for your domain.
-    By default fields will only be shown in the collapsed work package view if they
-    have a value. Fields that are ''Always displayed'' will be visibile even if they
-    don''t have a value.
+  text_form_configuration: 'Du kan anpassa vilka fält som ska visas i arbetspaketens
+    formulär och gruppera dom som du vill för att återspegla just dina behov. Som
+    standard visas endast fält med ett värde i den kollapsade vyn. Fält som har inställningen
+    ''Visa alltid'' kommer att vara synliga även om dom är tomma.
 
 '
-  text_form_configuration_drag_to_activate: Drag fields from here to activate them
-  text_form_configuration_required_attribute: Attribute is marked required and thus
-    always shown
+  text_form_configuration_drag_to_activate: Dra fält härifrån för att aktivera dom
+  text_form_configuration_required_attribute: Attributet är markerat som nödvändigt
+    och visas därför alltid
   text_caracters_maximum: maximalt %{count} tecken.
   text_caracters_minimum: Måste vara minst %{count} tecken lång.
   text_comma_separated: Flera värden tillåtna (kommaseparerade).
   text_comment_wiki_page: 'Kommentar på wiki-sida: %{page}'
   text_custom_field_possible_values_info: En rad för varje värde
-  text_custom_field_hint_activate_per_project: 'When using custom fields: Keep in
-    mind that custom fields need to be activated per project, too.
+  text_custom_field_hint_activate_per_project: 'När du använder anpassade fält: Kom
+    ihåg att dessa även måste aktiveras för varje projekt.
 
 '
-  text_custom_field_hint_activate_per_project_and_type: 'Custom fields need to be
-    activated per work package type and per project.
+  text_custom_field_hint_activate_per_project_and_type: 'Anpassade fält behöver aktiveras
+    per arbetspaketstyp och per projekt.
 
 '
-  text_custom_logo_instructions: A white logo on transparent background is recommended.
-    For best results on both, conventional and retina displays, make sure your image's
-    dimensions are 460px by 110px.
+  text_custom_logo_instructions: En vit logotyp på transparent bakgrund rekommenderas.
+    För bästa resultat på både vanliga och Retina-skärmar bör bilden vara minst 460x110
+    px.
   text_default_administrator_account_changed: Standardadministratörskontot har ändrats
   text_default_encoding: 'Standard: UTF-8'
   text_destroy: Ta bort
@@ -2082,8 +2080,8 @@ sv-SE:
   text_enumeration_destroy_question: "%{count} objekt har tilldelats detta värde."
   text_file_repository_writable: Katalog skrivbar för bifogade filer
   text_git_repo_example: ett tomt och lokalt versionsarkiv (t.ex. /gitrepo, c:\gitrepo)
-  text_hint_date_format: Enter a date in the form of YYYY-MM-DD. Other formats may
-    be changed to an unwanted date.
+  text_hint_date_format: Ange ett datum i formatet åååå-mm-dd. Andra format kan resultera
+    i oönskade datum.
   text_hint_disable_with_0: 'Notera: Inaktivera med 0'
   text_hours_between: Mellan %{min} och %{max} timmar.
   text_work_package_added: Arbetspaketet %{id} har rapporterats av %{author}.
@@ -2092,8 +2090,8 @@ sv-SE:
     till denna kategori. Vad vill du göra?
   text_work_package_category_reassign_to: Tilldela arbetspaket till denna kategori
   text_work_package_updated: Arbetspaketet %{id} har uppdaterats av %{author}.
-  text_work_package_watcher_added: You have been added as a watcher to Work package
-    %{id} by %{watcher_setter}.
+  text_work_package_watcher_added: "%{watcher_setter} har lagt till dig som en bevakare
+    av arbetspaket %{id}."
   text_work_packages_destroy_confirmation: Är du säker du vill ta bort det valda arbetspaket(paketen)?
   text_work_packages_ref_in_commit_messages: Referenser och fixande av arbetspaket
     i incheckningsmeddelanden
@@ -2108,17 +2106,17 @@ sv-SE:
   text_journal_deleted_with_diff: "%{label} raderad (%{link})"
   text_journal_set_to: "%{label} ange till %{value}"
   text_journal_set_with_diff: "%{label} anger (%{link})"
-  text_latest_note: 'The latest comment is: %{note}'
+  text_latest_note: 'Den senaste kommentaren är: %{note}'
   text_length_between: Längd mellan %{min} och %{max} tecken.
   text_line_separated: Flera värden tillåtna (en rad för varje värde).
   text_load_default_configuration: Ladda standardkonfigurationen
   text_min_max_length_info: 0 innebär ingen begränsning
-  text_no_roles_defined: There are no roles defined.
-  text_no_access_tokens_configurable: There are no access tokens which can be configured.
+  text_no_roles_defined: Det har inte definierats några roller.
+  text_no_access_tokens_configurable: Det finns inga åtkomstnycklar som kan konfigureras.
   text_no_configuration_data: Roller, typer, status för arbetspaket och arbetsflöden
     har inte konfigurerats ännu. Det rekommenderas starkt att läsa in standardkonfigurationen.
     Du kommer att kunna ändra dem när de är initialiserade.
-  text_no_notes: There are no comments available for this work package.
+  text_no_notes: Det finns inga kommentarer för detta arbetspaket.
   text_notice_too_many_values_are_inperformant: 'Observera: Att visa mer än 100 poster
     per sida kan öka sidans laddningstid.'
   text_own_membership_delete_confirmation: Du håller på att ta bort några eller alla
@@ -2128,7 +2126,7 @@ sv-SE:
   text_powered_by: Drivs av %{link}
   text_project_identifier_info: Bara gemena bokstäver (a-z), siffror, bindestreck
     och understreck tillåts och måste dessutom börja med en gemen bokstav.
-  text_reassign: 'Reassign to work package:'
+  text_reassign: 'Tilldela till arbetspaket:'
   text_regexp_info: t.ex. ^[A-Z0-9]+$
   text_regexp_multiline: Regex appliceras i flerradsläge. t.ex. ^---\s+
   text_repository_usernames_mapping: Välj eller uppdatera OpenProject användaren koppling
@@ -2145,7 +2143,7 @@ sv-SE:
   text_tip_work_package_end_day: arbetspaket som slutar denna dag
   text_type_no_workflow: Inget arbetsflöde har definierats för denna typ
   text_unallowed_characters: Otillåtet tecken
-  text_user_invited: The user has been invited and is pending registration.
+  text_user_invited: Användaren har bjudits in och inväntar nu dennes registrering.
   text_user_wrote: "%{value} skrev:"
   text_warn_on_leaving_unsaved: Arbetspaketet innehåller osparad text som försvinner
     om du lämnar sidan.
@@ -2199,7 +2197,7 @@ sv-SE:
     duration: Varaktighet
     duration_days:
       one: 1 dag
-      other: "%{count} days"
+      other: "%{count} dagar"
     edit_color: Redigera färg
     edit_project_type: Redigera projekttyp
     edit_thing: Redigera
@@ -2368,8 +2366,8 @@ sv-SE:
       months: Månader
       quarters: Kvartal
       years: År
-  title_remove_and_delete_user: Remove the invited user from the project and delete
-    him/her.
+  title_remove_and_delete_user: Ta bort den inbjudna medlemmen från projektet och
+    radera honom/henne.
   tooltip_resend_invitation: 'Skickar en ny nyckel om den gamla löpt ut eller användaren
     inte fick det ursprungliga e-postmeddelandet. Kan också användas för aktiva användare
     för att välja en ny autentiseringsmetod. När den används för aktiva användare
@@ -2405,16 +2403,16 @@ sv-SE:
 
 '
     authorization_rejected: Du är inte tillåten att logga in.
-    assign_random_password: Assign random password (sent to user via email)
+    assign_random_password: Generera ett lösenord (skickas till användaren med e-post)
     blocked: tillfälligt låst
     blocked_num_failed_logins:
       one: tillfälligt låst (ett misslyckat inloggningsförsök)
-      other: locked temporarily (%{count} failed login attempts)
+      other: tillfälligt låst (%{count} misslyckade inloggningsförsök)
     deleted: Raderad användare
     error_status_change_failed: 'Misslyckades med att ändra användarstatus på grund
       av följande fel: %{errors}'
     invite: Bjud in användare via e-post
-    invited: invited
+    invited: inbjuden
     lock: Lås permanent
     locked: låst permanent
     no_login: Användaren autentiseras via inloggning med lösenord. Eftersom det är
@@ -2456,8 +2454,8 @@ sv-SE:
 
 '
     destroy:
-      info: Deleting the work package is an irreversible action.
-      title: Delete the work package
+      info: Att radera arbetspaketet går inte att ångra.
+      title: Radera arbetspaketet
   nothing_to_preview: Ingenting att förhandsgranska
   api_v3:
     attributes:
