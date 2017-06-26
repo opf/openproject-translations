@@ -18,11 +18,21 @@ ru:
         эта маленькая Функция доступна только для абонентов корпоративной версии.
       manage_colors: Изменить цвет выбранных опций
       instructions:
+        alternative_color: Сильный контрастный цвет, обычно используемый для большинства
+          важных кнопок на экране.
+        content_link_color: Font color of most of the links.
         primary_color: Основной цвет.
         primary_color_dark: Для эффекта наведения обычно используется более темная
           версия основного цвета.
-        alternative_color: Сильный контрастный цвет, обычно используемый для большинства
-          важных кнопок на экране.
+        header_bg_color: Цвет фона заголовка.
+        header_item_bg_hover_color: Цвет фона в заголовках интерактивных элементов
+          под курсором мыши.
+        header_item_font_color: Цвет шрифта в заголовках интерактивных элементов.
+        header_item_font_hover_color: Цвет шрифта в заголовках интерактивных элементов
+          под курсором мыши.
+        header_border_bottom_color: Тонкая линия под заголовком. Оставьте это поле
+          пустым, если вы не хотите любой линии.
+        main_menu_bg_color: Left side menu's background color.
     enterprise:
       upgrade_to_ee: Обновите до корпоративной версии
       add_token: Загрузите маркер поддержки корпоративной версии
@@ -62,6 +72,8 @@ ru:
       further_information_before: Смотрите также
       link_name: переход на новый график.
       further_information_after: ''
+    calendar:
+      removal: 'Please note: This module is going to be removed with OpenProject 8.0.'
   groups:
     index:
       no_results_title_text: На данный момент группы отсутствуют.
@@ -233,11 +245,37 @@ ru:
         queries/base_contract:
           attributes:
             project:
+              error_not_found: not found
+            public:
+              error_unauthorized: "- The user has no permission to create public queries."
+        relations/base_contract:
+          attributes:
+            to:
+              error_not_found: work package in `to` position not found or not visible
+              error_readonly: an existing relation's `to` link is immutable
+            from:
+              error_not_found: work package in `from` position not found or not visible
+              error_readonly: an existing relation's `from` link is immutable
+        users/base_contract:
+          attributes:
+            status:
+              invalid_on_create: is not a valid status for new users.
+            auth_source:
+              error_not_found: not found
+        parse_schema_filter_params_service:
+          attributes:
+            base:
+              unsupported_operator: Оператор не поддерживается.
+              invalid_values: Недопустимое значение.
+              id_filter_required: Требуется фильтр по 'Id'.
+        query:
+          attributes:
+            project:
               error_not_found: не найдено
             public:
               error_unauthorized: "- У пользователя нет прав для создания общедоступных
                 запросов."
-        relations/base_contract:
+        relation:
           attributes:
             to:
               error_not_found: рабочий пакет в позиции `до` не найден или не виден
@@ -245,18 +283,12 @@ ru:
             from:
               error_not_found: рабочий пакет в позиции `от` не найден или не виден
               error_readonly: в существующих отношениях связь `от` неизменна
-        users/base_contract:
+        user:
           attributes:
             status:
               invalid_on_create: для нового пользователя это неподходящий статус.
             auth_source:
               error_not_found: не найдено
-        parse_schema_filter_params_service:
-          attributes:
-            base:
-              unsupported_operator: Оператор не поддерживается.
-              invalid_values: Недопустимое значение.
-              id_filter_required: Требуется фильтр по 'Id'.
   activerecord:
     attributes:
       announcements:
@@ -324,6 +356,8 @@ ru:
         column_names: Столбцы
         group_by: Результаты группы по
         filters: Фильтры
+        relations_to_type_column: Отношения к %{type}
+        relations_of_type_column: "%{type} отношения"
       repository:
         url: URL
       role:
@@ -1228,6 +1262,8 @@ ru:
   label_logged_as: Войти в систему как
   label_login: Войти
   label_custom_logo: Свой логотип
+  label_custom_favicon: Custom favicon
+  label_custom_touch_icon: Custom touch icon
   label_logout: Выход
   label_main_menu: Боковое меню
   label_manage_groups: Управление группами
@@ -1236,6 +1272,7 @@ ru:
   label_me: мне
   label_member_new: Новый участник
   label_member_plural: Участники
+  label_view_all_members: Просмотреть всех участников
   label_menu_item_name: Название пункта меню
   label_message: Сообщение
   label_message_last: Последнее сообщение
@@ -1405,6 +1442,7 @@ ru:
   label_storage_group: Файловая система %{identifier}
   label_storage_for: Охватывает хранение для
   label_string: Текст
+  label_subproject: Подпроект
   label_subproject_new: Новый подпроект
   label_subproject_plural: Подпроекты
   label_subtask_plural: Подзадачи
@@ -1695,9 +1733,9 @@ ru:
           mb: МБ
           tb: TБ
   onboarding:
-    heading_getting_started: Get an overview
-    text_getting_started_description: Get a quick overview of project management and
-      team collaboration with OpenProject.
+    heading_getting_started: Обзор
+    text_getting_started_description: Быстрый просмотр управления проектом и и команды
+      сопровождения с OpenProject.
     text_show_again: Вы можете перезапустить это видео из меню «Справка»
     welcome: Добро пожаловать в OpenProject
   permission_add_work_package_notes: Добавить заметки
@@ -2089,8 +2127,8 @@ ru:
 
 '
   text_form_configuration_drag_to_activate: Чтобы включить поля, перетащите их отсюда
-  text_form_configuration_required_attribute: Attribute is marked required and thus
-    always shown
+  text_form_configuration_required_attribute: Атрибут помечен как необходимый, поэтому
+    будет виден постоянно
   text_caracters_maximum: 'Максимальное количество символов: %{count}.'
   text_caracters_minimum: Должно быть по крайней мере %{count} символов.
   text_comma_separated: Можно ввести несколько значений(через запятую).
@@ -2104,9 +2142,22 @@ ru:
     включать для каждого типа комплекса работ и для каждого проекта в отдельности.
 
 '
-  text_custom_logo_instructions: Рекомендуется использовать белый логотип с прозрачным
+  text_custom_logo_instructions: 'Рекомендуется использовать белый логотип с прозрачным
     фоном. Для оптимального отображения на обычных и retina-дисплеях размер картинки
     должен быть 460 на 110 пикселей.
+
+'
+  text_custom_favicon_instructions: 'This is the tiny icon that appears in your browser
+    window/tab next to the page''s title. It''s needs to be a squared 32 by 32 pixels
+    sized PNG image file with a transparent background.
+
+'
+  text_custom_touch_icon_instructions: 'This is the icon that appears in your mobile
+    or tablet when you place a bookmark on your homescreen. It''s needs to be a squared
+    180 by 180 pixels sized PNG image file. Please make sure the image''s background
+    is not transparent otherwise it will look bad on iOS.
+
+'
   text_default_administrator_account_changed: Первоначальная учетная запись администратора
     была изменена
   text_default_encoding: 'По-умолчанию: UTF-8'
@@ -2559,3 +2610,8 @@ ru:
         только для чтения.
     resources:
       schema: Схема
+  notice_attachment_migration_wiki_page: 'Эта страница была автоматически создана
+    во время обновления OpenProject. Она содержит все вложения, ранее связанные с
+    %{container_type} «%{container_name}».
+
+'

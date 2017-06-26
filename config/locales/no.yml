@@ -19,11 +19,21 @@
         Edition support subscribers.
       manage_colors: Edit color select options
       instructions:
+        alternative_color: Strong accent color, typically used for most the important
+          button on a screen.
+        content_link_color: Font color of most of the links.
         primary_color: Main color.
         primary_color_dark: Typically a darker version of the main color used for
           hover effects.
-        alternative_color: Strong accent color, typically used for most the important
-          button on a screen.
+        header_bg_color: Background color of the header.
+        header_item_bg_hover_color: Background color of clickable header items when
+          hovered with the mouse.
+        header_item_font_color: Font color of clickable header items.
+        header_item_font_hover_color: Font color of clickable header items when hovered
+          with the mouse.
+        header_border_bottom_color: Thin line under the header. Leave this field empty
+          if you don't want any line.
+        main_menu_bg_color: Left side menu's background color.
     enterprise:
       upgrade_to_ee: Oppgrader til bedriftsversjonen
       add_token: Upload an Enterprise Edition support token
@@ -64,6 +74,8 @@
       further_information_before: Please take a look at
       link_name: how to migrate to the new timeline.
       further_information_after: ''
+    calendar:
+      removal: 'Please note: This module is going to be removed with OpenProject 8.0.'
   groups:
     index:
       no_results_title_text: There are currently no groups.
@@ -257,6 +269,26 @@
               unsupported_operator: The operator is not supported.
               invalid_values: En verdi er ugyldig.
               id_filter_required: An 'id' filter is required.
+        query:
+          attributes:
+            project:
+              error_not_found: not found
+            public:
+              error_unauthorized: "- The user has no permission to create public queries."
+        relation:
+          attributes:
+            to:
+              error_not_found: work package in `to` position not found or not visible
+              error_readonly: an existing relation's `to` link is immutable
+            from:
+              error_not_found: work package in `from` position not found or not visible
+              error_readonly: an existing relation's `from` link is immutable
+        user:
+          attributes:
+            status:
+              invalid_on_create: is not a valid status for new users.
+            auth_source:
+              error_not_found: not found
   activerecord:
     attributes:
       announcements:
@@ -324,6 +356,8 @@
         column_names: Kolonner
         group_by: Gruppèr resultater etter
         filters: Filtre
+        relations_to_type_column: Relations to %{type}
+        relations_of_type_column: "%{type} relations"
       repository:
         url: URL
       role:
@@ -1209,6 +1243,8 @@
   label_logged_as: Innlogget som
   label_login: Logg inn
   label_custom_logo: Tilpasset logo
+  label_custom_favicon: Custom favicon
+  label_custom_touch_icon: Custom touch icon
   label_logout: Logg av
   label_main_menu: Sidemeny
   label_manage_groups: Manage groups
@@ -1217,6 +1253,7 @@
   label_me: meg
   label_member_new: Nytt medlem
   label_member_plural: Medlemmer
+  label_view_all_members: View all members
   label_menu_item_name: Navn på menyelement
   label_message: Message
   label_message_last: Siste melding
@@ -1382,6 +1419,7 @@
   label_storage_group: Storage filesystem %{identifier}
   label_storage_for: Encompasses storage for
   label_string: Tekst
+  label_subproject: Underprosjekt
   label_subproject_new: Nytt underprosjekt
   label_subproject_plural: Underprosjekter
   label_subtask_plural: Underoppgaver
@@ -2064,9 +2102,22 @@
     activated per work package type and per project.
 
 '
-  text_custom_logo_instructions: A white logo on transparent background is recommended.
-    For best results on both, conventional and retina displays, make sure your image's
-    dimensions are 460px by 110px.
+  text_custom_logo_instructions: 'A white logo on transparent background is recommended.
+    For best results on both, conventional and retina displays, make sure your image''s
+    dimensions are 460px by 60px.
+
+'
+  text_custom_favicon_instructions: 'This is the tiny icon that appears in your browser
+    window/tab next to the page''s title. It''s needs to be a squared 32 by 32 pixels
+    sized PNG image file with a transparent background.
+
+'
+  text_custom_touch_icon_instructions: 'This is the icon that appears in your mobile
+    or tablet when you place a bookmark on your homescreen. It''s needs to be a squared
+    180 by 180 pixels sized PNG image file. Please make sure the image''s background
+    is not transparent otherwise it will look bad on iOS.
+
+'
   text_default_administrator_account_changed: Standard administratorkonto er endret
   text_default_encoding: 'Standard: UTF-8'
   text_destroy: Slett
@@ -2508,3 +2559,8 @@
       writing_read_only_attributes: Du kan ikke skrive til et skrivebeskyttet attributt.
     resources:
       schema: Skjema
+  notice_attachment_migration_wiki_page: 'This page was generated automatically during
+    the update of OpenProject. It contains all attachments previously associated with
+    the %{container_type} "%{container_name}".
+
+'

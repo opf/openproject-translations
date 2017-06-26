@@ -19,11 +19,21 @@ it:
         allo sviluppo di OpenProject.
       manage_colors: Modifica opzioni di selezione del colore
       instructions:
+        alternative_color: Colore forte, utilizzato di solito per far risaltare il
+          tasto principale sullo schermo.
+        content_link_color: Font color of most of the links.
         primary_color: Colore principale.
         primary_color_dark: In genere una versione più scura del colore principale
           utilizzato per effetti hover.
-        alternative_color: Colore forte, utilizzato di solito per far risaltare il
-          tasto principale sullo schermo.
+        header_bg_color: Background color of the header.
+        header_item_bg_hover_color: Background color of clickable header items when
+          hovered with the mouse.
+        header_item_font_color: Font color of clickable header items.
+        header_item_font_hover_color: Font color of clickable header items when hovered
+          with the mouse.
+        header_border_bottom_color: Thin line under the header. Leave this field empty
+          if you don't want any line.
+        main_menu_bg_color: Left side menu's background color.
     enterprise:
       upgrade_to_ee: Aggiorna ad Enterprise Edition
       add_token: Carica un token di assistenza per Enterprise Edition
@@ -64,6 +74,8 @@ it:
       further_information_before: Dai un'occhiata a
       link_name: come eseguire la migrazione alle nuove sequenze temporali.
       further_information_after: ''
+    calendar:
+      removal: 'Please note: This module is going to be removed with OpenProject 8.0.'
   groups:
     index:
       no_results_title_text: Al momento non esistono gruppi.
@@ -239,10 +251,36 @@ it:
         queries/base_contract:
           attributes:
             project:
+              error_not_found: not found
+            public:
+              error_unauthorized: "- The user has no permission to create public queries."
+        relations/base_contract:
+          attributes:
+            to:
+              error_not_found: work package in `to` position not found or not visible
+              error_readonly: an existing relation's `to` link is immutable
+            from:
+              error_not_found: work package in `from` position not found or not visible
+              error_readonly: an existing relation's `from` link is immutable
+        users/base_contract:
+          attributes:
+            status:
+              invalid_on_create: is not a valid status for new users.
+            auth_source:
+              error_not_found: not found
+        parse_schema_filter_params_service:
+          attributes:
+            base:
+              unsupported_operator: Operatore non supportato.
+              invalid_values: Valore non valido.
+              id_filter_required: Il filtro "id" è obbligatorio.
+        query:
+          attributes:
+            project:
               error_not_found: non trovato
             public:
               error_unauthorized: "- L'utente non è autorizzato a creare query pubbliche."
-        relations/base_contract:
+        relation:
           attributes:
             to:
               error_not_found: impossibile trovare o visualizzare la macro-attività
@@ -254,18 +292,12 @@ it:
                 in posizione "da"
               error_readonly: impossibile modificare il collegamento ad una relazione
                 esistente "da"
-        users/base_contract:
+        user:
           attributes:
             status:
               invalid_on_create: non è uno stato valido per i nuovi utenti.
             auth_source:
               error_not_found: non trovato
-        parse_schema_filter_params_service:
-          attributes:
-            base:
-              unsupported_operator: Operatore non supportato.
-              invalid_values: Valore non valido.
-              id_filter_required: Il filtro "id" è obbligatorio.
   activerecord:
     attributes:
       announcements:
@@ -333,6 +365,8 @@ it:
         column_names: Colonne
         group_by: Raggruppa i risultati per
         filters: Filtri
+        relations_to_type_column: Relations to %{type}
+        relations_of_type_column: "%{type} relations"
       repository:
         url: URL
       role:
@@ -1232,6 +1266,8 @@ it:
   label_logged_as: Accesso eseguito come
   label_login: Accedi
   label_custom_logo: Logo personalizzato
+  label_custom_favicon: Custom favicon
+  label_custom_touch_icon: Custom touch icon
   label_logout: Disconnetti
   label_main_menu: Menu laterale
   label_manage_groups: Gestisci i gruppi
@@ -1240,6 +1276,7 @@ it:
   label_me: io
   label_member_new: Nuovo membro
   label_member_plural: Membri
+  label_view_all_members: Visualizza tutti i membri
   label_menu_item_name: Nome della voce di menu
   label_message: "Messaggio\t"
   label_message_last: Ultimo messaggio
@@ -1408,6 +1445,7 @@ it:
   label_storage_group: File System di archiviazione %{identifier}
   label_storage_for: Comprende uno spazio di archiviazione su disco per
   label_string: Testo
+  label_subproject: Sottoprogetto
   label_subproject_new: Nuovo sotto-progetto
   label_subproject_plural: Sotto-progetti
   label_subtask_plural: Sottoattività
@@ -2137,9 +2175,22 @@ it:
     essere attivati per ogni tipo di macro-attività e per ogni progetto.
 
 '
-  text_custom_logo_instructions: È consigliato un logo bianco su sfondo trasparente.
-    Per ottenere i migliori risultati sia su display retina che convenzionale, assicurati
-    che le dimensioni dell'immagine siano 460px X 110px.
+  text_custom_logo_instructions: 'A white logo on transparent background is recommended.
+    For best results on both, conventional and retina displays, make sure your image''s
+    dimensions are 460px by 60px.
+
+'
+  text_custom_favicon_instructions: 'This is the tiny icon that appears in your browser
+    window/tab next to the page''s title. It''s needs to be a squared 32 by 32 pixels
+    sized PNG image file with a transparent background.
+
+'
+  text_custom_touch_icon_instructions: 'This is the icon that appears in your mobile
+    or tablet when you place a bookmark on your homescreen. It''s needs to be a squared
+    180 by 180 pixels sized PNG image file. Please make sure the image''s background
+    is not transparent otherwise it will look bad on iOS.
+
+'
   text_default_administrator_account_changed: Account amministratore predefinito cambiato
   text_default_encoding: 'Predefinito: UTF-8'
   text_destroy: Cancella
@@ -2603,3 +2654,8 @@ it:
       writing_read_only_attributes: Non puoi scrivere un attributo di sola lettura.
     resources:
       schema: Schema
+  notice_attachment_migration_wiki_page: 'This page was generated automatically during
+    the update of OpenProject. It contains all attachments previously associated with
+    the %{container_type} "%{container_name}".
+
+'

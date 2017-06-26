@@ -19,11 +19,21 @@ pt:
         disponível para os subscritores da versão Enterprise.
       manage_colors: Editar opções de selecção de cor
       instructions:
+        alternative_color: Cor de contraste forte, utilizada habitualmente nos botões
+          mais importantes do ecrã.
+        content_link_color: Cor da fonte da maioria dos links.
         primary_color: Cor principal.
         primary_color_dark: Normalmente é utilizada uma cor mais escura da cor principal
           para a ação de passar com o rato por cima.
-        alternative_color: Cor de contraste forte, utilizada habitualmente nos botões
-          mais importantes do ecrã.
+        header_bg_color: Cor de fundo do cabeçalho.
+        header_item_bg_hover_color: Background color of clickable header items when
+          hovered with the mouse.
+        header_item_font_color: Font color of clickable header items.
+        header_item_font_hover_color: Font color of clickable header items when hovered
+          with the mouse.
+        header_border_bottom_color: Thin line under the header. Leave this field empty
+          if you don't want any line.
+        main_menu_bg_color: Left side menu's background color.
     enterprise:
       upgrade_to_ee: Atualizar para a versão Enterprise
       add_token: Carregar um token de suporte da versão Enterprise
@@ -64,6 +74,8 @@ pt:
       further_information_before: Dê uma vista de olhos a
       link_name: Como migrar para uma uma nova linha temporal.
       further_information_after: ''
+    calendar:
+      removal: 'Please note: This module is going to be removed with OpenProject 8.0.'
   groups:
     index:
       no_results_title_text: Atualmente, não existem grupos.
@@ -244,11 +256,37 @@ pt:
         queries/base_contract:
           attributes:
             project:
+              error_not_found: not found
+            public:
+              error_unauthorized: "- The user has no permission to create public queries."
+        relations/base_contract:
+          attributes:
+            to:
+              error_not_found: work package in `to` position not found or not visible
+              error_readonly: an existing relation's `to` link is immutable
+            from:
+              error_not_found: work package in `from` position not found or not visible
+              error_readonly: an existing relation's `from` link is immutable
+        users/base_contract:
+          attributes:
+            status:
+              invalid_on_create: is not a valid status for new users.
+            auth_source:
+              error_not_found: not found
+        parse_schema_filter_params_service:
+          attributes:
+            base:
+              unsupported_operator: Este operador não é compatível.
+              invalid_values: Um valor é inválido.
+              id_filter_required: É necessário um filtro de "id".
+        query:
+          attributes:
+            project:
               error_not_found: não encontrado
             public:
               error_unauthorized: O utilizador não tem autorização para criar consultas
                 públicas.
-        relations/base_contract:
+        relation:
           attributes:
             to:
               error_not_found: pacote de trabalho na posição 'para' não foi encontrada
@@ -258,18 +296,12 @@ pt:
               error_not_found: pacote de trabalho na posição 'de' não foi encontrada
                 ou não está visível
               error_readonly: uma ligação 'de' existente não pode ser mudada
-        users/base_contract:
+        user:
           attributes:
             status:
               invalid_on_create: não é um estado válido para novos utilizadores.
             auth_source:
               error_not_found: não encontrado
-        parse_schema_filter_params_service:
-          attributes:
-            base:
-              unsupported_operator: Este operador não é compatível.
-              invalid_values: Um valor é inválido.
-              id_filter_required: É necessário um filtro de "id".
   activerecord:
     attributes:
       announcements:
@@ -337,6 +369,8 @@ pt:
         column_names: Colunas
         group_by: Agrupar resultados por
         filters: Filtros
+        relations_to_type_column: Relations to %{type}
+        relations_of_type_column: "%{type} relations"
       repository:
         url: URL
       role:
@@ -1231,6 +1265,8 @@ pt:
   label_logged_as: Autenticado como
   label_login: Iniciar sessão
   label_custom_logo: Logótipo personalizado
+  label_custom_favicon: Custom favicon
+  label_custom_touch_icon: Custom touch icon
   label_logout: Terminar Sessão
   label_main_menu: Menu lateral
   label_manage_groups: Gerir grupos
@@ -1239,6 +1275,7 @@ pt:
   label_me: eu
   label_member_new: Novo Membro
   label_member_plural: Membros
+  label_view_all_members: Ver todos os membros
   label_menu_item_name: Nome do item de menu
   label_message: Mensagem
   label_message_last: Última mensagem
@@ -1406,6 +1443,7 @@ pt:
   label_storage_group: Armazenamento de ficheiro de sistema %{identifier}
   label_storage_for: Engloba o armazenamento para
   label_string: Conteúdo
+  label_subproject: Sub-projecto
   label_subproject_new: Novo subprojeto
   label_subproject_plural: Subprojetos
   label_subtask_plural: Subtarefas
@@ -1693,9 +1731,9 @@ pt:
           mb: " MB"
           tb: TB
   onboarding:
-    heading_getting_started: Get an overview
-    text_getting_started_description: Get a quick overview of project management and
-      team collaboration with OpenProject.
+    heading_getting_started: Visão geral
+    text_getting_started_description: Obter uma visão geral da gestão do projeto e
+      colaboração da equipa com o OpenProject.
     text_show_again: Pode reiniciar este vídeo através do menu de ajuda
     welcome: Bem-vindo ao OpenProject
   permission_add_work_package_notes: Adicionar notas
@@ -2098,8 +2136,8 @@ pt:
 
 '
   text_form_configuration_drag_to_activate: Arraste campos daqui para ativá-los
-  text_form_configuration_required_attribute: Attribute is marked required and thus
-    always shown
+  text_form_configuration_required_attribute: Atributo está marcado como necessário
+    e será sempre mostrado
   text_caracters_maximum: "%{count} caracteres no máximo."
   text_caracters_minimum: Deve ter pelo menos %{count} caracteres.
   text_comma_separated: Permitidos múltiplos valores (separados por vírgula).
@@ -2113,9 +2151,22 @@ pt:
     precisam ser ativados por tipo de pacote de trabalho e por projeto.
 
 '
-  text_custom_logo_instructions: Recomenda-se um logótipo branco sobre fundo transparente.
-    Para obter os melhores resultados em ecrãs convencionais e de retina, certifique-se
-    que as dimensões da sua imagem são 460px por 110px.
+  text_custom_logo_instructions: 'A white logo on transparent background is recommended.
+    For best results on both, conventional and retina displays, make sure your image''s
+    dimensions are 460px by 60px.
+
+'
+  text_custom_favicon_instructions: 'This is the tiny icon that appears in your browser
+    window/tab next to the page''s title. It''s needs to be a squared 32 by 32 pixels
+    sized PNG image file with a transparent background.
+
+'
+  text_custom_touch_icon_instructions: 'This is the icon that appears in your mobile
+    or tablet when you place a bookmark on your homescreen. It''s needs to be a squared
+    180 by 180 pixels sized PNG image file. Please make sure the image''s background
+    is not transparent otherwise it will look bad on iOS.
+
+'
   text_default_administrator_account_changed: Conta padrão de administrador alterada
   text_default_encoding: 'Padrão: UTF-8'
   text_destroy: Eliminar
@@ -2569,3 +2620,8 @@ pt:
         leitura.
     resources:
       schema: Esquema
+  notice_attachment_migration_wiki_page: 'This page was generated automatically during
+    the update of OpenProject. It contains all attachments previously associated with
+    the %{container_type} "%{container_name}".
+
+'

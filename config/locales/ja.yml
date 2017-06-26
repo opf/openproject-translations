@@ -16,9 +16,16 @@ ja:
       enterprise_notice: OpenProject開発の金融面への貢献として、特に '感謝します!' この小さな機能はエンタープライズ版サポート購入者のみ利用できます。
       manage_colors: 色の選択オプションを編集
       instructions:
+        alternative_color: 強力なアクセント カラー。通常、画面の最も重要なボタンに使用されます。
+        content_link_color: 大部分のリンクのフォント色。
         primary_color: メインの色。
         primary_color_dark: ホバー効果に使用する、メインの色の暗いバージョンです。
-        alternative_color: 強力なアクセント カラー。通常、画面の最も重要なボタンに使用されます。
+        header_bg_color: ヘッダーの背景色。
+        header_item_bg_hover_color: クリック可能なヘッダー項目にマウスを置いたときの背景色。
+        header_item_font_color: クリック可能なヘッダー項目のフォント色。
+        header_item_font_hover_color: クリック可能なヘッダー項目にマウスを置いたときのフォント色。
+        header_border_bottom_color: ヘッダーの下の細い線。線を引きたくない場合は、このフィールドを空にしてください。
+        main_menu_bg_color: 左サイドメニューの背景色。
     enterprise:
       upgrade_to_ee: エンタープライズ版にアップグレード
       add_token: エンタープライズ版サポートのトークンをアップロード
@@ -55,6 +62,8 @@ ja:
       further_information_before: ご覧ください
       link_name: 新しいタイムラインに移行する方法。
       further_information_after: ''
+    calendar:
+      removal: 'Please note: This module is going to be removed with OpenProject 8.0.'
   groups:
     index:
       no_results_title_text: 現在、グループはありません。
@@ -204,10 +213,36 @@ ja:
         queries/base_contract:
           attributes:
             project:
+              error_not_found: not found
+            public:
+              error_unauthorized: "- The user has no permission to create public queries."
+        relations/base_contract:
+          attributes:
+            to:
+              error_not_found: work package in `to` position not found or not visible
+              error_readonly: an existing relation's `to` link is immutable
+            from:
+              error_not_found: work package in `from` position not found or not visible
+              error_readonly: an existing relation's `from` link is immutable
+        users/base_contract:
+          attributes:
+            status:
+              invalid_on_create: is not a valid status for new users.
+            auth_source:
+              error_not_found: not found
+        parse_schema_filter_params_service:
+          attributes:
+            base:
+              unsupported_operator: 演算子はサポートされていません。
+              invalid_values: 値が無効です。
+              id_filter_required: "'Id' のフィルターが必要です。"
+        query:
+          attributes:
+            project:
               error_not_found: 存在しません
             public:
               error_unauthorized: "- ユーザーは、公開クエリを作成する権限がありません。"
-        relations/base_contract:
+        relation:
           attributes:
             to:
               error_not_found: "「終了」の位置のワークパッケージが存在しないか表示されません"
@@ -215,18 +250,12 @@ ja:
             from:
               error_not_found: "「開始」の位置にワークパッケージが存在しないか表示されません"
               error_readonly: 既存の関係の「開始」のリンクは変更できません
-        users/base_contract:
+        user:
           attributes:
             status:
               invalid_on_create: 新規ユーザーの有効なステータスではありません。
             auth_source:
               error_not_found: 存在しません
-        parse_schema_filter_params_service:
-          attributes:
-            base:
-              unsupported_operator: 演算子はサポートされていません。
-              invalid_values: 値が無効です。
-              id_filter_required: "'Id' のフィルターが必要です。"
   activerecord:
     attributes:
       announcements:
@@ -294,6 +323,8 @@ ja:
         column_names: 列
         group_by: グループ化
         filters: フィルタ
+        relations_to_type_column: "%{type} との関係"
+        relations_of_type_column: "%{type} 関係"
       repository:
         url: URL
       role:
@@ -1139,6 +1170,8 @@ ja:
   label_logged_as: ログイン中
   label_login: ログイン
   label_custom_logo: カスタムロゴ
+  label_custom_favicon: カスタムの favicon
+  label_custom_touch_icon: カスタムのタッチアイコン
   label_logout: ログアウト
   label_main_menu: サイドメニュー
   label_manage_groups: グループを管理
@@ -1147,6 +1180,7 @@ ja:
   label_me: 自分
   label_member_new: 新規メンバー
   label_member_plural: メンバー
+  label_view_all_members: すべてのメンバーを表示
   label_menu_item_name: メニュー項目の名称
   label_message: メッセージ
   label_message_last: 最新のメッセージ
@@ -1313,6 +1347,7 @@ ja:
   label_storage_group: ストレージのファイルシステム %{identifier}
   label_storage_for: ストレージを包含
   label_string: テキスト（本文）
+  label_subproject: 子プロジェクト
   label_subproject_new: 新しい子プロジェクト
   label_subproject_plural: 子プロジェクト
   label_subtask_plural: 子タスク
@@ -1561,9 +1596,8 @@ ja:
           mb: MB
           tb: TB
   onboarding:
-    heading_getting_started: Get an overview
-    text_getting_started_description: Get a quick overview of project management and
-      team collaboration with OpenProject.
+    heading_getting_started: 概要を取得
+    text_getting_started_description: OpenProject のプロジェクト管理とチームコラボレーションの簡単な概要を取得します。
     text_show_again: ヘルプメニューからこのビデオを再度開始することができます。
     welcome: OpenProjectへようこそ
   permission_add_work_package_notes: 注記の追加
@@ -1904,8 +1938,7 @@ ja:
 
 '
   text_form_configuration_drag_to_activate: ここからフィールドをドラッグして、有効にします
-  text_form_configuration_required_attribute: Attribute is marked required and thus
-    always shown
+  text_form_configuration_required_attribute: 属性が必須とマークされています。 したがって常に示されます
   text_caracters_maximum: 最大%{count}文字です。
   text_caracters_minimum: 最低%{count}文字の長さが必要です。
   text_comma_separated: "（カンマで区切ることで）複数の値を設定できます。"
@@ -1917,8 +1950,18 @@ ja:
   text_custom_field_hint_activate_per_project_and_type: 'カスタムフィールドは、ワークパッケージタイプごと、およびプロジェクトごとにアクティブにする必要があります。
 
 '
-  text_custom_logo_instructions: 透明な背景の白いロゴをお勧めします。 従来、および Retina ディスプレイの両方で最高の結果となるように、画像の寸法は、460px
-    x 110px を確認してください。
+  text_custom_logo_instructions: '透明な背景の白いロゴをお勧めします。 従来、および Retina ディスプレイの両方で最高の結果となるように、画像の寸法は、460px
+    x 60px を確認してください。
+
+'
+  text_custom_favicon_instructions: 'これは、ページタイトル横のブラウザーウィンドウ/タブに表示される小さなアイコンです。 32
+    × 32 ピクセルサイズの、背景が透明な PNG イメージファイルにする必要がありますは、。
+
+'
+  text_custom_touch_icon_instructions: 'これは、携帯電話またはタブレットでホーム画面にブックマークを配置したときに表示されるアイコンです。180
+    x 180 ピクセルサイズの PNG イメージファイルにする必要があります。iOS での表示が悪くなるため、画像の背景を透明にしないでください。
+
+'
   text_default_administrator_account_changed: 管理者アカウントでデフォルト設定が変更済み
   text_default_encoding: '既定値: UTF-8'
   text_destroy: 削除
@@ -2303,3 +2346,7 @@ ja:
       writing_read_only_attributes: 読み取り専用の属性を書き込みできません。
     resources:
       schema: スキーマ
+  notice_attachment_migration_wiki_page: 'このページは、OpenProject の更新時に自動的に生成されました。%{container_type}
+    "%{container_name}" と関連付けられていたすべての添付ファイルが含まれています。
+
+'

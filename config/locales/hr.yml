@@ -18,10 +18,20 @@ hr:
         OpenProject, ova malena funkcija dostupna je samo za Enterprise Edition pretplatnike.
       manage_colors: Uređivanje boja odaberite Opcije
       instructions:
-        primary_color: Glavna boja.
-        primary_color_dark: Obično tamnije verzije glavne boje za efekat lebdenja.
         alternative_color: Strong accent color, typically used for most the important
           button on a screen.
+        content_link_color: Font color of most of the links.
+        primary_color: Glavna boja.
+        primary_color_dark: Obično tamnije verzije glavne boje za efekat lebdenja.
+        header_bg_color: Background color of the header.
+        header_item_bg_hover_color: Background color of clickable header items when
+          hovered with the mouse.
+        header_item_font_color: Font color of clickable header items.
+        header_item_font_hover_color: Font color of clickable header items when hovered
+          with the mouse.
+        header_border_bottom_color: Thin line under the header. Leave this field empty
+          if you don't want any line.
+        main_menu_bg_color: Left side menu's background color.
     enterprise:
       upgrade_to_ee: Nadogradnja na izdanje Enterprise
       add_token: Upload an Enterprise Edition support token
@@ -62,6 +72,8 @@ hr:
       further_information_before: Please take a look at
       link_name: how to migrate to the new timeline.
       further_information_after: ''
+    calendar:
+      removal: 'Please note: This module is going to be removed with OpenProject 8.0.'
   groups:
     index:
       no_results_title_text: Trenutno nema grupa.
@@ -236,7 +248,7 @@ hr:
         queries/base_contract:
           attributes:
             project:
-              error_not_found: nije pronađeno
+              error_not_found: not found
             public:
               error_unauthorized: "- The user has no permission to create public queries."
         relations/base_contract:
@@ -252,13 +264,33 @@ hr:
             status:
               invalid_on_create: is not a valid status for new users.
             auth_source:
-              error_not_found: nije pronađeno
+              error_not_found: not found
         parse_schema_filter_params_service:
           attributes:
             base:
               unsupported_operator: Operator nije podržan.
               invalid_values: Vrijednost nije valjana.
               id_filter_required: An 'id' filter is required.
+        query:
+          attributes:
+            project:
+              error_not_found: nije pronađeno
+            public:
+              error_unauthorized: "- The user has no permission to create public queries."
+        relation:
+          attributes:
+            to:
+              error_not_found: work package in `to` position not found or not visible
+              error_readonly: an existing relation's `to` link is immutable
+            from:
+              error_not_found: work package in `from` position not found or not visible
+              error_readonly: an existing relation's `from` link is immutable
+        user:
+          attributes:
+            status:
+              invalid_on_create: is not a valid status for new users.
+            auth_source:
+              error_not_found: nije pronađeno
   activerecord:
     attributes:
       announcements:
@@ -326,6 +358,8 @@ hr:
         column_names: Stupci
         group_by: Grupiraj rezultate po
         filters: Filteri
+        relations_to_type_column: Relations to %{type}
+        relations_of_type_column: "%{type} relations"
       repository:
         url: URL
       role:
@@ -1230,6 +1264,8 @@ hr:
   label_logged_as: Prijavljen kao
   label_login: Prijavi se
   label_custom_logo: Prilagođeni logotip
+  label_custom_favicon: Custom favicon
+  label_custom_touch_icon: Custom touch icon
   label_logout: Odjavi se
   label_main_menu: Izbornik sa strane
   label_manage_groups: Upravljanje grupama
@@ -1238,6 +1274,7 @@ hr:
   label_me: ja
   label_member_new: Novi član
   label_member_plural: Članovi
+  label_view_all_members: Pogledaj sve članove
   label_menu_item_name: Naziv stavke izbornika
   label_message: Poruka
   label_message_last: Posljednja poruka
@@ -1404,6 +1441,7 @@ hr:
   label_storage_group: Datotečni sustav sustava za pohranu %{identifier}
   label_storage_for: Obuhvaća diskovni prostor za
   label_string: Tekst
+  label_subproject: Potprojekt
   label_subproject_new: Novi podprojekt
   label_subproject_plural: Potprojekti
   label_subtask_plural: Podzadatci
@@ -2106,9 +2144,22 @@ hr:
     activated per work package type and per project.
 
 '
-  text_custom_logo_instructions: A white logo on transparent background is recommended.
-    For best results on both, conventional and retina displays, make sure your image's
-    dimensions are 460px by 110px.
+  text_custom_logo_instructions: 'A white logo on transparent background is recommended.
+    For best results on both, conventional and retina displays, make sure your image''s
+    dimensions are 460px by 60px.
+
+'
+  text_custom_favicon_instructions: 'This is the tiny icon that appears in your browser
+    window/tab next to the page''s title. It''s needs to be a squared 32 by 32 pixels
+    sized PNG image file with a transparent background.
+
+'
+  text_custom_touch_icon_instructions: 'This is the icon that appears in your mobile
+    or tablet when you place a bookmark on your homescreen. It''s needs to be a squared
+    180 by 180 pixels sized PNG image file. Please make sure the image''s background
+    is not transparent otherwise it will look bad on iOS.
+
+'
   text_default_administrator_account_changed: Default administrator account changed
   text_default_encoding: 'Zadana vrijednost: UTF-8'
   text_destroy: Obriši
@@ -2554,3 +2605,8 @@ hr:
         je dopušteno samo čitanje.
     resources:
       schema: Shema
+  notice_attachment_migration_wiki_page: 'This page was generated automatically during
+    the update of OpenProject. It contains all attachments previously associated with
+    the %{container_type} "%{container_name}".
+
+'

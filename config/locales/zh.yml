@@ -16,9 +16,19 @@ zh:
       enterprise_notice: 作为对为开发 OpenProject 提供财力支持的订阅者的特别“感谢”，这项小功能仅限企业版支持订阅者使用。
       manage_colors: 编辑颜色选择选项
       instructions:
+        alternative_color: 浓重的主题色，通常用于屏幕上最重要的按钮。
+        content_link_color: Font color of most of the links.
         primary_color: 主颜色。
         primary_color_dark: 通常深色的主颜色用于悬浮效果。
-        alternative_color: 浓重的主题色，通常用于屏幕上最重要的按钮。
+        header_bg_color: Background color of the header.
+        header_item_bg_hover_color: Background color of clickable header items when
+          hovered with the mouse.
+        header_item_font_color: Font color of clickable header items.
+        header_item_font_hover_color: Font color of clickable header items when hovered
+          with the mouse.
+        header_border_bottom_color: Thin line under the header. Leave this field empty
+          if you don't want any line.
+        main_menu_bg_color: Left side menu's background color.
     enterprise:
       upgrade_to_ee: 升级到企业版
       add_token: 上传企业版支持令牌
@@ -55,6 +65,8 @@ zh:
       further_information_before: 请查看
       link_name: 如何将迁移到新时间线。
       further_information_after: ''
+    calendar:
+      removal: 'Please note: This module is going to be removed with OpenProject 8.0.'
   groups:
     index:
       no_results_title_text: 目前没有组。
@@ -202,10 +214,36 @@ zh:
         queries/base_contract:
           attributes:
             project:
+              error_not_found: not found
+            public:
+              error_unauthorized: "- The user has no permission to create public queries."
+        relations/base_contract:
+          attributes:
+            to:
+              error_not_found: work package in `to` position not found or not visible
+              error_readonly: an existing relation's `to` link is immutable
+            from:
+              error_not_found: work package in `from` position not found or not visible
+              error_readonly: an existing relation's `from` link is immutable
+        users/base_contract:
+          attributes:
+            status:
+              invalid_on_create: is not a valid status for new users.
+            auth_source:
+              error_not_found: not found
+        parse_schema_filter_params_service:
+          attributes:
+            base:
+              unsupported_operator: 不支持此运算符。
+              invalid_values: 值无效。
+              id_filter_required: "“id”筛选器为必填字段。"
+        query:
+          attributes:
+            project:
               error_not_found: 未找到
             public:
               error_unauthorized: "- 此用户没有创建公共查询的权限。"
-        relations/base_contract:
+        relation:
           attributes:
             to:
               error_not_found: 找不到这个工作包
@@ -213,18 +251,12 @@ zh:
             from:
               error_not_found: 找不到这个工作包
               error_readonly: 关系要持久
-        users/base_contract:
+        user:
           attributes:
             status:
               invalid_on_create: 不是新用户的有效状态
             auth_source:
               error_not_found: 未找到
-        parse_schema_filter_params_service:
-          attributes:
-            base:
-              unsupported_operator: 不支持此运算符。
-              invalid_values: 值无效。
-              id_filter_required: "“id”筛选器为必填字段。"
   activerecord:
     attributes:
       announcements:
@@ -292,6 +324,8 @@ zh:
         column_names: 列
         group_by: 汇总结果根据
         filters: 筛选器
+        relations_to_type_column: Relations to %{type}
+        relations_of_type_column: "%{type} relations"
       repository:
         url: URL
       role:
@@ -1136,6 +1170,8 @@ zh:
   label_logged_as: 登录用户名
   label_login: 登录
   label_custom_logo: 自定义徽标
+  label_custom_favicon: Custom favicon
+  label_custom_touch_icon: Custom touch icon
   label_logout: 注销
   label_main_menu: 侧边菜单
   label_manage_groups: 组管理
@@ -1144,6 +1180,7 @@ zh:
   label_me: 我
   label_member_new: 新成员
   label_member_plural: 成员
+  label_view_all_members: 查看所有成员
   label_menu_item_name: 菜单项名称
   label_message: 消息
   label_message_last: 最后一条消息
@@ -1309,6 +1346,7 @@ zh:
   label_storage_group: 存储文件系统 %{identifier}
   label_storage_for: 包含存储用于
   label_string: 文本
+  label_subproject: 子项目
   label_subproject_new: 新的子项目
   label_subproject_plural: 子项目
   label_subtask_plural: 子任务
@@ -1903,8 +1941,22 @@ zh:
   text_custom_field_hint_activate_per_project_and_type: '需要按工作包类型和项目激活自定义字段。
 
 '
-  text_custom_logo_instructions: 建议在透明背景上使用白色徽标。为了同时在传统显示屏和 Retina 显示屏上获得最佳效果，请确保您的图像尺寸为
-    460px × 110px。
+  text_custom_logo_instructions: 'A white logo on transparent background is recommended.
+    For best results on both, conventional and retina displays, make sure your image''s
+    dimensions are 460px by 60px.
+
+'
+  text_custom_favicon_instructions: 'This is the tiny icon that appears in your browser
+    window/tab next to the page''s title. It''s needs to be a squared 32 by 32 pixels
+    sized PNG image file with a transparent background.
+
+'
+  text_custom_touch_icon_instructions: 'This is the icon that appears in your mobile
+    or tablet when you place a bookmark on your homescreen. It''s needs to be a squared
+    180 by 180 pixels sized PNG image file. Please make sure the image''s background
+    is not transparent otherwise it will look bad on iOS.
+
+'
   text_default_administrator_account_changed: 更改默认管理员帐户
   text_default_encoding: 默认值： UTF-8
   text_destroy: 删除
@@ -2281,3 +2333,8 @@ zh:
       writing_read_only_attributes: 你不能写入只读属性。
     resources:
       schema: 方案
+  notice_attachment_migration_wiki_page: 'This page was generated automatically during
+    the update of OpenProject. It contains all attachments previously associated with
+    the %{container_type} "%{container_name}".
+
+'

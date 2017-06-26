@@ -17,9 +17,19 @@ ko:
         Edition 후원자에게만 지원됩니다.
       manage_colors: 색상 선택 옵션 편집
       instructions:
+        alternative_color: 강한 강조 색은 일반적으로 화면의 가장 중요한 버튼에 사용됩니다.
+        content_link_color: Font color of most of the links.
         primary_color: 주 색상
         primary_color_dark: 일반적으로 메인 색상의 어두운 버전은 호버 효과에 사용됩니다.
-        alternative_color: 강한 강조 색은 일반적으로 화면의 가장 중요한 버튼에 사용됩니다.
+        header_bg_color: Background color of the header.
+        header_item_bg_hover_color: Background color of clickable header items when
+          hovered with the mouse.
+        header_item_font_color: Font color of clickable header items.
+        header_item_font_hover_color: Font color of clickable header items when hovered
+          with the mouse.
+        header_border_bottom_color: Thin line under the header. Leave this field empty
+          if you don't want any line.
+        main_menu_bg_color: Left side menu's background color.
     enterprise:
       upgrade_to_ee: Enterprise Edition으로 업그레이드 하세요.
       add_token: Enterprise Edition 지원 토큰을 업로드하세요.
@@ -58,6 +68,8 @@ ko:
       further_information_before: 다음을 살펴보세요.
       link_name: 새 타임라인을 마이그레이션하는 방법.
       further_information_after: ''
+    calendar:
+      removal: 'Please note: This module is going to be removed with OpenProject 8.0.'
   groups:
     index:
       no_results_title_text: 그룹이 없습니다.
@@ -214,10 +226,36 @@ ko:
         queries/base_contract:
           attributes:
             project:
+              error_not_found: not found
+            public:
+              error_unauthorized: "- The user has no permission to create public queries."
+        relations/base_contract:
+          attributes:
+            to:
+              error_not_found: work package in `to` position not found or not visible
+              error_readonly: an existing relation's `to` link is immutable
+            from:
+              error_not_found: work package in `from` position not found or not visible
+              error_readonly: an existing relation's `from` link is immutable
+        users/base_contract:
+          attributes:
+            status:
+              invalid_on_create: is not a valid status for new users.
+            auth_source:
+              error_not_found: not found
+        parse_schema_filter_params_service:
+          attributes:
+            base:
+              unsupported_operator: 그 연산자는 지원되지 않습니다.
+              invalid_values: 유효하지 않은 값입니다.
+              id_filter_required: "'id' 필터가 필요합니다."
+        query:
+          attributes:
+            project:
               error_not_found: 찾을 수 없음
             public:
               error_unauthorized: "- 해당 사용자는 공용 쿼리를 만들 권한이 없습니다."
-        relations/base_contract:
+        relation:
           attributes:
             to:
               error_not_found: "'끝' 위치의 작업 패키지가 없거나 표시되지 않음"
@@ -225,18 +263,12 @@ ko:
             from:
               error_not_found: "'시작' 위치의 작업 패키지가 없거나 표시되지 않음"
               error_readonly: 기존 관계의 '시작' 링크는 변경이 불가능합니다.
-        users/base_contract:
+        user:
           attributes:
             status:
               invalid_on_create: 은(는) 새 사용자에 대해 유효한 상태가 아닙니다.
             auth_source:
               error_not_found: 찾을 수 없음
-        parse_schema_filter_params_service:
-          attributes:
-            base:
-              unsupported_operator: 그 연산자는 지원되지 않습니다.
-              invalid_values: 유효하지 않은 값입니다.
-              id_filter_required: "'id' 필터가 필요합니다."
   activerecord:
     attributes:
       announcements:
@@ -304,6 +336,8 @@ ko:
         column_names: 컬럼
         group_by: 그룹 결과
         filters: 필터
+        relations_to_type_column: Relations to %{type}
+        relations_of_type_column: "%{type} relations"
       repository:
         url: 주소
       role:
@@ -1182,6 +1216,8 @@ ko:
   label_logged_as: '로그인한 계정:'
   label_login: 로그인
   label_custom_logo: 사용자 정의 로고
+  label_custom_favicon: Custom favicon
+  label_custom_touch_icon: Custom touch icon
   label_logout: 로그아웃
   label_main_menu: 측면 메뉴
   label_manage_groups: 그룹 관리
@@ -1190,6 +1226,7 @@ ko:
   label_me: 나
   label_member_new: 새 멤버
   label_member_plural: 멤버
+  label_view_all_members: 모든 회원 보기
   label_menu_item_name: 메뉴 항목의 이름
   label_message: 메시지
   label_message_last: 마지막 메시지
@@ -1355,6 +1392,7 @@ ko:
   label_storage_group: 저장 파일 시스템 %{identifier}
   label_storage_for: 을(를) 위한 전체 저장 공간
   label_string: 텍스트
+  label_subproject: 하위 프로젝트
   label_subproject_new: 새 하위 프로젝트
   label_subproject_plural: 하위 프로젝트
   label_subtask_plural: 하위 작업
@@ -1986,8 +2024,22 @@ ko:
     활성화해야 합니다.
 
 '
-  text_custom_logo_instructions: 투명한 배경에 흰색 로고가 권장됩니다. 기존 디스플레이와 레티나 디스플레이 둘 다에서 최상의
-    결과를 위해 이미지의 크기는 460px x 110px여야 합니다.
+  text_custom_logo_instructions: 'A white logo on transparent background is recommended.
+    For best results on both, conventional and retina displays, make sure your image''s
+    dimensions are 460px by 60px.
+
+'
+  text_custom_favicon_instructions: 'This is the tiny icon that appears in your browser
+    window/tab next to the page''s title. It''s needs to be a squared 32 by 32 pixels
+    sized PNG image file with a transparent background.
+
+'
+  text_custom_touch_icon_instructions: 'This is the icon that appears in your mobile
+    or tablet when you place a bookmark on your homescreen. It''s needs to be a squared
+    180 by 180 pixels sized PNG image file. Please make sure the image''s background
+    is not transparent otherwise it will look bad on iOS.
+
+'
   text_default_administrator_account_changed: 기본 관리자 계정 변경됨
   text_default_encoding: '기본: UTF-8'
   text_destroy: 삭제
@@ -2390,3 +2442,8 @@ ko:
       writing_read_only_attributes: 읽기 전용 특성은 변경할 수 없습니다.
     resources:
       schema: 스키마
+  notice_attachment_migration_wiki_page: 'This page was generated automatically during
+    the update of OpenProject. It contains all attachments previously associated with
+    the %{container_type} "%{container_name}".
+
+'

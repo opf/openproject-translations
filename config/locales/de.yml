@@ -19,11 +19,21 @@ de:
         mit einem Enterprise-Edition Abonnement verfügbar.
       manage_colors: Farbauswahloptionen bearbeiten
       instructions:
+        alternative_color: Starken Akzentfarbe, wird normalerweise für die wichtigste
+          Schaltfläche auf dem Bildschirm verwendet.
+        content_link_color: Schriftfarbe der meisten Links.
         primary_color: Hauptfarbe.
         primary_color_dark: In der Regel wird eine dunklere Version der Hauptfarbe
           für Hover-Effekte verwendet.
-        alternative_color: Starken Akzentfarbe, wird normalerweise für die wichtigste
-          Schaltfläche auf dem Bildschirm verwendet.
+        header_bg_color: Hintergrundfarbe des Headers.
+        header_item_bg_hover_color: Hintergrundfarbe von Header-Elementen während
+          Mouse-hover.
+        header_item_font_color: Schriftfarbe von anklickbaren Header-Elementen.
+        header_item_font_hover_color: Schriftfarbe von anklickbaren Header-Elementen
+          während Mouse-hover.
+        header_border_bottom_color: Rahmenlinie unterhalb des Headers. Freilassen,
+          um keine Linie darzustellen.
+        main_menu_bg_color: Hintergrundfarbe des Menüs in der linken Seitenleiste.
     enterprise:
       upgrade_to_ee: Auf Enterprise-Edition upgraden
       add_token: Enterprise-Edition Support Token hochladen
@@ -65,6 +75,8 @@ de:
       further_information_before: Bitte sehen Sie dazu auch
       link_name: Migration zur neuen Timeline-Ansicht.
       further_information_after: ''
+    calendar:
+      removal: 'Please note: This module is going to be removed with OpenProject 8.0.'
   groups:
     index:
       no_results_title_text: Derzeit gibt es keine Gruppen.
@@ -242,11 +254,37 @@ de:
         queries/base_contract:
           attributes:
             project:
+              error_not_found: not found
+            public:
+              error_unauthorized: "- The user has no permission to create public queries."
+        relations/base_contract:
+          attributes:
+            to:
+              error_not_found: work package in `to` position not found or not visible
+              error_readonly: an existing relation's `to` link is immutable
+            from:
+              error_not_found: work package in `from` position not found or not visible
+              error_readonly: an existing relation's `from` link is immutable
+        users/base_contract:
+          attributes:
+            status:
+              invalid_on_create: is not a valid status for new users.
+            auth_source:
+              error_not_found: not found
+        parse_schema_filter_params_service:
+          attributes:
+            base:
+              unsupported_operator: Der Operator wird nicht unterstützt.
+              invalid_values: Ein Wert ist ungültig.
+              id_filter_required: Ein "Id" Filter ist erforderlich.
+        query:
+          attributes:
+            project:
               error_not_found: nicht gefunden
             public:
               error_unauthorized: "- Der Nutzer hat nicht die Berechtigung öffentliche
                 Filter zu erstellen."
-        relations/base_contract:
+        relation:
           attributes:
             to:
               error_not_found: Arbeitspaket in 'zu' Position nicht gefunden oder nicht
@@ -258,18 +296,12 @@ de:
                 nicht sichtbar
               error_readonly: der 'von' Link einer bestehenden Relation kann nicht
                 geändert werden
-        users/base_contract:
+        user:
           attributes:
             status:
               invalid_on_create: ist kein gültiger Status für neue Benutzer.
             auth_source:
               error_not_found: nicht gefunden
-        parse_schema_filter_params_service:
-          attributes:
-            base:
-              unsupported_operator: Der Operator wird nicht unterstützt.
-              invalid_values: Ein Wert ist ungültig.
-              id_filter_required: Ein "Id" Filter ist erforderlich.
   activerecord:
     attributes:
       announcements:
@@ -337,6 +369,8 @@ de:
         column_names: Spalten
         group_by: Gruppiere Ergebnisse nach
         filters: Filter
+        relations_to_type_column: Beziehungen zu %{type}
+        relations_of_type_column: 'Beziehungen der Art: %{type}'
       repository:
         url: URL
       role:
@@ -1234,6 +1268,8 @@ de:
   label_logged_as: Angemeldet als
   label_login: Anmelden
   label_custom_logo: Benutzerdefiniertes Logo
+  label_custom_favicon: Benutzerdefiniertes Favicon
+  label_custom_touch_icon: Benutzerdefiniertes Touch-Icon
   label_logout: Abmelden
   label_main_menu: Nebenmenü
   label_manage_groups: Gruppen verwalten
@@ -1242,6 +1278,7 @@ de:
   label_me: ich
   label_member_new: Neues Mitglied
   label_member_plural: Mitglieder
+  label_view_all_members: Alle Mitglieder anzeigen
   label_menu_item_name: Name des Menüpunktes
   label_message: Nachricht
   label_message_last: Letzter Forenbeitrag
@@ -1409,6 +1446,7 @@ de:
   label_storage_group: Speicher-Dateisystem %{identifier}
   label_storage_for: Umfasst Speicher für
   label_string: Text
+  label_subproject: Unterprojekt von
   label_subproject_new: Neues Unterprojekt
   label_subproject_plural: Unterprojekte
   label_subtask_plural: Unteraufgaben
@@ -2119,9 +2157,22 @@ de:
     müssen jeweils in Arbeitspaket-Typ und Projekt aktiviert werden.
 
 '
-  text_custom_logo_instructions: Ein weißes Logo mit transparentem Hintergrund wird
+  text_custom_logo_instructions: 'Ein weißes Logo mit transparentem Hintergrund wird
     empfohlen. Für ein optimales Ergebnis für konventionelle und Retina-Displays sollte
-    die Bildabmessungen 460 x110 px betragen.
+    die Bildabmessungen 460 x 110 Pixel betragen.
+
+'
+  text_custom_favicon_instructions: 'Dies ist das kleine Symbol, das in Ihrem Browser-Fenster/Tab
+    neben dem Seitentitel angezeigt wird. Es muss ein quadratisches 32 x 32 Pixel
+    großes PNG mit transparentem Hintergrund sein.
+
+'
+  text_custom_touch_icon_instructions: 'Dieses Symbol wird auf Ihrem Mobilgerät oder
+    Tablet angezeigt, wenn Sie ein Lesezeichen dieser OpenProject-Instanz erstellen.
+    Es muss ein quadratisches 180 x 180 Pixel großes PNG sein. Der Hintergrund sollte
+    nicht transparent sein, da dies auf iOS-Geräten nicht optimal dargestellt wird.
+
+'
   text_default_administrator_account_changed: Administrator-Kennwort geändert
   text_default_encoding: 'Standard: UTF-8'
   text_destroy: Löschen
@@ -2585,3 +2636,8 @@ de:
         werden.
     resources:
       schema: Schema
+  notice_attachment_migration_wiki_page: 'Diese Seite wurde automatisch während der
+    Aktualisierung von OpenProject generiert. Es enthält alle Anhänge, die zuvor innerhalb
+    %{container_type} "%{container_name}" zugeordnet waren.
+
+'
