@@ -243,36 +243,10 @@ lt:
         queries/base_contract:
           attributes:
             project:
-              error_not_found: not found
-            public:
-              error_unauthorized: "- The user has no permission to create public queries."
-        relations/base_contract:
-          attributes:
-            to:
-              error_not_found: work package in `to` position not found or not visible
-              error_readonly: an existing relation's `to` link is immutable
-            from:
-              error_not_found: work package in `from` position not found or not visible
-              error_readonly: an existing relation's `from` link is immutable
-        users/base_contract:
-          attributes:
-            status:
-              invalid_on_create: is not a valid status for new users.
-            auth_source:
-              error_not_found: not found
-        parse_schema_filter_params_service:
-          attributes:
-            base:
-              unsupported_operator: Ši operacija nėra palaikoma.
-              invalid_values: Netinkama reikšmė.
-              id_filter_required: Reikalingas „id“ filtras.
-        query:
-          attributes:
-            project:
               error_not_found: nerasta
             public:
               error_unauthorized: "- Vartotojas neturi teisių viešoms užklausoms kurti."
-        relation:
+        relations/base_contract:
           attributes:
             to:
               error_not_found: darbų paketas į 'iki' poziciją nerastas arba yra nematomas
@@ -280,12 +254,18 @@ lt:
             from:
               error_not_found: darbų paketas į 'nuo' poziciją nerastas arba yra nematomas
               error_readonly: esama ryšio sąsaja 'nuo' yra nekintama
-        user:
+        users/base_contract:
           attributes:
             status:
               invalid_on_create: yra netinkama naujų vartotojų būsena.
             auth_source:
               error_not_found: nerasta
+        parse_schema_filter_params_service:
+          attributes:
+            base:
+              unsupported_operator: Ši operacija nėra palaikoma.
+              invalid_values: Netinkama reikšmė.
+              id_filter_required: Reikalingas „id“ filtras.
   activerecord:
     attributes:
       announcements:
@@ -353,8 +333,6 @@ lt:
         column_names: Stulpeliai
         group_by: Grupuoti rezultatus pagal
         filters: Filtrai
-        relations_to_type_column: Ryšiai su %{type}
-        relations_of_type_column: "%{type} ryšiai"
       repository:
         url: URL
       role:
@@ -2610,8 +2588,3 @@ lt:
       writing_read_only_attributes: Jūs neturėtumėte įrašyti atributą „tik skaitomas“.
     resources:
       schema: Schema
-  notice_attachment_migration_wiki_page: 'Šis puslapis buvo sugeneruotas automatiškai,
-    kai buvo naujinama OpenProject. Jame yra visi prisegti failai, kurie buvo susieti
-    su %{container_type} „%{container_name}“.
-
-'

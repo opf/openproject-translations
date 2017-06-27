@@ -245,37 +245,11 @@ ru:
         queries/base_contract:
           attributes:
             project:
-              error_not_found: not found
-            public:
-              error_unauthorized: "- The user has no permission to create public queries."
-        relations/base_contract:
-          attributes:
-            to:
-              error_not_found: work package in `to` position not found or not visible
-              error_readonly: an existing relation's `to` link is immutable
-            from:
-              error_not_found: work package in `from` position not found or not visible
-              error_readonly: an existing relation's `from` link is immutable
-        users/base_contract:
-          attributes:
-            status:
-              invalid_on_create: is not a valid status for new users.
-            auth_source:
-              error_not_found: not found
-        parse_schema_filter_params_service:
-          attributes:
-            base:
-              unsupported_operator: Оператор не поддерживается.
-              invalid_values: Недопустимое значение.
-              id_filter_required: Требуется фильтр по 'Id'.
-        query:
-          attributes:
-            project:
               error_not_found: не найдено
             public:
               error_unauthorized: "- У пользователя нет прав для создания общедоступных
                 запросов."
-        relation:
+        relations/base_contract:
           attributes:
             to:
               error_not_found: рабочий пакет в позиции `до` не найден или не виден
@@ -283,12 +257,18 @@ ru:
             from:
               error_not_found: рабочий пакет в позиции `от` не найден или не виден
               error_readonly: в существующих отношениях связь `от` неизменна
-        user:
+        users/base_contract:
           attributes:
             status:
               invalid_on_create: для нового пользователя это неподходящий статус.
             auth_source:
               error_not_found: не найдено
+        parse_schema_filter_params_service:
+          attributes:
+            base:
+              unsupported_operator: Оператор не поддерживается.
+              invalid_values: Недопустимое значение.
+              id_filter_required: Требуется фильтр по 'Id'.
   activerecord:
     attributes:
       announcements:
@@ -356,8 +336,6 @@ ru:
         column_names: Столбцы
         group_by: Результаты группы по
         filters: Фильтры
-        relations_to_type_column: Отношения к %{type}
-        relations_of_type_column: "%{type} отношения"
       repository:
         url: URL
       role:
@@ -2610,8 +2588,3 @@ ru:
         только для чтения.
     resources:
       schema: Схема
-  notice_attachment_migration_wiki_page: 'Эта страница была автоматически создана
-    во время обновления OpenProject. Она содержит все вложения, ранее связанные с
-    %{container_type} «%{container_name}».
-
-'

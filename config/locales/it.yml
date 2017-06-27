@@ -251,36 +251,10 @@ it:
         queries/base_contract:
           attributes:
             project:
-              error_not_found: not found
-            public:
-              error_unauthorized: "- The user has no permission to create public queries."
-        relations/base_contract:
-          attributes:
-            to:
-              error_not_found: work package in `to` position not found or not visible
-              error_readonly: an existing relation's `to` link is immutable
-            from:
-              error_not_found: work package in `from` position not found or not visible
-              error_readonly: an existing relation's `from` link is immutable
-        users/base_contract:
-          attributes:
-            status:
-              invalid_on_create: is not a valid status for new users.
-            auth_source:
-              error_not_found: not found
-        parse_schema_filter_params_service:
-          attributes:
-            base:
-              unsupported_operator: Operatore non supportato.
-              invalid_values: Valore non valido.
-              id_filter_required: Il filtro "id" è obbligatorio.
-        query:
-          attributes:
-            project:
               error_not_found: non trovato
             public:
               error_unauthorized: "- L'utente non è autorizzato a creare query pubbliche."
-        relation:
+        relations/base_contract:
           attributes:
             to:
               error_not_found: impossibile trovare o visualizzare la macro-attività
@@ -292,12 +266,18 @@ it:
                 in posizione "da"
               error_readonly: impossibile modificare il collegamento ad una relazione
                 esistente "da"
-        user:
+        users/base_contract:
           attributes:
             status:
               invalid_on_create: non è uno stato valido per i nuovi utenti.
             auth_source:
               error_not_found: non trovato
+        parse_schema_filter_params_service:
+          attributes:
+            base:
+              unsupported_operator: Operatore non supportato.
+              invalid_values: Valore non valido.
+              id_filter_required: Il filtro "id" è obbligatorio.
   activerecord:
     attributes:
       announcements:
@@ -365,8 +345,6 @@ it:
         column_names: Colonne
         group_by: Raggruppa i risultati per
         filters: Filtri
-        relations_to_type_column: Relations to %{type}
-        relations_of_type_column: "%{type} relations"
       repository:
         url: URL
       role:
@@ -2654,8 +2632,3 @@ it:
       writing_read_only_attributes: Non puoi scrivere un attributo di sola lettura.
     resources:
       schema: Schema
-  notice_attachment_migration_wiki_page: 'This page was generated automatically during
-    the update of OpenProject. It contains all attachments previously associated with
-    the %{container_type} "%{container_name}".
-
-'

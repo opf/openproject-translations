@@ -226,36 +226,10 @@ ko:
         queries/base_contract:
           attributes:
             project:
-              error_not_found: not found
-            public:
-              error_unauthorized: "- The user has no permission to create public queries."
-        relations/base_contract:
-          attributes:
-            to:
-              error_not_found: work package in `to` position not found or not visible
-              error_readonly: an existing relation's `to` link is immutable
-            from:
-              error_not_found: work package in `from` position not found or not visible
-              error_readonly: an existing relation's `from` link is immutable
-        users/base_contract:
-          attributes:
-            status:
-              invalid_on_create: is not a valid status for new users.
-            auth_source:
-              error_not_found: not found
-        parse_schema_filter_params_service:
-          attributes:
-            base:
-              unsupported_operator: 그 연산자는 지원되지 않습니다.
-              invalid_values: 유효하지 않은 값입니다.
-              id_filter_required: "'id' 필터가 필요합니다."
-        query:
-          attributes:
-            project:
               error_not_found: 찾을 수 없음
             public:
               error_unauthorized: "- 해당 사용자는 공용 쿼리를 만들 권한이 없습니다."
-        relation:
+        relations/base_contract:
           attributes:
             to:
               error_not_found: "'끝' 위치의 작업 패키지가 없거나 표시되지 않음"
@@ -263,12 +237,18 @@ ko:
             from:
               error_not_found: "'시작' 위치의 작업 패키지가 없거나 표시되지 않음"
               error_readonly: 기존 관계의 '시작' 링크는 변경이 불가능합니다.
-        user:
+        users/base_contract:
           attributes:
             status:
               invalid_on_create: 은(는) 새 사용자에 대해 유효한 상태가 아닙니다.
             auth_source:
               error_not_found: 찾을 수 없음
+        parse_schema_filter_params_service:
+          attributes:
+            base:
+              unsupported_operator: 그 연산자는 지원되지 않습니다.
+              invalid_values: 유효하지 않은 값입니다.
+              id_filter_required: "'id' 필터가 필요합니다."
   activerecord:
     attributes:
       announcements:
@@ -336,8 +316,6 @@ ko:
         column_names: 컬럼
         group_by: 그룹 결과
         filters: 필터
-        relations_to_type_column: Relations to %{type}
-        relations_of_type_column: "%{type} relations"
       repository:
         url: 주소
       role:
@@ -2442,8 +2420,3 @@ ko:
       writing_read_only_attributes: 읽기 전용 특성은 변경할 수 없습니다.
     resources:
       schema: 스키마
-  notice_attachment_migration_wiki_page: 'This page was generated automatically during
-    the update of OpenProject. It contains all attachments previously associated with
-    the %{container_type} "%{container_name}".
-
-'

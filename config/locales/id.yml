@@ -241,36 +241,10 @@ id:
         queries/base_contract:
           attributes:
             project:
-              error_not_found: not found
-            public:
-              error_unauthorized: "- The user has no permission to create public queries."
-        relations/base_contract:
-          attributes:
-            to:
-              error_not_found: work package in `to` position not found or not visible
-              error_readonly: an existing relation's `to` link is immutable
-            from:
-              error_not_found: work package in `from` position not found or not visible
-              error_readonly: an existing relation's `from` link is immutable
-        users/base_contract:
-          attributes:
-            status:
-              invalid_on_create: is not a valid status for new users.
-            auth_source:
-              error_not_found: not found
-        parse_schema_filter_params_service:
-          attributes:
-            base:
-              unsupported_operator: The operator is not supported.
-              invalid_values: A value is invalid.
-              id_filter_required: An 'id' filter is required.
-        query:
-          attributes:
-            project:
               error_not_found: tidak ditemukan
             public:
               error_unauthorized: "- The user has no permission to create public queries."
-        relation:
+        relations/base_contract:
           attributes:
             to:
               error_not_found: work package dalam posisi `to` tidak dapat ditemukan
@@ -279,12 +253,18 @@ id:
             from:
               error_not_found: work package in `from` position not found or not visible
               error_readonly: an existing relation's `from` link is immutable
-        user:
+        users/base_contract:
           attributes:
             status:
               invalid_on_create: bukan status yang valid untuk user baru.
             auth_source:
               error_not_found: tidak ditemukan
+        parse_schema_filter_params_service:
+          attributes:
+            base:
+              unsupported_operator: The operator is not supported.
+              invalid_values: A value is invalid.
+              id_filter_required: An 'id' filter is required.
   activerecord:
     attributes:
       announcements:
@@ -352,8 +332,6 @@ id:
         column_names: Kolom
         group_by: Group
         filters: Filter
-        relations_to_type_column: Relations to %{type}
-        relations_of_type_column: "%{type} relations"
       repository:
         url: URL
       role:
@@ -2543,8 +2521,3 @@ id:
       writing_read_only_attributes: Anda tidak harus menulis hanya-baca atribut.
     resources:
       schema: Schema
-  notice_attachment_migration_wiki_page: 'This page was generated automatically during
-    the update of OpenProject. It contains all attachments previously associated with
-    the %{container_type} "%{container_name}".
-
-'

@@ -214,49 +214,29 @@ zh:
         queries/base_contract:
           attributes:
             project:
-              error_not_found: not found
+              error_not_found: 未找到
             public:
-              error_unauthorized: "- The user has no permission to create public queries."
+              error_unauthorized: "- 此用户没有创建公共查询的权限。"
         relations/base_contract:
           attributes:
             to:
-              error_not_found: work package in `to` position not found or not visible
-              error_readonly: an existing relation's `to` link is immutable
+              error_not_found: 找不到这个工作包
+              error_readonly: 关系要持久
             from:
-              error_not_found: work package in `from` position not found or not visible
-              error_readonly: an existing relation's `from` link is immutable
+              error_not_found: 找不到这个工作包
+              error_readonly: 关系要持久
         users/base_contract:
           attributes:
             status:
-              invalid_on_create: is not a valid status for new users.
+              invalid_on_create: 不是新用户的有效状态
             auth_source:
-              error_not_found: not found
+              error_not_found: 未找到
         parse_schema_filter_params_service:
           attributes:
             base:
               unsupported_operator: 不支持此运算符。
               invalid_values: 值无效。
               id_filter_required: "“id”筛选器为必填字段。"
-        query:
-          attributes:
-            project:
-              error_not_found: 未找到
-            public:
-              error_unauthorized: "- 此用户没有创建公共查询的权限。"
-        relation:
-          attributes:
-            to:
-              error_not_found: 找不到这个工作包
-              error_readonly: 关系要持久
-            from:
-              error_not_found: 找不到这个工作包
-              error_readonly: 关系要持久
-        user:
-          attributes:
-            status:
-              invalid_on_create: 不是新用户的有效状态
-            auth_source:
-              error_not_found: 未找到
   activerecord:
     attributes:
       announcements:
@@ -324,8 +304,6 @@ zh:
         column_names: 列
         group_by: 汇总结果根据
         filters: 筛选器
-        relations_to_type_column: Relations to %{type}
-        relations_of_type_column: "%{type} relations"
       repository:
         url: URL
       role:
@@ -2333,8 +2311,3 @@ zh:
       writing_read_only_attributes: 你不能写入只读属性。
     resources:
       schema: 方案
-  notice_attachment_migration_wiki_page: 'This page was generated automatically during
-    the update of OpenProject. It contains all attachments previously associated with
-    the %{container_type} "%{container_name}".
-
-'

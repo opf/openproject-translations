@@ -245,37 +245,11 @@ sv-SE:
         queries/base_contract:
           attributes:
             project:
-              error_not_found: not found
-            public:
-              error_unauthorized: "- The user has no permission to create public queries."
-        relations/base_contract:
-          attributes:
-            to:
-              error_not_found: work package in `to` position not found or not visible
-              error_readonly: an existing relation's `to` link is immutable
-            from:
-              error_not_found: work package in `from` position not found or not visible
-              error_readonly: an existing relation's `from` link is immutable
-        users/base_contract:
-          attributes:
-            status:
-              invalid_on_create: is not a valid status for new users.
-            auth_source:
-              error_not_found: not found
-        parse_schema_filter_params_service:
-          attributes:
-            base:
-              unsupported_operator: Operatorn stöds inte.
-              invalid_values: Ett värde är ogiltigt.
-              id_filter_required: Ett ID-filter krävs.
-        query:
-          attributes:
-            project:
               error_not_found: hittades inte
             public:
               error_unauthorized: "- Användaren har inte behörighet att skapa offentliga
                 frågor."
-        relation:
+        relations/base_contract:
           attributes:
             to:
               error_not_found: arbetspaketet i 'till' hittades inte eller är inte
@@ -285,12 +259,18 @@ sv-SE:
               error_not_found: arbetspaketet i 'från' hittades inte eller är inte
                 synligt
               error_readonly: en befintlig relations 'från'-länk går ej att ändra
-        user:
+        users/base_contract:
           attributes:
             status:
               invalid_on_create: är inte en giltig status för nya användare.
             auth_source:
               error_not_found: hittades inte
+        parse_schema_filter_params_service:
+          attributes:
+            base:
+              unsupported_operator: Operatorn stöds inte.
+              invalid_values: Ett värde är ogiltigt.
+              id_filter_required: Ett ID-filter krävs.
   activerecord:
     attributes:
       announcements:
@@ -358,8 +338,6 @@ sv-SE:
         column_names: Kolumner
         group_by: Gruppera resultat efter
         filters: Filter
-        relations_to_type_column: Relationer till %{type}
-        relations_of_type_column: "%{type} relations"
       repository:
         url: URL
       role:
@@ -2552,8 +2530,3 @@ sv-SE:
       writing_read_only_attributes: Du får inte skriva till ett skrivskyddat attribut.
     resources:
       schema: Schema
-  notice_attachment_migration_wiki_page: 'This page was generated automatically during
-    the update of OpenProject. It contains all attachments previously associated with
-    the %{container_type} "%{container_name}".
-
-'
