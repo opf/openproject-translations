@@ -15,21 +15,19 @@
 module OpenProject::Translations::Patches::RedmineI18nPatch
   # Add langauges from this plugin to the list of available languages
   def all_languages
-    plugin_languages = Dir[OpenProject::Translations::Engine.root.join('config', 'locales', '*.{yml}').to_s].map do |file_path|
-      File.basename(file_path).split('.').first.to_sym
+    @@all_translations ||= begin
+      plugin_languages = Dir[OpenProject::Translations::Engine.root.join('config', 'locales', '*.{yml}').to_s].map do |file_path|
+        File.basename(file_path).split('.').first.to_sym
+      end
+
+      # do not count javascript translations as separate languages
+      plugin_languages.reject! { |l| l.to_s[0..2] == 'js-' }
+
+      core_languages = super
+
+      (core_languages + plugin_languages).sort.uniq
     end
-
-    # do not count javascript translations as separate languages
-    plugin_languages.reject! { |l| l.to_s[0..2] == 'js-' }
-
-    core_languages = super
-
-    (core_languages + plugin_languages).sort.uniq
   end
 end
 
-module Redmine
-  module I18n
-    prepend OpenProject::Translations::Patches::RedmineI18nPatch
-  end
-end
+Redmine::I18n.singleton_class.prepend OpenProject::Translations::Patches::RedmineI18nPatch
