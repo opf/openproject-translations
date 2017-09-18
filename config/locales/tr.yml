@@ -152,9 +152,9 @@ tr:
       settings: Ayarlar
       form_configuration: Formu yapılandırma
       projects: Projeler
-      enabled_projects: Enabled projects
-      add_group: Add group
-      reset: Reset to defaults
+      enabled_projects: Etkin projeler
+      add_group: Grup ekle
+      reset: Varsayılanlara geri yükle
   versions:
     overview:
       no_results_title_text: Bu sürüme atadığım iş paketi bulunmuyor.
@@ -256,7 +256,8 @@ tr:
             project:
               error_not_found: bulunamadı
             public:
-              error_unauthorized: "- The user has no permission to create public queries."
+              error_unauthorized: "- Kullanıcı genel sorgular oluşturma iznine sahip
+                değil."
         relation:
           attributes:
             to:
@@ -274,9 +275,9 @@ tr:
         parse_schema_filter_params_service:
           attributes:
             base:
-              unsupported_operator: The operator is not supported.
-              invalid_values: A value is invalid.
-              id_filter_required: An 'id' filter is required.
+              unsupported_operator: Biçim desteklenmiyor.
+              invalid_values: Bir değeri geçerli değil.
+              id_filter_required: Bir 'id' süzgeç gereklidir.
   activerecord:
     attributes:
       announcements:
@@ -311,7 +312,7 @@ tr:
         is_required: Gerekli
         max_length: Maksimum uzunluk
         min_length: Minimum uzunluk
-        multi_value: Allow multi-select
+        multi_value: Çoklu seçime izin ver
         possible_values: Olası değerler
         regexp: Düzenli ifade
         searchable: Aranabilir
@@ -319,10 +320,10 @@ tr:
       custom_value:
         value: Değer
       enterprise_token:
-        starts_at: Valid since
-        expires_at: Expires at
-        subscriber: Subscriber
-        encoded_token: Enterprise support token
+        starts_at: Beri geçerli
+        expires_at: Süre sonu: 
+        subscriber: Abone
+        encoded_token: Kurumsal Destek anahtarı
       relation:
         delay: Gecikme
         from: İş Paketi
@@ -352,8 +353,8 @@ tr:
       repository:
         url: URL
       role:
-        assignable: Work packages can be assigned to users and groups in possession
-          of this role in the respective project
+        assignable: İşpaketleri bağlı projedeki rollere göre kullanıcı ve gruplara
+          atanabilir
       time_entry:
         activity: Etkinlik
         hours: Saat
@@ -380,8 +381,8 @@ tr:
         impaired: Erişilebilirlik modu
         time_zone: Zaman dilimi
         auto_hide_popups: Başarılı bildirimleri otomatik olarak gizle
-        warn_on_leaving_unsaved: Warn me when leaving a work package with unsaved
-          changes
+        warn_on_leaving_unsaved: İş paketlerinden ayrılırken kaydedilmemiş değişiklik
+          olduğunda beni uyar
       version:
         effective_date: Teslim tarihi
         sharing: Paylaşım
@@ -450,8 +451,8 @@ tr:
         inclusion: is not set to one of the allowed values.
         invalid: geçersizdir.
         less_than_or_equal_to: must be less than or equal to %{count}.
-        not_a_date: is not a valid date.
-        not_a_datetime: is not a valid date time.
+        not_a_date: geçerli bir tarih değil.
+        not_a_datetime: geçerli bir zaman değil.
         not_an_iso_date: 'geçerli bir tarih değil. Gerekli biçim:: YYYY-AA-GG.'
         not_a_number: bir sayı değil.
         not_an_integer: bir tamsayı değil.
@@ -471,7 +472,7 @@ tr:
         custom_field:
           at_least_one_custom_option: En az bir seçeneğin uygun olması gerekir.
         enterprise_token:
-          unreadable: can't be read. Are you sure it is a support token?
+          unreadable: okunamıyor. Desteklenen bir destek anahtarı olduğuna emin misiniz?
         project:
           attributes:
             types:
@@ -480,8 +481,8 @@ tr:
           identical_projects: Bağımlılık bir proje ve kendisi arasında yaratılamaz.
           project_association_not_allowed: ilişkilere izin vermez.
         query:
-          group_by_hierarchies_exclusive: is mutually exclusive with group by '%{group_by}'.
-            You cannot activate both.
+          group_by_hierarchies_exclusive: grubu tarafından '%{group_by}' ile birlikte
+            kullanılamaz. Her ikisi de etkinleştiremezsiniz.
           filters:
             custom_fields:
               inexistent: There is no custom field for the filter.
@@ -522,10 +523,10 @@ tr:
         type:
           attributes:
             attribute_groups:
-              group_without_name: Unnamed groups are not allowed.
+              group_without_name: Adsız gruplara izin verilmez.
               duplicate_group: "%{group} grup ismi birden fazla kullanıldı. Grup isimleri
                 eşsiz olmalıdır."
-              attribute_unknown: Invalid work package attribute used.
+              attribute_unknown: Geçersiz iş paketi özniteliği kullanıldı.
         user:
           attributes:
             password:
@@ -896,9 +897,9 @@ tr:
   ee:
     upsale:
       form_configuration:
-        description: 'Customize the form configuration with these additional features:'
-        add_groups: Add new attribute groups
-        rename_groups: Rename attributes groups
+        description: 'Form yapılandırmasını bu ek özelliklerle kullanın:'
+        add_groups: Yeni öznitelik grubu ekleyin
+        rename_groups: Öznitelik grubunun adını değiştirin
   enumeration_activities: Activities (time tracking)
   enumeration_work_package_priorities: İş paketi öncelikleri
   enumeration_system_activity: Sistem Etkinliği
@@ -915,11 +916,11 @@ tr:
   error_check_user_and_role: Lütfen bir kullanıcı ve bir rol seçin.
   error_cookie_missing: The OpenProject cookie is missing. Please ensure that cookies
     are enabled, as this application will not properly function without.
-  error_custom_option_not_found: Option does not exist.
-  error_failed_to_delete_entry: Failed to delete this entry.
-  error_invalid_group_by: 'Can''t group by: %{value}'
-  error_invalid_query_column: 'Invalid query column: %{value}'
-  error_invalid_sort_criterion: 'Can''t sort by column: %{value}'
+  error_custom_option_not_found: Seçenek yok.
+  error_failed_to_delete_entry: Girdi silinemedi.
+  error_invalid_group_by: "%{value} ya göre guplandırılamadı"
+  error_invalid_query_column: 'Geçersiz sorgu sütunu: %{value}'
+  error_invalid_sort_criterion: 'Sütuna göre sıralama yapamazsınız: %{value}'
   error_pdf_export_too_many_columns: Too many columns selected for the PDF export.
     Please reduce the number of columns.
   error_token_authenticity: Unable to verify Cross-Site Request Forgery token.
@@ -991,14 +992,14 @@ tr:
     blocks:
       community: OpenProject topluluğu
       upsale:
-        become_hero: Become a hero!
+        become_hero: Kahraman olun!
         title: Enterprise Edition sürümüne yükseltme
-        description: Boost your productivity with the Enterprise Edition
-        more_info: More information
-        additional_features: Additional powerful premium features
+        description: Enterprise Edition ile verimliliğinizi artırın
+        more_info: Daha fazla bilgi
+        additional_features: Ek güçlü premium özellikler
         professional_support: OpenProject uzmanlarından profesyonel destek
-        you_contribute: Developers need to pay their bills, too. With Enterprise Edition
-          you substantially contribute to this Open-Source community effort.
+        you_contribute: Geliştiricilerin faturalarını da ödemesi gerekiyor. Enterprise
+          Edition ile Açık-Kaynak topluluğu çalışmalarına küçük bir katkı yapabilirsiniz.
     links:
       upgrade_enterprise_edition: Enterprise Edition sürümüne yükseltme
       user_guides: Kullanıcı rehberleri
@@ -1024,7 +1025,7 @@ tr:
         action: Eylem
         expiration: Bitiş tarihi
       indefinite_expiration: Hiçbir zaman
-  label_accessibility: Accessibility
+  label_accessibility: Erişilebilirlik
   label_account: Hesap
   label_active: Aktif
   label_activity: Etkinlik
@@ -1175,7 +1176,7 @@ tr:
   label_enterprise: Kurumsal
   label_enterprise_edition: Kurumsal Sürüm
   label_environment: Ortam
-  label_estimates_and_time: Estimates and time
+  label_estimates_and_time: Tahminler & zaman
   label_equals: şuysa
   label_example: Örnek
   label_export_to: 'Also available in:'
@@ -1210,7 +1211,7 @@ tr:
   label_in: in
   label_in_less_than: in less than
   label_in_more_than: in more than
-  label_inactive: Inactive
+  label_inactive: Etkin değil
   label_incoming_emails: Gelen e-postalar
   label_includes: includes
   label_index_by_date: Index by date
@@ -2076,10 +2077,9 @@ tr:
     array:
       sentence_connector: ve
       skip_last_comma: yanlış
-  text_accessibility_hint: The accessibility mode is designed for users who are blind,
-    motorically handicaped or have a bad eyesight. For the latter focused elements
-    are specially highlighted. Please notice, that the Backlogs module is not available
-    in this mode.
+  text_accessibility_hint: Erişilebilirlik modu, kör, engelli ve ya ciddi görme güçlüğü
+    çeken kullanıcılar için tasarlandı. Bu modda yazı odaklı bileşenler özellikle
+    vurgulanır. Backlogs modülünde bu özelliği henüz kullanamayacağınızı da belirtelim.
   text_access_token_hint: Access tokens allow you to grant external applications access
     to resources in OpenProject.
   text_analyze: 'Further analyze: %{subject}'
@@ -2205,8 +2205,8 @@ tr:
   text_unallowed_characters: Yasaklı karakterler
   text_user_invited: The user has been invited and is pending registration.
   text_user_wrote: "%{value} demiş ki:"
-  text_warn_on_leaving_unsaved: The work package contains unsaved text that will be
-    lost if you leave this page.
+  text_warn_on_leaving_unsaved: İş paketi bu sayfadan ayrıldığınızda kaybolabilecek
+    kaydedilmemiş metinler içeriyor.
   text_wiki_destroy_confirmation: Are you sure you want to delete this wiki and all
     its content?
   text_wiki_page_destroy_children: Delete child pages and all their descendants
@@ -2429,16 +2429,16 @@ tr:
       years: Yıl
   title_remove_and_delete_user: Remove the invited user from the project and delete
     him/her.
-  tooltip_resend_invitation: 'Sends another invitation email with a fresh token in
-    case the old one expired or the user did not get the original email. Can also
-    be used for active users to choose a new authentication method. When used with
-    active users their status will be changed to ''invited''.
+  tooltip_resend_invitation: 'Eskisi geçersiz olduysa ya da orjinal e-posta alınamadıysa
+    yeni bir davet anahtarı gönderir. Aynı zamanda bu işlevi aktif kullanıcıların
+    farkli bir kimlik doğrulama yöntemine geçişi için de kullanabilirsiniz. Aktif
+    kullanıcılar için kullandığınızda onların durumu ''davet edildi'' olarak değişir.
 
 '
   tooltip:
-    setting_email_login: 'If enabled a user will be unable to chose a login during
-      registration. Instead their given e-mail address will serve as the login. An
-      administrator may still change the login separately.
+    setting_email_login: 'Eğer aktive edilirse, kullanıcıya kayıt esnasında giriş
+      seçimi sunulmaz. Login adı olarak e-posta adresi kullanılacak. Yönetici istediği
+      zaman giriş bilgisini ayrıca belirleyebilir.
 
 '
   queries:
@@ -2539,8 +2539,8 @@ tr:
         this operation.
       missing_content_type: not specified
       missing_request_body: There was no request body.
-      missing_or_malformed_parameter: The query parameter '%{parameter}' is missing
-        or malformed.
+      missing_or_malformed_parameter: Sorgu parametresi '%{parameter}' eksik veya
+        hatalı biçimlendirilmiş.
       multipart_body_error: The request body did not contain the expected multipart
         parts.
       multiple_errors: Multiple field constraints have been violated.
