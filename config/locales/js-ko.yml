@@ -164,6 +164,7 @@ ko:
     label_total_progress: "%{percent}% 진행"
     label_visible_for_others: 다른사람에게 보이기
     label_updated_on: '업데이트 :'
+    label_warning: 경고
     label_work_package: 작업 패키지
     label_work_package_plural: 작업 패키지
     label_watch: 주시
@@ -206,8 +207,15 @@ ko:
         previous: 전 페이지로
     placeholders:
       default: "-"
+      subject: Enter subject here
       selection: 선택하십시오
       relation_description: 이 관계에 대한 설명을 추가하려면 클릭
+    project:
+      required_outside_context: You are not within a project context. Please choose
+        the project context first in order to select type and status
+      context: Project context
+      work_package_belongs_to: This work package belongs to project %{projectname}.
+      click_to_switch_context: Open this work package in that project.
     text_are_you_sure: 계속하시겠습니까?
     types:
       attribute_groups:
@@ -295,6 +303,18 @@ ko:
     text_query_destroy_confirmation: 선택한 쿼리를 삭제하시겠습니까?
     text_attachment_destroy_confirmation: 정말 이 첨부 파일을 삭제 하시겠습니까?
     timelines:
+      gantt_chart: Gantt chart
+      labels:
+        bar: Bar labels
+        left: Left
+        right: Right
+        farRight: Far right
+        showNone: "-- No label --"
+        description: 'Select the attributes you want to be shown in the respective
+          positions of the Gantt chart at all times. Note that when hovering an element,
+          its date labels will be shown instead of these attributes.
+
+'
       button_activate: 타임라인 모드 활성화
       button_deactivate: 타임라인 모드 비활성화
       cancel: 취소
@@ -342,6 +362,7 @@ ko:
       zoom:
         in: 확대
         out: 축소
+        auto: Auto zoom
         days: 일
         weeks: 주
         months: 개월
@@ -528,6 +549,13 @@ ko:
       form_submit:
         title: 계속하려면 확인하세요
         text: 정말로 이 작업을 수행하기를 원하시나요?
+      upsale_relation_columns: Need to see relations in the work package list?
+      upsale_relation_columns_link: Check out the Enterprise Edition.
+      destroy_work_package:
+        title: Confirm deletion of %{label}
+        text: Are you sure you want to delete the following %{label} ?
+        has_children: 'The work package has %{childUnits}:'
+        deletes_children: All child work packages will also be deleted.
     notice_successful_create: 생성에 성공했습니다.
     notice_successful_delete: 삭제에 성공했습니다.
     notice_successful_update: 업데이트에 성공했습니다.
@@ -555,6 +583,12 @@ ko:
     error_could_not_resolve_version_name: 버전 이름을 확인할 수 없습니다.
     error_could_not_resolve_user_name: 사용자 이름을 확인할 수 없습니다.
     units:
+      workPackage:
+        one: work package
+        other: work packages
+      child_work_packages:
+        one: one child work package
+        other: "%{count} work package children"
       hour:
         one: 1 hour
         other: "%{count} 시간"

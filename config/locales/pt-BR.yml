@@ -70,8 +70,8 @@ pt-BR:
     is_enabled_globally: Está habilitado globalmente
     enabled_in_project: Habilitado no projeto
     contained_in_type: Contido no tipo
-    confirm_destroy_option: Deleting an option will delete all of its occurrences
-      (e.g. in work packages). Are you sure you want to delete it?
+    confirm_destroy_option: Removendo uma opção removerá todas as suas ocorrências
+      (ex. em pacotes de trabalho). Tem certeza que você quer removê-la?
     tab:
       no_results_title_text: Atualmente, não há campos personalizados.
       no_results_content_text: Criar um novo campo personalizado
@@ -353,6 +353,7 @@ pt-BR:
         relations_of_type_column: Relações de %{type}
         group_by: Agrupar resultados por
         filters: Filtros
+        timeline_labels: Rótulos de linha do tempo
       repository:
         url: URL
       role:
@@ -492,8 +493,8 @@ pt-BR:
         repository:
           not_available: Fornecedor SCM não está disponível
           not_whitelisted: não é permitido pela configuração.
-          invalid_url: is not a valid repository URL or path.
-          must_not_be_ssh: must not be an SSH url.
+          invalid_url: não é um caminho ou URL válida do repositório.
+          must_not_be_ssh: não deve ser uma url SSH.
           no_directory: não é um diretório.
         work_package:
           is_not_a_valid_target_for_time_entries: 'Pacote de trabalho #%{id} não é
@@ -590,8 +591,8 @@ pt-BR:
     updated: 'Atualizado: %{title}'
   attributes:
     active: Ativo
-    assigned_to: Atribuído
-    assignee: Atribuído
+    assigned_to: Responsável
+    assignee: Responsável
     attachments: Anexos
     author: Autor
     base: 'Erro geral:'
@@ -613,6 +614,7 @@ pt-BR:
     estimated_time: Tempo estimado
     firstname: Nome
     group: Grupo
+    groups: Grupos
     groupname: Nome do grupo
     id: ID
     is_default: Valor padrão
@@ -628,6 +630,7 @@ pt-BR:
     project: Projeto
     responsible: Responsável
     role: Papel
+    roles: Papéis
     start_date: Data de início
     status: Situação
     subject: Assunto
@@ -910,6 +913,7 @@ pt-BR:
   enumeration_work_package_priorities: Prioridades do pacote de trabalho
   enumeration_system_activity: Atividade do Sistema
   enumeration_reported_project_statuses: Situação relatada do projeto
+  error_auth_source_sso_failed: Single Sign-On (SSO) para o usuário '%{value}' falhou
   error_can_not_archive_project: Este projeto não pode ser arquivado
   error_can_not_delete_entry: Não é possível excluir a entrada
   error_can_not_delete_custom_field: Não é possível excluir o campo personalizado
@@ -1017,6 +1021,7 @@ pt-BR:
       forums: Fóruns
       blog: Blog do OpenProject
       boards: Fórum da Comunidade
+      newsletter: Alertas de segurança / Newsletter
   instructions_after_registration: Você pode entrar assim que sua conta for ativada
     clicando %{signin}.
   instructions_after_logout: Você pode entrar novamente clicando %{signin}.
@@ -1035,6 +1040,8 @@ pt-BR:
   label_accessibility: Acessibilidade
   label_account: Conta
   label_active: Ativo
+  label_activate_user: Ativar usuário
+  label_active_in_new_projects: Ativo em novos projetos
   label_activity: Atividade
   label_add_edit_translations: Adicionar e editar traduções
   label_add_another_file: Adicionar outro arquivo
@@ -1104,6 +1111,7 @@ pt-BR:
   label_change_plural: Mudanças
   label_change_properties: Alterar propriedades
   label_change_status: Alterar situação
+  label_change_status_of_user: 'Alterar situação de #{username}'
   label_change_view_all: Visualizar todas as alterações
   label_changes_details: Detalhes de todas as alterações
   label_changeset: Conjunto de alterações
@@ -1150,6 +1158,7 @@ pt-BR:
   label_date_to: Para
   label_day_plural: dias
   label_default: Padrão
+  label_delete_user: Excluir usuário
   label_delete_project: Excluir projeto
   label_deleted: excluído
   label_deleted_custom_field: "(campo personalizado excluído)"
@@ -1230,6 +1239,7 @@ pt-BR:
   label_internal: Interno
   label_invite_user: Convidar usuário
   label_show_hide: Exibir/ocultar
+  label_show_all_registered_users: Mostrar todos usuários registrados
   label_journal: Diário
   label_journal_diff: Comparação de Descrição
   label_language: Idioma
@@ -1249,6 +1259,7 @@ pt-BR:
   label_less_than_ago: menos dias atrás
   label_list: Lista
   label_loading: Carregando...
+  label_lock_user: Bloquear usuário
   label_logged_as: Conectado como
   label_login: Login
   label_custom_logo: Logotipo personalizado
@@ -1493,6 +1504,7 @@ pt-BR:
   label_wiki_dont_show_menu_item: Não mostrar esta página wiki na navegação do projeto
   label_wiki_edit: Editar wiki
   label_wiki_edit_plural: Edições de wiki
+  label_wiki_page_attachments: Anexos da página wiki
   label_wiki_page_id: ID da página wiki
   label_wiki_navigation: Navegação wiki
   label_wiki_page: Página wiki
@@ -1503,6 +1515,7 @@ pt-BR:
   label_wiki_show_submenu_item: 'Mostrar como item do submenu de '
   label_work_package: Pacote de trabalho
   label_work_package_added: Pacote de trabalho adicionado
+  label_work_package_attachments: Anexos de pacote de trabalho
   label_work_package_category_new: Nova categoria
   label_work_package_category_plural: Categorias de pacote de trabalho
   label_work_package_hierarchy: Hierarquia de pacotes de trabalho
@@ -1589,6 +1602,8 @@ pt-BR:
     ldap_auth_failed: Não foi possível autenticar com o servidor LDAP.
   macro_execution_error: Erro de execução da macro %{macro_name}
   macro_unavailable: Macro %{macro_name} não pode ser exibida.
+  mail:
+    actions: Ações
   mail_body_account_activation_request: 'Um novo usuário (%{value}) registrou-se.
     A conta está aguardando sua aprovação:'
   mail_body_account_information: Suas informações de conta
@@ -1826,7 +1841,7 @@ pt-BR:
   query_fields:
     assigned_to_role: Atribuído ao papel
     member_of_group: Atribuído ao grupo
-    assignee_or_group: Assignee or belonging group
+    assignee_or_group: Responsável ou grupo
     subproject_id: Subprojeto
   repositories:
     at_identifier: em %{identifier}
@@ -1910,9 +1925,9 @@ pt-BR:
     git:
       instructions:
         managed_url: Esta é a URL do repositório Git gerenciado (local).
-        path: Specify the path to your local Git repository ( e.g., %{example_path}
-          ). You can also use remote repositories which are cloned to a local copy
-          by using a value starting with http(s):// or file://.
+        path: Especifique o caminho para seu repositório Git local (por exemplo, %{example_path}).
+          Você também pode usar repositórios remotos que são clonados para uma cópia
+          local usando um valor começando com http (s) :// ou file://.
         path_encoding: 'Sobreescrever a codificação do Git (padrão: UTF-8)'
       local_title: Ligação existente repositório Git local
       local_url: URL local
@@ -2333,7 +2348,7 @@ pt-BR:
         date: data
         default: padrão
       column:
-        assigned_to: Atribuído
+        assigned_to: Responsável
         type: Tipo
         due_date: Data de término
         name: Nome
@@ -2504,6 +2519,8 @@ pt-BR:
     blocked_num_failed_logins:
       one: bloqueado temporariamente (uma tentativa de login inválida)
       other: bloqueado temporariamente (%{count} tentativas de login inválidas)
+    confirm_status_change: Você está prestes a mudar a situação de '%{name}'. Tem
+      certeza que deseja continuar?
     deleted: Usuário excluído
     error_status_change_failed: 'A alteração da situação do usuário falhou devido
       aos seguintes erros: %{errors}'
@@ -2523,6 +2540,7 @@ pt-BR:
         (ex.: pacotes de trabalho em que você é o autor ou responsável).'
       mail_self_notified: Quero ser notificado das alterações que eu faço
     status_user_and_brute_force: "%{user} e %{brute_force}"
+    status_change: Mudança de situação
     unlock: Desbloquear
     unlock_and_reset_failed_logins: Desbloquear e redefinir logins com falha
   version_status_closed: fechado

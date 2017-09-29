@@ -352,6 +352,7 @@ ru:
         relations_of_type_column: "%{type} отношения"
         group_by: Результаты группы по
         filters: Фильтры
+        timeline_labels: Временные метки
       repository:
         url: URL
       role:
@@ -492,7 +493,7 @@ ru:
         repository:
           not_available: SCM поставщик не доступен
           not_whitelisted: не допускается конфигурацией.
-          invalid_url: is not a valid repository URL or path.
+          invalid_url: не допустимый URL или путь к репозиторию.
           must_not_be_ssh: must not be an SSH url.
           no_directory: не является каталогом.
         work_package:
@@ -618,6 +619,7 @@ ru:
     estimated_time: Предполагаемое время
     firstname: Имя
     group: Группа
+    groups: Группы
     groupname: Имя группы
     id: ID
     is_default: Значение по умолчанию
@@ -633,6 +635,7 @@ ru:
     project: Проект
     responsible: Ответственный
     role: Роль
+    roles: Роли
     start_date: Дата начала
     status: Состояние
     subject: Тема
@@ -924,6 +927,7 @@ ru:
   enumeration_work_package_priorities: Приоритеты пакета работ
   enumeration_system_activity: Активность системы
   enumeration_reported_project_statuses: Перечень отчетов о статусах проекта
+  error_auth_source_sso_failed: Single Sign-On (SSO) for user '%{value}' failed
   error_can_not_archive_project: Этот проект не может быть отправлен в архив
   error_can_not_delete_entry: Не удается удалить содержимое
   error_can_not_delete_custom_field: Не удается удалить настраиваемое поле
@@ -1030,6 +1034,7 @@ ru:
       forums: Форумы
       blog: Openproject блог
       boards: Форум сообщества
+      newsletter: Security alerts / Newsletter
   instructions_after_registration: Вы сможете войти как только ваша учетная запись
     будет активирована, нажав %{signin}.
   instructions_after_logout: Вы можете войти в снова, нажав %{signin}.
@@ -1049,6 +1054,8 @@ ru:
   label_accessibility: Спец. возможности
   label_account: Учетная запись
   label_active: Активно
+  label_activate_user: Активировать пользователя
+  label_active_in_new_projects: Активное участие в новых проектах
   label_activity: Деятельность
   label_add_edit_translations: Добавить и редактировать перевод
   label_add_another_file: Добавьте еще один файл
@@ -1117,6 +1124,7 @@ ru:
   label_change_plural: Изменения
   label_change_properties: Изменить свойства
   label_change_status: Изменить статус
+  label_change_status_of_user: 'Изменить статус #{username}'
   label_change_view_all: Просмотр всех изменений
   label_changes_details: Подробная информация обо всех изменениях
   label_changeset: Изменение
@@ -1163,6 +1171,7 @@ ru:
   label_date_to: Кому
   label_day_plural: дней
   label_default: По умолчанию
+  label_delete_user: Удалить пользователя
   label_delete_project: Удалить проект
   label_deleted: удалено
   label_deleted_custom_field: "(удалено настраиваемое поле)"
@@ -1242,6 +1251,7 @@ ru:
   label_internal: Внутренние
   label_invite_user: Пригласить пользователя
   label_show_hide: Показать/скрыть
+  label_show_all_registered_users: Показать всех зарегистрированных пользователей
   label_journal: Журнал
   label_journal_diff: Описание сравнения
   label_language: Язык
@@ -1261,6 +1271,7 @@ ru:
   label_less_than_ago: меньше чем день назад
   label_list: Список
   label_loading: Загрузка...
+  label_lock_user: Заблокировать пользователя
   label_logged_as: Войти в систему как
   label_login: Войти
   label_custom_logo: Свой логотип
@@ -1507,6 +1518,7 @@ ru:
   label_wiki_dont_show_menu_item: Не показывать эту Wiki-страницу в навигации по проектам
   label_wiki_edit: Редактировать Wiki
   label_wiki_edit_plural: Wiki редактируется
+  label_wiki_page_attachments: Вложения вики-страницы
   label_wiki_page_id: ID Wiki-страницы
   label_wiki_navigation: Навигация по wiki
   label_wiki_page: Wiki-страница
@@ -1517,6 +1529,7 @@ ru:
   label_wiki_show_submenu_item: 'Показать как пункт подменю '
   label_work_package: Пакет работ
   label_work_package_added: Пакет работ добавлен
+  label_work_package_attachments: Вложения пакета работ
   label_work_package_category_new: Новая категория
   label_work_package_category_plural: Категории пакета работ
   label_work_package_hierarchy: Иерархия пакета работ
@@ -1606,6 +1619,8 @@ ru:
     ldap_auth_failed: Не удалось проверить подлинность через LDAP-сервер.
   macro_execution_error: Ошибка при выполнении макроса %{macro_name}
   macro_unavailable: Макрос %{macro_name} не может быть отображен.
+  mail:
+    actions: Действия
   mail_body_account_activation_request: 'Новый пользователь (%{value}) зарегистрирован.
     Учетная запись ожидает вашего подтверждения:'
   mail_body_account_information: Информация о вашей учетной записи
@@ -2518,6 +2533,7 @@ ru:
       one: временно заблокирован (одна неудачная попытка авторизации)
       other: временно заблокирован (%{count} неудачных попыток авторизации)
       few: временно заблокирован (%{count} неудачные попытки авторизации)
+    confirm_status_change: Вы собираетесь изменить статус '%{name}'. Хотите продолжить?
     deleted: Удалённый пользователь
     error_status_change_failed: 'Изменение статуса пользователя не удалось из-за следующей
       ошибки: %{errors}'
@@ -2537,6 +2553,7 @@ ru:
         работ, где Вы автор или критик).
       mail_self_notified: Хочу получать уведомления об изменениях, которые делаю сам
     status_user_and_brute_force: "%{user} и %{brute_force}"
+    status_change: Смена статуса
     unlock: Разблокировать
     unlock_and_reset_failed_logins: Разблокировать и сбросить неудачные попытки входа
   version_status_closed: закрыто

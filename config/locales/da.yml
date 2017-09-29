@@ -351,6 +351,7 @@ da:
         relations_of_type_column: "%{type} relations"
         group_by: Grupper resultater efter
         filters: Filtre
+        timeline_labels: Timeline labels
       repository:
         url: Webadresse
       role:
@@ -589,8 +590,8 @@ da:
     updated: 'Opdateret: %{title}'
   attributes:
     active: Aktiv
-    assigned_to: Opdragsgiver
-    assignee: Opdragsgiver
+    assigned_to: Tildelt
+    assignee: Tildelt
     attachments: Vedhæftninger
     author: Forfatter
     base: 'Generel fejl:'
@@ -612,6 +613,7 @@ da:
     estimated_time: Anslået tid
     firstname: Fornavn
     group: Gruppe
+    groups: Grupper
     groupname: Gruppenavn
     id: Id
     is_default: Forhåndsvalgt værdi
@@ -627,6 +629,7 @@ da:
     project: Projekt
     responsible: Ansvarlig
     role: Rolle
+    roles: Roller
     start_date: Start dato
     status: Status
     subject: Emne
@@ -906,6 +909,7 @@ da:
   enumeration_work_package_priorities: Prioritering af arbejdspakker
   enumeration_system_activity: Systemaktivitet
   enumeration_reported_project_statuses: Rapporteret projektstatus
+  error_auth_source_sso_failed: Single Sign-On (SSO) for user '%{value}' failed
   error_can_not_archive_project: Dette projekt kan ikke arkiveres
   error_can_not_delete_entry: Unable to delete entry
   error_can_not_delete_custom_field: Kan ikke slette det selvvalgte felt
@@ -1012,6 +1016,7 @@ da:
       forums: Fora
       blog: OpenProject blog
       boards: Community forum
+      newsletter: Security alerts / Newsletter
   instructions_after_registration: Du kan logge ind så snart din konto er blevet aktiveret
     ved at klikke %{signin}.
   instructions_after_logout: Du kan logge ind igen ved at klikke %{signin}.
@@ -1030,6 +1035,8 @@ da:
   label_accessibility: Accessibility
   label_account: Konto
   label_active: Aktiv
+  label_activate_user: Activate user
+  label_active_in_new_projects: Active in new projects
   label_activity: Aktivitet
   label_add_edit_translations: Tilføje og redigere oversættelser
   label_add_another_file: Tilføj en anden fil
@@ -1098,6 +1105,7 @@ da:
   label_change_plural: Ændringer
   label_change_properties: Skift egenskaber
   label_change_status: Skift status
+  label_change_status_of_user: 'Change status of #{username}'
   label_change_view_all: Se alle ændringer
   label_changes_details: Detaljer for alle ændringer
   label_changeset: Changeset
@@ -1144,6 +1152,7 @@ da:
   label_date_to: Til
   label_day_plural: dage
   label_default: Forhåndsvalgt
+  label_delete_user: Delete user
   label_delete_project: Delete project
   label_deleted: slettet
   label_deleted_custom_field: "(slettet selvvalgt felt)"
@@ -1223,6 +1232,7 @@ da:
   label_internal: Intern
   label_invite_user: Invitér bruger
   label_show_hide: Vis/Skjul
+  label_show_all_registered_users: Show all registered users
   label_journal: Journal
   label_journal_diff: Sammenligning af beskrivelser
   label_language: Sprog
@@ -1242,6 +1252,7 @@ da:
   label_less_than_ago: mindre end dage siden
   label_list: List
   label_loading: Henter...
+  label_lock_user: Lock user
   label_logged_as: Logget ind som
   label_login: Log ind
   label_custom_logo: Custom logo
@@ -1484,6 +1495,7 @@ da:
   label_wiki_dont_show_menu_item: Vis ikke denne wikipage i projektnavigationen
   label_wiki_edit: Wiki-redigering
   label_wiki_edit_plural: Wiki-redigeringer
+  label_wiki_page_attachments: Wiki page attachments
   label_wiki_page_id: Wiki page ID
   label_wiki_navigation: Wiki-navigering
   label_wiki_page: Wiki-side
@@ -1494,6 +1506,7 @@ da:
   label_wiki_show_submenu_item: 'Vis som punkt i undermenu til '
   label_work_package: Arbejdspakke
   label_work_package_added: Arbejdspakke tilføjet
+  label_work_package_attachments: Work package attachments
   label_work_package_category_new: Ny kategori
   label_work_package_category_plural: Kategorier for arbejdspakker
   label_work_package_hierarchy: Work package hierarchy
@@ -1576,6 +1589,8 @@ da:
     ldap_auth_failed: Kunne ikke godkendes på LDAP-serveren.
   macro_execution_error: Fejl ved udførelse af makroen %{macro_name}
   macro_unavailable: Makro %{macro_name} kan ikke vises.
+  mail:
+    actions: Actions
   mail_body_account_activation_request: 'En ny bruger ( %{value}) har registreret
     sig. Kontoen afventer din godkendelse:'
   mail_body_account_information: Din kontoinformation
@@ -1811,9 +1826,9 @@ da:
   query:
     attribute_and_direction: "%{attribute} (%{direction})"
   query_fields:
-    assigned_to_role: Opdragsgiverens rolle
-    member_of_group: Opdragsgiverens gruppe
-    assignee_or_group: Assignee or belonging group
+    assigned_to_role: Tildeltes rolle
+    member_of_group: Tildeltes gruppe
+    assignee_or_group: Tildelte eller tilhørende gruppe
     subproject_id: Underprojekt
   repositories:
     at_identifier: på %{identifier}
@@ -2300,7 +2315,7 @@ da:
         date: dato
         default: Forhåndsvalgt
       column:
-        assigned_to: Opdragsgiver
+        assigned_to: Tildelt
         type: Type
         due_date: Slutdato
         name: Navn
@@ -2469,6 +2484,8 @@ da:
     blocked_num_failed_logins:
       one: midlertidigt låst (ét mislykket log ind-forsøg)
       other: midlertidigt låst (%{count} mislykkede log ind-forsøg)
+    confirm_status_change: You are about to change the status of '%{name}'. Are you
+      sure you want to continue?
     deleted: Slettet bruger
     error_status_change_failed: 'Det lykkedes ikke at ændre brugerens status på grund
       af denne fejl: %{errors}'
@@ -2488,6 +2505,7 @@ da:
         author or assignee of).
       mail_self_notified: I want to be notified of changes that I make myself
     status_user_and_brute_force: "%{user} og %{brute_force}"
+    status_change: Status change
     unlock: Lås op
     unlock_and_reset_failed_logins: Lås mislykkede forsøg på at logge ind op, og nulstil
       dem

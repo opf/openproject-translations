@@ -167,6 +167,7 @@ da:
     label_total_progress: 'Samlet fremskridt: %{percent}%'
     label_visible_for_others: Siden er synlig for andre
     label_updated_on: opdateret d.
+    label_warning: Advarsel
     label_work_package: Arbejdspakke
     label_work_package_plural: Arbejdspakker
     label_watch: Før tilsyn
@@ -210,8 +211,15 @@ da:
         previous: Back to the previous page
     placeholders:
       default: "-"
+      subject: Enter subject here
       selection: Vælg venligst
       relation_description: Click to add description for this relation
+    project:
+      required_outside_context: You are not within a project context. Please choose
+        the project context first in order to select type and status
+      context: Project context
+      work_package_belongs_to: This work package belongs to project %{projectname}.
+      click_to_switch_context: Open this work package in that project.
     text_are_you_sure: Er du sikker?
     types:
       attribute_groups:
@@ -302,6 +310,18 @@ da:
     text_query_destroy_confirmation: Er du sikker på du vil slette de valgte forespørgsler?
     text_attachment_destroy_confirmation: Sikker på, at du vil slette vedhæftningen?
     timelines:
+      gantt_chart: Gantt chart
+      labels:
+        bar: Bar labels
+        left: Left
+        right: Right
+        farRight: Far right
+        showNone: "-- No label --"
+        description: 'Select the attributes you want to be shown in the respective
+          positions of the Gantt chart at all times. Note that when hovering an element,
+          its date labels will be shown instead of these attributes.
+
+'
       button_activate: Activate timeline mode
       button_deactivate: Deactivate timeline mode
       cancel: Annuller
@@ -319,7 +339,7 @@ da:
         report_timeout: Tidslinjen kunne ikke indlæses indenfor en remelig tid.
       filter:
         column:
-          assigned_to: Opdragsgiver
+          assigned_to: Tildelt
           type: Type
           due_date: Slutdato
           name: Navn
@@ -353,6 +373,7 @@ da:
       zoom:
         in: Zoom ind
         out: Zoom ud
+        auto: Auto zoom
         days: Dage
         weeks: Uger
         months: Måneder
@@ -453,7 +474,7 @@ da:
         estimatesAndTime: Skøn & tid
         other: Andet
       properties:
-        assignee: Opdragsgiver
+        assignee: Tildelt
         author: Forfatter
         createdAt: Oprettet den
         description: Beskrivelse
@@ -551,6 +572,13 @@ da:
       form_submit:
         title: Confirm to continue
         text: Are you sure you want to perform this action?
+      upsale_relation_columns: Need to see relations in the work package list?
+      upsale_relation_columns_link: Check out the Enterprise Edition.
+      destroy_work_package:
+        title: Confirm deletion of %{label}
+        text: Are you sure you want to delete the following %{label} ?
+        has_children: 'The work package has %{childUnits}:'
+        deletes_children: All child work packages will also be deleted.
     notice_successful_create: Oprettelse gennemført.
     notice_successful_delete: Sletning gennemført.
     notice_successful_update: Opdatering gennemført.
@@ -578,6 +606,12 @@ da:
     error_could_not_resolve_version_name: Kunne ikke fastslå versionsnavn
     error_could_not_resolve_user_name: Kunne ikke finde brugernavnet
     units:
+      workPackage:
+        one: work package
+        other: work packages
+      child_work_packages:
+        one: one child work package
+        other: "%{count} work package children"
       hour:
         one: 1 time
         other: "%{count} timer"

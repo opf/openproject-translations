@@ -331,6 +331,7 @@ ko:
         relations_of_type_column: "%{type} relations"
         group_by: 그룹 결과
         filters: 필터
+        timeline_labels: Timeline labels
       repository:
         url: 주소
       role:
@@ -579,6 +580,7 @@ ko:
     estimated_time: 예상된 시간
     firstname: 이름
     group: 그룹
+    groups: 그룹
     groupname: 그룹명
     id: ID
     is_default: 기본값
@@ -594,6 +596,7 @@ ko:
     project: 프로젝트
     responsible: 책임
     role: 역할
+    roles: 역할
     start_date: 시작 날짜
     status: 상태
     subject: 제목
@@ -893,6 +896,7 @@ ko:
   enumeration_work_package_priorities: 작업 패키지 우선 순위
   enumeration_system_activity: 시스템 작업
   enumeration_reported_project_statuses: 보고된 프로젝트 상태
+  error_auth_source_sso_failed: Single Sign-On (SSO) for user '%{value}' failed
   error_can_not_archive_project: 이 프로젝트를 보관할 수 없습니다.
   error_can_not_delete_entry: Unable to delete entry
   error_can_not_delete_custom_field: 사용자 지정 필드를 삭제할 수 없습니다.
@@ -988,6 +992,7 @@ ko:
       forums: 포럼
       blog: OpenProject 블로그
       boards: 커뮤니티 포럼
+      newsletter: Security alerts / Newsletter
   instructions_after_registration: "%{signin}을(를) 클릭하여 계정이 활성화되면 바로 로그인할 수 있습니다."
   instructions_after_logout: "%{signin}을(를) 클릭하면 다시 로그인할 수 있습니다."
   instructions_after_error: "%{signin}을(를) 클릭하여 다시 로그인해 볼 수 있습니다. 오류가 계속되면 관리자에게 도움을
@@ -1005,6 +1010,8 @@ ko:
   label_accessibility: 접근성
   label_account: 계정
   label_active: 활성
+  label_activate_user: Activate user
+  label_active_in_new_projects: Active in new projects
   label_activity: 활동
   label_add_edit_translations: 추가 및 편집 번역
   label_add_another_file: 다른 파일 추가
@@ -1071,6 +1078,7 @@ ko:
   label_change_plural: 변경
   label_change_properties: 속성 변경
   label_change_status: 상태 변경
+  label_change_status_of_user: 'Change status of #{username}'
   label_change_view_all: 모든 변경 사항 보기
   label_changes_details: 모든 변경 사항의 세부 정보
   label_changeset: 변경 집합
@@ -1117,6 +1125,7 @@ ko:
   label_date_to: 끝
   label_day_plural: 일
   label_default: 기본
+  label_delete_user: Delete user
   label_delete_project: 프로젝트 삭제
   label_deleted: 삭제됨
   label_deleted_custom_field: "(삭제된 사용자 지정 필드)"
@@ -1195,6 +1204,7 @@ ko:
   label_internal: 내부
   label_invite_user: 사용자 초대
   label_show_hide: 표시/숨기기
+  label_show_all_registered_users: Show all registered users
   label_journal: 기록일지
   label_journal_diff: 설명 비교
   label_language: 언어
@@ -1214,6 +1224,7 @@ ko:
   label_less_than_ago: 일 미만 전
   label_list: 목록
   label_loading: 로드 중...
+  label_lock_user: Lock user
   label_logged_as: '로그인한 계정:'
   label_login: 로그인
   label_custom_logo: 사용자 정의 로고
@@ -1455,6 +1466,7 @@ ko:
   label_wiki_dont_show_menu_item: 프로젝트 탐색에 이 위키 페이지 표시 안 함
   label_wiki_edit: 위키 편집
   label_wiki_edit_plural: 위키 편집
+  label_wiki_page_attachments: Wiki page attachments
   label_wiki_page_id: 위키 페이지 ID
   label_wiki_navigation: 위키 탐색
   label_wiki_page: 위키 페이지
@@ -1465,6 +1477,7 @@ ko:
   label_wiki_show_submenu_item: '다음의 하위 메뉴 항목으로 표시: '
   label_work_package: 작업 패키지
   label_work_package_added: 작업 패키지 추가됨
+  label_work_package_attachments: Work package attachments
   label_work_package_category_new: 새 카테고리
   label_work_package_category_plural: 작업 패키지 카테고리
   label_work_package_hierarchy: 작업 패키지 계층 구조
@@ -1550,6 +1563,8 @@ ko:
     ldap_auth_failed: LDAP 서버에서 인증할 수 없습니다.
   macro_execution_error: 매크로 %{macro_name} 실행 중에 오류 발생
   macro_unavailable: 매크로 %{macro_name}은(는) 표시할 수 없습니다.
+  mail:
+    actions: Actions
   mail_body_account_activation_request: 새 사용자(%{value})가 등록되었습니다. 이 계정은 관리자 승인을 기다리는
     중입니다.
   mail_body_account_information: 계정 정보
@@ -2362,6 +2377,8 @@ ko:
     blocked_num_failed_logins:
       one: locked temporarily (one failed login attempt)
       other: 일시적으로 잠김 (%{count} 로그인 시도 실패)
+    confirm_status_change: You are about to change the status of '%{name}'. Are you
+      sure you want to continue?
     deleted: 사용자 삭제됨
     error_status_change_failed: '다음 오류 때문에 사용자 상태 변경 실패함: %{errors}'
     invite: 이메일을 통해 사용자 초대
@@ -2378,6 +2395,7 @@ ko:
         작업 패키지)에 대한 알림만 받게 됩니다.'
       mail_self_notified: 내가 만든 것이 변경되면 알림을 받고 싶습니다.
     status_user_and_brute_force: "%{user} 및 %{brute_force}"
+    status_change: Status change
     unlock: 잠금 해제
     unlock_and_reset_failed_logins: 실패한 로그인 잠금 해제 및 재설정
   version_status_closed: 닫음

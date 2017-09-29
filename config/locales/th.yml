@@ -348,6 +348,7 @@ th:
         relations_of_type_column: "%{type} relations"
         group_by: จัดกลุ่มผลลัพธ์โดย
         filters: ตัวกรอง
+        timeline_labels: Timeline labels
       repository:
         url: URL
       role:
@@ -606,6 +607,7 @@ th:
     estimated_time: ระยะเวลาโดยประมาณ
     firstname: ชื่อ
     group: กลุ่ม
+    groups: กลุ่ม
     groupname: ชื่อกลุ่ม
     id: ID
     is_default: ค่าเริ่มต้น
@@ -621,6 +623,7 @@ th:
     project: โครงการ
     responsible: รับผิดชอบ
     role: บทบาท
+    roles: บทบาท
     start_date: วันเริ่มต้น
     status: สถานะ
     subject: หัวข้อ
@@ -900,6 +903,7 @@ th:
   enumeration_work_package_priorities: ระดับความสำคัญของชุดภารกิจ
   enumeration_system_activity: กิจกรรมของระบบ
   enumeration_reported_project_statuses: สถานะโครงการที่รายงานแล้ว
+  error_auth_source_sso_failed: Single Sign-On (SSO) for user '%{value}' failed
   error_can_not_archive_project: โครงการนี้ไม่ได้ถูกเก็บถาวร
   error_can_not_delete_entry: Unable to delete entry
   error_can_not_delete_custom_field: ไม่สามารถลบฟิลด์ที่กำหนดเองได้
@@ -1000,6 +1004,7 @@ th:
       forums: กระทู้
       blog: OpenProject blog
       boards: Community forum
+      newsletter: Security alerts / Newsletter
   instructions_after_registration: คุณสามารถเข้าสู่ระบบได้ทันทีมีการเปิดใช้งานบัญชีผู้ใช้ของคุณ
     โดยคลิก %{signin}.
   instructions_after_logout: คุณสามารถเข้าสู่ระบบอีกครั้งโดยคลิก %{signin}
@@ -1019,6 +1024,8 @@ th:
   label_accessibility: Accessibility
   label_account: บัญชี
   label_active: ใช้งานอยู่
+  label_activate_user: Activate user
+  label_active_in_new_projects: Active in new projects
   label_activity: กิจกรรม
   label_add_edit_translations: Add and edit translations
   label_add_another_file: เพิ่มไฟล์อื่น
@@ -1085,6 +1092,7 @@ th:
   label_change_plural: การเปลี่ยนแปลง
   label_change_properties: เปลี่ยนแปลงคุณสมบัติ
   label_change_status: เปลี่ยนสถานะ
+  label_change_status_of_user: 'Change status of #{username}'
   label_change_view_all: ดูการเปลี่ยนแปลงทั้งหมด
   label_changes_details: รายละเอียดของการเปลี่ยนแปลงทั้งหมด
   label_changeset: Changeset
@@ -1131,6 +1139,7 @@ th:
   label_date_to: ถึงวันที่
   label_day_plural: วัน
   label_default: ค่าเริ่มต้น
+  label_delete_user: Delete user
   label_delete_project: Delete project
   label_deleted: ถูกลบ
   label_deleted_custom_field: "(ฟิลด์ที่กำหนดเองที่ถูกลบ)"
@@ -1209,6 +1218,7 @@ th:
   label_internal: ภายใน
   label_invite_user: Invite user
   label_show_hide: แสดง/ซ่อน
+  label_show_all_registered_users: Show all registered users
   label_journal: Journal
   label_journal_diff: เปรียบเทียบคำอธิบาย
   label_language: ภาษา
@@ -1228,6 +1238,7 @@ th:
   label_less_than_ago: น้อยกว่าสามวันที่ผ่านมา
   label_list: รายการ
   label_loading: กำลังโหลด...
+  label_lock_user: Lock user
   label_logged_as: เข้าสู่ระบบในนาม
   label_login: ล็อคอิน
   label_custom_logo: Custom logo
@@ -1469,6 +1480,7 @@ th:
   label_wiki_dont_show_menu_item: ไม่แสดงหน้าวิกินี้ในการนำทางของโครงการ
   label_wiki_edit: แก้ไขวิกิ
   label_wiki_edit_plural: แก้ไขวิกิ
+  label_wiki_page_attachments: Wiki page attachments
   label_wiki_page_id: Wiki page ID
   label_wiki_navigation: การทำทางของวิกิ
   label_wiki_page: หน้าวิกิ
@@ -1479,6 +1491,7 @@ th:
   label_wiki_show_submenu_item: แสดงเป็นรายการเมนูย่อยของ 
   label_work_package: ชุดภารกิจ
   label_work_package_added: ชุดภารกิจที่เพิ่ม
+  label_work_package_attachments: Work package attachments
   label_work_package_category_new: ประเภทใหม่
   label_work_package_category_plural: ประเภทของชุดภารกิจ
   label_work_package_hierarchy: Work package hierarchy
@@ -1557,6 +1570,8 @@ th:
     ldap_auth_failed: Could not authenticate at the LDAP-Server.
   macro_execution_error: ข้อผิดพลาดในการรันมาโคร %{macro_name}
   macro_unavailable: Macro %{macro_name} cannot be displayed.
+  mail:
+    actions: Actions
   mail_body_account_activation_request: 'มีผู้ใช้ใหม่ (%{value}) ได้ลงทะเบียนเข้ามา
     ขณะนี้บัญชีอยู่ระหว่างการพิจารณาอนุมัติของคุณ:'
   mail_body_account_information: ข้อมูลบัญชีของคุณ
@@ -2413,6 +2428,8 @@ th:
     blocked_num_failed_logins:
       one: locked temporarily (one failed login attempt)
       other: locked temporarily (%{count} failed login attempts)
+    confirm_status_change: You are about to change the status of '%{name}'. Are you
+      sure you want to continue?
     deleted: ผู้ใช้ที่ถูกลบ
     error_status_change_failed: 'ล้มเหลวในการเปลี่ยนสถานะของผู้ใช้เนื่องจากข้อผิดพลาดต่อไปนี้:
       %{errors}'
@@ -2432,6 +2449,7 @@ th:
         author or assignee of).
       mail_self_notified: I want to be notified of changes that I make myself
     status_user_and_brute_force: "%{user} และ %{brute_force}"
+    status_change: Status change
     unlock: ปลดล็อก
     unlock_and_reset_failed_logins: ปลดล็อค และรีเซตค่าล็อกอินที่ล้มเหลว
   version_status_closed: ปิด

@@ -64,7 +64,7 @@ pl:
       no_results_title_text: Nie ma jeszcze żadnych wiadomości.
   custom_fields:
     text_add_new_custom_field: 'Aby dodać do projektu nowe pola niestandardowe, najpierw
-      należy utworzyć je.
+      należy je utworzyć.
 
 '
     is_enabled_globally: Jest włączony globalnie
@@ -350,6 +350,7 @@ pl:
         relations_of_type_column: " %{type} relacji"
         group_by: Grupuj wyniki
         filters: Filtry
+        timeline_labels: Etykiety osi czasu
       repository:
         url: ADRES URL
       role:
@@ -491,8 +492,8 @@ pl:
         repository:
           not_available: Producent SCM nie jest dostępny
           not_whitelisted: nie jest dozwolone w tej konfiguracji.
-          invalid_url: is not a valid repository URL or path.
-          must_not_be_ssh: must not be an SSH url.
+          invalid_url: nie jest prawidłowym adresem URL ani ścieżką.
+          must_not_be_ssh: nie może być adresem SSH.
           no_directory: nie jest katalogiem.
         work_package:
           is_not_a_valid_target_for_time_entries: 'Zadanie #%{id} jest niepoprawnym
@@ -538,11 +539,9 @@ pl:
               numeric: liczbowe (np. 1)
               special: specjalne (np. '%')
               reused:
-                one: było użyte wcześniej. Proszę wybrać inne niż ostatnio.
-                other: has been used before. Please choose one that is different from
-                  your last %{count}.
-                few: has been used before. Please choose one that is different from
-                  your last %{count}.
+                one: było użyte wcześniej. Proszę wybrać inne niż poprzednie.
+                other: było użyte wcześniej. Proszę wybrać inne niż %{count} poprzednich.
+                few: było użyte wcześniej. Proszę wybrać inne niż %{count} poprzednich.
               match:
                 confirm: Potwierdź nowe hasło.
                 description: '"Potwierdzenie hasła" powinno być zgodne z wartością
@@ -554,8 +553,8 @@ pl:
         body: 'Sprawdź następujące pola:'
         header:
           one: 1 błąd uniemożliwia zapisanie %{model}
-          other: "%{count} błędu/ów uniemożliwia zapisanie %{model}"
-          few: "%{count} errors prohibited this %{model} from being saved"
+          other: "%{count} błędów uniemożliwia zapisanie %{model}"
+          few: "%{count} błędów uniemożliwia zapisanie %{model}"
     models:
       attachment: Plik
       attribute_help_text: Tekst pomocy atrybutu
@@ -613,6 +612,7 @@ pl:
     estimated_time: Szacowany czas
     firstname: Imię
     group: Grupa
+    groups: Grupy
     groupname: Nazwa grupy
     id: ID
     is_default: Wartość domyślna
@@ -628,6 +628,7 @@ pl:
     project: Projekt
     responsible: Odpowiedzialny
     role: Rola
+    roles: Role
     start_date: Data rozpoczęcia
     status: Status
     subject: Temat
@@ -766,54 +767,54 @@ pl:
     distance_in_words:
       about_x_hours:
         one: około 1 godziny
-        other: about %{count} hours
-        few: about %{count} hours
+        other: około %{count} godzin
+        few: około %{count} godzin
       about_x_months:
         one: około 1 miesiąca
-        other: about %{count} months
-        few: about %{count} months
+        other: około %{count} miesięcy
+        few: około %{count} miesięcy
       about_x_years:
         one: około 1 roku
-        other: about %{count} years
-        few: about %{count} years
+        other: około %{count} lat
+        few: około %{count} lat
       almost_x_years:
         one: prawie 1 rok
-        other: almost %{count} years
-        few: almost %{count} years
+        other: prawie %{count} lat
+        few: prawie %{count} lat
       half_a_minute: pół minuty
       less_than_x_minutes:
         one: mniej niż minutę
-        other: less than %{count} minutes
-        few: less than %{count} minutes
+        other: mniej niż %{count} minut
+        few: mniej niż %{count} minut
       less_than_x_seconds:
         one: mniej niż 1 sekundę
-        other: less than %{count} seconds
-        few: less than %{count} seconds
+        other: mniej niż %{count} sekund
+        few: mniej niż %{count} sekund
       over_x_years:
         one: ponad 1 rok
-        other: over %{count} years
-        few: over %{count} years
+        other: ponad %{count} lat
+        few: ponad %{count} lat
       x_days:
         one: 1 dzień
-        other: "%{count} days"
-        few: "%{count} days"
+        other: "%{count} dni"
+        few: "%{count} dni"
       x_minutes:
         one: 1 minuta
-        other: "%{count} minutes"
-        few: "%{count} minutes"
+        other: "%{count} minut"
+        few: "%{count} minut"
       x_months:
         one: 1 miesiąc
-        other: "%{count} months"
-        few: "%{count} months"
+        other: "%{count} miesięcy"
+        few: "%{count} miesięcy"
       x_seconds:
         one: 1 sekunda
-        other: "%{count} seconds"
+        other: "%{count} sekund"
         few: "%{count} sekund"
     units:
       hour:
         one: godzina
-        other: hours
-        few: hours
+        other: godziny
+        few: godziny
   default_activity_development: Rozwój
   default_activity_management: Zarządzanie
   default_activity_other: Inne
@@ -919,6 +920,8 @@ pl:
   enumeration_work_package_priorities: Priorytety zadania
   enumeration_system_activity: Aktywność systemu
   enumeration_reported_project_statuses: Status zgłoszonego projektu
+  error_auth_source_sso_failed: Pojedyncze logowanie (SSO) dla użytkownika '%{value}'
+    nie powiodło się
   error_can_not_archive_project: Ten projekt nie może być archiwizowany
   error_can_not_delete_entry: Nie można usunąć wpisu
   error_can_not_delete_custom_field: Nie można usunąć pola niestandardowego
@@ -1024,6 +1027,7 @@ pl:
       forums: Fora
       blog: Blog OpenProject
       boards: Forum społeczności
+      newsletter: Powiadomienia bezpieczeństwa / Newsletter
   instructions_after_registration: Możesz się zalogować w momencie gdy Twoje konto
     zostanie aktywowane poprzez kliknięcie %{signin}.
   instructions_after_logout: Możesz zalogować się ponownie klikając %{signin}.
@@ -1043,6 +1047,8 @@ pl:
   label_accessibility: Dostępność
   label_account: Konto
   label_active: Aktywne
+  label_activate_user: Aktywuj użytkownika
+  label_active_in_new_projects: Aktywne w nowych projektach
   label_activity: Działanie
   label_add_edit_translations: Dodawanie i edycja tłumaczeń
   label_add_another_file: Dodaj plik
@@ -1111,6 +1117,7 @@ pl:
   label_change_plural: Zmiany
   label_change_properties: Zmiana właściwości
   label_change_status: Zmiana stanu
+  label_change_status_of_user: 'Zmień status #{username}'
   label_change_view_all: Zobacz wszystkie zmiany
   label_changes_details: Szczegóły wszystkich zmian
   label_changeset: Zestaw zmian
@@ -1157,6 +1164,7 @@ pl:
   label_date_to: Do
   label_day_plural: dni
   label_default: Domyślnie
+  label_delete_user: Usuń użytkownika
   label_delete_project: Usuń projekt
   label_deleted: usunięte
   label_deleted_custom_field: "(usunięte pole niestandardowe)"
@@ -1237,6 +1245,7 @@ pl:
   label_internal: Wewnętrzne
   label_invite_user: Zaproś użytkownika
   label_show_hide: Pokaż/Ukryj
+  label_show_all_registered_users: Pokaż wszystkich zarejestrowanych użytkowników
   label_journal: Dziennik
   label_journal_diff: Opis porównania
   label_language: Język
@@ -1256,6 +1265,7 @@ pl:
   label_less_than_ago: mniej niż dni temu
   label_list: Lista
   label_loading: Ładowanie...
+  label_lock_user: Zablokuj użytkownika
   label_logged_as: Zalogowany jako
   label_login: Login
   label_custom_logo: Własne logo
@@ -1499,6 +1509,7 @@ pl:
   label_wiki_dont_show_menu_item: Nie pokazuj tej strony wiki  w nawigacji projektu
   label_wiki_edit: Edycja wiki
   label_wiki_edit_plural: Edycja wiki
+  label_wiki_page_attachments: Załączniki strony Wiki
   label_wiki_page_id: Identyfikator strony wiki
   label_wiki_navigation: Nawigacja Wiki
   label_wiki_page: Strony wiki
@@ -1509,6 +1520,7 @@ pl:
   label_wiki_show_submenu_item: 'Pokaż jako pozycję podmenu '
   label_work_package: Zadania
   label_work_package_added: Dodano zadanie
+  label_work_package_attachments: Załączniki pakietu roboczego
   label_work_package_category_new: Nowa kategoria
   label_work_package_category_plural: Kategorie zadań
   label_work_package_hierarchy: Hierarchia zadań
@@ -1536,30 +1548,30 @@ pl:
   label_workflow_plural: Przepływ zadań
   label_workflow_summary: Podsumowanie
   label_x_closed_work_packages_abbr:
-    one: 'Zamknięto: 1'
-    other: "%{count} closed"
+    one: 1 zamknięty
+    other: "%{count} zamkniętych"
     zero: 0 closed
-    few: "%{count} closed"
+    few: "%{count} zamkniętych"
   label_x_comments:
     one: 1 komentarz
-    other: "%{count} comments"
+    other: "%{count} komentarzy"
     zero: no comments
-    few: "%{count} comments"
+    few: "%{count} komentarzy"
   label_x_open_work_packages_abbr:
-    one: 'Otwarte: 1'
-    other: 'Otwarte: %{count}'
+    one: 1 otwarty
+    other: "%{count} otwartych"
     zero: 0 open
-    few: "%{count} open"
+    few: "%{count} otwartych"
   label_x_open_work_packages_abbr_on_total:
-    one: 'Otwarte: 1 / %{total}'
-    other: 'Otwarte: %{count} / %{total}'
+    one: 1 otwarty / %{total}
+    other: "%{count} otwartych / %{total}"
     zero: 0 open / %{total}
-    few: "%{count} open / %{total}"
+    few: "%{count} otwartych / %{total}"
   label_x_projects:
-    one: "%{count} projekt"
-    other: "%{count} projekty"
+    one: 1 projekt
+    other: "%{count} projektów"
     zero: no projects
-    few: "%{count} projects"
+    few: "%{count} projektów"
   label_year: Rok
   label_yesterday: wczoraj
   label_keyboard_function: Funkcja
@@ -1598,6 +1610,8 @@ pl:
     ldap_auth_failed: Nie można uwierzytelnić na serwerze LDAP.
   macro_execution_error: Błąd podczas wykonywania makra %{macro_name}
   macro_unavailable: Makro %{macro_name} nie może zostać wyświetlone.
+  mail:
+    actions: Akcje
   mail_body_account_activation_request: 'A new user (%{value}) has registered. The
     account is pending your approval:'
   mail_body_account_information: Informacje o koncie
@@ -1728,8 +1742,8 @@ pl:
         units:
           byte:
             one: Bajt
-            other: Bytes
-            few: Bytes
+            other: Bajty
+            few: Bajty
           gb: GB
           kb: kB
           mb: MB
@@ -1839,7 +1853,7 @@ pl:
   query_fields:
     assigned_to_role: Przypisany do roli
     member_of_group: Przypisany do grupy
-    assignee_or_group: Assignee or belonging group
+    assignee_or_group: Przypisana osoba lub przynależna grupa
     subproject_id: Podprojekt
   repositories:
     at_identifier: w %{identifier}
@@ -2294,8 +2308,8 @@ pl:
     duration: Czas trwania
     duration_days:
       one: 1 dzień
-      other: "%{count} days"
-      few: "%{count} days"
+      other: "%{count} dni"
+      few: "%{count} dni"
     edit_color: Edycja koloru
     edit_project_type: Edycja typu projektu
     edit_thing: Edycja
@@ -2497,8 +2511,9 @@ pl:
     blocked: zablokowany tymczsowo
     blocked_num_failed_logins:
       one: tymczasowo zablokowane (jedna nieudana próba zalogowania)
-      other: locked temporarily (%{count} failed login attempts)
-      few: locked temporarily (%{count} failed login attempts)
+      other: tymczasowo zablokowane (%{count} nieudanych prób zalogowania)
+      few: tymczasowo zablokowane (%{count} nieudanych prób zalogowania)
+    confirm_status_change: Zamierzasz zmienić status „%{name}”. Na pewno chcesz kontynuować?
     deleted: Usunięty uźytkownik
     error_status_change_failed: 'Zmiana statusu użytkownika nie powiodło się z powodu
       następujących błędów: %{errors}'
@@ -2518,6 +2533,7 @@ pl:
         których jesteś autorem lub osobą przypisaną).
       mail_self_notified: Chcę być powiadamiany o zmianach, które sam wprowadzam
     status_user_and_brute_force: "%{user} i %{brute_force}"
+    status_change: Zmiana statusu
     unlock: Odblokuj
     unlock_and_reset_failed_logins: Odblokuj i resetuj nieudane logowania
   version_status_closed: Zamknięte

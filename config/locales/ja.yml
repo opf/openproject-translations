@@ -315,6 +315,7 @@ ja:
         relations_of_type_column: "%{type} 関係"
         group_by: グループ化
         filters: フィルタ
+        timeline_labels: タイムラインのラベル
       repository:
         url: URL
       role:
@@ -560,6 +561,7 @@ ja:
     estimated_time: 予定工数
     firstname: 名前
     group: グループ
+    groups: グループ
     groupname: グループ名
     id: ID
     is_default: デフォルト値
@@ -575,6 +577,7 @@ ja:
     project: プロジェクト
     responsible: 責任者
     role: ロール
+    roles: ロール
     start_date: 開始日
     status: ステータス
     subject: 題名
@@ -849,6 +852,7 @@ ja:
   enumeration_work_package_priorities: 作業項目の優先度
   enumeration_system_activity: システム作業分類
   enumeration_reported_project_statuses: 報告されるプロジェクト進捗状況
+  error_auth_source_sso_failed: ユーザー '%{value}' のシングルサインオン (SSO) に失敗しました
   error_can_not_archive_project: このプロジェクトはアーカイブできません。
   error_can_not_delete_entry: エントリを削除できません
   error_can_not_delete_custom_field: カスタムフィールドを削除できません。
@@ -940,6 +944,7 @@ ja:
       forums: フォーラム
       blog: OpenProject ブログ
       boards: コミュニティ フォーラム
+      newsletter: セキュリティアラート / ニュースレター
   instructions_after_registration: "%{signin}をクリックして、アカウントが有効された後にログインできます。"
   instructions_after_logout: "%{signin}をクリックして再びログインできます。"
   instructions_after_error: "%{signin} をクリックして再びログインを試行できます。エラーが解決しない場合は、管理者にお問い合わせください。"
@@ -956,6 +961,8 @@ ja:
   label_accessibility: アクセシビリティ
   label_account: アカウント
   label_active: 有効
+  label_activate_user: ユーザーのアクティベート
+  label_active_in_new_projects: 新しいプロジェクトでアクティブ
   label_activity: 活動
   label_add_edit_translations: 翻訳の追加と編集
   label_add_another_file: 別のファイルを追加
@@ -1022,6 +1029,7 @@ ja:
   label_change_plural: 変更
   label_change_properties: プロパティの変更
   label_change_status: ステータスの変更
+  label_change_status_of_user: "#{username} のステータスを変更"
   label_change_view_all: 全変更を表示
   label_changes_details: 全変更の詳細
   label_changeset: 変更セット
@@ -1068,6 +1076,7 @@ ja:
   label_date_to: から
   label_day_plural: " 日"
   label_default: 既定の項目
+  label_delete_user: ユーザーを削除
   label_delete_project: プロジェクトを削除
   label_deleted: 削除された
   label_deleted_custom_field: "（削除されたカスタムフィールド）"
@@ -1146,6 +1155,7 @@ ja:
   label_internal: 社内
   label_invite_user: ユーザを招待
   label_show_hide: 表示/非表示
+  label_show_all_registered_users: すべての登録ユーザーを表示
   label_journal: 履歴記述
   label_journal_diff: 説明の比較
   label_language: 言語
@@ -1165,6 +1175,7 @@ ja:
   label_less_than_ago: 今日より○日前以降
   label_list: リスト
   label_loading: 読み込み中...
+  label_lock_user: ユーザーをロック
   label_logged_as: ログイン中
   label_login: ログイン
   label_custom_logo: カスタムロゴ
@@ -1407,6 +1418,7 @@ ja:
   label_wiki_dont_show_menu_item: プロジェクトのメニューでこのWikiページを非表示
   label_wiki_edit: Wikiの編集
   label_wiki_edit_plural: Wikiの編集
+  label_wiki_page_attachments: Wiki ページの添付ファイル
   label_wiki_page_id: WikiページのID
   label_wiki_navigation: Wikiのメニュー
   label_wiki_page: Wiki ページ
@@ -1417,6 +1429,7 @@ ja:
   label_wiki_show_submenu_item: 上位のメニュー項目
   label_work_package: 作業項目
   label_work_package_added: 作業項目が追加されました。
+  label_work_package_attachments: ワークパッケージの添付ファイル
   label_work_package_category_new: 新規カテゴリ
   label_work_package_category_plural: 作業項目のカテゴリ
   label_work_package_hierarchy: ワークパッケージの階層
@@ -1494,6 +1507,8 @@ ja:
     ldap_auth_failed: LDAPサーバーで認証できませんでした。
   macro_execution_error: マクロ%{macro_name}を実行中にエラーが発生しました。
   macro_unavailable: マクロ%{macro_name}を表示できません。
+  mail:
+    actions: 操作
   mail_body_account_activation_request: 新しいユーザ%{value}が登録されました。このアカウントは承認待ちです：
   mail_body_account_information: アカウント情報
   mail_body_account_information_external: "%{value} アカウントを使ってログインできます。"
@@ -2266,6 +2281,7 @@ ja:
     blocked_num_failed_logins:
       one: locked temporarily (one failed login attempt)
       other: 一時的にロックされている （%{count}回失敗したログイン試行）
+    confirm_status_change: "'%{name}' のステータスを変更しようとしています。続行してもよろしいですか?"
     deleted: 削除されたユーザ
     error_status_change_failed: 次のエラーによりユーザのステータスの変更が失敗しました：%{errors}
     invite: メールでユーザを招待
@@ -2281,6 +2297,7 @@ ja:
       mail_project_explanaition: 未選択プロジェクトでは、ウォッチ又は関与している事柄（例： 自分が作成者又は担当者の作業項目）のみメールが送信されます。
       mail_self_notified: 自分自身による変更の通知を希望
     status_user_and_brute_force: "%{user}かつ%{brute_force}"
+    status_change: ステータスの変更
     unlock: ロックを解除
     unlock_and_reset_failed_logins: ロックを解除して、失敗したログイン数をリセットする
   version_status_closed: 完了

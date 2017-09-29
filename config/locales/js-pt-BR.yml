@@ -167,6 +167,7 @@ pt-BR:
     label_total_progress: "%{percent}% Total de progresso"
     label_visible_for_others: Página visível para outros
     label_updated_on: atualizado em
+    label_warning: Aviso
     label_work_package: Pacote de trabalho
     label_work_package_plural: Pacotes de trabalho
     label_watch: Observar
@@ -213,8 +214,15 @@ pt-BR:
         previous: Voltar para a página anterior
     placeholders:
       default: "-"
+      subject: Informe o assunto aqui
       selection: Por favor selecione
       relation_description: Clique para adicionar a descrição para esta relação
+    project:
+      required_outside_context: Você não está dentro de um contexto de projeto. Por
+        favor, escolha o contexto do projeto a fim de selecionar o tipo e a situação
+      context: Contexto do projeto
+      work_package_belongs_to: Este pacote de trabalho pertence ao projeto %{projectname}.
+      click_to_switch_context: Open this work package in that project.
     text_are_you_sure: Tem certeza?
     types:
       attribute_groups:
@@ -305,6 +313,18 @@ pt-BR:
     text_query_destroy_confirmation: Tem certeza de que deseja excluir os itens selecionados?
     text_attachment_destroy_confirmation: Tem certeza de que deseja excluir o anexo?
     timelines:
+      gantt_chart: Gráfico de Gantt
+      labels:
+        bar: Barra de rótulos
+        left: Esquerda
+        right: Direita
+        farRight: Extrema direita
+        showNone: "-- Sem rótulo --"
+        description: 'Select the attributes you want to be shown in the respective
+          positions of the Gantt chart at all times. Note that when hovering an element,
+          its date labels will be shown instead of these attributes.
+
+'
       button_activate: Ativar o modo de linha do tempo
       button_deactivate: Desativar o modo de linha do tempo
       cancel: Cancelar
@@ -323,7 +343,7 @@ pt-BR:
           de tempo.
       filter:
         column:
-          assigned_to: Atribuído
+          assigned_to: Responsável
           type: Tipo
           due_date: Data de término
           name: Nome
@@ -357,6 +377,7 @@ pt-BR:
       zoom:
         in: Aumentar zoom
         out: Diminuir o zoom
+        auto: Auto zoom
         days: Dias
         weeks: Semanas
         months: Meses
@@ -457,7 +478,7 @@ pt-BR:
         estimatesAndTime: Estimativas e Tempo
         other: Outro
       properties:
-        assignee: Atribuído
+        assignee: Responsável
         author: Autor
         createdAt: Criado em
         description: Descrição
@@ -557,6 +578,13 @@ pt-BR:
       form_submit:
         title: Confirme para continuar
         text: Tem certeza de que deseja executar esta ação?
+      upsale_relation_columns: Necessário ver as relações na lista de pacote de trabalho?
+      upsale_relation_columns_link: Confira a versão Enterprise Edition.
+      destroy_work_package:
+        title: Confirmar exclusão do %{label}
+        text: Você tem certeza que deseja excluir o seguinte %{label}?
+        has_children: 'O pacote de trabalho tem %{childUnits}:'
+        deletes_children: Todos os pacotes de trabalho filhos também serão excluídos.
     notice_successful_create: Criado com sucesso.
     notice_successful_delete: Excluído com sucesso.
     notice_successful_update: Atualizado com sucesso.
@@ -584,6 +612,12 @@ pt-BR:
     error_could_not_resolve_version_name: Não foi possível identificar o nome da versão
     error_could_not_resolve_user_name: Não foi possível identificar o nome do usuário
     units:
+      workPackage:
+        one: pacote de trabalho
+        other: pacotes de trabalho
+      child_work_packages:
+        one: um pacote de trabalho filho
+        other: "%{count} pacotes de trabalho filhos"
       hour:
         one: 1 hora
         other: "%{count} horas"

@@ -166,6 +166,7 @@ lt:
     label_total_progress: "%{percent} % įvykdyta"
     label_visible_for_others: Puslapis matomas kitiems
     label_updated_on: atnaujintas
+    label_warning: Įspėjimas
     label_work_package: Darbų paketas
     label_work_package_plural: Darbų paketai
     label_watch: Stebėti
@@ -210,8 +211,15 @@ lt:
         previous: Į ankstesnį puslapį
     placeholders:
       default: "-"
+      subject: Įveskite temą čia
       selection: Prašome pasirinkti
       relation_description: Paspauskite, kad pridėtumėte šio ryšio aprašymą
+    project:
+      required_outside_context: Jūs nesate projekto kontekste. Pirmiausia prašome
+        pasirinkti projekto kontekstą, kad galėtumėte pasirinkti tipą ir būseną
+      context: Projekto kontekstas
+      work_package_belongs_to: Šis darbų paketas priklauso projektui %{projectname}.
+      click_to_switch_context: Atidaryti darbų paketą tame projekte.
     text_are_you_sure: Ar esate įsitikinę?
     types:
       attribute_groups:
@@ -304,6 +312,18 @@ lt:
     text_query_destroy_confirmation: Ar tikrai norite panaikinti pasirinktą užklausą?
     text_attachment_destroy_confirmation: Ar tikrai norite panaikinti priedą?
     timelines:
+      gantt_chart: Ganto grafikas
+      labels:
+        bar: Juostelės etiketės
+        left: Kairė
+        right: Dešinė
+        farRight: Toli dešinėje
+        showNone: "-- Be etiketės --"
+        description: 'Pasirinkite atributus, kuriuos visada norite pamatyti atitinkamose
+          Ganto grafiko pozicijose. Atkreipkite dėmesį, kad kai pelės klavišas užvestas
+          virš elemento, jo datos informacija bus rodoma vietoj šių atributų.
+
+'
       button_activate: Aktyvuoti laiko juostos režimą
       button_deactivate: Išjungti laiko juostos režimą
       cancel: Atšaukti
@@ -355,6 +375,7 @@ lt:
       zoom:
         in: Priartinti
         out: Nutolinti
+        auto: Automatinis priartinimas
         days: Dienos(-ų)
         weeks: Savaitės(-ių)
         months: Mėnesiai(-ių)
@@ -557,6 +578,14 @@ lt:
       form_submit:
         title: Norėdami tęsti, patvirtinkite
         text: Ar tikrai norite atlikti šį veiksmą?
+      upsale_relation_columns: Ar reikia matyti ryšius darbų paketų sąraše?
+      upsale_relation_columns_link: Patikrinkite Enterprise Edition.
+      destroy_work_package:
+        title: Patvirtinkite, jog %{label} ištrinamas
+        text: Ar Jūs tikrai norite, kad %{label} būtų ištrintas?
+        has_children: 'Darbų paketas turi %{childUnits}:'
+        deletes_children: Visi vaikų tipo pagal hierarchiją darbų paketai taip pat
+          bus ištrinti.
     notice_successful_create: Sėkmingas sukūrimas.
     notice_successful_delete: Sėkmingas panaikinimas.
     notice_successful_update: Sėkmingas atnaujinimas.
@@ -584,6 +613,14 @@ lt:
     error_could_not_resolve_version_name: Nepavyko nustatyti versijos pavadinimo
     error_could_not_resolve_user_name: Nepavyko nustatyti vartotojo vardo
     units:
+      workPackage:
+        one: darbų paketas
+        other: darbų paketai
+        few: darbų paketai
+      child_work_packages:
+        one: darbų paketas su vienu vaiku
+        other: "%{count} darbų paketo vaikų"
+        few: "%{count} darbų paketo vaikai"
       hour:
         one: valanda
         other: "%{count} valandos (-a, -ų)"

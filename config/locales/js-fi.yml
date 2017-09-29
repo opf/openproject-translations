@@ -166,6 +166,7 @@ fi:
     label_total_progress: "%{percent} % eteneminen"
     label_visible_for_others: Sivu on nähtävissä muille
     label_updated_on: päivitetty vimeksi
+    label_warning: Warning
     label_work_package: Työpaketti
     label_work_package_plural: Työpaketit
     label_watch: Seuraa
@@ -210,8 +211,15 @@ fi:
         previous: Palaa edelliselle sivulle
     placeholders:
       default: "-"
+      subject: Enter subject here
       selection: Valitse
       relation_description: Painamalla tästä voit lisätä kuvauksen tälle suhteelle
+    project:
+      required_outside_context: You are not within a project context. Please choose
+        the project context first in order to select type and status
+      context: Project context
+      work_package_belongs_to: This work package belongs to project %{projectname}.
+      click_to_switch_context: Open this work package in that project.
     text_are_you_sure: Oletko varma?
     types:
       attribute_groups:
@@ -302,6 +310,18 @@ fi:
     text_query_destroy_confirmation: Oletko varma, että haluat poistaa valitun kyselyn?
     text_attachment_destroy_confirmation: Oletko varma, että haluat poistaa liitteen?
     timelines:
+      gantt_chart: Gantt chart
+      labels:
+        bar: Bar labels
+        left: Left
+        right: Right
+        farRight: Far right
+        showNone: "-- No label --"
+        description: 'Select the attributes you want to be shown in the respective
+          positions of the Gantt chart at all times. Note that when hovering an element,
+          its date labels will be shown instead of these attributes.
+
+'
       button_activate: Ota aikajana tila käyttöön
       button_deactivate: Poista aikajana tila käytöstä
       cancel: Peruuta
@@ -354,6 +374,7 @@ fi:
       zoom:
         in: Lähennä
         out: Loitonna
+        auto: Auto zoom
         days: Days
         weeks: Weeks
         months: Months
@@ -550,6 +571,13 @@ fi:
       form_submit:
         title: Vahvista jatkaaksesi
         text: Oletko varma, että haluat suorittaa tämän toiminnon?
+      upsale_relation_columns: Need to see relations in the work package list?
+      upsale_relation_columns_link: Check out the Enterprise Edition.
+      destroy_work_package:
+        title: Confirm deletion of %{label}
+        text: Are you sure you want to delete the following %{label} ?
+        has_children: 'The work package has %{childUnits}:'
+        deletes_children: All child work packages will also be deleted.
     notice_successful_create: Luonti onnistui.
     notice_successful_delete: Poisto onnistui.
     notice_successful_update: Päivitys onnistui.
@@ -577,6 +605,12 @@ fi:
     error_could_not_resolve_version_name: Version nimeä ei voitu ratkaista
     error_could_not_resolve_user_name: Käyttäjän nimeä ei voitu ratkaista
     units:
+      workPackage:
+        one: work package
+        other: work packages
+      child_work_packages:
+        one: one child work package
+        other: "%{count} work package children"
       hour:
         one: 1 tunti
         other: "%{count} tuntia"

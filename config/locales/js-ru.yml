@@ -167,6 +167,7 @@ ru:
     label_total_progress: "%{percent}% общего прогресса"
     label_visible_for_others: Страница видна для других
     label_updated_on: Обновлено
+    label_warning: Предупреждение
     label_work_package: Пакет работ
     label_work_package_plural: Пакеты работ
     label_watch: Просмотреть
@@ -210,8 +211,15 @@ ru:
         previous: Назад к предыдущей странице
     placeholders:
       default: "-"
+      subject: Введите субъект здесь
       selection: Пожалуйста, выберите
       relation_description: Нажмите, чтобы добавить описание для этой связи
+    project:
+      required_outside_context: Вы находитесь вне контекста проекта. Пожалуйста, выберите
+        вначале контекст проекта для того, чтобы выбрать тип и состояние
+      context: Контекст проекта
+      work_package_belongs_to: Этот пакет работ относится к проекту %{projectname}.
+      click_to_switch_context: Open this work package in that project.
     text_are_you_sure: Вы уверены?
     types:
       attribute_groups:
@@ -304,6 +312,18 @@ ru:
     text_query_destroy_confirmation: Вы уверены, что хотите удалить выбранный запрос?
     text_attachment_destroy_confirmation: Вы уверены, что вы хотите удалить вложение?
     timelines:
+      gantt_chart: Диаграмма Гантта
+      labels:
+        bar: Полоса меток
+        left: Влево
+        right: Вправо
+        farRight: Крайний справа
+        showNone: "-- Не метка --"
+        description: 'Select the attributes you want to be shown in the respective
+          positions of the Gantt chart at all times. Note that when hovering an element,
+          its date labels will be shown instead of these attributes.
+
+'
       button_activate: Активировать режим временной шкалы
       button_deactivate: Отключить режим временной шкалы
       cancel: Отмена
@@ -356,6 +376,7 @@ ru:
       zoom:
         in: Увеличить
         out: Уменьшить
+        auto: Auto zoom
         days: Дни
         weeks: Недели
         months: Месяцы
@@ -557,6 +578,13 @@ ru:
       form_submit:
         title: Подтвердите продолжение
         text: Вы действительно хотите выполнить это действие?
+      upsale_relation_columns: Нужно видеть отношения в списке пакетов работ?
+      upsale_relation_columns_link: Проверьте корпоративную версию.
+      destroy_work_package:
+        title: Подтвердите удаление %{label}
+        text: Вы уверены, что хотите удалить следующую %{label} ?
+        has_children: 'Пакет работ имеет %{childUnits}:'
+        deletes_children: Также будут удалены все дочерние пакеты работ.
     notice_successful_create: Создание выполнено.
     notice_successful_delete: Удаление выполнено.
     notice_successful_update: Обновление выполнено.
@@ -584,6 +612,14 @@ ru:
     error_could_not_resolve_version_name: Не удалось определить название этапа
     error_could_not_resolve_user_name: Не удалось найти такое имя пользователя
     units:
+      workPackage:
+        one: пакет работ
+        other: пакеты работ
+        few: пакеты работ
+      child_work_packages:
+        one: one child work package
+        other: "%{count} work package children"
+        few: "%{count} work package children"
       hour:
         one: 1 час
         other: "%{count} часов"

@@ -168,6 +168,7 @@ es:
     label_total_progress: 'Progreso total: %{percent}%'
     label_visible_for_others: Página visible para los demás
     label_updated_on: actualizado el
+    label_warning: Alerta
     label_work_package: Paquete de trabajo
     label_work_package_plural: Paquetes de trabajo
     label_watch: Controlar
@@ -215,8 +216,15 @@ es:
         previous: Volver a la página anterior
     placeholders:
       default: "-"
+      subject: Enter subject here
       selection: Por favor, elija
       relation_description: Haga clic para añadir la descripción a esta relación
+    project:
+      required_outside_context: You are not within a project context. Please choose
+        the project context first in order to select type and status
+      context: Project context
+      work_package_belongs_to: This work package belongs to project %{projectname}.
+      click_to_switch_context: Open this work package in that project.
     text_are_you_sure: "¿Estás seguro?"
     types:
       attribute_groups:
@@ -310,6 +318,18 @@ es:
     text_attachment_destroy_confirmation: "¿Está seguro que desea eliminar el archivo
       adjunto?"
     timelines:
+      gantt_chart: Gantt chart
+      labels:
+        bar: Bar labels
+        left: Left
+        right: Right
+        farRight: Far right
+        showNone: "-- No label --"
+        description: 'Select the attributes you want to be shown in the respective
+          positions of the Gantt chart at all times. Note that when hovering an element,
+          its date labels will be shown instead of these attributes.
+
+'
       button_activate: Activar modo de línea de tiempo
       button_deactivate: Desactivar modo de línea de tiempo
       cancel: Cancelar
@@ -362,6 +382,7 @@ es:
       zoom:
         in: Acercar
         out: Alejar
+        auto: Auto zoom
         days: Días
         weeks: Semanas
         months: Meses
@@ -564,6 +585,13 @@ es:
       form_submit:
         title: Confirme para continuar
         text: "¿Estás seguro/a de que desea realizar esta acción?"
+      upsale_relation_columns: Need to see relations in the work package list?
+      upsale_relation_columns_link: Check out the Enterprise Edition.
+      destroy_work_package:
+        title: Confirm deletion of %{label}
+        text: Are you sure you want to delete the following %{label} ?
+        has_children: 'The work package has %{childUnits}:'
+        deletes_children: All child work packages will also be deleted.
     notice_successful_create: Creación exitosa.
     notice_successful_delete: Eliminado con éxito.
     notice_successful_update: Actualización correcta.
@@ -591,6 +619,12 @@ es:
     error_could_not_resolve_version_name: No se puede resolver el nombre de la versión
     error_could_not_resolve_user_name: No se pudo identificar el nombre de usuario
     units:
+      workPackage:
+        one: work package
+        other: work packages
+      child_work_packages:
+        one: one child work package
+        other: "%{count} work package children"
       hour:
         one: 1 hora
         other: "%{count} horas"
