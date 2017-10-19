@@ -516,8 +516,8 @@ pl:
             priority_id:
               only_active_priorities_allowed: musi być aktywny.
             category:
-              only_same_project_categories_allowed: Kategoria zadania musi być taka
-                sama w ramach tego samego projektu.
+              only_same_project_categories_allowed: Kategoria pakietu roboczego musi
+                znajdować się w tym samym projekcie co pakiet roboczy.
               does_not_exist: Podana kategoria nie istnieje.
             estimated_hours:
               only_values_greater_or_equal_zeroes_allowed: musi mieć wartość > = 0.
@@ -562,7 +562,7 @@ pl:
       custom_field: Pola niestandardowe
       group: Grupa
       category: Kategoria
-      status: Statusy Zadań
+      status: Status pakietu roboczego
       member: Członek
       news: Aktualności
       project: Projekt
@@ -578,7 +578,7 @@ pl:
       wiki: Wiki
       wiki_page: Strony wiki
       workflow: Przepływ pracy
-      work_package: Zadania
+      work_package: Pakiet roboczy
   errors:
     header_invalid_fields: 'Wystąpił problem z następującymi polami:'
     field_erroneous_label: 'To pole jest nieprawidłowe: %{full_errors} proszę podać
@@ -593,7 +593,7 @@ pl:
     attachments: Załączniki
     author: Autor
     base: 'Błąd ogólny:'
-    blocks_ids: Identyfikatory zablokowanych pakietów
+    blocks_ids: Identyfikatory zablokowanych pakietów roboczych
     category: Kategoria
     comment: Komentarz
     comments: Komentarz
@@ -616,9 +616,9 @@ pl:
     is_default: Wartość domyślna
     is_for_all: Dla wszystkich projektów
     is_public: Publiczny
-    issue: Zadania
+    issue: Pakiet roboczy
     lastname: Nazwisko
-    login: Login
+    login: Nazwa użytkownika
     mail: Adres e-mail
     name: Nazwa
     password: Hasło
@@ -636,7 +636,7 @@ pl:
     updated_on: Aktualizacja
     user: Użytkownik
     version: Wersja
-    work_package: Zadania
+    work_package: Pakiet roboczy
   button_add: Dodaj
   button_add_member: Dodaj członka projektu
   button_add_watcher: Dodaj obserwatora
@@ -667,7 +667,7 @@ pl:
   button_list: Lista
   button_lock: Blokada
   button_log_time: Rejestruj czas pracy
-  button_login: Login
+  button_login: Zaloguj
   button_move: Przenieś
   button_move_and_follow: Przenieś i kontynuuj
   button_quote: Cytat
@@ -896,14 +896,14 @@ pl:
   description_message_content: Treść wiadomości
   description_my_project: Jesteś członkiem
   description_notes: Notatki
-  description_parent_work_package: Parent work package of current
+  description_parent_work_package: Źródłowy pakiet roboczy dla bieżącego
   description_project_scope: Zakres wyszukiwania
   description_query_sort_criteria_attribute: Sortowanie atrybut
   description_query_sort_criteria_direction: Kierunek sortowania
   description_search: Wyszukiwanie
-  description_select_work_package: Wybierz zadanie
+  description_select_work_package: Wybierz pakiet roboczy
   description_selected_columns: Wybrane kolumny
-  description_sub_work_package: Sub work package of current
+  description_sub_work_package: Potomny pakiet roboczy dla bieżącego
   description_toc_toggle: Pokaż/Ukryj spis treści
   description_wiki_subpages_reassign: Wybierz nową stronę nadrzędną
   direction: ltr
@@ -914,18 +914,18 @@ pl:
         add_groups: Dodaj nowe grupy atrybutów
         rename_groups: Zmień grupy atrybutów
   enumeration_activities: Działania
-  enumeration_work_package_priorities: Priorytety zadania
+  enumeration_work_package_priorities: Priorytety pakietów roboczych
   enumeration_system_activity: Aktywność systemu
   enumeration_reported_project_statuses: Status zgłoszonego projektu
   error_can_not_archive_project: Ten projekt nie może być archiwizowany
   error_can_not_delete_entry: Nie można usunąć wpisu
   error_can_not_delete_custom_field: Nie można usunąć pola niestandardowego
-  error_can_not_delete_type: Ten typ zawiera zadania i nie może być usunięty.
+  error_can_not_delete_type: Ten typ zawiera pakiety robocze i nie może zostać usunięty.
   error_can_not_delete_standard_type: Nie można usunąć standardowych typów.
   error_can_not_invite_user: Nie można wysłać zaproszenia do użytkownika.
   error_can_not_remove_role: Ta Rola jest używana i nie można jej usunąć.
-  error_can_not_reopen_work_package_on_closed_version: Nie można otworzyć zadania
-    przypisanego do zamkniętej wersji
+  error_can_not_reopen_work_package_on_closed_version: Nie można otworzyć pakietu
+    roboczego przypisanego do zamkniętej wersji
   error_check_user_and_role: Wybierz użytkownika i rolę.
   error_cookie_missing: Brakuje pliku cookie OpenProject. Upewnij się, że obsługa
     plików cookie jest włączona, ponieważ bez tego aplikacja nie będzie funkcjonować
@@ -939,12 +939,13 @@ pl:
     liczbę kolumn.
   error_token_authenticity: Nie można zweryfikować tokenu Cross-Site Request Forgery.
   error_work_package_done_ratios_not_updated: Nie zaktualizowane wskaźniki wykonania
-    zadania.
-  error_work_package_not_found_in_project: Zadanie nie zostało znalezione lub nie
-    należy do tego projektu
+    pakietu roboczego.
+  error_work_package_not_found_in_project: Pakiet roboczy nie został znaleziony lub
+    nie należy do tego projektu
   error_must_be_project_member: musi być członkiem projektu
-  error_no_default_work_package_status: Nie został zdefiniowany domyślny status zadania.
-    Proszę sprawdzić konfigurację (przejdź do "Administracja-> Statusy zadań").
+  error_no_default_work_package_status: Nie zdefiniowano domyślnego statusu pakietu
+    roboczego. Proszę sprawdzić konfigurację (przejdź do „Administracja -> Statusy
+    pakietów roboczych”).
   error_no_type_in_project: Żaden typ nie jest związany z tym projektem. Proszę sprawdzić
     ustawienia projektu.
   error_omniauth_registration_timed_out: Upłynął limit czasu na zewnętrzną autoryzację.
@@ -952,10 +953,11 @@ pl:
   error_scm_command_failed: 'Wystąpił błąd podczas próby dostępu do repozytorium:
     %{value}'
   error_scm_not_found: Nie znaleziono wpisu lub zmiany w repozytorium.
-  error_unable_delete_status: Status Zestawu zadań nie może być usunięty dopóki jest
-    używany przynajmniej w jednym Zestawie zadań.
-  error_unable_delete_default_status: Nie można usunąć domyślnego statusu zadań. Proszę
-    wybrać innych domyślny status zadań przed usunięciem aktualnego.
+  error_unable_delete_status: Status pakietu roboczego nie może zostać usunięty dopóki
+    jest używany przynajmniej w jednym pakiecie roboczym.
+  error_unable_delete_default_status: Nie można usunąć domyślnego statusu pakietów
+    roboczych. Proszę wybrać innych domyślny status pakietów roboczych przed usunięciem
+    bieżącego.
   error_unable_to_connect: Nie można połączyć (%{value})
   error_unable_delete_wiki: Nie można usunąć strony wiki.
   error_unable_update_wiki: Nie można zaktualizować strony wiki.
@@ -977,9 +979,9 @@ pl:
     reply: Odpowiedział
     time_entry: Timelog edytowany
     wiki_page: Strona Wiki edytowana
-    work_package_closed: Zadanie zamknięte
-    work_package_edit: Zadanie edytowane
-    work_package_note: Dodano uwagę do zadania
+    work_package_closed: Pakiet roboczy zamknięty
+    work_package_edit: Pakiet roboczy edytowany
+    work_package_note: Notatka pakietu roboczego dodana
   export:
     format:
       atom: Atom
@@ -1046,7 +1048,7 @@ pl:
   label_add_another_file: Dodaj plik
   label_add_columns: Dodaj wybrane kolumny
   label_add_note: Dodaj notatkę
-  label_add_related_work_packages: Dodaj powiązane zadanie
+  label_add_related_work_packages: Dodaj powiązane pakiety robocze
   label_add_subtask: Dodać zadanie podrzędne
   label_added: dodane
   label_added_time_by: Dodane przez %{author} %{age} temu
@@ -1255,7 +1257,7 @@ pl:
   label_list: Lista
   label_loading: Ładowanie...
   label_logged_as: Zalogowany jako
-  label_login: Login
+  label_login: Zaloguj
   label_custom_logo: Własne logo
   label_custom_favicon: Własny favicon
   label_custom_touch_icon: Własny touch icon
@@ -1286,7 +1288,7 @@ pl:
   label_months_from: miesięcy od
   label_more: Więcej
   label_more_than_ago: Więcej niż dni temu
-  label_move_work_package: Przenoszenie zadania
+  label_move_work_package: Przenieś pakiet roboczy
   label_my_account: Moje konto
   label_my_account_data: Moje dane konta
   label_my_page: Moja strona
@@ -1373,7 +1375,7 @@ pl:
   label_registration_activation_by_email: aktywacja konta przez e-mail
   label_registration_automatic_activation: automatyczna aktywacja konta
   label_registration_manual_activation: ręczna aktywacja konta
-  label_related_work_packages: Powiązanie zadania
+  label_related_work_packages: Powiązanie pakiety robocze
   label_relates: powiązane z
   label_relates_to: powiązane z
   label_relation_delete: Usuń powiązanie
@@ -1385,7 +1387,7 @@ pl:
   label_report: Raport
   label_report_bug: Zgłoś błąd
   label_report_plural: Raporty
-  label_reported_work_packages: Raportowane zadania
+  label_reported_work_packages: Zgłoszone pakiety robocze
   label_reporting: Zgłoszenie
   label_reporting_plural: Zgłoszenia
   label_repository: Repozytorium
@@ -1393,7 +1395,7 @@ pl:
   label_repository_plural: Repozytoria
   label_required: wymagane
   label_requires: wymaga
-  label_responsible_for_work_packages: Zadania, za które jestem odpowiedzialny
+  label_responsible_for_work_packages: Pakiety robocze za które jestem odpowiedzialny
   label_result_plural: Wyniki
   label_reverse_chronological_order: W odwrotnej kolejności chronologicznej
   label_revision: Rewizja
@@ -1402,7 +1404,7 @@ pl:
   label_roadmap: Harmonogram
   label_roadmap_edit: Edycja harmonogramu %{name}
   label_roadmap_due_in: Due in %{value}
-  label_roadmap_no_work_packages: Nie ma zadań dla tej wersji
+  label_roadmap_no_work_packages: Nie ma pakietów roboczych dla tej wersji
   label_roadmap_overdue: "%{value} late"
   label_role_and_permissions: Role i uprawnienia
   label_role_new: Nowa rola
@@ -1428,7 +1430,7 @@ pl:
   label_start_to_start: rozpoczęcie-rozpoczęcie
   label_statistics: Statystyki
   label_status: Status
-  label_status_updated: Status zadania został zaktualizowany
+  label_status_updated: Status pakietu roboczego zaktualizowany
   label_stay_logged_in: Pozostań zalogowany
   label_storage_free_space: Pozostałe miejsca na dysku
   label_storage_used_space: Używana przestrzeń dyskowa
@@ -1459,7 +1461,7 @@ pl:
   label_type_plural: Typy
   label_type_default_new_projects: Typ włączony domyślnie dla nowych projektów
   label_ui: Interfejs użytkownika
-  label_update_work_package_done_ratios: Aktualizacja wskaźników postępu zadania
+  label_update_work_package_done_ratios: Zaktualizuj wskaźniki postępu pakietu roboczego
   label_updated_time: Aktualizacja %{value} temu
   label_updated_time_at: "%{author} %{age}"
   label_updated_time_by: Zaktualizowane przez %{author} %{age} temu
@@ -1489,7 +1491,7 @@ pl:
   label_view_all_revisions: Zobacz wszystkie rewizje
   label_view_diff: Widok różnic
   label_view_revisions: Widok rewizji
-  label_watched_work_packages: Obserwowane zadania
+  label_watched_work_packages: Obserwowane pakiety robocze
   label_week: Tydzień
   label_wiki_content_added: Dodano stronę wiki
   label_wiki_content_updated: Zaktualizowano stronę wiki
@@ -1505,30 +1507,30 @@ pl:
   label_wiki_show_menu_item: Pokaż jako element menu w nawigacji projektu
   label_wiki_show_new_page_link: Pokaż element podmenu "Utwórz nową stronę podrzędną"
   label_wiki_show_submenu_item: 'Pokaż jako pozycję podmenu '
-  label_work_package: Zadania
+  label_work_package: Pakiet roboczy
   label_work_package_added: Dodano zadanie
   label_work_package_category_new: Nowa kategoria
-  label_work_package_category_plural: Kategorie zadań
+  label_work_package_category_plural: Kategorie pakietów roboczych
   label_work_package_hierarchy: Hierarchia zadań
-  label_work_package_new: Nowe Zadanie
-  label_work_package_note_added: Dodano uwagę do zadania
-  label_work_package_edit: Edycja zadania %{name}
-  label_work_package_plural: Zadania
-  label_work_package_priority_updated: Zaktualizowano priorytety zadania
-  label_work_package_status: Statusy Zadań
-  label_work_package_status_new: Nowy stan
-  label_work_package_status_plural: Statusy zadań
-  label_work_package_types: Typy Zadań
-  label_work_package_updated: Zaktualizowano zadanie
-  label_work_package_tracking: Śledzenie zadania
-  label_work_package_view_all: Pokaż wszystkie zadania
-  label_work_package_view_all_assigned_to_me: Pokaż wszystkie zadania przydzielone
+  label_work_package_new: Nowy pakiet roboczy
+  label_work_package_note_added: Notatka pakietu roboczego dodana
+  label_work_package_edit: Edytuj pakiet roboczy %{name}
+  label_work_package_plural: Pakiety robocze
+  label_work_package_priority_updated: Zaktualizowano priorytety pakietów roboczych
+  label_work_package_status: Status pakietu roboczego
+  label_work_package_status_new: Nowy status
+  label_work_package_status_plural: Statusy pakietów roboczych
+  label_work_package_types: Typy pakietów roboczych
+  label_work_package_updated: Pakiet roboczy zaktualizowany
+  label_work_package_tracking: Śledzenie pakietów roboczych
+  label_work_package_view_all: Pokaż wszystkie pakiety robocze
+  label_work_package_view_all_assigned_to_me: Pokaż wszystkie pakiety robocze przydzielone
     do mnie
-  label_work_package_view_all_reported_by_me: Zobacz wszystkie zadania zgłoszone przeze
-    mnie
+  label_work_package_view_all_reported_by_me: Pokaż wszystkie pakiety robocze zgłoszone
+    przeze mnie
   label_work_package_view_all_responsible_for: Zobacz wszystkie zadania, za które
     jestem odpowiedzialny
-  label_work_package_view_all_watched: Pokaż wszystkie obserwowane zadania
+  label_work_package_view_all_watched: Pokaż wszystkie obserwowane pakiety robocze
   label_work_package_watchers: Obserwatorzy
   label_workflow: Przepływ pracy
   label_workflow_plural: Przepływ zadań
@@ -1572,14 +1574,14 @@ pl:
   label_keyboard_shortcut_go_my_page: Przejdź do mojej strony
   label_keyboard_shortcut_show_help: Pokaż ten komunikat pomocy
   label_keyboard_shortcut_go_overview: Przejdź do podsumowania projektu
-  label_keyboard_shortcut_go_work_package: Przejdź do zadań projektu
+  label_keyboard_shortcut_go_work_package: Przejdź do pakietów roboczych projektu
   label_keyboard_shortcut_go_wiki: Przejdź do wiki projektu
   label_keyboard_shortcut_go_activity: Przejdź działań projeku
   label_keyboard_shortcut_go_calendar: Przejdź do kalendarza projektu
   label_keyboard_shortcut_go_news: Przejdź do wiadomości projektu
   label_keyboard_shortcut_go_timelines: Przejdź do osi czasu
-  label_keyboard_shortcut_new_work_package: Tworzenie nowego zadania
-  label_keyboard_shortcut_details_package: Pokaż pasek właściwości zadań
+  label_keyboard_shortcut_new_work_package: Utwórz nowy pakiet roboczy
+  label_keyboard_shortcut_details_package: Pokaż panel właściwości pakietów roboczych
   label_keyboard_shortcut_go_edit: Przejdź do edycji bieżącej pozycji (tylko na stronach
     szczegółowych)
   label_keyboard_shortcut_open_more_menu: Open more-menu (on detail pages only)
@@ -1603,14 +1605,15 @@ pl:
     in.
   mail_body_lost_password: 'Aby zmienić hasło, kliknij na poniższy link:'
   mail_body_register: 'Aby aktywować swoje konto, kliknij na poniższy link:'
-  mail_body_reminder: "%{count} work package(s) that are assigned to you are due in
-    the next %{days} days:"
+  mail_body_reminder: 'Termin wykonania %{count} pakietów roboczych przypisanych do
+    Ciebie kończy się w ciągu %{days} dni:'
   mail_body_wiki_content_added: The '%{id}' wiki page has been added by %{author}.
   mail_body_wiki_content_updated: The '%{id}' wiki page has been updated by %{author}.
   mail_subject_account_activation_request: "%{value} account activation request"
   mail_subject_lost_password: Twoje hasło do %{value}
   mail_subject_register: Your %{value} account activation
-  mail_subject_reminder: "%{count} work package(s) due in the next %{days} days"
+  mail_subject_reminder: Termin wykonania %{count} pakietów roboczych kończy się w
+    ciągu %{days} dni
   mail_subject_wiki_content_added: "'%{id}' wiki page has been added"
   mail_subject_wiki_content_updated: "'%{id}' wiki page has been updated"
   more_actions: Więcej funkcji
@@ -1652,8 +1655,8 @@ pl:
     zostały usunięte.
   notice_email_error: An error occurred while sending mail (%{value})
   notice_email_sent: E-mail został wysłany do %{value}
-  notice_failed_to_save_work_packages: 'Nieudany zapis %{count} na %{total} wybranych
-    zadań: %{ids}.'
+  notice_failed_to_save_work_packages: 'Nie udało się zapisać %{count} z %{total}
+    wybranych pakietów roboczych: %{ids}.'
   notice_failed_to_save_members: 'Failed to save member(s): %{errors}.'
   notice_feeds_access_key_reseted: Klucz dostępu RSS został zresetowany.
   notice_feeds_access_key_generated: Klucz dostępu RSS został zresetowany.
@@ -1752,7 +1755,7 @@ pl:
   permission_commit_access: Dostęp odczytu i zapisu do repozytorium (wykonanie)
   permission_copy_projects: Kopiowanie projektów
   permission_delete_work_package_watchers: Usuwanie obserwatorów
-  permission_delete_work_packages: Usuń zadania
+  permission_delete_work_packages: Usuwanie pakietów roboczych
   permission_delete_messages: Usuwanie wiadomości
   permission_delete_own_messages: Usuwanie własnych wiadomości
   permission_delete_project_associations: Usuwanie zależności projektu
@@ -1761,7 +1764,7 @@ pl:
   permission_delete_wiki_pages: Usuwanie stron wiki
   permission_delete_wiki_pages_attachments: Usuwanie załączników
   permission_edit_work_package_notes: Edycja notatek
-  permission_edit_work_packages: Edycja zadań
+  permission_edit_work_packages: Edycja pakietów roboczych
   permission_edit_messages: Edycja wiadomości
   permission_edit_own_work_package_notes: Edycja własnych notatek
   permission_edit_own_messages: Edycja własnych wiadomości
@@ -1772,13 +1775,13 @@ pl:
   permission_edit_time_entries: Edycja wpisów dziennika
   permission_edit_timelines: Edycja osi czasu
   permission_edit_wiki_pages: Edycja stron wiki
-  permission_export_work_packages: Eksportuj pakiety
+  permission_export_work_packages: Eksportowanie pakietów roboczych
   permission_export_wiki_pages: Eksportowanie stron wiki
   permission_list_attachments: Lista załączników
   permission_log_time: Rejestr spędzonego czasu
   permission_manage_boards: Zarządzanie forum
-  permission_manage_categories: Zarządzać kategoriami zadań
-  permission_manage_work_package_relations: Zarządzanie powiązaniami zadań
+  permission_manage_categories: Zarządzaj kategoriami pakietów roboczych
+  permission_manage_work_package_relations: Zarządzanie powiązaniami pakietów roboczych
   permission_manage_members: Zarządzanie użytkownikami
   permission_manage_news: Zarządzanie wiadomościami
   permission_manage_project_activities: Zarządzanie działaniami projektu
@@ -1788,7 +1791,7 @@ pl:
   permission_manage_versions: Zarządzanie wersjami
   permission_manage_wiki: Zarządzanie wiki
   permission_manage_wiki_menu: Zarządzanie menu wiki
-  permission_move_work_packages: Przenoszenie zadań
+  permission_move_work_packages: Przenoszenie pakietów roboczych
   permission_protect_wiki_pages: Blokowanie stron wiki
   permission_rename_wiki_pages: Zmiana nazw strony wiki
   permission_save_queries: Zapisywanie zapytań
@@ -1798,7 +1801,7 @@ pl:
   permission_view_changesets: Zobacz repozytorium poprawek OpenProject
   permission_view_commit_author_statistics: Widok statystyk autorów
   permission_view_work_package_watchers: Zobacz listę obserwatorów
-  permission_view_work_packages: Wyświetl pakiety pracy
+  permission_view_work_packages: Pokaż pakiety robocze
   permission_view_messages: Widok wiadomości
   permission_view_members: Przeglądaj członków
   permission_view_project_associations: Widok zależności projektu
@@ -1826,7 +1829,7 @@ pl:
   project_module_activity: Działanie
   project_module_boards: Fora
   project_module_calendar: Kalendarz
-  project_module_work_package_tracking: Śledzenie zadania
+  project_module_work_package_tracking: Śledzenie pakietów roboczych
   project_module_news: Aktualności
   project_module_repository: Repozytorium
   project_module_time_tracking: Zarządzanie czasem
@@ -2000,21 +2003,22 @@ pl:
     nieudanych prób zalogowania
   setting_brute_force_block_minutes: Czas, kiedy użytkownik jest zablokowany
   setting_cache_formatted_text: Tekst sformatowany w pamięci podręcznej
-  setting_column_options: Dostosuj wygląd listy zadań
+  setting_column_options: Dostosuj wygląd list pakietów roboczych
   setting_commit_fix_keywords: Stałe słowa kluczowe
   setting_commit_logs_encoding: Commit messages encoding
   setting_commit_logtime_activity_id: Aktywność dla logowania czasu pracy
   setting_commit_logtime_enabled: Włącz logowanie czasu pracy
   setting_commit_ref_keywords: Referencing keywords
-  setting_cross_project_work_package_relations: Allow cross-project work package relations
+  setting_cross_project_work_package_relations: Zezwól na powiązania pakietów roboczych
+    pomiędzy projektami
   setting_date_format: Format daty
   setting_default_language: Język domyślny
   setting_default_notification_option: Domyślnie opcja powiadomienia
   setting_default_projects_modules: Domyślnie włączone moduły dla nowych projektów
   setting_default_projects_public: Nowe projekty są publiczne (domyślnie)
   setting_diff_max_lines_displayed: Maksymalna wyświetlana liczba linii różnic
-  setting_display_subprojects_work_packages: Wyświetlaj domyślnie zadania podprojektów
-    na głównym projekcie
+  setting_display_subprojects_work_packages: Domyślnie wyświetlaj pakiety robocze
+    podprojektów na głównym projekcie
   setting_emails_footer: Stopka wiadomości e-mail
   setting_emails_header: Nagłówek wiadomości e-mail
   setting_email_login: Użyj adresu e-mail jako login
@@ -2026,25 +2030,25 @@ pl:
   setting_gravatar_default: Domyślny obraz Gravatar
   setting_gravatar_enabled: Użyj ikon Gravatar
   setting_host_name: Nazwa hosta
-  setting_work_package_done_ratio: Obliczyć status realizacji zadania z
-  setting_work_package_done_ratio_field: Użyj pola z zadania
-  setting_work_package_done_ratio_status: Użyj statusu zadania
+  setting_work_package_done_ratio: Oblicz status realizacji pakietu roboczego z
+  setting_work_package_done_ratio_field: Użyj pola pakietu roboczego
+  setting_work_package_done_ratio_status: Użyj statusu pakietu roboczego
   setting_work_package_done_ratio_disabled: Wyłącz (Ukryj postęp)
   setting_work_package_list_default_columns: Wyświetlane domyślnie
   setting_work_package_list_summable_columns: Sumowanie
-  setting_work_package_properties: Właściwości zadania
-  setting_work_package_startdate_is_adddate: Użyj bieżącej daty jako datę początkową
-    dla nowych zadań
-  setting_work_packages_export_limit: Limit eksportowanych zadań
+  setting_work_package_properties: Właściwości pakietu roboczego
+  setting_work_package_startdate_is_adddate: Użyj bieżącej daty jako daty początkowej
+    dla nowych pakietów roboczych
+  setting_work_packages_export_limit: Limit eksportowanych pakietów roboczych
   setting_journal_aggregation_time_minutes: Wyświetl dzienniki jako zagregowane
   setting_log_requesting_user: Rejestrowanie loginu, nazwy i adresu e-mail użytkownika
     dla wszystkich żądań
   setting_login_required: Wymagane uwierzytelnienie
   setting_mail_from: Adres emisji
   setting_mail_handler_api_enabled: Włącz usługę przychodzących wiadomości e-mail
-  setting_mail_handler_api_description: Silnik e-mail umożliwia OpenProject otrzymywać
-    e-maile zawierające konkretne polecenia jako mechanizm instrumentacji (np. do
-    tworzenia i aktualizacji pakietów roboczych).
+  setting_mail_handler_api_description: Silnik e-mail umożliwia aplikacji OpenProject
+    otrzymywać wiadomości e-mail zawierające konkretne polecenia jako mechanizm instrumentacji
+    (np. do tworzenia i aktualizacji pakietów roboczych).
   setting_mail_handler_api_key: Klucz API
   setting_mail_handler_body_delimiters: Obcinanie e-mail po jednej z tych linii
   setting_mail_handler_body_delimiter_regex: Skróć wiadomości e-mail pasujące to wyrażenia
@@ -2120,7 +2124,7 @@ pl:
     do zasobów w OpenProject.
   text_analyze: 'Further analyze: %{subject}'
   text_are_you_sure: Jesteś pewien?
-  text_are_you_sure_with_children: Usunąć zadanie i wszystkie podrzędne zadania?
+  text_are_you_sure_with_children: Usunąć pakiet roboczy i wszystkie podrzędne pakiety?
   text_assign_to_project: Przypisz do projektu
   text_form_configuration: 'Możesz określić, które pola będą wyświetlane w formularzach
     Work Package. Możesz dowolnie grupować pola aby dostosować do swoich potrzeb.
@@ -2161,8 +2165,8 @@ pl:
     zmienione
   text_default_encoding: 'Domyślnie: UTF-8'
   text_destroy: Usuń
-  text_destroy_with_associated: 'Istnieją dodatkowe obiekty powiązane z zadani(em/ami),
-    które będą usunięte. Te obiekty są następujących typów:'
+  text_destroy_with_associated: 'Istnieją dodatkowe obiekty powiązane z pakietami
+    roboczymi, które będą usunięte. Te obiekty są następujących typów:'
   text_destroy_what_to_do: Co chcesz zrobić?
   text_diff_truncated: "... This diff was truncated because it exceeds the maximum
     size that can be displayed."
@@ -2177,18 +2181,18 @@ pl:
     zmienić na niechcianą datę.
   text_hint_disable_with_0: 'Uwaga: Wyłącz z 0'
   text_hours_between: Między %{min} i %{max} godzin.
-  text_work_package_added: Zadanie %{id} zostało dodane przez %{author}.
+  text_work_package_added: Pakiet roboczy %{id} został zgłoszony przez %{author}.
   text_work_package_category_destroy_assignments: Remove category assignments
-  text_work_package_category_destroy_question: Some work packages (%{count}) are assigned
-    to this category. What do you want to do?
-  text_work_package_category_reassign_to: Reassign work packages to this category
-  text_work_package_updated: Zadanie %{id} zostało zaktualizowane przez %{author}.
+  text_work_package_category_destroy_question: Niektóre pakiety robocze (%{count})
+    są przypisane do tej kategorii. Co chciałbyś zrobić?
+  text_work_package_category_reassign_to: Przypisz pakiety robocze do tej kategorii
+  text_work_package_updated: Pakiet roboczy %{id} został zaktualizowany przez %{author}.
   text_work_package_watcher_added: Zostałeś dodany jako obserwator do Zespołu zadań
     %{id} przez %{watcher_setter}.
-  text_work_packages_destroy_confirmation: Are you sure you want to delete the selected
-    work package(s)?
-  text_work_packages_ref_in_commit_messages: Referencing and fixing work packages
-    in commit messages
+  text_work_packages_destroy_confirmation: Czy na pewno chcesz usunąć wybrane pakiety
+    robocze?
+  text_work_packages_ref_in_commit_messages: Odwołania i poprawki do pakietów roboczych
+    w wiadomościach o zmianach
   text_journal_added: "%{label} %{value} added"
   text_journal_aggregation_time_explanation: Połącz dzienniki dla wyświetlania, jeśli
     ich różnica wiekowa jest poniżej wskazanej wartości. To opóźni dostawę powiadomień
@@ -2208,8 +2212,8 @@ pl:
   text_no_roles_defined: Nie ma żadnych zdefiniowanych uprawnień.
   text_no_access_tokens_configurable: Brak tokenów dostępu, które mogą być skonfigurowane.
   text_no_configuration_data: |-
-    Roles, types, work package statuses and workflow have not been configured yet.
-    It is highly recommended to load the default configuration. You will be able to modify it once loaded.
+    Role, typy, statusy pakietów roboczych i przepływ pracy nie zostały jeszcze skonfigurowane.
+    Zalecane jest załadowanie domyślnej konfiguracji. Będzie można ją zmodyfikować po załadowaniu.
   text_no_notes: Nie ma żadnych komentarzy dostępnych dla tego zestawu Zadań.
   text_notice_too_many_values_are_inperformant: 'Uwaga: Wyświetlanie ponad 100 pozycji
     na stronie może zwiększyć czas wczytywania strony.'
@@ -2234,9 +2238,10 @@ pl:
     Możesz porównać dwa elementy poprzez odznaczenie odpowiadających im pól wyboru.
     Po kliknięciu na przycick na dole wyświetlane są różnice.
   text_time_logged_by_changeset: Zastosowane w zbiorze zmian %{value}.
-  text_tip_work_package_begin_day: zadania począwszy od tego dnia
-  text_tip_work_package_begin_end_day: początek i koniec zadania tego dnia
-  text_tip_work_package_end_day: zadanie kończy się tego dnia
+  text_tip_work_package_begin_day: pakiet roboczy zaczynający się tego dnia
+  text_tip_work_package_begin_end_day: pakiet roboczy zaczynający się i kończący tego
+    dnia
+  text_tip_work_package_end_day: pakiet roboczy kończący się tego dnia
   text_type_no_workflow: No workflow defined for this type
   text_unallowed_characters: Niedpuszczalne znaki
   text_user_invited: Użytkownik został zaproszony i oczekuje na rejestrację.
@@ -2316,10 +2321,14 @@ pl:
         timeframe_end: 'The timeframe end '
         compare_to_relative: 'Wartość względnego porównania '
         compare_to_absolute: 'Wartość bezwzględna porównania '
-        planning_element_time_relative_one: 'Początek zadania w określonym czasie '
-        planning_element_time_relative_two: 'Koniec zadania w określonym czasie '
-        planning_element_time_absolute_one: 'Początek zadania w określonym czasie  '
-        planning_element_time_absolute_two: 'Koniec zadania w określonym czasie  '
+        planning_element_time_relative_one: 'Początek pakietów roboczych w określonym
+          czasie '
+        planning_element_time_relative_two: 'Koniec pakietów roboczych w określonym
+          czasie '
+        planning_element_time_absolute_one: 'Początek pakietów roboczych w określonym
+          czasie  '
+        planning_element_time_absolute_two: 'Koniec pakietów roboczych w określonym
+          czasie  '
       sort:
         sortation: Sortuj według
         alphabet: alfabetycznie
@@ -2348,7 +2357,7 @@ pl:
         days: dni
         weeks: tygodnie
         months: miesiące
-      exclude_own_work_packages: Ukryj zadania z tego projektu
+      exclude_own_work_packages: Ukryj pakiety robocze z tego projektu
       exclude_reporters: Ukryj inne projekty
       exclude_empty: Ukryj puste projekty
       grouping: Grupowanie
@@ -2361,13 +2370,13 @@ pl:
       noneSelection: "(brak)"
       outline: Initial outline expansion
       parent: Pokaż projekty podrzędne z
-      work_package_filters: Filtr zadań
-      work_package_responsible: Pokaż zadania z odpowiedzialnym
-      work_package_assignee: Pokaż zadania z przypisanym użytkownikiem
+      work_package_filters: Filtruj pakiety robocze
+      work_package_responsible: Pokaż pakiety robocze z odpowiedzialnym
+      work_package_assignee: Pokaż pakiety robocze z przypisanym
       types: Pokaż typy
       status: Pokaż status
-      project_time_filter: Projects with a work package of a certain type in a certain
-        timeframe
+      project_time_filter: Projekty z pakietem roboczym określonego typu w określonych
+        ramach czasowych
       project_time_filter_timeframe: Ramy czasowe
       project_time_filter_historical_from: od
       project_time_filter_historical_to: do
@@ -2386,7 +2395,7 @@ pl:
     history: Historia
     new_color: Nowy kolor
     new_association: Nowa zależność
-    new_work_package: Nowe Zadanie
+    new_work_package: Nowy pakiet roboczy
     new_project_type: Nowy typ projektu
     new_reporting: Nowe zgłoszenie
     new_timeline: Nowy raport na osi czasu
@@ -2414,7 +2423,8 @@ pl:
       edit: 'Edit status: %{comment}'
       show: 'Status: %{comment}'
     planning_element_update: 'Update: %{title}'
-    work_packages_are_displayed_in_aggregations: Work packages are displayed in aggregations
+    work_packages_are_displayed_in_aggregations: Pakiety robocze są wyświetlane w
+      agregacjach
     project_association_new: Add project dependency
     project_association_new_for_with: Ustaw zależność dla "%{project_a}" z
     project_association_with_other: Zależność projektu między "%{project_a}" i "%{project_b}"
@@ -2436,7 +2446,7 @@ pl:
 
 '
     really_delete_timeline: 'Czy na pewno chcesz usunąć następujący raport osi czasu?
-      Zadania pokazane w tym raporcie osi czasu nie zostaną usunięte.
+      Pakiety robocze pokazane w tym raporcie nie zostaną usunięte.
 
 '
     really_delete_reporting: 'Czy na pewno chcesz usunąć poniższe zgłoszenie? Poprzednie
@@ -2447,7 +2457,7 @@ pl:
     timeline: Raport osi czasu
     timelines: Sprawozdania terminów
     settings: Terminarz
-    vertical_work_package: Pionowe zadania
+    vertical_work_package: Pionowe pakiety robocze
     without_project_type: Bez typu projektu
     you_are_viewing_the_selected_timeline: Oglądasz raport zaznaczonej osi czasu
     zoom:
@@ -2540,7 +2550,7 @@ pl:
   query_menu_item_for: Element menu dla zapytania "%{title}"
   work_package:
     updated_automatically_by_child_changes: '_Zaktualizowane automatycznie przez zmianę
-      wartości wewnątrz podrzędnego zadania %{child}_
+      wartości wewnątrz podrzędnego pakietu roboczego %{child}_
 
 '
     destroy:
@@ -2582,13 +2592,14 @@ pl:
         unsupported_context: Podany zasób nie jest obsługiwany jako kontekst.
         context_object_not_found: Nie można odnaleźć zasobu z podanym kontekstem.
       validation:
-        done_ratio: Procent wykonania nie może być ustawiony na zadaniach zależnych
-          poprzez zmianę statusu lub gdy są wyłączone.
-        due_date: Daty zakończenia nie można ustawić na zadaniu głównym.
-        estimated_hours: Nie można ustawić szacunku godzinowego dla zadań nadrzędnych.
-        invalid_user_assigned_to_work_package: Wybrany użytkownik nie może być '%{property}'
+        done_ratio: Procent wykonania nie może być ustawiony na źródłowych pakietach
+          roboczych, jeśli zostało wywnioskowane ze statusu lub jeśli zostało wyłączone.
+        due_date: Daty zakończenia nie można ustawić na źródłowym pakiecie roboczym.
+        estimated_hours: Nie można ustawić szacunku godzinowego dla źródłowych pakietów
+          roboczych.
+        invalid_user_assigned_to_work_package: Wybrany użytkownik nie może być „%{property}”
           dla tego pakietu roboczego.
-        start_date: Daty rozpoczęcia nie można ustawić na zadaniu głównym.
+        start_date: Daty rozpoczęcia nie można ustawić na nadrzędnych pakietach roboczych.
       writing_read_only_attributes: Nie możesz zapisać atrybutu tylko do odczytu.
     resources:
       schema: Schemat
