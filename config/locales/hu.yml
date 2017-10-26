@@ -426,7 +426,7 @@ hu:
         spent_hours: Eltöltött idő
         spent_time: Eltöltött idő
         subproject: Alprojekt
-        time_entries: Bejelentkezett időtartam
+        time_entries: Eltöltött idő rögzítése
         type: Típus
         watcher: Megfigyelő
     errors:
@@ -518,8 +518,8 @@ hu:
             priority_id:
               only_active_priorities_allowed: needs to be active.
             category:
-              only_same_project_categories_allowed: The category of a work package
-                must be within the same project as the work package.
+              only_same_project_categories_allowed: A munkacsomag kategóriájának azonos
+                projektben kell lennie a munkacsomaggal.
               does_not_exist: A megadott kategória nem létezik.
             estimated_hours:
               only_values_greater_or_equal_zeroes_allowed: must be >= 0.
@@ -542,12 +542,12 @@ hu:
               reused:
                 one: has been used before. Please choose one that is different from
                   your last one.
-                other: has been used before. Please choose one that is different from
-                  your last %{count}.
+                other: korábban már használta. Kérjük, válasszon egyet, amely eltér
+                  a(z) %{count} utolsótól.
               match:
                 confirm: Új jelszó megerősítése.
-                description: "'Password confirmation' should match the input in the
-                  'New password' field."
+                description: A "'Jelszó megerősítés"-nek meg kell egyeznie az "Új
+                  jelszó" mezővel.
         member:
           principal_blank: Kérem, válasszon legalább egy felhasználót vagy csoportot.
           role_blank: kérem, válasszon legalább egy szerepkört.
@@ -555,7 +555,7 @@ hu:
         body: 'Kérjük, ellenőrizze az alábbi mezőket:'
         header:
           one: 1 error prohibited this %{model} from being saved
-          other: "%{count} errors prohibited this %{model} from being saved"
+          other: "%{count} hiba miatt nem menthető a következő: %{model}"
     models:
       attachment: File
       attribute_help_text: Attribute help text
@@ -571,7 +571,7 @@ hu:
       query: Egyéni lekérdezés
       role:
         one: Role
-        other: Roles
+        other: Szerepkörök
       type: Típus
       project_type: Projekt típus
       user: Felhasználó
@@ -595,7 +595,7 @@ hu:
     attachments: Csatolmány
     author: Szerző
     base: 'Általános hiba:'
-    blocks_ids: IDs of blocked work packages
+    blocks_ids: Lezárt munkacsomagok azonosítója
     category: Kategória
     comment: Vélemény
     comments: Vélemény
@@ -627,7 +627,7 @@ hu:
     priority: Fontosság
     project: Projekt
     responsible: Felelős
-    role: Role
+    role: Szerepkör
     start_date: Indulási dátum
     status: Állapot
     subject: Tárgy
@@ -661,18 +661,18 @@ hu:
   button_delete: Töröl
   button_delete_watcher: Megfigyelő törlése %{name}
   button_download: Letöltés
-  button_duplicate: Duplikátum
+  button_duplicate: Másolás ide
   button_edit: Szerkesztés
   button_edit_associated_wikipage: 'A hozzárendelt Wiki oldal: %{page_title} szerkesztése'
   button_expand_all: Az összes kibontása
   button_generate: Generate
   button_list: Lista
   button_lock: Tilt
-  button_log_time: Bejelentkezett időtartam
+  button_log_time: Eltöltött idő rögzítése
   button_login: Bejelentkezés
   button_move: Mozgatás
   button_move_and_follow: Mozgatés és a következő
-  button_quote: Quota
+  button_quote: Idéz
   button_remove: Remove
   button_remove_widget: Widget eltávolítása
   button_rename: Átnevezés
@@ -689,11 +689,11 @@ hu:
   button_unarchive: Nem archívált
   button_uncheck_all: Az összes kijelölés megszüntetése
   button_unlock: A zárolás feloldása
-  button_unwatch: Ellenőrizetlen
+  button_unwatch: Megfigyelés leállítása
   button_update: Frissítés
   button_upload: Upload
   button_view: Nézet
-  button_watch: Ellenőrzés
+  button_watch: Megfigyelés
   button_manage_menu_entry: Menüpont beállitása
   button_add_menu_entry: Menüpont hozzáadása
   button_configure_menu_entry: Menüpont beállitása
@@ -767,23 +767,23 @@ hu:
     distance_in_words:
       about_x_hours:
         one: körülbelül %{count} óra
-        other: about %{count} hours
+        other: körülbelül %{count} óra
       about_x_months:
         one: körülbelül %{count} hónap
-        other: about %{count} months
+        other: körülbelül %{count} hónap
       about_x_years:
         one: körülbelül 1 év
-        other: about %{count} years
+        other: körülbelül %{count} év
       almost_x_years:
         one: almost 1 year
-        other: almost %{count} years
+        other: majdnem %{count} év
       half_a_minute: Fél perc
       less_than_x_minutes:
         one: kevesebb, mint %{count} perc
         other: less than %{count} minutes
       less_than_x_seconds:
-        one: kevesebb, mint %{count} másodper
-        other: less than %{count} seconds
+        one: kevesebb, mint 1 másodperc
+        other: kevesebb, mint %{count} másodperc
       over_x_years:
         one: több mint %{count} év
         other: over %{count} years
@@ -826,41 +826,41 @@ hu:
   default_status_closed: Lezárva
   default_status_confirmed: Megerősítve
   default_status_developed: Lefejlesztve
-  default_status_in_development: In development
-  default_status_in_progress: In progress
+  default_status_in_development: Fejlesztés alatt
+  default_status_in_progress: Folyamatban
   default_status_in_specification: In specification
-  default_status_in_testing: In testing
+  default_status_in_testing: Tesztelés alatt
   default_status_new: Új
-  default_status_on_hold: On hold
-  default_status_rejected: Rejected
-  default_status_scheduled: Scheduled
+  default_status_on_hold: Visszatartva
+  default_status_rejected: Elutasítva
+  default_status_scheduled: Beütemezve
   default_status_specified: Specified
-  default_status_tested: Tested
-  default_status_test_failed: Test failed
-  default_status_to_be_scheduled: To be scheduled
+  default_status_tested: Tesztelve
+  default_status_test_failed: Teszt meghiúsult
+  default_status_to_be_scheduled: Ütemezendő
   default_priority_low: Alacsony
   default_priority_normal: Átlagos
   default_priority_high: Magas
   default_priority_immediate: Azonnali
-  default_project_type_scrum: Scrum team
+  default_project_type_scrum: Scrum csapat
   default_project_type_standard: Standard project
-  default_reported_project_status_green: Green
-  default_reported_project_status_amber: Amber
+  default_reported_project_status_green: Zöld
+  default_reported_project_status_amber: Borostyán
   default_reported_project_status_red: Piros
   default_role_anonymous: Anonymous
   default_role_developer: Fejlesztő
-  default_role_project_admin: Project admin
+  default_role_project_admin: Projekt admin
   default_role_non_member: Nem tag
-  default_role_reader: Reader
+  default_role_reader: Olvasó
   default_role_member: Tag
   default_type: Munkacsomag
   default_type_bug: Hiba
-  default_type_deliverable: Deliverable
+  default_type_deliverable: Szállítható
   default_type_epic: Epic
   default_type_feature: Szolgáltatás
   default_type_milestone: Fordulópont
   default_type_phase: Fázis
-  default_type_task: Task
+  default_type_task: Feladat
   default_type_user_story: User story
   description_active: Aktív?
   description_attachment_toggle: Csatolmányt mutat/elrejt
@@ -944,8 +944,8 @@ hu:
   error_scm_command_failed: 'Hiba mikor kipróbáláshoz el akarja érni a repository:
     %{value}'
   error_scm_not_found: A bejegyzés vagy a revízió  a csomagtárolóban  nem található.
-  error_unable_delete_status: The work package status cannot be deleted since it is
-    used by at least one work package.
+  error_unable_delete_status: A munka csomag állapot nem törölhető, mivel legalább
+    egy munka csomag használja.
   error_unable_delete_default_status: Nem tudom törtölni az alapértelmezett munkacsomag
     állapotát. Kérjük, válasszon egy másik alapértelmezett munka csomag állapotot,
     mielött ezt törli.
@@ -1064,7 +1064,7 @@ hu:
   label_applied_status: Alkalmazott státusz
   label_archive_project: Archive project
   label_ascending: Növekvő
-  label_assigned_to_me_work_packages: Hozzámrendelt munkacsomag
+  label_assigned_to_me_work_packages: Hozzámrendelt munkacsomagok
   label_associated_revisions: Kapcsolódó módosítások
   label_attachment_delete: Fájl törlése
   label_attachment_new: Új fájl
@@ -1213,7 +1213,7 @@ hu:
   label_help: Segítség
   label_here: itt
   label_hide: Elrejt
-  label_history: Elözmény
+  label_history: Előzmény
   label_home: Home
   label_in: in
   label_in_less_than: kevesebb, mint
@@ -1461,7 +1461,7 @@ hu:
   label_user: Felhasználó
   label_user_activity: "%{value} tevékenység"
   label_user_anonymous: Anonymous
-  label_user_mail_option_all: Minden esetben a saját projektek
+  label_user_mail_option_all: Minden saját projektet érintő esetben
   label_user_mail_option_none: Nincs esemény
   label_user_mail_option_only_assigned: Csak a hozzám rendelt feladatokról
   label_user_mail_option_only_my_events: Csak a megfigyelt feladatok vagy amelyben
@@ -1516,7 +1516,7 @@ hu:
   label_work_package_types: Work package types
   label_work_package_updated: Frissült a munkacsomag
   label_work_package_tracking: A munkacsomag nyomon követése
-  label_work_package_view_all: Minden munkacsomagot megtekintése
+  label_work_package_view_all: Minden munkacsomag megtekintése
   label_work_package_view_all_assigned_to_me: A hozzám rendelt valamennyi munkacsomag
     megtekintése
   label_work_package_view_all_reported_by_me: Az összes munkacsomag megtekintése az
@@ -1538,15 +1538,15 @@ hu:
     zero: no comments
   label_x_open_work_packages_abbr:
     one: 1 open
-    other: "%{count} open"
+    other: "%{count} nyitott"
     zero: 0 open
   label_x_open_work_packages_abbr_on_total:
     one: 1 open / %{total}
-    other: "%{count} open / %{total}"
+    other: "%{count} nyitott / %{total}"
     zero: 0 open / %{total}
   label_x_projects:
-    one: 1 project
-    other: "%{count} projects"
+    one: 1 projekt
+    other: "%{count} projekt"
     zero: no projects
   label_year: Év
   label_yesterday: tegnap
@@ -1569,7 +1569,7 @@ hu:
   label_keyboard_shortcut_go_news: Tovább a projekt híreihez
   label_keyboard_shortcut_go_timelines: Ugrás az idővonalakhoz
   label_keyboard_shortcut_new_work_package: Új munkacsomag létrehozása
-  label_keyboard_shortcut_details_package: Show work packages details pane
+  label_keyboard_shortcut_details_package: Munka csomag részletek ablaktábla megjelenítése
   label_keyboard_shortcut_go_edit: Tovább a "jelenlegi tétel szerkesztésére" (csak
     a részletes oldalak)
   label_keyboard_shortcut_open_more_menu: Több menü megnyitása (csak a részletes lapok)
@@ -1579,11 +1579,11 @@ hu:
     (csak néhány lista)
   label_keyboard_shortcut_focus_next_item: Középpontban a következő lista elemei (csak
     néhány lista)
-  label_visible_elements: Visible elements
+  label_visible_elements: Látható elemek
   auth_source:
     using_abstract_auth_source: Can't use an abstract authentication source.
-    ldap_error: 'LDAP-Error: %{error_message}'
-    ldap_auth_failed: Could not authenticate at the LDAP-Server.
+    ldap_error: 'LDAP-hiba: %{error_message}'
+    ldap_auth_failed: A hitelesítés meghiúsult az LDAP-kiszolgálón.
   macro_execution_error: Hiba a makro %{macro_name} végrehajtásában
   macro_unavailable: A %{macro_name} makró nem jeleníthető meg.
   mail_body_account_activation_request: 'Új felhasználó (%{value}) regisztrálva van.
@@ -1747,17 +1747,17 @@ hu:
   permission_edit_messages: Üzenetek szerkesztése
   permission_edit_own_work_package_notes: Saját megjegyzések szerkesztése
   permission_edit_own_messages: Saját üzenetek szerkesztése
-  permission_edit_own_time_entries: A saját bejelentkezett idő szerkesztése
+  permission_edit_own_time_entries: Rögzített eltöltött időim szerkesztése
   permission_edit_project: Projekt szerkesztése
   permission_edit_project_associations: Projekt függöségek szerkesztése
   permission_edit_reportings: Jelentések szerkesztése
-  permission_edit_time_entries: Bejelentkezett idő szerkesztése
+  permission_edit_time_entries: Eltöltött idők szerkesztése
   permission_edit_timelines: Idővonalak szerkesztése
   permission_edit_wiki_pages: Wiki lapok szerkesztése
-  permission_export_work_packages: Export work packages
+  permission_export_work_packages: Munkacsomagok exportálása
   permission_export_wiki_pages: Wiki oldalak exportálása
   permission_list_attachments: Mellékletek listája
-  permission_log_time: Bejelentkezett időtartam
+  permission_log_time: Eltöltött idő rögzítése
   permission_manage_boards: Fórum kezelése
   permission_manage_categories: Munkacsomag kategóriák kezelése
   permission_manage_work_package_relations: Munkacsomag kapcsolatok kezelése
@@ -2022,10 +2022,10 @@ hu:
     minden lekéréshez
   setting_login_required: Hitelesítés szükséges
   setting_mail_from: Kibocsátási e-mail cím
-  setting_mail_handler_api_enabled: Enable incoming email web service
-  setting_mail_handler_api_description: The email web handler enables OpenProject
-    to receive emails containing specific commands as an instrumentation mechanism
-    (e.g., to create and update work packages).
+  setting_mail_handler_api_enabled: Bejövő e-mail szolgáltatás engedélyezése
+  setting_mail_handler_api_description: Az e-mail web kezelő lehetővé teszi, hogy
+    az OpenProject különböző utasításokat tartalmazó e-maileket fogadjon és végrehajtson
+    (úgy mint munkacsomag készítés, frissítés).
   setting_mail_handler_api_key: API-kulcs
   setting_mail_handler_body_delimiters: E-mailek csonkolása e sorok után
   setting_mail_handler_body_delimiter_regex: Truncate emails matching this regex
@@ -2075,7 +2075,7 @@ hu:
   setting_welcome_title: Welcome block title
   setting_welcome_on_homescreen: Display welcome block on homescreen
   setting_welcome_on_projects_page: Display welcome block on project overview
-  setting_wiki_compression: Wiki elözmények tömörítése
+  setting_wiki_compression: Wiki előzmények tömörítése
   setting_work_package_group_assignment: Hozzárendelés engedélyezése csoportokhoz
   settings:
     general: Általános
@@ -2100,7 +2100,8 @@ hu:
     to resources in OpenProject.
   text_analyze: 'További elemzése: %{subject}'
   text_are_you_sure: Biztos vagy benne?
-  text_are_you_sure_with_children: Törli a munkacsomagot és minden gyermek munkacsomagot?
+  text_are_you_sure_with_children: Törli a munkacsomagot és minden hozzá tartozó gyermek
+    munkacsomagot?
   text_assign_to_project: Hozzárendelés projekthez
   text_form_configuration: 'You can customize which fields will be displayed in work
     package forms. You can freely group the fields to reflect the needs for your domain.
@@ -2329,7 +2330,7 @@ hu:
         none: Egyik sem
         relative: Relatív
         compare_relative_prefix: Compare current planning to
-        compare_relative_suffix: ago
+        compare_relative_suffix: óta
         compare_absolute: Hasonlítsa össze a jelenlegi tervezési  %{date} időpont
       time_relative:
         days: napok
@@ -2355,7 +2356,7 @@ hu:
       status: Állapot megjelenítése
       project_time_filter: Egy bizonyos típusú egy bizonyos időn belüli  projektek
         a munka csomagokkal
-      project_time_filter_timeframe: Timeframe
+      project_time_filter_timeframe: Időkeret
       project_time_filter_historical_from: tól
       project_time_filter_historical_to: címzett
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
@@ -2370,7 +2371,7 @@ hu:
       timeframe_start: tól
       timeline: Általános beállítások
       zoom: Zoom tényező
-    history: Elözmény
+    history: Előzmény
     new_color: Új szín
     new_association: Új függőség
     new_work_package: Új munkacsomag
@@ -2485,7 +2486,7 @@ hu:
     blocked: ideiglenesen zárolva
     blocked_num_failed_logins:
       one: locked temporarily (one failed login attempt)
-      other: locked temporarily (%{count} failed login attempts)
+      other: ideiglenesen zárolva (%{count} sikertelen bejelentkezési kísérlet)
     deleted: Törölt felhasználó
     error_status_change_failed: 'A felhasználó állapotának a módosítása nem sikerült
       a következő hiba miatt: %{errors}'
@@ -2540,10 +2541,10 @@ hu:
     attributes:
       lock_version: Lock Version
     errors:
-      code_401: You need to be authenticated to access this resource.
-      code_401_wrong_credentials: You did not provide the correct credentials.
-      code_403: You are not authorized to access this resource.
-      code_404: The requested resource could not be found.
+      code_401: Az erőforrás eléréséhez azonosítás szükséges.
+      code_401_wrong_credentials: Nem megfelelő hitelesítési adatok kerültek megadásra.
+      code_403: Ön nem jogosult az erőforrás eléréséhez.
+      code_404: A kért erőforrás nem található.
       code_409: Couldn't update the resource because of conflicting modifications.
       code_500: An internal error has occured.
       expected:
@@ -2580,4 +2581,4 @@ hu:
         start_date: Start date cannot be set on parent work packages.
       writing_read_only_attributes: You must not write a read-only attribute.
     resources:
-      schema: Schema
+      schema: Séma
