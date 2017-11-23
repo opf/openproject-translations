@@ -18,6 +18,7 @@ require 'tempfile'
 require 'crowdin-api'
 require 'yaml'
 require 'zip'
+require 'fileutils'
 
 namespace :translations do
   crowdin_project_key = ''
@@ -25,6 +26,10 @@ namespace :translations do
   # translations are organized in subdirecotries in crowdin.
   # one dir per OpenProject version
   crowdin_directory = ''
+
+  # Locales root directory
+  locales_root_dir = Rails.root.join 'config', 'locales'
+  locales_crowdin_dir = File.join(locales_root_dir, 'crowdin')
 
   # Whether the .yml file is based on the js-en.yml JavaScript translation file
   def js_translation?(translation_file_path)
@@ -46,15 +51,16 @@ namespace :translations do
 
   desc "fetch available translations from crowdin, and puts them into this gem"
   task :download => :check_for_api_key do
-    unless File.writable? OpenProject::Translations::Engine.root.join 'config', 'locales'
-      raise "#{OpenProject::Translations::Engine.root.join 'config', 'locales'} need to be writable"
+    unless File.directory?(locales_crowdin_dir)
+      FileUtils.mkdir_p(locales_crowdin_dir)
+    end
+
+    unless File.writable? locales_crowdin_dir
+      raise "#{locales_crowdin_dir} needs to be writable"
     end
 
     # nuke locales directory to get rid of old files
-    Dir.glob("#{OpenProject::Translations::Engine.root.join('config', 'locales')}/*.yml").each do |file|
-      File.delete(file) if File.file?(file)
-    end
-
+    FileUtils.rm_f Dir.glob("#{locales_crowdin_dir}/*.yml")
     crowdin = Crowdin::API.new project_id: crowdin_project_name, api_key: crowdin_project_key
 
     puts 'Downloading translations from crowdin ...'
@@ -66,14 +72,13 @@ namespace :translations do
       crowdin.download_translation 'all', output: languages_files.path
 
       # read zip
-      target_directory = OpenProject::Translations::Engine.root.join 'config', 'locales'
       Zip::File.open(languages_files.path) do |zip_file|
         zip_file.glob("*/#{crowdin_directory}/*.yml").each do |entry|
           language_name = entry.name.split('/').first # the file is put in a directory containing the language name
-          filepath = target_directory.join "#{js_translation?(Pathname.new(entry.name)) ? 'js-' : ''}#{language_name}.yml"
-          puts "saving #{filepath.basename}"
+          js_prefix = js_translation?(Pathname.new(entry.name)) ? 'js-' : ''
+          filepath = File.join(locales_crowdin_dir, "#{js_prefix}#{language_name}.yml")
+          puts "saving #{File.basename(filepath)}"
 
-          File.delete(filepath) if File.file?(filepath)
           File.open(filepath, 'wb') do |file|
             file.write entry.get_input_stream.read
           end
@@ -153,10 +158,10 @@ namespace :translations do
     english_js_translation = YAML.load File.read(Rails.root.join('config', 'locales', 'js-en.yml'))
 
     # fix missing translation keys in all translation files of this gem
-    OpenProject::Translations::Engine.root.join('config', 'locales').children.select do |file_path|
-      # find all .yml files in this gems' locales directory
-      file_path.file? && file_path.extname == '.yml'
-    end.each do |translation_file|
+    Pathname.new(locales_crowdin_dir)
+      .children
+      .select { |file_path| file_path.file? && file_path.extname == '.yml' }
+      .each do |translation_file|
       language_key = calculate_language_key translation_file
 
       puts "fixing #{js_translation?(translation_file) ? 'js-' : ''}#{language_key}"
@@ -181,34 +186,8 @@ namespace :translations do
         file.write translation.to_yaml
       end
       # the files should be named like their translation-key
-      File.rename translation_file, OpenProject::Translations::Engine.root.join('config', 'locales', "#{js_translation?(translation_file) ? 'js-' : ''}#{language_key}.yml")
-    end
-  end
-
-  desc "Update Gemfile.lock to newest Version of OpenProject Translation"
-  task :update_gemfile_lock => :environment do
-    target_path = 'tmp/openproject'
-    branch = ENV['Translation_working_branch']
-
-    system "git clone git@github.com:opf/openproject #{target_path}"
-    Dir.chdir target_path do
-      system "git checkout #{branch}"
-
-      Bundler.with_clean_env do
-        system 'bundle update --source openproject-translations'
-      end
-
-      system 'git add Gemfile.lock'
-      system 'git commit -m "Update reference to OpenProject-Translations"'
-
-      DEBUG = ENV['DEBUG'] || false
-      unless DEBUG
-        system "git push origin #{branch}"
-      end
-    end
-    unless DEBUG
-      require 'fileutils'
-      FileUtils.rm_rf(target_path)
+      new_filename = "#{js_translation?(translation_file) ? 'js-' : ''}#{language_key}.yml"
+      File.rename translation_file, File.join(locales_crowdin_dir, new_filename)
     end
   end
 end

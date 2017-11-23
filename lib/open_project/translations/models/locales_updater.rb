@@ -53,16 +53,16 @@ class LocalesUpdater
 
   def update_i18n_handle(configuration_hash)
     @i18n_provider = begin
-      project_id = configuration_hash[:project_id]
+      project_id = configuration_hash[:crowdin_id]
       api_key = configuration_hash[:api_key]
-      version = configuration_hash[:version]
+      version = configuration_hash[:version] || ENV.fetch('OPENPROJECT_TRANSLATIONS_VERSION')
       I18nProvider.new(project_id, api_key, version)
     end
   end
 
   def setup_plugin_repo(configuration_hash, path)
-    uri = configuration_hash[:uri]
-    branch = configuration_hash[:branch]
+    uri = "git@github.com:#{configuration_hash.fetch(:slug)}"
+    branch = configuration_hash[:branch] || ENV.fetch('OPENPROJECT_TRANSLATIONS_BRANCH')
 
     @plugin_repo = GitRepository.new(uri, path)
     @plugin_repo.clone
@@ -100,7 +100,14 @@ class LocalesUpdater
   def download_and_replace_locales
     # todo delete all locales here? maybe for the case that
     # we do not support a language anymore.
-    target_directory = Pathname(File.join('config', 'locales'))
+    target_directory = Pathname(File.join('config', 'locales', 'crowdin'))
+    unless File.directory?(target_directory)
+      FileUtils.mkdir_p(target_directory)
+    end
+
+    # Clear all locales before checking in the current ones
+    FileUtils.rm_f Dir.glob("#{target_directory}/*.yml")
+
     @i18n_provider.each_locale do |entry|
       language_name = entry.name.split('/').first # the file is put in a directory containing the language name
 

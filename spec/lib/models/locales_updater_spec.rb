@@ -7,17 +7,17 @@ describe LocalesUpdater do
     { plugins:
       { 'test-project' =>
         {
-          uri: uri,
+          slug: slug,
           api_key: api_key,
-          project_id: project_id,
+          crowdin_id: crowdin_id,
           version: version
         }
       }
     }
   }
-  let(:uri) { 'test-uri' }
+  let(:uri) { 'opf/test-uri' }
   let(:api_key) { 'test-key' }
-  let(:project_id) { 'test-id' }
+  let(:crowdin_id) { 'test-id' }
   let(:version) { 'test-version' }
 
   describe '#update_all_locales_of_all_repos' do
@@ -29,7 +29,7 @@ describe LocalesUpdater do
     it 'uses the correct credentials' do
       allow(locales_updater).to receive(:within_plugin_repo)
 
-      expect(I18nProvider).to receive(:new).with(project_id, api_key, version)
+      expect(I18nProvider).to receive(:new).with(crowdin_id, api_key, version)
       locales_updater.update_all_locales_of_all_repos
     end
 
