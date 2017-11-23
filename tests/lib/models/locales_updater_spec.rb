@@ -15,7 +15,7 @@ describe LocalesUpdater do
       }
     }
   }
-  let(:uri) { 'opf/test-uri' }
+  let(:slug) { 'opf/test-uri' }
   let(:api_key) { 'test-key' }
   let(:crowdin_id) { 'test-id' }
   let(:version) { 'test-version' }
