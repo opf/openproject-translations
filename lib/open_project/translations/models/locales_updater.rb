@@ -55,7 +55,7 @@ class LocalesUpdater
     @i18n_provider = begin
       project_id = configuration_hash[:crowdin_id]
       api_key = configuration_hash[:api_key]
-      version = configuration_hash[:version] || ENV.fetch('OPENPROJECT_TRANSLATIONS_VERSION')
+      version = configuration_hash[:version] || "#{OpenProject::VERSION::MAJOR}.#{OpenProject::VERSION::MINOR}"
       I18nProvider.new(project_id, api_key, version)
     end
   end

@@ -27,9 +27,6 @@ namespace :translations_for_plugins do
       raise "Configuration file is not readable."
     end
 
-    unless ENV.key? 'OPENPROJECT_TRANSLATIONS_VERSION'
-      raise "Missing ENV 'OPENPROJECT_TRANSLATIONS_VERSION' for version to upload plugins files for."
-    end
     unless ENV.key? 'OPENPROJECT_TRANSLATIONS_BRANCH'
       raise "Missing ENV 'OPENPROJECT_TRANSLATIONS_BRANCH' for the branch to upload plugins files from."
     end
