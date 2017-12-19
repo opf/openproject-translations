@@ -17,6 +17,6 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'rails', '~> 5.0.0'
   s.add_dependency 'rubyzip'
-  s.add_dependency 'crowdin-api', '~> 0.4.1'
+  s.add_dependency 'crowdin-api', '~> 0.5.0'
   s.add_dependency 'mixlib-shellout', '~> 2.1.0'
 end
