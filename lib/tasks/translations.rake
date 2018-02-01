@@ -171,6 +171,12 @@ namespace :translations do
       if language_key == 'lol'
         translation_yaml.gsub! /precision:0/, 'precision: 0'
       end
+
+      if language_key == 'no'
+        translation_yaml.gsub! /\Ano:/, '"no":'
+      end
+
+
       # for each translation file add missing translation keys
       translation = YAML.load translation_yaml
 

@@ -119,10 +119,42 @@ class LocalesUpdater
     end
   end
 
+  def calculate_language_key(translation_file_path)
+    # The main translation key is the language key ('en' for english, 'zh' for chinese etc.)
+    # Sometimes a language has multiple variants (eg simplified chinese 'zh-TW')
+    # For language variants ('zh-TW') crowdin gives us only the language key ('zh') so we replace it.
+    # from /path/to/openproject-translations/config/locales/zh-TW.yml we extract 'zh-TW'
+    language_key = if js_translation?(translation_file_path)
+      # ignore the 'js-' prefix of js translations
+      translation_file_path.basename.to_s[3..-5]
+    else
+      translation_file_path.basename.to_s[0..-5]
+    end
+
+    # Unfortunately OpenProject has some vendored translations in jstoolbar, which
+    # needs different names sometimes, so we map exceptions here
+    mapping = Hash.new {|hash, key| key }
+    mapping['zh-CN'] = 'zh'
+    mapping['es-ES'] = 'es'
+    mapping['pt-PT'] = 'pt'
+
+    mapping[language_key]
+  end
+
   def replace_file(filepath, new_file)
     File.delete(filepath) if File.file?(filepath)
+
+    contents = new_file.get_input_stream.read
+
+    # work around a crowdin bug which does not escape norwegian key
+    # and results in boolean
+    language_key = calculate_language_key filepath
+    if language_key == 'no'
+      contents.gsub! /\Ano:/, '"no":'
+    end
+
     File.open(filepath, 'wb') do |file|
-      file.write new_file.get_input_stream.read
+      file.write contents
     end
   end
 
