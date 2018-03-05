@@ -53,16 +53,16 @@ class LocalesUpdater
 
   def update_i18n_handle(configuration_hash)
     @i18n_provider = begin
-      project_id = configuration_hash[:project_id]
+      project_id = configuration_hash[:crowdin_id]
       api_key = configuration_hash[:api_key]
-      version = configuration_hash[:version]
+      version = configuration_hash[:version] || "#{OpenProject::VERSION::MAJOR}.#{OpenProject::VERSION::MINOR}"
       I18nProvider.new(project_id, api_key, version)
     end
   end
 
   def setup_plugin_repo(configuration_hash, path)
-    uri = configuration_hash[:uri]
-    branch = configuration_hash[:branch]
+    uri = "git@github.com:#{configuration_hash.fetch(:slug)}"
+    branch = configuration_hash[:branch] || ENV.fetch('OPENPROJECT_TRANSLATIONS_BRANCH')
 
     @plugin_repo = GitRepository.new(uri, path)
     @plugin_repo.clone
@@ -100,7 +100,14 @@ class LocalesUpdater
   def download_and_replace_locales
     # todo delete all locales here? maybe for the case that
     # we do not support a language anymore.
-    target_directory = Pathname(File.join('config', 'locales'))
+    target_directory = Pathname(File.join('config', 'locales', 'crowdin'))
+    unless File.directory?(target_directory)
+      FileUtils.mkdir_p(target_directory)
+    end
+
+    # Clear all locales before checking in the current ones
+    FileUtils.rm_f Dir.glob("#{target_directory}/*.yml")
+
     @i18n_provider.each_locale do |entry|
       language_name = entry.name.split('/').first # the file is put in a directory containing the language name
 
@@ -112,10 +119,42 @@ class LocalesUpdater
     end
   end
 
+  def calculate_language_key(translation_file_path)
+    # The main translation key is the language key ('en' for english, 'zh' for chinese etc.)
+    # Sometimes a language has multiple variants (eg simplified chinese 'zh-TW')
+    # For language variants ('zh-TW') crowdin gives us only the language key ('zh') so we replace it.
+    # from /path/to/openproject-translations/config/locales/zh-TW.yml we extract 'zh-TW'
+    language_key = if js_translation?(translation_file_path)
+      # ignore the 'js-' prefix of js translations
+      translation_file_path.basename.to_s[3..-5]
+    else
+      translation_file_path.basename.to_s[0..-5]
+    end
+
+    # Unfortunately OpenProject has some vendored translations in jstoolbar, which
+    # needs different names sometimes, so we map exceptions here
+    mapping = Hash.new {|hash, key| key }
+    mapping['zh-CN'] = 'zh'
+    mapping['es-ES'] = 'es'
+    mapping['pt-PT'] = 'pt'
+
+    mapping[language_key]
+  end
+
   def replace_file(filepath, new_file)
     File.delete(filepath) if File.file?(filepath)
+
+    contents = new_file.get_input_stream.read
+
+    # work around a crowdin bug which does not escape norwegian key
+    # and results in boolean
+    language_key = calculate_language_key filepath
+    if language_key == 'no'
+      contents.gsub! /\Ano:/, '"no":'
+    end
+
     File.open(filepath, 'wb') do |file|
-      file.write new_file.get_input_stream.read
+      file.write contents
     end
   end
 
