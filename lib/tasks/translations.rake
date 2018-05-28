@@ -46,7 +46,12 @@ namespace :translations do
   desc "request a new build of the language export files"
   task :request_build => :check_for_api_key do
     crowdin = Crowdin::API.new project_id: crowdin_project_name, api_key: crowdin_project_key
-    crowdin.export_translations
+    begin
+      crowdin.export_translations
+    rescue => e
+      warn "Error while requesting build: #{e} #{e.message}"
+      raise e unless ENV['IGNORE_CROWDIN_REQUEST_BUILD']
+    end
   end
 
   desc "fetch available translations from crowdin, and puts them into this gem"
