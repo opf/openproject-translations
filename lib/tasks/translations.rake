@@ -19,6 +19,7 @@ require 'crowdin-api'
 require 'yaml'
 require 'zip'
 require 'fileutils'
+require 'logger'
 
 namespace :translations do
   crowdin_project_key = ''
@@ -41,13 +42,16 @@ namespace :translations do
     raise "ERROR: please specify a crowdin API key via the #{env_name} environment variable" unless ENV[env_name]
     crowdin_project_key = ENV[env_name]
     crowdin_directory = "#{OpenProject::VERSION::MAJOR}.#{OpenProject::VERSION::MINOR}"
+    crowdin.log = Logger.new $stderr
+    crowdin.log.level = Logger::DEBUG
   end
 
   desc "request a new build of the language export files"
   task :request_build => :check_for_api_key do
     crowdin = Crowdin::API.new project_id: crowdin_project_name, api_key: crowdin_project_key
     begin
-      crowdin.export_translations
+      resp = crowdin.export_translations async: 1
+      warn resp.inspect 
     rescue => e
       warn "Error while requesting build: #{e} #{e.message}"
       raise e unless ENV['IGNORE_CROWDIN_REQUEST_BUILD']
