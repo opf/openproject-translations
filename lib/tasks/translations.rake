@@ -27,6 +27,8 @@ namespace :translations do
   # translations are organized in subdirecotries in crowdin.
   # one dir per OpenProject version
   crowdin_directory = ''
+  logger = Logger.new $stderr
+  logger.level = Logger::DEBUG
 
   # Locales root directory
   locales_root_dir = Rails.root.join 'config', 'locales'
@@ -42,13 +44,12 @@ namespace :translations do
     raise "ERROR: please specify a crowdin API key via the #{env_name} environment variable" unless ENV[env_name]
     crowdin_project_key = ENV[env_name]
     crowdin_directory = "#{OpenProject::VERSION::MAJOR}.#{OpenProject::VERSION::MINOR}"
-    crowdin.log = Logger.new $stderr
-    crowdin.log.level = Logger::DEBUG
   end
 
   desc "request a new build of the language export files"
   task :request_build => :check_for_api_key do
     crowdin = Crowdin::API.new project_id: crowdin_project_name, api_key: crowdin_project_key
+    crowdin.log = logger
     begin
       resp = crowdin.export_translations async: 1
       warn resp.inspect 
@@ -71,6 +72,7 @@ namespace :translations do
     # nuke locales directory to get rid of old files
     FileUtils.rm_f Dir.glob("#{locales_crowdin_dir}/*.yml")
     crowdin = Crowdin::API.new project_id: crowdin_project_name, api_key: crowdin_project_key
+    crowdin.log = logger
 
     puts 'Downloading translations from crowdin ...'
     begin
@@ -78,6 +80,7 @@ namespace :translations do
       languages_files.close
 
       crowdin = Crowdin::API.new project_id: crowdin_project_name, api_key: crowdin_project_key
+      crowdin.log = logger
       crowdin.download_translation 'all', output: languages_files.path
 
       # read zip
@@ -102,6 +105,7 @@ namespace :translations do
   task :upload => :check_for_api_key do
     puts "Uploading current OpenProject en.yml to crowdin"
     crowdin = Crowdin::API.new project_id: crowdin_project_name, api_key: crowdin_project_key
+    crowdin.log = logger
 
     # create crowdin directory just in case it doesn't exist.
     dir = crowdin.project_info['files'].find {|f| f['name'] == crowdin_directory && f['node_type'] == 'directory'}
