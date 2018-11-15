@@ -9,6 +9,10 @@ class I18nProvider
     @api_key = api_key
     @crowdin_directory = crowdin_directory
     @crowdin = create_handle
+    logger = Logger.new $stderr
+    logger.level = Logger::DEBUG
+
+    @crowdin.log = logger
   end
 
   def create_handle
@@ -70,7 +74,8 @@ class I18nProvider
   def request_build
     # todo maybe this could run into a timeout?
     begin
-      @crowdin.export_translations
+      resp = @crowdin.export_translations async: 1
+      warn resp.inspect
     rescue Crowdin::API::Errors::Error => e
       puts "Error during update of #{@project_id}: #{e.message}"
     end

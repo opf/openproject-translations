@@ -2,7 +2,6 @@ require 'pathname'
 require 'fileutils'
 
 require_relative '../helpers/tmp_directory'
-require_relative './git_repository'
 require_relative './i18n_provider'
 require_relative './locales_updater_configuration'
 
@@ -14,34 +13,23 @@ class LocalesUpdater
   include TmpDirectory
 
   def update_all_locales_of_all_repos(debug: true)
-    repos_to_update = plugins_with_locales
+    plugins_with_locales.each do |plugin_name, specifics|
+      path = Rails.root.join(specifics[:path])
 
-    within_tmp_directory(delete_if_exists: true, debug: debug) do
-      repos_to_update.each do |plugin_name, specifics|
+      Dir.chdir(path) do
+        puts "In #{path}"
         update_i18n_handle(specifics)
-
-        within_tmp_directory(path: File.join(FileUtils.pwd, plugin_name), debug: debug) do
-          within_plugin_repo(configuration_hash: specifics, path: FileUtils.pwd, debug: debug) do
-            puts "Uploading english for #{plugin_name}"
-            upload_english(plugin_name)
-            request_build
-            puts "Downloading translations for #{plugin_name}"
-            download_and_replace_locales
-          end
-        end
+        puts "Uploading english for #{plugin_name}"
+        upload_english(plugin_name)
+        puts "Request build #{plugin_name}"
+        request_build
+        puts "Downloading translations for #{plugin_name}"
+        download_and_replace_locales
       end
     end
   end
 
   private
-
-  def within_plugin_repo(configuration_hash:, path:, debug:)
-    setup_plugin_repo(configuration_hash, path)
-    @plugin_repo.within_repo do
-      yield
-    end
-    commit_and_push_plugin_repo(debug)
-  end
 
   def plugins_with_locales
     configuration[:plugins]
@@ -58,23 +46,6 @@ class LocalesUpdater
       version = configuration_hash[:version] || "#{OpenProject::VERSION::MAJOR}.#{OpenProject::VERSION::MINOR}"
       I18nProvider.new(project_id, api_key, version)
     end
-  end
-
-  def setup_plugin_repo(configuration_hash, path)
-    uri = "git@github.com:#{configuration_hash.fetch(:slug)}"
-    branch = configuration_hash[:branch] || ENV.fetch('OPENPROJECT_TRANSLATIONS_BRANCH')
-
-    @plugin_repo = GitRepository.new(uri, path)
-    @plugin_repo.clone
-
-    @plugin_repo.checkout(branch)
-    @plugin_repo
-  end
-
-  def commit_and_push_plugin_repo(debug)
-    @plugin_repo.add('config/locales')
-    @plugin_repo.commit('update locales from crowdin')
-    @plugin_repo.push unless debug
   end
 
   def upload_english(plugin_name)

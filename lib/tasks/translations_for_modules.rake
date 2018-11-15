@@ -16,8 +16,8 @@
 
 require_relative '../open_project/translations/models/locales_updater'
 
-namespace :translations_for_plugins do
-  desc "todo, upload english, download locales, commit to plugin repo"
+namespace :translations_for_modules do
+  desc "todo, upload english, download locales, and update files"
   task :update do
     unless ENV.key? 'OPENPROJECT_TRANSLATIONS_CONFIGURATION_FILE'
       raise "Missing ENV 'OPENPROJECT_TRANSLATIONS_CONFIGURATION_FILE' for version to upload plugins files for."
@@ -25,10 +25,6 @@ namespace :translations_for_plugins do
 
     unless File.readable? ENV['OPENPROJECT_TRANSLATIONS_CONFIGURATION_FILE']
       raise "Configuration file is not readable."
-    end
-
-    unless ENV.key? 'OPENPROJECT_TRANSLATIONS_BRANCH'
-      raise "Missing ENV 'OPENPROJECT_TRANSLATIONS_BRANCH' for the branch to upload plugins files from."
     end
 
     LocalesUpdater.new.update_all_locales_of_all_repos(debug: false)
