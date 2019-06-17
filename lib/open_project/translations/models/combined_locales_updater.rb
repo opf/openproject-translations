@@ -10,7 +10,7 @@ class CombinedLocalesUpdater
 
   ENGLISH_TRANSLATION_FILE ||= 'en.yml'
   ENGLISH_JS_TRANSLATION_FILE ||= 'js-en.yml'
-  ACCEPTANCE_LEVEL ||= ENV['ACCEPTANCE_LEVEL'].nil? ? 75 : ENV['ACCEPTANCE_LEVEL'].to_i
+  ACCEPTANCE_LEVEL ||= ENV['ACCEPTANCE_LEVEL'].nil? ? 30 : ENV['ACCEPTANCE_LEVEL'].to_i
 
   ##
   # Create a combined locales updater.
@@ -22,11 +22,17 @@ class CombinedLocalesUpdater
     @project = project
     @crowdin = ::Crowdin::API.new project_id: project, api_key: api_key
     @crowdin_version_dir = "#{OpenProject::VERSION::MAJOR}.#{OpenProject::VERSION::MINOR}"
-    @debug = false
+    @debug = true
   end
 
   def call!
     Dir.chdir(Rails.root) do
+
+      unless find_entry(@crowdin_version_dir)
+        puts "-- Creating new folder for #{@crowdin_version_dir}/ --"
+        crowdin.add_directory(@crowdin_version_dir)
+      end
+
       puts "-- Uploading all translations --"
       all_locale_paths.each { |dir| upload_translations(dir) }
 
@@ -78,54 +84,40 @@ class CombinedLocalesUpdater
       language_name = entry.name.split('/').first # the file is put in a directory containing the language name
 
       # only take translations with enough percent translated
-      next unless translation_status_high_enough?(language_name, ACCEPTANCE_LEVEL)
+      unless translation_status_high_enough?(language_name, ACCEPTANCE_LEVEL)
+        debug_print "[#{mod_name}] Skipping language #{language_name}, acceptance level not high enough"
+        next
+      end
 
-      filepath = target_directory.join "#{js_translation?(Pathname.new(entry.name)) ? 'js-' : ''}#{language_name}.yml"
-      replace_file(filepath, entry)
+      replace_file(target_directory, entry)
     end
   end
 
   ##
   # Replace a single translation file from crowdin
-  def replace_file(filepath, new_file)
-    File.delete(filepath) if File.file?(filepath)
+  def replace_file(target_directory, entry)
+    # Read the new file from zip
+    contents = entry.get_input_stream.read
 
-    contents = new_file.get_input_stream.read
+    # Read the language code from the YML index
+    language_key = contents[0, contents.index(':')]
 
     # work around a crowdin bug which does not escape norwegian key
     # and results in boolean
-    language_key = calculate_language_key filepath
     if language_key == 'no'
       contents.gsub! /\Ano:/, '"no":'
     end
 
-    File.open(filepath, 'wb') do |file|
+    # Remove any escaped language names
+    language_key.delete!('"')
+
+    # the files should be named like their translation-key
+    new_filename = "#{js_translation?(entry.name) ? 'js-' : ''}#{language_key}.yml"
+    new_filepath = File.join(target_directory, new_filename)
+
+    File.open(new_filepath, 'wb') do |file|
       file.write contents
     end
-  end
-
-  ##
-  # Determine and fix the localization language key from the file path
-  def calculate_language_key(translation_file_path)
-    # The main translation key is the language key ('en' for english, 'zh' for chinese etc.)
-    # Sometimes a language has multiple variants (eg simplified chinese 'zh-TW')
-    # For language variants ('zh-TW') crowdin gives us only the language key ('zh') so we replace it.
-    # from /path/to/openproject-translations/config/locales/zh-TW.yml we extract 'zh-TW'
-    language_key = if js_translation?(translation_file_path)
-      # ignore the 'js-' prefix of js translations
-      translation_file_path.basename.to_s[3..-5]
-    else
-      translation_file_path.basename.to_s[0..-5]
-    end
-
-    # Unfortunately OpenProject has some vendored translations in jstoolbar, which
-    # needs different names sometimes, so we map exceptions here
-    mapping = Hash.new {|hash, key| key }
-    mapping['zh-CN'] = 'zh'
-    mapping['es-ES'] = 'es'
-    mapping['pt-PT'] = 'pt'
-
-    mapping[language_key]
   end
 
   ##
@@ -308,6 +300,7 @@ class CombinedLocalesUpdater
   end
 
   def js_translation?(translation_file_path)
-    !!(translation_file_path.basename.to_s[0..-5] =~ /\Ajs-.+\z/)
+    filename = File.basename translation_file_path.to_s
+    filename.match? /\Ajs-.+\z/
   end
 end
