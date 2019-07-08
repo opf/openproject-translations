@@ -28,6 +28,8 @@ class CombinedLocalesUpdater
   def call!
     Dir.chdir(Rails.root) do
 
+      puts "-- Running updater for #{@crowdin_version_dir} --"
+
       unless find_entry(@crowdin_version_dir)
         puts "-- Creating new folder for #{@crowdin_version_dir}/ --"
         crowdin.add_directory(@crowdin_version_dir)
@@ -270,12 +272,14 @@ class CombinedLocalesUpdater
   ##
   # Look up the nested path info from crowdin
   def find_entry(path)
+    debug_print "Requesting project_info"
     entry = crowdin.project_info
 
     path
       .split('/')
       .each do |segment|
 
+      debug_print "Requesting project_info for #{segment}"
       entry = entry['files'].find { |f| f['name'] == segment }
       return nil if entry.nil?
     end
