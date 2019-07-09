@@ -5,6 +5,7 @@ require 'crowdin-api'
 class CombinedLocalesUpdater
   attr_reader :crowdin,
               :project,
+              :crowdin_project_info,
               :crowdin_version_dir,
               :debug
 
@@ -29,6 +30,9 @@ class CombinedLocalesUpdater
     Dir.chdir(Rails.root) do
 
       puts "-- Running updater for #{@crowdin_version_dir} --"
+
+      puts "-- Requesting project_info to look up entries --"
+      @crowdin_project_info = crowdin.project_info
 
       unless find_entry(@crowdin_version_dir)
         puts "-- Creating new folder for #{@crowdin_version_dir}/ --"
@@ -272,8 +276,7 @@ class CombinedLocalesUpdater
   ##
   # Look up the nested path info from crowdin
   def find_entry(path)
-    debug_print "Requesting project_info"
-    entry = crowdin.project_info
+    entry = @crowdin_project_info
 
     path
       .split('/')
