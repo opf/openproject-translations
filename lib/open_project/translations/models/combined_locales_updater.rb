@@ -103,10 +103,24 @@ class CombinedLocalesUpdater
   # Replace a single translation file from crowdin
   def replace_file(target_directory, entry)
     # Read the new file from zip
-    contents = entry.get_input_stream.read
+    contents = entry
+      .get_input_stream
+      .read
+
+    # Get the line that contains the first language key
+    language_key = nil
+
+    entry.get_input_stream.each_line do |line|
+      if line.match(/^\s*(.+?):\s*$/)
+        language_key = $1
+        break
+      end
+    end
 
     # Read the language code from the YML index
-    language_key = contents[0, contents.index(':')]
+    if language_key.nil?
+      return warn "Failed to detect language from #{entry.name}"
+    end
 
     # work around a crowdin bug which does not escape norwegian key
     # and results in boolean
