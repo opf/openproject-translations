@@ -111,15 +111,15 @@ class CombinedLocalesUpdater
     language_key = nil
 
     entry.get_input_stream.each_line do |line|
-      if line.match(/^\s*(.+?):\s*$/)
+      if line.match(/^\s*(\S{2,}):\s*$/)
         language_key = $1
         break
       end
     end
 
     # Read the language code from the YML index
-    if language_key.nil?
-      return warn "Failed to detect language from #{entry.name}"
+    if language_key.nil? || language_key.length > 5
+      raise "Failed to detect language from #{entry.name}"
     end
 
     # work around a crowdin bug which does not escape norwegian key
