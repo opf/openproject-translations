@@ -27,7 +27,17 @@ namespace :translations do
       raise "Missing ENV 'OPENPROJECT_CROWDIN_API_KEY'"
     end
 
-    updater = CombinedLocalesUpdater.new ENV['OPENPROJECT_CROWDIN_PROJECT'], ENV['OPENPROJECT_CROWDIN_API_KEY']
+    locale_paths =
+      if ENV['OPENPROJECT_CROWDIN_LOCALE_PATHS']
+        ENV['OPENPROJECT_CROWDIN_LOCALE_PATHS']
+        .split(",")
+        .map(&:strip)
+      else
+        ['config/locales'] + Dir.glob('modules/*/config/locales')
+      end
+    updater = CombinedLocalesUpdater.new project: ENV['OPENPROJECT_CROWDIN_PROJECT'],
+                                         api_key: ENV['OPENPROJECT_CROWDIN_API_KEY'],
+                                         locale_paths: locale_paths
     updater.call!
   end
 end

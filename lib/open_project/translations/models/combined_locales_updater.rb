@@ -7,6 +7,7 @@ class CombinedLocalesUpdater
               :project,
               :crowdin_project_info,
               :crowdin_version_dir,
+              :locale_paths,
               :debug
 
   ENGLISH_TRANSLATION_FILE ||= 'en.yml'
@@ -19,8 +20,10 @@ class CombinedLocalesUpdater
   # @param core_path OpenProject checked out core
   # @param project crowdin project identifier
   # @param api_key crowdin API key for the project
-  def initialize(project, api_key)
+  def initialize(project:, api_key:, locale_paths: )
     @project = project
+    @locale_paths = locale_paths
+
     @crowdin = ::Crowdin::API.new project_id: project, api_key: api_key
     @crowdin_version_dir = "#{OpenProject::VERSION::MAJOR}.#{OpenProject::VERSION::MINOR}"
     @debug = true
@@ -40,7 +43,7 @@ class CombinedLocalesUpdater
       end
 
       puts "-- Uploading all translations --"
-      all_locale_paths.each { |dir| upload_translations(dir) }
+      locale_paths.each { |dir| upload_translations(dir) }
 
       puts "-- Requesting build --"
       request_build
@@ -312,12 +315,6 @@ class CombinedLocalesUpdater
     else
       'core'
     end
-  end
-
-  ##
-  # Extracts all available modules for uploading
-  def all_locale_paths
-    ['config/locales'] + Dir.glob('modules/*/config/locales')
   end
 
   def js_translation?(translation_file_path)
