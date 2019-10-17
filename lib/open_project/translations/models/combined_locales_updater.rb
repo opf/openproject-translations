@@ -53,7 +53,7 @@ class CombinedLocalesUpdater
 
       puts "-- Downloading and updating all translations --"
       download_locales do |zip_file|
-        all_locale_paths.each do |module_dir|
+        locale_paths.each do |module_dir|
           mod_name = get_crowdin_name(module_dir)
           path = versioned_path(mod_name)
           entries =  zip_file.glob("*/#{path}/*.yml")
@@ -310,7 +310,7 @@ class CombinedLocalesUpdater
   ##
   # Get the folder name we track this module in
   def get_crowdin_name(path)
-    if match = path.match(/modules\/([^\/]+)\/config\/locales/)
+    if match = path.match(/([^\/]+)\/config\/locales/)
       match[1]
     else
       'core'
