@@ -35,10 +35,12 @@ module OpenProject
                   pluralizer.call(count)
                 end
 
-          if key == :many && entry.key?(:other)
+          # If we have an :other key, fall back to that
+          # as it will be safe to use.
+          # otherwise returns nil, and results in a missing translation
+          # to avoid raised exception
+          if entry.key?(:other)
             entry[:other]
-          else
-            raise
           end
         end
       end
