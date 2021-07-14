@@ -21,7 +21,7 @@ module OpenProject::Translations
     include OpenProject::Plugins::ActsAsOpEngine
 
     register 'openproject-translations',
-             :author_url => 'https://openproject.org',
+             :author_url => 'https://www.openproject.org',
              :requires_openproject => '>= 4.0.0'
 
     # load custom translation rules, as stored in config/locales/plurals.rb
