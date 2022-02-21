@@ -33,10 +33,6 @@ updating locales.
 OpenProject-Translations and js locales from plugins are required by
 each plugin individually.
 
-### Updating Locales
-
-* This plugin provides several rake tasks to update locales. These tasks keep the following up to date: the source files in Crowdin and the translated files in the GitHub repos. We execute these tasks once a day.
-
 ## Requirements
 
 * OpenProject version **3.0.0 or higher** ( or a current installation from the `dev` branch)
